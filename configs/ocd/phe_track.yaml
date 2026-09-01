@@ -1,0 +1,17 @@
+method: phe_track
+source: official PHE NeurIPS 2024 (HaiyangZheng/PHE)
+hash_code_length: 12
+prototype_dim: 768
+global_proto_per_class: 10
+epochs: 200
+batch_size: 128
+alpha: 0.1
+beta: 3.0
+optimizer: adamw
+weight_decay: 0.05
+sched: cosine
+warmup_epochs: 5
+features_lr: 0.0001
+add_on_layers_lr: 0.001
+prototype_vectors_lr: 0.001
+seeds: [1027, 1028, 1029]

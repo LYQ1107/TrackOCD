@@ -1,0 +1,37 @@
+{
+  "protocol": "trackocd_iclr27_phase19r_rc_ms_ocd",
+  "seed": 1902,
+  "episode_length": 24,
+  "batch_size": 24,
+  "updates_per_fold": 50000,
+  "upper_updates_if_unstable": 80000,
+  "feature": "frozen Phase15S DINOv2 CLS+ROI, normalized 0.8 CLS + 0.2 ROI",
+  "max_states": 16,
+  "max_anchors": 8,
+  "known_count": 48,
+  "defer_max_action_fraction": 0.15,
+  "loss_weights": {
+    "action_ce": 1.0,
+    "candidate_same_different": 1.0,
+    "new_existing": 0.75,
+    "known_calibration": 0.35,
+    "quality": 0.2,
+    "false_merge_risk": 1.5,
+    "fragmentation": 0.1
+  },
+  "internal_selection": "0.30 ExistingF1_macro + 0.20 NewF1_macro + 0.15 KnownMacro + 0.15 PositiveReuseRecall_macro + 0.10 NovelNMI_macro - 0.10 FalseMergeRate_macro - 0.05 FragmentationRate_macro",
+  "checkpoint_interval": 4000,
+  "checkpoint_policy": "best_internal and latest_valid only; persistent held-known replay",
+  "fallback": "one Tracklet-AGE-style Gaussian raw controller only, selected before public labels",
+  "public_gate": {
+    "commit_ct_min": 15,
+    "category_min": 5,
+    "video_min": 8,
+    "existing_precision_min": 0.70,
+    "negative_false_merge_max": 0.15,
+    "known_micro_min": 0.206,
+    "known_macro_min": 0.139
+  },
+  "public_labels_before_freeze": false,
+  "devplus_q1_before_gate": false
+}

@@ -1,0 +1,43 @@
+{
+  "protocol": "trackocd_iclr27_phase23_stage2a_candidate_quality_ranker",
+  "branch": "stage2a_quality_objectness_ranker",
+  "candidate_pool": {
+    "scale_factors": [0.8, 1.0, 1.25],
+    "center_shifts": [-0.2, 0.0, 0.2],
+    "max_history": 4,
+    "all_raw_rows_retained": true,
+    "top_k_eval": 5
+  },
+  "model": {
+    "input": ["aligned_dinov2_cls", "aligned_dinov2_roi", "candidate_box_xyxy", "parent_box_geometry", "raw_score", "causal_age", "history_stability", "transform_id"],
+    "forbidden": ["gt_bbox_xyxy", "row_iou", "gt_category_id_common", "physical_id", "semantic_id", "future_frame"],
+    "hidden": 192,
+    "output": "candidate_quality_logit"
+  },
+  "loss": {
+    "quality": "IoU-aware soft-label BCE + SmoothL1",
+    "hard_negative": "within-row pair ranking between highest-IoU and lowest-IoU candidates",
+    "weights": {"bce": 1.0, "smooth_l1": 0.25, "ranking": 0.25}
+  },
+  "training": {
+    "steps": 4000,
+    "checkpoint_every": 500,
+    "validation_steps": [1000, 2000, 3000, 4000],
+    "batch_size": 256,
+    "seed": 20260828,
+    "amp": "bf16",
+    "workers": 0,
+    "devices": [0, 1, 2, 3],
+    "one_fold_per_gpu": true,
+    "video_category_disjoint": true
+  },
+  "resource_preflight": {
+    "available_ram_gib": 107,
+    "ram_total_gib": 125,
+    "data1_free_gib": 50,
+    "gpu4_reserved_by_other_process": true,
+    "gpu_process_pid_untouched": 21590,
+    "oom": false
+  },
+  "sealed_inputs_not_read": ["DEV+", "Q1", "public new-model labels"]
+}

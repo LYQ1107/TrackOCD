@@ -1,0 +1,9 @@
+{
+  "name": "Tracklet-AGE adaptation",
+  "official_reproduction": false,
+  "pca_dim": 64,
+  "covariance": "Ledoit-Wolf shrinkage with global prior",
+  "known_open_set": "class-adaptive held-known calibration",
+  "expansion": "causal bounded Gaussian state anchors",
+  "encoder_updates": false
+}

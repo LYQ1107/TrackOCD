@@ -1,0 +1,98 @@
+diff --git a/projects/IDOL/idol/data/ytvis_eval.py b/projects/IDOL/idol/data/ytvis_eval.py
+index 71eedf7..055c95e 100644
+--- a/projects/IDOL/idol/data/ytvis_eval.py
++++ b/projects/IDOL/idol/data/ytvis_eval.py
+@@ -85,12 +85,10 @@ class YTVISEvaluator(DatasetEvaluator):
+         self._metadata = MetadataCatalog.get(dataset_name)
+ 
+         json_file = PathManager.get_local_path(self._metadata.json_file)
+-        # with contextlib.redirect_stdout(io.StringIO()):
+-        #     self._ytvis_api = YTVOS(json_file)
+-
+-        # Test set json files do not contain annotations (evaluation must be
+-        # performed using the COCO evaluation server).
+-        self._do_evaluation = "annotations" in self._ytvis_api.dataset
++        # SimOWT project modification: inference-only mode. We do not evaluate
++        # here; predictions are written by the IDOL model's track_eval path.
++        self._ytvis_api = None
++        self._do_evaluation = False
+ 
+     def reset(self):
+         self._predictions = []
+diff --git a/projects/IDOL/idol/idol.py b/projects/IDOL/idol/idol.py
+index 6823756..57d7ebf 100644
+--- a/projects/IDOL/idol/idol.py
++++ b/projects/IDOL/idol/idol.py
+@@ -609,7 +609,7 @@ class IDOL(nn.Module):
+             if not os.path.exists(dst_root):
+                 os.makedirs(dst_root)
+             try:
+-                train_coco_path = dst_root + str(batched_inputs[0]['image_id']).zfill(10) + '.json'
++                train_coco_path = os.path.join(dst_root, str(batched_inputs[0]['image_id']).zfill(10) + '.json')
+                 with open(train_coco_path, 'w') as f3:
+                     json.dump(self.anno, f3)
+             except:
+@@ -621,6 +621,8 @@ class IDOL(nn.Module):
+     def track_eval(self, processed_results, box_cls, box_pred, mask_pred,
+                         reid_pred, iou_pred, box_i, mask_pred_i, reid_pred_i, datasets_ori, idx_ori, batched_inputs, item, image_size):
+ 
++        if isinstance(batched_inputs, dict):
++            batched_inputs = [batched_inputs]
+         file_name_for_video = batched_inputs[0]['file_name']
+         file_name_list = file_name_for_video.split('/')
+         self.datasrc = file_name_list[4]
+@@ -758,7 +760,7 @@ class IDOL(nn.Module):
+                 self.tracklets1.append(prop)
+ 
+             if self.tracklets1 != []:
+-                dst_root = '/ssd1/wby_workspace/VNext/1_track_result/tao/3_ioubranch_reiddepth/submit2/'
++                dst_root = os.environ.get('SIMOWT_OUTPUT_DIR', '/ssd1/wby_workspace/VNext/1_track_result/tao/3_ioubranch_reiddepth/submit2/')
+                 if not os.path.exists(dst_root):
+                     os.makedirs(dst_root)
+                 train_coco_path = dst_root + str(batched_inputs[0]['image_id']).zfill(10) + '.json'
+diff --git a/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/PKG-INFO b/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/PKG-INFO
+index 18ccefb..5f86c90 100644
+--- a/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/PKG-INFO
++++ b/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/PKG-INFO
+@@ -4,8 +4,3 @@ Version: 1.0
+ Summary: PyTorch Wrapper for CUDA Functions of Multi-Scale Deformable Attention
+ Home-page: https://github.com/fundamentalvision/Deformable-DETR
+ Author: Weijie Su
+-License: UNKNOWN
+-Platform: UNKNOWN
+-
+-UNKNOWN
+-
+diff --git a/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/SOURCES.txt b/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/SOURCES.txt
+index 9219d84..3978df3 100644
+--- a/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/SOURCES.txt
++++ b/projects/IDOL/idol/models/ops/MultiScaleDeformableAttention.egg-info/SOURCES.txt
+@@ -1,7 +1,7 @@
+ setup.py
+-/home/dhw/LTL_workspace/VNext/projects/IDOL/idol/models/ops/src/vision.cpp
+-/home/dhw/LTL_workspace/VNext/projects/IDOL/idol/models/ops/src/cpu/ms_deform_attn_cpu.cpp
+-/home/dhw/LTL_workspace/VNext/projects/IDOL/idol/models/ops/src/cuda/ms_deform_attn_cuda.cu
++/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/third_party/SimOWT/projects/IDOL/idol/models/ops/src/vision.cpp
++/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/third_party/SimOWT/projects/IDOL/idol/models/ops/src/cpu/ms_deform_attn_cpu.cpp
++/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/third_party/SimOWT/projects/IDOL/idol/models/ops/src/cuda/ms_deform_attn_cuda.cu
+ MultiScaleDeformableAttention.egg-info/PKG-INFO
+ MultiScaleDeformableAttention.egg-info/SOURCES.txt
+ MultiScaleDeformableAttention.egg-info/dependency_links.txt
+diff --git a/projects/IDOL/idol/models/ops/dist/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg b/projects/IDOL/idol/models/ops/dist/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg
+index c9706d6..7ba0b3e 100644
+Binary files a/projects/IDOL/idol/models/ops/dist/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg and b/projects/IDOL/idol/models/ops/dist/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg differ
+diff --git a/projects/IDOL/train_net.py b/projects/IDOL/train_net.py
+index 127baff..e91efc0 100644
+--- a/projects/IDOL/train_net.py
++++ b/projects/IDOL/train_net.py
+@@ -6,8 +6,8 @@ This script is a simplified version of the training script in detectron2/tools.
+ """
+ ##
+ import os
+-os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1, 2, 3, 4, 5, 6, 7"
+-# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
++if "CUDA_VISIBLE_DEVICES" not in os.environ:
++    os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1, 2, 3, 4, 5, 6, 7"
+ 
+ 
+ import sys

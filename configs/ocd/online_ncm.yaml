@@ -1,0 +1,9 @@
+method: online_ncm
+known_prototype: mean_of_train_known_track_embeddings
+novel_prototype_update: confidence_controlled_incremental_mean
+known_threshold: null  # selected on proxy-known / proxy-novel calibration
+novel_threshold: null
+similarity: cosine
+stream_order: main
+seeds: [1027, 1028, 1029]
+proxy_known_fraction: 0.5

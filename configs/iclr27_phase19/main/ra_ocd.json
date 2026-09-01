@@ -1,0 +1,48 @@
+{
+  "protocol": "trackocd_iclr27_phase19_ra_ocd",
+  "representation": "frozen Phase15S DINOv2 CLS+ROI .65/.35, normalized 768-D raw path",
+  "model": {
+    "name": "RA-OCD",
+    "hidden": 256,
+    "residual_rank": 64,
+    "residual_gate_initial": 0.0,
+    "residual_norm_bound": 0.25,
+    "max_states": 8,
+    "max_anchors": 8,
+    "physical_id_as_feature": false,
+    "future_features": false
+  },
+  "rollout": {
+    "teacher_forcing_updates": "1->0.85 over 1-4000",
+    "scheduled_sampling_updates": "0.85->0.20 over 4001-16000",
+    "zero_teacher_updates": "16001-40000",
+    "state_relative_targets": true,
+    "executed_action_updates_next_state": true,
+    "shared_runtime": "src/iclr27_phase19/runtime/state_machine.py"
+  },
+  "training": {
+    "updates_per_fold": 40000,
+    "seed": 1801,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "amp": "BF16",
+    "gradient_clip": 5.0,
+    "checkpoint_interval": 2000,
+    "ladder": "L2"
+  },
+  "losses": {
+    "state_relative_action_ce": 1.0,
+    "known_ce": 0.35,
+    "quality_mse": 0.20,
+    "raw_rank_preservation": 0.15,
+    "residual_norm": 0.05,
+    "pairwise_raw_distillation": 0.10
+  },
+  "selection": {
+    "internal_only": true,
+    "primary_score": "0.35 ExistingF1 + 0.25 NewF1 + 0.20 HungarianNew + 0.15 KnownMacro - 0.05 FalseMerge - 0.05 Fragmentation",
+    "public_labels_before_freeze": false
+  }
+}

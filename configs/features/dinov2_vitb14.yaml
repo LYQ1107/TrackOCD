@@ -1,0 +1,9 @@
+encoder: dinov2
+model_name: facebookresearch/dinov2
+model_variant: dinov2_vitb14
+weight_source: official torch.hub facebookresearch/dinov2
+input_size: 518
+feature_dim: 768
+normalize: l2
+dtype_save: float16
+dtype_eval: float32

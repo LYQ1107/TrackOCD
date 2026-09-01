@@ -1,0 +1,13 @@
+diff --git a/ovtrack/datasets/parsers/coco_video_parser.py b/ovtrack/datasets/parsers/coco_video_parser.py
+index 5d46496..1f0d483 100644
+--- a/ovtrack/datasets/parsers/coco_video_parser.py
++++ b/ovtrack/datasets/parsers/coco_video_parser.py
+@@ -63,7 +63,7 @@ class CocoVID(COCO):
+ 
+     def get_img_ids_from_vid(self, vidId):
+         img_infos = self.vidToImgs[vidId]
+-        ids = list(np.zeros([len(img_infos)], dtype=np.int))
++        ids = list(np.zeros([len(img_infos)], dtype=int))
+         for img_info in img_infos:
+             ids[img_info["frame_id"]] = img_info["id"]
+         return ids

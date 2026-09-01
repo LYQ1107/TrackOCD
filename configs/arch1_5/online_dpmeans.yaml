@@ -1,0 +1,7 @@
+# Cosine DP-means (same assign-or-create rule as spherical k-means; separate
+# named baseline).
+attach_threshold: 0.4
+ema: 0.2
+seed_offset: 0
+proxy_calibration: hungarian ACC on proxy-novel train-known tracks
+proxy_acc: 0.3298

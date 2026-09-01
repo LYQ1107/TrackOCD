@@ -1,0 +1,4 @@
+router: reliability_gated_causal_adaptation
+blend: (1-w)*raw + w*adapted, w in [0,1] from anchor count/stability
+fallback: C1
+memory: corrected_b2 (threshold 0.45, unchanged)

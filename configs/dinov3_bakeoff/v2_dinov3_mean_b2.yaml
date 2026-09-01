@@ -1,0 +1,10 @@
+# V2: DINOv3 ViT-B/16 track mean + DINOv3 same-space router + corrected B2
+backbone: dinov3_vitb16_lvd1689m
+representation: track_mean
+router_space: dinov3_mean
+memory_space: dinov3_mean
+threshold: independently proxy-calibrated (never DINOv2/Transformer thresholds)
+weight_source: timm converted W4 (checkpoints/dinov3/WEIGHT_MANIFEST.json)
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+seeds: [1027, 1028, 1029]

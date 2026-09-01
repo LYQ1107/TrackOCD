@@ -1,0 +1,8 @@
+# D4 uncertainty-aware hard routing
+status: not_run
+reason: D2 did not reach PARTIAL_DUAL_BRANCH; D4 not authorized by protocol
+would_require:
+  - high-confidence known -> known
+  - high-confidence novel -> DINO discovery
+  - uncertain -> unresolved
+  - thresholds calibrated only on train-known proxy

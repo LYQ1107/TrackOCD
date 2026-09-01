@@ -1,0 +1,8 @@
+# D0 minimal baseline (A1 reproduction)
+router: dino_track_mean
+discovery_embedding: dino_track_mean
+memory: corrected_b2
+threshold: 0.45
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+seeds: [1027, 1028, 1029]

@@ -1,0 +1,20 @@
+name: ocd_ovmot_discovery
+channels: [defaults, conda-forge]
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.6.0+cu118
+      - torchvision==0.21.0+cu118
+      - timm
+      - scikit-learn
+      - scipy
+      - pillow
+      - opencv-python-headless
+      - pandas
+      - matplotlib
+      - tqdm
+      - einops
+      - open_clip_torch
+      - requests
+      - gdown

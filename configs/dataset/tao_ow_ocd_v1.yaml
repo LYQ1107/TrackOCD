@@ -1,0 +1,15 @@
+dataset: tao_ow_ocd_v1
+raw_tao: data/raw/tao
+annotations: data/raw/tao/annotations
+frames: data/raw/tao/frames
+root: data/tao_ow_ocd_v1
+public_dir: data/tao_ow_ocd_v1/public
+private_dir: data/tao_ow_ocd_v1/private
+splits_dir: data/tao_ow_ocd_v1/splits
+manifests_dir: data/tao_ow_ocd_v1/manifests
+stats_dir: data/tao_ow_ocd_v1/stats
+stream_file: val_gt_track_stream.jsonl
+seeds: [1027, 1028, 1029]
+balanced_seed: 20260805
+max_frames_per_track: 8
+bbox_context: 0.10

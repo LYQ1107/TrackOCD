@@ -1,0 +1,666 @@
+diff --git a/ovtr/config/ovtr_5_frame_train_val.py b/ovtr/config/ovtr_5_frame_train_val.py
+index 6de0030..e2de3bf 100644
+--- a/ovtr/config/ovtr_5_frame_train_val.py
++++ b/ovtr/config/ovtr_5_frame_train_val.py
+@@ -74,6 +74,7 @@ initial_grad_allowed = ['patch2query',
+ global_grad_allowed_epoch = 1
+ global_grad_allowed_epoch_track = 1 
+ train_tracking_only = ['track_embed',
++                       'tco_head',
+                        'update_attn',
+                        'norm4',
+                        'decoder.layers.0']
+@@ -196,4 +197,3 @@ data = dict(
+ )
+ 
+ evaluation = dict(metric=['track'], resfile_path='/scratch/tmp/')
+-
+diff --git a/ovtr/config/ovtr_lite_train_val.py b/ovtr/config/ovtr_lite_train_val.py
+index 07e910a..5e999fe 100644
+--- a/ovtr/config/ovtr_lite_train_val.py
++++ b/ovtr/config/ovtr_lite_train_val.py
+@@ -74,6 +74,7 @@ initial_grad_allowed = ['patch2query',
+ global_grad_allowed_epoch = 1
+ global_grad_allowed_epoch_track = 1 
+ train_tracking_only = ['track_embed',
++                       'tco_head',
+                        'update_attn',
+                        'norm4',
+                        'decoder.layers.0']
+@@ -196,4 +197,3 @@ data = dict(
+ )
+ 
+ evaluation = dict(metric=['track'], resfile_path='/scratch/tmp/')
+-
+diff --git a/ovtr/engine.py b/ovtr/engine.py
+index 84c6d86..1f765ed 100644
+--- a/ovtr/engine.py
++++ b/ovtr/engine.py
+@@ -52,9 +52,11 @@ def visualize(track_instances, filename):
+             cv2.putText(img, str(obj_idxes.item()) + CLASSES[label] + "{:.2f}".format(score.item()), (c1[0], c1[1] + 3), 0, 0.5, [225, 255, 255], thickness=1, lineType=cv2.LINE_AA)
+         cv2.imwrite(os.path.join(root, './data_vis_out', name), img)
+ 
+-def train_one_epoch_mot(model: torch.nn.Module, criterion: torch.nn.Module,
+-                    data_loader: Iterable, optimizer: torch.optim.Optimizer,
+-                    device: torch.device, epoch: int, max_norm: float = 0, writer=None, amp: bool = False):
++def train_one_epoch_mot(model: torch.nn.Module, criterion: torch.nn.Module,
++                    data_loader: Iterable, optimizer: torch.optim.Optimizer,
++                    device: torch.device, epoch: int, max_norm: float = 0,
++                    writer=None, amp: bool = False, max_train_iters: int = 0,
++                    ckpt_callback=None, ckpt_interval: int = 0):
+     model.train()
+     criterion.train()
+     metric_logger = utils.MetricLogger(delimiter="  ")
+@@ -128,9 +130,16 @@ def train_one_epoch_mot(model: torch.nn.Module, criterion: torch.nn.Module,
+             for loss_name, loss_value in loss_dict_reduced_scaled.items():
+                 storage.put_scalar(loss_name, loss_value.item())
+             writer.write()
+-        if storage is not None:
+-            storage.step()
+-        step += 1
++        if storage is not None:
++            storage.step()
++        step += 1
++        if max_train_iters and step >= max_train_iters:
++            print(f"Stopping after {step} training iterations "
++                  f"(max_train_iters={max_train_iters}).", flush=True)
++            break
++        if ckpt_callback is not None and ckpt_interval > 0 and \
++                step % ckpt_interval == 0:
++            ckpt_callback(step)
+     metric_logger.synchronize_between_processes()
+     print("Averaged stats:", metric_logger)
+     return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
+diff --git a/ovtr/eval.py b/ovtr/eval.py
+index 49136e8..c51c80d 100644
+--- a/ovtr/eval.py
++++ b/ovtr/eval.py
+@@ -24,6 +24,7 @@ import os
+ import numpy as np
+ import random
+ import argparse
++import json
+ import torchvision.transforms.functional as F
+ import torch
+ import cv2
+@@ -224,12 +225,31 @@ class OVTR_inference(object):
+         self.num_classes = len(CLASSES)
+         self.vis_points = args.vis_points
+         self.dataset_list = ["YFCC100M", "HACS", "BDD", "ArgoVerse", "AVA", "LaSOT", "Charades"]
++        self.tco_stats = []
+ 
+     @staticmethod
+     def filter_dt_by_score(dt_instances: Instances, prob_threshold: float, score_threshold: float) -> Instances:
+         keep = (dt_instances.scores > score_threshold) & (dt_instances.disappear_time == 0)
+         return dt_instances[keep]
+ 
++    @staticmethod
++    def apply_confirmation_score(dt_instances: Instances,
++                                 w1: float, w2: float) -> Instances:
++        if len(dt_instances) == 0:
++            return dt_instances
++        hit = dt_instances.hit_count.float()
++        dis = dt_instances.disappear_time.float()
++        # model already incremented hit_count for the current frame;
++        # only apply to tracks with at least one prior hit (>=2).
++        persistent = hit >= 2
++        if not persistent.any():
++            return dt_instances
++        delta = w1 * torch.log1p(hit) - w2 * dis
++        new_scores = torch.clamp(dt_instances.scores + delta, 0.0, 1.0)
++        dt_instances.scores = torch.where(
++            persistent, new_scores, dt_instances.scores)
++        return dt_instances
++
+     @staticmethod
+     def filter_dt_by_area(dt_instances: Instances, area_threshold: float) -> Instances:
+         wh = dt_instances.boxes[:, 2:4] - dt_instances.boxes[:, 0:2]
+@@ -264,8 +284,12 @@ class OVTR_inference(object):
+             bboxes2 = np.array(bbox_xyxy, dtype=np.float32)
+             labels2 = np.array(labels, dtype=int)
+             ids = np.array(identities, dtype=int)
++            scores2 = np.array(scores, dtype=np.float32)
+             track_result = [
+-                np.concatenate((ids[labels2 == i, None], bboxes2[labels2 == i, :]), axis=1)
++                np.concatenate(
++                    (ids[labels2 == i, None], bboxes2[labels2 == i, :],
++                     scores2[labels2 == i, None]),
++                    axis=1)
+                 for i in range(self.num_classes)
+                 ]
+                 
+@@ -314,6 +338,22 @@ class OVTR_inference(object):
+         res = self.detr.inference_single_image(data, track_instances, frame_id=frame_id, ori_img_size=info[1])
+         track_instances = res['track_instances']
+         dt_instances = track_instances.to(torch.device('cpu'))
++        if self.args.score_mode == 'confirmation':
++            dt_instances = self.apply_confirmation_score(
++                dt_instances, self.args.conf_w1, self.args.conf_w2)
++        if getattr(self.args, 'tco_stats_path', None):
++            for i in range(len(dt_instances)):
++                self.tco_stats.append({
++                    "frame_id": int(frame_id),
++                    "file_path": file_path,
++                    "obj_idx": int(dt_instances.obj_idxes[i]),
++                    "bbox": dt_instances.boxes[i].tolist(),
++                    "score": float(dt_instances.scores[i]),
++                    "tco_logit": float(dt_instances.tco_logit[i]),
++                    "hit_count": int(dt_instances.hit_count[i]),
++                    "disappear_time": int(dt_instances.disappear_time[i]),
++                    "cls_idx": int(dt_instances.cls_idxes[i]),
++                })
+ 
+         # filter det instances by score.
+         dt_instances = self.filter_dt_by_score(dt_instances, prob_threshold, score_threshold)
+@@ -406,6 +446,10 @@ def eval(args, cfg):
+         eval_kwargs.update(dict(metric=args.eval, **kwargs))
+         eval_kwargs.resfile_path = resfile_path
+         print(dataset_val.evaluate(outputs, **eval_kwargs))
++    if getattr(args, 'tco_stats_path', None):
++        with open(args.tco_stats_path, "w") as f:
++            json.dump(tracker.tco_stats, f)
++        print("Wrote TCO stats ->", args.tco_stats_path)
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/ovtr/main.py b/ovtr/main.py
+index 735a753..2c633e4 100644
+--- a/ovtr/main.py
++++ b/ovtr/main.py
+@@ -38,6 +38,28 @@ def get_args_parser():
+     parser.add_argument('--batch_size', default=2, type=int)
+     parser.add_argument('--weight_decay', default=1e-4, type=float)
+     parser.add_argument('--epochs', default=50, type=int)
++    parser.add_argument('--max_train_iters', default=0, type=int,
++                        help='stop after this many training iterations in '
++                             'each epoch (0 = unlimited; smoke-test only)')
++    parser.add_argument('--ckpt_interval', default=0, type=int,
++                        help='save an extra checkpoint every N training '
++                             'iterations (0 = disabled; does not change '
++                             'training dynamics)')
++    parser.add_argument('--tco_loss_coef', default=0.0, type=float,
++                        help='weight of trajectory-conditioned objectness '
++                             'loss (0 disables the TCO head)')
++    parser.add_argument('--tco_alpha', default=0.5, type=float,
++                        help='TCO logit mixing weight at inference')
++    parser.add_argument('--score_mode', default='base',
++                        choices=['base', 'confirmation', 'tco'],
++                        help='inference score mode (base/confirmation/tco)')
++    parser.add_argument('--conf_w1', default=0.0, type=float,
++                        help='P1 confirmation: weight on log1p(hit_count)')
++    parser.add_argument('--conf_w2', default=0.0, type=float,
++                        help='P1 confirmation: penalty per disappear_time')
++    parser.add_argument('--tco_stats_path', default=None, type=str,
++                        help='optional JSONL dump of per-proposal TCO state '
++                             'for representation audit')
+     parser.add_argument("--lr_drop", type=int, nargs='*')
+     parser.add_argument('--lr_drop_epochs', default=None, type=int, nargs='+')
+     parser.add_argument('--clip_max_norm', default=0.1, type=float,
+@@ -353,8 +375,32 @@ def main(args):
+ 
+             if args.distributed:
+                 sampler_train.set_epoch(epoch)
++            ckpt_callback = None
++            if args.ckpt_interval > 0 and args.output_dir:
++                def ckpt_callback(step):
++                    path = output_dir / f"checkpoint_iter{step:06}.pth"
++                    utils.save_on_master({
++                        'model': model_without_ddp.state_dict(),
++                        'optimizer': optimizer.state_dict(),
++                        'lr_scheduler': lr_scheduler.state_dict(),
++                        'epoch': epoch,
++                        'args': args,
++                    }, path)
++                    utils.save_on_master({
++                        'model': model_without_ddp.state_dict(),
++                        'optimizer': optimizer.state_dict(),
++                        'lr_scheduler': lr_scheduler.state_dict(),
++                        'epoch': epoch,
++                        'args': args,
++                    }, output_dir / "checkpoint.pth")
++                    print(f"[ckpt] iteration {step} saved -> {path}",
++                          flush=True)
+             train_stats = train_func(
+-                model, criterion, data_loader_train, optimizer, device, epoch, args.clip_max_norm, writer=writer
++                model, criterion, data_loader_train, optimizer, device, epoch,
++                args.clip_max_norm, writer=writer,
++                max_train_iters=args.max_train_iters,
++                ckpt_callback=ckpt_callback,
++                ckpt_interval=args.ckpt_interval,
+             )
+             lr_scheduler.step()
+             if args.output_dir:
+@@ -391,4 +437,3 @@ if __name__ == '__main__':
+     if args.output_dir:
+         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
+     main(args)  
+-
+diff --git a/ovtr/models/ovtr.py b/ovtr/models/ovtr.py
+index 7d8590e..82b2a8f 100644
+--- a/ovtr/models/ovtr.py
++++ b/ovtr/models/ovtr.py
+@@ -21,8 +21,9 @@ from .backbone import build_backbone
+ from .matcher import build_matcher
+ from .transformer import build_transformer
+ from .updater import build as build_updater
+-from .deformable_detr import SetCriterion
+-from .segmentation import sigmoid_focal_loss
++from .deformable_detr import SetCriterion
++from .segmentation import sigmoid_focal_loss
++from .tco import TCOHead
+ 
+ from util.clip_utils import load_embeddings
+ from .utils import MLP, protect_det_preds, protect_track_preds, preprocess_for_masks
+@@ -123,16 +124,17 @@ class RuntimeTrackerBase(object):
+         return top_indices
+ 
+ 
+-class OVFrameMatcher(SetCriterion):
+-    def __init__(self, num_classes,
+-                        matcher,
+-                        weight_dict,
+-                        losses,
+-                        random_drop=0,
+-                        calculate_negative_samples=True,
+-                        num_queries=900,
+-                        train_with_artificial_img_seqs=False,
+-                        ):
++class OVFrameMatcher(SetCriterion):
++    def __init__(self, num_classes,
++                        matcher,
++                        weight_dict,
++                        losses,
++                        random_drop=0,
++                        calculate_negative_samples=True,
++                        num_queries=900,
++                        train_with_artificial_img_seqs=False,
++                        tco_loss_coef=0.0,
++                        ):
+         """ Create the criterion.
+         Parameters:
+             num_classes: number of object categories, omitting the special no-object category
+@@ -152,8 +154,9 @@ class OVFrameMatcher(SetCriterion):
+         self.random_drop = random_drop
+ 
+         self.num_queries = num_queries
+-        self.calculate_negative_samples = calculate_negative_samples
+-        self.train_with_artificial_img_seqs = train_with_artificial_img_seqs
++        self.calculate_negative_samples = calculate_negative_samples
++        self.train_with_artificial_img_seqs = train_with_artificial_img_seqs
++        self.tco_enabled = tco_loss_coef > 0
+ 
+     def initialize(self, gt_instances: List[Instances]):
+         self.gt_instances = gt_instances
+@@ -421,14 +424,37 @@ class OVFrameMatcher(SetCriterion):
+         self.num_samples += len(gt_instances_i) + num_disappear_track
+         self.sample_device = device
+ 
+-        for loss in self.losses:
+-            new_track_loss = self.get_loss(loss,
+-                                           outputs=outputs_i,
+-                                           gt_instances=[gt_instances_i],
+-                                           indices=[(matched_indices[:, 0], matched_indices[:, 1])],
+-                                           num_boxes=1)
+-            self.losses_dict.update(
+-                {'frame_{}_{}'.format(self._current_frame_idx, key): value for key, value in new_track_loss.items()})
++        for loss in self.losses:
++            new_track_loss = self.get_loss(loss,
++                                           outputs=outputs_i,
++                                           gt_instances=[gt_instances_i],
++                                           indices=[(matched_indices[:, 0], matched_indices[:, 1])],
++                                           num_boxes=1)
++            self.losses_dict.update(
++                {'frame_{}_{}'.format(self._current_frame_idx, key): value for key, value in new_track_loss.items()})
++
++        if self.tco_enabled and hasattr(track_instances, "tco_logit"):
++            tco_logit = track_instances.tco_logit
++            persistent_valid = (
++                (track_instances.obj_idxes >= 0)
++                & (track_instances.matched_gt_idxes >= 0)
++                & (track_instances.iou > 0.5)
++                & (track_instances.hit_count >= 1)
++            )
++            persistent_fp = (
++                track_instances.is_fp
++                & (track_instances.matched_gt_idxes == -1)
++                & (track_instances.hit_count >= 1)
++            )
++            tco_mask = persistent_valid | persistent_fp
++            if tco_mask.any():
++                tgt = torch.zeros_like(tco_logit)
++                tgt[persistent_valid] = 1.0
++                loss_tco = F.binary_cross_entropy_with_logits(
++                    tco_logit[tco_mask], tgt[tco_mask], reduction="sum")
++                self.losses_dict.update(
++                    {"frame_{}_loss_tco".format(self._current_frame_idx):
++                     loss_tco})
+ 
+         if 'aux_outputs' in outputs:
+             for i, aux_outputs in enumerate(outputs['aux_outputs']):
+@@ -513,11 +539,13 @@ class OVTR(nn.Module):
+                     max_len=None,
+                     novel_cls_cpu=None,
+                     computed_aux=None,
+-                    score_thresh=None,
+-                    filter_score_thresh=None,
+-                    miss_tolerance=None,
+-                    train_with_artificial_img_seqs=False,
+-                 ):
++                    score_thresh=None,
++                    filter_score_thresh=None,
++                    miss_tolerance=None,
++                    train_with_artificial_img_seqs=False,
++                    tco_loss_coef=0.0,
++                    tco_alpha=0.5,
++                 ):
+         """ Initializes the model.
+         Parameters:
+             backbone: torch module of the backbone to be used. See backbone.py
+@@ -622,10 +650,15 @@ class OVTR(nn.Module):
+                                              filter_score_thresh=filter_score_thresh, 
+                                              miss_tolerance=miss_tolerance)
+         
+-        self.use_checkpoint = use_checkpoint
+-        self.distribution_based_sampling = distribution_based_sampling
+-        self.criterion = criterion
+-        self.train_with_artificial_img_seqs = train_with_artificial_img_seqs
++        self.use_checkpoint = use_checkpoint
++        self.distribution_based_sampling = distribution_based_sampling
++        self.criterion = criterion
++        self.train_with_artificial_img_seqs = train_with_artificial_img_seqs
++        self.tco_alpha = tco_alpha
++        if tco_loss_coef > 0:
++            self.tco_head = TCOHead(hidden_dim, hidden=128)
++        else:
++            self.tco_head = None
+ 
+     def _generate_empty_tracks(self, cls_pad_len=1203):
+         track_instances = Instances((1, 1))
+@@ -644,13 +677,56 @@ class OVTR(nn.Module):
+         track_instances.pred_boxes = torch.zeros((num_queries, 4), dtype=torch.float, device=device)
+         track_instances.pred_logits = torch.zeros((num_queries, cls_pad_len), dtype=torch.float, device=device)
+ 
+-        if not self.training:
+-            track_instances.cls_idxes = torch.full((num_queries,), -1, dtype=torch.long, device=device)
+-            track_instances.disappear_time = torch.zeros((num_queries, ), dtype=torch.long, device=device)
+-        return track_instances.to(device)
+-
+-    def clear(self):
+-        self.track_base.clear()
++        track_instances.cls_idxes = torch.full((num_queries,), -1, dtype=torch.long, device=device)
++        track_instances.disappear_time = torch.zeros((num_queries, ), dtype=torch.long, device=device)
++        track_instances.hit_count = torch.zeros((num_queries, ), dtype=torch.long, device=device)
++        track_instances.is_fp = torch.zeros((num_queries, ), dtype=torch.bool, device=device)
++        track_instances.tco_logit = torch.zeros((num_queries, ), dtype=torch.float, device=device)
++        return track_instances.to(device)
++
++    def _compute_tco_logits(self, track_instances):
++        if self.tco_head is None or len(track_instances) == 0:
++            return
++        if not hasattr(track_instances, "output_embedding_img"):
++            return
++        cur_embed = track_instances.output_embedding_img
++        hist_embed = track_instances.query_tgt
++        score = track_instances.scores
++        disappear_time = track_instances.disappear_time
++        track_instances.tco_logit = self.tco_head(
++            cur_embed, hist_embed, score, disappear_time)
++
++    def _update_hit_count(self, track_instances):
++        if len(track_instances) == 0:
++            return
++        if self.training:
++            matched = (
++                (track_instances.obj_idxes >= 0)
++                & (track_instances.matched_gt_idxes >= 0)
++            )
++        else:
++            matched = (
++                (track_instances.obj_idxes >= 0)
++                & (track_instances.scores >= self.track_base.score_thresh)
++            )
++        track_instances.hit_count[matched] += 1
++
++    def _apply_tco_scores(self, track_instances):
++        if self.tco_head is None or len(track_instances) == 0:
++            return
++        persistent = track_instances.hit_count >= 1
++        if not persistent.any():
++            return
++        eps = 1e-6
++        cur_logit = torch.logit(
++            torch.clamp(track_instances.scores, eps, 1.0 - eps))
++        final_logit = cur_logit + self.tco_alpha * track_instances.tco_logit
++        final_scores = torch.sigmoid(final_logit)
++        track_instances.scores = torch.where(
++            persistent, final_scores, track_instances.scores)
++
++    def clear(self):
++        self.track_base.clear()
+ 
+     @torch.jit.unused
+     def _set_aux_loss(self, outputs_class, outputs_coord, outputs_embed):
+@@ -800,22 +876,26 @@ class OVTR(nn.Module):
+         track_instances.scores = track_scores
+         track_instances.pred_logits = frame_res['pred_logits'][0]
+         track_instances.pred_boxes = frame_res['pred_boxes'][0]
+-        track_instances.output_embedding_txt = frame_res['hs_cti'][0]
+-        track_instances.output_embedding_img = frame_res['hs_ofa'][0]
+-        track_instances.query_pos = frame_res["query_pos_track"][0]
+-
+-        if self.training:
+-            # the track id will be assigned by the mather.
+-            frame_res['track_instances'] = track_instances
+-            track_instances = self.criterion.match_for_single_frame(frame_res, is_first)
+-        else:
+-            if self.train_with_artificial_img_seqs:
+-                track_instances, _track_discard = protect_track_preds(track_instances, num_queries=self.num_queries, miss_tolerance=self.track_base.miss_tolerance, ious_thresh=self.ious_thresh) 
+-            track_instances = self.post_process_pre(track_instances, frame_res['select_id'], is_first)
+-            # each track will be assigned an unique global id by the track base.
+-            if is_first:
+-                self.track_base.clear()
+-            track_instances = self.track_base.update(track_instances, _track_discard, is_repeat=is_repeat)
++        track_instances.output_embedding_txt = frame_res['hs_cti'][0]
++        track_instances.output_embedding_img = frame_res['hs_ofa'][0]
++        track_instances.query_pos = frame_res["query_pos_track"][0]
++        self._compute_tco_logits(track_instances)
++
++        if self.training:
++            # the track id will be assigned by the mather.
++            frame_res['track_instances'] = track_instances
++            track_instances = self.criterion.match_for_single_frame(frame_res, is_first)
++            self._update_hit_count(track_instances)
++        else:
++            if self.train_with_artificial_img_seqs:
++                track_instances, _track_discard = protect_track_preds(track_instances, num_queries=self.num_queries, miss_tolerance=self.track_base.miss_tolerance, ious_thresh=self.ious_thresh) 
++            track_instances = self.post_process_pre(track_instances, frame_res['select_id'], is_first)
++            self._apply_tco_scores(track_instances)
++            # each track will be assigned an unique global id by the track base.
++            if is_first:
++                self.track_base.clear()
++            track_instances = self.track_base.update(track_instances, _track_discard, is_repeat=is_repeat)
++            self._update_hit_count(track_instances)
+ 
+         tmp = {}
+         tmp['init_track_instances'] = self._generate_empty_tracks(cls_pad_len=track_instances.pred_logits.shape[1])
+@@ -965,12 +1045,15 @@ def build(args, cfg):
+     num_frames_per_batch = max(args.sampler_lengths)
+     weight_dict = {}
+     
+-    for i in range(0, num_frames_per_batch):
+-        weight_dict.update({"frame_{}_loss_ce".format(i): args.cls_loss_coef,
+-                            'frame_{}_loss_bbox'.format(i): args.bbox_loss_coef,
+-                            'frame_{}_loss_giou'.format(i): args.giou_loss_coef,
+-                            'frame_{}_loss_align'.format(i): args.align_loss_coef,
+-                            })
++    for i in range(0, num_frames_per_batch):
++        weight_dict.update({"frame_{}_loss_ce".format(i): args.cls_loss_coef,
++                            'frame_{}_loss_bbox'.format(i): args.bbox_loss_coef,
++                            'frame_{}_loss_giou'.format(i): args.giou_loss_coef,
++                            'frame_{}_loss_align'.format(i): args.align_loss_coef,
++                            })
++        if getattr(args, "tco_loss_coef", 0.0) > 0:
++            weight_dict.update(
++                {"frame_{}_loss_tco".format(i): args.tco_loss_coef})
+ 
+     if args.aux_loss:
+         for i in range(0, num_frames_per_batch):
+@@ -983,11 +1066,12 @@ def build(args, cfg):
+ 
+     losses = ['labels', 'boxes', 'align']
+ 
+-    criterion = OVFrameMatcher(None, matcher=matcher, weight_dict=weight_dict, losses=losses, random_drop=args.random_drop,
+-                                train_with_artificial_img_seqs=cfg.train_with_artificial_img_seqs,
+-                                calculate_negative_samples=args.calculate_negative_samples,
+-                                num_queries=cfg.num_queries,
+-                                )
++    criterion = OVFrameMatcher(None, matcher=matcher, weight_dict=weight_dict, losses=losses, random_drop=args.random_drop,
++                                train_with_artificial_img_seqs=cfg.train_with_artificial_img_seqs,
++                                calculate_negative_samples=args.calculate_negative_samples,
++                                num_queries=cfg.num_queries,
++                                tco_loss_coef=getattr(args, "tco_loss_coef", 0.0),
++                                )
+     criterion.to(device)
+ 
+     model = OVTR(
+@@ -1007,8 +1091,10 @@ def build(args, cfg):
+         distribution_based_sampling=cfg.distribution_based_sampling,
+         novel_cls_cpu=novel_class,
+         computed_aux=cfg.computed_aux,
+-        score_thresh=args.score_thresh,
+-        filter_score_thresh=args.filter_score_thresh,
+-        miss_tolerance=args.miss_tolerance
+-    )
++        score_thresh=args.score_thresh,
++        filter_score_thresh=args.filter_score_thresh,
++        miss_tolerance=args.miss_tolerance,
++        tco_loss_coef=getattr(args, "tco_loss_coef", 0.0),
++        tco_alpha=getattr(args, "tco_alpha", 0.5),
++    )
+     return model, criterion
+diff --git a/ovtr/models/tco.py b/ovtr/models/tco.py
+index e69de29..79b3702 100644
+--- a/ovtr/models/tco.py
++++ b/ovtr/models/tco.py
+@@ -0,0 +1,37 @@
++"""Minimal trainable trajectory-conditioned objectness (TCO) head for OVTR.
++
++The head consumes OVTR-native persistent-query state only:
++  - current decoder image embedding (output_embedding_img)
++  - CIP/history-enriched query_tgt
++  - current objectness score
++  - disappear_time (survival state)
++
++It outputs one validity logit. During inference the logit is added to the
++current score in logit space for persistent (hit_count >= 1) queries only;
++new-object queries keep the original score.
++"""
++from __future__ import annotations
++
++import torch
++from torch import nn
++
++
++class TCOHead(nn.Module):
++    def __init__(self, d_model: int = 256, hidden: int = 128):
++        super().__init__()
++        self.net = nn.Sequential(
++            nn.Linear(d_model * 2 + 2, hidden),
++            nn.ReLU(inplace=True),
++            nn.Linear(hidden, hidden),
++            nn.ReLU(inplace=True),
++            nn.Linear(hidden, 1),
++        )
++        # initialize the final layer to a small output so TCO starts neutral.
++        nn.init.zeros_(self.net[-1].weight)
++        nn.init.zeros_(self.net[-1].bias)
++
++    def forward(self, cur_embed, hist_embed, score, disappear_time):
++        score = score.detach().float().unsqueeze(-1)
++        disappear_time = disappear_time.float().unsqueeze(-1)
++        x = torch.cat([cur_embed, hist_embed, score, disappear_time], dim=-1)
++        return self.net(x).squeeze(-1)
+diff --git a/ovtr/models/updater.py b/ovtr/models/updater.py
+index 112a70c..43a161f 100644
+--- a/ovtr/models/updater.py
++++ b/ovtr/models/updater.py
+@@ -113,19 +113,24 @@ class QueryInteractionModule(TrackEmbeddingBase):
+                 num_fp = len(selected_active_track_instances)
+                 if num_fp >= len(inactive_instances):
+                     fp_track_instances = inactive_instances
+-                else:
+-                    inactive_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(inactive_instances.pred_boxes))
+-                    selected_active_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(selected_active_track_instances.pred_boxes))
+-                    ious = pairwise_iou(inactive_boxes, selected_active_boxes)
+-                    # select the fp with the largest IoU for each active track.
+-                    fp_indexes = ious.max(dim=0).indices
+-
+-                    # remove duplicate fp.
+-                    fp_indexes = torch.unique(fp_indexes)
+-                    fp_track_instances = inactive_instances[fp_indexes]
+-
+-                merged_track_instances = Instances.cat([active_track_instances, fp_track_instances])
+-                return merged_track_instances
++                else:
++                    inactive_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(inactive_instances.pred_boxes))
++                    selected_active_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(selected_active_track_instances.pred_boxes))
++                    ious = pairwise_iou(inactive_boxes, selected_active_boxes)
++                    # select the fp with the largest IoU for each active track.
++                    fp_indexes = ious.max(dim=0).indices
++
++                    # remove duplicate fp.
++                    fp_indexes = torch.unique(fp_indexes)
++                    fp_track_instances = inactive_instances[fp_indexes]
++
++                fp_track_instances.is_fp = torch.ones(
++                    len(fp_track_instances), dtype=torch.bool,
++                    device=fp_track_instances.scores.device)
++                fp_track_instances.hit_count = torch.clamp(
++                    fp_track_instances.hit_count, min=1)
++                merged_track_instances = Instances.cat([active_track_instances, fp_track_instances])
++                return merged_track_instances
+ 
+             return active_track_instances
+ 
+@@ -268,21 +273,26 @@ class Category_Information_Propagator(QueryInteractionModule):
+ 
+         if len(inactive_instances) > 0 and len(selected_active_track_instances) > 0:
+             num_fp = len(selected_active_track_instances)
+-            if num_fp >= len(inactive_instances):
+-                fp_track_instances = inactive_instances
+-            else:
+-                inactive_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(inactive_instances.pred_boxes))
+-                selected_active_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(selected_active_track_instances.pred_boxes))
+-                ious = pairwise_iou(inactive_boxes, selected_active_boxes)
+-                # select the fp with the largest IoU for each active track.
+-                fp_indexes = ious.max(dim=0).indices
+-
+-                # remove duplicate fp.
+-                fp_indexes = torch.unique(fp_indexes)
+-                fp_track_instances = inactive_instances[fp_indexes]
+-
+-            merged_track_instances = Instances.cat([active_track_instances, fp_track_instances])
+-            return merged_track_instances
++            if num_fp >= len(inactive_instances):
++                fp_track_instances = inactive_instances
++            else:
++                inactive_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(inactive_instances.pred_boxes))
++                selected_active_boxes = Boxes(box_ops.box_cxcywh_to_xyxy(selected_active_track_instances.pred_boxes))
++                ious = pairwise_iou(inactive_boxes, selected_active_boxes)
++                # select the fp with the largest IoU for each active track.
++                fp_indexes = ious.max(dim=0).indices
++
++                # remove duplicate fp.
++                fp_indexes = torch.unique(fp_indexes)
++                fp_track_instances = inactive_instances[fp_indexes]
++
++                fp_track_instances.is_fp = torch.ones(
++                    len(fp_track_instances), dtype=torch.bool,
++                    device=fp_track_instances.scores.device)
++                fp_track_instances.hit_count = torch.clamp(
++                    fp_track_instances.hit_count, min=1)
++                merged_track_instances = Instances.cat([active_track_instances, fp_track_instances])
++                return merged_track_instances
+ 
+         return active_track_instances
+     

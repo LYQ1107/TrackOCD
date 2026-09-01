@@ -1,0 +1,6 @@
+This patch documents the Phase 2 TrackEval extension. The CLEAR/Identity
+metrics were computed by calling the official TrackEval metric classes
+(trackeval.metrics.CLEAR, trackeval.metrics.Identity) over the same
+preprocessed TAO_OW sequence data (src/iclr27_phase2/trackeval_clear_identity.py).
+The only third-party source edit was the argparse scalarization in
+scripts/run_tao_ow.py (see patches/TrackEval_iclr27_phase1.patch for the diff).

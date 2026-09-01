@@ -1,0 +1,17 @@
+selection: deterministic SHA256 strata (7 domains, 20 videos, 732 frames)
+writer_hook: track_eval before idol_tracker.match
+export_dir_env: SIMOWT_EXPORT_DIR
+output_dir_env: SIMOWT_OUTPUT_DIR
+dataset: coco_2017_val_agn_20 (COCO-format subset of tao/annotations/val_split/all.json)
+json_env: SIMOWT_COCO_20_JSON
+command:
+  - cd third_party/SimOWT
+  - CUDA_VISIBLE_DEVICES=<gpu> SIMOWT_COCO_20_JSON=<validation_20_coco.json>
+    SIMOWT_EXPORT_DIR=<outputs/iclr27_phase3a/smoke>
+    SIMOWT_OUTPUT_DIR=<outputs/iclr27_phase3a/trajectories/instrumented_online_20/>
+    PYTHONPATH=. python projects/IDOL/train_net.py --config-file
+    projects/IDOL/configs/r50_eval.yaml --num-gpus 1 --eval-only
+    MODEL.WEIGHTS <checkpoints/simowt_weight.pth>
+    DATALOADER.NUM_WORKERS 4 DATASETS.TEST "('coco_2017_val_agn_20',)"
+    INPUT.COCO_PRETRAIN True OUTPUT_DIR <runs/iclr27_phase3a/inference_20_coco_v2>
+status: executed successfully (2026-08-06)

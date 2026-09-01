@@ -1,0 +1,9 @@
+encoder: clip
+model_name: open_clip
+model_variant: ViT-B-32
+weight_source: openai (via open_clip official)
+input_size: 224
+feature_dim: 512
+normalize: l2
+dtype_save: float16
+dtype_eval: float32

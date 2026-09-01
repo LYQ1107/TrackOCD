@@ -1,0 +1,44 @@
+# Runtime outputs and local experiment state (not source code)
+/outputs/
+/runs/
+/checkpoints/
+/data/
+
+# Vendored/upstream repositories are tracked separately upstream.
+# Keep the root repository lightweight and avoid embedding nested .git trees.
+/third_party/
+
+# Internal execution instructions and research logs (kept out of the public repo)
+/docs/
+/AGENTS.md
+/PROGRESS.md
+/research_log.md
+
+# Python/build/test caches
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs, temporary files, and local environment settings
+*.log
+*.tmp
+*.swp
+.env
+.env.*
+
+# Model/data artifacts that should never enter a public source repository
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.onnx
+*.bin
+*.safetensors

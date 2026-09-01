@@ -1,0 +1,6 @@
+router: lightweight_mlp
+status: conditional_on_r4_proxy_gain
+max_layers: 2
+hidden_dim: 32
+max_params: 5000
+memory: corrected_b2 (threshold 0.45, unchanged)

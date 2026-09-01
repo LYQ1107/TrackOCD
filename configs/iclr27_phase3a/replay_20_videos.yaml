@@ -1,0 +1,12 @@
+replay_input: outputs/iclr27_phase3a/smoke/replay_packages/<video_id>/*.npz
+tracker: IDOL_Tracker (same config from tracker_config.json)
+device: cuda
+gt_usage: none
+image_usage: none
+detector_usage: none
+future_usage: none
+command:
+  - cd <project root>
+  - CUDA_VISIBLE_DEVICES=<gpu>
+    python src/iclr27_phase3a/run_offline_replay.py
+status: executed successfully (2026-08-06)

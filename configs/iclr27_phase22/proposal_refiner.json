@@ -1,0 +1,25 @@
+{
+  "protocol": "trackocd_iclr27_phase22_class_agnostic_proposal_refiner",
+  "seed": 20260828,
+  "folds": [0, 1, 2, 3],
+  "gpus": [0, 1, 2, 3],
+  "steps": 2000,
+  "batch_size": 256,
+  "checkpoint_every": 500,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0001,
+  "loss": {
+    "box": "SmoothL1 on normalized xyxy delta for TRAIN GT-aligned rows",
+    "quality": "BCE for assigned-and-IoU>=0.5 objectness/quality",
+    "quality_weight": 0.5
+  },
+  "input": {
+    "visual": "frozen DINOv2 CLS+ROI (1536-D)",
+    "geometry": "causal score/bbox/age/stability fields only",
+    "forbidden": ["gt_bbox_xyxy", "row_iou", "gt_category_id_common", "physical_id", "semantic_id", "future_frame"]
+  },
+  "validation": "video-disjoint and held-category-disjoint TRAIN rows; select highest true-IoU recall + 0.05 quality AP",
+  "amp": "bf16 on CUDA, fp32 fallback on non-finite loss",
+  "worker_count": 0,
+  "public_q1_access": false
+}

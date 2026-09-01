@@ -1,0 +1,9 @@
+{
+  "protocol": "trackocd_iclr27_phase20_stage1_frozen_correspondence",
+  "features": "data/iclr27_phase19r/sources/public_cls_roi.npz",
+  "methods": ["cls_mean", "roi_mean", "cls_last", "roi_last", "cls_max", "roi_max"],
+  "prefixes": [1, 2, 4, 8, 16],
+  "candidate_rule": "different physical track and different video",
+  "training": false,
+  "sealed_inputs": ["DEV+", "Q1", "public new-model labels"]
+}

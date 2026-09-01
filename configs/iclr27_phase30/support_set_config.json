@@ -1,0 +1,38 @@
+{
+  "protocol": "trackocd_iclr27_phase30_support_set_correspondence",
+  "seed_base": 20303001,
+  "prefixes": [1, 2, 4, 8, 16],
+  "max_track_len": 16,
+  "input_dim": 768,
+  "embedding_dim": 256,
+  "support_size": 3,
+  "steps_formal": 2000,
+  "steps_fold_smoke": 500,
+  "steps_single_smoke": 100,
+  "batch_size": 64,
+  "checkpoint_every": 500,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0001,
+  "loss_weights": {
+    "multi_positive_contrastive": 1.0,
+    "hard_negative_ranking": 0.5,
+    "set_calibration": 0.2,
+    "prefix_consistency": 0.2,
+    "complexity_penalty": 0.01
+  },
+  "devices": [4, 5, 6, 7],
+  "amp": "bf16_if_finite_else_fp32",
+  "worker_count": 4,
+  "model_input_fields": [
+    "key_aligned_cls", "key_aligned_roi", "bbox_geometry",
+    "motion", "lifecycle", "history", "support_temporal_mask",
+    "query_temporal_mask"
+  ],
+  "forbidden_model_inputs": [
+    "category_id", "video_id", "physical_id", "semantic_id",
+    "category_text", "future_frame", "future_track", "gt_bbox",
+    "held_event_outcome", "StateMemory", "controller_action"
+  ],
+  "selection_source": "TRAIN-only video/category-disjoint validation episodes",
+  "held_event_selection": false
+}

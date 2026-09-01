@@ -1,0 +1,40 @@
+{
+  "phase": "iclr27_phase4e",
+  "candidates": {
+    "I0": {
+      "checkpoint": "runs/orbit_msr/msr_nr2/model.pth",
+      "description": "ORBIT-MSR C1 frozen baseline (gate 0.5, reuse 0.45)",
+      "official_reference": "runs/orbit_msr/candidate_1_seed1027.json"
+    },
+    "I1": {
+      "checkpoint": "runs/orbit_iam/iam_i1_v3/model.pth",
+      "compat_feats": "sim,margin,radius,support,mem,rel",
+      "freeze_mode": "compat",
+      "seed": 1027
+    },
+    "I2": {
+      "checkpoint": "runs/orbit_iam/iam_i2_v3/model.pth",
+      "compat_feats": "sim,margin,radius,support,conf,mem,rel",
+      "freeze_mode": "compat",
+      "seed": 1027
+    },
+    "I3": {
+      "checkpoint": "runs/orbit_iam/iam_i3_v3/model.pth",
+      "compat_feats": "sim,margin,radius,support,conf,mem,rel",
+      "freeze_mode": "full",
+      "seed": 1027
+    }
+  },
+  "candidate_a": {
+    "checkpoint": "runs/orbit_iam/iam_i2_v3/model.pth",
+    "compat_threshold": 0.45,
+    "compat_margin": 0.05,
+    "gate_threshold": 0.5,
+    "frozen": true,
+    "official_run": true
+  },
+  "multi_prototype": {
+    "gate": "MULTI_PROTOTYPE_NOT_JUSTIFIED",
+    "candidate_b": null
+  }
+}

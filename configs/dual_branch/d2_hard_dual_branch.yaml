@@ -1,0 +1,10 @@
+# D2 hard dual branch
+router: transformer_semantic
+router_threshold: proxy_calibrated (identical to D1)
+known_prediction: transformer nearest-known-prototype (identical to D1)
+discovery_embedding: frozen_dino_track_mean
+memory: corrected_b2 (novel-only mode, threshold 0.45)
+gradient_boundary: discovery_embedding requires_grad == False
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+seeds: [1027, 1028, 1029]

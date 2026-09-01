@@ -1,0 +1,16 @@
+{
+  "phase": 56,
+  "name": "anonymous causal semantic evidence controller",
+  "commit_probability_threshold": 0.45,
+  "support_quality_threshold": 0.20,
+  "similarity_threshold": 0.45,
+  "evidence_threshold": 0.55,
+  "persistence_steps": 2,
+  "evidence_update": "0.70 previous evidence + 0.30 current max support cosine",
+  "actions": ["COMMIT", "DEFER", "RESET_REJECT"],
+  "raw_fallback": "exact normalized latest causal visual anchor when support set is empty",
+  "threshold_source": "fixed before Phase56 evaluation; not selected on held events",
+  "model_inputs": ["causal visual vectors", "normalized geometry", "track age/history", "support vectors", "support quality", "controller state"],
+  "forbidden_inputs": ["category_name", "category_text", "semantic_id", "physical_id_as_feature", "future_frame", "future_track", "held_gt", "DEV+", "Q1", "public_new_model_label"],
+  "denominator": {"positive_events": 76, "negative_events": 76, "prefixes": [1, 2, 4, 8, 16]}
+}

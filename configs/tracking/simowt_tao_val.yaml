@@ -1,0 +1,12 @@
+tracker: SimOWT
+repo: third_party/SimOWT
+checkpoint: checkpoints/simowt_weight.pth
+dataset: tao_val
+config_file: projects/IDOL/configs/r50_eval.yaml
+eval_script: third_party/TrackEval/scripts/run_tao_ow.py
+subsets: [known, unknown]
+metrics: HOTA
+trackeval_gt_folder: TrackEval/data/gt/tao/tao_training
+trackeval_tracker_folder: TrackEval/data/trackers/tao/tao_training
+track_iou_threshold: 0.5
+diagnostic_iou_threshold: 0.3

@@ -1,0 +1,6 @@
+method: ORBIT
+checkpoint: runs/orbit/model_D2_b128_g0.3/model.pth
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+streams: [main_seed1027, main_seed1028, main_seed1029]
+mode: joint

@@ -1,0 +1,5 @@
+# O0: oracle route + DINOv2 mean + DINOv2 B2 (diagnostic only)
+router: gt_is_known
+memory_space: dinov2_mean
+threshold: 0.45
+formal_method: false

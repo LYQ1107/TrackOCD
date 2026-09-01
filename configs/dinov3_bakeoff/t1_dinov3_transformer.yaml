@@ -1,0 +1,8 @@
+# T1 (conditional): frozen DINOv3 frame features -> 2-layer temporal
+# transformer -> shared embedding for router AND corrected B2 memory.
+backbone: dinov3_vitb16_lvd1689m
+representation: shared_transformer
+shared: true
+trainable_params_target: ~1.43M
+training_protocol: identical to TrackOCD-v1 bake-off (seed 1027, 40 epochs)
+status: conditional_on_backbone_gate

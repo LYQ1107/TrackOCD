@@ -1,0 +1,5 @@
+router: causal_anchor_location_scale
+anchors: high-confidence known pseudo-anchors
+correction: z-score alignment to reference median/MAD with clipping
+fallback: C2/C1 when anchors insufficient
+memory: corrected_b2 (threshold 0.45, unchanged)

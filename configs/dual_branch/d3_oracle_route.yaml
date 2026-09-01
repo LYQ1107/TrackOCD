@@ -1,0 +1,10 @@
+# D3 oracle-route diagnostic (not a formal method)
+router: gt_is_known (diagnostic only)
+known_prediction: exact gt semantic id (diagnostic only)
+memory: corrected_b2 novel-only
+variants:
+  D3T: {discovery_embedding: transformer_semantic, threshold: proxy_calibrated}
+  D3D: {discovery_embedding: dino_track_mean, threshold: 0.45}
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+seeds: [1027, 1028, 1029]

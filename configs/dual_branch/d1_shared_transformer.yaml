@@ -1,0 +1,9 @@
+# D1 shared transformer baseline (Btransformer_b2 reproduction)
+router: transformer_semantic
+discovery_embedding: transformer_semantic
+memory: corrected_b2
+threshold: proxy_calibrated (deterministic, seed 1027)
+checkpoint: runs/trackocd_v1/traj_enc_transformer/model.pth
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+seeds: [1027, 1028, 1029]

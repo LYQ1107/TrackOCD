@@ -1,0 +1,9 @@
+# V0: DINOv2 ViT-B/14 track mean + same-space router + corrected B2
+backbone: dinov2_vitb14
+representation: track_mean
+router_space: dinov2_mean
+memory_space: dinov2_mean
+threshold: 0.45
+protocols: [pure, ov_assisted]
+subsets: [full, repeated, balanced]
+seeds: [1027, 1028, 1029]

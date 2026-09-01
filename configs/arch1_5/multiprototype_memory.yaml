@@ -1,0 +1,13 @@
+# OCD-v2 candidate-mature multi-prototype memory (main method).
+attach_threshold: 0.525
+create_threshold: 0.375
+new_proto_threshold: 0.475
+max_prototypes_per_category: 4
+ema: 0.25
+maturity_tracks: 2
+seed_offset: 0
+proxy_calibration: hungarian ACC on proxy-novel train-known tracks
+proxy_acc: 0.3627
+status_rule:
+  mature: track_count >= 2 and confidence >= attach_threshold
+  singleton_candidates: kept as valid predictions (not deleted)

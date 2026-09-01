@@ -1,0 +1,8 @@
+{
+  "name": "Fallback-A raw geometry plus probabilistic controller",
+  "trigger": "internal residual rank preservation or action stability fails",
+  "representation": "frozen DINOv2 raw only",
+  "controller": "shrinkage-aware covariance plus confidence-controlled EMA prototype",
+  "public_selection_allowed": false,
+  "exact_official_reproduction": false
+}

@@ -1,0 +1,5 @@
+# O1: oracle route + DINOv3 mean + DINOv3 B2 (diagnostic only)
+router: gt_is_known
+memory_space: dinov3_mean
+threshold: independently proxy-calibrated
+formal_method: false

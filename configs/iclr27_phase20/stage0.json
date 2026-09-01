@@ -1,0 +1,10 @@
+{
+  "protocol": "trackocd_iclr27_phase20_stage0_observability",
+  "source_rows": "data/iclr27_phase19r/sources/public_rows_corrected.csv",
+  "events": "outputs/iclr27_phase19r/manifests/held_known_positive_events.jsonl + held_known_negative_events.jsonl",
+  "prefixes": [1, 2, 4, 8, 16],
+  "reliable_rule": "assigned == 1 and row_iou >= 0.5",
+  "gate_o_rule": "largest perfect-correspondence ceiling must cover at least 50% of positive events",
+  "labels_allowed": "public TRAIN category/video metadata only",
+  "sealed_inputs": ["DEV+", "Q1", "public new-model labels"]
+}

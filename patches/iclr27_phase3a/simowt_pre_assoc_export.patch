@@ -1,0 +1,113 @@
+diff --git a/detectron2/data/datasets/builtin.py b/detectron2/data/datasets/builtin.py
+index 3895219..ce2885d 100644
+--- a/detectron2/data/datasets/builtin.py
++++ b/detectron2/data/datasets/builtin.py
+@@ -51,7 +51,14 @@ _PREDEFINED_SPLITS_COCO["coco"] = {
+ _PREDEFINED_SPLITS_COCO["coco_agn"] = {
+     "coco_2017_train_agn": ("coco/train2017", "coco/annotations/instances_train2017_agn.json"),
+     # "coco_2017_train_agn": ("coco/train2017", "tao/annotations/tao_train_coco_1.json"),
+-    "coco_2017_val_agn": ("tao/frames", "tao/annotations/val_split/all.json")
++    "coco_2017_val_agn": ("tao/frames", "tao/annotations/val_split/all.json"),
++    "coco_2017_val_agn_20": (
++        "tao/frames",
++        os.getenv(
++            "SIMOWT_COCO_20_JSON",
++            "/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/outputs/iclr27_phase3a/smoke/tao_subset/validation_20_coco.json",
++        ),
++    ),
+ }
+ ##
+ _PREDEFINED_SPLITS_COCO["coco_person"] = {
+diff --git a/projects/IDOL/idol/idol.py b/projects/IDOL/idol/idol.py
+index 6823756..0150d70 100644
+--- a/projects/IDOL/idol/idol.py
++++ b/projects/IDOL/idol/idol.py
+@@ -609,7 +609,7 @@ class IDOL(nn.Module):
+             if not os.path.exists(dst_root):
+                 os.makedirs(dst_root)
+             try:
+-                train_coco_path = dst_root + str(batched_inputs[0]['image_id']).zfill(10) + '.json'
++                train_coco_path = os.path.join(dst_root, str(batched_inputs[0]['image_id']).zfill(10) + '.json')
+                 with open(train_coco_path, 'w') as f3:
+                     json.dump(self.anno, f3)
+             except:
+@@ -621,6 +621,8 @@ class IDOL(nn.Module):
+     def track_eval(self, processed_results, box_cls, box_pred, mask_pred,
+                         reid_pred, iou_pred, box_i, mask_pred_i, reid_pred_i, datasets_ori, idx_ori, batched_inputs, item, image_size):
+ 
++        if isinstance(batched_inputs, dict):
++            batched_inputs = [batched_inputs]
+         file_name_for_video = batched_inputs[0]['file_name']
+         file_name_list = file_name_for_video.split('/')
+         self.datasrc = file_name_list[4]
+@@ -703,6 +705,61 @@ class IDOL(nn.Module):
+             len_thr = len(det_labels)
+             height = batched_inputs[0]['height']
+             width = batched_inputs[0]['width']
++            export_dir = os.environ.get('SIMOWT_EXPORT_DIR')
++            if export_dir:
++                vfilter = os.environ.get('SIMOWT_VIDEO_FILTER')
++                if not vfilter or str(video_id) in vfilter.split(','):
++                    import numpy as _np
++                    import json as _json
++                    bdir = os.path.join(export_dir, 'pre_assoc_detections')
++                    rdir = os.path.join(export_dir, 'replay_packages', str(video_id))
++                    os.makedirs(bdir, exist_ok=True)
++                    os.makedirs(rdir, exist_ok=True)
++                    with open(os.path.join(bdir, str(video_id) + '.jsonl'), 'a') as f3:
++                        for i in range(len(indices)):
++                            cx, cy, w, h, sc = det_bboxes[i].tolist()
++                            x1 = (cx - 0.5 * w) * width
++                            y1 = (cy - 0.5 * h) * height
++                            x2 = (cx + 0.5 * w) * width
++                            y2 = (cy + 0.5 * h) * height
++                            f3.write(_json.dumps({
++                                'video_id': video_id,
++                                'image_id': batched_inputs[0]['image_id'],
++                                'frame_order': int(self.frame_id),
++                                'bbox_xyxy_original': [x1, y1, x2, y2],
++                                'score': float(sc),
++                                'image_width': int(width),
++                                'image_height': int(height),
++                                'det_local_id': int(indices[i].item()),
++                                'postprocess_stage': 'post_nms_pre_assoc',
++                            }) + '\n')
++                    _np.savez(os.path.join(rdir, 'frame_%06d.npz' % int(self.frame_id)),
++                              det_bboxes=det_bboxes.float().cpu().numpy(),
++                              scores=scores[indices].float().cpu().numpy(),
++                              det_labels=det_labels.float().cpu().numpy(),
++                              det_masks=det_masks.float().cpu().numpy(),
++                              track_feats=track_feats.float().cpu().numpy(),
++                              indices=_np.asarray([int(x) for x in indices]),
++                              ori_size=_np.asarray([height, width]),
++                              image_size=_np.asarray([int(image_size[0]), int(image_size[1])]),
++                              frame_id=int(self.frame_id))
++                    cfgpath = os.path.join(rdir, 'tracker_config.json')
++                    if not os.path.exists(cfgpath):
++                        with open(cfgpath, 'w') as f3:
++                            _json.dump({
++                                'init_score_thr': init_score_thr,
++                                'obj_score_thr': obj_score_thr,
++                                'nms_thr_pre': nms_thr_pre,
++                                'addnew_score_thr': 0.2,
++                                'memo_tracklet_frames': 10,
++                                'memo_momentum': 0.8,
++                                'long_match': True,
++                                'frame_weight': True,
++                                'temporal_weight': True,
++                                'memory_len': 3,
++                                'inference_select_thres': float(self.inference_select_thres),
++                                'match_score_thr': float(getattr(self.idol_tracker, 'match_score_thr', 0.5)),
++                            }, f3)
+             bboxes, labels, ids, indices, masks_after_track = self.idol_tracker.match(
+                 bboxes=det_bboxes,
+                 labels=det_labels,
+@@ -758,7 +815,7 @@ class IDOL(nn.Module):
+                 self.tracklets1.append(prop)
+ 
+             if self.tracklets1 != []:
+-                dst_root = '/ssd1/wby_workspace/VNext/1_track_result/tao/3_ioubranch_reiddepth/submit2/'
++                dst_root = os.environ.get('SIMOWT_OUTPUT_DIR', '/ssd1/wby_workspace/VNext/1_track_result/tao/3_ioubranch_reiddepth/submit2/')
+                 if not os.path.exists(dst_root):
+                     os.makedirs(dst_root)
+                 train_coco_path = dst_root + str(batched_inputs[0]['image_id']).zfill(10) + '.json'

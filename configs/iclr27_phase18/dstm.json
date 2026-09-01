@@ -1,0 +1,109 @@
+{
+  "protocol": "trackocd_iclr27_phase18_dstm_registered_recipe",
+  "seeds": [1801, 1802, 1803],
+  "primary_sweep_seed": 1801,
+  "outer_folds": 4,
+  "representation": {
+    "main": "DINOv2 ViT-L/14 518 CLS plus ROI cached features",
+    "cls_weight_initialization": 1.0,
+    "roi_used_as_separate_learned_input": true,
+    "deployed_gt_view": false,
+    "physical_id_as_feature": false,
+    "future_frame_input": false
+  },
+  "model": {
+    "name": "DSTM",
+    "feature_dim": 768,
+    "geometry_fields": [
+      "score", "box_x1_norm", "box_y1_norm", "box_x2_norm", "box_y2_norm",
+      "box_width_norm", "box_height_norm", "box_area_norm", "box_aspect_log",
+      "border_left_norm", "border_top_norm", "border_right_norm", "border_bottom_norm",
+      "causal_prefix_age_norm", "causal_box_stability_iou"
+    ],
+    "hidden_dim": 128,
+    "row_projection_dim": 256,
+    "causal_encoder": "single-layer GRU",
+    "max_causal_sequence_rows": 32,
+    "state_set_layers": 1,
+    "state_set_heads": 4,
+    "cross_attention_heads": 4,
+    "decoder_ffn_dim": 256,
+    "known_token_count": 48,
+    "max_training_state_candidates": 6,
+    "max_deployed_novel_states": 32,
+    "state_anchor_top_k": 8,
+    "candidate_order_permuted_during_training": true
+  },
+  "loss_weights": {
+    "set_conditioned_action_and_id_ce": 1.0,
+    "balanced_supported_known_ce": 0.5,
+    "reliability_bce": 0.5,
+    "category_disjoint_metric": 0.25,
+    "selective_defer_risk": 0.25,
+    "merge_recovery_transition": 0.5,
+    "reliable_temporal_consistency": 0.1
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "warmup_updates": 1000,
+    "schedule": "cosine_to_0.05_of_initial",
+    "updates_per_fold": 20000,
+    "checkpoint_interval": 1000,
+    "deterministic_population_examples_per_update": 24,
+    "balanced_episode_examples_per_update": 24,
+    "global_batch": 48,
+    "amp": "BF16",
+    "gradient_clip_norm": 5.0,
+    "full_stream_rule": "cyclic source-row order over every allowed fitting row; no replacement until pass boundary",
+    "minimum_coverage": "max(20000 updates, 10 complete unique fitting-row passes)",
+    "checkpoint_retention": ["best", "latest"]
+  },
+  "calibration_selection": {
+    "source": "next-fold nested categories and Phase17 role-frozen supported-known calibration only",
+    "audit_used": false,
+    "composite": "2.0*CommitCT + 0.5*ExistingPrecision - 0.5*FalseMerge + 0.5*KnownMacro + 0.2*CommitCoverage - 0.05*LatencyNorm + 0.25*TransitionValid",
+    "minimum_training_still_completed_if_early_best": true
+  },
+  "public_gates": {
+    "identifiable_only": {
+      "O1_commit_ct_gt_zero": true,
+      "O1_categories": 11,
+      "all_fixed_event_hashes_valid": true
+    },
+    "method_improvement": {
+      "commit_ct_correct_minimum": "strongest_of_B1_B2_correct + 1",
+      "correct_categories_minimum": 4,
+      "correct_target_videos_minimum": 7,
+      "existing_precision_tolerance_below_strongest_baseline": 0.02,
+      "false_merge_tolerance_above_strongest_baseline": 0.02,
+      "known_category_macro_tolerance_below_strongest_baseline": 0.05,
+      "recovery_correct_advantage_over_B3_on_15_unreliable_prefix_events": 2,
+      "commit_coverage_range": [0.2, 0.95],
+      "all_contracts_valid": true,
+      "category_clustered_delta_point_estimate_gt_zero": true
+    },
+    "devplus_access": {
+      "commit_ct_correct_minimum": 15,
+      "commit_ct_recall_minimum": 0.35,
+      "commit_ct_absolute_advantage_over_strongest_baseline": 0.05,
+      "existing_precision_minimum": 0.7,
+      "negative_false_merge_rate_maximum": 0.15,
+      "correct_categories_minimum": 5,
+      "correct_target_videos_minimum": 8,
+      "known_category_macro_tolerance_below_strongest_baseline": 0.05,
+      "all_contracts_valid": true
+    },
+    "three_seed_method_claim": {
+      "mean_commit_ct_gt_strongest_baseline": true,
+      "categories_with_positive_paired_delta_minimum": 6,
+      "all_seed_fold_failures_reported": true
+    }
+  },
+  "repair_policy": {
+    "maximum_repair_families": 1,
+    "authorized": ["R1", "R2", "R3", "R4", "R5"],
+    "selection": "first complete main-sweep diagnostics only; same folds, denominators, metrics, coverage, and seeds"
+  }
+}

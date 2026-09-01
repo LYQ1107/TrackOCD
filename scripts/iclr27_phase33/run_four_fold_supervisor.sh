@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"; PY=/home/lwr/anaconda3/envs/locatemot/bin/python; TAG=${1:-adapter_formal}; STEPS=${STEPS:-2000}; mkdir -p "$ROOT/outputs/iclr27_phase33/logs"; pids=()
+for fold in 0 1 2 3; do gpu=$((fold+4)); d="$ROOT/outputs/iclr27_phase33/completion/${TAG}_f${fold}.done"; l="$ROOT/outputs/iclr27_phase33/completion/${TAG}_f${fold}.launched"; [[ ! -e "$d" ]] || continue; [[ ! -e "$l" ]] || { echo launched marker exists >&2; exit 2; }; (cd "$ROOT"; CUDA_VISIBLE_DEVICES=$gpu OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. exec "$PY" scripts/iclr27_phase33/train_adapter.py --fold $fold --steps $STEPS --checkpoint-every 500 --tag $TAG --device cuda:0 --expected-physical-gpu $gpu) >"$ROOT/outputs/iclr27_phase33/logs/${TAG}_f${fold}.log" 2>&1 & pids+=("$!"); done; s=0; for p in "${pids[@]}"; do wait "$p" || s=1; done; exit $s

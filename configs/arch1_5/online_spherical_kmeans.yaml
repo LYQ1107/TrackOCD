@@ -1,0 +1,6 @@
+# Online spherical k-means (continuous cosine assign-or-create).
+attach_threshold: 0.4
+ema: 0.2
+seed_offset: 0
+proxy_calibration: hungarian ACC on proxy-novel train-known tracks
+proxy_acc: 0.3298

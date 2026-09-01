@@ -1,0 +1,5 @@
+router: relative_standardized
+features: [s1, margin, z_top1, entropy]
+model: logistic_regression
+threshold: nested_fold_selected
+memory: corrected_b2 (threshold 0.45, unchanged)

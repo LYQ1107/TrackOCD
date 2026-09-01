@@ -1,0 +1,8 @@
+# Dual-threshold candidate buffer.
+attach_threshold: 0.525
+create_threshold: 0.375
+ema: 0.2
+maturity_tracks: 2
+seed_offset: 0
+proxy_calibration: hungarian ACC on proxy-novel train-known tracks
+proxy_acc: 0.3561

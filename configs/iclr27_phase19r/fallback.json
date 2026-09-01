@@ -1,0 +1,8 @@
+{
+  "name": "Fallback F-A Gaussian baseline",
+  "trigger": "RC-MS-OCD misses internal false-merge/known safety gates",
+  "representation": "frozen raw DINOv2 CLS+ROI",
+  "controller": "PCA + Ledoit-Wolf/global covariance + Gaussian log likelihood + bounded causal expansion",
+  "selection": "held-known only before public truth join",
+  "public_labels_before_selection": false
+}

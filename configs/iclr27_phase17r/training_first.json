@@ -1,0 +1,27 @@
+{
+  "protocol": "trackocd_iclr27_phase17r_training_first",
+  "seed": 1701,
+  "episode_order_seeds": [20260825, 20260826, 20260827],
+  "train_roles": ["known_bank", "novel_correspondence_train"],
+  "calibration_roles": ["known_calibration", "novel_calibration"],
+  "audit_roles": ["known_audit", "novel_audit"],
+  "observable_iou": 0.5,
+  "t0_updates": 6000,
+  "m1_updates": 12000,
+  "global_batch": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "embedding_dim": 256,
+  "checkpoint_interval": 1000,
+  "max_gpus": 4,
+  "gpu_ids": [4, 5, 6, 8],
+  "artifact_budget_gib": 40,
+  "minimum_available_ram_gib": 32,
+  "public_gate": {
+    "known_occurrence_accuracy": 0.6,
+    "fixed_ct_recall_strictly_greater_than": 0.0,
+    "correct_ct_categories": 3,
+    "correct_ct_videos": 3,
+    "predicted_existing_precision": 0.2
+  }
+}

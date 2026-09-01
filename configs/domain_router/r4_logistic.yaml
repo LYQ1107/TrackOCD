@@ -1,0 +1,6 @@
+router: compact_logistic
+features: [s1, s2, margin, z_top1, entropy, k1, k5, k10, proto_consistency, log_len, frame_consistency, log_area]
+max_features: 12
+model: logistic_regression_l2
+threshold: nested_fold_selected
+memory: corrected_b2 (threshold 0.45, unchanged)

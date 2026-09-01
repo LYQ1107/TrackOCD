@@ -1,0 +1,38 @@
+{
+  "checkpoints/simowt_weight.pth": {
+    "source": "SimOWT official Google Drive file id 1x7Xh_EKVkt7aAz3ioWpzUN-FxryNWKQk",
+    "size_bytes": 542162424,
+    "sha256": "70f30d3b66684e58d1875c75ba1c1011984644ea8362e7761dbbb6366a392a72",
+    "note": "official SimOWT TAO-OW checkpoint"
+  },
+  "checkpoints/dinov2_vitb14_pretrain.pth": {
+    "source": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth (facebookresearch/dinov2)",
+    "size_bytes": 346378731,
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "note": "official DINOv2 ViT-B/14 pretrain"
+  },
+  "checkpoints/clip_vitb32_openai.pt": {
+    "source": "OpenAI CLIP ViT-B/32 via open_clip (pretrained='openai')",
+    "size_bytes": 353976522,
+    "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+    "note": "official OpenAI CLIP ViT-B/32"
+  },
+  "data/external_annotations/tao_agn_val.json": {
+    "source": "SimOWT official Google Drive file id 1h2rohSDvJv_XvUdTaux5rN9jx86rzR9g",
+    "size_bytes": 185572247,
+    "sha256": "d309f4773853d1d3074bd41a9f5b6233da03a0d6f430f0cf79e5acb633f70ac5",
+    "note": "zip archive containing SimOWT class-agnostic COCO/TAO annotations"
+  },
+  "data/external_annotations/trackeval_validation.json": {
+    "source": "SimOWT official Google Drive file id 1aNW9X-CUMQqVZhHKKz55VLXQVEY0ZEQb",
+    "size_bytes": 43639943,
+    "sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+    "note": "TrackEval TAO-OW validation GT"
+  },
+  "data/external_annotations/simowt_agn/tao/annotations/val_split/all.json": {
+    "source": "extracted from tao_agn_val.json",
+    "size_bytes": 142853497,
+    "sha256": "7653abb59a6b830f832bb6a5ebfeb334ecf8191dfdeb2c0b3a8c12033e8a018c",
+    "note": "SimOWT class-agnostic TAO validation annotations (YTVIS-style)"
+  }
+}

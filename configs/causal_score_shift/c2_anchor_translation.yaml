@@ -1,0 +1,6 @@
+router: causal_anchor_translation
+features: [s1, margin]
+anchors: high-confidence known pseudo-anchors (train-only precision target)
+shift: observed_anchor_median - reference_known_median, clipped
+fallback: C1 when anchors insufficient
+memory: corrected_b2 (threshold 0.45, unchanged)

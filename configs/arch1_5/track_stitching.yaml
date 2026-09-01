@@ -1,0 +1,21 @@
+# Causal tracklet stabilization (Stage B) - NOT RUN this round.
+# Stage B is gated on Stage A passing; Stage A failed, so these parameters
+# were not calibrated. Values below are the planned constraints from the
+# audit and are explicitly NOT experiment results.
+status: not_run
+reason: Stage A gate failure (STOP_AFTER_STAGE_A)
+planned:
+  max_gap_frames: 30
+  candidate_pruning: video + time window + spatial gate (no global pairwise)
+  candidate_pairs_gap30_audited: 250991693
+  stitching_components:
+    motion: kalman + center velocity + scale + gIoU/time
+    identity: SimOWT reid if available, else DINOv2 crop (short-gap only)
+    semantic: weak CLIP distribution (Stage C experimental only)
+  constraints:
+    one_predecessor: true
+    one_successor: true
+    no_time_overlap: true
+    no_cross_video: true
+    bbox_unchanged: true
+    reversible_mapping: true

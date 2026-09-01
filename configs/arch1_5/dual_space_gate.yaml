@@ -1,0 +1,31 @@
+# Architecture 1.5 dual-space known/novel gates.
+# All parameters calibrated on the train-known proxy task (proxy-known vs
+# proxy-novel class split, seed 1027). No TAO-val unknown labels used.
+gate_types:
+  clip:
+    threshold: 0.8500000000000005
+    proxy_auroc: 0.7788
+  dino:
+    threshold: 0.6250000000000002
+    proxy_auroc: 0.8790
+  dual:
+    clip_weight: 0.1
+    threshold: 0.6500000000000002
+    proxy_auroc: 0.8784
+  dual_lr:
+    threshold: 0.10000000000000002
+    intercept: -9.430236440001142
+    coef:
+      - 5.2832797888610425
+      - 0.2825885673453808
+      - 5.000691221515694
+      - 1.6788497304976595
+      - 0.513987443065918
+      - 1.1648622874316887
+      - 0.49792828635748904
+      - -0.008823929952150053
+    proxy_auroc: 0.9129
+main_selection: proxy balanced accuracy -> dual_lr (0.848 vs dual 0.804)
+known_matcher:
+  clip_weight: 0.5
+  source: train-known supervised track-level accuracy sweep (0.71)

@@ -1,0 +1,23 @@
+diff --git a/scripts/run_tao_ow.py b/scripts/run_tao_ow.py
+index 2735dd4..5ee22bc 100644
+--- a/scripts/run_tao_ow.py
++++ b/scripts/run_tao_ow.py
+@@ -58,6 +58,11 @@ if __name__ == '__main__':
+         else:
+             parser.add_argument("--" + setting)
+     args = parser.parse_args().__dict__
++    # Minimal numpy-2/argparse compat: scalarize single-element lists
++    _keep_list = {"TRACKERS_TO_EVAL", "TRACKER_DISPLAY_NAMES", "CLASSES_TO_EVAL", "METRICS"}
++    for k, v in list(args.items()):
++        if k not in _keep_list and isinstance(v, list) and len(v) == 1:
++            args[k] = v[0]
+     for setting in args.keys():
+         if args[setting] is not None:
+             if type(config[setting]) == type(True):
+@@ -89,4 +94,4 @@ if __name__ == '__main__':
+             metrics_list.append(metric())
+     if len(metrics_list) == 0:
+         raise Exception('No metrics selected for evaluation')
+-    evaluator.evaluate(dataset_list, metrics_list)
+\ No newline at end of file
++    evaluator.evaluate(dataset_list, metrics_list)
