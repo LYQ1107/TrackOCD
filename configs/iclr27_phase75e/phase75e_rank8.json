@@ -1,0 +1,30 @@
+{
+  "phase": "Phase75E",
+  "method": "LoRA-inspired rank-8 raw-preserving feature residual adapter",
+  "dim": 768,
+  "rank": 8,
+  "alpha": 16.0,
+  "scale": 2.0,
+  "optimizer": "Adam",
+  "lr": 0.00004,
+  "warmup_steps": 2500,
+  "max_steps": 15000,
+  "gradient_clip": 0.05,
+  "checkpoint_every": 500,
+  "validation_every": 500,
+  "seed": 42,
+  "prefixes": [1, 2, 4, 8, 16],
+  "support_prefix": 16,
+  "loss": {
+    "rank": 0.5,
+    "raw_reconstruction": 1.0,
+    "safe": 1.0,
+    "rank_definition": "mean softplus(s_neg - s_pos) over every explicit positive and hard negative",
+    "safe_definition": "relu(detached raw positive margin - adapted margin), only when detached raw margin > 0"
+  },
+  "selection": ["min legal unsafe_flip_count", "max legal mAP", "max legal hard_negative_gap", "max global mAP"],
+  "data": "Phase30 fit episodes only; one video/category-disjoint fold per model",
+  "inference_inputs": ["frozen 768-D visual frame feature", "causal prefix only"],
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id", "text", "future", "held/DEV+/Q1/public-new/sealed labels"],
+  "controller": "not run unless both Phase75E global and legal strict R gates pass"
+}
