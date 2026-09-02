@@ -75,7 +75,7 @@ def main() -> None:
         for fe in fold_evals:
             p16 = next(x for x in fe["prefix_rows"] if x["prefix"] == 16)[section]
             raw, learned = p16["raw"], p16["learned"]
-            rows.append({"fold": fe["fold"], "metrics": {"raw": {"r1": raw["r1"], "map": raw["map"], "hard_negative_gap": raw["hard_negative_gap"]}, "pairwise": {"r1": learned["r1"], "map": learned["map"], "hard_negative_gap": learned["hard_negative_gap"], "unsafe_flip_count": learned["unsafe_flip_count"]}}})
+            rows.append({"fold": fe["fold"], "metrics": {"raw": {"r1": raw["raw_r1"], "map": raw["raw_map"], "hard_negative_gap": raw["raw_hard_negative_gap"]}, "pairwise": {"r1": learned["r1"], "map": learned["map"], "hard_negative_gap": learned["hard_negative_gap"], "unsafe_flip_count": learned["unsafe_flip_count"]}}})
         gate_by_section[section] = strict_gate(gate_rows(rows, section))
 
     payload = {

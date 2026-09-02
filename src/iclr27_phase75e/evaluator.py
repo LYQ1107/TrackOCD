@@ -166,7 +166,10 @@ def aggregate_sections(fold_evals: list[dict[str, Any]]) -> dict[str, Any]:
                 raw, learned = row["raw"], row["learned"]
                 fold_rows.append({
                     "r1": learned["r1"], "r5": learned["r5"], "map": learned["map"],
-                    "raw_r1": raw["r1"], "raw_r5": raw["r5"], "raw_map": raw["map"],
+                    # score_records' r1/map fields describe its ``scores``
+                    # array.  For raw-only records that array is a placeholder;
+                    # the frozen comparator is stored under raw_r1/raw_map.
+                    "raw_r1": raw["raw_r1"], "raw_r5": raw["raw_r5"], "raw_map": raw["raw_map"],
                     "hard_negative_gap": learned["hard_negative_gap"], "raw_hard_negative_gap": raw["raw_hard_negative_gap"],
                     "category_macro_r1": learned["category_macro_r1"], "video_macro_r1": learned["video_macro_r1"],
                     "queries": learned["queries"], "unsafe_flip_count": learned["unsafe_flip_count"],
