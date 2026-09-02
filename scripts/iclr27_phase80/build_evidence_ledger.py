@@ -34,6 +34,7 @@ def main() -> None:
     b = read_json(ROOT / "outputs/iclr27_phase80b/audit/phase80b_decision.json")
     c = read_json(ROOT / "outputs/iclr27_phase80c/audit/observability_quality_audit.json")
     d = read_json(ROOT / "outputs/iclr27_phase80d/audit/tract_route_audit.json")
+    modern = read_json(ROOT / "outputs/iclr27_phase80d/audit/modern_trajectory_audit.json")
     input_trace = Path(c["input"])
     if not input_trace.exists():
         raise FileNotFoundError(input_trace)
@@ -46,13 +47,14 @@ def main() -> None:
         "phase80a": {"decision": a.get("routing_criterion"), "raw_parity": a.get("raw_parity"), "aggregate_p16": a.get("aggregate", {}).get("16")},
         "phase80b": {"decision": b.get("decision"), "aggregate": b.get("aggregate"), "fold_deltas": b.get("fold_deltas"), "formal_completion": sorted(str(x) for x in (ROOT / "outputs/iclr27_phase80b/completion").glob("phase80b_formal_f*.done"))},
         "phase80c": {"decision": "PHASE80C_AUDIT_ASSIGNMENT_HEADROOM_NO_NEW_PHASE80_MODEL", "input_sha256": c.get("input_sha256"), "p16": c.get("summary", {}).get("by_prefix", {}).get("16"), "quality": c.get("summary", {}).get("p16_quality_audit")},
-        "phase80d": {"decision": d.get("decision"), "repo": d.get("repo"), "commit": d.get("commit"), "license": d.get("license"), "executed": d.get("executed"), "downloaded": d.get("downloaded")},
+        "phase80d": {"decision": d.get("decision"), "repo": d.get("repo"), "commit": d.get("commit"), "license": d.get("license"), "executed": d.get("executed"), "downloaded": d.get("downloaded"), "modern_search": modern.get("methods"), "modern_selection": modern.get("selection")},
         "artifacts": {
             "phase80a_decision": {"path": str(ROOT / "outputs/iclr27_phase80a/audit/phase80a_decision.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80a/audit/phase80a_decision.json")},
             "phase80b_decision": {"path": str(ROOT / "outputs/iclr27_phase80b/audit/phase80b_decision.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80b/audit/phase80b_decision.json")},
             "phase80b_exact": {"path": str(ROOT / "outputs/iclr27_phase80b/metrics/exact_memory_replay.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80b/metrics/exact_memory_replay.json")},
             "phase80c_audit": {"path": str(ROOT / "outputs/iclr27_phase80c/audit/observability_quality_audit.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80c/audit/observability_quality_audit.json")},
             "phase80d_audit": {"path": str(ROOT / "outputs/iclr27_phase80d/audit/tract_route_audit.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80d/audit/tract_route_audit.json")},
+            "phase80d_modern_audit": {"path": str(ROOT / "outputs/iclr27_phase80d/audit/modern_trajectory_audit.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80d/audit/modern_trajectory_audit.json")},
             "phase75b_input": {"path": str(input_trace), "sha256": c.get("input_sha256")},
         },
         "protocol": {"held_dev_q1_public_new_sealed_accessed": False, "future_rows_or_tracks": False, "physical_ids_as_model_input": False, "category_text_as_model_input": False, "controller_run": False, "commit_ct_run": False, "denominator": "Phase30 TRAIN-disjoint diagnostics for A/B; original 76 positive event audit for C; no held outcome selection"},
