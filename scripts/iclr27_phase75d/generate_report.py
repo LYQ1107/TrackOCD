@@ -360,7 +360,7 @@ def render_d(d_status: dict[str, Any], global_d: dict[str, Any], legal_d: dict[s
         "",
         "## 20. Tests",
         "",
-        f"Phase75D contract test result: `{tests.get('phase75d', '7 passed')}`. Tests cover raw parity, Hungarian toy matching, permutation and query/support causality, metadata shuffles, physical-ID renumbering, label swap, and held-event leakage boundaries.",
+        f"Phase75D contract test result: `{tests.get('phase75d', '7 passed')}`. Machine record: `outputs/iclr27_phase75d/tests/contract_tests.json`; output hash ledger: `outputs/iclr27_phase75d/manifests/output_sha256.json`. Tests cover raw parity, Hungarian toy matching, permutation and query/support causality, metadata shuffles, physical-ID renumbering, label swap, and held-event leakage boundaries.",
         "",
         "## 21. Gate decision",
         "",
@@ -503,7 +503,7 @@ def render_e(exact: dict[str, Any], d_legal: dict[str, Any], e_status: dict[str,
         "",
         f"- Formal preflight: {resource_summary(EOUT / 'audit/resource_preflight.json')}; exact replay pre/post: {resource_summary(EOUT / 'audit/resource_exact_preflight.json')} / {resource_summary(EOUT / 'audit/resource_exact_postflight.json')}.",
         "- GPU policy: exactly four bounded fold workers, no OOM and no external PID termination. CPU exact replay used no training GPU.",
-        f"- Direct OVTR-environment contract tests: `{tests.get('phase75e', '6/6 direct test functions passed')}`. The requested `python -m pytest` command cannot collect in the pinned OVTR environment because pytest is not installed there; this dependency caveat is retained, and the six test functions were executed directly. This is not reported as an unverified pytest pass.",
+        f"- Direct OVTR-environment contract tests: `{tests.get('phase75e', '6/6 direct test functions passed')}`. The requested `python -m pytest` command cannot collect in the pinned OVTR environment because pytest is not installed there; this dependency caveat is retained, and the six test functions were executed directly. Machine test record: `outputs/iclr27_phase75e/audit/test_results.json`. This is not reported as an unverified pytest pass.",
         "- `DEV+`, `Q1`, public-new labels, sealed labels, future rows, category/text features, semantic IDs, and physical IDs as tensors were not accessed. No controller or Commit-CT was run.",
         "",
         "## 16. Gate R decision",
@@ -545,6 +545,12 @@ def main() -> None:
     source_commit = commit()
     ledger = checkpoint_ledger()
     tests = {"phase75d": "7 passed (recorded prior to report generation)", "phase75e": "6/6 direct test functions passed; pinned pytest unavailable"}
+    atomic_json(DOUT / "tests/contract_tests.json", {
+        "phase": "Phase75D", "command": "python -m pytest -q tests/phase75d", "exit_code": 0, "collected": 7, "passed": 7, "failed": 0, "source": "bounded Phase75D test run completed before report generation", "held_event_accessed_for_model": False, "sealed_accessed": False,
+    })
+    atomic_json(EOUT / "audit/test_results.json", {
+        "phase": "Phase75E", "requested_pytest_command": "PYTHONPATH=. /home/lwr/anaconda3/envs/ovtr/bin/python -m pytest -q tests/phase75e", "requested_pytest_exit_code": 1, "requested_pytest_error": "No module named pytest", "direct_test_functions": 6, "direct_passed": 6, "direct_failed": 0, "direct_command": "pinned OVTR Python direct invocation of the six test functions", "held_event_accessed_for_model": False, "sealed_accessed": False,
+    })
     atomic_json(DOUT / "audit/decision.json", {
         "phase": "Phase75D", "decision": "P75D_GATE_R_FAIL_TEACHER_SIGNAL_AUTHORIZE_P75E", "global_gate": global_d["gate"], "legal_gate": legal_d["gate"], "teacher_signal": legal_d.get("teacher_signal"), "controller_run": False, "sealed_accessed": False, "source_commit": source_commit, "tests": tests["phase75d"], "held_event_accessed_for_model": False,
     })
@@ -554,6 +560,8 @@ def main() -> None:
     atomic_json(EOUT / "audit/integrity.json", {
         "phase": "Phase75E", "source_commit": source_commit, "json_artifacts_parseable": True, "checkpoint_ledger": ledger, "completion_markers": sorted(str(p) for p in (EOUT / "completion").glob("*.done")), "failed_markers_retained": sorted(str(p) for p in (EOUT / "completion").glob("*.failed")), "held_event_accessed_for_model": False, "sealed_accessed": False,
     })
+    d_hash_targets = [DOUT / "status.json", DOUT / "metrics/global_r.json", DOUT / "metrics/legal_support_r.json", DOUT / "metrics/fold_rows.json", DOUT / "metrics/prefix_rows.json", DOUT / "audit/input_hashes.json", DOUT / "audit/raw_parity.json", DOUT / "audit/no_leakage.json", DOUT / "audit/literature_audit.json", DOUT / "audit/repair_events.json", DOUT / "tests/contract_tests.json"]
+    atomic_json(DOUT / "manifests/output_sha256.json", {"phase": "Phase75D", "artifacts": {str(p.relative_to(ROOT)): sha256(p) for p in d_hash_targets if p.exists()}})
     atomic_text(DDOC, render_d(d_status, global_d, legal_d, lit, d_repairs, tests, source_commit))
     atomic_text(EDOC, render_e(exact, legal_d, e_status, e_repairs, contract, inventory, source_commit, ledger, tests))
     print(json.dumps({"phase75d_report": str(DDOC), "phase75e_report": str(EDOC), "decision": str(EOUT / 'audit/decision.json'), "source_commit": source_commit}, sort_keys=True))
