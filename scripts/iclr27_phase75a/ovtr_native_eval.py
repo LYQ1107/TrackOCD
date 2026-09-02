@@ -15,6 +15,7 @@ import importlib.util
 import json
 import os
 import sys
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -123,6 +124,36 @@ def install_capture(module: Any, native_path: Path, checkpoint_sha256: str) -> N
     module.OVTR_inference.update_results_teta = update
 
 
+def install_tao_frame_id_compat() -> None:
+    """Normalize TAO TRAIN ``frame_index`` to OVTR's ``frame_id`` contract.
+
+    The pinned OVTR parser indexes each video by ``image['frame_id']``.  The
+    public TAO TRAIN annotation uses the equivalent ``frame_index`` field and
+    intentionally omits ``frame_id``.  Add a contiguous, per-video causal
+    index only to the in-memory CocoVID objects; the source JSON remains
+    read-only and no future information is introduced.
+    """
+    from datasets.parsers import CocoVID
+
+    if getattr(CocoVID, "_phase75_frame_id_compat", False):
+        return
+    original_create_index = CocoVID.createIndex
+
+    def create_index(self: Any) -> Any:
+        images_by_video: dict[int, list[dict[str, Any]]] = defaultdict(list)
+        for image in self.dataset.get("images", []):
+            if "frame_id" not in image:
+                images_by_video[int(image["video_id"])].append(image)
+        for images in images_by_video.values():
+            images.sort(key=lambda item: (int(item.get("frame_index", 0)), int(item["id"])))
+            for frame_id, image in enumerate(images):
+                image["frame_id"] = frame_id
+        return original_create_index(self)
+
+    CocoVID.createIndex = create_index
+    CocoVID._phase75_frame_id_compat = True
+
+
 def atomic_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
@@ -167,6 +198,7 @@ def main() -> None:
     # is changed to export lineage that TAO serialization omits.
     from util.slconfig import SLConfig
     cfg = SLConfig.fromfile(args.config_file)
+    install_tao_frame_id_compat()
     module.OVTR_inference._phase75_native_records = []
     module.OVTR_inference._phase75_frame_trace = []
     module.OVTR_inference._phase75_seen_ids = set()
@@ -196,6 +228,7 @@ def main() -> None:
         "frame_trace_count": len(frame_trace),
         "labels_joined_before_model": False,
         "event_join_read": False,
+        "annotation_frame_id_source": "in_memory_sorted_frame_index",
     }
     atomic_jsonl(native_path.with_suffix(".summary.jsonl"), [summary])
     print(json.dumps(summary, sort_keys=True))
