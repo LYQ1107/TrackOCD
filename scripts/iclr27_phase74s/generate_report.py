@@ -94,7 +94,7 @@ realpath before protocol totals are computed.
 
 Inventory records: **{inv.get('manifest_count', 0)}**. The Phase19R freeze
 script still contains the historical silent fallback to
-`data/iclr27_phase19r/sources/{positive,negative}_events.jsonl`; this is the
+    `data/iclr27_phase19r/sources/{{positive,negative}}_events.jsonl`; this is the
 specific stale path being quarantined, not a model result.
 
 ## Versioned model/evaluator contract
@@ -167,6 +167,21 @@ This is a protocol recovery report, not a final MOT+OCD result.
 
 def main() -> None:
     DOC.parent.mkdir(parents=True, exist_ok=True)
+    repair_path = OUT / "audit/repair_events.json"
+    repairs = []
+    if repair_path.exists():
+        try:
+            repairs = json.loads(repair_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            repairs = []
+    repairs.append({
+        "attempt": "report-render-r1",
+        "status": "FAILED_BEFORE_REPORT",
+        "root_cause": "generate_report.py used unescaped literal braces in an f-string (NameError: positive)",
+        "preserved_artifacts": True,
+        "repair": "escape the literal source manifest braces; no audit/model outputs were changed",
+    })
+    atomic_json(repair_path, repairs)
     text = render()
     atomic_text(DOC, text)
     ledger()
