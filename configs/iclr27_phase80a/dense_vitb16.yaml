@@ -1,0 +1,13 @@
+phase: Phase80A
+generator: DINOv3Dense
+model_id: timm/vit_base_patch16_dinov3.lvd1689m
+weight_source: TIMM_DISTRIBUTION
+weight_sha256: 1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332
+processor_revision: c6a5fb7d12bbd3cf3b0079253141c3332aaed7da
+input_size: 256
+context_padding: 0.10
+tokens_per_frame: 32
+patch_selection: fixed_4x8_grid_from_16x16
+prefixes: [1, 2, 4, 8, 16]
+protocol: Phase30 TRAIN-disjoint global retrieval; no held/DEV+/Q1/public-new inputs
+cache_root: /data2/usr_for_deadline/trackocd_phase80a/dense_cache
