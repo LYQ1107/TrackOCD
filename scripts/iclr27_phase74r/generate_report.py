@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -19,6 +20,7 @@ OUT = ROOT / "outputs/iclr27_phase74r"
 DOC = ROOT / "docs/iclr27_phase74r/PHASE74R_HARNESS_AND_ASSET_REVALIDATION_REPORT.md"
 OVERALL = ROOT / "docs/AUTONOMOUS_TRACKOCD_ICLR_PROGRESS_REPORT.md"
 
+sys.path.insert(0, str(ROOT))
 from src.iclr27_phase74r.io import atomic_json, atomic_text, sha256  # noqa: E402
 
 
@@ -68,6 +70,14 @@ def write_repair_events() -> list[dict[str, Any]]:
             "root_cause": "evidence-derived denominator gate: the actual model fallback has 82 events and zero keys overlap the frozen 152-event evaluator metadata universe",
             "observed_action": "completed audit-only run; Q0 model was not invoked",
             "repair": "none; this is the actionable protocol blocker requiring Desktop ChatGPT review",
+        },
+        {
+            "attempt": "report-render-1",
+            "run_id": "phase74r-final-20260902-r3",
+            "status": "FAILED_BEFORE_REPORT",
+            "root_cause": "direct report-generator invocation did not add the project root to sys.path (ModuleNotFoundError: src)",
+            "observed_action": "audit outputs and code commit were retained; no model/replay was invoked",
+            "repair": "insert the resolved project root into sys.path before importing the local package",
         },
     ]
     atomic_json(OUT / "audit/repair_events.json", events)
