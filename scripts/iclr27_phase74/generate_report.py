@@ -36,6 +36,7 @@ def main() -> None:
     s = load("status.json"); a = load("assets/asset_universe_summary.json"); m = load("contracts/manifest_order_contract.json"); r = load("replay/control_replay_equivalence.json"); dep = load("audit/q0_text_category_dependency.json"); obs = load("metrics/observability_by_prefix.json"); tests = s["repair_results"]["real_metamorphic_tests"]
     inv = load("audit/input_inventory.json"); lin = load("contracts/five_field_lineage_contract.json")
     process_events = optional_load("audit/process_events.json", [])
+    schema_repairs = optional_load("audit/schema_repairs.json", [])
     lines = []
     def H(title, level=2): lines.append("#" * level + " " + title + "\n")
     def P(text=""): lines.append(text + "\n")
@@ -80,6 +81,8 @@ def main() -> None:
     H("29. Repeat Determinism Test"); P("两个独立 `/data2/.../metamorphic_repeat_{a,b}` 目录执行相同合同 payload，canonical hashes 相等（PASS）。Q0 inference repeat determinism 仍 NOT_RUN_BLOCKED_CONTROL_REPLAY。")
     H("30. Atomic Crash Test"); P("注入 generator exception 后 final 文件不存在、temp 文件清理、stale lock 可识别（PASS）；证据 `tests/atomic_crash_recovery.json`。")
     H("31. Input Preservation"); P("Q0 checkpoint/TAO/proposals/positive/negative hash 与注册值一致；corrected CSV 与两份 annotation 只读。Q0 原文件未修改，Phase73 原文件未修改。")
+    if schema_repairs:
+        P("交付格式修复（不改变实验数据）：" + "；".join(f"{x['original_path']} 原内容保留为 {x['preserved_line_jsonl']}，并原子生成可解析数组 {x['new_json_path']}（{x['records']} records，old SHA256={x['original_line_sha256']}）" for x in schema_repairs) + "。")
     H("32. Observability by Prefix"); P("以下是 availability audit（不是 OCD score）；每项 denominator=152：\n\n| prefix | source asset | target asset | source Q0 candidate | target Q0 candidate | source reliable | target reliable | both reliable |\n|---:|---:|---:|---:|---:|---:|---:|---:|\n" + "\n".join(f"| {p} | {metric(obs[str(p)]['source']['asset_located'])} | {metric(obs[str(p)]['target']['asset_located'])} | {metric(obs[str(p)]['source']['candidate_observed'])} | {metric(obs[str(p)]['target']['candidate_observed'])} | {metric(obs[str(p)]['source']['reliable'])} | {metric(obs[str(p)]['target']['reliable'])} | {metric(obs[str(p)]['source']['both_reliable'])} |" for p in [1,2,4,8,16]))
     H("33. Observability by Fold"); P("`metrics/observability_by_fold.json` 保留 fold 0–3、positive/negative 分层及 76+76 分母；因 Q0 未映射，各 fold source/target candidate/reliable 均为 0/该 fold 事件数，事件没有被删。")
     H("34. Positive and Negative Event Results"); P("positive=76、negative=76，均保留原文件顺序。当前只报告资产和 Q0 candidate availability；没有把 positive/negative label 送入模型，也没有输出 Commit/Defer 性能。")
