@@ -92,6 +92,19 @@ def crop_box(image: Image.Image, box: Iterable[float], context: float = CONTEXT)
     xb, yb = min(float(width), cx + nw * 0.5), min(float(height), cy + nh * 0.5)
     if xb - xa < 2 or yb - ya < 2:
         xa, ya, xb, yb = max(0.0, x1), max(0.0, y1), min(float(width), x2), min(float(height), y2)
+    # A few edge-touching DSCT boxes are narrower than a valid image crop.
+    # Keep their row key and causal observation, but expand only to the
+    # smallest deterministic 4-pixel window; do not drop the hard row.
+    if xb - xa < 4.0:
+        center = min(float(width), max(0.0, (x1 + x2) * 0.5))
+        xa, xb = max(0.0, center - 2.0), min(float(width), center + 2.0)
+        if xb - xa < 4.0:
+            xa, xb = 0.0, min(float(width), 4.0)
+    if yb - ya < 4.0:
+        center = min(float(height), max(0.0, (y1 + y2) * 0.5))
+        ya, yb = max(0.0, center - 2.0), min(float(height), center + 2.0)
+        if yb - ya < 4.0:
+            ya, yb = 0.0, min(float(height), 4.0)
     return image.crop((int(xa), int(ya), int(xb), int(yb)))
 
 
