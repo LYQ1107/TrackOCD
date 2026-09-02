@@ -67,6 +67,8 @@ def side_record(event: dict[str, Any], side: str) -> dict[str, Any]:
     details = event.get(f"{side}_row_details", [])
     scores = [float(d.get("q0_best_score") or 0.0) for d in details]
     q0_ious = [float(d.get("q0_max_iou") or 0.0) for d in details]
+    temporal_ious = [float(d.get("event_track_temporal_iou") or 0.0) for d in details]
+    transformed_ious = [float(d.get("event_transformed_iou") or 0.0) for d in details]
     return {
         "side": side,
         "candidate_count": candidates,
@@ -78,6 +80,11 @@ def side_record(event: dict[str, Any], side: str) -> dict[str, Any]:
         "max_q0_score": max(scores, default=0.0),
         "mean_q0_score": sum(scores) / len(scores) if scores else 0.0,
         "max_row_iou": max(q0_ious, default=0.0),
+        "mean_event_track_temporal_iou": sum(temporal_ious) / len(temporal_ious) if temporal_ious else 0.0,
+        "min_event_track_temporal_iou": min(temporal_ious, default=0.0),
+        "max_event_track_temporal_iou": max(temporal_ious, default=0.0),
+        "mean_event_transformed_iou": sum(transformed_ious) / len(transformed_ious) if transformed_ious else 0.0,
+        "max_event_transformed_iou": max(transformed_ious, default=0.0),
         "assigned_reliable": assigned_reliable,
         "pool_class": pool_class,
         "event_class": event_class,
