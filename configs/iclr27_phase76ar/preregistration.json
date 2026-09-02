@@ -1,0 +1,30 @@
+{
+  "phase": "Phase76AR",
+  "route": "Selective Relation Correctness Repair",
+  "hypothesis": "A genuinely dual-stream, per-match quality and bank-aware abstention model can retain the raw DINO anchor while intervening only when TRAIN evidence supports a local relation correction.",
+  "inputs": ["frozen Phase30 fit/validation manifests", "frozen Phase75D DINOv2 CLS/ROI table", "causal prefixes 1,2,4,8,16"],
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id", "text", "future", "held", "DEV+", "Q1", "public-new", "sealed labels", "StateMemory", "controller action"],
+  "streams": {
+    "memory_mimic": "rebuilt per-query candidate banks; <=3 same-category cross-video positives and prefix-union raw hard negatives (top4 per prefix, <=12 union)",
+    "legal_fit": "direct Phase30 fit records with kind=multi_positive_cross_video; support_track_keys and hard_negative_track_key only"
+  },
+  "model": {
+    "pair_token": "concat(abs(q-c), q*c), 1536 -> 256 -> LayerNorm -> GELU -> 128",
+    "per_match_quality": "[matched cosine,row gap,col gap,query local consistency,candidate local consistency] -> 32 -> 1 sigmoid",
+    "bank_context": "top1, top2, top1-top2, top1-top3, mean, std, entropy, candidate_count/16",
+    "bank_gate": "8 -> 32 -> 1 sigmoid, final bias -6",
+    "delta": "0.10*tanh(delta_raw)",
+    "final": "raw cosine + bank_gate * pair_gate * bounded_delta"
+  },
+  "loss": {
+    "formula": "1.0 task + 1.0 all-negative safety + 0.5 gate BCE + 0.01 residual",
+    "task_weights": {"raw_correct": 0.25, "raw_wrong": 1.0},
+    "safety": "for every negative when raw top1 is positive, final margin cannot be below detached raw margin",
+    "teacher": "raw-wrong and frozen matched-cosine evidence ranks a positive above every negative; raw-correct abstains"
+  },
+  "training": {"seed": 767600, "steps_smoke": 100, "steps_targeted": 500, "steps_formal": 10000, "optimizer": "AdamW", "lr": 0.0001, "checkpoint_every": 500, "validation_every": 500, "gpus": [4,5,6,7], "amp": "bf16_if_finite_else_fp32", "folds": "four video/category-disjoint"},
+  "selection": "lexicographic TRAIN-disjoint: total unsafe, prefix unsafe, legal mAP, legal R1, hard-gap, intervention rate; unsafe checkpoints diagnostic only",
+  "gate": {"raw_parity": "all fold-prefix <=1e-7", "p16_substantial_folds": ">=3 folds delta R1 >=0.02 and delta mAP >=0.01", "unsafe": "zero all prefixes", "hard_gap": "non-worse every fold", "intervention": "report, not maximize"},
+  "stop_rules": ["data/protocol leakage", "denominator or evaluator ambiguity", "unrecoverable artifact overwrite", "unsafe resource state"],
+  "public_or_sealed_access": false
+}
