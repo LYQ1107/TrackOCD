@@ -138,6 +138,7 @@ def render(metrics: dict[str, Any]) -> str:
         "- Feature: exact five-field-key-aligned Phase15S frozen DINOv2 CLS/ROI, fused as 0.8 CLS + 0.2 ROI. Metadata labels are used only to score disjoint TRAIN validation positives/negatives.",
         "- Prefixes: 1, 2, 4, 8, 16; candidates are different physical tracks in different videos.",
         "- Not read as model inputs: 152-event evaluator outcomes, held event GT, DEV+, Q1, public-new labels, future rows/tracks, category text, physical IDs or semantic IDs.",
+        "- Public source commits for this route: `a0ca478` (initial implementation), `cfd2d32` (row-index metadata repair), and `6ae3681` (verified literature URLs). The current source is pushed to [LYQ1107/TrackOCD](https://github.com/LYQ1107/TrackOCD).",
         "",
         "## Official method audit",
         "",
