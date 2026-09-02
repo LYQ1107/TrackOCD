@@ -73,7 +73,10 @@ def load_data() -> tuple[list[dict[str, str]], dict[str, list[int]], dict[str, d
             continue
         metadata[key] = {
             "category": category,
-            "video": int(ordered[-1]["video_id"]),
+            # ``by_track`` returns row indices, not row dictionaries.  Keep
+            # the ordering/feature alignment contract explicit and dereference
+            # the final index through the original CSV rows.
+            "video": int(rows[ordered[-1]]["video_id"]),
             "indices": ordered,
             "length": len(ordered),
         }
