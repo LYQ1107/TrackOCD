@@ -7,6 +7,7 @@ import numpy as np
 import torch
 
 from src.iclr27_phase75d.protocol import FrozenTrackTable, PREFIXES
+from src.iclr27_phase75d.pairwise_correspondence import fast_hungarian_score
 from src.iclr27_phase75d.retrieval_metrics import aggregate_fold_metrics, score_records
 
 from .pairwise_adapter import pairwise_torch_score
@@ -98,19 +99,22 @@ def _score_adapted_records(
         for p in needed_prefixes:
             cache[(key, p)] = _adapted_sequences(model, table, {key}, p, device)[key]
     out: list[dict[str, Any]] = []
-    with torch.no_grad():
-        for rec in records:
-            qkey = str(rec["query_key"])
-            q = torch.as_tensor(qcache[qkey], device=device)
-            scores: list[float] = []
-            for cand in rec["candidates"]:
-                ck = str(cand)
-                cp = support_prefix if support_prefix is not None else prefix
-                c = torch.as_tensor(cache[(ck, cp)], device=device)
-                scores.append(float(pairwise_torch_score(q, c).detach().cpu()))
-            x = dict(rec)
-            x["scores"] = scores
-            out.append(x)
+    # Inference is exact NumPy scoring: the model has already produced
+    # normalized arrays, and ``fast_hungarian_score`` is algebraically the
+    # Phase75D linear_sum_assignment score (with only exact small-size paths
+    # for p=1/2).  This avoids millions of one-element torch allocations in a
+    # checkpoint validation hook without changing candidate order or metrics.
+    for rec in records:
+        qkey = str(rec["query_key"])
+        q = qcache[qkey]
+        scores: list[float] = []
+        for cand in rec["candidates"]:
+            ck = str(cand)
+            cp = support_prefix if support_prefix is not None else prefix
+            scores.append(float(fast_hungarian_score(q, cache[(ck, cp)])))
+        x = dict(rec)
+        x["scores"] = scores
+        out.append(x)
     return out
 
 
