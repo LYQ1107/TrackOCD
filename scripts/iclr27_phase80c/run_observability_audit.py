@@ -174,8 +174,16 @@ def summarize(records: list[dict[str, Any]]) -> dict[str, Any]:
     # A light evaluator-only quality audit: this measures whether frozen q0
     # score/count correlate with the observed IoU; it is not used for fitting.
     quality: dict[str, Any] = {}
+    def corr(xs: list[float], ys: list[float]) -> float | None:
+        if len(xs) < 2 or len(set(xs)) < 2 or len(set(ys)) < 2:
+            return None
+        mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
+        num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+        den = math.sqrt(sum((x - mx) ** 2 for x in xs) * sum((y - my) ** 2 for y in ys))
+        return float(num / den) if den else None
     for side in ("source", "target"):
         vals = [(r[side]["max_q0_score"], r[side]["max_iou"], r[side]["candidate_count"]) for r in p16]
+        side_rows = [r[side] for r in p16]
         quality[side] = {
             "mean_max_q0_score_pool_good": (sum(v[0] for v in vals if v[1] >= 0.5) / max(sum(v[1] >= 0.5 for v in vals), 1)),
             "mean_max_q0_score_pool_bad": (sum(v[0] for v in vals if v[1] < 0.5) / max(sum(v[1] < 0.5 for v in vals), 1)),
@@ -183,6 +191,18 @@ def summarize(records: list[dict[str, Any]]) -> dict[str, Any]:
             "mean_candidate_count_pool_bad": (sum(v[2] for v in vals if v[1] < 0.5) / max(sum(v[1] < 0.5 for v in vals), 1)),
             "p16_pool_good": sum(v[1] >= 0.5 for v in vals),
             "p16_pool_bad": sum(v[1] < 0.5 for v in vals),
+            "pearson_with_max_iou": {
+                "max_q0_score": corr([r["max_q0_score"] for r in side_rows], [r["max_iou"] for r in side_rows]),
+                "candidate_count": corr([float(r["candidate_count"]) for r in side_rows], [r["max_iou"] for r in side_rows]),
+                "fragmentation_transitions": corr([float(r["fragmentation_transitions"]) for r in side_rows], [r["max_iou"] for r in side_rows]),
+                "event_temporal_iou": corr([r["mean_event_track_temporal_iou"] for r in side_rows], [r["max_iou"] for r in side_rows]),
+            },
+            "pearson_with_event_reliability": {
+                "max_q0_score": corr([r["max_q0_score"] for r in side_rows], [float(r["assigned_reliable"]) for r in side_rows]),
+                "candidate_count": corr([float(r["candidate_count"]) for r in side_rows], [float(r["assigned_reliable"]) for r in side_rows]),
+                "fragmentation_transitions": corr([float(r["fragmentation_transitions"]) for r in side_rows], [float(r["assigned_reliable"]) for r in side_rows]),
+                "event_temporal_iou": corr([r["mean_event_track_temporal_iou"] for r in side_rows], [float(r["assigned_reliable"]) for r in side_rows]),
+            },
         }
     return {"by_prefix": out, "p16_quality_audit": quality}
 
