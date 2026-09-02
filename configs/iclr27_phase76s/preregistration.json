@@ -1,0 +1,13 @@
+{
+  "phase": "Phase76S",
+  "hypothesis": "A TRAIN-only counterfactual router can abstain from the frozen relation residual on raw-ambiguous queries without sacrificing raw safety.",
+  "frozen_relation": "Phase76AR best checkpoints; no relation parameter updates",
+  "classes": ["HELP", "HARM", "NEUTRAL"],
+  "decision": "use frozen relation scores iff HELP is argmax; otherwise exact raw scores",
+  "model_input": ["raw top1", "raw top2", "raw top1-top2", "raw top1-top3", "raw mean", "raw std", "raw entropy", "candidate_count/16", "relation top1-top2", "relation mean gate", "relation max gate", "mean abs bounded delta", "relation top1 score", "raw top1 score"],
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id", "text", "future", "held", "DEV+", "Q1", "public-new", "sealed labels", "StateMemory", "controller action"],
+  "target": "raw/relation top1 correctness from TRAIN category metadata only: HELP if relation correct and raw wrong; HARM if raw correct and relation wrong; else NEUTRAL",
+  "training": {"steps_smoke": 100, "steps_targeted": 500, "steps_formal": 2000, "seed": 767700, "gpus": [4,5,6,7], "checkpoint_every": 500, "validation_every": 500},
+  "gate": {"delta_r1": 0.02, "delta_map": 0.01, "folds": 3, "hard_gap": "non-worse", "unsafe": 0},
+  "public_or_sealed_access": false
+}
