@@ -55,6 +55,7 @@ def main() -> None:
         "phase80c": {"decision": "PHASE80C_AUDIT_ASSIGNMENT_HEADROOM_NO_NEW_PHASE80_MODEL", "input_sha256": c.get("input_sha256"), "p16": c.get("summary", {}).get("by_prefix", {}).get("16"), "quality": c.get("summary", {}).get("p16_quality_audit")},
         "phase80d": {"decision": d.get("decision"), "repo": d.get("repo"), "commit": d.get("commit"), "license": d.get("license"), "executed": d.get("executed"), "downloaded": d.get("downloaded"), "modern_search": modern.get("methods"), "modern_selection": modern.get("selection")},
         "artifacts": {
+            "final_report": {"path": str(ROOT / "docs/AUTONOMOUS_TRACKOCD_10H_RESEARCH_REPORT.md"), "sha256": sha(ROOT / "docs/AUTONOMOUS_TRACKOCD_10H_RESEARCH_REPORT.md") if (ROOT / "docs/AUTONOMOUS_TRACKOCD_10H_RESEARCH_REPORT.md").exists() else None},
             "phase80a_decision": {"path": str(ROOT / "outputs/iclr27_phase80a/audit/phase80a_decision.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80a/audit/phase80a_decision.json")},
             "phase80b_decision": {"path": str(ROOT / "outputs/iclr27_phase80b/audit/phase80b_decision.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80b/audit/phase80b_decision.json")},
             "phase80b_exact": {"path": str(ROOT / "outputs/iclr27_phase80b/metrics/exact_memory_replay.json"), "sha256": sha(ROOT / "outputs/iclr27_phase80b/metrics/exact_memory_replay.json")},
