@@ -39,7 +39,11 @@ def load_model(path: Path) -> AnchoredRelationReranker:
 
 
 def p16(result: dict) -> dict:
-    return next(x for x in result["prefix_rows"] if x["prefix"] == 16)["learned"]
+    metric = dict(next(x for x in result["prefix_rows"] if x["prefix"] == 16)["learned"])
+    metric["delta_r1"] = float(metric["r1"] - metric["raw_r1"])
+    metric["delta_map"] = float(metric["map"] - metric["raw_map"])
+    metric["delta_hard_gap"] = float(metric["hard_negative_gap"] - metric["raw_hard_negative_gap"])
+    return metric
 
 
 def main() -> None:
@@ -57,7 +61,12 @@ def main() -> None:
     aggregate = {"r1":mean("r1"),"map":mean("map"),"hard_negative_gap":mean("hard_negative_gap"),"raw_r1":mean("raw_r1"),"raw_map":mean("raw_map"),"raw_hard_negative_gap":mean("raw_hard_negative_gap"),"delta_r1":mean("delta_r1"),"delta_map":mean("delta_map"),"delta_hard_gap":mean("delta_hard_gap"),"unsafe_flip_count":sum(int(x["unsafe_flip_count"]) for x in p16_rows),"queries":sum(int(x["queries"]) for x in p16_rows)}
     prefix_gate = []
     for p in (1,2,4,8,16):
-        rows = [next(x for x in f["val"]["prefix_rows"] if x["prefix"] == p)["learned"] for f in fold_results]
+        rows = []
+        for f in fold_results:
+            metric = dict(next(x for x in f["val"]["prefix_rows"] if x["prefix"] == p)["learned"])
+            metric["delta_r1"] = float(metric["r1"] - metric["raw_r1"])
+            metric["delta_map"] = float(metric["map"] - metric["raw_map"])
+            rows.append(metric)
         prefix_gate.append({"prefix":p,"unsafe":sum(int(x["unsafe_flip_count"]) for x in rows),"delta_r1":sum(float(x["delta_r1"]) for x in rows)/4.0,"delta_map":sum(float(x["delta_map"]) for x in rows)/4.0})
     fold_checks = []
     for f in fold_results:
@@ -69,4 +78,3 @@ def main() -> None:
 
 
 if __name__ == "__main__": main()
-
