@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import argparse
 import hashlib
 import json
 import os
@@ -66,12 +67,26 @@ def gate_for_stream(aggregate: dict, fold_results: list[dict], prefix_rows: list
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser(); ap.add_argument("--fold", type=int, default=None); ap.add_argument("--stream", choices=("legal_fit", "memory_mimic", "both"), default="both"); ap.add_argument("--aggregate", action="store_true"); args = ap.parse_args()
+    if args.aggregate:
+        return aggregate_saved()
     table = load_frozen_tracks(); streams_all = []; fold_results_by_stream: dict[str, list[dict]] = {"legal_fit": [], "memory_mimic": []}
-    for fold in range(4):
+    folds = range(4) if args.fold is None else [int(args.fold)]
+    for fold in folds:
         streams = OUT / "banks" / f"streams_f{fold}.json"; memory_fit, legal_fit = load_stream_payload(streams, "fit"); memory_val, legal_val = load_stream_payload(streams, "val"); cache_path = OUT / "banks" / f"pair_cache_f{fold}.json"; cache = load_pair_cache(cache_path); model_path = OUT / "checkpoints" / f"ar1_formal_f{fold}_best.pt"; model = load_model(model_path)
-        for name, banks in (("legal_fit", legal_val), ("memory_mimic", memory_val)):
+        stream_items = (("legal_fit", legal_val), ("memory_mimic", memory_val)) if args.stream == "both" else ((args.stream, legal_val if args.stream == "legal_fit" else memory_val),)
+        for name, banks in stream_items:
             result = evaluate_banks(model, banks, table, cache, torch.device("cpu"), indices=list(range(len(banks))))
             fold_results_by_stream[name].append({"fold": fold, "checkpoint": str(model_path.resolve()), "stream": name, "p16": p16(result), "result": result, "cache_sha256": cache_hash(cache_path), "stream_sha256": hashlib.sha256(streams.read_bytes()).hexdigest()})
+    # A fold-scoped invocation is intentionally small enough to finish within
+    # a bounded shell window.  It writes an atomic partial artifact; the
+    # aggregate invocation below combines all four partials without re-running
+    # inference.
+    if args.fold is not None:
+        for name, rows in fold_results_by_stream.items():
+            if rows:
+                atomic(OUT / f"metrics/exact_{name}_f{args.fold}.json", {"phase":"Phase76AR","fold":args.fold,"stream":name,"fold_result":rows[0]})
+        print(json.dumps({"phase":"Phase76AR","fold":args.fold,"streams":list(fold_results_by_stream),"status":"fold_saved"}, sort_keys=True)); return
     aggregate = {}; gates = {}
     for name, rows in fold_results_by_stream.items():
         aggregate[name] = summarize_stream(rows)
@@ -89,6 +104,27 @@ def main() -> None:
     legal_gate = all(gates["legal_fit"].values()); memory_gate = all(gates["memory_mimic"].values())
     decision = "PHASE76AR_GATE_R_PASS" if legal_gate and memory_gate else "PHASE76AR_GATE_R_FAIL_ROUTE_TO_PHASE76S_OR_PHASE76G"
     obj = {"phase":"Phase76AR","created_utc":dt.datetime.now(dt.timezone.utc).isoformat(),"decision":decision,"fold_results":fold_results_by_stream,"aggregate":aggregate,"gates":gates,"raw_structural_parity":"checked by prefix raw equality in evaluator; no held/public/sealed access","controller_run":False,"state_memory_run":False,"sealed_accessed":False,"held_event_accessed_for_model":False,"public_or_dev_accessed":False,"selection":"best checkpoints selected by TRAIN-disjoint validation only; exact replay uses all validation banks","protocol":"raw-first selective relation; dual stream; <=12 prefix-union negatives + <=3 positives; prefixes 1,2,4,8,16"}
+    atomic(OUT / "metrics/phase76ar_exact_retrieval.json", obj); atomic(OUT / "audit/phase76ar_decision.json", obj); atomic(OUT / "completion/exact_eval.done", {"phase":"Phase76AR","decision":decision,"metrics":str(OUT/"metrics/phase76ar_exact_retrieval.json")}); print(json.dumps({"phase":"Phase76AR","decision":decision,"aggregate":aggregate,"gates":gates}, sort_keys=True))
+
+
+def aggregate_saved() -> None:
+    table_results: dict[str, list[dict]] = {"legal_fit": [], "memory_mimic": []}
+    for fold in range(4):
+        for stream in table_results:
+            path = OUT / f"metrics/exact_{stream}_f{fold}.json"
+            if not path.exists(): raise FileNotFoundError(path)
+            table_results[stream].append(json.loads(path.read_text())["fold_result"])
+    aggregate: dict[str, dict] = {}; gates: dict[str, dict] = {}
+    for name, rows in table_results.items():
+        aggregate[name] = summarize_stream(rows)
+        prefix_summary = []
+        for prefix in (1, 2, 4, 8, 16):
+            metrics = [next(x for x in row["result"]["prefix_rows"] if x["prefix"] == prefix)["learned"] for row in rows]
+            prefix_summary.append({"prefix": prefix, "unsafe_flip_count": sum(int(x["unsafe_flip_count"]) for x in metrics), "delta_r1": sum(float(x["r1"] - x["raw_r1"]) for x in metrics) / 4.0, "delta_map": sum(float(x["map"] - x["raw_map"]) for x in metrics) / 4.0, "delta_hard_gap": sum(float(x["hard_negative_gap"] - x["raw_hard_negative_gap"]) for x in metrics) / 4.0})
+        aggregate[name]["prefix_summary"] = prefix_summary
+        gates[name] = {"p16_delta_r1_ge_0.02": aggregate[name]["delta_r1"] >= 0.02, "p16_delta_map_ge_0.01": aggregate[name]["delta_map"] >= 0.01, "p16_unsafe_zero": aggregate[name]["unsafe_flip_count"] == 0, "all_prefix_unsafe_zero": all(x["unsafe_flip_count"] == 0 for x in prefix_summary), "hard_gap_non_worse_all_folds": all(float(x["p16"]["delta_hard_gap"]) >= -1e-7 for x in rows), "substantial_r1_3_of_4": sum(float(x["p16"]["delta_r1"]) >= 0.02 for x in rows) >= 3, "substantial_map_3_of_4": sum(float(x["p16"]["delta_map"]) >= 0.01 for x in rows) >= 3}
+    legal_gate = all(gates["legal_fit"].values()); memory_gate = all(gates["memory_mimic"].values()); decision = "PHASE76AR_GATE_R_PASS" if legal_gate and memory_gate else "PHASE76AR_GATE_R_FAIL_ROUTE_TO_PHASE76S_OR_PHASE76G"
+    obj = {"phase":"Phase76AR","created_utc":dt.datetime.now(dt.timezone.utc).isoformat(),"decision":decision,"fold_results":table_results,"aggregate":aggregate,"gates":gates,"controller_run":False,"state_memory_run":False,"sealed_accessed":False,"held_event_accessed_for_model":False,"public_or_dev_accessed":False,"selection":"best checkpoints selected by TRAIN-disjoint validation only; exact replay uses all validation banks","protocol":"raw-first selective relation; dual stream; <=12 prefix-union negatives + <=3 positives; prefixes 1,2,4,8,16"}
     atomic(OUT / "metrics/phase76ar_exact_retrieval.json", obj); atomic(OUT / "audit/phase76ar_decision.json", obj); atomic(OUT / "completion/exact_eval.done", {"phase":"Phase76AR","decision":decision,"metrics":str(OUT/"metrics/phase76ar_exact_retrieval.json")}); print(json.dumps({"phase":"Phase76AR","decision":decision,"aggregate":aggregate,"gates":gates}, sort_keys=True))
 
 
