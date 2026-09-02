@@ -110,6 +110,11 @@ def resource_snapshot() -> dict[str, Any]:
     return {"created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "free_h": free.stdout, "pid": os.getpid()}
 
 
+def source_commit() -> str:
+    result = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=False)
+    return result.stdout.strip() if result.returncode == 0 else "UNKNOWN"
+
+
 def run_section(table, section: str) -> dict[str, Any]:
     fold_outputs: list[dict[str, Any]] = []
     prefix_outputs: list[dict[str, Any]] = []
@@ -169,7 +174,7 @@ def main() -> None:
     atomic_json(OUT / "audit/cache_keys.json", {"global": global_out["cache_keys"], "legal": legal_out["cache_keys"], "cache_root": "/data2/usr_for_deadline/trackocd_phase75d/cache", "matrix_persisted": False})
     atomic_json(OUT / "audit/resource_postflight.json", resource_snapshot())
     status = "P75D_GATE_R_PASS" if global_out["gate"]["pass"] and legal_out["gate"]["pass"] else ("P75D_PAIRWISE_SIGNAL_AUTHORIZE_P75E" if teacher["signal"] else "P75D_NO_PAIRWISE_SIGNAL")
-    status_obj = {"phase": "Phase75D", "status": status, "run_id": args.run_id, "source_commit": "pending_phase75d_commit", "training": False, "gpu_count": 0, "input_hashes": {"csv": table.csv_sha256, "features": table.feature_sha256}, "feature_hash": table.feature_sha256, "csv_hash": table.csv_sha256, "fold_manifest_hashes": {str(f): x["inventory"].get("manifest_sha256") for f in range(4) for x in global_out["folds"] if x["fold"] == f and x["prefix"] == 16}, "held_event_accessed_for_model": False, "sealed_accessed": False, "global_r": {"gate": global_out["gate"], "aggregate_prefix16": global_agg}, "legal_r": {"gate": legal_out["gate"], "aggregate_prefix16": legal_agg, "teacher_signal": teacher}, "unsafe": {"global": global_agg["unsafe_flip_count"], "legal": legal_agg["unsafe_flip_count"]}, "gates": {"global_pass": global_out["gate"]["pass"], "legal_pass": legal_out["gate"]["pass"], "teacher_signal": teacher["signal"]}, "failures": [], "repairs": [], "qualified_for_controller": bool(global_out["gate"]["pass"] and legal_out["gate"]["pass"]), "qualified_for_sealed": False}
+    status_obj = {"phase": "Phase75D", "status": status, "run_id": args.run_id, "source_commit": source_commit(), "training": False, "gpu_count": 0, "input_hashes": {"csv": table.csv_sha256, "features": table.feature_sha256}, "feature_hash": table.feature_sha256, "csv_hash": table.csv_sha256, "fold_manifest_hashes": {str(f): x["inventory"].get("manifest_sha256") for f in range(4) for x in global_out["folds"] if x["fold"] == f and x["prefix"] == 16}, "held_event_accessed_for_model": False, "sealed_accessed": False, "global_r": {"gate": global_out["gate"], "aggregate_prefix16": global_agg}, "legal_r": {"gate": legal_out["gate"], "aggregate_prefix16": legal_agg, "teacher_signal": teacher}, "unsafe": {"global": global_agg["unsafe_flip_count"], "legal": legal_agg["unsafe_flip_count"]}, "gates": {"global_pass": global_out["gate"]["pass"], "legal_pass": legal_out["gate"]["pass"], "teacher_signal": teacher["signal"]}, "failures": [], "repairs": [], "qualified_for_controller": bool(global_out["gate"]["pass"] and legal_out["gate"]["pass"]), "qualified_for_sealed": False}
     atomic_json(OUT / "status.json", status_obj)
     atomic_marker(OUT / "completion/pairwise_r.done", {"status": status, "run_id": args.run_id, "metrics": [str(OUT / "metrics/global_r.json"), str(OUT / "metrics/legal_support_r.json")]})
     print(json.dumps({"status": status, "global_gate": global_out["gate"], "legal_gate": legal_out["gate"], "teacher_signal": teacher}, indent=2, sort_keys=True))

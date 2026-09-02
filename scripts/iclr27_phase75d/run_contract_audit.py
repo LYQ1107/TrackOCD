@@ -111,6 +111,11 @@ def resource_snapshot() -> dict[str, Any]:
     return {"created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "free_h": free.stdout, "nvidia_smi": smi.stdout, "nvidia_smi_returncode": smi.returncode, "pid": os.getpid()}
 
 
+def source_commit() -> str:
+    result = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=False)
+    return result.stdout.strip() if result.returncode == 0 else "UNKNOWN"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(); parser.add_argument("--run-id", default="phase75d-audit-20260902-r1"); args = parser.parse_args()
     table = load_frozen_tracks()
@@ -138,7 +143,7 @@ def main() -> None:
     literature = json.loads((ROOT / "outputs/iclr27_phase51/audit/github_methods.json").read_text(encoding="utf-8"))
     atomic_json(OUT / "audit/literature_audit.json", {"selected": {"method": "GC-inspired Pairwise Track Correspondence", "official_repo": "https://github.com/LiZhYun/ICML2026-RethinkingOCL", "official_commit": "5d345268797425558b449337519af3ab24aeb6f1", "paper": "https://arxiv.org/abs/2605.03650", "license": "MIT", "borrowed": ["cosine frame similarity", "parameter-free Hungarian assignment"], "not_claimed": "full official Grounded Correspondence reproduction; TrackOCD physical tracklets are not object-centric slots"}, "audited_methods": literature.get("methods", []), "sealed_accessed": False})
     status = "PHASE75D_CONTRACT_AUDIT_PASS" if parity["status"] == "PASS" else parity["status"]
-    atomic_json(OUT / "status.json", {"phase": "Phase75D", "status": status, "run_id": args.run_id, "source_commit": "pending_phase75d_commit", "training": False, "gpu_count": 0, "input_hashes": {"csv": table.csv_sha256, "features": table.feature_sha256, "folds": fold_hashes}, "feature_hash": table.feature_sha256, "csv_hash": table.csv_sha256, "fold_manifest_hashes": fold_hashes, "held_event_accessed_for_model": False, "sealed_accessed": False, "global_r": {"raw_parity": parity["status"]}, "legal_r": {}, "unsafe": {}, "gates": {"raw_parity": parity["status"] == "PASS", "current_152_track_overlap_audited": len(overlap_current)}, "failures": [], "repairs": [], "qualified_for_controller": False, "qualified_for_sealed": False})
+    atomic_json(OUT / "status.json", {"phase": "Phase75D", "status": status, "run_id": args.run_id, "source_commit": source_commit(), "training": False, "gpu_count": 0, "input_hashes": {"csv": table.csv_sha256, "features": table.feature_sha256, "folds": fold_hashes}, "feature_hash": table.feature_sha256, "csv_hash": table.csv_sha256, "fold_manifest_hashes": fold_hashes, "held_event_accessed_for_model": False, "sealed_accessed": False, "global_r": {"raw_parity": parity["status"]}, "legal_r": {}, "unsafe": {}, "gates": {"raw_parity": parity["status"] == "PASS", "current_152_track_overlap_audited": len(overlap_current)}, "failures": [], "repairs": [], "qualified_for_controller": False, "qualified_for_sealed": False})
     (OUT / "completion").mkdir(parents=True, exist_ok=True)
     (OUT / "completion/contract_audit.done").write_text(json.dumps({"status": status, "run_id": args.run_id}) + "\n", encoding="utf-8")
     print(json.dumps({"status": status, "raw_parity": parity["status"], "current_152_track_overlap": len(overlap_current), "rows": len(table.rows), "tracks": len(table.sequences)}, indent=2, sort_keys=True))
