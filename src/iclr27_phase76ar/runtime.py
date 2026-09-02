@@ -43,11 +43,11 @@ def bank_features(bank: Any, table, cache: dict[str, Any], device: torch.device)
 def score_bank(model, features: dict[int, list[dict[str, torch.Tensor]]], prefix: int, *, raw_scores: torch.Tensor | None = None) -> dict[str, torch.Tensor]:
     if raw_scores is None:
         raw_scores = torch.stack([x["raw"] for x in features[prefix]])
-    finals: list[torch.Tensor] = []; deltas: list[torch.Tensor] = []; gates: list[torch.Tensor] = []; bank_gates: list[torch.Tensor] = []
+    finals: list[torch.Tensor] = []; deltas: list[torch.Tensor] = []; gates: list[torch.Tensor] = []; bank_gates: list[torch.Tensor] = []; bank_logits: list[torch.Tensor] = []
     for idx, item in enumerate(features[prefix]):
         out = model(item["pair_tokens"], item["quality_features"], item["summary"], item["raw"], raw_scores)
-        finals.append(out["final"].reshape(())); deltas.append(out["delta_bounded"].reshape(())); gates.append(out["gate"].reshape(())); bank_gates.append(out["bank_gate"].reshape(()))
-    return {"final": torch.stack(finals), "raw": raw_scores, "delta_bounded": torch.stack(deltas), "gate": torch.stack(gates), "bank_gate": torch.stack(bank_gates)}
+        finals.append(out["final"].reshape(())); deltas.append(out["delta_bounded"].reshape(())); gates.append(out["gate"].reshape(())); bank_gates.append(out["bank_gate"].reshape(())); bank_logits.append(out["bank_gate_logit"].reshape(()))
+    return {"final": torch.stack(finals), "raw": raw_scores, "delta_bounded": torch.stack(deltas), "gate": torch.stack(gates), "bank_gate": torch.stack(bank_gates), "bank_gate_logit": torch.stack(bank_logits)}
 
 
 def deterministic_order(items: list[Any], seed: int) -> list[int]:
