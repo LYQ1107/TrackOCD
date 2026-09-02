@@ -266,7 +266,7 @@ def render_d(d_status: dict[str, Any], global_d: dict[str, Any], legal_d: dict[s
         "",
         "Phase75D exact Pairwise Hungarian evaluation completed both registered benchmarks. The strict global and legal R gates are **FAIL**; no controller, StateMemory, DEV+, Q1, public-new, or sealed evaluation was run. The legal pairwise signal is positive under the pre-registered teacher-signal rule, so it authorizes Phase75E only; it is not a Gate R pass.",
         "",
-        f"Decision codes: `{global_d['gate']['pass']=}`, `{legal_d['gate']['pass']=}`, `{teacher.get('decision', 'n/a')}`.",
+        f"Decision codes: `P75D_GLOBAL_R_{'PASS' if global_d['gate']['pass'] else 'FAIL'}`, `P75D_LEGAL_R_{'PASS' if legal_d['gate']['pass'] else 'FAIL'}`, `{teacher.get('decision', 'n/a')}`.",
         "",
         "## 2. Frozen provenance and boundary",
         "",
@@ -392,7 +392,9 @@ def render_d(d_status: dict[str, Any], global_d: dict[str, Any], legal_d: dict[s
 
 
 def render_e(exact: dict[str, Any], d_legal: dict[str, Any], e_status: dict[str, Any], repairs: dict[str, Any], contract: dict[str, Any], inventory: dict[str, Any], source_commit: str, ledger: dict[str, Any], tests: dict[str, Any]) -> str:
-    cfg = load(EOUT / "../" / "../configs/iclr27_phase75e/phase75e_rank8.json")
+    cfg = load(ROOT / "configs/iclr27_phase75e/phase75e_rank8.json")
+    smoke = load(EOUT / "metrics/phase75e_smoke_r2_smoke_f0.json")
+    target = load(EOUT / "metrics/phase75e_target_r1_f0.json")
     formal = []
     for fold in range(4):
         d = load(EOUT / "metrics" / f"phase75e_formal_f{fold}.json")
@@ -426,8 +428,8 @@ def render_e(exact: dict[str, Any], d_legal: dict[str, Any], e_status: dict[str,
         "## 2. Frozen protocol and data boundary",
         "",
         f"- Phase30 fit episodes only; exact R-global and manifest-legal R replay use Phase75D frozen candidate universes and prefixes `{cfg['prefixes']}`.",
-        f"- Input CSV SHA256 `{contract['input_hashes']['csv']}`, features SHA256 `{contract['input_hashes']['features']}`, alignment permutation `{contract['input_hashes']['feature_alignment_permutation']}`; rows `{contract['rows']}/{contract['rows']}`, tracks `{contract['tracks']}`, dimension `{contract['feature_dim']}`.",
-        f"- Fit episode counts/positive links by fold: `{json.dumps(inventory.get('fit_episode_counts', {}), sort_keys=True)}` / `{json.dumps(inventory.get('positive_link_counts', {}), sort_keys=True)}`.",
+        f"- Input CSV SHA256 `{contract['input_hashes']['csv']}`, features SHA256 `{contract['input_hashes']['features']}`, alignment permutation `{contract['input_hashes']['permutation']}`; rows `{contract['rows']}/{contract['rows']}`, tracks `{contract['tracks']}`, dimension `{contract['feature_dim']}`.",
+        f"- Fit episode counts/positive links by fold: `{json.dumps({str(x['fold']): x['fit_episodes'] for x in contract['folds']}, sort_keys=True)}` / `{json.dumps({str(x['fold']): x['positive_links'] for x in contract['folds']}, sort_keys=True)}`.",
         "- No category, semantic/physical ID, text, future frame, held/DEV+/Q1/public-new/sealed label entered inference. `held_event_accessed_for_model=false`, `sealed_accessed=false`.",
         "",
         "## 3. Registered model and loss",
@@ -440,8 +442,8 @@ def render_e(exact: dict[str, Any], d_legal: dict[str, Any], e_status: dict[str,
         "",
         "- Initial smoke `phase75e_smoke_smoke_f0` failed before artifacts because of a wrong frozen evaluator import; its `.launched` and failure evidence are retained.",
         "- Second attempt reached validation but exposed a causal query/support-prefix cache KeyError; marker/checkpoint evidence is retained and fresh tag `phase75e_smoke_r2` was used.",
-        "- Fresh 100-step smoke completed: legal p16 R@1 `?` is reported in its artifact; adapted drift mean cosine `0.999927`, delta norm/raw `0.011885`; no protocol change.",
-        "- 500-step fold0 target completed: legal p16 R@1 `?` and mAP `?` are in `phase75e_target_r1_f0.json`; drift mean cosine `0.951155`, delta norm/raw `0.309555`. This is diagnosis only.",
+        f"- Fresh 100-step smoke completed: legal p16 R@1 `{hits(smoke['validation_history'][-1]['legal']['r1'], smoke['validation_history'][-1]['legal']['queries'])}/{smoke['validation_history'][-1]['legal']['queries']} ({smoke['validation_history'][-1]['legal']['r1']:.6f})`, mAP `{smoke['validation_history'][-1]['legal']['map']:.6f}`, unsafe `{smoke['validation_history'][-1]['legal']['unsafe_flip_count']}/{smoke['validation_history'][-1]['legal']['queries']}`; adapted drift mean cosine `{smoke['validation_history'][-1]['drift']['mean_cosine']:.6f}`, delta norm/raw `{smoke['validation_history'][-1]['drift']['mean_delta_norm_over_raw']:.6f}`; no protocol change.",
+        f"- 500-step fold0 target completed: legal p16 R@1 `{hits(target['validation_history'][-1]['legal']['r1'], target['validation_history'][-1]['legal']['queries'])}/{target['validation_history'][-1]['legal']['queries']} ({target['validation_history'][-1]['legal']['r1']:.6f})`, mAP `{target['validation_history'][-1]['legal']['map']:.6f}`, unsafe `{target['validation_history'][-1]['legal']['unsafe_flip_count']}/{target['validation_history'][-1]['legal']['queries']}`; drift mean cosine `{target['validation_history'][-1]['drift']['mean_cosine']:.6f}`, delta norm/raw `{target['validation_history'][-1]['drift']['mean_delta_norm_over_raw']:.6f}`. This is diagnosis only.",
         "",
         "The exact values above are intentionally read from the retained smoke/target JSON rather than used for checkpoint selection. The formal and exact replay below are authoritative.",
         "",
