@@ -125,8 +125,8 @@ contains no Q0 performance and does not claim OCD=0.
 ## Resources and integrity
 
 Phase74S used one bounded CPU process and zero GPUs. Pre/post resource command
-outputs are in `outputs/iclr27_phase74s/audit/{preflight,postflight}.json` and
-`logs/{preflight,postflight}_resource.txt`. No external process was touched;
+outputs are in `outputs/iclr27_phase74s/audit/{{preflight,postflight}}.json` and
+`logs/{{preflight,postflight}}_resource.txt`. No external process was touched;
 there is no training worker, no checkpoint, and no OOM event. Generated files
 were written atomically. Output hashes are in
 `outputs/iclr27_phase74s/manifests/output_sha256.json`.
