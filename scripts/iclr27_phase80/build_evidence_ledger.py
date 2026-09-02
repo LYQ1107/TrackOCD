@@ -30,6 +30,9 @@ def git(*args: str) -> str:
 
 
 def main() -> None:
+    start_utc = dt.datetime.fromisoformat("2026-09-02T18:27:32+00:00")
+    deadline_utc = dt.datetime.fromisoformat("2026-09-03T04:27:32+00:00")
+    now_utc = dt.datetime.now(dt.timezone.utc)
     a = read_json(ROOT / "outputs/iclr27_phase80a/audit/phase80a_decision.json")
     b = read_json(ROOT / "outputs/iclr27_phase80b/audit/phase80b_decision.json")
     c = read_json(ROOT / "outputs/iclr27_phase80c/audit/observability_quality_audit.json")
@@ -40,7 +43,10 @@ def main() -> None:
         raise FileNotFoundError(input_trace)
     ledger = {
         "phase": "Phase80+",
-        "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "created_utc": now_utc.isoformat(),
+        "research_start_utc": start_utc.isoformat().replace("+00:00", "Z"),
+        "research_deadline_utc": deadline_utc.isoformat().replace("+00:00", "Z"),
+        "actual_runtime_hours": round((now_utc - start_utc).total_seconds() / 3600.0, 4),
         "head": git("rev-parse", "HEAD"),
         "origin_main": git("ls-remote", "origin", "refs/heads/main"),
         "code_commits": ["eac6654", "9ac7bd9", "64972ba", "8c7a94e", "bb32667", "a985aaf", "676bb9a", "374cb00", "48b80ad", "491044b"],
@@ -61,6 +67,8 @@ def main() -> None:
         "resource_events": [{"type": "duplicate_audit_process", "pids": [3170, 3167], "action": "explicit SIGTERM task-owned duplicate; original 2322 retained", "external_processes_touched": False}, {"type": "oom", "occurred": False}],
         "symlink_ledger": [{"path": str(ROOT / "outputs/iclr27_phase80a/cache"), "target": "/data2/usr_for_deadline/trackocd_phase80a/dense_cache"}],
         "decision": "PHASE80_FAMILY_A_DENSE_FAIL_FAMILY_B_MEMORY_FAIL_FAMILY_C_ASSIGNMENT_HEADROOM_FAMILY_D_INELIGIBLE",
+        "status": "AUTONOMOUS_EARLY_STOP_NO_COMPLIANT_ROUTE",
+        "stop_basis": "The registered A/B hypotheses failed and the only remaining C/D references lack a compliant, reproducible training/inference interface under the frozen causal protocol (C requires a new physical-association implementation; D requires forbidden/external dependencies or unavailable resources). No unregistered long training was started.",
         "next_action": "Do not run controller or sealed/public evaluation under Phase80. A future authorized route must repair causal physical association/observability or provide a legal visual support contract; do not repeat frozen-feature memory/ranker variants.",
     }
     (OUT / "audit").mkdir(parents=True, exist_ok=True)
