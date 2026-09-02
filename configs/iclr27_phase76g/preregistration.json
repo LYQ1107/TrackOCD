@@ -1,0 +1,17 @@
+{
+  "phase": "Phase76G",
+  "hypothesis": "Rotating category-group meta-holdout and worst-group loss can prevent selective relation collapse on unseen fit-category groups while preserving exact raw fallback safety.",
+  "source": "frozen Phase76AR counterfactual examples and Phase76S feature contract",
+  "grouping": "sorted fit categories split deterministically into four groups; no held validation category enters training",
+  "objective": "weighted cross entropy plus 0.5 times the maximum per-group cross entropy over three training groups; holdout group rotates each update",
+  "input_dim": 14,
+  "decision": "HELP argmax uses frozen relation; HARM/NEUTRAL returns exact raw",
+  "steps": {"smoke": 100, "targeted": 500, "formal": 2000},
+  "checkpoint_every": 500,
+  "validation_every": 500,
+  "seed_base": 767900,
+  "gpus": [4, 5, 6, 7],
+  "gate": {"delta_r1": 0.02, "delta_map": 0.01, "folds": 3, "worst_fold_delta": -0.01, "unsafe": 0, "hard_gap": "non-worse"},
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id", "text", "future", "held", "DEV+", "Q1", "public-new", "sealed labels", "StateMemory", "controller action"],
+  "public_or_sealed_access": false
+}
