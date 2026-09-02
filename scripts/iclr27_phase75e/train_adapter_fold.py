@@ -161,7 +161,10 @@ def main() -> None:
     if args.resume:
         latest_link = OUT / "checkpoints" / f"{run}_latest.pt"
         if latest_link.exists():
-            checkpoint = torch.load(latest_link, map_location=device, weights_only=False)
+            try:
+                checkpoint = torch.load(latest_link, map_location=device, weights_only=False)
+            except TypeError:
+                checkpoint = torch.load(latest_link, map_location=device)
             model.load_state_dict(checkpoint["model"])
             optimizer.load_state_dict(checkpoint["optimizer"])
             start_step = int(checkpoint.get("step", 0))

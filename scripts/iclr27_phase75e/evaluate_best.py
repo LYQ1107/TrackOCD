@@ -37,7 +37,13 @@ def load_best(fold: int, tag: str, device: torch.device) -> tuple[LowRankFeature
     path = OUT / "checkpoints" / f"{tag}_f{fold}_best.pt"
     if not path.exists():
         raise FileNotFoundError(path)
-    checkpoint = torch.load(path, map_location=device, weights_only=False)
+    try:
+        checkpoint = torch.load(path, map_location=device, weights_only=False)
+    except TypeError:
+        # The pinned OVTR environment uses an older torch whose Unpickler does
+        # not expose the weights_only keyword.  These checkpoints are local
+        # files written by this run, so the legacy call is equivalent here.
+        checkpoint = torch.load(path, map_location=device)
     model = LowRankFeatureAdapter().to(device)
     model.load_state_dict(checkpoint["model"]); model.eval()
     return model, {"path": str(path.resolve()), "step": checkpoint.get("step"), "seed": checkpoint.get("seed"), "manifest_sha256": checkpoint.get("manifest_sha256")}
