@@ -14,7 +14,7 @@ from typing import Any
 
 import numpy as np
 
-from src.iclr27_phase75c.run_r_retrieval import query_metric
+from scripts.iclr27_phase75c.run_r_retrieval import query_metric
 from src.iclr27_phase75d.legal_support import load_legal_episodes
 from src.iclr27_phase75d.protocol import CSV_PATH, FEAT_PATH, PREFIXES, load_frozen_tracks, sha256
 
