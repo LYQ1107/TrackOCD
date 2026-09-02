@@ -1,0 +1,12 @@
+{
+  "phase": "Phase79O",
+  "hypothesis": "A fixed causal velocity projection from the latest one or two physical-track boxes can recover observations at event frames when DSCT misses a detection, without changing physical IDs or semantic inputs.",
+  "route": "single non-trained physical observability candidate augmentation",
+  "max_gap": 2,
+  "projection": "strictly prior frame history; constant velocity; existing raw candidates retained",
+  "evaluation": "frozen Phase75B event observability evaluator; positives/negatives 76+76; prefixes 1/2/4/8/16; assigned and row IoU rules unchanged",
+  "training": "none",
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id as feature", "text", "future rows", "held labels", "DEV+", "Q1", "public-new", "sealed labels", "StateMemory", "controller action"],
+  "literature_reference": ["https://github.com/Nathan-Li123/TRACT", "https://github.com/zekunqian/COVTrack"],
+  "public_or_sealed_access": false
+}
