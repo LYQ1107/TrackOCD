@@ -182,6 +182,7 @@ markers.  They were not overwritten:
 | r1 | failed before artifacts | undefined `EVENT_POS` in setup | minimal constant-name fix |
 | r2 | blocked prefix contract | checker demanded irrelevant frame/image source literals | minimal evidence-check fix |
 | r3 | `{status['status']}` | 82 model events vs 152 evaluator events; 0 key matches | retain blocker; await exact manifest |
+| report-render-1 | failed before report | direct invocation could not import local `src` package | add resolved project root to `sys.path` |
 
 Smoke and targeted tests after the two fixes: **9/9 passed**.  No old Phase74
 file was modified.
