@@ -29,7 +29,14 @@ def atomic(path: Path, value) -> None:
 
 
 def load_model(path: Path) -> CausalMemoryScorer:
-    ck = torch.load(path, map_location="cpu", weights_only=False); m=CausalMemoryScorer(); m.load_state_dict(ck["model"]); m.eval(); return m
+    try:
+        ck = torch.load(path, map_location="cpu", weights_only=False)
+    except TypeError:
+        # The pinned OVTR torch (1.x) does not expose weights_only.  These
+        # checkpoints are local artifacts produced by this run, so the legacy
+        # loader is equivalent and keeps the replay reproducible.
+        ck = torch.load(path, map_location="cpu")
+    m=CausalMemoryScorer(); m.load_state_dict(ck["model"]); m.eval(); return m
 
 
 def main() -> None:
@@ -47,4 +54,3 @@ def main() -> None:
 
 
 if __name__ == "__main__": main()
-
