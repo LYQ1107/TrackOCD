@@ -106,11 +106,18 @@ def evaluate_fold(table: Any, cls: np.ndarray, patch: np.ndarray, fold: int, pre
         dense_global[k], dense_tokens[k] = track_dense(cls, patch, seqs[k], prefix)
     token_bank = np.stack([dense_tokens[k] for k in keys], axis=0)
     records = []
+    unevaluable = []
     for q_index, query in enumerate(keys):
         candidate_indices = [j for j, candidate in enumerate(keys) if candidate != query and videos[candidate] != videos[query]]
         candidates = [keys[j] for j in candidate_indices]
         positives = {keys[j] for j in candidate_indices if cats[keys[j]] == cats[query]}
         negatives = {keys[j] for j in candidate_indices if cats[keys[j]] != cats[query]}
+        # Match the frozen Phase75D scorer: a query without both positive and
+        # negative candidates is retained only as an audit exclusion, never
+        # silently counted in retrieval metrics or rescue rates.
+        if not candidates or not positives or not negatives:
+            unevaluable.append({"query_key": query, "candidate_count": len(candidates), "positive_count": len(positives), "negative_count": len(negatives), "reason": "NO_POSITIVE_OR_NEGATIVE_CANDIDATE"})
+            continue
         raw_scores = np.asarray([float(raw_vecs[query] @ raw_vecs[c]) for c in candidates], dtype=np.float32)
         global_scores = np.asarray([float(dense_global[query] @ dense_global[c]) for c in candidates], dtype=np.float32)
         dense_scores = dense_pair_scores(dense_tokens[query], token_bank[np.asarray(candidate_indices, dtype=np.int64)], device)
@@ -145,7 +152,8 @@ def evaluate_fold(table: Any, cls: np.ndarray, patch: np.ndarray, fold: int, pre
     }
     summary["dense_net_rescue"] = summary["dense_rescued_raw_wrong"] - summary["dense_harmed_raw_correct"]
     summary["global_net_rescue"] = summary["global_rescued_raw_wrong"] - summary["global_harmed_raw_correct"]
-    return {"summary": summary, "records": records}
+    summary["unevaluable_queries"] = len(unevaluable)
+    return {"summary": summary, "records": records, "unevaluable": unevaluable}
 
 
 def main() -> None:
@@ -159,11 +167,13 @@ def main() -> None:
     device = torch.device(args.device)
     folds = []
     all_records = []
+    all_unevaluable = []
     for fold in range(4):
         for prefix in PREFIXES:
             evaluated = evaluate_fold(table, cls, patch, fold, prefix, device)
             folds.append(evaluated["summary"])
             all_records.extend(evaluated["records"])
+            all_unevaluable.extend(evaluated["unevaluable"])
             print(json.dumps(evaluated["summary"], sort_keys=True), flush=True)
     aggregate = {}
     for prefix in PREFIXES:
@@ -195,6 +205,7 @@ def main() -> None:
             "criterion": "dense rescued_raw_wrong > harmed_raw_correct AND at least 3 folds net_rescue > 0 AND no fold R1 drop < -0.02",
         },
         "records": all_records,
+        "unevaluable": all_unevaluable,
     }
     atomic_json(OUT / "metrics/phase80a_dense_diagnostic.json", result)
     atomic_json(OUT / "audit/phase80a_decision.json", {k: result[k] for k in ("phase", "created_utc", "protocol", "aggregate", "raw_parity", "routing_criterion", "held_dev_q1_public_new_accessed")})
@@ -204,4 +215,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
