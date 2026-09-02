@@ -14,7 +14,7 @@ import torch
 from PIL import Image
 
 from src.iclr27_phase80a.dense_source import DinoV3Dense, atomic_json, crop_box, load_rows, make_transform
-from src.iclr27_phase75d.protocol import row_key
+from src.iclr27_phase80a.dense_source import row_key
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs/iclr27_phase80a"
@@ -123,4 +123,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

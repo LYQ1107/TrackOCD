@@ -19,7 +19,15 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
-from src.iclr27_phase75d.protocol import CSV_PATH, row_key
+from src.iclr27_phase75d.protocol import CSV_PATH
+
+
+def row_key(row: dict[str, str]) -> str:
+    """Canonical five-field key shared with the frozen Phase23 protocol."""
+    value = str(row.get("row_key", ""))
+    if value:
+        return value
+    return ":".join(str(row.get(k, "")) for k in ("video_id", "frame_id", "proposal_local_id", "track_id", "image_id"))
 
 
 MODEL_ID = "timm/vit_base_patch16_dinov3.lvd1689m"
@@ -144,4 +152,3 @@ def cache_meta(rows: list[dict[str, str]], device: str, shard: int, num_shards: 
         "semantic_or_physical_id_input": False,
         "held_or_devplus_input": False,
     }
-
