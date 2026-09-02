@@ -70,7 +70,7 @@ def literature_payload() -> dict[str, Any]:
         "audited_candidates": [
             {
                 "method": "OVTR",
-                "paper_url": "https://openreview.net/forum?id=",
+                "paper_url": "https://arxiv.org/abs/2503.10616",
                 "repo_url": "https://github.com/jinyanglii/OVTR",
                 "commit": "500e72c19bf5f7f8717546911a5639fdc26bfee5",
                 "license": "MIT",
@@ -78,7 +78,7 @@ def literature_payload() -> dict[str, Any]:
             },
             {
                 "method": "MOTIP-2",
-                "paper_url": "https://arxiv.org/",
+                "paper_url": "https://arxiv.org/abs/2403.16848",
                 "repo_url": "https://github.com/GISer-WB/MOTIP-2",
                 "commit": "012856c1dc13b324064e79339ae71054518d1b5e",
                 "license": "repository terms audited in Phase57",
@@ -86,7 +86,7 @@ def literature_payload() -> dict[str, Any]:
             },
             {
                 "method": "ObjectRelator",
-                "paper_url": "https://openaccess.thecvf.com/",
+                "paper_url": "https://arxiv.org/abs/2411.19083",
                 "repo_url": "https://github.com/insait-institute/ObjectRelator",
                 "commit": "25ecbc086cc812304de97764aa21f4bb8e0e6360",
                 "license": "repository terms audited in Phase57",
@@ -94,7 +94,7 @@ def literature_payload() -> dict[str, Any]:
             },
             {
                 "method": "C3Po",
-                "paper_url": "https://arxiv.org/",
+                "paper_url": "https://arxiv.org/abs/2511.18559",
                 "repo_url": "https://github.com/c3po-correspondence/C3Po",
                 "commit": "21254a078435451e99d2feabd5db9334c02d8483",
                 "license": "repository terms audited in Phase57",
@@ -102,7 +102,7 @@ def literature_payload() -> dict[str, Any]:
             },
             {
                 "method": "MASA",
-                "paper_url": "https://openaccess.thecvf.com/",
+                "paper_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Matching_Anything_by_Segmenting_Anything_CVPR_2024_paper.pdf",
                 "repo_url": "https://github.com/siyuanliii/masa",
                 "commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
                 "license": "repository terms audited in Phase57",
