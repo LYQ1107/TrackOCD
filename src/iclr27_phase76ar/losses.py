@@ -41,7 +41,10 @@ def ar_loss(outputs: dict[str, torch.Tensor], positive_indices: list[int], negat
             final_margin = final_pos - scores[neg_idx]
             safe_terms.append(F.relu(raw_margin - final_margin))
     safe = torch.stack(safe_terms).mean() if safe_terms else scores.new_zeros(())
-    gate_logit = outputs["bank_gate_logit"]
+    # ``score_bank`` repeats the query-level gate once per candidate so the
+    # caller can align tensors.  BCE is a query-level target; reduce the
+    # repeated values to one scalar rather than broadcasting a scalar label.
+    gate_logit = outputs["bank_gate_logit"].reshape(-1).mean()
     target = gate_logit.new_tensor(float(teacher))
     gate = F.binary_cross_entropy_with_logits(gate_logit, target)
     residual = (outputs["delta_bounded"] ** 2).mean()
