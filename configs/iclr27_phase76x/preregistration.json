@@ -1,0 +1,12 @@
+{
+  "phase": "Phase76X",
+  "hypothesis": "A symmetric uniform-marginal soft optimal-transport match over causal frame features can recover multi-frame correspondence missed by one-to-one Hungarian relation summaries.",
+  "primitive": "50-iteration Sinkhorn on frame cosine matrix, temperature 0.07, uniform marginals",
+  "raw_anchor": "score = 0.5 * frozen raw cosine + 0.5 * soft-OT score",
+  "candidate_universe": "unchanged Phase76AR legal_fit and memory_mimic banks; candidate prefix 16, query prefixes 1/2/4/8/16",
+  "training": "none; parameter-free diagnostic primitive",
+  "gpus": [],
+  "gate": {"delta_r1": 0.02, "delta_map": 0.01, "folds": 3, "hard_gap": "non-worse", "unsafe": 0},
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id", "text", "future", "held", "DEV+", "Q1", "public-new", "sealed labels", "StateMemory", "controller action"],
+  "public_or_sealed_access": false
+}
