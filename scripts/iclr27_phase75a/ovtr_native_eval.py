@@ -49,6 +49,7 @@ def install_capture(module: Any, native_path: Path, checkpoint_sha256: str) -> N
         image_id = int(self.path_to_img_id.get(file_path, -1)) if file_path is not None else -1
         video_id = int(self.path_to_video_id.get(file_path, -1)) if file_path is not None else -1
         self._phase75_context = {"frame_id": frame_id, "image_id": image_id, "video_id": video_id, "file_path": file_path}
+        self._phase75_frame_trace.append(dict(self._phase75_context))
         return original_detect(self, *args, **kwargs)
 
     def update(self: Any, bbox_xyxy: Any, identities: Any, labels: Any, scores: Any = None, masks: Any = None, dt_instances: Any = None) -> Any:
@@ -167,6 +168,7 @@ def main() -> None:
     from util.slconfig import SLConfig
     cfg = SLConfig.fromfile(args.config_file)
     module.OVTR_inference._phase75_native_records = []
+    module.OVTR_inference._phase75_frame_trace = []
     module.OVTR_inference._phase75_seen_ids = set()
     module.OVTR_inference._phase75_previous_ids = set()
     install_capture(module, native_path, digest.hexdigest())
@@ -178,6 +180,8 @@ def main() -> None:
     if not records:
         records = getattr(module, "_PHASE75_NATIVE_RECORDS", [])
     atomic_jsonl(native_path, records)
+    frame_trace = getattr(module.OVTR_inference, "_phase75_frame_trace", [])
+    atomic_jsonl(native_path.with_suffix(".frames.jsonl"), frame_trace)
     summary = {
         "protocol": "trackocd_phase75a_native_q0_control_replay",
         "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -188,6 +192,8 @@ def main() -> None:
         "video_ids": json.loads(args.video_ids) if args.video_ids else None,
         "native_lineage": str(native_path),
         "native_record_count": len(records),
+        "frame_trace_path": str(native_path.with_suffix(".frames.jsonl")),
+        "frame_trace_count": len(frame_trace),
         "labels_joined_before_model": False,
         "event_join_read": False,
     }
