@@ -38,7 +38,7 @@ def build_pair_cache(banks, table, path: Path, *, candidate_prefix: int = 16) ->
             }
     payload = {"phase": "Phase76A", "candidate_prefix": candidate_prefix, "prefixes": PREFIXES, "pair_count": len(entries), "entries": entries}
     path.parent.mkdir(parents=True, exist_ok=True)
-    fd, tmp = tempfile.mkstemp(prefix=f".{path.name}.", dir=str(path.parent)); os.close(fd)
+    fd, tmp = tempfile.mkstemp(prefix=f".{path.name}.", dir=str(path.parent))
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as h:
             json.dump(payload, h, sort_keys=True, separators=(",", ":")); h.write("\n"); h.flush(); os.fsync(h.fileno())
@@ -54,4 +54,3 @@ def load_pair_cache(path: Path) -> dict[str, Any]:
 
 def cache_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
-
