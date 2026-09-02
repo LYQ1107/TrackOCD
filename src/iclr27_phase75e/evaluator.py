@@ -89,8 +89,14 @@ def _score_adapted_records(
     query_keys = {str(r["query_key"]) for r in records}
     qcache = _adapted_sequences(model, table, query_keys, prefix, device)
     for key in all_keys:
-        p = support_prefix if support_prefix is not None and key not in query_keys else prefix
-        cache[(key, p)] = _adapted_sequences(model, table, {key}, p, device)[key]
+        # A legal support track can also appear as another query in the same
+        # validation bank.  Cache both causal views rather than letting the
+        # query-role branch shadow the support-prefix lookup.
+        needed_prefixes = {prefix}
+        if support_prefix is not None:
+            needed_prefixes.add(support_prefix)
+        for p in needed_prefixes:
+            cache[(key, p)] = _adapted_sequences(model, table, {key}, p, device)[key]
     out: list[dict[str, Any]] = []
     with torch.no_grad():
         for rec in records:
