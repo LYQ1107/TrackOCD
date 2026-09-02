@@ -6,7 +6,6 @@ from typing import Any
 import numpy as np
 import torch
 
-from src.iclr27_phase75d.legal_support import legal_records
 from src.iclr27_phase75d.protocol import FrozenTrackTable, PREFIXES
 from src.iclr27_phase75d.retrieval_metrics import aggregate_fold_metrics, score_records
 
@@ -14,6 +13,11 @@ from .pairwise_adapter import pairwise_torch_score
 
 def _load_global_builder():
     from scripts.iclr27_phase75d.run_pairwise_r import global_records as builder
+    return builder
+
+
+def _load_legal_builder():
+    from scripts.iclr27_phase75d.run_pairwise_r import legal_records as builder
     return builder
 
 
@@ -120,9 +124,10 @@ def evaluate_fold(
     R-global.  Legal support is never searched or synthesized.
     """
     rows: list[dict[str, Any]] = []
+    legal_builder = _load_legal_builder()
     for prefix in PREFIXES:
         global_rec, global_info = _global_records_light(table, fold, prefix, global_query_limit)
-        legal_rec, unevaluable, legal_info = legal_records(table, fold, set(table.sequences))
+        legal_rec, unevaluable, legal_info = legal_builder(table, fold, prefix)
         if legal_query_limit is not None:
             legal_rec = legal_rec[: int(legal_query_limit)]
         raw_global = score_records(global_rec)
