@@ -86,31 +86,36 @@ def load_train() -> tuple[dict[int, dict[str, Any]], dict[int, list[dict[str, An
 
 def load_q0(images: dict[int, dict[str, Any]], allowed_videos: set[int], gt_by_image: dict[int, list[dict[str, Any]]]) -> dict[int, dict[int, list[dict[str, Any]]]]:
     """Read Q0 JSON once and assign TRAIN-only post-hoc GT targets."""
-    import ijson
-
     out: dict[int, dict[int, list[dict[str, Any]]]] = collections.defaultdict(lambda: collections.defaultdict(list))
-    with Q0_JSON.open("rb") as f:
-        for row in ijson.items(f, "item"):
-            iid = int(row.get("image_id", -1)); vid = int(row.get("video_id", -1))
-            if vid not in allowed_videos or iid not in images:
-                continue
-            b = [float(x) for x in row["bbox"]]
-            box = np.asarray([b[0], b[1], b[0] + b[2], b[1] + b[3]], dtype=np.float32)
-            best_iou, best_track, best_category = 0.0, -1, -1
-            for gt in gt_by_image.get(iid, []):
-                score = box_iou(box, gt["bbox"])
-                if score > best_iou:
-                    best_iou, best_track, best_category = score, int(gt["track"]), int(gt["category"])
-            im = images[iid]
-            out[vid][iid].append({
-                "bbox_xyxy": box,
-                "base_score": float(row.get("score", 0.0)),
-                "frame_id": int(im.get("frame_index", 0)),
-                # Target metadata is consumed only while constructing labels.
-                "_gt_track": best_track if best_iou >= 0.5 else -1,
-                "_gt_category": best_category,
-                "_gt_iou": best_iou,
-            })
+    try:
+        import ijson  # type: ignore
+        iterator = ijson.items(Q0_JSON.open("rb"), "item")
+    except ModuleNotFoundError:
+        # The pinned environment does not ship ijson.  The frozen Q0 file is
+        # ~233 MB and fits well within the registered memory budget, so use the
+        # standard parser without changing any rows or ordering.
+        iterator = iter(json.loads(Q0_JSON.read_text()))
+    for row in iterator:
+        iid = int(row.get("image_id", -1)); vid = int(row.get("video_id", -1))
+        if vid not in allowed_videos or iid not in images:
+            continue
+        b = [float(x) for x in row["bbox"]]
+        box = np.asarray([b[0], b[1], b[0] + b[2], b[1] + b[3]], dtype=np.float32)
+        best_iou, best_track, best_category = 0.0, -1, -1
+        for gt in gt_by_image.get(iid, []):
+            score = box_iou(box, gt["bbox"])
+            if score > best_iou:
+                best_iou, best_track, best_category = score, int(gt["track"]), int(gt["category"])
+        im = images[iid]
+        out[vid][iid].append({
+            "bbox_xyxy": box,
+            "base_score": float(row.get("score", 0.0)),
+            "frame_id": int(im.get("frame_index", 0)),
+            # Target metadata is consumed only while constructing labels.
+            "_gt_track": best_track if best_iou >= 0.5 else -1,
+            "_gt_category": best_category,
+            "_gt_iou": best_iou,
+        })
     return out
 
 
