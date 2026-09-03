@@ -223,11 +223,12 @@ if torch is not None:
         or semantic identifier is used in a feature tensor.
         """
 
-        def __init__(self, max_miss: int = 8, max_tracks: int = 512, conservative: bool = False):
+        def __init__(self, max_miss: int = 8, max_tracks: int = 512, conservative: bool = False, history: bool = False):
             from scipy.optimize import linear_sum_assignment
             self.max_miss = int(max_miss)
             self.max_tracks = int(max_tracks)
             self.conservative = bool(conservative)
+            self.history = bool(history)
             # One evidence-based repair after the first route: the initial
             # geometry comparator over-merged (403 vs Q0's 1026 tracks).  The
             # fixed tighter gates below are a single registered P2 contract,
@@ -242,11 +243,15 @@ if torch is not None:
             db = np.asarray(det["bbox_xyxy"], dtype=np.float32)
             gap = max(0, min(32, int(frame_id) - int(track.last_frame)))
             ref = track.last_bbox + np.asarray(track.velocity, dtype=np.float32) * float(gap)
-            iou = _box_iou(db, ref)
             iw, ih = float(image_size[0]), float(image_size[1])
+            refs = [ref]
+            if self.history:
+                refs.extend([np.asarray(x, dtype=np.float32) for x in getattr(track, "recent_bboxes", [])[-7:]])
+            ious = [_box_iou(db, x) for x in refs]
+            iou = max(ious) if ious else 0.0
             dc = np.asarray([(db[0] + db[2]) / (2.0 * iw), (db[1] + db[3]) / (2.0 * ih)])
-            tc = np.asarray([(ref[0] + ref[2]) / (2.0 * iw), (ref[1] + ref[3]) / (2.0 * ih)])
-            centre = float(np.linalg.norm(dc - tc))
+            centres = [float(np.linalg.norm(dc - np.asarray([(x[0] + x[2]) / (2.0 * iw), (x[1] + x[3]) / (2.0 * ih)]))) for x in refs]
+            centre = min(centres) if centres else 1.0
             dw, dh = max(1e-4, (db[2] - db[0]) / iw), max(1e-4, (db[3] - db[1]) / ih)
             tw, th = max(1e-4, (ref[2] - ref[0]) / iw), max(1e-4, (ref[3] - ref[1]) / ih)
             shape = abs(float(np.log(dw / tw))) + abs(float(np.log(dh / th)))
@@ -265,20 +270,36 @@ if torch is not None:
             vel = np.asarray([t.velocity for t in tracks], dtype=np.float32)
             gaps = np.clip(np.asarray([int(frame_id) - int(t.last_frame) for t in tracks], dtype=np.float32), 0.0, 32.0)
             refs = last + vel * gaps[:, None]
-            ix0 = np.maximum(refs[:, None, 0], boxes[None, :, 0]); iy0 = np.maximum(refs[:, None, 1], boxes[None, :, 1])
-            ix1 = np.minimum(refs[:, None, 2], boxes[None, :, 2]); iy1 = np.minimum(refs[:, None, 3], boxes[None, :, 3])
+            if self.history:
+                recent = []
+                for t, ref in zip(tracks, refs):
+                    rb = [np.asarray(x, dtype=np.float32) for x in getattr(t, "recent_bboxes", [])[-7:]]
+                    rb = [ref] + rb
+                    while len(rb) < 8:
+                        rb.append(rb[-1])
+                    recent.append(np.stack(rb[:8]))
+                refs_k = np.stack(recent, axis=0)  # [T,K,4]
+            else:
+                refs_k = refs[:, None, :]
+            ix0 = np.maximum(refs_k[:, :, None, 0], boxes[None, None, :, 0]); iy0 = np.maximum(refs_k[:, :, None, 1], boxes[None, None, :, 1])
+            ix1 = np.minimum(refs_k[:, :, None, 2], boxes[None, None, :, 2]); iy1 = np.minimum(refs_k[:, :, None, 3], boxes[None, None, :, 3])
             inter = np.maximum(0.0, ix1 - ix0) * np.maximum(0.0, iy1 - iy0)
-            area_r = np.maximum(0.0, refs[:, 2] - refs[:, 0]) * np.maximum(0.0, refs[:, 3] - refs[:, 1])
+            area_r = np.maximum(0.0, refs_k[:, :, 2] - refs_k[:, :, 0]) * np.maximum(0.0, refs_k[:, :, 3] - refs_k[:, :, 1])
             area_d = np.maximum(0.0, boxes[:, 2] - boxes[:, 0]) * np.maximum(0.0, boxes[:, 3] - boxes[:, 1])
-            union = area_r[:, None] + area_d[None, :] - inter
-            iou = np.divide(inter, union, out=np.zeros_like(inter), where=union > 0)
+            union = area_r[:, :, None] + area_d[None, None, :] - inter
+            iou_all = np.divide(inter, union, out=np.zeros_like(inter), where=union > 0)
+            iou = iou_all.max(axis=1)
             iw, ih = float(image_size[0]), float(image_size[1])
             dc = (boxes[:, :2] + boxes[:, 2:4]) / (2.0 * np.asarray([iw, ih], dtype=np.float32))
-            tc = (refs[:, :2] + refs[:, 2:4]) / (2.0 * np.asarray([iw, ih], dtype=np.float32))
-            centre = np.linalg.norm(dc[None, :, :] - tc[:, None, :], axis=-1)
+            tc = (refs_k[:, :, :2] + refs_k[:, :, 2:4]) / (2.0 * np.asarray([iw, ih], dtype=np.float32))
+            centre_all = np.linalg.norm(dc[None, None, :, :] - tc[:, :, None, :], axis=-1)
+            centre = centre_all.min(axis=1)
             dw = np.maximum(1e-4, (boxes[:, 2] - boxes[:, 0]) / iw); dh = np.maximum(1e-4, (boxes[:, 3] - boxes[:, 1]) / ih)
-            tw = np.maximum(1e-4, (refs[:, 2] - refs[:, 0]) / iw); th = np.maximum(1e-4, (refs[:, 3] - refs[:, 1]) / ih)
-            shape = np.abs(np.log(dw[None, :] / tw[:, None])) + np.abs(np.log(dh[None, :] / th[:, None]))
+            tw = np.maximum(1e-4, (refs_k[:, :, 2] - refs_k[:, :, 0]) / iw); th = np.maximum(1e-4, (refs_k[:, :, 3] - refs_k[:, :, 1]) / ih)
+            shape_all = np.abs(np.log(dw[None, None, :] / tw[:, :, None])) + np.abs(np.log(dh[None, None, :] / th[:, :, None]))
+            # Use the same reference that supplied the best spatial cue.
+            best_idx = np.argmax(iou_all - 0.01 * centre_all, axis=1)
+            shape = np.take_along_axis(shape_all, best_idx[:, None, :], axis=1).squeeze(1)
             det_score = np.asarray([float(d.get("base_score", d.get("score", 0.0))) for d in dets], dtype=np.float32)
             tr_score = np.asarray([float(t.score_ema) for t in tracks], dtype=np.float32)
             score = 2.0 * iou + np.exp(-centre / 0.08) + 0.10 * det_score[None, :] + 0.05 * tr_score[:, None] - 0.05 * shape
@@ -306,12 +327,16 @@ if torch is not None:
                     previous_bbox = track.last_bbox.copy(); dt = max(1, int(frame_id) - int(track.last_frame)); current_bbox = np.asarray(det["bbox_xyxy"], dtype=np.float32)
                     delta = (current_bbox - previous_bbox) / float(dt)
                     track.velocity = 0.8 * np.asarray(track.velocity, dtype=np.float32) + 0.2 * delta
+                    if self.history:
+                        recent = list(getattr(track, "recent_bboxes", [])); recent.append(current_bbox.copy()); track.recent_bboxes = recent[-8:]
                     track.last_bbox = current_bbox; track.last_frame = int(frame_id); track.age += 1; track.hit_count += 1; track.miss_count = 0
                     track.score_ema = 0.8 * track.score_ema + 0.2 * float(det.get("base_score", det.get("score", 0.0)))
                     track.association_ema = 0.8 * track.association_ema + 0.2 * assoc_score
                     lifecycle, tid = "continuation", track.physical_track_id
                 else:
                     track = TrackState(np.asarray(det["bbox_xyxy"], dtype=np.float32), int(frame_id), np.zeros(8, dtype=np.float32), float(det.get("base_score", det.get("score", 0.0))), physical_track_id=self.next_id)
+                    if self.history:
+                        track.recent_bboxes = [track.last_bbox.copy()]
                     self.next_id += 1; self.tracks.append(track); lifecycle, tid, assoc_score = "birth", track.physical_track_id, float(det.get("base_score", 0.0))
                 row = dict(det); row.update({"assigned_track_slot": int(tid), "physical_track_id": int(tid), "association_score": assoc_score, "assignment_candidate_rank": int(det.get("candidate_rank", j)), "lifecycle_action": lifecycle, "track_age": int(track.age), "miss_count": int(track.miss_count), "learned_match_score": assoc_score, "geometry_match_score": assoc_score})
                 out.append(row)

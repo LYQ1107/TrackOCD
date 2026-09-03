@@ -151,6 +151,7 @@ def main() -> None:
     ap.add_argument("--appearance", action="store_true", help="use the registered causal RGB crop descriptor")
     ap.add_argument("--geometry", action="store_true", help="use the registered model-free geometry/motion comparator")
     ap.add_argument("--geometry-conservative", action="store_true", help="use the single registered conservative geometry repair")
+    ap.add_argument("--geometry-history", action="store_true", help="use the causal recent-box history comparator")
     ap.add_argument("--max-miss", type=int, default=8, help="causal dormant horizon for the registered lifecycle route")
     args = ap.parse_args()
 
@@ -163,7 +164,7 @@ def main() -> None:
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     ckpt = Path(args.checkpoint) if args.checkpoint else Path("/dev/null")
-    stream = mod.run_stream(ckpt, args.device, use_motion=args.motion, max_miss=args.max_miss, use_appearance=args.appearance, geometry=args.geometry, geometry_conservative=args.geometry_conservative)
+    stream = mod.run_stream(ckpt, args.device, use_motion=args.motion, max_miss=args.max_miss, use_appearance=args.appearance, geometry=args.geometry, geometry_conservative=args.geometry_conservative, geometry_history=args.geometry_history)
     gt_by_image = load_gt()
     native = load_native()
     result = {
@@ -184,6 +185,7 @@ def main() -> None:
             "causal_appearance_descriptor": bool(args.appearance),
             "geometry_only": bool(args.geometry),
             "geometry_conservative": bool(args.geometry_conservative),
+            "geometry_history": bool(args.geometry_history),
             "max_miss": int(args.max_miss),
         },
         "learned": physical_summary(stream, gt_by_image),
