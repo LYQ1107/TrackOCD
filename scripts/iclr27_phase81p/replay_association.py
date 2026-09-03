@@ -33,9 +33,9 @@ def load_csv():
 def load_event_records():
     return [json.loads(x) for x in EVENT_OBS.read_text().splitlines() if x.strip()]
 
-def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False, max_miss: int = 8):
+def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False, max_miss: int = 8, use_appearance: bool = False):
     import torch
-    from src.iclr27_phase81p.association import AssociationTransformer, CausalAssociationRuntime
+    from src.iclr27_phase81p.association import AssociationTransformer, CausalAssociationRuntime, crop_descriptor
     state=torch.load(str(ckpt),map_location='cpu'); model=AssociationTransformer(); model.load_state_dict(state.get('model',state)); runtime=CausalAssociationRuntime(model,device=device,max_miss=int(max_miss),match_margin=0.0,max_tracks=256,use_motion=use_motion)
     frames=collections.defaultdict(lambda:collections.defaultdict(list)); allowed=None
     if max_videos is not None:
@@ -52,7 +52,12 @@ def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False,
         for (frame,image),dets in sorted(frames[v].items()):
             # Appearance is optional in this first physical route; geometry,
             # score and causal history remain fully available.
-            for d in dets: d['appearance']=np.zeros(8,np.float32)
+            for d in dets:
+                if use_appearance:
+                    frame_path=Path('/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/frames')/str(d.get('file_path',''))
+                    d['appearance']=crop_descriptor(str(frame_path),d['bbox_xyxy']) if frame_path.is_file() else np.zeros(8,np.float32)
+                else:
+                    d['appearance']=np.zeros(8,np.float32)
             out.extend(runtime.step(dets,frame))
     return out
 
@@ -79,8 +84,8 @@ def event_metrics(out, events):
     return {'aggregate':agg,'events':result}
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--checkpoint',required=True); ap.add_argument('--device',default='cuda:0'); ap.add_argument('--tag',default='formal'); ap.add_argument('--max-videos',type=int); ap.add_argument('--motion',action='store_true'); ap.add_argument('--max-miss',type=int,default=8); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument('--checkpoint',required=True); ap.add_argument('--device',default='cuda:0'); ap.add_argument('--tag',default='formal'); ap.add_argument('--max-videos',type=int); ap.add_argument('--motion',action='store_true'); ap.add_argument('--appearance',action='store_true'); ap.add_argument('--max-miss',type=int,default=8); args=ap.parse_args()
     import torch
-    ck=Path(args.checkpoint); events=load_event_records(); stream=run_stream(ck,args.device,args.max_videos,use_motion=args.motion,max_miss=args.max_miss); out=event_metrics(stream,events); result={'schema_version':'phase81p.replay_metrics.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checkpoint':str(ck.resolve()),'checkpoint_sha256':hashlib.sha256(ck.read_bytes()).hexdigest(),'event_observability_input':str(EVENT_OBS),'event_observability_sha256':hashlib.sha256(EVENT_OBS.read_bytes()).hexdigest(),'aggregate':out['aggregate'],'events':out['events'],'protocol':{'positive_denominator':76,'negative_denominator':76,'prefixes':[1,2,4,8,16],'labels_joined_before_inference':False,'future_rows_or_tracks':False,'ids_as_model_input':False,'causal_motion_prediction':bool(args.motion),'max_miss':int(args.max_miss)}}
+    ck=Path(args.checkpoint); events=load_event_records(); stream=run_stream(ck,args.device,args.max_videos,use_motion=args.motion,max_miss=args.max_miss,use_appearance=args.appearance); out=event_metrics(stream,events); result={'schema_version':'phase81p.replay_metrics.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checkpoint':str(ck.resolve()),'checkpoint_sha256':hashlib.sha256(ck.read_bytes()).hexdigest(),'event_observability_input':str(EVENT_OBS),'event_observability_sha256':hashlib.sha256(EVENT_OBS.read_bytes()).hexdigest(),'aggregate':out['aggregate'],'events':out['events'],'protocol':{'positive_denominator':76,'negative_denominator':76,'prefixes':[1,2,4,8,16],'labels_joined_before_inference':False,'future_rows_or_tracks':False,'ids_as_model_input':False,'causal_motion_prediction':bool(args.motion),'causal_appearance_descriptor':bool(args.appearance),'max_miss':int(args.max_miss)}}
     path=ROOT/f'outputs/iclr27_phase81p/metrics/replay_{args.tag}.json'; path.parent.mkdir(parents=True,exist_ok=True); tmp=path.with_name('.'+path.name+'.tmp'); tmp.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n'); os.replace(tmp,path); print(json.dumps(result['aggregate'],indent=2))
 if __name__=='__main__': main()
