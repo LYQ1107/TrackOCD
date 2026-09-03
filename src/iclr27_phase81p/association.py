@@ -250,15 +250,43 @@ if torch is not None:
             plausible = bool(iou > 0.02 or centre <= 0.20)
             return float(score), plausible
 
+        @staticmethod
+        def _score_matrix(dets: Sequence[Dict[str, object]], tracks: Sequence[TrackState], frame_id: int, image_size: Tuple[float, float]) -> Tuple[np.ndarray, np.ndarray]:
+            """Vectorized equivalent of ``_score`` for one frame."""
+            if not tracks or not dets:
+                return np.zeros((len(tracks), len(dets)), dtype=np.float32), np.zeros((len(tracks), len(dets)), dtype=bool)
+            boxes = np.asarray([d["bbox_xyxy"] for d in dets], dtype=np.float32)
+            last = np.asarray([t.last_bbox for t in tracks], dtype=np.float32)
+            vel = np.asarray([t.velocity for t in tracks], dtype=np.float32)
+            gaps = np.clip(np.asarray([int(frame_id) - int(t.last_frame) for t in tracks], dtype=np.float32), 0.0, 32.0)
+            refs = last + vel * gaps[:, None]
+            ix0 = np.maximum(refs[:, None, 0], boxes[None, :, 0]); iy0 = np.maximum(refs[:, None, 1], boxes[None, :, 1])
+            ix1 = np.minimum(refs[:, None, 2], boxes[None, :, 2]); iy1 = np.minimum(refs[:, None, 3], boxes[None, :, 3])
+            inter = np.maximum(0.0, ix1 - ix0) * np.maximum(0.0, iy1 - iy0)
+            area_r = np.maximum(0.0, refs[:, 2] - refs[:, 0]) * np.maximum(0.0, refs[:, 3] - refs[:, 1])
+            area_d = np.maximum(0.0, boxes[:, 2] - boxes[:, 0]) * np.maximum(0.0, boxes[:, 3] - boxes[:, 1])
+            union = area_r[:, None] + area_d[None, :] - inter
+            iou = np.divide(inter, union, out=np.zeros_like(inter), where=union > 0)
+            iw, ih = float(image_size[0]), float(image_size[1])
+            dc = (boxes[:, :2] + boxes[:, 2:4]) / (2.0 * np.asarray([iw, ih], dtype=np.float32))
+            tc = (refs[:, :2] + refs[:, 2:4]) / (2.0 * np.asarray([iw, ih], dtype=np.float32))
+            centre = np.linalg.norm(dc[None, :, :] - tc[:, None, :], axis=-1)
+            dw = np.maximum(1e-4, (boxes[:, 2] - boxes[:, 0]) / iw); dh = np.maximum(1e-4, (boxes[:, 3] - boxes[:, 1]) / ih)
+            tw = np.maximum(1e-4, (refs[:, 2] - refs[:, 0]) / iw); th = np.maximum(1e-4, (refs[:, 3] - refs[:, 1]) / ih)
+            shape = np.abs(np.log(dw[None, :] / tw[:, None])) + np.abs(np.log(dh[None, :] / th[:, None]))
+            det_score = np.asarray([float(d.get("base_score", d.get("score", 0.0))) for d in dets], dtype=np.float32)
+            tr_score = np.asarray([float(t.score_ema) for t in tracks], dtype=np.float32)
+            score = 2.0 * iou + np.exp(-centre / 0.08) + 0.10 * det_score[None, :] + 0.05 * tr_score[:, None] - 0.05 * shape
+            plausible = (iou > 0.02) | (centre <= 0.20)
+            return score.astype(np.float32), plausible
+
         def step(self, detections: Sequence[Dict[str, object]], frame_id: int, image_size: Tuple[float, float] = (640.0, 480.0)) -> List[Dict[str, object]]:
             dets = [dict(x) for x in detections]
             active = [t for t in self.tracks if t.miss_count <= self.max_miss]
             scores = np.zeros((len(active), len(dets)), dtype=np.float32)
             plausible = np.zeros_like(scores, dtype=bool)
             if active and dets:
-                for r, track in enumerate(active):
-                    for c, det in enumerate(dets):
-                        scores[r, c], plausible[r, c] = self._score(det, track, frame_id, image_size)
+                scores, plausible = self._score_matrix(dets, active, frame_id, image_size)
                 rows, cols = self._hungarian(-scores)
                 matches = {(int(r), int(c)) for r, c in zip(rows, cols) if plausible[r, c]}
             else:
