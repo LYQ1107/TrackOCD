@@ -6,6 +6,7 @@ ROUTE="${1:?route name required}"
 TAG="${2:-formal}"
 CKPT_ROOT="${3:?checkpoint root required}"
 MOTION="${4:-0}"
+MAX_MISS="${5:-8}"
 mkdir -p "$ROOT/outputs/iclr27_phase81p/completion" "$ROOT/outputs/iclr27_phase81p/metrics"
 declare -a PIDS=() GPUS=(4 5 6 7)
 for fold in 0 1 2 3; do
@@ -19,7 +20,7 @@ import json,sys,os,datetime
 print(json.dumps({'phase':'Phase81P+','route':sys.argv[4],'fold':int(sys.argv[1]),'gpu':int(sys.argv[2]),'tag':sys.argv[3],'pid':os.getpid(),'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}))
 PY
   log="/data2/usr_for_deadline/trackocd_phase81p/replay_${ROUTE}_${TAG}_f${fold}.log"
-  replay_args=(--checkpoint "$CKPT_ROOT/fold${fold}/best.pt" --device cuda:0 --tag "${ROUTE}_${TAG}_f${fold}")
+  replay_args=(--checkpoint "$CKPT_ROOT/fold${fold}/best.pt" --device cuda:0 --tag "${ROUTE}_${TAG}_f${fold}" --max-miss "$MAX_MISS")
   [[ "$MOTION" == "1" ]] && replay_args+=(--motion)
   CUDA_VISIBLE_DEVICES="$gpu" PYTHONPATH="$ROOT" "$PY" "$ROOT/scripts/iclr27_phase81p/replay_association.py" "${replay_args[@]}" >"$log" 2>&1 &
   PIDS+=("$!")

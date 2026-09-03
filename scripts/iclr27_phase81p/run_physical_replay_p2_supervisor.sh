@@ -5,6 +5,7 @@ PY="/home/lwr/anaconda3/envs/ovtr/bin/python"
 TAG="${1:-newlabel}"
 ROUTE="${2:-p2_newlabel}"
 MOTION="${3:-0}"
+MAX_MISS="${4:-8}"
 mkdir -p "$ROOT/outputs/iclr27_phase81p/completion" "$ROOT/outputs/iclr27_phase81p/metrics"
 declare -a PIDS=() GPUS=(4 5 6 7)
 for fold in 0 1 2 3; do
@@ -18,7 +19,7 @@ import json,sys,os,datetime
 print(json.dumps({'phase':'Phase81P+','route':'p2_newlabel','fold':int(sys.argv[1]),'gpu':int(sys.argv[2]),'tag':sys.argv[3],'pid':os.getpid(),'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}))
 PY
   log="/data2/usr_for_deadline/trackocd_phase81p/physical_${ROUTE}_${TAG}_f${fold}.log"
-  eval_args=(--checkpoint "$ROOT/outputs/iclr27_phase81p/checkpoints/${ROUTE}/fold${fold}/best.pt" --device cuda:0 --tag "${ROUTE}_${TAG}_f${fold}")
+  eval_args=(--checkpoint "$ROOT/outputs/iclr27_phase81p/checkpoints/${ROUTE}/fold${fold}/best.pt" --device cuda:0 --tag "${ROUTE}_${TAG}_f${fold}" --max-miss "$MAX_MISS")
   [[ "$MOTION" == "1" ]] && eval_args+=(--motion)
   CUDA_VISIBLE_DEVICES="$gpu" PYTHONPATH="$ROOT" "$PY" "$ROOT/scripts/iclr27_phase81p/evaluate_physical_replay.py" "${eval_args[@]}" >"$log" 2>&1 &
   PIDS+=("$!")

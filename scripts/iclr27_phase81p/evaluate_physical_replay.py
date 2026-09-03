@@ -148,6 +148,7 @@ def main() -> None:
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--tag", default="physical_formal")
     ap.add_argument("--motion", action="store_true", help="use the registered causal velocity route")
+    ap.add_argument("--max-miss", type=int, default=8, help="causal dormant horizon for the registered lifecycle route")
     args = ap.parse_args()
 
     # Import lazily so this evaluator shares exactly the Phase81P runtime.
@@ -159,7 +160,7 @@ def main() -> None:
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     ckpt = Path(args.checkpoint)
-    stream = mod.run_stream(ckpt, args.device, use_motion=args.motion)
+    stream = mod.run_stream(ckpt, args.device, use_motion=args.motion, max_miss=args.max_miss)
     gt_by_image = load_gt()
     native = load_native()
     result = {
@@ -177,6 +178,7 @@ def main() -> None:
             "positive_denominator": 76,
             "negative_denominator": 76,
             "causal_motion_prediction": bool(args.motion),
+            "max_miss": int(args.max_miss),
         },
         "learned": physical_summary(stream, gt_by_image),
         "q0_native": physical_summary(native, gt_by_image),
