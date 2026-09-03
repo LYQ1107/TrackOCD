@@ -13,6 +13,7 @@ CKPT_ROOT="${3:?checkpoint root required}"
 MOTION="${4:-0}"
 MAX_MISS="${5:-8}"
 APPEARANCE="${6:-0}"
+RESOLUTION_AWARE="${7:-0}"
 
 mkdir -p "$ROOT/outputs/iclr27_phase81p/completion" "$ROOT/outputs/iclr27_phase81p/metrics"
 declare -a PIDS=() GPUS=(4 5 6 7)
@@ -43,6 +44,7 @@ PY
   )
   [[ "$MOTION" == "1" ]] && eval_args+=(--motion)
   [[ "$APPEARANCE" == "1" ]] && eval_args+=(--appearance)
+  [[ "$RESOLUTION_AWARE" == "1" ]] && eval_args+=(--resolution-aware)
   CUDA_VISIBLE_DEVICES="$gpu" PYTHONPATH="$ROOT" "$PY" \
     "$ROOT/scripts/iclr27_phase81p/evaluate_physical_replay.py" \
     "${eval_args[@]}" >"$log" 2>&1 &

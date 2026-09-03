@@ -8,6 +8,7 @@ CKPT_ROOT="${3:?checkpoint root required}"
 MOTION="${4:-0}"
 MAX_MISS="${5:-8}"
 APPEARANCE="${6:-0}"
+RESOLUTION_AWARE="${7:-0}"
 mkdir -p "$ROOT/outputs/iclr27_phase81p/completion" "$ROOT/outputs/iclr27_phase81p/metrics"
 declare -a PIDS=() GPUS=(4 5 6 7)
 for fold in 0 1 2 3; do
@@ -24,6 +25,7 @@ PY
   replay_args=(--checkpoint "$CKPT_ROOT/fold${fold}/best.pt" --device cuda:0 --tag "${ROUTE}_${TAG}_f${fold}" --max-miss "$MAX_MISS")
   [[ "$MOTION" == "1" ]] && replay_args+=(--motion)
   [[ "$APPEARANCE" == "1" ]] && replay_args+=(--appearance)
+  [[ "$RESOLUTION_AWARE" == "1" ]] && replay_args+=(--resolution-aware)
   CUDA_VISIBLE_DEVICES="$gpu" PYTHONPATH="$ROOT" "$PY" "$ROOT/scripts/iclr27_phase81p/replay_association.py" "${replay_args[@]}" >"$log" 2>&1 &
   PIDS+=("$!")
   echo "launched replay fold=$fold gpu=$gpu pid=${PIDS[-1]} route=$ROUTE"

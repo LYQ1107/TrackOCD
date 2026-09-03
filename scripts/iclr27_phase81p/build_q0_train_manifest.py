@@ -119,7 +119,7 @@ def load_q0(images: dict[int, dict[str, Any]], allowed_videos: set[int], gt_by_i
     return out
 
 
-def make_examples(frame_map: dict[int, list[dict[str, Any]]], image_meta: dict[int, dict[str, Any]], limit: int, use_motion: bool, allowed_categories: set[int]) -> tuple[np.ndarray, np.ndarray, dict[str, Any]]:
+def make_examples(frame_map: dict[int, list[dict[str, Any]]], image_meta: dict[int, dict[str, Any]], limit: int, use_motion: bool, allowed_categories: set[int], resolution_aware: bool = False) -> tuple[np.ndarray, np.ndarray, dict[str, Any]]:
     from src.iclr27_phase81p.association import pair_features
 
     x_rows: list[np.ndarray] = []
@@ -148,7 +148,11 @@ def make_examples(frame_map: dict[int, list[dict[str, Any]]], image_meta: dict[i
                      "last_frame": int(h["frame_id"]), "velocity": h.get("velocity", np.zeros(4, dtype=np.float32)),
                      "age": int(h["age"]), "miss_count": max(0, pos - int(h["pos"])), "score_ema": float(h["score"]),
                      "association_ema": 0.0, "hit_count": int(h["age"])}
-                feats.append(pair_features(d, t, use_motion=use_motion))
+                if resolution_aware:
+                    size = (float(image_meta[iid].get("width", 640)), float(image_meta[iid].get("height", 480)))
+                    feats.append(pair_features(d, t, image_size=size, use_motion=use_motion))
+                else:
+                    feats.append(pair_features(d, t, use_motion=use_motion))
                 if gt_track >= 0 and int(h["gt_track"]) == gt_track and target == PAD_CANDIDATES:
                     target = j
             arr = np.zeros((PAD_CANDIDATES, PAIR_DIM), dtype=np.float32)
@@ -186,7 +190,7 @@ def make_examples(frame_map: dict[int, list[dict[str, Any]]], image_meta: dict[i
     return np.stack(x_rows), np.asarray(y_rows, dtype=np.int64), dict(stats)
 
 
-def build_fold(fold: int, q0: dict[int, dict[int, list[dict[str, Any]]]], images: dict[int, dict[str, Any]], categories: set[int], limit_fit: int, limit_val: int, data_dir: Path, use_motion: bool) -> dict[str, Any]:
+def build_fold(fold: int, q0: dict[int, dict[int, list[dict[str, Any]]]], images: dict[int, dict[str, Any]], categories: set[int], limit_fit: int, limit_val: int, data_dir: Path, use_motion: bool, resolution_aware: bool = False) -> dict[str, Any]:
     held_categories = {c for c in categories if c % 4 == fold}
     val_videos = {v for v in q0 if v % 4 == fold}
     fit_videos = set(q0) - val_videos
@@ -196,7 +200,7 @@ def build_fold(fold: int, q0: dict[int, dict[int, list[dict[str, Any]]]], images
             # Categories are TRAIN metadata only; enforce category-disjointness
             # by retaining a video when its annotations include the fold role.
             merged.update(q0[v])
-        return make_examples(merged, images, limit, use_motion, allowed_categories)
+        return make_examples(merged, images, limit, use_motion, allowed_categories, resolution_aware=resolution_aware)
     fit_x, fit_y, fit_stats = select(fit_videos, categories - held_categories, limit_fit)
     val_x, val_y, val_stats = select(val_videos, held_categories, limit_val)
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -213,12 +217,13 @@ def main() -> None:
     ap.add_argument("--q0-json", type=Path, default=Q0_JSON)
     ap.add_argument("--fit-limit", type=int, default=150000)
     ap.add_argument("--val-limit", type=int, default=60000)
+    ap.add_argument("--resolution-aware", action="store_true", help="normalize pair geometry by each TRAIN frame's recorded width/height")
     args = ap.parse_args()
     np.random.seed(SEED)
     images, gt_by_image, videos, categories = load_train()
     q0 = load_q0(images, videos, gt_by_image, args.q0_json)
-    folds = [build_fold(f, q0, images, categories, args.fit_limit, args.val_limit, DATA_ROOT / args.route_tag, args.motion) for f in range(4)]
-    result = {"schema_version": "phase81p.q0_aligned_manifest.v1", "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(), "seed": SEED, "route_tag": args.route_tag, "q0_json": str(args.q0_json), "q0_json_sha256": sha256(args.q0_json), "train_annotations": str(TRAIN_JSON), "train_annotations_sha256": sha256(TRAIN_JSON), "excluded_event_videos": sorted(event_videos()), "video_count": len(videos), "category_count": len(categories), "q0_videos_loaded": len(q0), "motion_features": bool(args.motion), "history_horizon": HISTORY_HORIZON, "candidate_width": PAD_CANDIDATES, "folds": folds, "data_dir": str(DATA_ROOT / args.route_tag), "inference_tensor_forbidden": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt"], "label_rule": "TRAIN-only max IoU >= 0.5 assigns a post-hoc GT track target; no label field is serialized in x"}
+    folds = [build_fold(f, q0, images, categories, args.fit_limit, args.val_limit, DATA_ROOT / args.route_tag, args.motion, resolution_aware=args.resolution_aware) for f in range(4)]
+    result = {"schema_version": "phase81p.q0_aligned_manifest.v1", "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(), "seed": SEED, "route_tag": args.route_tag, "q0_json": str(args.q0_json), "q0_json_sha256": sha256(args.q0_json), "train_annotations": str(TRAIN_JSON), "train_annotations_sha256": sha256(TRAIN_JSON), "excluded_event_videos": sorted(event_videos()), "video_count": len(videos), "category_count": len(categories), "q0_videos_loaded": len(q0), "motion_features": bool(args.motion), "resolution_aware": bool(args.resolution_aware), "history_horizon": HISTORY_HORIZON, "candidate_width": PAD_CANDIDATES, "folds": folds, "data_dir": str(DATA_ROOT / args.route_tag), "inference_tensor_forbidden": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt"], "label_rule": "TRAIN-only max IoU >= 0.5 assigns a post-hoc GT track target; no label field is serialized in x"}
     atomic_json(OUT_ROOT / args.route_tag / "train_manifest.json", result)
     atomic_json(OUT_ROOT / args.route_tag / "supervision_inventory.json", result)
     print(json.dumps(result, indent=2, sort_keys=True))

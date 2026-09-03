@@ -33,7 +33,7 @@ def load_csv():
 def load_event_records():
     return [json.loads(x) for x in EVENT_OBS.read_text().splitlines() if x.strip()]
 
-def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False, max_miss: int = 8, use_appearance: bool = False, geometry: bool = False, geometry_conservative: bool = False, geometry_history: bool = False):
+def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False, max_miss: int = 8, use_appearance: bool = False, geometry: bool = False, geometry_conservative: bool = False, geometry_history: bool = False, resolution_aware: bool = False):
     import torch
     from src.iclr27_phase81p.association import AssociationTransformer, CausalAssociationRuntime, CausalGeometryRuntime, crop_descriptor
     if geometry:
@@ -49,7 +49,24 @@ def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False,
             x=json.loads(line); v=int(x['video_id']);
             if allowed is not None and v not in allowed:continue
             if x.get('bbox_xyxy') is not None: frames[v][(int(x.get('frame_id',0)),int(x.get('image_id',-1)))].append(x)
-    out=[]; 
+    out=[]
+    image_size_cache = {}
+    def current_image_size(dets):
+        if not resolution_aware:
+            return (640.0, 480.0)
+        from PIL import Image
+        for det in dets:
+            fp = Path('/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/frames') / str(det.get('file_path', ''))
+            key = str(fp)
+            if key in image_size_cache:
+                return image_size_cache[key]
+            try:
+                with Image.open(fp) as im:
+                    image_size_cache[key] = (float(im.width), float(im.height))
+                    return image_size_cache[key]
+            except Exception:
+                continue
+        return (640.0, 480.0)
     for v in sorted(frames):
         runtime.tracks=[]; runtime.next_id=0
         for (frame,image),dets in sorted(frames[v].items()):
@@ -61,7 +78,7 @@ def run_stream(ckpt:Path, device:str, max_videos=None, use_motion: bool = False,
                     d['appearance']=crop_descriptor(str(frame_path),d['bbox_xyxy']) if frame_path.is_file() else np.zeros(8,np.float32)
                 else:
                     d['appearance']=np.zeros(8,np.float32)
-            out.extend(runtime.step(dets,frame))
+            out.extend(runtime.step(dets,frame,image_size=current_image_size(dets)))
     return out
 
 def event_metrics(out, events):
@@ -87,8 +104,8 @@ def event_metrics(out, events):
     return {'aggregate':agg,'events':result}
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--checkpoint',required=False,default=''); ap.add_argument('--device',default='cuda:0'); ap.add_argument('--tag',default='formal'); ap.add_argument('--max-videos',type=int); ap.add_argument('--motion',action='store_true'); ap.add_argument('--appearance',action='store_true'); ap.add_argument('--geometry',action='store_true'); ap.add_argument('--geometry-conservative',action='store_true'); ap.add_argument('--geometry-history',action='store_true'); ap.add_argument('--max-miss',type=int,default=8); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument('--checkpoint',required=False,default=''); ap.add_argument('--device',default='cuda:0'); ap.add_argument('--tag',default='formal'); ap.add_argument('--max-videos',type=int); ap.add_argument('--motion',action='store_true'); ap.add_argument('--appearance',action='store_true'); ap.add_argument('--geometry',action='store_true'); ap.add_argument('--geometry-conservative',action='store_true'); ap.add_argument('--geometry-history',action='store_true'); ap.add_argument('--resolution-aware',action='store_true'); ap.add_argument('--max-miss',type=int,default=8); args=ap.parse_args()
     import torch
-    ck=Path(args.checkpoint) if args.checkpoint else Path('/dev/null'); events=load_event_records(); stream=run_stream(ck,args.device,args.max_videos,use_motion=args.motion,max_miss=args.max_miss,use_appearance=args.appearance,geometry=args.geometry,geometry_conservative=args.geometry_conservative,geometry_history=args.geometry_history); out=event_metrics(stream,events); result={'schema_version':'phase81p.replay_metrics.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checkpoint':str(ck.resolve()) if not args.geometry else None,'checkpoint_sha256':hashlib.sha256(ck.read_bytes()).hexdigest() if not args.geometry else None,'event_observability_input':str(EVENT_OBS),'event_observability_sha256':hashlib.sha256(EVENT_OBS.read_bytes()).hexdigest(),'aggregate':out['aggregate'],'events':out['events'],'protocol':{'positive_denominator':76,'negative_denominator':76,'prefixes':[1,2,4,8,16],'labels_joined_before_inference':False,'future_rows_or_tracks':False,'ids_as_model_input':False,'causal_motion_prediction':bool(args.motion),'causal_appearance_descriptor':bool(args.appearance),'geometry_only':bool(args.geometry),'geometry_conservative':bool(args.geometry_conservative),'geometry_history':bool(args.geometry_history),'max_miss':int(args.max_miss)}}
+    ck=Path(args.checkpoint) if args.checkpoint else Path('/dev/null'); events=load_event_records(); stream=run_stream(ck,args.device,args.max_videos,use_motion=args.motion,max_miss=args.max_miss,use_appearance=args.appearance,geometry=args.geometry,geometry_conservative=args.geometry_conservative,geometry_history=args.geometry_history,resolution_aware=args.resolution_aware); out=event_metrics(stream,events); result={'schema_version':'phase81p.replay_metrics.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checkpoint':str(ck.resolve()) if not args.geometry else None,'checkpoint_sha256':hashlib.sha256(ck.read_bytes()).hexdigest() if not args.geometry else None,'event_observability_input':str(EVENT_OBS),'event_observability_sha256':hashlib.sha256(EVENT_OBS.read_bytes()).hexdigest(),'aggregate':out['aggregate'],'events':out['events'],'protocol':{'positive_denominator':76,'negative_denominator':76,'prefixes':[1,2,4,8,16],'labels_joined_before_inference':False,'future_rows_or_tracks':False,'ids_as_model_input':False,'causal_motion_prediction':bool(args.motion),'causal_appearance_descriptor':bool(args.appearance),'geometry_only':bool(args.geometry),'geometry_conservative':bool(args.geometry_conservative),'geometry_history':bool(args.geometry_history),'resolution_aware':bool(args.resolution_aware),'max_miss':int(args.max_miss)}}
     path=ROOT/f'outputs/iclr27_phase81p/metrics/replay_{args.tag}.json'; path.parent.mkdir(parents=True,exist_ok=True); tmp=path.with_name('.'+path.name+'.tmp'); tmp.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n'); os.replace(tmp,path); print(json.dumps(result['aggregate'],indent=2))
 if __name__=='__main__': main()
