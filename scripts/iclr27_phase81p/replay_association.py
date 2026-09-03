@@ -36,7 +36,7 @@ def load_event_records():
 def run_stream(ckpt:Path, device:str, max_videos=None):
     import torch
     from src.iclr27_phase81p.association import AssociationTransformer, CausalAssociationRuntime
-    state=torch.load(str(ckpt),map_location='cpu'); model=AssociationTransformer(); model.load_state_dict(state.get('model',state)); runtime=CausalAssociationRuntime(model,device=device,max_miss=8,match_margin=0.0)
+    state=torch.load(str(ckpt),map_location='cpu'); model=AssociationTransformer(); model.load_state_dict(state.get('model',state)); runtime=CausalAssociationRuntime(model,device=device,max_miss=8,match_margin=0.0,max_tracks=256)
     frames=collections.defaultdict(lambda:collections.defaultdict(list)); allowed=None
     if max_videos is not None:
         vids=sorted({int(x['source_video']) for x in load_event_records()}|{int(x['target_video']) for x in load_event_records()}); allowed=set(vids[:max_videos])

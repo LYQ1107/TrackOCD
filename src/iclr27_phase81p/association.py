@@ -145,10 +145,10 @@ if torch is not None:
     class CausalAssociationRuntime:
         """One-to-one causal Hungarian association over Q0 detections."""
 
-        def __init__(self, model: AssociationTransformer, device: str = "cpu", max_miss: int = 8, match_margin: float = 0.0):
+        def __init__(self, model: AssociationTransformer, device: str = "cpu", max_miss: int = 8, match_margin: float = 0.0, max_tracks: int = 256):
             from scipy.optimize import linear_sum_assignment
             self.model = model.to(device).eval(); self.device = device
-            self.max_miss = int(max_miss); self.match_margin = float(match_margin)
+            self.max_miss = int(max_miss); self.match_margin = float(match_margin); self.max_tracks = int(max_tracks)
             self._hungarian = linear_sum_assignment; self.tracks: List[TrackState] = []; self.next_id = 0
 
         @torch.no_grad()
@@ -183,4 +183,10 @@ if torch is not None:
                 if r not in matched_indices:
                     track.miss_count += 1; track.age += 1
             self.tracks = [t for t in self.tracks if t.miss_count <= self.max_miss]
+            if len(self.tracks) > self.max_tracks:
+                # Fixed causal memory bound: retain recent, well-supported
+                # tracks. This prevents a low-confidence model from creating
+                # an unbounded candidate matrix; no proposal row is dropped.
+                self.tracks.sort(key=lambda t: (t.miss_count, -t.hit_count, -t.score_ema, t.physical_track_id))
+                self.tracks = self.tracks[:self.max_tracks]
             return out
