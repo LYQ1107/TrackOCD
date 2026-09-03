@@ -32,6 +32,10 @@ HORIZON = 16
 MAX_CANDIDATES = 16
 APP_DIM = 32
 OBS_DIM = 49
+PROJECTION_SEED = 82017
+_projection_rng = np.random.default_rng(PROJECTION_SEED)
+APP_PROJECTION = _projection_rng.normal(0.0, 1.0, size=(768, APP_DIM)).astype(np.float32)
+APP_PROJECTION /= np.maximum(np.linalg.norm(APP_PROJECTION, axis=0, keepdims=True), 1e-8)
 
 
 def sha256(path: Path) -> str:
@@ -120,7 +124,9 @@ def observation(row: dict[str, Any], image: dict[str, Any], feature: np.ndarray,
         gap = min(HORIZON, float(frame - previous["frame"])) / HORIZON
         age = min(32, int(previous.get("age", 1)) + 1) / 32.0
         hit = min(32, int(previous.get("age", 1)) + 1) / max(1.0, min(32, int(previous.get("age", 1)) + 1))
-    app = np.asarray(feature, dtype=np.float32)
+    # A fixed, TRAIN-independent projection keeps the actual DINOv2
+    # appearance signal while making the causal observation tensor compact.
+    app = np.asarray(feature, dtype=np.float32) @ APP_PROJECTION
     app /= max(float(np.linalg.norm(app)), 1e-8)
     # 8 bbox/center/size + score/gap/age/hit + 4 velocity + 32 fixed DINOv2
     out = np.concatenate((b, c, wh, np.asarray([
@@ -266,7 +272,7 @@ def main() -> None:
         "schema_version": "trackocd.phase82p.residual_manifest.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "seed": SEED,
         "q0_path": str(Q0_JSON), "q0_sha256": sha256(Q0_JSON), "train_annotations": str(TRAIN_JSON), "train_annotations_sha256": sha256(TRAIN_JSON), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE),
         "event_videos_excluded": sorted(event_videos()), "videos": vids, "video_count": len(vids), "q0_rows_used": sum(len(v) for v in grouped.values()), "examples": len(all_examples),
-        "history_length": K, "horizon_frames": HORIZON, "max_candidates": MAX_CANDIDATES, "observation_dim": OBS_DIM, "appearance_dim": APP_DIM,
+        "history_length": K, "horizon_frames": HORIZON, "max_candidates": MAX_CANDIDATES, "observation_dim": OBS_DIM, "appearance_dim": APP_DIM, "appearance_projection_seed": PROJECTION_SEED,
         "video_stats": video_stats, "folds": folds,
         "inference_tensor_fields": ["normalized_bbox", "center", "size", "base_score", "frame_gap", "age", "hit_ratio", "causal_velocity", "DINOv2_crop_embedding_32_fixed_projection"],
         "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text"],
