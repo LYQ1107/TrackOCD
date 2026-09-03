@@ -84,17 +84,17 @@ def load_train() -> tuple[dict[int, dict[str, Any]], dict[int, list[dict[str, An
     return images, gt_by_image, videos, categories
 
 
-def load_q0(images: dict[int, dict[str, Any]], allowed_videos: set[int], gt_by_image: dict[int, list[dict[str, Any]]]) -> dict[int, dict[int, list[dict[str, Any]]]]:
+def load_q0(images: dict[int, dict[str, Any]], allowed_videos: set[int], gt_by_image: dict[int, list[dict[str, Any]]], q0_path: Path) -> dict[int, dict[int, list[dict[str, Any]]]]:
     """Read Q0 JSON once and assign TRAIN-only post-hoc GT targets."""
     out: dict[int, dict[int, list[dict[str, Any]]]] = collections.defaultdict(lambda: collections.defaultdict(list))
     try:
         import ijson  # type: ignore
-        iterator = ijson.items(Q0_JSON.open("rb"), "item")
+        iterator = ijson.items(q0_path.open("rb"), "item")
     except ModuleNotFoundError:
         # The pinned environment does not ship ijson.  The frozen Q0 file is
         # ~233 MB and fits well within the registered memory budget, so use the
         # standard parser without changing any rows or ordering.
-        iterator = iter(json.loads(Q0_JSON.read_text()))
+        iterator = iter(json.loads(q0_path.read_text()))
     for row in iterator:
         iid = int(row.get("image_id", -1)); vid = int(row.get("video_id", -1))
         if vid not in allowed_videos or iid not in images:
@@ -210,14 +210,15 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--route-tag", default="q0_aligned")
     ap.add_argument("--motion", action="store_true")
+    ap.add_argument("--q0-json", type=Path, default=Q0_JSON)
     ap.add_argument("--fit-limit", type=int, default=150000)
     ap.add_argument("--val-limit", type=int, default=60000)
     args = ap.parse_args()
     np.random.seed(SEED)
     images, gt_by_image, videos, categories = load_train()
-    q0 = load_q0(images, videos, gt_by_image)
+    q0 = load_q0(images, videos, gt_by_image, args.q0_json)
     folds = [build_fold(f, q0, images, categories, args.fit_limit, args.val_limit, DATA_ROOT / args.route_tag, args.motion) for f in range(4)]
-    result = {"schema_version": "phase81p.q0_aligned_manifest.v1", "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(), "seed": SEED, "route_tag": args.route_tag, "q0_json": str(Q0_JSON), "q0_json_sha256": sha256(Q0_JSON), "train_annotations": str(TRAIN_JSON), "train_annotations_sha256": sha256(TRAIN_JSON), "excluded_event_videos": sorted(event_videos()), "video_count": len(videos), "category_count": len(categories), "q0_videos_loaded": len(q0), "motion_features": bool(args.motion), "history_horizon": HISTORY_HORIZON, "candidate_width": PAD_CANDIDATES, "folds": folds, "data_dir": str(DATA_ROOT / args.route_tag), "inference_tensor_forbidden": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt"], "label_rule": "TRAIN-only max IoU >= 0.5 assigns a post-hoc GT track target; no label field is serialized in x"}
+    result = {"schema_version": "phase81p.q0_aligned_manifest.v1", "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(), "seed": SEED, "route_tag": args.route_tag, "q0_json": str(args.q0_json), "q0_json_sha256": sha256(args.q0_json), "train_annotations": str(TRAIN_JSON), "train_annotations_sha256": sha256(TRAIN_JSON), "excluded_event_videos": sorted(event_videos()), "video_count": len(videos), "category_count": len(categories), "q0_videos_loaded": len(q0), "motion_features": bool(args.motion), "history_horizon": HISTORY_HORIZON, "candidate_width": PAD_CANDIDATES, "folds": folds, "data_dir": str(DATA_ROOT / args.route_tag), "inference_tensor_forbidden": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt"], "label_rule": "TRAIN-only max IoU >= 0.5 assigns a post-hoc GT track target; no label field is serialized in x"}
     atomic_json(OUT_ROOT / args.route_tag / "train_manifest.json", result)
     atomic_json(OUT_ROOT / args.route_tag / "supervision_inventory.json", result)
     print(json.dumps(result, indent=2, sort_keys=True))
