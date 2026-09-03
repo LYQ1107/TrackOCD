@@ -223,16 +223,22 @@ if torch is not None:
         or semantic identifier is used in a feature tensor.
         """
 
-        def __init__(self, max_miss: int = 8, max_tracks: int = 512):
+        def __init__(self, max_miss: int = 8, max_tracks: int = 512, conservative: bool = False):
             from scipy.optimize import linear_sum_assignment
             self.max_miss = int(max_miss)
             self.max_tracks = int(max_tracks)
+            self.conservative = bool(conservative)
+            # One evidence-based repair after the first route: the initial
+            # geometry comparator over-merged (403 vs Q0's 1026 tracks).  The
+            # fixed tighter gates below are a single registered P2 contract,
+            # not a sweep or held-event calibration.
+            self.spatial_iou_gate = 0.05 if self.conservative else 0.02
+            self.centre_gate = 0.12 if self.conservative else 0.20
             self._hungarian = linear_sum_assignment
             self.tracks: List[TrackState] = []
             self.next_id = 0
 
-        @staticmethod
-        def _score(det: Dict[str, object], track: TrackState, frame_id: int, image_size: Tuple[float, float]) -> Tuple[float, bool]:
+        def _score(self, det: Dict[str, object], track: TrackState, frame_id: int, image_size: Tuple[float, float]) -> Tuple[float, bool]:
             db = np.asarray(det["bbox_xyxy"], dtype=np.float32)
             gap = max(0, min(32, int(frame_id) - int(track.last_frame)))
             ref = track.last_bbox + np.asarray(track.velocity, dtype=np.float32) * float(gap)
@@ -247,11 +253,10 @@ if torch is not None:
             score = 2.0 * iou + float(np.exp(-centre / 0.08)) + 0.10 * float(det.get("base_score", 0.0)) + 0.05 * float(track.score_ema) - 0.05 * shape
             # Fixed spatial plausibility gate: IoU or a nearby predicted
             # centre is required; this is not selected from held events.
-            plausible = bool(iou > 0.02 or centre <= 0.20)
+            plausible = bool(iou > self.spatial_iou_gate or centre <= self.centre_gate)
             return float(score), plausible
 
-        @staticmethod
-        def _score_matrix(dets: Sequence[Dict[str, object]], tracks: Sequence[TrackState], frame_id: int, image_size: Tuple[float, float]) -> Tuple[np.ndarray, np.ndarray]:
+        def _score_matrix(self, dets: Sequence[Dict[str, object]], tracks: Sequence[TrackState], frame_id: int, image_size: Tuple[float, float]) -> Tuple[np.ndarray, np.ndarray]:
             """Vectorized equivalent of ``_score`` for one frame."""
             if not tracks or not dets:
                 return np.zeros((len(tracks), len(dets)), dtype=np.float32), np.zeros((len(tracks), len(dets)), dtype=bool)
@@ -277,7 +282,8 @@ if torch is not None:
             det_score = np.asarray([float(d.get("base_score", d.get("score", 0.0))) for d in dets], dtype=np.float32)
             tr_score = np.asarray([float(t.score_ema) for t in tracks], dtype=np.float32)
             score = 2.0 * iou + np.exp(-centre / 0.08) + 0.10 * det_score[None, :] + 0.05 * tr_score[:, None] - 0.05 * shape
-            plausible = (iou > 0.02) | (centre <= 0.20)
+            # Constructor-bound gates keep scalar and vector paths equivalent.
+            plausible = (iou > self.spatial_iou_gate) | (centre <= self.centre_gate)
             return score.astype(np.float32), plausible
 
         def step(self, detections: Sequence[Dict[str, object]], frame_id: int, image_size: Tuple[float, float] = (640.0, 480.0)) -> List[Dict[str, object]]:
