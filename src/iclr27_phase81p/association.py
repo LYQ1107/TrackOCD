@@ -134,7 +134,15 @@ if torch is not None:
             flat = candidates.reshape(batch * count, 1, feats)
             pair, _ = self.forward(flat)
             pair = pair.reshape(batch, count)
-            _, new = self.forward(candidates.mean(dim=1, keepdim=True))
+            # Training shards use a fixed-width candidate tensor.  The unused
+            # tail is zero padded, whereas runtime ``score_matrix`` averages
+            # only the currently active tracks.  Mask those padding rows here
+            # so the NEW logit sees the same causal context in training and
+            # inference (all-zero rows remain a valid empty-history context).
+            valid = (candidates.abs().sum(dim=-1, keepdim=True) > 1e-8).to(candidates.dtype)
+            denom = valid.sum(dim=1, keepdim=True).clamp_min(1.0)
+            context = (candidates * valid).sum(dim=1, keepdim=True) / denom
+            _, new = self.forward(context)
             return pair, new
 
 
