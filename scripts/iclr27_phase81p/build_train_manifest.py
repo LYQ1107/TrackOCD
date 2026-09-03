@@ -45,7 +45,7 @@ def make_descriptor_cache(images, anns, use_appearance=False):
             cache[int(a['id'])]=(box,desc)
     return cache,missing
 
-def build_fold(fold, videos, images, anns, ann_cache, held_categories):
+def build_fold(fold, videos, images, anns, ann_cache, held_categories, data_dir):
     # Deterministic video/category-disjoint split; event videos are excluded.
     val_vids={v for v in videos if v % 4 == fold}
     fit_vids=set(videos)-val_vids
@@ -61,7 +61,7 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories):
         for a in rows: by_vf[(int(images[int(a['image_id'])]['video_id']),int(a['image_id']))].append(a)
         videos_frames=collections.defaultdict(list)
         for (v,iid) in by_vf: videos_frames[v].append(iid)
-        X=[]; y=[]; gap=[]; pos_count=0; neg_count=0
+        X=[]; y=[]; gap=[]; pos_count=0; neg_count=0; new_count=0
         for vid, frame_ids in videos_frames.items():
             frame_ids.sort(key=lambda iid:(image_frame[iid],iid)); history={}
             for pos, iid in enumerate(frame_ids):
@@ -79,39 +79,48 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories):
                     others=[h for h in candidates if h['track_id']!=gt]
                     others.sort(key=lambda h: abs(float(h['box'][0]-box[0]))+abs(float(h['box'][1]-box[1])))
                     chosen=(prev[:1]+others[:8])
-                    feats=[]; target=-1
+                    feats=[]; target=9  # explicit NEW class unless a causal positive exists
                     for j,h in enumerate(chosen):
                         d={'bbox_xyxy':box,'appearance':desc,'frame_id':frame,'base_score':1.0}
                         t={'last_bbox':h['box'],'appearance_ema':h['appearance'],'last_frame':h['frame'],'age':h['age'],'miss_count':max(0,pos-int(h['pos'])),'score_ema':1.0,'association_ema':0.0,'hit_count':h['age']}
                         feats.append(pair_features(d,t))
                         if int(h['track_id'])==gt: target=j
-                    if target<0: target=len(feats) # NEW alternative
-                    if not feats: continue
+                    # A first observation has no active history.  Retain a
+                    # zero-context sample so the NEW head receives an actual
+                    # TRAIN target; the zero vector is a structural marker,
+                    # not an identity/category feature.
+                    if not feats:
+                        arr=np.zeros((9,16),np.float32)
+                        X.append(arr); y.append(9); gap.append(0)
+                        new_count += 1
+                        if len(X)>=limit: break
+                        continue
                     # Fixed-width candidates: zero-pad; target index is preserved.
                     k=min(9,len(feats)); arr=np.zeros((9,16),np.float32); arr[:k]=np.asarray(feats[:k],np.float32)
-                    X.append(arr); y.append(target if target<9 else 9); gap.append(min(8,max(0,pos-(chosen[0]['pos'] if chosen else pos))))
-                    pos_count += int(target < k); neg_count += max(0,k-1)
+                    X.append(arr); y.append(target if target < k else 9); gap.append(min(8,max(0,pos-(chosen[0]['pos'] if chosen else pos))))
+                    pos_count += int(target < k); new_count += int(target >= k); neg_count += max(0,k-1)
                     if len(X)>=limit: break
                 # Update causal latest history after scoring this frame.
                 for a in cur:
                     box,desc=ann_cache[int(a['id'])]; history[int(a['track_id'])]={'track_id':int(a['track_id']),'box':box,'appearance':desc,'frame':frame,'pos':pos,'age':1 if int(a['track_id']) not in history else history[int(a['track_id'])]['age']+1}
                 if len(X)>=limit: break
             if len(X)>=limit: break
-        if not X: return np.zeros((0,9,16),np.float32),np.zeros((0,),np.int64),{'examples':0,'positive':0,'hard_negatives':0}
-        return np.stack(X),np.asarray(y,np.int64),{'examples':len(X),'positive':pos_count,'hard_negatives':neg_count}
+        if not X: return np.zeros((0,9,16),np.float32),np.zeros((0,),np.int64),{'examples':0,'positive':0,'new':0,'hard_negatives':0}
+        return np.stack(X),np.asarray(y,np.int64),{'examples':len(X),'positive':pos_count,'new':new_count,'hard_negatives':neg_count}
     fit_x,fit_y,fit_stats=examples(fit); val_x,val_y,val_stats=examples(val)
-    DATA.mkdir(parents=True,exist_ok=True)
-    fp=DATA/f'fold{fold}.npz'; vp=DATA/f'fold{fold}_val.npz'; np.savez_compressed(fp,x=fit_x,y=fit_y); np.savez_compressed(vp,x=val_x,y=val_y)
+    data_dir.mkdir(parents=True,exist_ok=True)
+    fp=data_dir/f'fold{fold}.npz'; vp=data_dir/f'fold{fold}_val.npz'; np.savez_compressed(fp,x=fit_x,y=fit_y); np.savez_compressed(vp,x=val_x,y=val_y)
     return {'fold':fold,'fit_videos':sorted(fit_vids),'val_videos':sorted(val_vids),'held_categories':sorted(held_categories),'fit_categories_disjoint':True,'fit':fit_stats,'val':val_stats,'fit_path':str(fp),'val_path':str(vp)}
 
 def main():
     import argparse
-    parser=argparse.ArgumentParser(); parser.add_argument('--appearance',action='store_true',help='decode RGB crops (slower; omitted for default geometry smoke)'); args=parser.parse_args()
+    parser=argparse.ArgumentParser(); parser.add_argument('--appearance',action='store_true',help='decode RGB crops (slower; omitted for default geometry smoke)'); parser.add_argument('--route-tag',default='baseline',help='isolated manifest/data namespace'); args=parser.parse_args()
     random.seed(SEED); np.random.seed(SEED)
     ann=json.loads(TRAIN_JSON.read_text()); images={int(x['id']):x for x in ann['images']}; anns=ann['annotations']; vids=sorted({int(x['video_id']) for x in ann['images']} - event_videos()); categories=sorted({int(x['category_id']) for x in anns})
     cache,missing=make_descriptor_cache(images,anns,use_appearance=args.appearance)
-    folds=[]
-    for f in range(4): folds.append(build_fold(f,vids,images,anns,cache,{c for c in categories if c%4==f}))
-    result={'schema_version':'phase81p.train_manifest.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'seed':SEED,'train_annotations':str(TRAIN_JSON),'train_annotations_sha256':hashlib.sha256(TRAIN_JSON.read_bytes()).hexdigest(),'excluded_event_videos':sorted(event_videos()),'video_count_after_exclusion':len(vids),'category_count':len(categories),'descriptor':'8-D RGB crop mean/std when --appearance is enabled; otherwise deterministic zero appearance (geometry/score-only baseline)','appearance_enabled':bool(args.appearance),'missing_image_annotations':missing,'folds':folds,'inference_tensor_forbidden':['track_id','category_id','physical_id','semantic_id','future','held_gt']}
-    atomic_json(OUT/'train_manifest.json',result); atomic_json(OUT/'supervision_inventory.json',result); print(json.dumps(result,indent=2))
+    folds=[]; data_dir=DATA/args.route_tag
+    for f in range(4): folds.append(build_fold(f,vids,images,anns,cache,{c for c in categories if c%4==f},data_dir))
+    result={'schema_version':'phase81p.train_manifest.v2','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'seed':SEED,'route_tag':args.route_tag,'train_annotations':str(TRAIN_JSON),'train_annotations_sha256':hashlib.sha256(TRAIN_JSON.read_bytes()).hexdigest(),'excluded_event_videos':sorted(event_videos()),'video_count_after_exclusion':len(vids),'category_count':len(categories),'descriptor':'8-D RGB crop mean/std when --appearance is enabled; otherwise deterministic zero appearance (geometry/score-only baseline)','appearance_enabled':bool(args.appearance),'missing_image_annotations':missing,'folds':folds,'data_dir':str(data_dir),'inference_tensor_forbidden':['track_id','category_id','physical_id','semantic_id','future','held_gt']}
+    manifest_dir=OUT/args.route_tag; manifest_dir.mkdir(parents=True,exist_ok=True)
+    atomic_json(manifest_dir/'train_manifest.json',result); atomic_json(manifest_dir/'supervision_inventory.json',result); print(json.dumps(result,indent=2))
 if __name__=='__main__': main()
