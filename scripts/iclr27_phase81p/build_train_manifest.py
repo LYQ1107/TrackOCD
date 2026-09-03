@@ -67,6 +67,11 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories):
             for iid in frame_ids:
                 cur=by_vf[(vid,iid)]
                 frame=int(image_frame[iid]); candidates=list(history.values())
+                # A causal tracker cannot retain arbitrarily old candidates;
+                # pruning to the registered eight-frame memory also prevents
+                # quadratic work on long TAO videos.
+                history={k:v for k,v in history.items() if frame-int(v['frame']) <= 8}
+                candidates=list(history.values())
                 # Keep up to eight recent alternatives plus the true trajectory.
                 for a in cur:
                     gt=int(a['track_id']); box,desc=ann_cache[int(a['id'])]
