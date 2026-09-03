@@ -21,6 +21,31 @@ except ImportError:  # allows audit scripts to import with system Python
 PAIR_DIM = 16
 
 
+def crop_descriptor(image_path: str, bbox: Sequence[float], size: Tuple[int, int] = (16, 16)) -> np.ndarray:
+    """Return an 8-D causal RGB crop descriptor.
+
+    This is deliberately category/ID agnostic: mean and standard deviation
+    over a clipped crop are the only visual statistics. Missing images produce
+    a deterministic zero descriptor and are counted by the caller.
+    """
+    try:
+        from PIL import Image
+        with Image.open(image_path).convert("RGB") as image:
+            w, h = image.size
+            x0, y0, x1, y1 = [float(x) for x in bbox]
+            x0, x1 = max(0.0, min(w - 1.0, x0)), max(1.0, min(float(w), x1))
+            y0, y1 = max(0.0, min(h - 1.0, y0)), max(1.0, min(float(h), y1))
+            if x1 <= x0 or y1 <= y0:
+                return np.zeros(8, dtype=np.float32)
+            crop = image.crop((int(x0), int(y0), int(x1), int(y1))).resize(size)
+            arr = np.asarray(crop, dtype=np.float32) / 255.0
+            mean = arr.mean(axis=(0, 1)); std = arr.std(axis=(0, 1))
+            gray = arr.mean(axis=2)
+            return np.asarray([mean[0], mean[1], mean[2], std[0], std[1], std[2], float(gray[:8].mean()), float(gray[8:].mean())], dtype=np.float32)
+    except Exception:
+        return np.zeros(8, dtype=np.float32)
+
+
 def _box_iou(a: np.ndarray, b: np.ndarray) -> float:
     ax0, ay0, ax1, ay1 = [float(x) for x in a]
     bx0, by0, bx1, by1 = [float(x) for x in b]
