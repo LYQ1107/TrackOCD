@@ -115,6 +115,26 @@ if torch is not None:
             context = encoded[:, -1]
             return self.pair_head(context).squeeze(-1), self.new_head(context).squeeze(-1)
 
+        @staticmethod
+        def _top_context(candidates: "torch.Tensor", pair_logits: "torch.Tensor", valid: "torch.Tensor" = None, topk: int = 4) -> "torch.Tensor":
+            """Build a candidate-conditioned NEW context with no ID features.
+
+            Runtime may have hundreds of active tracks, while TRAIN shards use
+            a fixed-width candidate tensor.  Averaging every runtime track
+            therefore changes the NEW-logit distribution.  Both paths now use
+            the strongest few causal association candidates; zero-padded TRAIN
+            rows are masked and an empty history yields an exact zero context.
+            """
+            if valid is None:
+                valid = torch.ones(pair_logits.shape, dtype=torch.bool, device=pair_logits.device)
+            masked = pair_logits.masked_fill(~valid, float("-inf"))
+            k = min(int(topk), candidates.shape[1])
+            vals, idx = torch.topk(masked, k=k, dim=1)
+            gathered = torch.gather(candidates, 1, idx.unsqueeze(-1).expand(-1, -1, candidates.shape[-1]))
+            selected = torch.isfinite(vals).unsqueeze(-1).to(candidates.dtype)
+            denom = selected.sum(dim=1, keepdim=True).clamp_min(1.0)
+            return (gathered * selected).sum(dim=1, keepdim=True) / denom
+
         def score_matrix(self, pair_matrix: "torch.Tensor") -> Tuple["torch.Tensor", "torch.Tensor"]:
             if pair_matrix.ndim != 3:
                 raise ValueError("pair_matrix must have shape [tracks,detections,PAIR_DIM]")
@@ -122,8 +142,11 @@ if torch is not None:
             flat = pair_matrix.reshape(tracks * dets, 1, feats)
             logits, _ = self.forward(flat)
             logits = logits.reshape(tracks, dets)
-            # A new/birth alternative is scored from each detection's mean pair context.
-            _, new_logits = self.forward(pair_matrix.mean(dim=0).unsqueeze(1))
+            # Keep NEW/birth calibration consistent with ``score_candidates``:
+            # only the top causal association candidates for each detection
+            # contribute to its context, rather than all active tracks.
+            contexts = self._top_context(pair_matrix.permute(1, 0, 2), logits.transpose(0, 1))
+            _, new_logits = self.forward(contexts)
             return logits, new_logits
 
         def score_candidates(self, candidates: "torch.Tensor") -> Tuple["torch.Tensor", "torch.Tensor"]:
@@ -135,13 +158,11 @@ if torch is not None:
             pair, _ = self.forward(flat)
             pair = pair.reshape(batch, count)
             # Training shards use a fixed-width candidate tensor.  The unused
-            # tail is zero padded, whereas runtime ``score_matrix`` averages
-            # only the currently active tracks.  Mask those padding rows here
-            # so the NEW logit sees the same causal context in training and
-            # inference (all-zero rows remain a valid empty-history context).
+            # tail is zero padded, whereas runtime ``score_matrix`` may contain
+            # hundreds of unrelated active tracks.  Use the same top-candidate
+            # context in both paths and mask padding rows.
             valid = (candidates.abs().sum(dim=-1, keepdim=True) > 1e-8).to(candidates.dtype)
-            denom = valid.sum(dim=1, keepdim=True).clamp_min(1.0)
-            context = (candidates * valid).sum(dim=1, keepdim=True) / denom
+            context = self._top_context(candidates, pair, valid.squeeze(-1).bool())
             _, new = self.forward(context)
             return pair, new
 
