@@ -31,7 +31,9 @@ K = 8
 HORIZON = 16
 MAX_CANDIDATES = 16
 APP_DIM = 32
-OBS_DIM = 49
+# 8 box/center/size + 4 score/causal scalars + 4 velocity + 32 fixed
+# appearance projection dimensions.
+OBS_DIM = 48
 PROJECTION_SEED = 82017
 _projection_rng = np.random.default_rng(PROJECTION_SEED)
 APP_PROJECTION = _projection_rng.normal(0.0, 1.0, size=(768, APP_DIM)).astype(np.float32)

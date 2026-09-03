@@ -11,7 +11,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-OBS_DIM = 49
+OBS_DIM = 48
 HISTORY_LENGTH = 8
 MAX_CANDIDATES = 16
 HIDDEN = 256
