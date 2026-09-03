@@ -61,6 +61,7 @@ def main() -> None:
     ap.add_argument("--num-shards", type=int, default=4)
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--batch", type=int, default=32)
+    ap.add_argument("--max-rows", type=int, default=0, help="bounded smoke limit; 0 means all rows in the shard")
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     if args.shard < 0 or args.shard >= args.num_shards:
@@ -79,6 +80,8 @@ def main() -> None:
     ann = json.loads(ANN.read_text(encoding="utf-8"))
     images = {int(x["id"]): x for x in ann["images"]}
     selected = [(idx, row) for idx, row in enumerate(rows) if idx % args.num_shards == args.shard]
+    if args.max_rows > 0:
+        selected = selected[:args.max_rows]
     tf = transforms.Compose([
         transforms.Resize((518, 518), interpolation=Image.BILINEAR),
         transforms.ToTensor(),
