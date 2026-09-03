@@ -5,7 +5,7 @@ PY="/home/lwr/anaconda3/envs/ovtr/bin/python"
 TAG="${1:-newlabel}"
 EPOCHS="${2:-20}"
 DATA_ROOT="${3:-/data2/usr_for_deadline/trackocd_phase81p/data/p2_newlabel}"
-ROUTE="p2_newlabel"
+ROUTE="${4:-p2_newlabel}"
 mkdir -p "$ROOT/outputs/iclr27_phase81p/supervisor" "$ROOT/outputs/iclr27_phase81p/completion"
 declare -a PIDS=() GPUS=(4 5 6 7)
 for fold in 0 1 2 3; do

@@ -45,7 +45,7 @@ def make_descriptor_cache(images, anns, use_appearance=False):
             cache[int(a['id'])]=(box,desc)
     return cache,missing
 
-def build_fold(fold, videos, images, anns, ann_cache, held_categories, data_dir):
+def build_fold(fold, videos, images, anns, ann_cache, held_categories, data_dir, use_motion=False):
     # Deterministic video/category-disjoint split; event videos are excluded.
     val_vids={v for v in videos if v % 4 == fold}
     fit_vids=set(videos)-val_vids
@@ -82,8 +82,8 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories, data_dir)
                     feats=[]; target=9  # explicit NEW class unless a causal positive exists
                     for j,h in enumerate(chosen):
                         d={'bbox_xyxy':box,'appearance':desc,'frame_id':frame,'base_score':1.0}
-                        t={'last_bbox':h['box'],'appearance_ema':h['appearance'],'last_frame':h['frame'],'age':h['age'],'miss_count':max(0,pos-int(h['pos'])),'score_ema':1.0,'association_ema':0.0,'hit_count':h['age']}
-                        feats.append(pair_features(d,t))
+                        t={'last_bbox':h['box'],'appearance_ema':h['appearance'],'last_frame':h['frame'],'velocity':h.get('velocity',np.zeros(4,np.float32)),'age':h['age'],'miss_count':max(0,pos-int(h['pos'])),'score_ema':1.0,'association_ema':0.0,'hit_count':h['age']}
+                        feats.append(pair_features(d,t,use_motion=use_motion))
                         if int(h['track_id'])==gt: target=j
                     # A first observation has no active history.  Retain a
                     # zero-context sample so the NEW head receives an actual
@@ -102,7 +102,12 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories, data_dir)
                     if len(X)>=limit: break
                 # Update causal latest history after scoring this frame.
                 for a in cur:
-                    box,desc=ann_cache[int(a['id'])]; history[int(a['track_id'])]={'track_id':int(a['track_id']),'box':box,'appearance':desc,'frame':frame,'pos':pos,'age':1 if int(a['track_id']) not in history else history[int(a['track_id'])]['age']+1}
+                    box,desc=ann_cache[int(a['id'])]; old=history.get(int(a['track_id']))
+                    if old is None:
+                        velocity=np.zeros(4,np.float32); age=1
+                    else:
+                        velocity=0.8*np.asarray(old.get('velocity',np.zeros(4,np.float32)),np.float32)+0.2*(np.asarray(box,np.float32)-np.asarray(old['box'],np.float32))/float(max(1,frame-int(old['frame']))); age=int(old['age'])+1
+                    history[int(a['track_id'])]={'track_id':int(a['track_id']),'box':box,'appearance':desc,'velocity':velocity,'frame':frame,'pos':pos,'age':age}
                 if len(X)>=limit: break
             if len(X)>=limit: break
         if not X: return np.zeros((0,9,16),np.float32),np.zeros((0,),np.int64),{'examples':0,'positive':0,'new':0,'hard_negatives':0}
@@ -114,13 +119,13 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories, data_dir)
 
 def main():
     import argparse
-    parser=argparse.ArgumentParser(); parser.add_argument('--appearance',action='store_true',help='decode RGB crops (slower; omitted for default geometry smoke)'); parser.add_argument('--route-tag',default='baseline',help='isolated manifest/data namespace'); args=parser.parse_args()
+    parser=argparse.ArgumentParser(); parser.add_argument('--appearance',action='store_true',help='decode RGB crops (slower; omitted for default geometry smoke)'); parser.add_argument('--motion',action='store_true',help='use causal velocity prediction in the fixed-width pair vector'); parser.add_argument('--route-tag',default='baseline',help='isolated manifest/data namespace'); args=parser.parse_args()
     random.seed(SEED); np.random.seed(SEED)
     ann=json.loads(TRAIN_JSON.read_text()); images={int(x['id']):x for x in ann['images']}; anns=ann['annotations']; vids=sorted({int(x['video_id']) for x in ann['images']} - event_videos()); categories=sorted({int(x['category_id']) for x in anns})
     cache,missing=make_descriptor_cache(images,anns,use_appearance=args.appearance)
     folds=[]; data_dir=DATA/args.route_tag
-    for f in range(4): folds.append(build_fold(f,vids,images,anns,cache,{c for c in categories if c%4==f},data_dir))
-    result={'schema_version':'phase81p.train_manifest.v2','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'seed':SEED,'route_tag':args.route_tag,'train_annotations':str(TRAIN_JSON),'train_annotations_sha256':hashlib.sha256(TRAIN_JSON.read_bytes()).hexdigest(),'excluded_event_videos':sorted(event_videos()),'video_count_after_exclusion':len(vids),'category_count':len(categories),'descriptor':'8-D RGB crop mean/std when --appearance is enabled; otherwise deterministic zero appearance (geometry/score-only baseline)','appearance_enabled':bool(args.appearance),'missing_image_annotations':missing,'folds':folds,'data_dir':str(data_dir),'inference_tensor_forbidden':['track_id','category_id','physical_id','semantic_id','future','held_gt']}
+    for f in range(4): folds.append(build_fold(f,vids,images,anns,cache,{c for c in categories if c%4==f},data_dir,use_motion=args.motion))
+    result={'schema_version':'phase81p.train_manifest.v3','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'seed':SEED,'route_tag':args.route_tag,'train_annotations':str(TRAIN_JSON),'train_annotations_sha256':hashlib.sha256(TRAIN_JSON.read_bytes()).hexdigest(),'excluded_event_videos':sorted(event_videos()),'video_count_after_exclusion':len(vids),'category_count':len(categories),'descriptor':'8-D RGB crop mean/std when --appearance is enabled; otherwise deterministic zero appearance (geometry/score-only baseline)','appearance_enabled':bool(args.appearance),'motion_features':bool(args.motion),'missing_image_annotations':missing,'folds':folds,'data_dir':str(data_dir),'inference_tensor_forbidden':['track_id','category_id','physical_id','semantic_id','future','held_gt']}
     manifest_dir=OUT/args.route_tag; manifest_dir.mkdir(parents=True,exist_ok=True)
     atomic_json(manifest_dir/'train_manifest.json',result); atomic_json(manifest_dir/'supervision_inventory.json',result); print(json.dumps(result,indent=2))
 if __name__=='__main__': main()

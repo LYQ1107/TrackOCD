@@ -57,28 +57,40 @@ def _box_iou(a: np.ndarray, b: np.ndarray) -> float:
     return float(inter / union) if union > 0 else 0.0
 
 
-def pair_features(det: Dict[str, object], track: Dict[str, object], image_size: Tuple[float, float] = (640.0, 480.0)) -> np.ndarray:
-    """Build the registered 16-D causal pair vector."""
+def pair_features(det: Dict[str, object], track: Dict[str, object], image_size: Tuple[float, float] = (640.0, 480.0), use_motion: bool = False) -> np.ndarray:
+    """Build the registered 16-D causal pair vector.
+
+    ``use_motion`` is an isolated Phase81P repair route.  It replaces the
+    last-observation geometry with a constant-velocity causal prediction while
+    preserving the vector width and all non-motion features.  The default is
+    byte/shape compatible with the original geometry-only route.
+    """
     db = np.asarray(det["bbox_xyxy"], dtype=np.float32)
     tb = np.asarray(track["last_bbox"], dtype=np.float32)
     iw, ih = float(image_size[0]), float(image_size[1])
+    gap = max(0, min(32, int(det.get("frame_id", 0)) - int(track.get("last_frame", 0))))
+    reference = tb
+    if use_motion:
+        velocity = np.asarray(track.get("velocity", np.zeros(4, dtype=np.float32)), dtype=np.float32)
+        if velocity.shape == (4,):
+            reference = tb + velocity * float(gap)
     dc = np.asarray([(db[0] + db[2]) / 2.0 / iw, (db[1] + db[3]) / 2.0 / ih])
-    tc = np.asarray([(tb[0] + tb[2]) / 2.0 / iw, (tb[1] + tb[3]) / 2.0 / ih])
+    tc = np.asarray([(reference[0] + reference[2]) / 2.0 / iw, (reference[1] + reference[3]) / 2.0 / ih])
     dw, dh = max(1e-4, (db[2] - db[0]) / iw), max(1e-4, (db[3] - db[1]) / ih)
-    tw, th = max(1e-4, (tb[2] - tb[0]) / iw), max(1e-4, (tb[3] - tb[1]) / ih)
+    tw, th = max(1e-4, (reference[2] - reference[0]) / iw), max(1e-4, (reference[3] - reference[1]) / ih)
     da = np.asarray(det.get("appearance", np.zeros(8, dtype=np.float32)), dtype=np.float32)
     ta = np.asarray(track.get("appearance_ema", np.zeros_like(da)), dtype=np.float32)
     denom = float(np.linalg.norm(da) * np.linalg.norm(ta))
     cos = float(np.dot(da, ta) / denom) if denom > 1e-8 else 0.0
     return np.asarray([
-        cos, _box_iou(db, tb), float(dc[0] - tc[0]), float(dc[1] - tc[1]),
+        cos, _box_iou(db, reference), float(dc[0] - tc[0]), float(dc[1] - tc[1]),
         float(np.log(dw / tw)), float(np.log(dh / th)),
-        float(min(32, max(0, int(det.get("frame_id", 0)) - int(track.get("last_frame", 0)))) / 8.0),
+        float(gap) / 8.0,
         float(min(32, int(track.get("age", 1))) / 32.0), float(min(8, int(track.get("miss_count", 0))) / 8.0),
         float(det.get("base_score", det.get("score", 0.0))), float(track.get("score_ema", 0.0)),
         float(track.get("association_ema", 0.0)), float(np.linalg.norm(da - ta)),
         float((db[2] - db[0]) * (db[3] - db[1]) / max(1.0, iw * ih)),
-        float((tb[2] - tb[0]) * (tb[3] - tb[1]) / max(1.0, iw * ih)),
+        float((reference[2] - reference[0]) * (reference[3] - reference[1]) / max(1.0, iw * ih)),
         float(track.get("hit_count", 0) / max(1, track.get("age", 1))),
     ], dtype=np.float32)
 
@@ -132,23 +144,28 @@ if torch is not None:
         last_frame: int
         appearance_ema: np.ndarray
         score_ema: float
+        velocity: np.ndarray = None
         association_ema: float = 0.0
         age: int = 1
         miss_count: int = 0
         hit_count: int = 1
         physical_track_id: int = -1
 
+        def __post_init__(self):
+            if self.velocity is None:
+                self.velocity = np.zeros(4, dtype=np.float32)
+
         def as_dict(self) -> Dict[str, object]:
-            return {"last_bbox": self.last_bbox, "last_frame": self.last_frame, "appearance_ema": self.appearance_ema, "score_ema": self.score_ema, "association_ema": self.association_ema, "age": self.age, "miss_count": self.miss_count, "hit_count": self.hit_count}
+            return {"last_bbox": self.last_bbox, "last_frame": self.last_frame, "appearance_ema": self.appearance_ema, "score_ema": self.score_ema, "velocity": self.velocity, "association_ema": self.association_ema, "age": self.age, "miss_count": self.miss_count, "hit_count": self.hit_count}
 
 
     class CausalAssociationRuntime:
         """One-to-one causal Hungarian association over Q0 detections."""
 
-        def __init__(self, model: AssociationTransformer, device: str = "cpu", max_miss: int = 8, match_margin: float = 0.0, max_tracks: int = 256):
+        def __init__(self, model: AssociationTransformer, device: str = "cpu", max_miss: int = 8, match_margin: float = 0.0, max_tracks: int = 256, use_motion: bool = False):
             from scipy.optimize import linear_sum_assignment
             self.model = model.to(device).eval(); self.device = device
-            self.max_miss = int(max_miss); self.match_margin = float(match_margin); self.max_tracks = int(max_tracks)
+            self.max_miss = int(max_miss); self.match_margin = float(match_margin); self.max_tracks = int(max_tracks); self.use_motion = bool(use_motion)
             self._hungarian = linear_sum_assignment; self.tracks: List[TrackState] = []; self.next_id = 0
 
         @torch.no_grad()
@@ -156,7 +173,7 @@ if torch is not None:
             dets = [dict(x) for x in detections]
             active = [t for t in self.tracks if t.miss_count <= self.max_miss]
             if active and dets:
-                mat = np.stack([pair_features(d, t.as_dict(), image_size) for t in active for d in dets], axis=0)
+                mat = np.stack([pair_features(d, t.as_dict(), image_size, use_motion=self.use_motion) for t in active for d in dets], axis=0)
                 tensor = torch.from_numpy(mat).to(self.device).reshape(len(active), len(dets), PAIR_DIM)
                 logits, new_logits = self.model.score_matrix(tensor)
                 scores, births = logits.detach().cpu().numpy(), new_logits.detach().cpu().numpy()
@@ -170,7 +187,10 @@ if torch is not None:
             for j, det in enumerate(dets):
                 if j in by_det:
                     track = active[by_det[j]]; assoc_score = float(scores[by_det[j], j]); lifecycle = "continuation"; tid = track.physical_track_id
-                    track.last_bbox = np.asarray(det["bbox_xyxy"], dtype=np.float32); track.last_frame = int(frame_id); track.age += 1; track.hit_count += 1; track.miss_count = 0
+                    previous_bbox = track.last_bbox.copy(); dt = max(1, int(frame_id) - int(track.last_frame)); current_bbox = np.asarray(det["bbox_xyxy"], dtype=np.float32)
+                    if self.use_motion:
+                        delta = (current_bbox - previous_bbox) / float(dt); track.velocity = 0.8 * track.velocity + 0.2 * delta
+                    track.last_bbox = current_bbox; track.last_frame = int(frame_id); track.age += 1; track.hit_count += 1; track.miss_count = 0
                     app = np.asarray(det.get("appearance", track.appearance_ema), dtype=np.float32); track.appearance_ema = 0.8 * track.appearance_ema + 0.2 * app
                     track.score_ema = 0.8 * track.score_ema + 0.2 * float(det.get("base_score", det.get("score", 0.0))); track.association_ema = 0.8 * track.association_ema + 0.2 * assoc_score
                 else:
