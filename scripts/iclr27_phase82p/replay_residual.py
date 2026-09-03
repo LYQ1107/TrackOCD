@@ -74,6 +74,8 @@ def main() -> None:
             decisions: dict[int, dict[str, Any]] = {}
             for idx, row in frame_rows:
                 original = int(row["physical_track_id"]); lifecycle = str(row.get("lifecycle", ""))
+                if row.get("bbox_xyxy") is None:
+                    continue
                 if lifecycle != "birth" and original in seen: continue
                 if lifecycle != "birth": continue
                 box = np.asarray(row["bbox_xyxy"], dtype=np.float32)
@@ -101,6 +103,8 @@ def main() -> None:
                 out_rows.append(out)
             best: dict[int, tuple[int, dict[str, Any], np.ndarray]] = {}
             for idx, row in frame_rows:
+                if row.get("bbox_xyxy") is None:
+                    continue
                 tid = int(row["physical_track_id"]); box = np.asarray(row["bbox_xyxy"], dtype=np.float32)
                 if tid not in best or float(row.get("base_score", 0.0)) > float(best[tid][1].get("base_score", 0.0)): best[tid] = (idx, row, box)
             for tid, (idx, row, box) in best.items():

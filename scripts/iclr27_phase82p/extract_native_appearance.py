@@ -74,6 +74,10 @@ def main() -> None:
         tensors, positions = [], []
     for pos, (idx, row) in enumerate(selected):
         try:
+            # Lifecycle termination records intentionally carry no detection
+            # box.  They are causal bookkeeping, not appearance observations.
+            if row.get("bbox_xyxy") is None:
+                continue
             with Image.open(FRAMES / str(row["file_path"])) as raw:
                 tensors.append(tf(crop_box(raw.convert("RGB"), [float(v) for v in row["bbox_xyxy"]])).unsqueeze(0))
             positions.append(pos)
