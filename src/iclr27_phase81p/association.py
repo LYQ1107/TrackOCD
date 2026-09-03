@@ -210,3 +210,83 @@ if torch is not None:
                 self.tracks.sort(key=lambda t: (t.miss_count, -t.hit_count, -t.score_ema, t.physical_track_id))
                 self.tracks = self.tracks[:self.max_tracks]
             return out
+
+
+    class CausalGeometryRuntime:
+        """Model-free causal geometry/motion association control.
+
+        This is a registered post-P1 family comparator, not a threshold sweep.
+        It keeps every frozen Q0 proposal row and uses only a predicted box,
+        centre distance, IoU, detector score and causal lifecycle state.  A
+        global Hungarian assignment is accepted only for spatially plausible
+        pairs; all remaining eligible detections become births.  No physical
+        or semantic identifier is used in a feature tensor.
+        """
+
+        def __init__(self, max_miss: int = 8, max_tracks: int = 512):
+            from scipy.optimize import linear_sum_assignment
+            self.max_miss = int(max_miss)
+            self.max_tracks = int(max_tracks)
+            self._hungarian = linear_sum_assignment
+            self.tracks: List[TrackState] = []
+            self.next_id = 0
+
+        @staticmethod
+        def _score(det: Dict[str, object], track: TrackState, frame_id: int, image_size: Tuple[float, float]) -> Tuple[float, bool]:
+            db = np.asarray(det["bbox_xyxy"], dtype=np.float32)
+            gap = max(0, min(32, int(frame_id) - int(track.last_frame)))
+            ref = track.last_bbox + np.asarray(track.velocity, dtype=np.float32) * float(gap)
+            iou = _box_iou(db, ref)
+            iw, ih = float(image_size[0]), float(image_size[1])
+            dc = np.asarray([(db[0] + db[2]) / (2.0 * iw), (db[1] + db[3]) / (2.0 * ih)])
+            tc = np.asarray([(ref[0] + ref[2]) / (2.0 * iw), (ref[1] + ref[3]) / (2.0 * ih)])
+            centre = float(np.linalg.norm(dc - tc))
+            dw, dh = max(1e-4, (db[2] - db[0]) / iw), max(1e-4, (db[3] - db[1]) / ih)
+            tw, th = max(1e-4, (ref[2] - ref[0]) / iw), max(1e-4, (ref[3] - ref[1]) / ih)
+            shape = abs(float(np.log(dw / tw))) + abs(float(np.log(dh / th)))
+            score = 2.0 * iou + float(np.exp(-centre / 0.08)) + 0.10 * float(det.get("base_score", 0.0)) + 0.05 * float(track.score_ema) - 0.05 * shape
+            # Fixed spatial plausibility gate: IoU or a nearby predicted
+            # centre is required; this is not selected from held events.
+            plausible = bool(iou > 0.02 or centre <= 0.20)
+            return float(score), plausible
+
+        def step(self, detections: Sequence[Dict[str, object]], frame_id: int, image_size: Tuple[float, float] = (640.0, 480.0)) -> List[Dict[str, object]]:
+            dets = [dict(x) for x in detections]
+            active = [t for t in self.tracks if t.miss_count <= self.max_miss]
+            scores = np.zeros((len(active), len(dets)), dtype=np.float32)
+            plausible = np.zeros_like(scores, dtype=bool)
+            if active and dets:
+                for r, track in enumerate(active):
+                    for c, det in enumerate(dets):
+                        scores[r, c], plausible[r, c] = self._score(det, track, frame_id, image_size)
+                rows, cols = self._hungarian(-scores)
+                matches = {(int(r), int(c)) for r, c in zip(rows, cols) if plausible[r, c]}
+            else:
+                matches = set()
+            by_det = {c: r for r, c in matches}
+            out: List[Dict[str, object]] = []
+            for j, det in enumerate(dets):
+                if j in by_det:
+                    track = active[by_det[j]]
+                    assoc_score = float(scores[by_det[j], j])
+                    previous_bbox = track.last_bbox.copy(); dt = max(1, int(frame_id) - int(track.last_frame)); current_bbox = np.asarray(det["bbox_xyxy"], dtype=np.float32)
+                    delta = (current_bbox - previous_bbox) / float(dt)
+                    track.velocity = 0.8 * np.asarray(track.velocity, dtype=np.float32) + 0.2 * delta
+                    track.last_bbox = current_bbox; track.last_frame = int(frame_id); track.age += 1; track.hit_count += 1; track.miss_count = 0
+                    track.score_ema = 0.8 * track.score_ema + 0.2 * float(det.get("base_score", det.get("score", 0.0)))
+                    track.association_ema = 0.8 * track.association_ema + 0.2 * assoc_score
+                    lifecycle, tid = "continuation", track.physical_track_id
+                else:
+                    track = TrackState(np.asarray(det["bbox_xyxy"], dtype=np.float32), int(frame_id), np.zeros(8, dtype=np.float32), float(det.get("base_score", det.get("score", 0.0))), physical_track_id=self.next_id)
+                    self.next_id += 1; self.tracks.append(track); lifecycle, tid, assoc_score = "birth", track.physical_track_id, float(det.get("base_score", 0.0))
+                row = dict(det); row.update({"assigned_track_slot": int(tid), "physical_track_id": int(tid), "association_score": assoc_score, "assignment_candidate_rank": int(det.get("candidate_rank", j)), "lifecycle_action": lifecycle, "track_age": int(track.age), "miss_count": int(track.miss_count), "learned_match_score": assoc_score, "geometry_match_score": assoc_score})
+                out.append(row)
+            matched_indices = {r for r, _ in matches}
+            for r, track in enumerate(active):
+                if r not in matched_indices:
+                    track.miss_count += 1; track.age += 1
+            self.tracks = [t for t in self.tracks if t.miss_count <= self.max_miss]
+            if len(self.tracks) > self.max_tracks:
+                self.tracks.sort(key=lambda t: (t.miss_count, -t.hit_count, -t.score_ema, t.physical_track_id))
+                self.tracks = self.tracks[:self.max_tracks]
+            return out

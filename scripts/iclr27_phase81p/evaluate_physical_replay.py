@@ -144,11 +144,12 @@ def physical_summary(rows: list[dict[str, Any]], gt_by_image: dict[tuple[int, in
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--checkpoint", required=True)
+    ap.add_argument("--checkpoint", required=False, default="")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--tag", default="physical_formal")
     ap.add_argument("--motion", action="store_true", help="use the registered causal velocity route")
     ap.add_argument("--appearance", action="store_true", help="use the registered causal RGB crop descriptor")
+    ap.add_argument("--geometry", action="store_true", help="use the registered model-free geometry/motion comparator")
     ap.add_argument("--max-miss", type=int, default=8, help="causal dormant horizon for the registered lifecycle route")
     args = ap.parse_args()
 
@@ -160,15 +161,15 @@ def main() -> None:
         raise RuntimeError(f"cannot import {REPLAY}")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    ckpt = Path(args.checkpoint)
-    stream = mod.run_stream(ckpt, args.device, use_motion=args.motion, max_miss=args.max_miss, use_appearance=args.appearance)
+    ckpt = Path(args.checkpoint) if args.checkpoint else Path("/dev/null")
+    stream = mod.run_stream(ckpt, args.device, use_motion=args.motion, max_miss=args.max_miss, use_appearance=args.appearance, geometry=args.geometry)
     gt_by_image = load_gt()
     native = load_native()
     result = {
         "schema_version": "phase81p.physical_replay.v1",
         "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "checkpoint": str(ckpt.resolve()),
-        "checkpoint_sha256": hashlib.sha256(ckpt.read_bytes()).hexdigest(),
+        "checkpoint": str(ckpt.resolve()) if not args.geometry else None,
+        "checkpoint_sha256": hashlib.sha256(ckpt.read_bytes()).hexdigest() if not args.geometry else None,
         "native_lineage": str(NATIVE),
         "native_lineage_sha256": hashlib.sha256(NATIVE.read_bytes()).hexdigest(),
         "train_annotations": str(TRAIN_ANN),
@@ -180,6 +181,7 @@ def main() -> None:
             "negative_denominator": 76,
             "causal_motion_prediction": bool(args.motion),
             "causal_appearance_descriptor": bool(args.appearance),
+            "geometry_only": bool(args.geometry),
             "max_miss": int(args.max_miss),
         },
         "learned": physical_summary(stream, gt_by_image),
