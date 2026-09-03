@@ -15,6 +15,7 @@
   "false_reconnect_weight": 2.0,
   "missed_repair_weight": 1.0,
   "candidate_pruning": "causal_motion_plus_visual_similarity_plus_recency_fixed_order",
+  "causal_horizon_units": "per-video observed-frame ordinal steps (strictly chronological; no future rows)",
   "decision": "argmax KEEP_Q0 or RECONNECT; default KEEP_Q0 on invalid/empty support",
   "q0_non_birth_policy": "byte_identical",
   "allowed_devices": [4, 5, 6, 7],

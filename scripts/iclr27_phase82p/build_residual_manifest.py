@@ -172,24 +172,30 @@ def process_video(video: int, rows: list[tuple[int, dict[str, Any]]], images: di
     seen: set[int] = set()
     examples: list[dict[str, Any]] = []
     stats = collections.Counter()
+    # Q0 TRAIN rows are sampled at irregular/30-frame intervals.  The runtime
+    # contract's horizon is expressed in observed causal steps, so map the
+    # sorted observed frame indices to per-video ordinal steps.  This keeps
+    # chronology exact without allowing a future row or changing row keys.
+    frame_steps = {frame: step for step, frame in enumerate(sorted(by_frame))}
     # This map is intentionally created inside process_video: no cross-video history.
     for frame in sorted(by_frame):
+        step = frame_steps[frame]
         frame_rows = by_frame[frame]
         current_states: list[dict[str, Any]] = []
         for idx, row in frame_rows:
             image = images[int(row["image_id"])]
             box = np.asarray([float(row["bbox"][0]), float(row["bbox"][1]), float(row["bbox"][0] + row["bbox"][2]), float(row["bbox"][1] + row["bbox"][3])], dtype=np.float32)
             gt_track, gt_category, gt_iou = best_gt({**row, "bbox_xyxy": box}, gt_by_image)
-            current_states.append({"idx": idx, "row": row, "box": box, "gt_track": gt_track, "gt_category": gt_category, "gt_iou": gt_iou, "track": int(row["track_id"]), "frame": frame})
+            current_states.append({"idx": idx, "row": row, "box": box, "gt_track": gt_track, "gt_category": gt_category, "gt_iou": gt_iou, "track": int(row["track_id"]), "frame": step, "frame_index": frame})
         # Build birth examples before updating this frame's history.
         for cur in current_states:
             if cur["track"] in seen:
                 continue
             image = images[int(cur["row"]["image_id"])]
-            current_obs = observation({**cur["row"], "bbox_xyxy": cur["box"]}, image, features[cur["idx"]], None, frame, 0)
+            current_obs = observation({**cur["row"], "bbox_xyxy": cur["box"]}, image, features[cur["idx"]], None, step, 0)
             cur_for_order = {"obs": [current_obs]}
-            dormant = [s for s in states.values() if int(s["track"]) != cur["track"] and frame > int(s["frame"]) and frame - int(s["frame"]) <= HORIZON]
-            chosen = candidate_order(cur_for_order, dormant, frame)
+            dormant = [s for s in states.values() if int(s["track"]) != cur["track"] and step > int(s["frame"]) and step - int(s["frame"]) <= HORIZON]
+            chosen = candidate_order(cur_for_order, dormant, step)
             target = 0
             histories: list[np.ndarray] = []
             mask: list[bool] = []
@@ -212,7 +218,7 @@ def process_video(video: int, rows: list[tuple[int, dict[str, Any]]], images: di
             stats["gt_iou_ge_05"] += int(cur["gt_iou"] >= 0.5)
             stats["history_observations"] += sum(len(s["obs"]) for s in chosen)
             examples.append({
-                "video_id": video, "frame_id": frame, "q0_track_id": cur["track"],
+                "video_id": video, "frame_id": frame, "causal_step": step, "q0_track_id": cur["track"],
                 "current": current_obs, "history": np.stack(histories),
                 "candidate_mask": np.asarray(mask, dtype=np.bool_), "target": target,
                 "target_gt_track_label": int(cur["gt_track"]), "target_gt_iou_label": float(cur["gt_iou"]),
@@ -227,11 +233,11 @@ def process_video(video: int, rows: list[tuple[int, dict[str, Any]]], images: di
         for track, cur in best_rows.items():
             image = images[int(cur["row"]["image_id"])]
             prev = states.get(track)
-            obs = observation({**cur["row"], "bbox_xyxy": cur["box"]}, image, features[cur["idx"]], prev, frame, len(prev["obs"]) if prev else 0)
+            obs = observation({**cur["row"], "bbox_xyxy": cur["box"]}, image, features[cur["idx"]], prev, step, len(prev["obs"]) if prev else 0)
             if prev is None:
-                states[track] = {"track": track, "frame": frame, "box": cur["box"], "obs": [obs], "gt_track": cur["gt_track"], "age": 1}
+                states[track] = {"track": track, "frame": step, "box": cur["box"], "obs": [obs], "gt_track": cur["gt_track"], "age": 1}
             else:
-                prev["obs"].append(obs); prev["obs"] = prev["obs"][-K:]; prev["frame"] = frame; prev["box"] = cur["box"]; prev["gt_track"] = cur["gt_track"]; prev["age"] = int(prev.get("age", 1)) + 1
+                prev["obs"].append(obs); prev["obs"] = prev["obs"][-K:]; prev["frame"] = step; prev["box"] = cur["box"]; prev["gt_track"] = cur["gt_track"]; prev["age"] = int(prev.get("age", 1)) + 1
         seen.update(best_rows)
         stats["frames"] += 1
     return examples, stats
@@ -279,7 +285,7 @@ def main() -> None:
         "inference_tensor_fields": ["normalized_bbox", "center", "size", "base_score", "frame_gap", "age", "hit_ratio", "causal_velocity", "DINOv2_crop_embedding_32_fixed_projection"],
         "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text"],
         "label_fields_not_in_tensor": ["target_gt_track_label", "target_gt_iou_label", "candidate_track_labels"],
-        "history_contract": "per-video reset; chronological frame loop; observations only at or before current birth; no cross-video state",
+        "history_contract": "per-video reset; chronological frame loop mapped to observed-frame ordinal causal steps; observations only at or before current birth; no cross-video state",
         "candidate_contract": "dormant/lost Q0 fragments <=16 frames, deterministic causal motion+visual+recency order, max16",
         "split_contract": "event videos excluded; four deterministic video-disjoint folds; category used only for metadata audit",
     }
