@@ -8,16 +8,19 @@ import datetime as dt
 import hashlib
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import torch
 
+# Keep the script runnable without requiring an external PYTHONPATH.
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 from src.iclr27_phase82p.build_residual_manifest import OBS_DIM, K, HORIZON, MAX_CANDIDATES, observation, candidate_order
 from src.iclr27_phase82p.residual import ResidualTrajectoryEncoder
 
-ROOT = Path(__file__).resolve().parents[2]
 NATIVE = Path("/data2/usr_for_deadline/trackocd_phase75b/event_full_sequence_repair2/native_lineage.jsonl")
 FRAMES = Path("/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/frames")
 APPEARANCE = ROOT / "outputs/iclr27_phase82p/features/native_dinov2.npz"

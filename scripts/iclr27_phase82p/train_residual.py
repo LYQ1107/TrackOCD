@@ -7,15 +7,18 @@ import datetime as dt
 import json
 import os
 import random
+import sys
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import torch
 
+# Allow direct invocation from the repository root or a scheduler shell.
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 from src.iclr27_phase82p.residual import ResidualTrajectoryEncoder, residual_loss, contract_summary
 
-ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs/iclr27_phase82p"
 
 
