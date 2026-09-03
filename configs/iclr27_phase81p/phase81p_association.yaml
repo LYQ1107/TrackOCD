@@ -1,0 +1,28 @@
+phase: Phase81P+
+route: q0_anchored_causal_association_transformer
+seed: 8101
+history_len: 8
+hidden_dim: 128
+heads: 4
+max_miss: 8
+match_margin: 0.0
+learning_rate: 0.0001
+weight_decay: 0.0001
+epochs: 20
+workers: 2
+gpu_mapping: {fold0: 4, fold1: 5, fold2: 6, fold3: 7}
+prefixes: [1, 2, 4, 8, 16]
+frozen_q0:
+  score_mode: base
+  proposal_boxes: true
+  proposal_source: outputs/iclr27_phase4q/q0_long
+  q0_checkpoint_sha256: 809c360471693adbc737394995528f04fd2ba90b6a65d85fc3c9e6b27d4d1738
+  q0_stream_sha256: 112d185e1a7d94495491d919d59045f0e474b5e2df1ab1c0fb6317f64bbab2ac
+inference_forbidden: [category_text, category_id, semantic_id, physical_id_feature, future_frame, future_track, held_gt, dev_plus, q1, public_new, sealed]
+selection_metrics: [association_accuracy, continuation_recall, false_merge, id_switch, fragmentation]
+physical_gate:
+  proposal_row_count_identical: true
+  det_a_non_worse: true
+  idsw_non_worse: true
+  false_merge_non_worse: true
+  require_frag_or_assa_idf1_improvement: true
