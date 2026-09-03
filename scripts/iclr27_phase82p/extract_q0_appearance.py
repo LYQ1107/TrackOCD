@@ -21,7 +21,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 Q0_JSON = ROOT / "outputs/iclr27_phase4t/train_stream/teta/tao_track.json"
 ANN = Path("/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/annotations/train.json")
-FRAMES = ANN.parent / "frames"
+# annotations/train.json lives one directory below TAO-Amodal; the images are
+# under TAO-Amodal/frames, not annotations/frames.
+FRAMES = ANN.parent.parent / "frames"
 HUB = Path("/home/user/.cache/torch/hub/facebookresearch_dinov2_main")
 OUT_ROOT = ROOT / "outputs/iclr27_phase82p/features/q0_dinov2_shards"
 
