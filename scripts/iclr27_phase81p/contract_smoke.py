@@ -10,7 +10,7 @@ def main():
  import torch
  from src.iclr27_phase81p.association import AssociationTransformer, CausalAssociationRuntime, PAIR_DIM
  torch.manual_seed(8101); model=AssociationTransformer(); x=torch.zeros((2,9,PAIR_DIM)); pair,new=model.score_candidates(x)
- assert tuple(pair.shape)==(2,9) and tuple(new.shape)==(2) and torch.isfinite(pair).all() and torch.isfinite(new).all()
+ assert tuple(pair.shape)==(2,9) and tuple(new.shape)==(2,) and bool(torch.isfinite(pair).all()) and bool(torch.isfinite(new).all())
  rt=CausalAssociationRuntime(model,'cpu');
  out0=rt.step([],0); assert out0==[]
  det={'bbox_xyxy':[1,2,20,30],'base_score':0.8,'frame_id':1,'appearance':np.zeros(8,np.float32)}
