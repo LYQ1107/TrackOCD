@@ -64,13 +64,13 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories):
         X=[]; y=[]; gap=[]; pos_count=0; neg_count=0
         for vid, frame_ids in videos_frames.items():
             frame_ids.sort(key=lambda iid:(image_frame[iid],iid)); history={}
-            for iid in frame_ids:
+            for pos, iid in enumerate(frame_ids):
                 cur=by_vf[(vid,iid)]
                 frame=int(image_frame[iid]); candidates=list(history.values())
                 # A causal tracker cannot retain arbitrarily old candidates;
                 # pruning to the registered eight-frame memory also prevents
                 # quadratic work on long TAO videos.
-                history={k:v for k,v in history.items() if frame-int(v['frame']) <= 8}
+                history={k:v for k,v in history.items() if pos-int(v['pos']) <= 8}
                 candidates=list(history.values())
                 # Keep up to eight recent alternatives plus the true trajectory.
                 for a in cur:
@@ -82,19 +82,19 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories):
                     feats=[]; target=-1
                     for j,h in enumerate(chosen):
                         d={'bbox_xyxy':box,'appearance':desc,'frame_id':frame,'base_score':1.0}
-                        t={'last_bbox':h['box'],'appearance_ema':h['appearance'],'last_frame':h['frame'],'age':h['age'],'miss_count':frame-h['frame'],'score_ema':1.0,'association_ema':0.0,'hit_count':h['age']}
+                        t={'last_bbox':h['box'],'appearance_ema':h['appearance'],'last_frame':h['frame'],'age':h['age'],'miss_count':max(0,pos-int(h['pos'])),'score_ema':1.0,'association_ema':0.0,'hit_count':h['age']}
                         feats.append(pair_features(d,t))
                         if int(h['track_id'])==gt: target=j
                     if target<0: target=len(feats) # NEW alternative
                     if not feats: continue
                     # Fixed-width candidates: zero-pad; target index is preserved.
                     k=min(9,len(feats)); arr=np.zeros((9,16),np.float32); arr[:k]=np.asarray(feats[:k],np.float32)
-                    X.append(arr); y.append(target if target<9 else 9); gap.append(min(8,max(0,frame-(chosen[0]['frame'] if chosen else frame))))
+                    X.append(arr); y.append(target if target<9 else 9); gap.append(min(8,max(0,pos-(chosen[0]['pos'] if chosen else pos))))
                     pos_count += int(target < k); neg_count += max(0,k-1)
                     if len(X)>=limit: break
                 # Update causal latest history after scoring this frame.
                 for a in cur:
-                    box,desc=ann_cache[int(a['id'])]; history[int(a['track_id'])]={'track_id':int(a['track_id']),'box':box,'appearance':desc,'frame':frame,'age':1 if int(a['track_id']) not in history else history[int(a['track_id'])]['age']+1}
+                    box,desc=ann_cache[int(a['id'])]; history[int(a['track_id'])]={'track_id':int(a['track_id']),'box':box,'appearance':desc,'frame':frame,'pos':pos,'age':1 if int(a['track_id']) not in history else history[int(a['track_id'])]['age']+1}
                 if len(X)>=limit: break
             if len(X)>=limit: break
         if not X: return np.zeros((0,9,16),np.float32),np.zeros((0,),np.int64),{'examples':0,'positive':0,'hard_negatives':0}
