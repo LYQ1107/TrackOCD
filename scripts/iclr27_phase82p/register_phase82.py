@@ -57,8 +57,21 @@ def atomic_json(path: Path, payload: Any) -> None:
 
 
 def main() -> None:
-    start = dt.datetime.now(dt.timezone.utc)
-    deadline = start + dt.timedelta(hours=10)
+    # Re-running registration after a small audit fix must not silently move
+    # the ten-hour deadline.  Preserve the first recorded clock values.
+    existing_path = AUDIT / "phase82_registration.json"
+    existing: dict[str, Any] = {}
+    if existing_path.is_file():
+        try:
+            existing = json.loads(existing_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            existing = {}
+    if existing.get("start_time_utc"):
+        start = dt.datetime.fromisoformat(str(existing["start_time_utc"]))
+        deadline = dt.datetime.fromisoformat(str(existing["deadline_utc"]))
+    else:
+        start = dt.datetime.now(dt.timezone.utc)
+        deadline = start + dt.timedelta(hours=10)
     output_link = OUT.resolve()
     payload = {
         "schema_version": "trackocd.phase82p.registration.v1",
@@ -70,7 +83,7 @@ def main() -> None:
         "cwd": str(ROOT),
         "git_head": run(["git", "rev-parse", "HEAD"]),
         "git_origin_main": run(["git", "ls-remote", "origin", "refs/heads/main"]),
-        "branch": run(["git", "branch", "--show-current"]),
+        "branch": run(["git", "rev-parse", "--abbrev-ref", "HEAD"]),
         "output_dir": str(output_link),
         "output_link_target": os.path.realpath(OUT),
         "resource_preflight": {
