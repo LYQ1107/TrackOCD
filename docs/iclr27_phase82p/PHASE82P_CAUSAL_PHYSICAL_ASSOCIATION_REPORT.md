@@ -4,7 +4,7 @@
 
 This report records the registered Phase82P window (`2026-09-03T16:39:00.669566Z` to `2026-09-04T02:39:00.669566Z`) and the work completed before the deadline. The route is a TRAIN-only residual fragment-repair experiment anchored to the frozen OVTR/Q0 physical stream. It is not a claim of MOT+OCD success.
 
-Starting code was the Phase81P frozen head `319fc3b91e8bb93398c9c6f54569d4990ba066d0`; final code head after every coherent change was pushed to GitHub is `8c2c4a18489d09a50bd46b14dd3ca2f60c7ccf1a` (`main`, origin synchronized).
+Starting code was the Phase81P frozen head `319fc3b91e8bb93398c9c6f54569d4990ba066d0`; final code head after every coherent change was pushed to GitHub is `b7fed9397905f00db4648c511e54dfa1d2350b88` (`main`, origin synchronized).
 
 ## Frozen contract and boundaries
 
