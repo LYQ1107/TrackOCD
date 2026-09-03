@@ -31,7 +31,7 @@ def event_videos():
             x=json.loads(line); vids.update([int(x['source_video']),int(x['target_video'])])
     return vids
 
-def make_descriptor_cache(images, anns):
+def make_descriptor_cache(images, anns, use_appearance=False):
     by_img=collections.defaultdict(list)
     for a in anns: by_img[int(a['image_id'])].append(a)
     cache={}; missing=0
@@ -40,8 +40,8 @@ def make_descriptor_cache(images, anns):
         path=Path('/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/frames')/str(rel) if rel else None
         for a in rows:
             b=a['bbox']; box=[float(b[0]),float(b[1]),float(b[0]+b[2]),float(b[1]+b[3])]
-            desc=crop_descriptor(str(path),box) if path else np.zeros(8,np.float32)
-            if not path or not path.is_file(): missing+=1
+            desc=crop_descriptor(str(path),box) if use_appearance and path else np.zeros(8,np.float32)
+            if use_appearance and (not path or not path.is_file()): missing+=1
             cache[int(a['id'])]=(box,desc)
     return cache,missing
 
@@ -105,11 +105,13 @@ def build_fold(fold, videos, images, anns, ann_cache, held_categories):
     return {'fold':fold,'fit_videos':sorted(fit_vids),'val_videos':sorted(val_vids),'held_categories':sorted(held_categories),'fit_categories_disjoint':True,'fit':fit_stats,'val':val_stats,'fit_path':str(fp),'val_path':str(vp)}
 
 def main():
+    import argparse
+    parser=argparse.ArgumentParser(); parser.add_argument('--appearance',action='store_true',help='decode RGB crops (slower; omitted for default geometry smoke)'); args=parser.parse_args()
     random.seed(SEED); np.random.seed(SEED)
     ann=json.loads(TRAIN_JSON.read_text()); images={int(x['id']):x for x in ann['images']}; anns=ann['annotations']; vids=sorted({int(x['video_id']) for x in ann['images']} - event_videos()); categories=sorted({int(x['category_id']) for x in anns})
-    cache,missing=make_descriptor_cache(images,anns)
+    cache,missing=make_descriptor_cache(images,anns,use_appearance=args.appearance)
     folds=[]
     for f in range(4): folds.append(build_fold(f,vids,images,anns,cache,{c for c in categories if c%4==f}))
-    result={'schema_version':'phase81p.train_manifest.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'seed':SEED,'train_annotations':str(TRAIN_JSON),'train_annotations_sha256':hashlib.sha256(TRAIN_JSON.read_bytes()).hexdigest(),'excluded_event_videos':sorted(event_videos()),'video_count_after_exclusion':len(vids),'category_count':len(categories),'descriptor':'8-D RGB crop mean/std; zero only when image missing','missing_image_annotations':missing,'folds':folds,'inference_tensor_forbidden':['track_id','category_id','physical_id','semantic_id','future','held_gt']}
+    result={'schema_version':'phase81p.train_manifest.v1','created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'seed':SEED,'train_annotations':str(TRAIN_JSON),'train_annotations_sha256':hashlib.sha256(TRAIN_JSON.read_bytes()).hexdigest(),'excluded_event_videos':sorted(event_videos()),'video_count_after_exclusion':len(vids),'category_count':len(categories),'descriptor':'8-D RGB crop mean/std when --appearance is enabled; otherwise deterministic zero appearance (geometry/score-only baseline)','appearance_enabled':bool(args.appearance),'missing_image_annotations':missing,'folds':folds,'inference_tensor_forbidden':['track_id','category_id','physical_id','semantic_id','future','held_gt']}
     atomic_json(OUT/'train_manifest.json',result); atomic_json(OUT/'supervision_inventory.json',result); print(json.dumps(result,indent=2))
 if __name__=='__main__': main()
