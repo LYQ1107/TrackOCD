@@ -114,6 +114,17 @@ if torch is not None:
             _, new_logits = self.forward(pair_matrix.mean(dim=0).unsqueeze(1))
             return logits, new_logits
 
+        def score_candidates(self, candidates: "torch.Tensor") -> Tuple["torch.Tensor", "torch.Tensor"]:
+            """Score listwise candidates shaped ``[batch, candidates, features]``."""
+            if candidates.ndim != 3 or candidates.shape[-1] != PAIR_DIM:
+                raise ValueError("candidates must have shape [batch,K,PAIR_DIM]")
+            batch, count, feats = candidates.shape
+            flat = candidates.reshape(batch * count, 1, feats)
+            pair, _ = self.forward(flat)
+            pair = pair.reshape(batch, count)
+            _, new = self.forward(candidates.mean(dim=1, keepdim=True))
+            return pair, new
+
 
     @dataclass
     class TrackState:
