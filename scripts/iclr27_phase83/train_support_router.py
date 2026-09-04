@@ -147,7 +147,10 @@ class MLP:
 def metrics(y: np.ndarray, p: np.ndarray) -> dict[str, Any]:
     pred = p >= .5; tp = int(np.sum(pred & (y == 1))); fp = int(np.sum(pred & (y == 0))); fn = int(np.sum((~pred) & (y == 1))); tn = int(np.sum((~pred) & (y == 0)))
     # Threshold-free ranking diagnostics use a deterministic O(n log n) AUC.
-    order = np.argsort(-p); ys = y[order]; pos = int(y.sum()); neg = int(len(y) - pos); rank = np.arange(1, len(y)+1); auc = float((rank[ys == 1].sum() - pos*(pos+1)/2) / max(pos*neg, 1))
+    order = np.argsort(-p); ys = y[order]; pos = int(y.sum()); neg = int(len(y) - pos); rank = np.arange(1, len(y)+1)
+    # ``rank`` is descending (largest probability has rank 1), so invert the
+    # usual ascending-rank Mann--Whitney expression for an AUC in [0,1].
+    desc_stat = float((rank[ys == 1].sum() - pos*(pos+1)/2) / max(pos*neg, 1)); auc = 1.0 - desc_stat
     return {"rows": int(len(y)), "positive": pos, "negative": neg, "positive_rate": float(pos/max(len(y),1)), "predicted_positive": int(pred.sum()), "precision": tp/max(tp+fp,1), "recall": tp/max(tp+fn,1), "f1": 2*tp/max(2*tp+fp+fn,1), "roc_auc": auc, "brier": float(np.mean((p-y)**2)), "confusion": {"tp":tp,"fp":fp,"fn":fn,"tn":tn}, "p_quantiles": [float(x) for x in np.quantile(p,[0,.1,.5,.9,1])]} 
 
 
