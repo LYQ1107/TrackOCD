@@ -112,12 +112,16 @@ def build_records(table, vectors: dict[str, np.ndarray], fold: int, prefix: int,
     keys = sorted({str(r["query_track_key"]) for r in manifest["records"] if r.get("split") == "val" and str(r.get("query_track_key")) in table.metadata})
     available = [k for k in keys if k in vectors or fallback_raw]
     vals = {k: vectors.get(k, table.raw_vector(k, prefix)) for k in available}
+    # Compute each frozen raw vector once.  Re-reading and averaging a track
+    # inside every query/candidate pair made the first implementation
+    # effectively quadratic in track length and produced no artifact.
+    raw_vals = {k: table.raw_vector(k, prefix) for k in available}
     all_idx = np.arange(len(available), dtype=np.int64); vids = np.asarray([table.metadata[k]["video"] for k in available]); cats = np.asarray([table.metadata[k]["category"] for k in available])
     recs: list[dict[str, Any]] = []
     for i, q in enumerate(available):
         ci = all_idx[(all_idx != i) & (vids != vids[i])]; candidates = [available[int(j)] for j in ci]
         pos = [available[int(j)] for j in ci if cats[int(j)] == cats[i]]; neg = [available[int(j)] for j in ci if cats[int(j)] != cats[i]]
-        qv = vals[q]; scores = [float(qv @ vals[c]) for c in candidates]; raw = [float(table.raw_vector(q, prefix) @ table.raw_vector(c, prefix)) for c in candidates]
+        qv = vals[q]; scores = [float(qv @ vals[c]) for c in candidates]; raw = [float(raw_vals[q] @ raw_vals[c]) for c in candidates]
         recs.append({"query_key": q, "category": int(cats[i]), "video": int(vids[i]), "candidates": candidates, "positives": pos, "negatives": neg, "scores": scores, "raw_scores": raw})
     return recs, {"fold": fold, "prefix": prefix, "manifest": str(manifest_path.resolve()), "manifest_sha256": sha(manifest_path), "keys_total": len(keys), "keys_evaluable": len(available), "candidate_universe": "all validation tracks except self and same video", "raw_fallback_for_unmapped": bool(fallback_raw)}
 
