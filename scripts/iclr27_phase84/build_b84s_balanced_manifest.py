@@ -37,8 +37,8 @@ EPISODE_DIR = ROOT / "outputs/iclr27_phase30/manifests"
 PUBLIC_CSV = ROOT / "data/iclr27_phase19r/sources/public_rows_corrected.csv"
 SOURCE_CACHE = BASE / "manifests/source_track_native_vectors.npz"
 OUT = ROOT / "outputs/iclr27_phase84"
-DATA = BASE / "manifests/b84sq_balanced_v2_features.npz"
-MANIFEST = OUT / "manifests/b84sq_balanced_v2_manifest.json"
+DATA = BASE / "manifests/b84sq_balanced_v3_features.npz"
+MANIFEST = OUT / "manifests/b84sq_balanced_v3_manifest.json"
 
 
 def sha(path: Path) -> str:
@@ -134,12 +134,17 @@ def main() -> None:
     if not selected: raise RuntimeError("no legal source/query groups after filtering")
     # Greedily partition category units by incident group count, then derive
     # each fold's video/category-disjoint fit set.  No event result is used.
-    cat_weight: Counter[int] = Counter()
-    for c in selected: cat_weight.update({int(c["query_category"]), int(c["source_category"])})
+    cat_weight: Counter[int] = Counter(); cat_pos: Counter[int] = Counter()
+    for c in selected:
+        cat_weight.update({int(c["query_category"]), int(c["source_category"])})
+        if c["kind"] == "multi_positive_cross_video": cat_pos[int(c["query_category"])] += 1
     def partition(k: int) -> list[set[int]]:
-        bins = [set() for _ in range(k)]; weights = [0]*k
+        bins = [set() for _ in range(k)]; weights = [0]*k; pos_weights = [0]*k
         for cat, wt in sorted(cat_weight.items(), key=lambda x: (-x[1], x[0])):
-            j = min(range(k), key=lambda z: (weights[z], z)); bins[j].add(cat); weights[j] += wt
+            # Keep positive query episodes balanced first; total group count is
+            # the secondary objective.  This prevents a large all-DEFER tail
+            # category from consuming an entire validation fold.
+            j = min(range(k), key=lambda z: (pos_weights[z], weights[z], z)); bins[j].add(cat); weights[j] += wt; pos_weights[j] += cat_pos.get(cat, 0)
         return bins
     # Prefer four folds, but objectively fall back to three if a fold would
     # have fewer than 100 validation groups or 100 fit groups.
@@ -182,8 +187,8 @@ def main() -> None:
     fold_meta: dict[str, Any] = {}
     for fi, fd in enumerate(sets):
         fit, val = fd["fit_groups"], fd["validation_groups"]; fcat = sorted({categories[i] for i in fit}); vcat = sorted({categories[i] for i in val}); fvid = sorted({videos[i] for i in fit}); vvid = sorted({videos[i] for i in val}); fold_meta[str(fi)] = {"fit_groups": fit, "validation_groups": val, "fit_categories": fcat, "validation_categories": vcat, "fit_videos": fvid, "validation_videos": vvid, "category_overlap": sorted(set(fcat)&set(vcat)), "video_overlap": sorted(set(fvid)&set(vvid)), "query_category_disjoint": not (set(fcat)&set(vcat)), "target_video_disjoint": not (set(fvid)&set(vvid)), "source_support_may_cross_fold": split_mode != "strict_query_source_category_and_all_video"}
-    manifest = {"schema_version": "trackocd.phase84.b84sq.balanced_manifest.v2", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "data": str(DATA.resolve()), "data_sha256": sha(DATA), "native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "episode_dir": str(EPISODE_DIR.resolve()), "public_csv": str(PUBLIC_CSV.resolve()), "groups": len(selected), "candidate_rows": len(feat_rows), "feature_dim": 19, "fold_count": chosen_k, "fold_assignment": split_mode, "folds": fold_meta, "raw_legal_pair_records": len(raw), "source_cap": {"positive": 2, "hard_defer": 2, "scope": "original Phase30 provenance fold"}, "event_videos_excluded": sorted(v for v in blocked if v >= 0), "target_contract": "positive iff candidate IoU>=0.5 to TRAIN GT box with source category; null/hard-negative is explicit DEFER", "labels_used_only_for_train_targets": True, "model_input_forbidden": ["category", "gt_bbox", "gt_iou", "assigned", "physical_id", "semantic_id", "future", "text", "event_key", "StateMemory", "controller_action"], "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
-    atomic_json(MANIFEST, manifest); atomic_json(OUT / "status.json", {"phase": "Phase84", "route": "B84S_Q_BALANCED_MANIFEST", "status": "COMPLETE", "manifest": str(MANIFEST.resolve()), "fold_count": chosen_k, "public_dev_q1_sealed_accessed": False}); atomic_json(OUT / "completion/b84sq_balanced_v2_manifest.done", {"status": "DONE", "manifest": str(MANIFEST.resolve()), "data": str(DATA.resolve())}); print(json.dumps({"groups": len(selected), "raw_records": len(raw), "candidate_rows": len(feat_rows), "fold_count": chosen_k, "folds": {f: {"fit": len(d["fit_groups"]), "val": len(d["validation_groups"]), "query_category_disjoint": d["query_category_disjoint"], "target_video_disjoint": d["target_video_disjoint"]} for f,d in fold_meta.items()}}, indent=2, sort_keys=True))
+    manifest = {"schema_version": "trackocd.phase84.b84sq.balanced_manifest.v3", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "data": str(DATA.resolve()), "data_sha256": sha(DATA), "native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "episode_dir": str(EPISODE_DIR.resolve()), "public_csv": str(PUBLIC_CSV.resolve()), "groups": len(selected), "candidate_rows": len(feat_rows), "feature_dim": 19, "fold_count": chosen_k, "fold_assignment": split_mode, "folds": fold_meta, "raw_legal_pair_records": len(raw), "source_cap": {"positive": 2, "hard_defer": 2, "scope": "original Phase30 provenance fold"}, "event_videos_excluded": sorted(v for v in blocked if v >= 0), "target_contract": "positive iff candidate IoU>=0.5 to TRAIN GT box with source category; null/hard-negative is explicit DEFER", "labels_used_only_for_train_targets": True, "model_input_forbidden": ["category", "gt_bbox", "gt_iou", "assigned", "physical_id", "semantic_id", "future", "text", "event_key", "StateMemory", "controller_action"], "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
+    atomic_json(MANIFEST, manifest); atomic_json(OUT / "status.json", {"phase": "Phase84", "route": "B84S_Q_BALANCED_MANIFEST", "status": "COMPLETE", "manifest": str(MANIFEST.resolve()), "fold_count": chosen_k, "public_dev_q1_sealed_accessed": False}); atomic_json(OUT / "completion/b84sq_balanced_v3_manifest.done", {"status": "DONE", "manifest": str(MANIFEST.resolve()), "data": str(DATA.resolve())}); print(json.dumps({"groups": len(selected), "raw_records": len(raw), "candidate_rows": len(feat_rows), "fold_count": chosen_k, "folds": {f: {"fit": len(d["fit_groups"]), "val": len(d["validation_groups"]), "query_category_disjoint": d["query_category_disjoint"], "target_video_disjoint": d["target_video_disjoint"]} for f,d in fold_meta.items()}}, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
