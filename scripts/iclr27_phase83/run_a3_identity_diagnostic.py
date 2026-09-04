@@ -14,6 +14,7 @@ import hashlib
 import json
 import math
 import os
+import sys
 import tempfile
 from collections import defaultdict
 from pathlib import Path
@@ -21,9 +22,11 @@ from typing import Any
 
 import numpy as np
 
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 from src.iclr27_phase75d.protocol import load_frozen_tracks, order_key
 
-ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs/iclr27_phase83"
 NATIVE = Path("/data2/usr_for_deadline/trackocd_phase83/a2_full/native_lineage.jsonl")
 FEATURES = Path("/data2/usr_for_deadline/trackocd_phase83/a2_dino_full_r1/merged/native_dinov2.npz")
