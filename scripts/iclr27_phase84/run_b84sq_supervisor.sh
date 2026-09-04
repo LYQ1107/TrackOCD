@@ -3,7 +3,8 @@ set -euo pipefail
 TAG="${1:-b84sq_formal_v3}"
 EPOCHS="${2:-15}"
 PY="/home/lwr/anaconda3/envs/ovtr/bin/python"
-for fold in 0 1 2 3; do
+FOLDS=(0 1 2)
+for fold in "${FOLDS[@]}"; do
   done_file="outputs/iclr27_phase84/completion/b84sq_${TAG}_f${fold}.done"
   launch_file="outputs/iclr27_phase84/completion/b84sq_${TAG}_f${fold}.launched"
   if [[ -f "$done_file" ]]; then
