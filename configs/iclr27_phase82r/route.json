@@ -1,0 +1,19 @@
+{
+  "phase": "Phase82R+",
+  "route": "balanced_two_stage_residual_then_selective_overwrite",
+  "seed": 8201,
+  "history_length": 8,
+  "horizon_observed_steps": 16,
+  "appearance_source": "DINOv2 ViT-B/14 normalized CLS 768-D; TRAIN-only PCA/projection is fitted per fold if used",
+  "repair_gate_sampling": "1 reconnect : 1 real KEEP negatives; every positive seen each epoch",
+  "ranking": "listwise reconnect ranking on positive candidate sets only",
+  "effective_epochs": 15,
+  "folds": 4,
+  "gpus": [4, 5, 6, 7],
+  "forbidden_inference_fields": ["category_id", "category_text", "semantic_id", "physical_id", "future", "held_gt", "DEV+", "Q1", "public_new", "sealed"],
+  "q0_strict_o_p16_reference": "25/76",
+  "q0_physical_stream": "frozen; non-birth continuation rows byte-preserved for residual route",
+  "candidate_policy": "causal dormant/terminated fragments only; deterministic geometry+appearance+recency; max 16",
+  "checkpoint_selection": ["false_reconnect_rate", "repair_precision", "repair_recall", "predicted_reconnect_rate"],
+  "no_threshold_sweep": true
+}
