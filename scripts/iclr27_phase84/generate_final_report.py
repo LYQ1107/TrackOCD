@@ -108,6 +108,8 @@ def main() -> None:
     b84sra_formal = load(METRICS / "b84s_formal_aggregate_b84sra_v1.json")
     b84sra_event = load(METRICS / "b84s_event_replay_b84sra_v1.json")
     b84sra_audit = load(AUDIT / "b84sra_failure_audit.json")
+    b84sproto_event = load(METRICS / "b84s_event_replay_b84sproto_v1.json")
+    b84sproto_audit = load(AUDIT / "b84sproto_failure_audit.json")
     align = load(AUDIT / "support_alignment_callgraph.json")
     repairs = load(AUDIT / "repair_events.json")
     validation = load(AUDIT / "validation_evidence_ledger.json")
@@ -116,6 +118,7 @@ def main() -> None:
     phys_p16 = physical.get("gate_diagnostic", {}).get("p16", {})
     q16 = p16_summary(b84sq_event)
     ra16 = p16_summary(b84sra_event)
+    proto16 = p16_summary(b84sproto_event)
     old16 = p16_summary(b84s_event)
     provenance_paths = [
         AUDIT / "phase83_a2_report_integrity.json", AUDIT / "a84_physical_r_metrics.json",
@@ -125,6 +128,7 @@ def main() -> None:
         METRICS / "b84s_event_replay_b84sq_v3.json", AUDIT / "b84sq_failure_audit.json",
         METRICS / "b84s_formal_aggregate_b84sra_v1.json", METRICS / "b84s_event_replay_b84sra_v1.json",
         AUDIT / "b84sra_failure_audit.json", AUDIT / "support_alignment_callgraph.json",
+        METRICS / "b84s_event_replay_b84sproto_v1.json", AUDIT / "b84sproto_failure_audit.json",
         OUT / "manifests/b84s_native_manifest.json", OUT / "manifests/b84sq_balanced_v3_manifest.json",
     ]
     provenance = {
@@ -153,6 +157,7 @@ def main() -> None:
             "B84S_original": "B84S_SOURCE_CONDITIONED_SELECTION_FAIL",
             "B84S_Q": b84sq_audit.get("decision", "B84S_Q_FAIL"),
             "B84S_RA": b84sra_audit.get("decision", "B84S_RA_PARTIAL_NO_ALIGNMENT"),
+            "B84S_PROTO": b84sproto_audit.get("decision", "B84S_PROTO_FAIL_NO_ALIGNMENT"),
             "B84A_alignment": "B84A_ALIGNMENT_NOT_NEEDED",
             "C84_controller": "NOT_RUN",
             "sealed": "NOT_RUN",
@@ -246,13 +251,19 @@ At prefix16 B84S-Q selected reliable candidates on `{q16.get('positive', {}).get
 
 The one registered no-training diagnostic added a fixed `0.05*tanh` bounded residual to raw source-mean cosine and used raw candidate fallback when the frozen model emitted DEFER. At prefix16 it reached `{ra16.get('positive', {}).get('selected_reliable_events')}/76` positive and `{ra16.get('negative', {}).get('selected_reliable_events')}/76` negative reliable selections, versus raw `{ra16.get('positive', {}).get('raw_source_mean_reliable_events')}/76` and `{ra16.get('negative', {}).get('raw_source_mean_reliable_events')}/76`. Per-fold positive counts and event taxonomy are in `{str((AUDIT / 'b84sra_failure_audit.json').resolve())}`. The modest positive increase remains below the registered `>30/76` alignment-routing criterion and increases negative activation; status is **PARTIAL / no alignment**.
 
+### B84S-PROTO fixed prototype-anchor diagnostic
+
+The final registered source-representation diagnostic selected by maximum
+cosine to the fixed three contiguous causal source prototypes. At prefix16 it
+reached `{proto16.get('positive', {}).get('selected_reliable_events')}/76` positive and `{proto16.get('negative', {}).get('selected_reliable_events')}/76` negative reliable selections, compared with raw source-mean `{proto16.get('positive', {}).get('raw_source_mean_reliable_events')}/76` and `{proto16.get('negative', {}).get('raw_source_mean_reliable_events')}/76`. This is below the `>30/76` alignment criterion and has higher negative activation than B84S-RA; it is **FAIL / no alignment**. Full event taxonomy is in `{str((AUDIT / 'b84sproto_failure_audit.json').resolve())}`.
+
 ### Event-level failure evidence
 
 The repaired B84S-Q prefix16 taxonomy is retained in `{str((AUDIT / 'b84sq_failure_audit.json').resolve())}`. Its fold view is:
 
 {table(['event fold','polarity','events','selected','reliable','raw reliable','taxonomy'], fold_rows)}
 
-The support-alignment callgraph confirms that B84S/B84S-Q/B84S-RA implement selection only; no transformed support IoU is present. Alignment is therefore **NOT_RUN**, not zeroed.
+The support-alignment callgraph confirms that B84S/B84S-Q/B84S-RA/B84S-PROTO implement selection only; no transformed support IoU is present. Alignment is therefore **NOT_RUN**, not zeroed.
 
 ## Route gates
 
@@ -261,6 +272,7 @@ The support-alignment callgraph confirms that B84S/B84S-Q/B84S-RA implement sele
     ['B84S original','FAIL', 'query-agnostic source attachment; p16 reliable selection below comparator'],
     ['B84S-Q repaired matcher','FAIL', '7/76 positive reliable at p16; repaired query contract still does not preserve raw signal'],
     ['B84S-RA raw-anchor','PARTIAL', '24/76 positive, 9/76 negative; below >30/76 alignment criterion'],
+    ['B84S-PROTO fixed M=3 prototypes','FAIL', '23/76 positive, 11/76 negative; below alignment criterion'],
     ['B84A alignment','NOT_RUN', 'selection criterion not met; no transformed-support implementation'],
     ['C84 controller / Commit-CT','NOT_RUN', 'R/O routes did not authorize controller'],
     ['sealed/public','NOT_RUN', 'sealed boundary remained closed'],

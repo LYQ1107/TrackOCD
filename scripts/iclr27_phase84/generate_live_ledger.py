@@ -86,11 +86,13 @@ def main() -> None:
     b84s = load(METRICS / "b84s_event_replay.json")
     b84sq = load(METRICS / "b84s_event_replay_b84sq_v3.json")
     b84sra = load(METRICS / "b84s_event_replay_b84sra_v1.json")
+    b84sproto = load(METRICS / "b84s_event_replay_b84sproto_v1.json")
     formal = load(METRICS / "b84s_formal_aggregate.json")
     formal_q = load(METRICS / "b84s_formal_aggregate_b84sq_v3.json")
     formal_ra = load(METRICS / "b84s_formal_aggregate_b84sra_v1.json")
     b84sq_audit = load(AUDIT / "b84sq_failure_audit.json")
     b84sra_audit = load(AUDIT / "b84sra_failure_audit.json")
+    b84sproto_audit = load(AUDIT / "b84sproto_failure_audit.json")
     physical_p16 = physical.get("p16", physical.get("aggregate", {}).get("16", {}))
     signal_p16 = signal.get("p16_signal", {})
     def p16_summary(z: dict[str, Any]) -> dict[str, Any]:
@@ -103,6 +105,7 @@ def main() -> None:
         AUDIT / "source_conditioned_signal.json",
         AUDIT / "b84sq_failure_audit.json",
         AUDIT / "b84sra_failure_audit.json",
+        AUDIT / "b84sproto_failure_audit.json",
         AUDIT / "support_alignment_callgraph.json",
         METRICS / "physical_r_q0_adapter.json",
         METRICS / "b84s_formal_aggregate.json",
@@ -111,6 +114,7 @@ def main() -> None:
         METRICS / "b84s_event_replay_b84sq_v3.json",
         METRICS / "b84s_formal_aggregate_b84sra_v1.json",
         METRICS / "b84s_event_replay_b84sra_v1.json",
+        METRICS / "b84s_event_replay_b84sproto_v1.json",
         OUT / "manifests/b84sq_balanced_v3_manifest.json",
         OUT / "manifests/b84s_native_manifest.json",
     ]
@@ -151,6 +155,7 @@ def main() -> None:
         {"name": "B84S_ORIGINAL_QUERY_AGNOSTIC", "evidence": [artifact(METRICS / "b84s_event_replay.json"), artifact(METRICS / "b84s_formal_aggregate.json")], "result": p16_summary(b84s), "decision": "B84S_SOURCE_CONTRACT_FAIL", "next_action": "repair source/query conditioning once"},
         {"name": "B84S_Q_QUERY_CONDITIONED", "evidence": [artifact(METRICS / "b84s_event_replay_b84sq_v3.json"), artifact(AUDIT / "b84sq_failure_audit.json")], "result": {"formal": formal_q.get("validation_weighted", {}), "p16": p16_summary(b84sq)}, "decision": b84sq_audit.get("decision", "B84S_Q_FAIL"), "next_action": "diagnose ranking/generalization; no alignment because positive reliable selection is below 30/76"},
         {"name": "B84S_RA_RAW_ANCHOR", "evidence": [artifact(METRICS / "b84s_event_replay_b84sra_v1.json"), artifact(AUDIT / "b84sra_failure_audit.json")], "result": {"formal": formal_ra.get("validation_weighted", {}), "p16": p16_summary(b84sra)}, "decision": b84sra_audit.get("decision", "B84S_RA_PARTIAL"), "next_action": "no alignment/controller; await finalization lock"},
+        {"name": "B84S_PROTO_FIXED_SOURCE_PROTOTYPES", "evidence": [artifact(METRICS / "b84s_event_replay_b84sproto_v1.json"), artifact(AUDIT / "b84sproto_failure_audit.json")], "result": {"p16": p16_summary(b84sproto)}, "decision": b84sproto_audit.get("decision", "B84S_PROTO_FAIL"), "next_action": "no alignment/controller; retain prototype diagnostic"},
     ]
     snapshot = resource_snapshot()
     atomic_json(AUDIT / "repair_events.json", {"schema_version": "trackocd.phase84.repair_events.v1", "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "events": repair_events, "resource_events": [{"event": "Phase84 formal workers", "oom": False, "external_process_terminated": False, "gpu_route": "CPU for B84S/B84S-Q/B84S-RA", "ram_snapshot": snapshot["free_h"], "process_count": snapshot["process_count"]}]})
@@ -168,6 +173,7 @@ def main() -> None:
         "- A84P true physical reassociation completed; its frozen-R safety gate failed, so no controller was run.",
         "- B84S original query-agnostic selector failed; B84S-Q repaired query/source contract also failed to improve event selection.",
         "- B84S-RA raw-anchor bounded residual reached its registered diagnostic result; positive selection remains below the >30/76 alignment-routing criterion and negative activation increased.",
+        "- B84S-PROTO fixed M=3 prototype-anchor diagnostic reached its registered result; it is below the alignment criterion and has higher negative activation than B84S-RA.",
         "- B84A alignment, C84 controller, and sealed/public evaluation are NOT_RUN by protocol.",
         "",
         f"Phase84 process snapshot: {len(snapshot['phase84_processes'])} task processes.",
