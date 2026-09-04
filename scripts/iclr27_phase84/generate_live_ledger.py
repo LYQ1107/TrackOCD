@@ -173,7 +173,7 @@ def main() -> None:
         f"Phase84 process snapshot: {len(snapshot['phase84_processes'])} task processes.",
         "",
         "Machine ledgers: `outputs/iclr27_phase84/audit/{research_ledger,repair_events,validation_evidence_ledger}.json`.",
-        "The final report is intentionally withheld until the registered finalization lock opens.",
+        "The final report is intentionally withheld until the registered finalization lock opens." if not lock.get("allowed", False) else "The registered finalization lock is open; the lock-aware final report generator may now run.",
     ]
     live_path = ROOT / "docs/iclr27_phase84/PHASE84_LIVE_LEDGER.md"
     live_path.parent.mkdir(parents=True, exist_ok=True)
