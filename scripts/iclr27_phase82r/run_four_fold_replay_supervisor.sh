@@ -5,6 +5,7 @@ PY="/home/lwr/anaconda3/envs/ovtr/bin/python"
 OUT="$ROOT/outputs/iclr27_phase82r"
 TAG="${1:-balanced_replay_formal}"
 CKPT_TAG="${2:-balanced_formal_r1}"
+THRESHOLD="${3:-0.5}"
 mkdir -p "$OUT/completion" "$OUT/logs/replay"
 GPUS=(4 5 6 7); pids=(); folds=()
 for fold in 0 1 2 3; do
@@ -12,7 +13,7 @@ for fold in 0 1 2 3; do
   [[ -e "$done_marker" ]] && continue
   [[ -e "$launched" ]] && { echo "refusing duplicate replay fold $fold" >&2; exit 3; }
   tmp="$launched.$$.tmp"; printf 'pid_pending supervisor=%s fold=%s gpu=%s tag=%s utc=%s\n' "$$" "$fold" "${GPUS[$fold]}" "$TAG" "$(date -u +%FT%TZ)" > "$tmp"; mv "$tmp" "$launched"
-  CUDA_VISIBLE_DEVICES="${GPUS[$fold]}" "$PY" "$ROOT/scripts/iclr27_phase82r/replay_balanced_residual.py" --checkpoint "$OUT/checkpoints/$CKPT_TAG/fold${fold}/latest.pt" --device cuda:0 --tag "${TAG}_f${fold}" > "$OUT/logs/replay/${TAG}_f${fold}.log" 2>&1 &
+  CUDA_VISIBLE_DEVICES="${GPUS[$fold]}" "$PY" "$ROOT/scripts/iclr27_phase82r/replay_balanced_residual.py" --checkpoint "$OUT/checkpoints/$CKPT_TAG/fold${fold}/latest.pt" --device cuda:0 --tag "${TAG}_f${fold}" --gate-threshold "$THRESHOLD" > "$OUT/logs/replay/${TAG}_f${fold}.log" 2>&1 &
   pids+=("$!"); folds+=("$fold")
 done
 status=0
