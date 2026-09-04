@@ -15,12 +15,14 @@ import hashlib
 import importlib
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 Q0_JSON = ROOT / "outputs/iclr27_phase4t/train_stream/teta/tao_track.json"
 TRAIN_JSON = Path("/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/annotations/train.json")
 EVENT_MANIFEST = ROOT / "outputs/iclr27_phase74s/manifests/model_events_v2.jsonl"
