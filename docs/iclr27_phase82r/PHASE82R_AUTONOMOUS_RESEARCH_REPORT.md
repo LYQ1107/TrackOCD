@@ -2,7 +2,7 @@
 
 **Window:** 2026-09-04 02:17:53 UTC – registered deadline 12:17:53 UTC  
 **Project:** `/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT`  
-**Final code HEAD:** `054910c06fca98e412792135045836203ffadadc` (`origin/main` synchronized)  
+**Final repository HEAD:** `d40548c` (`origin/main` synchronized; code/log baseline before the report commit was `054910c06fca98e412792135045836203ffadadc`)  
 **Status:** physical-association escalation completed with negative strict-O evidence; downstream retrieval/controller/sealed stages were not authorized by the frozen contract.
 
 ## Executive result
