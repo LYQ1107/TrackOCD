@@ -41,7 +41,9 @@ def train_fold(fold,tag,epochs,steps_limit=0,smoke=False):
  for epoch in range(epochs):
   rng.shuffle(order)
   for g in order:
-   a,z0=int(offsets[g]),int(offsets[g+1]); X=(x[a:z0]-mean)/std; n=z0-a; logits=np.concatenate([X@w,np.asarray([b])]); logits-=logits.max(); probs=np.exp(logits);probs/=max(float(probs.sum()),1e-12); target=min(int(targets[g]),n); loss=-np.log(max(float(probs[target]),1e-12)); grad=probs[:-1].astype(np.float32); grad[target]-=1. if target<n else 0.; w-=np.float32(0.04)*((X.T@grad)/max(1,n)); b-=np.float32(0.04)*(float(probs[-1])-(1. if target==n else 0.)); losses.append(float(loss));steps+=1
+   a,z0=int(offsets[g]),int(offsets[g+1]); X=(x[a:z0]-mean)/std; n=z0-a; logits=np.concatenate([X@w,np.asarray([b])]); logits-=logits.max(); probs=np.exp(logits);probs/=max(float(probs.sum()),1e-12); target=min(int(targets[g]),n); loss=-np.log(max(float(probs[target]),1e-12)); grad=probs[:-1].astype(np.float32)
+   if target < n: grad[target] -= 1.0
+   w-=np.float32(0.04)*((X.T@grad)/max(1,n)); b-=np.float32(0.04)*(float(probs[-1])-(1. if target==n else 0.)); losses.append(float(loss));steps+=1
    if steps%1000==0: atom_npz(ckdir/f'b84s_{tag}_f{fold}_step{steps:06d}.npz',w=w,b=np.asarray([b],np.float32),mean=mean,std=std,step=np.asarray([steps]),fold=np.asarray([fold]));
    if steps_limit and steps>=steps_limit: break
   if steps_limit and steps>=steps_limit: break
