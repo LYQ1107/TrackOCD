@@ -536,6 +536,7 @@ def build_report(snapshot: dict[str, Any], final_time: dt.datetime) -> str:
     b3_fold = table(["fold", "steps", "fit groups", "val groups", "val NLL", "candidate/defer acc", "defer recall", "pred candidate", "reliable target"], b3["fold_rows"])
     b4_fold = table(["fold", "steps", "fit groups", "val groups", "val NLL", "candidate/defer acc", "defer recall", "pred candidate", "reliable target"], b4["fold_rows"])
     syms = table(["path", "target", "exists", "sha256"], [[s.get("path"), s.get("target") or "", s.get("target_exists"), s.get("sha256", "")] for s in snapshot["symlinks"]])
+    checkpoints = table(["checkpoint", "size bytes", "sha256"], [[c.get("path"), c.get("size_bytes"), c.get("sha256")] for c in snapshot["checkpoints"]])
     markers = snapshot["markers"]
     return f"""# TrackOCD Phase83 Resumed Final Report
 
@@ -640,6 +641,10 @@ Aggregated p16 classes are B proposal exists but max IoU<0.5 = 15, D assigned bu
 - The first physical-R process was task-owned PID 17813 with wait shell 17963; it was SIGTERM-ed after profiling exposed repeated per-pair raw-vector recomputation and no artifact had been produced. No external process was touched and no OOM occurred.
 - Completion markers: `{markers['done_count']}` `.done`, `{markers['launched_count']}` `.launched`; unmatched launched markers are `{markers['unmatched_launched_without_done']}`. Checkpoints are resumable `.npz` artifacts with hashes in the ledger. No Phase83 process remained at final audit.
 - GPU 0–3 were occupied by external jobs during much of the run; the appearance extraction used idle GPUs 5–8. B2/B3/B4 routers were CPU-bound and did not need GPU placement. GPU4 was not touched after an external job appeared. RAM preflight had approximately 98 GiB available of 125 GiB total (≥25% headroom); `/data1` was near capacity, so large caches/checkpoints were stored under `/data2/usr_for_deadline/trackocd_phase83` and exposed by symlink. No OOM or near-OOM event occurred.
+
+Checkpoint inventory (all paths and hashes are generated from the current filesystem; no checkpoint was silently replaced):
+
+{checkpoints}
 
 Symlink/storage ledger:
 
