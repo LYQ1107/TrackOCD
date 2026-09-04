@@ -1,9 +1,9 @@
 # Phase84 live ledger (not final)
 
-Generated UTC: 2026-09-04T19:33:27.628774+00:00
+Generated UTC: 2026-09-04T19:35:11.397525+00:00
 Window deadline UTC: 2026-09-05T03:50:55Z
 Finalization lock allowed: False
-Git HEAD: 47fd54c4be69df772f43efe080b5d53a30f42507
+Git HEAD: b3f96e8a6dd58cdbf6e0fb8001c0b0e6451b3aa3
 
 Scientific status:
 - A84P true physical reassociation completed; its frozen-R safety gate failed, so no controller was run.
