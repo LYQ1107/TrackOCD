@@ -1,0 +1,27 @@
+{
+  "phase": "Phase83",
+  "route": "O_support_v1",
+  "version": "support_quality_router_v1",
+  "seed": 8301,
+  "prefixes": [1, 2, 4, 8, 16],
+  "reliable_rule": "assigned == 1 and transformed/event row IoU >= 0.5",
+  "teacher_rule": "support_quality >= 0.2 and causal_support_margin >= raw_margin + 0.005",
+  "inputs": [
+    "base_proposal_score", "bbox_geometry", "candidate_rank",
+    "corrected_dinov2_cosine", "temporal_mean_cosine",
+    "motion_consistency", "physical_track_age", "physical_track_confidence",
+    "history_length", "gap", "proposal_density", "candidate_ambiguity"
+  ],
+  "forbidden_inputs": [
+    "category", "category_text", "semantic_id", "physical_id_feature",
+    "gt_iou", "event_identity", "positive_negative_event_flag", "future",
+    "held_gt", "DEV+", "Q1", "public_new", "sealed", "StateMemory"
+  ],
+  "hidden": 128,
+  "aggregation": "candidate_mlp_plus_temporal_summary",
+  "decision": "support_selected_v1 if calibrated probability >= train_frozen_threshold else raw fallback",
+  "threshold_selection": "single TRAIN video-disjoint validation freeze; no held tuning",
+  "gpu_limit": 4,
+  "gpu_mapping": {"fold0": 4, "fold1": 5, "fold2": 6, "fold3": 7},
+  "completion": "atomic launched/done markers and resumable checkpoints"
+}
