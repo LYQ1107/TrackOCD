@@ -55,6 +55,14 @@ def crop_box(image: Any, box: list[float], context: float = 0.10) -> Any:
     return image.crop((int(xa), int(ya), int(xb), int(yb)))
 
 
+def xywh_to_xyxy(values: list[float]) -> list[float]:
+    """Q0 TAO rows store bbox as x,y,width,height (not x1,y1,x2,y2)."""
+    if len(values) != 4:
+        raise ValueError("Q0 bbox must have four values")
+    x, y, w, h = [float(v) for v in values]
+    return [x, y, x + max(0.0, w), y + max(0.0, h)]
+
+
 def cosine(a: np.ndarray, b: np.ndarray) -> float:
     den = float(np.linalg.norm(a) * np.linalg.norm(b))
     return float(np.dot(a, b) / den) if den > 1e-8 else 0.0
@@ -93,7 +101,7 @@ def main() -> None:
         path = FRAMES / str(image["file_name"])
         with Image.open(path) as raw:
             rgb = raw.convert("RGB")
-            crop = crop_box(rgb, [float(v) for v in row["bbox"]])
+            crop = crop_box(rgb, xywh_to_xyxy([float(v) for v in row["bbox"]]))
             arr = np.asarray(crop, dtype=np.float32) / 255.0
             pixel_stats.append({"mean": float(arr.mean()), "std": float(arr.std()), "shape": list(arr.shape), "path": str(path)})
             tensors.append(tf(crop).unsqueeze(0))
