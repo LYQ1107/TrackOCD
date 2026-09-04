@@ -27,17 +27,19 @@ class FullAssociation(nn.Module):
         obs_dim: int = OBS_DIM,
         hidden: int = HIDDEN,
         max_candidates: int = MAX_CANDIDATES,
+        explicit_app_cosine: bool = False,
     ) -> None:
         super().__init__()
         self.obs_dim = obs_dim
         self.hidden = hidden
         self.max_candidates = max_candidates
+        self.explicit_app_cosine = bool(explicit_app_cosine)
         self.obs_proj = nn.Sequential(nn.LayerNorm(obs_dim), nn.Linear(obs_dim, hidden), nn.GELU())
         self.temporal = nn.GRU(hidden, hidden, num_layers=1, batch_first=True)
         self.current_proj = nn.Sequential(nn.LayerNorm(obs_dim), nn.Linear(obs_dim, hidden), nn.GELU())
         # Four hidden vectors (current, candidate, abs-difference, product) plus
         # eight causal geometric deltas from the parent observation.
-        pair_dim = hidden * 4 + 8
+        pair_dim = hidden * 4 + 8 + (1 if self.explicit_app_cosine else 0)
         self.pair_head = nn.Sequential(
             nn.LayerNorm(pair_dim), nn.Linear(pair_dim, hidden), nn.GELU(), nn.Linear(hidden, 1)
         )
@@ -74,7 +76,13 @@ class FullAssociation(nn.Module):
         cur_expand = cur.unsqueeze(1).expand(-1, m, -1)
         # The first eight observation values are normalized box/center/size.
         geometry = history[:, :, -1, :8] - current[:, None, :8]
-        pair = torch.cat((cur_expand, traj, torch.abs(cur_expand - traj), cur_expand * traj, geometry), dim=-1)
+        pieces = [cur_expand, traj, torch.abs(cur_expand - traj), cur_expand * traj, geometry]
+        if self.explicit_app_cosine:
+            current_app = current[:, None, -32:]
+            candidate_app = history[:, :, -1, -32:]
+            app_cos = (current_app * candidate_app).sum(dim=-1, keepdim=True) / (current_app.norm(dim=-1, keepdim=True) * candidate_app.norm(dim=-1, keepdim=True)).clamp_min(1e-8)
+            pieces.append(app_cos)
+        pair = torch.cat(pieces, dim=-1)
         candidate_logits = self.pair_head(pair).squeeze(-1).masked_fill(~candidate_mask, -1e4)
         count = candidate_mask.float().sum(dim=1, keepdim=True) / float(max(1, m))
         top = candidate_logits.topk(k=2, dim=1).values if m >= 2 else torch.cat((candidate_logits, candidate_logits), dim=1).topk(k=2, dim=1).values
@@ -132,7 +140,8 @@ def contract_summary(model: nn.Module) -> dict[str, Any]:
         "history_length": HISTORY_LENGTH,
         "hidden": HIDDEN,
         "temporal": "single_layer_GRU",
-        "max_candidates": MAX_CANDIDATES,
+            "max_candidates": MAX_CANDIDATES,
+        "explicit_app_cosine": bool(getattr(model, "explicit_app_cosine", False)),
         "parameters": sum(p.numel() for p in model.parameters()),
         "actions": "0=NEW, 1..M=causal existing track",
         "inference_tensor_fields": ["normalized_box", "score", "causal_velocity", "fixed_DINOv2_projection", "history"],

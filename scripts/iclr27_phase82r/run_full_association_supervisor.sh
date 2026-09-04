@@ -3,6 +3,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 TAG="${1:-full_assoc_formal_r1}"
 EPOCHS="${2:-15}"
+VARIANT="${3:-base}"
 OUT="$ROOT/outputs/iclr27_phase82r"
 COMP="$OUT/completion/$TAG"
 LOG="$OUT/logs/$TAG"
@@ -24,7 +25,9 @@ for fold in 0 1 2 3; do
   tmp="${launched_marker}.$$.$RANDOM.tmp"
   printf '{"fold":%d,"gpu":%d,"tag":"%s","launched_utc":"%s"}\n' "$fold" "${GPUS[$fold]}" "$TAG" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$tmp"
   mv "$tmp" "$launched_marker"
-  CUDA_VISIBLE_DEVICES="${GPUS[$fold]}" "$PY" "$ROOT/scripts/iclr27_phase82r/train_full_association.py" --fold "$fold" --device cuda:0 --tag "$TAG" --epochs "$EPOCHS" > "$LOG/fold${fold}.log" 2>&1 &
+  extra=()
+  if [[ "$VARIANT" == "raw_anchor" ]]; then extra+=(--explicit-app-cosine); fi
+  CUDA_VISIBLE_DEVICES="${GPUS[$fold]}" "$PY" "$ROOT/scripts/iclr27_phase82r/train_full_association.py" --fold "$fold" --device cuda:0 --tag "$TAG" --epochs "$EPOCHS" "${extra[@]}" > "$LOG/fold${fold}.log" 2>&1 &
   pids+=("$!")
 done
 rc=0

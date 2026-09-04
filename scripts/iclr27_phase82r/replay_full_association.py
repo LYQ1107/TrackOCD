@@ -56,9 +56,9 @@ def candidate_sort(current: np.ndarray, states: list[dict[str, Any]], step: int)
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(); ap.add_argument("--checkpoint", type=Path, required=True); ap.add_argument("--device", default="cpu"); ap.add_argument("--tag", default="full_assoc_replay_r1"); ap.add_argument("--max-videos", type=int); ap.add_argument("--native", type=Path, default=NATIVE); ap.add_argument("--appearance", type=Path, default=APPEARANCE)
+    ap = argparse.ArgumentParser(); ap.add_argument("--checkpoint", type=Path, required=True); ap.add_argument("--device", default="cpu"); ap.add_argument("--tag", default="full_assoc_replay_r1"); ap.add_argument("--max-videos", type=int); ap.add_argument("--native", type=Path, default=NATIVE); ap.add_argument("--appearance", type=Path, default=APPEARANCE); ap.add_argument("--explicit-app-cosine", action="store_true")
     args = ap.parse_args(); device = torch.device(args.device if torch.cuda.is_available() else "cpu")
-    ck = torch.load(args.checkpoint, map_location=device); model = FullAssociation().to(device); model.load_state_dict(ck["model"]); model.eval()
+    ck = torch.load(args.checkpoint, map_location=device); model = FullAssociation(explicit_app_cosine=args.explicit_app_cosine).to(device); model.load_state_dict(ck["model"]); model.eval()
     native = [json.loads(line) for line in args.native.read_text(encoding="utf-8").splitlines() if line.strip()]; feats = np.asarray(np.load(args.appearance, allow_pickle=False)["features"], dtype=np.float32)
     if feats.shape != (len(native), 768): raise RuntimeError(f"appearance shape {feats.shape} != {(len(native), 768)}")
     by_video: dict[int, dict[tuple[int, int], list[tuple[int, dict[str, Any]]]]] = collections.defaultdict(lambda: collections.defaultdict(list))

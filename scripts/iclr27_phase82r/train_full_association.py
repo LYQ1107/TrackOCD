@@ -75,12 +75,12 @@ def balanced_batches(target: np.ndarray, rng: np.random.Generator, batch_size: i
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(); ap.add_argument("--fold", type=int, required=True); ap.add_argument("--device", default="cuda:0"); ap.add_argument("--data-root", type=Path, default=Path("/data2/usr_for_deadline/trackocd_phase82r/full_assoc_data")); ap.add_argument("--tag", default="full_assoc_formal_r1"); ap.add_argument("--epochs", type=int, default=15); ap.add_argument("--max-updates", type=int, default=0); ap.add_argument("--batch-size", type=int, default=256); ap.add_argument("--lr", type=float, default=2e-4); ap.add_argument("--checkpoint-interval", type=int, default=500); ap.add_argument("--seed", type=int, default=8261); ap.add_argument("--resume", type=Path)
+    ap = argparse.ArgumentParser(); ap.add_argument("--fold", type=int, required=True); ap.add_argument("--device", default="cuda:0"); ap.add_argument("--data-root", type=Path, default=Path("/data2/usr_for_deadline/trackocd_phase82r/full_assoc_data")); ap.add_argument("--tag", default="full_assoc_formal_r1"); ap.add_argument("--epochs", type=int, default=15); ap.add_argument("--max-updates", type=int, default=0); ap.add_argument("--batch-size", type=int, default=256); ap.add_argument("--lr", type=float, default=2e-4); ap.add_argument("--checkpoint-interval", type=int, default=500); ap.add_argument("--seed", type=int, default=8261); ap.add_argument("--resume", type=Path); ap.add_argument("--explicit-app-cosine", action="store_true")
     args = ap.parse_args(); torch.set_num_threads(4); seed = args.seed + args.fold; random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
     fit_z = np.load(args.data_root / f"fold{args.fold}.npz", allow_pickle=False); val_z = np.load(args.data_root / f"fold{args.fold}_val.npz", allow_pickle=False)
     fit = {k: fit_z[k] for k in ("current", "history", "candidate_mask", "target")}; val = {k: val_z[k] for k in ("current", "history", "candidate_mask", "target")}
-    model = FullAssociation().to(device); optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-4)
+    model = FullAssociation(explicit_app_cosine=args.explicit_app_cosine).to(device); optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-4)
     epoch = 0; updates = 0
     if args.resume:
         ck = torch.load(args.resume, map_location=device); model.load_state_dict(ck["model"]); optimizer.load_state_dict(ck["optimizer"]); epoch = int(ck.get("epoch", 0)); updates = int(ck.get("updates", 0))

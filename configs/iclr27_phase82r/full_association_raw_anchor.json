@@ -1,0 +1,13 @@
+{
+  "route": "phase82r_full_learned_augmented_causal_assignment_raw_anchor",
+  "parent_route": "full_association_r1",
+  "hypothesis": "explicit causal appearance cosine helps retain the corrected DINOv2 signal that a 32-D projection may dilute",
+  "history_length": 8,
+  "horizon_observed_steps": 16,
+  "max_candidates": 16,
+  "explicit_app_cosine": true,
+  "training": "same all-row TRAIN-only masked NEW+existing CE, balanced existing/NEW batches, 15 epochs, unchanged folds/seed",
+  "inference": "argmax over explicit NEW and prior dormant candidates; collision-safe canonical remap; Q0 rows/boxes/scores preserved",
+  "selection": "TRAIN validation only; no held-event tuning",
+  "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text", "DEV+", "Q1", "public_new", "sealed"]
+}
