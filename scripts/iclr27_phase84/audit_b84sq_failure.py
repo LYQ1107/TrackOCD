@@ -108,6 +108,8 @@ def main() -> None:
     ap.add_argument("--formal", default=str(DEFAULT_FORMAL))
     ap.add_argument("--manifest", default=str(DEFAULT_MANIFEST))
     ap.add_argument("--out", default=str(DEFAULT_OUT))
+    ap.add_argument("--decision", default="B84S_Q_FAIL_SELECTION_DID_NOT_IMPROVE_FROZEN_Q0")
+    ap.add_argument("--route", default="B84S-Q")
     args = ap.parse_args()
     replay_path, formal_path, manifest_path, out_path = map(Path, (args.replay, args.formal, args.manifest, args.out))
     replay = json.loads(replay_path.read_text(encoding="utf-8"))
@@ -153,11 +155,12 @@ def main() -> None:
     # a four-way split did not retain enough fit/validation groups.  Event fold
     # 3 is therefore deterministically evaluated with model fold 0; this is
     # reported explicitly rather than hidden in the aggregate.
-    decision = "B84S_Q_FAIL_SELECTION_DID_NOT_IMPROVE_FROZEN_Q0"
+    decision = str(args.decision)
     result = {
         "schema_version": "trackocd.phase84.b84sq.failure_audit.v1",
         "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "decision": decision,
+        "route": str(args.route),
         "inputs": {
             "replay": str(replay_path.resolve()),
             "replay_sha256": sha(replay_path),
@@ -195,7 +198,7 @@ def main() -> None:
             "positive_learned_reliable_events": by_pol["positive"]["selected_reliable"],
             "positive_raw_source_mean_reliable_events": by_pol["positive"]["raw_source_mean_reliable"],
             "negative_learned_reliable_events_false_support": by_pol["negative"]["selected_reliable"],
-            "interpretation": "B84S-Q has a nonempty native candidate pool, but query-conditioned listwise training does not preserve the frozen same-space source-mean selection: it recovers only 7/76 positive reliable events at prefix16 versus 20/76 for the posthoc raw source-mean diagnostic and 25/76 frozen-Q0 both-side reliability. This is selection/generalization failure under the repaired contract, not evidence that proposal coverage is absent.",
+            "interpretation": "The native candidate pool is nonempty, but this frozen source-conditioned selection route must be judged against the same-space raw source-mean diagnostic and frozen-Q0 reliability. The event-level counts above separate source/target observability from learned ranking and DEFER behavior; they are post-hoc evidence, not controller or sealed results.",
         },
     }
     atomic_json(out_path, result)
