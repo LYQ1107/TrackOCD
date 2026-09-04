@@ -16,6 +16,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import sys
 import tempfile
 from collections import defaultdict
 from pathlib import Path
@@ -23,10 +24,15 @@ from typing import Any
 
 import numpy as np
 
+# Direct script execution (the reproducibility command in the report) does
+# not automatically put the repository root on sys.path.
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from src.iclr27_phase75d.protocol import load_frozen_tracks, PREFIXES
 from src.iclr27_phase75d.retrieval_metrics import score_records, aggregate_fold_metrics
 
-ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs/iclr27_phase83"
 NATIVE = Path("/data2/usr_for_deadline/trackocd_phase75b/event_full_sequence_repair2/native_lineage.jsonl")
 NATIVE_FEAT = ROOT / "outputs/iclr27_phase82r/features/native_dinov2_corrected_r1.npz"
