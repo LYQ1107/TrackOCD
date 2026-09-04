@@ -1,0 +1,12 @@
+{
+  "route": "phase82r_full_causal_appearance_geometry_assignment",
+  "appearance_weight": 1.0,
+  "center_distance_weight": 1.0,
+  "scale_residual_weight": 0.5,
+  "gap_weight": 0.01,
+  "accept_score": 0.5,
+  "threshold_source": "single TRAIN diagnostic fixed before native replay; no held/public tuning",
+  "policy": "rank all causal dormant Q0 fragments by raw corrected DINO cosine minus geometry penalties; accept only score >= 0.5, otherwise exact Q0 KEEP",
+  "physical_stream": "all non-birth Q0 rows byte-preserved; only birth lineage canonicalization may change",
+  "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text", "DEV+", "Q1", "public_new", "sealed"]
+}
