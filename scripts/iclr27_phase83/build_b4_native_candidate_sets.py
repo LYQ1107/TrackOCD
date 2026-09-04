@@ -54,6 +54,11 @@ def iou(a: list[float] | None, b: list[float] | None) -> float:
     x1, y1, x2, y2 = max(a[0], b[0]), max(a[1], b[1]), min(a[2], b[2]), min(a[3], b[3]); inter = max(0.0, x2-x1)*max(0.0, y2-y1); aa=max(0.0,a[2]-a[0])*max(0.0,a[3]-a[1]); bb=max(0.0,b[2]-b[0])*max(0.0,b[3]-b[1]); return inter/max(aa+bb-inter,1e-8)
 
 
+def norm(v: np.ndarray) -> np.ndarray:
+    v = np.asarray(v, dtype=np.float32)
+    return v / max(float(np.linalg.norm(v)), 1e-8)
+
+
 def main() -> None:
     rows = list(csv.DictReader(CSV_PATH.open(newline="", encoding="utf-8"))); gt: dict[tuple[int,int],list[tuple[list[float],int]]] = defaultdict(list); dims: dict[int,tuple[float,float]] = {}
     for r in rows:
