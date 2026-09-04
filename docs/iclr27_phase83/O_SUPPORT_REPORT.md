@@ -1,7 +1,7 @@
 # Phase83 O-support report
 
-**Generated (UTC):** 2026-09-04T08:30:25.601339+00:00  
-**Source commit:** `9e6acb21bbebc41faa092621e7808eb675150021`  
+**Generated (UTC):** 2026-09-04T08:31:09.822762+00:00  
+**Source commit:** `915121c77a8f1ccaf4851ae1df27dbd442829d50`  
 **Route:** `support_quality_router_v1`, one hidden-128 class-agnostic MLP; no detector/proposal/physical tracker/controller changes.
 
 ## Frozen O contract and callgraph

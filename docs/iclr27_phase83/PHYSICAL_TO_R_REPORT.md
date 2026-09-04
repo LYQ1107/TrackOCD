@@ -1,7 +1,7 @@
 # Phase83 Physical→R report
 
-**Generated (UTC):** 2026-09-04T08:30:25.581917+00:00  
-**Source commit:** `9e6acb21bbebc41faa092621e7808eb675150021`  
+**Generated (UTC):** 2026-09-04T08:31:09.816073+00:00  
+**Source commit:** `915121c77a8f1ccaf4851ae1df27dbd442829d50`  
 **Route:** parameter-free causal temporal-appearance mean from the Phase82R native physical lineage, compared with the frozen Phase75D raw-DINO scorer. This is a TRAIN-disjoint retrieval diagnostic, not an OCD Commit-CT result.
 
 ## Contract and inputs
