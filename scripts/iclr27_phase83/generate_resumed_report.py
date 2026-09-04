@@ -141,7 +141,7 @@ def resource_snapshot() -> dict[str, Any]:
         "df_data1_data2": command_output(["df", "-h", "/data1", "/data2"]),
         "nvidia_smi": command_output(["nvidia-smi"], timeout=30),
         "process_count": command_output(["bash", "-lc", "ps -e --no-headers | wc -l"]),
-        "phase83_processes": command_output(["bash", "-lc", "ps -eo pid,ppid,etimes,args | rg 'iclr27_phase83|a2_|b2_|b3_|b4_|b5_|support_router|train_support|run_a3' | rg -v 'rg ' || true"]),
+        "phase83_processes": command_output(["bash", "-lc", "ps -eo pid,ppid,etimes,args | rg 'iclr27_phase83|a2_|b2_|b3_|b4_|b5_|support_router|train_support|run_a3' | rg -v 'rg |generate_resumed_report.py' || true"]),
     }
 
 
