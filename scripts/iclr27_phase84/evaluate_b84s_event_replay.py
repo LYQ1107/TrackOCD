@@ -41,6 +41,8 @@ PREFIXES = (1, 2, 4, 8, 16)
 MODEL_PREFIX = "b84s_b84s_formal_r2"
 MODEL_FOLD_COUNT = 4
 OUTPUT_SUFFIX = ""
+RAW_ANCHOR = False
+RAW_ANCHOR_BOUND = 0.05
 
 
 def sha(path: Path) -> str:
@@ -149,6 +151,17 @@ def target_action(base_desc: np.ndarray, native_indices: list[int], native_featu
     x = np.concatenate([base_desc, extra], axis=1).astype(np.float32)
     xn = (x - model["mean"]) / model["std"]
     logits = np.concatenate([xn @ model["w"], np.asarray([model["b"]], dtype=np.float32)])
+    if RAW_ANCHOR:
+        # A single fixed, bounded residual around the same-space raw anchor.
+        # The frozen model's candidate logits are standardized only within
+        # this causal candidate set; no event label participates in scoring.
+        candidate_logits = logits[:-1]
+        scale = max(float(np.std(candidate_logits)), 1e-6)
+        zlogits = (candidate_logits - float(np.mean(candidate_logits))) / scale
+        blended = extra[:, 0] + np.float32(RAW_ANCHOR_BOUND) * np.tanh(zlogits)
+        # Explicit raw fallback for the model's DEFER action.  Empty sets
+        # still return DEFER through the early branch above.
+        return int(np.argmax(blended)), logits.astype(np.float32), x
     return int(np.argmax(logits)), logits.astype(np.float32), x
 
 
@@ -191,7 +204,10 @@ def evaluate() -> tuple[dict[str, Any], dict[str, Any]]:
             rs = [r for r in records if r["prefix"] == p and r["polarity"] == pol]
             summary.append({"prefix": p, "polarity": pol, "events": len(rs), "selected_candidate_events": sum(r["selected_candidate"] for r in rs), "selected_reliable_events": sum(r["selected_reliable"] for r in rs), "raw_source_mean_reliable_events": sum(r["raw_selected_reliable"] for r in rs), "frozen_source_reliable": sum(r["source_reliable_frozen"] for r in rs), "frozen_target_reliable": sum(r["target_reliable_frozen"] for r in rs), "frozen_both_reliable": sum(r["both_reliable_frozen"] for r in rs)})
     model_meta = {str(k): {"path": v["path"], "sha256": v["sha256"]} for k, v in models.items()}
-    aggregate = {"schema_version": "trackocd.phase84.b84s.event_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "strategy": "frozen B84S native candidate-set listwise selector; event source track supplies same-space causal mean/prototypes; one frozen fold checkpoint per event fold", "model_prefix": MODEL_PREFIX, "model_fold_count": MODEL_FOLD_COUNT, "records": records, "summary": summary, "model_checkpoints": model_meta, "inputs": {"native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "b4_candidate_sets": str(B4_PATH.resolve()), "b4_candidate_sets_sha256": sha(B4_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "model_manifest": str(MODEL_MANIFEST.resolve()), "model_manifest_sha256": sha(MODEL_MANIFEST), "observability": str(OBS_PATH.resolve()), "observability_sha256": sha(OBS_PATH)}, "denominators": {"positive_events": 76, "negative_events": 76, "prefixes": list(PREFIXES)}, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "event_labels_posthoc_only": True, "controller_run": False}
+    strategy = "frozen B84S native candidate-set listwise selector; event source track supplies same-space causal mean/prototypes; one frozen fold checkpoint per event fold"
+    if RAW_ANCHOR:
+        strategy = "B84S-RA fixed raw source-mean cosine plus bounded 0.05 tanh-normalized B84S-Q candidate residual; model DEFER falls back to raw candidate"
+    aggregate = {"schema_version": "trackocd.phase84.b84s.event_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "strategy": strategy, "raw_anchor_enabled": RAW_ANCHOR, "raw_anchor_bound": RAW_ANCHOR_BOUND if RAW_ANCHOR else None, "model_prefix": MODEL_PREFIX, "model_fold_count": MODEL_FOLD_COUNT, "records": records, "summary": summary, "model_checkpoints": model_meta, "inputs": {"native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "b4_candidate_sets": str(B4_PATH.resolve()), "b4_candidate_sets_sha256": sha(B4_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "model_manifest": str(MODEL_MANIFEST.resolve()), "model_manifest_sha256": sha(MODEL_MANIFEST), "observability": str(OBS_PATH.resolve()), "observability_sha256": sha(OBS_PATH)}, "denominators": {"positive_events": 76, "negative_events": 76, "prefixes": list(PREFIXES)}, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "event_labels_posthoc_only": True, "controller_run": False}
     return aggregate, {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1"}
 
 
@@ -219,8 +235,8 @@ def aggregate_formal() -> dict[str, Any]:
 
 
 def main() -> None:
-    global MODEL_PREFIX, MODEL_FOLD_COUNT, MODEL_MANIFEST, OUTPUT_SUFFIX
-    ap = argparse.ArgumentParser(); ap.add_argument("--model-prefix", default=MODEL_PREFIX); ap.add_argument("--fold-count", type=int, default=MODEL_FOLD_COUNT); ap.add_argument("--suffix", default=""); ap.add_argument("--manifest", default=str(MODEL_MANIFEST)); a = ap.parse_args(); MODEL_PREFIX, MODEL_FOLD_COUNT, OUTPUT_SUFFIX, MODEL_MANIFEST = a.model_prefix, a.fold_count, a.suffix, Path(a.manifest)
+    global MODEL_PREFIX, MODEL_FOLD_COUNT, MODEL_MANIFEST, OUTPUT_SUFFIX, RAW_ANCHOR, RAW_ANCHOR_BOUND
+    ap = argparse.ArgumentParser(); ap.add_argument("--model-prefix", default=MODEL_PREFIX); ap.add_argument("--fold-count", type=int, default=MODEL_FOLD_COUNT); ap.add_argument("--suffix", default=""); ap.add_argument("--manifest", default=str(MODEL_MANIFEST)); ap.add_argument("--raw-anchor", action="store_true"); ap.add_argument("--raw-anchor-bound", type=float, default=RAW_ANCHOR_BOUND); a = ap.parse_args(); MODEL_PREFIX, MODEL_FOLD_COUNT, OUTPUT_SUFFIX, MODEL_MANIFEST, RAW_ANCHOR, RAW_ANCHOR_BOUND = a.model_prefix, a.fold_count, a.suffix, Path(a.manifest), bool(a.raw_anchor), float(a.raw_anchor_bound)
     formal = aggregate_formal()
     event, _ = evaluate()
     formal_path = OUT / f"metrics/b84s_formal_aggregate{OUTPUT_SUFFIX}.json"; event_path = OUT / f"metrics/b84s_event_replay{OUTPUT_SUFFIX}.json"; done_path = OUT / f"completion/b84s_event_replay{OUTPUT_SUFFIX}.done"

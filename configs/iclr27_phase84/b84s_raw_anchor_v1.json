@@ -1,0 +1,21 @@
+{
+  "schema_version": "trackocd.phase84.b84s.raw_anchor.v1",
+  "route": "B84S_RA",
+  "hypothesis": "The repaired source-conditioned matcher loses the useful same-space raw anchor because candidate logits and DEFER are poorly calibrated; a bounded, fixed residual around raw source-mean cosine may preserve selection while retaining any learned ranking signal.",
+  "model_checkpoint_prefix": "b84sq_b84sq_formal_v3",
+  "event_model_fold_count": 3,
+  "candidate_score": "raw_source_mean_cosine + 0.05 * tanh(per_candidate_set_zscore(frozen_model_candidate_logit))",
+  "residual_bound": 0.05,
+  "defer_contract": "if frozen model emits DEFER, select the raw source-mean candidate; native candidate sets are unchanged and empty sets remain DEFER",
+  "source_target_feature_space": "corrected native DINOv2, same preprocessing and normalization",
+  "prefixes": [1, 2, 4, 8, 16],
+  "event_denominator": {"positive": 76, "negative": 76},
+  "selection_threshold_sweep": false,
+  "controller_run": false,
+  "public_dev_q1_sealed_accessed": false,
+  "future_rows_or_tracks": false,
+  "ids_as_model_input": false,
+  "event_labels_posthoc_only": true,
+  "selection_of_alpha_from_events": false,
+  "status": "PREREGISTERED_DIAGNOSTIC"
+}
