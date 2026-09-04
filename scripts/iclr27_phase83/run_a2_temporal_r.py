@@ -25,7 +25,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from src.iclr27_phase75d.protocol import PREFIXES, load_frozen_tracks, order_key, track_key
+from src.iclr27_phase75d.protocol import PREFIXES, load_frozen_tracks, order_key
+from src.iclr27_phase23.protocol import track_key
 from src.iclr27_phase75d.retrieval_metrics import aggregate_fold_metrics, score_records
 
 OUT = ROOT / "outputs/iclr27_phase83"
