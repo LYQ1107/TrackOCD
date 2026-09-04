@@ -1,0 +1,10 @@
+{
+  "route": "phase82r_temporal_appearance_mean_causal_assignment",
+  "parent": "full_causal_r3",
+  "hypothesis": "causal normalized mean of already observed track appearance is more stable than last-frame appearance",
+  "aggregation": "running sum over causal state history, normalized at scoring",
+  "accept_score": 0.5,
+  "candidate_contract": "dormant-only prior observed states, horizon16, fixed motion/geometry terms",
+  "q0_rows_preserved": true,
+  "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text", "DEV+", "Q1", "public_new", "sealed"]
+}

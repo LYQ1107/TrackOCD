@@ -46,7 +46,7 @@ def cosine(a: np.ndarray, b: np.ndarray) -> float:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(); ap.add_argument("--device", default="cpu"); ap.add_argument("--tag", default="full_causal_r1"); ap.add_argument("--max-videos", type=int); args = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--device", default="cpu"); ap.add_argument("--tag", default="full_causal_r1"); ap.add_argument("--max-videos", type=int); ap.add_argument("--temporal-app-mean", action="store_true", help="use normalized mean of causal state appearance history") ; args = ap.parse_args()
     native = [json.loads(line) for line in NATIVE.read_text(encoding="utf-8").splitlines() if line.strip()]
     feats = np.asarray(np.load(APPEARANCE, allow_pickle=False)["features"], dtype=np.float32)
     if feats.shape != (len(native), 768): raise RuntimeError(f"appearance shape {feats.shape} != {(len(native), 768)}")
@@ -92,7 +92,8 @@ def main() -> None:
                     gap = step - int(st["step"])
                     if gap <= 0 or gap > 16: continue
                     sb = st["box"]; sc = np.asarray([(sb[0] + sb[2]) * .5 / iw, (sb[1] + sb[3]) * .5 / ih]); swh = np.asarray([(sb[2] - sb[0]) / iw, (sb[3] - sb[1]) / ih]); vel = np.asarray(st.get("velocity", np.zeros(2)), dtype=np.float32); pred = sc + vel * gap
-                    score = cosine(feats[idx], st["app"]) - float(np.linalg.norm(cc - pred)) - 0.5 * float(np.linalg.norm(cwh - swh)) - 0.01 * gap
+                    appearance = st.get("app_mean", st["app"]) if args.temporal_app_mean else st["app"]
+                    score = cosine(feats[idx], appearance) - float(np.linalg.norm(cc - pred)) - 0.5 * float(np.linalg.norm(cwh - swh)) - 0.01 * gap
                     candidates.append((score, int(st["track"]), gap))
                 candidates.sort(key=lambda x: (-x[0], x[1])); best = candidates[0] if candidates else None
                 if best is not None and best[0] >= 0.5 and root(best[1]) not in claimed:
@@ -148,7 +149,15 @@ def main() -> None:
                 if prev is not None:
                     oldc = np.asarray([(prev["box"][0] + prev["box"][2]) * .5 / iw, (prev["box"][1] + prev["box"][3]) * .5 / ih]); vel = sc - oldc
                 lifecycle = str(row.get("lifecycle", "")); status = "dormant" if lifecycle == "termination" else "active"
-                states[canonical_tid] = {"track": canonical_tid, "step": step, "box": box, "app": feats[idx].copy(), "velocity": vel, "status": status}
+                if prev is not None and args.temporal_app_mean:
+                    app_sum = np.asarray(prev.get("app_sum", prev["app"]), dtype=np.float32) + feats[idx]
+                    app_mean = app_sum / max(float(np.linalg.norm(app_sum)), 1e-8)
+                    app_count = int(prev.get("app_count", 1)) + 1
+                else:
+                    app_sum = feats[idx].copy()
+                    app_mean = feats[idx].copy()
+                    app_count = 1
+                states[canonical_tid] = {"track": canonical_tid, "step": step, "box": box, "app": feats[idx].copy(), "app_sum": app_sum, "app_count": app_count, "app_mean": app_mean, "velocity": vel, "status": status}
                 if canonical_tid != tid: stats["canonical_state_merges"] += 1
             # Preserve explicit termination metadata for tracks without a box.
             for idx, row in frame_rows:
@@ -157,7 +166,7 @@ def main() -> None:
                     if st is not None: st["status"] = "dormant"
         stats["videos"] += 1
     out_path = ROOT / "outputs/iclr27_phase82r/replays" / f"{args.tag}.jsonl"; atomic_jsonl(out_path, out_rows)
-    summary = {"schema_version": "trackocd.phase82r.full_causal_assignment_replay.v3_collision_safe", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "native_path": str(NATIVE), "native_sha256": sha256(NATIVE), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE), "tag": args.tag, "accept_score": 0.5, "videos": len(videos), "rows": len(out_rows), "stats": dict(stats), "output": str(out_path), "observed_step_map": True, "dormant_only_candidates": True, "same_frame_collision_fallback": True, "canonical_state_merge": True, "q0_non_birth_proposal_preserved": True, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
+    summary = {"schema_version": "trackocd.phase82r.full_causal_assignment_replay.v3_collision_safe", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "native_path": str(NATIVE), "native_sha256": sha256(NATIVE), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE), "tag": args.tag, "accept_score": 0.5, "temporal_app_mean": bool(args.temporal_app_mean), "videos": len(videos), "rows": len(out_rows), "stats": dict(stats), "output": str(out_path), "observed_step_map": True, "dormant_only_candidates": True, "same_frame_collision_fallback": True, "canonical_state_merge": True, "q0_non_birth_proposal_preserved": True, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
     atomic_json(ROOT / "outputs/iclr27_phase82r/metrics" / f"replay_{args.tag}.json", summary); print(json.dumps(summary, indent=2, sort_keys=True))
 
 
