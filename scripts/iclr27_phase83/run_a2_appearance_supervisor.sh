@@ -10,7 +10,9 @@ FRAMES="/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/frames"
 FEATURE_DIR="$ARCHIVE/$TAG"
 mkdir -p "$FEATURE_DIR" "$OUT/completion" "$OUT/logs/a2_appearance"
 [[ -s "$NATIVE" ]] || { echo "missing A2 native lineage: $NATIVE" >&2; exit 2; }
-GPUS=(4 5 6 7)
+# GPU4 became occupied by an unrelated job after the initial preflight.  Use
+# the four idle cards 5--8; CUDA_VISIBLE_DEVICES remaps each worker to cuda:0.
+GPUS=(5 6 7 8)
 pids=(); shards=()
 for shard in 0 1 2 3; do
   out="$FEATURE_DIR/shard_$(printf '%02d' "$shard").npz"
