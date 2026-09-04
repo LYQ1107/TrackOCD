@@ -106,6 +106,7 @@ def main() -> None:
     ap.add_argument("--appearance", type=Path, default=APPEARANCE)
     ap.add_argument("--out-root", type=Path, default=OUT_ROOT)
     ap.add_argument("--data-root", type=Path, default=DATA_ROOT)
+    ap.add_argument("--max-videos", type=int, default=0, help="bounded smoke subset; 0 uses all legal TRAIN videos")
     args = ap.parse_args()
     base = importlib.import_module("scripts.iclr27_phase82p.build_residual_manifest")
     base.APPEARANCE = args.appearance
@@ -133,6 +134,9 @@ def main() -> None:
     # Fixed fold assignment is inherited from Phase82R residual manifest; this
     # is a deterministic video-disjoint TRAIN split, not a held-event split.
     videos = sorted(grouped)
+    if args.max_videos:
+        videos = videos[: args.max_videos]
+        grouped = {v: grouped[v] for v in videos}
     fold_sets = [{v for i, v in enumerate(videos) if i % 4 == f} for f in range(4)]
     all_examples: list[dict[str, Any]] = []
     video_stats: dict[str, dict[str, Any]] = {}
