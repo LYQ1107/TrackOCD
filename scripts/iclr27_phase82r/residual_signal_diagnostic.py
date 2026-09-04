@@ -57,6 +57,14 @@ def atomic(path: Path, value: Any) -> None:
 
 
 def main() -> None:
+    ap = __import__("argparse").ArgumentParser()
+    ap.add_argument("--appearance", type=Path, default=APP)
+    ap.add_argument("--out", type=Path, default=OUT)
+    args = ap.parse_args()
+    # The Phase82P loader is reused read-only, but its appearance path is
+    # overridden explicitly so this route can audit a corrected cache without
+    # mutating the old module or output namespace.
+    b.APPEARANCE = args.appearance
     rows, images, gt_by_image, features, allowed = b.load_inputs()
     event_vids = b.event_videos()
     grouped: dict[int, list[tuple[int, dict[str, Any]]]] = collections.defaultdict(list)
@@ -156,7 +164,9 @@ def main() -> None:
         "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text"],
         "public_dev_q1_sealed_accessed": False,
     }
-    atomic(OUT, out)
+    out["appearance_path"] = str(args.appearance)
+    out["appearance_sha256"] = hashlib.sha256(args.appearance.read_bytes()).hexdigest()
+    atomic(args.out, out)
     print(json.dumps({k: out[k] for k in ["positive_reconnect_examples", "candidate_recall", "appearance_768d", "history"]}, indent=2, sort_keys=True))
 
 
