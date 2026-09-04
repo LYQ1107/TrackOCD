@@ -30,7 +30,8 @@ class BalancedResidualGate(nn.Module):
         self.pair_head = nn.Sequential(nn.LayerNorm(hidden * 4 + 8), nn.Linear(hidden * 4 + 8, hidden), nn.GELU(), nn.Linear(hidden, 1))
         # The gate starts at a neutral p=.5; class-balanced batches, rather
         # than a positive prior, determine the learned policy.
-        self.gate_head = nn.Sequential(nn.LayerNorm(hidden + 6), nn.Linear(hidden + 6, hidden // 2), nn.GELU(), nn.Linear(hidden // 2, 1))
+        # current embedding plus top1/top2/margin/count/entropy (five scalars)
+        self.gate_head = nn.Sequential(nn.LayerNorm(hidden + 5), nn.Linear(hidden + 5, hidden // 2), nn.GELU(), nn.Linear(hidden // 2, 1))
 
     @staticmethod
     def _last(encoded: torch.Tensor, valid: torch.Tensor) -> torch.Tensor:
