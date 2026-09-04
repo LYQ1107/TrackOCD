@@ -159,10 +159,15 @@ def main() -> None:
                     state = states.get(root(int(row["physical_track_id"])))
                     if state is not None: state["status"] = "dormant"
         stats["videos"] += 1
-    lineage = OUT / "physical/full_temporal_lineage.jsonl"; union_path = OUT / "physical/union_events.jsonl"
+    # The registered full run has the stable Phase84 paths requested by the
+    # protocol.  Any bounded smoke/targeted run is isolated by tag so it can
+    # never overwrite the full-run artifacts.
+    physical_dir = OUT / "physical" if args.tag == "full_temporal_r1" else OUT / "physical" / args.tag
+    lineage = physical_dir / "full_temporal_lineage.jsonl"; union_path = physical_dir / "union_events.jsonl"
     atomic_jsonl(lineage, output_rows); atomic_jsonl(union_path, unions)
     summary = {"schema_version": "trackocd.phase84.full_temporal_physical.v1", "phase": "Phase84 A84P", "tag": args.tag, "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "native_path": str(NATIVE.resolve()), "native_sha256": sha256(NATIVE), "native_features": str(FEATURES.resolve()), "native_features_sha256": sha256(FEATURES), "rows": len(output_rows), "videos": len(videos), "lineage": str(lineage.resolve()), "lineage_sha256": sha256(lineage), "union_events": str(union_path.resolve()), "union_events_sha256": sha256(union_path), "accept_score": args.accept_score, "max_gap": args.max_gap, "causal_temporal_appearance": True, "dormant_only_candidates": True, "observed_step_timing": True, "same_frame_collision_safe": True, "q0_rows_preserved": True, "stats": dict(stats), "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
-    atomic_json(OUT / "physical/full_temporal_summary.json", summary); atomic_json(OUT / "status.json", {"phase": "Phase84", "route": "A84P", "status": "A84P_COMPLETE", "summary": str((OUT / "physical/full_temporal_summary.json").resolve()), "public_dev_q1_sealed_accessed": False})
+    summary_path = physical_dir / "full_temporal_summary.json"
+    atomic_json(summary_path, summary); atomic_json(OUT / "status.json", {"phase": "Phase84", "route": "A84P", "status": "A84P_COMPLETE", "tag": args.tag, "summary": str(summary_path.resolve()), "public_dev_q1_sealed_accessed": False})
     print(json.dumps(summary, indent=2, sort_keys=True))
 
 
