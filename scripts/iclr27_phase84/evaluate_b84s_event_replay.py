@@ -43,6 +43,7 @@ MODEL_FOLD_COUNT = 4
 OUTPUT_SUFFIX = ""
 RAW_ANCHOR = False
 RAW_ANCHOR_BOUND = 0.05
+PROTOTYPE_ANCHOR = False
 
 
 def sha(path: Path) -> str:
@@ -151,6 +152,11 @@ def target_action(base_desc: np.ndarray, native_indices: list[int], native_featu
     x = np.concatenate([base_desc, extra], axis=1).astype(np.float32)
     xn = (x - model["mean"]) / model["std"]
     logits = np.concatenate([xn @ model["w"], np.asarray([model["b"]], dtype=np.float32)])
+    if PROTOTYPE_ANCHOR:
+        # Fixed M=3 causal prototype relation, registered from the signal
+        # audit.  The prototype set is source-only and no event metadata is
+        # consulted while choosing a candidate.
+        return int(np.argmax(extra[:, 1])), logits.astype(np.float32), x
     if RAW_ANCHOR:
         # A single fixed, bounded residual around the same-space raw anchor.
         # The frozen model's candidate logits are standardized only within
@@ -207,7 +213,9 @@ def evaluate() -> tuple[dict[str, Any], dict[str, Any]]:
     strategy = "frozen B84S native candidate-set listwise selector; event source track supplies same-space causal mean/prototypes; one frozen fold checkpoint per event fold"
     if RAW_ANCHOR:
         strategy = "B84S-RA fixed raw source-mean cosine plus bounded 0.05 tanh-normalized B84S-Q candidate residual; model DEFER falls back to raw candidate"
-    aggregate = {"schema_version": "trackocd.phase84.b84s.event_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "strategy": strategy, "raw_anchor_enabled": RAW_ANCHOR, "raw_anchor_bound": RAW_ANCHOR_BOUND if RAW_ANCHOR else None, "model_prefix": MODEL_PREFIX, "model_fold_count": MODEL_FOLD_COUNT, "records": records, "summary": summary, "model_checkpoints": model_meta, "inputs": {"native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "b4_candidate_sets": str(B4_PATH.resolve()), "b4_candidate_sets_sha256": sha(B4_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "model_manifest": str(MODEL_MANIFEST.resolve()), "model_manifest_sha256": sha(MODEL_MANIFEST), "observability": str(OBS_PATH.resolve()), "observability_sha256": sha(OBS_PATH)}, "denominators": {"positive_events": 76, "negative_events": 76, "prefixes": list(PREFIXES)}, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "event_labels_posthoc_only": True, "controller_run": False}
+    if PROTOTYPE_ANCHOR:
+        strategy = "B84S-PROTO fixed max cosine to exactly three contiguous causal source prototypes over native candidates"
+    aggregate = {"schema_version": "trackocd.phase84.b84s.event_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "strategy": strategy, "raw_anchor_enabled": RAW_ANCHOR, "raw_anchor_bound": RAW_ANCHOR_BOUND if RAW_ANCHOR else None, "prototype_anchor_enabled": PROTOTYPE_ANCHOR, "model_prefix": MODEL_PREFIX, "model_fold_count": MODEL_FOLD_COUNT, "records": records, "summary": summary, "model_checkpoints": model_meta, "inputs": {"native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "b4_candidate_sets": str(B4_PATH.resolve()), "b4_candidate_sets_sha256": sha(B4_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "model_manifest": str(MODEL_MANIFEST.resolve()), "model_manifest_sha256": sha(MODEL_MANIFEST), "observability": str(OBS_PATH.resolve()), "observability_sha256": sha(OBS_PATH)}, "denominators": {"positive_events": 76, "negative_events": 76, "prefixes": list(PREFIXES)}, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "event_labels_posthoc_only": True, "controller_run": False}
     return aggregate, {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1"}
 
 
@@ -235,8 +243,8 @@ def aggregate_formal() -> dict[str, Any]:
 
 
 def main() -> None:
-    global MODEL_PREFIX, MODEL_FOLD_COUNT, MODEL_MANIFEST, OUTPUT_SUFFIX, RAW_ANCHOR, RAW_ANCHOR_BOUND
-    ap = argparse.ArgumentParser(); ap.add_argument("--model-prefix", default=MODEL_PREFIX); ap.add_argument("--fold-count", type=int, default=MODEL_FOLD_COUNT); ap.add_argument("--suffix", default=""); ap.add_argument("--manifest", default=str(MODEL_MANIFEST)); ap.add_argument("--raw-anchor", action="store_true"); ap.add_argument("--raw-anchor-bound", type=float, default=RAW_ANCHOR_BOUND); a = ap.parse_args(); MODEL_PREFIX, MODEL_FOLD_COUNT, OUTPUT_SUFFIX, MODEL_MANIFEST, RAW_ANCHOR, RAW_ANCHOR_BOUND = a.model_prefix, a.fold_count, a.suffix, Path(a.manifest), bool(a.raw_anchor), float(a.raw_anchor_bound)
+    global MODEL_PREFIX, MODEL_FOLD_COUNT, MODEL_MANIFEST, OUTPUT_SUFFIX, RAW_ANCHOR, RAW_ANCHOR_BOUND, PROTOTYPE_ANCHOR
+    ap = argparse.ArgumentParser(); ap.add_argument("--model-prefix", default=MODEL_PREFIX); ap.add_argument("--fold-count", type=int, default=MODEL_FOLD_COUNT); ap.add_argument("--suffix", default=""); ap.add_argument("--manifest", default=str(MODEL_MANIFEST)); ap.add_argument("--raw-anchor", action="store_true"); ap.add_argument("--raw-anchor-bound", type=float, default=RAW_ANCHOR_BOUND); ap.add_argument("--prototype-anchor", action="store_true"); a = ap.parse_args(); MODEL_PREFIX, MODEL_FOLD_COUNT, OUTPUT_SUFFIX, MODEL_MANIFEST, RAW_ANCHOR, RAW_ANCHOR_BOUND, PROTOTYPE_ANCHOR = a.model_prefix, a.fold_count, a.suffix, Path(a.manifest), bool(a.raw_anchor), float(a.raw_anchor_bound), bool(a.prototype_anchor)
     formal = aggregate_formal()
     event, _ = evaluate()
     formal_path = OUT / f"metrics/b84s_formal_aggregate{OUTPUT_SUFFIX}.json"; event_path = OUT / f"metrics/b84s_event_replay{OUTPUT_SUFFIX}.json"; done_path = OUT / f"completion/b84s_event_replay{OUTPUT_SUFFIX}.done"

@@ -1,0 +1,18 @@
+{
+  "schema_version": "trackocd.phase84.b84s.prototype_anchor.v1",
+  "route": "B84S_PROTO_ANCHOR",
+  "hypothesis": "The source-conditioned TRAIN signal audit is strongest for max cosine to a fixed M=3 causal source prototype set; deterministic prototype-anchor selection may preserve event correspondence without learned ranking calibration.",
+  "source_representation": "prefix-16 source mean plus exactly three contiguous causal prototypes from corrected native DINOv2",
+  "candidate_score": "max over three source-prototype cosines",
+  "candidate_set": "native Q0 candidates grouped by (video_id,image_id), unchanged order",
+  "prefixes": [1, 2, 4, 8, 16],
+  "event_denominator": {"positive": 76, "negative": 76},
+  "training": false,
+  "threshold_sweep": false,
+  "controller_run": false,
+  "public_dev_q1_sealed_accessed": false,
+  "future_rows_or_tracks": false,
+  "ids_as_model_input": false,
+  "event_labels_posthoc_only": true,
+  "status": "PREREGISTERED_DIAGNOSTIC"
+}
