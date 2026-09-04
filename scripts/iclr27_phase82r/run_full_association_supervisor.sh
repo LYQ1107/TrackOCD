@@ -6,6 +6,7 @@ EPOCHS="${2:-15}"
 OUT="$ROOT/outputs/iclr27_phase82r"
 COMP="$OUT/completion/$TAG"
 LOG="$OUT/logs/$TAG"
+PY="/home/lwr/anaconda3/envs/ovtr/bin/python"
 mkdir -p "$COMP" "$LOG"
 GPUS=(4 5 6 7)
 pids=()
@@ -23,7 +24,7 @@ for fold in 0 1 2 3; do
   tmp="${launched_marker}.$$.$RANDOM.tmp"
   printf '{"fold":%d,"gpu":%d,"tag":"%s","launched_utc":"%s"}\n' "$fold" "${GPUS[$fold]}" "$TAG" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$tmp"
   mv "$tmp" "$launched_marker"
-  CUDA_VISIBLE_DEVICES="${GPUS[$fold]}" python "$ROOT/scripts/iclr27_phase82r/train_full_association.py" --fold "$fold" --device cuda:0 --tag "$TAG" --epochs "$EPOCHS" > "$LOG/fold${fold}.log" 2>&1 &
+  CUDA_VISIBLE_DEVICES="${GPUS[$fold]}" "$PY" "$ROOT/scripts/iclr27_phase82r/train_full_association.py" --fold "$fold" --device cuda:0 --tag "$TAG" --epochs "$EPOCHS" > "$LOG/fold${fold}.log" 2>&1 &
   pids+=("$!")
 done
 rc=0
