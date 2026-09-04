@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_REPLAY = ROOT / "outputs/iclr27_phase84/metrics/b84s_event_replay_b84sq_v3.json"
 DEFAULT_FORMAL = ROOT / "outputs/iclr27_phase84/metrics/b84s_formal_aggregate_b84sq_v3.json"
 DEFAULT_MANIFEST = ROOT / "outputs/iclr27_phase84/manifests/b84sq_balanced_v3_manifest.json"
+DEFAULT_OBS = Path("/data2/usr_for_deadline/trackocd_phase75b/observability_repair2/event_observability.jsonl")
 DEFAULT_OUT = ROOT / "outputs/iclr27_phase84/audit/b84sq_failure_audit.json"
 
 
@@ -107,14 +108,21 @@ def main() -> None:
     ap.add_argument("--replay", default=str(DEFAULT_REPLAY))
     ap.add_argument("--formal", default=str(DEFAULT_FORMAL))
     ap.add_argument("--manifest", default=str(DEFAULT_MANIFEST))
+    ap.add_argument("--observability", default=str(DEFAULT_OBS))
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     ap.add_argument("--decision", default="B84S_Q_FAIL_SELECTION_DID_NOT_IMPROVE_FROZEN_Q0")
     ap.add_argument("--route", default="B84S-Q")
     args = ap.parse_args()
-    replay_path, formal_path, manifest_path, out_path = map(Path, (args.replay, args.formal, args.manifest, args.out))
+    replay_path, formal_path, manifest_path, obs_path, out_path = map(Path, (args.replay, args.formal, args.manifest, args.observability, args.out))
     replay = json.loads(replay_path.read_text(encoding="utf-8"))
     formal = json.loads(formal_path.read_text(encoding="utf-8"))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    obs_by_event = {}
+    if obs_path.exists():
+        for line in obs_path.open(encoding="utf-8"):
+            if line.strip():
+                e = json.loads(line)
+                obs_by_event[str(e.get("event_key"))] = e
     records = list(replay["records"])
     p16 = [r for r in records if r["prefix"] == 16]
     by_pol: dict[str, dict[str, Any]] = {}
@@ -131,6 +139,9 @@ def main() -> None:
             "raw_source_mean_reliable": sum(int(r["raw_selected_reliable"]) for r in rs),
             "taxonomy": dict(sorted(Counter(classify(r) for r in rs).items())),
             "candidate_count": stats([int(r["candidate_count_total"]) for r in rs]),
+            "reliable_category_coverage": sorted({int(obs_by_event.get(r["event_key"], {}).get("category_denominator_only", -1)) for r in rs if r["selected_reliable"] and r["event_key"] in obs_by_event}),
+            "reliable_source_video_coverage": sorted({int(obs_by_event[r["event_key"]].get("source_video", -1)) for r in rs if r["selected_reliable"] and r["event_key"] in obs_by_event}),
+            "reliable_target_video_coverage": sorted({int(obs_by_event[r["event_key"]].get("target_video", -1)) for r in rs if r["selected_reliable"] and r["event_key"] in obs_by_event}),
         }
     taxonomy_events = []
     for r in p16:
@@ -142,6 +153,9 @@ def main() -> None:
             "polarity": r["polarity"],
             "source_tracklet_key": r["source_tracklet_key"],
             "target_tracklet_key": r["target_tracklet_key"],
+            "category_denominator_only": obs_by_event.get(r["event_key"], {}).get("category_denominator_only"),
+            "source_video": obs_by_event.get(r["event_key"], {}).get("source_video"),
+            "target_video": obs_by_event.get(r["event_key"], {}).get("target_video"),
             "source_reliable_frozen": r["source_reliable_frozen"],
             "target_reliable_frozen": r["target_reliable_frozen"],
             "both_reliable_frozen": r["both_reliable_frozen"],
@@ -168,6 +182,8 @@ def main() -> None:
             "formal_aggregate_sha256": sha(formal_path),
             "manifest": str(manifest_path.resolve()),
             "manifest_sha256": sha(manifest_path),
+            "observability": str(obs_path.resolve()),
+            "observability_sha256": sha(obs_path) if obs_path.is_file() else None,
         },
         "protocol": {
             "positive_events": 76,
