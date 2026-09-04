@@ -208,7 +208,12 @@ def aggregate_formal() -> dict[str, Any]:
         else:
             vals = [(r[metrics_key][key], r[metrics_key]["groups"]) for r in rows]
         return float(sum(v * n for v, n in vals) / max(den, 1.0))
-    metrics = ["candidate_top1_recall", "candidate_top5_recall", "defer_recall", "candidate_or_defer_accuracy", "mean_nll"]
+    # Fold metrics are intentionally schema-tolerant: the balanced B84S-Q
+    # trainer does not emit the optional mean_nll field that the older B84S
+    # trainer used.  Aggregate only fields present in every completed fold,
+    # rather than failing before the frozen event replay is written.
+    requested_metrics = ["candidate_top1_recall", "candidate_top5_recall", "defer_recall", "candidate_or_defer_accuracy", "mean_nll"]
+    metrics = [k for k in requested_metrics if all(k in r["validation_metrics"] for r in rows)]
     aggregate = {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "tag": MODEL_PREFIX, "folds": rows, "validation_weighted": {k: w(k, "validation") for k in metrics}, "validation_macro": {k: float(np.mean([r["validation_metrics"][k] for r in rows])) for k in metrics}, "fit_weighted": {k: float(np.average([r["fit_metrics"][k] for r in rows], weights=[r["fit_metrics"]["groups"] for r in rows])) for k in metrics}, "formal_protocol": {"epochs": 15, "folds": MODEL_FOLD_COUNT, "candidate_action_space": "native candidates + explicit DEFER", "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}}
     return aggregate
 
