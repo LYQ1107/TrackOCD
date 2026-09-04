@@ -69,14 +69,25 @@ def main() -> None:
                 except Exception: size = (640, 480)
                 dim_cache[path_key] = size
             iw, ih = float(size[0]), float(size[1]); decisions: dict[int, dict[str, Any]] = {}; claimed: set[int] = set()
+            # A fragment can have a stale termination marker in the previous
+            # observed frame and still be emitted as a continuation now.  Such
+            # an ID is not dormant for this frame and must be excluded before
+            # birth/reconnect decisions are made.
+            current_continuation_roots = {
+                root(int(row["physical_track_id"]))
+                for _, row in frame_rows
+                if str(row.get("lifecycle", "")) == "continuation" and row.get("bbox_xyxy") is not None
+            }
             for idx, row in frame_rows:
                 if row.get("bbox_xyxy") is None or str(row.get("lifecycle", "")) != "birth": continue
                 original = int(row["physical_track_id"]); box = np.asarray(row["bbox_xyxy"], dtype=np.float32); cc = np.asarray([(box[0] + box[2]) * .5 / iw, (box[1] + box[3]) * .5 / ih]); cwh = np.asarray([(box[2] - box[0]) / iw, (box[3] - box[1]) / ih]); candidates=[]
                 for st in states.values():
                     # Only fragments that have explicitly terminated/lost are eligible.
                     # Active Q0 tracks must never be used as reconnect targets.
-                    if str(st.get("status", "active")) != "dormant":
+                    if str(st.get("status", "active")) != "dormant" or root(int(st["track"])) in current_continuation_roots:
                         stats["active_candidates_skipped"] += 1
+                        if root(int(st["track"])) in current_continuation_roots:
+                            stats["current_continuation_candidates_skipped"] += 1
                         continue
                     gap = step - int(st["step"])
                     if gap <= 0 or gap > 16: continue
@@ -91,6 +102,28 @@ def main() -> None:
                     action = "KEEP_Q0"; stats["keep_decisions"] += 1; chosen = None
                 decisions[original] = {"action": action, "candidate_original_track_id": int(chosen[1]) if chosen else None, "assignment_score": float(chosen[0]) if chosen else None, "candidate_gap": int(chosen[2]) if chosen else None, "candidate_count": len(candidates)}
                 if chosen is not None: claimed.add(root(chosen[1])); stats["dormant_candidates_used"] += 1
+            # A Q0 fragment may be re-emitted as a continuation after an
+            # earlier reconnect.  Never emit two detections with one canonical
+            # ID in a frame: keep the canonical/root row when present and
+            # detach the other child back to its own physical ID.  This is a
+            # causal safety fallback, not a deletion or score change.
+            by_canonical: dict[int, list[tuple[int, dict[str, Any]]]] = collections.defaultdict(list)
+            for _, row in frame_rows:
+                if row.get("bbox_xyxy") is not None:
+                    raw = int(row["physical_track_id"]); by_canonical[root(raw)].append((raw, row))
+            for canonical_id, group in by_canonical.items():
+                if len(group) <= 1: continue
+                root_rows = [x for x in group if x[0] == canonical_id]
+                if root_rows:
+                    keep_raw = canonical_id
+                else:
+                    keep_raw = max(group, key=lambda x: (float(x[1].get("base_score", 0.0)), -x[0]))[0]
+                for raw, _ in group:
+                    if raw == keep_raw: continue
+                    if raw != root(raw):
+                        parent.pop(raw, None)
+                    stats["same_frame_lineage_collision_fallback"] += 1
+                    stats["lineage_collision_groups"] += 1
             for idx, row in frame_rows:
                 original = int(row["physical_track_id"]); out = dict(row); out["original_physical_track_id"] = original; out["physical_track_id"] = root(original)
                 if original in decisions: out.update({"full_assignment_action": decisions[original]["action"], "full_assignment_candidate_original_track_id": decisions[original]["candidate_original_track_id"], "full_assignment_score": decisions[original]["assignment_score"], "full_assignment_candidate_gap": decisions[original]["candidate_gap"], "full_assignment_candidate_count": decisions[original]["candidate_count"]})
@@ -124,7 +157,7 @@ def main() -> None:
                     if st is not None: st["status"] = "dormant"
         stats["videos"] += 1
     out_path = ROOT / "outputs/iclr27_phase82r/replays" / f"{args.tag}.jsonl"; atomic_jsonl(out_path, out_rows)
-    summary = {"schema_version": "trackocd.phase82r.full_causal_assignment_replay.v2_dormant_only", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "native_path": str(NATIVE), "native_sha256": sha256(NATIVE), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE), "tag": args.tag, "accept_score": 0.5, "videos": len(videos), "rows": len(out_rows), "stats": dict(stats), "output": str(out_path), "observed_step_map": True, "dormant_only_candidates": True, "same_frame_collision_fallback": True, "canonical_state_merge": True, "q0_non_birth_proposal_preserved": True, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
+    summary = {"schema_version": "trackocd.phase82r.full_causal_assignment_replay.v3_collision_safe", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "native_path": str(NATIVE), "native_sha256": sha256(NATIVE), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE), "tag": args.tag, "accept_score": 0.5, "videos": len(videos), "rows": len(out_rows), "stats": dict(stats), "output": str(out_path), "observed_step_map": True, "dormant_only_candidates": True, "same_frame_collision_fallback": True, "canonical_state_merge": True, "q0_non_birth_proposal_preserved": True, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
     atomic_json(ROOT / "outputs/iclr27_phase82r/metrics" / f"replay_{args.tag}.json", summary); print(json.dumps(summary, indent=2, sort_keys=True))
 
 
