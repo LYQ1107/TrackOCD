@@ -142,7 +142,8 @@ def main() -> None:
                     if raw_id != keep and raw_id != root(raw_id): parent.pop(raw_id, None); stats["lineage_collision_fallback"] += 1
             for native_idx, row in frame_rows:
                 original = int(row["physical_track_id"]); canonical = root(original); out = dict(row)
-                out.update({"phase84_row_uid": f"{video}:{image_id}:{frame_id}:{native_idx}:{int(row.get('candidate_rank', 0))}", "original_physical_track_id": original, "physical_track_id": canonical, "phase84_canonical_physical_track_id": canonical, "phase84_parent_assignment_action": decisions.get(original, {}).get("action", "Q0")})
+                rank = int(row.get("candidate_rank") or 0)
+                out.update({"phase84_row_uid": f"{video}:{image_id}:{frame_id}:{native_idx}:{rank}", "original_physical_track_id": original, "physical_track_id": canonical, "phase84_canonical_physical_track_id": canonical, "phase84_parent_assignment_action": decisions.get(original, {}).get("action", "Q0")})
                 if original in decisions: out.update({"phase84_assignment_score": decisions[original]["assignment_score"], "phase84_assignment_gap": decisions[original]["candidate_gap"], "phase84_assignment_candidate_count": decisions[original]["candidate_count"], "phase84_candidate_original_track_id": decisions[original]["candidate_original_track_id"]})
                 output_rows.append(out)
             # Update causal state after decisions, using only observed rows.
