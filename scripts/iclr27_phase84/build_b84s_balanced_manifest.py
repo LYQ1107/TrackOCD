@@ -79,7 +79,7 @@ def iou(a: list[float] | None, b: list[float] | None) -> float:
     return inter / max(aa + bb - inter, 1e-8)
 
 
-def collect(kfold: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def main() -> None:
     table = load_frozen_tracks()
     public = list(csv.DictReader(PUBLIC_CSV.open(newline="", encoding="utf-8")))
     native = [json.loads(line) for line in NATIVE_PATH.open(encoding="utf-8") if line.strip()]
