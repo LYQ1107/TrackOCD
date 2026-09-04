@@ -141,6 +141,7 @@ def resource_snapshot() -> dict[str, Any]:
         "df_data1_data2": command_output(["df", "-h", "/data1", "/data2"]),
         "nvidia_smi": command_output(["nvidia-smi"], timeout=30),
         "process_count": command_output(["bash", "-lc", "ps -e --no-headers | wc -l"]),
+        "phase83_processes": command_output(["bash", "-lc", "ps -eo pid,ppid,etimes,args | rg 'iclr27_phase83|a2_|b2_|b3_|b4_|b5_|support_router|train_support|run_a3' | rg -v 'rg ' || true"]),
     }
 
 
@@ -497,6 +498,7 @@ def ledger_from(snapshot: dict[str, Any], status: str) -> dict[str, Any]:
         "resource_snapshot": snapshot["resources"],
         "marker_audit": snapshot["markers"],
         "artifacts": snapshot["artifacts"],
+        "event_failure_rows": snapshot["event_failure_rows"],
         "symlinks": snapshot["symlinks"],
         "no_new_training_or_sealed_run": True,
         "final_report": {"path": str(FINAL_REPORT), "generated": FINAL_REPORT.exists()},
