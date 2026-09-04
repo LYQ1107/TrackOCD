@@ -131,7 +131,10 @@ def compact(m: dict[str, Any]) -> dict[str, Any]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(); parser.add_argument("--run-id", default="phase83-physical-r-temporal-20260904"); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument("--run-id", default="phase83-physical-r-temporal-20260904"); parser.add_argument("--folds", default="0,1,2,3", help="comma-separated TRAIN validation folds"); parser.add_argument("--prefixes", default="1,2,4,8,16", help="comma-separated causal prefixes"); args = parser.parse_args()
+    fold_ids = tuple(int(x) for x in args.folds.split(",") if x.strip()); prefixes = tuple(int(x) for x in args.prefixes.split(",") if x.strip())
+    if not fold_ids or any(f < 0 or f > 3 for f in fold_ids) or not prefixes or any(p not in PREFIXES for p in prefixes):
+        raise SystemExit("invalid folds/prefixes")
     table = load_frozen_tracks(); public = list(csv.DictReader(PUBLIC_ROWS.open(newline="", encoding="utf-8"))); native, by_image, native_feat = load_native()
     best, best_idx = public_native_mapping(public, native, by_image); matched, map_info = temporal_vectors(public, native_feat, best, best_idx)
     # Build causal vectors from matched current/past rows only; no suffix is
@@ -145,20 +148,20 @@ def main() -> None:
         temporal_by_prefix[p] = vv
     sections: dict[str, Any] = {}
     for mode, fallback in (("exact_mixed", True), ("mapped_subset", False)):
-        folds: list[dict[str, Any]] = []; prefix_rows: list[dict[str, Any]] = []
-        for fold in range(4):
-            for p in PREFIXES:
+        fold_rows: list[dict[str, Any]] = []; prefix_rows: list[dict[str, Any]] = []
+        for fold in fold_ids:
+            for p in prefixes:
                 recs, inv = build_records(table, temporal_by_prefix[p], fold, p, fallback_raw=fallback)
                 mm = score_records(recs); c = compact(mm)
-                folds.append({"fold": fold, "prefix": p, "metrics": c, "inventory": inv})
+                fold_rows.append({"fold": fold, "prefix": p, "metrics": c, "inventory": inv})
                 prefix_rows.append({"fold": fold, "prefix": p, "metrics": c, "keys_total": inv["keys_total"], "keys_evaluable": inv["keys_evaluable"]})
         agg: dict[str, Any] = {}
-        for p in PREFIXES:
-            fs = [x["metrics"] for x in folds if x["prefix"] == p]
+        for p in prefixes:
+            fs = [x["metrics"] for x in fold_rows if x["prefix"] == p]
             agg[str(p)] = aggregate_fold_metrics(fs)
-        p16 = [x for x in folds if x["prefix"] == 16]
+        p16 = [x for x in fold_rows if x["prefix"] == 16]
         fold_direction = [float(x["metrics"]["r1"]) >= float(x["metrics"]["raw_r1"]) and float(x["metrics"]["map"]) >= float(x["metrics"]["raw_map"]) for x in p16]
-        sections[mode] = {"folds": folds, "prefix": agg, "prefix_rows": prefix_rows, "gate_diagnostic": {"p16_fold_both_non_decrease": fold_direction, "folds_non_decrease": int(sum(fold_direction)), "unsafe_flip_count": int(sum(x["metrics"]["unsafe_flip_count"] for x in p16)), "formal_gate_eligible": mode == "exact_mixed" and sum(fold_direction) >= 3 and sum(x["metrics"]["unsafe_flip_count"] for x in p16) == 0}}
+        sections[mode] = {"folds": fold_rows, "prefix": agg, "prefix_rows": prefix_rows, "gate_diagnostic": {"p16_fold_both_non_decrease": fold_direction, "folds_non_decrease": int(sum(fold_direction)), "unsafe_flip_count": int(sum(x["metrics"]["unsafe_flip_count"] for x in p16)), "formal_gate_eligible": mode == "exact_mixed" and len(p16) == 4 and sum(fold_direction) >= 3 and sum(x["metrics"]["unsafe_flip_count"] for x in p16) == 0}}
     # Event 76 diagnostic: mapped physical vectors are compared pairwise for
     # known positive source/target tracks.  GT is read only from the frozen
     # event manifest for post-hoc reporting, never for vector construction.
@@ -173,7 +176,7 @@ def main() -> None:
     atomic_json(OUT / "audit/native_mapping.json", mapping); atomic_json(OUT / "audit/event_physical_r_diagnostic.json", event_diag)
     atomic_json(OUT / "metrics/physical_r_temporal.json", {"schema_version": "trackocd.phase83.physical_r.v1", "phase": "Phase83 Branch A", "run_id": args.run_id, "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "sections": sections, "mapping": mapping, "event_diagnostic": {k: v for k, v in event_diag.items() if k != "events"}, "raw_reference": str((ROOT / "outputs/iclr27_phase75d/metrics/global_r.json").resolve()), "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "held_events_used_for_model_selection": False})
     atomic_json(OUT / "audit/event_physical_r_diagnostic_events.json", event_diag)
-    p16 = sections["exact_mixed"]["prefix"]["16"]
+    p16 = sections["exact_mixed"]["prefix"].get("16", {})
     status = "R83_DIAGNOSTIC_NO_SAFE_IMPROVEMENT" if not sections["exact_mixed"]["gate_diagnostic"]["formal_gate_eligible"] else "R83_DIAGNOSTIC_SAFE_NONDECREASE"
     atomic_json(OUT / "status.json", {"phase": "Phase83", "status": status, "run_id": args.run_id, "next_action": "run O-support TRAIN-only router audit/training" if status != "R83_GATE_PASS" else "register one downstream R/C route", "physical_r": {"exact_mixed_p16": p16, "mapped_subset_p16": sections["mapped_subset"]["prefix"]["16"], "event_diagnostic": event_diag}, "public_dev_q1_sealed_accessed": False, "resource_event": "single-process CPU"})
     atomic_json(OUT / "completion/physical_r.done", {"status": status, "metrics": str(OUT / "metrics/physical_r_temporal.json"), "mapping": str(OUT / "audit/native_mapping.json")})
