@@ -195,11 +195,12 @@ def aggregate_formal() -> dict[str, Any]:
         p = BASE / "metrics" / f"b84s_b84s_formal_r2_f{fold}.json"
         rows.append(json.loads(p.read_text(encoding="utf-8")))
     def w(key: str, section: str) -> float:
-        den = sum(float(r[section]["validation_metrics"].get("target_candidate_groups" if key == "candidate_top1_recall" else "groups", 0.0)) for r in rows)
+        metrics_key = f"{section}_metrics"
+        den = sum(float(r[metrics_key].get("target_candidate_groups" if key == "candidate_top1_recall" else "groups", 0.0)) for r in rows)
         if key == "candidate_top1_recall":
-            vals = [(r[section]["validation_metrics"][key], r[section]["validation_metrics"]["target_candidate_groups"]) for r in rows]
+            vals = [(r[metrics_key][key], r[metrics_key]["target_candidate_groups"]) for r in rows]
         else:
-            vals = [(r[section]["validation_metrics"][key], r[section]["validation_metrics"]["groups"]) for r in rows]
+            vals = [(r[metrics_key][key], r[metrics_key]["groups"]) for r in rows]
         return float(sum(v * n for v, n in vals) / max(den, 1.0))
     metrics = ["candidate_top1_recall", "candidate_top5_recall", "defer_recall", "candidate_or_defer_accuracy", "mean_nll"]
     aggregate = {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "tag": "b84s_formal_r2", "folds": rows, "validation_weighted": {k: w(k, "validation") for k in metrics}, "validation_macro": {k: float(np.mean([r["validation_metrics"][k] for r in rows])) for k in metrics}, "fit_weighted": {k: float(np.average([r["fit_metrics"][k] for r in rows], weights=[r["fit_metrics"]["groups"] for r in rows])) for k in metrics}, "formal_protocol": {"epochs": 15, "folds": 4, "candidate_action_space": "native candidates + explicit DEFER", "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}}
