@@ -187,9 +187,9 @@ def main() -> None:
                 prev = states.get(key)
                 obs = base.observation({**cur["row"], "bbox_xyxy": cur["box"]}, images[int(cur["row"]["image_id"])], feat[cur["idx"]], prev, step, len(prev["obs"]) if prev else 0)
                 if prev is None:
-                    states[key] = {"video": video, "track": key[1], "step": step, "box": cur["box"], "obs": [obs], "gt_track": cur["gt_track"]}
+                    states[key] = {"video": video, "track": key[1], "step": step, "frame": step, "box": cur["box"], "obs": [obs], "gt_track": cur["gt_track"], "age": 1}
                 else:
-                    prev["obs"].append(obs); prev["obs"] = prev["obs"][-K:]; prev["step"] = step; prev["box"] = cur["box"]; prev["gt_track"] = cur["gt_track"]
+                    prev["obs"].append(obs); prev["obs"] = prev["obs"][-K:]; prev["step"] = step; prev["frame"] = step; prev["box"] = cur["box"]; prev["gt_track"] = cur["gt_track"]; prev["age"] = int(prev.get("age", 1)) + 1
         video_stats[str(video)] = {"examples": examples, "existing": existing, "new": new, "mean_candidates": candidates / max(1, examples), "tracks": len(tracks), "categories_with_gt": len([x for x in cats if x >= 0])}
     def arrays(items: list[dict[str, Any]]) -> dict[str, np.ndarray]:
         if not items:
