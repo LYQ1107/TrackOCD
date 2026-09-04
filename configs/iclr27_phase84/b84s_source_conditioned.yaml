@@ -1,0 +1,14 @@
+route: B84S_SOURCE_CONDITIONED
+seed: 84084
+prefixes: [1, 2, 4, 8, 16]
+source_prototypes: 3
+max_positive_support_per_group: 2
+max_hard_defer_per_group: 2
+action_space: candidates_plus_defer_single_softmax
+loss: listwise_cross_entropy
+effective_epochs: 15
+learning_rate: 0.04
+hidden_dim: 32
+fold_policy: fixed_video_category_disjoint_train_only
+selection: validation_low_false_support_high_precision_recall
+forbidden_inputs: [category, text, semantic_id, physical_id, future, GT, StateMemory, controller_action]
