@@ -1,0 +1,16 @@
+{
+  "route": "phase82r_full_learned_augmented_causal_assignment",
+  "history_length": 8,
+  "horizon_observed_steps": 16,
+  "max_candidates": 16,
+  "hidden": 96,
+  "embedding": "corrected DINOv2 fixed 32-D projection inside 48-D causal observation",
+  "assignment": "one NEW dummy plus existing causal track candidates; masked cross-entropy",
+  "sampling": "one positive existing assignment per one NEW/keep example in fit batches; natural validation",
+  "inference": "argmax over NEW and candidate logits; collision-safe canonical remap; preserve every Q0 row",
+  "checkpoint_selection": "validation non-NEW precision, recall, then assignment accuracy; pred_non_new must be nonzero",
+  "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text", "DEV+", "Q1", "public_new", "sealed"],
+  "q0_anchor": "all boxes/scores/non-assigned proposal rows preserved; only physical lineage association may change",
+  "train_labels": "TRAIN GT IoU-matched track target only; labels never serialized in inference tensors",
+  "seed": 8261
+}
