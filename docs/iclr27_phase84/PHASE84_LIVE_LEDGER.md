@@ -1,14 +1,15 @@
 # Phase84 live ledger (not final)
 
-Generated UTC: 2026-09-04T19:35:11.397525+00:00
+Generated UTC: 2026-09-04T19:44:52.121827+00:00
 Window deadline UTC: 2026-09-05T03:50:55Z
 Finalization lock allowed: False
-Git HEAD: b3f96e8a6dd58cdbf6e0fb8001c0b0e6451b3aa3
+Git HEAD: ff15d45d912de4ecb1b1595992ccb88eadc36c12
 
 Scientific status:
 - A84P true physical reassociation completed; its frozen-R safety gate failed, so no controller was run.
 - B84S original query-agnostic selector failed; B84S-Q repaired query/source contract also failed to improve event selection.
 - B84S-RA raw-anchor bounded residual reached its registered diagnostic result; positive selection remains below the >30/76 alignment-routing criterion and negative activation increased.
+- B84S-PROTO fixed M=3 prototype-anchor diagnostic reached its registered result; it is below the alignment criterion and has higher negative activation than B84S-RA.
 - B84A alignment, C84 controller, and sealed/public evaluation are NOT_RUN by protocol.
 
 Phase84 process snapshot: 0 task processes.
