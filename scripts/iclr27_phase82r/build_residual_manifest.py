@@ -11,6 +11,7 @@ from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 base = importlib.import_module("scripts.iclr27_phase82p.build_residual_manifest")
 base.OUT_ROOT = ROOT / "outputs/iclr27_phase82r/manifests"
 base.DATA_ROOT = Path("/data2/usr_for_deadline/trackocd_phase82r/data")
