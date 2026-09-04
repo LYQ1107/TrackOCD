@@ -168,7 +168,7 @@ class ListwiseSelector:
     def load(cls, path: Path) -> tuple["ListwiseSelector", np.ndarray, np.ndarray, int, int]:
         z = np.load(path, allow_pickle=False)
         obj = cls(int(z["w1"].shape[0]), int(z["w1"].shape[1]), 0)
-        obj.w1, obj.b1, obj.wc, obj.bc, obj.wd, obj.bd = z["w1"], z["b1"], z["wc"], z["bc"], z["wd"], z["bd"]
+        obj.w1, obj.b1, obj.wc, obj.bc, obj.wd, obj.bd = z["w1"], z["b1"], z["wc"], float(z["bc"][0]), z["wd"], float(z["bd"][0])
         obj.t = int(z.get("t", np.asarray([0]))[0])
         for k in obj.m:
             if f"m_{k}" in z: obj.m[k] = z[f"m_{k}"]
