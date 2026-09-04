@@ -31,6 +31,12 @@ Registered order:
    registered selective Q0 overwrite, then full joint causal assignment. No
    threshold lottery or backbone/controller changes are allowed.
 
+The selective overwrite uses one fixed TRAIN-only safety rule recorded in
+`configs/iclr27_phase82r/selective_overwrite.json`: a learned reconnect is
+accepted only when the gate probability is at least `0.9`; otherwise the exact
+Q0 KEEP lineage is emitted. This is a single pre-registered conservative
+fallback, not a held-event threshold sweep.
+
 The frozen Q0 anchor is strict p16 both-reliable `25/76`; any learned route
 must report physical proxy, TrackEval, strict O, retrieval and controller
 metrics separately. The route may end only at the fixed deadline or a genuine

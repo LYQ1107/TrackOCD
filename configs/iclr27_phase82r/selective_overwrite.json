@@ -1,0 +1,10 @@
+{
+  "route": "phase82r_selective_q0_overwrite",
+  "gate_threshold": 0.9,
+  "threshold_source": "single TRAIN-validation safety diagnostic registered before event replay; no held/public tuning",
+  "chosen": "learned candidate only when gate probability >= 0.9, otherwise exact Q0 KEEP",
+  "q0_fallback": true,
+  "physical_stream": "all non-birth Q0 rows byte-preserved; only birth lineage canonicalization may change",
+  "forbidden_inference_fields": ["category_id", "track_id", "physical_id", "semantic_id", "future", "held_gt", "text", "DEV+", "Q1", "public_new", "sealed"],
+  "protocol": "same native lineage, causal observed-step map, max dormant horizon 16"
+}

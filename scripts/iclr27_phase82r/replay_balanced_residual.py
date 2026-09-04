@@ -44,7 +44,8 @@ def atomic_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(); ap.add_argument("--checkpoint", type=Path, required=True); ap.add_argument("--device", default="cuda:0"); ap.add_argument("--tag", default="balanced_replay"); ap.add_argument("--max-videos", type=int); args = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--checkpoint", type=Path, required=True); ap.add_argument("--device", default="cuda:0"); ap.add_argument("--tag", default="balanced_replay"); ap.add_argument("--max-videos", type=int); ap.add_argument("--gate-threshold", type=float, default=0.5); args = ap.parse_args()
+    if not 0.0 <= args.gate_threshold <= 1.0: raise ValueError("gate threshold must be in [0,1]")
     native = [json.loads(line) for line in NATIVE.read_text(encoding="utf-8").splitlines() if line.strip()]
     z = np.load(APPEARANCE, allow_pickle=False); feats = np.asarray(z["features"], dtype=np.float32)
     if feats.shape != (len(native), 768): raise RuntimeError(f"native appearance shape {feats.shape} != {(len(native), 768)}")
@@ -81,7 +82,11 @@ def main() -> None:
                 hist = np.zeros((1, base.MAX_CANDIDATES, base.K, base.OBS_DIM), dtype=np.float32); mask = np.zeros((1, base.MAX_CANDIDATES), dtype=bool); ids=[]
                 for j, cand in enumerate(chosen):
                     seq = cand["obs"][-base.K:]; hist[0, j, -len(seq):] = np.asarray(seq, dtype=np.float32); mask[0, j] = True; ids.append(int(cand["track"]))
-                with torch.no_grad(): out = model(torch.from_numpy(cur_obs[None]).to(args.device), torch.from_numpy(hist).to(args.device), torch.from_numpy(mask).to(args.device)); picked, prob = predict(out); picked = int(picked[0].cpu()) if bool(mask.any()) else 0; probability = float(prob[0].cpu())
+                with torch.no_grad():
+                    out = model(torch.from_numpy(cur_obs[None]).to(args.device), torch.from_numpy(hist).to(args.device), torch.from_numpy(mask).to(args.device))
+                    prob = torch.sigmoid(out["gate_logit"]); candidate = out["candidate_logits"].argmax(dim=1) + 1
+                    picked = int(torch.where(prob >= args.gate_threshold, candidate, torch.zeros_like(candidate))[0].cpu()) if bool(mask.any()) else 0
+                    probability = float(prob[0].cpu())
                 if picked > 0 and picked <= len(ids):
                     parent = ids[picked - 1]; canonical[original] = root(parent); action = "RECONNECT"; stats["reconnect_decisions"] += 1
                 else:
@@ -103,7 +108,7 @@ def main() -> None:
                 seen.add(tid)
         stats["videos"] += 1
     out_path = ROOT / "outputs/iclr27_phase82r/replays" / f"{args.tag}.jsonl"; atomic_jsonl(out_path, out_rows)
-    summary = {"schema_version": "trackocd.phase82r.balanced_residual_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "checkpoint": str(args.checkpoint.resolve()), "checkpoint_sha256": sha256(args.checkpoint), "native_path": str(NATIVE), "native_sha256": sha256(NATIVE), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE), "tag": args.tag, "videos": len(videos), "rows": len(out_rows), "stats": dict(stats), "output": str(out_path), "observed_step_map": True, "dormant_horizon": base.HORIZON, "q0_non_birth_proposal_preserved": True, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
+    summary = {"schema_version": "trackocd.phase82r.balanced_residual_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "checkpoint": str(args.checkpoint.resolve()), "checkpoint_sha256": sha256(args.checkpoint), "native_path": str(NATIVE), "native_sha256": sha256(NATIVE), "appearance_path": str(APPEARANCE), "appearance_sha256": sha256(APPEARANCE), "tag": args.tag, "gate_threshold": args.gate_threshold, "videos": len(videos), "rows": len(out_rows), "stats": dict(stats), "output": str(out_path), "observed_step_map": True, "dormant_horizon": base.HORIZON, "q0_non_birth_proposal_preserved": True, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}
     atomic_json(ROOT / "outputs/iclr27_phase82r/metrics" / f"replay_{args.tag}.json", summary); print(json.dumps(summary, indent=2, sort_keys=True))
 
 
