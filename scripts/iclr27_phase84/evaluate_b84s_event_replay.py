@@ -8,6 +8,7 @@ manifest; event labels/GT are used only to score the frozen decisions.
 """
 from __future__ import annotations
 
+import argparse
 import ast
 import csv
 import datetime as dt
@@ -37,6 +38,9 @@ SOURCE_MANIFEST = BASE / "manifests/source_track_native_cache.json"
 OBS_PATH = Path("/data2/usr_for_deadline/trackocd_phase75b/observability_repair2/event_observability.jsonl")
 CSV_PATH = ROOT / "data/iclr27_phase19r/sources/public_rows_corrected.csv"
 PREFIXES = (1, 2, 4, 8, 16)
+MODEL_PREFIX = "b84s_b84s_formal_r2"
+MODEL_FOLD_COUNT = 4
+OUTPUT_SUFFIX = ""
 
 
 def sha(path: Path) -> str:
@@ -114,8 +118,8 @@ def load_gt() -> dict[str, list[float] | None]:
 
 def load_models() -> dict[int, dict[str, np.ndarray]]:
     models: dict[int, dict[str, np.ndarray]] = {}
-    for fold in range(4):
-        candidates = sorted((BASE / "checkpoints").glob(f"b84s_b84s_formal_r2_f{fold}_step*.npz"))
+    for fold in range(MODEL_FOLD_COUNT):
+        candidates = sorted((BASE / "checkpoints").glob(f"{MODEL_PREFIX}_f{fold}_step*.npz"))
         if not candidates:
             raise FileNotFoundError(f"no formal checkpoint for fold {fold}")
         p = candidates[-1]
@@ -168,7 +172,8 @@ def evaluate() -> tuple[dict[str, Any], dict[str, Any]]:
         for detail in event.get("target_row_details", []):
             image_key = (int(detail.get("video_id", -1)), int(detail.get("image_id", -1)))
             inds = groups.get(image_key, [])
-            choice, logits, _ = target_action(desc[np.asarray(inds, dtype=np.int64)] if inds else np.zeros((0, 15), dtype=np.float32), inds, features, sv, sp, models[fold])
+            model_fold = fold if fold in models else fold % MODEL_FOLD_COUNT
+            choice, logits, _ = target_action(desc[np.asarray(inds, dtype=np.int64)] if inds else np.zeros((0, 15), dtype=np.float32), inds, features, sv, sp, models[model_fold])
             deferred = choice >= len(inds)
             native_index = None if deferred else int(inds[choice])
             selected_iou = 0.0 if native_index is None else iou(box(native[native_index].get("bbox_xyxy")), gt.get(str(detail.get("row_key"))))
@@ -179,21 +184,21 @@ def evaluate() -> tuple[dict[str, Any], dict[str, Any]]:
             raw_idx = None if not len(inds) else int(inds[raw_choice])
             raw_iou = 0.0 if raw_idx is None else iou(box(native[raw_idx].get("bbox_xyxy")), gt.get(str(detail.get("row_key"))))
             selected.append({"row_key": str(detail.get("row_key")), "video_id": image_key[0], "image_id": image_key[1], "candidate_count": len(inds), "choice": None if deferred else choice, "defer": deferred, "logit_max": float(np.max(logits)) if len(logits) else 0.0, "selected_native_index": native_index, "selected_iou": float(selected_iou), "raw_source_mean_choice": raw_idx, "raw_source_mean_iou": float(raw_iou), "q0_reliable": bool(detail.get("q0_reliable", False))})
-        records.append({"event_key": str(event.get("event_key")), "model_event_uid": str(event.get("model_event_uid")), "fold": fold, "polarity": str(event.get("polarity")), "prefix": int(event.get("prefix", 0)), "source_tracklet_key": source_key, "target_tracklet_key": str(event.get("target_tracklet_key")), "source_reliable_frozen": bool(event.get("source_reliable", False)), "target_reliable_frozen": bool(event.get("target_reliable", False)), "both_reliable_frozen": bool(event.get("both_reliable", False)), "target_rows": selected, "selected_candidate": bool(any(x["choice"] is not None for x in selected)), "selected_reliable": bool(any(x["selected_iou"] >= 0.5 for x in selected)), "raw_selected_reliable": bool(any(x["raw_source_mean_iou"] >= 0.5 for x in selected)), "candidate_count_total": int(sum(x["candidate_count"] for x in selected))})
+        records.append({"event_key": str(event.get("event_key")), "model_event_uid": str(event.get("model_event_uid")), "fold": fold, "model_fold": fold if fold in models else fold % MODEL_FOLD_COUNT, "polarity": str(event.get("polarity")), "prefix": int(event.get("prefix", 0)), "source_tracklet_key": source_key, "target_tracklet_key": str(event.get("target_tracklet_key")), "source_reliable_frozen": bool(event.get("source_reliable", False)), "target_reliable_frozen": bool(event.get("target_reliable", False)), "both_reliable_frozen": bool(event.get("both_reliable", False)), "target_rows": selected, "selected_candidate": bool(any(x["choice"] is not None for x in selected)), "selected_reliable": bool(any(x["selected_iou"] >= 0.5 for x in selected)), "raw_selected_reliable": bool(any(x["raw_source_mean_iou"] >= 0.5 for x in selected)), "candidate_count_total": int(sum(x["candidate_count"] for x in selected))})
     summary: list[dict[str, Any]] = []
     for p in PREFIXES:
         for pol in ("positive", "negative"):
             rs = [r for r in records if r["prefix"] == p and r["polarity"] == pol]
             summary.append({"prefix": p, "polarity": pol, "events": len(rs), "selected_candidate_events": sum(r["selected_candidate"] for r in rs), "selected_reliable_events": sum(r["selected_reliable"] for r in rs), "raw_source_mean_reliable_events": sum(r["raw_selected_reliable"] for r in rs), "frozen_source_reliable": sum(r["source_reliable_frozen"] for r in rs), "frozen_target_reliable": sum(r["target_reliable_frozen"] for r in rs), "frozen_both_reliable": sum(r["both_reliable_frozen"] for r in rs)})
     model_meta = {str(k): {"path": v["path"], "sha256": v["sha256"]} for k, v in models.items()}
-    aggregate = {"schema_version": "trackocd.phase84.b84s.event_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "strategy": "frozen B84S native candidate-set listwise selector; event source track supplies same-space causal mean/prototypes; one frozen fold checkpoint per event fold", "records": records, "summary": summary, "model_checkpoints": model_meta, "inputs": {"native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "b4_candidate_sets": str(B4_PATH.resolve()), "b4_candidate_sets_sha256": sha(B4_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "model_manifest": str(MODEL_MANIFEST.resolve()), "model_manifest_sha256": sha(MODEL_MANIFEST), "observability": str(OBS_PATH.resolve()), "observability_sha256": sha(OBS_PATH)}, "denominators": {"positive_events": 76, "negative_events": 76, "prefixes": list(PREFIXES)}, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "event_labels_posthoc_only": True, "controller_run": False}
+    aggregate = {"schema_version": "trackocd.phase84.b84s.event_replay.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "strategy": "frozen B84S native candidate-set listwise selector; event source track supplies same-space causal mean/prototypes; one frozen fold checkpoint per event fold", "model_prefix": MODEL_PREFIX, "model_fold_count": MODEL_FOLD_COUNT, "records": records, "summary": summary, "model_checkpoints": model_meta, "inputs": {"native": str(NATIVE_PATH.resolve()), "native_sha256": sha(NATIVE_PATH), "native_features": str(FEATURE_PATH.resolve()), "native_features_sha256": sha(FEATURE_PATH), "b4_candidate_sets": str(B4_PATH.resolve()), "b4_candidate_sets_sha256": sha(B4_PATH), "source_cache": str(SOURCE_CACHE.resolve()), "source_cache_sha256": sha(SOURCE_CACHE), "model_manifest": str(MODEL_MANIFEST.resolve()), "model_manifest_sha256": sha(MODEL_MANIFEST), "observability": str(OBS_PATH.resolve()), "observability_sha256": sha(OBS_PATH)}, "denominators": {"positive_events": 76, "negative_events": 76, "prefixes": list(PREFIXES)}, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "event_labels_posthoc_only": True, "controller_run": False}
     return aggregate, {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1"}
 
 
 def aggregate_formal() -> dict[str, Any]:
     rows = []
-    for fold in range(4):
-        p = BASE / "metrics" / f"b84s_b84s_formal_r2_f{fold}.json"
+    for fold in range(MODEL_FOLD_COUNT):
+        p = BASE / "metrics" / f"{MODEL_PREFIX}_f{fold}.json"
         rows.append(json.loads(p.read_text(encoding="utf-8")))
     def w(key: str, section: str) -> float:
         metrics_key = f"{section}_metrics"
@@ -204,16 +209,19 @@ def aggregate_formal() -> dict[str, Any]:
             vals = [(r[metrics_key][key], r[metrics_key]["groups"]) for r in rows]
         return float(sum(v * n for v, n in vals) / max(den, 1.0))
     metrics = ["candidate_top1_recall", "candidate_top5_recall", "defer_recall", "candidate_or_defer_accuracy", "mean_nll"]
-    aggregate = {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "tag": "b84s_formal_r2", "folds": rows, "validation_weighted": {k: w(k, "validation") for k in metrics}, "validation_macro": {k: float(np.mean([r["validation_metrics"][k] for r in rows])) for k in metrics}, "fit_weighted": {k: float(np.average([r["fit_metrics"][k] for r in rows], weights=[r["fit_metrics"]["groups"] for r in rows])) for k in metrics}, "formal_protocol": {"epochs": 15, "folds": 4, "candidate_action_space": "native candidates + explicit DEFER", "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}}
+    aggregate = {"schema_version": "trackocd.phase84.b84s.formal_aggregate.v1", "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "tag": MODEL_PREFIX, "folds": rows, "validation_weighted": {k: w(k, "validation") for k in metrics}, "validation_macro": {k: float(np.mean([r["validation_metrics"][k] for r in rows])) for k in metrics}, "fit_weighted": {k: float(np.average([r["fit_metrics"][k] for r in rows], weights=[r["fit_metrics"]["groups"] for r in rows])) for k in metrics}, "formal_protocol": {"epochs": 15, "folds": MODEL_FOLD_COUNT, "candidate_action_space": "native candidates + explicit DEFER", "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False}}
     return aggregate
 
 
 def main() -> None:
+    global MODEL_PREFIX, MODEL_FOLD_COUNT, MODEL_MANIFEST, OUTPUT_SUFFIX
+    ap = argparse.ArgumentParser(); ap.add_argument("--model-prefix", default=MODEL_PREFIX); ap.add_argument("--fold-count", type=int, default=MODEL_FOLD_COUNT); ap.add_argument("--suffix", default=""); ap.add_argument("--manifest", default=str(MODEL_MANIFEST)); a = ap.parse_args(); MODEL_PREFIX, MODEL_FOLD_COUNT, OUTPUT_SUFFIX, MODEL_MANIFEST = a.model_prefix, a.fold_count, a.suffix, Path(a.manifest)
     formal = aggregate_formal()
     event, _ = evaluate()
-    atomic_json(OUT / "metrics/b84s_formal_aggregate.json", formal)
-    atomic_json(OUT / "metrics/b84s_event_replay.json", event)
-    atomic_json(OUT / "completion/b84s_event_replay.done", {"status": "DONE", "formal_aggregate": str((OUT / "metrics/b84s_formal_aggregate.json").resolve()), "event_replay": str((OUT / "metrics/b84s_event_replay.json").resolve()), "event_replay_sha256": sha(OUT / "metrics/b84s_event_replay.json")})
+    formal_path = OUT / f"metrics/b84s_formal_aggregate{OUTPUT_SUFFIX}.json"; event_path = OUT / f"metrics/b84s_event_replay{OUTPUT_SUFFIX}.json"; done_path = OUT / f"completion/b84s_event_replay{OUTPUT_SUFFIX}.done"
+    atomic_json(formal_path, formal)
+    atomic_json(event_path, event)
+    atomic_json(done_path, {"status": "DONE", "formal_aggregate": str(formal_path.resolve()), "event_replay": str(event_path.resolve()), "event_replay_sha256": sha(event_path)})
     print(json.dumps({"formal_validation_weighted": formal["validation_weighted"], "p16": [x for x in event["summary"] if x["prefix"] == 16]}, indent=2, sort_keys=True))
 
 
