@@ -66,7 +66,7 @@ def phase_processes() -> list[dict[str, Any]]:
         if not line:
             continue
         pid_text, _, command = line.partition(" ")
-        if "iclr27_phase84" not in command or int(pid_text) == os.getpid():
+        if "iclr27_phase84" not in command or int(pid_text) == os.getpid() or any(name in command for name in ("generate_live_ledger.py", "generate_final_report.py", "finalize_when_unlocked.py")):
             continue
         out.append({"pid": int(pid_text), "command": command})
     return out
