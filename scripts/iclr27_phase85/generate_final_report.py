@@ -177,6 +177,7 @@ def main() -> None:
     leakage = load(AUDIT / "leakage_contract.json")
     integrity = load(AUDIT / "integrity_check.json")
     repairs = load(AUDIT / "repair_events.json")
+    ledger = load(AUDIT / "research_ledger.json")
     if args.check_only:
         print(json.dumps({"status": "CHECK_ONLY_PASS", "provenance_sections": len(provenance["sections"]), "q0_parity": q0par.get("parity"), "physical_p16": phys.get("gate_diagnostic", {}).get("p16"), "selective_p16": selphys.get("gate_diagnostic", {}).get("p16"), "support_routing": feasibility.get("routing"), "failed_markers": sorted(p.name for p in COMP.glob("*.launched") if not p.with_suffix(".done").exists())}, indent=2, sort_keys=True))
         return
@@ -300,6 +301,7 @@ No persistent Commit-CT number is reported for Phase85: the controller was not a
 ## Resources, repairs, and integrity
 
 - Resource/space snapshots and symlink ledger are in `{str((AUDIT / 'research_ledger.json').resolve())}` and the registration. Large files remain on `/data2`; nothing was copied into `/data1` beyond tracked small code/docs.
+- The latest low-frequency resource snapshot includes `free -h`, `df -h /data1 /data2`, `nvidia-smi`, and process count in the research ledger (`{len(ledger.get('resources', {}).get('nvidia_smi', '').splitlines())}` nvidia-smi lines captured); no Phase85 worker remained at the integrity check.
 - One initial selective replay implementation was terminated only for task-owned PIDs `32861,32862` after profiling an avoidable per-row Torch bottleneck; the NumPy frozen-forward replacement passed smoke/targeted tests. No OOM and no external process termination occurred. The initial `physical_gate_smoke_r1` marker is retained without `.done` as failed evidence: `{', '.join(failed_markers) if failed_markers else 'none'}`.
 - A system-Python missing-torch invocation and a one-time audit import-path failure were repaired with the audited environment/project-root path; no scientific output was overwritten. All outputs use atomic writes. JSON and provenance checks passed before this report.
 - The final integrity audit `{str((AUDIT / 'integrity_check.json').resolve())}` parsed `{integrity.get('json_count')}` JSON artifacts with `{len(integrity.get('json_parse_failures', []))}` parse failures, found `{len(integrity.get('missing_key_artifacts', []))}` missing key artifacts, `{integrity.get('checkpoint_count')}` checkpoints and no forbidden named files or residual Phase85 process. The failed smoke marker is intentionally preserved as evidence.
