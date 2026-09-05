@@ -124,6 +124,7 @@ def main() -> None:
             {"stage": "B85S_support", "status": "SAFETY_FAIL", "artifacts": [artifact(METRICS / "support_event_replay.json"), artifact(METRICS / "support_event_replay_selective_source_v1.json")], "p16": [x for x in support.get("summary", []) if x.get("prefix") == 16], "selective_source_p16": [x for x in support_sel.get("summary", []) if x.get("prefix") == 16], "next_action": "no alignment/controller; preserve raw anchor"},
             {"stage": "support_selection_audit", "status": "DONE", "artifact": artifact(AUDIT / "support_alignment_feasibility.json"), "routing": support_audit.get("routing", {}), "next_action": "final report in unlock interval"},
             {"stage": "event_physical_contamination", "status": "DONE", "artifact": artifact(AUDIT / "event_physical_contamination.json"), "summary": contamination.get("summary", {}), "next_action": "retain contamination evidence"},
+            {"stage": "leakage_contract", "status": "PASS", "artifact": artifact(AUDIT / "leakage_contract.json"), "next_action": "final report after registered unlock"},
         ], "artifacts": [artifact(Path(x)) for x in artifacts], "failed_uncompleted_markers": failed_markers, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "controller_run": False, "sealed_run": False,
     }
     atomic_json(AUDIT / "research_ledger.json", ledger)
