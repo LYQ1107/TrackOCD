@@ -72,6 +72,7 @@ def resources() -> dict[str, Any]:
     return {
         "free_h": subprocess.run(["free", "-h"], text=True, capture_output=True, check=False).stdout,
         "disk": subprocess.run(["df", "-h", "/data1", "/data2"], text=True, capture_output=True, check=False).stdout,
+        "nvidia_smi": subprocess.run(["nvidia-smi"], text=True, capture_output=True, check=False).stdout,
         "process_count": len(ps.splitlines()),
         "phase85_processes": [],
     }
