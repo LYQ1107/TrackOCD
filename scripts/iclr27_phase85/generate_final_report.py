@@ -175,6 +175,8 @@ def main() -> None:
     q0_summary = summary_lines(METRICS / "trackeval/q0_event91/q0_event91/cls_comb_cls_av_summary.txt")
     temporal_summary = summary_lines(METRICS / "trackeval/temporal_mean_event91/temporal_mean_event91/cls_comb_cls_av_summary.txt")
     selective_summary = summary_lines(METRICS / "trackeval/selective_event91/selective_event91/cls_comb_cls_av_summary.txt")
+    q0_full_summary = summary_lines(METRICS / "trackeval/q0_full/q0_full/cls_comb_cls_av_summary.txt")
+    temporal_full_summary = summary_lines(METRICS / "trackeval/temporal_mean_full/temporal_mean_full/cls_comb_cls_av_summary.txt")
     physical_rows = []
     for prefix in [1, 2, 4, 8, 16]:
         d = phys.get("prefix", {}).get(str(prefix), {})
@@ -228,6 +230,12 @@ The class-agnostic event-video TrackEval comparison is:
 {md_table(['stream','HOTA','DetA','AssA','MOTA','IDF1','IDSW','Frag'], [['Q0',q0_summary.get('HOTA'),q0_summary.get('DetA'),q0_summary.get('AssA'),q0_summary.get('MOTA'),q0_summary.get('IDF1'),q0_summary.get('IDSW'),q0_summary.get('Frag')], ['temporal_mean',temporal_summary.get('HOTA'),temporal_summary.get('DetA'),temporal_summary.get('AssA'),temporal_summary.get('MOTA'),temporal_summary.get('IDF1'),temporal_summary.get('IDSW'),temporal_summary.get('Frag')], ['selective_gate',selective_summary.get('HOTA'),selective_summary.get('DetA'),selective_summary.get('AssA'),selective_summary.get('MOTA'),selective_summary.get('IDF1'),selective_summary.get('IDSW'),selective_summary.get('Frag')]])}
 
 These are diagnostics on the same 91 event videos; they do not replace full sealed MOT or persistent Commit-CT.
+
+The corresponding full 370-video class-agnostic TrackEval summaries (Q0 versus temporal mean) are:
+
+{md_table(['stream','HOTA','DetA','AssA','MOTA','IDF1','IDSW','Frag'], [['Q0 full',q0_full_summary.get('HOTA'),q0_full_summary.get('DetA'),q0_full_summary.get('AssA'),q0_full_summary.get('MOTA'),q0_full_summary.get('IDF1'),q0_full_summary.get('IDSW'),q0_full_summary.get('Frag')], ['temporal full',temporal_full_summary.get('HOTA'),temporal_full_summary.get('DetA'),temporal_full_summary.get('AssA'),temporal_full_summary.get('MOTA'),temporal_full_summary.get('IDF1'),temporal_full_summary.get('IDSW'),temporal_full_summary.get('Frag')]])}
+
+Selective physical TrackEval is intentionally restricted to the event91 diagnostic subset; no additional full-stream learned model score is treated as a gate.
 
 ## P3/P4 real Q0 adapter parity and physical→R
 
