@@ -317,6 +317,7 @@ python scripts/iclr27_phase85/audit_phase84_issues.py
 /home/lwr/anaconda3/envs/ovtr/bin/python scripts/iclr27_phase85/evaluate_physical_r.py --candidate outputs/iclr27_phase85/manifests/physical_r_selective_selective_gate_v1_vectors.npz --candidate-name selective_gate_v1 --output-tag physical_r_selective_comparison
 python scripts/iclr27_phase85/audit_support_selection.py
 python scripts/iclr27_phase85/audit_support_alignment_feasibility.py
+/home/lwr/anaconda3/envs/ovtr/bin/python scripts/iclr27_phase85/evaluate_support_phase85.py --policy raw_defer --output-tag support_event_replay_raw_defer_v1
 python scripts/iclr27_phase85/generate_final_report.py --check-only
 ```
 
