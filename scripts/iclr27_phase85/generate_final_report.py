@@ -118,6 +118,7 @@ def expected_sources() -> list[dict[str, Any]]:
         {"section": "support_selective_source", "route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "tag": None, "path": METRICS / "support_event_replay_selective_source_v1.json"},
         {"section": "support_selection_audit", "route": None, "tag": None, "path": AUDIT / "support_alignment_feasibility.json"},
         {"section": "event_physical_contamination", "route": None, "tag": None, "path": AUDIT / "event_physical_contamination.json"},
+        {"section": "integrity_check", "route": None, "tag": None, "path": AUDIT / "integrity_check.json"},
     ]
 
 
@@ -167,6 +168,7 @@ def main() -> None:
     topk = load(AUDIT / "support_topk_audit.json")
     shift = load(AUDIT / "support_train_event_shift.json")
     contamination = load(AUDIT / "event_physical_contamination.json")
+    integrity = load(AUDIT / "integrity_check.json")
     repairs = load(AUDIT / "repair_events.json")
     if args.check_only:
         print(json.dumps({"status": "CHECK_ONLY_PASS", "provenance_sections": len(provenance["sections"]), "q0_parity": q0par.get("parity"), "physical_p16": phys.get("gate_diagnostic", {}).get("p16"), "selective_p16": selphys.get("gate_diagnostic", {}).get("p16"), "support_routing": feasibility.get("routing"), "failed_markers": sorted(p.name for p in COMP.glob("*.launched") if not p.with_suffix(".done").exists())}, indent=2, sort_keys=True))
@@ -290,6 +292,7 @@ No persistent Commit-CT number is reported for Phase85: the controller was not a
 - Resource/space snapshots and symlink ledger are in `{str((AUDIT / 'research_ledger.json').resolve())}` and the registration. Large files remain on `/data2`; nothing was copied into `/data1` beyond tracked small code/docs.
 - One initial selective replay implementation was terminated only for task-owned PIDs `32861,32862` after profiling an avoidable per-row Torch bottleneck; the NumPy frozen-forward replacement passed smoke/targeted tests. No OOM and no external process termination occurred. The initial `physical_gate_smoke_r1` marker is retained without `.done` as failed evidence: `{', '.join(failed_markers) if failed_markers else 'none'}`.
 - A system-Python missing-torch invocation and a one-time audit import-path failure were repaired with the audited environment/project-root path; no scientific output was overwritten. All outputs use atomic writes. JSON and provenance checks passed before this report.
+- The final integrity audit `{str((AUDIT / 'integrity_check.json').resolve())}` parsed `{integrity.get('json_count')}` JSON artifacts with `{len(integrity.get('json_parse_failures', []))}` parse failures, found `{len(integrity.get('missing_key_artifacts', []))}` missing key artifacts, `{integrity.get('checkpoint_count')}` checkpoints and no forbidden named files or residual Phase85 process. The failed smoke marker is intentionally preserved as evidence.
 - Historical Phase84/Phase83 files were read-only; public DEV+/Q1/new-model/sealed labels were not accessed.
 
 ## Reproduction

@@ -88,6 +88,7 @@ def expected_provenance() -> list[dict[str, Any]]:
         {"section_name": "support_selective_source", "expected_route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "expected_tag": None, "path": METRICS / "support_event_replay_selective_source_v1.json"},
         {"section_name": "support_alignment_feasibility", "expected_route": None, "expected_tag": None, "path": AUDIT / "support_alignment_feasibility.json"},
         {"section_name": "event_physical_contamination", "expected_route": None, "expected_tag": None, "path": AUDIT / "event_physical_contamination.json"},
+        {"section_name": "integrity_check", "expected_route": None, "expected_tag": None, "path": AUDIT / "integrity_check.json"},
     ]
 
 
