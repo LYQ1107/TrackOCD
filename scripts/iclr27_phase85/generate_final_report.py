@@ -163,7 +163,10 @@ def main() -> None:
     selphys = load(AUDIT / "physical_r_selective_comparison.json")
     support = load(METRICS / "support_event_replay.json")
     support_sel = load(METRICS / "support_event_replay_selective_source_v1.json")
-    selection = load(AUDIT / "support_selection_audit.json")
+    # Use the event-level feasibility records for the complete table.  The
+    # lower-level selection audit has multiple target rows per event; taking a
+    # dictionary's last row would silently mislabel the event taxonomy.
+    selection = load(AUDIT / "support_alignment_feasibility.json")
     feasibility = load(AUDIT / "support_alignment_feasibility.json")
     topk = load(AUDIT / "support_topk_audit.json")
     shift = load(AUDIT / "support_train_event_shift.json")
