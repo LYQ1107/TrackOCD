@@ -42,7 +42,7 @@ def main() -> None:
     for path in json_files:
         try: json.loads(path.read_text(encoding="utf-8"))
         except Exception as exc: parse_failures.append({"path": str(path), "error": repr(exc)})
-    key_paths = [OUT / "metrics/temporal_mean_full.json", OUT / "audit/physical_r_q0_q0_parity_v5_adapter.json", OUT / "audit/physical_r_temporal_comparison_v2.json", OUT / "audit/physical_r_selective_comparison.json", OUT / "metrics/support_event_replay.json", OUT / "metrics/support_event_replay_selective_source_v1.json", OUT / "audit/support_alignment_feasibility.json", OUT / "audit/event_physical_contamination.json"]
+    key_paths = [OUT / "metrics/temporal_mean_full.json", OUT / "audit/physical_r_q0_q0_parity_v5_adapter.json", OUT / "audit/physical_r_temporal_comparison_v2.json", OUT / "audit/physical_r_selective_comparison.json", OUT / "metrics/support_event_replay.json", OUT / "metrics/support_event_replay_selective_source_v1.json", OUT / "audit/support_alignment_feasibility.json", OUT / "audit/event_physical_contamination.json", OUT / "audit/leakage_contract.json"]
     missing = [str(p) for p in key_paths if not p.is_file()]
     checkpoints = sorted((OUT / "checkpoints").glob("*.pt"))
     checkpoint_hashes = [{"path": str(p.resolve()), "sha256": sha(p), "size": p.stat().st_size} for p in checkpoints]

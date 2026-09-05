@@ -1,9 +1,9 @@
 # Phase85 live research ledger (not final)
 
-Generated UTC: 2026-09-05T11:29:24.728747+00:00
+Generated UTC: 2026-09-05T11:33:32.148593+00:00
 Window: 2026-09-05T08:50:01Z → 2026-09-05T18:50:01Z
 Finalization lock allowed: False
-Git HEAD: 6319e3ac0fb8e659ead8441db587f1bab6e56278
+Git HEAD: 363b244b6191cf491e6d1710549e7270476be77b
 
 Scientific state:
 - P0/P1/P2/P3/P4 repairs and parity are complete; Q0 parity passed on the frozen 984-query universe.

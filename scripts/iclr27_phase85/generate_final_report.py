@@ -118,6 +118,7 @@ def expected_sources() -> list[dict[str, Any]]:
         {"section": "support_selective_source", "route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "tag": None, "path": METRICS / "support_event_replay_selective_source_v1.json"},
         {"section": "support_selection_audit", "route": None, "tag": None, "path": AUDIT / "support_alignment_feasibility.json"},
         {"section": "event_physical_contamination", "route": None, "tag": None, "path": AUDIT / "event_physical_contamination.json"},
+        {"section": "leakage_contract", "route": None, "tag": None, "path": AUDIT / "leakage_contract.json"},
         {"section": "integrity_check", "route": None, "tag": None, "path": AUDIT / "integrity_check.json"},
     ]
 
@@ -171,6 +172,7 @@ def main() -> None:
     topk = load(AUDIT / "support_topk_audit.json")
     shift = load(AUDIT / "support_train_event_shift.json")
     contamination = load(AUDIT / "event_physical_contamination.json")
+    leakage = load(AUDIT / "leakage_contract.json")
     integrity = load(AUDIT / "integrity_check.json")
     repairs = load(AUDIT / "repair_events.json")
     if args.check_only:
@@ -220,6 +222,7 @@ Phase85 repaired the Phase84 implementation and evaluation contracts, then compl
 
 - Fixed denominators are 76 positive and 76 negative causal events at prefixes `{1,2,4,8,16}`; the frozen R universe has 984 validation queries with identical candidate order and same-video exclusion.
 - Inference inputs remain visual features, geometry, motion, causal history and internal bookkeeping only. Category names/text, semantic or physical IDs as features, future rows/tracks, held GT, DEV+, Q1, public-new and sealed labels were not accessed. TRAIN labels appear only as post-hoc supervision/audit metadata.
+- The explicit leakage contract audit is `{str((AUDIT / 'leakage_contract.json').resolve())}` (status **{leakage.get('status')}**): three TRAIN-derived manifests declare no public/DEV+/Q1/sealed access, no future rows/tracks, and no ID-as-model-input flags; source-token mentions are declarations/audit fields rather than inference paths.
 - Large artifacts are stored on `/data2/usr_for_deadline/trackocd_phase85/project_outputs` and exposed via the project symlink `outputs/iclr27_phase85`; source/target hashes and provenance are in `{str(PROVENANCE.resolve())}`. Phase84 artifacts were read-only.
 
 ## Phase84 issue repairs and audit
