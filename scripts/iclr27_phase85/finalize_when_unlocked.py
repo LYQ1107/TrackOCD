@@ -7,6 +7,7 @@ explicit error so the research budget cannot be replaced by idle waiting.
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import os
 import subprocess
@@ -33,6 +34,16 @@ def atomic_json(path: Path, value: object) -> None:
         if os.path.exists(tmp): os.unlink(tmp)
 
 
+def sha(path: Path) -> str | None:
+    if not path.is_file():
+        return None
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
 def main() -> None:
     reg = json.loads(REG.read_text(encoding="utf-8"))
     deadline = dt.datetime.fromisoformat(str(reg["deadline_utc"]).replace("Z", "+00:00"))
@@ -54,8 +65,20 @@ def main() -> None:
     # remains on the existing /data2 symlink target.
     subprocess.run(["git", "add", "-f", "docs/iclr27_phase85/PHASE85_AUTONOMOUS_RESEARCH_REPORT.md", "docs/iclr27_phase85/PHASE85_LIVE_LEDGER.md"], cwd=ROOT, check=True)
     subprocess.run(["git", "commit", "-m", "phase85 finalize autonomous research report"], cwd=ROOT, check=False)
+    final_head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True).stdout.strip()
     subprocess.run(["git", "push", "origin", "main"], cwd=ROOT, check=True)
-    print(json.dumps({"status": "FINALIZED", "report": str(report.resolve()), "lock": str(LOCK.resolve()), "git_head": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True).stdout.strip()}, indent=2, sort_keys=True))
+    # The report is generated before its finalization commit, so record the
+    # exact repository head separately in the machine decision and lock.  This
+    # keeps SCIENCE_HEAD, REPORT_GENERATION_HEAD and FINAL_REPOSITORY_HEAD
+    # auditable without rewriting the report after the commit.
+    lock = json.loads(LOCK.read_text(encoding="utf-8"))
+    lock.update({"final_repository_head": final_head, "finalized_utc": dt.datetime.now(dt.timezone.utc).isoformat()})
+    atomic_json(LOCK, lock)
+    decision_path = AUDIT / "phase85_decision.json"
+    decision = json.loads(decision_path.read_text(encoding="utf-8"))
+    decision.update({"final_repository_head": final_head, "finalization_commit": final_head, "decision_sha256_before_head_update": sha(decision_path)})
+    atomic_json(decision_path, decision)
+    print(json.dumps({"status": "FINALIZED", "report": str(report.resolve()), "lock": str(LOCK.resolve()), "git_head": final_head}, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
