@@ -1,0 +1,20 @@
+{
+  "schema_version": "trackocd.phase85.support_config.v1",
+  "seed": 8505,
+  "prefixes": [1, 2, 4, 8, 16],
+  "max_candidates": 32,
+  "default_k_rule": "validation_recall_at_16_ge_0.90_else_32",
+  "residual_scale": 0.05,
+  "defer_threshold": 0.5,
+  "teacher": "support_quality>=0.2 AND bridge_margin>=raw_margin+0.005",
+  "support_quality_min": 0.2,
+  "margin_delta": 0.005,
+  "model_input_forbidden": ["category", "text", "physical_id", "semantic_id", "future", "gt_bbox", "StateMemory", "controller_action"],
+  "train_split": "public_train_phase30_fit_val",
+  "folds": 3,
+  "max_updates": 3000,
+  "checkpoint_interval": 1000,
+  "smoke_updates": 100,
+  "targeted_updates": 500,
+  "amp": "bf16_if_finite_else_fp32"
+}
