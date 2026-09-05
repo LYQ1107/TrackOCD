@@ -1,14 +1,15 @@
 # Phase85 live research ledger (not final)
 
-Generated UTC: 2026-09-05T11:34:28.159182+00:00
+Generated UTC: 2026-09-05T11:40:11.979683+00:00
 Window: 2026-09-05T08:50:01Z → 2026-09-05T18:50:01Z
 Finalization lock allowed: False
-Git HEAD: f748a72640dd9471866d2599805774c27eea0394
+Git HEAD: a7ae09be078ca8ed75e098b44d15b5b579112cc1
 
 Scientific state:
 - P0/P1/P2/P3/P4 repairs and parity are complete; Q0 parity passed on the frozen 984-query universe.
 - Temporal-mean and selective physical streams have valid TrackEval diagnostics but both physical→R comparisons are below Q0 and unsafe.
 - Raw-anchored support reranking increases positive selection modestly but increases negative activation; its separate DEFER policy removes most positive selections.
+- The registered raw-ranking-plus-trained-DEFER fallback was also below the raw anchor (p16 positive 5/76, negative 2/76), so no support route is safe.
 - Selective-lineage source cache is worse than Q0. Support alignment is not authorized by the registered positive/safety routing criterion.
 - Controller, StateMemory, threshold sweep, modern backbone and sealed/public evaluation remain NOT_RUN by protocol.
 
