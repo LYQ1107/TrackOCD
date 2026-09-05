@@ -149,7 +149,7 @@ def main() -> None:
                 bucket = "pool_has_candidate_not_selected"
             rows.append({
                 "event_key": str(event.get("event_key")), "model_event_uid": str(event.get("model_event_uid")),
-                "polarity": str(event.get("polarity")), "prefix": int(event.get("prefix", 0)),
+                "fold": int(event.get("fold", -1)), "polarity": str(event.get("polarity")), "prefix": int(event.get("prefix", 0)),
                 "source_tracklet_key": str(event.get("source_tracklet_key")), "source_category": source_cat,
                 "target_row_key": str(target.get("row_key")), "candidate_count": len(cand_ids),
                 "topk_count": len(topk), "pool_max_iou": float(pool_max), "raw_iou": raw_iou,
