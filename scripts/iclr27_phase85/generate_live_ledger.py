@@ -87,6 +87,7 @@ def expected_provenance() -> list[dict[str, Any]]:
         {"section_name": "support_event_replay", "expected_route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "expected_tag": None, "path": METRICS / "support_event_replay.json"},
         {"section_name": "support_selective_source", "expected_route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "expected_tag": None, "path": METRICS / "support_event_replay_selective_source_v1.json"},
         {"section_name": "support_alignment_feasibility", "expected_route": None, "expected_tag": None, "path": AUDIT / "support_alignment_feasibility.json"},
+        {"section_name": "event_physical_contamination", "expected_route": None, "expected_tag": None, "path": AUDIT / "event_physical_contamination.json"},
     ]
 
 
@@ -98,6 +99,7 @@ def main() -> None:
     support = load(METRICS / "support_event_replay.json")
     support_sel = load(METRICS / "support_event_replay_selective_source_v1.json")
     support_audit = load(AUDIT / "support_alignment_feasibility.json")
+    contamination = load(AUDIT / "event_physical_contamination.json")
     artifacts = [item["path"] for item in expected_provenance()]
     provenance_rows = []
     for item in expected_provenance():
@@ -119,6 +121,7 @@ def main() -> None:
             {"stage": "P5_physical_to_r", "status": "DIAGNOSTIC_FAIL", "artifacts": [artifact(AUDIT / "physical_r_comparison.json"), artifact(AUDIT / "physical_r_selective_comparison.json")], "p16_temporal": phys.get("gate_diagnostic", {}), "p16_selective": sel_phys.get("gate_diagnostic", {}), "next_action": "retain negative physical evidence"},
             {"stage": "B85S_support", "status": "SAFETY_FAIL", "artifacts": [artifact(METRICS / "support_event_replay.json"), artifact(METRICS / "support_event_replay_selective_source_v1.json")], "p16": [x for x in support.get("summary", []) if x.get("prefix") == 16], "selective_source_p16": [x for x in support_sel.get("summary", []) if x.get("prefix") == 16], "next_action": "no alignment/controller; preserve raw anchor"},
             {"stage": "support_selection_audit", "status": "DONE", "artifact": artifact(AUDIT / "support_alignment_feasibility.json"), "routing": support_audit.get("routing", {}), "next_action": "final report in unlock interval"},
+            {"stage": "event_physical_contamination", "status": "DONE", "artifact": artifact(AUDIT / "event_physical_contamination.json"), "summary": contamination.get("summary", {}), "next_action": "retain contamination evidence"},
         ], "artifacts": [artifact(Path(x)) for x in artifacts], "failed_uncompleted_markers": failed_markers, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_as_model_input": False, "controller_run": False, "sealed_run": False,
     }
     atomic_json(AUDIT / "research_ledger.json", ledger)

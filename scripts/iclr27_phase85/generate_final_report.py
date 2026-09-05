@@ -117,6 +117,7 @@ def expected_sources() -> list[dict[str, Any]]:
         {"section": "support_event_replay", "route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "tag": None, "path": METRICS / "support_event_replay.json"},
         {"section": "support_selective_source", "route": "raw source-mean top32; bounded residual reranker; separate TRAIN defer head (p>=0.5 -> DEFER)", "tag": None, "path": METRICS / "support_event_replay_selective_source_v1.json"},
         {"section": "support_selection_audit", "route": None, "tag": None, "path": AUDIT / "support_alignment_feasibility.json"},
+        {"section": "event_physical_contamination", "route": None, "tag": None, "path": AUDIT / "event_physical_contamination.json"},
     ]
 
 
@@ -165,6 +166,7 @@ def main() -> None:
     feasibility = load(AUDIT / "support_alignment_feasibility.json")
     topk = load(AUDIT / "support_topk_audit.json")
     shift = load(AUDIT / "support_train_event_shift.json")
+    contamination = load(AUDIT / "event_physical_contamination.json")
     repairs = load(AUDIT / "repair_events.json")
     if args.check_only:
         print(json.dumps({"status": "CHECK_ONLY_PASS", "provenance_sections": len(provenance["sections"]), "q0_parity": q0par.get("parity"), "physical_p16": phys.get("gate_diagnostic", {}).get("p16"), "selective_p16": selphys.get("gate_diagnostic", {}).get("p16"), "support_routing": feasibility.get("routing"), "failed_markers": sorted(p.name for p in COMP.glob("*.launched") if not p.with_suffix(".done").exists())}, indent=2, sort_keys=True))
@@ -220,6 +222,8 @@ Phase85 repaired the Phase84 implementation and evaluation contracts, then compl
 The issue audit is `{str((AUDIT / 'phase84_issue_audit.json').resolve())}` and the repair ledger is `{str((AUDIT / 'repair_events.json').resolve())}`. The eight recorded issues were: last-observation appearance mislabeled as temporal mean; fake `raw_vectors-raw_vectors` parity; multi-root anchor membership; opaque IoU joins; severe multi-category union contamination; missing TrackEval; B84S-Q artifact mix-up; and early idle finalization. Phase85 uses running `app_sum/app_count/app_mean`, causal union inheritance, a true Q0 reconstruction, one last-mapped anchor root, explicit exact-key/IoU fallback counts, provenance assertions, and a lock-aware finalizer.
 
 Post-hoc TRAIN contamination remains a safety signal: the repaired audit records `11,816` same-category and `1,105` cross-category labeled unions (roots with multiple categories are retained as evidence; labels never enter inference).
+
+On the fixed 91 event-video subset, the event-root audit is `{str((AUDIT / 'event_physical_contamination.json').resolve())}`. Q0 has `{contamination.get('summary', {}).get('q0', {}).get('multi_category_fraction')}` multi-category roots, temporal mean `{contamination.get('summary', {}).get('temporal_mean', {}).get('multi_category_fraction')}`, and selective gate `{contamination.get('summary', {}).get('selective', {}).get('multi_category_fraction')}`. Relative to Q0, temporal mean changes `{contamination.get('root_changes', {}).get('q0_to_temporal_mean')}` public event rows and selective changes `{contamination.get('root_changes', {}).get('q0_to_selective')}`; this supports the conclusion that physical membership authority remains a safety risk even though TrackEval changes are modest.
 
 ## P1 physical implementation and TrackEval
 
