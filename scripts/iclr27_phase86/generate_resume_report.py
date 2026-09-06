@@ -24,7 +24,8 @@ def atom(p,v):
 def metric_summary(path, prefix=16):
  if not path.exists(): return {}
  o=load(path)
- return next((x for x in o.get('summary',[]) if x.get('prefix')==prefix),{})
+ values=o.get('summary',[]) or o.get('aggregate',[])
+ return next((x.get('aggregate',x) for x in values if x.get('prefix')==prefix),{})
 def main():
  assert_finalization_allowed()
  reg=load(OUT/'audit/window_registration.json'); resume=load(OUT/'audit/resume_after_premature_finalization.json'); d=load(OUT/'audit/diagnostic_ocd_full_metrics.json'); u1=load(OUT/'metrics/u1_final_alltrain_event_v3.json'); rf=load(OUT/'metrics/rf_canonical_root_v2.json'); u2=load(OUT/'audit/u2_decision.json'); methods=load(OUT/'audit/recent_method_audit.json'); ledger=load(OUT/'audit/research_ledger.json');
