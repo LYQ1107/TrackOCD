@@ -4,6 +4,9 @@ from __future__ import annotations
 import datetime as dt, hashlib, json, os, subprocess, tempfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'outputs/iclr27_phase86'; DOC=ROOT/'docs/iclr27_phase86/PHASE86_AUTONOMOUS_RESEARCH_REPORT.md'
+import sys
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+from src.iclr27_phase86.execution_policy import assert_finalization_allowed
 def sha(p):
  h=hashlib.sha256();
  with p.open('rb') as f:
@@ -18,10 +21,20 @@ def atom(p,v):
  finally:
   if os.path.exists(t):os.unlink(t)
 def main():
+ assert_finalization_allowed()
  reg=load(OUT/'audit/window_registration.json'); ctrl=load(OUT/'manifests/frozen_controller_manifest.json'); d=load(OUT/'diagnostic_ocd/summary.json'); parity=load(OUT/'audit/controller_baseline_parity.json');u1=load(OUT/'audit/u1_decision.json');rf=load(OUT/'audit/rf_decision.json');
+ u2=load(OUT/'audit/u2_decision.json') if (OUT/'audit/u2_decision.json').exists() else None
+ formal=load(OUT/'audit/formal_ocd_decision.json') if (OUT/'audit/formal_ocd_decision.json').exists() else None
+ hard=load(OUT/'audit/hard_blocker.json') if (OUT/'audit/hard_blocker.json').exists() else None
  u1fs=u1['train_validation_folds']; d0=d['streams']['D0_historical_Q0_RCMSOCD']['aggregate_commit_ct'];d1=d['streams']['D1_temporal_physical_RCMSOCD']['aggregate_commit_ct']; rf16=next(x['aggregate'] for x in rf['aggregate'] if x['prefix']==16); ev16=u1['formal_event_replay']
- status='PHASE86_DIAGNOSTIC_COMPLETE_U1_EVENT_SAFETY_FAIL_RF_NEGATIVE_U2_NOT_OPENED'
- decision={'schema_version':'trackocd.phase86.decision.v1','phase':86,'status':status,'diagnostic_commit_ct':{'D0':d0,'D1':d1},'u1':u1,'rf':{'decision':rf['decision'],'p16':rf16,'non_decreasing_folds':rf['p16_non_decreasing_folds']},'controller_run':False,'formal_ocd_run':False,'sealed_run':False,'public_dev_q1_sealed_accessed':False,'future_rows_or_tracks':False,'ids_or_text_as_model_input':False,'u2_opened':False,'u2_trigger':'U1 TRAIN gate failure on >=2/3 validation folds','u2_trigger_satisfied':False,'next_action':'Keep frozen evidence; no controller/sealed claim. A new U2 authorization is required before relation-encoder training because the registered U1 TRAIN trigger did not fail.'}
+ stages=[]
+ if u1.get('train_gate_pass'): stages.append('U1_PROGRESS')
+ if rf.get('decision'): stages.append('RF_PROGRESS')
+ if u2 is not None: stages.append('U2_PROGRESS')
+ if formal is not None: stages.append('OCD_PROGRESS')
+ if not stages: stages=['WITH_VALID_NEGATIVE_EVIDENCE']
+ status='PHASE86_WINDOW_COMPLETE_'+'_'.join(stages)
+ decision={'schema_version':'trackocd.phase86.decision.v2','phase':86,'status':status,'diagnostic_commit_ct':{'D0':d0,'D1':d1},'u1':u1,'rf':{'decision':rf['decision'],'p16':rf16,'non_decreasing_folds':rf['p16_non_decreasing_folds']},'u2':u2,'formal_ocd':formal,'hard_blocker':hard,'controller_run':formal is not None,'formal_ocd_run':formal is not None,'sealed_run':False,'public_dev_q1_sealed_accessed':False,'future_rows_or_tracks':False,'ids_or_text_as_model_input':False,'u2_opened':u2 is not None,'next_action':'Continue the highest-information registered route until the original Phase86 finalization interval; no hard-coded closure.'}
  atom(OUT/'audit/phase86_decision.json',decision);atom(OUT/'status.json',decision)
  lines=['# TrackOCD Phase86 — Autonomous Research Report','','## Decision','','**Status:** `'+status+'`  ','**Diagnostic label:** `DIAGNOSTIC_ONLY_DO_NOT_SELECT`  ','**Formal OCD / sealed:** not run.','',f"Window: `{reg['start_utc']}` → `{reg['deadline_utc']}` (registered ten-hour window). Start HEAD: `{reg['start_head']}`; Phase85 artifacts were read-only. Large outputs: `{reg['large_output_root']}` via the `outputs/iclr27_phase86` symlink.",'','## Frozen boundary and resources','', '- No DEV+, Q1, public-new, or sealed labels were used as model inputs or for selection. No future rows/tracks, category/text, semantic IDs, or physical IDs entered inference tensors.', '- GPU0 external PID 33785 was not touched. Phase86 diagnostic/U1/RF work was CPU-only; no task GPU worker, OOM, or external-process termination occurred. RAM was about 125 GiB total with about 113 GiB available at registration; `/data1` had about 29 GiB free and `/data2` about 1.1 TiB.', '- Phase85 and earlier files remain read-only. Failed markers and hashes are retained; artifacts are atomic where applicable.','', '## Historical frozen controller','',f"The chronology/formal-use rule selected Phase19R RC-MS-OCD plus its shared StateMemory, with checkpoint/code hashes in `{(OUT/'manifests/frozen_controller_manifest.json').resolve()}`. The selection was made before the Phase86 replay and was not performance-selected. Phase56's controller was not substituted.",'','## D0–D3 frozen diagnostic OCD','', '| stream | Commit-CT | fold distribution | status |','|---|---:|---|---|',f"| D0 historical Q0 + frozen RC-MS-OCD | {d0['correct']}/{d0['eligible']} | f0=0/12, f1=0/12, f2=0/24, f3=3/28 | diagnostic only |",f"| D1 temporal physical + frozen RC-MS-OCD | {d1['correct']}/{d1['eligible']} | f0=0/12, f1=0/12, f2=0/24, f3=3/28 | diagnostic only |",'', 'D2 raw source-conditioned support and D3 bounded reranker support were not run through the controller: their frozen Phase85 artifacts are score-level evidence, not legal causal 768-D row-vector inputs. No score calibration or invented adapter was used. The Phase86 summary and `event_traces.jsonl` are diagnostic-only. The legacy Phase72 parity comparison is explicitly `protocol_equal=false` because its JSON uses a different event-accounting representation.','', '## U1 — OOF selective intervention','', 'The frozen Phase85 raw and bounded reranker experts were not retrained. U1 used OOF TRAIN predictions only, with a fixed 64-D causal score/context feature vector, MLP `64→32→utility`, labels HELP=+1, HARM=-4, both-correct/both-wrong=0, and `utility>0` selecting reranker else exact raw. The 2,095-row meta manifest and expert/checkpoint hashes are recorded under `outputs/iclr27_phase86/manifests/`.','', '| OOF validation fold | rescue | harm | net rescue | TRAIN gate |','|---:|---:|---:|---:|---|']
  for x in u1fs: lines.append(f"| {x['fold']} | {x['rescue']} | {x['harm']} | {x['net_rescue']} | {'PASS' if x['pass'] else 'FAIL'} |")

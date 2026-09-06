@@ -24,6 +24,16 @@ def git_blob(path: pathlib.Path) -> str:
     return subprocess.run(["git", "hash-object", str(path)], cwd=ROOT, text=True,
                           capture_output=True, check=True).stdout.strip()
 
+def historical_identical(path: pathlib.Path) -> str | None:
+    current = sha(path)
+    rel = str(path.relative_to(ROOT))
+    commits = subprocess.run(["git", "log", "--follow", "--format=%H", "--", rel], cwd=ROOT, text=True, capture_output=True, check=True).stdout.splitlines()
+    for commit in commits:
+        shown = subprocess.run(["git", "show", f"{commit}:{rel}"], cwd=ROOT, capture_output=True, check=False).stdout
+        if hashlib.sha256(shown).hexdigest() == current:
+            return commit
+    return None
+
 
 def main() -> None:
     controller = ROOT / "src/iclr27_phase19r/models/controller.py"
@@ -54,7 +64,7 @@ def main() -> None:
         {
             "path": "src/iclr27_phase56/unified_model.py",
             "commit": "Phase56 local candidate",
-            "code_sha256": sha(ROOT / "src/iclr27_phase51/unified_model.py") if (ROOT / "src/iclr27_phase51/unified_model.py").exists() else None,
+            "code_sha256": sha(ROOT / "src/iclr27_phase56/unified_model.py") if (ROOT / "src/iclr27_phase56/unified_model.py").exists() else None,
             "artifact": [], "config": "outputs/iclr27_phase56/final_decision.json",
             "threshold": "Phase56 candidate thresholds; not selected for Phase86",
             "memory_policy": "new unified semantic controller",
@@ -73,6 +83,10 @@ def main() -> None:
         "selected_paths": {"controller": str(controller), "state_memory": str(state), "runner": str(runner),
                            "evaluator": str(evaluator), "trainer": str(trainer), "config": str(config)},
         "selected_hashes": {p.name: sha(p) for p in (controller, state, runner, evaluator, trainer, config)},
+        "historical_byte_identical_commit": {
+            "controller": historical_identical(controller),
+            "state_memory": historical_identical(state),
+        },
         "candidate_checkpoints": ck,
         "candidates": candidates,
         "sealed_or_public_accessed": False,
@@ -85,7 +99,8 @@ def main() -> None:
     manifest = {
         "schema_version": "trackocd.phase86.frozen_controller_manifest.v1",
         "phase": 86, "controller_family": "Phase19R RC-MS-OCD",
-        "controller_code_commit": "Phase19R source in current main; byte-identical source hash recorded",
+        "controller_code_commit": "Phase19R source in current main; historical byte-identical commit recorded",
+        "historical_byte_identical_commit": {"controller": historical_identical(controller), "state_memory": historical_identical(state)},
         "controller_code_sha256": sha(controller), "state_memory_sha256": sha(state),
         "controller_checkpoint_sha256": {str(x["fold"]): x["sha256"] for x in ck},
         "thresholds": {"tau_known": 0.20, "tau_assign": 0.52, "tau_ready": 0.45, "known_scale": 12.0,
