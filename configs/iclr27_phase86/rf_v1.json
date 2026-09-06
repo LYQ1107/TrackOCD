@@ -1,0 +1,13 @@
+{
+  "route": "H86-RF_ROOT_OF_FRAGMENTS",
+  "fragment_rule": "causal contiguous chunks of four normalized Phase75D frames, last short chunk retained",
+  "fragment_size": 4,
+  "candidate_protocol": "Phase75D frozen validation tracks, self and same-video excluded",
+  "prefixes": [1, 2, 4, 8, 16],
+  "raw_anchor_scale": 0.05,
+  "score": "raw_cosine + 0.05*tanh(symmetric_fragment_chamfer - raw_cosine)",
+  "aggregation_sweep": false,
+  "training": false,
+  "selection": "TRAIN validation only; unsafe below temporal-root mean and at least 3/4 fold non-decrease in R@1 and mAP",
+  "forbidden_inference_inputs": ["category", "semantic_id", "physical_id", "text", "future", "held_gt", "DEV+", "Q1", "public_new", "sealed"]
+}
