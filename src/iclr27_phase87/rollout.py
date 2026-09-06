@@ -15,14 +15,14 @@ def _event_tensors(store: FeatureStore, event: dict[str, Any], device: torch.dev
     target = store.track(event["target_track_key"])
     source = store.track(event["source_track_keys"][0])
     traw, tgeom, tquality, tmask = pad_track(target)
-    sraw, sgeom, _, smask = pad_track(source)
-    return tuple(torch.from_numpy(value).unsqueeze(0).to(device) for value in (sraw, sgeom, smask, traw, tgeom, tquality, tmask)), target
+    sraw, sgeom, squality, smask = pad_track(source)
+    return tuple(torch.from_numpy(value).unsqueeze(0).to(device) for value in (sraw, sgeom, squality, smask, traw, tgeom, tquality, tmask)), target
 
 
-def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[str, Any], train: bool, teacher_probability: float = 0.0, rng: random.Random | None = None) -> tuple[torch.Tensor, dict[str, Any]]:
+def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[str, Any], train: bool, teacher_probability: float = 0.0, rng: random.Random | None = None, false_merge_weight: float = 2.0, support_mode: bool = False) -> tuple[torch.Tensor, dict[str, Any]]:
     device = next(model.parameters()).device
     tensors, target_array = _event_tensors(store, event, device)
-    sraw, sgeom, smask, traw, tgeom, tquality, tmask = tensors
+    sraw, sgeom, squality, smask, traw, tgeom, tquality, tmask = tensors
     source_encoded = model.encode_track(sraw, sgeom, smask)
     target_encoded = model.encode_track(traw, tgeom, tmask)
     prototypes = torch.zeros((1, model.max_states, 4, 768), device=device)
@@ -31,7 +31,9 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
     prototypes[:, 0, 0] = source_encoded["semantic"].detach() if not train else source_encoded["semantic"]
     prototype_mask[:, 0, 0] = True
     state_stats[:, 0, :5] = torch.tensor([1.0 / 32.0, min(len(target_array.raw), 16) / 64.0, min(len(target_array.raw), 16) / 32.0, 0.0, 0.25], device=device)
-    support = torch.zeros((1, 8), device=device)
+    source_anchor = source_encoded["semantic"].detach()
+    source_length = smask.float().sum(dim=1, keepdim=True) / 16.0
+    source_variance = source_encoded["semantic_seq"].var(dim=1).mean(dim=-1, keepdim=True).clamp(0.0, 1.0)
     previous = torch.zeros((1, model.max_states), device=device)
     committed_action: str | None = None
     committed_state: int | None = None
@@ -41,6 +43,14 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
     reliable = int(event.get("reliable_prefix_for_loss_only", min(len(target_array.raw), 16)))
     positive = event.get("polarity") == "positive"
     for position in range(min(len(target_array.raw), 16)):
+        if support_mode:
+            current = target_encoded["semantic_seq"][:, position]
+            raw_best = (F.normalize(current, dim=-1) * F.normalize(source_anchor, dim=-1)).sum(dim=-1, keepdim=True)
+            previous_current = target_encoded["semantic_seq"][:, max(0, position - 1)]
+            history = (F.normalize(current, dim=-1) * F.normalize(previous_current, dim=-1)).sum(dim=-1, keepdim=True)
+            support = torch.cat([raw_best, torch.zeros_like(raw_best), raw_best, torch.full_like(raw_best, 1.0 / 16.0), source_length, source_variance, tquality[:, position : position + 1], history], dim=-1)
+        else:
+            support = torch.zeros((1, 8), device=device)
         output = model.forward_action(target_encoded["semantic_seq"][:, position], target_encoded["track_hidden_seq"][:, position], prototypes, prototype_mask, state_stats, evidence, support, tquality[:, position], torch.tensor([0.0], device=device))
         logits = mask_joint_logits(output["joint_logits"], model.known_count, model.max_states, [committed_action], [committed_state])
         if position + 1 < reliable:
@@ -57,7 +67,7 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
         relation_target = relation_target[:, : output["state_logits"].shape[1]]
         loss_terms["state_relation"].append(F.binary_cross_entropy_with_logits(output["state_logits"], relation_target))
         if not positive:
-            loss_terms["false_merge_risk"].append(2.0 * F.softplus(output["state_logits"][:, 0]).mean())
+            loss_terms["false_merge_risk"].append(float(false_merge_weight) * F.softplus(output["state_logits"][:, 0]).mean())
         if positive:
             loss_terms["new_existing_margin"].append(0.75 * F.softplus(output["new_logit"] - output["state_logits"][:, 0] + 0.2).mean())
         else:

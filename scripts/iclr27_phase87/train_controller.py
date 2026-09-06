@@ -84,6 +84,9 @@ def main() -> None:
     parser.add_argument("--updates", type=int, default=20000)
     parser.add_argument("--tag", default=None)
     parser.add_argument("--seed", type=int, default=87000)
+    parser.add_argument("--false-merge-weight", type=float, default=2.0)
+    parser.add_argument("--support-mode", action="store_true")
+    parser.add_argument("--init-checkpoint", default=None)
     args = parser.parse_args()
     tag = args.tag or f"c0_formal_f{args.fold}"
     marker = OUT / "completion" / f"{tag}.launched"
@@ -111,6 +114,9 @@ def main() -> None:
     atom(marker, {"phase": 87, "route": "C0_CAUSAL_PERSISTENT_CONTROLLER", "fold": args.fold, "device": str(device), "pid": os.getpid(), "updates": args.updates, "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "manifest_sha256": manifest_sha})
     store = FeatureStore()
     model = CausalPersistentOCD(max_states=16).to(device)
+    if args.init_checkpoint:
+        init_payload = torch.load(args.init_checkpoint, map_location=device)
+        model.load_state_dict(init_payload["model"])
     optimizer = torch.optim.AdamW(model.parameters(), lr=2e-4, weight_decay=1e-4)
     rng = random.Random(args.seed + args.fold)
     use_bf16 = device.type == "cuda" and torch.cuda.is_bf16_supported()
@@ -124,7 +130,7 @@ def main() -> None:
         optimizer.zero_grad(set_to_none=True)
         context = torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=use_bf16) if device.type == "cuda" else torch.autocast(device_type="cpu", enabled=False)
         with context:
-            loss, trace = rollout_event(model, store, event, train=True, teacher_probability=teacher_probability(step), rng=rng)
+            loss, trace = rollout_event(model, store, event, train=True, teacher_probability=teacher_probability(step), rng=rng, false_merge_weight=args.false_merge_weight, support_mode=args.support_mode)
         loss.backward()
         grad_norm = float(torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0).detach().cpu())
         optimizer.step()
@@ -133,10 +139,10 @@ def main() -> None:
         for name, value in trace["losses"].items():
             component_sums[name] = component_sums.get(name, 0.0) + float(value)
         if step % 2000 == 0 or step == args.updates:
-            save_checkpoint(checkpoint.with_name(f"{tag}_step{step:06d}.pt"), {"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": step, "fold": args.fold, "seed": args.seed + args.fold, "route": "C0_CAUSAL_PERSISTENT_CONTROLLER", "manifest_sha256": manifest_sha, "precision": "bf16-autocast" if use_bf16 else "fp32"})
-    save_checkpoint(checkpoint, {"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": args.updates, "fold": args.fold, "seed": args.seed + args.fold, "route": "C0_CAUSAL_PERSISTENT_CONTROLLER", "manifest_sha256": manifest_sha, "precision": "bf16-autocast" if use_bf16 else "fp32"})
+            save_checkpoint(checkpoint.with_name(f"{tag}_step{step:06d}.pt"), {"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": step, "fold": args.fold, "seed": args.seed + args.fold, "route": "C1_SUPPORT_INTEGRATION" if args.support_mode else "C0_FALSE_MERGE_REPAIR1", "false_merge_weight": args.false_merge_weight, "support_mode": args.support_mode, "manifest_sha256": manifest_sha, "precision": "bf16-autocast" if use_bf16 else "fp32"})
+    save_checkpoint(checkpoint, {"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": args.updates, "fold": args.fold, "seed": args.seed + args.fold, "route": "C1_SUPPORT_INTEGRATION" if args.support_mode else "C0_FALSE_MERGE_REPAIR1", "false_merge_weight": args.false_merge_weight, "support_mode": args.support_mode, "manifest_sha256": manifest_sha, "precision": "bf16-autocast" if use_bf16 else "fp32"})
     finished = dt.datetime.now(dt.timezone.utc)
-    result = {"schema_version": "trackocd.phase87.c0_train.v1", "phase": 87, "route": "C0_CAUSAL_PERSISTENT_CONTROLLER", "tag": tag, "fold": args.fold, "device": str(device), "updates": args.updates, "train_events": len(train_events), "validation_events": len(val_events), "seed": args.seed + args.fold, "loss_first": losses[0], "loss_last": losses[-1], "loss_mean_last_100": float(np.mean(losses[-100:])), "loss_components_mean": {name: value / len(losses) for name, value in component_sums.items()}, "grad_norm_mean": float(np.mean(grad_norms)), "precision": "bf16-autocast" if use_bf16 else "fp32", "started_utc": started.isoformat(), "finished_utc": finished.isoformat(), "checkpoint": str(checkpoint.resolve()), "checkpoint_sha256": sha(checkpoint), "manifest_sha256": manifest_sha, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_or_text_as_model_input": False}
+    result = {"schema_version": "trackocd.phase87.c0_train.v1", "phase": 87, "route": "C1_SUPPORT_INTEGRATION" if args.support_mode else "C0_FALSE_MERGE_REPAIR1", "tag": tag, "fold": args.fold, "device": str(device), "updates": args.updates, "false_merge_weight": args.false_merge_weight, "support_mode": args.support_mode, "init_checkpoint": args.init_checkpoint, "train_events": len(train_events), "validation_events": len(val_events), "seed": args.seed + args.fold, "loss_first": losses[0], "loss_last": losses[-1], "loss_mean_last_100": float(np.mean(losses[-100:])), "loss_components_mean": {name: value / len(losses) for name, value in component_sums.items()}, "grad_norm_mean": float(np.mean(grad_norms)), "precision": "bf16-autocast" if use_bf16 else "fp32", "started_utc": started.isoformat(), "finished_utc": finished.isoformat(), "checkpoint": str(checkpoint.resolve()), "checkpoint_sha256": sha(checkpoint), "manifest_sha256": manifest_sha, "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False, "ids_or_text_as_model_input": False}
     atom(metrics_path, result)
     atom(done, {"status": "DONE", "metrics": str(metrics_path.resolve()), "checkpoint": str(checkpoint.resolve()), "checkpoint_sha256": sha(checkpoint)})
     print(json.dumps(result, indent=2, sort_keys=True))
