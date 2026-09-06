@@ -19,7 +19,7 @@ def main() -> None:
     age = now.timestamp() - latest if latest else None
     unfinished = []
     for marker in OUT.rglob("*.launched") if OUT.exists() else []:
-        if not marker.with_suffix(".done").exists(): unfinished.append(str(marker))
+        if not marker.with_suffix(".done").exists() and not marker.with_suffix(".failed").exists(): unfinished.append(str(marker))
     rem = remaining_seconds()
     status = "RESEARCH_IDLE" if rem > 3600 and age is not None and age > 2700 else "ACTIVE"
     print(json.dumps({
