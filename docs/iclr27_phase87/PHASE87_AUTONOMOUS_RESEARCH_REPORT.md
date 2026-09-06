@@ -1,9 +1,9 @@
 # TrackOCD Phase87 — Causal Persistent OCD Controller Redesign
 
 **Status:** `PHASE87_REGISTERED_ROUTES_EXHAUSTED_FORMAL_GATE_FAIL`  
-**Generated (UTC):** 2026-09-06T22:51:34.902039+00:00  
+**Generated (UTC):** 2026-09-06T22:52:27.899273+00:00  
 **Window:** see window_registration.json → 2026-09-07T03:53:10.043296+00:00  
-**Code head at report generation:** `8f2283ccf2f28906d0dda654dfbdd2b63bb94138`
+**Code head at report generation:** `9db112460432772fcef04b88cdd3a84056dbd5db`
 
 ## Executive decision
 
