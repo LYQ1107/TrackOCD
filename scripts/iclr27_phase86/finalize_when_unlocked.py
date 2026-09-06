@@ -14,7 +14,7 @@ def main() -> None:
     report = ROOT / "docs/iclr27_phase86/PHASE86_AUTONOMOUS_RESEARCH_REPORT.md"
     # The guarded report generator is invoked by the operator in the unlocked interval.
     import subprocess
-    subprocess.run([sys.executable, "scripts/iclr27_phase86/generate_phase86_report.py"], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, "scripts/iclr27_phase86/generate_resume_report.py"], cwd=ROOT, check=True)
     if not report.is_file() or report.stat().st_size == 0: raise RuntimeError("missing final report")
     print(json.dumps({"status":"FINALIZATION_UNLOCKED","report":str(report.resolve())}, indent=2))
 
