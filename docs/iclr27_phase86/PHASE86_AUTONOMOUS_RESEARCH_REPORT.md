@@ -1,96 +1,88 @@
-# TrackOCD Phase86 — Autonomous Research Report
+# TrackOCD Phase86 — Autonomous Research Report (final window snapshot)
 
-## Decision
+**Status:** `PHASE86_WINDOW_COMPLETE_WITH_VALID_NEGATIVE_EVIDENCE`  
+**Generated (UTC):** `2026-09-06T17:12:11.694531+00:00`  
+**Original window:** `2026-09-06T07:57:11.490953Z` → `2026-09-06T17:57:11.490953Z`  
+**Remaining at generation:** `2700s`  
 
-**Status:** `PHASE86_DIAGNOSTIC_COMPLETE_U1_EVENT_SAFETY_FAIL_RF_NEGATIVE_U2_NOT_OPENED`  
-**Diagnostic label:** `DIAGNOSTIC_ONLY_DO_NOT_SELECT`  
-**Formal OCD / sealed:** not run.
+> The earlier report was an interim premature snapshot. This report was generated only after the registered deadline-minus-45-minute unlock.
 
-Window: `2026-09-06T07:57:11.490953Z` → `2026-09-06T17:57:11.490953Z` (registered ten-hour window). Start HEAD: `43a8c4e248f58b81deb0b831084282603e7bf1d6`; Phase85 artifacts were read-only. Large outputs: `/data2/usr_for_deadline/trackocd_phase86/project_outputs` via the `outputs/iclr27_phase86` symlink.
+## 1. Execution repair and provenance
 
-## Frozen boundary and resources
+- Original registration was not rerun. Resume record: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/audit/resume_after_premature_finalization.json`.
+- The finalization guard rejects early generation and allows only the registered unlock interval or an explicit allowed hard blocker. No hard blocker was declared.
+- Code/contract repair head before final report: `cc0956d9c6f4f4eb46f9a9e0c07ec2ee14b6efb3`; original premature report head: `e9801f9ca34fd135a02813b5709ae3c78d3ea8e7`.
+- Old D0/D1/U1/RF artifacts remain read-only evidence. The old modulo-3 event replay is labeled `U1_CV_CHECKPOINT_ROUTING_EVENT_DIAGNOSTIC`; the old within-track chunks are `WITHIN_TRACK_4FRAME_CHUNK_DIAGNOSTIC_NEGATIVE`.
+- GPU0 PID 33785 and external intermot workers were not touched. CPU routes used bounded single-process execution; no OOM or broad kill occurred. `/data1` was nearly full, so large outputs/checkpoints remained on `/data2` via the existing symlink.
 
-- No DEV+, Q1, public-new, or sealed labels were used as model inputs or for selection. No future rows/tracks, category/text, semantic IDs, or physical IDs entered inference tensors.
-- GPU0 external PID 33785 was not touched. Phase86 diagnostic/U1/RF work was CPU-only; no task GPU worker, OOM, or external-process termination occurred. RAM was about 125 GiB total with about 113 GiB available at registration; `/data1` had about 29 GiB free and `/data2` about 1.1 TiB.
-- Phase85 and earlier files remain read-only. Failed markers and hashes are retained; artifacts are atomic where applicable.
+## 2. Frozen boundaries
 
-## Historical frozen controller
+- No DEV+, Q1, public-new or sealed labels were used for training, checkpoint selection or inference. No future rows/tracks, category text, semantic IDs or physical IDs entered model tensors.
+- The Phase19R controller/StateMemory, event denominator (76 positive + 76 negative), prefixes `{1,2,4,8,16}`, candidate metadata order and frozen manifests were not changed.
+- Formal controller, Commit-CT and sealed evaluation were not run because no corrected score route passed its upstream safety gate.
 
-The chronology/formal-use rule selected Phase19R RC-MS-OCD plus its shared StateMemory, with checkpoint/code hashes in `/data2/usr_for_deadline/trackocd_phase86/project_outputs/manifests/frozen_controller_manifest.json`. The selection was made before the Phase86 replay and was not performance-selected. Phase56's controller was not substituted.
+## 3. Frozen D0/D1 diagnostic OCD
 
-## D0–D3 frozen diagnostic OCD
+| stream | Commit-CT | existing F1 macro | negative false-merge | unresolved | premature | duplicate births | category/video coverage |
+|---|---:|---:|---:|---:|---:|---:|---|
+| D0 historical Q0 + frozen RC-MS-OCD | 3/76 | 0.0268 | 0.2842 | 0.4449 | 0.2664 | 84 | category=1, video=2 |
+| D1 temporal physical + frozen RC-MS-OCD | 3/76 | 0.0268 | 0.2842 | 0.4449 | 0.2664 | 87 | category=1, video=2 |
 
-| stream | Commit-CT | fold distribution | status |
-|---|---:|---|---|
-| D0 historical Q0 + frozen RC-MS-OCD | 3/76 | f0=0/12, f1=0/12, f2=0/24, f3=3/28 | diagnostic only |
-| D1 temporal physical + frozen RC-MS-OCD | 3/76 | f0=0/12, f1=0/12, f2=0/24, f3=3/28 | diagnostic only |
+D0 and D1 both remain diagnostic-only 3/76, all three correct events in fold3. The full metric artifact is `audit/diagnostic_ocd_full_metrics.json`; no D0/D1 replay was repeated during resume.
 
-D2 raw source-conditioned support and D3 bounded reranker support were not run through the controller: their frozen Phase85 artifacts are score-level evidence, not legal causal 768-D row-vector inputs. No score calibration or invented adapter was used. The Phase86 summary and `event_traces.jsonl` are diagnostic-only. The legacy Phase72 parity comparison is explicitly `protocol_equal=false` because its JSON uses a different event-accounting representation.
+## 4. Corrected all-TRAIN U1 deployment
 
-## U1 — OOF selective intervention
+| route | p16 positive | p16 negative | reranker-use positive | reranker-use negative | decision |
+|---|---:|---:|---:|---:|---|
+| corrected all-TRAIN expert + all-OOF gate | 20/76 | 12/76 | 66/76 | 71/76 | **U1_FINAL_EVENT_SAFETY_FAIL** |
 
-The frozen Phase85 raw and bounded reranker experts were not retrained. U1 used OOF TRAIN predictions only, with a fixed 64-D causal score/context feature vector, MLP `64→32→utility`, labels HELP=+1, HARM=-4, both-correct/both-wrong=0, and `utility>0` selecting reranker else exact raw. The 2,095-row meta manifest and expert/checkpoint hashes are recorded under `outputs/iclr27_phase86/manifests/`.
+The support expert used the validated 19-D/10-D `SupportReranker`, 15 effective epochs, 54,780 steps and seed 86001. The gate used the unchanged 64→32 utility architecture, 2,000 steps and seed 86100. The two checkpoint paths and hashes are embedded in the replay artifact. Model selection never used event labels; event fold is reporting only, not model routing. The registered safety rule (positive≥22/76 and negative≤8/76) was not met.
 
-| OOF validation fold | rescue | harm | net rescue | TRAIN gate |
-|---:|---:|---:|---:|---|
-| 0 | 2 | 1 | 1 | PASS |
-| 1 | 3 | 1 | 2 | PASS |
-| 2 | 2 | 3 | -1 | FAIL |
+## 5. Canonical-root RF
 
-TRAIN gate: **PASS** (at least 2/3 folds satisfied net rescue>0 and harm≤rescue).
+- Source lineage: `/data2/usr_for_deadline/trackocd_phase85/project_outputs/physical/temporal_mean_full/full_temporal_lineage.jsonl`; union timeline: `/data2/usr_for_deadline/trackocd_phase85/project_outputs/physical/temporal_mean_full/union_events.jsonl`.
+- Reconstructed comparisons: `3527920`; fraction roots with >1 fragment: `0.2464`; maximum fragments: `6`; fallback comparisons: `830`.
+- p16 raw R@1/mAP `0.893219/0.848374`; canonical-root `0.893219/0.849139`; unsafe flips `1`; non-decreasing folds `2/4`.
+- Decision: `RF_CANONICAL_ROOT_V1_NEGATIVE`. It is a valid canonical-root test, not the old within-track diagnostic, and it does not authorize the controller.
 
-| p16 event replay | raw | full reranker | U1 selective | registered status |
-|---|---:|---:|---:|---|
-| positive reliable events | 20/76 | 23/76 | 22/76 | ≥22 |
-| negative reliable events | 8/76 | 15/76 | 12/76 | ≤8 |
+## 6. U2 and recent-method audit
 
-U1 event status is **FAIL**: selective intervention reaches 22/76 positives but 12/76 negatives, and uses the reranker on 58/76 negative events. Consequently no controller compatibility or Commit-CT claim was authorized. This event replay is a score-level route and does not override the U1 TRAIN trigger rule.
+- U2-v1 three-fold TRAIN validation produced zero rescue and zero harm in every fold; raw top-1/top-5 were unchanged and the learned residual saturated to a constant. Decision: `U2_BALANCED_TRAIN_NEGATIVE`.
+- One minimal repair balanced match/defer exposure without changing architecture, candidates, seed or protocol. It also produced zero rescue/harm in all folds. No third U2 variant was launched.
+- The verified recent audit covers AGE, TALON, LTC, TRACT, COVTrack, ObjectRelator and C3Po with current remote heads and license status. None exposes a drop-in text-free causal prior-support selector for this schema, so no external code/weights were imported. See `docs/iclr27_phase86/RECENT_METHOD_AUDIT.md`.
 
-## RF — Root-of-Fragments diagnostic
+## 7. Gate/status table
 
-RF was parameter-free: fixed causal contiguous four-frame fragments from frozen Phase75D vectors, symmetric Chamfer matching, and raw + `0.05*tanh` residual. It produced p16 R@1 `0.893219` vs raw `0.893219`, mAP `0.848641` vs raw `0.848374`, hard-gap `0.188156` vs raw `0.189559`, unsafe flips `0`, and `2/4` non-decreasing folds. Decision: **ROOT_OF_FRAGMENTS_V1_NEGATIVE**. No training or controller run followed.
-
-## Failures and repairs
-
-- Diagnostic r0: import path failure; retained in `completion/diagnostic_ocd_r0_failed.json`; fixed by the minimal project-root path insertion.
-- Diagnostic r1: Phase85 artifact path resolved under Phase86 output; D0/D1 completed in memory but summary commit failed; retained in `diagnostic_ocd_r1_failed.json`; fixed by a path-only correction.
-- U1 r1 smoke: scalar/list counter initialization raised a TypeError before metrics; retained as a failed marker; fixed by typed counters and rerun with fresh tag r2. U1 smoke, targeted, and formal artifacts are separate and atomic.
-- No OOM, duplicate supervisor, broad kill, or external-process termination occurred.
-
-## Gate and next-route decision
-
-| gate | result | evidence |
+| gate | result | interpretation |
 |---|---|---|
-| D0/D1 diagnostic | COMPLETE | 3/76 each, all fold3; diagnostic only |
-| U1 TRAIN safety | PASS | 2/3 OOF folds pass |
-| U1 event safety | FAIL | 22/76 positive, 12/76 negative |
-| RF TRAIN validation | FAIL | 2/4 non-decreasing; no safe improvement |
-| controller/formal OCD | NOT RUN | no legal safe upstream candidate |
+| frozen D0/D1 | diagnostic 3/76 | controller baseline evidence only |
+| corrected U1 event safety | FAIL | 20/76 positive, 12/76 negative |
+| canonical-root RF | FAIL | 2/4 non-decreasing and one unsafe flip |
+| U2 TRAIN | FAIL | 0/3 folds with net rescue |
+| controller/formal OCD | NOT RUN | no legal safe upstream stream |
 | sealed/public | NOT RUN | sealed boundary preserved |
 
-U2 was **not opened**: the pre-registered trigger is a failed U1 TRAIN gate, while U1 TRAIN safety passed on 2/3 folds. Opening U2 solely because the event score route failed would silently change the registered route order. A future U2 requires explicit authorization or a new preregistration.
-
-## Reproduction commands
+## 8. Reproduction
 
 ```bash
 cd /data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/discover_controller.py
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_diagnostic_ocd.py
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/validate_baseline_parity.py
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_u1_selective.py --mode smoke --tag r2 --fold 0
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_u1_selective.py --mode targeted --tag r1 --fold 0
-for f in 0 1 2; do /home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_u1_selective.py --mode formal --tag r1 --fold "$f"; done
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_u1_event_replay.py --tag u1_formal_replay_r1
-/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_rf_diagnostic.py
+/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/train_support_expert_final.py
+/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/train_u1_final.py
+/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_u1_final_event_replay.py --tag u1_final_alltrain_event_v3
+/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/run_rf_canonical_root.py --tag rf_canonical_root_v2
+/home/lwr/anaconda3/envs/locatemot/bin/python scripts/iclr27_phase86/train_u2.py --mode cv --fold 0 --epochs 15 --steps 1000
 ```
 
-## Key artifacts
+## 9. Final research decision
 
-- Report: `/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/docs/iclr27_phase86/PHASE86_AUTONOMOUS_RESEARCH_REPORT.md`
+**Phase86 did not complete MOT+OCD or sealed evaluation.** The resume corrected the deployment and execution contracts and exhausted the registered U1, canonical-root RF, U2-v1 and one justified U2 balancing repair. The evidence supports a narrower conclusion: current Phase85 support supervision/selector interface does not yield a safe upstream candidate under the frozen protocol. It is not evidence that the entire TrackOCD task is universally impossible. A future phase must register a new legal support contract or materially improve supervision; it must not repeat fold-modulo deployment, within-track RF chunks, or another gate/threshold lottery.
+
+## 10. Artifact provenance
+
 - Decision: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/audit/phase86_decision.json`
-- Diagnostic: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/diagnostic_ocd/summary.json`
-- U1 decision: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/audit/u1_decision.json`
-- RF decision: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/audit/rf_decision.json`
-- Controller manifest: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/manifests/frozen_controller_manifest.json`
-
-The report does not claim complete MOT+OCD. Persistent Commit-CT formal and sealed evaluation remain unrun because the only registered score-level intervention failed event safety and no controller-compatible safe upstream candidate was produced.
+- Ledger: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/audit/research_ledger.json`
+- U1 replay: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/metrics/u1_final_alltrain_event_v3.json`
+- RF replay: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/metrics/rf_canonical_root_v2.json`
+- U2 decision: `/data2/usr_for_deadline/trackocd_phase86/project_outputs/audit/u2_decision.json`
+- Source code head: `cc0956d9c6f4f4eb46f9a9e0c07ec2ee14b6efb3`
+- `public_dev_q1_sealed_accessed=false`, `formal_ocd_run=false`, `sealed_run=false`.
