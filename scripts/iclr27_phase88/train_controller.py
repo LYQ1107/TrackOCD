@@ -212,6 +212,17 @@ def main() -> None:
     known_keys = list(data.known_eval_keys) if hasattr(data, "known_eval_keys") else list(__import__("src.iclr27_phase19r.evaluation.internal", fromlist=["fixed_known_keys"]).fixed_known_keys(data))
     known_mask = torch.from_numpy(np.asarray(data.active_known_mask, dtype=bool)).to(device)
     rng = random.Random(seed)
+    if resume_payload is not None:
+        if resume_payload.get("sampler_state"):
+            sampler.load_state_dict(resume_payload["sampler_state"])
+        if resume_payload.get("rollout_rng_state"):
+            rng.setstate(resume_payload["rollout_rng_state"])
+        if resume_payload.get("python_rng_state"):
+            random.setstate(resume_payload["python_rng_state"])
+        if resume_payload.get("numpy_rng_state") is not None:
+            np.random.set_state(resume_payload["numpy_rng_state"])
+        if resume_payload.get("torch_rng_state") is not None:
+            torch.set_rng_state(resume_payload["torch_rng_state"])
     losses: list[float] = []
     component_sums: dict[str, float] = {}
     grad_norms: list[float] = []
@@ -239,7 +250,8 @@ def main() -> None:
             "known_prototype_hash": hashlib.sha256(model.known_prototypes.detach().cpu().numpy().tobytes()).hexdigest(),
             "precision": "bf16-autocast" if device.type == "cuda" and torch.cuda.is_bf16_supported() else "fp32",
             "python_rng_state": random.getstate(), "numpy_rng_state": np.random.get_state(),
-            "torch_rng_state": torch.get_rng_state(),
+            "torch_rng_state": torch.get_rng_state(), "sampler_state": sampler.state_dict(),
+            "rollout_rng_state": rng.getstate(),
         }
 
     model.train()
@@ -306,6 +318,7 @@ def main() -> None:
         "checkpoint": str(checkpoint.resolve()), "checkpoint_sha256": sha(checkpoint),
         "manifest_sha256": manifest_sha, "known_prototype_hash": final_payload["known_prototype_hash"],
         "semantic_contract_sha256": final_payload["semantic_contract_sha256"],
+        "sampler_state_persisted": True, "rollout_rng_state_persisted": True,
         "resumed_from": args.resume_checkpoint,
         "rss_samples": rss_samples,
         "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False,

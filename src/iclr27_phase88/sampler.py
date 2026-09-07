@@ -35,3 +35,10 @@ class BalancedCausalEventSampler:
             "positive": len(self.by_polarity["positive"]),
             "negative": len(self.by_polarity["negative"]),
         }
+
+    def state_dict(self) -> dict:
+        return {"rng_state": self.rng.getstate()}
+
+    def load_state_dict(self, state: dict) -> None:
+        if state and state.get("rng_state") is not None:
+            self.rng.setstate(state["rng_state"])
