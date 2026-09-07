@@ -22,8 +22,6 @@ if str(ROOT) not in sys.path:
 OUT = ROOT / "outputs/iclr27_phase88"
 CKPT_ROOT = OUT / "checkpoints"
 
-from src.iclr27_phase19r.data.stream import Phase19RData
-from src.iclr27_phase19r.evaluation.internal import fixed_known_keys
 from src.iclr27_phase88.controller import CausalPersistentOCD
 from src.iclr27_phase88.data import FeatureStore
 from src.iclr27_phase88.rollout import rollout_event, rollout_known_event
@@ -69,6 +67,16 @@ def load_jsonl(path: Path) -> list[dict]:
     return [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
 
 
+def current_rss_bytes() -> int:
+    try:
+        for line in Path("/proc/self/status").read_text().splitlines():
+            if line.startswith("VmRSS:"):
+                return int(line.split()[1]) * 1024
+    except (OSError, ValueError):
+        pass
+    return 0
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fold", type=int, required=True)
@@ -80,6 +88,8 @@ def main() -> None:
     ap.add_argument("--init-checkpoint", default=None)
     ap.add_argument("--resume-checkpoint", default=None)
     ap.add_argument("--checkpoint-interval", type=int, default=2000)
+    ap.add_argument("--event-tag", default="v2")
+    ap.add_argument("--memmap-root", default=None)
     args = ap.parse_args()
     marker = OUT / "completion" / f"{args.tag}.launched"
     done = OUT / "completion" / f"{args.tag}.done"
@@ -95,22 +105,29 @@ def main() -> None:
         torch.cuda.set_device(device)
     seed = int(args.seed) + int(args.fold)
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
-    data = Phase19RData(args.fold)
+    if args.memmap_root:
+        from src.iclr27_phase88.data_memmap import Phase88FoldData
+        data = Phase88FoldData(args.fold, args.memmap_root)
+    else:
+        from src.iclr27_phase19r.data.stream import Phase19RData
+        data = Phase19RData(args.fold)
     store = FeatureStore(args.fold, data)
-    train_path = OUT / "manifests" / f"fit_events_v2_f{args.fold}.jsonl"
-    val_path = OUT / "manifests" / f"val_events_v2_f{args.fold}.jsonl"
+    train_path = OUT / "manifests" / f"fit_events_v2_{args.event_tag}_f{args.fold}.jsonl"
+    val_path = OUT / "manifests" / f"val_events_v2_{args.event_tag}_f{args.fold}.jsonl"
     train_events = load_jsonl(train_path)
     val_events = load_jsonl(val_path)
     if not train_events:
         raise RuntimeError(f"no fit events for fold {args.fold}")
-    manifest_sha = sha(OUT / "manifests" / "causal_event_v2_manifest.json")
+    manifest_sha = sha(OUT / "manifests" / f"causal_event_v2_{args.event_tag}_manifest.json")
     atomic_json(marker, {
         "status": "LAUNCHED", "phase": 88, "route": args.tag, "fold": args.fold,
         "device": str(device), "pid": os.getpid(), "updates": args.updates,
         "seed": seed, "support_mode": bool(args.support_mode),
         "manifest_sha256": manifest_sha, "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
     })
-    model = CausalPersistentOCD(torch.from_numpy(data.known_prototypes), torch.from_numpy(data.active_known_mask), max_states=16).to(device)
+    rss_samples = [{"stage": "after_data_open", "rss_bytes": current_rss_bytes()}]
+    model = CausalPersistentOCD(torch.from_numpy(np.asarray(data.known_prototypes)), torch.from_numpy(np.asarray(data.active_known_mask)), max_states=16).to(device)
+    rss_samples.append({"stage": "after_model_create", "rss_bytes": current_rss_bytes()})
     resume_payload = None
     if args.resume_checkpoint:
         resume_payload = torch.load(args.resume_checkpoint, map_location=device)
@@ -125,13 +142,17 @@ def main() -> None:
         if resume_payload.get("optimizer"):
             optimizer.load_state_dict(resume_payload["optimizer"])
     sampler = BalancedCausalEventSampler(train_events, seed=seed)
-    known_keys = fixed_known_keys(data)
+    known_keys = list(data.known_eval_keys) if hasattr(data, "known_eval_keys") else list(__import__("src.iclr27_phase19r.evaluation.internal", fromlist=["fixed_known_keys"]).fixed_known_keys(data))
     known_mask = torch.from_numpy(np.asarray(data.active_known_mask, dtype=bool)).to(device)
     rng = random.Random(seed)
     losses: list[float] = []
     component_sums: dict[str, float] = {}
     grad_norms: list[float] = []
     reset_targets = 0; reset_predictions = 0; known_steps = 0
+    reset_targets_source = 0; reset_targets_target = 0; masked_target_violations = 0
+    target_action_counts = {k: 0 for k in ("EXISTING", "NEW", "DEFER", "RESET")}
+    source_action_counts = {k: 0 for k in ("EXISTING", "NEW", "DEFER", "RESET")}
+    reset_reason_counts: dict[str, int] = {}
     started = dt.datetime.now(dt.timezone.utc)
     model.train()
     for step in range(start_step + 1, args.updates + 1):
@@ -148,19 +169,30 @@ def main() -> None:
                                             teacher_probability=teacher_probability(step), rng=rng,
                                             support_mode=args.support_mode)
                 reset_targets += int(trace.get("reset_targets", 0)); reset_predictions += int(trace.get("reset_predictions", 0))
+                reset_targets_source += int(trace.get("reset_targets_source", 0))
+                reset_targets_target += int(trace.get("reset_targets_target", 0))
+                masked_target_violations += int(trace.get("masked_target_violations", 0))
+                for key, value in trace.get("target_action_counts", {}).items():
+                    target_action_counts[key] = target_action_counts.get(key, 0) + int(value)
+                for key, value in trace.get("source_target_counts", {}).items():
+                    source_action_counts[key] = source_action_counts.get(key, 0) + int(value)
+                for key, value in trace.get("reset_reason_counts", {}).items():
+                    reset_reason_counts[key] = reset_reason_counts.get(key, 0) + int(value)
         if not torch.isfinite(loss):
             raise RuntimeError(f"nonfinite loss at step {step}")
         loss.backward()
         grad_norm = float(torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0).detach().cpu())
         optimizer.step()
         losses.append(float(loss.detach().cpu())); grad_norms.append(grad_norm)
+        if step in {100, 500, 1000, 2000} or step % int(args.checkpoint_interval) == 0:
+            rss_samples.append({"stage": f"step_{step}", "rss_bytes": current_rss_bytes()})
         for name, value in trace.get("losses", {}).items():
             component_sums[name] = component_sums.get(name, 0.0) + float(value)
         if step % int(args.checkpoint_interval) == 0 or step == args.updates:
             payload = {
                 "model": model.state_dict(), "optimizer": optimizer.state_dict(),
                 "step": step, "fold": args.fold, "seed": seed, "route": args.tag,
-                "support_mode": bool(args.support_mode), "manifest_sha256": manifest_sha,
+                "support_mode": bool(args.support_mode), "event_tag": args.event_tag, "manifest_sha256": manifest_sha,
                 "known_prototype_hash": hashlib.sha256(model.known_prototypes.detach().cpu().numpy().tobytes()).hexdigest(),
                 "precision": "bf16-autocast" if device.type == "cuda" and torch.cuda.is_bf16_supported() else "fp32",
                 "python_rng_state": random.getstate(),
@@ -171,7 +203,7 @@ def main() -> None:
     final_payload = {
         "model": model.state_dict(), "optimizer": optimizer.state_dict(),
         "step": args.updates, "fold": args.fold, "seed": seed, "route": args.tag,
-        "support_mode": bool(args.support_mode), "manifest_sha256": manifest_sha,
+        "support_mode": bool(args.support_mode), "event_tag": args.event_tag, "manifest_sha256": manifest_sha,
         "known_prototype_hash": hashlib.sha256(model.known_prototypes.detach().cpu().numpy().tobytes()).hexdigest(),
         "precision": "bf16-autocast" if device.type == "cuda" and torch.cuda.is_bf16_supported() else "fp32",
         "python_rng_state": random.getstate(),
@@ -183,9 +215,12 @@ def main() -> None:
     result = {
         "schema_version": "trackocd.phase88.train.v1", "phase": 88, "route": args.tag,
         "fold": args.fold, "device": str(device), "updates": args.updates, "start_step": start_step, "seed": seed,
-        "support_mode": bool(args.support_mode), "train_events": len(train_events),
+        "support_mode": bool(args.support_mode), "event_tag": args.event_tag, "train_events": len(train_events),
         "validation_events": len(val_events), "sampler": sampler.stats(), "known_steps": known_steps,
         "reset_targets": reset_targets, "reset_predictions": reset_predictions,
+        "reset_targets_source": reset_targets_source, "reset_targets_target": reset_targets_target,
+        "target_action_counts": target_action_counts, "source_action_counts": source_action_counts,
+        "reset_reason_counts": reset_reason_counts, "masked_target_violations": masked_target_violations,
         "loss_first": losses[0], "loss_last": losses[-1], "loss_mean_last_100": float(np.mean(losses[-100:])),
         "loss_components_mean": {k: v / len(losses) for k, v in component_sums.items()},
         "grad_norm_mean": float(np.mean(grad_norms)), "precision": final_payload["precision"],
@@ -193,6 +228,7 @@ def main() -> None:
         "checkpoint": str(checkpoint.resolve()), "checkpoint_sha256": sha(checkpoint),
         "manifest_sha256": manifest_sha, "known_prototype_hash": final_payload["known_prototype_hash"],
         "resumed_from": args.resume_checkpoint,
+        "rss_samples": rss_samples,
         "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False,
         "ids_or_text_as_model_input": False,
     }

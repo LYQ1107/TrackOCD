@@ -54,9 +54,13 @@ class TargetSession:
     committed_known_index: int | None = None
     provisional_new: bool = False
     reset_count: int = 0
+    missing_positive_state: bool = False
+    reset_reason: str | None = None
+    reset_injection_applied: bool = False
+    reset_injection_global_index: int | None = None
     collected_vectors: list[np.ndarray] = field(default_factory=list)
 
-    def reset(self) -> None:
+    def reset(self, reason: str | None = None) -> None:
         self.evidence = None
         self.previous_best_index = None
         self.best_streak = 0
@@ -67,6 +71,7 @@ class TargetSession:
         self.provisional_new = False
         self.collected_vectors.clear()
         self.reset_count += 1
+        self.reset_reason = reason
 
 
 class StateMemoryV2:

@@ -111,6 +111,7 @@ def make_fold(fold: int, split: str, max_variants: int, seed: int) -> tuple[list
                     pos_sources.append(same[(variant + 1) % len(same)])
                 distractors = hard[: max(0, 4 - len(pos_sources))]
                 sources = list(dict.fromkeys(pos_sources + distractors))
+                masked_categories = sorted({target_cat, *[int(data.track_category[s]) for s in sources]})
                 events.append({
                     "event_id": f"f{fold}-{split}-pos-{len(events):06d}",
                     "fold": fold, "split": split, "polarity": "positive",
@@ -120,7 +121,7 @@ def make_fold(fold: int, split: str, max_variants: int, seed: int) -> tuple[list
                     "target_category_for_loss_only": target_cat,
                     "target_video": target_video,
                     "reliable_prefix_for_loss_only": store.reliability_prefix(target),
-                    "masked_known_categories_for_loss_only": [target_cat],
+                    "masked_known_categories_for_loss_only": masked_categories,
                     "metadata_only": ["category_for_loss_only", "video_id", "track_key", "reliable_prefix_for_loss_only"],
                 })
                 stats["positive"] += 1
@@ -128,6 +129,7 @@ def make_fold(fold: int, split: str, max_variants: int, seed: int) -> tuple[list
             sources = hard[variant:variant + max(2, min(4, len(hard)))]
             if len(sources) < 2:
                 sources = hard[:min(4, len(hard))]
+            masked_categories = sorted({target_cat, *[int(data.track_category[s]) for s in sources]})
             events.append({
                 "event_id": f"f{fold}-{split}-neg-{len(events):06d}",
                 "fold": fold, "split": split, "polarity": "negative",
@@ -137,7 +139,7 @@ def make_fold(fold: int, split: str, max_variants: int, seed: int) -> tuple[list
                 "target_category_for_loss_only": target_cat,
                 "target_video": target_video,
                 "reliable_prefix_for_loss_only": store.reliability_prefix(target),
-                "masked_known_categories_for_loss_only": [target_cat],
+                "masked_known_categories_for_loss_only": masked_categories,
                 "metadata_only": ["category_for_loss_only", "video_id", "track_key", "reliable_prefix_for_loss_only"],
             })
             stats["negative"] += 1
@@ -169,28 +171,43 @@ def make_fold(fold: int, split: str, max_variants: int, seed: int) -> tuple[list
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--seed", type=int, default=88001)
+    parser.add_argument("--tag", default="v2")
     args = parser.parse_args()
     counts = {}
     for fold in range(4):
         for split in ("fit", "val"):
-            events, info = make_fold(fold, split, max_variants=4, seed=args.seed)
-            atomic_jsonl(OUT / "manifests" / f"{split}_events_v2_f{fold}.jsonl", events)
+            variants = 4
+            events, info = make_fold(fold, split, max_variants=variants, seed=args.seed)
+            if split == "fit" and fold == 0 and len(events) < 500:
+                for candidate in (16, 64):
+                    variants = candidate
+                    events, info = make_fold(fold, split, max_variants=variants, seed=args.seed)
+                    if len(events) >= 500:
+                        break
+            info["requested_minimum_fit_events"] = 500 if split == "fit" else None
+            info["variants_used"] = variants
+            info["unique_event_count"] = len({str(e["event_id"]) for e in events})
+            info["unique_source_bank_count"] = len({tuple(e["source_track_keys"]) for e in events})
+            suffix = f"_events_v2_{args.tag}_f{fold}"
+            atomic_jsonl(OUT / "manifests" / f"{split}{suffix}.jsonl", events)
             counts[f"{split}{fold}"] = info
     manifest = {
-        "schema_version": "trackocd.phase88.causal_event_v2.v1",
+        "schema_version": f"trackocd.phase88.causal_event_v2_{args.tag}.v2",
         "phase": 88,
         "protocol": "episode source-before-target; source_video != target_video; no numeric video chronology",
         "counts": counts,
-        "source_count_range": [2, 4], "max_variants_per_target": 4,
+        "source_count_range": [2, 4], "max_variants_per_target": 64 if args.tag == "fix2" else 4,
+        "tag": args.tag,
         "model_input_fields": ["causal_raw_sequence", "causal_geometry_sequence", "quality_sequence", "support_features", "causal_state", "known_mask"],
         "loss_only_fields": ["polarity", "category_for_loss_only", "video_id", "track_key", "reliable_prefix_for_loss_only"],
         "hard_negative": "same split, different category/video, highest cosine of causal track vectors",
         "future_rows_or_tracks": False, "ids_or_text_as_model_input": False,
         "held_event_overlap": False,
     }
-    atomic_json(OUT / "manifests" / "causal_event_v2_manifest.json", manifest)
-    atomic_json(OUT / "audit" / "causal_event_v2_build.json", manifest)
-    atomic_json(OUT / "completion" / "build_events_v2.done", {"status": "DONE", "manifest": str((OUT / "manifests" / "causal_event_v2_manifest.json").resolve())})
+    manifest_path = OUT / "manifests" / f"causal_event_v2_{args.tag}_manifest.json"
+    atomic_json(manifest_path, manifest)
+    atomic_json(OUT / "audit" / f"causal_event_v2_{args.tag}_build.json", manifest)
+    atomic_json(OUT / "completion" / f"build_events_v2_{args.tag}.done", {"status": "DONE", "manifest": str(manifest_path.resolve())})
     print(json.dumps(manifest, indent=2, sort_keys=True))
 
 

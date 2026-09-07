@@ -30,10 +30,9 @@ def _quality(data: Phase19RData, row_index: int) -> float:
 class FeatureStore:
     """Fold-local, read-only adapter over Phase19RData."""
 
-    def __init__(self, fold: int = 0, data: Phase19RData | None = None):
+    def __init__(self, fold: int = 0, data: Phase19RData | Any | None = None):
         self.fold = int(fold)
         self.data = data or Phase19RData(self.fold)
-        self._cache: dict[str, TrackArray] = {}
 
     def keys(self) -> list[str]:
         return sorted(self.data.track_rows)
@@ -41,15 +40,13 @@ class FeatureStore:
     def track(self, key: str, max_len: int = 16) -> TrackArray:
         if key not in self.data.track_rows:
             raise KeyError(key)
-        if key not in self._cache:
-            idx = self.data.track_rows[key]
-            raw = np.asarray(self.data.raw[idx], dtype=np.float32)
-            geom = np.asarray(self.data.geom[idx], dtype=np.float32)
-            quality = np.asarray([_quality(self.data, i) for i in idx], dtype=np.float32)
-            self._cache[key] = TrackArray(key, raw, geom, quality)
-        value = self._cache[key]
-        n = min(int(max_len), len(value.raw))
-        return TrackArray(key, value.raw[:n], value.geom[:n], value.quality[:n])
+        indices = self.data.track_rows[key]
+        n = min(int(max_len), len(indices))
+        idx = np.asarray(indices[:n], dtype=np.int64)
+        raw = np.asarray(self.data.raw[idx], dtype=np.float32)
+        geom = np.asarray(self.data.geom[idx], dtype=np.float32)
+        quality = np.asarray([_quality(self.data, int(i)) for i in idx], dtype=np.float32)
+        return TrackArray(key, raw, geom, quality)
 
     def video(self, key: str) -> int:
         return int(self.data.track_video[key])
@@ -60,9 +57,15 @@ class FeatureStore:
     def reliability_prefix(self, key: str, max_len: int = 16) -> int:
         indices = self.data.track_rows[key]
         for pos, row_index in enumerate(indices[:max_len], start=1):
-            row = self.data.rows[row_index]
             try:
-                if int(row.get("assigned", 0)) == 1 and float(row.get("row_iou", 0.0)) >= 0.5:
+                if hasattr(self.data, "_assigned"):
+                    assigned = int(self.data._assigned[row_index])
+                    row_iou = float(self.data._row_iou[row_index])
+                else:
+                    row = self.data.rows[row_index]
+                    assigned = int(row.get("assigned", 0))
+                    row_iou = float(row.get("row_iou", 0.0))
+                if assigned == 1 and row_iou >= 0.5:
                     return pos
             except (TypeError, ValueError):
                 pass

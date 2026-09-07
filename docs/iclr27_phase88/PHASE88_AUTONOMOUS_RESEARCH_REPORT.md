@@ -1,9 +1,9 @@
 # TrackOCD Phase 88 — Persistent OCD Contract Repair + Full Runtime Training
 
-**Status:** resource-blocked before the formal C0v2 gate
-**Decision:** `P88_C0V2_FORMAL_INCOMPLETE_RAM_FLOOR_STOP_NO_CONTROLLER`
+**Status:** fix2 formal route resource-blocked in the current window (fold0 stopped at step 2000)
+**Decision:** `P88_FIX2_FORMAL_STEP2000_RAM_FLOOR_STOP_NO_CONTROLLER`
 **Registered window:** 2026-09-07 06:20:15–16:20:15 UTC
-**Repository at registration:** `3c12af72a83681883cd6e4e5ec0beeb35d78bdd3`
+**Repository at registration:** `3c12af72a83681883cd6e4e5ec0beeb35d78bdd3`; immediate-repair resume HEAD: `378456f1c58156ab4e15e2b77749b688574ea816`
 **Report generated:** 2026-09-07 (Asia/Shanghai)
 
 This report records the complete Phase88 work that actually ran. It does not convert a smoke result, a partial checkpoint, or an old diagnostic replay into a formal MOT+OCD result. The formal C0v2 training route was stopped for the mandatory RAM safety boundary after three bounded repair attempts. Consequently C0v2 formal validation, the C1 support continuation, unchanged-controller compatibility, and sealed evaluation were not run.
@@ -190,3 +190,45 @@ The last command is a bounded diagnostic only. A future continuation must not re
 - The host's external memory pressure is the actionable blocker. The scientific question remains open; the route was not stopped because the task was proven infeasible.
 
 Machine-readable decision and all hashes are in `outputs/iclr27_phase88/audit/final_decision.json`. The next legitimate action is to obtain an explicitly authorized memory-safe execution environment (or implement a measured memory-bounded data/rollout path), then complete the unchanged 20k/fold C0v2 protocol before opening C1. It is not legitimate to run controller tuning, threshold sweeps, a new backbone, or sealed evaluation from the partial checkpoint.
+
+## 11. Immediate-repair/resume addendum (fix2)
+
+The report above is retained as the original Phase88 snapshot. The immediate-repair instruction did not register a new phase or change the deadline. It reclassified the earlier partial route as an implementation/resource snapshot and required a clean formal restart because the old checkpoints were produced before the corrected target-role and teacher-forcing contract. The old checkpoints remain read-only provenance and are marked `INVALID_FOR_FORMAL_CONTINUATION` in `outputs/iclr27_phase88/audit/old_checkpoint_status.json`; none initialized fix2 formal training.
+
+### 11.1 Corrective implementation
+
+The fix2 code repaired the first actionable semantic contract defects rather than adding another model variant:
+
+- target actions are role-first: source tracks are processed independently of event polarity; positive targets use EXISTING/DEFER/RESET semantics and never create a duplicate NEW state when a positive match is missing;
+- teacher forcing samples one atomic decision and binds action, candidate slot, global index, and known/novel context consistently;
+- wrong-binding RESET injection is restricted to wrong-category states and records the local/global slot mapping;
+- collected semantic vectors are cleared on RESET and reduced from the current causal collection, matching runtime behavior;
+- RESET/DEFER/EXISTING/NEW/KNOWN transition fields are cleared or preserved explicitly;
+- the permanent `FeatureStore` cache was removed from the training path;
+- a shared read-only feature memmap is built once and referenced by fold metadata, with no feature copies in the Phase88 output tree;
+- fold0 event construction expands legal causal variants (4→16→64) without duplicating events and produced 982 unique fit events, above the 500 diagnostic target.
+
+The contract artifact reports `source_event_polarity_mismatch=0`, atomic teacher forcing, zero masked-target violations, complete pseudo-novel masks, RESET supervision, and collected-vector traces. Its SHA256 is `236d6b321739267f5d0c7e690656bdf86f3cb0a07cfa1165df457c3b6b48f2d7`. The fix2 event manifest SHA256 is `b70096c7302bf7a19b05423c00cf90e1c636926d0e895cf4be30a9d6546a33fd`; the shared memmap manifest SHA256 is `e42524d1895921b55aee9c639e597fc411a75f272275bfc7986f260cdb5c1a7c`.
+
+### 11.2 Scratch smoke and targeted acceptance
+
+Both runs were from scratch on the only idle Phase88 GPU (`cuda:5`) and used the fix2 event tag and memmap view. No old checkpoint was loaded.
+
+| run | updates | loss first → last | reset targets | masked target violations | measured RSS after step | status |
+|---|---:|---:|---:|---:|---:|---|
+| `c0v2_fix2_smoke_f0_r2` | 100 | 3.38330 → 2.49614 | 180 | 0 | ≈5.055 GB | PASS |
+| `c0v2_fix2_targeted_f0` | 500 | 3.38330 → 1.63342 | 504 | 0 | ≈5.051 GB | PASS |
+
+The smoke checkpoint SHA256 is `1ac8d573cdd6984375ead9654e3d1c970cf4b3193d20178a33ae879c1e2df726`; the targeted checkpoint SHA256 is `98b608036fd1206419a460d517b798078876a631fef0b8b2ded7c7e527667304`.
+
+A bounded 100-event TRAIN-disjoint replay of the targeted checkpoint is diagnostic only (51 positive/49 negative sample events): Commit-CT `8/51`, existing precision `.3158`, category coverage `2`, video coverage `8`, negative false merge `.8367`, premature `.77`, unresolved `.06`, and duplicate births `9`. It is not the registered 76-event formal gate and was not used for selection.
+
+### 11.3 Fix2 formal resource stop
+
+The formal restart began at `c0v2_fix2_formal_f0` on `cuda:5`, from scratch, with the required 20,000-update target. It atomically wrote `outputs/iclr27_phase88/checkpoints/c0v2_fix2_formal_f0_step002000.pt` (SHA256 `9bc85fa45022262270752abb25b0068efc9f7c0178074477d2cc9cd06fa68f3d`). At that point the measured worker peak RSS was approximately `5,051,117,568` bytes and available host RAM had fallen to approximately 31 GiB, below the mandatory 25% floor for the 125 GiB host. The task-owned wrapper/supervisor/worker PIDs `1365/1367/1368` were explicitly stopped. External GPU workers were untouched; no OOM kernel event occurred. The `.launched` marker was preserved, no `.done` marker or validation artifact was written, and this formal unit must not be blindly relaunched in the current window.
+
+This is an execution-resource blocker after the corrected memory-bounded implementation and a single worker, not evidence that the corrected scientific route failed. The formal C0v2 gate remains **not evaluated**. C1 support, controller compatibility, and sealed evaluation remain **not started**. The machine-readable event is `outputs/iclr27_phase88/audit/fix2_resource_stop.json`, and the updated decision is `outputs/iclr27_phase88/audit/final_decision.json` with status `PHASE88_FIX2_UNRECOVERABLE_RESOURCE_BLOCKER_CURRENT_WINDOW`.
+
+### 11.4 Current decision and continuation boundary
+
+The immediate-repair route is therefore incomplete, not a scientific success or failure. The only legitimate continuation is a newly authorized memory-safe execution window/isolated host (or a separately measured memory-bounded implementation), followed by the unchanged 20k-per-fold fix2 protocol from scratch. No partial checkpoint may open C1; no threshold, memory, controller, backbone, DEV+/Q1, public-new-model, or sealed evaluation was run. The original Phase88 deadline and denominator remain unchanged, and all public/sealed boundaries remain closed.

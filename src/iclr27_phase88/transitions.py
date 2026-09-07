@@ -14,17 +14,22 @@ def apply_session_action(session: TargetSession, action: str,
         session.committed_action = "EXISTING"
         session.committed_state_index = state_index
         session.committed_global_index = global_state_index
+        session.committed_known_index = None
         session.provisional_new = False
     elif action == "NEW":
         session.committed_action = "NEW"
         session.committed_state_index = None
         session.committed_global_index = None
+        session.committed_known_index = None
         session.provisional_new = True
     elif action == "KNOWN":
         session.committed_action = "KNOWN"
         session.committed_known_index = known_index
+        session.committed_state_index = None
+        session.committed_global_index = None
+        session.provisional_new = False
     elif action == "RESET":
-        session.reset()
+        session.reset(reason=session.reset_reason or "wrong_existing")
     elif action == "DEFER":
         return
     else:

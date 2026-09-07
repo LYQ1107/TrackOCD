@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture the one preflight snapshot required before Phase87 workers."""
+"""Capture Phase88 resource preflight and measured worker budget."""
 from __future__ import annotations
 
 import datetime as dt
@@ -21,7 +21,7 @@ def run(command: list[str]) -> str:
 
 def main() -> None:
     payload = {
-        "phase": 87,
+        "phase": 88,
         "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "pid": os.getpid(),
         "free_h": run(["free", "-h"]),
@@ -31,10 +31,10 @@ def main() -> None:
         "disk": run(["df", "-h", "/data1", "/data2"]),
         "planned_gpu_mapping": {"fold0": 5, "fold1": 6, "fold2": 7, "fold3": 8},
         "worker_limit": 4,
-        "estimated_peak_rss_per_worker_gb": 4.0,
+        "estimated_peak_rss_per_worker_gb": None,
         "minimum_available_ram_gb": 31.25,
         "external_gpu_pids_untouched": [8827, 13957, 15368, 3280, 6567, 1206],
-        "status": "PASS_HEADROOM_AND_MAPPING_RESERVED",
+        "status": "SNAPSHOT_DYNAMIC_RSS_REQUIRED",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     tmp = OUT.with_suffix(".tmp")

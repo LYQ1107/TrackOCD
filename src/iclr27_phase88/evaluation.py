@@ -53,9 +53,9 @@ def _correct_existing(row: dict[str, Any], states: dict[int, dict[str, Any]], ta
     )
 
 
-def evaluate_persistent_events(model: CausalPersistentOCD, data, events: list[dict[str, Any]],
-                               device: torch.device, *, support_mode: bool = False) -> dict[str, Any]:
-    """Replay every source and target track through one persistent runtime."""
+def replay_persistent_records(model: CausalPersistentOCD, data, events: list[dict[str, Any]],
+                              device: torch.device, *, support_mode: bool = False) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Replay source/target events only; known-stream evaluation is separate."""
     model.eval()
     store = FeatureStore(data.fold, data)
     records: list[dict[str, Any]] = []
@@ -127,13 +127,7 @@ def evaluate_persistent_events(model: CausalPersistentOCD, data, events: list[di
                 "reset_count": sum(x.get("reset", 0) for x in target_decisions),
                 "premature": int(bool(pre_commits)),
             })
-    known = evaluate_known_stream_v2(model, data, device)
-    formal = phase19r_metrics(records, known)
-    return {
-        "records": records,
-        "known_metrics": known,
-        "metrics": formal,
-        "diagnostic": {
+    diagnostic_out = {
             "source_tracks_processed": int(diagnostic["source_tracks_processed"]),
             "source_states_created": int(diagnostic["source_states_created"]),
             "source_deferred": int(diagnostic["source_defer"]),
@@ -147,8 +141,22 @@ def evaluate_persistent_events(model: CausalPersistentOCD, data, events: list[di
             "reset_targets": 0,
             "reset_predictions": int(diagnostic["reset_count"]),
             "source_track_count": int(sum(len(normalize_event(e)["source_track_keys"]) for e in events)),
-        },
-    }
+        }
+    return records, diagnostic_out
+
+
+def finalize_persistent_metrics(records: list[dict[str, Any]], known_metrics: dict[str, Any]) -> dict[str, Any]:
+    """Apply the exact Phase19R metrics implementation after all shards."""
+    return phase19r_metrics(records, known_metrics)
+
+
+def evaluate_persistent_events(model: CausalPersistentOCD, data, events: list[dict[str, Any]],
+                               device: torch.device, *, support_mode: bool = False) -> dict[str, Any]:
+    """Compatibility wrapper: event replay plus one known-stream pass."""
+    records, diagnostic = replay_persistent_records(model, data, events, device, support_mode=support_mode)
+    known = evaluate_known_stream_v2(model, data, device)
+    return {"records": records, "known_metrics": known,
+            "metrics": finalize_persistent_metrics(records, known), "diagnostic": diagnostic}
 
 
 def evaluate_known_stream_v2(model: CausalPersistentOCD, data, device: torch.device) -> dict[str, Any]:
@@ -158,7 +166,8 @@ def evaluate_known_stream_v2(model: CausalPersistentOCD, data, device: torch.dev
     rows = 0
     km = torch.from_numpy(np.asarray(data.active_known_mask, dtype=bool)).to(device)
     with torch.no_grad():
-        for key, cat in fixed_known_keys(data):
+        known_keys = data.known_eval_keys if hasattr(data, "known_eval_keys") else fixed_known_keys(data)
+        for key, cat in known_keys:
             runtime = CausalPersistentRuntime(model, store, device)
             result = runtime.process_track(key, data.track_video[key], km)
             values = []
