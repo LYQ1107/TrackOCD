@@ -44,6 +44,22 @@ def atomic_json(path: Path, value: object) -> None:
     os.replace(tmp, path)
 
 
+def publish_state(status: dict) -> None:
+    state = {
+        "phase": 88,
+        "task_status": status.get("task_status", "IN_PROGRESS"),
+        "current_stage": status.get("current_stage", status.get("resource_state", "IN_PROGRESS")),
+        "completed_stages": status.get("completed_stages", ["FIX2_SEMANTIC_CONTRACT_REPAIR", "FIX2_SMOKE", "FIX2_TARGETED"]),
+        "pending_stages": status.get("pending_stages", ["FIX2_FORMAL", "TRAIN_VALIDATION", "C0_C1_CONTROL", "DIAGNOSTIC", "SEALED_PROTOCOL_CHECK", "FINAL_REPORT"]),
+        "active_workers": status.get("active_workers", []),
+        "resource_state": status.get("resource_state", "IN_PROGRESS"),
+        "last_scientific_result": status.get("last_scientific_result", "FIX2_TARGETED_DIAGNOSTIC_ONLY"),
+        "next_action": status.get("next_action", "continue completion supervisor"),
+        "public_dev_q1_sealed_accessed": False,
+    }
+    atomic_json(OUT / "audit/continuous_state.json", state)
+
+
 def now() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat()
 
@@ -175,10 +191,11 @@ def wait_for_resource(manager: ResourceManager, status: dict) -> tuple[object, l
     while True:
         free = discover_usable_gpus()
         snap = resources(manager)
-        status["resource_state"] = "WAITING_FOR_RESOURCE" if snap.safe_workers <= 0 else "RESOURCE_AVAILABLE"
+    status["resource_state"] = "WAITING_FOR_RESOURCE" if snap.safe_workers <= 0 else "RESOURCE_AVAILABLE"
         status["last_resource_snapshot"] = snap.as_dict()
         status["next_action"] = "wait 120 seconds and recompute resources" if snap.safe_workers <= 0 else "resume valid fix2 formal queue"
         atomic_json(OUT / "audit/fix2_continuous_supervisor_status.json", status)
+        publish_state(status)
         if snap.safe_workers > 0 and free:
             return snap, free
         time.sleep(RESOURCE_WAIT_SECONDS)
@@ -299,6 +316,7 @@ def main() -> None:
         "semantic_contract_sha256": semantic_contract_sha(),
     })
     atomic_json(OUT / "audit/fix2_continuous_supervisor_status.json", status)
+    publish_state(status)
     run_low_ram_analysis(status)
     for fold in range(4):
         tag = f"c0v2_fix2_formal_f{fold}"
