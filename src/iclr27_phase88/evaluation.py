@@ -69,8 +69,9 @@ def replay_persistent_records(model: CausalPersistentOCD, data, events: list[dic
             source_decisions = []
             source_created = 0
             for source_key in event["source_track_keys"]:
-                source_cat = int(data.track_category.get(source_key, -1))
-                result = runtime.process_track(source_key, data.track_video[source_key], km,
+                source_cat = int(data.category(source_key) if hasattr(data, "category") else data.track_category.get(source_key, -1))
+                source_video = int(data.video(source_key) if hasattr(data, "video") else data.track_video[source_key])
+                result = runtime.process_track(source_key, source_video, km,
                                                oracle_category_for_eval=source_cat,
                                                support_mode=support_mode)
                 source_decisions.extend(result["trace"])
@@ -169,7 +170,8 @@ def evaluate_known_stream_v2(model: CausalPersistentOCD, data, device: torch.dev
         known_keys = data.known_eval_keys if hasattr(data, "known_eval_keys") else fixed_known_keys(data)
         for key, cat in known_keys:
             runtime = CausalPersistentRuntime(model, store, device)
-            result = runtime.process_track(key, data.track_video[key], km)
+            key_video = int(data.video(key) if hasattr(data, "video") else data.track_video[key])
+            result = runtime.process_track(key, key_video, km)
             values = []
             slot = data.known_to_index.get(int(cat))
             for row in result["trace"]:

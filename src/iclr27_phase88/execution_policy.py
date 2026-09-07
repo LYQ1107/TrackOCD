@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTRATION = ROOT / "outputs/iclr27_phase88/audit/window_registration.json"
+CONTINUOUS_STATE = ROOT / "outputs/iclr27_phase88/audit/continuous_state.json"
 FORMAL_GATE = {
     "commit_ct_min": 15,
     "category_coverage_min": 5,
@@ -40,9 +41,11 @@ def hard_blocker_active() -> bool:
 
 
 def assert_finalization_allowed() -> None:
-    remaining = remaining_seconds()
-    if remaining > 2700 and not hard_blocker_active():
-        raise RuntimeError("FINALIZATION_TOO_EARLY_RESEARCH_MUST_CONTINUE")
+    if not CONTINUOUS_STATE.exists():
+        raise RuntimeError("TASK_NOT_COMPLETE_RESEARCH_MUST_CONTINUE")
+    state = json.loads(CONTINUOUS_STATE.read_text())
+    if state.get("task_status") != "COMPLETE":
+        raise RuntimeError("TASK_NOT_COMPLETE_RESEARCH_MUST_CONTINUE")
 
 
 def sealed_inputs_forbidden() -> bool:

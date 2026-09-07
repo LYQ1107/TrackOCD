@@ -35,12 +35,14 @@ class FeatureStore:
         self.data = data or Phase19RData(self.fold)
 
     def keys(self) -> list[str]:
-        return sorted(self.data.track_rows)
+        if getattr(self.data, "track_rows", None) is not None:
+            return sorted(self.data.track_rows)
+        return sorted(getattr(self.data, "_track_keys", []))
 
     def track(self, key: str, max_len: int = 16) -> TrackArray:
-        if key not in self.data.track_rows:
+        if key not in set(self.keys()):
             raise KeyError(key)
-        indices = self.data.track_rows[key]
+        indices = self.data.row_indices(key) if hasattr(self.data, "row_indices") else self.data.track_rows[key]
         n = min(int(max_len), len(indices))
         idx = np.asarray(indices[:n], dtype=np.int64)
         raw = np.asarray(self.data.raw[idx], dtype=np.float32)
@@ -49,13 +51,13 @@ class FeatureStore:
         return TrackArray(key, raw, geom, quality)
 
     def video(self, key: str) -> int:
-        return int(self.data.track_video[key])
+        return int(self.data.video(key) if hasattr(self.data, "video") else self.data.track_video[key])
 
     def category(self, key: str) -> int:
-        return int(self.data.track_category[key])
+        return int(self.data.category(key) if hasattr(self.data, "category") else self.data.track_category[key])
 
     def reliability_prefix(self, key: str, max_len: int = 16) -> int:
-        indices = self.data.track_rows[key]
+        indices = self.data.row_indices(key) if hasattr(self.data, "row_indices") else self.data.track_rows[key]
         for pos, row_index in enumerate(indices[:max_len], start=1):
             try:
                 if hasattr(self.data, "_assigned"):
@@ -74,8 +76,8 @@ class FeatureStore:
     def summary(self) -> dict[str, Any]:
         return {
             "fold": self.fold,
-            "rows": len(self.data.rows),
-            "tracklets": len(self.data.track_rows),
+            "rows": int(self.data.raw.shape[0]) if getattr(self.data, "rows", None) is None else len(self.data.rows),
+            "tracklets": len(self.keys()),
             "known_count": int(len(self.data.supported_ids)),
             "active_known_count": int(np.asarray(self.data.active_known_mask).sum()),
             "input_fields": ["raw_visual_768", "geometry_15", "quality", "causal_prefix"],
