@@ -37,7 +37,10 @@ def stream_discovery_metrics(rows: Iterable[Mapping[str, object]]) -> dict[str, 
     """
     rows = [dict(r) for r in rows]
     if not rows:
-        return {"rows": 0, "all_acc": 0.0, "old_acc": 0.0, "new_acc": 0.0, "h_score": 0.0, "nmi": 0.0, "ari": 0.0}
+        return {"rows": 0, "old_rows": 0, "new_rows": 0,
+                "all_correct": 0, "old_correct": 0, "new_correct": 0,
+                "all_acc": 0.0, "old_acc": 0.0, "new_acc": 0.0,
+                "pseudo_novel_acc": 0.0, "h_score": 0.0, "nmi": 0.0, "ari": 0.0}
     mapping = _global_assignment(rows)
     correct = [mapping.get(str(r["predicted_token"])) == str(r["target_category"]) for r in rows]
     old = [i for i, r in enumerate(rows) if str(r.get("split", "new")).lower() == "old"]
@@ -49,8 +52,11 @@ def stream_discovery_metrics(rows: Iterable[Mapping[str, object]]) -> dict[str, 
     y = [str(r["target_category"]) for r in rows]
     p = [str(r["predicted_token"]) for r in rows]
     return {
-        "rows": len(rows), "all_acc": all_acc, "old_acc": old_acc,
-        "new_acc": new_acc, "h_score": float(h),
+        "rows": len(rows), "old_rows": len(old), "new_rows": len(new),
+        "all_correct": int(sum(correct)), "old_correct": int(sum(correct[i] for i in old)),
+        "new_correct": int(sum(correct[i] for i in new)),
+        "all_acc": all_acc, "old_acc": old_acc, "new_acc": new_acc,
+        "pseudo_novel_acc": new_acc, "h_score": float(h),
         "nmi": float(normalized_mutual_info_score(y, p)),
         "ari": float(adjusted_rand_score(y, p)),
         "global_pred_to_category": mapping,

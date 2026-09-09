@@ -19,7 +19,7 @@ import torch
 
 torch.set_num_threads(2)
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "outputs/iclr27_phase88"
+OUT = Path(os.environ.get("TRACKOCD_OUT", str(ROOT / "outputs/iclr27_phase88")))
 SHARED = Path("/data2/usr_for_deadline/trackocd_phase88/shared_features")
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -72,6 +72,8 @@ def main() -> None:
     ap.add_argument("--tag", default="frozen_c0v2_76plus76_diagnostic")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--memmap-root", default=str(SHARED))
+    ap.add_argument("--support-mode", choices=["auto", "on", "off"], default="auto")
+    ap.add_argument("--architecture", choices=("baseline", "h3"), default="baseline")
     args = ap.parse_args()
     selection_path = Path(args.selection).resolve()
     selection = json.loads(selection_path.read_text())
@@ -95,6 +97,21 @@ def main() -> None:
     selected_rows = selection.get("selected_fold_checkpoints", selection.get("folds"))
     if not selected_rows or len(selected_rows) != 4:
         raise RuntimeError("selection must contain four frozen fold checkpoints")
+    fold_modes = {
+        bool(row.get("support_mode", row.get("metrics", {}).get("support_mode", selection.get("support_mode", False))))
+        for row in selected_rows
+    }
+    if len(fold_modes) != 1:
+        raise RuntimeError("INCONSISTENT_FROZEN_SUPPORT_MODE")
+    frozen_support_mode = next(iter(fold_modes))
+    if args.support_mode == "on":
+        requested_support_mode = True
+    elif args.support_mode == "off":
+        requested_support_mode = False
+    else:
+        requested_support_mode = frozen_support_mode
+    if selection.get("candidate") == "H2_EQUAL_BUDGET" and requested_support_mode:
+        raise RuntimeError("H2_EQUAL_SUPPORT_MODE_MUST_BE_FALSE")
     for row in selected_rows:
         fold = int(row["fold"])
         ckpt = Path(row["checkpoint"]).resolve()
@@ -102,15 +119,23 @@ def main() -> None:
             raise RuntimeError(f"frozen checkpoint hash changed for fold {fold}")
         data = Phase88FoldData(fold, args.memmap_root)
         payload = torch.load(ckpt, map_location=device)
-        model = CausalPersistentOCD(
-            torch.from_numpy(__import__("numpy").asarray(data.known_prototypes)),
-            torch.from_numpy(__import__("numpy").asarray(data.active_known_mask)),
-            max_states=16,
-        ).to(device)
+        if args.architecture == "h3":
+            from src.iclr27_phase89.hierarchical import HierarchicalPersistentOCD
+            model = HierarchicalPersistentOCD(
+                torch.from_numpy(__import__("numpy").asarray(data.known_prototypes)),
+                torch.from_numpy(__import__("numpy").asarray(data.active_known_mask)),
+                max_states=16,
+            ).to(device)
+        else:
+            model = CausalPersistentOCD(
+                torch.from_numpy(__import__("numpy").asarray(data.known_prototypes)),
+                torch.from_numpy(__import__("numpy").asarray(data.active_known_mask)),
+                max_states=16,
+            ).to(device)
         model.load_state_dict(payload["model"], strict=False)
         model.eval()
         events = by_fold[fold]
-        records, diagnostic = replay_persistent_records(model, data, events, device, support_mode=True)
+        records, diagnostic = replay_persistent_records(model, data, events, device, support_mode=requested_support_mode)
         known = evaluate_known_stream_v2(model, data, device)
         metrics = finalize_persistent_metrics(records, known)
         all_records.extend(records)
@@ -130,9 +155,10 @@ def main() -> None:
     aggregate_known_metrics = aggregate_known(known_by_fold)
     aggregate_metrics = finalize_persistent_metrics(all_records, aggregate_known_metrics)
     out = {
-        "schema_version": "trackocd.phase88.frozen_76plus76_diagnostic.v1",
+        "schema_version": "trackocd.phase88.frozen_76plus76_diagnostic.v2",
         "phase": 88,
         "tag": args.tag,
+        "architecture": args.architecture,
         "status": "DIAGNOSTIC_ONLY_DO_NOT_SELECT",
         "selection_source": str(selection_path),
         "selection_sha256": sha(selection_path),
@@ -142,7 +168,8 @@ def main() -> None:
         "aggregate_metrics": aggregate_metrics,
         "aggregate_known_metrics": aggregate_known_metrics,
         "records": all_records,
-        "support_mode": True,
+        "support_mode": requested_support_mode,
+        "support_mode_source": "frozen_selection" if args.support_mode == "auto" else f"cli_{args.support_mode}",
         "public_dev_q1_sealed_accessed": False,
         "future_rows_or_tracks": False,
         "ids_or_text_as_model_input": False,

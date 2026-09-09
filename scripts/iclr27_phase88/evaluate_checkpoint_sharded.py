@@ -15,7 +15,7 @@ torch.set_num_threads(2)
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-OUT = ROOT / "outputs/iclr27_phase88"
+OUT = Path(os.environ.get("TRACKOCD_OUT", str(ROOT / "outputs/iclr27_phase88")))
 
 from src.iclr27_phase88.controller import CausalPersistentOCD
 from src.iclr27_phase88.data_memmap import Phase88FoldData
@@ -57,6 +57,7 @@ def main() -> None:
     ap.add_argument("--max-events", type=int, default=0)
     ap.add_argument("--memmap-root", default="/data2/usr_for_deadline/trackocd_phase88/shared_features")
     ap.add_argument("--support-mode", action="store_true")
+    ap.add_argument("--architecture", choices=("baseline", "h3"), default="baseline")
     args = ap.parse_args()
     device = torch.device(args.device)
     if device.type == "cuda":
@@ -64,7 +65,11 @@ def main() -> None:
     data = Phase88FoldData(args.fold, args.memmap_root)
     ckpt = Path(args.checkpoint).resolve()
     payload = torch.load(ckpt, map_location=device)
-    model = CausalPersistentOCD(torch.from_numpy(__import__('numpy').asarray(data.known_prototypes)), torch.from_numpy(__import__('numpy').asarray(data.active_known_mask)), max_states=16).to(device)
+    if args.architecture == "h3":
+        from src.iclr27_phase89.hierarchical import HierarchicalPersistentOCD
+        model = HierarchicalPersistentOCD(torch.from_numpy(__import__('numpy').asarray(data.known_prototypes)), torch.from_numpy(__import__('numpy').asarray(data.active_known_mask)), max_states=16).to(device)
+    else:
+        model = CausalPersistentOCD(torch.from_numpy(__import__('numpy').asarray(data.known_prototypes)), torch.from_numpy(__import__('numpy').asarray(data.active_known_mask)), max_states=16).to(device)
     model.load_state_dict(payload["model"], strict=False)
     model.eval()
     events = [normalize_event(e) for e in read_jsonl(OUT / "manifests" / f"val_events_v2_{args.event_tag}_f{args.fold}.jsonl")]
@@ -97,7 +102,7 @@ def main() -> None:
     metrics = finalize_persistent_metrics(all_records, known)
     final = {
         "schema_version": "trackocd.phase88.sharded_validation.v1",
-        "phase": 88, "tag": args.tag, "fold": args.fold,
+        "phase": 88, "tag": args.tag, "fold": args.fold, "architecture": args.architecture,
         "events": len(events), "shard_size": int(args.shard_size),
         "checkpoint": str(ckpt), "checkpoint_sha256": sha(ckpt),
         "metrics": metrics, "known_metrics": known,

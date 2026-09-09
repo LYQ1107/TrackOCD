@@ -22,7 +22,7 @@ torch.set_num_threads(int(os.environ.get("TRACKOCD_TORCH_THREADS", "2")))
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-OUT = ROOT / "outputs/iclr27_phase88"
+OUT = Path(os.environ.get("TRACKOCD_OUT", str(ROOT / "outputs/iclr27_phase88")))
 CKPT_ROOT = OUT / "checkpoints"
 
 from src.iclr27_phase88.controller import CausalPersistentOCD
@@ -148,12 +148,15 @@ def main() -> None:
     ap.add_argument("--init-checkpoint", default=None)
     ap.add_argument("--resume-checkpoint", default=None)
     ap.add_argument("--resume-launched", action="store_true")
+    ap.add_argument("--reinit-optimizer", action="store_true",
+                    help="Restore model/RNG state but intentionally initialize a fresh optimizer.")
+    ap.add_argument("--architecture", choices=("baseline", "h3"), default="baseline")
     ap.add_argument("--expected-start-step", type=int, default=None,
                     help="Require this step in a resumed checkpoint (equal-budget guard).")
     ap.add_argument("--checkpoint-interval", type=int, default=2000)
     ap.add_argument("--event-tag", default="v2")
     ap.add_argument("--memmap-root", default=None)
-    ap.add_argument("--loss-profile", choices=("baseline", "h1_false_merge_reset", "h2_known_suppression"), default="baseline")
+    ap.add_argument("--loss-profile", choices=("baseline", "h1_false_merge_reset", "h2_known_suppression", "h3_router"), default="baseline")
     args = ap.parse_args()
     if args.expected_start_step is not None and not args.resume_checkpoint:
         raise RuntimeError("EXPECTED_START_STEP_REQUIRES_RESUME_CHECKPOINT")
@@ -231,7 +234,11 @@ def main() -> None:
     # and keeps both paths numerically identical.
     known_prototypes = torch.from_numpy(np.asarray(data.known_prototypes)).clone()
     active_known_mask = torch.from_numpy(np.asarray(data.active_known_mask)).clone()
-    model = CausalPersistentOCD(known_prototypes, active_known_mask, max_states=16).to(device)
+    if args.architecture == "h3":
+        from src.iclr27_phase89.hierarchical import HierarchicalPersistentOCD
+        model = HierarchicalPersistentOCD(known_prototypes, active_known_mask, max_states=16).to(device)
+    else:
+        model = CausalPersistentOCD(known_prototypes, active_known_mask, max_states=16).to(device)
     record_memory("after_model_create")
     resume_payload = None
     if args.resume_checkpoint:
@@ -253,7 +260,7 @@ def main() -> None:
             raise RuntimeError(
                 f"START_STEP_MISMATCH expected={args.expected_start_step} actual={start_step}"
             )
-        if resume_payload.get("optimizer"):
+        if resume_payload.get("optimizer") and not args.reinit_optimizer:
             optimizer.load_state_dict(resume_payload["optimizer"])
     sampler = BalancedCausalEventSampler(train_events, seed=seed)
     known_keys = list(data.known_eval_keys) if hasattr(data, "known_eval_keys") else list(__import__("src.iclr27_phase19r.evaluation.internal", fromlist=["fixed_known_keys"]).fixed_known_keys(data))
@@ -291,6 +298,7 @@ def main() -> None:
         return {
             "model": model.state_dict(), "optimizer": optimizer.state_dict(),
             "step": step, "fold": args.fold, "seed": seed, "route": args.tag,
+            "architecture": args.architecture, "optimizer_reinitialized": bool(args.reinit_optimizer),
             "support_mode": bool(args.support_mode), "event_tag": args.event_tag,
             "loss_profile": args.loss_profile,
             "manifest_sha256": manifest_sha,
@@ -352,8 +360,9 @@ def main() -> None:
     gc.collect(); malloc_trim()
     finished = dt.datetime.now(dt.timezone.utc)
     result = {
-        "schema_version": "trackocd.phase88.train.v1", "phase": 88, "route": args.tag,
+        "schema_version": "trackocd.phase88.train.v2", "phase": 88, "route": args.tag,
         "fold": args.fold, "device": str(device), "updates": args.updates, "start_step": start_step, "seed": seed,
+        "architecture": args.architecture, "optimizer_reinitialized": bool(args.reinit_optimizer),
         "support_mode": bool(args.support_mode), "event_tag": args.event_tag, "train_events": len(train_events),
         "loss_profile": args.loss_profile,
         "validation_events": validation_event_count, "sampler": sampler.stats(), "known_steps": known_steps,

@@ -140,6 +140,16 @@ def _rollout_track(model: CausalPersistentOCD, store: FeatureStore, memory: Stat
         if float(logits[0, target_index].detach().cpu()) <= -1e3:
             raise RuntimeError("TARGET_ACTION_MASKED_BY_STATE_MACHINE")
         losses["action_ce"].append(F.cross_entropy(logits, torch.tensor([target_index], device=device)))
+        if "router_logits" in output:
+            router_target = {"KNOWN": 0, "EXISTING": 1, "NEW": 1, "DEFER": 2, "RESET": 3}[desired]
+            losses.setdefault("router_ce", []).append(
+                F.cross_entropy(output["router_logits"], torch.tensor([router_target], device=device))
+            )
+            if desired in {"EXISTING", "NEW"}:
+                open_target = int(desired_slot) if desired == "EXISTING" and desired_slot is not None else model.max_states
+                losses.setdefault("open_action_ce", []).append(
+                    F.cross_entropy(output["open_logits"], torch.tensor([open_target], device=device))
+                )
         valid = tensors["prototype_mask"].any(dim=-1)
         relation_target = torch.zeros_like(output["state_logits"])
         if desired == "EXISTING" and desired_slot is not None and desired_slot < relation_target.shape[1]:
@@ -272,6 +282,8 @@ def rollout_known_event(model: CausalPersistentOCD, store: FeatureStore, key: st
             slot = int(torch.where(known_mask.bool().reshape(-1))[0][0])
         if slot is not None:
             loss_terms.append(F.cross_entropy(out["joint_logits"], torch.tensor([slot], device=device)))
+            if "router_logits" in out:
+                loss_terms.append(F.cross_entropy(out["router_logits"], torch.tensor([0], device=device)))
             others = out["joint_logits"].clone(); others[:, slot] = -1e4
             loss_terms.append(0.75 * F.softplus(others.max(dim=-1).values - out["joint_logits"][:, slot] + 0.2).mean())
             trace.append({"position": p + 1, "action": "KNOWN", "known_index": slot})
@@ -290,7 +302,7 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
         if j is not None:
             mask_np[j] = False
     known_mask = torch.from_numpy(mask_np).to(device)
-    losses: dict[str, list[torch.Tensor]] = {"action_ce": [], "state_relation": [], "false_merge_risk": [], "new_existing_margin": [], "commit_defer_margin": [], "reset_margin": [], "known_margin": [], "known_suppression": []}
+    losses: dict[str, list[torch.Tensor]] = {"action_ce": [], "state_relation": [], "false_merge_risk": [], "new_existing_margin": [], "commit_defer_margin": [], "reset_margin": [], "known_margin": [], "known_suppression": [], "router_ce": [], "open_action_ce": []}
     memory = StateMemoryV2(max_states=model.max_states, max_prototypes=4, device=device)
     trace: list[dict[str, Any]] = []
     rng = rng or random.Random(0)
@@ -318,6 +330,12 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
                    "false_merge_risk": 2.0, "new_existing_margin": 0.75,
                    "commit_defer_margin": 0.75, "reset_margin": 0.75,
                    "known_margin": 0.75}
+    elif loss_profile == "h3_router":
+        weights = {"action_ce": 1.0, "state_relation": 1.0,
+                   "false_merge_risk": 2.0, "new_existing_margin": 0.75,
+                   "commit_defer_margin": 0.75, "reset_margin": 0.75,
+                   "known_margin": 0.75, "router_ce": 1.0,
+                   "open_action_ce": 1.0}
     else:
         raise ValueError(f"unknown loss profile: {loss_profile}")
     present = {k: sum(v) / max(len(v), 1) for k, v in losses.items() if v}
