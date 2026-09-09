@@ -92,7 +92,7 @@ def _rollout_track(model: CausalPersistentOCD, store: FeatureStore, memory: Stat
                    event: dict[str, Any], track_key: str, role: str, category: int,
                    known_mask: torch.Tensor, teacher_probability: float, rng: random.Random,
                    train: bool, losses: dict[str, list[torch.Tensor]], trace: list[dict[str, Any]],
-                   support_mode: bool) -> TargetSession:
+                   support_mode: bool, loss_profile: str) -> TargetSession:
     device = next(model.parameters()).device
     array = store.track(track_key)
     n = min(16, len(array.raw))
@@ -165,6 +165,24 @@ def _rollout_track(model: CausalPersistentOCD, store: FeatureStore, memory: Stat
         if desired == "RESET":
             non_reset = torch.cat([output["new_logit"].reshape(1, 1), output["defer_logit"].reshape(1, 1), output["state_logits"].masked_fill(~valid, -1e4)], dim=1).max(dim=-1).values
             losses["reset_margin"].append(0.75 * F.softplus(non_reset - output["reset_logit"] + 0.2).mean())
+        if loss_profile == "h2_known_suppression" and desired != "KNOWN":
+            # TRAIN-only safety supervision for the failure exposed by H1:
+            # pseudo-novel events were allowed to win through an unrelated
+            # KNOWN logit.  Compare the strongest legal known branch with
+            # the desired non-known action; no category/ID is fed to the
+            # model and inference/evaluator contracts remain unchanged.
+            known_valid = known_mask.reshape(1, -1).bool()
+            if bool(known_valid.any()):
+                best_known = output["known_logits"].masked_fill(~known_valid, -1e4).max(dim=-1).values
+                if desired == "EXISTING" and desired_slot is not None:
+                    non_known = output["state_logits"][:, int(desired_slot)]
+                elif desired == "NEW":
+                    non_known = output["new_logit"]
+                elif desired == "DEFER":
+                    non_known = output["defer_logit"]
+                else:  # RESET
+                    non_known = output["reset_logit"]
+                losses["known_suppression"].append(F.softplus(best_known - non_known + 0.2).mean())
         with torch.no_grad():
             predicted, pred_slot, confidence = decode_joint_action(logits, model.known_count, model.max_states)
         use_teacher = bool(train and rng.random() < teacher_probability)
@@ -262,7 +280,8 @@ def rollout_known_event(model: CausalPersistentOCD, store: FeatureStore, key: st
 
 def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[str, Any],
                   train: bool, teacher_probability: float = 0.0,
-                  rng: random.Random | None = None, support_mode: bool = True) -> tuple[torch.Tensor, dict[str, Any]]:
+                  rng: random.Random | None = None, support_mode: bool = True,
+                  loss_profile: str = "baseline") -> tuple[torch.Tensor, dict[str, Any]]:
     device = next(model.parameters()).device
     data = store.data
     mask_np = np.asarray(data.active_known_mask, dtype=bool).copy()
@@ -271,15 +290,36 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
         if j is not None:
             mask_np[j] = False
     known_mask = torch.from_numpy(mask_np).to(device)
-    losses: dict[str, list[torch.Tensor]] = {"action_ce": [], "state_relation": [], "false_merge_risk": [], "new_existing_margin": [], "commit_defer_margin": [], "reset_margin": [], "known_margin": []}
+    losses: dict[str, list[torch.Tensor]] = {"action_ce": [], "state_relation": [], "false_merge_risk": [], "new_existing_margin": [], "commit_defer_margin": [], "reset_margin": [], "known_margin": [], "known_suppression": []}
     memory = StateMemoryV2(max_states=model.max_states, max_prototypes=4, device=device)
     trace: list[dict[str, Any]] = []
     rng = rng or random.Random(0)
     for source in event["source_tracks"]:
-        _rollout_track(model, store, memory, event, source["track_key"], "source", int(source["category_for_loss_only"]), known_mask, teacher_probability, rng, train, losses, trace, support_mode)
+        _rollout_track(model, store, memory, event, source["track_key"], "source", int(source["category_for_loss_only"]), known_mask, teacher_probability, rng, train, losses, trace, support_mode, loss_profile)
     target = event["target_track_key"]
-    _rollout_track(model, store, memory, event, target, "target", int(event["target_category_for_loss_only"]), known_mask, teacher_probability, rng, train, losses, trace, support_mode)
-    weights = {"action_ce": 1.0, "state_relation": 1.0, "false_merge_risk": 2.0, "new_existing_margin": 0.75, "commit_defer_margin": 0.75, "reset_margin": 0.75, "known_margin": 0.75}
+    _rollout_track(model, store, memory, event, target, "target", int(event["target_category_for_loss_only"]), known_mask, teacher_probability, rng, train, losses, trace, support_mode, loss_profile)
+    # H1 is a single TRAIN-only safety-supervision repair registered after
+    # C0/C1 validation showed negative false-merge was dominant.  It changes
+    # only the relative penalty on wrong EXISTING bindings; inference,
+    # transitions, thresholds and StateMemory are unchanged.  Keeping the
+    # profile explicit makes old checkpoints/results reproducible.
+    if loss_profile == "h1_false_merge_reset":
+        weights = {"action_ce": 1.0, "state_relation": 1.0,
+                   "false_merge_risk": 5.0, "new_existing_margin": 1.25,
+                   "commit_defer_margin": 0.75, "reset_margin": 1.25,
+                   "known_margin": 0.75}
+    elif loss_profile == "h2_known_suppression":
+        weights = {"action_ce": 1.0, "state_relation": 1.0,
+                   "false_merge_risk": 2.0, "new_existing_margin": 0.75,
+                   "commit_defer_margin": 0.75, "reset_margin": 0.75,
+                   "known_margin": 0.75, "known_suppression": 1.5}
+    elif loss_profile == "baseline":
+        weights = {"action_ce": 1.0, "state_relation": 1.0,
+                   "false_merge_risk": 2.0, "new_existing_margin": 0.75,
+                   "commit_defer_margin": 0.75, "reset_margin": 0.75,
+                   "known_margin": 0.75}
+    else:
+        raise ValueError(f"unknown loss profile: {loss_profile}")
     present = {k: sum(v) / max(len(v), 1) for k, v in losses.items() if v}
     total = sum(weights[k] * v for k, v in present.items())
     target_trace = [x for x in trace if x.get("role") == "target"]
@@ -293,6 +333,7 @@ def rollout_event(model: CausalPersistentOCD, store: FeatureStore, event: dict[s
             reset_reasons[reason or "unknown"] = reset_reasons.get(reason or "unknown", 0) + 1
     return total, {
         "event_id": event.get("event_id"), "polarity": event.get("polarity"), "trace": trace,
+        "loss_profile": loss_profile,
         "losses": {k: float(v.detach().cpu()) for k, v in present.items()},
         "state_count": len(memory.states),
         "reset_targets": sum(int(x["target"] == "RESET") for x in trace),

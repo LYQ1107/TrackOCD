@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-torch.set_num_threads(2)
+torch.set_num_threads(int(os.environ.get("TRACKOCD_TORCH_THREADS", "2")))
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -112,6 +112,31 @@ def mem_available_kib() -> int:
     return 0
 
 
+def load_model_state(model: torch.nn.Module, state: dict[str, torch.Tensor], device: torch.device) -> None:
+    """Load a checkpoint without the legacy CPU load_state_dict segfault.
+
+    The project environment uses an older CUDA/PyTorch build whose CPU
+    ``load_state_dict`` path can segfault on this controller's GRU tensors.
+    Explicit copies are numerically identical and leave the normal CUDA path
+    unchanged.
+    """
+    if device.type != "cpu":
+        model.load_state_dict(state, strict=False)
+        return
+    current = model.state_dict()
+    missing = []
+    with torch.no_grad():
+        for name, value in state.items():
+            if name not in current:
+                continue
+            current[name].copy_(value)
+        for name in current:
+            if name not in state:
+                missing.append(name)
+    if missing:
+        raise RuntimeError(f"checkpoint missing model tensors: {missing}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fold", type=int, required=True)
@@ -126,6 +151,7 @@ def main() -> None:
     ap.add_argument("--checkpoint-interval", type=int, default=2000)
     ap.add_argument("--event-tag", default="v2")
     ap.add_argument("--memmap-root", default=None)
+    ap.add_argument("--loss-profile", choices=("baseline", "h1_false_merge_reset", "h2_known_suppression"), default="baseline")
     args = ap.parse_args()
     marker = OUT / "completion" / f"{args.tag}.launched"
     done = OUT / "completion" / f"{args.tag}.done"
@@ -159,6 +185,7 @@ def main() -> None:
         "status": "LAUNCHED", "phase": 88, "route": args.tag, "fold": args.fold,
         "device": str(device), "pid": os.getpid(), "updates": args.updates,
         "seed": seed, "support_mode": bool(args.support_mode),
+        "loss_profile": args.loss_profile,
         "manifest_sha256": manifest_sha, "created_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
     })
     memory_profile_path = OUT / "audit" / f"memory_profile_{args.tag}.jsonl"
@@ -193,15 +220,27 @@ def main() -> None:
 
     rss_samples: list[dict] = []
     record_memory("after_data_open")
-    model = CausalPersistentOCD(torch.from_numpy(np.asarray(data.known_prototypes)), torch.from_numpy(np.asarray(data.active_known_mask)), max_states=16).to(device)
+    # Clone read-only memmap-backed buffers before CPU construction.  Without
+    # this, the legacy CPU checkpoint path can try to copy into a read-only
+    # NumPy-backed ``active_known_mask`` and segfault; CUDA construction already
+    # materializes a device copy, but using explicit writable tensors is safer
+    # and keeps both paths numerically identical.
+    known_prototypes = torch.from_numpy(np.asarray(data.known_prototypes)).clone()
+    active_known_mask = torch.from_numpy(np.asarray(data.active_known_mask)).clone()
+    model = CausalPersistentOCD(known_prototypes, active_known_mask, max_states=16).to(device)
     record_memory("after_model_create")
     resume_payload = None
     if args.resume_checkpoint:
-        resume_payload = torch.load(args.resume_checkpoint, map_location=device)
-        model.load_state_dict(resume_payload["model"], strict=False)
+        # Checkpoint RNG state is a CPU ByteTensor.  Mapping the complete
+        # payload to CUDA makes torch.set_rng_state reject it before the
+        # continuation can start.  Keep the payload on CPU; load_state_dict
+        # and optimizer restore copy the model/state tensors to the active
+        # device as usual, while RNG restoration remains type-correct.
+        resume_payload = torch.load(args.resume_checkpoint, map_location="cpu")
+        load_model_state(model, resume_payload["model"], device)
     elif args.init_checkpoint:
         payload = torch.load(args.init_checkpoint, map_location=device)
-        model.load_state_dict(payload["model"], strict=False)
+        load_model_state(model, payload["model"], device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=2e-4, weight_decay=1e-4)
     start_step = 0
     if resume_payload is not None:
@@ -245,6 +284,7 @@ def main() -> None:
             "model": model.state_dict(), "optimizer": optimizer.state_dict(),
             "step": step, "fold": args.fold, "seed": seed, "route": args.tag,
             "support_mode": bool(args.support_mode), "event_tag": args.event_tag,
+            "loss_profile": args.loss_profile,
             "manifest_sha256": manifest_sha,
             "semantic_contract_sha256": semantic_contract_sha(),
             "known_prototype_hash": hashlib.sha256(model.known_prototypes.detach().cpu().numpy().tobytes()).hexdigest(),
@@ -267,7 +307,8 @@ def main() -> None:
                 event = sampler.sample()
                 loss, trace = rollout_event(model, store, event, train=True,
                                             teacher_probability=teacher_probability(step), rng=rng,
-                                            support_mode=args.support_mode)
+                                            support_mode=args.support_mode,
+                                            loss_profile=args.loss_profile)
                 reset_targets += int(trace.get("reset_targets", 0)); reset_predictions += int(trace.get("reset_predictions", 0))
                 reset_targets_source += int(trace.get("reset_targets_source", 0))
                 reset_targets_target += int(trace.get("reset_targets_target", 0))
@@ -306,6 +347,7 @@ def main() -> None:
         "schema_version": "trackocd.phase88.train.v1", "phase": 88, "route": args.tag,
         "fold": args.fold, "device": str(device), "updates": args.updates, "start_step": start_step, "seed": seed,
         "support_mode": bool(args.support_mode), "event_tag": args.event_tag, "train_events": len(train_events),
+        "loss_profile": args.loss_profile,
         "validation_events": validation_event_count, "sampler": sampler.stats(), "known_steps": known_steps,
         "reset_targets": reset_targets, "reset_predictions": reset_predictions,
         "reset_targets_source": reset_targets_source, "reset_targets_target": reset_targets_target,
