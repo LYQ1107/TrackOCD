@@ -191,7 +191,7 @@ def wait_for_resource(manager: ResourceManager, status: dict) -> tuple[object, l
     while True:
         free = discover_usable_gpus()
         snap = resources(manager)
-    status["resource_state"] = "WAITING_FOR_RESOURCE" if snap.safe_workers <= 0 else "RESOURCE_AVAILABLE"
+        status["resource_state"] = "WAITING_FOR_RESOURCE" if snap.safe_workers <= 0 else "RESOURCE_AVAILABLE"
         status["last_resource_snapshot"] = snap.as_dict()
         status["next_action"] = "wait 120 seconds and recompute resources" if snap.safe_workers <= 0 else "resume valid fix2 formal queue"
         atomic_json(OUT / "audit/fix2_continuous_supervisor_status.json", status)

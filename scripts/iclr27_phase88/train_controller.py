@@ -148,11 +148,15 @@ def main() -> None:
     ap.add_argument("--init-checkpoint", default=None)
     ap.add_argument("--resume-checkpoint", default=None)
     ap.add_argument("--resume-launched", action="store_true")
+    ap.add_argument("--expected-start-step", type=int, default=None,
+                    help="Require this step in a resumed checkpoint (equal-budget guard).")
     ap.add_argument("--checkpoint-interval", type=int, default=2000)
     ap.add_argument("--event-tag", default="v2")
     ap.add_argument("--memmap-root", default=None)
     ap.add_argument("--loss-profile", choices=("baseline", "h1_false_merge_reset", "h2_known_suppression"), default="baseline")
     args = ap.parse_args()
+    if args.expected_start_step is not None and not args.resume_checkpoint:
+        raise RuntimeError("EXPECTED_START_STEP_REQUIRES_RESUME_CHECKPOINT")
     marker = OUT / "completion" / f"{args.tag}.launched"
     done = OUT / "completion" / f"{args.tag}.done"
     metrics_path = OUT / "metrics" / f"{args.tag}.json"
@@ -245,6 +249,10 @@ def main() -> None:
     start_step = 0
     if resume_payload is not None:
         start_step = int(resume_payload.get("step", 0))
+        if args.expected_start_step is not None and start_step != int(args.expected_start_step):
+            raise RuntimeError(
+                f"START_STEP_MISMATCH expected={args.expected_start_step} actual={start_step}"
+            )
         if resume_payload.get("optimizer"):
             optimizer.load_state_dict(resume_payload["optimizer"])
     sampler = BalancedCausalEventSampler(train_events, seed=seed)
@@ -362,6 +370,13 @@ def main() -> None:
         "semantic_contract_sha256": final_payload["semantic_contract_sha256"],
         "sampler_state_persisted": True, "rollout_rng_state_persisted": True,
         "resumed_from": args.resume_checkpoint,
+        "resume_state_complete": bool(resume_payload is None or all(
+            resume_payload.get(k) is not None for k in
+            ("optimizer", "sampler_state", "rollout_rng_state", "python_rng_state", "numpy_rng_state", "torch_rng_state")
+        )),
+        "resume_state_repair_required": bool(resume_payload is not None and any(
+            resume_payload.get(k) is None for k in ("sampler_state", "rollout_rng_state")
+        )),
         "rss_samples": rss_samples,
         "public_dev_q1_sealed_accessed": False, "future_rows_or_tracks": False,
         "ids_or_text_as_model_input": False,

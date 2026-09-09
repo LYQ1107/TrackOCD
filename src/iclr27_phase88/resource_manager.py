@@ -22,7 +22,14 @@ MAX_GPUS = 4
 DEFAULT_WORKER_GPU_MIB = 4096
 
 
-def _meminfo() -> dict[str, int]:
+def read_meminfo() -> dict[str, int]:
+    """Read Linux memory counters in KiB.
+
+    ``MemFree`` is deliberately retained as a diagnostic only.  Shared
+    feature memmaps can turn it into page cache pressure even while the
+    kernel can reclaim enough memory safely; scheduling decisions therefore
+    use ``MemAvailable`` exclusively.
+    """
     result: dict[str, int] = {}
     try:
         for line in Path("/proc/meminfo").read_text().splitlines():
@@ -33,6 +40,15 @@ def _meminfo() -> dict[str, int]:
     except (OSError, ValueError):
         return result
     return result
+
+
+def _meminfo() -> dict[str, int]:
+    """Backward-compatible alias for older Phase88 callers."""
+    return read_meminfo()
+
+
+def mem_available_kib() -> int:
+    return int(read_meminfo().get("MemAvailable", 0))
 
 
 def process_memory_detail(pid: int | None = None) -> dict[str, int]:
@@ -161,8 +177,13 @@ def safe_worker_count(
 @dataclass
 class ResourceSnapshot:
     timestamp_utc: str
+    mem_free_kib: int
     mem_available_kib: int
     mem_total_kib: int
+    buffers_kib: int
+    cached_kib: int
+    swap_total_kib: int
+    swap_free_kib: int
     worker_rss_kib: int
     worker_anon_kib: int
     worker_pss_kib: int
@@ -191,8 +212,13 @@ class ResourceManager:
                                  len(free), self.max_workers)
         return ResourceSnapshot(
             timestamp_utc=dt.datetime.now(dt.timezone.utc).isoformat(),
+            mem_free_kib=int(info.get("MemFree", 0)),
             mem_available_kib=int(info.get("MemAvailable", 0)),
             mem_total_kib=int(info.get("MemTotal", 0)),
+            buffers_kib=int(info.get("Buffers", 0)),
+            cached_kib=int(info.get("Cached", 0)),
+            swap_total_kib=int(info.get("SwapTotal", 0)),
+            swap_free_kib=int(info.get("SwapFree", 0)),
             worker_rss_kib=int(detail.get("Rss", self.worker_rss_kib)),
             worker_anon_kib=int(detail.get("Anonymous", 0)),
             worker_pss_kib=int(detail.get("Pss", 0)),

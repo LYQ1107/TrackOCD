@@ -148,7 +148,32 @@ def replay_persistent_records(model: CausalPersistentOCD, data, events: list[dic
 
 def finalize_persistent_metrics(records: list[dict[str, Any]], known_metrics: dict[str, Any]) -> dict[str, Any]:
     """Apply the exact Phase19R metrics implementation after all shards."""
-    return phase19r_metrics(records, known_metrics)
+    out = phase19r_metrics(records, known_metrics)
+    out.update(extended_open_world_metrics(records))
+    return out
+
+
+def extended_open_world_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Phase88 diagnostics that split anonymous and known false assignment.
+
+    The historical ``negative_false_merge_rate`` remains untouched in the
+    Phase19R payload.  These fields make the open-world failure modes explicit
+    without changing training or selection semantics.
+    """
+    neg = [r for r in records if r.get("kind") == "negative_new"]
+    anonymous = [bool(r.get("first_commit") and r["first_commit"].get("action") == "EXISTING") for r in neg]
+    known = [bool(r.get("first_commit") and r["first_commit"].get("action") == "KNOWN") for r in neg]
+    open_world = [a or k for a, k in zip(anonymous, known)]
+    n = max(len(neg), 1)
+    return {
+        "anonymous_false_merge_count": int(sum(anonymous)),
+        "known_capture_error_count": int(sum(known)),
+        "open_world_false_assignment_count": int(sum(open_world)),
+        "anonymous_false_merge_rate": float(sum(anonymous) / n) if neg else 0.0,
+        "known_capture_error_rate": float(sum(known) / n) if neg else 0.0,
+        "open_world_false_assignment_rate": float(sum(open_world) / n) if neg else 0.0,
+        "extended_metric_protocol": "phase88_negative_first_commit_action_split",
+    }
 
 
 def evaluate_persistent_events(model: CausalPersistentOCD, data, events: list[dict[str, Any]],
