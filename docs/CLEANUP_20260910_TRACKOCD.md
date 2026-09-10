@@ -32,3 +32,24 @@ Their checksums, sizes, timestamps, and archive paths are recorded in
 `/data2/usr_for_deadline/trackocd_archive/project_cleanup_20260910/`.
 No current Phase90 checkpoint, marker, manifest, report, code, or active
 training input was deleted. The cleanup did not terminate any process.
+
+## Follow-up historical-output archive (same cleanup window)
+
+After a second read-only dependency and process audit, all remaining real
+`outputs/iclr27_phase*` directories for completed phases were confirmed to be
+closed historical artifacts. No process had them open, and the live Phase90
+route reads Phase88/89 assets from `/data2`; those active namespaces were
+excluded. The completed historical directories were moved (not deleted) to
+
+`/data2/usr_for_deadline/trackocd_archive/project_cleanup_20260910/outputs/`
+
+and replaced at their original paths by symlinks. The exact per-directory
+source, target, byte count, file count, and latest mtime are recorded in
+`outputs/phase_output_dirs_manifest.tsv` in that archive. The manifest has 99
+directories and totals approximately 9.8 GiB. The retained active paths are
+`outputs/iclr27_phase88`, `outputs/iclr27_phase89`, and
+`outputs/iclr27_phase90`; all three resolve successfully. A postflight check
+found zero real historical phase directories and zero broken phase symlinks,
+and no Phase90 process remained. `checkpoints/`, `data/`, `runs/`,
+`third_party/`, source code, manifests, reports, and all Phase90 artifacts
+were retained.
