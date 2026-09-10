@@ -241,6 +241,12 @@ def main() -> None:
         model = CausalPersistentOCD(known_prototypes, active_known_mask, max_states=16).to(device)
     record_memory("after_model_create")
     resume_payload = None
+    optimizer_policy = "FRESH_INITIALIZATION"
+    optimizer_restored = False
+    resume_state_fields = {
+        "optimizer": False, "sampler_state": False, "rollout_rng_state": False,
+        "python_rng_state": False, "numpy_rng_state": False, "torch_rng_state": False,
+    }
     if args.resume_checkpoint:
         # Checkpoint RNG state is a CPU ByteTensor.  Mapping the complete
         # payload to CUDA makes torch.set_rng_state reject it before the
@@ -248,6 +254,15 @@ def main() -> None:
         # and optimizer restore copy the model/state tensors to the active
         # device as usual, while RNG restoration remains type-correct.
         resume_payload = torch.load(args.resume_checkpoint, map_location="cpu")
+        for key in resume_state_fields:
+            resume_state_fields[key] = resume_payload.get(key) is not None
+        if args.resume_launched and not args.reinit_optimizer:
+            required = tuple(resume_state_fields)
+            missing = [key for key in required if not resume_state_fields[key]]
+            if missing:
+                raise RuntimeError(
+                    "RESOURCE_RESUME_STATE_INCOMPLETE: " + ",".join(missing)
+                )
         load_model_state(model, resume_payload["model"], device)
     elif args.init_checkpoint:
         payload = torch.load(args.init_checkpoint, map_location=device)
@@ -260,8 +275,15 @@ def main() -> None:
             raise RuntimeError(
                 f"START_STEP_MISMATCH expected={args.expected_start_step} actual={start_step}"
             )
+        if args.reinit_optimizer:
+            optimizer_policy = "REINIT_ONCE_AT_BASE"
+        else:
+            optimizer_policy = "RESTORE_AFTER_PAUSE"
         if resume_payload.get("optimizer") and not args.reinit_optimizer:
             optimizer.load_state_dict(resume_payload["optimizer"])
+            optimizer_restored = True
+    elif args.reinit_optimizer:
+        optimizer_policy = "REINIT_ONCE_AT_BASE"
     sampler = BalancedCausalEventSampler(train_events, seed=seed)
     known_keys = list(data.known_eval_keys) if hasattr(data, "known_eval_keys") else list(__import__("src.iclr27_phase19r.evaluation.internal", fromlist=["fixed_known_keys"]).fixed_known_keys(data))
     known_mask = torch.from_numpy(np.asarray(data.active_known_mask, dtype=bool)).to(device)
@@ -299,6 +321,10 @@ def main() -> None:
             "model": model.state_dict(), "optimizer": optimizer.state_dict(),
             "step": step, "fold": args.fold, "seed": seed, "route": args.tag,
             "architecture": args.architecture, "optimizer_reinitialized": bool(args.reinit_optimizer),
+            "optimizer_policy": optimizer_policy,
+            "optimizer_restored": bool(optimizer_restored),
+            "resume_checkpoint": args.resume_checkpoint,
+            "resume_state_fields": dict(resume_state_fields),
             "support_mode": bool(args.support_mode), "event_tag": args.event_tag,
             "loss_profile": args.loss_profile,
             "manifest_sha256": manifest_sha,
@@ -363,6 +389,10 @@ def main() -> None:
         "schema_version": "trackocd.phase88.train.v2", "phase": 88, "route": args.tag,
         "fold": args.fold, "device": str(device), "updates": args.updates, "start_step": start_step, "seed": seed,
         "architecture": args.architecture, "optimizer_reinitialized": bool(args.reinit_optimizer),
+        "optimizer_policy": optimizer_policy,
+        "optimizer_restored": bool(optimizer_restored),
+        "resume_checkpoint": args.resume_checkpoint,
+        "resume_state_fields": dict(resume_state_fields),
         "support_mode": bool(args.support_mode), "event_tag": args.event_tag, "train_events": len(train_events),
         "loss_profile": args.loss_profile,
         "validation_events": validation_event_count, "sampler": sampler.stats(), "known_steps": known_steps,
