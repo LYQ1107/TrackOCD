@@ -147,6 +147,18 @@ def advance_once() -> dict:
         if not run_stage(state, "GT_PHE", command, artifact):
             return state
         return state
+    if state.get("state") == "GT_CURRENT_MODEL":
+        artifact = OUTPUT_TARGET / "audit/current_model_contract.json"
+        command = [FEATURE_PYTHON, str(ROOT / "scripts/trackocd_v2/audit_current_model_contract.py")]
+        if not run_stage(state, "GT_CURRENT_MODEL", command, artifact):
+            return state
+        return state
+    if state.get("state") == "GT_BENCHMARK_TABLE":
+        artifact = OUTPUT_TARGET / "tables/gt_benchmark_table.json"
+        command = [PYTHON, str(ROOT / "scripts/trackocd_v2/build_gt_benchmark_table.py")]
+        if not run_stage(state, "GT_BENCHMARK_TABLE", command, artifact):
+            return state
+        return state
     if state.get("state") == "PREDICTED_STREAM_BUILD":
         stream_command = [PYTHON, str(ROOT / "scripts/trackocd_v2/build_predicted_stream.py")]
         stream_result = subprocess.run(stream_command, cwd=ROOT)
