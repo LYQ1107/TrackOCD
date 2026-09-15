@@ -74,6 +74,14 @@
   `wrong assignment / all GT_REUSE_ELIGIBLE novel targets`；DEFER/no-commit
   只进入 unresolved，不计为 false assignment。针对该分母补充回归断言，v2
   tests 仍 `5 passed`。
+- 冻结 Phase90 H3_REPRO 做了只读结构审计：四折 checkpoint 均可加载，输入
+  维度为 raw=768/geometry=15，known prototype 为 48 个；与 v2 的 78 个
+  known role 重合 48 个（覆盖 61.54%）。但旧模型使用 `0.8*CLS+0.2*ROI`
+  与旧 Phase19R fold 归一化几何，v2 cache 使用纯 CLS 且几何单独重建，故
+  `audit_current_model_contract.py` 将其登记为
+  `STRUCTURALLY_LOADABLE_BUT_NOT_COMPARABLE`，没有生成指标，也没有接触 Test
+  semantic labels。后续只有显式 adapter/retrain 并完整标注覆盖缺口后才可放入
+  bake-off。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
