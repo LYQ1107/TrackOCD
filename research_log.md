@@ -87,6 +87,11 @@
   引用了 worker 外的局部 `hub`，会在首个样本处触发 `NameError`；最小修复为
   显式传入 `model_repo`。用真实 TAO frame、fake CPU DINO 输出完成写 artifact
   smoke，`EXTRACT_ONE_SMOKE_OK`；preflight 仍为 pending=7787、selected GPU=[]。
+- 低频窗口后 GPU 3/6 的外部 compute app 释放；在启动前确认 MemAvailable 约
+  81 GiB、process count 688、GPU 3/6 空闲。按固定一 worker 启动 GT Train+Val
+  p16 构建，preflight 选择 GPU 3（pending=7787），启动后 GPU 3 约 5.9 GiB
+  used、系统可用 RAM 仍约 81 GiB；外部 PID 16825--16834 未触碰，无 near-OOM
+  事件。该长任务仍在同一阻塞会话中运行，尚未宣称完成。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
