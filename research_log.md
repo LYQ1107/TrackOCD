@@ -99,6 +99,15 @@
   4 像素。真实失败样本回放通过 `CROP_REGRESSION_OK (4,32)` 与
   `FAILED_SAMPLE_EXTRACT_SMOKE_OK 366_2350`；保留 `.failed` 证据并从其余
   未完成 units 恢复，当前 Train pending=2186。
+- 修复后 GT p16 构建从 7418 个未完成 unit 恢复并正常 exit 0：Train
+  2555/2555、Val 5232/5232，完整 feature audit 为 `READY`，每个 split 的
+  prefix 1/2/4/8/16 均全覆盖，缺失/多余/坏文件为 0。唯一旧 `.failed` marker
+  是已修复的 `366_2350`，作为失败证据保留；无 OOM/near-OOM。
+- 首次 geometry gate 在完整 cache 上失败于 NumPy array 的 truthiness：
+  `auroc_positive_higher()`，随后函数级回归又定位到同根因的
+  `separation()` 调用点。两处均改为长度判断；
+  `GEOMETRY_AUROC_NUMPY_SMOKE_OK` 通过，尚未包装 geometry 指标，等待同一路由
+  重跑验证。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference

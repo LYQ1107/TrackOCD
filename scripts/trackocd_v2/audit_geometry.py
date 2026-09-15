@@ -54,7 +54,7 @@ def distribution_stats(values: Sequence[float]) -> Dict[str, Any]:
 
 
 def auroc_positive_higher(positive: Sequence[float], negative: Sequence[float]) -> float | None:
-    if not positive or not negative:
+    if len(positive) == 0 or len(negative) == 0:
         return None
     scores = np.asarray(list(positive) + list(negative), dtype=np.float64)
     labels = np.asarray([1] * len(positive) + [0] * len(negative), dtype=np.int8)
@@ -74,7 +74,7 @@ def auroc_positive_higher(positive: Sequence[float], negative: Sequence[float]) 
 
 
 def separation(positive: Sequence[float], negative: Sequence[float]) -> Dict[str, Any]:
-    if not positive or not negative:
+    if len(positive) == 0 or len(negative) == 0:
         return {"positive_higher_auroc": None, "cohen_d": None, "overlap_coefficient": None}
     p, n = np.asarray(positive, dtype=np.float64), np.asarray(negative, dtype=np.float64)
     pooled = np.sqrt((float(p.var()) + float(n.var())) / 2.0)
