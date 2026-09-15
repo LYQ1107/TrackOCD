@@ -213,7 +213,21 @@ def crop_box(image: Any, box: Sequence[float], context: float = 0.10) -> Any:
     yb = min(float(height), cy + bh * (1.0 + 2.0 * context) * 0.5)
     if xb - xa < 2 or yb - ya < 2:
         xa, ya, xb, yb = max(0.0, x1), max(0.0, y1), min(float(width), x2), min(float(height), y2)
-    return image.crop((int(xa), int(ya), int(xb), int(yb)))
+    left, top, right, bottom = int(xa), int(ya), int(xb), int(yb)
+    # A valid object can touch an image boundary and be only a few pixels
+    # wide.  Keep that observation instead of dropping the track: expand only
+    # the integer crop window to the minimum usable raster size.
+    if right - left < 4:
+        if left + 4 <= width:
+            right = left + 4
+        else:
+            left, right = max(0, width - 4), width
+    if bottom - top < 4:
+        if top + 4 <= height:
+            bottom = top + 4
+        else:
+            top, bottom = max(0, height - 4), height
+    return image.crop((left, top, right, bottom))
 
 
 def normalized_mean(values: np.ndarray, quality: Sequence[float], end: int) -> np.ndarray:

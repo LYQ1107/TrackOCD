@@ -92,6 +92,13 @@
   p16 构建，preflight 选择 GPU 3（pending=7787），启动后 GPU 3 约 5.9 GiB
   used、系统可用 RAM 仍约 81 GiB；外部 PID 16825--16834 未触碰，无 near-OOM
   事件。该长任务仍在同一阻塞会话中运行，尚未宣称完成。
+- 首次 p16 路由在 369 个 Train track 完成后失败：`366_2350` 的有效首帧边界
+  小框 `[0,266,3,293]` 被 context crop 整数化为 3 像素宽，触发
+  `ValueError('degenerate crop')`；原图存在且尺寸为 1280x720，非数据损坏，
+  也没有跳过样本。最小修复为仅将小于 4 像素的整数 crop window 向图像内部扩到
+  4 像素。真实失败样本回放通过 `CROP_REGRESSION_OK (4,32)` 与
+  `FAILED_SAMPLE_EXTRACT_SMOKE_OK 366_2350`；保留 `.failed` 证据并从其余
+  未完成 units 恢复，当前 Train pending=2186。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
