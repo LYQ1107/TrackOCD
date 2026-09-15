@@ -1,5 +1,52 @@
 # TrackOCD Research Log
 
+## TrackOCD v2 bootstrap and canonical protocol (2026-09-16)
+
+### 简短研究计划
+
+1. 在独立 `trackocd_v2` namespace 锁定 TAO Train/Val/Test lineage、TAO-OW
+   base/novel/distractor roles 和既有四种 stream order。
+2. 建立不把 evaluator 标签送入模型的 `TrackSample`、GT-track stream、
+   common visual feature audit 与统一 Standard OCD/Persistent evaluator。
+3. 只有 common feature 的 prefix 1/2/4/8/16 完整后，才运行 geometry 和
+   Nearest/DP-Means/PHE/历史 adapter 的第一张比较表。
+
+### 已执行与结果
+
+- 新建分支 `codex/trackocd-v2`，旧 Phase19R/88/89/90 保持只读；v2 大输出
+  定向到 `/data2/usr_for_deadline/trackocd_v2/project_outputs`，项目路径只
+  保留 symlink。
+- `canonical_tao_universe.json` 锁定 Train `7eb551...`、Val `041488...`，
+  历史 TempoTrack Test 主文件为
+  `/data1/LWR/vranlee/SERVER_ONLY/avis/masa/data/tao/annotations/tao_test_lvis_v1_classes.json`
+  （结构性审计，1203 categories/1419 videos/52155 images/166764 anns/
+  7946 tracks），并保留官方 raw Test 作为 lineage 对照。Test semantic GT
+  未用于选择。
+- GT stream build 完成：Val 5232 non-distractor tracks，main/seed1027/
+  seed1028/seed1029 直接复用 `tao_ow_ocd_v1` 的既有顺序；Train 2555 个
+  非-distractor tracks。Train 中不在 Val role universe 的类别标记为
+  `train_unassigned`，没有被升级为 novel。
+- 第一次 PROTOCOL_BUILD 失败原因是 Train extra category 被错误视为未分配；
+  最小修复后 targeted smoke 通过。随后又修复 Python 3.8 不支持 dict union
+  和老 Git 不支持 `branch --show-current` 两个环境兼容问题。
+- 历史 DINOv2 ViT-B/14 cache 只读审计通过：Val 5232/5232、768 维、无坏文件、
+  无 category/text/physical-ID feature；但 frame prefix 分布最高为 8，缺少
+  注册要求的 prefix16。因此 `GT_FEATURE_BUILD` 记录为
+  `WAITING_RESOURCE/NEEDS_P16`，没有运行或包装不完整 cache 的 geometry/
+  baseline 结果。审计时全部 10 张 GPU 被外部 TempoTrack/COVTrack PID
+  16825--16834 占用，未触碰外部进程；MemAvailable 约 71 GiB，没有 OOM。
+- 增加独立的 `build_common_features.py`：输出到 `/data2` 的 v2 cache，保留
+  每个公开观测的 DINOv2 768-D descriptor，并生成 full/p1/p2/p4/p8/p16
+  的 quality-weighted causal aggregates；每个 track 使用 atomic output、
+  `.launched/.done/.failed` marker，最多 4 个动态空闲 GPU，至少保留 25% RAM。
+  资源 preflight 与 supervisor smoke 均正确返回等待状态，pending=7787，
+  selected GPU=0；没有启动本任务 worker。
+- 新增 v2 cache 审计、persistent evaluator 清理和 5 个 TrackOCD v2 tests；
+  `PYTHONPATH=. python -m pytest -q tests/trackocd_v2` 为 `5 passed`，system
+  Python 与 OVTR Python 均能编译 feature builder。当前 state 仍为
+  `GT_FEATURE_BUILD/WAITING_RESOURCE`，Test semantic access=false。
+
+
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
 
 ### 简短研究计划

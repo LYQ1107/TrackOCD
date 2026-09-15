@@ -1,0 +1,20 @@
+{
+  "schema_version": "trackocd.v2.protocol.v1",
+  "train_annotation": "data/raw/tao/annotations/train.json",
+  "val_annotation": "data/raw/tao/annotations/validation.json",
+  "test_annotation": "/data1/LWR/vranlee/SERVER_ONLY/avis/masa/data/tao/annotations/tao_test_lvis_v1_classes.json",
+  "known_source": "data/tao_ow_ocd_v1/splits/known_ids.json",
+  "novel_source": "data/tao_ow_ocd_v1/splits/unknown_ids_val.json",
+  "distractor_source": "data/tao_ow_ocd_v1/splits/distractor_ids.json",
+  "stream_orders": ["main", "seed1027", "seed1028", "seed1029"],
+  "prefixes": [1, 2, 4, 8, 16],
+  "feature": {
+    "encoder": "DINOv2 ViT-B/14",
+    "aggregation": "quality-weighted causal mean followed by L2 normalization",
+    "text_or_novel_logits": false,
+    "category_id_feature": false,
+    "physical_id_feature": false
+  },
+  "test_semantic_access": "forbidden until outputs/trackocd_v2/audit/FINAL_FREEZE.json exists",
+  "headline_metrics": ["TETA/OWTA", "AssA", "Old ACC", "New ACC", "H-score", "Commit-CT", "False Assignment Rate"]
+}
