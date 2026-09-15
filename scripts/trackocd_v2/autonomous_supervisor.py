@@ -160,18 +160,28 @@ def advance_once() -> dict:
             return state
         return state
     if state.get("state") == "PREDICTED_STREAM_BUILD":
-        stream_command = [PYTHON, str(ROOT / "scripts/trackocd_v2/build_predicted_stream.py")]
-        stream_result = subprocess.run(stream_command, cwd=ROOT)
-        if stream_result.returncode != 0:
-            state["status"] = "FAILED"
-            state.setdefault("failure_history", []).append({"stage": "PREDICTED_STREAM_BUILD", "returncode": stream_result.returncode, "time": now(), "command": stream_command})
-            write_state(state)
-            return state
+        stream_audit = OUTPUT_TARGET / "audit/predicted_track_stream.json"
+        stream_manifest = OUTPUT_TARGET / "manifests/tao_val_predicted_tracks.jsonl"
+        if not (stream_audit.exists() and stream_manifest.exists() and json.loads(stream_audit.read_text()).get("status") == "COMPLETE"):
+            stream_command = [PYTHON, str(ROOT / "scripts/trackocd_v2/build_predicted_stream.py")]
+            stream_result = subprocess.run(stream_command, cwd=ROOT)
+            if stream_result.returncode != 0:
+                state["status"] = "FAILED"
+                state.setdefault("failure_history", []).append({"stage": "PREDICTED_STREAM_BUILD", "returncode": stream_result.returncode, "time": now(), "command": stream_command})
+                write_state(state)
+                return state
         snapshot = resource_snapshot()
         feature_command = [FEATURE_PYTHON, str(ROOT / "scripts/trackocd_v2/build_common_features.py"), "--split", "pred", "--workers", "1"]
         feature_result = subprocess.run(feature_command, cwd=ROOT)
         if feature_result.returncode == 0:
-            mark_done(state, "PREDICTED_STREAM_BUILD", OUTPUT_TARGET / "audit/predicted_track_stream.json")
+            audit_command = [PYTHON, str(ROOT / "scripts/trackocd_v2/audit_predicted_features.py")]
+            audit_result = subprocess.run(audit_command, cwd=ROOT)
+            if audit_result.returncode == 0:
+                mark_done(state, "PREDICTED_STREAM_BUILD", OUTPUT_TARGET / "audit/predicted_feature_audit.json")
+            else:
+                state["status"] = "FAILED"
+                state.setdefault("failure_history", []).append({"stage": "PREDICTED_STREAM_BUILD", "returncode": audit_result.returncode, "time": now(), "command": audit_command})
+                write_state(state)
         elif feature_result.returncode == 2:
             state["status"] = "WAITING_RESOURCE"
             state["resource_events"].append({"stage": "PREDICTED_STREAM_BUILD", "reason": "predicted feature build is waiting for an idle GPU", "snapshot": snapshot, "feature_builder": feature_command, "time": now()})
@@ -180,6 +190,20 @@ def advance_once() -> dict:
             state["status"] = "FAILED"
             state.setdefault("failure_history", []).append({"stage": "PREDICTED_STREAM_BUILD", "returncode": feature_result.returncode, "time": now(), "command": feature_command})
             write_state(state)
+        return state
+    if state.get("state") in ("PRED_NEAREST", "PRED_DPMEANS", "PRED_PHE"):
+        stage = state["state"]
+        method = {"PRED_NEAREST": "nearest", "PRED_DPMEANS": "dpmeans", "PRED_PHE": "phe"}[stage]
+        artifact = OUTPUT_TARGET / ("tables/pred_%s.json" % method)
+        command = [FEATURE_PYTHON, str(ROOT / "scripts/trackocd_v2/run_pred_baselines.py"), "--method", method]
+        if not run_stage(state, stage, command, artifact):
+            return state
+        return state
+    if state.get("state") == "PRED_CURRENT_MODEL":
+        artifact = OUTPUT_TARGET / "audit/predicted_current_model_contract.json"
+        command = [PYTHON, str(ROOT / "scripts/trackocd_v2/audit_predicted_current_model.py")]
+        if not run_stage(state, "PRED_CURRENT_MODEL", command, artifact):
+            return state
         return state
     return state
 

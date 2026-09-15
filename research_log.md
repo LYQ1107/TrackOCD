@@ -121,6 +121,21 @@
   当前因外部 PID 17495、17496、17497、17498、17499、17501、17502、17503、
   17505、17506 重新占用全部 GPU 而返回 `WAITING_RESOURCE`，pending=649378，
   未启动本任务 worker。
+- 低频监控窗口（单次阻塞等待约 20 分钟）后复核：Luna 目标会话返回 inactive 的
+  历史完成状态；本机 MemAvailable 约 70 GiB、无 swap，10 张 GPU 仍分别由上述
+  外部 `ovtr` PID 占用，predicted feature root 仍不存在。本任务未启动重复 worker，
+  未触碰外部进程，也没有 near-OOM 事件。
+- 在等待 GPU 期间实现 predicted CPU 路径：`audit_predicted_features.py` 逐文件
+  校验 649378 个 public feature 的 p1/p2/p4/p8/p16 与无 GT 字段契约；
+  `run_pred_baselines.py` 对完整 public stream 先产生 causal decision JSONL，之后
+  才调用 `build_predicted_evaluator_join.py`，用历史 IoU>=0.5 子集做几何 Hungarian
+  evaluator-only join。加入 H3 predicted contract 的显式
+  `EXCLUDED_NOT_COMPARABLE` 记录，不生成当前模型伪指标；监督器已接入
+  PRED_NEAREST/PRED_DPMEANS/PRED_PHE/PRED_CURRENT_MODEL。
+- 新路径编译及 geometry-only join smoke 通过，`PYTHONPATH=. pytest -q
+  tests/trackocd_v2/test_evaluators.py tests/trackocd_v2/test_schema.py` 为
+  `5 passed`；首次无 `PYTHONPATH` 的 pytest 收集失败是环境入口问题，未改动测试
+  协议。预测特征尚未就绪，故没有宣称 predicted baseline 完成或产生指标。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
