@@ -141,6 +141,12 @@ def advance_once() -> dict:
         if not run_stage(state, stage, command, artifact):
             return state
         return state
+    if state.get("state") == "GT_PHE":
+        artifact = OUTPUT_TARGET / "tables/gt_phe.json"
+        command = [FEATURE_PYTHON, str(ROOT / "scripts/trackocd_v2/run_gt_phe.py")]
+        if not run_stage(state, "GT_PHE", command, artifact):
+            return state
+        return state
     return state
 
 

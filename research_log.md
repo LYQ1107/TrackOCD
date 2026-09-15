@@ -55,6 +55,16 @@
   evaluator labels，保留完整 per-row diagnostics。
 - 在缺失 p16 的当前状态下，geometry 与 Nearest smoke 都按预期返回
   `WAITING_FEATURES`，没有产生伪造指标，也没有读取 TAO Test semantic GT。
+- geometry gate 扩展为 Train/Val 双 split 的 same-identity、same-category
+  different-track/different-video、different-category cosine/distance 分布，
+  含 quantiles、AUROC、Cohen-d、overlap coefficient，并原子输出 JSON/CSV。
+  新增冻结历史 PHE-Track adapter：复用 `runs/phe_track/dinov2_seed1027` 的
+  48-class checkpoint，固定 Hamming radius=2、CPU 可运行，明确记录其相对
+  78 个 known role 的覆盖缺口；没有重新训练或把 checkpoint 当作完整 known
+  classifier。
+- PHE 单向量 adapter smoke 通过（48 class IDs，有限 KNOWN/NEW/EXISTING
+  decision），全套 v2 tests 仍为 `5 passed`；p16 未就绪所以正式 PHE/geometry
+  结果未运行。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
