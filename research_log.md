@@ -70,6 +70,10 @@
   join 的 public manifest。历史 `pred_track_stream_matched_iou0.5.jsonl`
   只保留为 evaluator 诊断，不能作为正式 predicted stream。predicted feature
   builder 已接入同一动态 GPU/marker gate，但尚未启动（当前所有 GPU 外部占用）。
+- Persistent evaluator 的 False Assignment Rate 已按正式协议固定为
+  `wrong assignment / all GT_REUSE_ELIGIBLE novel targets`；DEFER/no-commit
+  只进入 unresolved，不计为 false assignment。针对该分母补充回归断言，v2
+  tests 仍 `5 passed`。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference

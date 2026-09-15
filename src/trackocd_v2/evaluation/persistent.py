@@ -67,7 +67,9 @@ def evaluate_persistent(
             token_history[token].append((category, video_id, kind))
 
     denominator = max(eligible, 1)
-    false_denominator = sum(1 for category, _ in gt_history if category in persistent_categories)
+    # The headline false-assignment denominator is the same fixed causal
+    # target population as Commit-CT: every GT_REUSE_ELIGIBLE novel target.
+    false_denominator = eligible
     return {
         "commit_ct": correct / denominator if eligible else 0.0,
         "commit_ct_correct": correct,

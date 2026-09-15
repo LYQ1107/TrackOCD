@@ -41,6 +41,7 @@ def test_persistent_reuse_and_wrong_merge_are_separate():
     assert result["commit_ct_correct"] == 1
     assert result["commit_ct_denominator"] == 2
     assert result["false_assignment_count"] == 1
+    assert result["false_assignment_denominator"] == 2
     assert result["unresolved_count"] == 0
 
 
