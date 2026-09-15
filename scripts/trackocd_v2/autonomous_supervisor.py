@@ -127,6 +127,20 @@ def advance_once() -> dict:
             state.setdefault("failure_history", []).append({"stage": "GT_FEATURE_BUILD", "returncode": result.returncode, "time": now(), "command": build_command})
             write_state(state)
         return state
+    if state.get("state") == "GT_GEOMETRY_AUDIT":
+        artifact = OUTPUT_TARGET / "audit/geometry_audit.json"
+        command = [PYTHON, str(ROOT / "scripts/trackocd_v2/audit_geometry.py")]
+        if not run_stage(state, "GT_GEOMETRY_AUDIT", command, artifact):
+            return state
+        return state
+    if state.get("state") in ("GT_NEAREST", "GT_DPMEANS"):
+        stage = state["state"]
+        method = "nearest" if stage == "GT_NEAREST" else "dpmeans"
+        artifact = OUTPUT_TARGET / ("tables/gt_%s.json" % method)
+        command = [PYTHON, str(ROOT / "scripts/trackocd_v2/run_gt_baselines.py"), "--method", method]
+        if not run_stage(state, stage, command, artifact):
+            return state
+        return state
     return state
 
 

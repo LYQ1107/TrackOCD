@@ -46,6 +46,16 @@
   Python 与 OVTR Python 均能编译 feature builder。当前 state 仍为
   `GT_FEATURE_BUILD/WAITING_RESOURCE`，Test semantic access=false。
 
+## TrackOCD v2 geometry and GT baseline gates (2026-09-16)
+
+- 增加 `audit_geometry.py` 与 `run_gt_baselines.py`，并将
+  `GT_GEOMETRY_AUDIT`、`GT_NEAREST`、`GT_DPMEANS` 接入 completion-based
+  supervisor。geometry 只在 v2 cache audit=`READY` 后运行；baseline 使用
+  TRAIN old-only prototypes、固定参数和四种 Val order，决策后才 join
+  evaluator labels，保留完整 per-row diagnostics。
+- 在缺失 p16 的当前状态下，geometry 与 Nearest smoke 都按预期返回
+  `WAITING_FEATURES`，没有产生伪造指标，也没有读取 TAO Test semantic GT。
+
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
 
