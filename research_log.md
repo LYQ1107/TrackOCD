@@ -108,6 +108,19 @@
   `separation()` 调用点。两处均改为长度判断；
   `GEOMETRY_AUROC_NUMPY_SMOKE_OK` 通过，尚未包装 geometry 指标，等待同一路由
   重跑验证。
+- geometry 修复重跑完成：Val cross-video same-category vs different-category
+  AUROC 从 prefix1 的 0.788754 提升到 prefix16 的 0.873476，Cohen-d 为
+  1.079721→1.618950，overlap 为 0.558649→0.395206；cross-video nearest
+  category R@1 为 0.669534→0.783830。GT baseline table 已完成：Nearest 的
+  prefix16 Standard H-score/Commit-CT 为 0.370086/0.451501，DP-Means 为
+  0.242032/0.421492，PHE 为 0.119734/0.446682；这些是四 order 平均，未用于
+  反推阈值或训练。
+- 统一 GT benchmark 阶段完成，H3 因契约不一致显式 excluded。随后公开预测流
+  注册完成（source SHA=`2fbde4...ba237587`，649378 tracks/1853369 obs，
+  `gt_matching_used_to_build_stream=false`）；predicted p16 feature builder
+  当前因外部 PID 17495、17496、17497、17498、17499、17501、17502、17503、
+  17505、17506 重新占用全部 GPU 而返回 `WAITING_RESOURCE`，pending=649378，
+  未启动本任务 worker。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference
