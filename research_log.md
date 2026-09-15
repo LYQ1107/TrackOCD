@@ -82,6 +82,11 @@
   `STRUCTURALLY_LOADABLE_BUT_NOT_COMPARABLE`，没有生成指标，也没有接触 Test
   semantic labels。后续只有显式 adapter/retrain 并完整标注覆盖缺口后才可放入
   bake-off。
+- 资源窗口复核仍显示外部 PID 16825--16834 占用全部 GPU，v2 worker 未启动。
+  预启动代码审查发现 `build_common_features.extract_one()` 在写 artifact 时
+  引用了 worker 外的局部 `hub`，会在首个样本处触发 `NameError`；最小修复为
+  显式传入 `model_repo`。用真实 TAO frame、fake CPU DINO 输出完成写 artifact
+  smoke，`EXTRACT_ONE_SMOKE_OK`；preflight 仍为 pending=7787、selected GPU=[]。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference

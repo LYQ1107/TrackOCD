@@ -241,7 +241,7 @@ def claim(output: Path, worker_pid: int) -> bool:
     return True
 
 
-def extract_one(row: Dict[str, Any], source_split: str, manifest_sha: str, output: Path, device_index: int, batch_size: int, model: Any, transform: Any, torch: Any, image_cls: Any) -> None:
+def extract_one(row: Dict[str, Any], source_split: str, manifest_sha: str, output: Path, device_index: int, batch_size: int, model: Any, transform: Any, torch: Any, image_cls: Any, model_repo: Path) -> None:
     image_paths = list(row["image_paths"])
     boxes = list(row["boxes_xyxy"])
     if len(image_paths) != len(boxes) or not image_paths:
@@ -303,7 +303,7 @@ def extract_one(row: Dict[str, Any], source_split: str, manifest_sha: str, outpu
         "lineage": {
             "manifest_sha256": manifest_sha,
             "frames_root": str(FRAMES_ROOT),
-            "model_repo": str(hub.resolve()),
+            "model_repo": str(model_repo.resolve()),
             "device_index": int(device_index),
         },
     }
@@ -343,7 +343,7 @@ def worker(worker_index: int, gpu_index: int, items: Sequence[Tuple[str, Dict[st
             skipped += 1
             continue
         try:
-            extract_one(row, source_split, manifest_sha, output, gpu_index, batch_size, model, transform, torch, Image)
+            extract_one(row, source_split, manifest_sha, output, gpu_index, batch_size, model, transform, torch, Image, hub)
             completed += 1
         except Exception as exc:
             failed += 1
