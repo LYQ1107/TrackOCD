@@ -65,6 +65,11 @@
 - PHE 单向量 adapter smoke 通过（48 class IDs，有限 KNOWN/NEW/EXISTING
   decision），全套 v2 tests 仍为 `5 passed`；p16 未就绪所以正式 PHE/geometry
   结果未运行。
+- 注册 predicted 分支时发现公开 Q0/SimOWT `pred_track_stream.jsonl` 有
+  649,378 tracks、1,853,369 observations、988 videos；v2 已原子生成无 GT
+  join 的 public manifest。历史 `pred_track_stream_matched_iou0.5.jsonl`
+  只保留为 evaluator 诊断，不能作为正式 predicted stream。predicted feature
+  builder 已接入同一动态 GPU/marker gate，但尚未启动（当前所有 GPU 外部占用）。
 
 
 ## Phase 8A — Architecture Reset: Causal Semantic State Inference

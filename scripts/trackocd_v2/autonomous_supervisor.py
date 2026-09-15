@@ -147,6 +147,28 @@ def advance_once() -> dict:
         if not run_stage(state, "GT_PHE", command, artifact):
             return state
         return state
+    if state.get("state") == "PREDICTED_STREAM_BUILD":
+        stream_command = [PYTHON, str(ROOT / "scripts/trackocd_v2/build_predicted_stream.py")]
+        stream_result = subprocess.run(stream_command, cwd=ROOT)
+        if stream_result.returncode != 0:
+            state["status"] = "FAILED"
+            state.setdefault("failure_history", []).append({"stage": "PREDICTED_STREAM_BUILD", "returncode": stream_result.returncode, "time": now(), "command": stream_command})
+            write_state(state)
+            return state
+        snapshot = resource_snapshot()
+        feature_command = [FEATURE_PYTHON, str(ROOT / "scripts/trackocd_v2/build_common_features.py"), "--split", "pred", "--workers", "1"]
+        feature_result = subprocess.run(feature_command, cwd=ROOT)
+        if feature_result.returncode == 0:
+            mark_done(state, "PREDICTED_STREAM_BUILD", OUTPUT_TARGET / "audit/predicted_track_stream.json")
+        elif feature_result.returncode == 2:
+            state["status"] = "WAITING_RESOURCE"
+            state["resource_events"].append({"stage": "PREDICTED_STREAM_BUILD", "reason": "predicted feature build is waiting for an idle GPU", "snapshot": snapshot, "feature_builder": feature_command, "time": now()})
+            write_state(state)
+        else:
+            state["status"] = "FAILED"
+            state.setdefault("failure_history", []).append({"stage": "PREDICTED_STREAM_BUILD", "returncode": feature_result.returncode, "time": now(), "command": feature_command})
+            write_state(state)
+        return state
     return state
 
 

@@ -43,6 +43,7 @@ DEFAULT_HUBS = (
 FRAMES_ROOT = (ROOT / "data/raw/tao/frames").resolve()
 MANIFESTS = OUTPUT_TARGET / "manifests"
 FEATURE_ROOT = OUTPUT_TARGET / "features/gt_tracks"
+PRED_FEATURE_ROOT = OUTPUT_TARGET / "features/pred_tracks"
 
 
 def utc_now() -> str:
@@ -133,6 +134,7 @@ def load_rows(split: str) -> List[Tuple[str, Dict[str, Any], str]]:
     names = {
         "train": "tao_train_gt_tracks.jsonl",
         "val": "tao_val_gt_tracks.jsonl",
+        "pred": "tao_val_predicted_tracks.jsonl",
     }
     selected = ("train", "val") if split == "both" else (split,)
     rows: List[Tuple[str, Dict[str, Any], str]] = []
@@ -149,7 +151,8 @@ def load_rows(split: str) -> List[Tuple[str, Dict[str, Any], str]]:
 
 
 def cache_path(source_split: str, sample_key: str) -> Path:
-    return FEATURE_ROOT / source_split / (str(sample_key) + ".json")
+    root = PRED_FEATURE_ROOT if source_split == "pred" else FEATURE_ROOT
+    return root / source_split / (str(sample_key) + ".json")
 
 
 def marker_path(output: Path, suffix: str) -> Path:
@@ -365,7 +368,7 @@ def preflight(rows: Sequence[Tuple[str, Dict[str, Any], str]], requested_workers
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--split", choices=("train", "val", "both"), default="both")
+    parser.add_argument("--split", choices=("train", "val", "pred", "both"), default="both")
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--batch", type=int, default=DEFAULT_BATCH)
     parser.add_argument("--model-repo", type=Path)
