@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE",
+  "method": "PANDAS-TAO-Val-Transductive + category-agnostic ByteTrack",
+  "dataset": "TAO Validation",
+  "tao_test_used": false,
+  "coverage": {
+    "videos": 988,
+    "complete_stream_frames": 1040843,
+    "annotated_images": 36375,
+    "full_anonymous_detections": 312252900,
+    "bytetrack_track_rows": 7161,
+    "exported_tracks": 88
+  },
+  "base_checkpoint": {
+    "dataset": "COCO-half",
+    "frozen_before_tao": true,
+    "saved_epoch": 18,
+    "sha256": "86ced2e8061722aae173905585fba204c0e085f16dd2b68dec9ccfbf2344a725"
+  },
+  "detection": {
+    "base": {"AP": 0.09461081464386155, "AP50": 0.15234704256862985, "AP75": 0.09992221702517687},
+    "novel": {"AP": 0.002249334945614304, "AP50": 0.0045328102397726895, "AP75": 0.00204406229769286},
+    "all": {"AP": 0.020650855805035215, "AP50": 0.03398238909456416, "AP75": 0.02154469082577397}
+  },
+  "tracking": {
+    "HOTA_mean": 0.005589086107769699,
+    "LocA_mean": 0.8312754738461774,
+    "AssocA_mean": 0.14425157425823185,
+    "IDF1": 0.0004590111839840405,
+    "MOTA": -0.001078576985642549,
+    "IDSW": 1,
+    "Frag": 1
+  },
+  "large_artifacts_tracked": false
+}
