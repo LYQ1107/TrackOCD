@@ -265,15 +265,16 @@ class BYTETracker:
 
     def __init__(self, track_thresh=0.5, low_thresh=0.1, match_thresh=0.8,
                  track_buffer=30, frame_rate=30, min_box_area=10,
-                 mot20=False):
+                 mot20=False, filter_mot_aspect=False, new_track_thresh=None):
         self.track_thresh = track_thresh
-        self.det_thresh = track_thresh + 0.1
+        self.det_thresh = track_thresh + 0.1 if new_track_thresh is None else float(new_track_thresh)
         self.low_thresh = low_thresh
         self.match_thresh = match_thresh
         self.track_buffer = int(frame_rate / 30.0 * track_buffer)
         self.max_time_lost = self.track_buffer
         self.min_box_area = min_box_area
         self.mot20 = mot20
+        self.filter_mot_aspect = bool(filter_mot_aspect)
         self.frame_id = 0
         self.tracked_stracks = []
         self.lost_stracks = []
@@ -404,8 +405,10 @@ class BYTETracker:
             if t.frame_id == self.frame_id and t.is_activated:
                 tlbr = t.tlbr
                 tlwh = t.tlwh
-                vertical = tlwh[2] / max(tlwh[3], 1e-6) > 1.6
-                if self.mot20 or (tlwh[2] * tlwh[3] > self.min_box_area and not vertical):
+                area_ok = tlwh[2] * tlwh[3] > self.min_box_area
+                aspect_ratio = tlwh[2] / max(tlwh[3], 1e-6)
+                aspect_ok = not self.filter_mot_aspect or aspect_ratio <= 1.6
+                if area_ok and aspect_ok:
                     out_map[t.track_id] = [tlbr[0], tlbr[1], tlbr[2], tlbr[3], t.track_id, t.score]
         out = list(out_map.values())
         return np.asarray(out, dtype=np.float64).reshape(-1, 6)
