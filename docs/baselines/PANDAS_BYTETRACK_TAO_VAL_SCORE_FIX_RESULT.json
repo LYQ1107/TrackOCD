@@ -1,0 +1,242 @@
+{
+  "status": "COMPLETE",
+  "experiment": "PANDAS to ByteTrack TAO Validation score-contract and MOT-aspect-filter repair",
+  "branch": "codex/pandas-bytetrack-score-fix",
+  "trackocd_commit": "c3ace7ec99838aa2f9425c1dd0e5c2c3c288e560",
+  "implementation_commits": [
+    "2ea2f1e Repair PANDAS ByteTrack score contract",
+    "c3ace7e Record PANDAS score-fix smoke validation"
+  ],
+  "dataset": {
+    "name": "TAO Validation",
+    "trackeval_dataset": "TAO_OW",
+    "split": "val",
+    "subset": "all",
+    "class_mode": "class-agnostic",
+    "videos": 988,
+    "complete_stream_frames": 1040843,
+    "annotated_frames": 36375,
+    "gt_detections": 113112,
+    "gt_tracks": 5485,
+    "tao_test_used": false
+  },
+  "frozen_assets": {
+    "base_dataset": "COCO-half",
+    "base_checkpoint": "outputs/coco_half_base_phase/model_best.pth",
+    "base_checkpoint_sha256": "86ced2e8061722aae173905585fba204c0e085f16dd2b68dec9ccfbf2344a725",
+    "base_checkpoint_saved_epoch": 18,
+    "discovery": "PANDAS K=500",
+    "prototype_file": "outputs/pandas_discovery_K500/pandas_prototypes_K500.pt",
+    "prototype_sha256": "83cbe5f5e832414b4f0acd633964ade79e8d7e087923da3444ec26b9dba4a864",
+    "prototype_count": 580,
+    "trackeval_root": "/data3/liuyeqiang/InterMOT/third_party/MOTIP/TrackEval",
+    "trackeval_commit": "12c8791b303e0a0b50f753af204249e622d0281a"
+  },
+  "score_contract": {
+    "semantic_field": "scores",
+    "tracking_field": "foreground_scores",
+    "foreground_definition": "1 - softmax(original detector logits)[background]",
+    "prototype_field": "prototype_id",
+    "semantic_detection_scores_unchanged": true,
+    "mot_aspect_filter": false,
+    "foreground_storage_floor": 0.01
+  },
+  "reference_invariance": {
+    "images": 100,
+    "detections": 30000,
+    "boxes_max_abs_diff": "<1e-5",
+    "labels_identical": true,
+    "semantic_score_max_abs_diff": "<1e-6",
+    "semantic_foreground_pearson": 0.3447085676488368
+  },
+  "detection": {
+    "base": {"AP": 0.09461081464386155, "AP50": 0.15234704256862985, "AP75": 0.09992221702517687},
+    "novel": {"AP": 0.002249334945614304, "AP50": 0.0045328102397726895, "AP75": 0.00204406229769286},
+    "all": {"AP": 0.020650855805035215, "AP50": 0.03398238909456416, "AP75": 0.02154469082577397}
+  },
+  "inference": {
+    "output_root": "outputs/score_fix_full/anonymous/full",
+    "video_files": 988,
+    "full_stream_frames": 1040843,
+    "frames_with_detections": 1039239,
+    "empty_frames": 1604,
+    "detections_after_foreground_floor": 162700608,
+    "processed_new_videos": 296,
+    "reused_existing_videos": 692,
+    "all_shard_audits_pass": true,
+    "audit_files": [
+      "outputs/score_fix_full/audit/anonymous_inference_full_shard_00_of_04.json",
+      "outputs/score_fix_full/audit/anonymous_inference_full_shard_01_of_04.json",
+      "outputs/score_fix_full/audit/anonymous_inference_full_shard_02_of_04.json",
+      "outputs/score_fix_full/audit/anonymous_inference_full_shard_03_of_04.json"
+    ],
+    "semantic_score_quantiles": {
+      "min": 0.00851264,
+      "q10": 0.01142926,
+      "q25": 0.01365069,
+      "median": 0.01796228,
+      "q75": 0.02391765,
+      "q90": 0.03455986,
+      "q95": 0.04538021,
+      "q99": 0.09757990,
+      "max": 0.31608835
+    },
+    "foreground_score_quantiles": {
+      "min": 0.0000001192092896,
+      "q10": 0.00015866,
+      "q25": 0.00426292,
+      "median": 0.07544133,
+      "q75": 0.63564456,
+      "q90": 0.97955972,
+      "q95": 0.99475867,
+      "q99": 0.99893427,
+      "max": 0.99976027
+    }
+  },
+  "tracking": {
+    "score_key": "foreground_scores",
+    "filter_mot_aspect": false,
+    "match_thresh": 0.8,
+    "track_buffer": 30,
+    "variants": [
+      {
+        "name": "BT-FG-0",
+        "track_thresh": 0.5,
+        "low_thresh": 0.1,
+        "new_track_thresh": 0.6,
+        "track_rows": 54461482,
+        "tracks": 2370335,
+        "mean_track_length": 22.9762805679366,
+        "wall_seconds": 16236.422169923782,
+        "metrics": {
+          "HOTA_0": 0.13586675686744837,
+          "HOTA_mean": 0.11011336939513884,
+          "DetA_mean": 0.03755413222807158,
+          "AssocA_mean": 0.3302464178274666,
+          "LocA_mean": 0.8110537832513122,
+          "IDF1": 0.048112280701754384,
+          "MOTA": -14.006993068816747,
+          "IDSW": 35078,
+          "Frag": 7097
+        },
+        "export": {
+          "videos": 988,
+          "annotated_frames": 36375,
+          "track_rows": 1831391,
+          "prediction_sha256": "245c278e163d431ccf2bc8dd5881f621773a4fd11b44ef8a089ed8aa3ec60e7a"
+        }
+      },
+      {
+        "name": "BT-FG-1",
+        "track_thresh": 0.2,
+        "low_thresh": 0.05,
+        "new_track_thresh": 0.2,
+        "track_rows": 65427220,
+        "tracks": 3427596,
+        "mean_track_length": 19.088369807877008,
+        "wall_seconds": 21776.134749650955,
+        "metrics": {
+          "HOTA_0": 0.12223017598537815,
+          "HOTA_mean": 0.09966017523921374,
+          "DetA_mean": 0.032006728254154536,
+          "AssocA_mean": 0.3182923398643058,
+          "LocA_mean": 0.8102054217656751,
+          "IDF1": 0.039429326844870285,
+          "MOTA": -17.222584694815758,
+          "IDSW": 38910,
+          "Frag": 7409
+        },
+        "export": {
+          "videos": 988,
+          "annotated_frames": 36375,
+          "track_rows": 2218563,
+          "prediction_sha256": "b2dd15c3731890e041bad752c206fc787c50f97905aba420bc968a8666b98c40"
+        }
+      },
+      {
+        "name": "BT-FG-2",
+        "track_thresh": 0.1,
+        "low_thresh": 0.01,
+        "new_track_thresh": 0.1,
+        "track_rows": 67455262,
+        "tracks": 3640001,
+        "mean_track_length": 18.531660293499918,
+        "wall_seconds": 24154.204958200455,
+        "metrics": {
+          "HOTA_0": 0.11703989188907996,
+          "HOTA_mean": 0.09550440072059596,
+          "DetA_mean": 0.030982120155354526,
+          "AssocA_mean": 0.30237293173580254,
+          "LocA_mean": 0.8090944016773436,
+          "IDF1": 0.03686694956792059,
+          "MOTA": -17.950677204894266,
+          "IDSW": 39891,
+          "Frag": 7500
+        },
+        "export": {
+          "videos": 988,
+          "annotated_frames": 36375,
+          "track_rows": 2305209,
+          "prediction_sha256": "9ed336fb3a746b31394378ce28fadd93ef24d1346eb9e18a8c523f674cbb2720"
+        }
+      },
+      {
+        "name": "BT-FG-3",
+        "track_thresh": 0.05,
+        "low_thresh": 0.01,
+        "new_track_thresh": 0.05,
+        "track_rows": 65266712,
+        "tracks": 3978336,
+        "mean_track_length": 16.405530352388535,
+        "wall_seconds": 24868.645800590515,
+        "metrics": {
+          "HOTA_0": 0.12027678881072808,
+          "HOTA_mean": 0.09838912209194174,
+          "DetA_mean": 0.031551212731750156,
+          "AssocA_mean": 0.3152603595595511,
+          "LocA_mean": 0.8094466623973675,
+          "IDF1": 0.03789781998490307,
+          "MOTA": -17.502068746021642,
+          "IDSW": 40284,
+          "Frag": 7598
+        },
+        "export": {
+          "videos": 988,
+          "annotated_frames": 36375,
+          "track_rows": 2250208,
+          "prediction_sha256": "ada2f5a43d2a355fd980dbc2b61baaa249eca922e203577573f6dc1c9c185d28"
+        }
+      }
+    ]
+  },
+  "old_baseline_comparison": {
+    "implementation_commit": "bf29217c1778ff9f398e454b8d5f68a69017c2b7",
+    "score_key": "scores",
+    "filter_mot_aspect": true,
+    "track_rows": 7161,
+    "tracks": 88,
+    "mean_track_length": 81.375,
+    "metrics": {
+      "HOTA_mean": 0.005589086107769699,
+      "DetA_mean": 0.0002170140,
+      "AssocA_mean": 0.14425157425823185,
+      "LocA_mean": 0.8312754738461774,
+      "IDF1": 0.0004590111839840405,
+      "MOTA": -0.001078576985642549,
+      "IDSW": 1,
+      "Frag": 1
+    },
+    "comparison_note": "Diagnostic old/new comparison: both the score contract and the TAO-inapplicable MOT aspect filter changed, so it is not an isolated single-variable ablation."
+  },
+  "validation": {
+    "unit_test_command": "python -m pytest -q tests/pandas_bytetrack/test_score_contract.py",
+    "unit_tests_passed": 4,
+    "trackeval_exports_passed": 4,
+    "trackeval_runs_passed": 4,
+    "external_processes_interfered_with": false,
+    "retrained_pandas": false,
+    "rediscovered_prototypes": false,
+    "large_artifacts_tracked_in_git": false,
+    "disk_free_at_final_check": "93G"
+  }
+}

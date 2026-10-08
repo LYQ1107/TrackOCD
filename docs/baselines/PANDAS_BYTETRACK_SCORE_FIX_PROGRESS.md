@@ -1,5 +1,8 @@
 # PANDAS → ByteTrack TAO Val score-contract repair
 
+Status: **COMPLETE**. Full TAO Validation inference, four threshold sweeps,
+canonical TrackEval export/evaluation, and final result recording are done.
+
 This progress record belongs to the `codex/pandas-bytetrack-score-fix`
 branch, based on `bf29217`.
 
@@ -36,6 +39,17 @@ MOTChallenge aspect-ratio filter:
 | BT-FG-3 | 0.05 | 0.01 | 0.05 | 1,353,202 | 87,889 | 15.3967 |
 
 This is threshold sensitivity evidence only; it is not a Val-selected final
-operating point. Full TAO Validation inference and tracking remain pending.
+operating point. The full TAO Validation completion is recorded below.
+
+## Full TAO Validation completion
+
+The full rerun reused the frozen COCO-half checkpoint and K=500 prototypes.
+All 988 videos and 1,040,843 complete-stream frames were covered; the cache
+contains 162,700,608 detections after `foreground_scores >= 0.01`, with 1,604
+explicit empty frames. All four canonical TrackEval exports and all four
+TAO-OW evaluations returned `PASS` over 36,375 annotated frames. The final
+metrics and hashes are recorded in
+`PANDAS_BYTETRACK_TAO_VAL_SCORE_FIX_REPORT.md` and
+`PANDAS_BYTETRACK_TAO_VAL_SCORE_FIX_RESULT.json`.
 
 Large models, data, NPZ outputs, and logs remain outside Git.
