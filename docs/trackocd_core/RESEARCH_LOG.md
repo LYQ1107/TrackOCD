@@ -81,3 +81,25 @@
   full inference/training, Test access or foreign-process interference.
 - Next: independent hash-verified normalized-stream validation and lawful
   provenance, with GT-only evaluator/representation feasibility permitted.
+
+## 2026-10-10 — M3 evaluator engineering preparation, not formal main stage
+
+- Question: can scoring be independently correct before a GT-feasibility study?
+- Full legacy audit found Known-state Hungarian relabeling and permissive
+  contaminated token success. Preserve both files and every old result.
+- New sealed ledger has no GT/Novel/match input. Posthoc full-GT join counts
+  missing targets, exact Known IDs and one anonymous/Novel Hungarian only.
+  Persistent scoring is chronological and separates pure reuse, wrong NEW,
+  wrong Known, wrong merge, polluted, unknown, same-video and unresolved.
+- All rates use fixed GT reuse opportunities; missing sources do not shrink
+  eligibility. Unknown members cannot certify purity or prove a false merge.
+  Token history is an absorbing linear-memory summary, not copied per step.
+- Result: 110 tests passed, including 48 evaluator cases and 81-source byte
+  identity. Twenty preconstructed toy order/prefix replays and missing-source
+  CLI fixture pass (<76-MiB RSS); no real dataset, model or training opened.
+- Decision: retain engineering preparation only. Actual primary geometry
+  adapter/full-universe run and qualified M1 frontend remain pending. Toy
+  perfect accuracy is not a learned algorithm or scientific result.
+- NAS: user sent the read-only 294-MB native-row score-distribution request;
+  its actual new turn completed. Source-side results are audited separately,
+  not included as M3 synthetic or learned-method performance.

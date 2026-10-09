@@ -1,0 +1,152 @@
+{
+  "GT_annotation_or_dataset_opened": false,
+  "external_process_interference": false,
+  "file_sha256": {
+    "configs/trackocd_core/evaluation_protocol.json": "a1b28d9dfedf58fb4673083c03f85c06170a2e7683a7d2b6eb2fbb6963463cac",
+    "scripts/trackocd_core/smoke_evaluation_protocol.py": "938c2da8d6c5da7f21aa331b83c11da516eb882e9a17bce8f67cab39871da7b5",
+    "src/trackocd_core/evaluation/__init__.py": "3c1f2508df7a19659cadd702eea64491a589e9c967006be713b3dbe8fd1556c2",
+    "src/trackocd_core/evaluation/contracts.py": "da3c492c4468f2054387f177f4a05003b506c721678e1f2294a38db628d85614",
+    "src/trackocd_core/evaluation/persistent.py": "dc840a6146c78602866e6f6d116a67b4d1dd1545351265f94efc7b911e769483",
+    "src/trackocd_core/evaluation/standard.py": "4a89de40178aa067e3a2a05a43d58035ea2f0caf2b2451990d72a92069bbafac",
+    "tests/trackocd_core/test_evaluation_protocol.py": "31633ffb102d56ad8066fa82ff2ca586af2cac2efb857fef769298b2fb331980"
+  },
+  "gpu_used": false,
+  "missing_source_fixture": {
+    "false_split_new_count": 1,
+    "fixed_opportunities": 1
+  },
+  "peak_rss_kib": 75084,
+  "preconstructed_correct_events_are_not_learned_model_results": true,
+  "primary_predicted_protocol_complete": false,
+  "schema_version": "trackocd.core.evaluation_smoke.v1",
+  "scientific_hypothesis_tested": false,
+  "status": "PASS_ENGINEERING_SYNTHETIC_ONLY",
+  "test_accessed": false,
+  "toy_grid_cases": [
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 1,
+      "toy_order_index": 0
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 2,
+      "toy_order_index": 0
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 4,
+      "toy_order_index": 0
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 8,
+      "toy_order_index": 0
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 16,
+      "toy_order_index": 0
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 1,
+      "toy_order_index": 1
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 2,
+      "toy_order_index": 1
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 4,
+      "toy_order_index": 1
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 8,
+      "toy_order_index": 1
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 16,
+      "toy_order_index": 1
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 1,
+      "toy_order_index": 2
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 2,
+      "toy_order_index": 2
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 4,
+      "toy_order_index": 2
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 8,
+      "toy_order_index": 2
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 16,
+      "toy_order_index": 2
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 1,
+      "toy_order_index": 3
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 2,
+      "toy_order_index": 3
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 4,
+      "toy_order_index": 3
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 8,
+      "toy_order_index": 3
+    },
+    {
+      "expected_correct_reuse_count": 3,
+      "fixed_opportunities": 3,
+      "prefix_cap": 16,
+      "toy_order_index": 3
+    }
+  ],
+  "toy_grid_cases_passed": 20,
+  "toy_orders_are_not_real_TAO_order_artifacts": true,
+  "training_or_model_inference_started": false,
+  "wall_seconds": 0.0031700950057711452,
+  "worker_count": 1
+}

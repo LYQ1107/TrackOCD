@@ -1,0 +1,53 @@
+{
+  "schema_version": "trackocd.core.evaluation_protocol.v1",
+  "status": "ENGINEERING_GT_FEASIBILITY_ONLY_PRIMARY_FRONTEND_PENDING",
+  "legacy_v2_evaluators_modified": false,
+  "registered_orders": ["main", "seed1027", "seed1028", "seed1029"],
+  "prefix_caps": [1, 2, 4, 8, 16],
+  "each_order_prefix_replay_starts_fresh_memory": true,
+  "identity_namespace": ["video_id", "local_track_id"],
+  "prediction_ledger": {
+    "kinds": ["KNOWN", "NEW", "EXISTING", "WAIT"],
+    "KNOWN": "Exact registered Known ID; no anonymous token or evaluator remapping",
+    "NEW": "Create a previously nonexistent global anonymous token",
+    "EXISTING": "Reference an actually prior-created anonymous token",
+    "WAIT": "No hidden class/token assignment; may become first commitment later",
+    "commitment": "First non-WAIT is irrevocable within a replay; identical confirmation does not add membership twice",
+    "ordering": "Strict event sequence and nondecreasing registered video rank; observation count must be integer, nondecreasing per physical identity, <= prefix cap",
+    "GT_or_match_input_to_sealing": false
+  },
+  "posthoc_join": {
+    "fixed_universe": "Every registered Known/Novel GT track, including missing/unmatched; distractors excluded from headline denominators, retained for contamination",
+    "geometry": "One-to-one, category-free temporal-IoU >= 0.5 as inherited; actual qualified primary-stream adapter/receipt remains pending",
+    "unmatched_predicted_identities": "Explicit None; never dropped from token ledger",
+    "oracle_feedback_to_method": false
+  },
+  "standard": {
+    "old_acc": "Exact KNOWN hits / all Known GT tracks; never Hungarian-remap Known IDs",
+    "new_acc": "Anonymous hits under one global anonymous-token/Novel-only Hungarian / all Novel GT tracks",
+    "h_score": "2*Old*New/(Old+New); 0 when both are 0; null if either role has no denominator",
+    "all_acc": "(Known hits + Novel hits) / full non-distractor GT universe",
+    "novel_cluster_count": "All NEW token creations, including unmatched/distractor/Known-misassigned creation",
+    "unresolved_coverage": "(Missing predicted GT targets + matched WAIT/no-decision targets) / full non-distractor universe",
+    "dense_matrix": "Zero-Novel-support rows omitted only for memory use, not from total cluster count; one global matching remains"
+  },
+  "persistent": {
+    "fixed_opportunities": "Every Novel GT target whose category exists in an earlier registered video, independent of predicted coverage",
+    "four_denominators": ["All eligible Novel GT tracks", "Fixed cross-video Novel GT reuse opportunities", "Opportunities with valid predicted track", "Opportunities with first non-WAIT commitment"],
+    "correct_commit_ct": "Pure correct EXISTING with a genuinely prior other-video member of same GT category / fixed opportunities",
+    "false_merge_rate": "(Wrong-category EXISTING + reuse of already positively mixed-category token) / fixed opportunities",
+    "false_split_new_rate": "NEW on a GT reuse opportunity / fixed opportunities; missing source does not erase eligibility",
+    "wrong_known_assignment_rate": "KNOWN on a Novel reuse opportunity / fixed opportunities",
+    "wait_unresolved_rate": "(Missing predicted opportunities + matched WAIT/no-decision opportunities) / fixed opportunities",
+    "effective_commit_coverage": "Non-WAIT commitments / fixed opportunities; includes incorrect commitments, not an accuracy",
+    "additional_outcomes": ["Unknown-member/unverified token reuse", "Same-video-only unsupported EXISTING"],
+    "outcomes_partition_fixed_opportunities": true,
+    "contamination": "A past different GT category poisons a token permanently. Unknown unmatched members prevent certification of purity, but alone are not proven false merges",
+    "time": "Score before adding the current member. Later contamination cannot retrospectively erase an earlier correct commit",
+    "posthoc_Hungarian_repairs_online_reuse": false,
+    "matched_only_metrics": "Diagnostic only; never headline or eligibility source"
+  },
+  "zero_denominator": "null / NOT_APPLICABLE, never perfect accuracy",
+  "actual_main_dataset_metrics_computed": false,
+  "test_annotation_access_permitted": false
+}
