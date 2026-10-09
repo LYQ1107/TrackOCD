@@ -1,0 +1,236 @@
+{
+  "GT_physical_coverage_is_not_predicted_coverage": true,
+  "all_visual_encoder_parameters_frozen": true,
+  "annotation": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1759670751136653423,
+    "path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+    "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+    "sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+    "size_bytes": 21463934
+  },
+  "causality_claim": "observation-prefix-causal only; global frame-online decisions not verified",
+  "checkpoint": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791562730955240047,
+    "path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "size_bytes": 346378731
+  },
+  "config": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791570153340795594,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/common_features.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/common_features.json",
+    "sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "size_bytes": 1936
+  },
+  "external_process_interference": false,
+  "feature_dimension": 768,
+  "formal_predicted_result": false,
+  "full_track_mean_written": false,
+  "generated_utc": "2026-10-09T19:27:58.615744+00:00",
+  "labels_separated_from_model_view": true,
+  "new_feature_payload_bytes": 2114366,
+  "new_inferred_observations": 960,
+  "observations": 1024,
+  "optimizer_used": false,
+  "payloads": {
+    "geometry.npy": {
+      "bytes": 16512,
+      "sha256": "ac444ef02d857f20d20ac6cab69d1142e03f86e37e29a44db9593b4f74dd0da8"
+    },
+    "index.parquet": {
+      "bytes": 30335,
+      "sha256": "9d48c64ab312ef8590e9560dd6defe196492aac478f489b09b847b84e5f3407f"
+    },
+    "observations.npy": {
+      "bytes": 1572992,
+      "sha256": "9780e2cedd8c3d4315e5967f2a03bdd71297d79c1d4c2c9cd76c1d54cc864fa3"
+    },
+    "prefix_features.npy": {
+      "bytes": 491648,
+      "sha256": "523f5e52fd42e8a3885c156cdc7e1f1c5c3c588064b0e20bfdee4534106f3fde"
+    },
+    "train_labels.parquet": {
+      "bytes": 2879,
+      "sha256": "7c0cd36a0730ddf4a91eca335a2cb8bcbf97bc85d71cd5ee11221434dae2ac6c"
+    }
+  },
+  "pilot_config": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791573845239815028,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/gt_feasibility_pilot.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/gt_feasibility_pilot.json",
+    "sha256": "86bb1e8773b7d3dc6d0591e9faafe82f758f9c1f3f896a50e014acb21cacd2d0",
+    "size_bytes": 3051
+  },
+  "prefix_features_shape": [
+    64,
+    5,
+    768
+  ],
+  "prefixes": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "preregistration": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791573944948847253,
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/gt_pilot_preregistration.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/gt_pilot_preregistration.json",
+    "sha256": "e448f5804d80351927c6dad6c324e7af5e19a9967afdd4982d5b081d07dce529",
+    "size_bytes": 4308
+  },
+  "resources": {
+    "gpu_peak_allocated_bytes": 570027008,
+    "gpu_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "initial_mem_available_kib": 104994244,
+    "peak_cpu_rss_kib": 1301508,
+    "ram_plan_bytes": 4294967296,
+    "wall_seconds": 38.13124623300973,
+    "worker_count": 1
+  },
+  "reused_exact_smoke_observations": 64,
+  "roles": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791557849295634619,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
+    "size_bytes": 4517
+  },
+  "schema_version": "trackocd.core.gt-feature-pilot.v1",
+  "selection": {
+    "all_categories_in_inherited_known": true,
+    "eligible_long_track_categories": 46,
+    "eligible_long_track_count": 1170,
+    "heldout_pseudo_categories_unseen_to_adaptation_and_policy_fit": true,
+    "heldout_selection_pseudo_novel_categories": [
+      139,
+      174,
+      229,
+      235
+    ],
+    "known_probe_categories_are_intentionally_shared_not_category_holdout": true,
+    "observations": 1024,
+    "partition_tracks": {
+      "heldout_selection": 24,
+      "policy_train": 24,
+      "representation": 16
+    },
+    "partition_videos": {
+      "heldout_selection": [
+        119,
+        284,
+        433,
+        496,
+        508,
+        677,
+        705,
+        720,
+        1126,
+        1330,
+        1459,
+        1779,
+        1910,
+        1927,
+        1939,
+        1940,
+        2244,
+        2667,
+        2752,
+        2851,
+        2874,
+        2896
+      ],
+      "policy_train": [
+        0,
+        3,
+        11,
+        275,
+        371,
+        535,
+        545,
+        575,
+        653,
+        686,
+        689,
+        696,
+        1041,
+        1643,
+        1814,
+        1831,
+        1874,
+        2023,
+        2128,
+        2175,
+        2238,
+        2243,
+        2251,
+        2666
+      ],
+      "representation": [
+        1,
+        9,
+        67,
+        212,
+        221,
+        239,
+        384,
+        415,
+        456,
+        678,
+        1370,
+        1614,
+        1882,
+        1929,
+        1948,
+        2148
+      ]
+    },
+    "policy_train_pseudo_novel_categories": [
+      35,
+      81,
+      95,
+      118
+    ],
+    "pseudo_novel_category_disjointness_verified": true,
+    "purpose_tracks": {
+      "prototype": 4,
+      "representation_fit": 12,
+      "stream": 48
+    },
+    "sampling_uses_features_or_scores": false,
+    "selected_known_categories": [
+      41,
+      126,
+      133,
+      211
+    ],
+    "tracks": 64,
+    "video_disjointness_verified": true
+  },
+  "selection_plan_sha256": "25208d62173354bd33beaa38f056706feaeb0ed8e75194589db03ce1e3bdeafa",
+  "source_role": "Train Known GT feasibility, not predicted frontend/main metrics",
+  "source_sha256": {
+    "scripts/trackocd_core/extract_gt_pilot.py": "98caca93b31995e7147e91392b406f08bc52f2e39ef28523d71569ff81602a4c",
+    "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7"
+  },
+  "status": "PASS_SMALL_GT_FEASIBILITY_INPUT_ONLY",
+  "tracks": 64,
+  "training_started": false,
+  "unit_quality_not_detector_confidence": true,
+  "upstream_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "val_or_test_accessed": false
+}

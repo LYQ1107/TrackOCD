@@ -85,3 +85,14 @@ Both refuse to overwrite an existing completed artifact. Reuse/verify instead.
 Outputs and raw features stay private; only small aggregate receipts/reports
 and source/tests/config are published. Subsequent results append here without
 rewriting the preregistered choices or conflating them with formal M4.
+
+## Completed descriptor inference
+
+Preregistration `8295d52` was pushed and independently remote-verified before
+inference. The bounded run completed in 38.13 seconds: 64 tracks / 1,024
+observations, with 64 exact earlier smoke observations reused and 960 new
+frozen descriptors. Compact payload is 2,114,366 bytes (~2.02 MiB), GPU peak
+543.62 MiB and host peak 1.24 GiB; one worker on a freshly idle GPU UUID.
+All five payload hashes and 320 causal prefix views validate. No optimizer,
+representation training, Val/Test access or foreign process action occurred.
+Actual simple baseline scores remain the next separate step.

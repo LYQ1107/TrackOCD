@@ -138,3 +138,14 @@
   not a formal M4 or end-to-end success. Regression: 115 tests pass.
 - Next: commit/push the plan before running frozen DINO inference, then report
   the first actual small Train baseline results without tuning on heldout.
+
+## 2026-10-10 — Bounded GT pilot descriptors completed
+
+- Preregistration `8295d52` was pushed/remote-verified before frozen inference.
+  Reuse 64 exact old smoke observations; infer only 960 new observations.
+- Result: 64 GT tracks / 1,024 observations, 2,114,366 compact payload bytes,
+  38.13 s, 543.62-MiB GPU / 1.24-GiB host peak; five payload hashes and 320
+  prefix views checked. Same frozen encoder/crops, streaming batch four.
+- Decision: retain small Train Known-only feasibility input. No learned
+  model trained, no Val/Test or predicted-main score. Next: fixed simple
+  baselines on the registered Train streams; do not change sampling/gates.
