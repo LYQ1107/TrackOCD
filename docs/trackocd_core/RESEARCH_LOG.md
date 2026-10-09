@@ -407,3 +407,31 @@
 - Result187tests pass. Publish counts/hash/resource/metric receipts only,
   retain rawboxes and clippedGT privately. M1BLOCKED_FRONTEND_QUALITY persists;
   no M9/semantic scientific PASS, no second correction or goal completion.
+
+## 2026-10-10 — Separate full-universe frozen physical M1 preregistration
+
+- Scope grounded in original expanded FINAL_GOAL M1 Val physical audit, after
+  completed Train8 and fixedVal64; not a broadened historical smoke, M9 semantics,
+  full DINO cache or new training. M8 small-Train-first gate remains unchanged.
+- Entire label-blind image-metadata universe988videos/36375frames exists locally,
+  strict chronology, no missing/duplicate/escape; existing4,204,120,627 image bytes
+  reused, zero new image/weight bytes. Private per-image hash plan bb4ae9b1...
+  created107.45s/RSS847216640B; no GT/category/track fields select videos/images.
+- New video-atomic receipts validate hash/config/full input-plan/arrays before
+  skip/reuse, retain empty and interrupted attempts, check full frozen tensor state
+  unchanged before complete marker. No valid complete shard is re-extracted.
+- Max4 freshly idle GPUs, 8GiB GPU/4GiB host each; headroom RAM25%/disk4GiB,
+  outputs1GiB/candidate8GiB/overall15GiBsoft30GiBhard. Measured candidate5959065600B,
+  conservative entire repo+isolatedenv6438285312B. No arbitrary wall-time stop.
+- Independent one-CPU all-GT evaluator waits for sealed entire stream, uses pinned
+  canonical TAO_OW/HOTA and count-weighted sequence combine. Synthetic two-video
+  full-vs-separate fixture with empty predictions matches every metric field.
+  Full Known/Novel denominators and unknown/pollution evidence retained; different
+  PANDAS dense-frame input history/cadence still prevents architecture attribution.
+- Paper main-model generic SA1B/frozen foundation/final track-head phase supports
+  published provenance level, not exact private checkpoint training ledger. No
+  forbidden-supervision proof or automatic primary freeze; no tuning, R2, GT-policy
+  scope extension, semantic method selection or Test. Remote preregistration and
+  completed regression required before actual frozen inference.
+- Preregistration regression207passed/no skips; no actual full-Val inference yet
+  at this entry. Publish source/config/protocol only, keep image hash plan private.

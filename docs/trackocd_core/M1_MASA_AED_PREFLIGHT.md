@@ -352,3 +352,65 @@ Public evidence: `masa_physical_diagnostic_result.json` and
 `masa_physical_prediction_summary.json`; GT subsets and raw NPZ boxes stay
 private. Result regression: **187 tests pass**. The completed run is preserved;
 do not silently rerun it or broaden its result scope.
+
+## Separate all-universe M1 physical audit preregistration
+
+The original expanded FINAL_GOAL M1 explicitly requires Val physical quality
+and target-coverage auditing. After the completed Train8 engineering and Val64
+fixed diagnostic, a **separate physical-only all-Val preregistration** is now
+prepared. This is not an expansion/rerun of the old smoke/clip protocol, M9 OCD
+evaluation, semantic model selection/training or full DINO feature caching.
+The M8 small-Train-first scientific gate remains unchanged. No new authority
+is inferred from smoke success itself: scope comes from the expanded M1 goal.
+
+Image-metadata-only inventory confirms **988 videos / 36,375 annotated frames**,
+all present locally, strict chronological/nonduplicated image IDs, no path
+escape or Test/Train substitution. Existing image bytes **4,204,120,627** are
+reused in place; no image/model transfer. Every required image is hash-sealed
+in the private plan (SHA256
+`bb4ae9b1ce346d490021ab2b70a5e35078e38134184a2bed58d66d5af12ac179`).
+Preparing all hashes took107.45s, peak RSS847,216,640 B. The public config
+contains counts/hashes/protocol, not raw image paths or semantic names.
+
+Same MASA weight/native config/score.02/cap50, no rescue tuning or physical
+training. At most4 freshly idle GPUs, each8GiB GPU/4GiB host ceilings, system
+RAM headroom25%, disk headroom4GiB. Uncompressed prediction payload bound is
+88,464,000 B; prediction/evaluator artifacts conservative ceiling1GiB,
+candidate ceiling8GiB, overall soft15GiB/hard30GiB. Before launch, measured
+candidate5,959,065,600 allocated B and conservatively the **entire repository
+plus isolated environment**6,438,285,312 B (including pre-existing code, so
+not presented as an exact incremental storage ledger). No arbitrary hourly
+completion cutoff; genuine resource/input/immutable-state failures stop only
+newly created owned workers and preserve evidence.
+
+Predictions are video-atomic: SHA/config/full-video input-plan/array checks
+must pass before any existing complete video is reused; empty outputs remain
+valid. Incomplete attempts are retained; a restarted incomplete video's
+causal state must replay from its first image and real attempts are counted.
+Existing four short clips do not contain full-video tracker state and cannot
+masquerade as complete video shards. At each new complete-video boundary, all
+frozen tensor values are verified unchanged. Independent GT scoring is allowed
+only after all988 complete markers and36,375 frames are verified and sealed.
+
+One-CPU evaluation uses the same pinned canonical TAO_OW/HOTA, entire original
+GT universe/role denominators, unchanged partial-annotation preprocessing and
+count-weighted sequence combination. A nontrivial synthetic two-video fixture,
+including empty predictions, verifies per-video canonical evaluation+combination
+equals a single full-universe adapter call. Only current-video JSON scratch
+is kept, avoiding multi-million-row duplicated GT/pred JSON. Posthoc purity
+keeps unknown rows and distinguishes category from individual mixing.
+PANDAS projected scoring shares GT/images, but its association input cadence
+and dense-frame history differ: not an isolated/fair tracker-architecture ablation.
+
+Public supervision evidence is graded at **official publication/pinned release
+level**, not claimed as a private cryptographic training ledger. The
+[MASA paper sections4.1/J.1/J.2](https://arxiv.org/html/2406.04221v1) describe
+main SAM models' generic SA-1B image route, frozen SAM foundation and a final
+track-head-only training phase. Separate ablation/domain-adaptation models
+cannot automatically establish this release's lineage. The
+[SAM contributor statement](https://github.com/facebookresearch/segment-anything/issues/53)
+supports SA-1B foundation pretraining. The exact SAM release-stage config/data
+binding remains absent and disclosed, not evidence of forbidden supervision.
+No automatic primary freeze or M9/semantic PASS, regardless of this audit's scores.
+All preregistration tests now pass: **207 passed, no skips**. Commit/push/exact
+remote-HEAD verification is still required before actual GPU inference.
