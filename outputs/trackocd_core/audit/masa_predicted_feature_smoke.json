@@ -1,0 +1,73 @@
+{
+  "all_encoder_parameters_frozen": true,
+  "checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "encoder_source_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "external_process_interference": false,
+  "feature_dimension": 768,
+  "finished_utc": "2026-10-09T23:44:54.002786+00:00",
+  "formal_cache_started": false,
+  "frame_online_decisions_tested": false,
+  "gt_or_role_annotation_access": false,
+  "input_metadata_plan_sha256": "bb4ae9b1ce346d490021ab2b70a5e35078e38134184a2bed58d66d5af12ac179",
+  "input_shard_sha256": "7d1e5fe3fa693e8a27f004acfad5909e643f7566fafcb9cead286b668a5852df",
+  "model_final_state_sha256": "42c4c180dbaa825ee5bfecc6e6bf392af6439a1d2aa97f05095ac09b5e7097a9",
+  "model_initial_state_sha256": "42c4c180dbaa825ee5bfecc6e6bf392af6439a1d2aa97f05095ac09b5e7097a9",
+  "model_view_fields": [
+    "visual",
+    "boxes_normalized_xyxy",
+    "quality",
+    "elapsed_frames"
+  ],
+  "new_image_or_checkpoint_download": false,
+  "observation_counts": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "observations": 8,
+  "optimizer_used": false,
+  "poisoned_future_prefix_invariance": true,
+  "preregistration_commit": "f25ba9a323878ed7376cf3c8dec93540071bfffe",
+  "preregistration_config_sha256": "faabde930e4dcf3957d5b6d664572ffd38e4023a3bbb98134f2c7a70fcde4170",
+  "primary_freeze_permitted": false,
+  "private_payload": {
+    "bytes": 34432,
+    "sha256": "f7f8283a22f348500f6ea81e3ba5a8c1c699b70e630bb74926a5776b6b3a20d1"
+  },
+  "resources": {
+    "conservative_repo_and_owned_env_allocated_bytes": 6517792768,
+    "gpu_peak_allocated_bytes": 570027008,
+    "gpu_peak_reserved_bytes": 687865856,
+    "gpu_snapshot": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898, 14, 40428, 0\nGPU-5de9a1c2-0cc1-4fda-7d25-493f86f52424, 14, 40428, 0\nGPU-a4095968-9191-50eb-d56c-ed633b31e2c0, 14, 40428, 0\nGPU-f931e51b-55b2-c2c2-6506-b6f986864d54, 14, 40428, 0\nGPU-daa9b388-4540-242c-83d7-3261bb232a7c, 14, 40428, 0\nGPU-f07a0798-7ddc-ec7c-a27c-d47124bbfe81, 14, 40428, 0\nGPU-c2902ddf-62f4-cc2f-5d9f-d33c74555847, 14, 40428, 0\nGPU-995c9557-d84e-1a76-f02f-b1ddea34e56b, 14, 40428, 0\nGPU-cd127bcd-08c4-fe6a-78ca-fc41123d7119, 14, 40428, 0\nGPU-e947d8da-fc7a-4c0b-7d91-e9e67d34f4a6, 14, 40428, 0\n",
+    "gpu_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "mem_available_kib": 116378560,
+    "peak_cpu_rss_bytes": 1176440832,
+    "private_output_allocated_bytes_before_marker": 40960,
+    "wall_seconds": 8.470647510985145,
+    "worker_count": 1
+  },
+  "scanned_images": 2,
+  "schema_version": "trackocd.core.masa_predicted_feature_smoke_result.v1",
+  "scientific_pass_permitted": false,
+  "scope": "M1 required visual-interface engineering check, not main frontend freeze, M9, training, model selection or formal M2 cache",
+  "singleton_vs_batch_max_abs_delta_fp32": 4.6030618250370026e-07,
+  "source_role": "Tiny real MASA predicted-box interface smoke, never main/predicted feature cache",
+  "status": "PASS_TINY_REAL_PREDICTED_INTERFACE_NOT_PRIMARY_QUALIFICATION",
+  "stored_descriptor_max_unit_norm_error": 1.239776611328125e-05,
+  "strict_state_load": true,
+  "test_access": false,
+  "tested_prefixes": [
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2
+  ],
+  "tracks": 4,
+  "training": false,
+  "video_id": 4
+}

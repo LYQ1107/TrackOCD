@@ -532,3 +532,39 @@ after preflight. The private compact engineering payload cannot become formal
 M2 cache. This tiny gate cannot establish coverage, association quality,
 scientific PASS, frame-online decisions or primary-freeze permission. The
 limited-coverage choice remains pending; no training/R2/full cache is started.
+
+## Actual tiny predicted-box feature result (engineering only)
+
+Preregistration was pushed and independently verified as
+`f25ba9a323878ed7376cf3c8dec93540071bfffe` at23:44:28Z before inference.
+Completed **4 first-image physical IDs / 8 distinct predicted observations /
+2 chronological images**, each track has2 observed boxes. Two batches of4 plus
+one repeated first crop for the singleton comparison: **9 crop forwards**, not
+9 distinct observations. Existing sealed shard was reused; detector/tracker
+was not rerun. DINO source/crop/common config and checkpoint stayed unchanged.
+
+Result **PASS_TINY_REAL_PREDICTED_INTERFACE_NOT_PRIMARY_QUALIFICATION**:
+strict frozen768-D finite float16 descriptors; maximum stored unit-norm error
+**1.23978e-5**, singleton-versus-batch fp32 maximum difference **4.60306e-7**
+(limit1e-5). Available prefix1/2 aggregates checked: prefix1 is invariant when
+its second observation is poisoned; prefix2 has no unseen tail in this tiny
+check, so the broader all-prefix unit test remains distinct from real-smoke
+coverage. Model-state SHA before/after both
+`42c4c180dbaa825ee5bfecc6e6bf392af6439a1d2aa97f05095ac09b5e7097a9`.
+All parameters frozen/eval; no optimizer, training, GT/roles/Test access,
+semantic text, new image/weight download or formal feature cache.
+
+Actual **8.47s**, host peak **1,176,440,832 B**, GPU allocated peak570,027,008 B
+and reserved peak687,865,856 B. Private compact engineering NPZ **34,432 B**;
+completed private directory **49,152 allocated B**, including receipt and
+completion marker. Optional xFormers was absent; pinned DINO ran successfully
+in the unchanged base environment without adding it. No feature arrays/crops
+or prediction boxes are published, only the small aggregate receipt. No owned
+job remains live. This completes the M1 visual-interface engineering gate,
+**not** primary quality acceptance, formal M2/M9 or scientific PASS; the user
+quality-scope choice and original/R1 negative semantic findings remain intact.
+
+Post-result regression: **219 passed, no skips**. Final tests also bind the
+published tiny result to immutable model hashes, descriptor tolerance and the
+no-training/no-primary/no-formal-cache boundary. Actual aggregate receipt SHA256
+`cd042110c29be2ea10e8579ef7ca7a22d28150b8956735160e0d832c7278b202`.

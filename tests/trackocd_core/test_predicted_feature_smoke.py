@@ -90,3 +90,20 @@ else: raise AssertionError('Network allowed')
 """
     result = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=10)
     assert result.returncode == 0, result.stderr
+
+
+def test_actual_published_tiny_result_does_not_promote_to_primary_or_full_cache():
+    root = Path(__file__).resolve().parents[2]
+    receipt = json.loads((root / "outputs/trackocd_core/audit/masa_predicted_feature_smoke.json").read_text())
+    assert receipt["status"] == "PASS_TINY_REAL_PREDICTED_INTERFACE_NOT_PRIMARY_QUALIFICATION"
+    assert (receipt["tracks"], receipt["observations"], receipt["scanned_images"], receipt["feature_dimension"]) == (4, 8, 2, 768)
+    assert receipt["model_initial_state_sha256"] == receipt["model_final_state_sha256"]
+    assert receipt["singleton_vs_batch_max_abs_delta_fp32"] <= 1e-5
+    assert receipt["stored_descriptor_max_unit_norm_error"] < 1e-3
+    assert receipt["poisoned_future_prefix_invariance"] is True
+    assert receipt["all_encoder_parameters_frozen"] is True
+    assert receipt["private_payload"]["bytes"] < 2**20
+    for field in ("training", "optimizer_used", "gt_or_role_annotation_access", "test_access",
+                  "formal_cache_started", "primary_freeze_permitted", "scientific_pass_permitted",
+                  "external_process_interference", "new_image_or_checkpoint_download", "frame_online_decisions_tested"):
+        assert receipt[field] is False

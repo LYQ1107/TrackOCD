@@ -17,6 +17,24 @@
   This is engineering only; it cannot resolve the pending quality choice,
   prior R1 scientific negatives, GT-policy authority or optional M11.
 
+### Actual predicted interface result after exact remote preregistration
+
+- f25ba9a exactly verified at23:44:28Z before the single fresh-idle GPU job.
+  Completed4 tracks x2 observations from2 images:8 distinct crops plus one
+  repeated singleton check,9 crop forwards; no MASA reinference or GT substitute.
+- PASS engineering only: frozen finite768-D descriptors, singleton/batch
+  delta4.60306e-7, float16 norm error1.23978e-5, unchanged complete model digest,
+  available prefix1/2 checks (real changed future forprefix1, no tail forprefix2).
+- 8.47s; host1,176,440,832 B, GPU reserved687,865,856 B; private NPZ34,432 B,
+  completed tiny directory49,152 allocated B. No new dependencies/assets,
+  training, formal cache, annotations/roles/Test or foreign-process intervention.
+- Owned terminal exited0; no live owned job. M1 visual input compatibility
+  established, primary quality choice still pending. No M9/main scientific
+  PASS, R2 or GT-policy-scope expansion is inferred from this success.
+- Post-result regression: **219 passed, no skips**. Publish only the small
+  aggregate receipt plus source/tests/docs; exact remote delivery is verified
+  separately after commit. Main, original v2 and preexisting stashes preserved.
+
 ## 2026-10-10 — Exact v2 recovery (M0)
 
 - Question: did the new server restore the actual later v2, including atomic
