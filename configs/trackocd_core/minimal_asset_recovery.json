@@ -1,6 +1,12 @@
 {
   "schema_version": "trackocd.core.minimal_asset_recovery.v1",
-  "status": "CANDIDATES_NOT_RESTORED",
+  "status": "CURRENT_NAS_SOURCE_AUDITED_DINO_WEIGHT_RECOVERED_CODE_TRANSFER_PENDING",
+  "current_source_audit": "outputs/trackocd_core/audit/nas_source_audit.json",
+  "source_only_export_request": "docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md",
+  "current_verified_github_delivery": "38be5dd867c7c2ab2dee5f090a2c05366b12c96a",
+  "current_formal_shard_counts": {"present": 255, "required": 723, "missing": 468},
+  "current_dino_destination_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "current_added_large_asset_bytes": 346378731,
   "prepared_at_utc": "2026-10-09T15:17:37Z",
   "nas_host_reference": "remote-ssh-discovered:nas57",
   "nas_client_connection": {
@@ -49,7 +55,9 @@
       "source_candidate": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT",
       "selection": ["AGENTS.md", "scripts/trackocd_v2", "src/trackocd_v2", "configs/trackocd_v2", "research_log.md", "docs/trackocd_v2"],
       "size_bytes": null,
-      "availability": "CURRENT_CONTENTS_UNVERIFIED",
+      "python_source_size_bytes": 611764,
+      "python_file_count": 65,
+      "availability": "CURRENT_INVENTORY_AND_STATIC_AST_VERIFIED_EXACT_BYTES_NOT_TRANSFERRED",
       "checks": ["Read applicable ancestor/root/nested AGENTS.md before task actions", "Resolve symlinks without guessing path substitution", "Inventory named files and sizes only", "Compare with inherited v2 source without overwriting local work", "Do not relaunch historical scripts/PIDs"]
     },
     {
@@ -60,7 +68,7 @@
         "/home/Valadmin/A100/usr_for_deadline/trackocd_v2"
       ],
       "size_bytes": null,
-      "availability": "CURRENT_CONTENTS_UNVERIFIED",
+      "availability": "CURRENT_SOURCE_AUDITED_FORMAL_CACHE_PARTIAL_NOT_TRANSFERRED",
       "selection": "Metadata/manifests/configurations/complete markers first; no feature payload transfer in this pass",
       "checks": ["Confirm current source identity, last update and actual completed shards", "Do not assume historical 65 shards / 247756 observations are final", "Require checkpoint, frontend, feature, crop and causal lineage before cache reuse", "Verify complete markers against payloads, hashes and shard index coverage"]
     },
@@ -72,7 +80,7 @@
       "expected_size_bytes": 346378731,
       "expected_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
       "expected_hash_source": "assets/downloads_manifest.json",
-      "availability": "HISTORICALLY_LISTED_NOT_RESTORED",
+      "availability": "CURRENT_NAS_HASH_VERIFIED_A100_OFFICIAL_DOWNLOAD_RECOVERED",
       "checks": ["Current resolved source size and SHA256 must match pinned manifest", "Do not overwrite a different existing destination", "Recheck destination SHA256", "Recover exact DINO code/hub provenance separately before a small smoke"]
     }
   ],

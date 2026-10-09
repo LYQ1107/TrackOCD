@@ -1,7 +1,9 @@
 # M0 — TrackOCD core asset and protocol audit
 
-Date: 2026-10-09 (Asia/Shanghai). Engineering audit: **PASS**. Recovery of
-historical research assets: **BLOCKED**. Algorithm hypotheses: **NOT TESTED**.
+Initial audit: 2026-10-09 (Asia/Shanghai); continuation recorded in UTC below.
+Engineering audit and first four-commit GitHub delivery: **PASS**. Recovery of
+historical research assets: **PARTIAL / BLOCKED ON EXACT SOURCE TRANSFER**.
+Algorithm hypotheses: **NOT TESTED**.
 No new training, feature extraction, tracking inference or TAO Test access has
 been performed in M0.
 
@@ -244,3 +246,105 @@ On this follow-up, the worktree was clean before documentation edits and the
 same 15 tests passed again. About 91 GiB remains free. Training, large feature
 extraction and scientific evaluation have still not started; M0 remote
 delivery and current NAS asset verification remain required before advancing.
+
+## Verified delivery and current NAS evidence — 2026-10-09T16:16:35Z
+
+This supersedes the earlier transport/listener snapshots, not their history.
+The client-maintained A100 loopback relay at `127.0.0.1:17890` is now present.
+An ordinary non-force push published all four M0 commits through
+`38be5dd867c7c2ab2dee5f090a2c05366b12c96a`; an independent `git ls-remote`
+returned that exact SHA for the new research branch. The remote v2 branch
+still points to `cac66467af7ca137fc53bdbef34896dde47030d8`. No global proxy,
+SSH configuration, proxy daemon or external process was modified.
+
+The user started a new **read-only source audit** in NAS thread
+`盘点当前文件夹`, turn `01a1216a-ce14-7de0-9eec-36e9dd8af799`.
+Its completed command outputs, rather than the old journal, now establish:
+
+| Asset | Current source-side evidence | Recovery consequence |
+|---|---|---|
+| v2 Python source | 16 source + 49 script files, 611,764 bytes; static AST passes | Actual later source is located, **not transferred**. A100 has 27 tracked v2 Python files and lacks the sharded builder/reader. Exact source Git HEAD and file hashes remain unverified. |
+| DINOv2 B/14 weight | 346,378,731 bytes; source SHA and ZIP CRC match pinned official asset | Canonical weight can be recovered independently; old hub code is still missing. |
+| COVTrack physical stream | 369,794 tracks / 1,133,841 observations, no duplicate sample keys; SHA `63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1` matches cache input | Located on NAS, not restored on A100 or qualified for the new frozen frontend. |
+| Formal shards | **255 of 723 required**, 130,560 tracks / 561,672 observations; 2,087,621,953 payload bytes | Partial cache, 35.3061% track coverage; retain and validate existing units before any future resume. |
+| GT cache | Train 2,555 and Val 5,232 payload keys / done markers exactly match their manifests; 1,350,657,893 / 2,762,499,153 JSON bytes | File coverage is complete; contents were only sampled. This is GT input, not predicted tracking. Avoid raw JSON migration; later prefer compact, Train-Known-only export after lineage checks. |
+
+The formal manifest still says `RUNNING`; its `shard_count=255` is the existing
+count, not the required whole-cache count. With 512 tracks/shard, the latter
+is `ceil(369794/512)=723`. Missing units are **shard-000255 through
+shard-000722** (468 shards / 239,234 tracks). The latest completed marker is
+`2026-09-17T21:29:32.138874+00:00`, later than the old 65-shard journal entry.
+There is **no evidence of a currently live feature extractor**.
+
+All 255 existing units have their done marker and four payload files.
+Done/manifest agreement, NPY FP16 shapes and byte lengths, and Parquet envelope
+checks passed. **Parquet row contents, numerical array values and individual
+payload checksums were not validated**. They are structurally consistent
+reuse candidates, not yet a fully validated/recovered cache. The legacy
+reader correctly rejects a non-`COMPLETE` cache; do not edit that marker to
+pretend completion or restart an old supervisor/PID.
+
+The applicable NAS `AGENTS.md` (155 lines / 9,872 bytes) was read in full by
+the main agent from the complete source command output. No inspected v2
+subdirectory override was found. Its old Luna/Phase24 workflow was not
+started; the user's current M0–M10 goal and absolute no-TAO-Test constraint
+remain authoritative. During the NAS audit initial directory enumeration
+showed Test-related filenames/sizes, but no Test content was opened; subsequent
+checks excluded those assets.
+
+Current source paths are explicit in
+`outputs/trackocd_core/audit/nas_source_audit.json`. Old absolute `/data2`
+output paths and NAS broken symlinks must not be mistaken for valid new-server
+locations. The formerly relocated `/home/lwr/trackocd_v2_cache/pred` target
+is absent on NAS. This does not affect the separately located formal shards.
+
+### Weight recovered on A100; remaining environment gap
+
+The official DINOv2 weight was downloaded through the task-scoped relay into
+a task-owned temporary file. Its exact byte size and SHA were validated before
+an atomic no-overwrite hard-link installation at
+`/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth`.
+The destination hash matches both the pinned manifest and current NAS weight:
+`0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73`.
+Only the verified download temporary file/empty directory was removed; no
+pre-existing checkpoint or cache was touched. The checkpoint is ignored and
+will not be pushed to GitHub. New large-asset storage is 346,378,731 bytes
+(about 330.33 MiB), below the 15/30-GiB limits.
+
+The existing environment still supplies torch 2.6.0+cu118, torchvision
+0.21.0+cu118, NumPy 2.2.6 and pandas 2.3.3. **pyarrow is absent** and is a
+concrete gap for reading the formal Parquet indices. Old DINO hub code remains
+unavailable on both checked source hub paths and A100. OmegaConf, Hydra and
+xformers are also absent, but are not declared mandatory without the recovered
+runtime path. No package installation, CUDA worker, model inference or training
+was performed in this continuation. CPU asset checks are not a DINO inference
+smoke or a feature-contract compatibility proof.
+
+### Next smallest recovery action
+
+First transfer a **small code/config/test/provenance bundle**, not old archives,
+datasets, all GT JSON caches or the incomplete formal payloads. The complete
+Python inventory alone is only 611,764 bytes. Read source Git status and hash
+the named files; preserve exact bytes separately on A100 before comparing or
+merging unpublished work. The v2 sharded builder, reader and prefix-atomic
+runner must be recovered from real source, not rewritten from this audit.
+Remaining config/test/doc/metadata sizes require a source-side inventory.
+
+The source-side audit is now completed/idle, **not a live worker to wait on**.
+This A100 chat can read peer output but still lacks a message-dispatch or
+cross-host transfer tool. A client-mediated small transfer or source-side
+export is needed. See `docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md`.
+No bulk copying or new feature extraction is authorized by these source
+findings. M1–M10 have not been run, and no scientific PASS is claimed.
+
+An A100 file-by-file comparison against the actual NAS inventory confirms
+**38 missing files and eight shared files with different byte sizes**, including
+`persistent.py`, `protocol.py`, `build_common_features.py`,
+`build_predicted_evaluator_join.py`, `build_gt_benchmark_table.py`,
+`audit_canonical_tao.py`, `autonomous_supervisor.py` and `run_pred_baselines.py`.
+The other 19 shared files have equal sizes, which is **not proof of byte
+identity**. This demonstrates a real source-version gap, not just missing
+runtime assets. The comparison and local SHA values are reproducible in
+`scripts/trackocd_core/audit_assets.py`; NAS source SHA values remain pending.
+In particular, conclusions about the pushed old persistent evaluator must not
+be presented as a completed audit of the changed NAS evaluator.

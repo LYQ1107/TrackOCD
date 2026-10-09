@@ -1,0 +1,28 @@
+{
+  "budget_new_large_asset_bytes": 346378731,
+  "checks": {
+    "blocks_0_through_11": true,
+    "cls_token_768": true,
+    "final_norm_768": true,
+    "patch_embed_14": true
+  },
+  "destination": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+  "download_proxy_scope": "per-command 127.0.0.1:17890; shared service unchanged",
+  "feature_compatibility_proved": false,
+  "inference_started": false,
+  "installation": "verified temporary file, atomic hard link refusing overwrite",
+  "nas_source_evidence": "outputs/trackocd_core/audit/nas_source_audit.json",
+  "nas_source_weight_hash_equal": true,
+  "old_hub_code_restored": false,
+  "schema_version": "trackocd.core.checkpoint_recovery.v1",
+  "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "size_bytes": 346378731,
+  "source_kind": "OFFICIAL_PINNED_DOWNLOAD_NOT_NAS_FILE_TRANSFER",
+  "source_url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth",
+  "state_tensor_count": 175,
+  "status": "PASS_WEIGHT_INTEGRITY_AND_CPU_STATE_INSPECTION_ONLY",
+  "test_annotation_opened": false,
+  "torch_version": "2.6.0+cu118",
+  "training_started": false,
+  "verified_at_utc": "2026-10-09T16:23:41.936366+00:00"
+}

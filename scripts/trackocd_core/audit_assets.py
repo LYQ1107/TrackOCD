@@ -150,6 +150,20 @@ def main() -> int:
     root_tree = command(['git', 'rev-parse', 'HEAD^{tree}'])['stdout']
     meminfo = {k: int(v.split()[0]) for k, v in (line.split(':', 1) for line in Path('/proc/meminfo').read_text().splitlines())}
     stat = __import__('os').statvfs(ROOT)
+    source_audit_path = ROOT / 'outputs/trackocd_core/audit/nas_source_audit.json'
+    source_audit = json.loads(source_audit_path.read_text()) if source_audit_path.is_file() else None
+    source_comparison = []
+    for entry in source_audit['source_code']['inventory'] if source_audit else []:
+        local = file_record(ROOT / entry['relative_path'])
+        classification = ('MISSING_LOCAL' if not local['exists'] else
+                          'DIFFERENT_BYTE_SIZE' if local.get('size_bytes') != entry['size_bytes'] else
+                          'SAME_SIZE_NOT_BYTE_IDENTITY_PROOF')
+        source_comparison.append({'relative_path': entry['relative_path'],
+                                  'source_size_bytes': entry['size_bytes'],
+                                  'source_sha256': None, 'local_file': local,
+                                  'classification': classification})
+    checkpoint_receipt_path = ROOT / 'outputs/trackocd_core/audit/dino_checkpoint_recovery.json'
+    checkpoint_receipt = json.loads(checkpoint_receipt_path.read_text()) if checkpoint_receipt_path.is_file() else None
     audit = {
         'schema_version': 'trackocd.core.asset_audit.v1',
         'status': 'M0_AUDIT_COMPLETE_WITH_RECOVERY_GAPS',
@@ -185,6 +199,25 @@ def main() -> int:
                                      'journal_line': 22062, 'atomic_shards': 65,
                                      'observations': 247756, 'status': 'RUNNING',
                                      'current_final_state_known': False, 'files_recovered': False},
+        'current_nas_source_audit': {
+            'evidence_file': file_record(source_audit_path),
+            'source_turn': source_audit['source'] if source_audit else None,
+            'source_code': {key: source_audit['source_code'][key] for key in
+                            ('python_file_count', 'python_payload_bytes', 'source_bytes_restored_on_a100',
+                             'exact_source_hashes_verified', 'source_git_head_verified')} if source_audit else None,
+            'formal_cache': source_audit['formal_cache'] if source_audit else None,
+            'gt_cache': source_audit['gt_cache'] if source_audit else None,
+            'source_comparison': source_comparison,
+            'source_comparison_counts': dict(Counter(row['classification'] for row in source_comparison)),
+            'not_a_file_transfer_or_frontend_freeze': True,
+        },
+        'dino_checkpoint_recovery': {
+            'receipt': file_record(checkpoint_receipt_path),
+            'details': checkpoint_receipt,
+            'model_inference_or_feature_compatibility_proved': False,
+        },
+        'new_large_asset_bytes': (ROOT / 'checkpoints/dinov2_vitb14_pretrain.pth').stat().st_size
+                                if (ROOT / 'checkpoints/dinov2_vitb14_pretrain.pth').is_file() else 0,
         'legacy_evaluation_limitations': [
             'persistent evaluator accepts contaminated tokens after any same-category history',
             'NEW, wrong EXISTING and wrong KNOWN are collapsed into false assignment',

@@ -1,0 +1,475 @@
+{
+  "schema_version": "trackocd.core.nas_source_audit.v1",
+  "status": "SOURCE_AUDIT_COMPLETE_WITH_RECOVERY_GAPS",
+  "recorded_at_utc": "2026-10-09T16:16:35Z",
+  "a100_recovery_receipt_after_source_snapshot": "outputs/trackocd_core/audit/dino_checkpoint_recovery.json",
+  "source": {
+    "thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+    "thread_title": "盘点当前文件夹",
+    "host_id": "remote-ssh-discovered:nas57",
+    "turn_id": "01a1216a-ce14-7de0-9eec-36e9dd8af799",
+    "turn_status": "completed",
+    "started_at_unix": 1791562010,
+    "completed_at_unix": 1791562535,
+    "read_only": true
+  },
+  "instructions": {
+    "applicable_file": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/AGENTS.md",
+    "lines": 155,
+    "size_bytes": 9872,
+    "full_content_read_by_main_agent": true,
+    "source_command_id": "exec-9f13b7ef-2707-44e9-802e-b933bce88208",
+    "no_nested_override_found_in_checked_v2_directories": true,
+    "old_luna_phase24_monitoring_not_started": true
+  },
+  "source_code": {
+    "root": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT",
+    "python_file_count": 65,
+    "python_payload_bytes": 611764,
+    "src_python_count": 16,
+    "scripts_python_count": 49,
+    "static_ast_pass": true,
+    "project_modules_imported": false,
+    "exact_source_hashes_verified": false,
+    "source_git_head_verified": false,
+    "source_bytes_restored_on_a100": false,
+    "a100_tracked_v2_python_files": 27,
+    "inventory_complete": true,
+    "parent_output_including_later_search_was_truncated": true,
+    "inventory_command_id": "exec-e1c5fa59-d19e-4b4c-aeda-8c7d6d5e85d9",
+    "inventory": [
+      {
+        "relative_path": "src/trackocd_v2/models/__init__.py",
+        "size_bytes": 422
+      },
+      {
+        "relative_path": "src/trackocd_v2/models/semantic_adapter.py",
+        "size_bytes": 8221
+      },
+      {
+        "relative_path": "src/trackocd_v2/evaluation/standard_ocd.py",
+        "size_bytes": 3551
+      },
+      {
+        "relative_path": "src/trackocd_v2/evaluation/__init__.py",
+        "size_bytes": 46
+      },
+      {
+        "relative_path": "src/trackocd_v2/evaluation/persistent.py",
+        "size_bytes": 5047
+      },
+      {
+        "relative_path": "src/trackocd_v2/sharded_cache.py",
+        "size_bytes": 7210
+      },
+      {
+        "relative_path": "src/trackocd_v2/methods/phe_track.py",
+        "size_bytes": 3584
+      },
+      {
+        "relative_path": "src/trackocd_v2/methods/safe_controller.py",
+        "size_bytes": 8573
+      },
+      {
+        "relative_path": "src/trackocd_v2/methods/dpmeans.py",
+        "size_bytes": 1976
+      },
+      {
+        "relative_path": "src/trackocd_v2/methods/__init__.py",
+        "size_bytes": 45
+      },
+      {
+        "relative_path": "src/trackocd_v2/methods/nearest_prototype.py",
+        "size_bytes": 2192
+      },
+      {
+        "relative_path": "src/trackocd_v2/schema.py",
+        "size_bytes": 3684
+      },
+      {
+        "relative_path": "src/trackocd_v2/__init__.py",
+        "size_bytes": 266
+      },
+      {
+        "relative_path": "src/trackocd_v2/protocol.py",
+        "size_bytes": 2688
+      },
+      {
+        "relative_path": "src/trackocd_v2/frontend_contract.py",
+        "size_bytes": 8016
+      },
+      {
+        "relative_path": "src/trackocd_v2/io.py",
+        "size_bytes": 1935
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/frontend_execution_preflight.py",
+        "size_bytes": 13348
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_predicted_stream.py",
+        "size_bytes": 3316
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_sharded_feature_cache.py",
+        "size_bytes": 31127
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/register_frontend_normalization.py",
+        "size_bytes": 3683
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/select_frontend.py",
+        "size_bytes": 7372
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_common_features.py",
+        "size_bytes": 19198
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_predicted_stream_statistics.py",
+        "size_bytes": 18835
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_frontend_metrics.py",
+        "size_bytes": 38816
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/register_test_frontend_stream.py",
+        "size_bytes": 6691
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_simowt_native.py",
+        "size_bytes": 15054
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_gt_phe.py",
+        "size_bytes": 5700
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_test_ocd.py",
+        "size_bytes": 21349
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_pred_safe_controller.py",
+        "size_bytes": 10723
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_test_persistent_audit.py",
+        "size_bytes": 2541
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/train_semantic_adapter.py",
+        "size_bytes": 14998
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_covtrack_legacy_test.py",
+        "size_bytes": 7066
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_gt_baselines.py",
+        "size_bytes": 8208
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/register_frontend_metrics.py",
+        "size_bytes": 6087
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_test_track_stream.py",
+        "size_bytes": 8650
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/register_controller_decision.py",
+        "size_bytes": 2370
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_final_report.py",
+        "size_bytes": 10337
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/select_val_final.py",
+        "size_bytes": 5575
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_predicted_sanity.py",
+        "size_bytes": 20422
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/prepare_frontend_bakeoff.py",
+        "size_bytes": 1538
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/finalize_freeze.py",
+        "size_bytes": 4089
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/normalize_frontend_output.py",
+        "size_bytes": 21828
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_predicted_features.py",
+        "size_bytes": 6186
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_common_features.py",
+        "size_bytes": 7653
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_gt_track_stream.py",
+        "size_bytes": 7469
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_predicted_evaluator_join.py",
+        "size_bytes": 8173
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_final_tables.py",
+        "size_bytes": 12802
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_gt_safe_controller.py",
+        "size_bytes": 10298
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_covtrack_native.py",
+        "size_bytes": 14780
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_gt_benchmark_table.py",
+        "size_bytes": 6964
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/record_predicted_feature_pause.py",
+        "size_bytes": 3271
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_current_model_contract.py",
+        "size_bytes": 6201
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_test_trackeval_gt.py",
+        "size_bytes": 4693
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/build_frontend_evaluator_join.py",
+        "size_bytes": 14869
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_predicted_current_model.py",
+        "size_bytes": 1965
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/bootstrap.py",
+        "size_bytes": 2303
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_frontend_assets.py",
+        "size_bytes": 11988
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_geometry.py",
+        "size_bytes": 13484
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_canonical_tao.py",
+        "size_bytes": 6308
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/audit_external_ocd_baselines.py",
+        "size_bytes": 6172
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_ovtr_native.py",
+        "size_bytes": 14448
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_teta_reference.py",
+        "size_bytes": 8527
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/register_frontend_stage.py",
+        "size_bytes": 2919
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/autonomous_supervisor.py",
+        "size_bytes": 48238
+      },
+      {
+        "relative_path": "scripts/trackocd_v2/run_pred_baselines.py",
+        "size_bytes": 25676
+      }
+    ]
+  },
+  "checkpoint": {
+    "path": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/dinov2_vitb14_pretrain.pth",
+    "size_bytes": 346378731,
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "zip_crc_pass": true,
+    "matches_pinned_manifest": true,
+    "a100_restored": false,
+    "exact_old_hub_code_restored": false
+  },
+  "physical_stream": {
+    "path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+    "size_bytes": 258036479,
+    "sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "track_count": 369794,
+    "observation_count": 1133841,
+    "duplicate_sample_keys": 0,
+    "source_splits": [
+      "val_predicted"
+    ],
+    "source_sha_matches_cache_manifest": true,
+    "a100_restored": false,
+    "frontend_lawfulness_qualified_for_new_goal": false
+  },
+  "formal_cache": {
+    "root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
+    "manifest_status": "RUNNING",
+    "manifest_shard_count_field": 255,
+    "required_shards_from_total_tracks": 723,
+    "actual_shard_directories": 255,
+    "done_markers": 255,
+    "checked_shards": 255,
+    "stored_track_count": 130560,
+    "stored_observation_count": 561672,
+    "track_coverage_fraction": 0.3530614342039081,
+    "missing_track_count": 239234,
+    "missing_shard_count": 468,
+    "missing_shard_indices_inclusive": [
+      255,
+      722
+    ],
+    "stored_payload_bytes": 2087621953,
+    "dimension": 768,
+    "dtype": "float16",
+    "prefixes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "first_completed_utc": "2026-09-17T13:06:38.516860+00:00",
+    "last_completed_utc": "2026-09-17T21:29:32.138874+00:00",
+    "done_manifest_correspondence_pass": true,
+    "npy_header_shape_and_byte_length_pass": true,
+    "parquet_envelope_pass": true,
+    "parquet_rows_validated": false,
+    "full_array_values_validated": false,
+    "individual_payload_sha256_verified": false,
+    "whole_cache_complete": false,
+    "live_extractor_verified": false,
+    "a100_restored": false,
+    "old_shard_reuse_status": "STRUCTURALLY_CONSISTENT_CANDIDATES_PENDING_CONTENT_LINEAGE_VALIDATION"
+  },
+  "gt_cache": {
+    "root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks",
+    "train": {
+      "manifest_tracks": 2555,
+      "feature_files": 2555,
+      "done_markers": 2555,
+      "launched_markers": 2555,
+      "payload_bytes": 1350657893,
+      "missing_expected_keys": 0
+    },
+    "val": {
+      "manifest_tracks": 5232,
+      "feature_files": 5232,
+      "done_markers": 5232,
+      "launched_markers": 5232,
+      "payload_bytes": 2762499153,
+      "missing_expected_keys": 0
+    },
+    "scope": "FILE_KEY/MARKER_COVERAGE_COMPLETE; CONTENT_SAMPLED_ONLY",
+    "sample_dimension": 768,
+    "sample_prefixes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "not_a_predicted_track_result": true,
+    "train_cache_includes_non_known_rows_whitelist_required": true,
+    "a100_restored": false
+  },
+  "minimal_transfer": {
+    "source_python_payload_bytes": 611764,
+    "source_configs_tests_docs_metadata_size_bytes": null,
+    "physical_stream_bytes": 258036479,
+    "native_evaluator_rows_bytes": 242080666,
+    "formal_existing_payload_bytes": 2087621953,
+    "gt_train_json_bytes": 1350657893,
+    "gt_val_json_bytes": 2762499153,
+    "avoid_raw_gt_json_transfer": true,
+    "prefer_train_known_only_compact_export_after_feature_contract_validation": true,
+    "feature_payload_transfer_started": false,
+    "no_whole_archive_transfer": true
+  },
+  "limitations": [
+    "NAS code is located, not byte-recovered or proven equal to any current Git commit.",
+    "Old OUTPUT_TARGET and absolute symlinks require explicit relocation, not blind path rewriting.",
+    "Current cache is incomplete despite shard_count=255; required count is ceil(369794/512)=723.",
+    "255 shards passed structure checks only; no per-file checksum/Parquet row/numerical validation yet.",
+    "Old hub directories are missing on NAS; matching checkpoint does not prove exact embedding-code compatibility.",
+    "NAS default Python lacks torch and pyarrow; source audit did not execute project modules.",
+    "TAO Test filenames were seen during initial directory enumeration, but contents were not opened; subsequent checks were restricted.",
+    "Historical RUNNING/PIDs do not establish a live extractor on NAS or A100."
+  ],
+  "test_annotation_opened": false,
+  "training_started": false,
+  "feature_extraction_started": false,
+  "external_process_interference": false,
+  "command_evidence": [
+    {
+      "command_id": "exec-cbe5d883-a866-49e0-91fe-67dbe4dd5027",
+      "command": "/bin/bash -lc \"jq '{status,split,total_tracks,total_observations,shard_count,shard_tracks,dimension,completed_count:(.completed_shards|length),first_completed:.completed_shards[0],last_completed:.completed_shards[-1],encoder,input,authorization,cache_root}' /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native/cache_manifest.json\nfind /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native/shards -mindepth 1 -maxdepth 1 -type d | wc -l\nfind /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native/shards -mindepth 2 -maxdepth 2 -name .done | wc -l\ndu -sh /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks/train /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks/val\nsed -n '1,140p' /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native/shards/shard-000000/.done\"",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"RUNNING\",\n  \"split\": \"val\",\n  \"total_tracks\": 369794,\n  \"total_observations\": 561672,\n  \"shard_count\": 255,\n  \"shard_tracks\": 512,\n  \"dimension\": 768,\n  \"completed_count\": 255,\n  \"first_completed\": {\n    \"finished_utc\": \"2026-09-17T13:06:38.516860+00:00\",\n    \"format\": \"npy_plus_parquet_index\",\n    \"observation_count\": 6160,\n    \"prefixes\": [\n      1,\n      2,\n      4,\n      8,\n      16\n    ],\n    \"schema_version\": \"trackocd.v2.formal_feature_shard.v1\",\n    \"source_sha256\": \"63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1\",\n    \"track_count\": 512,\n    \"track_start\": 0\n  },\n  \"last_completed\": {\n    \"finished_utc\": \"2026-09-17T21:29:32.138874+00:00\",\n    \"format\": \"npy_plus_parquet_index\",\n    \"observation_count\": 1013,\n    \"prefixes\": [\n      1,\n      2,\n      4,\n      8,\n      16\n    ],\n    \"schema_version\": \"trackocd.v2.formal_feature_shard.v1\",\n    \"source_sha256\": \"63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1\",\n    \"track_count\": 512,\n    \"track_start\": 130048\n  },\n  \"encoder\": {\n    \"aggregation\": \"quality-weighted causal mean then L2 normalization\",\n    \"category_id_feature\": false,\n    \"future_observations_used\": false,\n    \"name\": \"DINOv2 ViT-B/14\",\n    \"physical_id_feature\": false,\n    \"text_or_category_logits\": false\n  },\n  \"input\": {\n    \"format\": \"grouped_jsonl\",\n    \"path\": \"/data2/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl\",\n    \"sha256\": \"63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1\"\n  },\n  \"authorization\": {\n    \"default_input\": \"/data2/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl\",\n    \"frontend\": \"COVTrack-native\",\n    \"representation_path\": \"/data2/usr_for_deadline/trackocd_v2/project_outputs/audit/representation_decision.json\",\n    \"representation_sha256\": \"4cbf0cf43084e5994d217d2598fc412f341494b3c68a916ddd763b6af9c92244\",\n    \"selection_path\": \"/data2/usr_for_deadline/trackocd_v2/project_outputs/audit/frontend_selection.json\",\n    \"selection_sha256\": \"6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e\",\n    \"split\": \"val\",\n    \"stage_path\": \"/data2/usr_for_deadline/trackocd_v2/project_outputs/audit/frontend_covtrack_native.json\",\n    \"stage_sha256\": \"524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526\"\n  },\n  \"cache_root\": \"/data2/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native\"\n}\n255\n255\n2.0G\t/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native\n1.3G\t/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks/train\n2.7G\t/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks/val\n{\n  \"finished_utc\": \"2026-09-17T13:06:38.516860+00:00\",\n  \"format\": \"npy_plus_parquet_index\",\n  \"observation_count\": 6160,\n  \"prefixes\": [\n    1,\n    2,\n    4,\n    8,\n    16\n  ],\n  \"schema_version\": \"trackocd.v2.formal_feature_shard.v1\",\n  \"source_sha256\": \"63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1\",\n  \"track_count\": 512,\n  \"track_start\": 0\n}\n",
+      "output_truncated": false
+    },
+    {
+      "command_id": "exec-adc94d22-e2b1-42ff-aa76-4ceee5a60078",
+      "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, pickletools, zipfile\np=Path('/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/dinov2_vitb14_pretrain.pth')\nresult={'path':str(p),'bytes':p.stat().st_size,'is_zip':zipfile.is_zipfile(p)}\nwith zipfile.ZipFile(p) as z:\n    entries=z.infolist()\n    result['zip_entries']=len(entries)\n    result['tensor_storage_entries']=sum('/data/' in x.filename for x in entries)\n    pkl=[x for x in entries if x.filename.endswith('/data.pkl')]\n    result['pickle_metadata_bytes']=pkl[0].file_size\n    strings=[arg for op,arg,pos in pickletools.genops(z.read(pkl[0])) if op.name in ('BINUNICODE','SHORT_BINUNICODE','UNICODE')]\n    result['state_keys_sample']=[s for s in strings if s in ('cls_token','pos_embed','mask_token','patch_embed.proj.weight','patch_embed.proj.bias','blocks.0.attn.qkv.weight','blocks.11.attn.qkv.weight','norm.weight')]\n    result['zip_crc_error']=z.testzip()\n    sha=hashlib.sha256()\n    with p.open('rb') as f:\n        for chunk in iter(lambda:f.read(8*1024*1024),b''):sha.update(chunk)\n    result['sha256']=sha.hexdigest()\nprint(json.dumps(result,ensure_ascii=False,indent=2))\nPY\"",
+      "exit_code": 0,
+      "output": "{\n  \"path\": \"/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/dinov2_vitb14_pretrain.pth\",\n  \"bytes\": 346378731,\n  \"is_zip\": true,\n  \"zip_entries\": 177,\n  \"tensor_storage_entries\": 175,\n  \"pickle_metadata_bytes\": 21829,\n  \"state_keys_sample\": [\n    \"cls_token\",\n    \"pos_embed\",\n    \"mask_token\",\n    \"patch_embed.proj.weight\",\n    \"patch_embed.proj.bias\",\n    \"blocks.0.attn.qkv.weight\",\n    \"blocks.11.attn.qkv.weight\",\n    \"norm.weight\"\n  ],\n  \"zip_crc_error\": null,\n  \"sha256\": \"0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73\"\n}\n",
+      "output_truncated": false
+    },
+    {
+      "command_id": "exec-6d2643b2-7449-4e1f-beff-ceba24bf4d07",
+      "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport json, hashlib\nbase=Path('/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs')\nrows=observations=0; keys=set(); duplicates=0; splits=set(); sha=hashlib.sha256()\np=base/'manifests/frontend_streams/covtrack_native/physical_tracks.jsonl'\nwith p.open('rb') as f:\n    for line in f:\n        sha.update(line)\n        if not line.strip():continue\n        row=json.loads(line);rows+=1;observations+=len(row['frame_ids']);key=row['sample_key']\n        duplicates+=key in keys;keys.add(key);splits.add(row.get('source_split'))\nm=json.loads((base/'features/formal/covtrack_native/cache_manifest.json').read_text())\nprint(json.dumps({'manifest_source_path':str(p),'tracks':rows,'observations':observations,'duplicate_sample_keys':duplicates,'source_splits':sorted(splits),'actual_sha256':sha.hexdigest(),'source_sha256_matches_cache_manifest':sha.hexdigest()==m['input']['sha256'],'tracks_match_cache_manifest':rows==m['total_tracks']},ensure_ascii=False,indent=2))\nPY\"",
+      "exit_code": 0,
+      "output": "{\n  \"manifest_source_path\": \"/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl\",\n  \"tracks\": 369794,\n  \"observations\": 1133841,\n  \"duplicate_sample_keys\": 0,\n  \"source_splits\": [\n    \"val_predicted\"\n  ],\n  \"actual_sha256\": \"63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1\",\n  \"source_sha256_matches_cache_manifest\": true,\n  \"tracks_match_cache_manifest\": true\n}\n",
+      "output_truncated": false
+    },
+    {
+      "command_id": "exec-4e5fdceb-a54c-4b3d-a2c9-6d69b0e16a97",
+      "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport json, math, struct\nimport numpy as np\nroot=Path('/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native')\nmanifest=json.loads((root/'cache_manifest.json').read_text())\nassert manifest['split']=='val'\nentries=manifest['completed_shards']\nexpected=(manifest['total_tracks']+manifest['shard_tracks']-1)//manifest['shard_tracks']\nentry_map={int(e['track_start'])//manifest['shard_tracks']:e for e in entries}\nissues=[]; tracks=0; observations=0; checked=0; payload_bytes=0\npresent_dirs=sorted((root/'shards').glob('shard-*'))\nfor folder in present_dirs:\n    if not folder.is_dir():continue\n    index=int(folder.name.split('-')[1]); entry=entry_map.get(index)\n    required=['.done','observations.npy','prefix_features.npy','full_features.npy','index.parquet']\n    missing=[n for n in required if not (folder/n).is_file()]\n    if missing:issues.append({'shard':folder.name,'missing':missing});continue\n    done=json.loads((folder/'.done').read_text())\n    if done\"'!=entry:issues.append({'\"'shard':folder.name,'done_differs_from_manifest':True})\n    nt=int(done['track_count']); no=int(done['observation_count'])\n    shapes={'observations.npy':(no,768),'prefix_features.npy':(nt,5,768),'full_features.npy':(nt,768)}\n    for name,expected_shape in shapes.items():\n        p=folder/name\n        with p.open('rb') as f:\n            version=np.lib.format.read_magic(f)\n            shape,fortran,dtype=np.lib.format._read_array_header(f,version)\n            expected_bytes=f.tell()+math.prod(shape)*dtype.itemsize\n        if tuple(shape)\"'!=expected_shape or dtype!=np.dtype('\"'float16') or p.stat().st_size\"'!=expected_bytes:\n            issues.append({'\"'shard':folder.name,'file':name,'shape':shape,'dtype':str(dtype),'bytes':p.stat().st_size,'expected_bytes':expected_bytes})\n        payload_bytes+=p.stat().st_size\n    p=folder/'index.parquet'\n    with p.open('rb') as f:\n        magic=f.read(4); f.seek(-8,2); tail=f.read(8)\n    footer_size=struct.unpack('<I',tail[:4])[0]\n    if magic\"'!=b'\"'PAR1' or tail[4:]\"'!=b'\"'PAR1' or footer_size+12>p.stat().st_size:\n        issues.append({'shard':folder.name,'invalid_parquet_envelope':True})\n    payload_bytes+=p.stat().st_size\n    tracks+=nt; observations+=no; checked+=1\npresent=set(entry_map)\nmissing_indices=sorted(set(range(expected))-present)\nresult={'scope':'TAO Val only; metadata/header/footer checks, no inference','manifest_status':manifest['status'],'required_total_tracks':manifest['total_tracks'],'required_total_shards':expected,'actual_shard_dirs':len(present_dirs),'checked_shards':checked,'done_track_count':tracks,'done_observation_count':observations,'coverage_pct':round(tracks/manifest['total_tracks']*100,4),'missing_tracks':manifest['total_tracks']-tracks,'missing_shards':len(missing_indices),'missing_shard_range':[min(missing_indices),max(missing_indices)] if missing_indices else None,'manifest_done_count_agrees':len(entries)==checked,'manifest_observation_count_agrees':manifest['total_observations']==observations,'stored_payload_bytes':payload_bytes,'issues':issues,'parquet_row_values_validated':False}\nprint(json.dumps(result,ensure_ascii=False,indent=2))\nPY\"",
+      "exit_code": 0,
+      "output": "{\n  \"scope\": \"TAO Val only; metadata/header/footer checks, no inference\",\n  \"manifest_status\": \"RUNNING\",\n  \"required_total_tracks\": 369794,\n  \"required_total_shards\": 723,\n  \"actual_shard_dirs\": 255,\n  \"checked_shards\": 255,\n  \"done_track_count\": 130560,\n  \"done_observation_count\": 561672,\n  \"coverage_pct\": 35.3061,\n  \"missing_tracks\": 239234,\n  \"missing_shards\": 468,\n  \"missing_shard_range\": [\n    255,\n    722\n  ],\n  \"manifest_done_count_agrees\": true,\n  \"manifest_observation_count_agrees\": true,\n  \"stored_payload_bytes\": 2087621953,\n  \"issues\": [],\n  \"parquet_row_values_validated\": false\n}\n",
+      "output_truncated": false
+    },
+    {
+      "command_id": "exec-1492ec0e-a3fa-4c27-852c-335f6f789dc1",
+      "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport json\nbase=Path('/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs')\nresult={}\nfor split in ('train','val'):\n    manifest_path=base/'manifests'/('tao_'+split+'_gt_tracks.jsonl')\n    with manifest_path.open() as f: rows=[json.loads(line) for line in f if line.strip()]\n    expected={str(r['sample_key']) for r in rows}\n    folder=base/'features/gt_tracks'/split\n    paths=list(folder.glob('*.json')); actual={p.stem for p in paths}\n    done={p.name.removesuffix('.json.done') for p in folder.glob('*.json.done')}\n    launched={p.name.removesuffix('.json.launched') for p in folder.glob('*.json.launched')}\n    sample_path=sorted(paths)[0]\n    sample=json.loads(sample_path.read_text())\n    result[split]={'manifest_path':str(manifest_path),'manifest_rows':len(rows),'unique_keys':len(expected),'feature_json_files':len(paths),'done_markers':len(done),'launched_markers':len(launched),'missing_features':sorted(expected-actual),'unexpected_features':sorted(actual-expected),'missing_done':sorted(expected-done),'launched_without_payload':sorted(launched-actual),'stale_launched_with_done':len(launched&done),'payload_bytes':sum(p.stat().st_size for p in paths),'sample_path':str(sample_path),'sample_keys':list(sample),'sample_prefix_keys':list(sample.get('prefix_features',{})),'sample_full_dimension':len(sample.get('full_feature',[]))}\nprint(json.dumps(result,ensure_ascii=False,indent=2))\nPY\nfind /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/src/trackocd_v2 -name '*.py' | wc -l\nfind /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/scripts/trackocd_v2 -name '*.py' | wc -l\nrg -n 'dinov2|DINOv2' /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/assets/downloads_manifest.json --max-columns 500 --max-columns-preview\"",
+      "exit_code": 0,
+      "output": "{\n  \"train\": {\n    \"manifest_path\": \"/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_train_gt_tracks.jsonl\",\n    \"manifest_rows\": 2555,\n    \"unique_keys\": 2555,\n    \"feature_json_files\": 2555,\n    \"done_markers\": 2555,\n    \"launched_markers\": 2555,\n    \"missing_features\": [],\n    \"unexpected_features\": [],\n    \"missing_done\": [],\n    \"launched_without_payload\": [],\n    \"stale_launched_with_done\": 2555,\n    \"payload_bytes\": 1350657893,\n    \"sample_path\": \"/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks/train/0_0.json\",\n    \"sample_keys\": [\n      \"boxes_xyxy\",\n      \"feature\",\n      \"frame_embeddings\",\n      \"frame_ids\",\n      \"full_feature\",\n      \"image_paths\",\n      \"lineage\",\n      \"physical_track_id\",\n      \"prefix_features\",\n      \"prefix_observations_used\",\n      \"quality\",\n      \"sample_key\",\n      \"schema_version\",\n      \"source_split\",\n      \"video_id\"\n    ],\n    \"sample_prefix_keys\": [\n      \"1\",\n      \"16\",\n      \"2\",\n      \"4\",\n      \"8\"\n    ],\n    \"sample_full_dimension\": 768\n  },\n  \"val\": {\n    \"manifest_path\": \"/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_gt_tracks.jsonl\",\n    \"manifest_rows\": 5232,\n    \"unique_keys\": 5232,\n    \"feature_json_files\": 5232,\n    \"done_markers\": 5232,\n    \"launched_markers\": 5232,\n    \"missing_features\": [],\n    \"unexpected_features\": [],\n    \"missing_done\": [],\n    \"launched_without_payload\": [],\n    \"stale_launched_with_done\": 5232,\n    \"payload_bytes\": 2762499153,\n    \"sample_path\": \"/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks/val/1000_6727.json\",\n    \"sample_keys\": [\n      \"boxes_xyxy\",\n      \"feature\",\n      \"frame_embeddings\",\n      \"frame_ids\",\n      \"full_feature\",\n      \"image_paths\",\n      \"lineage\",\n      \"physical_track_id\",\n      \"prefix_features\",\n      \"prefix_observations_used\",\n      \"quality\",\n      \"sample_key\",\n      \"schema_version\",\n      \"source_split\",\n      \"video_id\"\n    ],\n    \"sample_prefix_keys\": [\n      \"1\",\n      \"16\",\n      \"2\",\n      \"4\",\n      \"8\"\n    ],\n    \"sample_full_dimension\": 768\n  }\n}\n16\n49\n8:  \"checkpoints/dinov2_vitb14_pretrain.pth\": {\n9:    \"source\": \"https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth (facebookresearch/dinov2)\",\n12:    \"note\": \"official DINOv2 ViT-B/14 pretrain\"\n",
+      "output_truncated": false
+    },
+    {
+      "command_id": "exec-0be0333e-66a2-42fd-b377-007309d5e1b8",
+      "command": "/bin/bash -lc \"jq '.\\\"checkpoints/dinov2_vitb14_pretrain.pth\\\"' /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/assets/downloads_manifest.json\nnl -ba /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/src/trackocd_v2/io.py | sed -n '9,22p'\nnl -ba /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/src/trackocd_v2/sharded_cache.py | sed -n '23,43p'\nls -ld /home/user/.cache/torch/hub/facebookresearch_dinov2_main /home/lwr/.cache/torch/hub/facebookresearch_dinov2_main 2>&1\nwc -lc /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/AGENTS.md\nfind /home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native/shards -maxdepth 2 \\\\( -name .launched -o -name '*.tmp*' \\\\) -printf '%p\\\\n' | head -12\"",
+      "exit_code": 0,
+      "output": "{\n  \"source\": \"https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth (facebookresearch/dinov2)\",\n  \"size_bytes\": 346378731,\n  \"sha256\": \"0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73\",\n  \"note\": \"official DINOv2 ViT-B/14 pretrain\"\n}\n     9\tfrom typing import Any\n    10\t\n    11\t\n    12\tPROJECT_ROOT = Path(__file__).resolve().parents[2]\n    13\tOUTPUT_TARGET = Path(\"/data2/usr_for_deadline/trackocd_v2/project_outputs\")\n    14\tOUTPUT_LINK = PROJECT_ROOT / \"outputs/trackocd_v2\"\n    15\t\n    16\t\n    17\tdef atomic_write_text(path: Path, text: str) -> None:\n    18\t    path.parent.mkdir(parents=True, exist_ok=True)\n    19\t    temporary = path.with_name(f\".{path.name}.tmp.{os.getpid()}\")\n    20\t    temporary.write_text(text)\n    21\t    os.replace(temporary, path)\n    22\t\n    23\t\n    24\t    def __init__(self, manifest_path: Path):\n    25\t        self.manifest_path = Path(manifest_path).resolve()\n    26\t        if not self.manifest_path.is_file():\n    27\t            raise FileNotFoundError(self.manifest_path)\n    28\t        self.manifest: Dict[str, Any] = json.loads(self.manifest_path.read_text(encoding=\"utf-8\"))\n    29\t        if self.manifest.get(\"status\") != \"COMPLETE\":\n    30\t            raise RuntimeError(\"sharded feature cache is not complete: %s\" % self.manifest.get(\"status\"))\n    31\t        if self.manifest.get(\"format\") != \"sharded_numpy_with_parquet_index\":\n    32\t            raise ValueError(\"unsupported sharded feature format\")\n    33\t        if tuple(int(value) for value in self.manifest.get(\"prefixes\", [])) != PREFIXES:\n    34\t            raise ValueError(\"sharded feature prefix contract is not 1/2/4/8/16\")\n    35\t        self.cache_root = Path(str(self.manifest[\"cache_root\"])).resolve()\n    36\t        self.shard_tracks = int(self.manifest[\"shard_tracks\"])\n    37\t        if self.shard_tracks < 1:\n    38\t            raise ValueError(\"invalid shard_tracks\")\n    39\t        self._entries: Dict[str, Tuple[int, int, Dict[str, Any]]] = {}\n    40\t        self._shards: Dict[int, Path] = {}\n    41\t        self._current_index: Optional[int] = None\n    42\t        self._current_observations: Optional[np.ndarray] = None\n    43\t        self._current_prefixes: Optional[np.ndarray] = None\nls: cannot access '/home/user/.cache/torch/hub/facebookresearch_dinov2_main': No such file or directory\nls: cannot access '/home/lwr/.cache/torch/hub/facebookresearch_dinov2_main': No such file or directory\n 155 9872 /home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/AGENTS.md\n",
+      "output_truncated": false
+    },
+    {
+      "command_id": "exec-f6f24315-c3b8-4f44-ad5e-8a31d7235cca",
+      "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport ast, json\nroot=Path('/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT')\nresults=[]\nfor relative in ('src/trackocd_v2','scripts/trackocd_v2'):\n    files=list((root/relative).rglob('*.py'));errors=[]\n    for path in files:\n        try:ast.parse(path.read_text(),filename=str(path))\n        except (SyntaxError,UnicodeError) as e:errors.append({'path':str(path),'error':str(e)})\n    results.append({'directory':relative,'python_files':len(files),'syntax_errors':errors})\nprint(json.dumps({'static_ast_only':True,'project_modules_imported':False,'checks':results},ensure_ascii=False,indent=2))\nPY\"",
+      "exit_code": 0,
+      "output": "{\n  \"static_ast_only\": true,\n  \"project_modules_imported\": false,\n  \"checks\": [\n    {\n      \"directory\": \"src/trackocd_v2\",\n      \"python_files\": 16,\n      \"syntax_errors\": []\n    },\n    {\n      \"directory\": \"scripts/trackocd_v2\",\n      \"python_files\": 49,\n      \"syntax_errors\": []\n    }\n  ]\n}\n",
+      "output_truncated": false
+    }
+  ]
+}

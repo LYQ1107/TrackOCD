@@ -1,5 +1,5 @@
 {
-  "ancestor_delivery_tree": "492da1cf826f7937bd6011649ec4c7d5ef9fdf6f",
+  "ancestor_delivery_tree": "7e371bb8df13d8edd06b3a77e7a319dbf29c9b63",
   "annotations": {
     "train": {
       "annotated_images": 18274,
@@ -418,12 +418,15 @@
       "reuse_note": "historical state not current state"
     },
     {
-      "exists": false,
+      "exists": true,
       "is_symlink": false,
       "kind": "dinov2_checkpoint",
+      "mtime_ns": 1791562730955240047,
       "path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
       "resolved_path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
-      "reuse_note": "official source/hash in assets/downloads_manifest.json"
+      "reuse_note": "official source/hash in assets/downloads_manifest.json",
+      "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+      "size_bytes": 346378731
     },
     {
       "exists": false,
@@ -453,6 +456,1014 @@
   "budget": {
     "hard_bytes": 32212254720,
     "soft_bytes": 16106127360
+  },
+  "current_nas_source_audit": {
+    "evidence_file": {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1791563065606418653,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/nas_source_audit.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/nas_source_audit.json",
+      "sha256": "815b7f8fbf9b3d60aad8b7883328f87a52fd810d2af543069f292781ee322b9a",
+      "size_bytes": 36022
+    },
+    "formal_cache": {
+      "a100_restored": false,
+      "actual_shard_directories": 255,
+      "checked_shards": 255,
+      "dimension": 768,
+      "done_manifest_correspondence_pass": true,
+      "done_markers": 255,
+      "dtype": "float16",
+      "first_completed_utc": "2026-09-17T13:06:38.516860+00:00",
+      "full_array_values_validated": false,
+      "individual_payload_sha256_verified": false,
+      "last_completed_utc": "2026-09-17T21:29:32.138874+00:00",
+      "live_extractor_verified": false,
+      "manifest_shard_count_field": 255,
+      "manifest_status": "RUNNING",
+      "missing_shard_count": 468,
+      "missing_shard_indices_inclusive": [
+        255,
+        722
+      ],
+      "missing_track_count": 239234,
+      "npy_header_shape_and_byte_length_pass": true,
+      "old_shard_reuse_status": "STRUCTURALLY_CONSISTENT_CANDIDATES_PENDING_CONTENT_LINEAGE_VALIDATION",
+      "parquet_envelope_pass": true,
+      "parquet_rows_validated": false,
+      "prefixes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "required_shards_from_total_tracks": 723,
+      "root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
+      "stored_observation_count": 561672,
+      "stored_payload_bytes": 2087621953,
+      "stored_track_count": 130560,
+      "track_coverage_fraction": 0.3530614342039081,
+      "whole_cache_complete": false
+    },
+    "gt_cache": {
+      "a100_restored": false,
+      "not_a_predicted_track_result": true,
+      "root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/gt_tracks",
+      "sample_dimension": 768,
+      "sample_prefixes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "scope": "FILE_KEY/MARKER_COVERAGE_COMPLETE; CONTENT_SAMPLED_ONLY",
+      "train": {
+        "done_markers": 2555,
+        "feature_files": 2555,
+        "launched_markers": 2555,
+        "manifest_tracks": 2555,
+        "missing_expected_keys": 0,
+        "payload_bytes": 1350657893
+      },
+      "train_cache_includes_non_known_rows_whitelist_required": true,
+      "val": {
+        "done_markers": 5232,
+        "feature_files": 5232,
+        "launched_markers": 5232,
+        "manifest_tracks": 5232,
+        "missing_expected_keys": 0,
+        "payload_bytes": 2762499153
+      }
+    },
+    "not_a_file_transfer_or_frontend_freeze": true,
+    "source_code": {
+      "exact_source_hashes_verified": false,
+      "python_file_count": 65,
+      "python_payload_bytes": 611764,
+      "source_bytes_restored_on_a100": false,
+      "source_git_head_verified": false
+    },
+    "source_comparison": [
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/models/__init__.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/models/__init__.py"
+        },
+        "relative_path": "src/trackocd_v2/models/__init__.py",
+        "source_sha256": null,
+        "source_size_bytes": 422
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/models/semantic_adapter.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/models/semantic_adapter.py"
+        },
+        "relative_path": "src/trackocd_v2/models/semantic_adapter.py",
+        "source_sha256": null,
+        "source_size_bytes": 8221
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518337856,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/standard_ocd.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/standard_ocd.py",
+          "sha256": "b9332f8b16520a7c7aa6e24c25ad3ad750c726d437e627bb55936706a3367a6e",
+          "size_bytes": 3551
+        },
+        "relative_path": "src/trackocd_v2/evaluation/standard_ocd.py",
+        "source_sha256": null,
+        "source_size_bytes": 3551
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518296922,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/__init__.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/__init__.py",
+          "sha256": "787eddbcdc1fc174461489aba04c74c9459412f72c44d955035b8d41f7705f8c",
+          "size_bytes": 46
+        },
+        "relative_path": "src/trackocd_v2/evaluation/__init__.py",
+        "source_sha256": null,
+        "source_size_bytes": 46
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518337856,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/persistent.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/persistent.py",
+          "sha256": "6b6c9f561a388b83202b4b6c4a4881e5d8d8b2666f800d8c3e302e164285f954",
+          "size_bytes": 3743
+        },
+        "relative_path": "src/trackocd_v2/evaluation/persistent.py",
+        "source_sha256": null,
+        "source_size_bytes": 5047
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/sharded_cache.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/sharded_cache.py"
+        },
+        "relative_path": "src/trackocd_v2/sharded_cache.py",
+        "source_sha256": null,
+        "source_size_bytes": 7210
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518548051,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/phe_track.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/phe_track.py",
+          "sha256": "074a206b3f6ea29ba5cd9c4a8da1e1e778eb418296759895ba21824afcba4fd8",
+          "size_bytes": 3584
+        },
+        "relative_path": "src/trackocd_v2/methods/phe_track.py",
+        "source_sha256": null,
+        "source_size_bytes": 3584
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/safe_controller.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/safe_controller.py"
+        },
+        "relative_path": "src/trackocd_v2/methods/safe_controller.py",
+        "source_sha256": null,
+        "source_size_bytes": 8573
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518548051,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/dpmeans.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/dpmeans.py",
+          "sha256": "c406a4a6052214c2b32425be4899fc9e1982468a1b1ee4135b03e75417139ae5",
+          "size_bytes": 1976
+        },
+        "relative_path": "src/trackocd_v2/methods/dpmeans.py",
+        "source_sha256": null,
+        "source_size_bytes": 1976
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518337856,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/__init__.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/__init__.py",
+          "sha256": "b21f2f0db16e0f9c00bd467d20c58926ffd20efa06b87e4e6342ec2374303d23",
+          "size_bytes": 45
+        },
+        "relative_path": "src/trackocd_v2/methods/__init__.py",
+        "source_sha256": null,
+        "source_size_bytes": 45
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518548051,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/nearest_prototype.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/nearest_prototype.py",
+          "sha256": "e9ba14bdcbf5bd3c3968c8f67155190d4a3bfa95f67b187c4d998bfa2f7c5373",
+          "size_bytes": 2192
+        },
+        "relative_path": "src/trackocd_v2/methods/nearest_prototype.py",
+        "source_sha256": null,
+        "source_size_bytes": 2192
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518548051,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/schema.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/schema.py",
+          "sha256": "501623fdf4c4ec23dc50ac53a59773026c72743ed860701e3f8c697f214c40ab",
+          "size_bytes": 3684
+        },
+        "relative_path": "src/trackocd_v2/schema.py",
+        "source_sha256": null,
+        "source_size_bytes": 3684
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518155239,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/__init__.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/__init__.py",
+          "sha256": "dc031894087052224232f0ef431784dd3d5b196f3c24558c5063122af390d294",
+          "size_bytes": 266
+        },
+        "relative_path": "src/trackocd_v2/__init__.py",
+        "source_sha256": null,
+        "source_size_bytes": 266
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518548051,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/protocol.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/protocol.py",
+          "sha256": "da84a11c8c3e129b7018ad1afb67e1240d650deefd2e64a788471dd499bf2b74",
+          "size_bytes": 2076
+        },
+        "relative_path": "src/trackocd_v2/protocol.py",
+        "source_sha256": null,
+        "source_size_bytes": 2688
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/frontend_contract.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/frontend_contract.py"
+        },
+        "relative_path": "src/trackocd_v2/frontend_contract.py",
+        "source_sha256": null,
+        "source_size_bytes": 8016
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309518337856,
+          "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/io.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/io.py",
+          "sha256": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031",
+          "size_bytes": 1935
+        },
+        "relative_path": "src/trackocd_v2/io.py",
+        "source_sha256": null,
+        "source_size_bytes": 1935
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/frontend_execution_preflight.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/frontend_execution_preflight.py"
+        },
+        "relative_path": "scripts/trackocd_v2/frontend_execution_preflight.py",
+        "source_sha256": null,
+        "source_size_bytes": 13348
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_predicted_stream.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_predicted_stream.py",
+          "sha256": "9c4fcd9f7bb26bc0d6de87e0ac9472efd81ae5054d3400eb85a004a9c81fb94b",
+          "size_bytes": 3316
+        },
+        "relative_path": "scripts/trackocd_v2/build_predicted_stream.py",
+        "source_sha256": null,
+        "source_size_bytes": 3316
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_sharded_feature_cache.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_sharded_feature_cache.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_sharded_feature_cache.py",
+        "source_sha256": null,
+        "source_size_bytes": 31127
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_frontend_normalization.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_frontend_normalization.py"
+        },
+        "relative_path": "scripts/trackocd_v2/register_frontend_normalization.py",
+        "source_sha256": null,
+        "source_size_bytes": 3683
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/select_frontend.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/select_frontend.py"
+        },
+        "relative_path": "scripts/trackocd_v2/select_frontend.py",
+        "source_sha256": null,
+        "source_size_bytes": 7372
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_common_features.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_common_features.py",
+          "sha256": "63b0dc333520abe897881ceb1a8721c7ad0d0637fa2c89bfefd876961e3715af",
+          "size_bytes": 18598
+        },
+        "relative_path": "scripts/trackocd_v2/build_common_features.py",
+        "source_sha256": null,
+        "source_size_bytes": 19198
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_predicted_stream_statistics.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_predicted_stream_statistics.py"
+        },
+        "relative_path": "scripts/trackocd_v2/audit_predicted_stream_statistics.py",
+        "source_sha256": null,
+        "source_size_bytes": 18835
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_frontend_metrics.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_frontend_metrics.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_frontend_metrics.py",
+        "source_sha256": null,
+        "source_size_bytes": 38816
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_test_frontend_stream.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_test_frontend_stream.py"
+        },
+        "relative_path": "scripts/trackocd_v2/register_test_frontend_stream.py",
+        "source_sha256": null,
+        "source_size_bytes": 6691
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_simowt_native.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_simowt_native.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_simowt_native.py",
+        "source_sha256": null,
+        "source_size_bytes": 15054
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_phe.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_phe.py",
+          "sha256": "2b0a6cc45e0397063dcd4021e11b5b1f75a92d19e61946c4e1be80b64e97e8db",
+          "size_bytes": 5700
+        },
+        "relative_path": "scripts/trackocd_v2/run_gt_phe.py",
+        "source_sha256": null,
+        "source_size_bytes": 5700
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_test_ocd.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_test_ocd.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_test_ocd.py",
+        "source_sha256": null,
+        "source_size_bytes": 21349
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_pred_safe_controller.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_pred_safe_controller.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_pred_safe_controller.py",
+        "source_sha256": null,
+        "source_size_bytes": 10723
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_test_persistent_audit.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_test_persistent_audit.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_test_persistent_audit.py",
+        "source_sha256": null,
+        "source_size_bytes": 2541
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/train_semantic_adapter.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/train_semantic_adapter.py"
+        },
+        "relative_path": "scripts/trackocd_v2/train_semantic_adapter.py",
+        "source_sha256": null,
+        "source_size_bytes": 14998
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_covtrack_legacy_test.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_covtrack_legacy_test.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_covtrack_legacy_test.py",
+        "source_sha256": null,
+        "source_size_bytes": 7066
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_baselines.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_baselines.py",
+          "sha256": "28fdd34ef6d00cbd136f2c242d2fd23191e5765e174620ea2843c581b445f446",
+          "size_bytes": 8208
+        },
+        "relative_path": "scripts/trackocd_v2/run_gt_baselines.py",
+        "source_sha256": null,
+        "source_size_bytes": 8208
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_frontend_metrics.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_frontend_metrics.py"
+        },
+        "relative_path": "scripts/trackocd_v2/register_frontend_metrics.py",
+        "source_sha256": null,
+        "source_size_bytes": 6087
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_test_track_stream.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_test_track_stream.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_test_track_stream.py",
+        "source_sha256": null,
+        "source_size_bytes": 8650
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_controller_decision.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_controller_decision.py"
+        },
+        "relative_path": "scripts/trackocd_v2/register_controller_decision.py",
+        "source_sha256": null,
+        "source_size_bytes": 2370
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_final_report.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_final_report.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_final_report.py",
+        "source_sha256": null,
+        "source_size_bytes": 10337
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/select_val_final.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/select_val_final.py"
+        },
+        "relative_path": "scripts/trackocd_v2/select_val_final.py",
+        "source_sha256": null,
+        "source_size_bytes": 5575
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_predicted_sanity.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_predicted_sanity.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_predicted_sanity.py",
+        "source_sha256": null,
+        "source_size_bytes": 20422
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/prepare_frontend_bakeoff.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/prepare_frontend_bakeoff.py"
+        },
+        "relative_path": "scripts/trackocd_v2/prepare_frontend_bakeoff.py",
+        "source_sha256": null,
+        "source_size_bytes": 1538
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/finalize_freeze.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/finalize_freeze.py"
+        },
+        "relative_path": "scripts/trackocd_v2/finalize_freeze.py",
+        "source_sha256": null,
+        "source_size_bytes": 4089
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/normalize_frontend_output.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/normalize_frontend_output.py"
+        },
+        "relative_path": "scripts/trackocd_v2/normalize_frontend_output.py",
+        "source_sha256": null,
+        "source_size_bytes": 21828
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_predicted_features.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_predicted_features.py",
+          "sha256": "0208b8c6024c7d898e2c2d2af5921742090678e8023d233bad8d811074afd09d",
+          "size_bytes": 6186
+        },
+        "relative_path": "scripts/trackocd_v2/audit_predicted_features.py",
+        "source_sha256": null,
+        "source_size_bytes": 6186
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309516813402,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_common_features.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_common_features.py",
+          "sha256": "00c9de44bae33f89913c3c9fd56498dee5b06003326ac0af974d2268e01eb512",
+          "size_bytes": 7653
+        },
+        "relative_path": "scripts/trackocd_v2/audit_common_features.py",
+        "source_sha256": null,
+        "source_size_bytes": 7653
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_gt_track_stream.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_gt_track_stream.py",
+          "sha256": "7a579e8b10727307e7fe1221f6f2f4e9a19b8b297cd7c3aa62f66776e3837449",
+          "size_bytes": 7469
+        },
+        "relative_path": "scripts/trackocd_v2/build_gt_track_stream.py",
+        "source_sha256": null,
+        "source_size_bytes": 7469
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_predicted_evaluator_join.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_predicted_evaluator_join.py",
+          "sha256": "6549498ef93900238f2ea9016f1a5da21a459672121f75644eeefeb567ada2a8",
+          "size_bytes": 7977
+        },
+        "relative_path": "scripts/trackocd_v2/build_predicted_evaluator_join.py",
+        "source_sha256": null,
+        "source_size_bytes": 8173
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_final_tables.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_final_tables.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_final_tables.py",
+        "source_sha256": null,
+        "source_size_bytes": 12802
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_safe_controller.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_safe_controller.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_gt_safe_controller.py",
+        "source_sha256": null,
+        "source_size_bytes": 10298
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_covtrack_native.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_covtrack_native.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_covtrack_native.py",
+        "source_sha256": null,
+        "source_size_bytes": 14780
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_gt_benchmark_table.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_gt_benchmark_table.py",
+          "sha256": "f249c415bc36e95941a70968720aa65fddaca62bb9e247748f760b02f73d8f32",
+          "size_bytes": 5308
+        },
+        "relative_path": "scripts/trackocd_v2/build_gt_benchmark_table.py",
+        "source_sha256": null,
+        "source_size_bytes": 6964
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/record_predicted_feature_pause.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/record_predicted_feature_pause.py"
+        },
+        "relative_path": "scripts/trackocd_v2/record_predicted_feature_pause.py",
+        "source_sha256": null,
+        "source_size_bytes": 3271
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309516813402,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_current_model_contract.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_current_model_contract.py",
+          "sha256": "3e21048f72ef3b690a8ce9bf6859ee477816648b1c9cd8489f696f8cf9778a8e",
+          "size_bytes": 6201
+        },
+        "relative_path": "scripts/trackocd_v2/audit_current_model_contract.py",
+        "source_sha256": null,
+        "source_size_bytes": 6201
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_test_trackeval_gt.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_test_trackeval_gt.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_test_trackeval_gt.py",
+        "source_sha256": null,
+        "source_size_bytes": 4693
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_frontend_evaluator_join.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_frontend_evaluator_join.py"
+        },
+        "relative_path": "scripts/trackocd_v2/build_frontend_evaluator_join.py",
+        "source_sha256": null,
+        "source_size_bytes": 14869
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309516813402,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_predicted_current_model.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_predicted_current_model.py",
+          "sha256": "6d84763c8f70fea969b84cb35623685964bb4a682409b0f744e0e23068c96919",
+          "size_bytes": 1965
+        },
+        "relative_path": "scripts/trackocd_v2/audit_predicted_current_model.py",
+        "source_sha256": null,
+        "source_size_bytes": 1965
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/bootstrap.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/bootstrap.py",
+          "sha256": "769dc312bc3b0fbe2a11f2753b747fe2c9a233a5b79b70878aef1251807a07de",
+          "size_bytes": 2303
+        },
+        "relative_path": "scripts/trackocd_v2/bootstrap.py",
+        "source_sha256": null,
+        "source_size_bytes": 2303
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_frontend_assets.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_frontend_assets.py"
+        },
+        "relative_path": "scripts/trackocd_v2/audit_frontend_assets.py",
+        "source_sha256": null,
+        "source_size_bytes": 11988
+      },
+      {
+        "classification": "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309516813402,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_geometry.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_geometry.py",
+          "sha256": "fcba8892a1e2d8cb53f621006fdb2918ec973c39f7b55b7f9a955ee2ef3d835b",
+          "size_bytes": 13484
+        },
+        "relative_path": "scripts/trackocd_v2/audit_geometry.py",
+        "source_sha256": null,
+        "source_size_bytes": 13484
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309516155237,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_canonical_tao.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_canonical_tao.py",
+          "sha256": "3323250f9aa935f9af515b99b62bc3a201cb6a283fbd745829ab806a024111d1",
+          "size_bytes": 5839
+        },
+        "relative_path": "scripts/trackocd_v2/audit_canonical_tao.py",
+        "source_sha256": null,
+        "source_size_bytes": 6308
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_external_ocd_baselines.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_external_ocd_baselines.py"
+        },
+        "relative_path": "scripts/trackocd_v2/audit_external_ocd_baselines.py",
+        "source_sha256": null,
+        "source_size_bytes": 6172
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_ovtr_native.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_ovtr_native.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_ovtr_native.py",
+        "source_sha256": null,
+        "source_size_bytes": 14448
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_teta_reference.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_teta_reference.py"
+        },
+        "relative_path": "scripts/trackocd_v2/run_teta_reference.py",
+        "source_sha256": null,
+        "source_size_bytes": 8527
+      },
+      {
+        "classification": "MISSING_LOCAL",
+        "local_file": {
+          "exists": false,
+          "is_symlink": false,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_frontend_stage.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/register_frontend_stage.py"
+        },
+        "relative_path": "scripts/trackocd_v2/register_frontend_stage.py",
+        "source_sha256": null,
+        "source_size_bytes": 2919
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/autonomous_supervisor.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/autonomous_supervisor.py",
+          "sha256": "d38586faf55da13b7d345ba911c58b57d7e5f63c5ba99009ffba45c2623edd95",
+          "size_bytes": 11458
+        },
+        "relative_path": "scripts/trackocd_v2/autonomous_supervisor.py",
+        "source_sha256": null,
+        "source_size_bytes": 48238
+      },
+      {
+        "classification": "DIFFERENT_BYTE_SIZE",
+        "local_file": {
+          "exists": true,
+          "is_symlink": false,
+          "mtime_ns": 1790664309517155238,
+          "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_pred_baselines.py",
+          "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_pred_baselines.py",
+          "sha256": "7b57bc5152e4d8a3d95d861010d5fc130a0bc85053887ca2eed59cf377567407",
+          "size_bytes": 13012
+        },
+        "relative_path": "scripts/trackocd_v2/run_pred_baselines.py",
+        "source_sha256": null,
+        "source_size_bytes": 25676
+      }
+    ],
+    "source_comparison_counts": {
+      "DIFFERENT_BYTE_SIZE": 8,
+      "MISSING_LOCAL": 38,
+      "SAME_SIZE_NOT_BYTE_IDENTITY_PROOF": 19
+    },
+    "source_turn": {
+      "completed_at_unix": 1791562535,
+      "host_id": "remote-ssh-discovered:nas57",
+      "read_only": true,
+      "started_at_unix": 1791562010,
+      "thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+      "thread_title": "\u76d8\u70b9\u5f53\u524d\u6587\u4ef6\u5939",
+      "turn_id": "01a1216a-ce14-7de0-9eec-36e9dd8af799",
+      "turn_status": "completed"
+    }
+  },
+  "dino_checkpoint_recovery": {
+    "details": {
+      "budget_new_large_asset_bytes": 346378731,
+      "checks": {
+        "blocks_0_through_11": true,
+        "cls_token_768": true,
+        "final_norm_768": true,
+        "patch_embed_14": true
+      },
+      "destination": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+      "download_proxy_scope": "per-command 127.0.0.1:17890; shared service unchanged",
+      "feature_compatibility_proved": false,
+      "inference_started": false,
+      "installation": "verified temporary file, atomic hard link refusing overwrite",
+      "nas_source_evidence": "outputs/trackocd_core/audit/nas_source_audit.json",
+      "nas_source_weight_hash_equal": true,
+      "old_hub_code_restored": false,
+      "schema_version": "trackocd.core.checkpoint_recovery.v1",
+      "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+      "size_bytes": 346378731,
+      "source_kind": "OFFICIAL_PINNED_DOWNLOAD_NOT_NAS_FILE_TRANSFER",
+      "source_url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth",
+      "state_tensor_count": 175,
+      "status": "PASS_WEIGHT_INTEGRITY_AND_CPU_STATE_INSPECTION_ONLY",
+      "test_annotation_opened": false,
+      "torch_version": "2.6.0+cu118",
+      "training_started": false,
+      "verified_at_utc": "2026-10-09T16:23:41.936366+00:00"
+    },
+    "model_inference_or_feature_compatibility_proved": false,
+    "receipt": {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1791563021936758925,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/dino_checkpoint_recovery.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/dino_checkpoint_recovery.json",
+      "sha256": "2e8cde20d782800b8e8f8bb6254f00235a48204869e39e4309d1d45776fb242f",
+      "size_bytes": 1239
+    }
   },
   "existing_pandas_output_directories": [
     {
@@ -529,7 +1540,7 @@
     }
   ],
   "external_process_interference": false,
-  "generated_utc": "2026-10-09T15:00:37.390668+00:00",
+  "generated_utc": "2026-10-09T16:27:50.206051+00:00",
   "git": {
     "branch": {
       "returncode": 0,
@@ -539,12 +1550,12 @@
     "branches": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 44615cc Audit TrackOCD core assets and recover inherited role protocol\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
+      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 38be5dd Record client-only NAS SSH route and observed proxy prerequisites\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
     },
     "head": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "44615cc8efe4da350fe09c1598af740c0c7f9681"
+      "stdout": "38be5dd867c7c2ab2dee5f090a2c05366b12c96a"
     },
     "stashes": {
       "returncode": 0,
@@ -554,12 +1565,12 @@
     "status": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "M configs/trackocd_core/roles.json\n M docs/trackocd_core/M0_ASSET_AND_PROTOCOL_AUDIT.md\n M scripts/trackocd_core/audit_assets.py\n M tests/trackocd_core/test_asset_audit.py\n?? scripts/trackocd_core/recover_role_files.py"
+      "stdout": "M configs/trackocd_core/minimal_asset_recovery.json\n M docs/trackocd_core/M0_ASSET_AND_PROTOCOL_AUDIT.md\n M outputs/trackocd_core/audit/assets.json\n M scripts/trackocd_core/audit_assets.py"
     },
     "worktrees": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 44615cc8efe4da350fe09c1598af740c0c7f9681\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
+      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 38be5dd867c7c2ab2dee5f090a2c05366b12c96a\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
     }
   },
   "historical_cache_evidence": {
@@ -580,6 +1591,7 @@
     "standard evaluator remaps KNOWN tokens together with anonymous tokens",
     "whole-track ordering/prefix means do not prove truly frame-online replay"
   ],
+  "new_large_asset_bytes": 346378731,
   "official_role_sources": {
     "distractor_map": {
       "exists": true,
@@ -607,13 +1619,13 @@
     "repository": "https://github.com/YangLiu14/Open-World-Tracking"
   },
   "resource_snapshot": {
-    "available_disk_bytes": 96770715648,
+    "available_disk_bytes": 96400580608,
     "gpus": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 24 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
+      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 29 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
     },
-    "mem_available_kib": 104928688,
+    "mem_available_kib": 104962000,
     "mem_total_kib": 131633116
   },
   "roles": {
