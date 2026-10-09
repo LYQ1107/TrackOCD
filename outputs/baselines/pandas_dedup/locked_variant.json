@@ -1,0 +1,15 @@
+{
+  "variant": "Dedup-C",
+  "nms_config": {
+    "nms_iou": 0.7,
+    "max_detections": 100
+  },
+  "selection_is_tao_val_development": true,
+  "any_recall_eligible": false,
+  "calibration_hota": 0.2319645186933783,
+  "calibration_recall_losses": {
+    "all": 0.006772908366533881,
+    "base": 0.002979145978152964,
+    "novel": 0.036036036036036
+  }
+}

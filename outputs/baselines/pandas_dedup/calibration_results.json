@@ -1,0 +1,2230 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "variant": "Original-FG-0",
+      "diagnostics": {
+        "status": "PASS",
+        "variant": "Original-FG-0",
+        "subset": "calibration",
+        "video_ids": [
+          4,
+          20,
+          22,
+          23,
+          24,
+          25,
+          26,
+          30,
+          31,
+          35,
+          36,
+          37,
+          39,
+          45,
+          49,
+          52,
+          54,
+          55,
+          58,
+          59
+        ],
+        "videos": 20,
+        "frames": 22322,
+        "annotated_frames": 792,
+        "candidate_counts_before": {
+          "count": 22322,
+          "total": 3747198,
+          "mean": 167.87017292357316,
+          "median": 162.0,
+          "p90": 274.0,
+          "max": 299
+        },
+        "candidate_counts_after": {
+          "count": 22322,
+          "total": 3747198,
+          "mean": 167.87017292357316,
+          "median": 162.0,
+          "p90": 274.0,
+          "max": 299
+        },
+        "retained_fraction": 1.0,
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1669,
+              "total": 2510,
+              "recall": 0.6649402390438247
+            },
+            "base": {
+              "matched": 1583,
+              "total": 2014,
+              "recall": 0.7859980139026812
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1669,
+              "gt": 2510,
+              "predictions": 39134,
+              "unmatched_predictions": 37465
+            }
+          }
+        },
+        "physical_tracks": 51125,
+        "track_lengths": {
+          "count": 51125,
+          "total": 1139713,
+          "mean": 22.292674816625915,
+          "median": 10.0,
+          "p90": 51.0,
+          "max": 1147
+        },
+        "track_rows_full_stream": 1139713,
+        "track_rows_exported": 39134,
+        "lost_covered_gt": {
+          "covered_gt_lost": 0
+        },
+        "loss_examples": [],
+        "evaluator_only_semantic_diagnostic": {
+          "covered_novel_gt": 124,
+          "assigned_novel_prototype": 81,
+          "mapped_correct_covered_novel": 22,
+          "cluster_purity_on_covered_novel": 1.0,
+          "mapped_accuracy_on_covered_novel": 0.1774193548387097,
+          "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+          "anonymous_novel_clusters_observed": 24
+        },
+        "source_hashes": [
+          {
+            "video_id": 4,
+            "detections_sha256": "14512c8e3766b1b0e0ad02a22774bb2cb5c35b218a17f4bb5f3c53bf5b47f3ef",
+            "tracks_sha256": "3fed161bf2c95f85a5fb3293135805fd856080fa0ebb1ecf8ecb9149575034f4"
+          },
+          {
+            "video_id": 20,
+            "detections_sha256": "3c5263e01cb8ce61055ce55ab37b0ac87d4fe1912b35f21a02f6a071aeb366e8",
+            "tracks_sha256": "7eb7ceeabdfd84740c511df73c90f56a0324085be867782e7ace9a3970b6dbef"
+          },
+          {
+            "video_id": 22,
+            "detections_sha256": "9f5536b4293af061902f83b0cff9f619ffc3c35f70d2f5b765a129fccf978942",
+            "tracks_sha256": "6e67d4e047261e54f784c31991d3034892f6e94f09e761e1eac1b9a84193913d"
+          },
+          {
+            "video_id": 23,
+            "detections_sha256": "ae177d19438a74b02abddb4802343bc0b9e5471c150ca58e4da28dc044125bde",
+            "tracks_sha256": "2a763e649065233b1d6a638f617068714c6e59b4192eba5be08f7c177ab97b56"
+          },
+          {
+            "video_id": 24,
+            "detections_sha256": "c250417a4be927b0d8e418d50d1a8523937257bbbc41c5c1c06b4689c6ceeb24",
+            "tracks_sha256": "0facef85e2d9302f01ed8f3929541bcc0d807dabfea26f7fce276f34ec663574"
+          },
+          {
+            "video_id": 25,
+            "detections_sha256": "9c3e47acf42dfdb7caae7257d725f9a870800dc614749819cc061e16f9e34970",
+            "tracks_sha256": "72582d3005425a49850d3b04f10079e732238e6ce43c1de31852c7cf5e21aae5"
+          },
+          {
+            "video_id": 26,
+            "detections_sha256": "5a6b1b425c1a1e26db89e1f4b08567906933eb67e4d410ef2cce9712423e1114",
+            "tracks_sha256": "f9584f06c5a7adeb3a6982283d1d6c478663010163a8d3ae38a16449c4e75c5a"
+          },
+          {
+            "video_id": 30,
+            "detections_sha256": "229dce30cfa43eade05048679303e8e7238cad73c28b346a425466a728d0628b",
+            "tracks_sha256": "1e068aff8f9d08e678a02f560caf704fae8036520c47faeb99572f35adb0a19e"
+          },
+          {
+            "video_id": 31,
+            "detections_sha256": "59528378e8800641149bbee3b9da32a07e4a7533a42818801d8a3ca55a5e231a",
+            "tracks_sha256": "961222acf665f305df0be0ccc88fd9e3c12c3a5604dfc321e2d7fe6f5dce4e86"
+          },
+          {
+            "video_id": 35,
+            "detections_sha256": "677c97ab763f8f77d1445e02bc721f224947a5b3d55f1d64ad885499bb8661f2",
+            "tracks_sha256": "b3157a7d5129eb18cfeeaeb04492ca1dcbcc0b001879f03475f27a69139229e2"
+          },
+          {
+            "video_id": 36,
+            "detections_sha256": "85eec262be62ee2ca644091b78d8428330bee4405bba48f3068085a2983b3069",
+            "tracks_sha256": "da4f601000855fe3afca2dee10976d46925c41d7d2b021796a65d288f8047b08"
+          },
+          {
+            "video_id": 37,
+            "detections_sha256": "c4e7edd6e914a43bf06c6ce7c97fcdcc7ae0e65ab69d70b3ba6c64278d83f2c6",
+            "tracks_sha256": "99621d2a0b7c11bde18a9ab508bd5bf565086d9b00822d2ba29b962aa376a0d8"
+          },
+          {
+            "video_id": 39,
+            "detections_sha256": "d006f5d32f91f3fa48aac0695362ab8de1d73f7d82f7358349dc9ca66e734532",
+            "tracks_sha256": "ae552e3f6e9146b2195d282e45c373a61675d5b27f10bf4361f8030b9e0b76a5"
+          },
+          {
+            "video_id": 45,
+            "detections_sha256": "5cc9f26496fbf2a30083d137f92c320f869cf3be32277c7f4c6dc323ac5c3875",
+            "tracks_sha256": "baae62148d0c44c0d5fa5bd9f2ffeb8d72ded2bb6994b5b16ded27d0a3034295"
+          },
+          {
+            "video_id": 49,
+            "detections_sha256": "9501f7a80a4d66a92868828c513fe014f81cd1875da2dd70b1a24d555cc4923f",
+            "tracks_sha256": "4b1249cb4a01899c80c79e89b737448640b01348a111d5af9653f54aabeaaa3c"
+          },
+          {
+            "video_id": 52,
+            "detections_sha256": "eee593674566234849390e90dcc85c2bf00f805b120e94788afaf1065cdf157c",
+            "tracks_sha256": "da346464ab94accf0b260ceff5ba038d19e80dafbb42140fcde6e899e491a5c1"
+          },
+          {
+            "video_id": 54,
+            "detections_sha256": "5d213f95161b109a89e51781413a2dc204e09de0d602dbeb1501c296bfee4210",
+            "tracks_sha256": "e6074428b178c0bac883dcbaff00db1af2b8be07cbbf3bc7763367a772588620"
+          },
+          {
+            "video_id": 55,
+            "detections_sha256": "58c7bceebff33238de14f97ff7be5d11c95aa2a4a8aa8deb6cc23a58715d88c1",
+            "tracks_sha256": "3936bfdc10164a58089021c968bc5f020dbf7e8b2c70c31a2c0dab1a80c63a90"
+          },
+          {
+            "video_id": 58,
+            "detections_sha256": "826538882fd830e37d2e6e446c34bfb63cbab0590929c52e519a1fde091c20fe",
+            "tracks_sha256": "75a53a9b1720109af5ba5d5840ac0b6c25032724923455b908657336abeeca1e"
+          },
+          {
+            "video_id": 59,
+            "detections_sha256": "072fd55c5b504e394bf992a74a5d640ead304d1b55f483512b81b2bf7ab1aee6",
+            "tracks_sha256": "dc39db0f079f053be3fcbdec07be07b184a2443c115abcec6b225a933bae72f6"
+          }
+        ],
+        "prediction_sha256": "a88ebfc118b7152bf3bfe34de0672f2524be78025cbf73e8da78a73cf4313c48",
+        "annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+        "gt_export_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "unmatched_policy": "spatial one-to-one diagnostic; may include unannotated real objects"
+      },
+      "metrics": {
+        "HOTA_0": 0.13256979093331586,
+        "LocA_0": 0.6456936251102007,
+        "AssocA_0": 0.27460843316398675,
+        "DetA_0": 0.06399930717935394,
+        "HOTA_mean": 0.10139583631431269,
+        "LocA_mean": 0.8048786205418296,
+        "AssocA_mean": 0.2534825192174772,
+        "DetA_mean": 0.041197156079303764,
+        "IDF1": 0.0454175484291063,
+        "MOTA": -12.681673306772907,
+        "IDSW": 821,
+        "Frag": 153
+      },
+      "clear_counts": {
+        "CLR_TP": 1669,
+        "CLR_FN": 841,
+        "CLR_FP": 32679,
+        "IDSW": 821,
+        "MT": 49,
+        "PT": 40,
+        "ML": 18,
+        "Frag": 153.0,
+        "CLR_Frames": 792,
+        "MOTA": -12.681673306772907,
+        "MOTP": 0.8186781014536852,
+        "MODA": -12.354581673306773,
+        "CLR_Re": 0.6649402390438247,
+        "CLR_Pr": 0.048590893210667285,
+        "MTR": 0.45794392523364486,
+        "PTR": 0.37383177570093457,
+        "MLR": 0.16822429906542055,
+        "sMOTA": -12.802241533336174,
+        "CLR_F1": 0.09056378533832546,
+        "FP_per_frame": 41.26136363636363,
+        "MOTAL": -12.355742766198055,
+        "MOTP_sum": 1366.3737513262006
+      },
+      "trackeval_count": {
+        "Dets": 34348,
+        "GT_Dets": 2510,
+        "IDs": 19334,
+        "GT_IDs": 107
+      }
+    },
+    {
+      "variant": "Dedup-A",
+      "diagnostics": {
+        "status": "PASS",
+        "variant": "Dedup-A",
+        "subset": "calibration",
+        "video_ids": [
+          4,
+          20,
+          22,
+          23,
+          24,
+          25,
+          26,
+          30,
+          31,
+          35,
+          36,
+          37,
+          39,
+          45,
+          49,
+          52,
+          54,
+          55,
+          58,
+          59
+        ],
+        "videos": 20,
+        "frames": 22322,
+        "annotated_frames": 792,
+        "candidate_counts_before": {
+          "count": 22322,
+          "total": 3747198,
+          "mean": 167.87017292357316,
+          "median": 162.0,
+          "p90": 274.0,
+          "max": 299
+        },
+        "candidate_counts_after": {
+          "count": 22322,
+          "total": 817301,
+          "mean": 36.61414747782457,
+          "median": 41.0,
+          "p90": 50.0,
+          "max": 50
+        },
+        "retained_fraction": 0.21810990505438999,
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1942,
+              "total": 2510,
+              "recall": 0.7737051792828685
+            },
+            "base": {
+              "matched": 1748,
+              "total": 2014,
+              "recall": 0.8679245283018868
+            },
+            "novel": {
+              "matched": 107,
+              "total": 222,
+              "recall": 0.481981981981982
+            },
+            "distractor": {
+              "matched": 87,
+              "total": 274,
+              "recall": 0.3175182481751825
+            },
+            "one_to_one": {
+              "matched": 1939,
+              "gt": 2510,
+              "predictions": 29084,
+              "unmatched_predictions": 27145
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1798,
+              "total": 2510,
+              "recall": 0.7163346613545817
+            },
+            "base": {
+              "matched": 1662,
+              "total": 2014,
+              "recall": 0.8252234359483615
+            },
+            "novel": {
+              "matched": 65,
+              "total": 222,
+              "recall": 0.2927927927927928
+            },
+            "distractor": {
+              "matched": 71,
+              "total": 274,
+              "recall": 0.2591240875912409
+            },
+            "one_to_one": {
+              "matched": 1792,
+              "gt": 2510,
+              "predictions": 14584,
+              "unmatched_predictions": 12792
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1577,
+              "total": 2510,
+              "recall": 0.6282868525896415
+            },
+            "base": {
+              "matched": 1500,
+              "total": 2014,
+              "recall": 0.7447864945382324
+            },
+            "novel": {
+              "matched": 37,
+              "total": 222,
+              "recall": 0.16666666666666666
+            },
+            "distractor": {
+              "matched": 40,
+              "total": 274,
+              "recall": 0.145985401459854
+            },
+            "one_to_one": {
+              "matched": 1570,
+              "gt": 2510,
+              "predictions": 5724,
+              "unmatched_predictions": 4154
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1613,
+              "total": 2510,
+              "recall": 0.6426294820717131
+            },
+            "base": {
+              "matched": 1535,
+              "total": 2014,
+              "recall": 0.7621648460774578
+            },
+            "novel": {
+              "matched": 40,
+              "total": 222,
+              "recall": 0.18018018018018017
+            },
+            "distractor": {
+              "matched": 38,
+              "total": 274,
+              "recall": 0.1386861313868613
+            },
+            "one_to_one": {
+              "matched": 1608,
+              "gt": 2510,
+              "predictions": 6626,
+              "unmatched_predictions": 5018
+            }
+          }
+        },
+        "physical_tracks": 4218,
+        "track_lengths": {
+          "count": 4218,
+          "total": 190263,
+          "mean": 45.107396870554766,
+          "median": 11.0,
+          "p90": 116.0,
+          "max": 1171
+        },
+        "track_rows_full_stream": 190263,
+        "track_rows_exported": 6626,
+        "lost_covered_gt": {
+          "covered_gt_lost": 59,
+          "lost_base": 30,
+          "lost_with_other_gt_iou05": 0,
+          "lost_novel": 17,
+          "lost_distractor": 12
+        },
+        "loss_examples": [
+          {
+            "image_id": 152,
+            "annotation_id": 734,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5910661816596985,
+            "best_iou_after": 0.34320130944252014
+          },
+          {
+            "image_id": 181,
+            "annotation_id": 842,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6765925884246826,
+            "best_iou_after": 0.395021915435791
+          },
+          {
+            "image_id": 184,
+            "annotation_id": 851,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6928513646125793,
+            "best_iou_after": 0.3433554470539093
+          },
+          {
+            "image_id": 770,
+            "annotation_id": 3121,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6162211298942566,
+            "best_iou_after": 0.4537075161933899
+          },
+          {
+            "image_id": 772,
+            "annotation_id": 3139,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5365213751792908,
+            "best_iou_after": 0.49331551790237427
+          },
+          {
+            "image_id": 778,
+            "annotation_id": 3184,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.835489809513092,
+            "best_iou_after": 0.49271565675735474
+          },
+          {
+            "image_id": 779,
+            "annotation_id": 3192,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6866785883903503,
+            "best_iou_after": 0.45117104053497314
+          },
+          {
+            "image_id": 792,
+            "annotation_id": 3272,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5082343816757202,
+            "best_iou_after": 0.46540817618370056
+          },
+          {
+            "image_id": 793,
+            "annotation_id": 3275,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7356027364730835,
+            "best_iou_after": 0.46580827236175537
+          },
+          {
+            "image_id": 794,
+            "annotation_id": 3278,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.515197217464447,
+            "best_iou_after": 0.4944706857204437
+          },
+          {
+            "image_id": 795,
+            "annotation_id": 3279,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5640624761581421,
+            "best_iou_after": 0.3622022271156311
+          },
+          {
+            "image_id": 842,
+            "annotation_id": 3493,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5177379250526428,
+            "best_iou_after": 0.46645399928092957
+          },
+          {
+            "image_id": 856,
+            "annotation_id": 3539,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5665878653526306,
+            "best_iou_after": 0.3325667083263397
+          },
+          {
+            "image_id": 884,
+            "annotation_id": 3601,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6994056701660156,
+            "best_iou_after": 0.4960913360118866
+          },
+          {
+            "image_id": 886,
+            "annotation_id": 3614,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5248236060142517,
+            "best_iou_after": 0.48321324586868286
+          },
+          {
+            "image_id": 888,
+            "annotation_id": 3627,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7290804982185364,
+            "best_iou_after": 0.46654441952705383
+          },
+          {
+            "image_id": 900,
+            "annotation_id": 3691,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5964289903640747,
+            "best_iou_after": 0.4941805601119995
+          },
+          {
+            "image_id": 959,
+            "annotation_id": 3892,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7036417126655579,
+            "best_iou_after": 0.09379920363426208
+          },
+          {
+            "image_id": 965,
+            "annotation_id": 3910,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5409775972366333,
+            "best_iou_after": 0.48371750116348267
+          },
+          {
+            "image_id": 1028,
+            "annotation_id": 4211,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5901469588279724,
+            "best_iou_after": 0.44273853302001953
+          }
+        ],
+        "evaluator_only_semantic_diagnostic": {
+          "cluster_purity_on_covered_novel": null,
+          "mapped_accuracy_on_covered_novel": null,
+          "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+          "anonymous_novel_clusters_observed": 0
+        },
+        "source_hashes": [
+          {
+            "video_id": 4,
+            "detections_sha256": "14512c8e3766b1b0e0ad02a22774bb2cb5c35b218a17f4bb5f3c53bf5b47f3ef",
+            "tracks_sha256": "e3a09d5acb9e573a95ab650e76a22ddca0d4ecd0a24e1b2202bc450849334f91"
+          },
+          {
+            "video_id": 20,
+            "detections_sha256": "3c5263e01cb8ce61055ce55ab37b0ac87d4fe1912b35f21a02f6a071aeb366e8",
+            "tracks_sha256": "c315e3cb922df8fa6f3e38174c7ad27b6aeaf83966666e8377d92e9cc7854dbe"
+          },
+          {
+            "video_id": 22,
+            "detections_sha256": "9f5536b4293af061902f83b0cff9f619ffc3c35f70d2f5b765a129fccf978942",
+            "tracks_sha256": "c9f5719238d6ff9665effaf8d8e9094a0d08f5aa525b2498375f2af13d868a46"
+          },
+          {
+            "video_id": 23,
+            "detections_sha256": "ae177d19438a74b02abddb4802343bc0b9e5471c150ca58e4da28dc044125bde",
+            "tracks_sha256": "66ba605d99256c0a12468a6d3b69b15bd1f5ce018a8a7db9915a08f7d0a70e4e"
+          },
+          {
+            "video_id": 24,
+            "detections_sha256": "c250417a4be927b0d8e418d50d1a8523937257bbbc41c5c1c06b4689c6ceeb24",
+            "tracks_sha256": "2f312c056afed904a3e3db54aaf9a735713d6c65b05e0ab4d7778c3697fcb155"
+          },
+          {
+            "video_id": 25,
+            "detections_sha256": "9c3e47acf42dfdb7caae7257d725f9a870800dc614749819cc061e16f9e34970",
+            "tracks_sha256": "cf8e81662039f9da4e8e7054fa02b5c0f40925120e0d6c852f25257625c4938e"
+          },
+          {
+            "video_id": 26,
+            "detections_sha256": "5a6b1b425c1a1e26db89e1f4b08567906933eb67e4d410ef2cce9712423e1114",
+            "tracks_sha256": "0e16d3802758df47549c00ee6079776a7ab93a3cbda05414852db78c38a9924e"
+          },
+          {
+            "video_id": 30,
+            "detections_sha256": "229dce30cfa43eade05048679303e8e7238cad73c28b346a425466a728d0628b",
+            "tracks_sha256": "7817a9d309c9862c109828a2b86b455b9b7703d883f5a9241f8c2b7b1e7de066"
+          },
+          {
+            "video_id": 31,
+            "detections_sha256": "59528378e8800641149bbee3b9da32a07e4a7533a42818801d8a3ca55a5e231a",
+            "tracks_sha256": "ba6dc5c783768587015aae6c3eb2f2a1ae1eb83523f2629ddb9f5e5ed58e779f"
+          },
+          {
+            "video_id": 35,
+            "detections_sha256": "677c97ab763f8f77d1445e02bc721f224947a5b3d55f1d64ad885499bb8661f2",
+            "tracks_sha256": "17edb98605b5926a12f62980bcc2149afaeb30bc6d5a5be12efac28f21983d07"
+          },
+          {
+            "video_id": 36,
+            "detections_sha256": "85eec262be62ee2ca644091b78d8428330bee4405bba48f3068085a2983b3069",
+            "tracks_sha256": "c6931735ada7af6734a10f7a08b43a5eadc37457a548e2ec256118d7b2004b75"
+          },
+          {
+            "video_id": 37,
+            "detections_sha256": "c4e7edd6e914a43bf06c6ce7c97fcdcc7ae0e65ab69d70b3ba6c64278d83f2c6",
+            "tracks_sha256": "2ad5cfbb1c4aa141b0ff0c5120dffa1b0adf58a366c96ff3593ca86b59d5a971"
+          },
+          {
+            "video_id": 39,
+            "detections_sha256": "d006f5d32f91f3fa48aac0695362ab8de1d73f7d82f7358349dc9ca66e734532",
+            "tracks_sha256": "3d9fab04d3a2e8e8927e9a74ad6952396d9f87793a334890182ef3ce49a869f8"
+          },
+          {
+            "video_id": 45,
+            "detections_sha256": "5cc9f26496fbf2a30083d137f92c320f869cf3be32277c7f4c6dc323ac5c3875",
+            "tracks_sha256": "71c762f1fe51e0a1a71a0552c0ea8647ae4f5763ebb5d56fc53c0ecf3c1a326f"
+          },
+          {
+            "video_id": 49,
+            "detections_sha256": "9501f7a80a4d66a92868828c513fe014f81cd1875da2dd70b1a24d555cc4923f",
+            "tracks_sha256": "b64367c1f207e76c3bac83fab317929b1491c308a48409ad05599df26baac46b"
+          },
+          {
+            "video_id": 52,
+            "detections_sha256": "eee593674566234849390e90dcc85c2bf00f805b120e94788afaf1065cdf157c",
+            "tracks_sha256": "e7a14b24d204ac4df395c9b27f1598360e89be13ba1a2be7f7acfaf9e1b14a23"
+          },
+          {
+            "video_id": 54,
+            "detections_sha256": "5d213f95161b109a89e51781413a2dc204e09de0d602dbeb1501c296bfee4210",
+            "tracks_sha256": "6e020ae88491dc0a68dab1523423dcab7a7e023c97fb85ad2ad177720b17b766"
+          },
+          {
+            "video_id": 55,
+            "detections_sha256": "58c7bceebff33238de14f97ff7be5d11c95aa2a4a8aa8deb6cc23a58715d88c1",
+            "tracks_sha256": "f7ebb2123df1bc2bc832e31d30a5e9c8bb9404b232c8d13bc8abc3ee09515dbf"
+          },
+          {
+            "video_id": 58,
+            "detections_sha256": "826538882fd830e37d2e6e446c34bfb63cbab0590929c52e519a1fde091c20fe",
+            "tracks_sha256": "34eb609fdf83ca910b46780036a814c717f4d6fe25b3e0d82b3147f860ec8729"
+          },
+          {
+            "video_id": 59,
+            "detections_sha256": "072fd55c5b504e394bf992a74a5d640ead304d1b55f483512b81b2bf7ab1aee6",
+            "tracks_sha256": "09c45f1606379d3306dd04761c5704249fcd66bc147484ccf933c4d542ce3779"
+          }
+        ],
+        "prediction_sha256": "5e3291223f4f3b2db44b41866c8f32e9d0c3830f064d51ca1fc518063f9a3711",
+        "annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+        "gt_export_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "unmatched_policy": "spatial one-to-one diagnostic; may include unannotated real objects"
+      },
+      "metrics": {
+        "HOTA_0": 0.35769134915847817,
+        "LocA_0": 0.6837927053307192,
+        "AssocA_0": 0.4080652216487936,
+        "DetA_0": 0.31353591160220995,
+        "HOTA_mean": 0.27337403029299384,
+        "LocA_mean": 0.8146215573245761,
+        "AssocA_mean": 0.3732234130651161,
+        "DetA_mean": 0.2042344547437846,
+        "IDF1": 0.2212875335903727,
+        "MOTA": -1.2306772908366534,
+        "IDSW": 256,
+        "Frag": 158
+      },
+      "clear_counts": {
+        "CLR_TP": 1608,
+        "CLR_FN": 902,
+        "CLR_FP": 4441,
+        "IDSW": 256,
+        "MT": 45,
+        "PT": 42,
+        "ML": 20,
+        "Frag": 158.0,
+        "CLR_Frames": 792,
+        "MOTA": -1.2306772908366534,
+        "MOTP": 0.8092009820516924,
+        "MODA": -1.1286852589641434,
+        "CLR_Re": 0.6406374501992032,
+        "CLR_Pr": 0.2658290626549843,
+        "MTR": 0.4205607476635514,
+        "PTR": 0.3925233644859813,
+        "MLR": 0.18691588785046728,
+        "sMOTA": -1.3529102871955692,
+        "CLR_F1": 0.37574483000350506,
+        "FP_per_frame": 5.607323232323233,
+        "MOTAL": -1.129644717117654,
+        "MOTP_sum": 1301.1951791391214
+      },
+      "trackeval_count": {
+        "Dets": 6049,
+        "GT_Dets": 2510,
+        "IDs": 1784,
+        "GT_IDs": 107
+      },
+      "recall_losses": {
+        "all": 0.023505976095617553,
+        "base": 0.014895729890764597,
+        "novel": 0.07657657657657652
+      },
+      "recall_eligible": false,
+      "metric_delta": {
+        "HOTA_0": 0.2251215582251623,
+        "LocA_0": 0.038099080220518555,
+        "AssocA_0": 0.13345678848480685,
+        "DetA_0": 0.24953660442285602,
+        "HOTA_mean": 0.17197819397868114,
+        "LocA_mean": 0.009742936782746514,
+        "AssocA_mean": 0.11974089384763886,
+        "DetA_mean": 0.16303729866448083,
+        "IDF1": 0.1758699851612664,
+        "MOTA": 11.450996015936255,
+        "IDSW": -565,
+        "Frag": 5
+      }
+    },
+    {
+      "variant": "Dedup-B",
+      "diagnostics": {
+        "status": "PASS",
+        "variant": "Dedup-B",
+        "subset": "calibration",
+        "video_ids": [
+          4,
+          20,
+          22,
+          23,
+          24,
+          25,
+          26,
+          30,
+          31,
+          35,
+          36,
+          37,
+          39,
+          45,
+          49,
+          52,
+          54,
+          55,
+          58,
+          59
+        ],
+        "videos": 20,
+        "frames": 22322,
+        "annotated_frames": 792,
+        "candidate_counts_before": {
+          "count": 22322,
+          "total": 3747198,
+          "mean": 167.87017292357316,
+          "median": 162.0,
+          "p90": 274.0,
+          "max": 299
+        },
+        "candidate_counts_after": {
+          "count": 22322,
+          "total": 941430,
+          "mean": 42.1749843204014,
+          "median": 50.0,
+          "p90": 50.0,
+          "max": 50
+        },
+        "retained_fraction": 0.251235723332474,
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1940,
+              "total": 2510,
+              "recall": 0.7729083665338645
+            },
+            "base": {
+              "matched": 1751,
+              "total": 2014,
+              "recall": 0.8694141012909633
+            },
+            "novel": {
+              "matched": 97,
+              "total": 222,
+              "recall": 0.4369369369369369
+            },
+            "distractor": {
+              "matched": 92,
+              "total": 274,
+              "recall": 0.3357664233576642
+            },
+            "one_to_one": {
+              "matched": 1939,
+              "gt": 2510,
+              "predictions": 33195,
+              "unmatched_predictions": 31256
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1820,
+              "total": 2510,
+              "recall": 0.7250996015936255
+            },
+            "base": {
+              "matched": 1681,
+              "total": 2014,
+              "recall": 0.8346573982125124
+            },
+            "novel": {
+              "matched": 66,
+              "total": 222,
+              "recall": 0.2972972972972973
+            },
+            "distractor": {
+              "matched": 73,
+              "total": 274,
+              "recall": 0.2664233576642336
+            },
+            "one_to_one": {
+              "matched": 1819,
+              "gt": 2510,
+              "predictions": 19211,
+              "unmatched_predictions": 17392
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1590,
+              "total": 2510,
+              "recall": 0.6334661354581673
+            },
+            "base": {
+              "matched": 1512,
+              "total": 2014,
+              "recall": 0.7507447864945382
+            },
+            "novel": {
+              "matched": 38,
+              "total": 222,
+              "recall": 0.17117117117117117
+            },
+            "distractor": {
+              "matched": 40,
+              "total": 274,
+              "recall": 0.145985401459854
+            },
+            "one_to_one": {
+              "matched": 1584,
+              "gt": 2510,
+              "predictions": 6518,
+              "unmatched_predictions": 4934
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1634,
+              "total": 2510,
+              "recall": 0.650996015936255
+            },
+            "base": {
+              "matched": 1554,
+              "total": 2014,
+              "recall": 0.7715988083416088
+            },
+            "novel": {
+              "matched": 42,
+              "total": 222,
+              "recall": 0.1891891891891892
+            },
+            "distractor": {
+              "matched": 38,
+              "total": 274,
+              "recall": 0.1386861313868613
+            },
+            "one_to_one": {
+              "matched": 1630,
+              "gt": 2510,
+              "predictions": 7885,
+              "unmatched_predictions": 6255
+            }
+          }
+        },
+        "physical_tracks": 5186,
+        "track_lengths": {
+          "count": 5186,
+          "total": 225936,
+          "mean": 43.56652526031623,
+          "median": 12.0,
+          "p90": 112.5,
+          "max": 1171
+        },
+        "track_rows_full_stream": 225936,
+        "track_rows_exported": 7885,
+        "lost_covered_gt": {
+          "covered_gt_lost": 61,
+          "lost_base": 27,
+          "lost_with_other_gt_iou05": 0,
+          "lost_novel": 27,
+          "lost_distractor": 7
+        },
+        "loss_examples": [
+          {
+            "image_id": 181,
+            "annotation_id": 842,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6765925884246826,
+            "best_iou_after": 0.395021915435791
+          },
+          {
+            "image_id": 184,
+            "annotation_id": 851,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6928513646125793,
+            "best_iou_after": 0.3433554470539093
+          },
+          {
+            "image_id": 772,
+            "annotation_id": 3139,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5365213751792908,
+            "best_iou_after": 0.49331551790237427
+          },
+          {
+            "image_id": 775,
+            "annotation_id": 3158,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.9595259428024292,
+            "best_iou_after": 0.3824087977409363
+          },
+          {
+            "image_id": 777,
+            "annotation_id": 3177,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7952165007591248,
+            "best_iou_after": 0.3648265600204468
+          },
+          {
+            "image_id": 777,
+            "annotation_id": 3180,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5814179182052612,
+            "best_iou_after": 0.4963478744029999
+          },
+          {
+            "image_id": 779,
+            "annotation_id": 3192,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6866785883903503,
+            "best_iou_after": 0.45117104053497314
+          },
+          {
+            "image_id": 779,
+            "annotation_id": 3193,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7624822854995728,
+            "best_iou_after": 0.3932168185710907
+          },
+          {
+            "image_id": 780,
+            "annotation_id": 3206,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.705319881439209,
+            "best_iou_after": 0.47221657633781433
+          },
+          {
+            "image_id": 781,
+            "annotation_id": 3208,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.8137377500534058,
+            "best_iou_after": 0.3682692348957062
+          },
+          {
+            "image_id": 784,
+            "annotation_id": 3232,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6738305687904358,
+            "best_iou_after": 0.3869028091430664
+          },
+          {
+            "image_id": 785,
+            "annotation_id": 3240,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6322647929191589,
+            "best_iou_after": 0.362006813287735
+          },
+          {
+            "image_id": 786,
+            "annotation_id": 3254,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.8640888333320618,
+            "best_iou_after": 0.4126704931259155
+          },
+          {
+            "image_id": 792,
+            "annotation_id": 3272,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5082343816757202,
+            "best_iou_after": 0.46540817618370056
+          },
+          {
+            "image_id": 794,
+            "annotation_id": 3278,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.515197217464447,
+            "best_iou_after": 0.4944706857204437
+          },
+          {
+            "image_id": 842,
+            "annotation_id": 3493,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5177379250526428,
+            "best_iou_after": 0.46645399928092957
+          },
+          {
+            "image_id": 848,
+            "annotation_id": 3516,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.6148966550827026,
+            "best_iou_after": 0.41803601384162903
+          },
+          {
+            "image_id": 856,
+            "annotation_id": 3539,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5665878653526306,
+            "best_iou_after": 0.3325667083263397
+          },
+          {
+            "image_id": 959,
+            "annotation_id": 3892,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7036417126655579,
+            "best_iou_after": 0.13807137310504913
+          },
+          {
+            "image_id": 962,
+            "annotation_id": 3901,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.7525464296340942,
+            "best_iou_after": 0.25482264161109924
+          }
+        ],
+        "evaluator_only_semantic_diagnostic": {
+          "cluster_purity_on_covered_novel": null,
+          "mapped_accuracy_on_covered_novel": null,
+          "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+          "anonymous_novel_clusters_observed": 0
+        },
+        "source_hashes": [
+          {
+            "video_id": 4,
+            "detections_sha256": "14512c8e3766b1b0e0ad02a22774bb2cb5c35b218a17f4bb5f3c53bf5b47f3ef",
+            "tracks_sha256": "48620814fa2d1780b829e212b92fbf2944b1f3cbe1df9cd47197daa65148f583"
+          },
+          {
+            "video_id": 20,
+            "detections_sha256": "3c5263e01cb8ce61055ce55ab37b0ac87d4fe1912b35f21a02f6a071aeb366e8",
+            "tracks_sha256": "7cf042a8b151703182fc1796c40167fe83db15c125ed8bdb3ad209b5931c5735"
+          },
+          {
+            "video_id": 22,
+            "detections_sha256": "9f5536b4293af061902f83b0cff9f619ffc3c35f70d2f5b765a129fccf978942",
+            "tracks_sha256": "a7e5b1bbc0a8fe1f6d6dba615de9208955c424d50a133d3f4319dcb6925a1abd"
+          },
+          {
+            "video_id": 23,
+            "detections_sha256": "ae177d19438a74b02abddb4802343bc0b9e5471c150ca58e4da28dc044125bde",
+            "tracks_sha256": "c69de5672278037b852e0d31c5becdc569242d86e089fe3fae6de4dfc571f5a6"
+          },
+          {
+            "video_id": 24,
+            "detections_sha256": "c250417a4be927b0d8e418d50d1a8523937257bbbc41c5c1c06b4689c6ceeb24",
+            "tracks_sha256": "28d2ee3525ef4b09f24e6bc6fa0fc8248c38e95b501b2f6ce62d84ff309eb2b5"
+          },
+          {
+            "video_id": 25,
+            "detections_sha256": "9c3e47acf42dfdb7caae7257d725f9a870800dc614749819cc061e16f9e34970",
+            "tracks_sha256": "d081a685de8fbedb36da72b159e5f2cfcf9708f563dc87903c7d2ca24e860be9"
+          },
+          {
+            "video_id": 26,
+            "detections_sha256": "5a6b1b425c1a1e26db89e1f4b08567906933eb67e4d410ef2cce9712423e1114",
+            "tracks_sha256": "888655cca8d0aa6365941ae7cd0d365be3b8587d558a6a3e790fd84c474ef05b"
+          },
+          {
+            "video_id": 30,
+            "detections_sha256": "229dce30cfa43eade05048679303e8e7238cad73c28b346a425466a728d0628b",
+            "tracks_sha256": "d34c1e414d87847e4469edf07a184c514da300bb9bb7060c6b93f589c8e2bce3"
+          },
+          {
+            "video_id": 31,
+            "detections_sha256": "59528378e8800641149bbee3b9da32a07e4a7533a42818801d8a3ca55a5e231a",
+            "tracks_sha256": "0a3964e6fff997f8d89a49cada1556a3c70f9af81e0b639fbcd842d192844a8a"
+          },
+          {
+            "video_id": 35,
+            "detections_sha256": "677c97ab763f8f77d1445e02bc721f224947a5b3d55f1d64ad885499bb8661f2",
+            "tracks_sha256": "082da0d45d8fbb3d73a5c2d2ff49bbdab0c4abbc6b67478e7f609950fe9c1c4d"
+          },
+          {
+            "video_id": 36,
+            "detections_sha256": "85eec262be62ee2ca644091b78d8428330bee4405bba48f3068085a2983b3069",
+            "tracks_sha256": "5038d0bad7cbb955dc9a23365a888173b9db51bfa49a9a0edbe83af1cce608e1"
+          },
+          {
+            "video_id": 37,
+            "detections_sha256": "c4e7edd6e914a43bf06c6ce7c97fcdcc7ae0e65ab69d70b3ba6c64278d83f2c6",
+            "tracks_sha256": "8cd9d2c2bf46b88d0baf49344b3cfce1800f6c2dadb997bda681a2a0d124d192"
+          },
+          {
+            "video_id": 39,
+            "detections_sha256": "d006f5d32f91f3fa48aac0695362ab8de1d73f7d82f7358349dc9ca66e734532",
+            "tracks_sha256": "37d5798398f818e3784cbe4034498d173853b63f198c4ee8bdf996224d51b3e1"
+          },
+          {
+            "video_id": 45,
+            "detections_sha256": "5cc9f26496fbf2a30083d137f92c320f869cf3be32277c7f4c6dc323ac5c3875",
+            "tracks_sha256": "7511fc6d66cc0cd4a21b928147f59b1630c37c86b3a1c9f7ad088f58d9b07c2c"
+          },
+          {
+            "video_id": 49,
+            "detections_sha256": "9501f7a80a4d66a92868828c513fe014f81cd1875da2dd70b1a24d555cc4923f",
+            "tracks_sha256": "170c4f2991bd978fdb3d9200b288176551b7f847a00f76e065ecf79885e1aeee"
+          },
+          {
+            "video_id": 52,
+            "detections_sha256": "eee593674566234849390e90dcc85c2bf00f805b120e94788afaf1065cdf157c",
+            "tracks_sha256": "c40ea75b1a236835b71650109dd8f7d1dd3cdff1da1d5f77460ad785b6a6133c"
+          },
+          {
+            "video_id": 54,
+            "detections_sha256": "5d213f95161b109a89e51781413a2dc204e09de0d602dbeb1501c296bfee4210",
+            "tracks_sha256": "0d95e628df18125dd5aa6a695e8058af8482576a996168b428f95988e5cc74f1"
+          },
+          {
+            "video_id": 55,
+            "detections_sha256": "58c7bceebff33238de14f97ff7be5d11c95aa2a4a8aa8deb6cc23a58715d88c1",
+            "tracks_sha256": "1b32f2118393f84123916141723dd4bbfbea702b19267f8ff1872fee4089372a"
+          },
+          {
+            "video_id": 58,
+            "detections_sha256": "826538882fd830e37d2e6e446c34bfb63cbab0590929c52e519a1fde091c20fe",
+            "tracks_sha256": "77b38de797db7bdcaeffb0b4c8dbabeaaaaa1f0110f9bd4330712387f5882e13"
+          },
+          {
+            "video_id": 59,
+            "detections_sha256": "072fd55c5b504e394bf992a74a5d640ead304d1b55f483512b81b2bf7ab1aee6",
+            "tracks_sha256": "391588637363ffe179bde72c2cebd82e99f88491485391c3fdaa831760f09bdc"
+          }
+        ],
+        "prediction_sha256": "d34d3c8d2d49abb83e1e34ff89eec40db4866adb57a1e70d5a822180da6c1f23",
+        "annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+        "gt_export_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "unmatched_policy": "spatial one-to-one diagnostic; may include unannotated real objects"
+      },
+      "metrics": {
+        "HOTA_0": 0.30466390380164987,
+        "LocA_0": 0.670037587996889,
+        "AssocA_0": 0.3401625294195238,
+        "DetA_0": 0.2728698379508625,
+        "HOTA_mean": 0.2323343906146823,
+        "LocA_mean": 0.8107032620305964,
+        "AssocA_mean": 0.3155542599071205,
+        "DetA_mean": 0.17491645112763318,
+        "IDF1": 0.17186858316221765,
+        "MOTA": -1.7386454183266933,
+        "IDSW": 394,
+        "Frag": 160
+      },
+      "clear_counts": {
+        "CLR_TP": 1630,
+        "CLR_FN": 880,
+        "CLR_FP": 5600,
+        "IDSW": 394,
+        "MT": 45,
+        "PT": 43,
+        "ML": 19,
+        "Frag": 160.0,
+        "CLR_Frames": 792,
+        "MOTA": -1.7386454183266933,
+        "MOTP": 0.8061459991288362,
+        "MODA": -1.5816733067729083,
+        "CLR_Re": 0.649402390438247,
+        "CLR_Pr": 0.22544951590594745,
+        "MTR": 0.4205607476635514,
+        "PTR": 0.40186915887850466,
+        "MLR": 0.17757009345794392,
+        "sMOTA": -1.864534669888445,
+        "CLR_F1": 0.3347022587268994,
+        "FP_per_frame": 7.070707070707071,
+        "MOTAL": -1.5827073690126796,
+        "MOTP_sum": 1314.017978580003
+      },
+      "trackeval_count": {
+        "Dets": 7230,
+        "GT_Dets": 2510,
+        "IDs": 2266,
+        "GT_IDs": 107
+      },
+      "recall_losses": {
+        "all": 0.02430278884462156,
+        "base": 0.013406156901688115,
+        "novel": 0.1216216216216216
+      },
+      "recall_eligible": false,
+      "metric_delta": {
+        "HOTA_0": 0.172094112868334,
+        "LocA_0": 0.024343962886688275,
+        "AssocA_0": 0.06555409625553704,
+        "DetA_0": 0.20887053077150858,
+        "HOTA_mean": 0.1309385543003696,
+        "LocA_mean": 0.005824641488766824,
+        "AssocA_mean": 0.06207174068964327,
+        "DetA_mean": 0.1337192950483294,
+        "IDF1": 0.12645103473311134,
+        "MOTA": 10.943027888446213,
+        "IDSW": -427,
+        "Frag": 7
+      }
+    },
+    {
+      "variant": "Dedup-C",
+      "diagnostics": {
+        "status": "PASS",
+        "variant": "Dedup-C",
+        "subset": "calibration",
+        "video_ids": [
+          4,
+          20,
+          22,
+          23,
+          24,
+          25,
+          26,
+          30,
+          31,
+          35,
+          36,
+          37,
+          39,
+          45,
+          49,
+          52,
+          54,
+          55,
+          58,
+          59
+        ],
+        "videos": 20,
+        "frames": 22322,
+        "annotated_frames": 792,
+        "candidate_counts_before": {
+          "count": 22322,
+          "total": 3747198,
+          "mean": 167.87017292357316,
+          "median": 162.0,
+          "p90": 274.0,
+          "max": 299
+        },
+        "candidate_counts_after": {
+          "count": 22322,
+          "total": 1335653,
+          "mean": 59.835722605501296,
+          "median": 60.0,
+          "p90": 100.0,
+          "max": 100
+        },
+        "retained_fraction": 0.35644046564926646,
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1984,
+              "total": 2510,
+              "recall": 0.7904382470119522
+            },
+            "base": {
+              "matched": 1772,
+              "total": 2014,
+              "recall": 0.8798411122144985
+            },
+            "novel": {
+              "matched": 116,
+              "total": 222,
+              "recall": 0.5225225225225225
+            },
+            "distractor": {
+              "matched": 96,
+              "total": 274,
+              "recall": 0.35036496350364965
+            },
+            "one_to_one": {
+              "matched": 1983,
+              "gt": 2510,
+              "predictions": 47379,
+              "unmatched_predictions": 45396
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1821,
+              "total": 2510,
+              "recall": 0.7254980079681275
+            },
+            "base": {
+              "matched": 1681,
+              "total": 2014,
+              "recall": 0.8346573982125124
+            },
+            "novel": {
+              "matched": 67,
+              "total": 222,
+              "recall": 0.30180180180180183
+            },
+            "distractor": {
+              "matched": 73,
+              "total": 274,
+              "recall": 0.2664233576642336
+            },
+            "one_to_one": {
+              "matched": 1820,
+              "gt": 2510,
+              "predictions": 19705,
+              "unmatched_predictions": 17885
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1590,
+              "total": 2510,
+              "recall": 0.6334661354581673
+            },
+            "base": {
+              "matched": 1512,
+              "total": 2014,
+              "recall": 0.7507447864945382
+            },
+            "novel": {
+              "matched": 38,
+              "total": 222,
+              "recall": 0.17117117117117117
+            },
+            "distractor": {
+              "matched": 40,
+              "total": 274,
+              "recall": 0.145985401459854
+            },
+            "one_to_one": {
+              "matched": 1584,
+              "gt": 2510,
+              "predictions": 6518,
+              "unmatched_predictions": 4934
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1633,
+              "total": 2510,
+              "recall": 0.6505976095617529
+            },
+            "base": {
+              "matched": 1553,
+              "total": 2014,
+              "recall": 0.7711022840119166
+            },
+            "novel": {
+              "matched": 42,
+              "total": 222,
+              "recall": 0.1891891891891892
+            },
+            "distractor": {
+              "matched": 38,
+              "total": 274,
+              "recall": 0.1386861313868613
+            },
+            "one_to_one": {
+              "matched": 1629,
+              "gt": 2510,
+              "predictions": 7910,
+              "unmatched_predictions": 6281
+            }
+          }
+        },
+        "physical_tracks": 5183,
+        "track_lengths": {
+          "count": 5183,
+          "total": 226619,
+          "mean": 43.723519197376035,
+          "median": 12.0,
+          "p90": 112.0,
+          "max": 1171
+        },
+        "track_rows_full_stream": 226619,
+        "track_rows_exported": 7910,
+        "lost_covered_gt": {
+          "covered_gt_lost": 17,
+          "lost_novel": 8,
+          "lost_with_other_gt_iou05": 0,
+          "lost_base": 6,
+          "lost_distractor": 3
+        },
+        "loss_examples": [
+          {
+            "image_id": 792,
+            "annotation_id": 3272,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5082343816757202,
+            "best_iou_after": 0.46540817618370056
+          },
+          {
+            "image_id": 794,
+            "annotation_id": 3278,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.515197217464447,
+            "best_iou_after": 0.4944706857204437
+          },
+          {
+            "image_id": 842,
+            "annotation_id": 3493,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5177379250526428,
+            "best_iou_after": 0.46645399928092957
+          },
+          {
+            "image_id": 1430,
+            "annotation_id": 5726,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5448300838470459,
+            "best_iou_after": 0.4551694691181183
+          },
+          {
+            "image_id": 1530,
+            "annotation_id": 6111,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5149871110916138,
+            "best_iou_after": 0.4707542061805725
+          },
+          {
+            "image_id": 1769,
+            "annotation_id": 7047,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5082405805587769,
+            "best_iou_after": 0.4785902798175812
+          },
+          {
+            "image_id": 1775,
+            "annotation_id": 7067,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5410228967666626,
+            "best_iou_after": 0.4939742982387543
+          },
+          {
+            "image_id": 1914,
+            "annotation_id": 7574,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5650113821029663,
+            "best_iou_after": 0.4577818214893341
+          },
+          {
+            "image_id": 1935,
+            "annotation_id": 7624,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.507495641708374,
+            "best_iou_after": 0.42440274357795715
+          },
+          {
+            "image_id": 2024,
+            "annotation_id": 7953,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5061761736869812,
+            "best_iou_after": 0.4622943699359894
+          },
+          {
+            "image_id": 2119,
+            "annotation_id": 8363,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5668362975120544,
+            "best_iou_after": 0.4758724570274353
+          },
+          {
+            "image_id": 2251,
+            "annotation_id": 8981,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5091268420219421,
+            "best_iou_after": 0.4816487431526184
+          },
+          {
+            "image_id": 2256,
+            "annotation_id": 9004,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5017318725585938,
+            "best_iou_after": 0.4144791066646576
+          },
+          {
+            "image_id": 2273,
+            "annotation_id": 9075,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5005891919136047,
+            "best_iou_after": 0.49157679080963135
+          },
+          {
+            "image_id": 2286,
+            "annotation_id": 9135,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5111335515975952,
+            "best_iou_after": 0.4181011915206909
+          },
+          {
+            "image_id": 2294,
+            "annotation_id": 9178,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.550146222114563,
+            "best_iou_after": 0.4329485297203064
+          },
+          {
+            "image_id": 2300,
+            "annotation_id": 9224,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5243792533874512,
+            "best_iou_after": 0.4556272625923157
+          }
+        ],
+        "evaluator_only_semantic_diagnostic": {
+          "cluster_purity_on_covered_novel": null,
+          "mapped_accuracy_on_covered_novel": null,
+          "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+          "anonymous_novel_clusters_observed": 0
+        },
+        "source_hashes": [
+          {
+            "video_id": 4,
+            "detections_sha256": "14512c8e3766b1b0e0ad02a22774bb2cb5c35b218a17f4bb5f3c53bf5b47f3ef",
+            "tracks_sha256": "474dfcf3807d5cb4101e1a38fad0213803f2914308d6fc26c392bb343eb10c50"
+          },
+          {
+            "video_id": 20,
+            "detections_sha256": "3c5263e01cb8ce61055ce55ab37b0ac87d4fe1912b35f21a02f6a071aeb366e8",
+            "tracks_sha256": "18349727932e0f40ca5577bf7dfb9e0c5705bba71bc4e07d16d60118e5a3bbd1"
+          },
+          {
+            "video_id": 22,
+            "detections_sha256": "9f5536b4293af061902f83b0cff9f619ffc3c35f70d2f5b765a129fccf978942",
+            "tracks_sha256": "22bed4bc93a04c54cd5f3b1433c1083147816ce7749c9983bc3afc6c66119df4"
+          },
+          {
+            "video_id": 23,
+            "detections_sha256": "ae177d19438a74b02abddb4802343bc0b9e5471c150ca58e4da28dc044125bde",
+            "tracks_sha256": "5724e67b2270216078c6b26f28dcea847f8778133e443adc592d7ec4662ce7b8"
+          },
+          {
+            "video_id": 24,
+            "detections_sha256": "c250417a4be927b0d8e418d50d1a8523937257bbbc41c5c1c06b4689c6ceeb24",
+            "tracks_sha256": "44fab1def62e62b7887b1571361ec81aa871a280537b800bf2b9b400602f51bd"
+          },
+          {
+            "video_id": 25,
+            "detections_sha256": "9c3e47acf42dfdb7caae7257d725f9a870800dc614749819cc061e16f9e34970",
+            "tracks_sha256": "6a7310b71779daaa00e08e113f0ff15332f65bfe178a75f1d51b1601cde9bbf3"
+          },
+          {
+            "video_id": 26,
+            "detections_sha256": "5a6b1b425c1a1e26db89e1f4b08567906933eb67e4d410ef2cce9712423e1114",
+            "tracks_sha256": "4f995eac5599f9967718e6d7b396f50a340e71bf45a8fb55f997e3348af69cf1"
+          },
+          {
+            "video_id": 30,
+            "detections_sha256": "229dce30cfa43eade05048679303e8e7238cad73c28b346a425466a728d0628b",
+            "tracks_sha256": "dcb9b16c72714d6d406333c2dc674802a8033cf52308f1df3303a5b1de854959"
+          },
+          {
+            "video_id": 31,
+            "detections_sha256": "59528378e8800641149bbee3b9da32a07e4a7533a42818801d8a3ca55a5e231a",
+            "tracks_sha256": "877297e70d2b7a0e19b3bcf9a61cb8fdf5c9c512d06149d5b8d060a966f65704"
+          },
+          {
+            "video_id": 35,
+            "detections_sha256": "677c97ab763f8f77d1445e02bc721f224947a5b3d55f1d64ad885499bb8661f2",
+            "tracks_sha256": "026ab4dfad7debb20591efb5ced8b1822e522ddbaa307a670fba01ee1d439eb9"
+          },
+          {
+            "video_id": 36,
+            "detections_sha256": "85eec262be62ee2ca644091b78d8428330bee4405bba48f3068085a2983b3069",
+            "tracks_sha256": "32831f46463afd6be9b81f8c9f8fef894bafbd6259c7341c6f6650632dfa5be9"
+          },
+          {
+            "video_id": 37,
+            "detections_sha256": "c4e7edd6e914a43bf06c6ce7c97fcdcc7ae0e65ab69d70b3ba6c64278d83f2c6",
+            "tracks_sha256": "1a4de44549f85bf7a0d509b9d874c7541b0037352ad535ec05e9054b0a8310db"
+          },
+          {
+            "video_id": 39,
+            "detections_sha256": "d006f5d32f91f3fa48aac0695362ab8de1d73f7d82f7358349dc9ca66e734532",
+            "tracks_sha256": "bc3693897ce935f702aea2debeb26d09d34f9539d4cc68887090aa79283dc105"
+          },
+          {
+            "video_id": 45,
+            "detections_sha256": "5cc9f26496fbf2a30083d137f92c320f869cf3be32277c7f4c6dc323ac5c3875",
+            "tracks_sha256": "16a16951010e788ca3317bf218ebd6cddc5c6590e3f4e3fe1b7f42e7597ab037"
+          },
+          {
+            "video_id": 49,
+            "detections_sha256": "9501f7a80a4d66a92868828c513fe014f81cd1875da2dd70b1a24d555cc4923f",
+            "tracks_sha256": "f58c50092a71cefff398e0bcbc7a36a0433ea1271b3cbbf5bad4733b39400767"
+          },
+          {
+            "video_id": 52,
+            "detections_sha256": "eee593674566234849390e90dcc85c2bf00f805b120e94788afaf1065cdf157c",
+            "tracks_sha256": "a1aad512d1e6f2d8824cb3e9515d2a87f631431d34556c6d36fece8d0e27e245"
+          },
+          {
+            "video_id": 54,
+            "detections_sha256": "5d213f95161b109a89e51781413a2dc204e09de0d602dbeb1501c296bfee4210",
+            "tracks_sha256": "63ffbd16b2c304a05fbff98d32e8250ec04cbdc79b8c004e0116ee8b86017893"
+          },
+          {
+            "video_id": 55,
+            "detections_sha256": "58c7bceebff33238de14f97ff7be5d11c95aa2a4a8aa8deb6cc23a58715d88c1",
+            "tracks_sha256": "ca690a8557f540327e659228e0678f5f3fea6d79e61bca96336ca93ed9cda679"
+          },
+          {
+            "video_id": 58,
+            "detections_sha256": "826538882fd830e37d2e6e446c34bfb63cbab0590929c52e519a1fde091c20fe",
+            "tracks_sha256": "12b44d62e8ab6f6cbb529b96f7f0ffec3efd275a0fe0f80f61ec75a094e5ed5f"
+          },
+          {
+            "video_id": 59,
+            "detections_sha256": "072fd55c5b504e394bf992a74a5d640ead304d1b55f483512b81b2bf7ab1aee6",
+            "tracks_sha256": "cc21876bac3805ac1855386785d5bd7e301204dc71a1007731d0659d14cb87c9"
+          }
+        ],
+        "prediction_sha256": "0f274780dd53e539b95187f56e5a748e261a2490a320155faf3693ae5b0dc567",
+        "annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+        "gt_export_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "unmatched_policy": "spatial one-to-one diagnostic; may include unannotated real objects"
+      },
+      "metrics": {
+        "HOTA_0": 0.30385068921937597,
+        "LocA_0": 0.6699378899064372,
+        "AssocA_0": 0.33915935951947107,
+        "DetA_0": 0.27221787855095125,
+        "HOTA_mean": 0.2319645186933783,
+        "LocA_mean": 0.8106941405767835,
+        "AssocA_mean": 0.3153216626686455,
+        "DetA_mean": 0.17449768539348812,
+        "IDF1": 0.1714636894397214,
+        "MOTA": -1.748605577689243,
+        "IDSW": 394,
+        "Frag": 159
+      },
+      "clear_counts": {
+        "CLR_TP": 1629,
+        "CLR_FN": 881,
+        "CLR_FP": 5624,
+        "IDSW": 394,
+        "MT": 45,
+        "PT": 43,
+        "ML": 19,
+        "Frag": 159.0,
+        "CLR_Frames": 792,
+        "MOTA": -1.748605577689243,
+        "MOTP": 0.8064371532687395,
+        "MODA": -1.591633466135458,
+        "CLR_Re": 0.649003984063745,
+        "CLR_Pr": 0.22459671859920033,
+        "MTR": 0.4205607476635514,
+        "PTR": 0.40186915887850466,
+        "MLR": 0.17757009345794392,
+        "sMOTA": -1.874228636384551,
+        "CLR_F1": 0.33370890095257605,
+        "FP_per_frame": 7.101010101010101,
+        "MOTAL": -1.5926675283752294,
+        "MOTP_sum": 1313.6861226747767
+      },
+      "trackeval_count": {
+        "Dets": 7253,
+        "GT_Dets": 2510,
+        "IDs": 2273,
+        "GT_IDs": 107
+      },
+      "recall_losses": {
+        "all": 0.006772908366533881,
+        "base": 0.002979145978152964,
+        "novel": 0.036036036036036
+      },
+      "recall_eligible": false,
+      "metric_delta": {
+        "HOTA_0": 0.1712808982860601,
+        "LocA_0": 0.024244264796236537,
+        "AssocA_0": 0.06455092635548432,
+        "DetA_0": 0.20821857137159733,
+        "HOTA_mean": 0.1305686823790656,
+        "LocA_mean": 0.005815520034953892,
+        "AssocA_mean": 0.061839143451168255,
+        "DetA_mean": 0.13330052931418435,
+        "IDF1": 0.1260461410106151,
+        "MOTA": 10.933067729083664,
+        "IDSW": -427,
+        "Frag": 6
+      }
+    }
+  ],
+  "locked_variant": {
+    "variant": "Dedup-C",
+    "nms_config": {
+      "nms_iou": 0.7,
+      "max_detections": 100
+    },
+    "selection_is_tao_val_development": true,
+    "any_recall_eligible": false,
+    "calibration_hota": 0.2319645186933783,
+    "calibration_recall_losses": {
+      "all": 0.006772908366533881,
+      "base": 0.002979145978152964,
+      "novel": 0.036036036036036
+    }
+  }
+}

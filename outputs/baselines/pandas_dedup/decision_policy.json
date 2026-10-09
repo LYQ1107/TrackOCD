@@ -1,0 +1,8 @@
+{
+  "written_before_dedup_metrics_were_read": true,
+  "calibration_choice": "Highest HOTA among the three fixed variants whose absolute proposal recall loss is at most 0.02 for All, Base, and Novel; ties use A/B/C order",
+  "no_eligible_variant": "Confirm the variant with least All recall loss (ties by A/B/C order), but do not run full unless the same safety gates pass",
+  "confirmation": "Evaluate only the calibration-locked variant and frozen Original FG-0 on the preregistered disjoint 20-video set",
+  "full_gate": "Require observed duplication, at least 20% fewer candidates, at most 0.02 absolute All/Base/Novel recall loss, HOTA improvement >=0.005, DetA improvement >=0.002 and identical GT/evaluator; check the same recall gates on both subsets",
+  "parameter_scope": "Only A/B/C tracking-only NMS and max-box controls; ByteTrack and frozen model artifacts unchanged"
+}
