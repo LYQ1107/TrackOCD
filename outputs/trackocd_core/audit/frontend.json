@@ -1,5 +1,7 @@
 {
   "FROZEN_PHYSICAL_FRONTEND_written": false,
+  "candidate_metadata_refresh_scope": "SimOWT completed follow-up only; original physical metrics/lengths/coverage not rerun",
+  "candidate_metadata_refreshed_utc": "2026-10-09T18:47:25.192701+00:00",
   "covtrack_native_recovery_candidate": {
     "causal_native_inference_verified": false,
     "contract_booleans_are_not_native_vocabulary_or_supervision_proof": true,
@@ -201,21 +203,31 @@
       "status": "INCOMPARABLE"
     },
     "SimOWT/Q0": {
-      "historical_summary": {
-        "asset_and_provenance_verified_for_core": false,
-        "category_free_tracking": {
-          "AssA": 0.48950000000000005,
-          "DetRe": 0.7513299999999999,
-          "LocA": 0.84421,
-          "OWTA": 0.60202
+      "historical_clean_declarations_are_not_proof": true,
+      "historical_coverage_with_current_key_recount": {
+        "commit_ct_computed": false,
+        "extra_score_keys": 0,
+        "geometry_matches_freshly_recomputed": false,
+        "gt_manifest": {
+          "bytes": 11876759,
+          "sha256": "23fbe4d7f2494508141f2d88f8741cec19ee52cae783cdee8483120bd01210e8"
         },
-        "fragmentation_not_verified": true,
-        "historical_track_count": 649378,
-        "novel_track_observability": {
+        "gt_track_keys": 5232,
+        "historical_score_keys": 5232,
+        "key_universe_and_reliable_counts_freshly_recounted": true,
+        "known": {
+          "denominator": 4413,
+          "numerator": 1618,
+          "value": 0.3666440063448901
+        },
+        "matched_only_denominator": false,
+        "missing_score_keys": 0,
+        "novel": {
           "denominator": 819,
           "numerator": 179,
           "value": 0.21855921855921856
         },
+        "persistent_counts_freshly_recomputed": false,
         "persistent_observability": {
           "denominator": 527,
           "numerator": 83,
@@ -225,10 +237,177 @@
           "denominator": 527,
           "numerator": 103,
           "value": 0.1954459203036053
-        }
+        },
+        "private_labels": {
+          "bytes": 564552,
+          "sha256": "a770efa4f1640318ce75d90330f0dd16364b32072f848f60c2cffe294f3b1f48"
+        },
+        "threshold": "Inherited category-free per-video temporal-IoU >= 0.5"
       },
-      "historical_track_count": 649378,
-      "status": "BLOCKED_ASSET_AND_PROVENANCE_RECOVERY",
+      "historical_summary": {
+        "AssA": 0.4895,
+        "DetA": 0.048456,
+        "DetPr": 0.049034,
+        "DetRe": 0.75133,
+        "HOTA": 0.15279,
+        "IDF1": null,
+        "LocA": 0.84421,
+        "OWTA": 0.60202,
+        "TrackEval_GT_tracks_including_distractors": 5485,
+        "TrackOCD_nondistractor_universe": 5232,
+        "counts_same_scoring_projection": false,
+        "normalized_stream_tracks": 649378,
+        "raw_summary_percent_scale": true,
+        "scale": "0-1",
+        "status": "PRESERVED_REFERENCE_NOT_NEW_RUN",
+        "summary_sha256": "71ec860e9755aa3619d35e07ff3e601910ffa659015d3c89ab69ffe67e3e408d",
+        "summary_tracker_IDs": 599375
+      },
+      "metrics_recomputed_on_a100": false,
+      "qualification": {
+        "checkpoint_supervision_exclusion": "UNVERIFIED",
+        "decision": "Preserve Q0 as inspected candidate/reference, not clean-certified primary. Never silently repair Q0 or relabel the GT smoke as predicted-track evidence.",
+        "frontend_freeze_written": false,
+        "gt_feasibility_exception_still_allowed": true,
+        "historical_runtime_isolation_and_binding": "UNVERIFIED",
+        "legal_contract_status": "BLOCKED_PROVENANCE_NOT_PROVEN_LEAKAGE",
+        "main_M1_gate": "BLOCKED_FRONTEND_QUALITY",
+        "no_novel_vocabulary_on_inspected_path": "SUPPORTED_STATIC",
+        "quality_status": "BLOCKED_FRAGMENTATION_AND_SCORE_CONTRACT_DIAGNOSIS",
+        "selected_as_primary": false
+      },
+      "score_contract_diagnosis": {
+        "empty_memo_score_column_view_overwrite": 0.7501,
+        "frozen_asset_repaired_or_recomputed": false,
+        "historical_score_distribution_or_fragmentation_attribution_verified": false,
+        "probability_source": "coco_inference sigmoid logits / sqrt with sigmoid IoU, then Instances.scores",
+        "registered_thresholds": {
+          "addnew_score": 0.2,
+          "inference_select": 0.1,
+          "init_score": 0.2
+        },
+        "reproducible_CPU_receipt": "outputs/trackocd_core/audit/simowt_score_contract.json",
+        "tracking_consumer": "track_eval applies scores.sigmoid() again for selection/NMS/exported association score",
+        "unit_probability_after_sigmoid_interval": [
+          0.5,
+          0.7310585786300049
+        ],
+        "upstream_pinned_source_contains_same_operations": true
+      },
+      "source_copy_checks_performed": true,
+      "source_provenance_evidence": {
+        "exists": true,
+        "is_symlink": false,
+        "mtime_ns": 1791571389770817312,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/nas_simowt_provenance.json",
+        "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/nas_simowt_provenance.json",
+        "sha256": "d631bf58be8f84d7e8222f6fbe0513e65d990653b8ae9e92d46044fbf0d2d33f",
+        "size_bytes": 13542
+      },
+      "source_stream_currently_hashed_and_counted": {
+        "array_length_mismatch_tracks": 0,
+        "bytes": 329292704,
+        "elapsed_seconds": 7.040087215136737,
+        "file": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/physical_tracks.jsonl",
+        "first_identity_only": {
+          "physical_track_id": "0",
+          "sample_key": "simowt_54_0",
+          "source_sample_id": "54_0",
+          "source_split": "val_predicted",
+          "video_id": 54
+        },
+        "length": {
+          "exact_histogram": {
+            "1": 406425,
+            "10": 4073,
+            "11": 3351,
+            "12": 2940,
+            "13": 2581,
+            "14": 2274,
+            "15": 1962,
+            "16": 1820,
+            "17": 1580,
+            "18": 1423,
+            "19": 1284,
+            "2": 91683,
+            "20": 1142,
+            "21": 1051,
+            "22": 984,
+            "23": 897,
+            "24": 822,
+            "25": 761,
+            "26": 763,
+            "27": 692,
+            "28": 640,
+            "29": 657,
+            "3": 45865,
+            "30": 699,
+            "31": 837,
+            "32": 617,
+            "33": 667,
+            "34": 492,
+            "35": 394,
+            "36": 434,
+            "37": 373,
+            "38": 376,
+            "39": 481,
+            "4": 23247,
+            "40": 1158,
+            "41": 76,
+            "42": 32,
+            "43": 19,
+            "44": 9,
+            "45": 38,
+            "46": 2,
+            "47": 2,
+            "48": 1,
+            "49": 2,
+            "5": 14846,
+            "51": 11,
+            "56": 1,
+            "6": 10426,
+            "7": 7783,
+            "8": 5869,
+            "9": 4816
+          },
+          "max": 56,
+          "mean": 2.854068046653875,
+          "min": 1,
+          "quantile_method": "linear interpolation at (n-1)*q",
+          "quantiles": {
+            "p25": 1,
+            "p50": 1,
+            "p75": 2,
+            "p90": 6,
+            "p95": 11,
+            "p99": 30
+          },
+          "single_frame_ratio": 0.6258681384340091,
+          "single_frame_tracks": 406425
+        },
+        "observations": 1853369,
+        "peak_rss_kib": 18796,
+        "schema_fields": [
+          "boxes_xyxy",
+          "frame_ids",
+          "image_paths",
+          "physical_track_id",
+          "quality",
+          "sample_key",
+          "source_sample_id",
+          "source_split",
+          "stream_order",
+          "video_id"
+        ],
+        "sha256": "60be1313b781e5b8809b1ad2d9d75e303e0ec3b90664cdd7be1f8d281fd95038",
+        "source_split_counts": {
+          "val_predicted": 649378
+        },
+        "tracks": 649378,
+        "videos": 988,
+        "workers": 1
+      },
+      "status": "INSPECTED_CANDIDATE_QUALITY_AND_PROVENANCE_BLOCKED",
       "stream_present_on_a100": false
     }
   },

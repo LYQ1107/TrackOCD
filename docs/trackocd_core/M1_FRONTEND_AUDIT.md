@@ -110,12 +110,12 @@ prove corrupt artifacts. Current NAS dependency links to old `/data1/...`
 are broken; candidate files elsewhere are not assumed to resolve those links.
 
 OVTR-native is explicitly vocabulary-assisted/reference-only: **INCOMPARABLE**
-as a clean core frontend. Historical SimOWT/Q0 is not restored locally. The
-selection JSON records AssA 0.48950, DetRe 0.75133, Novel coverage **179/819**
-and persistent coverage **83/527**, but actual configuration, supervision,
-stream identity and the 649,378-track fragmentation profile remain unverified.
-The count alone is not a quality certificate. No existing lawful
-MASA/AED TAO asset route is established.
+as a clean core frontend. The subsequent
+[SimOWT follow-up](M1_SIMOWT_FOLLOWUP.md) verifies its source-side stream hash,
+649,378-track fragmentation profile and actual static inference branch.
+Checkpoint supervision/historical runtime binding remain unverified and
+score-contract defects are diagnosed; it is not frozen as clean primary.
+No existing lawful MASA/AED TAO asset route is established.
 
 **M1 status: diagnostics complete / BLOCKED_FRONTEND_QUALITY.** No qualifying
 main frontend has been frozen; `FROZEN_PHYSICAL_FRONTEND.json` is not written.
@@ -123,12 +123,13 @@ PANDAS remains a fixed external reference, not promoted to primary by this
 audit. The goal remains active. The user-authorized **GT-track feasibility
 exception** may support representation/policy feasibility, clearly labeled
 GT, but cannot replace the required predicted-track M9 main result or prove
-overall completion. No new features/training have been started yet.
+overall completion. The subsequent M2 GT-only smoke completed four tracks /
+64 frozen DINO observations, without training or a predicted main result.
 
 The verified live NAS metadata audit was waited on until completion, not an
-old source-upload handle. A narrow SimOWT/Q0 follow-up was given to the user;
-there is currently no verified new SimOWT job to wait on. The original 81
-source files, 255 source cache units and all historical results are preserved.
+old source-upload handle. The narrow SimOWT/Q0 follow-up has also completed;
+neither completed audit is a live extractor. The original 81 source files,
+255 source cache units and all historical results are preserved.
 
 ## Verification and delivery
 

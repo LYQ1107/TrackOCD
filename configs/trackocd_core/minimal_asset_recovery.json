@@ -3,6 +3,11 @@
   "status": "EXACT_V2_SOURCE_AND_VAL_METADATA_RECOVERED_FRONTEND_QUALIFICATION_BLOCKED",
   "m1_provenance_receipt": "outputs/trackocd_core/audit/nas_m1_provenance.json",
   "m1_native_covtrack_status": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE",
+  "m1_simowt_provenance_receipt": "outputs/trackocd_core/audit/nas_simowt_provenance.json",
+  "m1_simowt_status": "INSPECTED_FRAGMENTED_CANDIDATE_WITH_UNVERIFIED_SUPERVISION_AND_SCORE_CONTRACT_DIAGNOSIS",
+  "m2_gt_smoke_receipt": "outputs/trackocd_core/audit/gt_feature_smoke.json",
+  "m2_new_pinned_DINO_source": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "m2_cache_payload_bytes": 138207,
   "m1_valid_cache_bytes_do_not_establish_lawful_frontend": true,
   "exact_source_recovery_receipt": "outputs/trackocd_core/audit/source_recovery.json",
   "recovered_source_commit": "604d7eff50e2db386b597ec81690f16d0b40885e",
@@ -119,6 +124,22 @@
   ],
   "conditional_assets": [
     {
+      "asset": "SimOWT normalized physical stream and native evaluator rows",
+      "source_candidates": [
+        "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/physical_tracks.jsonl",
+        "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/native_evaluator_rows.jsonl"
+      ],
+      "size_bytes_each": [329292704, 294735737],
+      "size_bytes_total": 624028441,
+      "sha256_each": [
+        "60be1313b781e5b8809b1ad2d9d75e303e0ec3b90664cdd7be1f8d281fd95038",
+        "59122f452cec080a3a868a6ad05e5dc30ff5349b9a20a9e44e5d865c85329994"
+      ],
+      "source_current_hash_verified": true,
+      "destination_payload_restored": false,
+      "condition": "Only for independent geometry/score audit after a scoped transfer route. Inspect supervision and static score defects before any primary freeze; no automatic Q0 repair/full cache. Exclude duplicate original public/early-v2 streams, raw 1.22-GB merge, 36k per-image JSONs and old environment."
+    },
+    {
       "asset": "DINO-PHE checkpoint",
       "source_candidates": [
         "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/runs/phe_track/dinov2_seed1027/checkpoint.pth",
@@ -136,7 +157,9 @@
       "historical_display_size": "518 MiB",
       "expected_size_bytes": 542162424,
       "expected_sha256": "70f30d3b66684e58d1875c75ba1c1011984644ea8362e7761dbbb6366a392a72",
-      "condition": "Prefer verified existing lawful predicted tracks. Restore weight/environment only if M1 requires low-cost reproduction; no large physical-tracker training."
+      "source_current_hash_verified": true,
+      "destination_payload_restored": false,
+      "condition": "Prefer independent validation of completed streams. Restore weight/environment only for a separately justified bounded reproduction after lawful supervision checks; no large physical-tracker training or automatic six-hour inference."
     },
     {
       "asset": "COVTrack checkpoints",

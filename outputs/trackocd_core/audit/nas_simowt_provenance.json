@@ -1,0 +1,365 @@
+{
+  "schema_version": "trackocd.core.nas_simowt_provenance.v1",
+  "audited_at_utc": "2026-10-09T18:40:01Z",
+  "evidence_origin": {
+    "host": "remote-ssh-discovered:nas57",
+    "thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+    "turn_id": "01a121db-ff96-72c0-8300-04e0751c6079",
+    "turn_status": "completed",
+    "source_command_outputs_main_read": true,
+    "source_files_changed": false
+  },
+  "source_repository": {
+    "upstream": "https://github.com/22109095/SimOWT",
+    "current_head": "753b2ac0082976753350d1b74a4d332088889e57",
+    "historical_dirty_worktree": true,
+    "historical_source_patch_snapshot_available": false,
+    "current_tracker_sha256": "0d68554296749207625bbbe8b828176bba873fa9a031ccaf1cf9dc0f9434d698",
+    "current_idol_sha256": "00970901e4501879f4722590a085817a4a49ec6f51683d798a8760e9c948c4bb"
+  },
+  "current_source_stream": {
+    "file": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/physical_tracks.jsonl",
+    "bytes": 329292704,
+    "sha256": "60be1313b781e5b8809b1ad2d9d75e303e0ec3b90664cdd7be1f8d281fd95038",
+    "workers": 1,
+    "elapsed_seconds": 7.040087215136737,
+    "peak_rss_kib": 18796,
+    "tracks": 649378,
+    "observations": 1853369,
+    "videos": 988,
+    "source_split_counts": {
+      "val_predicted": 649378
+    },
+    "schema_fields": [
+      "boxes_xyxy",
+      "frame_ids",
+      "image_paths",
+      "physical_track_id",
+      "quality",
+      "sample_key",
+      "source_sample_id",
+      "source_split",
+      "stream_order",
+      "video_id"
+    ],
+    "first_identity_only": {
+      "sample_key": "simowt_54_0",
+      "source_sample_id": "54_0",
+      "video_id": 54,
+      "physical_track_id": "0",
+      "source_split": "val_predicted"
+    },
+    "array_length_mismatch_tracks": 0,
+    "length": {
+      "min": 1,
+      "max": 56,
+      "mean": 2.854068046653875,
+      "quantile_method": "linear interpolation at (n-1)*q",
+      "quantiles": {
+        "p25": 1,
+        "p50": 1,
+        "p75": 2,
+        "p90": 6,
+        "p95": 11,
+        "p99": 30
+      },
+      "single_frame_tracks": 406425,
+      "single_frame_ratio": 0.6258681384340091,
+      "exact_histogram": {
+        "1": 406425,
+        "2": 91683,
+        "3": 45865,
+        "4": 23247,
+        "5": 14846,
+        "6": 10426,
+        "7": 7783,
+        "8": 5869,
+        "9": 4816,
+        "10": 4073,
+        "11": 3351,
+        "12": 2940,
+        "13": 2581,
+        "14": 2274,
+        "15": 1962,
+        "16": 1820,
+        "17": 1580,
+        "18": 1423,
+        "19": 1284,
+        "20": 1142,
+        "21": 1051,
+        "22": 984,
+        "23": 897,
+        "24": 822,
+        "25": 761,
+        "26": 763,
+        "27": 692,
+        "28": 640,
+        "29": 657,
+        "30": 699,
+        "31": 837,
+        "32": 617,
+        "33": 667,
+        "34": 492,
+        "35": 394,
+        "36": 434,
+        "37": 373,
+        "38": 376,
+        "39": 481,
+        "40": 1158,
+        "41": 76,
+        "42": 32,
+        "43": 19,
+        "44": 9,
+        "45": 38,
+        "46": 2,
+        "47": 2,
+        "48": 1,
+        "49": 2,
+        "51": 11,
+        "56": 1
+      }
+    }
+  },
+  "historical_normalization": {
+    "status": "COMPLETE_WITH_INVALID_BOXES",
+    "invalid_boxes_retained": 16290,
+    "all_observations_retained": true,
+    "invalid_box_count_freshly_recomputed": false,
+    "normalization_gt_join_used": false,
+    "annotation_usage": "Structural image/video/frame_index/file_name lookup, as inspected in normalization"
+  },
+  "historical_coverage_with_current_key_recount": {
+    "gt_manifest": {
+      "bytes": 11876759,
+      "sha256": "23fbe4d7f2494508141f2d88f8741cec19ee52cae783cdee8483120bd01210e8"
+    },
+    "private_labels": {
+      "bytes": 564552,
+      "sha256": "a770efa4f1640318ce75d90330f0dd16364b32072f848f60c2cffe294f3b1f48"
+    },
+    "gt_track_keys": 5232,
+    "historical_score_keys": 5232,
+    "missing_score_keys": 0,
+    "extra_score_keys": 0,
+    "threshold": "Inherited category-free per-video temporal-IoU >= 0.5",
+    "known": {
+      "numerator": 1618,
+      "denominator": 4413,
+      "value": 0.3666440063448901
+    },
+    "novel": {
+      "numerator": 179,
+      "denominator": 819,
+      "value": 0.21855921855921856
+    },
+    "persistent_observability": {
+      "numerator": 83,
+      "denominator": 527,
+      "value": 0.15749525616698293
+    },
+    "persistent_target_observability": {
+      "numerator": 103,
+      "denominator": 527,
+      "value": 0.1954459203036053
+    },
+    "geometry_matches_freshly_recomputed": false,
+    "key_universe_and_reliable_counts_freshly_recounted": true,
+    "persistent_counts_freshly_recomputed": false,
+    "commit_ct_computed": false,
+    "matched_only_denominator": false
+  },
+  "historical_full_val_tracking": {
+    "status": "PRESERVED_REFERENCE_NOT_NEW_RUN",
+    "scale": "0-1",
+    "HOTA": 0.15279,
+    "AssA": 0.4895,
+    "DetA": 0.048456,
+    "DetRe": 0.75133,
+    "DetPr": 0.049034,
+    "OWTA": 0.60202,
+    "LocA": 0.84421,
+    "IDF1": null,
+    "summary_sha256": "71ec860e9755aa3619d35e07ff3e601910ffa659015d3c89ab69ffe67e3e408d",
+    "raw_summary_percent_scale": true,
+    "TrackEval_GT_tracks_including_distractors": 5485,
+    "TrackOCD_nondistractor_universe": 5232,
+    "summary_tracker_IDs": 599375,
+    "normalized_stream_tracks": 649378,
+    "counts_same_scoring_projection": false
+  },
+  "native_execution_evidence": {
+    "eval_only": true,
+    "loaded_checkpoint_path_logged": true,
+    "logged_classifier_out_features": 1,
+    "model_num_classes": 1,
+    "coco_pretrain_flag": true,
+    "canonical_val_batches": 36375,
+    "registered_dataset_name": "coco_2017_val_agn",
+    "actual_registered_split": "TAO Validation",
+    "environment": {
+      "python": "3.7.16",
+      "torch": "1.8.1+cu111",
+      "torchvision": "0.9.1",
+      "detectron2": "0.6"
+    },
+    "old_runtime_restored_on_a100": false,
+    "r50_eval_yaml": {
+      "bytes": 1176,
+      "sha256": "d9feae0c04ff306f68f095449a276c22639ca4301ef26a183acd181d7fdc95d7"
+    },
+    "effective_config_yaml": {
+      "bytes": 7185,
+      "sha256": "01cc7f0467aebca8ae85eeb58a28c4f3349f4114afbf9f6a6e360c14364307bd"
+    },
+    "logged_config_text_matches_current_ignoring_final_blank_line": true,
+    "logged_config_bytes_identical": false,
+    "log": {
+      "bytes": 871318,
+      "sha256": "cf8c4e9d678f7e8e980a3dfa9ce380413596a23dd76a0929de679e652fb76347"
+    },
+    "historical_duration_logged": "6:41:20",
+    "COCOEvaluator_return_empty_warning_not_separate_TrackEval_failure": true,
+    "entry_interface": "evaluator passes [current_inputs, datasets_ori] including full Val annotations/future records",
+    "inspected_actual_forward": "eval COCO_PRETRAIN branch takes batched_inputs[0]; track_eval receives empty datasets_ori and current mapped input",
+    "inference_mapper_removes_annotations": true,
+    "model_constructor_reads_all_annotation_json_but_retains_videos_lookup": true,
+    "static_association": "Current predictions + past track memo 10 frames, long embedding memory 3",
+    "future_box_or_id_smoothing_found_on_inspected_path": false,
+    "frame_online_runtime_replay_verified": false,
+    "metadata_input_file_contains_semantic_fields": true,
+    "full_boundary_isolation_verified": false
+  },
+  "checkpoint": {
+    "actual_nas_path": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/simowt_weight.pth",
+    "bytes": 542162424,
+    "sha256": "70f30d3b66684e58d1875c75ba1c1011984644ea8362e7761dbbb6366a392a72",
+    "source_hash_matches_download_manifest": true,
+    "current_source_hash_verified": true,
+    "run_time_weight_sha256_logged": false,
+    "official_model_zoo_drive_id": "1x7Xh_EKVkt7aAz3ioWpzUN-FxryNWKQk",
+    "a100_payload_restored": false,
+    "training_config_COCO_agnostic_is_not_complete_checkpoint_training_provenance": true,
+    "primary_source_review": {
+      "model_zoo": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/assets/train%26test%26model_zoo.md",
+      "training_config": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/projects/IDOL/configs/r50_train.yaml",
+      "paper_full_text_fetch": "ACM 403; no inferred training split from abstract"
+    },
+    "novel_or_val_label_supervision_exclusion_verified": false,
+    "positive_proof_of_forbidden_supervision": false
+  },
+  "score_contract_diagnosis": {
+    "probability_source": "coco_inference sigmoid logits / sqrt with sigmoid IoU, then Instances.scores",
+    "tracking_consumer": "track_eval applies scores.sigmoid() again for selection/NMS/exported association score",
+    "registered_thresholds": {
+      "inference_select": 0.1,
+      "init_score": 0.2,
+      "addnew_score": 0.2
+    },
+    "unit_probability_after_sigmoid_interval": [
+      0.5,
+      0.7310585786300049
+    ],
+    "empty_memo_score_column_view_overwrite": 0.7501,
+    "reproducible_CPU_receipt": "outputs/trackocd_core/audit/simowt_score_contract.json",
+    "upstream_pinned_source_contains_same_operations": true,
+    "historical_score_distribution_or_fragmentation_attribution_verified": false,
+    "frozen_asset_repaired_or_recomputed": false
+  },
+  "source_hash_lineage_gaps": [
+    {
+      "relation": "metrics input stage",
+      "historical_referenced_sha256": "a76798c21fe424662f9ccfab201fc98ea94f651e06abe9329eda4fbef5cc4f86",
+      "current_sha256": "f1da1683c4175b76c75d0a67a87a9d46d07a58a4538f2c43a7d6fb690042c7f6"
+    },
+    {
+      "relation": "stage input asset audit",
+      "historical_referenced_sha256": "7351936ccd0c69298fb8cfc456425d0d2f860132d7266abb003cccf04ad12539",
+      "current_sha256": "641e43c7400c1460e7a6409c479eae0f88efc61237473105be9fa1184d8b7205"
+    }
+  ],
+  "mismatched_historical_input_hashes_alone_prove_corruption": false,
+  "private_source_copies_restored": [
+    {
+      "file": "frontend_simowt.json",
+      "bytes": 7923,
+      "sha256": "f1da1683c4175b76c75d0a67a87a9d46d07a58a4538f2c43a7d6fb690042c7f6"
+    },
+    {
+      "file": "frontend_simowt_normalization.json",
+      "bytes": 2235,
+      "sha256": "4b94ec33c287d06135bd34acafb1483e5919d819a164bde6c42dd1c644a03eef"
+    },
+    {
+      "file": "downloads_manifest.json",
+      "bytes": 1861,
+      "sha256": "5d641ec1f3237d4a04cf61e11ca8c2efe55fa6a3f72823d547edb79266e24f30"
+    },
+    {
+      "file": "tracker.py",
+      "bytes": 24113,
+      "sha256": "0d68554296749207625bbbe8b828176bba873fa9a031ccaf1cf9dc0f9434d698"
+    }
+  ],
+  "private_source_copy_total_bytes": 36132,
+  "private_source_copies_a100_sha256_verified": true,
+  "historical_raw_clean_flags_treated_as_proof": false,
+  "distinct_untransferred_assets": [
+    {
+      "asset": "Normalized physical stream",
+      "path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/physical_tracks.jsonl",
+      "bytes": 329292704,
+      "sha256": "60be1313b781e5b8809b1ad2d9d75e303e0ec3b90664cdd7be1f8d281fd95038"
+    },
+    {
+      "asset": "Normalized native evaluator rows",
+      "path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/native_evaluator_rows.jsonl",
+      "bytes": 294735737,
+      "sha256": "59122f452cec080a3a868a6ad05e5dc30ff5349b9a20a9e44e5d865c85329994"
+    },
+    {
+      "asset": "Archived raw per-image prediction merge",
+      "bytes": 1220382281,
+      "sha256": "8ae674667b500b04ec9108976a43a44f2d91661e8f831e08e06dd5e5514a5231"
+    },
+    {
+      "asset": "Original public stream; different schema/order",
+      "bytes": 281913598,
+      "sha256": "2fbde4d4352a7831925f772b39f02c85f17ef92daee4f79ae9cd891ba2375878"
+    },
+    {
+      "asset": "Early v2 predicted stream; different frontend usage",
+      "bytes": 394170147,
+      "sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca"
+    }
+  ],
+  "qualification": {
+    "no_novel_vocabulary_on_inspected_path": "SUPPORTED_STATIC",
+    "checkpoint_supervision_exclusion": "UNVERIFIED",
+    "historical_runtime_isolation_and_binding": "UNVERIFIED",
+    "legal_contract_status": "BLOCKED_PROVENANCE_NOT_PROVEN_LEAKAGE",
+    "quality_status": "BLOCKED_FRAGMENTATION_AND_SCORE_CONTRACT_DIAGNOSIS",
+    "selected_as_primary": false,
+    "frontend_freeze_written": false,
+    "main_M1_gate": "BLOCKED_FRONTEND_QUALITY",
+    "gt_feasibility_exception_still_allowed": true,
+    "decision": "Preserve Q0 as inspected candidate/reference, not clean-certified primary. Never silently repair Q0 or relabel the GT smoke as predicted-track evidence."
+  },
+  "command_references": {
+    "current_stream_hash_statistics": "exec-d48c7cd9-6920-4627-b0fa-3a14d4609d11",
+    "fixed_gt_score_key_recount": "exec-4945ddbe-d804-4cf1-b249-c3f1128abbc5",
+    "physical_weight_and_raw_output_hashes": "exec-a03f0085-4424-4df5-a8be-d2166b4c6f23",
+    "input_interface": "exec-e63b10fb-ec7c-46b4-9c08-a30bb1a456ba",
+    "actual_forward_branch": "exec-cddc8238-1c2e-4acc-8987-6e7ab753d6eb",
+    "actual_track_eval": "exec-c4091ec7-9cec-4d07-84ef-474acc3eca6b",
+    "probability_source": "exec-d95c9f85-eed4-45a7-ada8-30872ac2eaa6",
+    "tracker_empty_memo": "exec-65adc3e3-dbe2-418d-b1f6-42bbbc4ad834",
+    "hash_inventory": "exec-f6ac4fde-9fe4-43d6-9102-034a682fbabe"
+  },
+  "boundary": {
+    "full_inference_or_training_started": false,
+    "large_nas_payload_transferred": false,
+    "test_annotation_or_dataset_opened": false,
+    "external_process_interference": false,
+    "source_evidence_not_substitute_for_runtime_replay": true
+  }
+}

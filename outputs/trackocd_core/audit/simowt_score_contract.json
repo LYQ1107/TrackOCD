@@ -1,0 +1,47 @@
+{
+  "after_second_sigmoid": [
+    0.5,
+    0.5024999791668749,
+    0.5473576181430894,
+    0.7109495026250039,
+    0.7310585786300049
+  ],
+  "all_examples_exceed_registered_addnew_0_2": true,
+  "all_examples_exceed_registered_select_0_1": true,
+  "already_probability_examples": [
+    0.0,
+    0.01,
+    0.19,
+    0.9,
+    1.0
+  ],
+  "candidates_passing_0_2_after_source_prefix": 3,
+  "device": "cpu",
+  "execution_scope": "Three AST-verified statements on three synthetic CPU candidates",
+  "frontend_inference_or_training_started": false,
+  "frozen_stream_mutated": false,
+  "historical_stream_scores_or_fragmentation_cause_verified": false,
+  "initial_candidates_passing_0_2": 1,
+  "initial_scores": [
+    0.009999999776482582,
+    0.1899999976158142,
+    0.8999999761581421
+  ],
+  "interpretation": "These gates cannot reject low raw probabilities after recompression; mask NMS and association still operate",
+  "schema_version": "trackocd.core.simowt_score_contract.v1",
+  "score_column_and_conf_list_share_storage": true,
+  "scores_after_empty_branch": [
+    0.7501000165939331,
+    0.7501000165939331,
+    0.7501000165939331
+  ],
+  "second_sigmoid_range_on_unit_interval": [
+    0.5,
+    0.7310585786300049
+  ],
+  "source_bytes": 24113,
+  "source_empty_branch_first_line": 508,
+  "source_sha256": "0d68554296749207625bbbe8b828176bba873fa9a031ccaf1cf9dc0f9434d698",
+  "status": "PASS_ENGINEERING_STATIC_DIAGNOSTIC_NOT_FRONTEND_QUALIFICATION",
+  "test_annotation_opened": false
+}

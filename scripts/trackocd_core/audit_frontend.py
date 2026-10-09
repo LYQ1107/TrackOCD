@@ -113,10 +113,57 @@ def recovered_nas_evidence(root: Path) -> dict | None:
     return evidence
 
 
+def simowt_candidate(root: Path, verify_private: bool = True) -> dict:
+    path = root / "outputs/trackocd_core/audit/nas_simowt_provenance.json"
+    if not path.is_file():
+        return {"status": "BLOCKED_ASSET_AND_PROVENANCE_RECOVERY", "historical_track_count": 649378,
+                "stream_present_on_a100": False}
+    evidence = json.loads(path.read_text())
+    if verify_private:
+        for record in evidence["private_source_copies_restored"]:
+            payload = path.parent / "nas_simowt_source" / record["file"]
+            if payload.stat().st_size != record["bytes"] or sha256_file(payload) != record["sha256"]:
+                raise ValueError("SimOWT source copy byte mismatch: " + record["file"])
+    return {
+        "status": "INSPECTED_CANDIDATE_QUALITY_AND_PROVENANCE_BLOCKED",
+        "stream_present_on_a100": False,
+        "source_stream_currently_hashed_and_counted": evidence["current_source_stream"],
+        "historical_summary": evidence["historical_full_val_tracking"],
+        "historical_coverage_with_current_key_recount": evidence["historical_coverage_with_current_key_recount"],
+        "qualification": evidence["qualification"],
+        "score_contract_diagnosis": evidence["score_contract_diagnosis"],
+        "metrics_recomputed_on_a100": False,
+        "source_provenance_evidence": file_record(path),
+        "historical_clean_declarations_are_not_proof": True,
+        "source_copy_checks_performed": verify_private,
+    }
+
+
+def refresh_simowt_candidate(snapshot: dict, root: Path) -> dict:
+    """Update only candidate metadata; preserve the full existing physical audit."""
+    if snapshot.get("selected_frontend") is not None or snapshot.get("FROZEN_PHYSICAL_FRONTEND_written") is not False:
+        raise ValueError("Refuse metadata-only refresh of a frozen/selected primary")
+    candidate = simowt_candidate(root)
+    if candidate["status"] == "BLOCKED_ASSET_AND_PROVENANCE_RECOVERY":
+        raise ValueError("No completed SimOWT source evidence to refresh")
+    result = dict(snapshot)
+    result["other_candidates"] = dict(snapshot["other_candidates"])
+    result["other_candidates"]["SimOWT/Q0"] = candidate
+    result["candidate_metadata_refreshed_utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
+    result["candidate_metadata_refresh_scope"] = "SimOWT completed follow-up only; original physical metrics/lengths/coverage not rerun"
+    return result
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "outputs/trackocd_core/audit/frontend.json")
+    parser.add_argument("--refresh-candidates-only", action="store_true")
     args = parser.parse_args()
+    if args.refresh_candidates_only:
+        result = refresh_simowt_candidate(json.loads(args.output.read_text()), ROOT)
+        atomic_json(args.output, result)
+        print(json.dumps({"status": result["frontend_gate"], "refresh": result["candidate_metadata_refresh_scope"]}))
+        return 0
     started = time.monotonic()
     mem = {k: int(v.split()[0]) for k, v in (line.split(":", 1) for line in Path("/proc/meminfo").read_text().splitlines())}
     if mem["MemAvailable"] < mem["MemTotal"] * .25:
@@ -220,9 +267,7 @@ def main() -> int:
         "pandas_bytetrack_frozen_reference": reference,
         "covtrack_native_recovery_candidate": covtrack,
         "other_candidates": {
-            "SimOWT/Q0": {"status": "BLOCKED_ASSET_AND_PROVENANCE_RECOVERY", "historical_track_count": 649378,
-                          "stream_present_on_a100": False,
-                          "historical_summary": provenance["simowt_historical_summary"] if provenance else None},
+            "SimOWT/Q0": simowt_candidate(ROOT),
             "OVTR-native": {"status": "INCOMPARABLE", "reason": "Legacy contract explicitly labels it vocabulary-assisted; not a clean main physical frontend"},
             "COVTrack-NoSemantic": {"status": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE" if provenance else "BLOCKED_PROVENANCE_AND_ASSET_RECOVERY",
                                     "reason": "Association toggle does not remove the shared detector's Val Novel vocabulary"},

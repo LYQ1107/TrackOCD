@@ -58,3 +58,26 @@
   frame-online-memory claim. M1 qualified primary frontend remains blocked.
 - Next: SimOWT provenance/fragmentation audit and legitimate frontend freeze;
   GT representation feasibility is allowed but not end-to-end completion.
+
+## 2026-10-10 — M1 SimOWT/Q0 completed follow-up
+
+- Question: is the historical ~650k stream a lawful, reliable primary asset?
+- NAS source streaming scan: 649,378 tracklets / 1,853,369 observations,
+  median length 1, single-observation 62.59%; current SHA matches normalized
+  receipt. Saved-score recount covers all 5,232 GT keys: Known 1618/4413,
+  Novel 179/819. Geometry was not rerun; persistent 83/527 is not Commit-CT.
+- Actual static path: one-class detector, no Novel text vocabulary, current
+  frame plus past memo; complete Val record is passed then discarded.
+  Present weight matches official-asset manifest, but complete supervision
+  history and dirty source/run-time binding remain unverified. This differs
+  from COVTrack's positively evidenced vocabulary-assisted detection.
+- Root-cause diagnostic: probability scores receive a second sigmoid;
+  empty memo overwrites the shared score view with .7501. AST-pinned CPU
+  check accepts 3/3 synthetic candidates instead of 1/3 at .2. Not a full
+  stream score attribution, repair or threshold search. Regression: 62 passed.
+- Decision: retain inspected candidate/reference; M1 still blocked, no
+  primary freeze. Four private source files (36,132 B) match source SHA;
+  only aggregate evidence/code/report are published. No large transfer,
+  full inference/training, Test access or foreign-process interference.
+- Next: independent hash-verified normalized-stream validation and lawful
+  provenance, with GT-only evaluator/representation feasibility permitted.
