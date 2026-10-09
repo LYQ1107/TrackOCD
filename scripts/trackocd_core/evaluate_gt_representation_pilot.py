@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import argparse
 import json
 import resource
 import sys
@@ -16,6 +17,7 @@ sys.path.insert(0, str(ROOT))
 from scripts.trackocd_core.run_gt_pilot_baselines import registered_orders, replay
 from src.trackocd_core.evaluation import Target, TrackKey, evaluate_persistent, evaluate_standard, join_evaluation
 from src.trackocd_core.features import CompactGTFeasibilityCache, PREFIXES
+from src.trackocd_core.experiment_config import representation_config
 from src.trackocd_v2.io import atomic_json, sha256_file
 
 
@@ -26,8 +28,10 @@ def main() -> int:
     import pyarrow.parquet as pq
     from src.trackocd_core.representation import CategoryEvidence
     torch.set_num_threads(1)
-    config_path = ROOT / "configs/trackocd_core/gt_representation_pilot.json"
-    config = json.loads(config_path.read_text())
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', type=Path, default=ROOT / 'configs/trackocd_core/gt_representation_pilot.json')
+    config_path = parser.parse_args().config.resolve()
+    config = representation_config(ROOT, config_path)
     data = json.loads((ROOT / config["data_plan"]).read_text())
     cache_root = ROOT / data["cache_directory"]
     cache = CompactGTFeasibilityCache(cache_root)
@@ -36,7 +40,8 @@ def main() -> int:
     if (training["config_sha256"] != sha256_file(config_path)
             or training["cache_manifest_sha256"] != sha256_file(cache_root / "manifest.json")):
         raise ValueError("Frozen training/data lineage changed")
-    receipt_path = ROOT / "outputs/trackocd_core/audit/gt_representation_evaluation.json"
+    audit_prefix = "gt_representation_r1" if config["root_cause_correction_rounds_used"] else "gt_representation"
+    receipt_path = ROOT / f"outputs/trackocd_core/audit/{audit_prefix}_evaluation.json"
     if receipt_path.exists():
         raise RuntimeError("Preserve actual prior evaluation; no hidden re-selection")
     labels = pq.read_table(cache_root / "train_labels.parquet").to_pylist()
@@ -132,7 +137,8 @@ def main() -> int:
                "selection_categories_not_seen_in_fit": True, "GT_or_mapping_in_policy_state": False,
                "val_or_test_access": False, "external_process_interference": False,
                "primary_frontend_frozen": False, "formal_M5_M8_M9_complete": False, "M11_authorized": False,
-               "root_cause_correction_rounds_used": 0,
+               "root_cause_correction_rounds_used": config["root_cause_correction_rounds_used"],
+               "parent_config_sha256": config.get("parent_config_sha256"),
                "source_sha256": {name: sha256_file(ROOT / name) for name in
                                  ("scripts/trackocd_core/evaluate_gt_representation_pilot.py", "scripts/trackocd_core/run_gt_pilot_baselines.py",
                                   "src/trackocd_core/representation.py", "src/trackocd_v2/methods/nearest_prototype.py")},

@@ -1,0 +1,14 @@
+{
+  "schema_version": "trackocd.core.gt-representation-controlled-correction.v1",
+  "status": "PREREGISTERED_SINGLE_CONTROLLED_GT_CORRECTION_R1_NOT_MAIN",
+  "parent_config": "configs/trackocd_core/gt_representation_pilot.json",
+  "parent_config_sha256": "48f5e6b2526e85dc93eca5e2b3ea1e2e92ed0277bb32303b63561a4508748891",
+  "rationale": "Policy Train-only frozen diagnosis shows worse threshold-independent Known/pseudo-Novel ranking and compressed unseen-class geometry after four-class adapter fitting; test fit-only teacher Gram regularization, not threshold retuning or capacity growth",
+  "teacher_geometry_loss_weight": 5.0,
+  "teacher_geometry_loss": "MSE between category-evidence cosine Gram and frozen-DINO augmented-prefix-mean cosine Gram on the same 12 fit rows; teacher detached, no prototype/policy/heldout/Val/Test sample in fitting",
+  "output_directory": "outputs/trackocd_core/pilots/gt_train_known/representation_r1",
+  "root_cause_correction_rounds_used": 1,
+  "unchanged": ["fit rows", "model capacity", "seeds", "steps", "optimizer", "corruption", "prototype supervision", "thresholds", "evaluation rows", "orders", "prefixes"],
+  "original_checkpoints_and_results_preserved": true,
+  "after_this_round_further_root_cause_correction_forbidden": true
+}

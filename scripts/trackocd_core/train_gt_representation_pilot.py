@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import argparse
 import json
 import os
 import resource
@@ -16,13 +17,16 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from scripts.trackocd_core.smoke_gt_features import choose_idle_gpu
 from src.trackocd_core.features import CompactGTFeasibilityCache, PREFIXES
+from src.trackocd_core.experiment_config import representation_config
 from src.trackocd_v2.io import atomic_json, sha256_file
 
 
 def main() -> int:
     started = time.monotonic()
-    config_path = ROOT / "configs/trackocd_core/gt_representation_pilot.json"
-    config = json.loads(config_path.read_text())
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', type=Path, default=ROOT / 'configs/trackocd_core/gt_representation_pilot.json')
+    config_path = parser.parse_args().config.resolve()
+    config = representation_config(ROOT, config_path)
     data_config_path = ROOT / config["data_plan"]
     data_config = json.loads(data_config_path.read_text())
     output = ROOT / config["output_directory"]
@@ -91,7 +95,12 @@ def main() -> int:
                 category_loss = cross_video_category_loss(result["embedding"], category_tensor, videos, identities,
                                                          config["contrastive_temperature"])
                 reliability_loss = F.binary_cross_entropy_with_logits(result["reliability_logits"], torch.tensor(clean, device="cuda:0")) if learned else torch.zeros((), device="cuda:0")
-                loss = category_loss + config["reliability_loss_weight"] * reliability_loss
+                geometry_loss = torch.zeros((), device="cuda:0")
+                if config.get("teacher_geometry_loss_weight", 0):
+                    teacher = F.normalize(torch.tensor(augmented, device="cuda:0").mean(dim=1), dim=-1).detach()
+                    geometry_loss = F.mse_loss(result["embedding"] @ result["embedding"].T, teacher @ teacher.T)
+                loss = (category_loss + config["reliability_loss_weight"] * reliability_loss
+                        + config.get("teacher_geometry_loss_weight", 0) * geometry_loss)
                 if not torch.isfinite(loss):
                     raise ValueError("Nonfinite bounded fit loss")
                 optimizer.zero_grad(set_to_none=True)
@@ -99,7 +108,8 @@ def main() -> int:
                 torch.nn.utils.clip_grad_norm_(model.parameters(), config["gradient_clip_norm"])
                 optimizer.step()
                 trace.append({"step": step + 1, "prefix": p, "category_loss": float(category_loss.detach().cpu()),
-                              "synthetic_reliability_loss": float(reliability_loss.detach().cpu())})
+                              "synthetic_reliability_loss": float(reliability_loss.detach().cpu()),
+                              "fit_only_teacher_geometry_loss": float(geometry_loss.detach().cpu())})
             model.eval()
             checkpoint = output / f"{name}_seed{seed}.pt"
             temporary = checkpoint.with_suffix(".pt.tmp")
@@ -124,6 +134,8 @@ def main() -> int:
                "only_registered_representation_fit_rows_used": True, "policy_or_heldout_rows_used_for_fit": False,
                "novel_or_val_labels_used_for_fit": False, "test_accessed": False, "external_process_interference": False,
                "loss_drop_is_not_unseen_category_generalization_proof": True, "formal_M5_M8_complete": False,
+               "root_cause_correction_rounds_used": config["root_cause_correction_rounds_used"],
+               "parent_config_sha256": config.get("parent_config_sha256"),
                "source_sha256": {name: sha256_file(ROOT / name) for name in
                                  ("scripts/trackocd_core/train_gt_representation_pilot.py", "src/trackocd_core/representation.py")},
                "resources": {"wall_seconds": time.monotonic() - started, "worker_count": 1, "gpu_uuid": uuid,
@@ -131,7 +143,8 @@ def main() -> int:
                              "peak_cpu_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
                              "initial_mem_available_kib": mem["MemAvailable"], "ram_plan_bytes": config["ram_plan_bytes"]}}
     atomic_json(output / "training_receipt.json", receipt)
-    atomic_json(ROOT / "outputs/trackocd_core/audit/gt_representation_training.json", receipt)
+    prefix = "gt_representation_r1" if config["root_cause_correction_rounds_used"] else "gt_representation"
+    atomic_json(ROOT / f"outputs/trackocd_core/audit/{prefix}_training.json", receipt)
     print(json.dumps({"status": receipt["status"], "fits": len(fits), "new_checkpoint_bytes": checkpoint_bytes, "resources": receipt["resources"]}))
     return 0
 

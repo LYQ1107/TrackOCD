@@ -212,3 +212,14 @@
   not hide failure with a gate change or larger network. Root cause is not
   uniquely proved; one correction remains unused and must be preregistered
   using fit-only teacher geometry, same data/seeds/steps/capacity.
+
+## 2026-10-10 — Single controlled correction R1 preregistration
+
+- Root evidence is policy_train-only score compression and lower rank-based
+  open-set discrimination, not heldout/Val tuning. Test weight-5 fit-only
+  frozen-DINO cosine-Gram preservation in both A1/A2 losses.
+- No changes to samples, capacity, initialization seeds, 120-step budget,
+  corruption, prototype supervision, .65/.55 gates, orders or prefixes.
+  New R1 directory/checkpoints/results; preserve all original negative data.
+- This consumes the one root-cause correction round when started. No second
+  loss/architecture/threshold retry; no M11 or primary/frontend PASS implied.
