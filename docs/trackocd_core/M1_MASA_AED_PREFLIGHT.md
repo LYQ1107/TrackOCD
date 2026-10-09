@@ -445,3 +445,70 @@ is yet claimed. No downstream physical/semantic tuning or primary freeze follows
 from output counts. Old8/64 results remain intact and separately scoped.
 Sealed-prediction receipt regression: **208 tests pass, no skips**. Independent
 CPU evaluation is still running at this inference-stage delivery.
+
+## Actual full-Val physical audit result (988 videos, not M9 semantics)
+
+Independent evaluation completed after the full prediction seal: **988 videos /
+36,375 images / 113,112 GT annotation rows**, no dropped videos or narrowed role
+denominators. Same pinned canonical TAO_OW/HOTA and count-weighted sequence
+combination. One CPU process, no GPU or model training: **1,212.44s**, reported
+peak RSS **847,216,640 B**. PANDAS projection reproduces frozen exported
+**HOTA exactly, absolute difference0**; all four physical metric values also
+match the previously recorded reference. No historical reference is overwritten.
+
+| Physical route | HOTA | AssA | DetA | DetRe | Known reliable coverage | Novel reliable coverage |
+|---|---:|---:|---:|---:|---:|---:|
+| Frozen MASA native candidate | 0.145054 | 0.440879 | 0.048489 | 0.631809 | 1,400/4,413 (31.72%) | 189/819 (23.08%) |
+| Frozen PANDAS BT-FG-0 projection | 0.110113 | 0.330246 | 0.037554 | 0.578390 | 1,442/4,413 (32.68%) | 30/819 (3.66%) |
+
+Novel reliable target count is **6.3x** the PANDAS count, but **630/819 Novel
+targets remain missing/unreliable**. Known reliable targets are42 fewer than
+PANDAS. These are physical-route improvements, not evidence of semantic
+discovery, an independent temporal-evidence effect or a matched-input tracker
+ablation: input cadence/detection source/history differ and remain disclosed.
+Do not extrapolate the old four-clip0/2 result to this full-Val189/819 result.
+
+Native annotated-cadence stream: **304,561 physical identities**, mean length
+5.0565, median2, p90=13, p95=22; **114,380/304,561=37.56%** single-observation
+tracks, **71.55%** at most4 and **92.52%** at most16 observations. PANDAS
+annotated projection: **1,041,719 identities**, mean1.7580, median1, p90=3;
+**728,116/1,041,719=69.90%** singles. These projection counts must not overwrite
+PANDAS dense-lifetime2,370,335-track/10.19%-singleton history. Native fragments
+are materially fewer, but still substantial; short tracks cannot disappear from
+later prefix evaluation or headline denominators.
+
+Native geometry-matched rows **83,730/1,540,022**, leaving **1,456,292 unknown**.
+There are **290,240** identities without any GT match and **298,926** with
+unknown observations; **391** observed multicategory identities, **1,761**
+touch multiple GT individuals, and only **5,514** have all observations matched
+to one category. The matched-only majority fraction0.98980 is **not** a purity
+certificate. PANDAS has77,254 matched/1,754,137 unknown rows,626 observed
+multicategory/1,727 multi-individual identities and28,422 entirely observed
+single-category identities. Unmatched objects remain unknown under incomplete
+annotation, not proven background/false positives. No unknown-row filter repairs
+either candidate's quality before scoring.
+
+Canonical preprocessing evaluates **1,444,087 native** and **1,703,763 PANDAS**
+rows, removing95,935 and127,628 respectively under its original rules. Raw
+coverage/length/purity retain all rows; this removal is not a private unmatched
+filter or an input to the semantic model. Entire NPZ hashes/bytes and each
+video's score/coverage/purity are retained in the aggregate result receipt.
+
+**Primary freeze remains unresolved**, not automatic PASS or a newly invented
+numeric failure threshold. The original goal asks for a reliable frontend but
+does not specify a numerical coverage gate. This is the best currently measured
+legal-image-route candidate, yet coverage/fragmentation are limited and the
+exact private release training ledger remains undisclosed. User direction was
+requested whether to accept an explicitly limited-coverage main benchmark or
+keep the reliable-frontend requirement and leave primary unfrozen. No threshold,
+cap, sampling, weight, R2, GT-policy scope, DINO cache or training is changed
+while this decision is pending. The original/R1 negative semantic feasibility
+results stand; no M9/main scientific PASS or final-goal completion is claimed.
+
+Final regression: **209 passed, no skips**. After both real jobs terminate,
+private full prediction+evaluation allocation **72,204,288 B**; candidate named
+roots **6,034,083,840 B** and conservative entire repo+isolated env
+**6,517,043,200 B**, below the stated ceilings. Public aggregate result is
+**3,367,976 B**, SHA256
+`5d4e2d903204bf6313f6df42a300171d3596413f34ebaf2d731ed4fbb466b220`.
+No raw NPZ, GT payload or model weight is staged. No owned local job remains live.

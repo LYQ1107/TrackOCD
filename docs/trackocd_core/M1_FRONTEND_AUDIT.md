@@ -154,3 +154,22 @@ Full diagnostic reruns require existing Val/BT-FG-0 assets and the five private
 metadata copies named in the curated provenance receipt. Only aggregate
 reports, receipts, scripts and synthetic tests are delivered to GitHub;
 private source copies are deliberately excluded.
+
+## Latest separate MASA all-Val physical audit
+
+The previously unverified candidate is now restored and executed under separate
+remote preregistration455e9dd; sealed inference delivered414ebda. Exact pinned
+source/frozen419-tensor model, existing images, video-atomic output hashes and
+causal image-only wrapper are verified. Published generic-image provenance is
+supported, but exact private SAM release-stage ledger is not claimed.
+
+Actual full988-video/36375-image result: MASA HOTA0.145054/AssA0.440879,
+Known1400/4413/Novel189/819; PANDAS frozen reference HOTA0.110113/AssA0.330246,
+Known1442/4413/Novel30/819. PANDAS HOTA recomputes exactly (difference0).
+Native Novel coverage23.08% is6.3x PANDAS, yet630Novel targets missing/unreliable;
+median native length2, singletons37.56%, unknown rows1456292/1540022. Neither
+proposal counts nor matched-only purity establish a strong frontend or M9 PASS.
+See `M1_MASA_AED_PREFLIGHT.md` and `masa_full_val_physical_result.json` for all
+metrics, denominators, per-video records, resources and cadence limitations.
+Primary remains unfrozen pending an explicit quality/limited-coverage choice;
+no post-Val threshold/cap/weight change or downstream semantic training follows.

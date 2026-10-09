@@ -455,3 +455,31 @@
   claim. No GT-policy expansion or second representation correction.
 - Completed frozen-inference delivery regression208passed/no skips. Independent
   CPU evaluator ongoing; its full-GT result will be a separate report/artifact.
+
+## 2026-10-10 — Full-Val physical quality/coverage audit complete; primary choice pending
+
+- Fullseal precedes independent GT evaluator:988videos36375images113112GTrows;
+  CPU1212.44s/reportedRSS847216640B. PANDAS full-HOTA reproduces historical
+  0.11011336939513884 exactly (diff0); same canonical source/protocol/count-weighted
+  combination. All original references and clipped results remain distinct.
+- Native HOTA.145053592/AssA.440879146/DetA.048488755/DetRe.631808808. Known
+  1400/4413 vsPANDAS1442/4413; Novel189/819 vs30/819 =6.3x, but630Novel remain
+  missing/unreliable. Different detector/cadence/history, no tracker-architecture
+  attribution or OCD/temporal/discovery-contribution claim.
+- Native304561identities/1540022obs, mean5.0565 median2 p90=13 p95=22;
+  singles114380=37.56%, <=4 71.55%, <=16 92.52%. PANDAS annotationprojection
+  1041719identities median1/singles69.90%; not its dense-history10.19% singleton.
+- Native83730matched/1456292unknown;290240tracks noGT support,298926 unknown
+  members,391observedmulticategory/1761multi-individual,5514allobserved-onecategory.
+  Matched-onlymajority.98980 does not certify purity. PANDAS likewise preserves
+  1754137unknown. Originalcanonical preprocessing removes95935/127628rows;
+  no private unknown filter or narrowed GT denominator rescues scores.
+- Original goal has qualitative reliability gate, no fixed numeric cutoff;
+  user choice requested limited-coverage MASA benchmark vsmaintain reliable-front
+  requirement/unfrozen. No automaticprimaryPASS/FAIL-threshold invention, cap
+  change, ValNovel semanticselection/training, Test, R2 or GT-policy expansion.
+  Report true results; do not mark entire M0–M10 goal complete from this audit.
+- Final209tests/no skips; namedcandidate6034083840allocatedB, conservative
+  repo+isolatedenv6517043200B, fullprediction+eval72204288B. Public aggregate
+  3367976B/SHA5d4e2d903204bf6313f6df42a300171d3596413f34ebaf2d731ed4fbb466b220.
+  Both GPU/CPU sessions terminal; no owned task live, rawboxes/GT/weights private.

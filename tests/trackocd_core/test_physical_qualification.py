@@ -165,3 +165,24 @@ def test_actual_full_val_prediction_receipt_has_unique_complete_universe_and_no_
     assert sum(w["actual_forwards_completed_this_attempt"] for w in workers) == 36375
     assert all(w["initial_frozen_state_sha256"] == w["final_frozen_state_sha256"] for w in workers)
     assert len({w["initial_frozen_state_sha256"] for w in workers}) == 1
+
+
+def test_actual_full_val_result_has_fixed_denominators_reference_identity_and_unknown_rows():
+    path = Path(__file__).resolve().parents[2] / "outputs/trackocd_core/audit/masa_full_val_physical_result.json"
+    if not path.exists(): pytest.skip("Independent full-Val physical evaluation not delivered")
+    r = json.loads(path.read_text())
+    assert r["videos"] == 988 and r["images"] == 36375 and r["gt_rows"] == 113112
+    assert not r["primary_freeze_permitted"] and not r["ocd_or_m9_metrics"] and not r["labels_for_model_input_or_tuning"]
+    assert r["pandas_same_protocol_hota_absolute_difference_from_frozen_export"] == 0
+    assert r["resources"]["cpu_workers"] == 1 and not r["resources"]["gpu_used"]
+    for name, covered_known, covered_novel in [("MASA_NATIVE", 1400, 189), ("PANDAS_BT_FG0", 1442, 30)]:
+        d = r["results"][name]
+        assert len(d["per_video"]) == 988 and len({v["video_id"] for v in d["per_video"]}) == 988
+        assert sum(v["images"] for v in d["per_video"]) == 36375
+        assert d["coverage"]["known"]["gt_tracks"] == 4413 and d["coverage"]["known"]["reliably_observed"] == covered_known
+        assert d["coverage"]["novel"]["gt_tracks"] == 819 and d["coverage"]["novel"]["reliably_observed"] == covered_novel
+        assert d["purity"]["matched_rows"] + d["purity"]["unmatched_unknown_rows"] == d["raw_prediction_rows"]
+        assert d["purity"]["unmatched_unknown_rows"] > .9 * d["raw_prediction_rows"]
+        assert d["canonical_evaluated_prediction_rows"] < d["raw_prediction_rows"]
+        assert not d["annotated_projection_lengths"]["counts_come_from_full_frame_stream_not_only_annotated_frames"]
+        assert all(0 <= v <= 1 for v in d["canonical_tracking"].values())
