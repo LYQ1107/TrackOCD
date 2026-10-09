@@ -348,3 +348,45 @@ runtime assets. The comparison and local SHA values are reproducible in
 `scripts/trackocd_core/audit_assets.py`; NAS source SHA values remain pending.
 In particular, conclusions about the pushed old persistent evaluator must not
 be presented as a completed audit of the changed NAS evaluator.
+
+## Git-first recovery and minimum Parquet dependency — 2026-10-09T16:45:22Z
+
+The user chose **NAS → GitHub recovery branch → A100 targeted fetch**. The
+source-only recovery request now uses a temporary isolated clone and a new
+`codex/trackocd-v2-nas-recovery` branch, preserving the original NAS worktree,
+main, old v2 and current research branch. It excludes data, weights, feature
+payloads and Test outputs, forbids force push, and requires source hashes and
+independent remote HEAD verification. The previous no-Git archive instruction
+is superseded; a source archive is fallback only if NAS Git authentication
+is unavailable. Neither a source push nor NAS authentication has yet been
+verified. At the fresh check, the NAS peer was completed/idle and this recovery
+branch was absent; no live upload was being waited on.
+
+Reading the actual NAS `sharded_cache.py` output establishes the missing
+backend precisely: `_load_index()` imports `pyarrow.parquet`, otherwise raising
+`pyarrow is required to read the sharded feature index`. The existing A100
+environment has no pip module, so the installed `uv` was used to add **only
+`pyarrow==25.0.1`**, with `--no-deps --no-cache --only-binary=:all:` and the
+per-command 17890 proxy. Official [installation guidance](https://arrow.apache.org/docs/python/install.html)
+and the [25.0.1 release](https://pypi.org/project/pyarrow/25.0.1/) identify the
+supported binary distribution/Python compatibility; they do not prove our
+NAS cache integrity. No other packages or shared service settings changed.
+
+`environments/trackocd_core_extra_requirements.txt` pins this minimal addition.
+The reproducible CPU smoke in `scripts/trackocd_core/check_parquet_dependency.py`
+passed for **two synthetic tracks / five observations**: nested Parquet rows,
+offset/count indexing into a `(5,768)` FP16 NPY memmap, and separate videos
+retaining the same local physical ID. It did **not** import the unrecovered
+legacy reader, validate actual NAS shards, run a model, or open annotations.
+The independent report is `outputs/trackocd_core/audit/parquet_dependency_smoke.json`.
+The one new regression plus the earlier asset and v2 tests passed (**16 total**).
+
+The smoke confirmed torch `2.6.0+cu118`, torchvision `0.21.0+cu118`, NumPy
+`2.2.6` and pandas `2.3.3` unchanged. PyArrow's installed distribution manifest
+accounts for 157,010,660 bytes; together with the recovered DINO checkpoint,
+named added large assets/dependencies account for 503,389,391 bytes (about
+480.1 MiB), well within 15/30 GiB. The 12,488-byte synthetic temporary payload
+was task-owned and removed automatically; no existing cache was removed.
+Old hub code and the exact later v2 source/metadata remain pending.
+This is **M0 engineering progress only**, not completion of M1 or any scientific
+gate, and the real 255-shard cache remains partial and unvalidated in content.

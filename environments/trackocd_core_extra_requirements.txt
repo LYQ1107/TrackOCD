@@ -1,0 +1,3 @@
+# Minimal additions to the existing /data3/liuyeqiang/.venvs/trackocd-a100.
+# Formal v2 Parquet indices need this backend; keep the existing torch stack.
+pyarrow==25.0.1

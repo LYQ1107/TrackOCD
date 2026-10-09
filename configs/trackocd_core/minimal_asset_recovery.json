@@ -3,10 +3,33 @@
   "status": "CURRENT_NAS_SOURCE_AUDITED_DINO_WEIGHT_RECOVERED_CODE_TRANSFER_PENDING",
   "current_source_audit": "outputs/trackocd_core/audit/nas_source_audit.json",
   "source_only_export_request": "docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md",
+  "preferred_source_delivery": {
+    "route": "NAS_SOURCE_ONLY_GITHUB_RECOVERY_BRANCH_THEN_A100_TARGETED_FETCH",
+    "repository": "https://github.com/LYQ1107/TrackOCD",
+    "recovery_branch_candidate": "codex/trackocd-v2-nas-recovery",
+    "base_v2_commit": "cac66467af7ca137fc53bdbef34896dde47030d8",
+    "source_worktree_mutation_permitted": false,
+    "isolated_temporary_clone_required": true,
+    "nas_github_access_and_authentication_verified": false,
+    "recovery_branch_observed_on_remote": false,
+    "source_metadata_first_pass_max_bytes": 10485760,
+    "force_push_permitted": false,
+    "model_data_cache_upload_permitted": false,
+    "fallback": "Small source-only archive if source Git authentication is unavailable; no large transfer"
+  },
   "current_verified_github_delivery": "38be5dd867c7c2ab2dee5f090a2c05366b12c96a",
   "current_formal_shard_counts": {"present": 255, "required": 723, "missing": 468},
   "current_dino_destination_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
   "current_added_large_asset_bytes": 346378731,
+  "current_added_dependency_manifest_bytes": 157010660,
+  "current_added_named_assets_and_dependencies_bytes": 503389391,
+  "current_a100_parquet_dependency": {
+    "package": "pyarrow==25.0.1",
+    "smoke_receipt": "outputs/trackocd_core/audit/parquet_dependency_smoke.json",
+    "synthetic_cpu_io_pass": true,
+    "existing_torch_torchvision_numpy_pandas_versions_preserved": true,
+    "real_nas_shard_contents_validated": false
+  },
   "prepared_at_utc": "2026-10-09T15:17:37Z",
   "nas_host_reference": "remote-ssh-discovered:nas57",
   "nas_client_connection": {

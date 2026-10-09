@@ -1,5 +1,5 @@
 {
-  "ancestor_delivery_tree": "7e371bb8df13d8edd06b3a77e7a319dbf29c9b63",
+  "ancestor_delivery_tree": "19d1309aafd6f290f799fdf15270860399250bc6",
   "annotations": {
     "train": {
       "annotated_images": 18274,
@@ -1540,7 +1540,51 @@
     }
   ],
   "external_process_interference": false,
-  "generated_utc": "2026-10-09T16:27:50.206051+00:00",
+  "formal_parquet_dependency_smoke": {
+    "actual_nas_payload_validation_proved": false,
+    "details": {
+      "dimension": 768,
+      "feature_contract_compatibility_proved": false,
+      "float16_npy_memory_map_roundtrip_pass": true,
+      "install_scope": "one pinned binary wheel with uv --no-deps --no-cache; task-scoped proxy only",
+      "installed_pyarrow_distribution_bytes": 157010660,
+      "legacy_sharded_reader_imported": false,
+      "observations": 5,
+      "official_installation_reference": "https://arrow.apache.org/docs/python/install.html",
+      "official_release_reference": "https://pypi.org/project/pyarrow/25.0.1/",
+      "original_stack_versions_preserved": true,
+      "parquet_nested_row_roundtrip_pass": true,
+      "real_nas_shards_validated": false,
+      "same_local_id_different_video_retained": true,
+      "schema_version": "trackocd.core.parquet_dependency_smoke.v1",
+      "smoke_script_sha256": "637aac5297bf5446ed3915c39e53db9a457de7b5029e65e101cc9cb90d27f9d0",
+      "source_dependency_evidence_command": "exec-083c82f8-1c5d-466b-84bb-24f9f151383c",
+      "status": "PASS_SYNTHETIC_CPU_IO_ONLY",
+      "temporary_payload_bytes": 12488,
+      "temporary_payload_retained": false,
+      "test_annotation_opened": false,
+      "tracks": 2,
+      "training_started": false,
+      "verified_at_utc": "2026-10-09T16:45:22.327550+00:00",
+      "versions": {
+        "numpy": "2.2.6",
+        "pandas": "2.3.3",
+        "pyarrow": "25.0.1",
+        "torch": "2.6.0+cu118",
+        "torchvision": "0.21.0+cu118"
+      }
+    },
+    "receipt": {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1791564322327089386,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/parquet_dependency_smoke.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/parquet_dependency_smoke.json",
+      "sha256": "eed501ef10d4a288554f81beae36baff48c06c3372ea79775530661c33da30be",
+      "size_bytes": 1331
+    }
+  },
+  "generated_utc": "2026-10-09T16:46:52.405492+00:00",
   "git": {
     "branch": {
       "returncode": 0,
@@ -1550,12 +1594,12 @@
     "branches": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 38be5dd Record client-only NAS SSH route and observed proxy prerequisites\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
+      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 6839420 Audit current NAS v2 source gap and partial shards; recover pinned DINO weight\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
     },
     "head": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "38be5dd867c7c2ab2dee5f090a2c05366b12c96a"
+      "stdout": "68394203242ce24a0ef457338baab572e1ad0e99"
     },
     "stashes": {
       "returncode": 0,
@@ -1565,12 +1609,12 @@
     "status": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "M configs/trackocd_core/minimal_asset_recovery.json\n M docs/trackocd_core/M0_ASSET_AND_PROTOCOL_AUDIT.md\n M outputs/trackocd_core/audit/assets.json\n M scripts/trackocd_core/audit_assets.py"
+      "stdout": "M configs/trackocd_core/minimal_asset_recovery.json\n M docs/trackocd_core/M0_ASSET_AND_PROTOCOL_AUDIT.md\n M docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md\n M scripts/trackocd_core/audit_assets.py\n?? environments/trackocd_core_extra_requirements.txt\n?? scripts/trackocd_core/check_parquet_dependency.py\n?? tests/trackocd_core/test_parquet_dependency.py"
     },
     "worktrees": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 38be5dd867c7c2ab2dee5f090a2c05366b12c96a\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
+      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 68394203242ce24a0ef457338baab572e1ad0e99\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
     }
   },
   "historical_cache_evidence": {
@@ -1591,6 +1635,7 @@
     "standard evaluator remaps KNOWN tokens together with anonymous tokens",
     "whole-track ordering/prefix means do not prove truly frame-online replay"
   ],
+  "new_environment_dependency_manifest_bytes": 157010660,
   "new_large_asset_bytes": 346378731,
   "official_role_sources": {
     "distractor_map": {
@@ -1619,13 +1664,13 @@
     "repository": "https://github.com/YangLiu14/Open-World-Tracking"
   },
   "resource_snapshot": {
-    "available_disk_bytes": 96400580608,
+    "available_disk_bytes": 95859392512,
     "gpus": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 29 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
+      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 23 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
     },
-    "mem_available_kib": 104962000,
+    "mem_available_kib": 104658456,
     "mem_total_kib": 131633116
   },
   "roles": {

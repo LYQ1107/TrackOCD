@@ -1,0 +1,32 @@
+{
+  "dimension": 768,
+  "feature_contract_compatibility_proved": false,
+  "float16_npy_memory_map_roundtrip_pass": true,
+  "install_scope": "one pinned binary wheel with uv --no-deps --no-cache; task-scoped proxy only",
+  "installed_pyarrow_distribution_bytes": 157010660,
+  "legacy_sharded_reader_imported": false,
+  "observations": 5,
+  "official_installation_reference": "https://arrow.apache.org/docs/python/install.html",
+  "official_release_reference": "https://pypi.org/project/pyarrow/25.0.1/",
+  "original_stack_versions_preserved": true,
+  "parquet_nested_row_roundtrip_pass": true,
+  "real_nas_shards_validated": false,
+  "same_local_id_different_video_retained": true,
+  "schema_version": "trackocd.core.parquet_dependency_smoke.v1",
+  "smoke_script_sha256": "637aac5297bf5446ed3915c39e53db9a457de7b5029e65e101cc9cb90d27f9d0",
+  "source_dependency_evidence_command": "exec-083c82f8-1c5d-466b-84bb-24f9f151383c",
+  "status": "PASS_SYNTHETIC_CPU_IO_ONLY",
+  "temporary_payload_bytes": 12488,
+  "temporary_payload_retained": false,
+  "test_annotation_opened": false,
+  "tracks": 2,
+  "training_started": false,
+  "verified_at_utc": "2026-10-09T16:45:22.327550+00:00",
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "pyarrow": "25.0.1",
+    "torch": "2.6.0+cu118",
+    "torchvision": "0.21.0+cu118"
+  }
+}

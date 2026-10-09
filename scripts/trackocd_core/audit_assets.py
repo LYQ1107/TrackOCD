@@ -164,6 +164,8 @@ def main() -> int:
                                   'classification': classification})
     checkpoint_receipt_path = ROOT / 'outputs/trackocd_core/audit/dino_checkpoint_recovery.json'
     checkpoint_receipt = json.loads(checkpoint_receipt_path.read_text()) if checkpoint_receipt_path.is_file() else None
+    dependency_receipt_path = ROOT / 'outputs/trackocd_core/audit/parquet_dependency_smoke.json'
+    dependency_receipt = json.loads(dependency_receipt_path.read_text()) if dependency_receipt_path.is_file() else None
     audit = {
         'schema_version': 'trackocd.core.asset_audit.v1',
         'status': 'M0_AUDIT_COMPLETE_WITH_RECOVERY_GAPS',
@@ -216,6 +218,13 @@ def main() -> int:
             'details': checkpoint_receipt,
             'model_inference_or_feature_compatibility_proved': False,
         },
+        'formal_parquet_dependency_smoke': {
+            'receipt': file_record(dependency_receipt_path),
+            'details': dependency_receipt,
+            'actual_nas_payload_validation_proved': False,
+        },
+        'new_environment_dependency_manifest_bytes': dependency_receipt['installed_pyarrow_distribution_bytes']
+                                                     if dependency_receipt else 0,
         'new_large_asset_bytes': (ROOT / 'checkpoints/dinov2_vitb14_pretrain.pth').stat().st_size
                                 if (ROOT / 'checkpoints/dinov2_vitb14_pretrain.pth').is_file() else 0,
         'legacy_evaluation_limitations': [

@@ -1,12 +1,15 @@
-# NAS source-only recovery request
+# NAS source-only GitHub recovery request
 
-Paste the following into NAS thread **盘点当前文件夹**. This is a minimal
-source export request, not permission to train, restart old processes, read
-TAO Test data, or migrate historical runtime caches.
+Paste the following into NAS thread **盘点当前文件夹**. The user selected
+**NAS → isolated GitHub recovery branch → A100**, avoiding a client-mediated
+archive transfer when NAS authentication is available. This is source-only
+delivery, not permission to train, restart old processes, read TAO Test data,
+or migrate historical runtime caches. A100's working GitHub proxy/credentials
+do not establish NAS authentication; verify it at the source first.
 
 ```text
-接续刚完成的 TrackOCD v2 只读核验。A100 已恢复官方 DINOv2 权重且哈希匹配；
-下一步只恢复真实旧 v2 源码和小型配置/证据，不复制数据集、模型或 features。
+接续刚完成的 TrackOCD v2 核验，按用户选择改为仅将源码推送 GitHub。
+A100 已恢复官方 DINOv2 权重且哈希匹配；不复制数据集、模型或 features。
 
 源根：/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT
 运行证据根：/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs
@@ -21,19 +24,29 @@ TAO Test data, or migrate historical runtime caches.
    小 JSON 配置、状态和 provenance；可包含 cache_manifest.json。
    不选择 features 数组/GT JSON、模型、图片、原始 annotations 或大 JSONL。
    缺失文件记录为缺失；拒绝沿失效软链接猜测映射。
-4. 若上述 source-only 范围总计不超过 10 MiB，在新建、唯一的任务临时目录
-   创建一个代码恢复包及普通文件 SHA256/大小清单。清单用相对路径，区分
-   项目源与运行元数据，保留完整真实源码，不用聊天重写。排除 .git、
-   __pycache__、venv、数据、权重及软链接目标。不修改任何原始文件。
-   如果超过 10 MiB，先报告清单并等待缩小范围，不启动大迁移。
-5. 输出恢复包的绝对路径、字节数、SHA256、源文件清单及 Git 证据。
-   不启动 HTTP 服务/后台进程，不改 SSH/proxy，不 push Git，不训练，
-   不恢复 supervisor，不执行任何 Test 入口。若没有 A100 传输通道，
-   只报告准备好的小包，后续由客户端 scp 中转。
+4. 先验证 https://github.com/LYQ1107/TrackOCD 的访问/认证。不要复制私钥、
+   打印凭据、改共享 proxy/SSH 或把 A100 认证可用当成 NAS 已认证。
+   若上述 source-only 内容总计超过 10 MiB，先报告清单等待缩小范围。
+5. 在唯一任务临时目录中创建隔离克隆，以远端 codex/trackocd-v2 的
+   cac66467af7ca137fc53bdbef34896dde47030d8 为基底，新建
+   codex/trackocd-v2-nas-recovery。若分支已存在，不覆盖；报告并使用唯一
+   新名称。原 NAS 工作树始终只读，不 checkout/reset/stash/commit 源树。
+6. 仅复制并提交上面已盘点的真实源码/配置/测试/必要说明和小型 provenance。
+   对忽略的 docs/元数据只允许明确具名添加，不 git add -f 整个 outputs。
+   排除 .git、__pycache__、venv、数据、权重、features 及软链接目标；
+   不上传 Test 数据或相关实验输出。附普通文件 SHA256/大小清单，
+   区分项目源与运行元数据，缺失项如实记录；不从聊天重新生成代码。
+7. 做静态/不读数据的测试后，普通 commit + push 新恢复分支，禁止 force push，
+   不覆盖 main、原 codex/trackocd-v2 或当前 TrackOCD core 研究分支。
+   输出源 Git HEAD/status、恢复 commit SHA、文件清单/哈希和 ls-remote
+   独立核验结果。不要创建 PR、启动服务、训练或恢复旧 supervisor。
+   如果访问/认证失败，仅报告具体缺口；源码小包作为后备路线，暂不大迁移。
 ```
 
-The limit above is a first-pass transfer cap, not a change to the research goal
-or its 15/30-GiB budgets. After actual transfer, A100 must verify the bundle,
-extract into an isolated task recovery directory, read instructions/configs,
-and compare exact source bytes against the preserved working tree. No new
-claim of complete v2 recovery may be made from a file inventory alone.
+The limit above covers selected source/metadata, not the small isolated Git
+clone, and does not change the research goal or its 15/30-GiB budgets. After
+independent remote verification, A100 fetches only the returned recovery
+branch, reads its source inventory/instructions/configs and compares hashes
+against NAS evidence and the preserved local worktree. A100 must not blanket
+merge a legacy supervisor or run Test-capable entry points. No claim of complete
+v2 recovery may be made from a file inventory or unverified push alone.
