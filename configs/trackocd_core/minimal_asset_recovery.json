@@ -8,6 +8,25 @@
   "m2_gt_smoke_receipt": "outputs/trackocd_core/audit/gt_feature_smoke.json",
   "m2_new_pinned_DINO_source": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
   "m2_cache_payload_bytes": 138207,
+  "current_small_gt_feasibility": {
+    "scope": "Train Known GT only, not formal predicted M3/M4/M5/M8/M9",
+    "pilot_preregistration": "outputs/trackocd_core/audit/gt_pilot_preregistration.json",
+    "pilot_feature_receipt": "outputs/trackocd_core/audit/gt_pilot_features.json",
+    "pilot_tracks": 64,
+    "pilot_observations": 1024,
+    "reused_smoke_observations": 64,
+    "new_compact_pilot_payload_bytes": 2114366,
+    "model_checkpoint_payload_bytes_original_plus_r1": 25645464,
+    "training_receipts": ["outputs/trackocd_core/audit/gt_representation_training.json", "outputs/trackocd_core/audit/gt_representation_r1_training.json"],
+    "evaluation_receipts": ["outputs/trackocd_core/audit/gt_representation_evaluation.json", "outputs/trackocd_core/audit/gt_representation_r1_evaluation.json"],
+    "root_cause_correction_rounds_used": 1,
+    "further_correction_permitted": false,
+    "temporal_scientific_pass": false,
+    "primary_frontend_frozen": false,
+    "raw_arrays_and_checkpoints_published": false
+  },
+  "m1_simowt_actual_score_receipt": "outputs/trackocd_core/audit/nas_simowt_score_distribution.json",
+  "preferred_remaining_recovery": "Small complete supervision/config/runtime evidence first; source-side independent geometry summary preferred to bulk stream transfer; no duplicated native-row scan or full cache",
   "m1_valid_cache_bytes_do_not_establish_lawful_frontend": true,
   "exact_source_recovery_receipt": "outputs/trackocd_core/audit/source_recovery.json",
   "recovered_source_commit": "604d7eff50e2db386b597ec81690f16d0b40885e",
@@ -137,7 +156,7 @@
       ],
       "source_current_hash_verified": true,
       "destination_payload_restored": false,
-      "condition": "Only for independent geometry/score audit after a scoped transfer route. Inspect supervision and static score defects before any primary freeze; no automatic Q0 repair/full cache. Exclude duplicate original public/early-v2 streams, raw 1.22-GB merge, 36k per-image JSONs and old environment."
+      "condition": "Conditional ceiling, not required copying: native-row size/hash/score/bbox distribution audit is now complete on NAS. Prefer a bounded source-side independent geometry summary. If scoped A100 geometry reproduction is separately needed, normalized physical stream alone is 329292704 B; native rows add 294735737 B only if truly required. No automatic Q0 repair/full inference/cache, duplicates or old environment."
     },
     {
       "asset": "DINO-PHE checkpoint",

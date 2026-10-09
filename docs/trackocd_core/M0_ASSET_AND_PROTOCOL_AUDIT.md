@@ -4,7 +4,8 @@ Initial audit: 2026-10-09 (Asia/Shanghai); continuation recorded in UTC below.
 Engineering audit and prior GitHub delivery: **PASS**. Exact later v2 source:
 **81/81 NAS/Git/A100 byte identities verified**. Historical runtime assets:
 **PARTIAL; metadata, physical streams and feature payloads not transferred**.
-Algorithm hypotheses: **NOT TESTED**.
+Algorithm hypotheses in **M0 alone**: **NOT TESTED**. Later bounded Train
+Known GT feasibility has now run; see the final dated handover section.
 No new training, feature extraction, tracking inference or TAO Test access has
 been performed in M0.
 
@@ -445,3 +446,74 @@ byte-for-byte and inspected the actual source/configuration and runtime log.
 Its [qualification report](M1_FRONTEND_AUDIT.md) supersedes treating historical
 COVTrack "clean" flags as proof: the detector uses Novel vocabulary, so the
 native stream/cache is retained as a reference, not resumed as core input.
+
+## Current recovery handover — 2026-10-10 (Asia/Shanghai)
+
+The code mismatch is resolved: exact 81-file v2 recovery from `604d7eff`,
+including actual cross-track batching and atomic prefix resume. Source files
+remain byte-identical in the current research branch. Main, old v2, both
+recovery stashes, ignored user histories and historical evaluators are intact.
+Earlier missing-code/environment snapshots above are history, not current gaps.
+
+Restored/reused: pinned DINOv2 B/14 weight and official source `7764ea0`,
+existing Python 3.10 / torch 2.6 CUDA environment, minimal PyArrow addition,
+in-place Train/Val data, exact role bytes, five COV runtime metadata files and
+four private SimOWT source/metadata files. No old SimOWT 3.7 environment,
+physical stream payload, COV weights or NAS feature payload was copied.
+
+Actual last cache state remains **255/723 formal shards**, 561,672
+observations; not historical 65 and not extraction complete. Headers/envelopes
+and markers passed source-side checks, not all numerical/Parquet content/SHA.
+Native COVTrack uses Novel vocabulary, so keep these as reference assets and
+do not resume them as clean primary input. A new DINO pin/preprocessing is
+not proven identical to old NAS descriptor code; do not mix cache lineages.
+
+Main M1 is still `BLOCKED_FRONTEND_QUALITY`. PANDAS Novel coverage is weak;
+COVTrack fails no-Novel-vocabulary; SimOWT has median-one fragmentation and
+score-contract issues, with complete supervision/runtime binding unresolved.
+The completed additional NAS native-row audit verifies 1,853,369 scores:
+1,802,527 in the repeated-sigmoid region, 50,842 near .7501, no scores below
+.5. This is artifact consistency, not proof of lawful historical training or
+all fragmentation causality. The NAS audits are completed, not live jobs.
+
+Permitted GT exception progressed beyond synthetic tests: 64 deterministic
+Train Known tracks / 1,024 observations, globally video-disjoint partitions,
+12 classes split into four adaptation/four policy pseudo-Novel/four heldout
+pseudo-Novel. Original TAO roles unchanged. Four exact smoke tracks reused.
+Compact pilot payload 2,114,366 B, frozen inference 38.13 s; no full cache.
+Separate evaluator handles fixed GT universes and absorbing contamination.
+Actual fixed baselines: 120 replays; original representations: 280 replays;
+single preregistered R1: another 280 replays. These are **Train GT only**, not
+new TAO Val detection/tracking or formal main M4/M5/M8/M9 completion.
+
+Six original plus six R1 small adapter/evidence fits used only the 12 legal
+fit tracks / 192 observations. Each six-fit job took ~13 seconds, not long
+training; DINO/detector/tracker stayed frozen. Private checkpoints total
+25,645,464 B. Original unknown discovery failed; R1 partially improved H,
+but did not establish stable A2-over-A1 temporal benefit. Preserve negative
+results and the simpler A1 candidate. The sole correction round is consumed;
+no R2, GT-as-predicted claim or M11 authorization. Regression: 124 pass.
+
+Named new weight/dependency/feature/checkpoint payload is 531,287,428 B,
+excluding small source/receipts/vendor checkout; far below 15/30 GiB. This
+does not include the pre-existing ~354-GiB dataset, which was reused in place.
+Current disk snapshots are ~88 GiB free, not the initial 295-GiB user estimate.
+No Test access, external process interference, destructive reset or full job.
+
+Continue from: M1 lawful primary provenance/assets and independent geometry
+qualification. Official SimOWT [model instructions](https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/assets/train%26test%26model_zoo.md)
+and [data preparation](https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/assets/data.md)
+do not seal the checkpoint's complete training lineage. Do not fetch their
+whole class-agnostic annotation pack, which has not been proven Val/Train-only.
+The [official conference abstract](https://www.sigmm.org/opentoc/MM2023-TOC)
+confirms the self-training method, not exact supervision splits. Full paper or
+model training evidence was requested; no source claim is inferred from an
+unavailable full text. Prefer small provenance/geometry summaries before a
+conditional 329-MB stream or 542-MB checkpoint transfer. Do not repeat the
+completed score scan, copy archives, start full extraction or broaden the GT
+representation exception into decision-learning main work without clarification.
+
+Delivered reports: `GT_PILOT_BASELINE_TABLE.md`, `GT_REPRESENTATION_PILOT.md`,
+`GT_CONTROLLED_CORRECTION_R1.md`, and append-only `RESEARCH_LOG.md`; public
+JSON/CSV contain real bounded metrics, source/config/asset hashes and resources.
+Raw descriptors, GT rows, checkpoints and peer logs/AGENTS remain private.
