@@ -1,0 +1,121 @@
+{
+  "schema_version": "trackocd.core.minimal_asset_recovery.v1",
+  "status": "CANDIDATES_NOT_RESTORED",
+  "prepared_at_utc": "2026-10-09T15:17:37Z",
+  "nas_host_reference": "remote-ssh-discovered:nas57",
+  "nas_root_candidate": "/home/Valadmin/A100",
+  "new_server_root": "/data3/liuyeqiang/TrackOCD",
+  "historical_listing_source": {
+    "thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+    "thread_title": "盘点当前文件夹",
+    "turn_id": "01a0c857-ef93-79e2-b405-7e5cdc85eb2d",
+    "turn_started_at_utc": "2026-09-22T09:00:01Z",
+    "checkpoint_listing_command_id": "exec-50dd5bcc-7178-42f7-8bd6-af8de624d411",
+    "command_exit_code": 0,
+    "listing_truncated": false,
+    "evidence_level": "HISTORICAL_COMMAND_OUTPUT_NOT_CURRENT_DISK_VERIFICATION"
+  },
+  "storage_limits": {
+    "soft_bytes": 16106127360,
+    "hard_bytes": 32212254720,
+    "bulk_transfer_authorized": false,
+    "sizes_and_manifest_required_before_transfer": true
+  },
+  "reuse_in_place": [
+    "TAO Train/Validation frames and annotations under /data3/liuyeqiang/TAO-Amodal",
+    "Existing /data3/liuyeqiang/.venvs/trackocd-a100 environment",
+    "Inherited pushed v2 source at cac66467af7ca137fc53bdbef34896dde47030d8",
+    "Exactly recovered role split files and original hashes",
+    "Frozen completed PANDAS outputs as labeled external references only"
+  ],
+  "first_recovery_pass": [
+    {
+      "asset": "Unpublished v2 source and relevant instructions/configuration",
+      "source_candidate": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT",
+      "selection": ["AGENTS.md", "scripts/trackocd_v2", "src/trackocd_v2", "configs/trackocd_v2", "research_log.md", "docs/trackocd_v2"],
+      "size_bytes": null,
+      "availability": "CURRENT_CONTENTS_UNVERIFIED",
+      "checks": ["Read applicable ancestor/root/nested AGENTS.md before task actions", "Resolve symlinks without guessing path substitution", "Inventory named files and sizes only", "Compare with inherited v2 source without overwriting local work", "Do not relaunch historical scripts/PIDs"]
+    },
+    {
+      "asset": "v2 runtime metadata and formal cache manifests",
+      "source_candidates": [
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/outputs/trackocd_v2/audit/autonomous_state.json",
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/outputs/trackocd_v2/features/formal/covtrack_native",
+        "/home/Valadmin/A100/usr_for_deadline/trackocd_v2"
+      ],
+      "size_bytes": null,
+      "availability": "CURRENT_CONTENTS_UNVERIFIED",
+      "selection": "Metadata/manifests/configurations/complete markers first; no feature payload transfer in this pass",
+      "checks": ["Confirm current source identity, last update and actual completed shards", "Do not assume historical 65 shards / 247756 observations are final", "Require checkpoint, frontend, feature, crop and causal lineage before cache reuse", "Verify complete markers against payloads, hashes and shard index coverage"]
+    },
+    {
+      "asset": "DINOv2 ViT-B/14 checkpoint",
+      "source_candidate": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/dinov2_vitb14_pretrain.pth",
+      "destination_candidate": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+      "historical_display_size": "331 MiB",
+      "expected_size_bytes": 346378731,
+      "expected_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+      "expected_hash_source": "assets/downloads_manifest.json",
+      "availability": "HISTORICALLY_LISTED_NOT_RESTORED",
+      "checks": ["Current resolved source size and SHA256 must match pinned manifest", "Do not overwrite a different existing destination", "Recheck destination SHA256", "Recover exact DINO code/hub provenance separately before a small smoke"]
+    }
+  ],
+  "conditional_assets": [
+    {
+      "asset": "DINO-PHE checkpoint",
+      "source_candidates": [
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/runs/phe_track/dinov2_seed1027/checkpoint.pth",
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/runs/phe_track/dinov2_seed1028/checkpoint.pth",
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/runs/phe_track/dinov2_seed1029/checkpoint.pth"
+      ],
+      "historical_display_size_each": "61 MiB",
+      "size_bytes": null,
+      "sha256": null,
+      "condition": "Inspect configs, supervision and the 48/78 Known coverage; prove compatibility with common pure DINO CLS descriptors before comparison. Do not select a seed from Val performance. Otherwise INCOMPARABLE."
+    },
+    {
+      "asset": "SimOWT checkpoint",
+      "source_candidate": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/simowt_weight.pth",
+      "historical_display_size": "518 MiB",
+      "expected_size_bytes": 542162424,
+      "expected_sha256": "70f30d3b66684e58d1875c75ba1c1011984644ea8362e7761dbbb6366a392a72",
+      "condition": "Prefer verified existing lawful predicted tracks. Restore weight/environment only if M1 requires low-cost reproduction; no large physical-tracker training."
+    },
+    {
+      "asset": "COVTrack checkpoints",
+      "source_candidates": [
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/covtrack/ctao_public.pth",
+        "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/checkpoints/covtrack/ovtrack_pair.pth"
+      ],
+      "historical_display_sizes": ["352 MiB", "344 MiB"],
+      "size_bytes": null,
+      "sha256": null,
+      "condition": "Do not assume historical selected frontend is lawful or quality-qualified. Establish exact detection/vocabulary/training/causal provenance and stream identity first."
+    },
+    {
+      "asset": "Completed GT/predicted-track DINO shards",
+      "source_candidate": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2",
+      "size_bytes": null,
+      "sha256": null,
+      "condition": "Actual resolved locations, complete shard manifest and full requested feature contract must be verified. Transfer only required verified shards within budget; otherwise plan bounded compact FP16 re-extraction, never start a full cache automatically."
+    }
+  ],
+  "exclude": [
+    "Whole /home/Valadmin/A100/usr_for_deadline/trackocd_archive (historical listing: 146G)",
+    "Whole Phase89/90 trees and incompatible checkpoints as new v2 evidence models",
+    "Duplicate TAO frames or datasets already present",
+    "TAO Test assets/annotations/semantic GT",
+    "Unrelated project files and external-process operations",
+    "Per-track JSON/marker/crop copies and redundant intermediate checkpoints",
+    "Entire old Python 3.7 environment before establishing a concrete dependency need"
+  ],
+  "resume_gates": [
+    "Obtain real nas57 connection route (HostName/User/Port and any jump/proxy), not a GitHub key label",
+    "Restore GitHub transport; ordinary push and exact remote HEAD verification before leaving M0",
+    "Audit current NAS assets without treating peer historical output as current file identity",
+    "Read and preserve actual unpublished v2 changes; never substitute Phase89/90 or reconstructed chat code",
+    "Complete M1 lawful frontend quality/coverage/causality audit or explicitly disclose permitted GT-only feasibility",
+    "Continue the original M0-M10 goal without narrowing the scientific requirements"
+  ]
+}

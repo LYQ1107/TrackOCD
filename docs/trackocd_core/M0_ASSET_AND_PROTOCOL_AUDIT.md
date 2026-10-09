@@ -120,7 +120,26 @@ No NAS mount exists here. A bounded BatchMode SSH probe to
 and 2049 also timed out. No authentication/configuration changes were made.
 Candidate old roots remain the user-provided `/home/Valadmin/A100` project,
 `usr_for_deadline/trackocd_v2`, `trackocd_phase90` and `trackocd_archive` paths.
-Their symlink mappings, sizes and contents are **unverified**.
+Their current symlink mappings, sizes and contents are **unverified**.
+
+A subsequent read-only inspection of the app's NAS thread `盘点当前文件夹`
+(`01a0c851-ce6c-76e2-ac44-d6b0e3618ceb`, host `remote-ssh-discovered:nas57`)
+recovered its completed inventory from **2026-09-22**. That command output
+lists the OCD-root DINOv2 B/14 checkpoint (331 MiB), SimOWT checkpoint
+(518 MiB), COVTrack checkpoints and three DINO-PHE checkpoints (61 MiB each).
+These are stronger location leads than a chat recollection, but they are
+**historical listings**, not current file/hash verification or restored assets.
+The pinned DINO/SimOWT hashes must still be checked at the source and destination.
+An existing Phase90 tree and a 146-G historical archive do not prove recovery
+of the later v2 code, selected stream or atomic shards. The task's available
+app tools can inspect peer thread output but provide no cross-host shell or
+file-copy operation; this does not establish A100-to-NAS connectivity.
+
+`configs/trackocd_core/minimal_asset_recovery.json` now names those exact
+checkpoint candidates and the unresolved v2 code/metadata/cache locations.
+It prioritizes small code/metadata and DINO before optional legacy checkpoints,
+requires manifests and sizes before any feature transfer, and excludes whole
+archives, frame duplication and Test assets. No bulk migration was started.
 
 The last machine output in the old journal at line 22062,
 `2026-09-17T18:28:14.579Z`, reports 65 done atomic shards / 247,756 observations
@@ -189,3 +208,19 @@ timed out. No proxy daemon, network configuration or external process was
 changed. These are execution prerequisites, not negative algorithm results.
 Every local M0 commit remains preserved for an ordinary non-force push;
 M1–M10 have not been skipped because of failed remote verification.
+
+The user's GitHub SSH-key screenshot was checked against the local **public**
+key fingerprint; they match. No private key was printed, exported or changed.
+The identity is an existing GitHub key, not proof of a NAS login route.
+Bounded GitHub probes using that key failed before authentication: direct port
+22 timed out; SSH-over-443 through the existing HTTP/SOCKS proxies and port
+22 through the HTTP proxy timed out during banner exchange. This is not an
+observed key rejection and not proof that the repository or remote branch is
+absent. No proxy service, SSH config, host-key checking or unrelated process
+was changed. The missing NAS connection fields are HostName/User/Port and,
+if present, the jump/proxy route from the user's `Host nas57` configuration.
+
+On this follow-up, the worktree was clean before documentation edits and the
+same 15 tests passed again. About 91 GiB remains free. Training, large feature
+extraction and scientific evaluation have still not started; M0 remote
+delivery and current NAS asset verification remain required before advancing.
