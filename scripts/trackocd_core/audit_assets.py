@@ -107,6 +107,12 @@ def main() -> int:
     roles_path = ROOT / 'configs/trackocd_core/roles.json'
     roles = json.loads(roles_path.read_text())
     validate_roles(roles)
+    recovered_files = {}
+    for role_name, filename in (('known_base', 'known_ids.json'), ('genuine_novel', 'unknown_ids_val.json'), ('distractor', 'distractor_ids.json')):
+        path = ROOT / 'outputs/trackocd_core/recovered_splits' / filename
+        if not path.is_file() or sha256_file(path) != roles['original_files'][role_name]['sha256']:
+            raise ValueError(f'RECOVERED_ROLE_ASSET_MISSING_OR_CORRUPT: {filename}')
+        recovered_files[filename] = file_record(path)
     official = PANDAS / 'vendor/Open-World-Tracking'
     coco_map = official / 'datasets/coco_id2tao_id.json'
     distractor_map = official / 'datasets/distractor_classes.json'
@@ -159,7 +165,8 @@ def main() -> int:
         'roles': {'path': str(roles_path), 'sha256': sha256_file(roles_path),
                   'counts': {k: len(roles[k]) for k in ('known_ids', 'novel_ids', 'distractor_ids')},
                   'inherited_ids_recovered_from_complete_machine_audit': True,
-                  'original_split_bytes_recovered': False,
+                  'original_split_bytes_recovered': True,
+                  'recovered_original_files': recovered_files,
                   'official_known_and_distractor_content_equal': True,
                   'source': roles['source'], 'original_file_hashes': roles['original_files']},
         'official_role_sources': {'repository': 'https://github.com/YangLiu14/Open-World-Tracking',

@@ -1,5 +1,5 @@
 {
-  "ancestor_delivery_tree": "78b56d1f0062d339aa8e995d8320a3fdb2a5906d",
+  "ancestor_delivery_tree": "492da1cf826f7937bd6011649ec4c7d5ef9fdf6f",
   "annotations": {
     "train": {
       "annotated_images": 18274,
@@ -529,7 +529,7 @@
     }
   ],
   "external_process_interference": false,
-  "generated_utc": "2026-10-09T14:36:32.136787+00:00",
+  "generated_utc": "2026-10-09T15:00:37.390668+00:00",
   "git": {
     "branch": {
       "returncode": 0,
@@ -539,12 +539,12 @@
     "branches": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
+      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 44615cc Audit TrackOCD core assets and recover inherited role protocol\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
     },
     "head": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "7e0d4b6cf8046d173afedb0f16e138d45c43a416"
+      "stdout": "44615cc8efe4da350fe09c1598af740c0c7f9681"
     },
     "stashes": {
       "returncode": 0,
@@ -554,12 +554,12 @@
     "status": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "?? configs/trackocd_core/\n?? scripts/trackocd_core/\n?? src/trackocd_core/\n?? tests/trackocd_core/"
+      "stdout": "M configs/trackocd_core/roles.json\n M docs/trackocd_core/M0_ASSET_AND_PROTOCOL_AUDIT.md\n M scripts/trackocd_core/audit_assets.py\n M tests/trackocd_core/test_asset_audit.py\n?? scripts/trackocd_core/recover_role_files.py"
     },
     "worktrees": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 7e0d4b6cf8046d173afedb0f16e138d45c43a416\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
+      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 44615cc8efe4da350fe09c1598af740c0c7f9681\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
     }
   },
   "historical_cache_evidence": {
@@ -607,13 +607,13 @@
     "repository": "https://github.com/YangLiu14/Open-World-Tracking"
   },
   "resource_snapshot": {
-    "available_disk_bytes": 96780066816,
+    "available_disk_bytes": 96770715648,
     "gpus": {
       "returncode": 0,
       "stderr": "",
-      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 17 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
+      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 24 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
     },
-    "mem_available_kib": 100903440,
+    "mem_available_kib": 104928688,
     "mem_total_kib": 131633116
   },
   "roles": {
@@ -641,15 +641,46 @@
         "sha256": "0a8684ee4df3c7315153bf7559066c7a9707fa46539aa54110e003bf7657cedc"
       }
     },
-    "original_split_bytes_recovered": false,
+    "original_split_bytes_recovered": true,
     "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
-    "sha256": "68b97610597e4315149be8aabce07c8fbd8b20708dc1735293053a2702ae141b",
+    "recovered_original_files": {
+      "distractor_ids.json": {
+        "exists": true,
+        "is_symlink": false,
+        "mtime_ns": 1791557849385965033,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/distractor_ids.json",
+        "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/distractor_ids.json",
+        "sha256": "9dc538ee9ba3b1c9f2604315113baa204d566296507658d2312a497988a709fc",
+        "size_bytes": 276
+      },
+      "known_ids.json": {
+        "exists": true,
+        "is_symlink": false,
+        "mtime_ns": 1791557849371534008,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/known_ids.json",
+        "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/known_ids.json",
+        "sha256": "0a8684ee4df3c7315153bf7559066c7a9707fa46539aa54110e003bf7657cedc",
+        "size_bytes": 471
+      },
+      "unknown_ids_val.json": {
+        "exists": true,
+        "is_symlink": false,
+        "mtime_ns": 1791557849378992248,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/unknown_ids_val.json",
+        "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/unknown_ids_val.json",
+        "sha256": "a05c7563ba06734b4ce755d9d574a1284e936babb7e592f381aee3862aca016f",
+        "size_bytes": 1284
+      }
+    },
+    "sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
     "source": {
+      "byte_recovery_recipe": "json.dumps(recorded_ids, indent=1), no trailing newline; verify all original SHA256 before writing",
       "history_file": "/data3/liuyeqiang/.codex/sessions/2026/09/16/rollout-2026-09-16T01-12-43-01a0a60e-8106-7120-b890-6c8707ec0388.jsonl",
       "ids_recovered_verbatim": true,
       "known_and_distractor_official_source": "YangLiu14/Open-World-Tracking@060dd193127ac1f2ae8a580ce4382d152c35e0fc",
       "line": 297,
-      "original_files_not_recovered": true,
+      "original_files_not_recovered": false,
+      "original_split_bytes_recovered": true,
       "timestamp": "2026-09-15T17:25:29.838Z",
       "type": "historical_machine_audit_recovery"
     }

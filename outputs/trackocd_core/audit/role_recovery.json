@@ -1,0 +1,46 @@
+{
+  "files": {
+    "distractor_ids.json": {
+      "count": 45,
+      "matches_original_byte_hash": true,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/distractor_ids.json",
+      "sha256": "9dc538ee9ba3b1c9f2604315113baa204d566296507658d2312a497988a709fc",
+      "size_bytes": 276
+    },
+    "known_ids.json": {
+      "count": 78,
+      "matches_original_byte_hash": true,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/known_ids.json",
+      "sha256": "0a8684ee4df3c7315153bf7559066c7a9707fa46539aa54110e003bf7657cedc",
+      "size_bytes": 471
+    },
+    "unknown_ids_val.json": {
+      "count": 209,
+      "matches_original_byte_hash": true,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/unknown_ids_val.json",
+      "sha256": "a05c7563ba06734b4ce755d9d574a1284e936babb7e592f381aee3862aca016f",
+      "size_bytes": 1284
+    }
+  },
+  "original_worktree_recovered": false,
+  "original_writer": "src/data/build_protocol.py:225-228",
+  "role_ids_changed": false,
+  "schema_version": "trackocd.core.role_recovery.v1",
+  "serialization": {
+    "final_newline": false,
+    "indent": 1
+  },
+  "source_audit": {
+    "byte_recovery_recipe": "json.dumps(recorded_ids, indent=1), no trailing newline; verify all original SHA256 before writing",
+    "history_file": "/data3/liuyeqiang/.codex/sessions/2026/09/16/rollout-2026-09-16T01-12-43-01a0a60e-8106-7120-b890-6c8707ec0388.jsonl",
+    "ids_recovered_verbatim": true,
+    "known_and_distractor_official_source": "YangLiu14/Open-World-Tracking@060dd193127ac1f2ae8a580ce4382d152c35e0fc",
+    "line": 297,
+    "original_files_not_recovered": false,
+    "original_split_bytes_recovered": true,
+    "timestamp": "2026-09-15T17:25:29.838Z",
+    "type": "historical_machine_audit_recovery"
+  },
+  "status": "PASS",
+  "writer_sha256": "14e1b0bdd0057e784b3b6e56b80cacc9296bac3207b3671b0f696611627c0ab3"
+}

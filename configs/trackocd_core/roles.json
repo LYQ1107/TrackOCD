@@ -5,7 +5,9 @@
     "history_file": "/data3/liuyeqiang/.codex/sessions/2026/09/16/rollout-2026-09-16T01-12-43-01a0a60e-8106-7120-b890-6c8707ec0388.jsonl",
     "line": 297,
     "timestamp": "2026-09-15T17:25:29.838Z",
-    "original_files_not_recovered": true,
+    "original_files_not_recovered": false,
+    "original_split_bytes_recovered": true,
+    "byte_recovery_recipe": "json.dumps(recorded_ids, indent=1), no trailing newline; verify all original SHA256 before writing",
     "ids_recovered_verbatim": true,
     "known_and_distractor_official_source": "YangLiu14/Open-World-Tracking@060dd193127ac1f2ae8a580ce4382d152c35e0fc"
   },

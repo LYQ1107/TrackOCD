@@ -33,9 +33,19 @@ These scripts will not be relaunched unchanged on the new server.
 The complete machine audit printed in the old session journal at line 297,
 timestamp `2026-09-15T17:25:29.838Z`, contains all original role IDs and hashes.
 Those IDs were recovered verbatim into `configs/trackocd_core/roles.json`:
-78 Known, 209 observed Val Novel, 45 distractor categories. The new config
-explicitly distinguishes recovered ID content from missing original bytes.
-It does **not** claim to reproduce the old split-file byte hashes.
+78 Known, 209 observed Val Novel, 45 distractor categories. The initial M0
+commit `44615cc` recovered ID content but not byte identity. A follow-up
+inspection found the original serialization recipe in
+`src/data/build_protocol.py:225`: `json.dumps(ids, indent=1)` without a final
+newline. All three payloads produced the **exact original SHA256 hashes**.
+
+`scripts/trackocd_core/recover_role_files.py` now reconstructs only these three
+tiny assets under `outputs/trackocd_core/recovered_splits/`, validating all
+payloads and any existing target before writing. The successful manifest is
+`outputs/trackocd_core/audit/role_recovery.json`. Their combined size is only
+2,031 bytes (471 / 1,284 / 276); the original worktree and other runtime assets
+are still not recovered. No IDs, category roles or performance-derived
+selection were changed.
 
 Known IDs and distractor IDs are equal to the official maps in the existing
 Open-World-Tracking checkout at
@@ -163,8 +173,19 @@ record `BLOCKED_FRONTEND_QUALITY` and distinguish any permissible GT-track
 feasibility work from an end-to-end result. No architecture training or
 positive scientific claim is authorized by this M0 engineering pass alone.
 
-Validation: six new asset/role/forbidden-annotation tests plus six historical
-v2 tests passed (`12 passed`). The first audit invocation correctly stopped
+Validation: nine new asset/role/forbidden-annotation tests plus six historical
+v2 tests passed (`15 passed`). New recovery tests verify original byte hashes,
+idempotent reuse, pre-write rejection of corrupt input and refusal to overwrite
+a different existing asset. The first audit invocation correctly stopped
 on a source-map mismatch caused by parsing distractor-group keys as category
 IDs. The parser was corrected to flatten official category lists; no role
 was changed. A complete successful audit and source hashes are retained.
+
+## M0 delivery continuation
+
+The first delivery and continuation both observed GitHub HTTPS TLS failures
+and NAS SSH timeouts. A no-proxy GitHub connection and SSH-over-443 also
+timed out. No proxy daemon, network configuration or external process was
+changed. These are execution prerequisites, not negative algorithm results.
+Every local M0 commit remains preserved for an ordinary non-force push;
+M1–M10 have not been skipped because of failed remote verification.
