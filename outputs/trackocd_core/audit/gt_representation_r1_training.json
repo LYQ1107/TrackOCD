@@ -1,0 +1,5218 @@
+{
+  "A0_no_optimizer_or_training": true,
+  "DINO_detector_tracker_trained": false,
+  "cache_manifest_sha256": "7314e2ca52f69d7d6193ad43f40d804a96fd5e1589842efd4648d1f77d021694",
+  "config_sha256": "1e5a6e428866adb8be9b647498757e506aab4e61aeed086b9da132956a90b2cb",
+  "external_process_interference": false,
+  "fits": [
+    {
+      "checkpoint": {
+        "bytes": 2102840,
+        "path": "outputs/trackocd_core/pilots/gt_train_known/representation_r1/A1_semantic_adapter_mean_seed1027.pt",
+        "sha256": "9d63c8fbbac7891562a9e1e59e062d13f09be168d187455a4e1f8d01ed32dbd0"
+      },
+      "fit_categories": [
+        41,
+        126,
+        133,
+        211
+      ],
+      "fit_observations": 192,
+      "fit_tracks": 12,
+      "fit_videos": 12,
+      "model": "A1_semantic_adapter_mean",
+      "parameters": 525056,
+      "seed": 1027,
+      "steps": 120,
+      "synthetic_corruptions": 363,
+      "trace": [
+        {
+          "category_loss": 2.391335964202881,
+          "fit_only_teacher_geometry_loss": 0.6119937300682068,
+          "prefix": 1,
+          "step": 1,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.457125186920166,
+          "fit_only_teacher_geometry_loss": 0.5266889333724976,
+          "prefix": 2,
+          "step": 2,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.087343215942383,
+          "fit_only_teacher_geometry_loss": 0.39190009236335754,
+          "prefix": 4,
+          "step": 3,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.75931978225708,
+          "fit_only_teacher_geometry_loss": 0.20541074872016907,
+          "prefix": 8,
+          "step": 4,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.4220508337020874,
+          "fit_only_teacher_geometry_loss": 0.07995278388261795,
+          "prefix": 16,
+          "step": 5,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.620241165161133,
+          "fit_only_teacher_geometry_loss": 0.15257270634174347,
+          "prefix": 1,
+          "step": 6,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.104994773864746,
+          "fit_only_teacher_geometry_loss": 0.11795263737440109,
+          "prefix": 2,
+          "step": 7,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8062860369682312,
+          "fit_only_teacher_geometry_loss": 0.12194999307394028,
+          "prefix": 4,
+          "step": 8,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7526621222496033,
+          "fit_only_teacher_geometry_loss": 0.09006261825561523,
+          "prefix": 8,
+          "step": 9,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7626222372055054,
+          "fit_only_teacher_geometry_loss": 0.06366030126810074,
+          "prefix": 16,
+          "step": 10,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 7.107364654541016,
+          "fit_only_teacher_geometry_loss": 0.08056553453207016,
+          "prefix": 1,
+          "step": 11,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9212052822113037,
+          "fit_only_teacher_geometry_loss": 0.10315010696649551,
+          "prefix": 2,
+          "step": 12,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7914206385612488,
+          "fit_only_teacher_geometry_loss": 0.09811907261610031,
+          "prefix": 4,
+          "step": 13,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7760329246520996,
+          "fit_only_teacher_geometry_loss": 0.08754423260688782,
+          "prefix": 8,
+          "step": 14,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7647976875305176,
+          "fit_only_teacher_geometry_loss": 0.0750025287270546,
+          "prefix": 16,
+          "step": 15,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.807185649871826,
+          "fit_only_teacher_geometry_loss": 0.11052647233009338,
+          "prefix": 1,
+          "step": 16,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.4640501737594604,
+          "fit_only_teacher_geometry_loss": 0.09118198603391647,
+          "prefix": 2,
+          "step": 17,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8398234844207764,
+          "fit_only_teacher_geometry_loss": 0.07903097569942474,
+          "prefix": 4,
+          "step": 18,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7322205305099487,
+          "fit_only_teacher_geometry_loss": 0.07648729532957077,
+          "prefix": 8,
+          "step": 19,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.713350772857666,
+          "fit_only_teacher_geometry_loss": 0.07069419324398041,
+          "prefix": 16,
+          "step": 20,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.9027020931243896,
+          "fit_only_teacher_geometry_loss": 0.09922043234109879,
+          "prefix": 1,
+          "step": 21,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.326765775680542,
+          "fit_only_teacher_geometry_loss": 0.08891388773918152,
+          "prefix": 2,
+          "step": 22,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7848984003067017,
+          "fit_only_teacher_geometry_loss": 0.08955486118793488,
+          "prefix": 4,
+          "step": 23,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7640328407287598,
+          "fit_only_teacher_geometry_loss": 0.0890381708741188,
+          "prefix": 8,
+          "step": 24,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7487602233886719,
+          "fit_only_teacher_geometry_loss": 0.08266345411539078,
+          "prefix": 16,
+          "step": 25,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.4968204498291016,
+          "fit_only_teacher_geometry_loss": 0.09571404755115509,
+          "prefix": 1,
+          "step": 26,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.0097827911376953,
+          "fit_only_teacher_geometry_loss": 0.08828435838222504,
+          "prefix": 2,
+          "step": 27,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8561556339263916,
+          "fit_only_teacher_geometry_loss": 0.08523765206336975,
+          "prefix": 4,
+          "step": 28,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7090408205986023,
+          "fit_only_teacher_geometry_loss": 0.07417616993188858,
+          "prefix": 8,
+          "step": 29,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.710551917552948,
+          "fit_only_teacher_geometry_loss": 0.06897091865539551,
+          "prefix": 16,
+          "step": 30,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.4196014404296875,
+          "fit_only_teacher_geometry_loss": 0.09240281581878662,
+          "prefix": 1,
+          "step": 31,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.0354862213134766,
+          "fit_only_teacher_geometry_loss": 0.06334016472101212,
+          "prefix": 2,
+          "step": 32,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7431125044822693,
+          "fit_only_teacher_geometry_loss": 0.08105083554983139,
+          "prefix": 4,
+          "step": 33,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7482109069824219,
+          "fit_only_teacher_geometry_loss": 0.06839574873447418,
+          "prefix": 8,
+          "step": 34,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7341088056564331,
+          "fit_only_teacher_geometry_loss": 0.064731664955616,
+          "prefix": 16,
+          "step": 35,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.85591983795166,
+          "fit_only_teacher_geometry_loss": 0.06774923950433731,
+          "prefix": 1,
+          "step": 36,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.115572452545166,
+          "fit_only_teacher_geometry_loss": 0.07784757018089294,
+          "prefix": 2,
+          "step": 37,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7878134250640869,
+          "fit_only_teacher_geometry_loss": 0.07120214402675629,
+          "prefix": 4,
+          "step": 38,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7620174288749695,
+          "fit_only_teacher_geometry_loss": 0.05993368849158287,
+          "prefix": 8,
+          "step": 39,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7379374504089355,
+          "fit_only_teacher_geometry_loss": 0.05495483800768852,
+          "prefix": 16,
+          "step": 40,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.0682754516601562,
+          "fit_only_teacher_geometry_loss": 0.08289934694766998,
+          "prefix": 1,
+          "step": 41,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.9809898138046265,
+          "fit_only_teacher_geometry_loss": 0.053032562136650085,
+          "prefix": 2,
+          "step": 42,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7525383234024048,
+          "fit_only_teacher_geometry_loss": 0.06233645975589752,
+          "prefix": 4,
+          "step": 43,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.736947238445282,
+          "fit_only_teacher_geometry_loss": 0.05360882729291916,
+          "prefix": 8,
+          "step": 44,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7411292791366577,
+          "fit_only_teacher_geometry_loss": 0.051345448940992355,
+          "prefix": 16,
+          "step": 45,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.5572404861450195,
+          "fit_only_teacher_geometry_loss": 0.08160799741744995,
+          "prefix": 1,
+          "step": 46,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7480481863021851,
+          "fit_only_teacher_geometry_loss": 0.05752795189619064,
+          "prefix": 2,
+          "step": 47,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8249577879905701,
+          "fit_only_teacher_geometry_loss": 0.05083424597978592,
+          "prefix": 4,
+          "step": 48,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7617523670196533,
+          "fit_only_teacher_geometry_loss": 0.04929957911372185,
+          "prefix": 8,
+          "step": 49,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7495102286338806,
+          "fit_only_teacher_geometry_loss": 0.04475926235318184,
+          "prefix": 16,
+          "step": 50,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.74172306060791,
+          "fit_only_teacher_geometry_loss": 0.04094831272959709,
+          "prefix": 1,
+          "step": 51,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.7667278051376343,
+          "fit_only_teacher_geometry_loss": 0.05661310628056526,
+          "prefix": 2,
+          "step": 52,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8979891538619995,
+          "fit_only_teacher_geometry_loss": 0.05009706690907478,
+          "prefix": 4,
+          "step": 53,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7777537107467651,
+          "fit_only_teacher_geometry_loss": 0.047744270414114,
+          "prefix": 8,
+          "step": 54,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.737539529800415,
+          "fit_only_teacher_geometry_loss": 0.04319797828793526,
+          "prefix": 16,
+          "step": 55,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.302817344665527,
+          "fit_only_teacher_geometry_loss": 0.06665156781673431,
+          "prefix": 1,
+          "step": 56,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.045745611190796,
+          "fit_only_teacher_geometry_loss": 0.05739809572696686,
+          "prefix": 2,
+          "step": 57,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7911301851272583,
+          "fit_only_teacher_geometry_loss": 0.050731074064970016,
+          "prefix": 4,
+          "step": 58,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7513831853866577,
+          "fit_only_teacher_geometry_loss": 0.043389104306697845,
+          "prefix": 8,
+          "step": 59,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.777790904045105,
+          "fit_only_teacher_geometry_loss": 0.038993917405605316,
+          "prefix": 16,
+          "step": 60,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.552971839904785,
+          "fit_only_teacher_geometry_loss": 0.060755107551813126,
+          "prefix": 1,
+          "step": 61,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.0671201944351196,
+          "fit_only_teacher_geometry_loss": 0.05422793701291084,
+          "prefix": 2,
+          "step": 62,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7397933006286621,
+          "fit_only_teacher_geometry_loss": 0.052288830280303955,
+          "prefix": 4,
+          "step": 63,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7484120726585388,
+          "fit_only_teacher_geometry_loss": 0.04551481083035469,
+          "prefix": 8,
+          "step": 64,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7318322062492371,
+          "fit_only_teacher_geometry_loss": 0.04344134032726288,
+          "prefix": 16,
+          "step": 65,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.457409620285034,
+          "fit_only_teacher_geometry_loss": 0.0665014460682869,
+          "prefix": 1,
+          "step": 66,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7383270263671875,
+          "fit_only_teacher_geometry_loss": 0.05907244235277176,
+          "prefix": 2,
+          "step": 67,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7459192276000977,
+          "fit_only_teacher_geometry_loss": 0.04716997966170311,
+          "prefix": 4,
+          "step": 68,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7470147013664246,
+          "fit_only_teacher_geometry_loss": 0.045865703374147415,
+          "prefix": 8,
+          "step": 69,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7450339198112488,
+          "fit_only_teacher_geometry_loss": 0.03998526930809021,
+          "prefix": 16,
+          "step": 70,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.8572299480438232,
+          "fit_only_teacher_geometry_loss": 0.060908157378435135,
+          "prefix": 1,
+          "step": 71,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.5390409231185913,
+          "fit_only_teacher_geometry_loss": 0.05108271911740303,
+          "prefix": 2,
+          "step": 72,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7912303805351257,
+          "fit_only_teacher_geometry_loss": 0.04115455225110054,
+          "prefix": 4,
+          "step": 73,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7909337878227234,
+          "fit_only_teacher_geometry_loss": 0.0391562320291996,
+          "prefix": 8,
+          "step": 74,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7519383430480957,
+          "fit_only_teacher_geometry_loss": 0.03561382368206978,
+          "prefix": 16,
+          "step": 75,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.658442497253418,
+          "fit_only_teacher_geometry_loss": 0.03960651904344559,
+          "prefix": 1,
+          "step": 76,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.5893491506576538,
+          "fit_only_teacher_geometry_loss": 0.049421172589063644,
+          "prefix": 2,
+          "step": 77,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9201752543449402,
+          "fit_only_teacher_geometry_loss": 0.04368681460618973,
+          "prefix": 4,
+          "step": 78,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.763274610042572,
+          "fit_only_teacher_geometry_loss": 0.04225961118936539,
+          "prefix": 8,
+          "step": 79,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7292989492416382,
+          "fit_only_teacher_geometry_loss": 0.041294634342193604,
+          "prefix": 16,
+          "step": 80,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.585681676864624,
+          "fit_only_teacher_geometry_loss": 0.060936201363801956,
+          "prefix": 1,
+          "step": 81,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.8540480136871338,
+          "fit_only_teacher_geometry_loss": 0.0659145787358284,
+          "prefix": 2,
+          "step": 82,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.73769211769104,
+          "fit_only_teacher_geometry_loss": 0.051170457154512405,
+          "prefix": 4,
+          "step": 83,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7521671056747437,
+          "fit_only_teacher_geometry_loss": 0.04295816645026207,
+          "prefix": 8,
+          "step": 84,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7462529540061951,
+          "fit_only_teacher_geometry_loss": 0.042111221700906754,
+          "prefix": 16,
+          "step": 85,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.2381434440612793,
+          "fit_only_teacher_geometry_loss": 0.07485756278038025,
+          "prefix": 1,
+          "step": 86,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.3944056034088135,
+          "fit_only_teacher_geometry_loss": 0.07686302810907364,
+          "prefix": 2,
+          "step": 87,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7834141254425049,
+          "fit_only_teacher_geometry_loss": 0.051098454743623734,
+          "prefix": 4,
+          "step": 88,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7432215213775635,
+          "fit_only_teacher_geometry_loss": 0.05057615786790848,
+          "prefix": 8,
+          "step": 89,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.744400143623352,
+          "fit_only_teacher_geometry_loss": 0.04880894348025322,
+          "prefix": 16,
+          "step": 90,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.3155083656311035,
+          "fit_only_teacher_geometry_loss": 0.07684139162302017,
+          "prefix": 1,
+          "step": 91,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.6845130920410156,
+          "fit_only_teacher_geometry_loss": 0.0631670132279396,
+          "prefix": 2,
+          "step": 92,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8101518154144287,
+          "fit_only_teacher_geometry_loss": 0.055344220250844955,
+          "prefix": 4,
+          "step": 93,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7334405779838562,
+          "fit_only_teacher_geometry_loss": 0.057653333991765976,
+          "prefix": 8,
+          "step": 94,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7209386229515076,
+          "fit_only_teacher_geometry_loss": 0.0517125204205513,
+          "prefix": 16,
+          "step": 95,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.9910125732421875,
+          "fit_only_teacher_geometry_loss": 0.08755528181791306,
+          "prefix": 1,
+          "step": 96,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.6182093620300293,
+          "fit_only_teacher_geometry_loss": 0.06410523504018784,
+          "prefix": 2,
+          "step": 97,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7887725830078125,
+          "fit_only_teacher_geometry_loss": 0.061625294387340546,
+          "prefix": 4,
+          "step": 98,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7188539505004883,
+          "fit_only_teacher_geometry_loss": 0.056122396141290665,
+          "prefix": 8,
+          "step": 99,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7240102291107178,
+          "fit_only_teacher_geometry_loss": 0.051832251250743866,
+          "prefix": 16,
+          "step": 100,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.971001148223877,
+          "fit_only_teacher_geometry_loss": 0.072142094373703,
+          "prefix": 1,
+          "step": 101,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.140217900276184,
+          "fit_only_teacher_geometry_loss": 0.0722234770655632,
+          "prefix": 2,
+          "step": 102,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7425619959831238,
+          "fit_only_teacher_geometry_loss": 0.0595463402569294,
+          "prefix": 4,
+          "step": 103,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7529046535491943,
+          "fit_only_teacher_geometry_loss": 0.04891686141490936,
+          "prefix": 8,
+          "step": 104,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7473921775817871,
+          "fit_only_teacher_geometry_loss": 0.04375677928328514,
+          "prefix": 16,
+          "step": 105,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.699379920959473,
+          "fit_only_teacher_geometry_loss": 0.0683555081486702,
+          "prefix": 1,
+          "step": 106,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8683080673217773,
+          "fit_only_teacher_geometry_loss": 0.06198198348283768,
+          "prefix": 2,
+          "step": 107,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8273947238922119,
+          "fit_only_teacher_geometry_loss": 0.051988862454891205,
+          "prefix": 4,
+          "step": 108,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7589771747589111,
+          "fit_only_teacher_geometry_loss": 0.04283956438302994,
+          "prefix": 8,
+          "step": 109,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7354841232299805,
+          "fit_only_teacher_geometry_loss": 0.03995690494775772,
+          "prefix": 16,
+          "step": 110,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.572628974914551,
+          "fit_only_teacher_geometry_loss": 0.07171930372714996,
+          "prefix": 1,
+          "step": 111,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.881983995437622,
+          "fit_only_teacher_geometry_loss": 0.05545036867260933,
+          "prefix": 2,
+          "step": 112,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8047174215316772,
+          "fit_only_teacher_geometry_loss": 0.04510330781340599,
+          "prefix": 4,
+          "step": 113,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7988452911376953,
+          "fit_only_teacher_geometry_loss": 0.039517130702733994,
+          "prefix": 8,
+          "step": 114,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7635725736618042,
+          "fit_only_teacher_geometry_loss": 0.03796081617474556,
+          "prefix": 16,
+          "step": 115,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.344707012176514,
+          "fit_only_teacher_geometry_loss": 0.09645334631204605,
+          "prefix": 1,
+          "step": 116,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.3430545330047607,
+          "fit_only_teacher_geometry_loss": 0.052130792289972305,
+          "prefix": 2,
+          "step": 117,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8265053629875183,
+          "fit_only_teacher_geometry_loss": 0.044645290821790695,
+          "prefix": 4,
+          "step": 118,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7633795142173767,
+          "fit_only_teacher_geometry_loss": 0.037794727832078934,
+          "prefix": 8,
+          "step": 119,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.750826358795166,
+          "fit_only_teacher_geometry_loss": 0.034697987139225006,
+          "prefix": 16,
+          "step": 120,
+          "synthetic_reliability_loss": 0.0
+        }
+      ],
+      "wall_seconds": 1.5424281480081845
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171404,
+        "path": "outputs/trackocd_core/pilots/gt_train_known/representation_r1/A2_semantic_adapter_evidence_seed1027.pt",
+        "sha256": "03f80a267d8686ef1eae1537bd5547c45813cc5a3e38b3651ff1018289f6cf63"
+      },
+      "fit_categories": [
+        41,
+        126,
+        133,
+        211
+      ],
+      "fit_observations": 192,
+      "fit_tracks": 12,
+      "fit_videos": 12,
+      "model": "A2_semantic_adapter_evidence",
+      "parameters": 541889,
+      "seed": 1027,
+      "steps": 120,
+      "synthetic_corruptions": 363,
+      "trace": [
+        {
+          "category_loss": 2.391335964202881,
+          "fit_only_teacher_geometry_loss": 0.6119937300682068,
+          "prefix": 1,
+          "step": 1,
+          "synthetic_reliability_loss": 0.6946770548820496
+        },
+        {
+          "category_loss": 2.4571080207824707,
+          "fit_only_teacher_geometry_loss": 0.5266898274421692,
+          "prefix": 2,
+          "step": 2,
+          "synthetic_reliability_loss": 0.7311796545982361
+        },
+        {
+          "category_loss": 2.0870988368988037,
+          "fit_only_teacher_geometry_loss": 0.3919551968574524,
+          "prefix": 4,
+          "step": 3,
+          "synthetic_reliability_loss": 0.7259689569473267
+        },
+        {
+          "category_loss": 1.7592697143554688,
+          "fit_only_teacher_geometry_loss": 0.20544219017028809,
+          "prefix": 8,
+          "step": 4,
+          "synthetic_reliability_loss": 0.7216728925704956
+        },
+        {
+          "category_loss": 1.4225414991378784,
+          "fit_only_teacher_geometry_loss": 0.0800069198012352,
+          "prefix": 16,
+          "step": 5,
+          "synthetic_reliability_loss": 0.7201740145683289
+        },
+        {
+          "category_loss": 4.621944904327393,
+          "fit_only_teacher_geometry_loss": 0.1526518613100052,
+          "prefix": 1,
+          "step": 6,
+          "synthetic_reliability_loss": 0.7158159613609314
+        },
+        {
+          "category_loss": 2.1026904582977295,
+          "fit_only_teacher_geometry_loss": 0.11816199868917465,
+          "prefix": 2,
+          "step": 7,
+          "synthetic_reliability_loss": 0.7185505628585815
+        },
+        {
+          "category_loss": 0.8057946562767029,
+          "fit_only_teacher_geometry_loss": 0.12233196198940277,
+          "prefix": 4,
+          "step": 8,
+          "synthetic_reliability_loss": 0.7315312623977661
+        },
+        {
+          "category_loss": 0.7524687647819519,
+          "fit_only_teacher_geometry_loss": 0.09088090062141418,
+          "prefix": 8,
+          "step": 9,
+          "synthetic_reliability_loss": 0.7381410598754883
+        },
+        {
+          "category_loss": 0.7622561454772949,
+          "fit_only_teacher_geometry_loss": 0.06353697925806046,
+          "prefix": 16,
+          "step": 10,
+          "synthetic_reliability_loss": 0.7400499582290649
+        },
+        {
+          "category_loss": 7.102476119995117,
+          "fit_only_teacher_geometry_loss": 0.08035441488027573,
+          "prefix": 1,
+          "step": 11,
+          "synthetic_reliability_loss": 0.6977680921554565
+        },
+        {
+          "category_loss": 0.9331120848655701,
+          "fit_only_teacher_geometry_loss": 0.10326481610536575,
+          "prefix": 2,
+          "step": 12,
+          "synthetic_reliability_loss": 0.7344181537628174
+        },
+        {
+          "category_loss": 0.7929328680038452,
+          "fit_only_teacher_geometry_loss": 0.09889388829469681,
+          "prefix": 4,
+          "step": 13,
+          "synthetic_reliability_loss": 0.7319159507751465
+        },
+        {
+          "category_loss": 0.7799617648124695,
+          "fit_only_teacher_geometry_loss": 0.08867879956960678,
+          "prefix": 8,
+          "step": 14,
+          "synthetic_reliability_loss": 0.7260584235191345
+        },
+        {
+          "category_loss": 0.7648645639419556,
+          "fit_only_teacher_geometry_loss": 0.07623735815286636,
+          "prefix": 16,
+          "step": 15,
+          "synthetic_reliability_loss": 0.7201713919639587
+        },
+        {
+          "category_loss": 3.7973976135253906,
+          "fit_only_teacher_geometry_loss": 0.11006759107112885,
+          "prefix": 1,
+          "step": 16,
+          "synthetic_reliability_loss": 0.6999143958091736
+        },
+        {
+          "category_loss": 1.4310922622680664,
+          "fit_only_teacher_geometry_loss": 0.09045498818159103,
+          "prefix": 2,
+          "step": 17,
+          "synthetic_reliability_loss": 0.7052077054977417
+        },
+        {
+          "category_loss": 0.8374524116516113,
+          "fit_only_teacher_geometry_loss": 0.078373022377491,
+          "prefix": 4,
+          "step": 18,
+          "synthetic_reliability_loss": 0.702241837978363
+        },
+        {
+          "category_loss": 0.7339261770248413,
+          "fit_only_teacher_geometry_loss": 0.07615331560373306,
+          "prefix": 8,
+          "step": 19,
+          "synthetic_reliability_loss": 0.6987226009368896
+        },
+        {
+          "category_loss": 0.713455855846405,
+          "fit_only_teacher_geometry_loss": 0.07039405405521393,
+          "prefix": 16,
+          "step": 20,
+          "synthetic_reliability_loss": 0.6936244964599609
+        },
+        {
+          "category_loss": 1.9125957489013672,
+          "fit_only_teacher_geometry_loss": 0.09894607216119766,
+          "prefix": 1,
+          "step": 21,
+          "synthetic_reliability_loss": 0.6891776919364929
+        },
+        {
+          "category_loss": 2.3565683364868164,
+          "fit_only_teacher_geometry_loss": 0.08778474479913712,
+          "prefix": 2,
+          "step": 22,
+          "synthetic_reliability_loss": 0.6858228445053101
+        },
+        {
+          "category_loss": 0.7838428020477295,
+          "fit_only_teacher_geometry_loss": 0.08894091099500656,
+          "prefix": 4,
+          "step": 23,
+          "synthetic_reliability_loss": 0.6762369871139526
+        },
+        {
+          "category_loss": 0.7619096636772156,
+          "fit_only_teacher_geometry_loss": 0.08805402368307114,
+          "prefix": 8,
+          "step": 24,
+          "synthetic_reliability_loss": 0.6670485734939575
+        },
+        {
+          "category_loss": 0.7477676868438721,
+          "fit_only_teacher_geometry_loss": 0.0823618695139885,
+          "prefix": 16,
+          "step": 25,
+          "synthetic_reliability_loss": 0.6585777997970581
+        },
+        {
+          "category_loss": 3.5186638832092285,
+          "fit_only_teacher_geometry_loss": 0.09553346782922745,
+          "prefix": 1,
+          "step": 26,
+          "synthetic_reliability_loss": 0.6809083819389343
+        },
+        {
+          "category_loss": 1.0005043745040894,
+          "fit_only_teacher_geometry_loss": 0.0881814956665039,
+          "prefix": 2,
+          "step": 27,
+          "synthetic_reliability_loss": 0.6474812626838684
+        },
+        {
+          "category_loss": 0.8552064895629883,
+          "fit_only_teacher_geometry_loss": 0.08537260442972183,
+          "prefix": 4,
+          "step": 28,
+          "synthetic_reliability_loss": 0.65264892578125
+        },
+        {
+          "category_loss": 0.7083143591880798,
+          "fit_only_teacher_geometry_loss": 0.07443980127573013,
+          "prefix": 8,
+          "step": 29,
+          "synthetic_reliability_loss": 0.6349220871925354
+        },
+        {
+          "category_loss": 0.709918737411499,
+          "fit_only_teacher_geometry_loss": 0.06892099976539612,
+          "prefix": 16,
+          "step": 30,
+          "synthetic_reliability_loss": 0.6271371841430664
+        },
+        {
+          "category_loss": 4.434049606323242,
+          "fit_only_teacher_geometry_loss": 0.09219489246606827,
+          "prefix": 1,
+          "step": 31,
+          "synthetic_reliability_loss": 0.6604574918746948
+        },
+        {
+          "category_loss": 2.9412639141082764,
+          "fit_only_teacher_geometry_loss": 0.06278223544359207,
+          "prefix": 2,
+          "step": 32,
+          "synthetic_reliability_loss": 0.6559267044067383
+        },
+        {
+          "category_loss": 0.7425934076309204,
+          "fit_only_teacher_geometry_loss": 0.08046343922615051,
+          "prefix": 4,
+          "step": 33,
+          "synthetic_reliability_loss": 0.6102542877197266
+        },
+        {
+          "category_loss": 0.7467872500419617,
+          "fit_only_teacher_geometry_loss": 0.06802107393741608,
+          "prefix": 8,
+          "step": 34,
+          "synthetic_reliability_loss": 0.6061201691627502
+        },
+        {
+          "category_loss": 0.7328843474388123,
+          "fit_only_teacher_geometry_loss": 0.06438517570495605,
+          "prefix": 16,
+          "step": 35,
+          "synthetic_reliability_loss": 0.5942434072494507
+        },
+        {
+          "category_loss": 4.8744354248046875,
+          "fit_only_teacher_geometry_loss": 0.06779483705759048,
+          "prefix": 1,
+          "step": 36,
+          "synthetic_reliability_loss": 0.6583237648010254
+        },
+        {
+          "category_loss": 2.0875067710876465,
+          "fit_only_teacher_geometry_loss": 0.07672727853059769,
+          "prefix": 2,
+          "step": 37,
+          "synthetic_reliability_loss": 0.6094967722892761
+        },
+        {
+          "category_loss": 0.7903765439987183,
+          "fit_only_teacher_geometry_loss": 0.07072010636329651,
+          "prefix": 4,
+          "step": 38,
+          "synthetic_reliability_loss": 0.5829119086265564
+        },
+        {
+          "category_loss": 0.7605385780334473,
+          "fit_only_teacher_geometry_loss": 0.059418871998786926,
+          "prefix": 8,
+          "step": 39,
+          "synthetic_reliability_loss": 0.5660834312438965
+        },
+        {
+          "category_loss": 0.7379975318908691,
+          "fit_only_teacher_geometry_loss": 0.05501507595181465,
+          "prefix": 16,
+          "step": 40,
+          "synthetic_reliability_loss": 0.552362859249115
+        },
+        {
+          "category_loss": 3.065758466720581,
+          "fit_only_teacher_geometry_loss": 0.08250441402196884,
+          "prefix": 1,
+          "step": 41,
+          "synthetic_reliability_loss": 0.5947781205177307
+        },
+        {
+          "category_loss": 1.94706130027771,
+          "fit_only_teacher_geometry_loss": 0.05307989940047264,
+          "prefix": 2,
+          "step": 42,
+          "synthetic_reliability_loss": 0.5911357998847961
+        },
+        {
+          "category_loss": 0.7525798082351685,
+          "fit_only_teacher_geometry_loss": 0.0625360906124115,
+          "prefix": 4,
+          "step": 43,
+          "synthetic_reliability_loss": 0.5397773385047913
+        },
+        {
+          "category_loss": 0.7383739352226257,
+          "fit_only_teacher_geometry_loss": 0.05344638600945473,
+          "prefix": 8,
+          "step": 44,
+          "synthetic_reliability_loss": 0.5473735332489014
+        },
+        {
+          "category_loss": 0.7410628199577332,
+          "fit_only_teacher_geometry_loss": 0.05205265060067177,
+          "prefix": 16,
+          "step": 45,
+          "synthetic_reliability_loss": 0.5204205513000488
+        },
+        {
+          "category_loss": 3.5777080059051514,
+          "fit_only_teacher_geometry_loss": 0.08107005059719086,
+          "prefix": 1,
+          "step": 46,
+          "synthetic_reliability_loss": 0.5824543237686157
+        },
+        {
+          "category_loss": 0.747951865196228,
+          "fit_only_teacher_geometry_loss": 0.057409729808568954,
+          "prefix": 2,
+          "step": 47,
+          "synthetic_reliability_loss": 0.5062090754508972
+        },
+        {
+          "category_loss": 0.827021598815918,
+          "fit_only_teacher_geometry_loss": 0.05039310082793236,
+          "prefix": 4,
+          "step": 48,
+          "synthetic_reliability_loss": 0.5377695560455322
+        },
+        {
+          "category_loss": 0.7633146047592163,
+          "fit_only_teacher_geometry_loss": 0.04891316220164299,
+          "prefix": 8,
+          "step": 49,
+          "synthetic_reliability_loss": 0.5026225447654724
+        },
+        {
+          "category_loss": 0.7548391222953796,
+          "fit_only_teacher_geometry_loss": 0.04438785836100578,
+          "prefix": 16,
+          "step": 50,
+          "synthetic_reliability_loss": 0.48369890451431274
+        },
+        {
+          "category_loss": 4.727577209472656,
+          "fit_only_teacher_geometry_loss": 0.04156993702054024,
+          "prefix": 1,
+          "step": 51,
+          "synthetic_reliability_loss": 0.6419019103050232
+        },
+        {
+          "category_loss": 1.7901580333709717,
+          "fit_only_teacher_geometry_loss": 0.05644964054226875,
+          "prefix": 2,
+          "step": 52,
+          "synthetic_reliability_loss": 0.5515868663787842
+        },
+        {
+          "category_loss": 0.8922836184501648,
+          "fit_only_teacher_geometry_loss": 0.050287120044231415,
+          "prefix": 4,
+          "step": 53,
+          "synthetic_reliability_loss": 0.5059657096862793
+        },
+        {
+          "category_loss": 0.769919753074646,
+          "fit_only_teacher_geometry_loss": 0.04737161472439766,
+          "prefix": 8,
+          "step": 54,
+          "synthetic_reliability_loss": 0.45742738246917725
+        },
+        {
+          "category_loss": 0.7371799349784851,
+          "fit_only_teacher_geometry_loss": 0.04280075803399086,
+          "prefix": 16,
+          "step": 55,
+          "synthetic_reliability_loss": 0.4407777488231659
+        },
+        {
+          "category_loss": 4.3303914070129395,
+          "fit_only_teacher_geometry_loss": 0.066154845058918,
+          "prefix": 1,
+          "step": 56,
+          "synthetic_reliability_loss": 0.5947372317314148
+        },
+        {
+          "category_loss": 1.0122551918029785,
+          "fit_only_teacher_geometry_loss": 0.056425902992486954,
+          "prefix": 2,
+          "step": 57,
+          "synthetic_reliability_loss": 0.44909223914146423
+        },
+        {
+          "category_loss": 0.797258734703064,
+          "fit_only_teacher_geometry_loss": 0.050178926438093185,
+          "prefix": 4,
+          "step": 58,
+          "synthetic_reliability_loss": 0.43883126974105835
+        },
+        {
+          "category_loss": 0.7480709552764893,
+          "fit_only_teacher_geometry_loss": 0.0430801697075367,
+          "prefix": 8,
+          "step": 59,
+          "synthetic_reliability_loss": 0.41621536016464233
+        },
+        {
+          "category_loss": 0.7731701731681824,
+          "fit_only_teacher_geometry_loss": 0.03904189541935921,
+          "prefix": 16,
+          "step": 60,
+          "synthetic_reliability_loss": 0.40177488327026367
+        },
+        {
+          "category_loss": 4.552473068237305,
+          "fit_only_teacher_geometry_loss": 0.06007315218448639,
+          "prefix": 1,
+          "step": 61,
+          "synthetic_reliability_loss": 0.6247239112854004
+        },
+        {
+          "category_loss": 1.0648120641708374,
+          "fit_only_teacher_geometry_loss": 0.05414094403386116,
+          "prefix": 2,
+          "step": 62,
+          "synthetic_reliability_loss": 0.42215609550476074
+        },
+        {
+          "category_loss": 0.7380741834640503,
+          "fit_only_teacher_geometry_loss": 0.05273132026195526,
+          "prefix": 4,
+          "step": 63,
+          "synthetic_reliability_loss": 0.4170910716056824
+        },
+        {
+          "category_loss": 0.7526258230209351,
+          "fit_only_teacher_geometry_loss": 0.045150693506002426,
+          "prefix": 8,
+          "step": 64,
+          "synthetic_reliability_loss": 0.3867299258708954
+        },
+        {
+          "category_loss": 0.7323408126831055,
+          "fit_only_teacher_geometry_loss": 0.0434444360435009,
+          "prefix": 16,
+          "step": 65,
+          "synthetic_reliability_loss": 0.3591465651988983
+        },
+        {
+          "category_loss": 2.437939167022705,
+          "fit_only_teacher_geometry_loss": 0.06713774800300598,
+          "prefix": 1,
+          "step": 66,
+          "synthetic_reliability_loss": 0.466349333524704
+        },
+        {
+          "category_loss": 0.7382487654685974,
+          "fit_only_teacher_geometry_loss": 0.05923936888575554,
+          "prefix": 2,
+          "step": 67,
+          "synthetic_reliability_loss": 0.35182008147239685
+        },
+        {
+          "category_loss": 0.7477981448173523,
+          "fit_only_teacher_geometry_loss": 0.04663103446364403,
+          "prefix": 4,
+          "step": 68,
+          "synthetic_reliability_loss": 0.3810748755931854
+        },
+        {
+          "category_loss": 0.7457685470581055,
+          "fit_only_teacher_geometry_loss": 0.044576793909072876,
+          "prefix": 8,
+          "step": 69,
+          "synthetic_reliability_loss": 0.3541574478149414
+        },
+        {
+          "category_loss": 0.74449223279953,
+          "fit_only_teacher_geometry_loss": 0.039502400904893875,
+          "prefix": 16,
+          "step": 70,
+          "synthetic_reliability_loss": 0.3332473635673523
+        },
+        {
+          "category_loss": 3.853649139404297,
+          "fit_only_teacher_geometry_loss": 0.05954735353589058,
+          "prefix": 1,
+          "step": 71,
+          "synthetic_reliability_loss": 0.49614307284355164
+        },
+        {
+          "category_loss": 1.5067048072814941,
+          "fit_only_teacher_geometry_loss": 0.05110405012965202,
+          "prefix": 2,
+          "step": 72,
+          "synthetic_reliability_loss": 0.4502118229866028
+        },
+        {
+          "category_loss": 0.7797979116439819,
+          "fit_only_teacher_geometry_loss": 0.040529925376176834,
+          "prefix": 4,
+          "step": 73,
+          "synthetic_reliability_loss": 0.33608317375183105
+        },
+        {
+          "category_loss": 0.7891026735305786,
+          "fit_only_teacher_geometry_loss": 0.03893491253256798,
+          "prefix": 8,
+          "step": 74,
+          "synthetic_reliability_loss": 0.32617971301078796
+        },
+        {
+          "category_loss": 0.7506510615348816,
+          "fit_only_teacher_geometry_loss": 0.03550173342227936,
+          "prefix": 16,
+          "step": 75,
+          "synthetic_reliability_loss": 0.28883761167526245
+        },
+        {
+          "category_loss": 4.650815010070801,
+          "fit_only_teacher_geometry_loss": 0.03872298821806908,
+          "prefix": 1,
+          "step": 76,
+          "synthetic_reliability_loss": 0.641215443611145
+        },
+        {
+          "category_loss": 1.6503267288208008,
+          "fit_only_teacher_geometry_loss": 0.048823464661836624,
+          "prefix": 2,
+          "step": 77,
+          "synthetic_reliability_loss": 0.4753732681274414
+        },
+        {
+          "category_loss": 0.9029199481010437,
+          "fit_only_teacher_geometry_loss": 0.04302501305937767,
+          "prefix": 4,
+          "step": 78,
+          "synthetic_reliability_loss": 0.3577881455421448
+        },
+        {
+          "category_loss": 0.7695736885070801,
+          "fit_only_teacher_geometry_loss": 0.041751544922590256,
+          "prefix": 8,
+          "step": 79,
+          "synthetic_reliability_loss": 0.3201667070388794
+        },
+        {
+          "category_loss": 0.7325846552848816,
+          "fit_only_teacher_geometry_loss": 0.04052296653389931,
+          "prefix": 16,
+          "step": 80,
+          "synthetic_reliability_loss": 0.2561238706111908
+        },
+        {
+          "category_loss": 3.599057674407959,
+          "fit_only_teacher_geometry_loss": 0.05920296162366867,
+          "prefix": 1,
+          "step": 81,
+          "synthetic_reliability_loss": 0.45159563422203064
+        },
+        {
+          "category_loss": 1.8928096294403076,
+          "fit_only_teacher_geometry_loss": 0.06528053432703018,
+          "prefix": 2,
+          "step": 82,
+          "synthetic_reliability_loss": 0.45802077651023865
+        },
+        {
+          "category_loss": 0.7364612817764282,
+          "fit_only_teacher_geometry_loss": 0.05056687816977501,
+          "prefix": 4,
+          "step": 83,
+          "synthetic_reliability_loss": 0.2520979344844818
+        },
+        {
+          "category_loss": 0.7501376867294312,
+          "fit_only_teacher_geometry_loss": 0.04233676940202713,
+          "prefix": 8,
+          "step": 84,
+          "synthetic_reliability_loss": 0.28346937894821167
+        },
+        {
+          "category_loss": 0.747814416885376,
+          "fit_only_teacher_geometry_loss": 0.04142837971448898,
+          "prefix": 16,
+          "step": 85,
+          "synthetic_reliability_loss": 0.2351880520582199
+        },
+        {
+          "category_loss": 3.2753424644470215,
+          "fit_only_teacher_geometry_loss": 0.07232056558132172,
+          "prefix": 1,
+          "step": 86,
+          "synthetic_reliability_loss": 0.5756637454032898
+        },
+        {
+          "category_loss": 1.3977470397949219,
+          "fit_only_teacher_geometry_loss": 0.07590023428201675,
+          "prefix": 2,
+          "step": 87,
+          "synthetic_reliability_loss": 0.39497384428977966
+        },
+        {
+          "category_loss": 0.7847094535827637,
+          "fit_only_teacher_geometry_loss": 0.05003071203827858,
+          "prefix": 4,
+          "step": 88,
+          "synthetic_reliability_loss": 0.31397145986557007
+        },
+        {
+          "category_loss": 0.7432534694671631,
+          "fit_only_teacher_geometry_loss": 0.049500271677970886,
+          "prefix": 8,
+          "step": 89,
+          "synthetic_reliability_loss": 0.23012185096740723
+        },
+        {
+          "category_loss": 0.7445489764213562,
+          "fit_only_teacher_geometry_loss": 0.04779936745762825,
+          "prefix": 16,
+          "step": 90,
+          "synthetic_reliability_loss": 0.20279213786125183
+        },
+        {
+          "category_loss": 3.3014111518859863,
+          "fit_only_teacher_geometry_loss": 0.07545851171016693,
+          "prefix": 1,
+          "step": 91,
+          "synthetic_reliability_loss": 0.4457617998123169
+        },
+        {
+          "category_loss": 1.776910662651062,
+          "fit_only_teacher_geometry_loss": 0.0627114325761795,
+          "prefix": 2,
+          "step": 92,
+          "synthetic_reliability_loss": 0.4612674117088318
+        },
+        {
+          "category_loss": 0.8036767840385437,
+          "fit_only_teacher_geometry_loss": 0.055407632142305374,
+          "prefix": 4,
+          "step": 93,
+          "synthetic_reliability_loss": 0.299894243478775
+        },
+        {
+          "category_loss": 0.7303683161735535,
+          "fit_only_teacher_geometry_loss": 0.05627201125025749,
+          "prefix": 8,
+          "step": 94,
+          "synthetic_reliability_loss": 0.2102263867855072
+        },
+        {
+          "category_loss": 0.721793532371521,
+          "fit_only_teacher_geometry_loss": 0.05036880075931549,
+          "prefix": 16,
+          "step": 95,
+          "synthetic_reliability_loss": 0.17805282771587372
+        },
+        {
+          "category_loss": 4.9361572265625,
+          "fit_only_teacher_geometry_loss": 0.08686091005802155,
+          "prefix": 1,
+          "step": 96,
+          "synthetic_reliability_loss": 0.7360193133354187
+        },
+        {
+          "category_loss": 1.6157493591308594,
+          "fit_only_teacher_geometry_loss": 0.06318625062704086,
+          "prefix": 2,
+          "step": 97,
+          "synthetic_reliability_loss": 0.3813292384147644
+        },
+        {
+          "category_loss": 0.7839113473892212,
+          "fit_only_teacher_geometry_loss": 0.060531605035066605,
+          "prefix": 4,
+          "step": 98,
+          "synthetic_reliability_loss": 0.220873162150383
+        },
+        {
+          "category_loss": 0.7185419797897339,
+          "fit_only_teacher_geometry_loss": 0.05502011999487877,
+          "prefix": 8,
+          "step": 99,
+          "synthetic_reliability_loss": 0.1540609747171402
+        },
+        {
+          "category_loss": 0.7233495712280273,
+          "fit_only_teacher_geometry_loss": 0.05115323141217232,
+          "prefix": 16,
+          "step": 100,
+          "synthetic_reliability_loss": 0.1705375611782074
+        },
+        {
+          "category_loss": 2.9844908714294434,
+          "fit_only_teacher_geometry_loss": 0.07175732403993607,
+          "prefix": 1,
+          "step": 101,
+          "synthetic_reliability_loss": 0.43983781337738037
+        },
+        {
+          "category_loss": 1.1559162139892578,
+          "fit_only_teacher_geometry_loss": 0.07125283777713776,
+          "prefix": 2,
+          "step": 102,
+          "synthetic_reliability_loss": 0.30020105838775635
+        },
+        {
+          "category_loss": 0.7428044080734253,
+          "fit_only_teacher_geometry_loss": 0.058616288006305695,
+          "prefix": 4,
+          "step": 103,
+          "synthetic_reliability_loss": 0.20517055690288544
+        },
+        {
+          "category_loss": 0.7530496120452881,
+          "fit_only_teacher_geometry_loss": 0.04842527210712433,
+          "prefix": 8,
+          "step": 104,
+          "synthetic_reliability_loss": 0.17845205962657928
+        },
+        {
+          "category_loss": 0.7494933009147644,
+          "fit_only_teacher_geometry_loss": 0.04349641501903534,
+          "prefix": 16,
+          "step": 105,
+          "synthetic_reliability_loss": 0.14627721905708313
+        },
+        {
+          "category_loss": 4.67756986618042,
+          "fit_only_teacher_geometry_loss": 0.06743036210536957,
+          "prefix": 1,
+          "step": 106,
+          "synthetic_reliability_loss": 0.631630539894104
+        },
+        {
+          "category_loss": 0.8657941222190857,
+          "fit_only_teacher_geometry_loss": 0.06109445542097092,
+          "prefix": 2,
+          "step": 107,
+          "synthetic_reliability_loss": 0.20374910533428192
+        },
+        {
+          "category_loss": 0.8194987773895264,
+          "fit_only_teacher_geometry_loss": 0.051138222217559814,
+          "prefix": 4,
+          "step": 108,
+          "synthetic_reliability_loss": 0.23174387216567993
+        },
+        {
+          "category_loss": 0.7598914504051208,
+          "fit_only_teacher_geometry_loss": 0.04186127707362175,
+          "prefix": 8,
+          "step": 109,
+          "synthetic_reliability_loss": 0.23256072402000427
+        },
+        {
+          "category_loss": 0.7357029318809509,
+          "fit_only_teacher_geometry_loss": 0.039582498371601105,
+          "prefix": 16,
+          "step": 110,
+          "synthetic_reliability_loss": 0.1691516488790512
+        },
+        {
+          "category_loss": 5.539798259735107,
+          "fit_only_teacher_geometry_loss": 0.06991050392389297,
+          "prefix": 1,
+          "step": 111,
+          "synthetic_reliability_loss": 1.1904327869415283
+        },
+        {
+          "category_loss": 1.8907666206359863,
+          "fit_only_teacher_geometry_loss": 0.0547255277633667,
+          "prefix": 2,
+          "step": 112,
+          "synthetic_reliability_loss": 0.448015421628952
+        },
+        {
+          "category_loss": 0.7972525358200073,
+          "fit_only_teacher_geometry_loss": 0.045079607516527176,
+          "prefix": 4,
+          "step": 113,
+          "synthetic_reliability_loss": 0.2866106927394867
+        },
+        {
+          "category_loss": 0.7975248098373413,
+          "fit_only_teacher_geometry_loss": 0.03926287218928337,
+          "prefix": 8,
+          "step": 114,
+          "synthetic_reliability_loss": 0.15520553290843964
+        },
+        {
+          "category_loss": 0.7605297565460205,
+          "fit_only_teacher_geometry_loss": 0.03802533820271492,
+          "prefix": 16,
+          "step": 115,
+          "synthetic_reliability_loss": 0.11449413746595383
+        },
+        {
+          "category_loss": 4.310318946838379,
+          "fit_only_teacher_geometry_loss": 0.09611804783344269,
+          "prefix": 1,
+          "step": 116,
+          "synthetic_reliability_loss": 1.0753159523010254
+        },
+        {
+          "category_loss": 1.348839282989502,
+          "fit_only_teacher_geometry_loss": 0.051597222685813904,
+          "prefix": 2,
+          "step": 117,
+          "synthetic_reliability_loss": 0.2880929708480835
+        },
+        {
+          "category_loss": 0.8217604160308838,
+          "fit_only_teacher_geometry_loss": 0.04416325315833092,
+          "prefix": 4,
+          "step": 118,
+          "synthetic_reliability_loss": 0.23836484551429749
+        },
+        {
+          "category_loss": 0.7601937055587769,
+          "fit_only_teacher_geometry_loss": 0.03719595447182655,
+          "prefix": 8,
+          "step": 119,
+          "synthetic_reliability_loss": 0.20363259315490723
+        },
+        {
+          "category_loss": 0.7497004270553589,
+          "fit_only_teacher_geometry_loss": 0.0343206487596035,
+          "prefix": 16,
+          "step": 120,
+          "synthetic_reliability_loss": 0.14902648329734802
+        }
+      ],
+      "wall_seconds": 1.9326447579951491
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102840,
+        "path": "outputs/trackocd_core/pilots/gt_train_known/representation_r1/A1_semantic_adapter_mean_seed1028.pt",
+        "sha256": "18db0d723922fe344e44d7177bb6e1000fec545e9230fe7570939a32c14c5053"
+      },
+      "fit_categories": [
+        41,
+        126,
+        133,
+        211
+      ],
+      "fit_observations": 192,
+      "fit_tracks": 12,
+      "fit_videos": 12,
+      "model": "A1_semantic_adapter_mean",
+      "parameters": 525056,
+      "seed": 1028,
+      "steps": 120,
+      "synthetic_corruptions": 372,
+      "trace": [
+        {
+          "category_loss": 2.405996561050415,
+          "fit_only_teacher_geometry_loss": 0.693960964679718,
+          "prefix": 1,
+          "step": 1,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.3333725929260254,
+          "fit_only_teacher_geometry_loss": 0.49861589074134827,
+          "prefix": 2,
+          "step": 2,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.9121475219726562,
+          "fit_only_teacher_geometry_loss": 0.3556828200817108,
+          "prefix": 4,
+          "step": 3,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.559740424156189,
+          "fit_only_teacher_geometry_loss": 0.17023877799510956,
+          "prefix": 8,
+          "step": 4,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.382369875907898,
+          "fit_only_teacher_geometry_loss": 0.06433592736721039,
+          "prefix": 16,
+          "step": 5,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.109765529632568,
+          "fit_only_teacher_geometry_loss": 0.11716070771217346,
+          "prefix": 1,
+          "step": 6,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1560451984405518,
+          "fit_only_teacher_geometry_loss": 0.12030075490474701,
+          "prefix": 2,
+          "step": 7,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8901299238204956,
+          "fit_only_teacher_geometry_loss": 0.1148017942905426,
+          "prefix": 4,
+          "step": 8,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7603034377098083,
+          "fit_only_teacher_geometry_loss": 0.09130866080522537,
+          "prefix": 8,
+          "step": 9,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7915405035018921,
+          "fit_only_teacher_geometry_loss": 0.08009812980890274,
+          "prefix": 16,
+          "step": 10,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.359889507293701,
+          "fit_only_teacher_geometry_loss": 0.08462993055582047,
+          "prefix": 1,
+          "step": 11,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9993945956230164,
+          "fit_only_teacher_geometry_loss": 0.10650970041751862,
+          "prefix": 2,
+          "step": 12,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8126420974731445,
+          "fit_only_teacher_geometry_loss": 0.11025359481573105,
+          "prefix": 4,
+          "step": 13,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7792254686355591,
+          "fit_only_teacher_geometry_loss": 0.09388836473226547,
+          "prefix": 8,
+          "step": 14,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7479891777038574,
+          "fit_only_teacher_geometry_loss": 0.08282453566789627,
+          "prefix": 16,
+          "step": 15,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.8630712032318115,
+          "fit_only_teacher_geometry_loss": 0.1378287374973297,
+          "prefix": 1,
+          "step": 16,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.4058631658554077,
+          "fit_only_teacher_geometry_loss": 0.09981679916381836,
+          "prefix": 2,
+          "step": 17,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7475107908248901,
+          "fit_only_teacher_geometry_loss": 0.08728991448879242,
+          "prefix": 4,
+          "step": 18,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7391368746757507,
+          "fit_only_teacher_geometry_loss": 0.07892248779535294,
+          "prefix": 8,
+          "step": 19,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7393474578857422,
+          "fit_only_teacher_geometry_loss": 0.06907413899898529,
+          "prefix": 16,
+          "step": 20,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.208371162414551,
+          "fit_only_teacher_geometry_loss": 0.11464682221412659,
+          "prefix": 1,
+          "step": 21,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.7483630180358887,
+          "fit_only_teacher_geometry_loss": 0.08029317855834961,
+          "prefix": 2,
+          "step": 22,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.807233989238739,
+          "fit_only_teacher_geometry_loss": 0.08500555157661438,
+          "prefix": 4,
+          "step": 23,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7825498580932617,
+          "fit_only_teacher_geometry_loss": 0.08762241154909134,
+          "prefix": 8,
+          "step": 24,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7824486494064331,
+          "fit_only_teacher_geometry_loss": 0.08810712397098541,
+          "prefix": 16,
+          "step": 25,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.475577354431152,
+          "fit_only_teacher_geometry_loss": 0.0915961042046547,
+          "prefix": 1,
+          "step": 26,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2786667346954346,
+          "fit_only_teacher_geometry_loss": 0.0990753322839737,
+          "prefix": 2,
+          "step": 27,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7771457433700562,
+          "fit_only_teacher_geometry_loss": 0.07964910566806793,
+          "prefix": 4,
+          "step": 28,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7291957139968872,
+          "fit_only_teacher_geometry_loss": 0.07960213720798492,
+          "prefix": 8,
+          "step": 29,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7376372218132019,
+          "fit_only_teacher_geometry_loss": 0.06500604003667831,
+          "prefix": 16,
+          "step": 30,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.8722925186157227,
+          "fit_only_teacher_geometry_loss": 0.0918426439166069,
+          "prefix": 1,
+          "step": 31,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.2058982849121094,
+          "fit_only_teacher_geometry_loss": 0.07724882662296295,
+          "prefix": 2,
+          "step": 32,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7625284194946289,
+          "fit_only_teacher_geometry_loss": 0.07834626734256744,
+          "prefix": 4,
+          "step": 33,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7153813242912292,
+          "fit_only_teacher_geometry_loss": 0.06572640687227249,
+          "prefix": 8,
+          "step": 34,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7311662435531616,
+          "fit_only_teacher_geometry_loss": 0.06392590701580048,
+          "prefix": 16,
+          "step": 35,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.927301406860352,
+          "fit_only_teacher_geometry_loss": 0.08207310736179352,
+          "prefix": 1,
+          "step": 36,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2456505298614502,
+          "fit_only_teacher_geometry_loss": 0.07544959336519241,
+          "prefix": 2,
+          "step": 37,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8571542501449585,
+          "fit_only_teacher_geometry_loss": 0.06934089958667755,
+          "prefix": 4,
+          "step": 38,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7859139442443848,
+          "fit_only_teacher_geometry_loss": 0.0604633092880249,
+          "prefix": 8,
+          "step": 39,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7837051153182983,
+          "fit_only_teacher_geometry_loss": 0.05940152704715729,
+          "prefix": 16,
+          "step": 40,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.6514954566955566,
+          "fit_only_teacher_geometry_loss": 0.07250935584306717,
+          "prefix": 1,
+          "step": 41,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1630011796951294,
+          "fit_only_teacher_geometry_loss": 0.0739254578948021,
+          "prefix": 2,
+          "step": 42,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8017966747283936,
+          "fit_only_teacher_geometry_loss": 0.059541378170251846,
+          "prefix": 4,
+          "step": 43,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7571503520011902,
+          "fit_only_teacher_geometry_loss": 0.05614076927304268,
+          "prefix": 8,
+          "step": 44,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7446656227111816,
+          "fit_only_teacher_geometry_loss": 0.05410275235772133,
+          "prefix": 16,
+          "step": 45,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.471229076385498,
+          "fit_only_teacher_geometry_loss": 0.06628549098968506,
+          "prefix": 1,
+          "step": 46,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.497209310531616,
+          "fit_only_teacher_geometry_loss": 0.06854240596294403,
+          "prefix": 2,
+          "step": 47,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8988703489303589,
+          "fit_only_teacher_geometry_loss": 0.059560373425483704,
+          "prefix": 4,
+          "step": 48,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7627948522567749,
+          "fit_only_teacher_geometry_loss": 0.06106657534837723,
+          "prefix": 8,
+          "step": 49,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7684566378593445,
+          "fit_only_teacher_geometry_loss": 0.05816135182976723,
+          "prefix": 16,
+          "step": 50,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.32314920425415,
+          "fit_only_teacher_geometry_loss": 0.0680457130074501,
+          "prefix": 1,
+          "step": 51,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.5850017070770264,
+          "fit_only_teacher_geometry_loss": 0.07444354146718979,
+          "prefix": 2,
+          "step": 52,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8076179027557373,
+          "fit_only_teacher_geometry_loss": 0.06602302938699722,
+          "prefix": 4,
+          "step": 53,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7437211275100708,
+          "fit_only_teacher_geometry_loss": 0.058780718594789505,
+          "prefix": 8,
+          "step": 54,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7417054176330566,
+          "fit_only_teacher_geometry_loss": 0.05314866080880165,
+          "prefix": 16,
+          "step": 55,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.55495023727417,
+          "fit_only_teacher_geometry_loss": 0.055815089493989944,
+          "prefix": 1,
+          "step": 56,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1360152959823608,
+          "fit_only_teacher_geometry_loss": 0.07187110185623169,
+          "prefix": 2,
+          "step": 57,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7385780215263367,
+          "fit_only_teacher_geometry_loss": 0.06602292507886887,
+          "prefix": 4,
+          "step": 58,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7297934889793396,
+          "fit_only_teacher_geometry_loss": 0.060186173766851425,
+          "prefix": 8,
+          "step": 59,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7504643201828003,
+          "fit_only_teacher_geometry_loss": 0.0529823824763298,
+          "prefix": 16,
+          "step": 60,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.467790126800537,
+          "fit_only_teacher_geometry_loss": 0.06848950684070587,
+          "prefix": 1,
+          "step": 61,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.5699872970581055,
+          "fit_only_teacher_geometry_loss": 0.07154599577188492,
+          "prefix": 2,
+          "step": 62,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8354634642601013,
+          "fit_only_teacher_geometry_loss": 0.05855007469654083,
+          "prefix": 4,
+          "step": 63,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7290446758270264,
+          "fit_only_teacher_geometry_loss": 0.05624162405729294,
+          "prefix": 8,
+          "step": 64,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7369850873947144,
+          "fit_only_teacher_geometry_loss": 0.050817668437957764,
+          "prefix": 16,
+          "step": 65,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 6.26828670501709,
+          "fit_only_teacher_geometry_loss": 0.07316495478153229,
+          "prefix": 1,
+          "step": 66,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.0032076835632324,
+          "fit_only_teacher_geometry_loss": 0.06752223521471024,
+          "prefix": 2,
+          "step": 67,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8125290870666504,
+          "fit_only_teacher_geometry_loss": 0.06118599697947502,
+          "prefix": 4,
+          "step": 68,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7313356399536133,
+          "fit_only_teacher_geometry_loss": 0.050941456109285355,
+          "prefix": 8,
+          "step": 69,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7475072741508484,
+          "fit_only_teacher_geometry_loss": 0.04672776907682419,
+          "prefix": 16,
+          "step": 70,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.764571666717529,
+          "fit_only_teacher_geometry_loss": 0.046669572591781616,
+          "prefix": 1,
+          "step": 71,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.4529742002487183,
+          "fit_only_teacher_geometry_loss": 0.05495305731892586,
+          "prefix": 2,
+          "step": 72,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7410591840744019,
+          "fit_only_teacher_geometry_loss": 0.05103788897395134,
+          "prefix": 4,
+          "step": 73,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7832518815994263,
+          "fit_only_teacher_geometry_loss": 0.044983621686697006,
+          "prefix": 8,
+          "step": 74,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7642678618431091,
+          "fit_only_teacher_geometry_loss": 0.046511270105838776,
+          "prefix": 16,
+          "step": 75,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.4375505447387695,
+          "fit_only_teacher_geometry_loss": 0.06603258103132248,
+          "prefix": 1,
+          "step": 76,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.3450210094451904,
+          "fit_only_teacher_geometry_loss": 0.05140059068799019,
+          "prefix": 2,
+          "step": 77,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8283880949020386,
+          "fit_only_teacher_geometry_loss": 0.044169969856739044,
+          "prefix": 4,
+          "step": 78,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8755226135253906,
+          "fit_only_teacher_geometry_loss": 0.04005013778805733,
+          "prefix": 8,
+          "step": 79,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7638733386993408,
+          "fit_only_teacher_geometry_loss": 0.03997163474559784,
+          "prefix": 16,
+          "step": 80,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.079566955566406,
+          "fit_only_teacher_geometry_loss": 0.061617493629455566,
+          "prefix": 1,
+          "step": 81,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.493497848510742,
+          "fit_only_teacher_geometry_loss": 0.0561247393488884,
+          "prefix": 2,
+          "step": 82,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7610055208206177,
+          "fit_only_teacher_geometry_loss": 0.04996129497885704,
+          "prefix": 4,
+          "step": 83,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7298054695129395,
+          "fit_only_teacher_geometry_loss": 0.05104195699095726,
+          "prefix": 8,
+          "step": 84,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.733890175819397,
+          "fit_only_teacher_geometry_loss": 0.04917145520448685,
+          "prefix": 16,
+          "step": 85,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.8889424800872803,
+          "fit_only_teacher_geometry_loss": 0.08410916477441788,
+          "prefix": 1,
+          "step": 86,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2505544424057007,
+          "fit_only_teacher_geometry_loss": 0.0715750902891159,
+          "prefix": 2,
+          "step": 87,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7996348142623901,
+          "fit_only_teacher_geometry_loss": 0.05906369909644127,
+          "prefix": 4,
+          "step": 88,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7412599325180054,
+          "fit_only_teacher_geometry_loss": 0.05638926103711128,
+          "prefix": 8,
+          "step": 89,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7310492992401123,
+          "fit_only_teacher_geometry_loss": 0.05166329815983772,
+          "prefix": 16,
+          "step": 90,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.1032402515411377,
+          "fit_only_teacher_geometry_loss": 0.06322744488716125,
+          "prefix": 1,
+          "step": 91,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1200768947601318,
+          "fit_only_teacher_geometry_loss": 0.0631868988275528,
+          "prefix": 2,
+          "step": 92,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7619497776031494,
+          "fit_only_teacher_geometry_loss": 0.057645466178655624,
+          "prefix": 4,
+          "step": 93,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7347850799560547,
+          "fit_only_teacher_geometry_loss": 0.05559813976287842,
+          "prefix": 8,
+          "step": 94,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7460087537765503,
+          "fit_only_teacher_geometry_loss": 0.055374085903167725,
+          "prefix": 16,
+          "step": 95,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.4304943084716797,
+          "fit_only_teacher_geometry_loss": 0.06131681427359581,
+          "prefix": 1,
+          "step": 96,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.0215106010437012,
+          "fit_only_teacher_geometry_loss": 0.07105448096990585,
+          "prefix": 2,
+          "step": 97,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.765701174736023,
+          "fit_only_teacher_geometry_loss": 0.05669808387756348,
+          "prefix": 4,
+          "step": 98,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7478138208389282,
+          "fit_only_teacher_geometry_loss": 0.051818542182445526,
+          "prefix": 8,
+          "step": 99,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7507128119468689,
+          "fit_only_teacher_geometry_loss": 0.044133346527814865,
+          "prefix": 16,
+          "step": 100,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.060675621032715,
+          "fit_only_teacher_geometry_loss": 0.05877995491027832,
+          "prefix": 1,
+          "step": 101,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.8120841979980469,
+          "fit_only_teacher_geometry_loss": 0.062472131103277206,
+          "prefix": 2,
+          "step": 102,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7987114787101746,
+          "fit_only_teacher_geometry_loss": 0.05382373556494713,
+          "prefix": 4,
+          "step": 103,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7605164051055908,
+          "fit_only_teacher_geometry_loss": 0.04895760118961334,
+          "prefix": 8,
+          "step": 104,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7538455724716187,
+          "fit_only_teacher_geometry_loss": 0.04364006966352463,
+          "prefix": 16,
+          "step": 105,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.599250793457031,
+          "fit_only_teacher_geometry_loss": 0.07428906857967377,
+          "prefix": 1,
+          "step": 106,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9114614725112915,
+          "fit_only_teacher_geometry_loss": 0.059438228607177734,
+          "prefix": 2,
+          "step": 107,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7395123243331909,
+          "fit_only_teacher_geometry_loss": 0.05473038926720619,
+          "prefix": 4,
+          "step": 108,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7460629343986511,
+          "fit_only_teacher_geometry_loss": 0.04626790061593056,
+          "prefix": 8,
+          "step": 109,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7235627174377441,
+          "fit_only_teacher_geometry_loss": 0.041594166308641434,
+          "prefix": 16,
+          "step": 110,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.625335216522217,
+          "fit_only_teacher_geometry_loss": 0.05684688314795494,
+          "prefix": 1,
+          "step": 111,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.7644844055175781,
+          "fit_only_teacher_geometry_loss": 0.0570019967854023,
+          "prefix": 2,
+          "step": 112,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7722751498222351,
+          "fit_only_teacher_geometry_loss": 0.04938388243317604,
+          "prefix": 4,
+          "step": 113,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7264760732650757,
+          "fit_only_teacher_geometry_loss": 0.04713788256049156,
+          "prefix": 8,
+          "step": 114,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7337840795516968,
+          "fit_only_teacher_geometry_loss": 0.0415768139064312,
+          "prefix": 16,
+          "step": 115,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.0218048095703125,
+          "fit_only_teacher_geometry_loss": 0.07669562846422195,
+          "prefix": 1,
+          "step": 116,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.4036048650741577,
+          "fit_only_teacher_geometry_loss": 0.058200981467962265,
+          "prefix": 2,
+          "step": 117,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.0890884399414062,
+          "fit_only_teacher_geometry_loss": 0.049948800355196,
+          "prefix": 4,
+          "step": 118,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.734700620174408,
+          "fit_only_teacher_geometry_loss": 0.04703039675951004,
+          "prefix": 8,
+          "step": 119,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7494069933891296,
+          "fit_only_teacher_geometry_loss": 0.040837857872247696,
+          "prefix": 16,
+          "step": 120,
+          "synthetic_reliability_loss": 0.0
+        }
+      ],
+      "wall_seconds": 1.2517588329792488
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171404,
+        "path": "outputs/trackocd_core/pilots/gt_train_known/representation_r1/A2_semantic_adapter_evidence_seed1028.pt",
+        "sha256": "24b78a255da8c9fbef856963658c3785d7dc7671ca7eabdcabf8513937ecc229"
+      },
+      "fit_categories": [
+        41,
+        126,
+        133,
+        211
+      ],
+      "fit_observations": 192,
+      "fit_tracks": 12,
+      "fit_videos": 12,
+      "model": "A2_semantic_adapter_evidence",
+      "parameters": 541889,
+      "seed": 1028,
+      "steps": 120,
+      "synthetic_corruptions": 372,
+      "trace": [
+        {
+          "category_loss": 2.405996561050415,
+          "fit_only_teacher_geometry_loss": 0.693960964679718,
+          "prefix": 1,
+          "step": 1,
+          "synthetic_reliability_loss": 0.7035017013549805
+        },
+        {
+          "category_loss": 2.3334100246429443,
+          "fit_only_teacher_geometry_loss": 0.498605877161026,
+          "prefix": 2,
+          "step": 2,
+          "synthetic_reliability_loss": 0.7182683944702148
+        },
+        {
+          "category_loss": 1.9120540618896484,
+          "fit_only_teacher_geometry_loss": 0.35568541288375854,
+          "prefix": 4,
+          "step": 3,
+          "synthetic_reliability_loss": 0.7150067090988159
+        },
+        {
+          "category_loss": 1.5592446327209473,
+          "fit_only_teacher_geometry_loss": 0.17034326493740082,
+          "prefix": 8,
+          "step": 4,
+          "synthetic_reliability_loss": 0.7047097682952881
+        },
+        {
+          "category_loss": 1.382422924041748,
+          "fit_only_teacher_geometry_loss": 0.06440108269453049,
+          "prefix": 16,
+          "step": 5,
+          "synthetic_reliability_loss": 0.7028713226318359
+        },
+        {
+          "category_loss": 4.1091437339782715,
+          "fit_only_teacher_geometry_loss": 0.11707106977701187,
+          "prefix": 1,
+          "step": 6,
+          "synthetic_reliability_loss": 0.705988347530365
+        },
+        {
+          "category_loss": 1.162796974182129,
+          "fit_only_teacher_geometry_loss": 0.12019678205251694,
+          "prefix": 2,
+          "step": 7,
+          "synthetic_reliability_loss": 0.7119507789611816
+        },
+        {
+          "category_loss": 0.8906267881393433,
+          "fit_only_teacher_geometry_loss": 0.1149570569396019,
+          "prefix": 4,
+          "step": 8,
+          "synthetic_reliability_loss": 0.7159814238548279
+        },
+        {
+          "category_loss": 0.7598349452018738,
+          "fit_only_teacher_geometry_loss": 0.09154076129198074,
+          "prefix": 8,
+          "step": 9,
+          "synthetic_reliability_loss": 0.7193602919578552
+        },
+        {
+          "category_loss": 0.7913309931755066,
+          "fit_only_teacher_geometry_loss": 0.0801040306687355,
+          "prefix": 16,
+          "step": 10,
+          "synthetic_reliability_loss": 0.7189164161682129
+        },
+        {
+          "category_loss": 4.369179725646973,
+          "fit_only_teacher_geometry_loss": 0.08442288637161255,
+          "prefix": 1,
+          "step": 11,
+          "synthetic_reliability_loss": 0.7067901492118835
+        },
+        {
+          "category_loss": 1.000244379043579,
+          "fit_only_teacher_geometry_loss": 0.10619958490133286,
+          "prefix": 2,
+          "step": 12,
+          "synthetic_reliability_loss": 0.7117114067077637
+        },
+        {
+          "category_loss": 0.8108812570571899,
+          "fit_only_teacher_geometry_loss": 0.10997302830219269,
+          "prefix": 4,
+          "step": 13,
+          "synthetic_reliability_loss": 0.7075157165527344
+        },
+        {
+          "category_loss": 0.7788888216018677,
+          "fit_only_teacher_geometry_loss": 0.0936587005853653,
+          "prefix": 8,
+          "step": 14,
+          "synthetic_reliability_loss": 0.7014281749725342
+        },
+        {
+          "category_loss": 0.7479316592216492,
+          "fit_only_teacher_geometry_loss": 0.08270744234323502,
+          "prefix": 16,
+          "step": 15,
+          "synthetic_reliability_loss": 0.6941828727722168
+        },
+        {
+          "category_loss": 3.8634676933288574,
+          "fit_only_teacher_geometry_loss": 0.1373893916606903,
+          "prefix": 1,
+          "step": 16,
+          "synthetic_reliability_loss": 0.6911525726318359
+        },
+        {
+          "category_loss": 1.3761181831359863,
+          "fit_only_teacher_geometry_loss": 0.09980521351099014,
+          "prefix": 2,
+          "step": 17,
+          "synthetic_reliability_loss": 0.6833630800247192
+        },
+        {
+          "category_loss": 0.74718177318573,
+          "fit_only_teacher_geometry_loss": 0.0872955471277237,
+          "prefix": 4,
+          "step": 18,
+          "synthetic_reliability_loss": 0.679023265838623
+        },
+        {
+          "category_loss": 0.7390428781509399,
+          "fit_only_teacher_geometry_loss": 0.07898474484682083,
+          "prefix": 8,
+          "step": 19,
+          "synthetic_reliability_loss": 0.6712135076522827
+        },
+        {
+          "category_loss": 0.7393871545791626,
+          "fit_only_teacher_geometry_loss": 0.06908699125051498,
+          "prefix": 16,
+          "step": 20,
+          "synthetic_reliability_loss": 0.6629811525344849
+        },
+        {
+          "category_loss": 4.212477684020996,
+          "fit_only_teacher_geometry_loss": 0.11464209109544754,
+          "prefix": 1,
+          "step": 21,
+          "synthetic_reliability_loss": 0.6752378940582275
+        },
+        {
+          "category_loss": 1.7476024627685547,
+          "fit_only_teacher_geometry_loss": 0.08012892305850983,
+          "prefix": 2,
+          "step": 22,
+          "synthetic_reliability_loss": 0.657589852809906
+        },
+        {
+          "category_loss": 0.8066333532333374,
+          "fit_only_teacher_geometry_loss": 0.08447197824716568,
+          "prefix": 4,
+          "step": 23,
+          "synthetic_reliability_loss": 0.6475818157196045
+        },
+        {
+          "category_loss": 0.7837851047515869,
+          "fit_only_teacher_geometry_loss": 0.08688315749168396,
+          "prefix": 8,
+          "step": 24,
+          "synthetic_reliability_loss": 0.6413636803627014
+        },
+        {
+          "category_loss": 0.7823834419250488,
+          "fit_only_teacher_geometry_loss": 0.08760564029216766,
+          "prefix": 16,
+          "step": 25,
+          "synthetic_reliability_loss": 0.6257240772247314
+        },
+        {
+          "category_loss": 4.4845991134643555,
+          "fit_only_teacher_geometry_loss": 0.09104757755994797,
+          "prefix": 1,
+          "step": 26,
+          "synthetic_reliability_loss": 0.648759126663208
+        },
+        {
+          "category_loss": 1.2806332111358643,
+          "fit_only_teacher_geometry_loss": 0.09877950698137283,
+          "prefix": 2,
+          "step": 27,
+          "synthetic_reliability_loss": 0.6318159699440002
+        },
+        {
+          "category_loss": 0.7743064761161804,
+          "fit_only_teacher_geometry_loss": 0.07964383065700531,
+          "prefix": 4,
+          "step": 28,
+          "synthetic_reliability_loss": 0.6182187795639038
+        },
+        {
+          "category_loss": 0.7273738384246826,
+          "fit_only_teacher_geometry_loss": 0.07944311201572418,
+          "prefix": 8,
+          "step": 29,
+          "synthetic_reliability_loss": 0.6118606328964233
+        },
+        {
+          "category_loss": 0.7357909083366394,
+          "fit_only_teacher_geometry_loss": 0.06492874771356583,
+          "prefix": 16,
+          "step": 30,
+          "synthetic_reliability_loss": 0.5946625471115112
+        },
+        {
+          "category_loss": 1.875840187072754,
+          "fit_only_teacher_geometry_loss": 0.09198159724473953,
+          "prefix": 1,
+          "step": 31,
+          "synthetic_reliability_loss": 0.6163798570632935
+        },
+        {
+          "category_loss": 2.3020288944244385,
+          "fit_only_teacher_geometry_loss": 0.07953625917434692,
+          "prefix": 2,
+          "step": 32,
+          "synthetic_reliability_loss": 0.6387289762496948
+        },
+        {
+          "category_loss": 0.7704833745956421,
+          "fit_only_teacher_geometry_loss": 0.07824230194091797,
+          "prefix": 4,
+          "step": 33,
+          "synthetic_reliability_loss": 0.5902099609375
+        },
+        {
+          "category_loss": 0.7174711227416992,
+          "fit_only_teacher_geometry_loss": 0.06532985717058182,
+          "prefix": 8,
+          "step": 34,
+          "synthetic_reliability_loss": 0.581474244594574
+        },
+        {
+          "category_loss": 0.7354534864425659,
+          "fit_only_teacher_geometry_loss": 0.06402561068534851,
+          "prefix": 16,
+          "step": 35,
+          "synthetic_reliability_loss": 0.553662896156311
+        },
+        {
+          "category_loss": 4.90117883682251,
+          "fit_only_teacher_geometry_loss": 0.08176568895578384,
+          "prefix": 1,
+          "step": 36,
+          "synthetic_reliability_loss": 0.6413805484771729
+        },
+        {
+          "category_loss": 1.1592133045196533,
+          "fit_only_teacher_geometry_loss": 0.07666172087192535,
+          "prefix": 2,
+          "step": 37,
+          "synthetic_reliability_loss": 0.5656285285949707
+        },
+        {
+          "category_loss": 0.8463287353515625,
+          "fit_only_teacher_geometry_loss": 0.06957876682281494,
+          "prefix": 4,
+          "step": 38,
+          "synthetic_reliability_loss": 0.5612484812736511
+        },
+        {
+          "category_loss": 0.7830832004547119,
+          "fit_only_teacher_geometry_loss": 0.060514092445373535,
+          "prefix": 8,
+          "step": 39,
+          "synthetic_reliability_loss": 0.5243176817893982
+        },
+        {
+          "category_loss": 0.7815221548080444,
+          "fit_only_teacher_geometry_loss": 0.05959524214267731,
+          "prefix": 16,
+          "step": 40,
+          "synthetic_reliability_loss": 0.5098115801811218
+        },
+        {
+          "category_loss": 3.686774253845215,
+          "fit_only_teacher_geometry_loss": 0.07153517007827759,
+          "prefix": 1,
+          "step": 41,
+          "synthetic_reliability_loss": 0.5788236856460571
+        },
+        {
+          "category_loss": 1.172823190689087,
+          "fit_only_teacher_geometry_loss": 0.07373879849910736,
+          "prefix": 2,
+          "step": 42,
+          "synthetic_reliability_loss": 0.5613820552825928
+        },
+        {
+          "category_loss": 0.7916812300682068,
+          "fit_only_teacher_geometry_loss": 0.05937353894114494,
+          "prefix": 4,
+          "step": 43,
+          "synthetic_reliability_loss": 0.519020676612854
+        },
+        {
+          "category_loss": 0.7566902041435242,
+          "fit_only_teacher_geometry_loss": 0.055719900876283646,
+          "prefix": 8,
+          "step": 44,
+          "synthetic_reliability_loss": 0.4993535876274109
+        },
+        {
+          "category_loss": 0.747050940990448,
+          "fit_only_teacher_geometry_loss": 0.053652405738830566,
+          "prefix": 16,
+          "step": 45,
+          "synthetic_reliability_loss": 0.47907739877700806
+        },
+        {
+          "category_loss": 4.418007850646973,
+          "fit_only_teacher_geometry_loss": 0.06526899337768555,
+          "prefix": 1,
+          "step": 46,
+          "synthetic_reliability_loss": 0.6106476187705994
+        },
+        {
+          "category_loss": 2.528160572052002,
+          "fit_only_teacher_geometry_loss": 0.06632820516824722,
+          "prefix": 2,
+          "step": 47,
+          "synthetic_reliability_loss": 0.5745199918746948
+        },
+        {
+          "category_loss": 0.8920302391052246,
+          "fit_only_teacher_geometry_loss": 0.05845128744840622,
+          "prefix": 4,
+          "step": 48,
+          "synthetic_reliability_loss": 0.5050022006034851
+        },
+        {
+          "category_loss": 0.7689427137374878,
+          "fit_only_teacher_geometry_loss": 0.06056523323059082,
+          "prefix": 8,
+          "step": 49,
+          "synthetic_reliability_loss": 0.46080636978149414
+        },
+        {
+          "category_loss": 0.7726399898529053,
+          "fit_only_teacher_geometry_loss": 0.05762248486280441,
+          "prefix": 16,
+          "step": 50,
+          "synthetic_reliability_loss": 0.44308000802993774
+        },
+        {
+          "category_loss": 5.307662487030029,
+          "fit_only_teacher_geometry_loss": 0.06820020824670792,
+          "prefix": 1,
+          "step": 51,
+          "synthetic_reliability_loss": 0.6547726392745972
+        },
+        {
+          "category_loss": 1.5601072311401367,
+          "fit_only_teacher_geometry_loss": 0.0731528103351593,
+          "prefix": 2,
+          "step": 52,
+          "synthetic_reliability_loss": 0.5595344305038452
+        },
+        {
+          "category_loss": 0.8011724352836609,
+          "fit_only_teacher_geometry_loss": 0.06468694657087326,
+          "prefix": 4,
+          "step": 53,
+          "synthetic_reliability_loss": 0.4900341033935547
+        },
+        {
+          "category_loss": 0.7412813901901245,
+          "fit_only_teacher_geometry_loss": 0.057773735374212265,
+          "prefix": 8,
+          "step": 54,
+          "synthetic_reliability_loss": 0.4202805459499359
+        },
+        {
+          "category_loss": 0.7440543174743652,
+          "fit_only_teacher_geometry_loss": 0.05274524539709091,
+          "prefix": 16,
+          "step": 55,
+          "synthetic_reliability_loss": 0.4183306097984314
+        },
+        {
+          "category_loss": 5.529384613037109,
+          "fit_only_teacher_geometry_loss": 0.05478251352906227,
+          "prefix": 1,
+          "step": 56,
+          "synthetic_reliability_loss": 0.6969695091247559
+        },
+        {
+          "category_loss": 1.2840535640716553,
+          "fit_only_teacher_geometry_loss": 0.07036659866571426,
+          "prefix": 2,
+          "step": 57,
+          "synthetic_reliability_loss": 0.46639201045036316
+        },
+        {
+          "category_loss": 0.7409242987632751,
+          "fit_only_teacher_geometry_loss": 0.06504563987255096,
+          "prefix": 4,
+          "step": 58,
+          "synthetic_reliability_loss": 0.3989813029766083
+        },
+        {
+          "category_loss": 0.7314874529838562,
+          "fit_only_teacher_geometry_loss": 0.05899401381611824,
+          "prefix": 8,
+          "step": 59,
+          "synthetic_reliability_loss": 0.4000948667526245
+        },
+        {
+          "category_loss": 0.7500063180923462,
+          "fit_only_teacher_geometry_loss": 0.052252572029829025,
+          "prefix": 16,
+          "step": 60,
+          "synthetic_reliability_loss": 0.3814901113510132
+        },
+        {
+          "category_loss": 3.500438690185547,
+          "fit_only_teacher_geometry_loss": 0.06916949152946472,
+          "prefix": 1,
+          "step": 61,
+          "synthetic_reliability_loss": 0.5018899440765381
+        },
+        {
+          "category_loss": 1.6433031558990479,
+          "fit_only_teacher_geometry_loss": 0.07047434896230698,
+          "prefix": 2,
+          "step": 62,
+          "synthetic_reliability_loss": 0.5361470580101013
+        },
+        {
+          "category_loss": 0.8222339153289795,
+          "fit_only_teacher_geometry_loss": 0.05851340293884277,
+          "prefix": 4,
+          "step": 63,
+          "synthetic_reliability_loss": 0.42572253942489624
+        },
+        {
+          "category_loss": 0.7299420833587646,
+          "fit_only_teacher_geometry_loss": 0.05505182594060898,
+          "prefix": 8,
+          "step": 64,
+          "synthetic_reliability_loss": 0.40595072507858276
+        },
+        {
+          "category_loss": 0.7373344302177429,
+          "fit_only_teacher_geometry_loss": 0.04983418062329292,
+          "prefix": 16,
+          "step": 65,
+          "synthetic_reliability_loss": 0.3434728980064392
+        },
+        {
+          "category_loss": 6.2499237060546875,
+          "fit_only_teacher_geometry_loss": 0.07088940590620041,
+          "prefix": 1,
+          "step": 66,
+          "synthetic_reliability_loss": 0.8351219892501831
+        },
+        {
+          "category_loss": 1.0219823122024536,
+          "fit_only_teacher_geometry_loss": 0.06598910689353943,
+          "prefix": 2,
+          "step": 67,
+          "synthetic_reliability_loss": 0.38026484847068787
+        },
+        {
+          "category_loss": 0.8092734217643738,
+          "fit_only_teacher_geometry_loss": 0.059163015335798264,
+          "prefix": 4,
+          "step": 68,
+          "synthetic_reliability_loss": 0.3910754323005676
+        },
+        {
+          "category_loss": 0.7296338081359863,
+          "fit_only_teacher_geometry_loss": 0.05013764649629593,
+          "prefix": 8,
+          "step": 69,
+          "synthetic_reliability_loss": 0.3349117636680603
+        },
+        {
+          "category_loss": 0.7468451857566833,
+          "fit_only_teacher_geometry_loss": 0.04538712650537491,
+          "prefix": 16,
+          "step": 70,
+          "synthetic_reliability_loss": 0.3304547071456909
+        },
+        {
+          "category_loss": 5.785068511962891,
+          "fit_only_teacher_geometry_loss": 0.047069765627384186,
+          "prefix": 1,
+          "step": 71,
+          "synthetic_reliability_loss": 0.6452785730361938
+        },
+        {
+          "category_loss": 1.4421274662017822,
+          "fit_only_teacher_geometry_loss": 0.053840406239032745,
+          "prefix": 2,
+          "step": 72,
+          "synthetic_reliability_loss": 0.40283942222595215
+        },
+        {
+          "category_loss": 0.7426058053970337,
+          "fit_only_teacher_geometry_loss": 0.050131138414144516,
+          "prefix": 4,
+          "step": 73,
+          "synthetic_reliability_loss": 0.30683469772338867
+        },
+        {
+          "category_loss": 0.7841752767562866,
+          "fit_only_teacher_geometry_loss": 0.04409947618842125,
+          "prefix": 8,
+          "step": 74,
+          "synthetic_reliability_loss": 0.3252035081386566
+        },
+        {
+          "category_loss": 0.7663048505783081,
+          "fit_only_teacher_geometry_loss": 0.045032158493995667,
+          "prefix": 16,
+          "step": 75,
+          "synthetic_reliability_loss": 0.2997013032436371
+        },
+        {
+          "category_loss": 4.342883110046387,
+          "fit_only_teacher_geometry_loss": 0.06459775567054749,
+          "prefix": 1,
+          "step": 76,
+          "synthetic_reliability_loss": 0.6504061222076416
+        },
+        {
+          "category_loss": 1.332571029663086,
+          "fit_only_teacher_geometry_loss": 0.05078987404704094,
+          "prefix": 2,
+          "step": 77,
+          "synthetic_reliability_loss": 0.37987810373306274
+        },
+        {
+          "category_loss": 0.8302130699157715,
+          "fit_only_teacher_geometry_loss": 0.042735252529382706,
+          "prefix": 4,
+          "step": 78,
+          "synthetic_reliability_loss": 0.3506321609020233
+        },
+        {
+          "category_loss": 0.8667324781417847,
+          "fit_only_teacher_geometry_loss": 0.039147067815065384,
+          "prefix": 8,
+          "step": 79,
+          "synthetic_reliability_loss": 0.3312067985534668
+        },
+        {
+          "category_loss": 0.7649751901626587,
+          "fit_only_teacher_geometry_loss": 0.03876548632979393,
+          "prefix": 16,
+          "step": 80,
+          "synthetic_reliability_loss": 0.2710804343223572
+        },
+        {
+          "category_loss": 4.0507683753967285,
+          "fit_only_teacher_geometry_loss": 0.05967805162072182,
+          "prefix": 1,
+          "step": 81,
+          "synthetic_reliability_loss": 0.5532206296920776
+        },
+        {
+          "category_loss": 2.477573871612549,
+          "fit_only_teacher_geometry_loss": 0.054452359676361084,
+          "prefix": 2,
+          "step": 82,
+          "synthetic_reliability_loss": 0.5105363726615906
+        },
+        {
+          "category_loss": 0.7580647468566895,
+          "fit_only_teacher_geometry_loss": 0.049376387149095535,
+          "prefix": 4,
+          "step": 83,
+          "synthetic_reliability_loss": 0.3332199454307556
+        },
+        {
+          "category_loss": 0.7298716306686401,
+          "fit_only_teacher_geometry_loss": 0.050372667610645294,
+          "prefix": 8,
+          "step": 84,
+          "synthetic_reliability_loss": 0.2987855076789856
+        },
+        {
+          "category_loss": 0.7342886924743652,
+          "fit_only_teacher_geometry_loss": 0.04833801090717316,
+          "prefix": 16,
+          "step": 85,
+          "synthetic_reliability_loss": 0.26520663499832153
+        },
+        {
+          "category_loss": 1.890769362449646,
+          "fit_only_teacher_geometry_loss": 0.08387670665979385,
+          "prefix": 1,
+          "step": 86,
+          "synthetic_reliability_loss": 0.3441697955131531
+        },
+        {
+          "category_loss": 1.2430930137634277,
+          "fit_only_teacher_geometry_loss": 0.07039809226989746,
+          "prefix": 2,
+          "step": 87,
+          "synthetic_reliability_loss": 0.39636358618736267
+        },
+        {
+          "category_loss": 0.7976250052452087,
+          "fit_only_teacher_geometry_loss": 0.05844186618924141,
+          "prefix": 4,
+          "step": 88,
+          "synthetic_reliability_loss": 0.3933085799217224
+        },
+        {
+          "category_loss": 0.7375121116638184,
+          "fit_only_teacher_geometry_loss": 0.05586520954966545,
+          "prefix": 8,
+          "step": 89,
+          "synthetic_reliability_loss": 0.29568397998809814
+        },
+        {
+          "category_loss": 0.728914737701416,
+          "fit_only_teacher_geometry_loss": 0.051195744425058365,
+          "prefix": 16,
+          "step": 90,
+          "synthetic_reliability_loss": 0.24235324561595917
+        },
+        {
+          "category_loss": 2.1155433654785156,
+          "fit_only_teacher_geometry_loss": 0.06209117919206619,
+          "prefix": 1,
+          "step": 91,
+          "synthetic_reliability_loss": 0.3453596830368042
+        },
+        {
+          "category_loss": 1.151208519935608,
+          "fit_only_teacher_geometry_loss": 0.06158216670155525,
+          "prefix": 2,
+          "step": 92,
+          "synthetic_reliability_loss": 0.3498147130012512
+        },
+        {
+          "category_loss": 0.7558865547180176,
+          "fit_only_teacher_geometry_loss": 0.056929416954517365,
+          "prefix": 4,
+          "step": 93,
+          "synthetic_reliability_loss": 0.29668352007865906
+        },
+        {
+          "category_loss": 0.7338017225265503,
+          "fit_only_teacher_geometry_loss": 0.05425198748707771,
+          "prefix": 8,
+          "step": 94,
+          "synthetic_reliability_loss": 0.21824996173381805
+        },
+        {
+          "category_loss": 0.7451578974723816,
+          "fit_only_teacher_geometry_loss": 0.053956907242536545,
+          "prefix": 16,
+          "step": 95,
+          "synthetic_reliability_loss": 0.20972637832164764
+        },
+        {
+          "category_loss": 3.3767752647399902,
+          "fit_only_teacher_geometry_loss": 0.06172586977481842,
+          "prefix": 1,
+          "step": 96,
+          "synthetic_reliability_loss": 0.44116148352622986
+        },
+        {
+          "category_loss": 1.04422128200531,
+          "fit_only_teacher_geometry_loss": 0.06982170045375824,
+          "prefix": 2,
+          "step": 97,
+          "synthetic_reliability_loss": 0.2567903697490692
+        },
+        {
+          "category_loss": 0.7668427228927612,
+          "fit_only_teacher_geometry_loss": 0.05582912638783455,
+          "prefix": 4,
+          "step": 98,
+          "synthetic_reliability_loss": 0.25326794385910034
+        },
+        {
+          "category_loss": 0.7489902377128601,
+          "fit_only_teacher_geometry_loss": 0.05089334771037102,
+          "prefix": 8,
+          "step": 99,
+          "synthetic_reliability_loss": 0.2581859827041626
+        },
+        {
+          "category_loss": 0.753457248210907,
+          "fit_only_teacher_geometry_loss": 0.043918270617723465,
+          "prefix": 16,
+          "step": 100,
+          "synthetic_reliability_loss": 0.1989908069372177
+        },
+        {
+          "category_loss": 5.064902305603027,
+          "fit_only_teacher_geometry_loss": 0.05610945448279381,
+          "prefix": 1,
+          "step": 101,
+          "synthetic_reliability_loss": 0.73065584897995
+        },
+        {
+          "category_loss": 1.7464755773544312,
+          "fit_only_teacher_geometry_loss": 0.06163140758872032,
+          "prefix": 2,
+          "step": 102,
+          "synthetic_reliability_loss": 0.3651510179042816
+        },
+        {
+          "category_loss": 0.7976459264755249,
+          "fit_only_teacher_geometry_loss": 0.05299108475446701,
+          "prefix": 4,
+          "step": 103,
+          "synthetic_reliability_loss": 0.2775347828865051
+        },
+        {
+          "category_loss": 0.7547633051872253,
+          "fit_only_teacher_geometry_loss": 0.04844136908650398,
+          "prefix": 8,
+          "step": 104,
+          "synthetic_reliability_loss": 0.2472945749759674
+        },
+        {
+          "category_loss": 0.7504218816757202,
+          "fit_only_teacher_geometry_loss": 0.043337710201740265,
+          "prefix": 16,
+          "step": 105,
+          "synthetic_reliability_loss": 0.1963043510913849
+        },
+        {
+          "category_loss": 4.627640724182129,
+          "fit_only_teacher_geometry_loss": 0.07185795903205872,
+          "prefix": 1,
+          "step": 106,
+          "synthetic_reliability_loss": 0.7446700930595398
+        },
+        {
+          "category_loss": 0.9332385063171387,
+          "fit_only_teacher_geometry_loss": 0.057418160140514374,
+          "prefix": 2,
+          "step": 107,
+          "synthetic_reliability_loss": 0.23409196734428406
+        },
+        {
+          "category_loss": 0.7345288991928101,
+          "fit_only_teacher_geometry_loss": 0.054274339228868484,
+          "prefix": 4,
+          "step": 108,
+          "synthetic_reliability_loss": 0.19551721215248108
+        },
+        {
+          "category_loss": 0.7473354339599609,
+          "fit_only_teacher_geometry_loss": 0.04592099413275719,
+          "prefix": 8,
+          "step": 109,
+          "synthetic_reliability_loss": 0.20345336198806763
+        },
+        {
+          "category_loss": 0.7245094776153564,
+          "fit_only_teacher_geometry_loss": 0.04104145988821983,
+          "prefix": 16,
+          "step": 110,
+          "synthetic_reliability_loss": 0.18381118774414062
+        },
+        {
+          "category_loss": 4.610965251922607,
+          "fit_only_teacher_geometry_loss": 0.05789271369576454,
+          "prefix": 1,
+          "step": 111,
+          "synthetic_reliability_loss": 0.5806944370269775
+        },
+        {
+          "category_loss": 1.8503055572509766,
+          "fit_only_teacher_geometry_loss": 0.05780614912509918,
+          "prefix": 2,
+          "step": 112,
+          "synthetic_reliability_loss": 0.45979711413383484
+        },
+        {
+          "category_loss": 0.7819514274597168,
+          "fit_only_teacher_geometry_loss": 0.048699770122766495,
+          "prefix": 4,
+          "step": 113,
+          "synthetic_reliability_loss": 0.25795406103134155
+        },
+        {
+          "category_loss": 0.7290644645690918,
+          "fit_only_teacher_geometry_loss": 0.04587135836482048,
+          "prefix": 8,
+          "step": 114,
+          "synthetic_reliability_loss": 0.1535346955060959
+        },
+        {
+          "category_loss": 0.7385000586509705,
+          "fit_only_teacher_geometry_loss": 0.04064219817519188,
+          "prefix": 16,
+          "step": 115,
+          "synthetic_reliability_loss": 0.15219636261463165
+        },
+        {
+          "category_loss": 5.025117874145508,
+          "fit_only_teacher_geometry_loss": 0.07825914770364761,
+          "prefix": 1,
+          "step": 116,
+          "synthetic_reliability_loss": 1.2070555686950684
+        },
+        {
+          "category_loss": 1.408128023147583,
+          "fit_only_teacher_geometry_loss": 0.0585724376142025,
+          "prefix": 2,
+          "step": 117,
+          "synthetic_reliability_loss": 0.3813912868499756
+        },
+        {
+          "category_loss": 1.0568346977233887,
+          "fit_only_teacher_geometry_loss": 0.049379538744688034,
+          "prefix": 4,
+          "step": 118,
+          "synthetic_reliability_loss": 0.27795952558517456
+        },
+        {
+          "category_loss": 0.733435332775116,
+          "fit_only_teacher_geometry_loss": 0.045360956341028214,
+          "prefix": 8,
+          "step": 119,
+          "synthetic_reliability_loss": 0.1438189595937729
+        },
+        {
+          "category_loss": 0.7444047331809998,
+          "fit_only_teacher_geometry_loss": 0.03943281248211861,
+          "prefix": 16,
+          "step": 120,
+          "synthetic_reliability_loss": 0.1320783793926239
+        }
+      ],
+      "wall_seconds": 1.8365323929756414
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102840,
+        "path": "outputs/trackocd_core/pilots/gt_train_known/representation_r1/A1_semantic_adapter_mean_seed1029.pt",
+        "sha256": "d9fadb3617cb55a0d08cdce812b65cfc0d3572e51aee9930276100d799233211"
+      },
+      "fit_categories": [
+        41,
+        126,
+        133,
+        211
+      ],
+      "fit_observations": 192,
+      "fit_tracks": 12,
+      "fit_videos": 12,
+      "model": "A1_semantic_adapter_mean",
+      "parameters": 525056,
+      "seed": 1029,
+      "steps": 120,
+      "synthetic_corruptions": 374,
+      "trace": [
+        {
+          "category_loss": 2.369382381439209,
+          "fit_only_teacher_geometry_loss": 0.6665610074996948,
+          "prefix": 1,
+          "step": 1,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.1692256927490234,
+          "fit_only_teacher_geometry_loss": 0.5039654970169067,
+          "prefix": 2,
+          "step": 2,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.5198166370391846,
+          "fit_only_teacher_geometry_loss": 0.3022193908691406,
+          "prefix": 4,
+          "step": 3,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1047747135162354,
+          "fit_only_teacher_geometry_loss": 0.10997501760721207,
+          "prefix": 8,
+          "step": 4,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1759090423583984,
+          "fit_only_teacher_geometry_loss": 0.07394149899482727,
+          "prefix": 16,
+          "step": 5,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 7.9387006759643555,
+          "fit_only_teacher_geometry_loss": 0.13937292993068695,
+          "prefix": 1,
+          "step": 6,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2927074432373047,
+          "fit_only_teacher_geometry_loss": 0.10693909227848053,
+          "prefix": 2,
+          "step": 7,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7152303457260132,
+          "fit_only_teacher_geometry_loss": 0.104177325963974,
+          "prefix": 4,
+          "step": 8,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7575973272323608,
+          "fit_only_teacher_geometry_loss": 0.09537351131439209,
+          "prefix": 8,
+          "step": 9,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.768478274345398,
+          "fit_only_teacher_geometry_loss": 0.10460285097360611,
+          "prefix": 16,
+          "step": 10,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.091235637664795,
+          "fit_only_teacher_geometry_loss": 0.1058480516076088,
+          "prefix": 1,
+          "step": 11,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.390244960784912,
+          "fit_only_teacher_geometry_loss": 0.10844169557094574,
+          "prefix": 2,
+          "step": 12,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8094395399093628,
+          "fit_only_teacher_geometry_loss": 0.10295743495225906,
+          "prefix": 4,
+          "step": 13,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7546005249023438,
+          "fit_only_teacher_geometry_loss": 0.08333902806043625,
+          "prefix": 8,
+          "step": 14,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7287256717681885,
+          "fit_only_teacher_geometry_loss": 0.0726206824183464,
+          "prefix": 16,
+          "step": 15,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.505090713500977,
+          "fit_only_teacher_geometry_loss": 0.09630805253982544,
+          "prefix": 1,
+          "step": 16,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.9684380292892456,
+          "fit_only_teacher_geometry_loss": 0.09843198210000992,
+          "prefix": 2,
+          "step": 17,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7093870043754578,
+          "fit_only_teacher_geometry_loss": 0.0972515121102333,
+          "prefix": 4,
+          "step": 18,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7333922386169434,
+          "fit_only_teacher_geometry_loss": 0.08296995609998703,
+          "prefix": 8,
+          "step": 19,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7201730608940125,
+          "fit_only_teacher_geometry_loss": 0.06945262849330902,
+          "prefix": 16,
+          "step": 20,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.768268585205078,
+          "fit_only_teacher_geometry_loss": 0.09387023746967316,
+          "prefix": 1,
+          "step": 21,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2571933269500732,
+          "fit_only_teacher_geometry_loss": 0.09367368370294571,
+          "prefix": 2,
+          "step": 22,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9397952556610107,
+          "fit_only_teacher_geometry_loss": 0.07980892062187195,
+          "prefix": 4,
+          "step": 23,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7438896894454956,
+          "fit_only_teacher_geometry_loss": 0.07956884056329727,
+          "prefix": 8,
+          "step": 24,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7559735178947449,
+          "fit_only_teacher_geometry_loss": 0.07364396005868912,
+          "prefix": 16,
+          "step": 25,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.517197608947754,
+          "fit_only_teacher_geometry_loss": 0.09105429798364639,
+          "prefix": 1,
+          "step": 26,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.7763714790344238,
+          "fit_only_teacher_geometry_loss": 0.0766296237707138,
+          "prefix": 2,
+          "step": 27,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.799371600151062,
+          "fit_only_teacher_geometry_loss": 0.06746862828731537,
+          "prefix": 4,
+          "step": 28,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7555016875267029,
+          "fit_only_teacher_geometry_loss": 0.06860139966011047,
+          "prefix": 8,
+          "step": 29,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7448384165763855,
+          "fit_only_teacher_geometry_loss": 0.067207932472229,
+          "prefix": 16,
+          "step": 30,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.772489547729492,
+          "fit_only_teacher_geometry_loss": 0.08701490610837936,
+          "prefix": 1,
+          "step": 31,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.19675350189209,
+          "fit_only_teacher_geometry_loss": 0.08445681631565094,
+          "prefix": 2,
+          "step": 32,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9287093877792358,
+          "fit_only_teacher_geometry_loss": 0.06378881633281708,
+          "prefix": 4,
+          "step": 33,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7217533588409424,
+          "fit_only_teacher_geometry_loss": 0.06132221221923828,
+          "prefix": 8,
+          "step": 34,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7463665008544922,
+          "fit_only_teacher_geometry_loss": 0.05710960924625397,
+          "prefix": 16,
+          "step": 35,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 6.298036098480225,
+          "fit_only_teacher_geometry_loss": 0.05316082760691643,
+          "prefix": 1,
+          "step": 36,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.796823263168335,
+          "fit_only_teacher_geometry_loss": 0.07238135486841202,
+          "prefix": 2,
+          "step": 37,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8001726865768433,
+          "fit_only_teacher_geometry_loss": 0.06164546683430672,
+          "prefix": 4,
+          "step": 38,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7559688091278076,
+          "fit_only_teacher_geometry_loss": 0.057445745915174484,
+          "prefix": 8,
+          "step": 39,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7410454154014587,
+          "fit_only_teacher_geometry_loss": 0.05064466968178749,
+          "prefix": 16,
+          "step": 40,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 6.680299282073975,
+          "fit_only_teacher_geometry_loss": 0.07914749532938004,
+          "prefix": 1,
+          "step": 41,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.1458964347839355,
+          "fit_only_teacher_geometry_loss": 0.07932993024587631,
+          "prefix": 2,
+          "step": 42,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.820788562297821,
+          "fit_only_teacher_geometry_loss": 0.059911761432886124,
+          "prefix": 4,
+          "step": 43,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7612543106079102,
+          "fit_only_teacher_geometry_loss": 0.05391103774309158,
+          "prefix": 8,
+          "step": 44,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7344176173210144,
+          "fit_only_teacher_geometry_loss": 0.052117832005023956,
+          "prefix": 16,
+          "step": 45,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 6.1483683586120605,
+          "fit_only_teacher_geometry_loss": 0.06974276155233383,
+          "prefix": 1,
+          "step": 46,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.1514954566955566,
+          "fit_only_teacher_geometry_loss": 0.05560481548309326,
+          "prefix": 2,
+          "step": 47,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7768980264663696,
+          "fit_only_teacher_geometry_loss": 0.051569581031799316,
+          "prefix": 4,
+          "step": 48,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7763668298721313,
+          "fit_only_teacher_geometry_loss": 0.046347539871931076,
+          "prefix": 8,
+          "step": 49,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7600117921829224,
+          "fit_only_teacher_geometry_loss": 0.04402720928192139,
+          "prefix": 16,
+          "step": 50,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.240381240844727,
+          "fit_only_teacher_geometry_loss": 0.06495889276266098,
+          "prefix": 1,
+          "step": 51,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.3578953742980957,
+          "fit_only_teacher_geometry_loss": 0.04522807523608208,
+          "prefix": 2,
+          "step": 52,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8111423850059509,
+          "fit_only_teacher_geometry_loss": 0.05182268097996712,
+          "prefix": 4,
+          "step": 53,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7638192176818848,
+          "fit_only_teacher_geometry_loss": 0.04214051738381386,
+          "prefix": 8,
+          "step": 54,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7304197549819946,
+          "fit_only_teacher_geometry_loss": 0.04098495468497276,
+          "prefix": 16,
+          "step": 55,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.450308799743652,
+          "fit_only_teacher_geometry_loss": 0.06113455072045326,
+          "prefix": 1,
+          "step": 56,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.690732479095459,
+          "fit_only_teacher_geometry_loss": 0.060562994331121445,
+          "prefix": 2,
+          "step": 57,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7646450400352478,
+          "fit_only_teacher_geometry_loss": 0.05121941491961479,
+          "prefix": 4,
+          "step": 58,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7668910026550293,
+          "fit_only_teacher_geometry_loss": 0.04609057679772377,
+          "prefix": 8,
+          "step": 59,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.761298656463623,
+          "fit_only_teacher_geometry_loss": 0.043105438351631165,
+          "prefix": 16,
+          "step": 60,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.3311820030212402,
+          "fit_only_teacher_geometry_loss": 0.06273192912340164,
+          "prefix": 1,
+          "step": 61,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.5558360815048218,
+          "fit_only_teacher_geometry_loss": 0.06449878215789795,
+          "prefix": 2,
+          "step": 62,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.9580798149108887,
+          "fit_only_teacher_geometry_loss": 0.05202812701463699,
+          "prefix": 4,
+          "step": 63,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7516719102859497,
+          "fit_only_teacher_geometry_loss": 0.043325699865818024,
+          "prefix": 8,
+          "step": 64,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7794994711875916,
+          "fit_only_teacher_geometry_loss": 0.03976834565401077,
+          "prefix": 16,
+          "step": 65,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.2422780990600586,
+          "fit_only_teacher_geometry_loss": 0.07895396649837494,
+          "prefix": 1,
+          "step": 66,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.241570234298706,
+          "fit_only_teacher_geometry_loss": 0.049517419189214706,
+          "prefix": 2,
+          "step": 67,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8627272844314575,
+          "fit_only_teacher_geometry_loss": 0.05105521157383919,
+          "prefix": 4,
+          "step": 68,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7252079844474792,
+          "fit_only_teacher_geometry_loss": 0.048350740224123,
+          "prefix": 8,
+          "step": 69,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7345559000968933,
+          "fit_only_teacher_geometry_loss": 0.04796164110302925,
+          "prefix": 16,
+          "step": 70,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 2.261343240737915,
+          "fit_only_teacher_geometry_loss": 0.06017613410949707,
+          "prefix": 1,
+          "step": 71,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.4169305562973022,
+          "fit_only_teacher_geometry_loss": 0.06568107008934021,
+          "prefix": 2,
+          "step": 72,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8441200256347656,
+          "fit_only_teacher_geometry_loss": 0.0517360121011734,
+          "prefix": 4,
+          "step": 73,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7244731187820435,
+          "fit_only_teacher_geometry_loss": 0.04972715675830841,
+          "prefix": 8,
+          "step": 74,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7328835725784302,
+          "fit_only_teacher_geometry_loss": 0.045534897595644,
+          "prefix": 16,
+          "step": 75,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.8777196407318115,
+          "fit_only_teacher_geometry_loss": 0.06893239915370941,
+          "prefix": 1,
+          "step": 76,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.518838882446289,
+          "fit_only_teacher_geometry_loss": 0.05969801917672157,
+          "prefix": 2,
+          "step": 77,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7657817602157593,
+          "fit_only_teacher_geometry_loss": 0.04947219789028168,
+          "prefix": 4,
+          "step": 78,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7514409422874451,
+          "fit_only_teacher_geometry_loss": 0.04299098625779152,
+          "prefix": 8,
+          "step": 79,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7571743726730347,
+          "fit_only_teacher_geometry_loss": 0.039010703563690186,
+          "prefix": 16,
+          "step": 80,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.160172462463379,
+          "fit_only_teacher_geometry_loss": 0.06090690568089485,
+          "prefix": 1,
+          "step": 81,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7902722358703613,
+          "fit_only_teacher_geometry_loss": 0.05548523738980293,
+          "prefix": 2,
+          "step": 82,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7504575252532959,
+          "fit_only_teacher_geometry_loss": 0.045516811311244965,
+          "prefix": 4,
+          "step": 83,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7356635928153992,
+          "fit_only_teacher_geometry_loss": 0.04220349341630936,
+          "prefix": 8,
+          "step": 84,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.753321647644043,
+          "fit_only_teacher_geometry_loss": 0.03696519881486893,
+          "prefix": 16,
+          "step": 85,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 6.350939750671387,
+          "fit_only_teacher_geometry_loss": 0.043080564588308334,
+          "prefix": 1,
+          "step": 86,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.353865623474121,
+          "fit_only_teacher_geometry_loss": 0.045522674918174744,
+          "prefix": 2,
+          "step": 87,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8123335838317871,
+          "fit_only_teacher_geometry_loss": 0.04005558788776398,
+          "prefix": 4,
+          "step": 88,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7472351789474487,
+          "fit_only_teacher_geometry_loss": 0.036565978080034256,
+          "prefix": 8,
+          "step": 89,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7640606164932251,
+          "fit_only_teacher_geometry_loss": 0.03295191004872322,
+          "prefix": 16,
+          "step": 90,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.6240546703338623,
+          "fit_only_teacher_geometry_loss": 0.049750056117773056,
+          "prefix": 1,
+          "step": 91,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.8364166021347046,
+          "fit_only_teacher_geometry_loss": 0.050715845078229904,
+          "prefix": 2,
+          "step": 92,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7902998924255371,
+          "fit_only_teacher_geometry_loss": 0.040260542184114456,
+          "prefix": 4,
+          "step": 93,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7701964378356934,
+          "fit_only_teacher_geometry_loss": 0.034028131514787674,
+          "prefix": 8,
+          "step": 94,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7581366300582886,
+          "fit_only_teacher_geometry_loss": 0.03365872800350189,
+          "prefix": 16,
+          "step": 95,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.886262893676758,
+          "fit_only_teacher_geometry_loss": 0.0668574869632721,
+          "prefix": 1,
+          "step": 96,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2768052816390991,
+          "fit_only_teacher_geometry_loss": 0.05202147364616394,
+          "prefix": 2,
+          "step": 97,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7666229605674744,
+          "fit_only_teacher_geometry_loss": 0.044516969472169876,
+          "prefix": 4,
+          "step": 98,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7461725473403931,
+          "fit_only_teacher_geometry_loss": 0.038068484514951706,
+          "prefix": 8,
+          "step": 99,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7616573572158813,
+          "fit_only_teacher_geometry_loss": 0.03438933566212654,
+          "prefix": 16,
+          "step": 100,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 4.264823913574219,
+          "fit_only_teacher_geometry_loss": 0.05761823430657387,
+          "prefix": 1,
+          "step": 101,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2290362119674683,
+          "fit_only_teacher_geometry_loss": 0.06285146623849869,
+          "prefix": 2,
+          "step": 102,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8326520323753357,
+          "fit_only_teacher_geometry_loss": 0.04455356299877167,
+          "prefix": 4,
+          "step": 103,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7872011065483093,
+          "fit_only_teacher_geometry_loss": 0.038175955414772034,
+          "prefix": 8,
+          "step": 104,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7361615896224976,
+          "fit_only_teacher_geometry_loss": 0.03648795560002327,
+          "prefix": 16,
+          "step": 105,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.3177852630615234,
+          "fit_only_teacher_geometry_loss": 0.0635334923863411,
+          "prefix": 1,
+          "step": 106,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.7017993927001953,
+          "fit_only_teacher_geometry_loss": 0.05376369506120682,
+          "prefix": 2,
+          "step": 107,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7832158803939819,
+          "fit_only_teacher_geometry_loss": 0.04958615452051163,
+          "prefix": 4,
+          "step": 108,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7483893632888794,
+          "fit_only_teacher_geometry_loss": 0.045992445200681686,
+          "prefix": 8,
+          "step": 109,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7304098010063171,
+          "fit_only_teacher_geometry_loss": 0.04413987696170807,
+          "prefix": 16,
+          "step": 110,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 3.164787769317627,
+          "fit_only_teacher_geometry_loss": 0.06420666724443436,
+          "prefix": 1,
+          "step": 111,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.2343475818634033,
+          "fit_only_teacher_geometry_loss": 0.0510360486805439,
+          "prefix": 2,
+          "step": 112,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7920138239860535,
+          "fit_only_teacher_geometry_loss": 0.055059097707271576,
+          "prefix": 4,
+          "step": 113,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7431049346923828,
+          "fit_only_teacher_geometry_loss": 0.04747023805975914,
+          "prefix": 8,
+          "step": 114,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7350223064422607,
+          "fit_only_teacher_geometry_loss": 0.04040544480085373,
+          "prefix": 16,
+          "step": 115,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 5.292129039764404,
+          "fit_only_teacher_geometry_loss": 0.07576803117990494,
+          "prefix": 1,
+          "step": 116,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 1.6953842639923096,
+          "fit_only_teacher_geometry_loss": 0.05657785013318062,
+          "prefix": 2,
+          "step": 117,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.8931012153625488,
+          "fit_only_teacher_geometry_loss": 0.04323175922036171,
+          "prefix": 4,
+          "step": 118,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7493686676025391,
+          "fit_only_teacher_geometry_loss": 0.03986732289195061,
+          "prefix": 8,
+          "step": 119,
+          "synthetic_reliability_loss": 0.0
+        },
+        {
+          "category_loss": 0.7490785121917725,
+          "fit_only_teacher_geometry_loss": 0.03812555968761444,
+          "prefix": 16,
+          "step": 120,
+          "synthetic_reliability_loss": 0.0
+        }
+      ],
+      "wall_seconds": 1.2663204759883229
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171404,
+        "path": "outputs/trackocd_core/pilots/gt_train_known/representation_r1/A2_semantic_adapter_evidence_seed1029.pt",
+        "sha256": "43b6b1399cf8b36c7dbb529145ea9107318538c46d4adaa0a51ff61627084fe8"
+      },
+      "fit_categories": [
+        41,
+        126,
+        133,
+        211
+      ],
+      "fit_observations": 192,
+      "fit_tracks": 12,
+      "fit_videos": 12,
+      "model": "A2_semantic_adapter_evidence",
+      "parameters": 541889,
+      "seed": 1029,
+      "steps": 120,
+      "synthetic_corruptions": 374,
+      "trace": [
+        {
+          "category_loss": 2.369382381439209,
+          "fit_only_teacher_geometry_loss": 0.6665610074996948,
+          "prefix": 1,
+          "step": 1,
+          "synthetic_reliability_loss": 0.6403071880340576
+        },
+        {
+          "category_loss": 2.169358968734741,
+          "fit_only_teacher_geometry_loss": 0.5039616227149963,
+          "prefix": 2,
+          "step": 2,
+          "synthetic_reliability_loss": 0.6484237313270569
+        },
+        {
+          "category_loss": 1.5193103551864624,
+          "fit_only_teacher_geometry_loss": 0.30212458968162537,
+          "prefix": 4,
+          "step": 3,
+          "synthetic_reliability_loss": 0.6249107122421265
+        },
+        {
+          "category_loss": 1.1048521995544434,
+          "fit_only_teacher_geometry_loss": 0.10996132344007492,
+          "prefix": 8,
+          "step": 4,
+          "synthetic_reliability_loss": 0.6194148063659668
+        },
+        {
+          "category_loss": 1.1743751764297485,
+          "fit_only_teacher_geometry_loss": 0.07392588257789612,
+          "prefix": 16,
+          "step": 5,
+          "synthetic_reliability_loss": 0.6137581467628479
+        },
+        {
+          "category_loss": 7.9385223388671875,
+          "fit_only_teacher_geometry_loss": 0.13937826454639435,
+          "prefix": 1,
+          "step": 6,
+          "synthetic_reliability_loss": 0.6705753207206726
+        },
+        {
+          "category_loss": 1.2988518476486206,
+          "fit_only_teacher_geometry_loss": 0.10673929750919342,
+          "prefix": 2,
+          "step": 7,
+          "synthetic_reliability_loss": 0.6390030384063721
+        },
+        {
+          "category_loss": 0.7151431441307068,
+          "fit_only_teacher_geometry_loss": 0.10420955717563629,
+          "prefix": 4,
+          "step": 8,
+          "synthetic_reliability_loss": 0.6224687099456787
+        },
+        {
+          "category_loss": 0.7571033239364624,
+          "fit_only_teacher_geometry_loss": 0.09525969624519348,
+          "prefix": 8,
+          "step": 9,
+          "synthetic_reliability_loss": 0.6273375749588013
+        },
+        {
+          "category_loss": 0.7678948640823364,
+          "fit_only_teacher_geometry_loss": 0.10416141152381897,
+          "prefix": 16,
+          "step": 10,
+          "synthetic_reliability_loss": 0.6239725351333618
+        },
+        {
+          "category_loss": 5.099660873413086,
+          "fit_only_teacher_geometry_loss": 0.1059555783867836,
+          "prefix": 1,
+          "step": 11,
+          "synthetic_reliability_loss": 0.6689895391464233
+        },
+        {
+          "category_loss": 1.3778741359710693,
+          "fit_only_teacher_geometry_loss": 0.10833992063999176,
+          "prefix": 2,
+          "step": 12,
+          "synthetic_reliability_loss": 0.6283378601074219
+        },
+        {
+          "category_loss": 0.8058983087539673,
+          "fit_only_teacher_geometry_loss": 0.10241164267063141,
+          "prefix": 4,
+          "step": 13,
+          "synthetic_reliability_loss": 0.6250889897346497
+        },
+        {
+          "category_loss": 0.75396728515625,
+          "fit_only_teacher_geometry_loss": 0.08315292000770569,
+          "prefix": 8,
+          "step": 14,
+          "synthetic_reliability_loss": 0.6167920827865601
+        },
+        {
+          "category_loss": 0.7281739115715027,
+          "fit_only_teacher_geometry_loss": 0.0725356712937355,
+          "prefix": 16,
+          "step": 15,
+          "synthetic_reliability_loss": 0.6028226017951965
+        },
+        {
+          "category_loss": 5.537863731384277,
+          "fit_only_teacher_geometry_loss": 0.09654639661312103,
+          "prefix": 1,
+          "step": 16,
+          "synthetic_reliability_loss": 0.6646678447723389
+        },
+        {
+          "category_loss": 1.9135922193527222,
+          "fit_only_teacher_geometry_loss": 0.0982113927602768,
+          "prefix": 2,
+          "step": 17,
+          "synthetic_reliability_loss": 0.6147364377975464
+        },
+        {
+          "category_loss": 0.7106016874313354,
+          "fit_only_teacher_geometry_loss": 0.0969766154885292,
+          "prefix": 4,
+          "step": 18,
+          "synthetic_reliability_loss": 0.5888029336929321
+        },
+        {
+          "category_loss": 0.7328505516052246,
+          "fit_only_teacher_geometry_loss": 0.08252254873514175,
+          "prefix": 8,
+          "step": 19,
+          "synthetic_reliability_loss": 0.5865177512168884
+        },
+        {
+          "category_loss": 0.7201484441757202,
+          "fit_only_teacher_geometry_loss": 0.06912984699010849,
+          "prefix": 16,
+          "step": 20,
+          "synthetic_reliability_loss": 0.5765449404716492
+        },
+        {
+          "category_loss": 4.772526264190674,
+          "fit_only_teacher_geometry_loss": 0.09379676729440689,
+          "prefix": 1,
+          "step": 21,
+          "synthetic_reliability_loss": 0.633529007434845
+        },
+        {
+          "category_loss": 1.2543580532073975,
+          "fit_only_teacher_geometry_loss": 0.09332596510648727,
+          "prefix": 2,
+          "step": 22,
+          "synthetic_reliability_loss": 0.5910329222679138
+        },
+        {
+          "category_loss": 0.9359778165817261,
+          "fit_only_teacher_geometry_loss": 0.0797630026936531,
+          "prefix": 4,
+          "step": 23,
+          "synthetic_reliability_loss": 0.5753161311149597
+        },
+        {
+          "category_loss": 0.7432793378829956,
+          "fit_only_teacher_geometry_loss": 0.0792451873421669,
+          "prefix": 8,
+          "step": 24,
+          "synthetic_reliability_loss": 0.5537964105606079
+        },
+        {
+          "category_loss": 0.755081832408905,
+          "fit_only_teacher_geometry_loss": 0.0733964815735817,
+          "prefix": 16,
+          "step": 25,
+          "synthetic_reliability_loss": 0.5491719245910645
+        },
+        {
+          "category_loss": 5.506834983825684,
+          "fit_only_teacher_geometry_loss": 0.09081803262233734,
+          "prefix": 1,
+          "step": 26,
+          "synthetic_reliability_loss": 0.6440979242324829
+        },
+        {
+          "category_loss": 1.6973493099212646,
+          "fit_only_teacher_geometry_loss": 0.07688065618276596,
+          "prefix": 2,
+          "step": 27,
+          "synthetic_reliability_loss": 0.5833572149276733
+        },
+        {
+          "category_loss": 0.7989945411682129,
+          "fit_only_teacher_geometry_loss": 0.06712949275970459,
+          "prefix": 4,
+          "step": 28,
+          "synthetic_reliability_loss": 0.549912691116333
+        },
+        {
+          "category_loss": 0.7523948550224304,
+          "fit_only_teacher_geometry_loss": 0.068714439868927,
+          "prefix": 8,
+          "step": 29,
+          "synthetic_reliability_loss": 0.5458710789680481
+        },
+        {
+          "category_loss": 0.7440377473831177,
+          "fit_only_teacher_geometry_loss": 0.06689764559268951,
+          "prefix": 16,
+          "step": 30,
+          "synthetic_reliability_loss": 0.5195449590682983
+        },
+        {
+          "category_loss": 3.8060500621795654,
+          "fit_only_teacher_geometry_loss": 0.08679717034101486,
+          "prefix": 1,
+          "step": 31,
+          "synthetic_reliability_loss": 0.5890307426452637
+        },
+        {
+          "category_loss": 2.170738458633423,
+          "fit_only_teacher_geometry_loss": 0.08278149366378784,
+          "prefix": 2,
+          "step": 32,
+          "synthetic_reliability_loss": 0.5778956413269043
+        },
+        {
+          "category_loss": 0.9162554740905762,
+          "fit_only_teacher_geometry_loss": 0.06394507735967636,
+          "prefix": 4,
+          "step": 33,
+          "synthetic_reliability_loss": 0.5222357511520386
+        },
+        {
+          "category_loss": 0.7222983241081238,
+          "fit_only_teacher_geometry_loss": 0.060837522149086,
+          "prefix": 8,
+          "step": 34,
+          "synthetic_reliability_loss": 0.49681568145751953
+        },
+        {
+          "category_loss": 0.7458970546722412,
+          "fit_only_teacher_geometry_loss": 0.056814491748809814,
+          "prefix": 16,
+          "step": 35,
+          "synthetic_reliability_loss": 0.4751525819301605
+        },
+        {
+          "category_loss": 6.278578758239746,
+          "fit_only_teacher_geometry_loss": 0.05300312116742134,
+          "prefix": 1,
+          "step": 36,
+          "synthetic_reliability_loss": 0.6418399214744568
+        },
+        {
+          "category_loss": 1.84274423122406,
+          "fit_only_teacher_geometry_loss": 0.07147271186113358,
+          "prefix": 2,
+          "step": 37,
+          "synthetic_reliability_loss": 0.5597278475761414
+        },
+        {
+          "category_loss": 0.8108314275741577,
+          "fit_only_teacher_geometry_loss": 0.06104081869125366,
+          "prefix": 4,
+          "step": 38,
+          "synthetic_reliability_loss": 0.5146769285202026
+        },
+        {
+          "category_loss": 0.7602595686912537,
+          "fit_only_teacher_geometry_loss": 0.05707474425435066,
+          "prefix": 8,
+          "step": 39,
+          "synthetic_reliability_loss": 0.49095258116722107
+        },
+        {
+          "category_loss": 0.7458053827285767,
+          "fit_only_teacher_geometry_loss": 0.05054399371147156,
+          "prefix": 16,
+          "step": 40,
+          "synthetic_reliability_loss": 0.4516427218914032
+        },
+        {
+          "category_loss": 6.597503662109375,
+          "fit_only_teacher_geometry_loss": 0.07841695845127106,
+          "prefix": 1,
+          "step": 41,
+          "synthetic_reliability_loss": 0.7561395168304443
+        },
+        {
+          "category_loss": 2.1714251041412354,
+          "fit_only_teacher_geometry_loss": 0.08032292872667313,
+          "prefix": 2,
+          "step": 42,
+          "synthetic_reliability_loss": 0.5560361742973328
+        },
+        {
+          "category_loss": 0.8236104846000671,
+          "fit_only_teacher_geometry_loss": 0.0596560575067997,
+          "prefix": 4,
+          "step": 43,
+          "synthetic_reliability_loss": 0.4351279139518738
+        },
+        {
+          "category_loss": 0.7630702257156372,
+          "fit_only_teacher_geometry_loss": 0.05376719310879707,
+          "prefix": 8,
+          "step": 44,
+          "synthetic_reliability_loss": 0.4317111372947693
+        },
+        {
+          "category_loss": 0.7365951538085938,
+          "fit_only_teacher_geometry_loss": 0.052305568009614944,
+          "prefix": 16,
+          "step": 45,
+          "synthetic_reliability_loss": 0.41057342290878296
+        },
+        {
+          "category_loss": 6.140039443969727,
+          "fit_only_teacher_geometry_loss": 0.07044490426778793,
+          "prefix": 1,
+          "step": 46,
+          "synthetic_reliability_loss": 0.7626799941062927
+        },
+        {
+          "category_loss": 1.1007400751113892,
+          "fit_only_teacher_geometry_loss": 0.055341120809316635,
+          "prefix": 2,
+          "step": 47,
+          "synthetic_reliability_loss": 0.4293903708457947
+        },
+        {
+          "category_loss": 0.7674137949943542,
+          "fit_only_teacher_geometry_loss": 0.051252081990242004,
+          "prefix": 4,
+          "step": 48,
+          "synthetic_reliability_loss": 0.433061808347702
+        },
+        {
+          "category_loss": 0.7738306522369385,
+          "fit_only_teacher_geometry_loss": 0.04547174647450447,
+          "prefix": 8,
+          "step": 49,
+          "synthetic_reliability_loss": 0.3898093104362488
+        },
+        {
+          "category_loss": 0.75684654712677,
+          "fit_only_teacher_geometry_loss": 0.04322388395667076,
+          "prefix": 16,
+          "step": 50,
+          "synthetic_reliability_loss": 0.3825460374355316
+        },
+        {
+          "category_loss": 4.277307987213135,
+          "fit_only_teacher_geometry_loss": 0.06258036196231842,
+          "prefix": 1,
+          "step": 51,
+          "synthetic_reliability_loss": 0.5800157785415649
+        },
+        {
+          "category_loss": 1.3889570236206055,
+          "fit_only_teacher_geometry_loss": 0.04491813853383064,
+          "prefix": 2,
+          "step": 52,
+          "synthetic_reliability_loss": 0.4450078010559082
+        },
+        {
+          "category_loss": 0.8276330828666687,
+          "fit_only_teacher_geometry_loss": 0.053021013736724854,
+          "prefix": 4,
+          "step": 53,
+          "synthetic_reliability_loss": 0.4508008360862732
+        },
+        {
+          "category_loss": 0.7636375427246094,
+          "fit_only_teacher_geometry_loss": 0.04262322559952736,
+          "prefix": 8,
+          "step": 54,
+          "synthetic_reliability_loss": 0.3837677240371704
+        },
+        {
+          "category_loss": 0.7301380038261414,
+          "fit_only_teacher_geometry_loss": 0.04080246388912201,
+          "prefix": 16,
+          "step": 55,
+          "synthetic_reliability_loss": 0.34708914160728455
+        },
+        {
+          "category_loss": 4.472283840179443,
+          "fit_only_teacher_geometry_loss": 0.060802824795246124,
+          "prefix": 1,
+          "step": 56,
+          "synthetic_reliability_loss": 0.6550730466842651
+        },
+        {
+          "category_loss": 1.6178042888641357,
+          "fit_only_teacher_geometry_loss": 0.06003417447209358,
+          "prefix": 2,
+          "step": 57,
+          "synthetic_reliability_loss": 0.4599657952785492
+        },
+        {
+          "category_loss": 0.7598442435264587,
+          "fit_only_teacher_geometry_loss": 0.050905704498291016,
+          "prefix": 4,
+          "step": 58,
+          "synthetic_reliability_loss": 0.3516708314418793
+        },
+        {
+          "category_loss": 0.764021098613739,
+          "fit_only_teacher_geometry_loss": 0.04563203081488609,
+          "prefix": 8,
+          "step": 59,
+          "synthetic_reliability_loss": 0.3254736661911011
+        },
+        {
+          "category_loss": 0.760412335395813,
+          "fit_only_teacher_geometry_loss": 0.0427897609770298,
+          "prefix": 16,
+          "step": 60,
+          "synthetic_reliability_loss": 0.3153906464576721
+        },
+        {
+          "category_loss": 3.2559375762939453,
+          "fit_only_teacher_geometry_loss": 0.0625155121088028,
+          "prefix": 1,
+          "step": 61,
+          "synthetic_reliability_loss": 0.4921136796474457
+        },
+        {
+          "category_loss": 1.5318197011947632,
+          "fit_only_teacher_geometry_loss": 0.06512515991926193,
+          "prefix": 2,
+          "step": 62,
+          "synthetic_reliability_loss": 0.43969762325286865
+        },
+        {
+          "category_loss": 0.9216046333312988,
+          "fit_only_teacher_geometry_loss": 0.05240843445062637,
+          "prefix": 4,
+          "step": 63,
+          "synthetic_reliability_loss": 0.4332290291786194
+        },
+        {
+          "category_loss": 0.7524380683898926,
+          "fit_only_teacher_geometry_loss": 0.04367722198367119,
+          "prefix": 8,
+          "step": 64,
+          "synthetic_reliability_loss": 0.3096979558467865
+        },
+        {
+          "category_loss": 0.7805131673812866,
+          "fit_only_teacher_geometry_loss": 0.04010143503546715,
+          "prefix": 16,
+          "step": 65,
+          "synthetic_reliability_loss": 0.29913806915283203
+        },
+        {
+          "category_loss": 2.263925075531006,
+          "fit_only_teacher_geometry_loss": 0.07638134062290192,
+          "prefix": 1,
+          "step": 66,
+          "synthetic_reliability_loss": 0.43935883045196533
+        },
+        {
+          "category_loss": 1.1971404552459717,
+          "fit_only_teacher_geometry_loss": 0.0498034842312336,
+          "prefix": 2,
+          "step": 67,
+          "synthetic_reliability_loss": 0.37181156873703003
+        },
+        {
+          "category_loss": 0.839507520198822,
+          "fit_only_teacher_geometry_loss": 0.05157427862286568,
+          "prefix": 4,
+          "step": 68,
+          "synthetic_reliability_loss": 0.3602232336997986
+        },
+        {
+          "category_loss": 0.728206992149353,
+          "fit_only_teacher_geometry_loss": 0.048382468521595,
+          "prefix": 8,
+          "step": 69,
+          "synthetic_reliability_loss": 0.32283368706703186
+        },
+        {
+          "category_loss": 0.7377573847770691,
+          "fit_only_teacher_geometry_loss": 0.048072922974824905,
+          "prefix": 16,
+          "step": 70,
+          "synthetic_reliability_loss": 0.26869916915893555
+        },
+        {
+          "category_loss": 2.2651734352111816,
+          "fit_only_teacher_geometry_loss": 0.059343211352825165,
+          "prefix": 1,
+          "step": 71,
+          "synthetic_reliability_loss": 0.36529678106307983
+        },
+        {
+          "category_loss": 1.4321178197860718,
+          "fit_only_teacher_geometry_loss": 0.06573400646448135,
+          "prefix": 2,
+          "step": 72,
+          "synthetic_reliability_loss": 0.41000717878341675
+        },
+        {
+          "category_loss": 0.8381716012954712,
+          "fit_only_teacher_geometry_loss": 0.051725003868341446,
+          "prefix": 4,
+          "step": 73,
+          "synthetic_reliability_loss": 0.34657716751098633
+        },
+        {
+          "category_loss": 0.723303496837616,
+          "fit_only_teacher_geometry_loss": 0.04882403463125229,
+          "prefix": 8,
+          "step": 74,
+          "synthetic_reliability_loss": 0.24811318516731262
+        },
+        {
+          "category_loss": 0.7319258451461792,
+          "fit_only_teacher_geometry_loss": 0.04424493387341499,
+          "prefix": 16,
+          "step": 75,
+          "synthetic_reliability_loss": 0.2748749852180481
+        },
+        {
+          "category_loss": 3.8770835399627686,
+          "fit_only_teacher_geometry_loss": 0.06797850131988525,
+          "prefix": 1,
+          "step": 76,
+          "synthetic_reliability_loss": 0.5662032961845398
+        },
+        {
+          "category_loss": 1.535034418106079,
+          "fit_only_teacher_geometry_loss": 0.0603000707924366,
+          "prefix": 2,
+          "step": 77,
+          "synthetic_reliability_loss": 0.3856639862060547
+        },
+        {
+          "category_loss": 0.7719401717185974,
+          "fit_only_teacher_geometry_loss": 0.04963694140315056,
+          "prefix": 4,
+          "step": 78,
+          "synthetic_reliability_loss": 0.31044620275497437
+        },
+        {
+          "category_loss": 0.7582551836967468,
+          "fit_only_teacher_geometry_loss": 0.04270191490650177,
+          "prefix": 8,
+          "step": 79,
+          "synthetic_reliability_loss": 0.23448535799980164
+        },
+        {
+          "category_loss": 0.7611088752746582,
+          "fit_only_teacher_geometry_loss": 0.03948170319199562,
+          "prefix": 16,
+          "step": 80,
+          "synthetic_reliability_loss": 0.23558692634105682
+        },
+        {
+          "category_loss": 5.061628341674805,
+          "fit_only_teacher_geometry_loss": 0.06275966763496399,
+          "prefix": 1,
+          "step": 81,
+          "synthetic_reliability_loss": 0.7261208891868591
+        },
+        {
+          "category_loss": 0.7857707738876343,
+          "fit_only_teacher_geometry_loss": 0.05592026934027672,
+          "prefix": 2,
+          "step": 82,
+          "synthetic_reliability_loss": 0.2077048122882843
+        },
+        {
+          "category_loss": 0.7473668456077576,
+          "fit_only_teacher_geometry_loss": 0.04571044445037842,
+          "prefix": 4,
+          "step": 83,
+          "synthetic_reliability_loss": 0.28264254331588745
+        },
+        {
+          "category_loss": 0.7340773344039917,
+          "fit_only_teacher_geometry_loss": 0.041026897728443146,
+          "prefix": 8,
+          "step": 84,
+          "synthetic_reliability_loss": 0.22630715370178223
+        },
+        {
+          "category_loss": 0.7535327672958374,
+          "fit_only_teacher_geometry_loss": 0.036463990807533264,
+          "prefix": 16,
+          "step": 85,
+          "synthetic_reliability_loss": 0.20956526696681976
+        },
+        {
+          "category_loss": 6.333240509033203,
+          "fit_only_teacher_geometry_loss": 0.04483743757009506,
+          "prefix": 1,
+          "step": 86,
+          "synthetic_reliability_loss": 0.9722523093223572
+        },
+        {
+          "category_loss": 1.3146672248840332,
+          "fit_only_teacher_geometry_loss": 0.04533221200108528,
+          "prefix": 2,
+          "step": 87,
+          "synthetic_reliability_loss": 0.3248932659626007
+        },
+        {
+          "category_loss": 0.8149930834770203,
+          "fit_only_teacher_geometry_loss": 0.039536476135253906,
+          "prefix": 4,
+          "step": 88,
+          "synthetic_reliability_loss": 0.3483944535255432
+        },
+        {
+          "category_loss": 0.751299262046814,
+          "fit_only_teacher_geometry_loss": 0.03678984194993973,
+          "prefix": 8,
+          "step": 89,
+          "synthetic_reliability_loss": 0.1993781328201294
+        },
+        {
+          "category_loss": 0.7664810419082642,
+          "fit_only_teacher_geometry_loss": 0.03267713263630867,
+          "prefix": 16,
+          "step": 90,
+          "synthetic_reliability_loss": 0.2095043659210205
+        },
+        {
+          "category_loss": 3.7047901153564453,
+          "fit_only_teacher_geometry_loss": 0.04887227341532707,
+          "prefix": 1,
+          "step": 91,
+          "synthetic_reliability_loss": 0.5612789988517761
+        },
+        {
+          "category_loss": 1.8263776302337646,
+          "fit_only_teacher_geometry_loss": 0.050873007625341415,
+          "prefix": 2,
+          "step": 92,
+          "synthetic_reliability_loss": 0.4578818678855896
+        },
+        {
+          "category_loss": 0.7987279891967773,
+          "fit_only_teacher_geometry_loss": 0.040824100375175476,
+          "prefix": 4,
+          "step": 93,
+          "synthetic_reliability_loss": 0.26442259550094604
+        },
+        {
+          "category_loss": 0.7781723737716675,
+          "fit_only_teacher_geometry_loss": 0.03392687812447548,
+          "prefix": 8,
+          "step": 94,
+          "synthetic_reliability_loss": 0.24396078288555145
+        },
+        {
+          "category_loss": 0.762214183807373,
+          "fit_only_teacher_geometry_loss": 0.033700380474328995,
+          "prefix": 16,
+          "step": 95,
+          "synthetic_reliability_loss": 0.16618046164512634
+        },
+        {
+          "category_loss": 4.838500022888184,
+          "fit_only_teacher_geometry_loss": 0.06701575219631195,
+          "prefix": 1,
+          "step": 96,
+          "synthetic_reliability_loss": 0.9489517211914062
+        },
+        {
+          "category_loss": 1.2916713953018188,
+          "fit_only_teacher_geometry_loss": 0.05259622260928154,
+          "prefix": 2,
+          "step": 97,
+          "synthetic_reliability_loss": 0.32694241404533386
+        },
+        {
+          "category_loss": 0.7660249471664429,
+          "fit_only_teacher_geometry_loss": 0.04495972767472267,
+          "prefix": 4,
+          "step": 98,
+          "synthetic_reliability_loss": 0.18453077971935272
+        },
+        {
+          "category_loss": 0.7479250431060791,
+          "fit_only_teacher_geometry_loss": 0.03829173371195793,
+          "prefix": 8,
+          "step": 99,
+          "synthetic_reliability_loss": 0.16535905003547668
+        },
+        {
+          "category_loss": 0.7614385485649109,
+          "fit_only_teacher_geometry_loss": 0.03518121689558029,
+          "prefix": 16,
+          "step": 100,
+          "synthetic_reliability_loss": 0.12910214066505432
+        },
+        {
+          "category_loss": 4.222928047180176,
+          "fit_only_teacher_geometry_loss": 0.05787252262234688,
+          "prefix": 1,
+          "step": 101,
+          "synthetic_reliability_loss": 0.6195904016494751
+        },
+        {
+          "category_loss": 1.2059392929077148,
+          "fit_only_teacher_geometry_loss": 0.06458187103271484,
+          "prefix": 2,
+          "step": 102,
+          "synthetic_reliability_loss": 0.29052019119262695
+        },
+        {
+          "category_loss": 0.8252030611038208,
+          "fit_only_teacher_geometry_loss": 0.04535887762904167,
+          "prefix": 4,
+          "step": 103,
+          "synthetic_reliability_loss": 0.24180130660533905
+        },
+        {
+          "category_loss": 0.7839236259460449,
+          "fit_only_teacher_geometry_loss": 0.038895104080438614,
+          "prefix": 8,
+          "step": 104,
+          "synthetic_reliability_loss": 0.21053366363048553
+        },
+        {
+          "category_loss": 0.7356480360031128,
+          "fit_only_teacher_geometry_loss": 0.03692161291837692,
+          "prefix": 16,
+          "step": 105,
+          "synthetic_reliability_loss": 0.14649641513824463
+        },
+        {
+          "category_loss": 3.3591184616088867,
+          "fit_only_teacher_geometry_loss": 0.0615914948284626,
+          "prefix": 1,
+          "step": 106,
+          "synthetic_reliability_loss": 0.44518613815307617
+        },
+        {
+          "category_loss": 1.6779804229736328,
+          "fit_only_teacher_geometry_loss": 0.053335387259721756,
+          "prefix": 2,
+          "step": 107,
+          "synthetic_reliability_loss": 0.5145193338394165
+        },
+        {
+          "category_loss": 0.7737188339233398,
+          "fit_only_teacher_geometry_loss": 0.05052310228347778,
+          "prefix": 4,
+          "step": 108,
+          "synthetic_reliability_loss": 0.26384153962135315
+        },
+        {
+          "category_loss": 0.7449542880058289,
+          "fit_only_teacher_geometry_loss": 0.04689503088593483,
+          "prefix": 8,
+          "step": 109,
+          "synthetic_reliability_loss": 0.2079283595085144
+        },
+        {
+          "category_loss": 0.7289853096008301,
+          "fit_only_teacher_geometry_loss": 0.04456125572323799,
+          "prefix": 16,
+          "step": 110,
+          "synthetic_reliability_loss": 0.11045058816671371
+        },
+        {
+          "category_loss": 3.131786823272705,
+          "fit_only_teacher_geometry_loss": 0.06380892544984818,
+          "prefix": 1,
+          "step": 111,
+          "synthetic_reliability_loss": 0.4551208019256592
+        },
+        {
+          "category_loss": 1.2276562452316284,
+          "fit_only_teacher_geometry_loss": 0.05053918808698654,
+          "prefix": 2,
+          "step": 112,
+          "synthetic_reliability_loss": 0.44947969913482666
+        },
+        {
+          "category_loss": 0.7883965373039246,
+          "fit_only_teacher_geometry_loss": 0.05593748390674591,
+          "prefix": 4,
+          "step": 113,
+          "synthetic_reliability_loss": 0.19870953261852264
+        },
+        {
+          "category_loss": 0.7427882552146912,
+          "fit_only_teacher_geometry_loss": 0.04739217832684517,
+          "prefix": 8,
+          "step": 114,
+          "synthetic_reliability_loss": 0.1630730926990509
+        },
+        {
+          "category_loss": 0.736254096031189,
+          "fit_only_teacher_geometry_loss": 0.040347058326005936,
+          "prefix": 16,
+          "step": 115,
+          "synthetic_reliability_loss": 0.10939445346593857
+        },
+        {
+          "category_loss": 5.2605390548706055,
+          "fit_only_teacher_geometry_loss": 0.07676833122968674,
+          "prefix": 1,
+          "step": 116,
+          "synthetic_reliability_loss": 1.2863199710845947
+        },
+        {
+          "category_loss": 1.6457252502441406,
+          "fit_only_teacher_geometry_loss": 0.05591076612472534,
+          "prefix": 2,
+          "step": 117,
+          "synthetic_reliability_loss": 0.362833708524704
+        },
+        {
+          "category_loss": 0.9014989733695984,
+          "fit_only_teacher_geometry_loss": 0.0431058406829834,
+          "prefix": 4,
+          "step": 118,
+          "synthetic_reliability_loss": 0.2757076323032379
+        },
+        {
+          "category_loss": 0.7507637739181519,
+          "fit_only_teacher_geometry_loss": 0.039232365787029266,
+          "prefix": 8,
+          "step": 119,
+          "synthetic_reliability_loss": 0.13337022066116333
+        },
+        {
+          "category_loss": 0.748929500579834,
+          "fit_only_teacher_geometry_loss": 0.037597525864839554,
+          "prefix": 16,
+          "step": 120,
+          "synthetic_reliability_loss": 0.12538543343544006
+        }
+      ],
+      "wall_seconds": 1.8917688980000094
+    }
+  ],
+  "formal_M5_M8_complete": false,
+  "generated_utc": "2026-10-09T19:56:06.586329+00:00",
+  "loss_drop_is_not_unseen_category_generalization_proof": true,
+  "new_checkpoint_bytes": 12822732,
+  "novel_or_val_labels_used_for_fit": false,
+  "only_registered_representation_fit_rows_used": true,
+  "parent_config_sha256": "48f5e6b2526e85dc93eca5e2b3ea1e2e92ed0277bb32303b63561a4508748891",
+  "policy_or_heldout_rows_used_for_fit": false,
+  "resources": {
+    "gpu_peak_allocated_bytes": 30130688,
+    "gpu_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "initial_mem_available_kib": 103890136,
+    "peak_cpu_rss_kib": 1109444,
+    "ram_plan_bytes": 4294967296,
+    "wall_seconds": 13.553277566999895,
+    "worker_count": 1
+  },
+  "root_cause_correction_rounds_used": 1,
+  "schema_version": "trackocd.core.gt-representation-fit.v1",
+  "source_sha256": {
+    "scripts/trackocd_core/train_gt_representation_pilot.py": "a492d586966021a6010a047ba8f20a10d2f5a847ff70b831963b5834fe883ed4",
+    "src/trackocd_core/representation.py": "b6232770198ddb95f24ae9e7936fead95229f5c3fb1776bea84abddebc3dc739"
+  },
+  "status": "COMPLETE_BOUNDED_FIT_NOT_SCIENTIFIC_PASS",
+  "test_accessed": false
+}

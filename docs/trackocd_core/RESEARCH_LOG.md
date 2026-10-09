@@ -223,3 +223,19 @@
   New R1 directory/checkpoints/results; preserve all original negative data.
 - This consumes the one root-cause correction round when started. No second
   loss/architecture/threshold retry; no M11 or primary/frontend PASS implied.
+
+## 2026-10-10 — R1 completed; no stable temporal gain, no further correction
+
+- Push/remote-verify `63a3ad0` before six unchanged-budget R1 fits. 13.55 s,
+  28.73-MiB GPU / ~1.06-GiB host; 12,822,732 new private checkpoint bytes.
+  Frozen evaluation: 280 actual replays / 6,720 decisions, 9.41 s CPU;
+  A0 exactly reproduces original B1. All original artifacts preserved.
+- Heldout p16 seed/order means: A1/A2 Old 79.17%, New 9.03%, H 14.89%,
+  CT 4.17%, wrong Known 85.42%. Partial recovery, not reliable discovery.
+  Paired A2-A1 p16 all zero; one p1 seed improvement and p8 deterioration
+  do not establish stable temporal contribution. Keep full prefix/seed table.
+- Decision: retain A1 candidate, no A2/M11 or main scientific PASS. One
+  correction round used; do not launch R2 or silently calibrate/resample.
+  Primary frontend/provenance remains unresolved. GT decision learning is a
+  separate scope from the authorized representation exception; clarify before
+  treating it as a substitute for strict main-stage progression.
