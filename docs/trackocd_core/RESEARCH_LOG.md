@@ -1,5 +1,22 @@
 # TrackOCD core research log
 
+## 2026-10-10 — M1 bounded real predicted-box feature gate preregistered
+
+- Full physical audit already delivered at1047150: no primary freeze or main
+  scientific PASS. Limited-coverage scope choice still awaits user direction.
+- Complete the remaining M1 uniform-visual-interface engineering requirement
+  with at most8 real sealed MASA predicted observations from the first metadata
+  video, not by reusing/promoting GT crops. First-image IDs fixed before any
+  later track length or label is consulted; no short-track substitution.
+- Reuse pinned DINO768 weights/source/crop parameters exactly; no training,
+  optimizer, annotations/roles/Test, detector replay, download or formal cache.
+  One fresh idle GPU,4GiB host/GPU bounds and1MiB private output ceiling.
+- Test code/config, commit/push and verify exact remote SHA before GPU work.
+  Preregistration regression: **218 passed, no skips**; inherited encoder/crop
+  hashes and actual annotation/roles/Test/network denial tested.
+  This is engineering only; it cannot resolve the pending quality choice,
+  prior R1 scientific negatives, GT-policy authority or optional M11.
+
 ## 2026-10-10 — Exact v2 recovery (M0)
 
 - Question: did the new server restore the actual later v2, including atomic

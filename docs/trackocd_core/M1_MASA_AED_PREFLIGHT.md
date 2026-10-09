@@ -512,3 +512,23 @@ roots **6,034,083,840 B** and conservative entire repo+isolated env
 **3,367,976 B**, SHA256
 `5d4e2d903204bf6313f6df42a300171d3596413f34ebaf2d731ed4fbb466b220`.
 No raw NPZ, GT payload or model weight is staged. No owned local job remains live.
+
+## Preregistered tiny real predicted-box visual-interface check
+
+The remaining M1 visual-interface gate is checked separately, not by promoting
+the completed Train Known GT cache. The first metadata video and its first-image
+four numerically sorted physical IDs supply at most two observations each,
+scanning at most eight images. No label, reliable-coverage or future-length
+selection; empty/short tracks are never replaced. Existing sealed physical
+shards are read, not re-inferred. Maximum **8 real crops / one fresh idle GPU /
+batch4 / 4GiB host and GPU / 1MiB output**. No new image/weight copy.
+
+Pinned DINOv2 source, weight, crop/context/resize/norm and causal four-field
+interface stay byte-identical. Strict frozen loading, finite768-D unit features,
+singleton-versus-batch tolerance1e-5, available prefix1/2 invariance to a poisoned
+future tail and unchanged model state are required. No GT, roles, text or Test
+input; the inference process denies their opening and network/child execution
+after preflight. The private compact engineering payload cannot become formal
+M2 cache. This tiny gate cannot establish coverage, association quality,
+scientific PASS, frame-online decisions or primary-freeze permission. The
+limited-coverage choice remains pending; no training/R2/full cache is started.
