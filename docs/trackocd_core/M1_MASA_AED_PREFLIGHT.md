@@ -414,3 +414,34 @@ binding remains absent and disclosed, not evidence of forbidden supervision.
 No automatic primary freeze or M9/semantic PASS, regardless of this audit's scores.
 All preregistration tests now pass: **207 passed, no skips**. Commit/push/exact
 remote-HEAD verification is still required before actual GPU inference.
+
+## Actual sealed full-Val physical inference, evaluation still pending
+
+Remote-preregistered `455e9dda98752323a1cb12c1e3b2c0fcf9e31900` was independently
+verified at **2026-10-09T22:16:15Z**, before the new owned run. Four freshly idle
+GPUs completed the exact988-video/36,375-image universe once; all4 workers
+returned0. Supervisor2637.60s (~44min), no wall-time cutoff, foreign-process
+interference, training, Test, parameter change or new image/model transfer.
+
+Sealed stream: **1,540,022 track observations / 1,811,677 raw detection rows**,
+988 complete video markers, private compressed NPZ total **63,222,355 B**.
+The original cap50 is saturated on **35,934/36,375 frames (98.79%)**; zero
+empty detection/tracking frames. These counts are not accuracy or coverage.
+All419 frozen tensors match the release and remain value-identical at every
+complete video and final worker boundary; all4 initial state digests also match.
+All registered arrays/metadata/hashes were reverified before full stream seal.
+
+Peak per-worker RSS1,689,985,024 /1,689,075,712 /1,689,571,328 /1,691,398,144 B;
+GPU reserved maxima3,445,620,736 /3,447,717,888 /3,445,620,736 /3,447,717,888 B.
+Supervisor candidate allocation peak **6,032,039,936 B**, below8GiB; observed
+RAM headroom remained ~85%. Generated predictions and state/attempt evidence
+stay private. Small public `masa_full_val_prediction_summary.json` carries
+counts/hashes/frozen-model/resource proof, not raw boxes, labels or image paths.
+
+This phase is **successful frozen inference, not M1 qualification or M9**.
+At this entry, independent one-CPU canonical full-GT evaluation is started
+only after the sealed-prediction checks; no full-Val HOTA/coverage/purity result
+is yet claimed. No downstream physical/semantic tuning or primary freeze follows
+from output counts. Old8/64 results remain intact and separately scoped.
+Sealed-prediction receipt regression: **208 tests pass, no skips**. Independent
+CPU evaluation is still running at this inference-stage delivery.

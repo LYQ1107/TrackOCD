@@ -149,3 +149,19 @@ def test_registered_full_scope_not_m9_and_no_tuning_or_automatic_primary():
     assert not p["evaluation"]["labels_for_model_input_or_tuning"]
     assert p["asset_inventory"]["new_image_copy_bytes"] == p["asset_inventory"]["new_weight_bytes"] == 0
     assert not p["provenance"]["exact_private_sam_release_training_stage_binding_verified"]
+
+
+def test_actual_full_val_prediction_receipt_has_unique_complete_universe_and_no_primary_claim():
+    path = Path(__file__).resolve().parents[2] / "outputs/trackocd_core/audit/masa_full_val_prediction_summary.json"
+    if not path.exists(): pytest.skip("Completed real physical prediction receipt absent")
+    p = json.loads(path.read_text())
+    assert p["status"] == "SEALED_COMPLETE_FULL_VAL_PHYSICAL_STREAM" and p["videos"] == 988 and p["images"] == 36375
+    assert p["prediction_rows"] == 1540022 and p["detection_rows"] == 1811677 and p["compressed_npz_bytes"] == 63222355
+    assert p["frame_statistics"]["frames"] == 36375 and p["all_complete_video_states_unchanged"]
+    assert not any(p["boundary"].values()) and not p["independent_gt_evaluation_complete"]
+    assert p["frozen_model"]["strict_state_tensor_keys"] == 419 and p["frozen_model"]["all_parameters_frozen"]
+    assert p["supervisor"]["worker_returncodes"] == [0] * 4 and p["supervisor"]["remote_preregistration_verified"]
+    workers = p["worker_resources"]
+    assert sum(w["actual_forwards_completed_this_attempt"] for w in workers) == 36375
+    assert all(w["initial_frozen_state_sha256"] == w["final_frozen_state_sha256"] for w in workers)
+    assert len({w["initial_frozen_state_sha256"] for w in workers}) == 1

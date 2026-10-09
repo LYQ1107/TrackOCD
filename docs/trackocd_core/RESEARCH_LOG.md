@@ -435,3 +435,23 @@
   completed regression required before actual frozen inference.
 - Preregistration regression207passed/no skips; no actual full-Val inference yet
   at this entry. Publish source/config/protocol only, keep image hash plan private.
+
+## 2026-10-10 — Full-Val physical prediction sealed, independent evaluation started
+
+- Prereg455e9dda98752323a1cb12c1e3b2c0fcf9e31900 pushed/exactremote verified
+  22:16:15Z before inference. Actual4freshlyidle GPU workers allreturn0,
+  full988videos/36375registeredimages sealed; supervisor2637.60s (~44min).
+- Trackrows1540022/detrows1811677; all988complete-video markers and arrays
+  rechecked before fullseal; compactprivateNPZ63222355B. ROIcap50 on35934/36375
+  frames, zeroemptyframes. Counts do not establish recall/purity/scientificPASS.
+- All419 frozen model tensors unchanged at complete-video/final boundaries,
+  all4 initial/final digest values identical. Same weight/source/model config,
+  no GT/text/future input, newimage/weight copy, training, physicaltuning or Test.
+- Per-worker hostmax~1.69GB/GPUreserved~3.45GB, candidateallocatedpeak6032039936B
+  <8GiB; preserved25%RAM headroom and outputs/stages within15GiBsoft30GiBhard.
+- Publish small counts/hash/resource receipt only, retain rawNPZ privately.
+  Independent single-CPU full-GT canonical evaluation starts only after fullseal;
+  at this entry no new full-Val physicalmetric/coverage, primaryfreeze/M9/semantic
+  claim. No GT-policy expansion or second representation correction.
+- Completed frozen-inference delivery regression208passed/no skips. Independent
+  CPU evaluator ongoing; its full-GT result will be a separate report/artifact.
