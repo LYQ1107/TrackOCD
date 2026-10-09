@@ -1,0 +1,21 @@
+{
+  "schema_version": "trackocd.core.final_goal.v1",
+  "title": "Track-Conditioned Evidence Learning and Risk-Aware Persistent Category Discovery for Online Multi-Object Tracking",
+  "status": "ACTIVE",
+  "branch": "codex/trackocd-track-conditioned-persistent-discovery",
+  "pandas_reference_commit": "7e0d4b6cf8046d173afedb0f16e138d45c43a416",
+  "v2_reference_commit": "cac66467af7ca137fc53bdbef34896dde47030d8",
+  "request_source": "/data3/liuyeqiang/.codex/attachments/f16320c2-6607-43dd-9277-70c58e765089/Pasted text.txt",
+  "required_stages": ["M0", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10"],
+  "optional_stage": "M11 only after independent representation and decision scientific PASS",
+  "allowed_trainable_components": ["Semantic Adapter", "Temporal Evidence Learner", "Persistent Decision Model"],
+  "frozen_components": ["detector", "physical tracker", "DINOv2 ViT-B/14"],
+  "scientific_statuses": ["PASS", "FAIL", "BLOCKED", "INCOMPARABLE"],
+  "forbidden": ["TAO Test annotation access", "Val Novel-label training or pre-M8 selection", "Novel vocabulary input", "oracle memory", "future observations", "GT tracks labeled predicted", "external process interference", "force push"],
+  "soft_storage_budget_bytes": 16106127360,
+  "hard_storage_budget_bytes": 32212254720,
+  "max_root_cause_correction_rounds": 1,
+  "stages_in_strict_order": true,
+  "missing_frontend_exception": "GT-track feasibility permitted only with BLOCKED_FRONTEND_QUALITY disclosed; cannot claim end-to-end completion",
+  "required_deliverables": ["FINAL_REPORT.md", "FINAL_RESULT.json", "METHOD_ARCHITECTURE.md", "DATA_PROTOCOL_AND_LEAKAGE_AUDIT.md", "TRAINING_AND_REPRODUCTION.md", "BASELINE_COMPARISON.csv", "ABLATION_RESULTS.csv", "PER_VIDEO_ORDER_RESULTS.csv", "source/tests/config/checkpoint hashes", "resource usage", "local/remote HEAD proof"]
+}

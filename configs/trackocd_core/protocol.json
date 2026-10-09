@@ -1,0 +1,20 @@
+{
+  "schema_version": "trackocd.core.protocol.v1",
+  "stage": "M0",
+  "role_source": "configs/trackocd_core/roles.json",
+  "train_annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+  "val_annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+  "test_access": "FORBIDDEN throughout this goal, including after any legacy FINAL_FREEZE",
+  "training_category_allowlist": "TAO Train observed categories intersect inherited known_ids",
+  "val_novel_training_or_selection": false,
+  "visual_encoder": "Frozen DINOv2 ViT-B/14",
+  "input_dimension": 768,
+  "prefixes": [1, 2, 4, 8, 16],
+  "orders": ["main", "seed1027", "seed1028", "seed1029"],
+  "frozen_frontend_required_for_predicted_main_result": true,
+  "soft_storage_budget_bytes": 16106127360,
+  "hard_storage_budget_bytes": 32212254720,
+  "maximum_root_cause_correction_rounds": 1,
+  "semantic_feedback_requires_representation_and_decision_scientific_pass": true,
+  "historical_v2_evaluator_read_only": true
+}

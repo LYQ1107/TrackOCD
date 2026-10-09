@@ -1,0 +1,781 @@
+{
+  "ancestor_delivery_tree": "78b56d1f0062d339aa8e995d8320a3fdb2a5906d",
+  "annotations": {
+    "train": {
+      "annotated_images": 18274,
+      "annotations": 54639,
+      "exists": true,
+      "is_symlink": false,
+      "missing_annotated_frame_count": 0,
+      "missing_annotated_frame_examples": [],
+      "model_training_annotation_allowlist": "Train categories in known_ids ONLY",
+      "mtime_ns": 1759670751136653423,
+      "observed_categories": 216,
+      "other_train_categories_training_permitted": false,
+      "path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+      "physical_gt_tracks": 2647,
+      "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+      "role_annotation_counts": {
+        "distractor": 1879,
+        "new": 7374,
+        "old": 43380,
+        "train_unassigned": 2006
+      },
+      "sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+      "size_bytes": 21463934,
+      "train_known_category_stats": {
+        "1001": {
+          "observations": 66,
+          "tracks": 2,
+          "video_count": 2
+        },
+        "1018": {
+          "observations": 131,
+          "tracks": 7,
+          "video_count": 6
+        },
+        "1057": {
+          "observations": 80,
+          "tracks": 2,
+          "video_count": 2
+        },
+        "1097": {
+          "observations": 31,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "1122": {
+          "observations": 81,
+          "tracks": 3,
+          "video_count": 2
+        },
+        "1144": {
+          "observations": 639,
+          "tracks": 34,
+          "video_count": 25
+        },
+        "1155": {
+          "observations": 39,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "118": {
+          "observations": 143,
+          "tracks": 5,
+          "video_count": 4
+        },
+        "1215": {
+          "observations": 33,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "1229": {
+          "observations": 160,
+          "tracks": 4,
+          "video_count": 3
+        },
+        "126": {
+          "observations": 524,
+          "tracks": 21,
+          "video_count": 14
+        },
+        "133": {
+          "observations": 422,
+          "tracks": 23,
+          "video_count": 22
+        },
+        "139": {
+          "observations": 175,
+          "tracks": 6,
+          "video_count": 5
+        },
+        "174": {
+          "observations": 180,
+          "tracks": 16,
+          "video_count": 14
+        },
+        "211": {
+          "observations": 4522,
+          "tracks": 434,
+          "video_count": 104
+        },
+        "221": {
+          "observations": 31,
+          "tracks": 2,
+          "video_count": 1
+        },
+        "229": {
+          "observations": 501,
+          "tracks": 14,
+          "video_count": 12
+        },
+        "235": {
+          "observations": 443,
+          "tracks": 24,
+          "video_count": 21
+        },
+        "237": {
+          "observations": 216,
+          "tracks": 7,
+          "video_count": 7
+        },
+        "34": {
+          "observations": 45,
+          "tracks": 4,
+          "video_count": 4
+        },
+        "347": {
+          "observations": 892,
+          "tracks": 38,
+          "video_count": 29
+        },
+        "35": {
+          "observations": 198,
+          "tracks": 9,
+          "video_count": 9
+        },
+        "36": {
+          "observations": 15,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "382": {
+          "observations": 1091,
+          "tracks": 47,
+          "video_count": 36
+        },
+        "4": {
+          "observations": 40,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "41": {
+          "observations": 875,
+          "tracks": 34,
+          "video_count": 16
+        },
+        "428": {
+          "observations": 17,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "429": {
+          "observations": 370,
+          "tracks": 16,
+          "video_count": 3
+        },
+        "475": {
+          "observations": 28,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "502": {
+          "observations": 181,
+          "tracks": 7,
+          "video_count": 2
+        },
+        "579": {
+          "observations": 303,
+          "tracks": 11,
+          "video_count": 7
+        },
+        "58": {
+          "observations": 77,
+          "tracks": 2,
+          "video_count": 2
+        },
+        "60": {
+          "observations": 6,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "625": {
+          "observations": 38,
+          "tracks": 2,
+          "video_count": 2
+        },
+        "642": {
+          "observations": 31,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "714": {
+          "observations": 162,
+          "tracks": 7,
+          "video_count": 5
+        },
+        "79": {
+          "observations": 40,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "805": {
+          "observations": 29125,
+          "tracks": 1341,
+          "video_count": 418
+        },
+        "81": {
+          "observations": 291,
+          "tracks": 13,
+          "video_count": 5
+        },
+        "896": {
+          "observations": 28,
+          "tracks": 3,
+          "video_count": 3
+        },
+        "91": {
+          "observations": 40,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "926": {
+          "observations": 159,
+          "tracks": 8,
+          "video_count": 6
+        },
+        "937": {
+          "observations": 37,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "95": {
+          "observations": 448,
+          "tracks": 21,
+          "video_count": 13
+        },
+        "961": {
+          "observations": 40,
+          "tracks": 1,
+          "video_count": 1
+        },
+        "980": {
+          "observations": 195,
+          "tracks": 5,
+          "video_count": 4
+        },
+        "982": {
+          "observations": 80,
+          "tracks": 2,
+          "video_count": 1
+        },
+        "99": {
+          "observations": 111,
+          "tracks": 9,
+          "video_count": 4
+        }
+      },
+      "train_supported_known_ids": [
+        4,
+        34,
+        35,
+        36,
+        41,
+        58,
+        60,
+        79,
+        81,
+        91,
+        95,
+        99,
+        118,
+        126,
+        133,
+        139,
+        174,
+        211,
+        221,
+        229,
+        235,
+        237,
+        347,
+        382,
+        428,
+        429,
+        475,
+        502,
+        579,
+        625,
+        642,
+        714,
+        805,
+        896,
+        926,
+        937,
+        961,
+        980,
+        982,
+        1001,
+        1018,
+        1057,
+        1097,
+        1122,
+        1144,
+        1155,
+        1215,
+        1229
+      ],
+      "train_zero_shot_known_ids": [
+        13,
+        45,
+        78,
+        154,
+        185,
+        276,
+        299,
+        371,
+        392,
+        452,
+        480,
+        544,
+        621,
+        699,
+        717,
+        729,
+        747,
+        779,
+        829,
+        852,
+        979,
+        993,
+        1038,
+        1091,
+        1099,
+        1115,
+        1117,
+        1132,
+        1135,
+        1162
+      ],
+      "videos": 500
+    },
+    "val": {
+      "annotated_images": 36375,
+      "annotations": 113112,
+      "exists": true,
+      "is_symlink": false,
+      "missing_annotated_frame_count": 0,
+      "missing_annotated_frame_examples": [],
+      "model_training_annotation_allowlist": "Train categories in known_ids ONLY",
+      "mtime_ns": 1759672067358884999,
+      "observed_categories": 302,
+      "other_train_categories_training_permitted": false,
+      "path": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+      "physical_gt_tracks": 5485,
+      "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+      "role_annotation_counts": {
+        "distractor": 5232,
+        "new": 20522,
+        "old": 87358
+      },
+      "sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+      "size_bytes": 43639943,
+      "train_known_category_stats": null,
+      "train_supported_known_ids": null,
+      "train_zero_shot_known_ids": null,
+      "videos": 988
+    }
+  },
+  "assets": [
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "gt_track_features",
+      "path": "/data3/liuyeqiang/TrackOCD/data/caches/features/dinov2_vitb14",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/data/caches/features/dinov2_vitb14",
+      "reuse_note": "missing; do not replace with another encoder"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "v2_gt_features",
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2/features/gt_tracks",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2/features/gt_tracks",
+      "reuse_note": "missing local recovered cache"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "v2_predicted_features",
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2/features/formal/covtrack_native",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2/features/formal/covtrack_native",
+      "reuse_note": "NAS shard final state unverified"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "legacy_predicted_stream",
+      "path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+      "reuse_note": "649378-track historical stream not restored"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "selected_frontend_state",
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2/audit/autonomous_state.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2/audit/autonomous_state.json",
+      "reuse_note": "historical state not current state"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "dinov2_checkpoint",
+      "path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+      "reuse_note": "official source/hash in assets/downloads_manifest.json"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "simowt_checkpoint",
+      "path": "/data3/liuyeqiang/TrackOCD/checkpoints/simowt_weight.pth",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/checkpoints/simowt_weight.pth",
+      "reuse_note": "official source/hash in assets/downloads_manifest.json"
+    },
+    {
+      "exists": false,
+      "is_symlink": false,
+      "kind": "phe_checkpoint",
+      "path": "/data3/liuyeqiang/TrackOCD/runs/phe_track/dinov2_seed1027/checkpoint.pth",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/runs/phe_track/dinov2_seed1027/checkpoint.pth",
+      "reuse_note": "historical known coverage 48/78; representation compatibility must be checked"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "kind": "pandas_frozen_tracks",
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full/bytetrack/BT-FG-0",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full/bytetrack/BT-FG-0",
+      "reuse_note": "reference only; do not promote as reliable frontend without quality audit"
+    }
+  ],
+  "budget": {
+    "hard_bytes": 32212254720,
+    "soft_bytes": 16106127360
+  },
+  "existing_pandas_output_directories": [
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/anonymous",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/anonymous"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/anonymous_smoke_final",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/anonymous_smoke_final"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/audit",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/audit"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/bytetrack",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/bytetrack"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/bytetrack_trackeval",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/bytetrack_trackeval"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/coco_half_base_phase",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/coco_half_base_phase"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/detection",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/detection"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/pandas_discovery_K500",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/pandas_discovery_K500"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/profile_batch16",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/profile_batch16"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full"
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_reference",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_reference"
+    }
+  ],
+  "external_process_interference": false,
+  "generated_utc": "2026-10-09T14:36:32.136787+00:00",
+  "git": {
+    "branch": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "codex/trackocd-track-conditioned-persistent-discovery"
+    },
+    "branches": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "codex/pandas-bytetrack-dedup-audit                    7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/pandas-bytetrack-score-fix                      411aed5 Record full PANDAS TAO Val score-fix results\n  codex/pandas-bytetrack-tao-val                        bf29217 Add PANDAS TAO Val ByteTrack baseline results\n* codex/trackocd-track-conditioned-persistent-discovery 7e0d4b6 Complete PANDAS dedup confirmation and record recall-gated outcome\n  codex/trackocd-v2                                     cac6646 Add predicted-stream causal baseline path\n  main                                                  7b1d3c0 [origin/main] phase90 archive unused historical outputs safely\n  remotes/origin/HEAD                                   -> origin/main\n  remotes/origin/codex/trackocd-v2                      cac6646 Add predicted-stream causal baseline path\n  remotes/origin/main                                   7b1d3c0 phase90 archive unused historical outputs safely"
+    },
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "7e0d4b6cf8046d173afedb0f16e138d45c43a416"
+    },
+    "stashes": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "stash@{0} 13f322b946a43644516917580fd02548d132dcac On main: codex recovery: v2 tree after interrupted switch\nstash@{1} 0851687c861c5048ac4ce3944f8cd447d88bfcf3 On main: codex recovery: materialized v2 tree from interrupted checkout"
+    },
+    "status": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "?? configs/trackocd_core/\n?? scripts/trackocd_core/\n?? src/trackocd_core/\n?? tests/trackocd_core/"
+    },
+    "worktrees": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "worktree /data3/liuyeqiang/TrackOCD\nHEAD 7e0d4b6cf8046d173afedb0f16e138d45c43a416\nbranch refs/heads/codex/trackocd-track-conditioned-persistent-discovery"
+    }
+  },
+  "historical_cache_evidence": {
+    "atomic_shards": 65,
+    "current_final_state_known": false,
+    "files_recovered": false,
+    "journal_line": 22062,
+    "last_machine_observation_utc": "2026-09-17T18:28:14.579Z",
+    "observations": 247756,
+    "status": "RUNNING"
+  },
+  "large_assets_copied": false,
+  "legacy_evaluation_limitations": [
+    "persistent evaluator accepts contaminated tokens after any same-category history",
+    "NEW, wrong EXISTING and wrong KNOWN are collapsed into false assignment",
+    "physical local IDs are not namespaced by video in category-track eligibility",
+    "predicted evaluator denominator comes from matched join, not all GT opportunities",
+    "standard evaluator remaps KNOWN tokens together with anonymous tokens",
+    "whole-track ordering/prefix means do not prove truly frame-online replay"
+  ],
+  "official_role_sources": {
+    "distractor_map": {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790668192169935992,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/vendor/Open-World-Tracking/datasets/distractor_classes.json",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/vendor/Open-World-Tracking/datasets/distractor_classes.json",
+      "sha256": "b999eee97cb569d9f411ee2060582b04a0fe6fd98c5134b75132dc42c2fc33da",
+      "size_bytes": 1152
+    },
+    "git_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "060dd193127ac1f2ae8a580ce4382d152c35e0fc"
+    },
+    "known_map": {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790668192169935992,
+      "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/vendor/Open-World-Tracking/datasets/coco_id2tao_id.json",
+      "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/vendor/Open-World-Tracking/datasets/coco_id2tao_id.json",
+      "sha256": "a95567f04769319bfa65a4fbe6a0791b745123f947e6b7861c8705e54f7718a2",
+      "size_bytes": 849
+    },
+    "repository": "https://github.com/YangLiu14/Open-World-Tracking"
+  },
+  "resource_snapshot": {
+    "available_disk_bytes": 96780066816,
+    "gpus": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n1, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n2, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n3, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n4, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n5, NVIDIA A100-SXM4-40GB, 40960 MiB, 14148 MiB, 26294 MiB, 17 %\n6, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n7, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n8, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %\n9, NVIDIA A100-SXM4-40GB, 40960 MiB, 14 MiB, 40428 MiB, 0 %"
+    },
+    "mem_available_kib": 100903440,
+    "mem_total_kib": 131633116
+  },
+  "roles": {
+    "counts": {
+      "distractor_ids": 45,
+      "known_ids": 78,
+      "novel_ids": 209
+    },
+    "inherited_ids_recovered_from_complete_machine_audit": true,
+    "official_known_and_distractor_content_equal": true,
+    "original_file_hashes": {
+      "distractor": {
+        "count": 45,
+        "path": "/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/data/tao_ow_ocd_v1/splits/distractor_ids.json",
+        "sha256": "9dc538ee9ba3b1c9f2604315113baa204d566296507658d2312a497988a709fc"
+      },
+      "genuine_novel": {
+        "count": 209,
+        "path": "/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/data/tao_ow_ocd_v1/splits/unknown_ids_val.json",
+        "sha256": "a05c7563ba06734b4ce755d9d574a1284e936babb7e592f381aee3862aca016f"
+      },
+      "known_base": {
+        "count": 78,
+        "path": "/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT/data/tao_ow_ocd_v1/splits/known_ids.json",
+        "sha256": "0a8684ee4df3c7315153bf7559066c7a9707fa46539aa54110e003bf7657cedc"
+      }
+    },
+    "original_split_bytes_recovered": false,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "sha256": "68b97610597e4315149be8aabce07c8fbd8b20708dc1735293053a2702ae141b",
+    "source": {
+      "history_file": "/data3/liuyeqiang/.codex/sessions/2026/09/16/rollout-2026-09-16T01-12-43-01a0a60e-8106-7120-b890-6c8707ec0388.jsonl",
+      "ids_recovered_verbatim": true,
+      "known_and_distractor_official_source": "YangLiu14/Open-World-Tracking@060dd193127ac1f2ae8a580ce4382d152c35e0fc",
+      "line": 297,
+      "original_files_not_recovered": true,
+      "timestamp": "2026-09-15T17:25:29.838Z",
+      "type": "historical_machine_audit_recovery"
+    }
+  },
+  "schema_version": "trackocd.core.asset_audit.v1",
+  "status": "M0_AUDIT_COMPLETE_WITH_RECOVERY_GAPS",
+  "test_annotation_opened": false,
+  "training_permitted_now": false,
+  "v2_source_files": [
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309513155233,
+      "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_v2/protocol.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_v2/protocol.json",
+      "sha256": "d1fd03d4fbf469e4ae975d4fc6f2d071512c3fbf267e3a9d3ebfa52d70bf3c16",
+      "size_bytes": 1038
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518548051,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/schema.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/schema.py",
+      "sha256": "501623fdf4c4ec23dc50ac53a59773026c72743ed860701e3f8c697f214c40ab",
+      "size_bytes": 3684
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518548051,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/protocol.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/protocol.py",
+      "sha256": "da84a11c8c3e129b7018ad1afb67e1240d650deefd2e64a788471dd499bf2b74",
+      "size_bytes": 2076
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518548051,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/nearest_prototype.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/nearest_prototype.py",
+      "sha256": "e9ba14bdcbf5bd3c3968c8f67155190d4a3bfa95f67b187c4d998bfa2f7c5373",
+      "size_bytes": 2192
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518548051,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/dpmeans.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/dpmeans.py",
+      "sha256": "c406a4a6052214c2b32425be4899fc9e1982468a1b1ee4135b03e75417139ae5",
+      "size_bytes": 1976
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518548051,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/phe_track.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/methods/phe_track.py",
+      "sha256": "074a206b3f6ea29ba5cd9c4a8da1e1e778eb418296759895ba21824afcba4fd8",
+      "size_bytes": 3584
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518337856,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/standard_ocd.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/standard_ocd.py",
+      "sha256": "b9332f8b16520a7c7aa6e24c25ad3ad750c726d437e627bb55936706a3367a6e",
+      "size_bytes": 3551
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309518337856,
+      "path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/persistent.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/src/trackocd_v2/evaluation/persistent.py",
+      "sha256": "6b6c9f561a388b83202b4b6c4a4881e5d8d8b2666f800d8c3e302e164285f954",
+      "size_bytes": 3743
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309517155238,
+      "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_baselines.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_gt_baselines.py",
+      "sha256": "28fdd34ef6d00cbd136f2c242d2fd23191e5765e174620ea2843c581b445f446",
+      "size_bytes": 8208
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309517155238,
+      "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_pred_baselines.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_pred_baselines.py",
+      "sha256": "7b57bc5152e4d8a3d95d861010d5fc130a0bc85053887ca2eed59cf377567407",
+      "size_bytes": 13012
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309517155238,
+      "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_predicted_stream.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_predicted_stream.py",
+      "sha256": "9c4fcd9f7bb26bc0d6de87e0ac9472efd81ae5054d3400eb85a004a9c81fb94b",
+      "size_bytes": 3316
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309517155238,
+      "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_common_features.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/build_common_features.py",
+      "sha256": "63b0dc333520abe897881ceb1a8721c7ad0d0637fa2c89bfefd876961e3715af",
+      "size_bytes": 18598
+    },
+    {
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1790664309516813402,
+      "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_geometry.py",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/audit_geometry.py",
+      "sha256": "fcba8892a1e2d8cb53f621006fdb2918ec973c39f7b55b7f9a955ee2ef3d835b",
+      "size_bytes": 13484
+    }
+  ],
+  "v2_source_tree": "b5b06e398143d8560057085734468e7f80470293"
+}
