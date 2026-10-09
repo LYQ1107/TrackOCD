@@ -115,15 +115,20 @@ as a clean core frontend. The subsequent
 649,378-track fragmentation profile and actual static inference branch.
 Checkpoint supervision/historical runtime binding remain unverified and
 score-contract defects are diagnosed; it is not frozen as clean primary.
-No existing lawful MASA/AED TAO asset route is established.
+No existing lawful MASA/AED TAO stream is established. The subsequent
+[MASA and AED preflight](M1_MASA_AED_PREFLIGHT.md) identifies a conditional
+MASA-SAM-B native-proposal smoke, not a qualified frontend. Its default TAO
+configuration depends on external Detic detections; a frozen image-only
+RPN/ROI wrapper, compatible runtime and release tensor coverage are unverified.
 
 **M1 status: diagnostics complete / BLOCKED_FRONTEND_QUALITY.** No qualifying
 main frontend has been frozen; `FROZEN_PHYSICAL_FRONTEND.json` is not written.
 PANDAS remains a fixed external reference, not promoted to primary by this
 audit. The goal remains active. The user-authorized **GT-track feasibility
-exception** may support representation/policy feasibility, clearly labeled
-GT, but cannot replace the required predicted-track M9 main result or prove
-overall completion. The subsequent M2 GT-only smoke completed four tracks /
+exception** authorizes representation feasibility, clearly labeled GT;
+GT policy learning is awaiting explicit scope clarification. Neither can
+replace the required predicted-track M9 main result or prove overall
+completion. The subsequent M2 GT-only smoke completed four tracks /
 64 frozen DINO observations, without training or a predicted main result.
 
 The verified live NAS metadata audit was waited on until completion, not an

@@ -1,0 +1,99 @@
+{
+  "schema_version": "trackocd.core.masa_sam_candidate_smoke.v1",
+  "status": "PREREGISTERED_CONDITIONAL_NOT_RUN",
+  "purpose": "M1 low-cost frozen image-only physical frontend candidate, not M1 qualification or a new training route",
+  "source_commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+  "weight_repository": "https://huggingface.co/dereksiyuanli/masa",
+  "weight_repository_revision": "25ed372c47f2c46cf36fd446d1b657b656bc7ea9",
+  "weights": [
+    {
+      "filename": "sam_vitb_masa.pth",
+      "bytes": 558882875,
+      "sha256_from_repository_lfs_metadata": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+      "downloaded": false,
+      "role": "Frozen MASA-SAM-B adapter, association and object-distillation heads; inspect actual tensor-key coverage before use"
+    },
+    {
+      "filename": "sam_vit_b_01ec64_mmdet.pth",
+      "bytes": 375042767,
+      "sha256_from_repository_lfs_metadata": "8e0b59afc7bf5071e01fc39c20c7f0412142700f762a5b987173f577ff91f354",
+      "downloaded": false,
+      "role": "Conditional SAM-B backbone initialization only if the MASA release does not already supply all required frozen backbone tensors"
+    }
+  ],
+  "conditional_weight_ceiling_bytes": 933925642,
+  "runtime": {
+    "base_trackocd_environment_mutation_permitted": false,
+    "isolated_destination": "/data3/liuyeqiang/.venvs/trackocd-masa-smoke",
+    "preserve_existing_destination_if_present": true,
+    "candidate_python_version": "3.10",
+    "upstream_documented_python_version": "3.11",
+    "candidate_torch": "2.1.2+cu118",
+    "candidate_torchvision": "0.16.2+cu118",
+    "candidate_numpy": "1.26.4",
+    "candidate_mmcv": "2.1.0",
+    "candidate_mmdet": "3.3.0",
+    "dependency_resolver_and_exact_wheel_lock_required_before_install": true,
+    "official_mmcv_cp310_wheel_observed": "https://download.openmmlab.com/mmcv/dist/cu118/torch2.1.0/mmcv-2.1.0-cp310-cp310-manylinux1_x86_64.whl",
+    "existing_torch_2_6_wheel_index_observation": "Requested cu118/torch2.6 index returned HTTP 404; not proof all builds are impossible",
+    "installed_cuda_compiler_observation": "CUDA 13.2, not the frozen torch CUDA 11.8 runtime",
+    "cuda_source_compilation_or_toolkit_install_permitted": false,
+    "install_entire_upstream_requirements_permitted": false,
+    "automatic_text_model_or_other_weight_download_permitted": false,
+    "runtime_compatibility_verified": false
+  },
+  "proposal_contract": {
+    "detector": "Frozen SAM-B multi-level image features -> released MASA adapter -> released one-class RPN/ROI proposal heads",
+    "native_proposal_wiring_verified": false,
+    "owned_wrapper_required": true,
+    "wrapper_is_new_candidate_not_recovered_historical_stream": true,
+    "input_fields": ["current_image", "image_geometry", "video_local_frame_ordinal"],
+    "load_public_dets": false,
+    "given_dets": false,
+    "class_agnostic_association": true,
+    "tracker_memo_tracklet_frames": 10,
+    "inherited_rpn_max_per_img": 1000,
+    "inherited_rcnn_score_threshold": 0.02,
+    "inherited_rcnn_nms_iou": 0.5,
+    "inherited_rcnn_max_per_img": 50,
+    "demo_offline_postprocessing_permitted": false,
+    "gt_boxes_labels_tracks_or_category_names_as_runtime_input": false,
+    "future_frame_boxes_scores_or_ids_as_runtime_input": false,
+    "threshold_search_or_physical_training_permitted": false
+  },
+  "execution_limits": {
+    "initial_input": "Synthetic image shape/import/empty-proposal checks before any dataset image",
+    "real_input": "At most 8 already-local Train images from one video, chronological; image paths only, no semantic/track annotations passed to runner",
+    "max_images": 8,
+    "max_videos": 1,
+    "max_gpu_workers": 1,
+    "gpu_uuid_and_free_memory_recheck_required": true,
+    "max_smoke_elapsed_seconds": 600,
+    "max_host_working_bytes": 4294967296,
+    "max_gpu_working_bytes": 8589934592,
+    "minimum_system_ram_headroom_fraction": 0.25,
+    "max_new_environment_source_weights_and_output_bytes": 8589934592,
+    "max_output_bytes": 10485760,
+    "overall_goal_soft_bytes": 16106127360,
+    "overall_goal_hard_bytes": 32212254720,
+    "budget_is_stop_ceiling_not_measured_install_size": true,
+    "unsafe_pickle_fallback_permitted": false,
+    "upstream_install_script_execution_permitted": false,
+    "full_val_or_cache_job_permitted": false,
+    "tao_test_access_permitted": false,
+    "external_process_interference_permitted": false
+  },
+  "pass_requires": [
+    "Pinned source/weight bytes verified; actual checkpoint tensor keys cover frozen backbone, adapter, proposal and association components",
+    "Minimal isolated binary-wheel dependency lock fits budget and imports without text-model/data downloads",
+    "Image-only native proposal wrapper and past-only tracker execute within bounds with finite non-degenerate anonymous boxes",
+    "Prefix outputs are invariant when inaccessible future frames are changed; no offline score/box/track filtering",
+    "Actual counts, hashes, runtime and memory retained, including empty or failed results"
+  ],
+  "smoke_pass_does_not_establish": [
+    "TAO Val physical HOTA/AssA/DetA/DetRe or Known/Novel coverage",
+    "A qualifying frozen primary frontend or complete M1",
+    "A reproduced official public-Detic benchmark or recovered old SimOWT stream",
+    "Any representation correction round, M7 policy authority, M9 result or M11 PASS"
+  ]
+}

@@ -257,3 +257,31 @@
 - Source-only scan 0.0189 s / 18.38-MiB peak; 131 tests pass. Initial new source
   equality expectation failed and was replaced with explicit observed mismatch,
   not a source/model alteration. Full details: M1_SIMOWT_TRAINING_CHAIN.md.
+
+## 2026-10-10 — MASA and AED low-cost alternative preflight
+
+- M1 permits existing/low-cost MASA/AED candidates. Fifteen pinned official
+  source/config/docs files, 96,708 B, exact Git blob/SHA256 verified; one CPU
+  worker, 0.0066 s, 17,864-KiB peak. No data/model execution or environment edit.
+- MASA-SAM generic image/segment supervision motivates a candidate, not release
+  certification. Default TAO config uses external Detic detections; disabling
+  that flag alone does not supply the missing SamMasa detector prediction API.
+  Native multi-level SAM -> released RPN/ROI -> anonymous past-only tracking
+  requires an explicit new bounded wrapper and actual checkpoint key checks.
+- Demo uses future-dependent centered boxes/full-segment scores/whole-track
+  filtering; bypass all offline postprocessing. Formula witness changes an
+  earlier coordinate 0->2 by changing only future coordinate index 2.
+- Official LFS metadata pins optional weights totaling 933,925,642 B, not
+  downloaded. Existing torch2.6 runtime lacks mmcv/mmdet/mmengine; official
+  torch2.1 cu118 cp310 MMCV binary is listed, torch2.6 index returns 404;
+  installed CUDA compiler is 13.2. Do not compile or alter base environment.
+- Conditional plan: resolve exact minimal binary wheels and inspect safe weight
+  tensor coverage first; <=8 Train images/one video, 600 seconds, <=8-GiB new
+  total, fixed proposal settings, no training/text/GT/future input/full job.
+  A smoke PASS would not qualify M1 or reproduce public-Detic benchmark scores.
+- AED frequency-base filter is not an explicit 78-Known whitelist; actual
+  release overlap/binding unverified, no prohibited-supervision claim or pack
+  download. Original GT exception wording narrowed to representation only;
+  GT policy authority still pending. Root correction remains consumed.
+- Regression 137 pass; M1_MASA_AED_PREFLIGHT.md and small public source/asset
+  receipts preserve limitations and next action. Primary gate remains blocked.

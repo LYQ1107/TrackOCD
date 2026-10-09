@@ -1,0 +1,229 @@
+{
+  "aed": {
+    "configured_train_base": true,
+    "default_public_detector_vocab_and_supervision_need_audit": true,
+    "forbidden_supervision_proven_for_release": false,
+    "released_training_source_weight_binding_verified": false,
+    "source_filter": "Exclude LVIS frequency r, not an explicit whitelist of inherited 78 Known IDs",
+    "status": "DEFAULT_RELEASE_NOT_DROP_IN_LEGAL_FRONTEND",
+    "true_protocol_role_overlap_checked": false,
+    "weight_or_joint_annotation_pack_downloaded": false
+  },
+  "audited_at_utc": "2026-10-09T20:39:49.824788+00:00",
+  "boundary": {
+    "base_environment_changed": false,
+    "checkpoint_opened": false,
+    "dataset_or_gt_opened": false,
+    "foreign_process_interference": false,
+    "model_training_or_inference_started": false,
+    "new_representation_correction": false,
+    "test_data_opened": false,
+    "upstream_import_or_exec": false
+  },
+  "masa": {
+    "bounded_plan": "configs/trackocd_core/masa_sam_candidate_smoke.json",
+    "candidate": "SAM-B image-only released object-distillation heads plus past-only anonymous association",
+    "conditional_weight_ceiling_bytes": 933925642,
+    "default_benchmark_is_not_our_native_image_only_result": true,
+    "default_public_detections_no_novel_vocabulary_qualified": false,
+    "default_tao_route_uses_external_detic_detections": true,
+    "demo_offline_post": {
+      "can_disable_with_no_post": true,
+      "causal_candidate_must_bypass_all_three": true,
+      "default_enabled": true,
+      "formula_dependency_witness": {
+        "first_coordinate_after_changing_only_future_index_2": 2.0,
+        "first_coordinate_before": 0.0,
+        "kind": "synthetic source-formula witness, not upstream execution or actual stream"
+      },
+      "full_segment_score_mean": true,
+      "symmetric_box_smoothing": true,
+      "whole_track_removal_from_later_giant_box": true
+    },
+    "documented_supervision": "SA-1B 500K raw images and SAM segments; model zoo reports no in-domain images",
+    "no_public_no_given_default_branch_dispatches_detector_api_not_masa_proposal_heads": true,
+    "public_detector_vocabulary_or_release_binding_inspected": false,
+    "released_tensor_coverage_or_complete_training_binding_inspected": false,
+    "sam_class_bases": [
+      "BaseModule"
+    ],
+    "sam_class_methods": [
+      "__init__",
+      "device",
+      "forward",
+      "postprocess_masks",
+      "preprocess"
+    ],
+    "simple_load_public_dets_false_is_not_a_verified_native_runner": true,
+    "status": "CONDITIONAL_CANDIDATE_RUNTIME_AND_NATIVE_PROPOSAL_WIRING_UNVERIFIED",
+    "weight_repository_revision": "25ed372c47f2c46cf36fd446d1b657b656bc7ea9",
+    "weights_downloaded": false
+  },
+  "qualification": {
+    "m1_complete": false,
+    "next": "Resolve minimal binary wheels and checkpoint key coverage before conditional <=8-image Train-only native smoke; no full job",
+    "primary_frontend_selected": false
+  },
+  "resources": {
+    "elapsed_seconds": 0.006615021993638948,
+    "peak_rss_kib": 17864,
+    "workers": 1
+  },
+  "runtime_preflight": {
+    "binary_wheel_resolution_and_measured_runtime_size_complete": false,
+    "compiler_cuda_version_observed": "13.2",
+    "existing_environment_root_modules": {
+      "einops": true,
+      "mmcv": false,
+      "mmdet": false,
+      "mmengine": false,
+      "pycocotools": true,
+      "segment_anything": false,
+      "timm": true,
+      "transformers": false
+    },
+    "new_environment_installed": false,
+    "official_cp310_mmcv_2_1_cu118_torch_2_1_wheel_index_observed": true,
+    "official_cu118_torch_2_6_index_http_status_observed": 404
+  },
+  "schema_version": "trackocd.core.frontend_alternatives_preflight.v1",
+  "source_files": [
+    {
+      "bytes": 1131,
+      "git_blob_matches": true,
+      "git_blob_sha1": "de3638abc473f403b6e6d3c3e17c82884fbfe1f0",
+      "path": "docs/install.md",
+      "project": "masa",
+      "sha256": "aacdef092326cea146f40c2ff9b5319bd24eb58d40b28db5461662b6d8032e89",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/docs/install.md"
+    },
+    {
+      "bytes": 4540,
+      "git_blob_matches": true,
+      "git_blob_sha1": "38f4fe12749850e4ce1e9a63a57d3d571a4f49fa",
+      "path": "docs/train.md",
+      "project": "masa",
+      "sha256": "8c463eeb0d79b9b78c729fb7bcbf98ffbc55c6c043d72538bea9acb32d685871",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/docs/train.md"
+    },
+    {
+      "bytes": 3192,
+      "git_blob_matches": true,
+      "git_blob_sha1": "bf8fbdc7f9e5eca061792dd45fe3c23d1f2f3184",
+      "path": "docs/model_zoo.md",
+      "project": "masa",
+      "sha256": "8cbae57a4a990f9c8890b96bc7ded04926dfeba4f302734c4e2208fcbf1af4d3",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/docs/model_zoo.md"
+    },
+    {
+      "bytes": 245,
+      "git_blob_matches": true,
+      "git_blob_sha1": "3bb5f5fa389631d5aa9965eb518eac2fe0e6ef29",
+      "path": "environment.yml",
+      "project": "masa",
+      "sha256": "e874c3d68d3a658731fe7cf6dcd1fdd555e0796b34fbccbb1a0c7afbbb8f60df",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/environment.yml"
+    },
+    {
+      "bytes": 364,
+      "git_blob_matches": true,
+      "git_blob_sha1": "88eea8448a4ac6c5b1db48641ac456185d332643",
+      "path": "requirements.txt",
+      "project": "masa",
+      "sha256": "03e8afe537c497887416e7db7cdb76d11a666ec5bd04c4e0496539a99ec7a025",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/requirements.txt"
+    },
+    {
+      "bytes": 807,
+      "git_blob_matches": true,
+      "git_blob_sha1": "4f318ba026466cc65bafecccf12980937bd6b861",
+      "path": "configs/masa-sam/sam-vitb.py",
+      "project": "masa",
+      "sha256": "aa9fac397403de1812647b3964e961e0a206058d5b67d8055a633e94ca8a1ee7",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/configs/masa-sam/sam-vitb.py"
+    },
+    {
+      "bytes": 7466,
+      "git_blob_matches": true,
+      "git_blob_sha1": "f9abc1c7454ccf87c676860e41063ba5cdc86260",
+      "path": "configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py",
+      "project": "masa",
+      "sha256": "07a8442664f07b96f87c681558c65d8db98444b6de5b1990829c5b2926b95634",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py"
+    },
+    {
+      "bytes": 21362,
+      "git_blob_matches": true,
+      "git_blob_sha1": "02d4061b7cf0d180bb76b465111a30848837a93c",
+      "path": "masa/models/mot/masa.py",
+      "project": "masa",
+      "sha256": "1439cd038d15183f15766522d13cef8d2783922b93e40fac665677bd47489c44",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/masa/models/mot/masa.py"
+    },
+    {
+      "bytes": 7481,
+      "git_blob_matches": true,
+      "git_blob_sha1": "1cfd0a6708b6578db86ee7c93f35c6452708273b",
+      "path": "masa/models/detectors/sam_masa.py",
+      "project": "masa",
+      "sha256": "3007f084ed6bb6698af2008ac55d945bd76cb341a2ce36620cfaa7345fc6f5f9",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/masa/models/detectors/sam_masa.py"
+    },
+    {
+      "bytes": 8479,
+      "git_blob_matches": true,
+      "git_blob_sha1": "91dd2f165c2f51722c70c16c831986cb01529780",
+      "path": "demo/utils.py",
+      "project": "masa",
+      "sha256": "83466857f240d39ef81ee7cb67b72a0e3debf181b50f758810ca128a45486211",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/demo/utils.py"
+    },
+    {
+      "bytes": 11199,
+      "git_blob_matches": true,
+      "git_blob_sha1": "1ef5c76a8474836a795a0b68293436be78c6b013",
+      "path": "demo/video_demo_with_text.py",
+      "project": "masa",
+      "sha256": "d76a7e749b855ca06d3b58f225f1a8b9c6517d2a14eb4423cf778094bfa1a3ab",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/demo/video_demo_with_text.py"
+    },
+    {
+      "bytes": 198,
+      "git_blob_matches": true,
+      "git_blob_sha1": "d68306ba1a2a6fcaf2de10117d21f4230f9bb236",
+      "path": "masa/models/__init__.py",
+      "project": "masa",
+      "sha256": "0729796db293f8afeaea65ea5a374e7cf84cac048cf7364431a6628c355444c3",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/masa/models/__init__.py"
+    },
+    {
+      "bytes": 222,
+      "git_blob_matches": true,
+      "git_blob_sha1": "2e99d2e39e59e5eb549844ecd5ae380e2c804907",
+      "path": "masa/models/detectors/__init__.py",
+      "project": "masa",
+      "sha256": "4d4f59c9d9ba7f030ecb01d3329a7a611e600c0af71303877739ce8ed97d3e37",
+      "url": "https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/masa/models/detectors/__init__.py"
+    },
+    {
+      "bytes": 984,
+      "git_blob_matches": true,
+      "git_blob_sha1": "de064dca36a22070483ab928eddab9fc2dcacf0e",
+      "path": "configs/tao.args",
+      "project": "aed",
+      "sha256": "e24004ea8f10a0db7c799319bfaab552ce4e40225dbdf15f2698f6e2bd3660cb",
+      "url": "https://github.com/balabooooo/AED/blob/e9c0c7f1884fdcf76c24747d4f3e8245dcfb1064/configs/tao.args"
+    },
+    {
+      "bytes": 29038,
+      "git_blob_matches": true,
+      "git_blob_sha1": "f5b78375160cf2de664e8efc96d0132cca489612",
+      "path": "datasets/tao_dataset.py",
+      "project": "aed",
+      "sha256": "89f2e003795942b8318ced60d8faa537257b62772f47eb14b3562aac13e1b534",
+      "url": "https://github.com/balabooooo/AED/blob/e9c0c7f1884fdcf76c24747d4f3e8245dcfb1064/datasets/tao_dataset.py"
+    }
+  ],
+  "source_payload_bytes": 96708,
+  "status": "PASS_SOURCE_PREFLIGHT_NOT_FRONTEND_QUALIFICATION"
+}

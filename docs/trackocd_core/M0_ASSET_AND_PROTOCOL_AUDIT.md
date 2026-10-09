@@ -526,3 +526,14 @@ NAS current idol/entrypoint/registry are not byte-identical to upstream despite
 the same HEAD; training YAML is identical. See M1_SIMOWT_TRAINING_CHAIN.md and
 simowt_official_training_source.json. Latest regression 131 tests; primary
 remains unqualified. No new model/data/inference or correction round.
+
+Subsequent alternative preflight: 15 pinned MASA/AED source/config/docs files
+(96,708 B) recovered privately with Git blob/SHA256 verification. A conditional
+MASA-SAM-B native anonymous proposal route is now specified, not executed or
+qualified. Default public-Detic config and future-dependent demo filtering
+cannot be reused as the clean causal frontend. Two optional weights have a
+metadata-only 933,925,642-B ceiling; no weights or environment installed.
+Minimal binary-wheel lock and actual release tensor coverage come first;
+then at most eight Train images under an 8-GiB incremental stop ceiling.
+See M1_MASA_AED_PREFLIGHT.md. Latest regression: 137 pass. No training, Test,
+R2, full Val/cache or claim that AED's frequency-base filter proves legality.
