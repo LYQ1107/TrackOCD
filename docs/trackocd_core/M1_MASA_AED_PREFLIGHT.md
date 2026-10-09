@@ -568,3 +568,30 @@ Post-result regression: **219 passed, no skips**. Final tests also bind the
 published tiny result to immutable model hashes, descriptor tolerance and the
 no-training/no-primary/no-formal-cache boundary. Actual aggregate receipt SHA256
 `cd042110c29be2ea10e8579ef7ca7a22d28150b8956735160e0d832c7278b202`.
+
+## Preregistered fixed-opportunity physical cross-video support diagnostic
+
+Remaining original-goal denominator evidence: the full audit retained per-video
+coverage counts but not target-level geometry matches. Reconstruct only that
+join once from already sealed MASA/PANDAS NPZ and fixed Val annotation, verifying
+every NPZ hash and reproducing each prior per-video Known/Novel coverage count.
+No HOTA rerun, model inference, training, new features or primary freeze.
+
+Use the identical evaluator-only GT opportunity helper: a Novel target is a
+reuse opportunity if its category occurs in a strictly earlier registered
+video, **even if that earlier target was never detected**. Same-video members
+cannot serve as earlier-video sources. Four existing orders and all five prefix
+values are fixed before this statistic. Count how many opportunities have both
+a reliable current identity and an earlier reliable same-category identity
+with at least p observations. All short/missing targets stay in the fixed GT
+denominator; this is full-p physical availability, not a filter on production
+min(p,observed_length) prefixes and not semantic Commit-CT, purity or success.
+One CPU,2GiB host bound/25% RAM headroom,16MiB new-output ceiling; source GT
+join is private evaluator-only and forbidden to models/training/selection.
+Small aggregate tables/hashes only are published after tests and remote prereg.
+
+Preregistration regression **224 passed, no skips**. Both frozen source NPZ
+sets total1,246,900,563 B already in place; no copied images/weights. CPU module
+imports neither Torch nor TrackEval. The shared opportunity helper keeps all
+existing semantic evaluator tests/formulas intact; a caught stale-variable
+refactor error was fixed before real work, not a new representation correction.

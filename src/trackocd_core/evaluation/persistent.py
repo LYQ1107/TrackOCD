@@ -31,18 +31,25 @@ class _History:
             self.mixed = True
 
 
+def fixed_cross_video_targets(targets, video_order) -> tuple:
+    """Evaluator-only GT opportunity universe, independent of physical coverage."""
+    ranks = {v: i for i, v in enumerate(video_order)}
+    if len(ranks) != len(video_order) or any(t.key.video_id not in ranks for t in targets):
+        raise ValueError("Duplicate order or GT target outside the full video universe")
+    first_rank = {}
+    novel = [t for t in targets if t.role == "novel"]
+    for target in novel:
+        first_rank[target.category_id] = min(first_rank.get(target.category_id, ranks[target.key.video_id]),
+                                              ranks[target.key.video_id])
+    return tuple(t for t in novel if ranks[t.key.video_id] > first_rank[t.category_id])
+
+
 def evaluate_persistent(join: EvaluationJoin) -> dict:
-    ranks = {v: i for i, v in enumerate(join.replay.video_order)}
     targets_by_key = {t.key: t for t in join.targets}
     predicted_to_gt = dict(join.matches)
     gt_to_predicted = {gt: pred for pred, gt in join.matches if gt is not None}
     commits = {c.event.physical_key: c for c in join.replay.commits}
-    first_rank = {}
-    novel = [t for t in join.targets if t.role == "novel"]
-    for target in novel:
-        first_rank[target.category_id] = min(first_rank.get(target.category_id, ranks[target.key.video_id]),
-                                              ranks[target.key.video_id])
-    eligible = [t for t in novel if ranks[t.key.video_id] > first_rank[t.category_id]]
+    eligible = fixed_cross_video_targets(join.targets, join.replay.video_order)
     categories_with_reuse = {t.category_id for t in eligible}
     outcomes = Counter()
     matched = non_wait = 0
@@ -109,7 +116,7 @@ def evaluate_persistent(join: EvaluationJoin) -> dict:
     unresolved = outcomes["missed_predicted_opportunity"] + outcomes["wait"]
     return {
         "schema_version": "trackocd.core.persistent_ocd.v1",
-        "all_eligible_novel_gt_tracks": len(novel),
+        "all_eligible_novel_gt_tracks": sum(t.role == "novel" for t in join.targets),
         "fixed_gt_cross_video_reuse_opportunities": denominator,
         "valid_predicted_opportunity_count": matched,
         "non_wait_opportunity_count": non_wait,

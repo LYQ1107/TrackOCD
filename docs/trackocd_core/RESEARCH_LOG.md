@@ -1,5 +1,27 @@
 # TrackOCD core research log
 
+## 2026-10-10 — M1 fixed-opportunity physical support preregistration
+
+- Previous turn was real progress: predicted-box DINO gate completed and
+  delivered0768cc3. Original goal/source reread: strong reliable frontend gate
+  cannot be replaced by engineering success; user quality choice not answered.
+- The current full-Val result lacks target-level joins needed for the original
+  fixed cross-video GT-opportunity denominator. One CPU-only reconstruction on
+  both hash-bound streams supplies new prerequisite support evidence without
+  rerunning models/HOTA/features. All988videos/36375images and the original
+  Known4413/Novel819 target universe retained; every old per-video coverage
+  count must reproduce before publishing. Private GT join is evaluator-only.
+- Share the existing evaluator opportunity definition, including missing prior
+  source and same-video exclusion. Four fixed orders, all five full-p evidence
+  availability diagnostics; no short/missing-target denominator removal or
+  semantic CT/purity/primary-freeze claim. Still min(p,observed) in production.
+- A refactor's obsolete local-variable reference was caught by synthetic
+  regression before real evaluation and fixed without changing formulas or
+  any model/threshold/R1 setting. Final prereg regression **224 passed**, no
+  skips. Import check: no Torch/TrackEval loaded. One CPU,2GiB RAM plan/25%
+  headroom,16MiB new-output cap; existing NPZ1,246,900,563 B read in place,
+  zero image/weight transfer. Tests→commit→push→exactremote before CPU audit.
+
 ## 2026-10-10 — M1 bounded real predicted-box feature gate preregistered
 
 - Full physical audit already delivered at1047150: no primary freeze or main
