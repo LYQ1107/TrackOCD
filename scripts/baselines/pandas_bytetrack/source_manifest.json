@@ -1,0 +1,21 @@
+{
+  "ancestor": "411aed527d5c7999e4c88c10bed9be0ecd7b043d",
+  "actual_source_root": "/data3/liuyeqiang/pandas_bytetrack_tao_val",
+  "pandas_upstream_commit": "9a6bafa728a14f3c7e936f1ee23d53110f362e85",
+  "trackeval_commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "frozen_runtime_sha256": {
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/export_bytetrack_trackeval.py": "f2ce68bfbc3b7a16ffca14103a4bdc1eab240016d55e25d3c2493c8a26f20ac8",
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/pandas_runtime.py": "0b250dbc9737e57eee6434103b1278213ddbb9e9d6efc57d78f2245b276c690f",
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/pandas_torchvision_compat.py": "509e4ddd522655827d5bdd13039908288ad9cf32f73d614bffed7869529de6b8",
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/run_bytetrack_npz.py": "f7c641cf0004b4f6dd0f4155288cb3d3dcc329d40bb6e3968be5fdbf32cd540b",
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/run_pandas_anonymous_inference.py": "b17e6f283f05d3479fa7bddba0cad1fdf87622abf0e529f50e27f9e963bb6c87",
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/run_tao_ow_trackeval.py": "b21dbca3714a3f6456da7b24ca0d92dd699c2ef6b0b7e48c4f0becd33b080a29",
+    "scripts/baselines/pandas_bytetrack/frozen_runtime/tao_data.py": "b944f0ffc94529969098c454ceeabceebf42850ae2c3f4beefe4190554282b5c",
+    "scripts/baselines/pandas_bytetrack/patches/pandas_foreground_score.patch": "fbef6776d218efa22452cd722a347c953a0aa0d7e4175530f89033ef6dda1c8a"
+  },
+  "notes": [
+    "Frozen runtime snapshots are byte-identical source captures, not executable recommendations to repeat inference.",
+    "PANDAS predictor source is available in the pinned upstream; foreground export patch covers the local RoIHeads modifications.",
+    "Legacy run_bytetrack_npz.py contains the recorded server root; the new adapter runner resolves repository paths relatively."
+  ]
+}

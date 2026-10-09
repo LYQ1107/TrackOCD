@@ -1,0 +1,138 @@
+diff --git a/model_components/rcnn_components.py b/model_components/rcnn_components.py
+index e21e834..f7dd83c 100644
+--- a/model_components/rcnn_components.py
++++ b/model_components/rcnn_components.py
+@@ -34,7 +34,7 @@ class RoIHeadsModified(RoIHeads):
+                                         box_regression,  # type: Tensor
+                                         proposals,  # type: List[Tensor]
+                                         image_shapes,  # type: List[Tuple[int, int]]
+-                                        objectnesses,
++                                        foreground_scores=None,
+                                         ):
+         # type: (...) -> Tuple[List[Tensor], List[Tensor], List[Tensor]]
+         device = class_logits.device
+@@ -58,18 +58,39 @@ class RoIHeadsModified(RoIHeads):
+         all_scores = []
+         all_probas = []
+         all_labels = []
+-        all_objectnesses = []
+-
+-        all_boxes, all_scores, all_probas, all_labels = self.postprocess_loop(pred_boxes_list, pred_scores_list,
+-                                                                              image_shapes, num_classes, device,
+-                                                                              all_boxes, all_scores, all_probas,
+-                                                                              all_labels)
+-
+-        return all_boxes, all_scores, all_probas, all_labels, all_objectnesses
+-
+-    def postprocess_loop(self, pred_boxes_list, pred_scores_list, image_shapes, num_classes, device,
+-                         all_boxes, all_scores, all_probas, all_labels):
+-        for boxes, scores, image_shape in zip(pred_boxes_list, pred_scores_list, image_shapes):
++        if foreground_scores is not None:
++            foreground_scores_list = foreground_scores.split(boxes_per_image, 0)
++        else:
++            foreground_scores_list = [None for _ in boxes_per_image]
++        all_foreground_scores = []
++
++        (
++            all_boxes,
++            all_scores,
++            all_probas,
++            all_labels,
++            all_foreground_scores,
++        ) = self.postprocess_loop(
++            pred_boxes_list,
++            pred_scores_list,
++            foreground_scores_list,
++            image_shapes,
++            num_classes,
++            device,
++            all_boxes,
++            all_scores,
++            all_probas,
++            all_labels,
++            all_foreground_scores,
++        )
++
++        return all_boxes, all_scores, all_probas, all_labels, all_foreground_scores
++
++    def postprocess_loop(self, pred_boxes_list, pred_scores_list, foreground_scores_list,
++                         image_shapes, num_classes, device, all_boxes, all_scores,
++                         all_probas, all_labels, all_foreground_scores):
++        for boxes, scores, fg_scores, image_shape in zip(
++                pred_boxes_list, pred_scores_list, foreground_scores_list, image_shapes):
+             boxes = box_ops.clip_boxes_to_image(boxes, image_shape)
+             num_boxes = len(boxes)
+ 
+@@ -112,7 +133,16 @@ class RoIHeadsModified(RoIHeads):
+             all_scores.append(scores)
+             all_probas.append(probas[box_id])  # grab probability vectors for the chosen boxes
+             all_labels.append(labels)
+-        return all_boxes, all_scores, all_probas, all_labels
++            if fg_scores is not None:
++                selected_fg_scores = fg_scores[box_id]
++            else:
++                selected_fg_scores = torch.full(
++                    (len(boxes),),
++                    float("nan"),
++                    device=device,
++                )
++            all_foreground_scores.append(selected_fg_scores)
++        return all_boxes, all_scores, all_probas, all_labels, all_foreground_scores
+ 
+     def forward(self,
+                 features,  # type: Dict[str, Tensor]
+@@ -146,6 +176,21 @@ class RoIHeadsModified(RoIHeads):
+ 
+         box_features = self.box_roi_pool(features, proposals, image_shapes)
+         box_features = self.box_head(box_features)
++
++        foreground_scores = None
++        if (
++            not self.training
++            and hasattr(self.box_predictor, "cls_score_orig")
++            and self.box_predictor.cls_score_orig is not None
++        ):
++            box_features_flat = box_features.flatten(start_dim=1)
++            original_class_logits = self.box_predictor.cls_score_orig(box_features_flat)
++            original_class_probs = torch.softmax(original_class_logits, dim=-1)
++            # The original Faster R-CNN head uses class 0 for background.
++            # This is a detector foreground confidence, not a PANDAS
++            # prototype/semantic score and not RPN objectness.
++            foreground_scores = 1.0 - original_class_probs[:, 0]
++
+         class_logits, box_regression = self.box_predictor(box_features.clone())
+ 
+         result = torch.jit.annotate(List[Dict[str, torch.Tensor]], [])
+@@ -160,9 +205,19 @@ class RoIHeadsModified(RoIHeads):
+             }
+         else:
+             if self.postprocess_type == 'standard':
+-                boxes, scores, probas, labels, objs = self.postprocess_detections_modified(class_logits, box_regression,
+-                                                                                           proposals,
+-                                                                                           image_shapes, objs)
++                (
++                    boxes,
++                    scores,
++                    probas,
++                    labels,
++                    foreground_scores_out,
++                ) = self.postprocess_detections_modified(
++                    class_logits,
++                    box_regression,
++                    proposals,
++                    image_shapes,
++                    foreground_scores=foreground_scores,
++                )
+             else:
+                 raise NotImplementedError
+ 
+@@ -172,7 +227,8 @@ class RoIHeadsModified(RoIHeads):
+                     "boxes": boxes[i],
+                     "labels": labels[i],
+                     "scores": scores[i],
+-                    "probas": probas[i]
++                    "probas": probas[i],
++                    "foreground_scores": foreground_scores_out[i],
+                 }
+                 if objs != []:
+                     results_dict["objs"] = objs[i]
