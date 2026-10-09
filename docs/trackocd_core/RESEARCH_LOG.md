@@ -167,3 +167,17 @@
 - Resources: one CPU worker, 1.445 s, 677.14-MiB peak, no learning/GPU,
   Val/Test or foreign process changes. Regression: 119 tests pass. Next:
   bounded A0/A1/A2 Train-only GT feasibility with category-held-out fitting.
+
+## 2026-10-10 — Bounded A0/A1/A2 feasibility fit preregistration
+
+- Only 12 representation-fit Known GT tracks / 192 observations may enter
+  learning; prototype/policy/heldout tracks do not. Encoder/physical frontend
+  remain frozen. Three seeds, 120 steps/model/seed, 600-s total bound.
+- A1 is 525,056-param adapter/mean; A2 adds 16,833-param causal evidence and
+  synthetic reliability supervision. Identical inputs/adapter initialization
+  per seed, category-level cross-video positives, no genuine Novel/Val/Test.
+- Keep original baseline gates; disclose post-adaptation calibration and
+  auxiliary-loss/capacity confounds. Save all fixed-step results, no tuning or
+  correction round. Small GT feasibility is not formal M5/M8/M9/M11 PASS.
+- Baseline CSV formatting-only LF normalization leaves numeric cells/raw
+  sealed decisions unchanged; original run-source hashes are preserved.

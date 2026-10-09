@@ -152,7 +152,7 @@ def main() -> int:
     atomic_json(output / "results.json", receipt)
     atomic_json(ROOT / "outputs/trackocd_core/audit/gt_pilot_baselines.json", receipt)
     csv_buffer = io.StringIO()
-    writer = csv.DictWriter(csv_buffer, fieldnames=list(aggregate[0]))
+    writer = csv.DictWriter(csv_buffer, fieldnames=list(aggregate[0]), lineterminator="\n")
     writer.writeheader()
     writer.writerows(aggregate)
     atomic_write_text(ROOT / "outputs/trackocd_core/audit/GT_PILOT_BASELINE_COMPARISON.csv", csv_buffer.getvalue())
