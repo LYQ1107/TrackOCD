@@ -353,3 +353,30 @@
   M1 remains BLOCKED_FRONTEND_QUALITY; complete supervision binding and a new
   explicit bounded physical quality/coverage/pollution preregistration come next.
   Completed smoke is preserved and cannot be automatically rerun for tuning.
+
+## 2026-10-10 — Published training trace and physical-diagnostic preregistration
+
+- Revalidated exact clean `7fb6fef` delivery. Previous goal turn is real progress:
+  completed isolated install and actual frozen/causal eight-forward smoke.
+- Six pinned small sources/docs, 32,848 B (four new, 25,116 B): SA-1B generic
+  leaf, converter category1 and generic dataset metadata verified by AST only.
+  Published model-zoo link/no-in-domain assertion verified. No SAM-B train
+  configuration in complete tree; documented converter filename absent, supplied
+  training model GroundingDINO. Exact SAM release-stage binding still missing;
+  no forbidden-supervision assertion, upstream execution or data/weight download.
+- Current Val GT and historical PANDAS canonical GT symlink have identical
+  43,639,943 bytes/SHA256. Preserve canonical TAO_OW partial-annotation rules;
+  don't substitute ordinary box-HOTA or remove unmatched outputs ourselves.
+- Separate fixed M1 diagnostic: first ascending Val video IDs4/20/22/23, each
+  first16 image metadata rows;64 forwards max, no GT-driven sample selection.
+  Prediction/GT evaluator separated; compact outputs sealed first. Native
+  model/weights unchanged, no threshold search or repeated completed smoke.
+- Raw unknown observations are not proven false positives/background; track
+  category/identity mixing is posthoc geometric evidence, not semantic memory
+  input or universal purity. All selected GT targets and zero denominators kept.
+- PANDAS same-image projection retains different dense-frame history/cadence;
+  not a fair same-input association ablation or formal OCD comparison.
+- Unchanged canonical adapter's fresh-process synthetic perfect fixture gives
+  HOTA/AssA/DetA/DetRe=1; no real Val prediction/GT match has run at preregistration.
+- Regression185 pass. Preregister and verify remote before bounded inference;
+  no full-Val/cache, training, Test, primary freeze or M9 score from this pilot.

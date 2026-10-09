@@ -1,0 +1,86 @@
+{
+  "actual_converter_filename": "tools/format_conversion/convert_sam_2_cocofmt.py",
+  "boundary": {
+    "dataset_or_weight_download": false,
+    "foreign_process_interference": false,
+    "gt_or_test_access": false,
+    "model_execution": false,
+    "training_json_opened": false,
+    "upstream_code_executed": false
+  },
+  "checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+  "documented_converter_filename_present": false,
+  "exact_checkpoint_stage_config_supervision_binding_verified": false,
+  "forbidden_supervision_proven": false,
+  "generated_utc": "2026-10-09T21:44:54.333383+00:00",
+  "no_in_domain_training_claim_scope": "Official model-zoo/train docs, not checkpoint-saved source/config/training-data ledger",
+  "official_model_zoo_links_exact_sam_checkpoint_filename": "sam_vitb_masa.pth",
+  "primary_freeze_permitted_by_this_audit": false,
+  "published_route": {
+    "all_selected_leaf_paths_are_sa1b": true,
+    "converted_category_ids": [
+      1,
+      1
+    ],
+    "converter_assigns_one_generic_category": true,
+    "generic_object_metadata_only": true,
+    "scope": "Published GroundingDINO training template/data converter; not a SAM-B checkpoint training config",
+    "training_dataset_leaves": [
+      {
+        "ann_file": "data/sam/sam_annotations/jsons/sa1b_coco_fmt_500k_bbox_anno.json",
+        "data_prefix": {
+          "img": "data/sam/batch0/"
+        },
+        "type": "MASADataset"
+      }
+    ],
+    "training_fixed_length": 200000
+  },
+  "resources": {
+    "peak_rss_bytes": 19243008,
+    "wall_seconds": 0.007102611009031534
+  },
+  "sam_training_config_paths_in_complete_pinned_tree": [],
+  "schema_version": "trackocd.core.masa_training_route.v1",
+  "source_bytes": 32848,
+  "source_commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+  "source_files": [
+    {
+      "bytes": 4540,
+      "git_blob_sha1": "38f4fe12749850e4ce1e9a63a57d3d571a4f49fa",
+      "path": "docs/train.md",
+      "sha256": "8c463eeb0d79b9b78c729fb7bcbf98ffbc55c6c043d72538bea9acb32d685871"
+    },
+    {
+      "bytes": 3192,
+      "git_blob_sha1": "bf8fbdc7f9e5eca061792dd45fe3c23d1f2f3184",
+      "path": "docs/model_zoo.md",
+      "sha256": "8cbae57a4a990f9c8890b96bc7ded04926dfeba4f302734c4e2208fcbf1af4d3"
+    },
+    {
+      "bytes": 8447,
+      "git_blob_sha1": "82cfd3e790c25d7d72cf6f16ef417eb9e8526944",
+      "path": "configs/masa-gdino/masa_gdino_swinb_train.py",
+      "sha256": "aa5310dc6225341e81dc1514dafdc22d9e0f32f30a3ee2b98b9f1e86ecd2636c"
+    },
+    {
+      "bytes": 3467,
+      "git_blob_sha1": "e656da18e833f93e86451c1ef161407057ef77c1",
+      "path": "configs/datasets/masa_dataset.py",
+      "sha256": "8f443d6634c9b8a99f489e794441ecd8a98712ad405fac76d29f6397dcc78a4a"
+    },
+    {
+      "bytes": 9989,
+      "git_blob_sha1": "dfc22b60490933e40d98cbbb96a616b13d2aacd1",
+      "path": "masa/datasets/masa_dataset.py",
+      "sha256": "519b155a2930cbeb2ac3cbadaa504ab8d5a7bb85abe0599f53f5d8c61c9bfd51"
+    },
+    {
+      "bytes": 3213,
+      "git_blob_sha1": "3cd86c5bd49078a214c570e2e13b5ee11e03764b",
+      "path": "tools/format_conversion/convert_sam_2_cocofmt.py",
+      "sha256": "47b6341b30ff4d6872f957cafb2c8ac18060e1decbba2e3f9c53038842f1db1e"
+    }
+  ],
+  "status": "PUBLISHED_GENERIC_ROUTE_VERIFIED_EXACT_SAM_RELEASE_STAGE_BINDING_MISSING"
+}

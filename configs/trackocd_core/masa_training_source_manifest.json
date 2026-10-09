@@ -1,0 +1,40 @@
+{
+  "schema_version": "trackocd.core.masa_training_source_manifest.v1",
+  "repository": "https://github.com/siyuanliii/masa",
+  "commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+  "complete_tree_blob_count": 1327,
+  "sam_b_training_config_paths": [],
+  "documented_converter_path_present": false,
+  "files": [
+    {
+      "path": "docs/train.md",
+      "bytes": 4540,
+      "git_blob_sha1": "38f4fe12749850e4ce1e9a63a57d3d571a4f49fa"
+    },
+    {
+      "path": "docs/model_zoo.md",
+      "bytes": 3192,
+      "git_blob_sha1": "bf8fbdc7f9e5eca061792dd45fe3c23d1f2f3184"
+    },
+    {
+      "path": "configs/masa-gdino/masa_gdino_swinb_train.py",
+      "bytes": 8447,
+      "git_blob_sha1": "82cfd3e790c25d7d72cf6f16ef417eb9e8526944"
+    },
+    {
+      "path": "configs/datasets/masa_dataset.py",
+      "bytes": 3467,
+      "git_blob_sha1": "e656da18e833f93e86451c1ef161407057ef77c1"
+    },
+    {
+      "path": "masa/datasets/masa_dataset.py",
+      "bytes": 9989,
+      "git_blob_sha1": "dfc22b60490933e40d98cbbb96a616b13d2aacd1"
+    },
+    {
+      "path": "tools/format_conversion/convert_sam_2_cocofmt.py",
+      "bytes": 3213,
+      "git_blob_sha1": "3cd86c5bd49078a214c570e2e13b5ee11e03764b"
+    }
+  ]
+}

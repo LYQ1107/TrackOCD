@@ -246,3 +246,48 @@ No training, Val/Test job, threshold search, R2, GT policy expansion or formal
 M1/M9/M11 PASS occurred. Complete checkpoint-stage supervision provenance and
 an explicit bounded physical coverage/pollution evaluation remain required.
 Do not automatically rerun the completed smoke or escalate to full Val/cache.
+
+## Published supervision trace and fixed bounded physical diagnostic
+
+Continuation 2026-10-10: six pinned source/doc files (**32,848 B**, four new
+files **25,116 B**) seal the published training-route audit. The training data
+template has one SA-1B leaf, generic bbox annotations and synthetic paired-view
+augmentation. Both converter bbox/segmentation rows assign category 1; dataset
+metadata is generic `object`. The model zoo explicitly links `sam_vitb_masa.pth`
+and describes no in-domain training. These are published route assertions,
+not a checkpoint-saved training ledger. The complete pinned tree has **no
+SAM-B training configuration**; the documented `convert_sa1b_to_coco.py`
+filename is absent, while `convert_sam_2_cocofmt.py` is present. The supplied
+train model is GroundingDINO, not an exact SAM-B release configuration.
+`masa_training_route.json` preserves this missing binding without claiming
+forbidden supervision. No dataset converter, training script or data pack ran.
+
+A separate M1 diagnostic is preregistered in `masa_physical_diagnostic.json`:
+ascending Val video IDs **4/20/22/23**, each first 16 chronological image-metadata
+rows, **64 images maximum**. Selection never inspects GT category/track/annotation
+fields, substitutes a video, or expands based on later Novel support. Current
+Val GT is byte-identical to the prior PANDAS canonical GT symlink: SHA256
+`0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee`.
+
+This is **not a rerun of the consumed eight-forward smoke**, full-Val/M9,
+semantic model selection/training, tracker tuning, a second representation
+correction or primary freeze. Released weights and native model config are
+unchanged. A remote-verified preregistration is required before execution.
+The prediction worker denies GT/role/Test reads and network/external children;
+only current pixels/geometry/ordinal reach the frozen model. Four compact NPZ
+files are sealed before a fresh evaluator opens GT. Evaluation uses the existing
+unchanged canonical TAO_OW adapter (all classes, cap300), fixed temporal-IoU
+coverage matching, annotated-clip lengths and posthoc category/identity mixing.
+Unknown unmatched observations cannot certify purity or prove background.
+
+The frozen PANDAS FG-0 projection uses identical scoring images and GT, but
+retains its dense-frame association/prehistory. Native association starts at the
+first selected annotated image and uses annotated-only ordinal cadence. This
+is a physical-route diagnostic, **not a matched-input association ablation**.
+Length statistics refer only to the selected projection, not whole-video track
+lifetimes. No four-clip result, however favorable, can establish full-Val coverage,
+universal causality, legal released-stage supervision or M1 qualification.
+Zero role denominators remain null, and all empty/failing clips are retained.
+No TETA/OWTA is invented. An actual unchanged-canonical-adapter synthetic
+perfect-track fixture has HOTA/AssA/DetA/DetRe=1. Preregistration regression:
+**185 tests pass**.
