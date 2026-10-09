@@ -1,5 +1,25 @@
 # OCD_OVMOT — MOT + On-the-fly Category Discovery
 
+## A100 TrackOCD v2 recovery / current core research
+
+The later NAS v2 implementation was recovered from
+`codex/trackocd-v2-nas-recovery` at `604d7eff` (81 source/test/config files).
+The ongoing core branch is `codex/trackocd-track-conditioned-persistent-discovery`;
+main's historical Phase88/89/90 results are not the latest v2 experiment.
+See `docs/trackocd_core/M0_ASSET_AND_PROTOCOL_AUDIT.md` for verified recovery
+evidence and remaining assets. Exact NAS source files retain legacy paths and
+Test-capable entrypoints: **do not run the old supervisor or the end-to-end
+command below as an A100 recovery command**. The current core goal forbids TAO
+Test entirely and does not authorize automatic full caching or training.
+
+Migration checks use the existing `trackocd-a100` environment:
+
+```bash
+source /data3/liuyeqiang/trackocd_a100_env.sh
+python scripts/trackocd_core/verify_recovered_source.py
+python -m pytest -q tests/trackocd_core tests/trackocd_v2
+```
+
 Architecture 1 verification: **Track-then-Discover** on TAO-OW, with SimOWT as
 the tracking frontend, PHE as the discovery frontend (adapted to track
 embeddings), frozen DINOv2/CLIP features, and official TrackEval for tracking.

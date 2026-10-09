@@ -11,6 +11,19 @@ def _decision(row: Mapping) -> tuple[str, str | None]:
     return str(decision.get("kind", "DEFER")), decision.get("token")
 
 
+def _evaluator_track_key(row: Mapping) -> str:
+    """Return the evaluator-side physical-track identity.
+
+    Predicted rows are matched to a GT track only after the causal pass.  The
+    join records that GT key explicitly; falling back to ``sample_key`` keeps
+    ordinary GT streams unique even when a dataset reuses a local track ID in
+    another video.
+    """
+
+    value = row.get("evaluator_track_key", row.get("sample_key", row.get("physical_track_id")))
+    return str(value)
+
+
 def evaluate_persistent(
     rows: Sequence[Mapping],
     decisions: Sequence[Mapping] | None = None,
@@ -35,16 +48,31 @@ def evaluate_persistent(
     for row in rows:
         category = int(row["gt_category_id"])
         if category in novel and category not in distractor:
-            category_tracks[category].add(str(row["physical_track_id"]))
+            category_tracks[category].add(_evaluator_track_key(row))
             category_videos[category].add(int(row["video_id"]))
     persistent_categories = {c for c in category_tracks if len(category_tracks[c]) >= 2 and len(category_videos[c]) >= 2}
 
     token_history: defaultdict[str, list[tuple[int, int, str]]] = defaultdict(list)
-    # This history is evaluator-only.  It defines when a later row is a
-    # cross-video reuse opportunity without exposing the category to a method.
-    gt_history: list[tuple[int, int]] = []
+    # Eligibility is defined by the registered stream order, not by the order
+    # in which a predicted frontend happened to produce matched rows.  This
+    # matters for end-to-end scoring: an unobserved GT source must still make a
+    # later target eligible, while its missing prediction contributes no token
+    # and therefore cannot make the target correct.  The optional field is
+    # evaluator-only and is absent on the ordinary GT path, where list order
+    # remains the registered order.
+    eligibility_order = sorted(
+        enumerate(rows),
+        key=lambda item: (int(item[1].get("gt_stream_order", item[0])), item[0]),
+    )
+    seen_gt_by_category: defaultdict[int, list[tuple[int, int]]] = defaultdict(list)
+    eligible_by_row: dict[int, bool] = {}
+    for row_index, row in eligibility_order:
+        category = int(row["gt_category_id"])
+        video_id = int(row["video_id"])
+        eligible_by_row[row_index] = any(previous_video != video_id for _, previous_video in seen_gt_by_category[category])
+        seen_gt_by_category[category].append((row_index, video_id))
     eligible = correct = false_assignment = unresolved = 0
-    for row, decision in zip(rows, decisions):
+    for row_index, (row, decision) in enumerate(zip(rows, decisions)):
         category = int(row["gt_category_id"])
         if category in distractor or category not in known and category not in novel:
             continue
@@ -53,8 +81,7 @@ def evaluate_persistent(
         token = None if token is None else str(token)
         prior = token_history[token] if token is not None else []
         prior_same_category_other_video = any(c == category and v != video_id for c, v, _ in prior)
-        earlier_same = any(c == category and v != video_id for c, v in gt_history)
-        if category in persistent_categories and earlier_same:
+        if category in persistent_categories and eligible_by_row.get(row_index, False):
             eligible += 1
             if token is None or kind == "DEFER":
                 unresolved += 1
@@ -62,7 +89,6 @@ def evaluate_persistent(
                 correct += 1
             else:
                 false_assignment += 1
-        gt_history.append((category, video_id))
         if token is not None and kind != "DEFER":
             token_history[token].append((category, video_id, kind))
 

@@ -6,6 +6,11 @@ track keeps one DINOv2 descriptor per public observation, plus quality-
 weighted causal aggregates for ``full`` and prefixes 1/2/4/8/16.  No
 category, split role, or semantic label is read by the encoder.
 
+This file is retained for the completed GT Train/Val cache and diagnostic
+compatibility.  The legacy predicted route is intentionally disabled: after
+frontend selection, formal predicted features must use the sharded cache
+builder rather than resuming a million-small-file layout.
+
 This command is a bounded supervisor in its own right.  It selects only
 GPUs with no compute applications, starts at most four one-GPU workers, and
 leaves completion evidence per track so an interrupted run can resume.
@@ -392,6 +397,14 @@ def main() -> int:
         raise SystemExit("--workers must be between 1 and 4")
     if args.batch < 1 or args.batch > 64:
         raise SystemExit("--batch must be between 1 and 64")
+    if args.split == "pred":
+        print(
+            "PREDICTED_LEGACY_FEATURE_BUILD_DISABLED: formal predicted features "
+            "must use the post-selection sharded cache builder; the paused "
+            "legacy per-track JSON route will not resume",
+            file=sys.stderr,
+        )
+        return 3
     ensure_output_layout()
     rows = load_rows(args.split)
     hub = args.model_repo or next((path for path in DEFAULT_HUBS if path.is_dir()), DEFAULT_HUBS[0])

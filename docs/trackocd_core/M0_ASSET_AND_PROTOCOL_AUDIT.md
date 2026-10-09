@@ -1,8 +1,9 @@
 # M0 — TrackOCD core asset and protocol audit
 
 Initial audit: 2026-10-09 (Asia/Shanghai); continuation recorded in UTC below.
-Engineering audit and first four-commit GitHub delivery: **PASS**. Recovery of
-historical research assets: **PARTIAL / BLOCKED ON EXACT SOURCE TRANSFER**.
+Engineering audit and prior GitHub delivery: **PASS**. Exact later v2 source:
+**81/81 NAS/Git/A100 byte identities verified**. Historical runtime assets:
+**PARTIAL; metadata, physical streams and feature payloads not transferred**.
 Algorithm hypotheses: **NOT TESTED**.
 No new training, feature extraction, tracking inference or TAO Test access has
 been performed in M0.
@@ -390,3 +391,51 @@ was task-owned and removed automatically; no existing cache was removed.
 Old hub code and the exact later v2 source/metadata remain pending.
 This is **M0 engineering progress only**, not completion of M1 or any scientific
 gate, and the real 255-shard cache remains partial and unvalidated in content.
+
+## Exact NAS source recovery — 2026-10-10 (Asia/Shanghai)
+
+Remote branch `codex/trackocd-v2-nas-recovery` independently resolves to
+`604d7eff50e2db386b597ec81690f16d0b40885e`. Only that branch was fetched.
+The source-side delivery turn `01a121ab-161b-77a0-8c92-d74972d8306a` recorded
+Git blob hashes before and after delivery: all 81 agree. NAS original HEAD
+remains `24907fe1d6a2c296de06732392deb1c2eda9c23d`; its index digest was also
+reported unchanged. This recovers source bytes, **not the full old Git history**.
+
+The recovery commit's actual parent is main `7b1d3c0`, not the requested old-v2
+base. Its exact diff nevertheless contains only the registered 81 v2 files:
+65 implementation/entrypoint files, 15 synthetic test files, one protocol JSON,
+642,256 bytes. No blanket merge was performed. Only these exact files were
+materialized into the existing research branch: 50 added, nine updated, 22
+already identical. Main, original v2, prior research commits and both recovery
+stashes are preserved. `nas_source_delivery.json` records the source evidence;
+`verify_recovered_source.py` independently checks Git tree identity and all
+A100 bytes, adding SHA256 values in `source_recovery.json`.
+
+The recovered sharded builder really contains cross-track batching; the
+predicted runner really seals/resumes each prefix atomically. The newer
+persistent evaluator fixes track namespacing and the runner supplies unmatched
+GT targets as DEFER under a fixed denominator. These findings supersede the
+initial audit of `cac6646`. Remaining limitations are real: Standard OCD still
+remaps Known tokens by Hungarian; contaminated-token reuse is still accepted;
+wrong NEW/EXISTING/KNOWN are not separately scored; track-prefix replay is not
+a proof of event-time online causality. M3 must use a separate core evaluator,
+not silently reinterpret historical scores or overwrite the legacy evaluator.
+
+First A100 synthetic run: **43 PASS / 2 FAIL**. The failures expose old server
+assumptions: the sharded preflight test calls `ensure_output_layout()` before
+its gate and attempts the old `/data2` mount (permission denied; no output
+created), and the ownership test hardcodes the old root. A separate
+`tests/trackocd_v2/conftest.py` redirects synthetic I/O to pytest tmp directories
+and simulates that ownership fixture's root. All 81 recovered files remain
+byte-identical; no old runner was launched. The corrected migration suite plus
+source-identity tests now reports **48 PASS** on the existing Python 3.10 /
+torch 2.6 / PyArrow 25 stack. This is compatibility evidence, not model inference.
+
+No training, full cache extraction, tracking run or TAO Test data access took
+place. The old output paths, missing native environments/hub code, legacy
+Test-after-freeze stages and historical PID markers must not be executed as
+new-server recovery. DINO weight and PyArrow are available; exact embedding
+code lineage and actual cache numerical/Parquet values remain unverified.
+`research_log.md`, project reports and runtime frontend/representation provenance
+were excluded from the source commit and are still required as a small,
+Val-only metadata follow-up. No cache completion or frontend freeze is claimed.

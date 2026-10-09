@@ -42,9 +42,12 @@ def _json(path: Path) -> dict[str, Any]:
     return value
 
 
-def _counts(value: dict[str, Any]) -> dict[str, int]:
+def _counts(value: dict[str, Any], *, include_categories: bool = True) -> dict[str, int]:
     result = {}
-    for key in ("videos", "images", "annotations", "categories", "tracks"):
+    keys = ("videos", "images", "annotations", "tracks")
+    if include_categories:
+        keys = (*keys[:3], "categories", keys[3])
+    for key in keys:
         values = value.get(key)
         if not isinstance(values, list):
             raise ValueError(f"missing list {key}")
@@ -54,15 +57,19 @@ def _counts(value: dict[str, Any]) -> dict[str, int]:
 
 def _file_record(path: Path, *, structural_only: bool) -> dict[str, Any]:
     value = _json(path)
-    return {
+    record = {
         "path": str(path.resolve()),
         "sha256": sha256_file(path),
         "schema": sorted(value.keys()),
-        "counts": _counts(value),
-        "category_id_min": min((int(x["id"]) for x in value.get("categories", [])), default=None),
-        "category_id_max": max((int(x["id"]) for x in value.get("categories", [])), default=None),
+        "counts": _counts(value, include_categories=not structural_only),
         "structural_only": structural_only,
     }
+    if not structural_only:
+        record.update({
+            "category_id_min": min((int(x["id"]) for x in value.get("categories", [])), default=None),
+            "category_id_max": max((int(x["id"]) for x in value.get("categories", [])), default=None),
+        })
+    return record
 
 
 def _split_record(path: Path, values: set[int]) -> dict[str, Any]:
@@ -93,6 +100,9 @@ def main() -> None:
         "git_head": __import__("subprocess").check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
         "train_annotation": _file_record(TRAIN, structural_only=False),
         "val_annotation": _file_record(VAL, structural_only=False),
+        # This is a structural lineage record only.  Category fields are not
+        # exported to the v2 public Test manifest before FINAL_FREEZE.
+        "test_annotation": _file_record(TEMPO_TEST, structural_only=True),
         "test_annotation_lineage": {
             "tempo_track_primary": _file_record(TEMPO_TEST, structural_only=True),
             "official_tao_raw": _file_record(TAO_TEST_RAW, structural_only=True),

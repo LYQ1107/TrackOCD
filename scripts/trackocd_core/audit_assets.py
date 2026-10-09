@@ -152,15 +152,21 @@ def main() -> int:
     stat = __import__('os').statvfs(ROOT)
     source_audit_path = ROOT / 'outputs/trackocd_core/audit/nas_source_audit.json'
     source_audit = json.loads(source_audit_path.read_text()) if source_audit_path.is_file() else None
+    source_recovery_path = ROOT / 'outputs/trackocd_core/audit/source_recovery.json'
+    source_recovery = json.loads(source_recovery_path.read_text()) if source_recovery_path.is_file() else None
+    recovered_source = {row['path']: row for row in source_recovery['files']} if source_recovery else {}
     source_comparison = []
     for entry in source_audit['source_code']['inventory'] if source_audit else []:
         local = file_record(ROOT / entry['relative_path'])
-        classification = ('MISSING_LOCAL' if not local['exists'] else
+        recovered = recovered_source.get(entry['relative_path'])
+        exact = bool(recovered and local.get('sha256') == recovered['sha256'])
+        classification = ('EXACT_NAS_SOURCE_BYTES' if exact else
+                          'MISSING_LOCAL' if not local['exists'] else
                           'DIFFERENT_BYTE_SIZE' if local.get('size_bytes') != entry['size_bytes'] else
                           'SAME_SIZE_NOT_BYTE_IDENTITY_PROOF')
         source_comparison.append({'relative_path': entry['relative_path'],
                                   'source_size_bytes': entry['size_bytes'],
-                                  'source_sha256': None, 'local_file': local,
+                                  'source_sha256': recovered['sha256'] if recovered else None, 'local_file': local,
                                   'classification': classification})
     checkpoint_receipt_path = ROOT / 'outputs/trackocd_core/audit/dino_checkpoint_recovery.json'
     checkpoint_receipt = json.loads(checkpoint_receipt_path.read_text()) if checkpoint_receipt_path.is_file() else None
@@ -213,6 +219,12 @@ def main() -> int:
             'source_comparison_counts': dict(Counter(row['classification'] for row in source_comparison)),
             'not_a_file_transfer_or_frontend_freeze': True,
         },
+        'exact_source_recovery': {
+            'receipt': file_record(source_recovery_path),
+            'details': source_recovery,
+            'supersedes_original_source_audit_missing_bytes': bool(source_recovery),
+            'frontend_or_feature_cache_recovered': False,
+        },
         'dino_checkpoint_recovery': {
             'receipt': file_record(checkpoint_receipt_path),
             'details': checkpoint_receipt,
@@ -230,11 +242,15 @@ def main() -> int:
         'legacy_evaluation_limitations': [
             'persistent evaluator accepts contaminated tokens after any same-category history',
             'NEW, wrong EXISTING and wrong KNOWN are collapsed into false assignment',
-            'physical local IDs are not namespaced by video in category-track eligibility',
-            'predicted evaluator denominator comes from matched join, not all GT opportunities',
             'standard evaluator remaps KNOWN tokens together with anonymous tokens',
             'whole-track ordering/prefix means do not prove truly frame-online replay',
         ],
+        'restored_legacy_fixes_verified_in_source': [
+            'persistent eligibility uses evaluator_track_key/sample_key, not bare local physical ID',
+            'predicted denominator includes all GT targets and represents unmatched targets as DEFER',
+            'formal builder fills DINO batches across track boundaries',
+            'predicted runner seals and resumes independent prefixes atomically',
+        ] if source_recovery else [],
         'training_permitted_now': False,
         'test_annotation_opened': False, 'external_process_interference': False,
         'large_assets_copied': False,

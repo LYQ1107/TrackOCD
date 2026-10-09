@@ -19,11 +19,8 @@ STAGES = (
     "GT_CURRENT_MODEL",
     "GT_BENCHMARK_TABLE",
     "PREDICTED_STREAM_BUILD",
-    "PRED_NEAREST",
-    "PRED_DPMEANS",
-    "PRED_PHE",
-    "PRED_CURRENT_MODEL",
-    "OCD_BASELINE_EXTENSIONS",
+    "PREDICTED_STREAM_METADATA_AUDIT",
+    "PREDICTED_SANITY_BENCHMARK",
     "FRONTEND_AUDIT",
     "FRONTEND_SIMOWT",
     "FRONTEND_OVTR",
@@ -31,11 +28,19 @@ STAGES = (
     "FRONTEND_COVTRACK_NOSEM",
     "FRONTEND_SELECTION",
     "REPRESENTATION_DECISION",
+    "FORMAL_PREDICTED_FEATURE_CACHE",
+    "PRED_NEAREST",
+    "PRED_DPMEANS",
+    "PRED_PHE",
+    "PRED_CURRENT_MODEL",
+    "OCD_BASELINE_EXTENSIONS",
     "SEMANTIC_ADAPTER",
     "CONTROLLER_DECISION",
     "SAFE_CONTROLLER",
     "VAL_FINAL_SELECTION",
     "FINAL_FREEZE",
+    "TAO_TEST_FRONTEND",
+    "TAO_TEST_FEATURE_CACHE",
     "TAO_TEST_STANDARD_OCD",
     "TAO_TEST_PERSISTENT",
     "TAO_TEST_TRACKING",
@@ -68,5 +73,11 @@ def assert_test_semantic_access_allowed(final_freeze: Path | None, purpose: str)
     before loading Test labels.
     """
 
-    if final_freeze is None or not final_freeze.exists():
+    if final_freeze is None or not final_freeze.is_file():
         raise RuntimeError(f"TEST_SEMANTIC_LEAKAGE_FORBIDDEN: {purpose}")
+    try:
+        payload = json.loads(final_freeze.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"TEST_SEMANTIC_LEAKAGE_FORBIDDEN: invalid final freeze for {purpose}") from exc
+    if payload.get("status") != "FINAL_FREEZE" or payload.get("test_semantic_accessed") is not False:
+        raise RuntimeError(f"TEST_SEMANTIC_LEAKAGE_FORBIDDEN: final freeze is not valid for {purpose}")

@@ -60,6 +60,40 @@ def metric_rows(name: str, path: Path, payload: dict[str, Any]) -> list[dict[str
     return rows
 
 
+def markdown_table(rows: list[dict[str, Any]], current: dict[str, Any]) -> str:
+    lines = [
+        "# TAO Val GT-track TrackOCD v2 benchmark",
+        "",
+        "All numeric rows use the same visual cache, four fixed stream orders, one global Hungarian Standard OCD mapping, and the full-stream Persistent evaluator.",
+        "",
+        "| Method | Prefix | Old ACC | New ACC | H-score | Commit-CT | False Assignment | Status |",
+        "|---|---:|---:|---:|---:|---:|---:|---|",
+    ]
+    for row in rows:
+        lines.append(
+            "| {method} | p{prefix} | {old:.6f} | {new:.6f} | {h:.6f} | {ct:.6f} | {far:.6f} | COMPLETE |".format(
+                method=row["method"],
+                prefix=row["prefix"],
+                old=row["standard_old_acc"],
+                new=row["standard_new_acc"],
+                h=row["standard_h_score"],
+                ct=row["persistent_commit_ct"],
+                far=row["persistent_false_assignment_rate"],
+            )
+        )
+    lines.append(
+        "| Current-H3/H2 legacy checkpoint | all | NA | NA | NA | NA | NA | EXCLUDED_NOT_COMPARABLE |"
+    )
+    lines.extend([
+        "",
+        "The historical H2/H3 checkpoint is retained as provenance but is not assigned a v2 metric because its raw/geometry contract differs from the v2 representation. No number is fabricated.",
+        "",
+        f"Current-model contract: `{current.get('decision')}`.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
 def main() -> int:
     out = ensure_output_layout()
     files = {
@@ -87,7 +121,10 @@ def main() -> int:
     writer = csv.DictWriter(csv_buffer, fieldnames=fields)
     writer.writeheader()
     writer.writerows({key: row[key] for key in fields} for row in rows)
-    atomic_write_text(out / "tables/gt_benchmark_table.csv", csv_buffer.getvalue())
+    csv_text = csv_buffer.getvalue()
+    atomic_write_text(out / "tables/gt_benchmark_table.csv", csv_text)
+    atomic_write_text(out / "tables/gt_track_ocd_val.csv", csv_text)
+    atomic_write_text(out / "tables/gt_track_ocd_val.md", markdown_table(rows, current))
     result = {
         "schema_version": "trackocd.v2.gt_benchmark_table.v1",
         "status": "COMPLETE",

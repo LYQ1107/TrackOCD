@@ -1,0 +1,427 @@
+{
+  "schema_version": "trackocd.core.nas-source-delivery.v1",
+  "source_host": "remote-ssh-discovered:nas57",
+  "source_root": "/home/Valadmin/A100/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT",
+  "evidence_thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+  "evidence_turn_id": "01a121ab-161b-77a0-8c92-d74972d8306a",
+  "evidence_before_item": "exec-c162f848-6321-47f5-96ff-bf00c09a0083",
+  "evidence_after_item": "exec-6bf9a749-5409-4b5b-9a72-fd48850856a9",
+  "recovery_branch": "codex/trackocd-v2-nas-recovery",
+  "recovery_commit": "604d7eff50e2db386b597ec81690f16d0b40885e",
+  "source_worktree_head": "24907fe1d6a2c296de06732392deb1c2eda9c23d",
+  "source_index_sha256": "1c1a3ab4c17a80dd91d73d6023516f2123202746e9c50839429dac853004f16e",
+  "file_count": 81,
+  "total_bytes": 642256,
+  "files": [
+    {
+      "path": "configs/trackocd_v2/protocol.json",
+      "bytes": 1038,
+      "git_blob_sha": "166ecd4e9a3cbc8b7f403b1b8c37e70c52a89f49"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_canonical_tao.py",
+      "bytes": 6308,
+      "git_blob_sha": "23f19420b3f0097fed463591c221073cd2fc2e0e"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_common_features.py",
+      "bytes": 7653,
+      "git_blob_sha": "e489bf4f5af728fef2ab4152f51732df4335326d"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_current_model_contract.py",
+      "bytes": 6201,
+      "git_blob_sha": "4e983b76e466f2f069a62ce27d549a16a53cef9c"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_external_ocd_baselines.py",
+      "bytes": 6172,
+      "git_blob_sha": "2e3f848c0aabc04300703391e32a68c7b9c5df94"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_frontend_assets.py",
+      "bytes": 11988,
+      "git_blob_sha": "e64294379369bcf370ec18750361e518cb4f149a"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_geometry.py",
+      "bytes": 13484,
+      "git_blob_sha": "f21f8157d90a7d7316f83ebda9442d913b46846b"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_predicted_current_model.py",
+      "bytes": 1965,
+      "git_blob_sha": "0bb1f3f7c43ea979772a12b0f23231e7b2ead9c0"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_predicted_features.py",
+      "bytes": 6186,
+      "git_blob_sha": "bb3c19c91952af9368844fff4c32aa5d28efaa80"
+    },
+    {
+      "path": "scripts/trackocd_v2/audit_predicted_stream_statistics.py",
+      "bytes": 18835,
+      "git_blob_sha": "9101f8e739de8f92bc43696df5f2ee004fdd0eed"
+    },
+    {
+      "path": "scripts/trackocd_v2/autonomous_supervisor.py",
+      "bytes": 48238,
+      "git_blob_sha": "d2204a885596533af88b78f2112eb361879ad90b"
+    },
+    {
+      "path": "scripts/trackocd_v2/bootstrap.py",
+      "bytes": 2303,
+      "git_blob_sha": "70cef152ca0255b60181ed69f691f75e594602b1"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_common_features.py",
+      "bytes": 19198,
+      "git_blob_sha": "a684f862cb21da63614c2c232475c37ecdc78151"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_final_report.py",
+      "bytes": 10337,
+      "git_blob_sha": "93fb1d800f3440d3a88652f48f3a56d7adc1e7e4"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_final_tables.py",
+      "bytes": 12802,
+      "git_blob_sha": "129203f9ffcfed223ac0102182cef305895c2f90"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_frontend_evaluator_join.py",
+      "bytes": 14869,
+      "git_blob_sha": "48dd9da1c6abe410e0b1fd97ef59380143724e8a"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_gt_benchmark_table.py",
+      "bytes": 6964,
+      "git_blob_sha": "8d94808985bb5e58cc52aadbb9046e10692ff891"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_gt_track_stream.py",
+      "bytes": 7469,
+      "git_blob_sha": "482ca1b949b7aa00fe9106660f044f3f02ad92c1"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_predicted_evaluator_join.py",
+      "bytes": 8173,
+      "git_blob_sha": "ff0689c473befeb5be48f2b19434d4b2e2eba197"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_predicted_stream.py",
+      "bytes": 3316,
+      "git_blob_sha": "c3a3b51813d6f15daa01c5fadd79b7baf37875e5"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_sharded_feature_cache.py",
+      "bytes": 31127,
+      "git_blob_sha": "4be1013b5ff3a0ece25214cb4895b527cd3d4b20"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_test_persistent_audit.py",
+      "bytes": 2541,
+      "git_blob_sha": "cadc111f1b2fc5eddaee6a68372fc8cdd8bc1753"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_test_track_stream.py",
+      "bytes": 8650,
+      "git_blob_sha": "2d94f4630388dadeaddb8dbca77feab92f96b5c4"
+    },
+    {
+      "path": "scripts/trackocd_v2/build_test_trackeval_gt.py",
+      "bytes": 4693,
+      "git_blob_sha": "c1b3554afa9fb9f5196c68e082188f1588e0fcb1"
+    },
+    {
+      "path": "scripts/trackocd_v2/finalize_freeze.py",
+      "bytes": 4089,
+      "git_blob_sha": "b0d2012cbba94781bbfbf5563d257bffea4a105c"
+    },
+    {
+      "path": "scripts/trackocd_v2/frontend_execution_preflight.py",
+      "bytes": 13348,
+      "git_blob_sha": "f214e8685f171059db2c7eae076de67b595c8417"
+    },
+    {
+      "path": "scripts/trackocd_v2/normalize_frontend_output.py",
+      "bytes": 21828,
+      "git_blob_sha": "535335cac2860929f42015979507690043ca8926"
+    },
+    {
+      "path": "scripts/trackocd_v2/prepare_frontend_bakeoff.py",
+      "bytes": 1538,
+      "git_blob_sha": "252af385321fe0087d5f63eeac51796b1f52663f"
+    },
+    {
+      "path": "scripts/trackocd_v2/record_predicted_feature_pause.py",
+      "bytes": 3271,
+      "git_blob_sha": "a286a5eabc6044420c95b4e74cd99a5f0ff6140e"
+    },
+    {
+      "path": "scripts/trackocd_v2/register_controller_decision.py",
+      "bytes": 2370,
+      "git_blob_sha": "641ee27165f5528841db581fb3086d4f0e469989"
+    },
+    {
+      "path": "scripts/trackocd_v2/register_frontend_metrics.py",
+      "bytes": 6087,
+      "git_blob_sha": "691accfafa82883ae571a5ffbec3a7c63badc545"
+    },
+    {
+      "path": "scripts/trackocd_v2/register_frontend_normalization.py",
+      "bytes": 3683,
+      "git_blob_sha": "c4a0d988611d6ae88c64ae30d18003b28fbdf726"
+    },
+    {
+      "path": "scripts/trackocd_v2/register_frontend_stage.py",
+      "bytes": 2919,
+      "git_blob_sha": "c7158e6e6767a6a05a70624fe13b9f77ab4a9ba4"
+    },
+    {
+      "path": "scripts/trackocd_v2/register_test_frontend_stream.py",
+      "bytes": 6691,
+      "git_blob_sha": "f0914b1c305ca2a35e4f2dfcfceee0798f2f8536"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_covtrack_legacy_test.py",
+      "bytes": 7066,
+      "git_blob_sha": "af43f229c0a91c067d7b10a2467be287fd6455ac"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_covtrack_native.py",
+      "bytes": 14780,
+      "git_blob_sha": "66eeecfd39773d1a8ffed819f06b2b3f2257d1e2"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_frontend_metrics.py",
+      "bytes": 38816,
+      "git_blob_sha": "c2d6085d05999720d9281b09dec301e2e5b38042"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_gt_baselines.py",
+      "bytes": 8208,
+      "git_blob_sha": "2e38641448e352278da2a3f1fc8044db4231f4cf"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_gt_phe.py",
+      "bytes": 5700,
+      "git_blob_sha": "35cf8c54e04909c5f02b4d014c298aac9b6b85a7"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_gt_safe_controller.py",
+      "bytes": 10298,
+      "git_blob_sha": "177c4a31aa9b9bc07e5e4c88c65ea5ee6d484df3"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_ovtr_native.py",
+      "bytes": 14448,
+      "git_blob_sha": "6b0ae1cbb81bb59eb9b4dc1059964e31f5aee48a"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_pred_baselines.py",
+      "bytes": 25676,
+      "git_blob_sha": "61db8fb6fb9fc04741e06aa613900e3a86507493"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_pred_safe_controller.py",
+      "bytes": 10723,
+      "git_blob_sha": "945cbbd52ec5894b1326e893a7b359eda5307b53"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_predicted_sanity.py",
+      "bytes": 20422,
+      "git_blob_sha": "6ba06435afe5687d569ecdde0249409832798522"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_simowt_native.py",
+      "bytes": 15054,
+      "git_blob_sha": "cbfb8e04d6c43e01e37b898f4c5a220f033a9972"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_test_ocd.py",
+      "bytes": 21349,
+      "git_blob_sha": "184dec265693866d04cad319a3e2740fda5ff847"
+    },
+    {
+      "path": "scripts/trackocd_v2/run_teta_reference.py",
+      "bytes": 8527,
+      "git_blob_sha": "e8ca3297c0e5ea2432fb72178a40b91fb97dc579"
+    },
+    {
+      "path": "scripts/trackocd_v2/select_frontend.py",
+      "bytes": 7372,
+      "git_blob_sha": "1ae313c19157bcb5265f864a90e1d2956b201e32"
+    },
+    {
+      "path": "scripts/trackocd_v2/select_val_final.py",
+      "bytes": 5575,
+      "git_blob_sha": "409f5168d5184dc4f7da21c352c2ea6b251d4fd2"
+    },
+    {
+      "path": "scripts/trackocd_v2/train_semantic_adapter.py",
+      "bytes": 14998,
+      "git_blob_sha": "fc7bea65f65b23ad55945230c3a9a5a10d81e86d"
+    },
+    {
+      "path": "src/trackocd_v2/__init__.py",
+      "bytes": 266,
+      "git_blob_sha": "d4c87a3a5df46702912a7751322ed0a75e93913d"
+    },
+    {
+      "path": "src/trackocd_v2/evaluation/__init__.py",
+      "bytes": 46,
+      "git_blob_sha": "992bcd9e8cb61ad96922da0756aaafdea3cdaae9"
+    },
+    {
+      "path": "src/trackocd_v2/evaluation/persistent.py",
+      "bytes": 5047,
+      "git_blob_sha": "72ef7e3b86790df4407107145dd75a4301822dff"
+    },
+    {
+      "path": "src/trackocd_v2/evaluation/standard_ocd.py",
+      "bytes": 3551,
+      "git_blob_sha": "83c4290e5f04cd4bd39255584beec1497051ede2"
+    },
+    {
+      "path": "src/trackocd_v2/frontend_contract.py",
+      "bytes": 8016,
+      "git_blob_sha": "d85973ca61cea99becde4f9da069be8a2002e7e1"
+    },
+    {
+      "path": "src/trackocd_v2/io.py",
+      "bytes": 1935,
+      "git_blob_sha": "6d7341c3fab3b0f36ceda6ea78ad98a21302ab80"
+    },
+    {
+      "path": "src/trackocd_v2/methods/__init__.py",
+      "bytes": 45,
+      "git_blob_sha": "5103d20eb6bdc42830a98794ff72377281e0b4c0"
+    },
+    {
+      "path": "src/trackocd_v2/methods/dpmeans.py",
+      "bytes": 1976,
+      "git_blob_sha": "38a9395d14432b15be63365bb2940f2ac91d0b78"
+    },
+    {
+      "path": "src/trackocd_v2/methods/nearest_prototype.py",
+      "bytes": 2192,
+      "git_blob_sha": "940fc227291dacecef2f31263ae6eb4d4f6dd9bb"
+    },
+    {
+      "path": "src/trackocd_v2/methods/phe_track.py",
+      "bytes": 3584,
+      "git_blob_sha": "0f40bb45513f46e7b0dce71201e1d7bcb3d1b4d9"
+    },
+    {
+      "path": "src/trackocd_v2/methods/safe_controller.py",
+      "bytes": 8573,
+      "git_blob_sha": "75821a93e553d9f9756394f53edbd02c8bb46695"
+    },
+    {
+      "path": "src/trackocd_v2/models/__init__.py",
+      "bytes": 422,
+      "git_blob_sha": "18329a56d1ff8de1fe1f450c164f1a4724497af1"
+    },
+    {
+      "path": "src/trackocd_v2/models/semantic_adapter.py",
+      "bytes": 8221,
+      "git_blob_sha": "f83a5754144cbc853332d069e989dd00cced7380"
+    },
+    {
+      "path": "src/trackocd_v2/protocol.py",
+      "bytes": 2688,
+      "git_blob_sha": "a7fffd61ef53ddaa1ee05467ef020c188d9932d5"
+    },
+    {
+      "path": "src/trackocd_v2/schema.py",
+      "bytes": 3684,
+      "git_blob_sha": "40bf66f5c225c2df7dcb7a0d34bac55318770a34"
+    },
+    {
+      "path": "src/trackocd_v2/sharded_cache.py",
+      "bytes": 7210,
+      "git_blob_sha": "db6ec0d42738fd493982d632bc386c41c8656fa5"
+    },
+    {
+      "path": "tests/trackocd_v2/test_evaluators.py",
+      "bytes": 3517,
+      "git_blob_sha": "ad0303aa1d3f56a45a9e964fb11265c09672f64d"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_contract.py",
+      "bytes": 1678,
+      "git_blob_sha": "aae21b9d7e9cc89c01982deeafafd7545a456496"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_evaluator_join.py",
+      "bytes": 1591,
+      "git_blob_sha": "935176229eb47b17aa2447a759e3d13392429f84"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_metrics.py",
+      "bytes": 4601,
+      "git_blob_sha": "4d882bbdd16ac81266b7fabb2d5a5568192389d3"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_normalizer.py",
+      "bytes": 4511,
+      "git_blob_sha": "28bbeb2b671abde478cd37767d5217fb475dc876"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_preflight.py",
+      "bytes": 330,
+      "git_blob_sha": "c9218073a1cded7c65ce437d7d8a67b600cd2e91"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_selection.py",
+      "bytes": 873,
+      "git_blob_sha": "28290fa1241b3637d073735c8b3870b0877276d2"
+    },
+    {
+      "path": "tests/trackocd_v2/test_frontend_supervisor.py",
+      "bytes": 2025,
+      "git_blob_sha": "d10d8889bffb695405d67411bcac783be505eb41"
+    },
+    {
+      "path": "tests/trackocd_v2/test_predicted_contract.py",
+      "bytes": 947,
+      "git_blob_sha": "552a83bc632e66fcb13b02152e40ca88c8438afb"
+    },
+    {
+      "path": "tests/trackocd_v2/test_predicted_denominator.py",
+      "bytes": 1164,
+      "git_blob_sha": "c04112706223c916f5dfa1f0fef03d826c308681"
+    },
+    {
+      "path": "tests/trackocd_v2/test_safe_controller.py",
+      "bytes": 1049,
+      "git_blob_sha": "c6c7a6a43d07a9e3ff2a245791491722868b3ca0"
+    },
+    {
+      "path": "tests/trackocd_v2/test_schema.py",
+      "bytes": 915,
+      "git_blob_sha": "2680124ecbb917aeb50dd54646deaf37b6c6edc8"
+    },
+    {
+      "path": "tests/trackocd_v2/test_semantic_adapter.py",
+      "bytes": 1603,
+      "git_blob_sha": "83005b96d7cf4dcdfe69d0a9846808af492b67a2"
+    },
+    {
+      "path": "tests/trackocd_v2/test_sharded_cache.py",
+      "bytes": 2888,
+      "git_blob_sha": "6ad968b7ec91fb108fe117a52374f4db39061ad9"
+    },
+    {
+      "path": "tests/trackocd_v2/test_test_lock.py",
+      "bytes": 1762,
+      "git_blob_sha": "64fd349fa14b050c4f535d114fc88c4d91697871"
+    }
+  ],
+  "limitations": [
+    "Manifest obtained from NAS peer command output, not a direct A100 filesystem read.",
+    "Restores selected source/test/config bytes, not the full historical Git history or runtime assets.",
+    "No data, model, feature-shard, report or internal AGENTS.md delivery."
+  ]
+}
