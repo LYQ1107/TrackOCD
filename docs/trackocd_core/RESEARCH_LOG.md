@@ -239,3 +239,21 @@
   Primary frontend/provenance remains unresolved. GT decision learning is a
   separate scope from the authorized representation exception; clarify before
   treating it as a substitute for strict main-stage progression.
+
+## 2026-10-10 — Official SimOWT training source trace, not release qualification
+
+- Main priority returns to M1. Complete official tree, ten selected source/config
+  files (169,655 B), all exact Git blob and SHA256 identities verified. No new
+  training/inference/environment, annotation/GT/Test access or NAS job.
+- COCO-named train mapper can route to TAO Train. Official Known-filter auxiliary
+  set matches inherited 78, but its proposal/merge/release linkage is missing;
+  separate extra-box generator saves original unfiltered annotations. Neither
+  source possibility establishes actual release supervision or proves leakage.
+- Actual NAS current idol/entrypoint/registry differ from pinned upstream despite
+  equal HEAD; YAML bytes match. Preserve this gap, no pretend patch recovery.
+- Decision: BLOCKED_PROVENANCE_NOT_PROVEN_LEAKAGE; no primary freeze, Q0 unchanged.
+  Need stage/teacher/merged-file ledger and runtime binding before qualification.
+  No extra GT correction or unapproved GT policy extension.
+- Source-only scan 0.0189 s / 18.38-MiB peak; 131 tests pass. Initial new source
+  equality expectation failed and was replaced with explicit observed mismatch,
+  not a source/model alteration. Full details: M1_SIMOWT_TRAINING_CHAIN.md.

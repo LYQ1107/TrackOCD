@@ -1,0 +1,224 @@
+{
+  "audited_at_utc": "2026-10-09T20:20:30.077471+00:00",
+  "boundary": {
+    "annotation_or_model_opened": false,
+    "source_or_frozen_stream_mutated": false,
+    "test_data_opened": false,
+    "training_or_inference_started": false,
+    "upstream_import_or_exec": false
+  },
+  "configured_training": {
+    "base_yaml_inheritance": false,
+    "coco_pretrain": true,
+    "dataset": "coco_2017_train_agn",
+    "initial_weights": "./weights/R-50.pkl",
+    "num_classes": 1
+  },
+  "minimal_missing_evidence": [
+    "Released checkpoint SHA -> every training/self-training stage config/source and initial/teacher SHA",
+    "Hashes and split/source-role summary of actual merged training JSON; Known GT only, pseudo-vs-GT provenance",
+    "Teacher proposal and pseudo generation split/supervision/vocabulary lineage plus merge/filter source",
+    "Train/Val separation and strict frame-only inference binding; no novel label/vocabulary or Test access"
+  ],
+  "nas_current_source_comparison": {
+    "comparisons": [
+      {
+        "bytes_and_sha256_match": true,
+        "nas_current_bytes": 1174,
+        "nas_current_sha256": "6b699c50af57634eb714f2b7fe974e9560ff8db103f3a80e773e0c0a8a3cf2ee",
+        "path": "projects/IDOL/configs/r50_train.yaml",
+        "upstream_bytes": 1174,
+        "upstream_sha256": "6b699c50af57634eb714f2b7fe974e9560ff8db103f3a80e773e0c0a8a3cf2ee"
+      },
+      {
+        "bytes_and_sha256_match": false,
+        "nas_current_bytes": 6977,
+        "nas_current_sha256": "fc28312a704e1843b0fab4e59c812f45ddf5bfbda878ca22681ee5f5bf9aa61b",
+        "path": "projects/IDOL/train_net.py",
+        "upstream_bytes": 6866,
+        "upstream_sha256": "cf49125384557cc2d748faa793ddaac248a704d6efbcda38fd5a917f0a64647a"
+      },
+      {
+        "bytes_and_sha256_match": false,
+        "nas_current_bytes": 11076,
+        "nas_current_sha256": "0844d1ae0733eda67c04325b283c4271d883fa5eac060b20cc2b9b814b8901de",
+        "path": "detectron2/data/datasets/builtin.py",
+        "upstream_bytes": 10559,
+        "upstream_sha256": "412cee4a14790b0c9065fc2f30c71730e9635507b6be7ce48a60c7ca7026828b"
+      },
+      {
+        "bytes_and_sha256_match": false,
+        "nas_current_bytes": 58283,
+        "nas_current_sha256": "00970901e4501879f4722590a085817a4a49ec6f51683d798a8760e9c948c4bb",
+        "path": "projects/IDOL/idol/idol.py",
+        "upstream_bytes": 54461,
+        "upstream_sha256": "6a66c3e2a0c56e53574a9546d248a50a604acaf9f9cd1efef6e8afb49007b318"
+      }
+    ],
+    "complete_dirty_patch_recovered": false,
+    "evidence_command": "exec-aee15cc8-b452-429a-905b-57e38ffdf01d",
+    "evidence_thread": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+    "same_HEAD_proves_same_worktree_source": false
+  },
+  "pseudo_generation_trace": {
+    "default_eval_function_choice": "2 (tracking), not 1/3 (pseudo generation)",
+    "documented_nested_eval_config_and_truncode_missing_from_complete_pinned_tree": true,
+    "pseudo_generators_exist_but_active_config_and_merge_script_not_sealed": true
+  },
+  "qualification": {
+    "historical_run_source_and_weight_binding": "UNVERIFIED",
+    "known_only_auxiliary_source_is_not_complete_training_proof": true,
+    "legal_status": "BLOCKED_PROVENANCE_NOT_PROVEN_LEAKAGE",
+    "positive_evidence_of_forbidden_supervision_for_released_weight": false,
+    "primary_frontend_selected": false,
+    "released_checkpoint_supervision_exclusion": "UNVERIFIED"
+  },
+  "registered_paths": {
+    "coco_2017_train_agn": [
+      "coco/train2017",
+      "coco/annotations/instances_train2017_agn.json"
+    ],
+    "coco_2017_val_agn": [
+      "tao/frames",
+      "tao/annotations/val_split/all.json"
+    ]
+  },
+  "resources": {
+    "elapsed_seconds": 0.01890521901077591,
+    "peak_rss_kib": 18820,
+    "workers": 1
+  },
+  "schema_version": "trackocd.core.simowt_official_training_source.v1",
+  "source_files": [
+    {
+      "bytes": 1174,
+      "git_blob_matches": true,
+      "git_blob_sha1": "cf5c0d8f5d91e40cd4a46ba53ac3722388a5a2a7",
+      "path": "projects/IDOL/configs/r50_train.yaml",
+      "sha256": "6b699c50af57634eb714f2b7fe974e9560ff8db103f3a80e773e0c0a8a3cf2ee",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/projects/IDOL/configs/r50_train.yaml"
+    },
+    {
+      "bytes": 6866,
+      "git_blob_matches": true,
+      "git_blob_sha1": "127baff8b62b18431709704674cde01221d617b1",
+      "path": "projects/IDOL/train_net.py",
+      "sha256": "cf49125384557cc2d748faa793ddaac248a704d6efbcda38fd5a917f0a64647a",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/projects/IDOL/train_net.py"
+    },
+    {
+      "bytes": 10559,
+      "git_blob_matches": true,
+      "git_blob_sha1": "3895219565a40184f5e88222d332c2e2c9d4c146",
+      "path": "detectron2/data/datasets/builtin.py",
+      "sha256": "412cee4a14790b0c9065fc2f30c71730e9635507b6be7ce48a60c7ca7026828b",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/detectron2/data/datasets/builtin.py"
+    },
+    {
+      "bytes": 24170,
+      "git_blob_matches": true,
+      "git_blob_sha1": "44fad6452bd30cb0cb29481920ab66c1c946dd49",
+      "path": "detectron2/data/datasets/coco.py",
+      "sha256": "a8ca0471634573269db8e958b2cf4d012475c33ed3b38ee0bd19a03cd2aa9f13",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/detectron2/data/datasets/coco.py"
+    },
+    {
+      "bytes": 9356,
+      "git_blob_matches": true,
+      "git_blob_sha1": "c3a682f3e1d3a7f733288f56f0daf58ba78a3e35",
+      "path": "projects/IDOL/idol/data/coco_clip.py",
+      "sha256": "3a58af12cc8e6e78f418c57ae07dd921334249d9212c79a9765bb545d8bc33a6",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/projects/IDOL/idol/data/coco_clip.py"
+    },
+    {
+      "bytes": 54461,
+      "git_blob_matches": true,
+      "git_blob_sha1": "6823756a32b67a13b38090a84d9e7cc81a6135de",
+      "path": "projects/IDOL/idol/idol.py",
+      "sha256": "6a66c3e2a0c56e53574a9546d248a50a604acaf9f9cd1efef6e8afb49007b318",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/projects/IDOL/idol/idol.py"
+    },
+    {
+      "bytes": 45124,
+      "git_blob_matches": true,
+      "git_blob_sha1": "d29dc7254b0f41b339444c73d73bb20271786ef1",
+      "path": "projects/IDOL/idol/models/deformable_detr.py",
+      "sha256": "28e7949a80800e8cfa3d91fb116ad5a6c7c758fc1964c4f437f0b733c72eda17",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/projects/IDOL/idol/models/deformable_detr.py"
+    },
+    {
+      "bytes": 6253,
+      "git_blob_matches": true,
+      "git_blob_sha1": "2fe93baf385be858038419d25896a89c662e2ffd",
+      "path": "dataset_extra/gen_extra_anno.py",
+      "sha256": "e03983a2601111c0e2943a0e30614f63f706cca5ede0fccc96e998c036d4a5af",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/dataset_extra/gen_extra_anno.py"
+    },
+    {
+      "bytes": 10360,
+      "git_blob_matches": true,
+      "git_blob_sha1": "6956dec24bb2e89c09eae4f1d88b0aa11e56e559",
+      "path": "dataset_extra/gen_faker_anno.py",
+      "sha256": "5dead47a883411c9a76e3cd20000758d218bfb805b0894a3938577383f70ef73",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/dataset_extra/gen_faker_anno.py"
+    },
+    {
+      "bytes": 1332,
+      "git_blob_matches": true,
+      "git_blob_sha1": "da00162b12634e788e10d03f0b93d3e3ac4bb137",
+      "path": "assets/train&test&model_zoo.md",
+      "sha256": "7c75435a7c032e580ed1083ed1c90afda2f1b89809f0857a5f726009c3f6aae7",
+      "url": "https://github.com/22109095/SimOWT/blob/753b2ac0082976753350d1b74a4d332088889e57/assets/train&test&model_zoo.md"
+    }
+  ],
+  "source_payload_bytes": 169655,
+  "status": "PASS_STATIC_SOURCE_TRACE_NOT_CHECKPOINT_QUALIFICATION",
+  "supervision_source_trace": {
+    "gen_extra_anno": {
+      "filter_destination": "local annos variable, not data['annotations']",
+      "gt_path_is_named_train": true,
+      "saved_data_retains_original_annotation_list": true,
+      "used_in_released_checkpoint_training": "UNVERIFIED"
+    },
+    "gen_faker_anno": {
+      "default_entrypoint_calls_gen": false,
+      "gt_annotations_filtered_in_place_to_known": true,
+      "gt_path_is_named_train": true,
+      "merged_foreground_only_and_generated_box_masks": true,
+      "proposal_path_string": "datasets/props_train.json",
+      "save_statements_commented_out": true,
+      "teacher_proposal_supervision_and_merged_json_lineage_verified": false
+    },
+    "known_id_sets_match_inherited_78": true,
+    "score_to_loss_path": {
+      "category_collapse_does_not_prove_box_supervision_origin": true,
+      "criterion": "sqrt(longscore) weights contrastive/aux ReID loss, COCO weights overwritten 1; deformable_detr.py:646-708",
+      "loader": "annotation longscore -> int(longscore*1000), default 1000; coco.py:224-227",
+      "model": "class modulo 10000 -> longscore/1000; foreground labels zero; idol.py:423-430"
+    }
+  },
+  "training_mapper": {
+    "mixed_actual_training_file_content_observed": false,
+    "path_examples": [
+      {
+        "input": "datasets/coco/train2017/000000123456.jpg",
+        "routed": "datasets/coco/train2017/000000123456.jpg"
+      },
+      {
+        "input": "datasets/coco/train2017/train/source/video/frame.jpg",
+        "routed": "datasets/tao/frames/train/source/video/frame.jpg"
+      },
+      {
+        "input": "datasets/coco/train2017/source/video/frame.jpg",
+        "routed": "datasets/tao/frames/train/source/video/frame.jpg"
+      }
+    ],
+    "source_lines": [
+      121,
+      124
+    ],
+    "tao_train_path_rewrite_reachable": true,
+    "two_augmented_views_of_same_source_image": true
+  },
+  "upstream_commit": "753b2ac0082976753350d1b74a4d332088889e57"
+}

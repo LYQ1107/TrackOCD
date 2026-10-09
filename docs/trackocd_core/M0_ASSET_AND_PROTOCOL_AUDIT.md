@@ -517,3 +517,12 @@ Delivered reports: `GT_PILOT_BASELINE_TABLE.md`, `GT_REPRESENTATION_PILOT.md`,
 `GT_CONTROLLED_CORRECTION_R1.md`, and append-only `RESEARCH_LOG.md`; public
 JSON/CSV contain real bounded metrics, source/config/asset hashes and resources.
 Raw descriptors, GT rows, checkpoints and peer logs/AGENTS remain private.
+
+Subsequent M1 source evidence: ten pinned official SimOWT files (169,655 B)
+were individually recovered privately and hash-verified. The COCO-named mapper
+can route to TAO Train; Known-filter and original-list-retaining auxiliary
+generators are different paths, neither bound to the released checkpoint.
+NAS current idol/entrypoint/registry are not byte-identical to upstream despite
+the same HEAD; training YAML is identical. See M1_SIMOWT_TRAINING_CHAIN.md and
+simowt_official_training_source.json. Latest regression 131 tests; primary
+remains unqualified. No new model/data/inference or correction round.

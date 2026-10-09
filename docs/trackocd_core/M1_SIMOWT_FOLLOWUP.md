@@ -95,6 +95,16 @@ bounded smoke and evaluation; it cannot be passed off as original Q0.
 
 ## Decision and minimal next assets
 
+Update, 2026-10-10: `M1_SIMOWT_TRAINING_CHAIN.md` records the subsequent pinned
+official mapper/generator/loss trace and current NAS-vs-upstream differences.
+The training YAML alone is not a supervision certificate; the COCO-named mapper
+can route to TAO Train. Original release legality remains unverified. Source-side
+geometry summary is now preferred; if transfer later becomes necessary, the
+329-MB normalized stream alone is first, with the 294-MB native rows optional
+because their score distribution has already been measured. The combined
+624-MB estimate below describes the original two-file audit option, not a
+mandatory new transfer or authorization to copy it now.
+
 **M1 remains BLOCKED_FRONTEND_QUALITY; selected primary = none.** SimOWT is
 an inspected candidate/reference with unresolved supervision/runtime binding
 and a diagnosed score contract. Unlike COVTrack-native, it has **no positive

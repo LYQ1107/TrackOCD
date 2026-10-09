@@ -1,0 +1,60 @@
+{
+  "schema_version": "trackocd.core.simowt_official_source_manifest.v1",
+  "repository": "https://github.com/22109095/SimOWT",
+  "commit": "753b2ac0082976753350d1b74a4d332088889e57",
+  "tree_listing_complete": true,
+  "applicable_upstream_AGENTS_files": [],
+  "scope": "10 explicitly selected UTF-8 source/config/docs files only; no dataset, checkpoint, binary, Test annotations or upstream execution",
+  "files": [
+    {
+      "path": "projects/IDOL/configs/r50_train.yaml",
+      "git_blob_sha1": "cf5c0d8f5d91e40cd4a46ba53ac3722388a5a2a7",
+      "bytes": 1174
+    },
+    {
+      "path": "projects/IDOL/train_net.py",
+      "git_blob_sha1": "127baff8b62b18431709704674cde01221d617b1",
+      "bytes": 6866
+    },
+    {
+      "path": "detectron2/data/datasets/builtin.py",
+      "git_blob_sha1": "3895219565a40184f5e88222d332c2e2c9d4c146",
+      "bytes": 10559
+    },
+    {
+      "path": "detectron2/data/datasets/coco.py",
+      "git_blob_sha1": "44fad6452bd30cb0cb29481920ab66c1c946dd49",
+      "bytes": 24170
+    },
+    {
+      "path": "projects/IDOL/idol/data/coco_clip.py",
+      "git_blob_sha1": "c3a682f3e1d3a7f733288f56f0daf58ba78a3e35",
+      "bytes": 9356
+    },
+    {
+      "path": "projects/IDOL/idol/idol.py",
+      "git_blob_sha1": "6823756a32b67a13b38090a84d9e7cc81a6135de",
+      "bytes": 54461
+    },
+    {
+      "path": "projects/IDOL/idol/models/deformable_detr.py",
+      "git_blob_sha1": "d29dc7254b0f41b339444c73d73bb20271786ef1",
+      "bytes": 45124
+    },
+    {
+      "path": "dataset_extra/gen_extra_anno.py",
+      "git_blob_sha1": "2fe93baf385be858038419d25896a89c662e2ffd",
+      "bytes": 6253
+    },
+    {
+      "path": "dataset_extra/gen_faker_anno.py",
+      "git_blob_sha1": "6956dec24bb2e89c09eae4f1d88b0aa11e56e559",
+      "bytes": 10360
+    },
+    {
+      "path": "assets/train&test&model_zoo.md",
+      "git_blob_sha1": "da00162b12634e788e10d03f0b93d3e3ac4bb137",
+      "bytes": 1332
+    }
+  ]
+}
