@@ -439,3 +439,9 @@ code lineage and actual cache numerical/Parquet values remain unverified.
 `research_log.md`, project reports and runtime frontend/representation provenance
 were excluded from the source commit and are still required as a small,
 Val-only metadata follow-up. No cache completion or frontend freeze is claimed.
+
+The subsequent M1 continuation recovered all five named Val metadata files
+byte-for-byte and inspected the actual source/configuration and runtime log.
+Its [qualification report](M1_FRONTEND_AUDIT.md) supersedes treating historical
+COVTrack "clean" flags as proof: the detector uses Novel vocabulary, so the
+native stream/cache is retained as a reference, not resumed as core input.

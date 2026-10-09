@@ -1,0 +1,77 @@
+{
+  "annotated_frames": 36375,
+  "annotated_prediction_rows": 1831391,
+  "annotated_prediction_tracks": 1041719,
+  "annotation": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1759672067358884999,
+    "path": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+    "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+    "sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+    "size_bytes": 43639943
+  },
+  "by_role": {
+    "known": {
+      "coverage": 0.32676184001812825,
+      "gt_tracks": 4413,
+      "missing_or_unreliable": 2971,
+      "reliably_observed": 1442
+    },
+    "novel": {
+      "coverage": 0.03663003663003663,
+      "gt_tracks": 819,
+      "missing_or_unreliable": 789,
+      "reliably_observed": 30
+    }
+  },
+  "external_process_interference": false,
+  "fixed_geometric_join": {
+    "assignment": "one global per-video Hungarian over physical tracks, category-free geometry",
+    "same_rule_as_legacy_v2_frontend_observability": true,
+    "temporal_iou": "sum(box IoU on common canonical image IDs) / count(union of GT/pred canonical image IDs)",
+    "threshold": 0.5,
+    "unannotated_frames": "used by original association, excluded from annotation-frame geometric scoring"
+  },
+  "frozen_export_evidence": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791502045066917047,
+    "path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full/trackeval/BT-FG-0/export_trackeval_complete.json",
+    "resolved_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full/trackeval/BT-FG-0/export_trackeval_complete.json",
+    "sha256": "af5d8456960a893d4f6db38a34958cc436509c0e63cebed2ab62f314c38642bf",
+    "size_bytes": 546
+  },
+  "full_npz_checksums_verified": false,
+  "generated_utc": "2026-10-09T18:00:00.295954+00:00",
+  "labels_used_only_to_aggregate_geometry_matches": true,
+  "matched_only_ocd_score_computed": false,
+  "model_or_memory_received_gt": false,
+  "non_distractor_gt_tracks": 5232,
+  "projected_box_bytes_compared_with_export": false,
+  "projection_counts_agree_with_frozen_export": true,
+  "resources": {
+    "gpu_used": false,
+    "initial_mem_available_kib": 105107836,
+    "peak_process_rss_kib": 326976,
+    "ram_plan": "one video of existing arrays; <2 GiB working plan; preserve 25% system headroom",
+    "wall_seconds": 13.79189478000626,
+    "worker_count": 1
+  },
+  "role": "FROZEN_PANDAS_BT_FG0_EXTERNAL_REFERENCE_NOT_CORE_FRONTEND_FREEZE",
+  "roles": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791557849295634619,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
+    "size_bytes": 4517
+  },
+  "schema_version": "trackocd.core.frozen-frontend-coverage.v1",
+  "status": "EVALUATOR_DIAGNOSTIC_COMPLETE",
+  "test_data_accessed": false,
+  "thresholds_tuned": false,
+  "training_started": false,
+  "videos": 988
+}

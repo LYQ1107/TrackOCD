@@ -1,0 +1,302 @@
+{
+  "schema_version": "trackocd.core.nas-m1-provenance.v1",
+  "scope": "Val-only source evidence; historical results, not a qualified core frontend",
+  "audited_at_utc": "2026-10-09T18:11:50Z",
+  "source": {
+    "host": "remote-ssh-discovered:nas57",
+    "thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+    "turn_id": "01a121c9-3912-7a43-ac61-e4f0b131c1b4",
+    "turn_completed": true
+  },
+  "metadata_files": [
+    {
+      "name": "frontend_selection.json",
+      "source_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/audit/frontend_selection.json",
+      "private_local_copy": "outputs/trackocd_core/audit/nas_m1_source/frontend_selection.json",
+      "bytes": 19891,
+      "sha256": "6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e",
+      "a100_bytes_sha256_verified": true,
+      "source_chunk_commands": [
+        "exec-904cd59e-b45f-4c6b-aa83-16f75cdc4802",
+        "exec-817ffed1-5153-4563-b717-e5b07720f2b7"
+      ]
+    },
+    {
+      "name": "representation_decision.json",
+      "source_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/audit/representation_decision.json",
+      "private_local_copy": "outputs/trackocd_core/audit/nas_m1_source/representation_decision.json",
+      "bytes": 707,
+      "sha256": "4cbf0cf43084e5994d217d2598fc412f341494b3c68a916ddd763b6af9c92244",
+      "a100_bytes_sha256_verified": true,
+      "source_chunk_commands": [
+        "exec-b0f3b77e-3fd3-4840-a948-5da82a6bb058"
+      ]
+    },
+    {
+      "name": "frontend_covtrack_native_native_run.json",
+      "source_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/audit/frontend_covtrack_native_native_run.json",
+      "private_local_copy": "outputs/trackocd_core/audit/nas_m1_source/frontend_covtrack_native_native_run.json",
+      "bytes": 2578,
+      "sha256": "4350d5270f1608d7e30b0a3f51d7865adfcfba22cc72e812a18c76ad758ceca2",
+      "a100_bytes_sha256_verified": true,
+      "source_chunk_commands": [
+        "exec-c75941cd-88f3-42db-b391-15dfd8474fca"
+      ]
+    },
+    {
+      "name": "frontend_covtrack_native.json",
+      "source_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/audit/frontend_covtrack_native.json",
+      "private_local_copy": "outputs/trackocd_core/audit/nas_m1_source/frontend_covtrack_native.json",
+      "bytes": 10069,
+      "sha256": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526",
+      "a100_bytes_sha256_verified": true,
+      "source_chunk_commands": [
+        "exec-14e0695d-8d91-4d93-843c-e347110f557a",
+        "exec-5b82ed03-a613-4213-a9a9-67b0b446049e"
+      ]
+    },
+    {
+      "name": "frontend_covtrack_native_metrics.json",
+      "source_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/audit/frontend_covtrack_native_metrics.json",
+      "private_local_copy": "outputs/trackocd_core/audit/nas_m1_source/frontend_covtrack_native_metrics.json",
+      "bytes": 227457,
+      "sha256": "e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2",
+      "a100_bytes_sha256_verified": true,
+      "source_chunk_commands": [
+        "exec-fe77824c-fdc5-4beb-bdc4-dc13676bb221",
+        "exec-2d6b50ec-7982-431d-bb8c-50c409ea9191",
+        "exec-d7ff3dd7-4a5c-466b-bc97-187774dbd14b",
+        "exec-3e4f8366-a304-4368-8d5b-6d4a796689e7",
+        "exec-5d886b10-6d27-4a20-9766-83d588f05109",
+        "exec-74663135-6355-4be4-a7a3-25b1d4d576cc",
+        "exec-2b580545-d673-42a2-8561-98ec5a5e0765",
+        "exec-8e515768-9c3d-4d72-899b-4e18c56aac13",
+        "exec-08f15b6f-5df9-4363-a77f-ec25c0818206",
+        "exec-1a6e2c79-b8a1-48b6-82d8-2d19a3f07939",
+        "exec-6991ea89-ad04-4bcf-b1eb-c35bcd7e63df",
+        "exec-8c5897c1-7989-4360-9adb-7dc69fe9e307",
+        "exec-2f4d7429-8b6a-4105-9562-cbe0263c5e53",
+        "exec-0d774d7e-e335-447a-a881-d5fe816b8a08",
+        "exec-328e4ada-e442-40d8-a00b-87431338bbac",
+        "exec-54092cd9-b13a-490c-afd5-e0b4d6614da4",
+        "exec-7b9059d1-9689-4fe5-a384-bf0dea20d7b0",
+        "exec-ec84154f-08ba-416f-8bea-f50e3dda95b9",
+        "exec-69cc8436-72a6-419b-a37e-2b025e7e7d98",
+        "exec-a950a919-3341-4378-bd08-d03f8028cf43",
+        "exec-a459bd85-e2b9-435d-b8d9-14aa844410d2",
+        "exec-34d991ca-c420-4b75-95a9-e3f022bda3b9",
+        "exec-173d58a1-5171-439f-b629-d0d01eabe309"
+      ]
+    }
+  ],
+  "historical_selection": {
+    "selected_frontend": "COVTrack-native",
+    "representation_authorized": true,
+    "not_core_authority": true
+  },
+  "native_run": {
+    "split": "val",
+    "run_id": "v2_val_native_20260917T064434Z_7975",
+    "checkpoint_sha256": "e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c",
+    "native_output_sha256": "fa6017a9fc74840df972b0607703a5f2e8fdbf5cbea1b8f0942583c1f10bdde7",
+    "physical_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "config_sha256_saved_in_native_run": false,
+    "prompt_sha256_saved_in_native_run": false
+  },
+  "current_config": {
+    "source_relative_path": "third_party/research_refs_phase4n/COVTrack/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+    "bytes": 13410,
+    "sha256": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a",
+    "repository_commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b",
+    "historical_repository_dirty": true,
+    "exact_historical_run_config_bytes_verified": false,
+    "only_validation_categories": true,
+    "prompt_path": "saved_models/pretrained_models/detpro_prompt.pt",
+    "num_classes": 1203,
+    "confused_features": true
+  },
+  "vocabulary": {
+    "current_full_vocab_count": 1203,
+    "current_selected_val_vocab_count": 296,
+    "trackocd_val_novel_count": 209,
+    "trackocd_novel_present_in_selected_vocab": 203,
+    "unmapped_v05_novel_count": 6,
+    "mapping": "Evaluator-side LVIS v0.5->v1 synset join, not raw ID comparison; no vocabulary passed to a model",
+    "selected_novel_mask_true_count": 86,
+    "native_metrics_observed_categories": 295,
+    "observed_categories_outside_current_selected_vocabulary": 0,
+    "source_mapping_command": "exec-5431c692-c00b-43f1-a2d4-7cc5e7181053",
+    "core_inference_vocabulary_allowed": false
+  },
+  "historical_runtime_log": {
+    "source_relative_path": "frontend_native/covtrack_native/v2_val_native_20260917T064434Z_7975/native_val.log",
+    "bytes": 3094094,
+    "read_scope": "initialization prefix only; no full log or tensor read",
+    "source_command": "exec-3710fba7-d017-448a-a772-f7305119afa2",
+    "prompt_path": "saved_models/pretrained_models/detpro_prompt.pt",
+    "prompt_exists_at_run": true,
+    "custom_classes": false,
+    "text_feature_shape": [
+      296,
+      512
+    ],
+    "full_log_hash_verified": false
+  },
+  "code_observations": [
+    {
+      "path": "ovtrack/models/roi_heads/ovtrack_roi_head.py",
+      "lines": [
+        1677,
+        1755,
+        1804,
+        1834,
+        3122,
+        3258
+      ],
+      "facts": "Loads DetPro/CLIP class text embeddings, selects Val vocabulary, multiplies visual projections by text matrix; Val Novel mask affects image/text score blending."
+    },
+    {
+      "path": "ovtrack/models/roi_heads/ovtrack_roi_head.py",
+      "lines": [
+        2931,
+        2994
+      ],
+      "facts": "cls_embeds originate from visual text/image projections, not direct transfer of the text matrix to the association module."
+    },
+    {
+      "path": "ovtrack/models/trackers/ovtracker.py",
+      "lines": [
+        526,
+        745
+      ],
+      "facts": "confused_features=true fuses appearance, geometry and visual semantic embeddings before assignment; cls_static_ratio=0 does not disable this branch."
+    },
+    {
+      "path": "ovtrack/datasets/tao_dataset.py",
+      "lines": [
+        17,
+        38,
+        143,
+        178,
+        208,
+        243
+      ],
+      "facts": "Whole-track majority vote changes category_id only, not boxes, scores or physical association IDs."
+    }
+  ],
+  "causality": {
+    "current_image_and_history_memo_in_static_association": true,
+    "memo_frames": 10,
+    "val_reference_sampler": null,
+    "physical_geometry_future_rewrite_found": false,
+    "offline_category_majority_vote": true,
+    "frame_online_runtime_replay_verified": false,
+    "supervision_training_sampler_may_use_future_reference_frames": true
+  },
+  "supervision": {
+    "config_training_annotation": "saved_models/ctao_dataset/ctao_base.json",
+    "config_initialization": "saved_models/pretrained_models/ovtrack_pair.pth",
+    "checkpoint_training_history_fully_verified": false,
+    "training_novel_labels_excluded_verified": false,
+    "val_pipeline_collects_only_image": true,
+    "optional_val_gt_visualization_historical_file_existence_unknown": true
+  },
+  "lineage_limits": {
+    "metrics_stage_sha256": "a76233e970dba023bec5c68036bd172e4b5f6bf326423a75b9987b237d91a34a",
+    "current_stage_sha256": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526",
+    "stage_input_audit_sha256": "7351936ccd0c69298fb8cfc456425d0d2f860132d7266abb003cccf04ad12539",
+    "current_asset_audit_sha256": "641e43c7400c1460e7a6409c479eae0f88efc61237473105be9fa1184d8b7205",
+    "historical_referenced_snapshots_missing": true,
+    "hash_mismatch_alone_proves_corruption": false,
+    "current_copied_metadata_bytes_corrupt": false
+  },
+  "historical_native_metrics": {
+    "units": "0_to_1",
+    "category_free_tracking": {
+      "AssA": 0.44569000000000003,
+      "AssPr": 0.73638,
+      "AssRe": 0.48908,
+      "DetA": 0.055848,
+      "DetPr": 0.057751000000000004,
+      "DetRe": 0.54448,
+      "HOTA": 0.15412,
+      "LocA": 0.76654,
+      "OWTA": 0.48228000000000004
+    },
+    "canonical_val_annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+    "by_gt_split": {
+      "new": {
+        "reliably_observed": 191,
+        "tracks": 819
+      },
+      "old": {
+        "reliably_observed": 1015,
+        "tracks": 4413
+      }
+    },
+    "novel_track_observability": {
+      "denominator": 819,
+      "numerator": 191,
+      "value": 0.23321123321123322
+    },
+    "persistent_observability": {
+      "denominator": 527,
+      "numerator": 88,
+      "value": 0.16698292220113853
+    },
+    "recomputed_on_a100": false,
+    "not_new_ocd_or_commit_ct_result": true
+  },
+  "simowt_historical_summary": {
+    "category_free_tracking": {
+      "AssA": 0.48950000000000005,
+      "DetRe": 0.7513299999999999,
+      "LocA": 0.84421,
+      "OWTA": 0.60202
+    },
+    "novel_track_observability": {
+      "denominator": 819,
+      "numerator": 179,
+      "value": 0.21855921855921856
+    },
+    "persistent_observability": {
+      "denominator": 527,
+      "numerator": 83,
+      "value": 0.15749525616698293
+    },
+    "persistent_target_observability": {
+      "denominator": 527,
+      "numerator": 103,
+      "value": 0.1954459203036053
+    },
+    "historical_track_count": 649378,
+    "asset_and_provenance_verified_for_core": false,
+    "fragmentation_not_verified": true
+  },
+  "cache": {
+    "source_manifest_status": "RUNNING_SAVED_SNAPSHOT_NOT_LIVE_PROCESS",
+    "completed_shards": 255,
+    "required_shards": 723,
+    "completed_tracks": 130560,
+    "total_tracks": 369794,
+    "observations": 561672,
+    "manifest_updated_utc": "2026-09-17T21:29:32.139386+00:00",
+    "payload_content_and_parquet_rows_fully_verified": false,
+    "transferred_to_a100": false,
+    "retained_for_reference": true,
+    "qualified_as_core_input": false
+  },
+  "qualification": {
+    "native_legal_gate": "FAIL_NO_NOVEL_VOCABULARY",
+    "native_core_comparability": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE",
+    "nosem_detector_vocabulary_unchanged_by_association_toggle": true,
+    "old_clean_booleans_are_not_valid_core_qualification_proof": true,
+    "primary_frontend_frozen": false,
+    "overall_goal_complete": false
+  },
+  "original_source_files_modified": false,
+  "private_raw_logs_or_AGENTS_uploaded": false,
+  "weight_or_shard_tensors_read_in_this_audit": false,
+  "test_data_accessed": false,
+  "external_process_interference": false
+}

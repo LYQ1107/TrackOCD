@@ -1,6 +1,9 @@
 {
   "schema_version": "trackocd.core.minimal_asset_recovery.v1",
-  "status": "EXACT_V2_SOURCE_RECOVERED_RUNTIME_METADATA_AND_CACHE_PENDING",
+  "status": "EXACT_V2_SOURCE_AND_VAL_METADATA_RECOVERED_FRONTEND_QUALIFICATION_BLOCKED",
+  "m1_provenance_receipt": "outputs/trackocd_core/audit/nas_m1_provenance.json",
+  "m1_native_covtrack_status": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE",
+  "m1_valid_cache_bytes_do_not_establish_lawful_frontend": true,
   "exact_source_recovery_receipt": "outputs/trackocd_core/audit/source_recovery.json",
   "recovered_source_commit": "604d7eff50e2db386b597ec81690f16d0b40885e",
   "recovered_source_file_count": 81,
@@ -98,7 +101,7 @@
         "/home/Valadmin/A100/usr_for_deadline/trackocd_v2"
       ],
       "size_bytes": null,
-      "availability": "CURRENT_SOURCE_AUDITED_FORMAL_CACHE_PARTIAL_NOT_TRANSFERRED",
+      "availability": "FIVE_VAL_METADATA_FILES_BYTE_IDENTICAL_ON_A100_FORMAL_CACHE_PARTIAL_NOT_TRANSFERRED",
       "selection": "Metadata/manifests/configurations/complete markers first; no feature payload transfer in this pass",
       "checks": ["Confirm current source identity, last update and actual completed shards", "Do not assume historical 65 shards / 247756 observations are final", "Require checkpoint, frontend, feature, crop and causal lineage before cache reuse", "Verify complete markers against payloads, hashes and shard index coverage"]
     },
@@ -144,14 +147,14 @@
       "historical_display_sizes": ["352 MiB", "344 MiB"],
       "size_bytes": null,
       "sha256": null,
-      "condition": "Do not assume historical selected frontend is lawful or quality-qualified. Establish exact detection/vocabulary/training/causal provenance and stream identity first."
+      "condition": "M1 found Novel vocabulary in the native detection route. Preserve these as historical references; do not transfer them to resume the core primary stream. An association-only NoSemantic toggle does not repair detector legality."
     },
     {
       "asset": "Completed GT/predicted-track DINO shards",
       "source_candidate": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2",
       "size_bytes": null,
       "sha256": null,
-      "condition": "Actual resolved locations, complete shard manifest and full requested feature contract must be verified. Transfer only required verified shards within budget; otherwise plan bounded compact FP16 re-extraction, never start a full cache automatically."
+      "condition": "GT feasibility assets may be reused only after complete descriptor/crop lineage verification and a Train Known whitelist. The 255 COVTrack native units remain references, not qualified core input. Future lawful predicted shards require complete lineage and frontend qualification; never start a full cache automatically."
     }
   ],
   "exclude": [
