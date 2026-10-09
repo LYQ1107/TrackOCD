@@ -40,3 +40,21 @@
   M1 is BLOCKED_FRONTEND_QUALITY, not proof that every physical route fails.
 - Next: small SimOWT source/config/fragmentation follow-up; meanwhile the
   expressly allowed GT-feasibility route can progress, not a predicted claim.
+
+## 2026-10-10 — M2 permitted GT descriptor/interface smoke
+
+- Question: can the existing checkpoint/runtime produce common 768-D visual
+  inputs without future-tail/label leakage or an unnecessary dependency stack?
+- Pin official DINOv2 source `7764ea0`; direct backbone construction and strict
+  loading of the existing checkpoint, frozen/eval FP32. No duplicate weights,
+  xFormers installation, text head or optimizer. Four Train Known GT tracks
+  (Known 35/41), 64 observations; no Val/Novel/Test inputs to this smoke.
+- Result: 10.78 s, 138,207 compact payload bytes; five file hashes and 20
+  prefix views verify, stored FP16 means exactly agree. Singleton/batch feature
+  max delta 5.76e-7. New PrefixView excludes labels/IDs/full mean/total length;
+  future-tail perturbation tests pass. Regression: 57 passed.
+- Decision: retain PASS_ENGINEERING_GT_ONLY. New source/preprocessing lineage
+  is not proven identical to NAS features; no mixing, predicted main score or
+  frame-online-memory claim. M1 qualified primary frontend remains blocked.
+- Next: SimOWT provenance/fragmentation audit and legitimate frontend freeze;
+  GT representation feasibility is allowed but not end-to-end completion.

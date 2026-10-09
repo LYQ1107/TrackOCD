@@ -1,0 +1,115 @@
+{
+  "all_selected_labels_in_inherited_known": true,
+  "all_visual_encoder_parameters_frozen": true,
+  "annotation": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1759670751136653423,
+    "path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+    "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+    "sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+    "size_bytes": 21463934
+  },
+  "causality_claim": "observation-prefix-causal only; global frame-online decisions not verified",
+  "checkpoint": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791562730955240047,
+    "path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "size_bytes": 346378731
+  },
+  "config": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791570153340795594,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/common_features.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/common_features.json",
+    "sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "size_bytes": 1936
+  },
+  "duplicate_checkpoint_downloaded": false,
+  "external_process_interference": false,
+  "feature_dimension": 768,
+  "formal_cache_started": false,
+  "frame_online_decisions_tested": false,
+  "full_track_mean_written": false,
+  "generated_utc": "2026-10-09T18:23:30.414908+00:00",
+  "labels_separated_from_model_view": true,
+  "new_feature_payload_bytes": 138207,
+  "novel_labels_for_training": false,
+  "observations": 64,
+  "old_nas_feature_byte_compatibility_verified": false,
+  "optimizer_used": false,
+  "parameters": 86580480,
+  "payloads": {
+    "geometry.npy": {
+      "bytes": 1152,
+      "sha256": "049d7583c86e0206e6542565ec04501b02b4ba4879dd7f02a5a1da4f55459570"
+    },
+    "index.parquet": {
+      "bytes": 6634,
+      "sha256": "f54ea9cd3c275579d4c49812027b85f4e0d322af06f83f41e1a87b7ac69f9f7b"
+    },
+    "observations.npy": {
+      "bytes": 98432,
+      "sha256": "56f44042bcfaa2ad475a96a02f9d10400dfe954bf1373bced2702abec831c1ce"
+    },
+    "prefix_features.npy": {
+      "bytes": 30848,
+      "sha256": "506135c685c7b4a48eede9531b8338d2adc8a7873393b8b2c0bc430ab7c9cd79"
+    },
+    "train_labels.parquet": {
+      "bytes": 1141,
+      "sha256": "f00869177b282e9b1169377c384d86cffc9abd8e5cf30751dbf49a997b2f4c8e"
+    }
+  },
+  "prefix_features_shape": [
+    4,
+    5,
+    768
+  ],
+  "prefixes": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "resources": {
+    "gpu_peak_allocated_bytes": 570027008,
+    "gpu_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "initial_mem_available_kib": 105781156,
+    "peak_cpu_rss_kib": 1299384,
+    "ram_plan_bytes": 4294967296,
+    "wall_seconds": 10.78201835299842,
+    "worker_count": 1
+  },
+  "roles": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791557849295634619,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
+    "size_bytes": 4517
+  },
+  "schema_version": "trackocd.core.gt-feature-smoke.v1",
+  "singleton_vs_batch_max_abs_delta_fp32": 5.755573511123657e-07,
+  "source_role": "Train Known GT feasibility, not predicted frontend/main metrics",
+  "status": "PASS_ENGINEERING_GT_ONLY",
+  "stored_descriptor_max_unit_norm_error": 3.1828880310058594e-05,
+  "strict_state_load_pass": true,
+  "test_data_accessed": false,
+  "tracks": 4,
+  "train_known_categories": [
+    35,
+    41
+  ],
+  "training_started": false,
+  "upstream_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "upstream_source_bytes": 3459339,
+  "val_data_accessed": false,
+  "visual_model_training_mode": false
+}
