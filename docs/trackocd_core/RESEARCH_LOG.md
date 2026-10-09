@@ -121,3 +121,20 @@
 - Decision: preserve new aggregate evidence and original flow; 111 regression
   tests pass. M1 quality/provenance gate remains blocked, GT-only preparation
   remains authorized; not a new TAO detection/tracking/OCD experiment.
+
+## 2026-10-10 — Preregistered bounded Train Known GT pilot
+
+- Question: is cross-video category-level feasibility possible with actual
+  legal observations rather than only synthetic evaluator fixtures?
+- Train-only support inventory: 46 Known categories / 1,170 eligible >=16-ob
+  tracks. Before reading descriptors/scores, fix 64 tracks / 1,024 observations:
+  four adaptation classes, four policy pseudo-Novel, four heldout pseudo-Novel.
+  Representation/policy/selection video sets are globally disjoint; Known
+  probes intentionally share prototype classes. Original TAO roles unchanged.
+- Decision: register bounded GT-only descriptor inference, four video orders,
+  five prefixes and fixed comparable baseline gates; reuse compatible old
+  smoke descriptors. No training, Val/Test or new physical frontend planned
+  in this delivery. Four-Known support and long-track GT sampling are limited,
+  not a formal M4 or end-to-end success. Regression: 115 tests pass.
+- Next: commit/push the plan before running frozen DINO inference, then report
+  the first actual small Train baseline results without tuning on heldout.

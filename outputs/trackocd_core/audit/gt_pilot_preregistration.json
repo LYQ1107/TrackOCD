@@ -1,0 +1,169 @@
+{
+  "annotation": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1759670751136653423,
+    "path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+    "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+    "sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+    "size_bytes": 21463934
+  },
+  "config": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791573845239815028,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/gt_feasibility_pilot.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/gt_feasibility_pilot.json",
+    "sha256": "86bb1e8773b7d3dc6d0591e9faafe82f758f9c1f3f896a50e014acb21cacd2d0",
+    "size_bytes": 3051
+  },
+  "formal_predicted_result": false,
+  "generated_utc": "2026-10-09T19:25:44.933723+00:00",
+  "inference_started": false,
+  "labels_for_sampling_only_not_model_input": true,
+  "private_plan": {
+    "bytes": 289416,
+    "sha256": "25208d62173354bd33beaa38f056706feaeb0ed8e75194589db03ce1e3bdeafa"
+  },
+  "resources": {
+    "peak_rss_kib": 693392,
+    "wall_seconds": 0.6269748799968511,
+    "workers": 1
+  },
+  "roles": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791557849295634619,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/roles.json",
+    "sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
+    "size_bytes": 4517
+  },
+  "schema_version": "trackocd.core.gt-pilot-preregistration.v1",
+  "selection": {
+    "all_categories_in_inherited_known": true,
+    "eligible_long_track_categories": 46,
+    "eligible_long_track_count": 1170,
+    "heldout_pseudo_categories_unseen_to_adaptation_and_policy_fit": true,
+    "heldout_selection_pseudo_novel_categories": [
+      139,
+      174,
+      229,
+      235
+    ],
+    "known_probe_categories_are_intentionally_shared_not_category_holdout": true,
+    "observations": 1024,
+    "partition_tracks": {
+      "heldout_selection": 24,
+      "policy_train": 24,
+      "representation": 16
+    },
+    "partition_videos": {
+      "heldout_selection": [
+        119,
+        284,
+        433,
+        496,
+        508,
+        677,
+        705,
+        720,
+        1126,
+        1330,
+        1459,
+        1779,
+        1910,
+        1927,
+        1939,
+        1940,
+        2244,
+        2667,
+        2752,
+        2851,
+        2874,
+        2896
+      ],
+      "policy_train": [
+        0,
+        3,
+        11,
+        275,
+        371,
+        535,
+        545,
+        575,
+        653,
+        686,
+        689,
+        696,
+        1041,
+        1643,
+        1814,
+        1831,
+        1874,
+        2023,
+        2128,
+        2175,
+        2238,
+        2243,
+        2251,
+        2666
+      ],
+      "representation": [
+        1,
+        9,
+        67,
+        212,
+        221,
+        239,
+        384,
+        415,
+        456,
+        678,
+        1370,
+        1614,
+        1882,
+        1929,
+        1948,
+        2148
+      ]
+    },
+    "policy_train_pseudo_novel_categories": [
+      35,
+      81,
+      95,
+      118
+    ],
+    "pseudo_novel_category_disjointness_verified": true,
+    "purpose_tracks": {
+      "prototype": 4,
+      "representation_fit": 12,
+      "stream": 48
+    },
+    "sampling_uses_features_or_scores": false,
+    "selected_known_categories": [
+      41,
+      126,
+      133,
+      211
+    ],
+    "tracks": 64,
+    "video_disjointness_verified": true
+  },
+  "source_sha256": {
+    "scripts/trackocd_core/prepare_gt_pilot.py": "5f809c6074ff6a7e7c9f7dfd58bd1f35abc221abf76fe22d346f9df055451207",
+    "src/trackocd_core/pilot.py": "8ece3f35fe80e0a047a5148bc161404dfdf1e352e4b028b86d1c3d76b224238c"
+  },
+  "status": "PREREGISTERED_SMALL_TRAIN_KNOWN_GT_ONLY_NOT_MAIN",
+  "training_started": false,
+  "val_or_test_access": false,
+  "visual_config": {
+    "exists": true,
+    "is_symlink": false,
+    "mtime_ns": 1791570153340795594,
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/common_features.json",
+    "resolved_path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_core/common_features.json",
+    "sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "size_bytes": 1936
+  }
+}
