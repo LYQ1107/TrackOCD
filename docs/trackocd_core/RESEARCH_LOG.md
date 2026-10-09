@@ -149,3 +149,21 @@
 - Decision: retain small Train Known-only feasibility input. No learned
   model trained, no Val/Test or predicted-main score. Next: fixed simple
   baselines on the registered Train streams; do not change sampling/gates.
+
+## 2026-10-10 — First actual small Train GT baseline table
+
+- Question: do the fixed nearest/frame-vote/DP-Means baselines already provide
+  reliable category-level cross-video reuse on the registered lawful pilot?
+- Same frozen inputs / four Known prototype tracks; 120 real replays across
+  two Train streams, four orders, five prefixes; 2,880 sealed decisions.
+  Each full universe is Known 12 / pseudo-Novel 12 / GT reuse opportunities 8.
+- Result: heldout p16 Correct Commit-CT = 0 for all methods; New ACC means
+  39.58/39.58/43.75%, Old ACC 0/2.08/0%, H 0/3.47/0%. Error breakdown and
+  all prefixes/orders retained. No stable benefit from increasing prefix.
+- Decision: preserve weak results, do not retune on heldout or silently alter
+  gates. Single-track prototypes/fixed operating point limit conclusions;
+  this is not strongest-full-M4 or M9, nor evidence that all nearest routes
+  fail. B3 remains INCOMPARABLE; no PHE/model score fabricated.
+- Resources: one CPU worker, 1.445 s, 677.14-MiB peak, no learning/GPU,
+  Val/Test or foreign process changes. Regression: 119 tests pass. Next:
+  bounded A0/A1/A2 Train-only GT feasibility with category-held-out fitting.

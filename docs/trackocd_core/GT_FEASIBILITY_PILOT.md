@@ -95,4 +95,6 @@ frozen descriptors. Compact payload is 2,114,366 bytes (~2.02 MiB), GPU peak
 543.62 MiB and host peak 1.24 GiB; one worker on a freshly idle GPU UUID.
 All five payload hashes and 320 causal prefix views validate. No optimizer,
 representation training, Val/Test access or foreign process action occurred.
-Actual simple baseline scores remain the next separate step.
+Actual simple baseline scores are now separately delivered in
+`GT_PILOT_BASELINE_TABLE.md` and the public aggregate JSON/CSV. They are weak,
+not a main-stage completion or grounds to change the preregistered gates.
