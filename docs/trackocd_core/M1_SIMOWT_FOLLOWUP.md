@@ -17,7 +17,8 @@ All rows are `val_predicted`; no category, text or embedding is exported.
 - **406,425 single-observation tracklets (62.5868%)**. This is the actual
   highly fragmented ~650k route; do not confuse it with PANDAS median 10.
 - Historical normalization retained **16,290 degenerate boxes**, rather than
-  silently dropping difficult observations. This count was not recomputed.
+  silently dropping difficult observations. The subsequent native-row scan
+  independently recounted this same degenerate-box total.
 - Original public, early-v2, normalized physical and native evaluator streams
   have distinct sizes/hashes/schemas. They are not interchangeable assets.
 
@@ -85,8 +86,9 @@ checkpoint, data or GPU. Synthetic scores [.01, .19, .9] become [.7501]*3:
 initialization at .2 accepts **3 instead of 1**. The same operations are
 present in pinned upstream source; they were not invented by the recovery.
 
-This proves two static contract effects. It **does not** prove historical
-score distribution or that these effects alone caused all fragmentation.
+This proves two static contract effects. The following additional scan also
+measures the actual saved score distribution. Neither alone proves exact
+historical code/weight binding or all fragmentation's cause.
 No frozen scores/boxes/IDs were modified, no threshold sweep or full inference
 was run. Any later correction would require its own distinct artifact,
 bounded smoke and evaluation; it cannot be passed off as original Q0.
@@ -106,6 +108,30 @@ Only the normalized physical + native evaluator JSONL would be necessary:
 streams, TAO frames and old environment are unnecessary for that audit.
 The checkpoint is conditional on a separately justified bounded rerun.
 No bulk transfer or full feature cache is automatically authorized.
+
+## Additional actual-stream score check
+
+NAS turn `01a1220d-d968-7153-884c-69e70550ec99` completed the user-approved
+read-only native evaluator JSONL scan. Main agent read the full command and
+untruncated output. File size/SHA256 match; size/inode/mtime unchanged.
+
+- **1,853,369 observations / 988 videos**, no blank/malformed rows.
+- Score min **.5053257942**, max **.7501000166**, mean **.6140423702**.
+- **1,802,527** scores in [0.5, sigmoid(1)] and **50,842** near .7501,
+  with endpoint/absolute tolerance 1e-6. These disjoint sets contain every
+  score; **zero below .5** or outside both sets, zero nonfinite/missing scores.
+- All `category_id=1`; **16,290 degenerate finite boxes**, no malformed or
+  nonfinite boxes. No new annotation/GT/Test read was needed.
+- One worker, **28.664 s**, **19,345,408-byte peak RSS**; enforced 256-MiB
+  address-space cap, minimum sampled system available RAM **81.85%**.
+
+This is strong artifact-level consistency with the inspected recompression
+and overwrite operations, not mere synthetic algebra. It does not recover
+lost raw probabilities or prove the checkpoint's supervision history. No
+original score/box/ID was changed; no inference/caching job started.
+The aggregate receipt is `nas_simowt_score_distribution.json`. The primary
+frontend remains unqualified. The latest regression including this receipt
+is **111 passed**; earlier 62 refers to the original follow-up delivery.
 
 The explicit GT-feasibility exception remains available. M2's four-track,
 64-observation frozen DINO smoke is only PASS_ENGINEERING_GT_ONLY; it cannot

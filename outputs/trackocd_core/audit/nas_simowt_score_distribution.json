@@ -1,0 +1,124 @@
+{
+  "schema_version": "trackocd.core.nas_simowt_score_distribution.v1",
+  "status": "SOURCE_SIDE_EXISTING_VAL_STREAM_AUDIT_COMPLETE",
+  "evidence_origin": {
+    "host": "remote-ssh-discovered:nas57",
+    "thread_id": "01a0c851-ce6c-76e2-ac44-d6b0e3618ceb",
+    "turn_id": "01a1220d-d968-7153-884c-69e70550ec99",
+    "turn_status": "completed",
+    "command_id": "exec-b6826d63-147a-423a-a30c-dfd7f7e675ef",
+    "exit_code": 0,
+    "command_and_full_untruncated_output_main_read": true
+  },
+  "source_result": {
+    "status": "COMPLETE",
+    "file": {
+      "actual_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/simowt/native_evaluator_rows.jsonl",
+      "type": "regular_file",
+      "bytes": 294735737,
+      "expected_bytes_match": true,
+      "sha256": "59122f452cec080a3a868a6ad05e5dc30ff5349b9a20a9e44e5d865c85329994",
+      "expected_sha256_match": true,
+      "unchanged_during_read": true
+    },
+    "counts": {
+      "total_lines": 1853369,
+      "blank_lines": 0,
+      "observation_rows": 1853369,
+      "videos": 988
+    },
+    "score": {
+      "missing": 0,
+      "null_or_non_numeric": 0,
+      "nonfinite": 0,
+      "finite_count": 1853369,
+      "outside_0_1": 0,
+      "min": 0.5053257942199707,
+      "max": 0.7501000165939331,
+      "mean": 0.6140423702131698,
+      "bins_width": 0.05,
+      "bin_rule": "[lower,upper), final bin [0.95,1.00]; only finite scores within [0,1]",
+      "bins": {
+        "0.00-0.05": 0,
+        "0.05-0.10": 0,
+        "0.10-0.15": 0,
+        "0.15-0.20": 0,
+        "0.20-0.25": 0,
+        "0.25-0.30": 0,
+        "0.30-0.35": 0,
+        "0.35-0.40": 0,
+        "0.40-0.45": 0,
+        "0.45-0.50": 0,
+        "0.50-0.55": 290509,
+        "0.55-0.60": 531707,
+        "0.60-0.65": 543411,
+        "0.65-0.70": 263314,
+        "0.70-0.75": 173586,
+        "0.75-0.80": 50842,
+        "0.80-0.85": 0,
+        "0.85-0.90": 0,
+        "0.90-0.95": 0,
+        "0.95-1.00": 0
+      },
+      "absolute_tolerance": 0.000001,
+      "near_0_7501": 50842,
+      "sigmoid_1": 0.7310585786300049,
+      "within_0_5_to_sigmoid_1_with_endpoint_tolerance": 1802527,
+      "below_0_5_strict": 0,
+      "below_0_5_minus_tolerance": 0,
+      "outside_interval_and_0_7501_tolerance": 0
+    },
+    "bbox_xyxy": {
+      "malformed_or_missing": 0,
+      "nonfinite": 0,
+      "degenerate_finite": 16290,
+      "nonfinite_or_degenerate": 16290,
+      "degenerate_rule": "x2<=x1 or y2<=y1"
+    },
+    "category_id": {
+      "missing": 0,
+      "counts": {
+        "1": 1853369
+      },
+      "only_foreground_1": true
+    },
+    "resources": {
+      "cpu_workers": 1,
+      "work_memory_budget_bytes": 268435456,
+      "enforced_address_space_limit_bytes": 268435456,
+      "system_total_ram_bytes": 16541995008,
+      "ram_available_before_bytes": 13544738816,
+      "ram_available_after_bytes": 13541969920,
+      "minimum_sampled_ram_available_bytes": 13539184640,
+      "minimum_sampled_ram_available_ratio": 0.818473505369347,
+      "ram_floor_ratio": 0.25,
+      "peak_rss_bytes": 19345408,
+      "max_line_bytes": 167,
+      "elapsed_seconds": 28.664196
+    },
+    "scope": {
+      "existing_stream_distribution_only": true,
+      "training_or_inference_run": false,
+      "new_gt_or_test_read": false,
+      "files_written": false,
+      "feature_cache_started": false
+    }
+  },
+  "derived": {
+    "interval_fraction": 0.9725677941089983,
+    "overwritten_signature_fraction": 0.02743220589100174,
+    "all_scores_in_two_disjoint_tolerated_regions": true,
+    "scores_below_registered_0_1_or_0_2_thresholds": 0
+  },
+  "interpretation": {
+    "consistent_with_inspected_second_sigmoid_and_empty_memo_overwrite": true,
+    "historical_source_patch_weight_binding_proven": false,
+    "all_fragmentation_caused_by_score_operations_proven": false,
+    "training_supervision_exclusion_proven": false,
+    "raw_detector_probability_recovered": false,
+    "current_flow_repairs_applied": false,
+    "score_quality_is_not_a_calibrated_raw_foreground_probability": true,
+    "normalization_degenerate_box_count_now_independently_recounted": true,
+    "qualifying_primary_frontend_frozen": false
+  }
+}

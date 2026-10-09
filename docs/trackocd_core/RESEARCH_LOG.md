@@ -103,3 +103,21 @@
 - NAS: user sent the read-only 294-MB native-row score-distribution request;
   its actual new turn completed. Source-side results are audited separately,
   not included as M3 synthetic or learned-method performance.
+
+## 2026-10-10 — M1 actual SimOWT native-row score distribution
+
+- Source-side read-only scan verifies the 294,735,737-byte native JSONL SHA
+  and 1,853,369 observations / 988 videos, unchanged during read.
+- Scores: 1,802,527 within [.5, sigmoid(1)] and 50,842 near .7501; zero
+  below .5 or outside both tolerated regions. Degenerate boxes 16,290,
+  all labels foreground 1. No new GT/annotation/Test needed.
+- Result: artifact-level distribution matches the static operations;
+  score quality is not raw calibrated foreground confidence. Does not prove
+  complete historical source/weight lineage, lawful supervision, or that all
+  fragmentation is caused by these operations. No silent repair of Q0.
+- Resources: one bounded worker, 28.66 s, 18.45-MiB RSS, minimum available
+  RAM 81.85%, enforced 256-MiB address-space budget. No data/weight/shard
+  moved, external process changed, inference/training/cache started.
+- Decision: preserve new aggregate evidence and original flow; 111 regression
+  tests pass. M1 quality/provenance gate remains blocked, GT-only preparation
+  remains authorized; not a new TAO detection/tracking/OCD experiment.

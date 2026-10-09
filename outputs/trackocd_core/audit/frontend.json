@@ -1,7 +1,7 @@
 {
   "FROZEN_PHYSICAL_FRONTEND_written": false,
   "candidate_metadata_refresh_scope": "SimOWT completed follow-up only; original physical metrics/lengths/coverage not rerun",
-  "candidate_metadata_refreshed_utc": "2026-10-09T18:47:25.192701+00:00",
+  "candidate_metadata_refreshed_utc": "2026-10-09T19:13:53.569848+00:00",
   "covtrack_native_recovery_candidate": {
     "causal_native_inference_verified": false,
     "contract_booleans_are_not_native_vocabulary_or_supervision_proof": true,
@@ -277,9 +277,13 @@
         "selected_as_primary": false
       },
       "score_contract_diagnosis": {
+        "all_native_scores_in_second_sigmoid_interval_or_0_7501_tolerance": true,
+        "current_source_distribution_freshly_audited": true,
+        "current_source_distribution_receipt": "outputs/trackocd_core/audit/nas_simowt_score_distribution.json",
         "empty_memo_score_column_view_overwrite": 0.7501,
         "frozen_asset_repaired_or_recomputed": false,
         "historical_score_distribution_or_fragmentation_attribution_verified": false,
+        "near_0_7501_count": 50842,
         "probability_source": "coco_inference sigmoid logits / sqrt with sigmoid IoU, then Instances.scores",
         "registered_thresholds": {
           "addnew_score": 0.2,
@@ -287,22 +291,24 @@
           "init_score": 0.2
         },
         "reproducible_CPU_receipt": "outputs/trackocd_core/audit/simowt_score_contract.json",
+        "score_below_0_5_count": 0,
         "tracking_consumer": "track_eval applies scores.sigmoid() again for selection/NMS/exported association score",
         "unit_probability_after_sigmoid_interval": [
           0.5,
           0.7310585786300049
         ],
-        "upstream_pinned_source_contains_same_operations": true
+        "upstream_pinned_source_contains_same_operations": true,
+        "within_second_sigmoid_interval_count": 1802527
       },
       "source_copy_checks_performed": true,
       "source_provenance_evidence": {
         "exists": true,
         "is_symlink": false,
-        "mtime_ns": 1791571389770817312,
+        "mtime_ns": 1791573233312863296,
         "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/nas_simowt_provenance.json",
         "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/audit/nas_simowt_provenance.json",
-        "sha256": "d631bf58be8f84d7e8222f6fbe0513e65d990653b8ae9e92d46044fbf0d2d33f",
-        "size_bytes": 13542
+        "sha256": "db9a4c2ba05a2096a06b2f62da0c4bb3fb8c4da3db8ea447c73bb9d133db34a5",
+        "size_bytes": 14002
       },
       "source_stream_currently_hashed_and_counted": {
         "array_length_mismatch_tracks": 0,

@@ -74,3 +74,18 @@ def test_candidate_refresh_preserves_physical_metrics_and_rejects_source_mismatc
     with pytest.raises(ValueError, match="source copy byte mismatch"):
         refresh_simowt_candidate(snapshot, tmp_path)
     assert snapshot["pandas_bytetrack_frozen_reference"] == {"unchanged": True}
+
+
+def test_actual_source_distribution_conserves_rows_without_overclaiming_history():
+    evidence = json.loads((ROOT / "outputs/trackocd_core/audit/nas_simowt_score_distribution.json").read_text())
+    source = evidence["source_result"]
+    score, rows = source["score"], source["counts"]["observation_rows"]
+    assert sum(score["bins"].values()) == rows == 1853369
+    assert score["near_0_7501"] + score["within_0_5_to_sigmoid_1_with_endpoint_tolerance"] == rows
+    assert score["below_0_5_strict"] == score["outside_interval_and_0_7501_tolerance"] == 0
+    assert source["bbox_xyxy"]["degenerate_finite"] == 16290
+    assert source["file"]["expected_sha256_match"]
+    assert source["resources"]["minimum_sampled_ram_available_ratio"] >= 0.25
+    assert evidence["interpretation"]["consistent_with_inspected_second_sigmoid_and_empty_memo_overwrite"]
+    assert not evidence["interpretation"]["historical_source_patch_weight_binding_proven"]
+    assert not evidence["interpretation"]["all_fragmentation_caused_by_score_operations_proven"]

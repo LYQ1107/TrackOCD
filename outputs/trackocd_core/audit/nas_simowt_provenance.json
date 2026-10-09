@@ -124,7 +124,8 @@
     "status": "COMPLETE_WITH_INVALID_BOXES",
     "invalid_boxes_retained": 16290,
     "all_observations_retained": true,
-    "invalid_box_count_freshly_recomputed": false,
+    "invalid_box_count_freshly_recomputed": true,
+    "fresh_box_recount_evidence": "outputs/trackocd_core/audit/nas_simowt_score_distribution.json",
     "normalization_gt_join_used": false,
     "annotation_usage": "Structural image/video/frame_index/file_name lookup, as inspected in normalization"
   },
@@ -248,6 +249,12 @@
     "positive_proof_of_forbidden_supervision": false
   },
   "score_contract_diagnosis": {
+    "current_source_distribution_freshly_audited": true,
+    "current_source_distribution_receipt": "outputs/trackocd_core/audit/nas_simowt_score_distribution.json",
+    "all_native_scores_in_second_sigmoid_interval_or_0_7501_tolerance": true,
+    "within_second_sigmoid_interval_count": 1802527,
+    "near_0_7501_count": 50842,
+    "score_below_0_5_count": 0,
     "probability_source": "coco_inference sigmoid logits / sqrt with sigmoid IoU, then Instances.scores",
     "tracking_consumer": "track_eval applies scores.sigmoid() again for selection/NMS/exported association score",
     "registered_thresholds": {
