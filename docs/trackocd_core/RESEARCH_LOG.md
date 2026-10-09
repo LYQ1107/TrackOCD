@@ -199,3 +199,16 @@
 - Next: policy_train-only score separation diagnosis, no new fit or parameter
   search on heldout/Val Novel. One correction cap remains unused; no M11,
   qualified frontend, main M5/M8/M9 or end-to-end PASS. Goal remains active.
+
+## 2026-10-10 — Policy-Train-only open-set geometry diagnosis
+
+- Frozen model/prototype score distributions only, 35 cases, 3.80 s CPU;
+  no heldout features, new fit, threshold search, Val/Test or memory repair.
+- Policy p16 max-Known-score AUROC drops .9792 raw→.7153–.8681 adapted;
+  rank-based deterioration cannot be fixed by a single monotone threshold.
+  Unknown same/different cosine gap compresses .2708→.017–.046; report
+  distributions, not an uncalibrated cross-space statistical superiority claim.
+- Decision: investigate preservation of frozen visual open-set geometry,
+  not hide failure with a gate change or larger network. Root cause is not
+  uniquely proved; one correction remains unused and must be preregistered
+  using fit-only teacher geometry, same data/seeds/steps/capacity.

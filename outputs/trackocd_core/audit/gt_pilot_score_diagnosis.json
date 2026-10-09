@@ -1,0 +1,1534 @@
+{
+  "cases": [
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.5605402588844299,
+        "mean": 0.40605582545200986,
+        "median": 0.43615807592868805,
+        "min": 0.15472057461738586
+      },
+      "known_pass_fixed_gate_count": 0,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.826388888888889,
+      "model": "A0_frozen_raw_mean",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.38177329301834106,
+        "mean": 0.04115153397260993,
+        "median": 0.02274087257683277,
+        "min": -0.03875890374183655
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.5671734809875488,
+        "mean": 0.1706775800945858,
+        "median": 0.09050726890563965,
+        "min": 0.024571234360337257
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 0,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.5196138620376587,
+        "mean": 0.12480621629705031,
+        "median": 0.07372675463557243,
+        "min": -0.004108387976884842
+      },
+      "seed": null
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.6574797630310059,
+        "mean": 0.45676490664482117,
+        "median": 0.4873818904161453,
+        "min": 0.15645405650138855
+      },
+      "known_pass_fixed_gate_count": 1,
+      "known_top1_without_rejection_count": 8,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8958333333333334,
+      "model": "A0_frozen_raw_mean",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.28426849842071533,
+        "mean": 0.042001116925988485,
+        "median": 0.03616679832339287,
+        "min": -0.02718525379896164
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.5438397526741028,
+        "mean": 0.1639840438341101,
+        "median": 0.08511119708418846,
+        "min": 0.03199747949838638
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 0,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.5300517082214355,
+        "mean": 0.18377483154957494,
+        "median": 0.13791291415691376,
+        "min": 0.0021193791180849075
+      },
+      "seed": null
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.7399886250495911,
+        "mean": 0.4976172720392545,
+        "median": 0.5029461234807968,
+        "min": 0.20727720856666565
+      },
+      "known_pass_fixed_gate_count": 1,
+      "known_top1_without_rejection_count": 8,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.9722222222222222,
+      "model": "A0_frozen_raw_mean",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.1432468295097351,
+        "mean": 0.03829184269394587,
+        "median": 0.03664841689169407,
+        "min": -0.03773312270641327
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.416995644569397,
+        "mean": 0.14526680360237756,
+        "median": 0.09277893230319023,
+        "min": 0.024014689028263092
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 0,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.5310345888137817,
+        "mean": 0.22720661076406637,
+        "median": 0.19297432899475098,
+        "min": 0.020226892083883286
+      },
+      "seed": null
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.8460954427719116,
+        "mean": 0.4940597948928674,
+        "median": 0.48331256210803986,
+        "min": 0.20714817941188812
+      },
+      "known_pass_fixed_gate_count": 1,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.9791666666666666,
+      "model": "A0_frozen_raw_mean",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.15067490935325623,
+        "mean": 0.036561567457047875,
+        "median": 0.03625908121466637,
+        "min": -0.0426366813480854
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.30257201194763184,
+        "mean": 0.1394226693858703,
+        "median": 0.09456335008144379,
+        "min": 0.021428436040878296
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 0,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.5687918066978455,
+        "mean": 0.2652805804585417,
+        "median": 0.2236269935965538,
+        "min": 0.03759131580591202
+      },
+      "seed": null
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.8521509170532227,
+        "mean": 0.4701155126094818,
+        "median": 0.45541150867938995,
+        "min": 0.22296512126922607
+      },
+      "known_pass_fixed_gate_count": 2,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.9791666666666666,
+      "model": "A0_frozen_raw_mean",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.16616973280906677,
+        "mean": 0.038527675317945306,
+        "median": 0.0388739388436079,
+        "min": -0.04810170829296112
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.31237298250198364,
+        "mean": 0.14160285331308842,
+        "median": 0.10431499779224396,
+        "min": 0.024010896682739258
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 0,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.5730060935020447,
+        "mean": 0.30935655161738396,
+        "median": 0.30437028408050537,
+        "min": 0.031147189438343048
+      },
+      "seed": null
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9850252270698547,
+        "mean": 0.932617629567782,
+        "median": 0.9600265026092529,
+        "min": 0.7873727083206177
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.5694444444444445,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9833527207374573,
+        "mean": 0.8206483909377346,
+        "median": 0.8154128193855286,
+        "min": 0.49423444271087646
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9897828102111816,
+        "mean": 0.9192076623439789,
+        "median": 0.9148765802383423,
+        "min": 0.7897285223007202
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9855477213859558,
+        "mean": 0.8363814875483513,
+        "median": 0.9138664901256561,
+        "min": 0.4435735046863556
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9892058372497559,
+        "mean": 0.9456391433874766,
+        "median": 0.9515145719051361,
+        "min": 0.8812477588653564
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7083333333333334,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9833816885948181,
+        "mean": 0.8670921491252052,
+        "median": 0.8844676911830902,
+        "min": 0.4795915484428406
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9874550700187683,
+        "mean": 0.9142829477787018,
+        "median": 0.9188761413097382,
+        "min": 0.7708890438079834
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9867767095565796,
+        "mean": 0.8805589228868484,
+        "median": 0.9185469746589661,
+        "min": 0.5794951915740967
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9921793937683105,
+        "mean": 0.9582133491834005,
+        "median": 0.9721107482910156,
+        "min": 0.874500572681427
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7916666666666666,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9845833778381348,
+        "mean": 0.8765489712909416,
+        "median": 0.9137749075889587,
+        "min": 0.5347660183906555
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9778916239738464,
+        "mean": 0.9101716428995132,
+        "median": 0.9092061519622803,
+        "min": 0.7841845154762268
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9869931936264038,
+        "mean": 0.8987146615982056,
+        "median": 0.9159469604492188,
+        "min": 0.6768957376480103
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9930827617645264,
+        "mean": 0.9615393429994583,
+        "median": 0.9706292152404785,
+        "min": 0.8771200180053711
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7986111111111112,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9831472039222717,
+        "mean": 0.878269366644047,
+        "median": 0.9072406888008118,
+        "min": 0.5563017725944519
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9860857129096985,
+        "mean": 0.9145172834396362,
+        "median": 0.9180846512317657,
+        "min": 0.7923927307128906
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9842597246170044,
+        "mean": 0.8988846987485886,
+        "median": 0.9194580316543579,
+        "min": 0.6500875353813171
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9933794140815735,
+        "mean": 0.9606524109840393,
+        "median": 0.969455361366272,
+        "min": 0.8773342370986938
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.798611111111111,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9851275086402893,
+        "mean": 0.876876813394052,
+        "median": 0.9031708240509033,
+        "min": 0.55600506067276
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9732694625854492,
+        "mean": 0.9133149335781733,
+        "median": 0.9171994924545288,
+        "min": 0.7946741580963135
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9866399168968201,
+        "mean": 0.8938423891862234,
+        "median": 0.9202383756637573,
+        "min": 0.6287952065467834
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9844641089439392,
+        "mean": 0.929433266321818,
+        "median": 0.9596602320671082,
+        "min": 0.7816457748413086
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.5625,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9835460782051086,
+        "mean": 0.8135001162687937,
+        "median": 0.8099529147148132,
+        "min": 0.48278552293777466
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9892750978469849,
+        "mean": 0.9208996693293253,
+        "median": 0.9224124252796173,
+        "min": 0.7948082089424133
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9843229651451111,
+        "mean": 0.8285043115417162,
+        "median": 0.9042762815952301,
+        "min": 0.4331477880477905
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9884403347969055,
+        "mean": 0.9425576577583948,
+        "median": 0.9516138136386871,
+        "min": 0.8703687191009521
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.6805555555555556,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.983176589012146,
+        "mean": 0.8616144287365454,
+        "median": 0.8802801668643951,
+        "min": 0.4687838852405548
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9873449802398682,
+        "mean": 0.9172711223363876,
+        "median": 0.9247329235076904,
+        "min": 0.7762518525123596
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9854536056518555,
+        "mean": 0.874414786696434,
+        "median": 0.9132097661495209,
+        "min": 0.5689550638198853
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9911415576934814,
+        "mean": 0.957542359828949,
+        "median": 0.9706380665302277,
+        "min": 0.8732722997665405
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.798611111111111,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9838898181915283,
+        "mean": 0.8723340630531311,
+        "median": 0.9120714068412781,
+        "min": 0.5239749550819397
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9765775203704834,
+        "mean": 0.9127538998921713,
+        "median": 0.9122998118400574,
+        "min": 0.7897722721099854
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9840021133422852,
+        "mean": 0.8939938594897588,
+        "median": 0.9080793261528015,
+        "min": 0.6752854585647583
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9929451942443848,
+        "mean": 0.9607855727275213,
+        "median": 0.9694525301456451,
+        "min": 0.8746811151504517
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7986111111111112,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9808019399642944,
+        "mean": 0.874765795690042,
+        "median": 0.9061554968357086,
+        "min": 0.545752763748169
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9846211671829224,
+        "mean": 0.9167634844779968,
+        "median": 0.922642171382904,
+        "min": 0.7985281348228455
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9812127351760864,
+        "mean": 0.8950485289096832,
+        "median": 0.9158229529857635,
+        "min": 0.6476812362670898
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9935646653175354,
+        "mean": 0.9600859234730402,
+        "median": 0.9681336283683777,
+        "min": 0.8743381500244141
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7847222222222222,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9831116199493408,
+        "mean": 0.8731172725006386,
+        "median": 0.9026695787906647,
+        "min": 0.5461164712905884
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9758109450340271,
+        "mean": 0.9146786580483118,
+        "median": 0.9218524098396301,
+        "min": 0.8012601137161255
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9848143458366394,
+        "mean": 0.8898151864608129,
+        "median": 0.9207930266857147,
+        "min": 0.6263445615768433
+      },
+      "seed": 1027
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9875712394714355,
+        "mean": 0.9591726015011469,
+        "median": 0.972527801990509,
+        "min": 0.8160748481750488
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7361111111111112,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9744428992271423,
+        "mean": 0.8709270645070959,
+        "median": 0.8975138664245605,
+        "min": 0.594299852848053
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.985389769077301,
+        "mean": 0.9436099529266357,
+        "median": 0.9435278177261353,
+        "min": 0.8738036155700684
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9825955629348755,
+        "mean": 0.8895343417922655,
+        "median": 0.9531453847885132,
+        "min": 0.48555007576942444
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9884113073348999,
+        "mean": 0.9701156218846639,
+        "median": 0.973528116941452,
+        "min": 0.9408799409866333
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 6,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8125,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9795187711715698,
+        "mean": 0.8919035096963247,
+        "median": 0.9273883998394012,
+        "min": 0.6040624380111694
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9793166518211365,
+        "mean": 0.9437482059001923,
+        "median": 0.9501210153102875,
+        "min": 0.8593076467514038
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9866816997528076,
+        "mean": 0.9079330513874689,
+        "median": 0.9647659063339233,
+        "min": 0.5775051712989807
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9960262179374695,
+        "mean": 0.9653385827938715,
+        "median": 0.9701229333877563,
+        "min": 0.9073017835617065
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7291666666666667,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9883409738540649,
+        "mean": 0.8973874328313051,
+        "median": 0.9237778782844543,
+        "min": 0.5750203132629395
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9894729852676392,
+        "mean": 0.9403694868087769,
+        "median": 0.9425606429576874,
+        "min": 0.867781400680542
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9816365242004395,
+        "mean": 0.9236630648374557,
+        "median": 0.9638490378856659,
+        "min": 0.6819493174552917
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9937846660614014,
+        "mean": 0.9601268966992696,
+        "median": 0.9715610444545746,
+        "min": 0.8883780837059021
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7083333333333334,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.983751118183136,
+        "mean": 0.9024355113506317,
+        "median": 0.9303026795387268,
+        "min": 0.6093135476112366
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9865591526031494,
+        "mean": 0.9421308984359106,
+        "median": 0.9359329342842102,
+        "min": 0.8746196627616882
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9863415956497192,
+        "mean": 0.9278925110896429,
+        "median": 0.9480215311050415,
+        "min": 0.6967782378196716
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9934724569320679,
+        "mean": 0.9577630013227463,
+        "median": 0.9673348069190979,
+        "min": 0.8932099342346191
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 10,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7152777777777778,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9839195609092712,
+        "mean": 0.9033135882130375,
+        "median": 0.9339317679405212,
+        "min": 0.633846640586853
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.979034960269928,
+        "mean": 0.9350836674372355,
+        "median": 0.9309216141700745,
+        "min": 0.8809967041015625
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.990979790687561,
+        "mean": 0.9222214668989182,
+        "median": 0.954060822725296,
+        "min": 0.6783336400985718
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9873565435409546,
+        "mean": 0.9593507349491119,
+        "median": 0.9723365604877472,
+        "min": 0.8187018632888794
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7291666666666667,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9748616814613342,
+        "mean": 0.8744275448498903,
+        "median": 0.8953849077224731,
+        "min": 0.6108340620994568
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9861173629760742,
+        "mean": 0.944645827015241,
+        "median": 0.9463208913803101,
+        "min": 0.8715654611587524
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9837609529495239,
+        "mean": 0.8914384370048841,
+        "median": 0.9501543343067169,
+        "min": 0.4932166635990143
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9883474707603455,
+        "mean": 0.9704946329196295,
+        "median": 0.9738833904266357,
+        "min": 0.9422213435173035
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 6,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8194444444444444,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9776526093482971,
+        "mean": 0.8966421407681925,
+        "median": 0.9302067458629608,
+        "min": 0.6202881932258606
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9784978032112122,
+        "mean": 0.9451932062705358,
+        "median": 0.9540676474571228,
+        "min": 0.8581216931343079
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9871172904968262,
+        "mean": 0.9108593811591467,
+        "median": 0.9619946181774139,
+        "min": 0.5903738737106323
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9957790374755859,
+        "mean": 0.9656823178132375,
+        "median": 0.9722498655319214,
+        "min": 0.9088268280029297
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7222222222222222,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9862351417541504,
+        "mean": 0.9017334083716074,
+        "median": 0.92823526263237,
+        "min": 0.5874364972114563
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9897406697273254,
+        "mean": 0.9421608597040176,
+        "median": 0.944784939289093,
+        "min": 0.866530179977417
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9810509085655212,
+        "mean": 0.9253014822800955,
+        "median": 0.9623435735702515,
+        "min": 0.6901146769523621
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9936308860778809,
+        "mean": 0.9614906162023544,
+        "median": 0.9726842641830444,
+        "min": 0.8918857574462891
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 10,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7152777777777778,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9832150936126709,
+        "mean": 0.9059352775414785,
+        "median": 0.9297561049461365,
+        "min": 0.6190975308418274
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9868502616882324,
+        "mean": 0.9437589148680369,
+        "median": 0.9396973252296448,
+        "min": 0.8733747005462646
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9859424829483032,
+        "mean": 0.9295095205307007,
+        "median": 0.9446749985218048,
+        "min": 0.7056785821914673
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9938743114471436,
+        "mean": 0.9598377893368403,
+        "median": 0.9679367244243622,
+        "min": 0.8959883451461792
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 10,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7152777777777778,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9828987121582031,
+        "mean": 0.9066061289222153,
+        "median": 0.938814640045166,
+        "min": 0.6516454815864563
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.979740560054779,
+        "mean": 0.9362643361091614,
+        "median": 0.9359811842441559,
+        "min": 0.8758372068405151
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9904744625091553,
+        "mean": 0.9239508211612701,
+        "median": 0.9549781680107117,
+        "min": 0.6873452663421631
+      },
+      "seed": 1028
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9877259731292725,
+        "mean": 0.9524731387694677,
+        "median": 0.9664673209190369,
+        "min": 0.8265022039413452
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 8,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7847222222222222,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9714487791061401,
+        "mean": 0.8420667372368,
+        "median": 0.879045158624649,
+        "min": 0.5265385508537292
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9786747694015503,
+        "mean": 0.9286543428897858,
+        "median": 0.9345293939113617,
+        "min": 0.8245302438735962
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9747675657272339,
+        "mean": 0.8621327802538872,
+        "median": 0.9042158126831055,
+        "min": 0.4206242859363556
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9896450042724609,
+        "mean": 0.960417851805687,
+        "median": 0.9663374423980713,
+        "min": 0.9267181158065796
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.826388888888889,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9815969467163086,
+        "mean": 0.8745708951243648,
+        "median": 0.9204921722412109,
+        "min": 0.5038221478462219
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9668048620223999,
+        "mean": 0.9255408893028895,
+        "median": 0.9335818886756897,
+        "min": 0.8026934862136841
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9827278852462769,
+        "mean": 0.9014525810877482,
+        "median": 0.9474468231201172,
+        "min": 0.5686871409416199
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9917440414428711,
+        "mean": 0.9596653779347738,
+        "median": 0.9637095928192139,
+        "min": 0.8992561101913452
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8819444444444444,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9900705218315125,
+        "mean": 0.8804055584801568,
+        "median": 0.9201816618442535,
+        "min": 0.5453176498413086
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9533389210700989,
+        "mean": 0.9228663295507431,
+        "median": 0.9331348538398743,
+        "min": 0.8041486144065857
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9776572585105896,
+        "mean": 0.9332047800223032,
+        "median": 0.9628371894359589,
+        "min": 0.7382457256317139
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9871448278427124,
+        "mean": 0.95791095495224,
+        "median": 0.962534099817276,
+        "min": 0.8797543048858643
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8194444444444443,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9896702170372009,
+        "mean": 0.8855291891981054,
+        "median": 0.9199033677577972,
+        "min": 0.5558456778526306
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9679973125457764,
+        "mean": 0.9232390423615774,
+        "median": 0.9304281175136566,
+        "min": 0.8104782104492188
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.985051155090332,
+        "mean": 0.9379521707693735,
+        "median": 0.9590281546115875,
+        "min": 0.7643914818763733
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9926064014434814,
+        "mean": 0.95494278271993,
+        "median": 0.9647207260131836,
+        "min": 0.8677330613136292
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8402777777777778,
+      "model": "A1_semantic_adapter_mean",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9890385270118713,
+        "mean": 0.8791026682765396,
+        "median": 0.9174146950244904,
+        "min": 0.5538241267204285
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9562596678733826,
+        "mean": 0.9155722012122472,
+        "median": 0.9254127144813538,
+        "min": 0.8161978721618652
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.99153733253479,
+        "mean": 0.9198517948389053,
+        "median": 0.9590107202529907,
+        "min": 0.7182926535606384
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9885802268981934,
+        "mean": 0.9472823838392893,
+        "median": 0.965349406003952,
+        "min": 0.79879230260849
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.7569444444444444,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 1,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9657781720161438,
+        "mean": 0.8222847376708631,
+        "median": 0.8635344803333282,
+        "min": 0.48086169362068176
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9735872149467468,
+        "mean": 0.9262333959341049,
+        "median": 0.9347076117992401,
+        "min": 0.839443027973175
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9769008159637451,
+        "mean": 0.8436752880613009,
+        "median": 0.9108165502548218,
+        "min": 0.3676091134548187
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9871211051940918,
+        "mean": 0.9574072708686193,
+        "median": 0.9650853276252747,
+        "min": 0.9095838069915771
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 7,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8402777777777778,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 2,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9807353615760803,
+        "mean": 0.8603875372144911,
+        "median": 0.9089730679988861,
+        "min": 0.45213133096694946
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9619014263153076,
+        "mean": 0.9214702149232229,
+        "median": 0.9279846549034119,
+        "min": 0.8183844685554504
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9810406565666199,
+        "mean": 0.8932952433824539,
+        "median": 0.9449978768825531,
+        "min": 0.5367791056632996
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9909743070602417,
+        "mean": 0.9560642043749491,
+        "median": 0.9617563784122467,
+        "min": 0.8933245539665222
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8680555555555555,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 4,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9887888431549072,
+        "mean": 0.8647413546288455,
+        "median": 0.9109951555728912,
+        "min": 0.4916019141674042
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9519001245498657,
+        "mean": 0.9167905201514562,
+        "median": 0.9285329580307007,
+        "min": 0.8178894519805908
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9788662195205688,
+        "mean": 0.9266114880641302,
+        "median": 0.9600428640842438,
+        "min": 0.7147872447967529
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9841612577438354,
+        "mean": 0.952539806564649,
+        "median": 0.9618061780929565,
+        "min": 0.8712897300720215
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8055555555555556,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 8,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9875741600990295,
+        "mean": 0.8724452345459549,
+        "median": 0.9086978435516357,
+        "min": 0.5039150714874268
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9607168436050415,
+        "mean": 0.9168547689914703,
+        "median": 0.9257498681545258,
+        "min": 0.8232364654541016
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9836941361427307,
+        "mean": 0.9337125172217687,
+        "median": 0.9549304842948914,
+        "min": 0.7480550408363342
+      },
+      "seed": 1029
+    },
+    {
+      "fixed_gt_counts": {
+        "different_class_pairs": 54,
+        "known": 12,
+        "pseudo_novel": 12,
+        "same_class_pairs": 12
+      },
+      "known_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9899284839630127,
+        "mean": 0.9518272628386816,
+        "median": 0.9592747390270233,
+        "min": 0.8593645095825195
+      },
+      "known_pass_fixed_gate_count": 12,
+      "known_top1_without_rejection_count": 9,
+      "known_vs_pseudo_novel_prototype_score_AUROC_diagnostic_only": 0.8680555555555555,
+      "model": "A2_semantic_adapter_evidence",
+      "prefix": 16,
+      "pseudo_novel_different_class_cosine": {
+        "count": 54,
+        "max": 0.9898223876953125,
+        "mean": 0.8683695804189753,
+        "median": 0.906614750623703,
+        "min": 0.5026463270187378
+      },
+      "pseudo_novel_max_prototype_cosine": {
+        "count": 12,
+        "max": 0.9496100544929504,
+        "mean": 0.9088908036549886,
+        "median": 0.9099695682525635,
+        "min": 0.826252818107605
+      },
+      "pseudo_novel_pass_fixed_known_gate_count": 12,
+      "pseudo_novel_same_class_cross_video_cosine": {
+        "count": 12,
+        "max": 0.9910538792610168,
+        "mean": 0.9145392129818598,
+        "median": 0.9585267901420593,
+        "min": 0.6918896436691284
+      },
+      "seed": 1029
+    }
+  ],
+  "config_sha256": "48f5e6b2526e85dc93eca5e2b3ea1e2e92ed0277bb32303b63561a4508748891",
+  "data_partitions_read_for_descriptors": [
+    "separate Known prototypes",
+    "policy_train"
+  ],
+  "fixed_gate_counts_ignore_anonymous_arbitration_are_not_sequential_metrics": true,
+  "generated_utc": "2026-10-09T19:47:17.012046+00:00",
+  "heldout_descriptor_or_evaluation_accessed": false,
+  "new_model_fitting_or_threshold_search": false,
+  "policy_memory_or_GT_mapping_used": false,
+  "resources": {
+    "gpu_used": false,
+    "peak_rss_kib": 693392,
+    "wall_seconds": 3.7965736630139872,
+    "worker_count": 1
+  },
+  "root_cause_correction_rounds_used": 0,
+  "schema_version": "trackocd.core.gt-pilot-score-diagnosis.v1",
+  "source_sha256": {
+    "scripts/trackocd_core/diagnose_gt_pilot_scores.py": "e92e16fc82cd38db547ece7883cde300fca55ea3db51ddd6b29367412e90b99d",
+    "src/trackocd_core/representation.py": "b6232770198ddb95f24ae9e7936fead95229f5c3fb1776bea84abddebc3dc739"
+  },
+  "status": "POLICY_TRAIN_ONLY_DIAGNOSTIC_NOT_CORRECTION",
+  "training_receipt_sha256": "8bf14e73c1cc3d93f0ac074cd34f6182063ef7ee6c252658bca68a6e8f88928f",
+  "val_or_test_accessed": false
+}

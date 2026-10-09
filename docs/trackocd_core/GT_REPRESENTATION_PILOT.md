@@ -112,3 +112,28 @@ promote A2 or M11 based on these results. Next: diagnose Known/pseudo-Novel
 score separation on **policy_train only**, without refitting, expanding the
 network or using Val Novel labels. Any correction must be explicitly
 registered and respect the one-root-cause-correction cap.
+
+## Policy-Train-only frozen score diagnosis
+
+No optimizer, threshold search, heldout descriptors or Val/Test were opened
+by this diagnostic. Same fixed final models/prototypes, 35 seed/prefix cases,
+one CPU worker, 3.80 s, ~677.14-MiB peak. These are pair/prototype score
+distributions, not a new sequential policy performance result.
+
+At p16, raw DINO Known-vs-pseudo-Novel max-prototype-score AUROC is .9792;
+A1 across seeds is .7986/.7153/.8403, A2 .7847/.7153/.8681. This ranking
+diagnostic is threshold-independent: an unchanged .65 gate is **not the
+only evidenced issue**. Raw unknown same-class cosine mean .3094 vs
+different-class .0385; adapted unknown pair means rise to .87–.92 and gaps
+shrink to .017–.046. Do not equate different-space mean gaps to statistical
+proof, but retain the observable compression and worse prototype ranking.
+Every adapted policy_train unknown passes the fixed Known gate; raw passes
+none. Known top-1 without rejection is 9/12 raw and 9/10/9 adapted.
+
+This supports investigating loss of frozen open-set geometry under tiny
+four-class fitting, not merely changing thresholds or enlarging the network.
+It does not prove one unique cause or justify a universal method failure.
+One controlled correction remains unused; if taken, preregister fit-only
+geometry-preservation regularization, keep data/seeds/steps/model capacity
+and all original outcomes fixed, and evaluate only after the new checkpoints
+freeze. No repeated root-cause search or Val Novel optimization is authorized.
