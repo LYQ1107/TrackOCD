@@ -217,8 +217,28 @@ Bounded GitHub probes using that key failed before authentication: direct port
 22 through the HTTP proxy timed out during banner exchange. This is not an
 observed key rejection and not proof that the repository or remote branch is
 absent. No proxy service, SSH config, host-key checking or unrelated process
-was changed. The missing NAS connection fields are HostName/User/Port and,
-if present, the jump/proxy route from the user's `Host nas57` configuration.
+was changed. At that point, the requested NAS connection fields were
+HostName/User/Port and any jump/proxy route in the user's `Host nas57` stanza.
+
+The user subsequently provided that client stanza: `Valadmin@192.168.31.57:22`,
+client identity `id_ed25519_nas_192_168_31_57`, and
+`RemoteForward 17890 127.0.0.1:7890`. This is a client-to-NAS login plus a
+client-proxy listener on NAS, not an A100 jump route. A fresh A100 direct
+probe still timed out, and the named identity is absent here. No identity
+was copied and the NAS stanza was not installed into A100's SSH config.
+Existing A100 HTTP/SOCKS proxies accepted a CONNECT request for NAS but did
+not return any SSH banner; accepted proxy replies are not treated as a
+verified NAS connection.
+
+Read-only listener/controller inspection identifies A100's 7890/7891 as
+the existing local `mihomo`, not the client's NAS reverse forward. Its
+selected `hostwind` leaf reported `alive=false` with recent zero-delay
+health observations, while the GitHub HTTPS probe failed. This supplies
+an upstream-network lead, not proof of GitHub key rejection or authority
+to change routing, restart services or interfere with other jobs.
+A100 loopback port 17890 has no listener at this snapshot. A separate
+client-opened loopback SSH reverse forward could supply a task-scoped
+proxy without changing the current proxy; it has not been created.
 
 On this follow-up, the worktree was clean before documentation edits and the
 same 15 tests passed again. About 91 GiB remains free. Training, large feature

@@ -3,6 +3,21 @@
   "status": "CANDIDATES_NOT_RESTORED",
   "prepared_at_utc": "2026-10-09T15:17:37Z",
   "nas_host_reference": "remote-ssh-discovered:nas57",
+  "nas_client_connection": {
+    "configuration_received_from_user": true,
+    "host_alias": "nas57",
+    "host_name": "192.168.31.57",
+    "user": "Valadmin",
+    "port": 22,
+    "identity_file_reference_on_client_only": "~/.ssh/id_ed25519_nas_192_168_31_57",
+    "identities_only": true,
+    "remote_forward_on_nas": "17890 127.0.0.1:7890",
+    "interpretation": "The client authenticates to NAS and makes its own proxy reachable on NAS. This neither forwards the SSH identity to A100 nor establishes an A100-to-NAS route.",
+    "a100_direct_probe": "Connection timed out",
+    "a100_matching_identity_present": false,
+    "private_key_copy_requested": false,
+    "client_relay_required": true
+  },
   "nas_root_candidate": "/home/Valadmin/A100",
   "new_server_root": "/data3/liuyeqiang/TrackOCD",
   "historical_listing_source": {
@@ -111,7 +126,7 @@
     "Entire old Python 3.7 environment before establishing a concrete dependency need"
   ],
   "resume_gates": [
-    "Obtain real nas57 connection route (HostName/User/Port and any jump/proxy), not a GitHub key label",
+    "Use the received nas57 client configuration to establish an actual scoped client relay or source-side read-only inventory; do not copy its private key or mistake NAS RemoteForward for A100 reachability",
     "Restore GitHub transport; ordinary push and exact remote HEAD verification before leaving M0",
     "Audit current NAS assets without treating peer historical output as current file identity",
     "Read and preserve actual unpublished v2 changes; never substitute Phase89/90 or reconstructed chat code",
