@@ -63,8 +63,8 @@ downgrade or wholesale requirements installation is planned.
 At pinned [official weight repository revision](https://huggingface.co/dereksiyuanli/masa/tree/25ed372c47f2c46cf36fd446d1b657b656bc7ea9),
 LFS metadata lists `sam_vitb_masa.pth` as 558,882,875 B and converted
 `sam_vit_b_01ec64_mmdet.pth` as 375,042,767 B: a conservative 933,925,642-B
-weight ceiling, not downloaded or locally hash-verified. Inspect the first
-checkpoint's tensor coverage before deciding whether the second is necessary.
+weight ceiling at initial preflight. The subsequent first-checkpoint recovery
+below verifies local bytes and defers the second until exact model key matching.
 Exact filenames, LFS SHA256 and revision are in `masa_sam_candidate_smoke.json`.
 
 The conditional smoke uses a separate runtime only after an exact minimal
@@ -102,9 +102,69 @@ source-only audit took 0.0066 s, 17,864-KiB peak RSS, one CPU worker. All
 Private upstream copies are excluded from Git; public aggregate receipt,
 source manifest, tests and conditional smoke configuration are included.
 
-Next: exact binary-wheel dependency resolution and safe frozen checkpoint
-key coverage, then the bounded native proposal smoke if those gates pass.
+Initial next action was binary-wheel resolution and safe checkpoint inspection;
+both completed in the subsequent recovery below. Isolated installation,
+exact model key matching and the bounded proposal smoke remain unverified.
 Smoke success would still require separate physical/coverage evaluation
 before M1 qualification. Preserve Q0, all old streams/shards and the negative
 GT representation findings. The one correction round remains consumed;
 GT policy-learning scope is still awaiting explicit clarification.
+
+## Frozen checkpoint recovery and exact wheel budget
+
+The first checkpoint is now local: **558,882,875 B**, SHA256
+`441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c`,
+matching the pinned repository LFS identity. Download took approximately
+117 seconds; the verified partial file was renamed without overwriting an
+existing destination. No second SAM pretrain weight was downloaded.
+
+Read-only `torch.load(weights_only=True, mmap=True, map_location='cpu')`
+loaded **419 tensors** without extra global allowlisting or unsafe fallback.
+Components include 177 backbone tensors, 75 adapter tensors, six RPN tensors,
+eight ROI tensors and 16 track-head tensors; prompt/mask components account
+for the remainder. The ROI classification weight is `[2,1024]` (one foreground
+plus background), regression `[4,1024]`, and SAM blocks 0–11 are present.
+This is structural evidence, **not exact runtime model compatibility, numeric
+finiteness, supervision certification or M1 qualification**. Checkpoint
+metadata/category names never became model input or public output. Inspection
+took 3.23 s with 355,360-KiB peak RSS; no model was constructed or executed.
+The subsequent safe metadata check finds no saved training configuration
+and zero metadata keys. Official generic-image/no-in-domain documentation
+supports candidate investigation, but the checkpoint does not itself provide
+a complete released-stage training ledger. Do not infer that ledger from
+one-class tensor shapes or silently invoke COCO metadata defaults.
+
+The resolver generated an exact 48-package binary-wheel lock for Python 3.10
+and the documented torch2.1/cu118 family. No packages were installed. The
+official cu118 index identifies the working `download-r2.pytorch.org` URLs;
+the initial connection failures do not mean cu118 is unavailable. The wheel
+inventory uses bounded ZIP-directory ranges and curl for the three PyTorch
+wheels whose Python HTTP requests returned 403. Small archives may be read
+fully in memory within 64 KiB; no archive payload is saved or installed.
+
+All **48 selected wheel directories** were measured: **5,378,584,576 B**
+of unpacked 4-KiB allocation, plus **1,344,152,372 B** reserved for environment
+overhead/bytecode. Including both optional weights and a 16-MiB source/output
+reserve gives **7,673,439,806 B**, below the 8-GiB candidate ceiling. Network
+directory bodies total **4,407,901 B**; inventory took 61.11 s with
+28,280-KiB peak RSS. Archive-content SHA verification is still required at
+installation; range metadata is not cryptographic payload verification.
+
+This is a **resident budget estimate**, not a verified installer transient
+peak. Use a same-filesystem temporary area, no retained wheel cache, and a
+monitored single-package/hardlink installation so unpack/copy/download peaks
+cannot silently exceed the ceiling. Do not duplicate an existing destination,
+compile sources or install unpinned/text/benchmark extras to make imports pass.
+The upstream package initializer imports dataset and semantic modules;
+the native runner must explicitly register only the inspected required image
+modules, without calling the default loader's class-name metadata fallback.
+
+Public recovery receipt, binary lock, directory budget and synthetic tests
+are retained. Actual new named weight/dependency/GT/checkpoint payload is now
+**1,090,170,303 B**, excluding small source/report files and unchanged existing
+assets. No inference/training, GT/Test access, base-env changes, foreign-worker
+interference, further representation correction or primary freeze occurred.
+
+Next: guarded isolated binary installation, source-whitelisted native model
+construction and strict component key/shape matching. Only then execute the
+already limited eight-Train-image causal smoke, preserving failures/empties.

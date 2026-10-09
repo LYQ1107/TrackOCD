@@ -537,3 +537,14 @@ Minimal binary-wheel lock and actual release tensor coverage come first;
 then at most eight Train images under an 8-GiB incremental stop ceiling.
 See M1_MASA_AED_PREFLIGHT.md. Latest regression: 137 pass. No training, Test,
 R2, full Val/cache or claim that AED's frequency-base filter proves legality.
+
+Subsequent concrete asset progress: frozen MASA-SAM-B release checkpoint
+558,882,875 B recovered with exact LFS SHA256 and safe CPU/mmap loading;
+419 tensors include backbone, adapter, one-class RPN/ROI and track head.
+Second SAM initialization download is deferred pending exact model matching.
+An exact 48-package binary lock and bounded wheel-directory inventory give
+5,378,584,576 B unpacked allocation, conservative resident estimate
+7,673,439,806 B with reserve/both optional weights, below the 8-GiB ceiling.
+Installer transient peak and isolated runtime still unverified; no packages,
+model, data or full job started. Actual named new payload: 1,090,170,303 B.
+See masa_checkpoint_recovery.json and masa_runtime_wheel_inventory.json.

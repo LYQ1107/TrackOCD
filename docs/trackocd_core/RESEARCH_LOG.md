@@ -285,3 +285,34 @@
   GT policy authority still pending. Root correction remains consumed.
 - Regression 137 pass; M1_MASA_AED_PREFLIGHT.md and small public source/asset
   receipts preserve limitations and next action. Primary gate remains blocked.
+
+## 2026-10-10 — Actual frozen MASA checkpoint and binary dependency budget
+
+- Previous preflight delivered and exact remote HEAD `21447b5` verified before
+  asset recovery. Restore only the first pinned 558,882,875-B MASA-SAM-B weight;
+  approximately 117-s transfer, exact LFS SHA256. No other model/data transfer.
+- Safe CPU/mmap `weights_only` inspection: 419 tensors, all required component
+  prefixes, one-class ROI dimensions and 12 backbone blocks. No unsafe fallback,
+  extra globals, model construction, metadata/class-name input, numeric/GT/Test
+  execution or complete supervision/runtime qualification. 3.23 s / 347.03 MiB.
+- Second 375-MB pretrain asset deferred until strict frozen model matching;
+  prefix presence alone is insufficient to certify every required parameter.
+- Safe metadata follow-up: zero metadata keys, no saved training config;
+  official generic-image training description is not a checkpoint-saved stage
+  ledger. Keep this qualification limit; do not use COCO metadata fallback.
+- Exact minimal binary-wheel lock resolves 48 packages. Complete ZIP-directory
+  ranges total 4,407,901 B: unpacked allocation 5,378,584,576 B; resident budget
+  with reserves/two optional weights 7,673,439,806 B <8 GiB. 61.11 s /27.62 MiB.
+  No full large-wheel download, installation, compile or existing-env change.
+- Initial instrument probes rejected small suffix ranges/direct archive lock
+  entries; guarded handling added. Three PyTorch URLs gave Python-client 403;
+  bounded official curl transport works. An incomplete budget was never treated
+  as PASS. Initial incompatible uv switches were rejected before resolution.
+- Measured budget does not establish installer transient peak or compatibility.
+  Next: monitored isolated single-package/hardlink install, minimal image-module
+  registration, strict key matching, then the fixed <=8 Train-image smoke.
+  Do not call the default semantic metadata fallback or expand to a full job.
+- Named new payload now 1,090,170,303 B plus small sources/receipts. No research
+  training, inference, R2, GT policy extension, Test or primary frontend freeze.
+- Regression **150 pass**; exact legacy v2 identity remains covered. Delivery
+  contains only small code/lock/aggregate evidence, never checkpoint/wheel bytes.

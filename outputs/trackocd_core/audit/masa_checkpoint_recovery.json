@@ -1,0 +1,145 @@
+{
+  "boundary": {
+    "annotations_or_gt_opened": false,
+    "base_environment_changed": false,
+    "checkpoint_metadata_as_model_input": false,
+    "foreign_process_interference": false,
+    "model_constructed": false,
+    "model_training_or_inference": false,
+    "primary_frontend_selected": false,
+    "test_access": false
+  },
+  "bytes": 558882875,
+  "checkpoint_path": "checkpoints/masa_sam_candidate/sam_vitb_masa.pth",
+  "exact_runtime_model_key_and_shape_match_verified": false,
+  "released_training_metadata": {
+    "metadata_key_count": 0,
+    "saved_training_config_present": false,
+    "complete_release_stage_training_binding_verified": false
+  },
+  "inspected_at_utc": "2026-10-09T20:47:31.585729+00:00",
+  "resources": {
+    "elapsed_seconds": 3.229676583025139,
+    "peak_rss_kib": 355360,
+    "system_ram_headroom_fraction_before": 0.7915346773375782,
+    "workers": 1
+  },
+  "safe_load": {
+    "extra_globals_allowlisted": [],
+    "map_location": "cpu",
+    "mmap": true,
+    "pickle_GLOBAL_names_inspected_without_execution": [
+      "collections.OrderedDict",
+      "torch.FloatStorage",
+      "torch._utils._rebuild_tensor_v2"
+    ],
+    "unsafe_fallback": false,
+    "weights_only": true
+  },
+  "schema_version": "trackocd.core.masa_checkpoint_recovery.v1",
+  "second_pretrain_weight_downloaded": false,
+  "second_pretrain_weight_need": "Deferred until exact frozen model load; prefix presence alone is insufficient",
+  "sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+  "size_and_sha256_match": true,
+  "source_url": "https://huggingface.co/dereksiyuanli/masa/resolve/25ed372c47f2c46cf36fd446d1b657b656bc7ea9/sam_vitb_masa.pth",
+  "status": "PASS_SAFE_TENSOR_STRUCTURE_NOT_RUNTIME_OR_FRONTEND_QUALIFICATION",
+  "tensor_structure": {
+    "all_required_component_prefixes_present": true,
+    "backbone_block_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "full_numeric_finiteness_scan_performed": false,
+    "groups": {
+      "detector.backbone": {
+        "elements": 89670912,
+        "tensor_bytes": 358683648,
+        "tensors": 177
+      },
+      "detector.mask_decoder": {
+        "elements": 4058340,
+        "tensor_bytes": 16233360,
+        "tensors": 120
+      },
+      "detector.prompt_encoder": {
+        "elements": 6476,
+        "tensor_bytes": 25904,
+        "tensors": 17
+      },
+      "masa_adapter": {
+        "elements": 15979028,
+        "tensor_bytes": 63916112,
+        "tensors": 75
+      },
+      "roi_head": {
+        "elements": 13901830,
+        "tensor_bytes": 55607320,
+        "tensors": 8
+      },
+      "rpn_head": {
+        "elements": 593935,
+        "tensor_bytes": 2375740,
+        "tensors": 6
+      },
+      "track_head": {
+        "elements": 15469824,
+        "tensor_bytes": 61879296,
+        "tensors": 16
+      }
+    },
+    "metadata_text_or_category_names_emitted": false,
+    "required_prefixes": [
+      "detector.backbone",
+      "masa_adapter",
+      "rpn_head",
+      "roi_head",
+      "track_head"
+    ],
+    "selected_tensor_shapes": {
+      "detector.backbone.patch_embed.proj.weight": [
+        768,
+        3,
+        16,
+        16
+      ],
+      "detector.backbone.pos_embed": [
+        1,
+        64,
+        64,
+        768
+      ],
+      "roi_head.bbox_head.fc_cls.weight": [
+        2,
+        1024
+      ],
+      "roi_head.bbox_head.fc_reg.weight": [
+        4,
+        1024
+      ],
+      "rpn_head.rpn_cls.weight": [
+        3,
+        256,
+        1,
+        1
+      ],
+      "rpn_head.rpn_reg.weight": [
+        12,
+        256,
+        1,
+        1
+      ]
+    },
+    "total_tensors": 419
+  },
+  "weight_repository_revision": "25ed372c47f2c46cf36fd446d1b657b656bc7ea9"
+}
