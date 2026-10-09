@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "targeted_tests_passed": 7,
+  "cpu_gpu_test_executed": true,
+  "elapsed_test_seconds": 4.11,
+  "command": "CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /data3/liuyeqiang/.venvs/trackocd-a100/bin/python -m pytest -q tests/baselines/pandas_bytetrack/test_tracking_postprocess.py",
+  "frame_offsets_policy": "frame/image IDs unchanged; source offsets unchanged; new candidate/track offsets correspond to selected rows",
+  "gt_or_category_text_inputs": false
+}

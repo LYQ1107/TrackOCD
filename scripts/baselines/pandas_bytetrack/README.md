@@ -40,3 +40,26 @@ behavior is identical for the incumbent and new variants.
 
 The new output root has a 10 GiB soft budget. Models, data, source NPZ and old
 tracking outputs remain read-only and outside Git.
+
+## Tracking adapter and tests
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+  /data3/liuyeqiang/.venvs/trackocd-a100/bin/python -m pytest -q \
+  tests/baselines/pandas_bytetrack/test_tracking_postprocess.py
+
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  /data3/liuyeqiang/.venvs/trackocd-a100/bin/python \
+  scripts/baselines/pandas_bytetrack/run_tracking.py \
+  --detections-root /data3/liuyeqiang/pandas_bytetrack_tao_val/outputs/score_fix_full/anonymous/full \
+  --output-root outputs/baselines/pandas_dedup/calibration/Dedup-A/tracks \
+  --budget-root outputs/baselines/pandas_dedup \
+  --selection outputs/baselines/pandas_dedup/selection.json \
+  --subset calibration --variant Dedup-A
+```
+
+Use the same runner for the preregistered B and C variants with their own output
+roots. It never loads annotations. It retains original detection indices and
+all frame/image IDs. Original offsets are preserved as `source_frame_offsets`;
+suppressed candidate/track arrays have new cardinalities, so their own offsets
+must change. Resume validates input/output SHA256 and exact NMS configuration.
