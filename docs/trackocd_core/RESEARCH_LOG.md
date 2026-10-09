@@ -181,3 +181,21 @@
   correction round. Small GT feasibility is not formal M5/M8/M9/M11 PASS.
 - Baseline CSV formatting-only LF normalization leaves numeric cells/raw
   sealed decisions unchanged; original run-source hashes are preserved.
+
+## 2026-10-10 — Actual A0/A1/A2 heldout Train GT negative finding
+
+- Before training, push/remote-verify `b696190`. Six fixed 120-step fits use
+  only 12 legal representation tracks, same-seed input corruption. 13.21 s,
+  28.70-MiB GPU / 1.04-GiB host peak, 12,822,732 private checkpoint bytes.
+- Frozen evaluation: 280 real replays / 6,720 sealed decisions, 9.46 s CPU;
+  A0 exactly reproduces original B1 for all 40 cases. Regression: 123 pass.
+- Loss falls ~2.4→.7, but heldout p16 A1/A2 Known 77.78% seed mean (7.86pp
+  seed std), pseudo-Novel New/H/CT all zero; wrong Known 100% of reuse
+  opportunities. A1/A2 decision aggregates equal on every seed/prefix.
+- Decision: no independent temporal/discovery gain supported. Closed-world
+  improvement/100% commit coverage is not discovery success. Keep every
+  checkpoint, prefix/order result and negative finding; no hidden correction.
+  Calibration/four-class fit are unisolated possible causes, not proven.
+- Next: policy_train-only score separation diagnosis, no new fit or parameter
+  search on heldout/Val Novel. One correction cap remains unused; no M11,
+  qualified frontend, main M5/M8/M9 or end-to-end PASS. Goal remains active.

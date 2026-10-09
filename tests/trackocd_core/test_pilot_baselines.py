@@ -61,3 +61,24 @@ def test_registered_orders_and_prefix_completion_routing_are_deterministic():
     assert [e.physical_key.local_track_id for e in sealed.events] == ['8', '7']
     assert [e.kind for e in sealed.events] == ['NEW', 'EXISTING']
     assert runtime['anonymous_memory_counts'] == [1, 1]
+
+
+def test_external_representation_callback_receives_only_visible_input():
+    vector = np.eye(768, dtype=np.float32)[0]
+
+    class Cache:
+        def get_prefix(self, key, observed):
+            return visual_view([vector] * observed)
+
+    seen = []
+
+    def represent(view):
+        assert len(view.visual) == 2
+        assert not hasattr(view, 'category_id') and not hasattr(view, 'physical_track_id')
+        seen.append(len(view.visual))
+        return np.array([1., 0.], dtype=np.float32)
+
+    routes = [{'key': 'private-route-only', 'video_id': 1, 'physical_track_id': 7, 'frame_ids': [0, 1, 999]}]
+    sealed, _ = replay(Cache(), routes, {}, THRESHOLDS, 'B1_track_nearest', [1], 2, represent=represent)
+    assert seen == [2]
+    assert sealed.events[0].kind == 'NEW' and sealed.events[0].observed_prefix == 2

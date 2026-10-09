@@ -35,7 +35,7 @@ def registered_orders(video_ids: list[int]) -> dict[str, list[int]]:
 
 
 def replay(cache, routes: list[dict], prototypes: dict, thresholds: dict,
-           name: str, order: list[int], prefix: int) -> tuple:
+           name: str, order: list[int], prefix: int, represent=None) -> tuple:
     """No target categories, semantic roles, matches or Hungarian input."""
     model = make_baseline(name, prototypes, thresholds)
     by_video = defaultdict(list)
@@ -48,7 +48,7 @@ def replay(cache, routes: list[dict], prototypes: dict, thresholds: dict,
         for row in sorted(by_video[video], key=lambda r: (r["frame_ids"][prefix - 1], r["physical_track_id"])):
             view = cache.get_prefix(row["key"], prefix)
             started = time.perf_counter()
-            action = decide_prefix(model, view)
+            action = decide_prefix(model, view) if represent is None else model.step(represent(view))
             inference_seconds += time.perf_counter() - started
             kind = action["kind"]
             events.append(DecisionEvent(len(events), TrackKey(video, str(row["physical_track_id"])), len(view.visual), kind,

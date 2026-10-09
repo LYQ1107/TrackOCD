@@ -69,3 +69,46 @@ Report all seeds/orders/prefixes, fixed denominators and pollution breakdown;
 compare paired seeds rather than treating 12 correlated seed/order runs as
 independent datasets. Loss decrease alone is not success. These tiny GT-only
 scores cannot authorize M11, prove predicted robustness or main scientific PASS.
+
+## Actual bounded result — negative discovery finding
+
+Preregistration `b696190` was pushed and exact remote HEAD checked before
+training. Six fits completed, 120 fixed steps each, 13.21 s total,
+28.70-MiB GPU / 1.04-GiB host peak; private checkpoints total 12,822,732 B.
+Identical per-seed synthetic corruption counts for A1/A2: 363/372/374.
+Category loss declined from ~2.37–2.41 to ~.72–.76; that is **not** success.
+
+Frozen evaluation completed 280 actual replays / 6,720 sealed decisions in
+9.46 s on one CPU worker (~677.14-MiB peak). A0 exactly reproduces the
+original frozen B1 metrics in every partition/order/prefix. All raw decisions
+are retained in private hashed Parquet; public JSON/CSV keeps every seed,
+order, prefix, count and error type. Regression: 123 tests pass.
+
+Heldout selection, percentages (four-order mean per seed; all prefixes kept):
+
+| Representation | Seed | p16 Old ACC | p16 New ACC | p16 H | p16 Correct CT | p16 Wrong Known |
+|---|---:|---:|---:|---:|---:|---:|
+| A0 raw mean | N/A | 2.08 | 39.58 | 3.47 | 0.00 | 12.50 |
+| A1 adapter + mean | 1027 | 66.67 | 0.00 | 0.00 | 0.00 | 100.00 |
+| A2 adapter + evidence | 1027 | 66.67 | 0.00 | 0.00 | 0.00 | 100.00 |
+| A1 adapter + mean | 1028 | 83.33 | 0.00 | 0.00 | 0.00 | 100.00 |
+| A2 adapter + evidence | 1028 | 83.33 | 0.00 | 0.00 | 0.00 | 100.00 |
+| A1 adapter + mean | 1029 | 83.33 | 0.00 | 0.00 | 0.00 | 100.00 |
+| A2 adapter + evidence | 1029 | 83.33 | 0.00 | 0.00 | 0.00 | 100.00 |
+
+A1/A2 p16 Known mean is 77.78%, seed population std 7.86 points. At all
+prefixes their New/H/CT are zero, and pseudo-Novel reuse opportunities are
+all assigned Known. Their aggregate decision metrics match exactly across
+paired seeds. This is **no independent temporal-discovery gain on this fixed
+pilot**, not proof the module can never help elsewhere. Forced commitment
+coverage is 100%; no anonymous merge is recorded when all unknowns go Known.
+
+No early stop, hidden threshold change, dataset resampling or retraining was
+performed after evaluation. Loss decline and Known-only improvement cannot
+support an open-world-discovery claim. The limited four-class fit and
+post-adaptation threshold calibration are possible explanations, not yet
+isolated causes. Retain A1 as a candidate, not as scientific PASS; do not
+promote A2 or M11 based on these results. Next: diagnose Known/pseudo-Novel
+score separation on **policy_train only**, without refitting, expanding the
+network or using Val Novel labels. Any correction must be explicitly
+registered and respect the one-root-cause-correction cap.
