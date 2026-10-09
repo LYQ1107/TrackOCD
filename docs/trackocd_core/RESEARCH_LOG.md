@@ -316,3 +316,40 @@
   training, inference, R2, GT policy extension, Test or primary frontend freeze.
 - Regression **150 pass**; exact legacy v2 identity remains covered. Delivery
   contains only small code/lock/aggregate evidence, never checkpoint/wheel bytes.
+
+## 2026-10-10 — Frozen MASA native runtime and eight-forward causal smoke
+
+- Exact previous remote delivery `c04f51a` retained. Install 48 hash-locked binary
+  wheels in a separate owned runtime; base distribution snapshot unchanged.
+  RECORD checks: 20,423 files / 5,325,373,594 logical bytes, zero mismatch.
+  Measured install peak 5,945,593,856 B, below the registered 8-GiB ceiling.
+- Preserve initial verifier failure: Torch itself installed successfully with
+  require-hashes, but uv omitted optional direct_url archive hash. Resume uses
+  owned success/control-flow/URL/requirement proof plus streamed RECORD checks;
+  no second Torch download, unsafe fallback, base downgrade or source compile.
+- Recover 14 exact native image-module/config/license files, 125,292 B. Explicit
+  frozen SAM multilevel -> adapter -> released one-class RPN/ROI -> past tracker;
+  no MASA dataset/semantic initializer, metadata fallback or offline postprocessor.
+  Strict 419 model keys/shapes match, all tensors finite/parameters frozen;
+  no second pretrained weight required. Network/external children denied.
+- Preserve pre-image mmap failure (torch2.1 requires string, not PathLike);
+  safe string-filename correction, no extra globals or unsafe checkpoint loader.
+  It consumed zero real-image forwards and no representation correction round.
+- CPU binary ops, synthetic preprocessing and empty-proposal fixtures pass.
+  Four existing Train images, two chronological replays = eight forwards total.
+  Existing long-Known-GT selection bias and ordinal-time subsampling disclosed;
+  no GT/semantic metadata passed to model. Future last-two pixels inverted;
+  first-two detection/track arrays exactly identical. Bounded engineering PASS.
+- Every ROI frame hits inherited 50-proposal cap. Original tracks 43/37/40/42;
+  changed-future 43/37/40/40, finite nondegenerate anonymous outputs only.
+  Not coverage/purity/physical metrics, not an official public-Detic reproduction,
+  GT scientific temporal benefit or complete M1 qualification.
+- Supervised smoke 16.88 s, worker 15.31 s; peak host 1,687,347,200 B,
+  GPU reserved 3,439,329,280 B. Retained owned candidate allocated size
+  5,945,954,304 B; prior other named logical payload 531,287,428 B.
+  Mixed subtotal is not an exhaustive filesystem inventory. No foreign process
+  touched, Train model optimization, Test/Val job, full cache, R2 or primary freeze.
+- Regression **177 pass**. Small code/config/receipts/report delivered only.
+  M1 remains BLOCKED_FRONTEND_QUALITY; complete supervision binding and a new
+  explicit bounded physical quality/coverage/pollution preregistration come next.
+  Completed smoke is preserved and cannot be automatically rerun for tuning.

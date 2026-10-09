@@ -168,3 +168,81 @@ interference, further representation correction or primary freeze occurred.
 Next: guarded isolated binary installation, source-whitelisted native model
 construction and strict component key/shape matching. Only then execute the
 already limited eight-Train-image causal smoke, preserving failures/empties.
+
+## Actual isolated runtime and bounded native smoke
+
+2026-10-09 21:30 UTC / 2026-10-10 Asia/Shanghai. The isolated runtime and
+native engineering smoke are now **PASS**; M1 remains
+`BLOCKED_FRONTEND_QUALITY`, with no primary freeze or formal physical metrics.
+The original conditional plan above remains immutable historical preregistration;
+actual results are in `masa_runtime_install_summary.json` and
+`masa_native_smoke.json`.
+
+All **48 hash-locked binary wheels** were installed into
+`/data3/liuyeqiang/.venvs/trackocd-masa-smoke`, one package at a time, using
+same-filesystem hardlinks and no index/dependency resolution, source build,
+toolkit installation or base-env change. Installed RECORD SHA256 checks cover
+**20,423 files / 5,325,373,594 logical bytes**, with zero mismatches. The base
+distribution snapshot is unchanged. Peak owned allocated size during install
+was **5,945,593,856 B**, measured rather than inferred from ZIP metadata.
+
+The first Torch install succeeded, but uv's `direct_url.json` had empty
+`archive_info`; the initial checker incorrectly required that optional saved
+hash. The original partial environment/log were preserved. Resumption checked
+the exact requirement, successful hash-required operation/control flow, source
+URL/version and all installed RECORD digests, without downloading Torch again.
+Later operation receipts are saved before metadata inspection. RECORD integrity
+is not independent archive re-hashing; an empty saved metadata hash is never
+trusted without the verified owned hash-required operation. Both attempts are
+retained; their install wall times were 462.48 and 373.54 seconds.
+
+Fourteen additional image-only source/config/license files, **125,292 B**, match
+the pinned upstream Git blobs. Explicit module registration avoids MASA's
+dataset/semantic package initializers. The wrapper does not call `init_masa`,
+`MASA.predict`, public detections, checkpoint class-name defaults, dataset
+loaders, the offline smoother or the track-wide filter. It uses current RGB
+pixels/geometry and current ordinal, SAM multi-level features, the released
+adapter/RPN/one-class ROI heads, and the unchanged past-memory tracker.
+Network and implicit external-child execution are denied inside the worker.
+
+All **419 model keys and shapes match exactly**, all state tensors are finite,
+and every parameter is frozen. No second SAM checkpoint is needed. CPU binary
+NMS/RoIAlign, synthetic preprocessing and empty-proposal fixtures pass. An
+initial model-load attempt failed before any real-image forward because torch
+2.1's mmap interface requires a string filename rather than `Path`; the owned
+wrapper now passes `str(checkpoint)` without unsafe pickle fallback. That
+12.28-second / 1,152,876,544-B-RSS failure is preserved in the public receipt.
+
+The completed smoke used **four unique existing Train images from one video,
+two sequential replays, eight forwards total**. Image selection reused the
+previous long-Known-GT pilot plan and is biased; no GT/semantic fields or image
+paths become model input. Frame ordinals are subsampled-video units, not original
+frame indices. The second replay inverts only the last two images. Both first
+frames' detection/track arrays are **exactly identical** across replays, and
+the future pixel hashes differ. This is a bounded causal witness, not a universal
+causality certificate or temporal scientific PASS.
+
+Every frame has **50 ROI detections**, hitting the inherited cap without tuning.
+Original tracking counts are **43/37/40/42**; changed-future counts are
+**43/37/40/40**. All outputs are finite/nondegenerate, native foreground label
+0, exported as anonymous category 1. No boxes were repaired or postfiltered.
+Counts do not establish recall, useful coverage, purity or tracking accuracy;
+the proposal-cap saturation must remain visible in the next evaluation.
+The upstream tracker parameter `memo_tracklet_frames=10` is preserved, but its
+empty-frame early return and pruning-after-association are not silently repaired
+or described as a guaranteed pre-association age bound.
+
+Worker time was **15.31 s**, supervised wall time **16.88 s**. Peak host RSS:
+**1,687,347,200 B (1.57 GiB)**. Peak GPU allocated/reserved:
+**3,126,221,312 / 3,439,329,280 B**. Fresh GPU selection preceded the owned worker;
+sampled total selected-device memory reached 3,815 MiB. Candidate allocated size
+including retained setup/smoke attempts is **5,945,954,304 B (5.54 GiB)**, below
+8 GiB. Prior other named payload is 531,287,428 logical bytes; the mixed
+known subtotal 6,477,241,732 B is not an exhaustive filesystem inventory.
+
+Regression: **177 core/recovered-v2 tests pass**. Only small code/config/aggregate
+receipts are published, not wheels, weights, raw images, GT rows or source copies.
+No training, Val/Test job, threshold search, R2, GT policy expansion or formal
+M1/M9/M11 PASS occurred. Complete checkpoint-stage supervision provenance and
+an explicit bounded physical coverage/pollution evaluation remain required.
+Do not automatically rerun the completed smoke or escalate to full Val/cache.

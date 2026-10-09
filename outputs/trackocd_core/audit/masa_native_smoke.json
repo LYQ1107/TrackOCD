@@ -1,0 +1,1001 @@
+{
+  "all_state_tensors_finite": true,
+  "binary_cpu_nms_roi_align_pass": true,
+  "boundary": {
+    "extra_weight_download": false,
+    "foreign_process_interference": false,
+    "future_runtime_input": false,
+    "gt_runtime_input": false,
+    "offline_postprocessing": false,
+    "physical_training": false,
+    "semantic_runtime_input": false,
+    "val_or_test_access": false
+  },
+  "completed_at_utc": "2026-10-09T21:30:09.229476+00:00",
+  "elapsed_seconds": 15.307321811007569,
+  "frozen_model": {
+    "all_parameters_frozen": true,
+    "checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+    "missing_keys": [],
+    "native_model_config": {
+      "benchmark": "tao",
+      "data_preprocessor": {
+        "bgr_to_rgb": true,
+        "mean": [
+          123.675,
+          116.28,
+          103.53
+        ],
+        "pad_mask": false,
+        "pad_size_divisor": 1024,
+        "std": [
+          58.395,
+          57.12,
+          57.375
+        ],
+        "type": "TrackDataPreprocessor"
+      },
+      "detector": {
+        "backbone": {
+          "depth": 12,
+          "embed_dim": 768,
+          "global_attn_indexes": [
+            2,
+            5,
+            8,
+            11
+          ],
+          "img_size": 1024,
+          "mlp_ratio": 4,
+          "num_heads": 12,
+          "out_chans": 256,
+          "out_indices": [
+            2,
+            5,
+            8,
+            11
+          ],
+          "patch_size": 16,
+          "qkv_bias": true,
+          "type": "ImageEncoderViT",
+          "use_rel_pos": true,
+          "window_size": 14
+        },
+        "mask_decoder": {
+          "iou_head_depth": 3,
+          "iou_head_hidden_dim": 256,
+          "num_multimask_outputs": 3,
+          "transformer_dim": 256,
+          "type": "MaskDecoder"
+        },
+        "prompt_encoder": {
+          "embed_dim": 256,
+          "image_embedding_size": [
+            64,
+            64
+          ],
+          "input_image_size": [
+            1024,
+            1024
+          ],
+          "mask_in_chans": 16,
+          "type": "PromptEncoder"
+        },
+        "type": "SamMasa"
+      },
+      "freeze_detector": true,
+      "freeze_masa_adapter": true,
+      "freeze_object_prior_distillation": true,
+      "given_dets": false,
+      "load_public_dets": false,
+      "masa_adapter": [
+        {
+          "in_channels": [
+            768,
+            768,
+            768,
+            768
+          ],
+          "num_outs": 5,
+          "out_channels": 256,
+          "type": "SimpleFPN",
+          "use_residual": true
+        },
+        {
+          "in_channels": 256,
+          "num_blocks": 3,
+          "out_channels": 256,
+          "type": "DyHead"
+        }
+      ],
+      "public_det_path": null,
+      "roi_head": {
+        "bbox_head": {
+          "bbox_coder": {
+            "target_means": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_stds": [
+              0.1,
+              0.1,
+              0.2,
+              0.2
+            ],
+            "type": "DeltaXYWHBBoxCoder"
+          },
+          "fc_out_channels": 1024,
+          "in_channels": 256,
+          "loss_bbox": {
+            "loss_weight": 1.0,
+            "type": "L1Loss"
+          },
+          "loss_cls": {
+            "loss_weight": 1.0,
+            "type": "CrossEntropyLoss",
+            "use_sigmoid": false
+          },
+          "num_classes": 1,
+          "reg_class_agnostic": true,
+          "roi_feat_size": 7,
+          "type": "Shared2FCBBoxHead"
+        },
+        "bbox_roi_extractor": {
+          "featmap_strides": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "out_channels": 256,
+          "roi_layer": {
+            "output_size": 7,
+            "sampling_ratio": 0,
+            "type": "RoIAlign"
+          },
+          "type": "SingleRoIExtractor"
+        },
+        "type": "StandardRoIHead"
+      },
+      "rpn_head": {
+        "anchor_generator": {
+          "ratios": [
+            0.5,
+            1.0,
+            2.0
+          ],
+          "scales": [
+            8
+          ],
+          "strides": [
+            4,
+            8,
+            16,
+            32,
+            64
+          ],
+          "type": "AnchorGenerator"
+        },
+        "bbox_coder": {
+          "target_means": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_stds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "DeltaXYWHBBoxCoder"
+        },
+        "feat_channels": 256,
+        "in_channels": 256,
+        "loss_bbox": {
+          "beta": 0.1111111111111111,
+          "loss_weight": 1.0,
+          "type": "SmoothL1Loss"
+        },
+        "loss_cls": {
+          "loss_weight": 1.0,
+          "type": "CrossEntropyLoss",
+          "use_sigmoid": true
+        },
+        "type": "RPNHead"
+      },
+      "test_cfg": {
+        "rcnn": {
+          "mask_thr_binary": 0.5,
+          "max_per_img": 50,
+          "nms": {
+            "class_agnostic": true,
+            "iou_threshold": 0.5,
+            "split_thr": 100000,
+            "type": "nms"
+          },
+          "score_thr": 0.02
+        },
+        "rpn": {
+          "max_per_img": 1000,
+          "min_bbox_size": 0,
+          "nms": {
+            "iou_threshold": 0.7,
+            "type": "nms"
+          },
+          "nms_pre": 1000
+        }
+      },
+      "track_head": {
+        "embed_head": {
+          "embed_channels": 256,
+          "loss_track": {
+            "loss_weight": 0.25,
+            "type": "UnbiasedContrastLoss"
+          },
+          "loss_track_aux": {
+            "hard_mining": true,
+            "loss_weight": 1.0,
+            "neg_margin": 0.1,
+            "neg_pos_ub": 3,
+            "pos_margin": 0,
+            "type": "MarginL2Loss"
+          },
+          "norm_cfg": {
+            "num_groups": 32,
+            "type": "GN"
+          },
+          "num_convs": 4,
+          "num_fcs": 1,
+          "type": "QuasiDenseEmbedHead"
+        },
+        "roi_extractor": {
+          "featmap_strides": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "out_channels": 256,
+          "roi_layer": {
+            "output_size": 7,
+            "sampling_ratio": 0,
+            "type": "RoIAlign"
+          },
+          "type": "SingleRoIExtractor"
+        },
+        "train_cfg": null,
+        "type": "MasaTrackHead"
+      },
+      "tracker": {
+        "fps": 1,
+        "init_score_thr": 0.0001,
+        "match_score_thr": 0.5,
+        "max_distance": -1,
+        "memo_momentum": 0.8,
+        "memo_tracklet_frames": 10,
+        "obj_score_thr": 0.0001,
+        "type": "MasaTaoTracker",
+        "with_cats": false
+      },
+      "train_cfg": null,
+      "type": "MASA",
+      "unified_backbone": true
+    },
+    "registered_upstream_modules": [
+      "masa.models.sam.common",
+      "masa.models.sam.transformer",
+      "masa.models.sam.prompt_encoder",
+      "masa.models.sam.mask_decoder",
+      "masa.models.sam.image_encoder",
+      "masa.models.detectors.sam_masa",
+      "masa.models.necks.simplefpn",
+      "masa.models.losses.unbiased_contrastive_loss",
+      "masa.models.roi_heads.track_heads.masa_track_head",
+      "masa.models.tracker.masa_tao_tracker",
+      "masa.models.mot.masa"
+    ],
+    "second_pretrain_weight_used": false,
+    "shape_mismatches": [],
+    "source_files": [
+      {
+        "bytes": 11342,
+        "git_blob_sha1": "9caa45f5f120b02e604f8c36db4088a689eb89d6",
+        "path": "LICENSE",
+        "sha256": "157fd3f210262c332d99f5866c8a85990509e239fb6c7d6ca015c7e0511dac16"
+      },
+      {
+        "bytes": 1455,
+        "git_blob_sha1": "554da79bdf6414465ff60be4ed2cfbf612021bbe",
+        "path": "masa/models/sam/common.py",
+        "sha256": "bfc7e29359c7d6fa0faa325bbb3965d6f148a3452c23e4a9ad7263323afee68f"
+      },
+      {
+        "bytes": 15194,
+        "git_blob_sha1": "707ea16cf0b904bc7dd09fa8ad92ad23aefb50e6",
+        "path": "masa/models/sam/image_encoder.py",
+        "sha256": "2f24fdbd7b9b1dd5045170fdf348d7e5c4ebc08f2d269cac08e2bfd06d3793b1"
+      },
+      {
+        "bytes": 8324,
+        "git_blob_sha1": "ff4bd8a456116921f910e55ae077af5c9a86dcac",
+        "path": "masa/models/sam/transformer.py",
+        "sha256": "9a7853e3b9451121b41aebf6cf23b80ecc352e402da85bea058cb0f29fcfd7ed"
+      },
+      {
+        "bytes": 9502,
+        "git_blob_sha1": "a74307c854210b29645a12e427b21c2685c5d1ab",
+        "path": "masa/models/sam/mask_decoder.py",
+        "sha256": "e7e96059055148413eb4385ebba629fae243aabc96bd9fdbd59150ea13cb2149"
+      },
+      {
+        "bytes": 8792,
+        "git_blob_sha1": "1e6e22f900c9f1c3b41012dacd695993a2320e6b",
+        "path": "masa/models/sam/prompt_encoder.py",
+        "sha256": "f98d8e8a1799c0b9e7ef00aeb5953e37facb81fc4cda1c50c53c13d699b74f32"
+      },
+      {
+        "bytes": 7481,
+        "git_blob_sha1": "1cfd0a6708b6578db86ee7c93f35c6452708273b",
+        "path": "masa/models/detectors/sam_masa.py",
+        "sha256": "3007f084ed6bb6698af2008ac55d945bd76cb341a2ce36620cfaa7345fc6f5f9"
+      },
+      {
+        "bytes": 10113,
+        "git_blob_sha1": "278ae0953ff31e204124fb3ffc20e9961c530008",
+        "path": "masa/models/necks/simplefpn.py",
+        "sha256": "bf3583ebe4dff56c96bdbcc57df64f27780fa6bd63f6bb2eacf05602f5bf5f16"
+      },
+      {
+        "bytes": 2136,
+        "git_blob_sha1": "d416aaaea122f88ec554b1a8910a72bc32a8443e",
+        "path": "masa/models/losses/unbiased_contrastive_loss.py",
+        "sha256": "5e07cc2423aba2829c70779806ac8656c9b2f9e7b2e53f51ec23c632f1943d85"
+      },
+      {
+        "bytes": 7344,
+        "git_blob_sha1": "15b8b1843c42921d5d17c4d71f904a9bb5417b2a",
+        "path": "masa/models/roi_heads/track_heads/masa_track_head.py",
+        "sha256": "8e3ac591d1be4bb046cb8927aeef96eec1c4cc69357e29f2183d9019d7176149"
+      },
+      {
+        "bytes": 13974,
+        "git_blob_sha1": "5d9c00c0105b356a43ab748fb9d4dde9fec3aeff",
+        "path": "masa/models/tracker/masa_tao_tracker.py",
+        "sha256": "c963393eee82ba5321a4c8e3ac4cd8d5b066a46788ec2096cc8f4fb2713b787c"
+      },
+      {
+        "bytes": 21362,
+        "git_blob_sha1": "02d4061b7cf0d180bb76b465111a30848837a93c",
+        "path": "masa/models/mot/masa.py",
+        "sha256": "1439cd038d15183f15766522d13cef8d2783922b93e40fac665677bd47489c44"
+      },
+      {
+        "bytes": 807,
+        "git_blob_sha1": "4f318ba026466cc65bafecccf12980937bd6b861",
+        "path": "configs/masa-sam/sam-vitb.py",
+        "sha256": "aa9fac397403de1812647b3964e961e0a206058d5b67d8055a633e94ca8a1ee7"
+      },
+      {
+        "bytes": 7466,
+        "git_blob_sha1": "f9abc1c7454ccf87c676860e41063ba5cdc86260",
+        "path": "configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py",
+        "sha256": "07a8442664f07b96f87c681558c65d8db98444b6de5b1990829c5b2926b95634"
+      }
+    ],
+    "strict_state_tensor_keys": 419,
+    "unexpected_keys": [],
+    "upstream_dataset_text_api_or_postprocess_imported": false
+  },
+  "input": {
+    "image_sha256": [
+      "65fd372a4958c4b163c7e7cf92cf8b258154bd57806e241076f08db97de6156a",
+      "38c2cc9bdd0a8e048abb69af53eb2333625b4fdcde8d2903d540f25abdb715cd",
+      "2174188248a4cdd9fb534b9fc30d023a1180ab4912d3490c50d308eaa5aecd37",
+      "9e52e1a9d1471101376468ed26a145a730a63a33468e007a3ce935de6db46fd8"
+    ],
+    "real_image_forward_ceiling": 8,
+    "selection_bias": "Existing long Known-GT pilot selection; engineering only, not coverage estimation",
+    "source_plan_sha256": "25208d62173354bd33beaa38f056706feaeb0ed8e75194589db03ce1e3bdeafa",
+    "temporal_spacing": "Subsampled chronological frames; ordinal units, not original frame indices",
+    "unique_train_images": 4
+  },
+  "network_and_external_children_denied": true,
+  "peak_gpu_allocated_bytes": 3126221312,
+  "peak_gpu_reserved_bytes": 3439329280,
+  "peak_host_rss_bytes": 1687347200,
+  "prefix_invariance": {
+    "comparisons": [
+      {
+        "exact_detection_and_track_arrays_equal": true,
+        "ordinal": 0,
+        "same_current_pixels": true
+      },
+      {
+        "exact_detection_and_track_arrays_equal": true,
+        "ordinal": 1,
+        "same_current_pixels": true
+      }
+    ],
+    "future_pixels_actually_changed": true,
+    "proof_scope": "Two native sequential replays only, not a formal full-Val causality certificate"
+  },
+  "prior_engineering_attempts": [
+    {
+      "elapsed_seconds": 12.275789639999857,
+      "error": "ValueError: f must be a string filename in order to use mmap argument",
+      "peak_host_rss_bytes": 1152876544,
+      "real_image_forwards_started": 0,
+      "status": "BLOCKED_NATIVE_SMOKE_ENGINEERING"
+    }
+  ],
+  "real_image_forwards_started": 8,
+  "replays": [
+    {
+      "changed_future_pixels": false,
+      "frames": [
+        {
+          "current_pixels_sha256": "34dc6cbf105a284f2101af6c5bbb6039ef17be46dfe80c1dee8d1ed5d7bc77f7",
+          "detections": {
+            "array_sha256": "42de4f48dc36afca963d272a841a7f27193ccffa02d4514a887c21b238d0f05d",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9998087286949158,
+            "score_mean": 0.5081390142440796,
+            "score_min": 0.16564711928367615
+          },
+          "elapsed_seconds": 0.6544678049976937,
+          "ordinal": 0,
+          "tracks": {
+            "array_sha256": "1b365417079ee74b5abcb940e0fc24e9a96708dbf97c6f13bd8641b8c6b2caec",
+            "count": 43,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9998087286949158,
+            "score_mean": 0.5489687323570251,
+            "score_min": 0.16564711928367615,
+            "unique_ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42
+            ]
+          }
+        },
+        {
+          "current_pixels_sha256": "567084dd12eb5b4ce18e1c0436afbb386b9ee58c50e2a71b825ebc4946d393ad",
+          "detections": {
+            "array_sha256": "409f13117bfe78465932ded7b61a9a9397533f04b59dd25b8796516c9e6cfc45",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9997472167015076,
+            "score_mean": 0.49979355931282043,
+            "score_min": 0.1463983952999115
+          },
+          "elapsed_seconds": 0.25226637601736,
+          "ordinal": 1,
+          "tracks": {
+            "array_sha256": "004193f7170d12d7f1c83a74355a272f24f8dca84a24596847b1a49440c61299",
+            "count": 37,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9997472167015076,
+            "score_mean": 0.5954974889755249,
+            "score_min": 0.151034876704216,
+            "unique_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              11,
+              12,
+              14,
+              16,
+              19,
+              20,
+              22,
+              23,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              37,
+              38,
+              41,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51
+            ]
+          }
+        },
+        {
+          "current_pixels_sha256": "eb1841fbf49c5b92b4cd25776ba3c3a3fcaf70713b6a264e4e0d9ba0b08cd270",
+          "detections": {
+            "array_sha256": "8b01a5fb8ea684f7e25b902bd143906c581a052bd543d95b47331be2e46b6a3b",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9997212290763855,
+            "score_mean": 0.4987524151802063,
+            "score_min": 0.142075777053833
+          },
+          "elapsed_seconds": 0.23462743998970836,
+          "ordinal": 2,
+          "tracks": {
+            "array_sha256": "9605b8ede32a403ed960acd41d33adb5ee8dff2dc2aa911d84ba44452f17dfcc",
+            "count": 40,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9997212290763855,
+            "score_mean": 0.5592724084854126,
+            "score_min": 0.142075777053833,
+            "unique_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              14,
+              16,
+              19,
+              20,
+              21,
+              23,
+              26,
+              27,
+              31,
+              35,
+              41,
+              42,
+              43,
+              44,
+              47,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63
+            ]
+          }
+        },
+        {
+          "current_pixels_sha256": "9cbcbd0d27275d263d65ab0e51b6f2c60f71e545db797917c93cc471667c18b8",
+          "detections": {
+            "array_sha256": "72b2172d9ba1b2b0c4cfd5245aa674f63f86aba801548d91ab67e55d2f2d7e32",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9993906021118164,
+            "score_mean": 0.5557520389556885,
+            "score_min": 0.18650604784488678
+          },
+          "elapsed_seconds": 0.2326624949928373,
+          "ordinal": 3,
+          "tracks": {
+            "array_sha256": "b2779804d9c6be2c783a6249cb7a292a5ad7c07bb4696f6356f076d80882ef25",
+            "count": 42,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9993906021118164,
+            "score_mean": 0.6135857105255127,
+            "score_min": 0.2054101973772049,
+            "unique_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              18,
+              19,
+              20,
+              22,
+              24,
+              25,
+              26,
+              27,
+              31,
+              34,
+              41,
+              42,
+              43,
+              46,
+              50,
+              59,
+              61,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "changed_future_pixels": true,
+      "frames": [
+        {
+          "current_pixels_sha256": "34dc6cbf105a284f2101af6c5bbb6039ef17be46dfe80c1dee8d1ed5d7bc77f7",
+          "detections": {
+            "array_sha256": "42de4f48dc36afca963d272a841a7f27193ccffa02d4514a887c21b238d0f05d",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9998087286949158,
+            "score_mean": 0.5081390142440796,
+            "score_min": 0.16564711928367615
+          },
+          "elapsed_seconds": 0.22777166499872692,
+          "ordinal": 0,
+          "tracks": {
+            "array_sha256": "1b365417079ee74b5abcb940e0fc24e9a96708dbf97c6f13bd8641b8c6b2caec",
+            "count": 43,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9998087286949158,
+            "score_mean": 0.5489687323570251,
+            "score_min": 0.16564711928367615,
+            "unique_ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42
+            ]
+          }
+        },
+        {
+          "current_pixels_sha256": "567084dd12eb5b4ce18e1c0436afbb386b9ee58c50e2a71b825ebc4946d393ad",
+          "detections": {
+            "array_sha256": "409f13117bfe78465932ded7b61a9a9397533f04b59dd25b8796516c9e6cfc45",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9997472167015076,
+            "score_mean": 0.49979355931282043,
+            "score_min": 0.1463983952999115
+          },
+          "elapsed_seconds": 0.23345180400065146,
+          "ordinal": 1,
+          "tracks": {
+            "array_sha256": "004193f7170d12d7f1c83a74355a272f24f8dca84a24596847b1a49440c61299",
+            "count": 37,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9997472167015076,
+            "score_mean": 0.5954974889755249,
+            "score_min": 0.151034876704216,
+            "unique_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              11,
+              12,
+              14,
+              16,
+              19,
+              20,
+              22,
+              23,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              37,
+              38,
+              41,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51
+            ]
+          }
+        },
+        {
+          "current_pixels_sha256": "84dd98cbbc4fb7fe33d4279a528b12360cf57ef3cf2cf5d9cdac2b40d3f5961f",
+          "detections": {
+            "array_sha256": "e8491d0ef412729adc180933d63e9150fba34202b80d85c4e7063c63f4d522a6",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9994332194328308,
+            "score_mean": 0.5340687036514282,
+            "score_min": 0.19898894429206848
+          },
+          "elapsed_seconds": 0.23107593099121004,
+          "ordinal": 2,
+          "tracks": {
+            "array_sha256": "23af566c8332c8117c4f31809adf1ec423aa016fba8de894430143cc91a0bde6",
+            "count": 40,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9994332194328308,
+            "score_mean": 0.5913814306259155,
+            "score_min": 0.2109445184469223,
+            "unique_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              12,
+              14,
+              20,
+              21,
+              22,
+              24,
+              25,
+              27,
+              28,
+              31,
+              44,
+              45,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70
+            ]
+          }
+        },
+        {
+          "current_pixels_sha256": "4251fd4743619ed400a598f59875bafed1138917f43cb576477b1de237414165",
+          "detections": {
+            "array_sha256": "be3b0f8ab34071dd68c63e46c08c9fc3dfacc34126e90fe2407d88aa7047a30f",
+            "count": 50,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9987534284591675,
+            "score_mean": 0.5222101807594299,
+            "score_min": 0.19302380084991455
+          },
+          "elapsed_seconds": 0.23185331100830808,
+          "ordinal": 3,
+          "tracks": {
+            "array_sha256": "96a0f9f0383521276da0971fc06f369819e49ced09ce2a24929c286cddd4f68f",
+            "count": 40,
+            "export_category_contract": "anonymous foreground 1 (native tensor label 0)",
+            "nonfinite_or_degenerate": 0,
+            "score_max": 0.9987534284591675,
+            "score_mean": 0.5838062167167664,
+            "score_min": 0.19563129544258118,
+            "unique_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              14,
+              20,
+              24,
+              25,
+              27,
+              31,
+              34,
+              52,
+              53,
+              55,
+              56,
+              57,
+              60,
+              61,
+              62,
+              64,
+              65,
+              66,
+              68,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "runtime_versions": {
+    "mmcv": "2.1.0",
+    "mmdet": "3.3.0",
+    "mmengine": "0.10.7",
+    "numpy": "1.26.4",
+    "torch": "2.1.2+cu118",
+    "torchvision": "0.16.2+cu118"
+  },
+  "schema_version": "trackocd.core.masa_native_smoke.v1",
+  "started_at_utc": "2026-10-09T21:29:53.922139+00:00",
+  "status": "PASS_BOUNDED_FROZEN_NATIVE_SMOKE_NOT_M1_QUALIFICATION",
+  "storage_after_all_attempts": {
+    "boundary": "Candidate is inode-deduplicated allocated size across environment/source/checkpoint/retained attempt directories. Other prior payload uses recorded logical sizes; subtotal is not an exhaustive project/global filesystem inventory.",
+    "candidate_allocated_bytes": 5945954304,
+    "candidate_limit_bytes": 8589934592,
+    "mixed_logical_plus_allocated_known_goal_subtotal_bytes": 6477241732,
+    "prior_other_named_goal_payload_bytes": 531287428
+  },
+  "supervisor": {
+    "elapsed_seconds": 16.877703973004827,
+    "fresh_gpu_query": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898, 14, 40428, 0\nGPU-5de9a1c2-0cc1-4fda-7d25-493f86f52424, 14, 40428, 0\nGPU-a4095968-9191-50eb-d56c-ed633b31e2c0, 14, 40428, 0\nGPU-f931e51b-55b2-c2c2-6506-b6f986864d54, 14, 40428, 0\nGPU-daa9b388-4540-242c-83d7-3261bb232a7c, 14, 40428, 0\nGPU-f07a0798-7ddc-ec7c-a27c-d47124bbfe81, 14, 40428, 0\nGPU-c2902ddf-62f4-cc2f-5d9f-d33c74555847, 14, 40428, 0\nGPU-995c9557-d84e-1a76-f02f-b1ddea34e56b, 14, 40428, 0\nGPU-cd127bcd-08c4-fe6a-78ca-fc41123d7119, 14, 40428, 0\nGPU-e947d8da-fc7a-4c0b-7d91-e9e67d34f4a6, 14, 40428, 0\n",
+    "gpu_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "install_receipt_sha256": "cd7448a7411e142b3cceaacf964e23ff401c9a6a97031cb946b09fb424fa7f1e",
+    "peak_candidate_allocated_bytes": 5945786368,
+    "peak_owned_process_tree_rss_bytes": 1320878080,
+    "peak_selected_device_memory_mib": 3815,
+    "preregistered_plan_sha256": "0da078afcdf1e3f285d20e9f40e42f355aeff77ff59c996ce5cfe3964b9e4966",
+    "private_directory": "outputs/trackocd_core/audit/masa-native-smoke-ekntrfmu",
+    "worker_returncode": 0
+  },
+  "synthetic_shape_and_empty_proposal_pass": true
+}

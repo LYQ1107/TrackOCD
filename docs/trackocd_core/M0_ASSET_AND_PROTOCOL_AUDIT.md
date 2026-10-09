@@ -548,3 +548,19 @@ An exact 48-package binary lock and bounded wheel-directory inventory give
 Installer transient peak and isolated runtime still unverified; no packages,
 model, data or full job started. Actual named new payload: 1,090,170,303 B.
 See masa_checkpoint_recovery.json and masa_runtime_wheel_inventory.json.
+
+Subsequent native runtime execution: 48 exact binary packages installed in an
+owned isolated environment, base snapshot unchanged; 20,423 installed RECORD
+files checked. Fourteen exact native source files (125,292 B), 419 strict frozen
+model keys/shapes and finite tensors; no additional SAM weight. Synthetic and
+empty-proposal checks plus four Train images/two replays/eight forwards pass.
+Changed future leaves first-two detection/track arrays exactly unchanged.
+Every frame saturates the inherited 50-proposal cap; no useful coverage/purity
+claim or physical metric. Supervised smoke 16.88 s, host peak 1,687,347,200 B,
+GPU reserved peak 3,439,329,280 B; retained owned candidate allocated size
+5,945,954,304 B <8 GiB. Initial uv-metadata verifier and PathLike-mmap failures
+preserved, with no repeated real-image smoke or training/threshold search.
+See masa_runtime_install_summary.json, masa_native_smoke.json and the final
+section of M1_MASA_AED_PREFLIGHT.md. Latest regression: 177 pass. Primary M1
+still blocked pending provenance/physical coverage and pollution evaluation;
+no full Val/cache, Test, R2, GT decision authorization or formal scientific PASS.

@@ -1,0 +1,1005 @@
+{
+  "base_core_versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "pyarrow": "25.0.1",
+    "torch": "2.6.0+cu118",
+    "torchvision": "0.21.0+cu118"
+  },
+  "base_distribution_snapshot_unchanged": true,
+  "binary_only": true,
+  "boundary": {
+    "base_environment_mutated": false,
+    "foreign_process_interference": false,
+    "model_or_data_execution": false,
+    "source_build": false,
+    "test_access": false
+  },
+  "candidate_ceiling_bytes": 8589934592,
+  "completed_at_utc": "2026-10-09T21:29:05.747429+00:00",
+  "completed_package_count": 48,
+  "completed_packages": [
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 4164857411,
+        "hashed_files": 10200,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "torch",
+      "resumed_and_verified": true,
+      "sha256": "60396358193f238888540f4a38d78485f161e28ec17fa445f0373b5350ef21f0",
+      "version": "2.1.2+cu118"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 343284259,
+        "hashed_files": 530,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "mmcv",
+      "resumed_and_verified": false,
+      "sha256": "82a3eb54106f643dace1f9bd4d96e96899a0bb2360a5bb8e2f252a36d95051d9",
+      "version": "2.1.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 288652343,
+        "hashed_files": 58,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "triton",
+      "resumed_and_verified": false,
+      "sha256": "66439923a30d5d48399b08a9eae10370f6c261a5ec864a64983bae63152d39d7",
+      "version": "2.1.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 175536134,
+        "hashed_files": 131,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "opencv-python",
+      "resumed_and_verified": false,
+      "sha256": "9ace140fc6d647fbe1c692bcb2abce768973491222c067c131d80957c595b71f",
+      "version": "4.10.0.84"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 120470533,
+        "hashed_files": 1426,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "scipy",
+      "resumed_and_verified": false,
+      "sha256": "9e2abc762b0811e09a0d3258abee2d98e0c703eee49464ce0069590846f31d40",
+      "version": "1.15.3"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 64581316,
+        "hashed_files": 918,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "numpy",
+      "resumed_and_verified": false,
+      "sha256": "ffa75af20b44f8dba823498024771d5ac50620e6915abac414251bd971b4529f",
+      "version": "1.26.4"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 22212472,
+        "hashed_files": 596,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "matplotlib",
+      "resumed_and_verified": false,
+      "sha256": "1aa972116abb4c9d201bf245620b433726cb6856f3bef6a78f776a00f5c92d37",
+      "version": "3.10.9"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 21986257,
+        "hashed_files": 141,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "pillow",
+      "resumed_and_verified": false,
+      "sha256": "975385f4776fafde056abb318f612ef6285b10a1f12b8570f3647ad0d74b48ec",
+      "version": "12.2.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 26696975,
+        "hashed_files": 1573,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "sympy",
+      "resumed_and_verified": false,
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "version": "1.14.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 17413763,
+        "hashed_files": 200,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "torchvision",
+      "resumed_and_verified": false,
+      "sha256": "18470aef0bbde73f5a6a96135cd457f4d8be31f60be7ceae4ef5174f02f73add",
+      "version": "0.16.2+cu118"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 22338934,
+        "hashed_files": 369,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "fonttools",
+      "resumed_and_verified": false,
+      "sha256": "fb53892b570f7f1f0055e75fc4de32673e32f749c4c8a606b63d5c436650e634",
+      "version": "4.65.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 10559448,
+        "hashed_files": 141,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "shapely",
+      "resumed_and_verified": false,
+      "sha256": "e38a190442aacc67ff9f75ce60aec04893041f16f97d242209106d502486a142",
+      "version": "2.1.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 7100257,
+        "hashed_files": 1566,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "mmdet",
+      "resumed_and_verified": false,
+      "sha256": "2e23e291281ac57e7dccf8678e957da45fbe560ce78a1f5ded6afeccd3730f17",
+      "version": "3.3.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 6368993,
+        "hashed_files": 584,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "networkx",
+      "resumed_and_verified": false,
+      "sha256": "df5d4365b724cf81b8c6a7312509d0c22386097011ad1abe274afd5e9d3bbc5f",
+      "version": "3.4.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 6685359,
+        "hashed_files": 12,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "kiwisolver",
+      "resumed_and_verified": false,
+      "sha256": "e05c2f7925f1d88778e53cb44f14e0223204a3bdd09a41664750363acfb1f2ef",
+      "version": "1.5.1"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 4592761,
+        "hashed_files": 352,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "pygments",
+      "resumed_and_verified": false,
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "version": "2.21.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 4202335,
+        "hashed_files": 505,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "setuptools",
+      "resumed_and_verified": false,
+      "sha256": "558e47c15f1811c1fa7adbd0096669bf76c1d3f433f58324df69f3f5ecac4e8f",
+      "version": "75.8.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 2730871,
+        "hashed_files": 26,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "pyyaml",
+      "resumed_and_verified": false,
+      "sha256": "9c7708761fccb9397fe64bbc0395abcae8c4bf7b0eac081e12b809bf47700d0b",
+      "version": "6.0.3"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 1942686,
+        "hashed_files": 94,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "mpmath",
+      "resumed_and_verified": false,
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "version": "1.3.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 1653060,
+        "hashed_files": 11,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "pycocotools",
+      "resumed_and_verified": false,
+      "sha256": "e40a3a898c6e5340b8d70cf7984868b9bff8c3d80187de9a3b661d504d665978",
+      "version": "2.0.11"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 1734784,
+        "hashed_files": 164,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "mmengine",
+      "resumed_and_verified": false,
+      "sha256": "262ac976a925562f78cd5fd14dd1bc9b680ed0aa81f0d85b723ef782f99c54ee",
+      "version": "0.10.7"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 989321,
+        "hashed_files": 26,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "contourpy",
+      "resumed_and_verified": false,
+      "sha256": "ad687a04bc802cbe8b9c399c07162a3c35e227e2daccf1668eb1f278cb698631",
+      "version": "1.3.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 1237919,
+        "hashed_files": 107,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "rich",
+      "resumed_and_verified": false,
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "version": "15.0.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 781603,
+        "hashed_files": 24,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "charset-normalizer",
+      "resumed_and_verified": false,
+      "sha256": "8a893cc101149f80a653f82062ebc95b34525a2614382e1da5458fe7c6997249",
+      "version": "3.5.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 1027889,
+        "hashed_files": 87,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "yapf",
+      "resumed_and_verified": false,
+      "sha256": "224faffbc39c428cb095818cf6ef5511fdab6f7430a10783fdfb292ccf2852ca",
+      "version": "0.43.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 439684,
+        "hashed_files": 27,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "python-dateutil",
+      "resumed_and_verified": false,
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "version": "2.9.0.post0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 805621,
+        "hashed_files": 64,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "fsspec",
+      "resumed_and_verified": false,
+      "sha256": "8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f",
+      "version": "2026.9.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 248147,
+        "hashed_files": 14,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "certifi",
+      "resumed_and_verified": false,
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "version": "2026.7.22"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 447177,
+        "hashed_files": 44,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "urllib3",
+      "resumed_and_verified": false,
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "version": "2.8.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 494644,
+        "hashed_files": 33,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "jinja2",
+      "resumed_and_verified": false,
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "version": "3.1.6"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 461069,
+        "hashed_files": 30,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "filelock",
+      "resumed_and_verified": false,
+      "sha256": "2ce9818e3e2d8f284c1a964414447ef148d42a5fd5e2a477a7118e574b293ec1",
+      "version": "4.1.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 497008,
+        "hashed_files": 31,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "packaging",
+      "resumed_and_verified": false,
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "version": "26.3"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 487295,
+        "hashed_files": 25,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "pyparsing",
+      "resumed_and_verified": false,
+      "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
+      "version": "3.3.3"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 238635,
+        "hashed_files": 77,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "markdown-it-py",
+      "resumed_and_verified": false,
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "version": "4.2.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 231061,
+        "hashed_files": 42,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "tqdm",
+      "resumed_and_verified": false,
+      "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73",
+      "version": "4.70.1"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 232539,
+        "hashed_files": 28,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "requests",
+      "resumed_and_verified": false,
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "version": "2.34.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 341398,
+        "hashed_files": 19,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "idna",
+      "resumed_and_verified": false,
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+      "version": "3.20"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 225661,
+        "hashed_files": 33,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "einops",
+      "resumed_and_verified": false,
+      "sha256": "919387eb55330f5757c6bea9165c5ff5cfe63a642682ea788a6d472576d81737",
+      "version": "0.8.1"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 182518,
+        "hashed_files": 7,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "typing-extensions",
+      "resumed_and_verified": false,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "version": "4.16.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 150832,
+        "hashed_files": 20,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "platformdirs",
+      "resumed_and_verified": false,
+      "sha256": "78bfb9db2a8471ed7eebe3c3c932da413911042994e699b384fbb4493fa872d7",
+      "version": "4.12.4"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 58348,
+        "hashed_files": 13,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "markupsafe",
+      "resumed_and_verified": false,
+      "sha256": "d1aca03ede943eb80ab3d63bb082c84b7aab85ea83bd0fd0c200260945fb49d9",
+      "version": "3.0.4"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 43674,
+        "hashed_files": 15,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "terminaltables",
+      "resumed_and_verified": false,
+      "sha256": "e4fdc4179c9e4aab5f674d80f09d76fa436b96fdc698a8505e0a36bf0804a874",
+      "version": "3.1.10"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 42383,
+        "hashed_files": 11,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "tomli",
+      "resumed_and_verified": false,
+      "sha256": "32a7b79ac57a2e83670ce329ccf675798bc5a2094783a63676866b70503f2e2b",
+      "version": "2.5.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 37708,
+        "hashed_files": 8,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "six",
+      "resumed_and_verified": false,
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "version": "1.17.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 22685,
+        "hashed_files": 13,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "mdurl",
+      "resumed_and_verified": false,
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "version": "0.1.2"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 22251,
+        "hashed_files": 9,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "cycler",
+      "resumed_and_verified": false,
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+      "version": "0.12.1"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 18061,
+        "hashed_files": 10,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "termcolor",
+      "resumed_and_verified": false,
+      "sha256": "cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5",
+      "version": "3.3.0"
+    },
+    {
+      "installed_record_integrity": {
+        "hashed_bytes": 7512,
+        "hashed_files": 9,
+        "mismatch_count": 0,
+        "mismatches": []
+      },
+      "name": "addict",
+      "resumed_and_verified": false,
+      "sha256": "249bb56bbfd3cdc2a004ea0ff4c2b6ddc84d53bc2194761636eb314d5cfa5dfc",
+      "version": "2.4.0"
+    }
+  ],
+  "dependency_lock_sha256": "523e8ad24a3ad9c74b9570ea9ebc93b760c335f3dcab5e7315a03c1362ba8940",
+  "elapsed_seconds": 373.53718390199356,
+  "environment": "/data3/liuyeqiang/.venvs/trackocd-masa-smoke",
+  "final_owned_allocated_bytes": 5945593856,
+  "first_install_attempt": {
+    "cause": "uv direct_url archive_info omitted hash; owned hash-required successful Torch install recovered without re-download",
+    "elapsed_seconds": 462.47702630999265,
+    "peak_allocated_bytes": 4755169280,
+    "status": "BLOCKED_OWNED_INSTALL_PARTIAL_PRESERVED"
+  },
+  "hash_required": true,
+  "integrity_proof_boundary": "uv require-hashes successful operations plus installed RECORD SHA256 streaming checks; missing direct_url hash is not itself trusted, and RECORD is not independent archive re-hashing",
+  "no_dependencies_or_indexes": true,
+  "peak_owned_allocated_bytes": 5945593856,
+  "record_hashed_bytes": 5325373594,
+  "record_hashed_files": 20423,
+  "schema_version": "trackocd.core.masa_runtime_install.v1",
+  "started_at_utc": "2026-10-09T21:22:51.705513+00:00",
+  "status": "PASS_HASH_LOCKED_ISOLATED_INSTALL_NOT_MODEL_COMPATIBILITY",
+  "verified_install_operations": {
+    "addict": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_addict.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "249bb56bbfd3cdc2a004ea0ff4c2b6ddc84d53bc2194761636eb314d5cfa5dfc",
+      "url": "https://files.pythonhosted.org/packages/6a/00/b08f23b7d7e1e14ce01419a467b583edbb93c6cdb8654e54a9cc579cd61f/addict-2.4.0-py3-none-any.whl"
+    },
+    "certifi": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_certifi.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl"
+    },
+    "charset-normalizer": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_charset-normalizer.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "8a893cc101149f80a653f82062ebc95b34525a2614382e1da5458fe7c6997249",
+      "url": "https://files.pythonhosted.org/packages/c4/9f/9f52d2886d52645987d603425482c63c5045a3005db1354a7097e5ed1ae9/charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+    },
+    "contourpy": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_contourpy.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "ad687a04bc802cbe8b9c399c07162a3c35e227e2daccf1668eb1f278cb698631",
+      "url": "https://files.pythonhosted.org/packages/32/5c/1ee32d1c7956923202f00cf8d2a14a62ed7517bdc0ee1e55301227fc273c/contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    "cycler": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_cycler.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+      "url": "https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl"
+    },
+    "einops": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_einops.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "919387eb55330f5757c6bea9165c5ff5cfe63a642682ea788a6d472576d81737",
+      "url": "https://files.pythonhosted.org/packages/87/62/9773de14fe6c45c23649e98b83231fffd7b9892b6cf863251dc2afa73643/einops-0.8.1-py3-none-any.whl"
+    },
+    "filelock": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_filelock.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "2ce9818e3e2d8f284c1a964414447ef148d42a5fd5e2a477a7118e574b293ec1",
+      "url": "https://files.pythonhosted.org/packages/ee/86/032133892a5de43b5a98200b01aadcad68cc255e274a762f08b8a76d2912/filelock-4.1.0-py3-none-any.whl"
+    },
+    "fonttools": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_fonttools.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "fb53892b570f7f1f0055e75fc4de32673e32f749c4c8a606b63d5c436650e634",
+      "url": "https://files.pythonhosted.org/packages/ee/56/151b5e81d20c63834f48ad37a0cbbbe2f9b248e38f8d10387f0cf5219244/fonttools-4.65.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    },
+    "fsspec": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_fsspec.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f",
+      "url": "https://files.pythonhosted.org/packages/6c/c0/a98505f18594f1bce828bb159cec0fcf9860562f1a2c85913409fc8f3d9e/fsspec-2026.9.0-py3-none-any.whl"
+    },
+    "idna": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_idna.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+      "url": "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl"
+    },
+    "jinja2": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_jinja2.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "url": "https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl"
+    },
+    "kiwisolver": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_kiwisolver.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "e05c2f7925f1d88778e53cb44f14e0223204a3bdd09a41664750363acfb1f2ef",
+      "url": "https://files.pythonhosted.org/packages/f1/0e/9f394d693be549fa3fab62498c2778294595991047adc3dcf10aa99b91c0/kiwisolver-1.5.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+    },
+    "markdown-it-py": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_markdown-it-py.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "url": "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl"
+    },
+    "markupsafe": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_markupsafe.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "d1aca03ede943eb80ab3d63bb082c84b7aab85ea83bd0fd0c200260945fb49d9",
+      "url": "https://files.pythonhosted.org/packages/00/26/c4708ed3b0f08e8e6d7cbce3314ac130cb5352d1f62951b6fef7878f2b1e/markupsafe-3.0.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+    },
+    "matplotlib": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_matplotlib.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "1aa972116abb4c9d201bf245620b433726cb6856f3bef6a78f776a00f5c92d37",
+      "url": "https://files.pythonhosted.org/packages/fc/b7/d8bcec2626c35f96972bff656299fef4578113ea6193c8fdad324710410c/matplotlib-3.10.9-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    },
+    "mdurl": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_mdurl.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl"
+    },
+    "mmcv": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_mmcv.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "82a3eb54106f643dace1f9bd4d96e96899a0bb2360a5bb8e2f252a36d95051d9",
+      "url": "https://download.openmmlab.com/mmcv/dist/cu118/torch2.1.0/mmcv-2.1.0-cp310-cp310-manylinux1_x86_64.whl"
+    },
+    "mmdet": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_mmdet.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "2e23e291281ac57e7dccf8678e957da45fbe560ce78a1f5ded6afeccd3730f17",
+      "url": "https://files.pythonhosted.org/packages/02/c7/c2d91161c9b3e1c237ea00e9cefb7f4bfe2854769f56025db415b734aedb/mmdet-3.3.0-py3-none-any.whl"
+    },
+    "mmengine": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_mmengine.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "262ac976a925562f78cd5fd14dd1bc9b680ed0aa81f0d85b723ef782f99c54ee",
+      "url": "https://files.pythonhosted.org/packages/98/8e/f98332248aad102511bea4ae19c0ddacd2f0a994f3ca4c82b7a369e0af8b/mmengine-0.10.7-py3-none-any.whl"
+    },
+    "mpmath": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_mpmath.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "url": "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl"
+    },
+    "networkx": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_networkx.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "df5d4365b724cf81b8c6a7312509d0c22386097011ad1abe274afd5e9d3bbc5f",
+      "url": "https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl"
+    },
+    "numpy": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_numpy.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "ffa75af20b44f8dba823498024771d5ac50620e6915abac414251bd971b4529f",
+      "url": "https://files.pythonhosted.org/packages/4b/d7/ecf66c1cd12dc28b4040b15ab4d17b773b87fa9d29ca16125de01adb36cd/numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    "opencv-python": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_opencv-python.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "9ace140fc6d647fbe1c692bcb2abce768973491222c067c131d80957c595b71f",
+      "url": "https://files.pythonhosted.org/packages/3f/a4/d2537f47fd7fcfba966bd806e3ec18e7ee1681056d4b0a9c8d983983e4d5/opencv_python-4.10.0.84-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    "packaging": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_packaging.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl"
+    },
+    "pillow": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_pillow.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "975385f4776fafde056abb318f612ef6285b10a1f12b8570f3647ad0d74b48ec",
+      "url": "https://files.pythonhosted.org/packages/ea/f1/aa1bb13b2f4eba914e9637893c73f2af8e48d7d4023b9d3750d4c5eb2d0c/pillow-12.2.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    },
+    "platformdirs": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_platformdirs.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "78bfb9db2a8471ed7eebe3c3c932da413911042994e699b384fbb4493fa872d7",
+      "url": "https://files.pythonhosted.org/packages/f4/ba/223e00b885e960edd5d4b4d178c88acce019bd5b83786093681b8c393492/platformdirs-4.12.4-py3-none-any.whl"
+    },
+    "pycocotools": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_pycocotools.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "e40a3a898c6e5340b8d70cf7984868b9bff8c3d80187de9a3b661d504d665978",
+      "url": "https://files.pythonhosted.org/packages/c5/a1/b4b49b85763043372e66baa10dffa42337cf4687d6db22546c27f3a4d732/pycocotools-2.0.11-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+    },
+    "pygments": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_pygments.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl"
+    },
+    "pyparsing": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_pyparsing.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
+      "url": "https://files.pythonhosted.org/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl"
+    },
+    "python-dateutil": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_python-dateutil.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+    },
+    "pyyaml": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_pyyaml.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "9c7708761fccb9397fe64bbc0395abcae8c4bf7b0eac081e12b809bf47700d0b",
+      "url": "https://files.pythonhosted.org/packages/7a/1e/7acc4f0e74c4b3d9531e24739e0ab832a5edf40e64fbae1a9c01941cabd7/pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+    },
+    "requests": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_requests.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl"
+    },
+    "rich": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_rich.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "url": "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl"
+    },
+    "scipy": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_scipy.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "9e2abc762b0811e09a0d3258abee2d98e0c703eee49464ce0069590846f31d40",
+      "url": "https://files.pythonhosted.org/packages/8e/6d/41991e503e51fc1134502694c5fa7a1671501a17ffa12716a4a9151af3df/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    "setuptools": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_setuptools.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "558e47c15f1811c1fa7adbd0096669bf76c1d3f433f58324df69f3f5ecac4e8f",
+      "url": "https://files.pythonhosted.org/packages/a9/38/7d7362e031bd6dc121e5081d8cb6aa6f6fedf2b67bf889962134c6da4705/setuptools-75.8.2-py3-none-any.whl"
+    },
+    "shapely": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_shapely.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "e38a190442aacc67ff9f75ce60aec04893041f16f97d242209106d502486a142",
+      "url": "https://files.pythonhosted.org/packages/50/8a/0ab1f7433a2a85d9e9aea5b1fbb333f3b09b309e7817309250b4b7b2cc7a/shapely-2.1.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    },
+    "six": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_six.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
+    },
+    "sympy": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_sympy.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "url": "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl"
+    },
+    "termcolor": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_termcolor.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5",
+      "url": "https://files.pythonhosted.org/packages/33/d1/8bb87d21e9aeb323cc03034f5eaf2c8f69841e40e4853c2627edf8111ed3/termcolor-3.3.0-py3-none-any.whl"
+    },
+    "terminaltables": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_terminaltables.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "e4fdc4179c9e4aab5f674d80f09d76fa436b96fdc698a8505e0a36bf0804a874",
+      "url": "https://files.pythonhosted.org/packages/c4/fb/ea621e0a19733e01fe4005d46087d383693c0f4a8f824b47d8d4122c87e0/terminaltables-3.1.10-py2.py3-none-any.whl"
+    },
+    "tomli": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_tomli.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "32a7b79ac57a2e83670ce329ccf675798bc5a2094783a63676866b70503f2e2b",
+      "url": "https://files.pythonhosted.org/packages/60/3f/3e3f8fd0919249b0200c80fbc4f9a1e70be19f9883da71dfb7f8b9ab8aca/tomli-2.5.0-py3-none-any.whl"
+    },
+    "torch": {
+      "not_a_hash_read_from_direct_url_metadata": true,
+      "original_operation_log": "outputs/trackocd_core/audit/masa-install-c3tjs30r/wheel_torch.log",
+      "proof": "owned_installer_control_flow_and_saved_uv_success_log",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "60396358193f238888540f4a38d78485f161e28ec17fa445f0373b5350ef21f0",
+      "url": "https://download-r2.pytorch.org/whl/cu118/torch-2.1.2%2Bcu118-cp310-cp310-linux_x86_64.whl"
+    },
+    "torchvision": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_torchvision.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "18470aef0bbde73f5a6a96135cd457f4d8be31f60be7ceae4ef5174f02f73add",
+      "url": "https://download-r2.pytorch.org/whl/cu118/torchvision-0.16.2%2Bcu118-cp310-cp310-linux_x86_64.whl"
+    },
+    "tqdm": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_tqdm.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73",
+      "url": "https://files.pythonhosted.org/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl"
+    },
+    "triton": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_triton.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "66439923a30d5d48399b08a9eae10370f6c261a5ec864a64983bae63152d39d7",
+      "url": "https://download-r2.pytorch.org/whl/triton-2.1.0-0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    },
+    "typing-extensions": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_typing-extensions.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl"
+    },
+    "urllib3": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_urllib3.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "url": "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl"
+    },
+    "yapf": {
+      "operation_log": "outputs/trackocd_core/audit/masa-install-m3fzu6zp/wheel_yapf.log",
+      "proof": "owned_uv_hash_required_operation_completed",
+      "require_hashes": true,
+      "returncode": 0,
+      "sha256": "224faffbc39c428cb095818cf6ef5511fdab6f7430a10783fdfb292ccf2852ca",
+      "url": "https://files.pythonhosted.org/packages/37/81/6acd6601f61e31cfb8729d3da6d5df966f80f374b78eff83760714487338/yapf-0.43.0-py3-none-any.whl"
+    }
+  }
+}

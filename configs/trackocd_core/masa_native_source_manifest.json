@@ -1,0 +1,80 @@
+{
+  "schema_version": "trackocd.core.masa_native_source_manifest.v1",
+  "repository": "https://github.com/siyuanliii/masa",
+  "commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+  "full_upstream_tree_checked": true,
+  "upstream_AGENTS": [],
+  "scope": "Exact small image modules/configs/license only; explicitly exclude datasets, semantic detectors, APIs/metadata fallbacks, training launchers and offline demo filtering",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11342,
+      "git_blob_sha1": "9caa45f5f120b02e604f8c36db4088a689eb89d6"
+    },
+    {
+      "path": "masa/models/sam/common.py",
+      "bytes": 1455,
+      "git_blob_sha1": "554da79bdf6414465ff60be4ed2cfbf612021bbe"
+    },
+    {
+      "path": "masa/models/sam/image_encoder.py",
+      "bytes": 15194,
+      "git_blob_sha1": "707ea16cf0b904bc7dd09fa8ad92ad23aefb50e6"
+    },
+    {
+      "path": "masa/models/sam/transformer.py",
+      "bytes": 8324,
+      "git_blob_sha1": "ff4bd8a456116921f910e55ae077af5c9a86dcac"
+    },
+    {
+      "path": "masa/models/sam/mask_decoder.py",
+      "bytes": 9502,
+      "git_blob_sha1": "a74307c854210b29645a12e427b21c2685c5d1ab"
+    },
+    {
+      "path": "masa/models/sam/prompt_encoder.py",
+      "bytes": 8792,
+      "git_blob_sha1": "1e6e22f900c9f1c3b41012dacd695993a2320e6b"
+    },
+    {
+      "path": "masa/models/detectors/sam_masa.py",
+      "bytes": 7481,
+      "git_blob_sha1": "1cfd0a6708b6578db86ee7c93f35c6452708273b"
+    },
+    {
+      "path": "masa/models/necks/simplefpn.py",
+      "bytes": 10113,
+      "git_blob_sha1": "278ae0953ff31e204124fb3ffc20e9961c530008"
+    },
+    {
+      "path": "masa/models/losses/unbiased_contrastive_loss.py",
+      "bytes": 2136,
+      "git_blob_sha1": "d416aaaea122f88ec554b1a8910a72bc32a8443e"
+    },
+    {
+      "path": "masa/models/roi_heads/track_heads/masa_track_head.py",
+      "bytes": 7344,
+      "git_blob_sha1": "15b8b1843c42921d5d17c4d71f904a9bb5417b2a"
+    },
+    {
+      "path": "masa/models/tracker/masa_tao_tracker.py",
+      "bytes": 13974,
+      "git_blob_sha1": "5d9c00c0105b356a43ab748fb9d4dde9fec3aeff"
+    },
+    {
+      "path": "masa/models/mot/masa.py",
+      "bytes": 21362,
+      "git_blob_sha1": "02d4061b7cf0d180bb76b465111a30848837a93c"
+    },
+    {
+      "path": "configs/masa-sam/sam-vitb.py",
+      "bytes": 807,
+      "git_blob_sha1": "4f318ba026466cc65bafecccf12980937bd6b861"
+    },
+    {
+      "path": "configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py",
+      "bytes": 7466,
+      "git_blob_sha1": "f9abc1c7454ccf87c676860e41063ba5cdc86260"
+    }
+  ]
+}
