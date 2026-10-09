@@ -1,0 +1,454 @@
+{
+  "status": "PASS",
+  "results": {
+    "calibration": {
+      "Dedup-A": {
+        "counts": {
+          "gt_total": 2510,
+          "before_covered": 2001,
+          "after_nms_covered": 1957,
+          "after_cap_covered": 1942,
+          "nms_lost_base": 25,
+          "cap_lost_base": 5,
+          "nms_lost_novel": 10,
+          "cap_lost_novel": 7,
+          "nms_lost_distractor": 9,
+          "cap_lost_distractor": 3,
+          "nms_loss_with_suppressor_covering_other_gt": 5
+        },
+        "examples": [
+          {
+            "image_id": 152,
+            "annotation_id": 734,
+            "role": "base",
+            "suppressor_covers_different_gt": true,
+            "best_iou_before": 0.5910661816596985,
+            "best_iou_after_nms": 0.4781759977340698
+          },
+          {
+            "image_id": 181,
+            "annotation_id": 842,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.6765925884246826,
+            "best_iou_after_nms": 0.4264906048774719
+          },
+          {
+            "image_id": 770,
+            "annotation_id": 3121,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.6162211298942566,
+            "best_iou_after_nms": 0.4537075161933899
+          },
+          {
+            "image_id": 772,
+            "annotation_id": 3139,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5365213751792908,
+            "best_iou_after_nms": 0.49331551790237427
+          },
+          {
+            "image_id": 778,
+            "annotation_id": 3184,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.835489809513092,
+            "best_iou_after_nms": 0.49271565675735474
+          },
+          {
+            "image_id": 779,
+            "annotation_id": 3192,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.6866785883903503,
+            "best_iou_after_nms": 0.45117104053497314
+          },
+          {
+            "image_id": 792,
+            "annotation_id": 3272,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5082343816757202,
+            "best_iou_after_nms": 0.46540817618370056
+          },
+          {
+            "image_id": 793,
+            "annotation_id": 3275,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.7356027364730835,
+            "best_iou_after_nms": 0.46580827236175537
+          },
+          {
+            "image_id": 794,
+            "annotation_id": 3278,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.515197217464447,
+            "best_iou_after_nms": 0.4944706857204437
+          },
+          {
+            "image_id": 795,
+            "annotation_id": 3279,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5640624761581421,
+            "best_iou_after_nms": 0.3622022271156311
+          },
+          {
+            "image_id": 842,
+            "annotation_id": 3493,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5177379250526428,
+            "best_iou_after_nms": 0.46645399928092957
+          },
+          {
+            "image_id": 884,
+            "annotation_id": 3601,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.6994056701660156,
+            "best_iou_after_nms": 0.4960913360118866
+          }
+        ]
+      },
+      "Dedup-B": {
+        "counts": {
+          "gt_total": 2510,
+          "before_covered": 2001,
+          "after_nms_covered": 1984,
+          "after_cap_covered": 1940,
+          "nms_lost_base": 6,
+          "cap_lost_base": 21,
+          "nms_lost_novel": 8,
+          "cap_lost_novel": 19,
+          "nms_lost_distractor": 3,
+          "cap_lost_distractor": 4,
+          "nms_loss_with_suppressor_covering_other_gt": 3
+        },
+        "examples": [
+          {
+            "image_id": 792,
+            "annotation_id": 3272,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5082343816757202,
+            "best_iou_after_nms": 0.46540817618370056
+          },
+          {
+            "image_id": 794,
+            "annotation_id": 3278,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.515197217464447,
+            "best_iou_after_nms": 0.4944706857204437
+          },
+          {
+            "image_id": 842,
+            "annotation_id": 3493,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5177379250526428,
+            "best_iou_after_nms": 0.46645399928092957
+          },
+          {
+            "image_id": 1430,
+            "annotation_id": 5726,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5448300838470459,
+            "best_iou_after_nms": 0.4551694691181183
+          },
+          {
+            "image_id": 1530,
+            "annotation_id": 6111,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5149871110916138,
+            "best_iou_after_nms": 0.4707542061805725
+          },
+          {
+            "image_id": 1769,
+            "annotation_id": 7047,
+            "role": "distractor",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5082405805587769,
+            "best_iou_after_nms": 0.4785902798175812
+          },
+          {
+            "image_id": 1775,
+            "annotation_id": 7067,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5410228967666626,
+            "best_iou_after_nms": 0.4939742982387543
+          },
+          {
+            "image_id": 1914,
+            "annotation_id": 7574,
+            "role": "distractor",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5650113821029663,
+            "best_iou_after_nms": 0.4577818214893341
+          },
+          {
+            "image_id": 1935,
+            "annotation_id": 7624,
+            "role": "distractor",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.507495641708374,
+            "best_iou_after_nms": 0.42440274357795715
+          },
+          {
+            "image_id": 2024,
+            "annotation_id": 7953,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5061761736869812,
+            "best_iou_after_nms": 0.4622943699359894
+          },
+          {
+            "image_id": 2119,
+            "annotation_id": 8363,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5668362975120544,
+            "best_iou_after_nms": 0.4758724570274353
+          },
+          {
+            "image_id": 2251,
+            "annotation_id": 8981,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5091268420219421,
+            "best_iou_after_nms": 0.4816487431526184
+          }
+        ]
+      },
+      "Dedup-C": {
+        "counts": {
+          "gt_total": 2510,
+          "before_covered": 2001,
+          "after_nms_covered": 1984,
+          "after_cap_covered": 1984,
+          "nms_lost_base": 6,
+          "cap_lost_base": 0,
+          "nms_lost_novel": 8,
+          "cap_lost_novel": 0,
+          "nms_lost_distractor": 3,
+          "cap_lost_distractor": 0,
+          "nms_loss_with_suppressor_covering_other_gt": 3
+        },
+        "examples": [
+          {
+            "image_id": 792,
+            "annotation_id": 3272,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5082343816757202,
+            "best_iou_after_nms": 0.46540817618370056
+          },
+          {
+            "image_id": 794,
+            "annotation_id": 3278,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.515197217464447,
+            "best_iou_after_nms": 0.4944706857204437
+          },
+          {
+            "image_id": 842,
+            "annotation_id": 3493,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5177379250526428,
+            "best_iou_after_nms": 0.46645399928092957
+          },
+          {
+            "image_id": 1430,
+            "annotation_id": 5726,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5448300838470459,
+            "best_iou_after_nms": 0.4551694691181183
+          },
+          {
+            "image_id": 1530,
+            "annotation_id": 6111,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5149871110916138,
+            "best_iou_after_nms": 0.4707542061805725
+          },
+          {
+            "image_id": 1769,
+            "annotation_id": 7047,
+            "role": "distractor",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5082405805587769,
+            "best_iou_after_nms": 0.4785902798175812
+          },
+          {
+            "image_id": 1775,
+            "annotation_id": 7067,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5410228967666626,
+            "best_iou_after_nms": 0.4939742982387543
+          },
+          {
+            "image_id": 1914,
+            "annotation_id": 7574,
+            "role": "distractor",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5650113821029663,
+            "best_iou_after_nms": 0.4577818214893341
+          },
+          {
+            "image_id": 1935,
+            "annotation_id": 7624,
+            "role": "distractor",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.507495641708374,
+            "best_iou_after_nms": 0.42440274357795715
+          },
+          {
+            "image_id": 2024,
+            "annotation_id": 7953,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5061761736869812,
+            "best_iou_after_nms": 0.4622943699359894
+          },
+          {
+            "image_id": 2119,
+            "annotation_id": 8363,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5668362975120544,
+            "best_iou_after_nms": 0.4758724570274353
+          },
+          {
+            "image_id": 2251,
+            "annotation_id": 8981,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5091268420219421,
+            "best_iou_after_nms": 0.4816487431526184
+          }
+        ]
+      }
+    },
+    "confirmation": {
+      "Dedup-C": {
+        "counts": {
+          "gt_total": 2290,
+          "before_covered": 1809,
+          "after_nms_covered": 1798,
+          "after_cap_covered": 1798,
+          "nms_lost_base": 2,
+          "cap_lost_base": 0,
+          "nms_lost_novel": 8,
+          "cap_lost_novel": 0,
+          "nms_lost_distractor": 1,
+          "cap_lost_distractor": 0,
+          "nms_loss_with_suppressor_covering_other_gt": 3
+        },
+        "examples": [
+          {
+            "image_id": 3535,
+            "annotation_id": 14546,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.514630138874054,
+            "best_iou_after_nms": 0.4279072880744934
+          },
+          {
+            "image_id": 13218,
+            "annotation_id": 59994,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.559403121471405,
+            "best_iou_after_nms": 0.48187047243118286
+          },
+          {
+            "image_id": 13222,
+            "annotation_id": 60007,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.530544638633728,
+            "best_iou_after_nms": 0.38695260882377625
+          },
+          {
+            "image_id": 13227,
+            "annotation_id": 60031,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5333044528961182,
+            "best_iou_after_nms": 0.41334015130996704
+          },
+          {
+            "image_id": 68022,
+            "annotation_id": 252466,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5483773350715637,
+            "best_iou_after_nms": 0.4614497721195221
+          },
+          {
+            "image_id": 91219,
+            "annotation_id": 337957,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5218117237091064,
+            "best_iou_after_nms": 0.394399493932724
+          },
+          {
+            "image_id": 91224,
+            "annotation_id": 337990,
+            "role": "novel",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5460365414619446,
+            "best_iou_after_nms": 0.4956567883491516
+          },
+          {
+            "image_id": 91234,
+            "annotation_id": 338061,
+            "role": "base",
+            "suppressor_covers_different_gt": false,
+            "best_iou_before": 0.5139889121055603,
+            "best_iou_after_nms": 0.4835296869277954
+          },
+          {
+            "image_id": 91669,
+            "annotation_id": 339267,
+            "role": "novel",
+            "suppressor_covers_different_gt": true,
+            "best_iou_before": 0.5792773962020874,
+            "best_iou_after_nms": 0.4699408710002899
+          },
+          {
+            "image_id": 106374,
+            "annotation_id": 394564,
+            "role": "novel",
+            "suppressor_covers_different_gt": true,
+            "best_iou_before": 0.5058781504631042,
+            "best_iou_after_nms": 0.4808550477027893
+          },
+          {
+            "image_id": 106391,
+            "annotation_id": 394631,
+            "role": "distractor",
+            "suppressor_covers_different_gt": true,
+            "best_iou_before": 0.528546929359436,
+            "best_iou_after_nms": 0.4719175100326538
+          }
+        ]
+      }
+    }
+  },
+  "interpretation": "Only GT-covered candidate losses are decomposed. Suppressor covering a different GT supports adjacent-object collision; absence does not prove no unannotated-object collision. Exact duplicate removal alone cannot change geometric coverage."
+}

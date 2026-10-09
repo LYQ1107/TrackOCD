@@ -104,3 +104,18 @@ Evidence and per-file hashes: `outputs/baselines/pandas_dedup/audit.json`.
 No input NPZ was modified; pre/post checksums agree. No inference, training,
 discovery or TAO Test access occurred. The audit used CPU and stayed within the
 10 GiB additional-output budget.
+
+## Intervention outcome
+
+The three fixed NMS/candidate-cap interventions and disjoint confirmation have
+now completed. C (IoU 0.7, max 100) increased HOTA from 0.101396 to 0.231965
+on calibration and from 0.122971 to 0.289395 on confirmation. This confirms a
+major tracking-interface bottleneck. Exact cross-prototype duplication is one
+identified mechanism, but the intervention also suppresses distinct overlapping
+proposals and caps candidates; these effects must not all be credited to exact
+duplicates. C lost 8 previously covered Novel GT boxes in each subset due to
+NMS, including adjacent-object collisions. Calibration Novel recall loss was
+3.60 percentage points, exceeding the preregistered 2-point protection limit.
+The full-Val promotion gate therefore failed and no new 988-video run was
+launched. The final report separates this tracking benefit from proposal and
+semantic limitations.

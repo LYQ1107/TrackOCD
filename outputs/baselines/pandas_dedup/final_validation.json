@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "targeted_tests_passed": 7,
+  "cpu_gpu_test_executed": true,
+  "canonical_subset_evaluations_passed": 6,
+  "used_original_npz_final_hash_checks_passed": 40,
+  "checkpoint_and_prototype_expected_sha256_match": true,
+  "frozen_detection_metrics_hash_unchanged": true,
+  "frozen_full_fg0_metrics_hash_unchanged": true,
+  "byte_tracker_source_unchanged_from_411aed5": true,
+  "trackeval_commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "trackeval_worktree_clean": true,
+  "evaluation_resume_validation_passed_without_reexecution": true,
+  "extra_output_bytes_at_check": 63076109,
+  "soft_budget_bytes": 10737418240,
+  "full_run_started": false,
+  "full_run_gate_failure": "calibration Novel proposal recall loss 8/222 > 0.02",
+  "new_tracker_settings_tested": ["Dedup-A", "Dedup-B", "Dedup-C"],
+  "confirmation_settings_tested": ["Original-FG-0 reused", "Dedup-C locked"],
+  "tao_test_used": false,
+  "external_processes_interfered_with": false
+}

@@ -1,0 +1,1840 @@
+{
+  "status": "COMPLETE",
+  "goal_outcome": "Redundancy and major tracking-interface bottleneck confirmed on fixed subsets; NMS improves tracking but fails the preregistered calibration Novel recall safety gate. No full-Val promotion.",
+  "branch": "codex/pandas-bytetrack-dedup-audit",
+  "ancestor": "411aed527d5c7999e4c88c10bed9be0ecd7b043d",
+  "completed_stage_commits": [
+    "0c39b60",
+    "140a930",
+    "2f33c7c"
+  ],
+  "dataset": "TAO Validation",
+  "experiment_is_tao_val_development": true,
+  "tao_test_used": false,
+  "frozen_inputs": {
+    "base_checkpoint_sha256": "86ced2e8061722aae173905585fba204c0e085f16dd2b68dec9ccfbf2344a725",
+    "prototype_sha256": "83cbe5f5e832414b4f0acd633964ade79e8d7e087923da3444ec26b9dba4a864",
+    "detection_metrics_sha256": "828988930768a298754d9022b197a66d141b16f18e3d81dc0a209e9804f53eab",
+    "incumbent_full_trackeval_sha256": "003e1594e4e35ff684da81769cedbea1e0edd4b184f7cc96d7af0f513a426aab",
+    "used_npz_hash_checks_passed": 40,
+    "all_npz_universe": 988,
+    "modified_npz": 0,
+    "new_inference": false,
+    "retrained": false,
+    "rediscovered": false,
+    "K": 500
+  },
+  "audit": {
+    "frames": 22322,
+    "detections": 3747198,
+    "exact_extra_duplicate_rows": 1475493,
+    "exact_extra_duplicate_fraction": 0.3937590167373061,
+    "unique_exact_geometry_mean": 101.76977869366544,
+    "iou09_candidates_with_partner_fraction": 0.6937831948031569,
+    "identical_box_pairs": 2930094,
+    "identical_box_pairs_all_cross_prototype": true,
+    "identical_box_pairs_all_same_foreground": true,
+    "raw_proposal_id_saved": false,
+    "evidence_path": "outputs/baselines/pandas_dedup/audit.json"
+  },
+  "calibration": {
+    "video_ids": [
+      4,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      30,
+      31,
+      35,
+      36,
+      37,
+      39,
+      45,
+      49,
+      52,
+      54,
+      55,
+      58,
+      59
+    ],
+    "frames": 22322,
+    "annotated_frames": 792,
+    "gt_boxes": 2510,
+    "results": [
+      {
+        "variant": "Original-FG-0",
+        "candidate_counts": {
+          "count": 22322,
+          "total": 3747198,
+          "mean": 167.87017292357316,
+          "median": 162,
+          "p90": 274,
+          "max": 299
+        },
+        "retained_fraction": 1,
+        "physical_tracks": 51125,
+        "track_lengths": {
+          "count": 51125,
+          "total": 1139713,
+          "mean": 22.292674816625915,
+          "median": 10,
+          "p90": 51,
+          "max": 1147
+        },
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1669,
+              "total": 2510,
+              "recall": 0.6649402390438247
+            },
+            "base": {
+              "matched": 1583,
+              "total": 2014,
+              "recall": 0.7859980139026812
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1669,
+              "gt": 2510,
+              "predictions": 39134,
+              "unmatched_predictions": 37465
+            }
+          }
+        },
+        "track_rows": 1139713,
+        "exported_rows": 39134,
+        "lost_covered_gt": {
+          "covered_gt_lost": 0
+        },
+        "metrics": {
+          "HOTA_0": 0.13256979093331586,
+          "LocA_0": 0.6456936251102007,
+          "AssocA_0": 0.27460843316398675,
+          "DetA_0": 0.06399930717935394,
+          "HOTA_mean": 0.10139583631431269,
+          "LocA_mean": 0.8048786205418296,
+          "AssocA_mean": 0.2534825192174772,
+          "DetA_mean": 0.041197156079303764,
+          "IDF1": 0.0454175484291063,
+          "MOTA": -12.681673306772907,
+          "IDSW": 821,
+          "Frag": 153
+        },
+        "canonical_clear_counts": {
+          "CLR_TP": 1669,
+          "CLR_FN": 841,
+          "CLR_FP": 32679,
+          "IDSW": 821,
+          "MT": 49,
+          "PT": 40,
+          "ML": 18,
+          "Frag": 153,
+          "CLR_Frames": 792,
+          "MOTA": -12.681673306772907,
+          "MOTP": 0.8186781014536852,
+          "MODA": -12.354581673306773,
+          "CLR_Re": 0.6649402390438247,
+          "CLR_Pr": 0.048590893210667285,
+          "MTR": 0.45794392523364486,
+          "PTR": 0.37383177570093457,
+          "MLR": 0.16822429906542055,
+          "sMOTA": -12.802241533336174,
+          "CLR_F1": 0.09056378533832546,
+          "FP_per_frame": 41.26136363636363,
+          "MOTAL": -12.355742766198055,
+          "MOTP_sum": 1366.3737513262006
+        },
+        "gt_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "prediction_sha256": "a88ebfc118b7152bf3bfe34de0672f2524be78025cbf73e8da78a73cf4313c48"
+      },
+      {
+        "variant": "Dedup-A",
+        "candidate_counts": {
+          "count": 22322,
+          "total": 817301,
+          "mean": 36.61414747782457,
+          "median": 41,
+          "p90": 50,
+          "max": 50
+        },
+        "retained_fraction": 0.21810990505438999,
+        "physical_tracks": 4218,
+        "track_lengths": {
+          "count": 4218,
+          "total": 190263,
+          "mean": 45.107396870554766,
+          "median": 11,
+          "p90": 116,
+          "max": 1171
+        },
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1942,
+              "total": 2510,
+              "recall": 0.7737051792828685
+            },
+            "base": {
+              "matched": 1748,
+              "total": 2014,
+              "recall": 0.8679245283018868
+            },
+            "novel": {
+              "matched": 107,
+              "total": 222,
+              "recall": 0.481981981981982
+            },
+            "distractor": {
+              "matched": 87,
+              "total": 274,
+              "recall": 0.3175182481751825
+            },
+            "one_to_one": {
+              "matched": 1939,
+              "gt": 2510,
+              "predictions": 29084,
+              "unmatched_predictions": 27145
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1798,
+              "total": 2510,
+              "recall": 0.7163346613545817
+            },
+            "base": {
+              "matched": 1662,
+              "total": 2014,
+              "recall": 0.8252234359483615
+            },
+            "novel": {
+              "matched": 65,
+              "total": 222,
+              "recall": 0.2927927927927928
+            },
+            "distractor": {
+              "matched": 71,
+              "total": 274,
+              "recall": 0.2591240875912409
+            },
+            "one_to_one": {
+              "matched": 1792,
+              "gt": 2510,
+              "predictions": 14584,
+              "unmatched_predictions": 12792
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1577,
+              "total": 2510,
+              "recall": 0.6282868525896415
+            },
+            "base": {
+              "matched": 1500,
+              "total": 2014,
+              "recall": 0.7447864945382324
+            },
+            "novel": {
+              "matched": 37,
+              "total": 222,
+              "recall": 0.16666666666666666
+            },
+            "distractor": {
+              "matched": 40,
+              "total": 274,
+              "recall": 0.145985401459854
+            },
+            "one_to_one": {
+              "matched": 1570,
+              "gt": 2510,
+              "predictions": 5724,
+              "unmatched_predictions": 4154
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1613,
+              "total": 2510,
+              "recall": 0.6426294820717131
+            },
+            "base": {
+              "matched": 1535,
+              "total": 2014,
+              "recall": 0.7621648460774578
+            },
+            "novel": {
+              "matched": 40,
+              "total": 222,
+              "recall": 0.18018018018018017
+            },
+            "distractor": {
+              "matched": 38,
+              "total": 274,
+              "recall": 0.1386861313868613
+            },
+            "one_to_one": {
+              "matched": 1608,
+              "gt": 2510,
+              "predictions": 6626,
+              "unmatched_predictions": 5018
+            }
+          }
+        },
+        "track_rows": 190263,
+        "exported_rows": 6626,
+        "lost_covered_gt": {
+          "covered_gt_lost": 59,
+          "lost_base": 30,
+          "lost_with_other_gt_iou05": 0,
+          "lost_novel": 17,
+          "lost_distractor": 12
+        },
+        "metrics": {
+          "HOTA_0": 0.35769134915847817,
+          "LocA_0": 0.6837927053307192,
+          "AssocA_0": 0.4080652216487936,
+          "DetA_0": 0.31353591160220995,
+          "HOTA_mean": 0.27337403029299384,
+          "LocA_mean": 0.8146215573245761,
+          "AssocA_mean": 0.3732234130651161,
+          "DetA_mean": 0.2042344547437846,
+          "IDF1": 0.2212875335903727,
+          "MOTA": -1.2306772908366534,
+          "IDSW": 256,
+          "Frag": 158
+        },
+        "canonical_clear_counts": {
+          "CLR_TP": 1608,
+          "CLR_FN": 902,
+          "CLR_FP": 4441,
+          "IDSW": 256,
+          "MT": 45,
+          "PT": 42,
+          "ML": 20,
+          "Frag": 158,
+          "CLR_Frames": 792,
+          "MOTA": -1.2306772908366534,
+          "MOTP": 0.8092009820516924,
+          "MODA": -1.1286852589641434,
+          "CLR_Re": 0.6406374501992032,
+          "CLR_Pr": 0.2658290626549843,
+          "MTR": 0.4205607476635514,
+          "PTR": 0.3925233644859813,
+          "MLR": 0.18691588785046728,
+          "sMOTA": -1.3529102871955692,
+          "CLR_F1": 0.37574483000350506,
+          "FP_per_frame": 5.607323232323233,
+          "MOTAL": -1.129644717117654,
+          "MOTP_sum": 1301.1951791391214
+        },
+        "gt_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "prediction_sha256": "5e3291223f4f3b2db44b41866c8f32e9d0c3830f064d51ca1fc518063f9a3711"
+      },
+      {
+        "variant": "Dedup-B",
+        "candidate_counts": {
+          "count": 22322,
+          "total": 941430,
+          "mean": 42.1749843204014,
+          "median": 50,
+          "p90": 50,
+          "max": 50
+        },
+        "retained_fraction": 0.251235723332474,
+        "physical_tracks": 5186,
+        "track_lengths": {
+          "count": 5186,
+          "total": 225936,
+          "mean": 43.56652526031623,
+          "median": 12,
+          "p90": 112.5,
+          "max": 1171
+        },
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1940,
+              "total": 2510,
+              "recall": 0.7729083665338645
+            },
+            "base": {
+              "matched": 1751,
+              "total": 2014,
+              "recall": 0.8694141012909633
+            },
+            "novel": {
+              "matched": 97,
+              "total": 222,
+              "recall": 0.4369369369369369
+            },
+            "distractor": {
+              "matched": 92,
+              "total": 274,
+              "recall": 0.3357664233576642
+            },
+            "one_to_one": {
+              "matched": 1939,
+              "gt": 2510,
+              "predictions": 33195,
+              "unmatched_predictions": 31256
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1820,
+              "total": 2510,
+              "recall": 0.7250996015936255
+            },
+            "base": {
+              "matched": 1681,
+              "total": 2014,
+              "recall": 0.8346573982125124
+            },
+            "novel": {
+              "matched": 66,
+              "total": 222,
+              "recall": 0.2972972972972973
+            },
+            "distractor": {
+              "matched": 73,
+              "total": 274,
+              "recall": 0.2664233576642336
+            },
+            "one_to_one": {
+              "matched": 1819,
+              "gt": 2510,
+              "predictions": 19211,
+              "unmatched_predictions": 17392
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1590,
+              "total": 2510,
+              "recall": 0.6334661354581673
+            },
+            "base": {
+              "matched": 1512,
+              "total": 2014,
+              "recall": 0.7507447864945382
+            },
+            "novel": {
+              "matched": 38,
+              "total": 222,
+              "recall": 0.17117117117117117
+            },
+            "distractor": {
+              "matched": 40,
+              "total": 274,
+              "recall": 0.145985401459854
+            },
+            "one_to_one": {
+              "matched": 1584,
+              "gt": 2510,
+              "predictions": 6518,
+              "unmatched_predictions": 4934
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1634,
+              "total": 2510,
+              "recall": 0.650996015936255
+            },
+            "base": {
+              "matched": 1554,
+              "total": 2014,
+              "recall": 0.7715988083416088
+            },
+            "novel": {
+              "matched": 42,
+              "total": 222,
+              "recall": 0.1891891891891892
+            },
+            "distractor": {
+              "matched": 38,
+              "total": 274,
+              "recall": 0.1386861313868613
+            },
+            "one_to_one": {
+              "matched": 1630,
+              "gt": 2510,
+              "predictions": 7885,
+              "unmatched_predictions": 6255
+            }
+          }
+        },
+        "track_rows": 225936,
+        "exported_rows": 7885,
+        "lost_covered_gt": {
+          "covered_gt_lost": 61,
+          "lost_base": 27,
+          "lost_with_other_gt_iou05": 0,
+          "lost_novel": 27,
+          "lost_distractor": 7
+        },
+        "metrics": {
+          "HOTA_0": 0.30466390380164987,
+          "LocA_0": 0.670037587996889,
+          "AssocA_0": 0.3401625294195238,
+          "DetA_0": 0.2728698379508625,
+          "HOTA_mean": 0.2323343906146823,
+          "LocA_mean": 0.8107032620305964,
+          "AssocA_mean": 0.3155542599071205,
+          "DetA_mean": 0.17491645112763318,
+          "IDF1": 0.17186858316221765,
+          "MOTA": -1.7386454183266933,
+          "IDSW": 394,
+          "Frag": 160
+        },
+        "canonical_clear_counts": {
+          "CLR_TP": 1630,
+          "CLR_FN": 880,
+          "CLR_FP": 5600,
+          "IDSW": 394,
+          "MT": 45,
+          "PT": 43,
+          "ML": 19,
+          "Frag": 160,
+          "CLR_Frames": 792,
+          "MOTA": -1.7386454183266933,
+          "MOTP": 0.8061459991288362,
+          "MODA": -1.5816733067729083,
+          "CLR_Re": 0.649402390438247,
+          "CLR_Pr": 0.22544951590594745,
+          "MTR": 0.4205607476635514,
+          "PTR": 0.40186915887850466,
+          "MLR": 0.17757009345794392,
+          "sMOTA": -1.864534669888445,
+          "CLR_F1": 0.3347022587268994,
+          "FP_per_frame": 7.070707070707071,
+          "MOTAL": -1.5827073690126796,
+          "MOTP_sum": 1314.017978580003
+        },
+        "gt_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "prediction_sha256": "d34d3c8d2d49abb83e1e34ff89eec40db4866adb57a1e70d5a822180da6c1f23"
+      },
+      {
+        "variant": "Dedup-C",
+        "candidate_counts": {
+          "count": 22322,
+          "total": 1335653,
+          "mean": 59.835722605501296,
+          "median": 60,
+          "p90": 100,
+          "max": 100
+        },
+        "retained_fraction": 0.35644046564926646,
+        "physical_tracks": 5183,
+        "track_lengths": {
+          "count": 5183,
+          "total": 226619,
+          "mean": 43.723519197376035,
+          "median": 12,
+          "p90": 112,
+          "max": 1171
+        },
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 2001,
+              "total": 2510,
+              "recall": 0.7972111553784861
+            },
+            "base": {
+              "matched": 1778,
+              "total": 2014,
+              "recall": 0.8828202581926514
+            },
+            "novel": {
+              "matched": 124,
+              "total": 222,
+              "recall": 0.5585585585585585
+            },
+            "distractor": {
+              "matched": 99,
+              "total": 274,
+              "recall": 0.3613138686131387
+            },
+            "one_to_one": {
+              "matched": 2001,
+              "gt": 2510,
+              "predictions": 133410,
+              "unmatched_predictions": 131409
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1984,
+              "total": 2510,
+              "recall": 0.7904382470119522
+            },
+            "base": {
+              "matched": 1772,
+              "total": 2014,
+              "recall": 0.8798411122144985
+            },
+            "novel": {
+              "matched": 116,
+              "total": 222,
+              "recall": 0.5225225225225225
+            },
+            "distractor": {
+              "matched": 96,
+              "total": 274,
+              "recall": 0.35036496350364965
+            },
+            "one_to_one": {
+              "matched": 1983,
+              "gt": 2510,
+              "predictions": 47379,
+              "unmatched_predictions": 45396
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1844,
+              "total": 2510,
+              "recall": 0.7346613545816733
+            },
+            "base": {
+              "matched": 1692,
+              "total": 2014,
+              "recall": 0.8401191658391262
+            },
+            "novel": {
+              "matched": 76,
+              "total": 222,
+              "recall": 0.34234234234234234
+            },
+            "distractor": {
+              "matched": 76,
+              "total": 274,
+              "recall": 0.2773722627737226
+            },
+            "one_to_one": {
+              "matched": 1844,
+              "gt": 2510,
+              "predictions": 73788,
+              "unmatched_predictions": 71944
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1821,
+              "total": 2510,
+              "recall": 0.7254980079681275
+            },
+            "base": {
+              "matched": 1681,
+              "total": 2014,
+              "recall": 0.8346573982125124
+            },
+            "novel": {
+              "matched": 67,
+              "total": 222,
+              "recall": 0.30180180180180183
+            },
+            "distractor": {
+              "matched": 73,
+              "total": 274,
+              "recall": 0.2664233576642336
+            },
+            "one_to_one": {
+              "matched": 1820,
+              "gt": 2510,
+              "predictions": 19705,
+              "unmatched_predictions": 17885
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1612,
+              "total": 2510,
+              "recall": 0.6422310756972112
+            },
+            "base": {
+              "matched": 1526,
+              "total": 2014,
+              "recall": 0.7576961271102284
+            },
+            "novel": {
+              "matched": 45,
+              "total": 222,
+              "recall": 0.20270270270270271
+            },
+            "distractor": {
+              "matched": 41,
+              "total": 274,
+              "recall": 0.14963503649635038
+            },
+            "one_to_one": {
+              "matched": 1612,
+              "gt": 2510,
+              "predictions": 37023,
+              "unmatched_predictions": 35411
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1590,
+              "total": 2510,
+              "recall": 0.6334661354581673
+            },
+            "base": {
+              "matched": 1512,
+              "total": 2014,
+              "recall": 0.7507447864945382
+            },
+            "novel": {
+              "matched": 38,
+              "total": 222,
+              "recall": 0.17117117117117117
+            },
+            "distractor": {
+              "matched": 40,
+              "total": 274,
+              "recall": 0.145985401459854
+            },
+            "one_to_one": {
+              "matched": 1584,
+              "gt": 2510,
+              "predictions": 6518,
+              "unmatched_predictions": 4934
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1633,
+              "total": 2510,
+              "recall": 0.6505976095617529
+            },
+            "base": {
+              "matched": 1553,
+              "total": 2014,
+              "recall": 0.7711022840119166
+            },
+            "novel": {
+              "matched": 42,
+              "total": 222,
+              "recall": 0.1891891891891892
+            },
+            "distractor": {
+              "matched": 38,
+              "total": 274,
+              "recall": 0.1386861313868613
+            },
+            "one_to_one": {
+              "matched": 1629,
+              "gt": 2510,
+              "predictions": 7910,
+              "unmatched_predictions": 6281
+            }
+          }
+        },
+        "track_rows": 226619,
+        "exported_rows": 7910,
+        "lost_covered_gt": {
+          "covered_gt_lost": 17,
+          "lost_novel": 8,
+          "lost_with_other_gt_iou05": 0,
+          "lost_base": 6,
+          "lost_distractor": 3
+        },
+        "metrics": {
+          "HOTA_0": 0.30385068921937597,
+          "LocA_0": 0.6699378899064372,
+          "AssocA_0": 0.33915935951947107,
+          "DetA_0": 0.27221787855095125,
+          "HOTA_mean": 0.2319645186933783,
+          "LocA_mean": 0.8106941405767835,
+          "AssocA_mean": 0.3153216626686455,
+          "DetA_mean": 0.17449768539348812,
+          "IDF1": 0.1714636894397214,
+          "MOTA": -1.748605577689243,
+          "IDSW": 394,
+          "Frag": 159
+        },
+        "canonical_clear_counts": {
+          "CLR_TP": 1629,
+          "CLR_FN": 881,
+          "CLR_FP": 5624,
+          "IDSW": 394,
+          "MT": 45,
+          "PT": 43,
+          "ML": 19,
+          "Frag": 159,
+          "CLR_Frames": 792,
+          "MOTA": -1.748605577689243,
+          "MOTP": 0.8064371532687395,
+          "MODA": -1.591633466135458,
+          "CLR_Re": 0.649003984063745,
+          "CLR_Pr": 0.22459671859920033,
+          "MTR": 0.4205607476635514,
+          "PTR": 0.40186915887850466,
+          "MLR": 0.17757009345794392,
+          "sMOTA": -1.874228636384551,
+          "CLR_F1": 0.33370890095257605,
+          "FP_per_frame": 7.101010101010101,
+          "MOTAL": -1.5926675283752294,
+          "MOTP_sum": 1313.6861226747767
+        },
+        "gt_sha256": "7ee2f39d22b822d690875bceed408b8abe90266c83a61ed930c464a7010f6546",
+        "prediction_sha256": "0f274780dd53e539b95187f56e5a748e261a2490a320155faf3693ae5b0dc567"
+      }
+    ]
+  },
+  "confirmation": {
+    "video_ids": [
+      91,
+      165,
+      308,
+      339,
+      387,
+      876,
+      1235,
+      1238,
+      1351,
+      1573,
+      1796,
+      1855,
+      2407,
+      2418,
+      2581,
+      2664,
+      2881,
+      2897,
+      2898,
+      2904
+    ],
+    "frames": 20360,
+    "annotated_frames": 723,
+    "gt_boxes": 2290,
+    "results": [
+      {
+        "variant": "Original-FG-0",
+        "candidate_counts": {
+          "count": 20360,
+          "total": 3055567,
+          "mean": 150.07696463654224,
+          "median": 146,
+          "p90": 254,
+          "max": 300
+        },
+        "retained_fraction": 1,
+        "physical_tracks": 50701,
+        "track_lengths": {
+          "count": 50701,
+          "total": 1088604,
+          "mean": 21.471055797716023,
+          "median": 9,
+          "p90": 49,
+          "max": 1196
+        },
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 1809,
+              "total": 2290,
+              "recall": 0.7899563318777293
+            },
+            "base": {
+              "matched": 1342,
+              "total": 1520,
+              "recall": 0.8828947368421053
+            },
+            "novel": {
+              "matched": 370,
+              "total": 631,
+              "recall": 0.5863708399366085
+            },
+            "distractor": {
+              "matched": 97,
+              "total": 139,
+              "recall": 0.697841726618705
+            },
+            "one_to_one": {
+              "matched": 1809,
+              "gt": 2290,
+              "predictions": 108087,
+              "unmatched_predictions": 106278
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1809,
+              "total": 2290,
+              "recall": 0.7899563318777293
+            },
+            "base": {
+              "matched": 1342,
+              "total": 1520,
+              "recall": 0.8828947368421053
+            },
+            "novel": {
+              "matched": 370,
+              "total": 631,
+              "recall": 0.5863708399366085
+            },
+            "distractor": {
+              "matched": 97,
+              "total": 139,
+              "recall": 0.697841726618705
+            },
+            "one_to_one": {
+              "matched": 1809,
+              "gt": 2290,
+              "predictions": 108087,
+              "unmatched_predictions": 106278
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1690,
+              "total": 2290,
+              "recall": 0.7379912663755459
+            },
+            "base": {
+              "matched": 1302,
+              "total": 1520,
+              "recall": 0.8565789473684211
+            },
+            "novel": {
+              "matched": 303,
+              "total": 631,
+              "recall": 0.48019017432646594
+            },
+            "distractor": {
+              "matched": 85,
+              "total": 139,
+              "recall": 0.6115107913669064
+            },
+            "one_to_one": {
+              "matched": 1689,
+              "gt": 2290,
+              "predictions": 62891,
+              "unmatched_predictions": 61202
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1690,
+              "total": 2290,
+              "recall": 0.7379912663755459
+            },
+            "base": {
+              "matched": 1302,
+              "total": 1520,
+              "recall": 0.8565789473684211
+            },
+            "novel": {
+              "matched": 303,
+              "total": 631,
+              "recall": 0.48019017432646594
+            },
+            "distractor": {
+              "matched": 85,
+              "total": 139,
+              "recall": 0.6115107913669064
+            },
+            "one_to_one": {
+              "matched": 1689,
+              "gt": 2290,
+              "predictions": 62891,
+              "unmatched_predictions": 61202
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1542,
+              "total": 2290,
+              "recall": 0.6733624454148471
+            },
+            "base": {
+              "matched": 1234,
+              "total": 1520,
+              "recall": 0.8118421052631579
+            },
+            "novel": {
+              "matched": 243,
+              "total": 631,
+              "recall": 0.38510301109350237
+            },
+            "distractor": {
+              "matched": 65,
+              "total": 139,
+              "recall": 0.4676258992805755
+            },
+            "one_to_one": {
+              "matched": 1539,
+              "gt": 2290,
+              "predictions": 36459,
+              "unmatched_predictions": 34920
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1542,
+              "total": 2290,
+              "recall": 0.6733624454148471
+            },
+            "base": {
+              "matched": 1234,
+              "total": 1520,
+              "recall": 0.8118421052631579
+            },
+            "novel": {
+              "matched": 243,
+              "total": 631,
+              "recall": 0.38510301109350237
+            },
+            "distractor": {
+              "matched": 65,
+              "total": 139,
+              "recall": 0.4676258992805755
+            },
+            "one_to_one": {
+              "matched": 1539,
+              "gt": 2290,
+              "predictions": 36459,
+              "unmatched_predictions": 34920
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1552,
+              "total": 2290,
+              "recall": 0.6777292576419214
+            },
+            "base": {
+              "matched": 1224,
+              "total": 1520,
+              "recall": 0.8052631578947368
+            },
+            "novel": {
+              "matched": 261,
+              "total": 631,
+              "recall": 0.41362916006339145
+            },
+            "distractor": {
+              "matched": 67,
+              "total": 139,
+              "recall": 0.48201438848920863
+            },
+            "one_to_one": {
+              "matched": 1551,
+              "gt": 2290,
+              "predictions": 37890,
+              "unmatched_predictions": 36339
+            }
+          }
+        },
+        "track_rows": 1088604,
+        "exported_rows": 37890,
+        "lost_covered_gt": {
+          "covered_gt_lost": 0
+        },
+        "metrics": {
+          "HOTA_0": 0.1470158495166133,
+          "LocA_0": 0.6762724138988732,
+          "AssocA_0": 0.3585822728975265,
+          "DetA_0": 0.06027531655271791,
+          "HOTA_mean": 0.12297059281248818,
+          "LocA_mean": 0.8152225350968624,
+          "AssocA_mean": 0.38137091559384295,
+          "DetA_mean": 0.040785482487045444,
+          "IDF1": 0.05447763351935922,
+          "MOTA": -13.029257641921397,
+          "IDSW": 646,
+          "Frag": 111
+        },
+        "canonical_clear_counts": {
+          "CLR_TP": 1551,
+          "CLR_FN": 739,
+          "CLR_FP": 30742,
+          "IDSW": 646,
+          "MT": 53,
+          "PT": 38,
+          "ML": 25,
+          "Frag": 111,
+          "CLR_Frames": 723,
+          "MOTA": -13.029257641921397,
+          "MOTP": 0.8230357118177591,
+          "MODA": -12.747161572052402,
+          "CLR_Re": 0.6772925764192139,
+          "CLR_Pr": 0.04802898460966773,
+          "MTR": 0.45689655172413796,
+          "PTR": 0.3275862068965517,
+          "MLR": 0.21551724137931033,
+          "sMOTA": -13.14911424059854,
+          "CLR_F1": 0.0896972500939768,
+          "FP_per_frame": 42.520055325034576,
+          "MOTAL": -12.748388747824452,
+          "MOTP_sum": 1276.5283890293445
+        },
+        "gt_sha256": "2e5c7581e029b55bc1de7bab99b296916443b9ae2444c2c578de10d53d064b57",
+        "prediction_sha256": "bec00a4152ba3a801af0b728a3bb3502850a1e058308440a7d12d3d476414ae5"
+      },
+      {
+        "variant": "Dedup-C",
+        "candidate_counts": {
+          "count": 20360,
+          "total": 1016084,
+          "mean": 49.90589390962672,
+          "median": 50,
+          "p90": 84,
+          "max": 100
+        },
+        "retained_fraction": 0.33253533632219484,
+        "physical_tracks": 4334,
+        "track_lengths": {
+          "count": 4334,
+          "total": 196552,
+          "mean": 45.351176742039684,
+          "median": 11,
+          "p90": 116,
+          "max": 1201
+        },
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 1809,
+              "total": 2290,
+              "recall": 0.7899563318777293
+            },
+            "base": {
+              "matched": 1342,
+              "total": 1520,
+              "recall": 0.8828947368421053
+            },
+            "novel": {
+              "matched": 370,
+              "total": 631,
+              "recall": 0.5863708399366085
+            },
+            "distractor": {
+              "matched": 97,
+              "total": 139,
+              "recall": 0.697841726618705
+            },
+            "one_to_one": {
+              "matched": 1809,
+              "gt": 2290,
+              "predictions": 108087,
+              "unmatched_predictions": 106278
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1798,
+              "total": 2290,
+              "recall": 0.7851528384279476
+            },
+            "base": {
+              "matched": 1340,
+              "total": 1520,
+              "recall": 0.881578947368421
+            },
+            "novel": {
+              "matched": 362,
+              "total": 631,
+              "recall": 0.5736925515055468
+            },
+            "distractor": {
+              "matched": 96,
+              "total": 139,
+              "recall": 0.6906474820143885
+            },
+            "one_to_one": {
+              "matched": 1789,
+              "gt": 2290,
+              "predictions": 36146,
+              "unmatched_predictions": 34357
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1690,
+              "total": 2290,
+              "recall": 0.7379912663755459
+            },
+            "base": {
+              "matched": 1302,
+              "total": 1520,
+              "recall": 0.8565789473684211
+            },
+            "novel": {
+              "matched": 303,
+              "total": 631,
+              "recall": 0.48019017432646594
+            },
+            "distractor": {
+              "matched": 85,
+              "total": 139,
+              "recall": 0.6115107913669064
+            },
+            "one_to_one": {
+              "matched": 1689,
+              "gt": 2290,
+              "predictions": 62891,
+              "unmatched_predictions": 61202
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1679,
+              "total": 2290,
+              "recall": 0.7331877729257642
+            },
+            "base": {
+              "matched": 1300,
+              "total": 1520,
+              "recall": 0.8552631578947368
+            },
+            "novel": {
+              "matched": 297,
+              "total": 631,
+              "recall": 0.4706814580031696
+            },
+            "distractor": {
+              "matched": 82,
+              "total": 139,
+              "recall": 0.5899280575539568
+            },
+            "one_to_one": {
+              "matched": 1666,
+              "gt": 2290,
+              "predictions": 14790,
+              "unmatched_predictions": 13124
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1542,
+              "total": 2290,
+              "recall": 0.6733624454148471
+            },
+            "base": {
+              "matched": 1234,
+              "total": 1520,
+              "recall": 0.8118421052631579
+            },
+            "novel": {
+              "matched": 243,
+              "total": 631,
+              "recall": 0.38510301109350237
+            },
+            "distractor": {
+              "matched": 65,
+              "total": 139,
+              "recall": 0.4676258992805755
+            },
+            "one_to_one": {
+              "matched": 1539,
+              "gt": 2290,
+              "predictions": 36459,
+              "unmatched_predictions": 34920
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1526,
+              "total": 2290,
+              "recall": 0.6663755458515284
+            },
+            "base": {
+              "matched": 1229,
+              "total": 1520,
+              "recall": 0.8085526315789474
+            },
+            "novel": {
+              "matched": 238,
+              "total": 631,
+              "recall": 0.37717908082408874
+            },
+            "distractor": {
+              "matched": 59,
+              "total": 139,
+              "recall": 0.4244604316546763
+            },
+            "one_to_one": {
+              "matched": 1509,
+              "gt": 2290,
+              "predictions": 5834,
+              "unmatched_predictions": 4325
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1530,
+              "total": 2290,
+              "recall": 0.6681222707423581
+            },
+            "base": {
+              "matched": 1217,
+              "total": 1520,
+              "recall": 0.8006578947368421
+            },
+            "novel": {
+              "matched": 251,
+              "total": 631,
+              "recall": 0.3977812995245642
+            },
+            "distractor": {
+              "matched": 62,
+              "total": 139,
+              "recall": 0.4460431654676259
+            },
+            "one_to_one": {
+              "matched": 1514,
+              "gt": 2290,
+              "predictions": 6877,
+              "unmatched_predictions": 5363
+            }
+          }
+        },
+        "track_rows": 196552,
+        "exported_rows": 6877,
+        "lost_covered_gt": {
+          "covered_gt_lost": 11,
+          "lost_novel": 8,
+          "lost_with_other_gt_iou05": 1,
+          "lost_base": 2,
+          "lost_distractor": 1
+        },
+        "metrics": {
+          "HOTA_0": 0.3573376853324432,
+          "LocA_0": 0.7053629750899579,
+          "AssocA_0": 0.448982072907063,
+          "DetA_0": 0.284399375975039,
+          "HOTA_mean": 0.2893953919211551,
+          "LocA_mean": 0.8243545911095534,
+          "AssocA_mean": 0.44306339544625095,
+          "DetA_mean": 0.19334259983201824,
+          "IDF1": 0.23393659662334507,
+          "MOTA": -1.3882096069868997,
+          "IDSW": 260,
+          "Frag": 112
+        },
+        "canonical_clear_counts": {
+          "CLR_TP": 1512,
+          "CLR_FN": 778,
+          "CLR_FP": 4431,
+          "IDSW": 260,
+          "MT": 53,
+          "PT": 38,
+          "ML": 25,
+          "Frag": 112,
+          "CLR_Frames": 723,
+          "MOTA": -1.3882096069868997,
+          "MOTP": 0.8136470236785484,
+          "MODA": -1.2746724890829695,
+          "CLR_Re": 0.6602620087336245,
+          "CLR_Pr": 0.254416961130742,
+          "MTR": 0.45689655172413796,
+          "PTR": 0.3275862068965517,
+          "MLR": 0.21551724137931033,
+          "sMOTA": -1.5112513974663908,
+          "CLR_F1": 0.36730231993198104,
+          "FP_per_frame": 6.128630705394191,
+          "MOTAL": -1.2757270625973671,
+          "MOTP_sum": 1230.234299801965
+        },
+        "gt_sha256": "2e5c7581e029b55bc1de7bab99b296916443b9ae2444c2c578de10d53d064b57",
+        "prediction_sha256": "835bf250b84f047ac68a126eab1bd3d31227a7cd07a6a0e77a5c2c53b7a45a90"
+      }
+    ]
+  },
+  "locked_variant": {
+    "variant": "Dedup-C",
+    "nms_config": {
+      "nms_iou": 0.7,
+      "max_detections": 100
+    },
+    "selection_is_tao_val_development": true,
+    "any_recall_eligible": false,
+    "calibration_hota": 0.2319645186933783,
+    "calibration_recall_losses": {
+      "all": 0.006772908366533881,
+      "base": 0.002979145978152964,
+      "novel": 0.036036036036036
+    }
+  },
+  "full_run_decision": {
+    "performed": false,
+    "gates": {
+      "duplicated_boxes_supported": true,
+      "candidate_reduction": true,
+      "calibration_recall_safe": false,
+      "confirmation_recall_safe": true,
+      "hota_improved": true,
+      "deta_improved": true,
+      "same_gt_and_pinned_evaluator": true
+    },
+    "failed_gate": "calibration_recall_safe",
+    "calibration_novel_recall_loss": 0.036036036036036036,
+    "confirmation_novel_recall_loss": 0.012678288431061807,
+    "absolute_recall_loss_limit": 0.02,
+    "no_other_variants_or_threshold_search": true
+  },
+  "suppression_loss_decomposition": {
+    "calibration": {
+      "Dedup-A": {
+        "gt_total": 2510,
+        "before_covered": 2001,
+        "after_nms_covered": 1957,
+        "after_cap_covered": 1942,
+        "nms_lost_base": 25,
+        "cap_lost_base": 5,
+        "nms_lost_novel": 10,
+        "cap_lost_novel": 7,
+        "nms_lost_distractor": 9,
+        "cap_lost_distractor": 3,
+        "nms_loss_with_suppressor_covering_other_gt": 5
+      },
+      "Dedup-B": {
+        "gt_total": 2510,
+        "before_covered": 2001,
+        "after_nms_covered": 1984,
+        "after_cap_covered": 1940,
+        "nms_lost_base": 6,
+        "cap_lost_base": 21,
+        "nms_lost_novel": 8,
+        "cap_lost_novel": 19,
+        "nms_lost_distractor": 3,
+        "cap_lost_distractor": 4,
+        "nms_loss_with_suppressor_covering_other_gt": 3
+      },
+      "Dedup-C": {
+        "gt_total": 2510,
+        "before_covered": 2001,
+        "after_nms_covered": 1984,
+        "after_cap_covered": 1984,
+        "nms_lost_base": 6,
+        "cap_lost_base": 0,
+        "nms_lost_novel": 8,
+        "cap_lost_novel": 0,
+        "nms_lost_distractor": 3,
+        "cap_lost_distractor": 0,
+        "nms_loss_with_suppressor_covering_other_gt": 3
+      }
+    },
+    "confirmation": {
+      "Dedup-C": {
+        "gt_total": 2290,
+        "before_covered": 1809,
+        "after_nms_covered": 1798,
+        "after_cap_covered": 1798,
+        "nms_lost_base": 2,
+        "cap_lost_base": 0,
+        "nms_lost_novel": 8,
+        "cap_lost_novel": 0,
+        "nms_lost_distractor": 1,
+        "cap_lost_distractor": 0,
+        "nms_loss_with_suppressor_covering_other_gt": 3
+      }
+    }
+  },
+  "semantic_diagnostics": {
+    "calibration": {
+      "covered_novel_gt": 124,
+      "assigned_novel_prototype": 81,
+      "mapped_correct_covered_novel": 22,
+      "cluster_purity_on_covered_novel": 1,
+      "mapped_accuracy_on_covered_novel": 0.1774193548387097,
+      "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+      "anonymous_prototypes_observed_on_novel_gt": 24,
+      "prototypes_counted_include_base": true
+    },
+    "confirmation": {
+      "covered_novel_gt": 370,
+      "assigned_novel_prototype": 287,
+      "mapped_correct_covered_novel": 121,
+      "cluster_purity_on_covered_novel": 0.9297297297297298,
+      "mapped_accuracy_on_covered_novel": 0.327027027027027,
+      "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+      "anonymous_prototypes_observed_on_novel_gt": 72,
+      "prototypes_counted_include_base": true
+    },
+    "interpretation": "Prototype counts include both base and novel prototypes. Purity is conditional on GT-covered proposals and can be high with fragmented prototypes; frozen Hungarian mapping is fit on TAO Val and these figures are evaluator-only optimistic diagnostics."
+  },
+  "frozen_detection_AP": {
+    "base": 0.09461081464386155,
+    "novel": 0.002249334945614304,
+    "all": 0.020650855805035215,
+    "tracking_only_NMS_changes_semantic_AP": false
+  },
+  "incumbent_full_fg0": {
+    "videos": 988,
+    "HOTA_mean": 0.11011336939513884,
+    "DetA_mean": 0.03755413222807158,
+    "AssocA_mean": 0.3302464178274666,
+    "IDF1": 0.048112280701754384
+  },
+  "recommended_operating_point": {
+    "official_full_val_baseline": "Retain frozen FG-0 as historical full-Val incumbent; no NMS full-Val result is available or claimed.",
+    "tracking_only_diagnostic": "Dedup-C: class-agnostic NMS IoU0.7, max100 with fixed FG-0 ByteTrack; useful reproducible diagnostic, fails calibration Novel recall safety.",
+    "next_research": "Stop expanding PANDAS. Return to fixed physical tracker + common features -> Nearest / DP-Means / PHE / TrackOCD."
+  },
+  "validation": {
+    "targeted_tests_passed": 7,
+    "CPU_GPU_consistency": true,
+    "canonical_evaluator_runs_passed": 6,
+    "canonical_TrackEval_commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+    "original_fg0_tracking_reused": true,
+    "new_output_disk_usage": "61 MiB",
+    "additional_soft_budget": "10 GiB",
+    "external_processes_interfered_with": false
+  },
+  "reproduction_directory": "scripts/baselines/pandas_bytetrack"
+}

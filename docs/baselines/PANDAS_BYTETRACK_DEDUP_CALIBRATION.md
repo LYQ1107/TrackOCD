@@ -28,4 +28,5 @@ a validated full-Val replacement.
 The complete recall, spatial one-to-one matching, unmatched-prediction counts,
 GT-loss examples, per-file hashes and exact metrics are in
 `outputs/baselines/pandas_dedup/calibration_results.json`. Independent
-confirmation remains to be performed. No further variants are allowed.
+confirmation is complete and is recorded in the final report. No further
+variants were run.

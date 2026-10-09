@@ -188,7 +188,8 @@ def main():
                 **dict(semantic_diag),"cluster_purity_on_covered_novel":purity if voting else None,
                 "mapped_accuracy_on_covered_novel":semantic_diag["mapped_correct_covered_novel"]/max(semantic_diag["covered_novel_gt"],1) if voting else None,
                 "selection":"highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
-                "anonymous_novel_clusters_observed":len(voting)},
+                "anonymous_prototypes_observed_on_novel_gt":len(voting),
+                "prototypes_counted_include_base":True},
             "source_hashes":sources,"prediction_sha256":sha256(pred_path),
             "annotation_sha256":sha256(args.annotation),"gt_export_sha256":sha256(gt_path),
             "unmatched_policy":"spatial one-to-one diagnostic; may include unannotated real objects"}

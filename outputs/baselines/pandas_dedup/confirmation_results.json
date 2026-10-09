@@ -1,0 +1,971 @@
+{
+  "status": "PASS",
+  "locked_variant": {
+    "variant": "Dedup-C",
+    "nms_config": {
+      "nms_iou": 0.7,
+      "max_detections": 100
+    },
+    "selection_is_tao_val_development": true,
+    "any_recall_eligible": false,
+    "calibration_hota": 0.2319645186933783,
+    "calibration_recall_losses": {
+      "all": 0.006772908366533881,
+      "base": 0.002979145978152964,
+      "novel": 0.036036036036036
+    }
+  },
+  "rows": [
+    {
+      "variant": "Original-FG-0",
+      "diagnostics": {
+        "status": "PASS",
+        "variant": "Original-FG-0",
+        "subset": "confirmation",
+        "video_ids": [
+          91,
+          165,
+          308,
+          339,
+          387,
+          876,
+          1235,
+          1238,
+          1351,
+          1573,
+          1796,
+          1855,
+          2407,
+          2418,
+          2581,
+          2664,
+          2881,
+          2897,
+          2898,
+          2904
+        ],
+        "videos": 20,
+        "frames": 20360,
+        "annotated_frames": 723,
+        "candidate_counts_before": {
+          "count": 20360,
+          "total": 3055567,
+          "mean": 150.07696463654224,
+          "median": 146.0,
+          "p90": 254.0,
+          "max": 300
+        },
+        "candidate_counts_after": {
+          "count": 20360,
+          "total": 3055567,
+          "mean": 150.07696463654224,
+          "median": 146.0,
+          "p90": 254.0,
+          "max": 300
+        },
+        "retained_fraction": 1.0,
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 1809,
+              "total": 2290,
+              "recall": 0.7899563318777293
+            },
+            "base": {
+              "matched": 1342,
+              "total": 1520,
+              "recall": 0.8828947368421053
+            },
+            "novel": {
+              "matched": 370,
+              "total": 631,
+              "recall": 0.5863708399366085
+            },
+            "distractor": {
+              "matched": 97,
+              "total": 139,
+              "recall": 0.697841726618705
+            },
+            "one_to_one": {
+              "matched": 1809,
+              "gt": 2290,
+              "predictions": 108087,
+              "unmatched_predictions": 106278
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1809,
+              "total": 2290,
+              "recall": 0.7899563318777293
+            },
+            "base": {
+              "matched": 1342,
+              "total": 1520,
+              "recall": 0.8828947368421053
+            },
+            "novel": {
+              "matched": 370,
+              "total": 631,
+              "recall": 0.5863708399366085
+            },
+            "distractor": {
+              "matched": 97,
+              "total": 139,
+              "recall": 0.697841726618705
+            },
+            "one_to_one": {
+              "matched": 1809,
+              "gt": 2290,
+              "predictions": 108087,
+              "unmatched_predictions": 106278
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1690,
+              "total": 2290,
+              "recall": 0.7379912663755459
+            },
+            "base": {
+              "matched": 1302,
+              "total": 1520,
+              "recall": 0.8565789473684211
+            },
+            "novel": {
+              "matched": 303,
+              "total": 631,
+              "recall": 0.48019017432646594
+            },
+            "distractor": {
+              "matched": 85,
+              "total": 139,
+              "recall": 0.6115107913669064
+            },
+            "one_to_one": {
+              "matched": 1689,
+              "gt": 2290,
+              "predictions": 62891,
+              "unmatched_predictions": 61202
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1690,
+              "total": 2290,
+              "recall": 0.7379912663755459
+            },
+            "base": {
+              "matched": 1302,
+              "total": 1520,
+              "recall": 0.8565789473684211
+            },
+            "novel": {
+              "matched": 303,
+              "total": 631,
+              "recall": 0.48019017432646594
+            },
+            "distractor": {
+              "matched": 85,
+              "total": 139,
+              "recall": 0.6115107913669064
+            },
+            "one_to_one": {
+              "matched": 1689,
+              "gt": 2290,
+              "predictions": 62891,
+              "unmatched_predictions": 61202
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1542,
+              "total": 2290,
+              "recall": 0.6733624454148471
+            },
+            "base": {
+              "matched": 1234,
+              "total": 1520,
+              "recall": 0.8118421052631579
+            },
+            "novel": {
+              "matched": 243,
+              "total": 631,
+              "recall": 0.38510301109350237
+            },
+            "distractor": {
+              "matched": 65,
+              "total": 139,
+              "recall": 0.4676258992805755
+            },
+            "one_to_one": {
+              "matched": 1539,
+              "gt": 2290,
+              "predictions": 36459,
+              "unmatched_predictions": 34920
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1542,
+              "total": 2290,
+              "recall": 0.6733624454148471
+            },
+            "base": {
+              "matched": 1234,
+              "total": 1520,
+              "recall": 0.8118421052631579
+            },
+            "novel": {
+              "matched": 243,
+              "total": 631,
+              "recall": 0.38510301109350237
+            },
+            "distractor": {
+              "matched": 65,
+              "total": 139,
+              "recall": 0.4676258992805755
+            },
+            "one_to_one": {
+              "matched": 1539,
+              "gt": 2290,
+              "predictions": 36459,
+              "unmatched_predictions": 34920
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1552,
+              "total": 2290,
+              "recall": 0.6777292576419214
+            },
+            "base": {
+              "matched": 1224,
+              "total": 1520,
+              "recall": 0.8052631578947368
+            },
+            "novel": {
+              "matched": 261,
+              "total": 631,
+              "recall": 0.41362916006339145
+            },
+            "distractor": {
+              "matched": 67,
+              "total": 139,
+              "recall": 0.48201438848920863
+            },
+            "one_to_one": {
+              "matched": 1551,
+              "gt": 2290,
+              "predictions": 37890,
+              "unmatched_predictions": 36339
+            }
+          }
+        },
+        "physical_tracks": 50701,
+        "track_lengths": {
+          "count": 50701,
+          "total": 1088604,
+          "mean": 21.471055797716023,
+          "median": 9.0,
+          "p90": 49.0,
+          "max": 1196
+        },
+        "track_rows_full_stream": 1088604,
+        "track_rows_exported": 37890,
+        "lost_covered_gt": {
+          "covered_gt_lost": 0
+        },
+        "loss_examples": [],
+        "evaluator_only_semantic_diagnostic": {
+          "covered_novel_gt": 370,
+          "assigned_novel_prototype": 287,
+          "mapped_correct_covered_novel": 121,
+          "cluster_purity_on_covered_novel": 0.9297297297297298,
+          "mapped_accuracy_on_covered_novel": 0.327027027027027,
+          "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+          "anonymous_novel_clusters_observed": 72
+        },
+        "source_hashes": [
+          {
+            "video_id": 91,
+            "detections_sha256": "cff7086dd91d64418be21e4f5a9a1b373696610847ae015065ed98edd213d8e0",
+            "tracks_sha256": "767de9629e03624d58206e328202c5885a6a956f103aebcfbca0f0f1d355556c"
+          },
+          {
+            "video_id": 165,
+            "detections_sha256": "280d99bf659530c14a423449ccb4c973872658b2c1080fc51e99518e551bb9b2",
+            "tracks_sha256": "692105692f8c583a96490784406f2694422f71699db49e521d8077d3fd658cfc"
+          },
+          {
+            "video_id": 308,
+            "detections_sha256": "11f8a4c67e5329b2220fe1a03c3b7e30507e5f427212f719bb8d4c2a4b9109eb",
+            "tracks_sha256": "feb65b238bab3798784e3d15915bec59f852a0bde724dd28c03f55ec3dd315d7"
+          },
+          {
+            "video_id": 339,
+            "detections_sha256": "e8358372d4010609a6579e85d0824d8e65fe662d8f674d0fa380fb6b70088ff4",
+            "tracks_sha256": "a4552806247c4daca25f6d366c0d92259eb6b19e430067c564a75f4e43a243c4"
+          },
+          {
+            "video_id": 387,
+            "detections_sha256": "5b7eceeaa068a89394d7ce8ab46f588596e6b9f37dd88b13d11966f028a6c26f",
+            "tracks_sha256": "1f87fed80c6ca10898998c456f760dc063b3a29d5cf8c07fb59b9c6e3e5907a2"
+          },
+          {
+            "video_id": 876,
+            "detections_sha256": "d496ebb2a7648d9419290e0ce84844b11b5845b6bda90a3b35d63366bbd826e8",
+            "tracks_sha256": "efd24ebbf3f76649590b2a3bcee728d70a2676b1457ae961136fc570afef04d8"
+          },
+          {
+            "video_id": 1235,
+            "detections_sha256": "b7dfa2d19336bc39870cb04df8b21e6819f1236c6f8eee48641ff2fc2be2ab48",
+            "tracks_sha256": "1c3852b3f721fe9c2d117004ae329d5373bc25367570098e0ace0138e335328c"
+          },
+          {
+            "video_id": 1238,
+            "detections_sha256": "a7dbf0b62d9c864a8bb72c957fe593344d9eb62889c1f1de83aab33a3e4af301",
+            "tracks_sha256": "3e0e9e133ab92708836d59dad5dd9b0a45602f89f0cb2dc2042ead4e234d7b25"
+          },
+          {
+            "video_id": 1351,
+            "detections_sha256": "4023a55e2c75f2b10a13b69bda2cc2c7266767d4d6c6b1675c39d22db620814c",
+            "tracks_sha256": "6edc0260830c723c61ea05ca032c4343c1bb31a67acdbfbde4f802451d9f2ee0"
+          },
+          {
+            "video_id": 1573,
+            "detections_sha256": "cfd2d048467cef4a2a4013370ba04614b169e5c79f8954848c67ae353399d43d",
+            "tracks_sha256": "7135a4970ef90451959a3a59ae7c56c114fb4a00e3793fa754cacfad91049b57"
+          },
+          {
+            "video_id": 1796,
+            "detections_sha256": "cbabfe4fad51c4b50e48cacc9b2be8801a8b49f93b894103021681d75fd48275",
+            "tracks_sha256": "d8c5917b6dc67ddbae15f0668e223142b2f624ab791a620538e390871c5bf039"
+          },
+          {
+            "video_id": 1855,
+            "detections_sha256": "55d3dde9f088517d0a065b2ae37705120613ada425ec36b14b7d97a1edc20666",
+            "tracks_sha256": "792ff9e8cfa849d189600b9ca4de7e3fc67564a9e3acfb0021f354752a6b7600"
+          },
+          {
+            "video_id": 2407,
+            "detections_sha256": "b41dbd2e0d00a266feb593523f7224aecb119523d99de1fa7c81387cbd2fd313",
+            "tracks_sha256": "b69636cf1354f2742d1599803ead7d249152dcfd59803fe67b1b4d770421c186"
+          },
+          {
+            "video_id": 2418,
+            "detections_sha256": "ccec629b7cfdc2a72885d2ba9450ec3716d70dd4bb0062f37902db6903bcd894",
+            "tracks_sha256": "89e975b15fecc7e141006db6d5cdeba239079c6486aceb11fddf420b0b532dbc"
+          },
+          {
+            "video_id": 2581,
+            "detections_sha256": "c44b569c326829ea81fc5acfe3d3ea3ede6d61e1c1e411c90d06736e893db446",
+            "tracks_sha256": "26042721aa11ddfbab0315b8d3973ac3c6e78329904ff54c5056580753890015"
+          },
+          {
+            "video_id": 2664,
+            "detections_sha256": "139fbb7532770c0ea19790b19daac9fc21591e6ef3206912813e8d40024b8a1f",
+            "tracks_sha256": "62d73bb598487d7a4c3fded81c4ea6ecc810341e729d1125e64c00cfd36f9231"
+          },
+          {
+            "video_id": 2881,
+            "detections_sha256": "79fd81666bf8cc066ed3216ff4cb95725164089eddb4e39678388c4f21268494",
+            "tracks_sha256": "e067ddaec757767e7f9ea89b48da8b6c5e84fdcce076bc7e4204aff3186bda4f"
+          },
+          {
+            "video_id": 2897,
+            "detections_sha256": "0b15942ce88aedb91d657cd2d3f68d674fa2e61825a2f34c5518cb327b49b4ff",
+            "tracks_sha256": "1125d462e6cb7ecdfacd24eef13399a9af0b20a88142121d998d3e3297679554"
+          },
+          {
+            "video_id": 2898,
+            "detections_sha256": "0505d7e37eaeb867b165ca293d1dad2642cff3d880b31fa6f67d973531e88bca",
+            "tracks_sha256": "fbbbe323c45c285f044fd40b2b0b7efbd3cd2975a726a2e10a7955861a5ad4c6"
+          },
+          {
+            "video_id": 2904,
+            "detections_sha256": "0566bb6bc4ceb7941c2794c8a64e13a8ca541784e6122ecd073f4e290ddaef07",
+            "tracks_sha256": "841c493657a46dc77aad42abbd54a7fea2d05e43001aad8a2c06372d4c67cdef"
+          }
+        ],
+        "prediction_sha256": "bec00a4152ba3a801af0b728a3bb3502850a1e058308440a7d12d3d476414ae5",
+        "annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+        "gt_export_sha256": "2e5c7581e029b55bc1de7bab99b296916443b9ae2444c2c578de10d53d064b57",
+        "unmatched_policy": "spatial one-to-one diagnostic; may include unannotated real objects"
+      },
+      "metrics": {
+        "HOTA_0": 0.1470158495166133,
+        "LocA_0": 0.6762724138988732,
+        "AssocA_0": 0.3585822728975265,
+        "DetA_0": 0.06027531655271791,
+        "HOTA_mean": 0.12297059281248818,
+        "LocA_mean": 0.8152225350968624,
+        "AssocA_mean": 0.38137091559384295,
+        "DetA_mean": 0.040785482487045444,
+        "IDF1": 0.05447763351935922,
+        "MOTA": -13.029257641921397,
+        "IDSW": 646,
+        "Frag": 111
+      },
+      "clear_counts": {
+        "CLR_TP": 1551,
+        "CLR_FN": 739,
+        "CLR_FP": 30742,
+        "IDSW": 646,
+        "MT": 53,
+        "PT": 38,
+        "ML": 25,
+        "Frag": 111.0,
+        "CLR_Frames": 723,
+        "MOTA": -13.029257641921397,
+        "MOTP": 0.8230357118177591,
+        "MODA": -12.747161572052402,
+        "CLR_Re": 0.6772925764192139,
+        "CLR_Pr": 0.04802898460966773,
+        "MTR": 0.45689655172413796,
+        "PTR": 0.3275862068965517,
+        "MLR": 0.21551724137931033,
+        "sMOTA": -13.14911424059854,
+        "CLR_F1": 0.0896972500939768,
+        "FP_per_frame": 42.520055325034576,
+        "MOTAL": -12.748388747824452,
+        "MOTP_sum": 1276.5283890293445
+      },
+      "trackeval_count": {
+        "Dets": 32293,
+        "GT_Dets": 2290,
+        "IDs": 19050,
+        "GT_IDs": 116
+      }
+    },
+    {
+      "variant": "Dedup-C",
+      "diagnostics": {
+        "status": "PASS",
+        "variant": "Dedup-C",
+        "subset": "confirmation",
+        "video_ids": [
+          91,
+          165,
+          308,
+          339,
+          387,
+          876,
+          1235,
+          1238,
+          1351,
+          1573,
+          1796,
+          1855,
+          2407,
+          2418,
+          2581,
+          2664,
+          2881,
+          2897,
+          2898,
+          2904
+        ],
+        "videos": 20,
+        "frames": 20360,
+        "annotated_frames": 723,
+        "candidate_counts_before": {
+          "count": 20360,
+          "total": 3055567,
+          "mean": 150.07696463654224,
+          "median": 146.0,
+          "p90": 254.0,
+          "max": 300
+        },
+        "candidate_counts_after": {
+          "count": 20360,
+          "total": 1016084,
+          "mean": 49.90589390962672,
+          "median": 50.0,
+          "p90": 84.0,
+          "max": 100
+        },
+        "retained_fraction": 0.33253533632219484,
+        "proposal_recall_iou05": {
+          "before": {
+            "all": {
+              "matched": 1809,
+              "total": 2290,
+              "recall": 0.7899563318777293
+            },
+            "base": {
+              "matched": 1342,
+              "total": 1520,
+              "recall": 0.8828947368421053
+            },
+            "novel": {
+              "matched": 370,
+              "total": 631,
+              "recall": 0.5863708399366085
+            },
+            "distractor": {
+              "matched": 97,
+              "total": 139,
+              "recall": 0.697841726618705
+            },
+            "one_to_one": {
+              "matched": 1809,
+              "gt": 2290,
+              "predictions": 108087,
+              "unmatched_predictions": 106278
+            }
+          },
+          "after": {
+            "all": {
+              "matched": 1798,
+              "total": 2290,
+              "recall": 0.7851528384279476
+            },
+            "base": {
+              "matched": 1340,
+              "total": 1520,
+              "recall": 0.881578947368421
+            },
+            "novel": {
+              "matched": 362,
+              "total": 631,
+              "recall": 0.5736925515055468
+            },
+            "distractor": {
+              "matched": 96,
+              "total": 139,
+              "recall": 0.6906474820143885
+            },
+            "one_to_one": {
+              "matched": 1789,
+              "gt": 2290,
+              "predictions": 36146,
+              "unmatched_predictions": 34357
+            }
+          },
+          "association_before": {
+            "all": {
+              "matched": 1690,
+              "total": 2290,
+              "recall": 0.7379912663755459
+            },
+            "base": {
+              "matched": 1302,
+              "total": 1520,
+              "recall": 0.8565789473684211
+            },
+            "novel": {
+              "matched": 303,
+              "total": 631,
+              "recall": 0.48019017432646594
+            },
+            "distractor": {
+              "matched": 85,
+              "total": 139,
+              "recall": 0.6115107913669064
+            },
+            "one_to_one": {
+              "matched": 1689,
+              "gt": 2290,
+              "predictions": 62891,
+              "unmatched_predictions": 61202
+            }
+          },
+          "association_after": {
+            "all": {
+              "matched": 1679,
+              "total": 2290,
+              "recall": 0.7331877729257642
+            },
+            "base": {
+              "matched": 1300,
+              "total": 1520,
+              "recall": 0.8552631578947368
+            },
+            "novel": {
+              "matched": 297,
+              "total": 631,
+              "recall": 0.4706814580031696
+            },
+            "distractor": {
+              "matched": 82,
+              "total": 139,
+              "recall": 0.5899280575539568
+            },
+            "one_to_one": {
+              "matched": 1666,
+              "gt": 2290,
+              "predictions": 14790,
+              "unmatched_predictions": 13124
+            }
+          },
+          "birth_before": {
+            "all": {
+              "matched": 1542,
+              "total": 2290,
+              "recall": 0.6733624454148471
+            },
+            "base": {
+              "matched": 1234,
+              "total": 1520,
+              "recall": 0.8118421052631579
+            },
+            "novel": {
+              "matched": 243,
+              "total": 631,
+              "recall": 0.38510301109350237
+            },
+            "distractor": {
+              "matched": 65,
+              "total": 139,
+              "recall": 0.4676258992805755
+            },
+            "one_to_one": {
+              "matched": 1539,
+              "gt": 2290,
+              "predictions": 36459,
+              "unmatched_predictions": 34920
+            }
+          },
+          "birth_after": {
+            "all": {
+              "matched": 1526,
+              "total": 2290,
+              "recall": 0.6663755458515284
+            },
+            "base": {
+              "matched": 1229,
+              "total": 1520,
+              "recall": 0.8085526315789474
+            },
+            "novel": {
+              "matched": 238,
+              "total": 631,
+              "recall": 0.37717908082408874
+            },
+            "distractor": {
+              "matched": 59,
+              "total": 139,
+              "recall": 0.4244604316546763
+            },
+            "one_to_one": {
+              "matched": 1509,
+              "gt": 2290,
+              "predictions": 5834,
+              "unmatched_predictions": 4325
+            }
+          },
+          "track_output": {
+            "all": {
+              "matched": 1530,
+              "total": 2290,
+              "recall": 0.6681222707423581
+            },
+            "base": {
+              "matched": 1217,
+              "total": 1520,
+              "recall": 0.8006578947368421
+            },
+            "novel": {
+              "matched": 251,
+              "total": 631,
+              "recall": 0.3977812995245642
+            },
+            "distractor": {
+              "matched": 62,
+              "total": 139,
+              "recall": 0.4460431654676259
+            },
+            "one_to_one": {
+              "matched": 1514,
+              "gt": 2290,
+              "predictions": 6877,
+              "unmatched_predictions": 5363
+            }
+          }
+        },
+        "physical_tracks": 4334,
+        "track_lengths": {
+          "count": 4334,
+          "total": 196552,
+          "mean": 45.351176742039684,
+          "median": 11.0,
+          "p90": 116.0,
+          "max": 1201
+        },
+        "track_rows_full_stream": 196552,
+        "track_rows_exported": 6877,
+        "lost_covered_gt": {
+          "covered_gt_lost": 11,
+          "lost_novel": 8,
+          "lost_with_other_gt_iou05": 1,
+          "lost_base": 2,
+          "lost_distractor": 1
+        },
+        "loss_examples": [
+          {
+            "image_id": 3535,
+            "annotation_id": 14546,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.514630138874054,
+            "best_iou_after": 0.4279072880744934
+          },
+          {
+            "image_id": 13218,
+            "annotation_id": 59994,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.559403121471405,
+            "best_iou_after": 0.48187047243118286
+          },
+          {
+            "image_id": 13222,
+            "annotation_id": 60007,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.530544638633728,
+            "best_iou_after": 0.38695260882377625
+          },
+          {
+            "image_id": 13227,
+            "annotation_id": 60031,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5333044528961182,
+            "best_iou_after": 0.41334015130996704
+          },
+          {
+            "image_id": 68022,
+            "annotation_id": 252466,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5483773350715637,
+            "best_iou_after": 0.4614497721195221
+          },
+          {
+            "image_id": 91219,
+            "annotation_id": 337957,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5218117237091064,
+            "best_iou_after": 0.394399493932724
+          },
+          {
+            "image_id": 91224,
+            "annotation_id": 337990,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5460365414619446,
+            "best_iou_after": 0.4956567883491516
+          },
+          {
+            "image_id": 91234,
+            "annotation_id": 338061,
+            "role": "base",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5139889121055603,
+            "best_iou_after": 0.4835296869277954
+          },
+          {
+            "image_id": 91669,
+            "annotation_id": 339267,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.5792773962020874,
+            "best_iou_after": 0.4699408710002899
+          },
+          {
+            "image_id": 106374,
+            "annotation_id": 394564,
+            "role": "novel",
+            "nearby_distinct_gt_iou05": true,
+            "best_iou_before": 0.5058781504631042,
+            "best_iou_after": 0.4808550477027893
+          },
+          {
+            "image_id": 106391,
+            "annotation_id": 394631,
+            "role": "distractor",
+            "nearby_distinct_gt_iou05": false,
+            "best_iou_before": 0.528546929359436,
+            "best_iou_after": 0.4719175100326538
+          }
+        ],
+        "evaluator_only_semantic_diagnostic": {
+          "cluster_purity_on_covered_novel": null,
+          "mapped_accuracy_on_covered_novel": null,
+          "selection": "highest semantic score among IoU>=0.5 candidates per GT; evaluator-only, optimistic mapping fit on TAO Val",
+          "anonymous_novel_clusters_observed": 0
+        },
+        "source_hashes": [
+          {
+            "video_id": 91,
+            "detections_sha256": "cff7086dd91d64418be21e4f5a9a1b373696610847ae015065ed98edd213d8e0",
+            "tracks_sha256": "c962840e997206c35dcb048a8d2d9c10ffdfdf904f3b24080914b71b3af6359f"
+          },
+          {
+            "video_id": 165,
+            "detections_sha256": "280d99bf659530c14a423449ccb4c973872658b2c1080fc51e99518e551bb9b2",
+            "tracks_sha256": "5e723160893a84f57feb58b528dcea57e6f02ed5a8b3f264302e4f447e848b3b"
+          },
+          {
+            "video_id": 308,
+            "detections_sha256": "11f8a4c67e5329b2220fe1a03c3b7e30507e5f427212f719bb8d4c2a4b9109eb",
+            "tracks_sha256": "fdb210a10624cfd0557ee0066d47b37f5f67f4492b0017bf2484ad610c10023c"
+          },
+          {
+            "video_id": 339,
+            "detections_sha256": "e8358372d4010609a6579e85d0824d8e65fe662d8f674d0fa380fb6b70088ff4",
+            "tracks_sha256": "a466e7aa4e5640ea659b2bf79c95e6c9e7b994e962be537d0147e0124c0eabaa"
+          },
+          {
+            "video_id": 387,
+            "detections_sha256": "5b7eceeaa068a89394d7ce8ab46f588596e6b9f37dd88b13d11966f028a6c26f",
+            "tracks_sha256": "f36ea27bfeee37091fcf60bed880cf9e474e38a913b6db1e672e2eae97167590"
+          },
+          {
+            "video_id": 876,
+            "detections_sha256": "d496ebb2a7648d9419290e0ce84844b11b5845b6bda90a3b35d63366bbd826e8",
+            "tracks_sha256": "eba5f9a2bba908d5e1ae5e0e256b3740c35f2072204af3875c7252e420f24c7a"
+          },
+          {
+            "video_id": 1235,
+            "detections_sha256": "b7dfa2d19336bc39870cb04df8b21e6819f1236c6f8eee48641ff2fc2be2ab48",
+            "tracks_sha256": "bbba3495d145fa2f832ac7097eedf9c6247d5156b7be4d1d2e531c4929826a94"
+          },
+          {
+            "video_id": 1238,
+            "detections_sha256": "a7dbf0b62d9c864a8bb72c957fe593344d9eb62889c1f1de83aab33a3e4af301",
+            "tracks_sha256": "9e4e642d8051c0632611b8776def860d8e01f8e1544d348f9225d41b2b4d3aa9"
+          },
+          {
+            "video_id": 1351,
+            "detections_sha256": "4023a55e2c75f2b10a13b69bda2cc2c7266767d4d6c6b1675c39d22db620814c",
+            "tracks_sha256": "d633cca4a1905b322b19069eff16ca5ad22d0bc554792a2d1e5ea722f315f1d1"
+          },
+          {
+            "video_id": 1573,
+            "detections_sha256": "cfd2d048467cef4a2a4013370ba04614b169e5c79f8954848c67ae353399d43d",
+            "tracks_sha256": "a54fc00d623bfd473bcefe41136b69d1175574cfa3f5f5c07c52d05da910aa28"
+          },
+          {
+            "video_id": 1796,
+            "detections_sha256": "cbabfe4fad51c4b50e48cacc9b2be8801a8b49f93b894103021681d75fd48275",
+            "tracks_sha256": "5741782031c0bc4e58d8ff977ed5a1f460b17da0b2b92727ac91f9357665b061"
+          },
+          {
+            "video_id": 1855,
+            "detections_sha256": "55d3dde9f088517d0a065b2ae37705120613ada425ec36b14b7d97a1edc20666",
+            "tracks_sha256": "e35959aed6918449f626e4527824f1e06955773ae9af1dbd793757043848234f"
+          },
+          {
+            "video_id": 2407,
+            "detections_sha256": "b41dbd2e0d00a266feb593523f7224aecb119523d99de1fa7c81387cbd2fd313",
+            "tracks_sha256": "6575aba055b19ef84fddcce0ec5757630c546cff275a7cf291dcc99189344654"
+          },
+          {
+            "video_id": 2418,
+            "detections_sha256": "ccec629b7cfdc2a72885d2ba9450ec3716d70dd4bb0062f37902db6903bcd894",
+            "tracks_sha256": "96d01f6887988fb9ab5ee96b6393c167912831ee80de5aca54edf441683cd6a9"
+          },
+          {
+            "video_id": 2581,
+            "detections_sha256": "c44b569c326829ea81fc5acfe3d3ea3ede6d61e1c1e411c90d06736e893db446",
+            "tracks_sha256": "5f9dc84ed60df3994d62d814f3264e790fcc8c7e45038ee6fcf25f08ac9498d9"
+          },
+          {
+            "video_id": 2664,
+            "detections_sha256": "139fbb7532770c0ea19790b19daac9fc21591e6ef3206912813e8d40024b8a1f",
+            "tracks_sha256": "6225239177afbe8076410630f853ed35a8487b5c73e76a1159249900878c1f5c"
+          },
+          {
+            "video_id": 2881,
+            "detections_sha256": "79fd81666bf8cc066ed3216ff4cb95725164089eddb4e39678388c4f21268494",
+            "tracks_sha256": "b4ab15e7db6154412dc7cbb68e5f425e5f0ce39cc09a6bb1c22c92b4018acf8a"
+          },
+          {
+            "video_id": 2897,
+            "detections_sha256": "0b15942ce88aedb91d657cd2d3f68d674fa2e61825a2f34c5518cb327b49b4ff",
+            "tracks_sha256": "4fb1ca084109b7cdb8528f5030ae487ec544a41abd2daa8a3f670b031cda1d94"
+          },
+          {
+            "video_id": 2898,
+            "detections_sha256": "0505d7e37eaeb867b165ca293d1dad2642cff3d880b31fa6f67d973531e88bca",
+            "tracks_sha256": "2a9ab6eb22d72d0f4c91cc4a12ce73fa08a250bcea304649ee7f308d863d910a"
+          },
+          {
+            "video_id": 2904,
+            "detections_sha256": "0566bb6bc4ceb7941c2794c8a64e13a8ca541784e6122ecd073f4e290ddaef07",
+            "tracks_sha256": "ab81092f6d8526db62f6c2e3a878ef738b664f99650dcd7a00714c0bbf0114d4"
+          }
+        ],
+        "prediction_sha256": "835bf250b84f047ac68a126eab1bd3d31227a7cd07a6a0e77a5c2c53b7a45a90",
+        "annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+        "gt_export_sha256": "2e5c7581e029b55bc1de7bab99b296916443b9ae2444c2c578de10d53d064b57",
+        "unmatched_policy": "spatial one-to-one diagnostic; may include unannotated real objects"
+      },
+      "metrics": {
+        "HOTA_0": 0.3573376853324432,
+        "LocA_0": 0.7053629750899579,
+        "AssocA_0": 0.448982072907063,
+        "DetA_0": 0.284399375975039,
+        "HOTA_mean": 0.2893953919211551,
+        "LocA_mean": 0.8243545911095534,
+        "AssocA_mean": 0.44306339544625095,
+        "DetA_mean": 0.19334259983201824,
+        "IDF1": 0.23393659662334507,
+        "MOTA": -1.3882096069868997,
+        "IDSW": 260,
+        "Frag": 112
+      },
+      "clear_counts": {
+        "CLR_TP": 1512,
+        "CLR_FN": 778,
+        "CLR_FP": 4431,
+        "IDSW": 260,
+        "MT": 53,
+        "PT": 38,
+        "ML": 25,
+        "Frag": 112.0,
+        "CLR_Frames": 723,
+        "MOTA": -1.3882096069868997,
+        "MOTP": 0.8136470236785484,
+        "MODA": -1.2746724890829695,
+        "CLR_Re": 0.6602620087336245,
+        "CLR_Pr": 0.254416961130742,
+        "MTR": 0.45689655172413796,
+        "PTR": 0.3275862068965517,
+        "MLR": 0.21551724137931033,
+        "sMOTA": -1.5112513974663908,
+        "CLR_F1": 0.36730231993198104,
+        "FP_per_frame": 6.128630705394191,
+        "MOTAL": -1.2757270625973671,
+        "MOTP_sum": 1230.234299801965
+      },
+      "trackeval_count": {
+        "Dets": 5943,
+        "GT_Dets": 2290,
+        "IDs": 1838,
+        "GT_IDs": 116
+      }
+    }
+  ],
+  "recall_losses": {
+    "all": 0.004803493449781704,
+    "base": 0.0013157894736842701,
+    "novel": 0.01267828843106178
+  },
+  "hota_gain": 0.16642479910866692,
+  "deta_gain": 0.1525571173449728,
+  "gates": {
+    "duplicated_boxes_supported": true,
+    "candidate_reduction": true,
+    "calibration_recall_safe": false,
+    "confirmation_recall_safe": true,
+    "hota_improved": true,
+    "deta_improved": true,
+    "same_gt_and_pinned_evaluator": true
+  },
+  "run_full": false
+}

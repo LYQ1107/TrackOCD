@@ -95,3 +95,19 @@ is forbidden unless all gates pass. Record `locked_variant.json` before running
 the confirmation comparison. Confirmation uses `--subset confirmation` with
 the locked name and the frozen Original-FG-0; `--stage confirmation` writes
 the complete gate decision. Results are TAO Val development experiments.
+
+To reproduce the evaluator-only cause decomposition (NMS versus candidate cap):
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  /data3/liuyeqiang/.venvs/trackocd-a100/bin/python \
+  scripts/baselines/pandas_bytetrack/audit_suppression_losses.py \
+  --asset-root /data3/liuyeqiang/pandas_bytetrack_tao_val \
+  --annotation /data3/liuyeqiang/TAO-Amodal/annotations/validation.json \
+  --output-root outputs/baselines/pandas_dedup
+```
+
+The measured promotion decision is `run_full=false` because calibration Novel
+recall loses 3.60 percentage points even for C. Do not launch a full rerun or
+add new variants. The diagnostic is complete and the next research workflow is
+fixed physical tracking and common features with Nearest/DP-Means/PHE/TrackOCD.
