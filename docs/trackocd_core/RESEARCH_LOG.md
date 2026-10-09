@@ -380,3 +380,30 @@
   HOTA/AssA/DetA/DetRe=1; no real Val prediction/GT match has run at preregistration.
 - Regression185 pass. Preregister and verify remote before bounded inference;
   no full-Val/cache, training, Test, primary freeze or M9 score from this pilot.
+
+## 2026-10-10 — Actual fixed Val4 physical diagnostic (not main qualification)
+
+- Remote-verified preregistration1d0f3a1 executed once;4videos x16images =64
+  frozen native forwards, compact stream sealed before independent evaluation.
+  No label-based resampling, threshold/cap change, training or completed-smoke rerun.
+- Same328 GT rows and canonical TAO_OW/HOTA source for both routes. Combined
+  native HOTA.169655/AssA.502096/DetA.059033/DetRe.531611; PANDAS frozen projection
+  .122697/.372579/.041192/.583440. Actual per-video and alpha arrays retained.
+  Not full-Val values; different native ordinal vs PANDAS dense-frame history
+  prevents matched-input association/contribution claims.
+- Coverage fixed clip universe: Known native8/26 vsPANDAS10/26; Novel0/2 forboth.
+  Native everyROIframe cap50;495tracks/2843obs, median4,single119/495=24.04%.
+  PANDAS annotated projection2807tracks/4543obs, median1,single71.71%.
+- No observed different-category mix, but native2659/2843 rows unknown after
+  geometry match,456tracks without GT support,477 with unknown observations.
+  This cannot establish purity. Six tracks touch multiple individuals, not
+  automatically multiple semantic categories. No unmatched outputs discarded;
+  canonical preprocessing removeszero selectedrows. Small NovelN2 is not
+  full-Val statistical support or an opportunity to select favorable new clips.
+- Nativeworker27.74s/supervisor29.74s; host1669230592B/GPUreserved3441426432B.
+  CPUeval5.60s/847216640B; fourprivateNPZ118457B, allboundedoutput2723840allocatedB;
+  candidatewithretainedattempts5948731392allocatedB <8GiB. No foreigninterference,
+  extraweight, semanticGTinput, training, Test/fullVal/cache or primaryfreeze.
+- Result187tests pass. Publish counts/hash/resource/metric receipts only,
+  retain rawboxes and clippedGT privately. M1BLOCKED_FRONTEND_QUALITY persists;
+  no M9/semantic scientific PASS, no second correction or goal completion.

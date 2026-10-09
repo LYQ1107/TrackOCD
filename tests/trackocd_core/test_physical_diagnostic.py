@@ -105,3 +105,33 @@ assert all(np.allclose(r[k],1.) for k in ['HOTA','AssA','DetA','DetRe']),r
 """
     result=subprocess.run([sys.executable,"-c",code,str(canonical),str(gt),str(tmp_path/"pred")],capture_output=True,text=True,timeout=20)
     assert result.returncode==0,result.stderr
+
+
+def test_actual_bounded_diagnostic_keeps_denominators_unknown_rows_and_primary_gate():
+    path=Path(__file__).resolve().parents[2]/"outputs/trackocd_core/audit/masa_physical_diagnostic_result.json"
+    if not path.exists():
+        pytest.skip("Real bounded diagnostic not delivered yet")
+    r=json.loads(path.read_text())
+    assert r["status"]=="BOUNDED_DIAGNOSTIC_COMPLETE_NOT_M1_QUALIFICATION"
+    assert r["video_ids"]==[4,20,22,23] and r["selected_images"]==64 and r["selected_gt_rows"]==328
+    assert r["not_full_val_or_main_result"] and not r["primary_freeze_permitted"]
+    for name,known in [("MASA_NATIVE",8),("PANDAS_BT_FG0",10)]:
+        v=r["results"][name]
+        assert v["coverage"]["known"]["gt_clip_tracks"]==26
+        assert v["coverage"]["known"]["reliably_observed"]==known
+        assert v["coverage"]["novel"]["gt_clip_tracks"]==2 and v["coverage"]["novel"]["reliably_observed"]==0
+        assert v["purity"]["unmatched_unknown_rows"]>0
+        assert not v["annotated_projection_lengths"]["counts_come_from_full_frame_stream_not_only_annotated_frames"]
+        assert all(0<=score<=1 for score in v["canonical_tracking"].values())
+
+
+def test_prediction_receipt_seals64_forwards_without_labels_or_new_weights():
+    path=Path(__file__).resolve().parents[2]/"outputs/trackocd_core/audit/masa_physical_prediction_summary.json"
+    if not path.exists():
+        pytest.skip("Small public physical-prediction receipt not delivered yet")
+    p=json.loads(path.read_text())
+    assert p["real_image_forwards_started"]==64 and len(p["videos"])==4
+    assert not any(p["boundary"].values())
+    assert p["frozen_model"]["strict_state_tensor_keys"]==419 and p["frozen_model"]["all_parameters_frozen"]
+    assert not p["frozen_model"]["second_pretrain_weight_used"]
+    assert p["supervisor"]["worker_returncode"]==0 and p["supervisor"]["remote_preregistration_verified"]

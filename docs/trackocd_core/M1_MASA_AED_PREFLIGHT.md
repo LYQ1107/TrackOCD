@@ -291,3 +291,64 @@ Zero role denominators remain null, and all empty/failing clips are retained.
 No TETA/OWTA is invented. An actual unchanged-canonical-adapter synthetic
 perfect-track fixture has HOTA/AssA/DetA/DetRe=1. Preregistration regression:
 **185 tests pass**.
+
+## Actual fixed Val4 physical diagnostic results
+
+The **same remote-verified preregistration `1d0f3a1`** executed once: video
+IDs4/20/22/23, 16 images each, 64 frozen forwards, no resampling/tuning.
+Prediction was sealed before independent GT evaluation. Both streams used
+the same 328 GT annotation rows and unchanged pinned canonical TAO_OW/HOTA
+code. This is a **four-clip diagnostic**, not full-Val or a matched-input
+association/semantic contribution comparison.
+
+| Frozen physical route | Clip HOTA | AssA | DetA | DetRe | Known clip coverage | Novel clip coverage |
+|---|---:|---:|---:|---:|---:|---:|
+| MASA native candidate | 0.169655 | 0.502096 | 0.059033 | 0.531611 | 8/26 (30.77%) | 0/2 |
+| Existing PANDAS BT-FG-0 projection | 0.122697 | 0.372579 | 0.041192 | 0.583440 | 10/26 (38.46%) | 0/2 |
+
+These combined HOTA values come from canonical count-weighted sequence
+combination, **not averaging four independent HOTA numbers**. Numeric scores
+are fractions, not percentages. The receipt retains each video's real metrics,
+all alpha arrays and denominators. PANDAS whole-Val HOTA remains its separate
+historical 0.110113 result; neither clip value overwrites it.
+
+All MASA ROI frames saturate the unchanged **50-proposal cap**. There are
+495 annotated-clip physical identities / 2,843 observations, mean length
+5.7434, median4, p90=14 and **119/495=24.04%** single-observation identities.
+The PANDAS projection has 2,807 identities / 4,543 observations, median1,
+**2,013/2,807=71.71%** single-observation identities. Different association
+cadence/prehistory remains material: this cannot isolate a tracker-architecture
+effect, and clip lengths cannot be called whole-video lifetimes.
+
+At the fixed frame IoU threshold, MASA matches **184/2,843** observations to
+GT, leaving **2,659 unknown**; PANDAS matches **216/4,543**, leaving **4,327
+unknown**. Neither has observed multicategory mixing among these matches, but
+that does **not** establish pure track representations: MASA has 456 identities
+without any GT match and 477 identities with unknown observations. Only18
+MASA observed identities have every observation matched to one category.
+Six MASA identities touch multiple GT individuals; this is distinguished from
+category mixing, not interpreted as different-class contamination automatically.
+Unmatched observations remain unknown under incomplete annotation, not proven
+background or reliable foreground. Canonical preprocessing removed zero selected
+rows for both routes; no private unmatched-filter improves the reported scores.
+
+Interpretation: native candidate association/fragmentation diagnostics are less
+poor in these clips, but Known reliable coverage is lower and both Novel clip
+targets remain missing/unreliable. **No primary qualification PASS** is supported.
+The two-Novel-target sample cannot establish a full-Val Novel recall FAIL either.
+It is not permissible to select more favorable clips, raise the proposal cap,
+retune thresholds or infer category-discovery contribution from this comparison.
+M1 remains `BLOCKED_FRONTEND_QUALITY`; full qualification and released-supervision
+scope still require stronger evidence. No frozen-primary marker is written.
+
+Frozen worker **27.74 s**, supervised **29.74 s**; peak host RSS
+**1,669,230,592 B**, GPU reserved **3,441,426,432 B**. Independent CPU evaluator
+**5.60 s**, **847,216,640-B** peak RSS. Four private compact NPZ files total
+**118,457 B**; all bounded diagnostic artifacts occupy **2,723,840 allocated B**.
+The owned candidate including retained install/smoke/diagnostic directories
+is **5,948,731,392 allocated B**, below8GiB. No other processes remain ours on
+GPU, no training/Test/semantic input/extra weight or full-Val cache ran.
+Public evidence: `masa_physical_diagnostic_result.json` and
+`masa_physical_prediction_summary.json`; GT subsets and raw NPZ boxes stay
+private. Result regression: **187 tests pass**. The completed run is preserved;
+do not silently rerun it or broaden its result scope.

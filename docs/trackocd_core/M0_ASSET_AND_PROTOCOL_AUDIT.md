@@ -564,3 +564,14 @@ See masa_runtime_install_summary.json, masa_native_smoke.json and the final
 section of M1_MASA_AED_PREFLIGHT.md. Latest regression: 177 pass. Primary M1
 still blocked pending provenance/physical coverage and pollution evaluation;
 no full Val/cache, Test, R2, GT decision authorization or formal scientific PASS.
+
+Subsequent physical audit: published generic SA-1B route/converter source
+verified, but no exact SAM-B release train config in pinned tree. Separate
+remote-preregistered64-forward Val4 first16 diagnostic completed; same GT hash
+as previous canonical PANDAS export. Native clip HOTA0.169655, AssA0.502096,
+Known8/26 vsPANDAS10/26; Novel0/2 forboth, unknown nativeobs2659/2843.
+All ROIframes cap50; no tuning/resampling or semanticGTinput. Diagnostic is
+not full-Val, matched-input architecture ablation, purity proof or primary
+qualification; M1blocked remains. See final M1_MASA_AED_PREFLIGHT.md section
+and masa_physical_diagnostic_result.json. Regression187pass; real outputs
+and negative coverage evidence retained, no fullcache/Train optimization/Test.

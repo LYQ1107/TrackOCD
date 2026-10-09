@@ -1,0 +1,838 @@
+{
+  "boundary": {
+    "extra_weight_download": false,
+    "foreign_process_interference": false,
+    "future_model_input": false,
+    "gt_or_category_model_input": false,
+    "offline_filtering": false,
+    "test_access": false,
+    "training": false
+  },
+  "completed_utc": "2026-10-09T21:51:35.789432+00:00",
+  "config_sha256": "49156948da5277b48e7f29418cec9cbd6ea7b592f0e4d925bfd9a27997666593",
+  "elapsed_seconds": 27.741798222996294,
+  "frozen_model": {
+    "all_parameters_frozen": true,
+    "checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+    "missing_keys": [],
+    "native_model_config": {
+      "benchmark": "tao",
+      "data_preprocessor": {
+        "bgr_to_rgb": true,
+        "mean": [
+          123.675,
+          116.28,
+          103.53
+        ],
+        "pad_mask": false,
+        "pad_size_divisor": 1024,
+        "std": [
+          58.395,
+          57.12,
+          57.375
+        ],
+        "type": "TrackDataPreprocessor"
+      },
+      "detector": {
+        "backbone": {
+          "depth": 12,
+          "embed_dim": 768,
+          "global_attn_indexes": [
+            2,
+            5,
+            8,
+            11
+          ],
+          "img_size": 1024,
+          "mlp_ratio": 4,
+          "num_heads": 12,
+          "out_chans": 256,
+          "out_indices": [
+            2,
+            5,
+            8,
+            11
+          ],
+          "patch_size": 16,
+          "qkv_bias": true,
+          "type": "ImageEncoderViT",
+          "use_rel_pos": true,
+          "window_size": 14
+        },
+        "mask_decoder": {
+          "iou_head_depth": 3,
+          "iou_head_hidden_dim": 256,
+          "num_multimask_outputs": 3,
+          "transformer_dim": 256,
+          "type": "MaskDecoder"
+        },
+        "prompt_encoder": {
+          "embed_dim": 256,
+          "image_embedding_size": [
+            64,
+            64
+          ],
+          "input_image_size": [
+            1024,
+            1024
+          ],
+          "mask_in_chans": 16,
+          "type": "PromptEncoder"
+        },
+        "type": "SamMasa"
+      },
+      "freeze_detector": true,
+      "freeze_masa_adapter": true,
+      "freeze_object_prior_distillation": true,
+      "given_dets": false,
+      "load_public_dets": false,
+      "masa_adapter": [
+        {
+          "in_channels": [
+            768,
+            768,
+            768,
+            768
+          ],
+          "num_outs": 5,
+          "out_channels": 256,
+          "type": "SimpleFPN",
+          "use_residual": true
+        },
+        {
+          "in_channels": 256,
+          "num_blocks": 3,
+          "out_channels": 256,
+          "type": "DyHead"
+        }
+      ],
+      "public_det_path": null,
+      "roi_head": {
+        "bbox_head": {
+          "bbox_coder": {
+            "target_means": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_stds": [
+              0.1,
+              0.1,
+              0.2,
+              0.2
+            ],
+            "type": "DeltaXYWHBBoxCoder"
+          },
+          "fc_out_channels": 1024,
+          "in_channels": 256,
+          "loss_bbox": {
+            "loss_weight": 1.0,
+            "type": "L1Loss"
+          },
+          "loss_cls": {
+            "loss_weight": 1.0,
+            "type": "CrossEntropyLoss",
+            "use_sigmoid": false
+          },
+          "num_classes": 1,
+          "reg_class_agnostic": true,
+          "roi_feat_size": 7,
+          "type": "Shared2FCBBoxHead"
+        },
+        "bbox_roi_extractor": {
+          "featmap_strides": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "out_channels": 256,
+          "roi_layer": {
+            "output_size": 7,
+            "sampling_ratio": 0,
+            "type": "RoIAlign"
+          },
+          "type": "SingleRoIExtractor"
+        },
+        "type": "StandardRoIHead"
+      },
+      "rpn_head": {
+        "anchor_generator": {
+          "ratios": [
+            0.5,
+            1.0,
+            2.0
+          ],
+          "scales": [
+            8
+          ],
+          "strides": [
+            4,
+            8,
+            16,
+            32,
+            64
+          ],
+          "type": "AnchorGenerator"
+        },
+        "bbox_coder": {
+          "target_means": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_stds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "DeltaXYWHBBoxCoder"
+        },
+        "feat_channels": 256,
+        "in_channels": 256,
+        "loss_bbox": {
+          "beta": 0.1111111111111111,
+          "loss_weight": 1.0,
+          "type": "SmoothL1Loss"
+        },
+        "loss_cls": {
+          "loss_weight": 1.0,
+          "type": "CrossEntropyLoss",
+          "use_sigmoid": true
+        },
+        "type": "RPNHead"
+      },
+      "test_cfg": {
+        "rcnn": {
+          "mask_thr_binary": 0.5,
+          "max_per_img": 50,
+          "nms": {
+            "class_agnostic": true,
+            "iou_threshold": 0.5,
+            "split_thr": 100000,
+            "type": "nms"
+          },
+          "score_thr": 0.02
+        },
+        "rpn": {
+          "max_per_img": 1000,
+          "min_bbox_size": 0,
+          "nms": {
+            "iou_threshold": 0.7,
+            "type": "nms"
+          },
+          "nms_pre": 1000
+        }
+      },
+      "track_head": {
+        "embed_head": {
+          "embed_channels": 256,
+          "loss_track": {
+            "loss_weight": 0.25,
+            "type": "UnbiasedContrastLoss"
+          },
+          "loss_track_aux": {
+            "hard_mining": true,
+            "loss_weight": 1.0,
+            "neg_margin": 0.1,
+            "neg_pos_ub": 3,
+            "pos_margin": 0,
+            "type": "MarginL2Loss"
+          },
+          "norm_cfg": {
+            "num_groups": 32,
+            "type": "GN"
+          },
+          "num_convs": 4,
+          "num_fcs": 1,
+          "type": "QuasiDenseEmbedHead"
+        },
+        "roi_extractor": {
+          "featmap_strides": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "out_channels": 256,
+          "roi_layer": {
+            "output_size": 7,
+            "sampling_ratio": 0,
+            "type": "RoIAlign"
+          },
+          "type": "SingleRoIExtractor"
+        },
+        "train_cfg": null,
+        "type": "MasaTrackHead"
+      },
+      "tracker": {
+        "fps": 1,
+        "init_score_thr": 0.0001,
+        "match_score_thr": 0.5,
+        "max_distance": -1,
+        "memo_momentum": 0.8,
+        "memo_tracklet_frames": 10,
+        "obj_score_thr": 0.0001,
+        "type": "MasaTaoTracker",
+        "with_cats": false
+      },
+      "train_cfg": null,
+      "type": "MASA",
+      "unified_backbone": true
+    },
+    "registered_upstream_modules": [
+      "masa.models.sam.common",
+      "masa.models.sam.transformer",
+      "masa.models.sam.prompt_encoder",
+      "masa.models.sam.mask_decoder",
+      "masa.models.sam.image_encoder",
+      "masa.models.detectors.sam_masa",
+      "masa.models.necks.simplefpn",
+      "masa.models.losses.unbiased_contrastive_loss",
+      "masa.models.roi_heads.track_heads.masa_track_head",
+      "masa.models.tracker.masa_tao_tracker",
+      "masa.models.mot.masa"
+    ],
+    "second_pretrain_weight_used": false,
+    "shape_mismatches": [],
+    "source_files": [
+      {
+        "bytes": 11342,
+        "git_blob_sha1": "9caa45f5f120b02e604f8c36db4088a689eb89d6",
+        "path": "LICENSE",
+        "sha256": "157fd3f210262c332d99f5866c8a85990509e239fb6c7d6ca015c7e0511dac16"
+      },
+      {
+        "bytes": 1455,
+        "git_blob_sha1": "554da79bdf6414465ff60be4ed2cfbf612021bbe",
+        "path": "masa/models/sam/common.py",
+        "sha256": "bfc7e29359c7d6fa0faa325bbb3965d6f148a3452c23e4a9ad7263323afee68f"
+      },
+      {
+        "bytes": 15194,
+        "git_blob_sha1": "707ea16cf0b904bc7dd09fa8ad92ad23aefb50e6",
+        "path": "masa/models/sam/image_encoder.py",
+        "sha256": "2f24fdbd7b9b1dd5045170fdf348d7e5c4ebc08f2d269cac08e2bfd06d3793b1"
+      },
+      {
+        "bytes": 8324,
+        "git_blob_sha1": "ff4bd8a456116921f910e55ae077af5c9a86dcac",
+        "path": "masa/models/sam/transformer.py",
+        "sha256": "9a7853e3b9451121b41aebf6cf23b80ecc352e402da85bea058cb0f29fcfd7ed"
+      },
+      {
+        "bytes": 9502,
+        "git_blob_sha1": "a74307c854210b29645a12e427b21c2685c5d1ab",
+        "path": "masa/models/sam/mask_decoder.py",
+        "sha256": "e7e96059055148413eb4385ebba629fae243aabc96bd9fdbd59150ea13cb2149"
+      },
+      {
+        "bytes": 8792,
+        "git_blob_sha1": "1e6e22f900c9f1c3b41012dacd695993a2320e6b",
+        "path": "masa/models/sam/prompt_encoder.py",
+        "sha256": "f98d8e8a1799c0b9e7ef00aeb5953e37facb81fc4cda1c50c53c13d699b74f32"
+      },
+      {
+        "bytes": 7481,
+        "git_blob_sha1": "1cfd0a6708b6578db86ee7c93f35c6452708273b",
+        "path": "masa/models/detectors/sam_masa.py",
+        "sha256": "3007f084ed6bb6698af2008ac55d945bd76cb341a2ce36620cfaa7345fc6f5f9"
+      },
+      {
+        "bytes": 10113,
+        "git_blob_sha1": "278ae0953ff31e204124fb3ffc20e9961c530008",
+        "path": "masa/models/necks/simplefpn.py",
+        "sha256": "bf3583ebe4dff56c96bdbcc57df64f27780fa6bd63f6bb2eacf05602f5bf5f16"
+      },
+      {
+        "bytes": 2136,
+        "git_blob_sha1": "d416aaaea122f88ec554b1a8910a72bc32a8443e",
+        "path": "masa/models/losses/unbiased_contrastive_loss.py",
+        "sha256": "5e07cc2423aba2829c70779806ac8656c9b2f9e7b2e53f51ec23c632f1943d85"
+      },
+      {
+        "bytes": 7344,
+        "git_blob_sha1": "15b8b1843c42921d5d17c4d71f904a9bb5417b2a",
+        "path": "masa/models/roi_heads/track_heads/masa_track_head.py",
+        "sha256": "8e3ac591d1be4bb046cb8927aeef96eec1c4cc69357e29f2183d9019d7176149"
+      },
+      {
+        "bytes": 13974,
+        "git_blob_sha1": "5d9c00c0105b356a43ab748fb9d4dde9fec3aeff",
+        "path": "masa/models/tracker/masa_tao_tracker.py",
+        "sha256": "c963393eee82ba5321a4c8e3ac4cd8d5b066a46788ec2096cc8f4fb2713b787c"
+      },
+      {
+        "bytes": 21362,
+        "git_blob_sha1": "02d4061b7cf0d180bb76b465111a30848837a93c",
+        "path": "masa/models/mot/masa.py",
+        "sha256": "1439cd038d15183f15766522d13cef8d2783922b93e40fac665677bd47489c44"
+      },
+      {
+        "bytes": 807,
+        "git_blob_sha1": "4f318ba026466cc65bafecccf12980937bd6b861",
+        "path": "configs/masa-sam/sam-vitb.py",
+        "sha256": "aa9fac397403de1812647b3964e961e0a206058d5b67d8055a633e94ca8a1ee7"
+      },
+      {
+        "bytes": 7466,
+        "git_blob_sha1": "f9abc1c7454ccf87c676860e41063ba5cdc86260",
+        "path": "configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py",
+        "sha256": "07a8442664f07b96f87c681558c65d8db98444b6de5b1990829c5b2926b95634"
+      }
+    ],
+    "strict_state_tensor_keys": 419,
+    "unexpected_keys": [],
+    "upstream_dataset_text_api_or_postprocess_imported": false
+  },
+  "gt_or_role_files_opened": false,
+  "peak_gpu_allocated_bytes": 3126635520,
+  "peak_gpu_reserved_bytes": 3441426432,
+  "peak_host_rss_bytes": 1669230592,
+  "private_plan_sha256": "f04fce6b4ee1173a2aef2efde145df6946183ae7ce27de1c68be051d3245b02e",
+  "private_prediction_manifest_sha256": "5247f5f7bba0706b0a9c4dd4dcd8dd60f4ff154570d955fc120a32091cb8353e",
+  "public_scope": "Small count/hash/frozen-model/resource receipt only; private frame-path plan, raw NPZ boxes and clipped GT are not published",
+  "real_image_forwards_started": 64,
+  "schema_version": "trackocd.core.masa_physical_prediction.v1",
+  "started_utc": "2026-10-09T21:51:08.047843+00:00",
+  "status": "SEALED_BOUNDED_PHYSICAL_PREDICTIONS_NOT_QUALIFICATION",
+  "storage_after_bounded_evaluation": {
+    "bounded_diagnostic_allocated_bytes": 2723840,
+    "candidate_allocated_bytes": 5948731392,
+    "candidate_limit_bytes": 8589934592,
+    "private_npz_bytes": 118457
+  },
+  "supervisor": {
+    "elapsed_seconds": 29.738349296007073,
+    "error": null,
+    "fresh_gpu_query": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898, 14, 40428, 0\nGPU-5de9a1c2-0cc1-4fda-7d25-493f86f52424, 14, 40428, 0\nGPU-a4095968-9191-50eb-d56c-ed633b31e2c0, 14, 40428, 0\nGPU-f931e51b-55b2-c2c2-6506-b6f986864d54, 14, 40428, 0\nGPU-daa9b388-4540-242c-83d7-3261bb232a7c, 14, 40428, 0\nGPU-f07a0798-7ddc-ec7c-a27c-d47124bbfe81, 14, 40428, 0\nGPU-c2902ddf-62f4-cc2f-5d9f-d33c74555847, 14, 40428, 0\nGPU-995c9557-d84e-1a76-f02f-b1ddea34e56b, 14, 40428, 0\nGPU-cd127bcd-08c4-fe6a-78ca-fc41123d7119, 14, 40428, 0\nGPU-e947d8da-fc7a-4c0b-7d91-e9e67d34f4a6, 14, 40428, 0\n",
+    "gpu_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "peak_candidate_allocated_bytes": 5946318848,
+    "peak_worker_tree_rss_bytes": 1365893120,
+    "preregistration_commit": "1d0f3a1d0cf497c0c638f0d6da3f55c0b1057a05",
+    "remote_preregistration_verified": true,
+    "schema_version": "trackocd.core.masa_physical_supervisor.v1",
+    "worker_returncode": 0
+  },
+  "videos": [
+    {
+      "frames": [
+        {
+          "detections": 50,
+          "image_sha256": "0d0146e3b720b630c7bd30d723e16ecc7341665a80d25df42aec1efaabf37c4d",
+          "ordinal": 0,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "193a9b0edaba837751917712d893abf89a5188883c021af9d92a2c1c13e3ab84",
+          "ordinal": 1,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "a8eccc8c6c0a5201856a84ad003e89beda86df125e0c88e06f26483b49ff9921",
+          "ordinal": 2,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "df5ac479dbf228a9ef1bcb2306ff2a9c03dcc82c323b156f3070e5c26075403d",
+          "ordinal": 3,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "e95f6a2405718d360209a8c7c35d43e009da77e3ab5b5a103daff50560821a64",
+          "ordinal": 4,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "787a825408d65a383e9b663371550581b68c3945dae5e9a701f4211a4695c2b5",
+          "ordinal": 5,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "55b0d5696b904cae635433ecc49673e21d82aef0c0917f783c261da998a77467",
+          "ordinal": 6,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "dda2af8eba119ad97c6b3b864a9a4be1b5bbfe70116107e389e72e6bb833b481",
+          "ordinal": 7,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "77051970d66f33f7210435a90bd3bbe42509559d81182ed4ef9e9d7d21e529a8",
+          "ordinal": 8,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "866de270d7378ae1490cd2d9fba0ecee67e00133e9ec3684f88f82aeaff774df",
+          "ordinal": 9,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "a76cedea0ce239b8cd1227cbe0bb69d053c20cd6a043b9a290a3baf84b56b5c0",
+          "ordinal": 10,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "49c7a7317550656ba6a06a12632b52a7345be8e470f79b1eec58d95d0b6c6897",
+          "ordinal": 11,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "9f7d669ab119184dca5ae1e9d199ef770c53b16dcf3573a3faec3bd11fa96583",
+          "ordinal": 12,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "e30ee3f4f73c25f39a96c4a4034fa0dc45d358e5e9812b15b24ebbff0f20c3fb",
+          "ordinal": 13,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "f10952c8a6ba18a8171f5a263554dcc3a97be2ca80ba33ff0cb36cb388b96359",
+          "ordinal": 14,
+          "tracks": 50
+        },
+        {
+          "detections": 50,
+          "image_sha256": "678e60ab42dd3bfbe94ed1810ed80f89906ad1a999200d06ae9ec9994ebc0900",
+          "ordinal": 15,
+          "tracks": 50
+        }
+      ],
+      "npz_bytes": 31284,
+      "npz_filename": "video_0004.npz",
+      "npz_sha256": "4d5ee5e1d698e6a71da7aa1e33fc2a711c0e337f4df3890900eb58b8b82a655d",
+      "video_id": 4
+    },
+    {
+      "frames": [
+        {
+          "detections": 50,
+          "image_sha256": "b0503efd68df8d9438dd0a701d113c222b41e3f11084c244c368b7d06fa31d1b",
+          "ordinal": 0,
+          "tracks": 39
+        },
+        {
+          "detections": 50,
+          "image_sha256": "be8fe70f4105139c4e24d54e1b5656073580e2fdb942f3a6d43bb231de33f8ad",
+          "ordinal": 1,
+          "tracks": 38
+        },
+        {
+          "detections": 50,
+          "image_sha256": "c0759bcea7979280c2e90a1ecbed4e2fd7b99c5b71dae6701a281d2988e04604",
+          "ordinal": 2,
+          "tracks": 36
+        },
+        {
+          "detections": 50,
+          "image_sha256": "6c3dbb8608a8a094c337d9ab1fbe34c0f5050a9471dde2f2ada8078464b48b5e",
+          "ordinal": 3,
+          "tracks": 33
+        },
+        {
+          "detections": 50,
+          "image_sha256": "2b0dc0a2640cfd2018a9e5cf097455c5b0f3949f06fa3549954dcd3b7cb4b329",
+          "ordinal": 4,
+          "tracks": 36
+        },
+        {
+          "detections": 50,
+          "image_sha256": "26d6c134e03a80acd2f9e533c06f90fed287f555bb910780f6273a630f59c6d4",
+          "ordinal": 5,
+          "tracks": 34
+        },
+        {
+          "detections": 50,
+          "image_sha256": "4b77bc19cb279b97dcde2c5059e09ea04bf1116a21d65f32429d23e50ca2b299",
+          "ordinal": 6,
+          "tracks": 37
+        },
+        {
+          "detections": 50,
+          "image_sha256": "8a272c4cc8db53be5d245d72ed698c077300ee07361207e72d7e3bb100ddbfc4",
+          "ordinal": 7,
+          "tracks": 33
+        },
+        {
+          "detections": 50,
+          "image_sha256": "0579394aa86588f41841e7e130c7d6b7aee2f90a0bb1d90b9d8ffb6c0e8a550d",
+          "ordinal": 8,
+          "tracks": 33
+        },
+        {
+          "detections": 50,
+          "image_sha256": "2d1921e430c93830c6a696923a6d942715e06edc97a4f91b75f61d40e2656784",
+          "ordinal": 9,
+          "tracks": 35
+        },
+        {
+          "detections": 50,
+          "image_sha256": "344bc1d2c838abccd5297a1c6c681e2adf87f91883aa210177188b31654b138d",
+          "ordinal": 10,
+          "tracks": 36
+        },
+        {
+          "detections": 50,
+          "image_sha256": "f973e863ba7d8072f30d1ef88bbdd4361bdb654995aaea3d234d50191c0f7dbe",
+          "ordinal": 11,
+          "tracks": 38
+        },
+        {
+          "detections": 50,
+          "image_sha256": "d24162d52f58f5427912109c598bffb150110d9dc593b237e37a73822662bb89",
+          "ordinal": 12,
+          "tracks": 34
+        },
+        {
+          "detections": 50,
+          "image_sha256": "5c6b2e073e7a3971a8d8ee1b2fae3f83c9067759fe16db7c13be98b2a9c38e30",
+          "ordinal": 13,
+          "tracks": 35
+        },
+        {
+          "detections": 50,
+          "image_sha256": "4785007d96089032df794a15c4c3a83b569a199ac819f837fa10bf46a9c7a871",
+          "ordinal": 14,
+          "tracks": 37
+        },
+        {
+          "detections": 50,
+          "image_sha256": "406f60cb21adcfb5e1f18e2d6cf5464138ea20ad36fcdac2169d752078127772",
+          "ordinal": 15,
+          "tracks": 32
+        }
+      ],
+      "npz_bytes": 26943,
+      "npz_filename": "video_0020.npz",
+      "npz_sha256": "d6af6b584573d48b7cef8e6ad3854529634b9a4630c54edd387e2b9f41cad7cf",
+      "video_id": 20
+    },
+    {
+      "frames": [
+        {
+          "detections": 50,
+          "image_sha256": "7d14091c9ef9f7712ff3b88211103815e270e3a16b7029f79f37f52cede3b3e6",
+          "ordinal": 0,
+          "tracks": 49
+        },
+        {
+          "detections": 50,
+          "image_sha256": "01a1140fd36f7cbebc8eed9ca707e146dec0cf27bc544209e599e21b2f8290c8",
+          "ordinal": 1,
+          "tracks": 48
+        },
+        {
+          "detections": 50,
+          "image_sha256": "3c145bba174bdc8d03485f7bd6ab1e7f5a37eb438380ab76576037b579f08031",
+          "ordinal": 2,
+          "tracks": 49
+        },
+        {
+          "detections": 50,
+          "image_sha256": "182a44c920673aab34717631ca3fdffb5b7c19fa886e0a07c9c6c8bd5d1de858",
+          "ordinal": 3,
+          "tracks": 47
+        },
+        {
+          "detections": 50,
+          "image_sha256": "4b37c48a994635e001279adb5cb41fad0cb286335e6b8170685e3785a0eca55c",
+          "ordinal": 4,
+          "tracks": 49
+        },
+        {
+          "detections": 50,
+          "image_sha256": "3be527fae65ff2c953e9b5b11d6ee9b0901361b56e3cfe8895de0030997ff372",
+          "ordinal": 5,
+          "tracks": 47
+        },
+        {
+          "detections": 50,
+          "image_sha256": "b8f2ae5257103e3ec5c474c7af3047cc83dfdaf7f8acabb37214c4a0a9c1ff17",
+          "ordinal": 6,
+          "tracks": 48
+        },
+        {
+          "detections": 50,
+          "image_sha256": "75b819b11a3ec84a2f972c713975ccac119ebeee39d44c013b621d8a993081f5",
+          "ordinal": 7,
+          "tracks": 49
+        },
+        {
+          "detections": 50,
+          "image_sha256": "30df2a1691fc7e5ce9e927bcfa071842a9da5c1a5c1810b23488f3ad40e8673e",
+          "ordinal": 8,
+          "tracks": 48
+        },
+        {
+          "detections": 50,
+          "image_sha256": "0858a3b8982653c75205ecc0e798a6c7523c1d2371af6c05ef4f0eba6321af36",
+          "ordinal": 9,
+          "tracks": 49
+        },
+        {
+          "detections": 50,
+          "image_sha256": "0c0411318583421fb711f9329b927f9aed53c27f271c3b665f082955b8a7bc04",
+          "ordinal": 10,
+          "tracks": 46
+        },
+        {
+          "detections": 50,
+          "image_sha256": "ffb9381ec85407a12cf217b876d27c84209b59476320014bcf8df59db90220ad",
+          "ordinal": 11,
+          "tracks": 48
+        },
+        {
+          "detections": 50,
+          "image_sha256": "cd4ae0fff205f926ef41789ee3360694f97713d31dc4ee4149f80a46e7f7cadc",
+          "ordinal": 12,
+          "tracks": 47
+        },
+        {
+          "detections": 50,
+          "image_sha256": "6c74670829a6b5ce87d7552fac281d3ba1640877562912037b6c851a9e57dfe5",
+          "ordinal": 13,
+          "tracks": 45
+        },
+        {
+          "detections": 50,
+          "image_sha256": "3c884e146d43759c23cee7cf455fbf209147eccb016cefdcf05bb9af03804d8b",
+          "ordinal": 14,
+          "tracks": 48
+        },
+        {
+          "detections": 50,
+          "image_sha256": "96ad188ccd0d3f7f5f9bbfcc8b6cf241617e232bd519cded2b5d9c5422373a5f",
+          "ordinal": 15,
+          "tracks": 48
+        }
+      ],
+      "npz_bytes": 30497,
+      "npz_filename": "video_0022.npz",
+      "npz_sha256": "0ec8a3a1e18873a22fd218917d7d8a9132c10a3e1a3062b6505f6082e214e56f",
+      "video_id": 22
+    },
+    {
+      "frames": [
+        {
+          "detections": 50,
+          "image_sha256": "6845d127e04641cc2049097d11e367684bf64faa31bda5abf8aa924a9c0d2ab2",
+          "ordinal": 0,
+          "tracks": 46
+        },
+        {
+          "detections": 50,
+          "image_sha256": "9028364d44650610d2e2fc46af26c8c610b769bef768fa1bfb5d8e19bf84e191",
+          "ordinal": 1,
+          "tracks": 46
+        },
+        {
+          "detections": 50,
+          "image_sha256": "abb61a3f122640c20e278b0a4e051e07428e010462474d7b3418316c4bad3d89",
+          "ordinal": 2,
+          "tracks": 47
+        },
+        {
+          "detections": 50,
+          "image_sha256": "9df9e665ccac0af44d2ab3bda37da7134a082de1a21914aa1892317b9550fa74",
+          "ordinal": 3,
+          "tracks": 41
+        },
+        {
+          "detections": 50,
+          "image_sha256": "ceb1258035c31a2e3d653ce71117513662cc9b7af76c4a0deaaa8d452d9b5065",
+          "ordinal": 4,
+          "tracks": 46
+        },
+        {
+          "detections": 50,
+          "image_sha256": "793291efb531c75c6f914b35eabba3f0bd0c1005e47995a947bd06d489962f44",
+          "ordinal": 5,
+          "tracks": 44
+        },
+        {
+          "detections": 50,
+          "image_sha256": "7170dec871dbb3b2c07b7f7b038ed662d21738a4a261222564cc2697f2a05723",
+          "ordinal": 6,
+          "tracks": 45
+        },
+        {
+          "detections": 50,
+          "image_sha256": "28de13afa53ee2eeff091d4d79d576379ec7755f828e3fe6fcb2bff73b98ff97",
+          "ordinal": 7,
+          "tracks": 45
+        },
+        {
+          "detections": 50,
+          "image_sha256": "df70808641b545c64aa2569bd03831952b6daad7c5a99b4987e9b399fd7bacce",
+          "ordinal": 8,
+          "tracks": 46
+        },
+        {
+          "detections": 50,
+          "image_sha256": "3cdc0e41f0156098626f18aff367ffeaaae2ce3cf9495e0c6d2a974c04b9b3c3",
+          "ordinal": 9,
+          "tracks": 47
+        },
+        {
+          "detections": 50,
+          "image_sha256": "2e8f6e8defde2f79054ea916ab28c70117c45b781f107b1fd97e57408a637477",
+          "ordinal": 10,
+          "tracks": 44
+        },
+        {
+          "detections": 50,
+          "image_sha256": "61514f83fd1f15a7e1063d99771f2864667218920655ec7b63379dfb94c95195",
+          "ordinal": 11,
+          "tracks": 43
+        },
+        {
+          "detections": 50,
+          "image_sha256": "74ad89210e3b06e41315e05da935b57d0f83c5130fee3b7c9dfa974dfa5d6dc1",
+          "ordinal": 12,
+          "tracks": 44
+        },
+        {
+          "detections": 50,
+          "image_sha256": "6907816b665bf067cdf287737faaa1aa8364efd2fdf7e0bd3412561aa3de181a",
+          "ordinal": 13,
+          "tracks": 44
+        },
+        {
+          "detections": 50,
+          "image_sha256": "7a9be5074ac7bdb477fed87950149489c0bf333d590e62970e67ad3c8eeb1fa7",
+          "ordinal": 14,
+          "tracks": 40
+        },
+        {
+          "detections": 50,
+          "image_sha256": "78e8ec29da638269d758364cb3b7d70ca715870e32c9bb2bf2e0646462608766",
+          "ordinal": 15,
+          "tracks": 44
+        }
+      ],
+      "npz_bytes": 29733,
+      "npz_filename": "video_0023.npz",
+      "npz_sha256": "f5d40fcf05f591f4dd54a1396e4b4bb0cf0922f16198aedd046f9bf62cb48643",
+      "video_id": 23
+    }
+  ]
+}
