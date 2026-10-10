@@ -68,7 +68,8 @@ def main(commit):
         stable.append({'left':left,'right':right,'cases':len(pairs),'H_positive':sum(r['h_score_delta']>0 for r in pairs),
             'CT_positive':sum(r['CT_delta']>0 for r in pairs),'matched_coverage_cases':sum(r['comparable_within_tolerance'] for r in pairs),
             'matched_CT_gain_or_FM_reduction_without_more_wrongKnown':sum(r['comparable_within_tolerance'] and (r['CT_delta']>0 or r['false_merge_delta']<0) and r['wrong_known_all_novel_delta']<=0 for r in pairs)})
-    corrections=read('TRAIN_FIRST_ERROR_CORRECTION_RESULT');roles=read('TRAIN_FIRST_REPRESENTATION_ROLE_ANALYSIS')
+    corrections=read('TRAIN_FIRST_ERROR_CORRECTION_RESULT');roles=read('TRAIN_FIRST_REPRESENTATION_ROLE_ANALYSIS');shift=read('INPUT_SHIFT_DIAGNOSTIC_RESULT')
+    if shift['status']!='COMPLETE_POSTHOC_DESCRIPTIVE_INPUT_SHIFT_NOT_CAUSAL_INTERVENTION' or shift['model_freeze_sha256']!=sha256_file(base/'model_freeze.json'):raise ValueError('Actual unchanged descriptive shift evidence required')
     support=read('audit/physical_cross_video_support')['frontends']['MASA_NATIVE']
     physical_rows=[]
     for order,r in support['orders'].items():
@@ -90,26 +91,27 @@ def main(commit):
         'TRAIN_FIRST_ERROR_CORRECTION_RESULT.json','TRAIN_FIRST_MODEL_FREEZE_RESULT.json','LIMITED_MASA_FEATURE_FULL_RESULT.json','LIMITED_MASA_FULL_FEATURE_VALIDATION.json',
         'EXACT_SEARCH_CPU_PROOF.json','EXACT_SEARCH_CUDA_PROOF.json','TRAINING_CURVES_RESULT.json','LIMITED_MASA_EVALUATION_RESULT.json',
         'TRAIN_BASELINE_COMPARISON.csv','REPRESENTATION_ABLATION.csv','PERSISTENT_POLICY_COMPARISON.csv','PER_ORDER_RESULTS.csv','ERROR_BREAKDOWN.csv',
-        'ERROR_CORRECTION_COMPARISON.csv','TRAINING_LOSS_TRACES.csv','LIMITED_MASA_CASE_ALIAS_MANIFEST.csv']
+        'ERROR_CORRECTION_COMPARISON.csv','TRAINING_LOSS_TRACES.csv','LIMITED_MASA_CASE_ALIAS_MANIFEST.csv','INPUT_SHIFT_DIAGNOSTIC_RESULT.json']
     artifact_hashes={n:sha256_file(out/n) for n in artifact_names}
     result={'schema_version':'trackocd.core.actual-train-first-final.v1','status':'COMPLETE_REAL_TRAIN_AND_LIMITED_PREDICTED_EVALUATION_SCIENTIFIC_NEGATIVE',
         'scope':'Independent new Train-first main, not R2; limited annotated-cadence MASA replay',
         'all_T0_through_T6_scientific_work_complete':True,'historical_M1_status':'BLOCKED_FRONTEND_QUALITY',
         'scope_authorization_sha256':'cc874517b5366c019b625ce3d6fcf0a33333c359cfb1dd8d03039d2cde290e99',
-        'report_source_registration_commit':commit,'source_registration_exact_remote_verified':True,'full_inference_preregistration_commit':val['preregistration_commit'],
+        'report_source_registration_commit':commit,'source_registration_exact_remote_verified':True,'full_inference_preregistration_commit':inference['preregistration_commit'],
+        'posthoc_evaluator_registration_commit':val['preregistration_commit'],
         'report_source_sha256':sha256_file(Path(__file__).resolve()),'model_freeze_sha256':sha256_file(base/'model_freeze.json'),'protected_sha256':freeze['protected_sha256'],
         'actual_fits':33,'selected_checkpoints':checkpoints,'retained_checkpoints':retained,'controlled_representation_cases':420,'controlled_policy_cases':1800,
         'limited_MASA_unique_executions':840,'limited_MASA_logical_cases':2040,'canonical_per_order_rows':4260,'actual_loss_trace_rows':15360,
         'train_p16_aggregate':[{'method':name,**row} for name,row in train_rows],'limited_MASA_p16_aggregate':[row for _,row in val_rows],
-        'limited_MASA_p16_fixed_comparison_sign_counts':stable,'Native_physical_support':physical_rows,'identical_frozen_physical_scores_for_all_methods':val['physical_native_reference'],
+        'limited_MASA_p16_fixed_comparison_sign_counts':stable,'Native_physical_support':physical_rows,'posthoc_input_shift':shift,'identical_frozen_physical_scores_for_all_methods':val['physical_native_reference'],
         'scientific_conclusions':{'Representation_PASS':False,'Temporal_Evidence_PASS':False,'Persistent_Decision_PASS':False,
             'reason':'Unseen Train macroRank1 not improved; A2 not better than staticcapacity; zero pureCT in all controlled learned policy cases. Report Val partial findings separately.',
             'new_TrackOCD_method_paper_claim_supported':False,'complete_credible_negative_result':True},
         'GT_in_live_memory':False,'Val_training_or_tuning':False,'TAO_Test_access':False,'new_physical_inference':False,'new_downloads':False,
         'PHE':val['PHE'],'artifact_sha256':artifact_hashes,'resources':resource,
         'old_app_goal_is_not_falsely_completed':True,'final_delivery_remote_verification':'Performed after report commit; see actual handoff, not a self-referential invented commit SHA'}
-    checkpoint_table='| Phase / model / seed | selected step or epoch | actual local checkpoint | SHA256 |\n|---|---:|---|---|\n'
-    for cp in checkpoints:checkpoint_table+=f"| {cp['phase']} / {cp['model']} / {cp['seed']} | {cp['step_or_epoch']} | `{cp['local_path']}` | `{cp['sha256']}` |\n"
+    checkpoint_table='| Phase / representation / model / seed | selected step or epoch | actual local checkpoint | SHA256 |\n|---|---:|---|---|\n'
+    for cp in checkpoints:checkpoint_table+=f"| {cp['phase']} / {cp['representation'] or '-'} / {cp['model']} / {cp['seed']} | {cp['step_or_epoch']} | `{cp['local_path']}` | `{cp['sha256']}` |\n"
     questions=f'''# Scientific conclusion — real negative result
 
 1. **Why previous Known collapse?** Old R0/R1 had tiny four-class/12-track
@@ -150,7 +152,12 @@ def main(commit):
    targets vs full Val4413/819, category support, physical noise/shortness,
    15→48prototype deployment shift and304561predicted IDs differ. Their
    numeric differences are descriptive, not an isolated frontend causal
-   experiment. No GT repair/counterfactual retraining was performed.
+   experiment. Selected Train mean available observations is
+   {shift['Train_selected']['mean_available_observations']:.4f} vs Native
+   {shift['Native_all']['mean_available_observations']:.4f}; match-conditioned
+   lengths and Known prototype/physical coverage are in the actual posthoc
+   descriptive diagnostic, not causal interventions. No GT repair or
+   counterfactual retraining was performed.
 9. **Physical restriction?** Known reliable1400/4413,Novel189/819. Main fixed
    reuse527 has118reliable current opportunities,409missed; only87have an
    earlier reliable same-category match. Other orders are in the support
@@ -239,6 +246,13 @@ not dense-frameonline. PHE INCOMPARABLE; incomplete supervision provenance
 precludes strict all-Novel-supervision-exclusion claims.
 
 {support_table}
+
+Posthoc descriptive Known prototype/physical-coverage counts (not new GT input
+to frozen inference and not a preregistered causal intervention):
+
+```json
+{json.dumps(shift['Known_GT_prototype_and_physical_coverage'],indent=2)}
+```
 
 Strict>=16support13.17% isnotclippedshort-trackabsoluteceiling. See
 SCIENTIFIC_CONCLUSION.md for allten requiredquestions, stablepair signs,

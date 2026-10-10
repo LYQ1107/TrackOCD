@@ -1106,3 +1106,20 @@
 - Actual352scoped tests passed/no skips(47.64s whileeightworkers run),including
   truefirstfullstream fixedcase/fullGT/explicitWAIT distinction andfinalreport
   completeness/actualmeanH gates. NativeGTjoin openedonlypostseal, no newfit.
+
+## 2026-10-10 — Posthoc descriptive input-shift diagnostic registration
+
+- Formalinference/metric sources and840jobs unchanged. Register oneCPU
+  actual256MiBRSSguard/joint25%RAMreservation descriptivechecker. Existing
+  GTjoin onlyafterpredefined full304561IDseal; no newGTannotations/Test,
+  semanticwordoutput,model/threshold/cost update or physical inference.
+- Quantify legalTrain15fit/33prototype-only/30missing-prototype KnownGT
+  crossedwith reliablephysicalcoverage; actualavailable first16clippedlength
+  profiles forTrain/Native/allmatched/unknownIDs. Unmatched not labelled
+  background/provenpollution; scalarcounts only,no rawflags/GT/pred uploads.
+- Explicitly posthocafterfirstValmetrics,notpreregistered causalintervention.
+  Finalreport source willbind actualdiagnostic,distinguishinference/evaluator
+  registration SHA and include policyrepresentation incheckpointtable labels.
+- Actual354scoped tests passed/noskips(54.05s with8inferenceworkers),trueclip
+  counting/postsealing/resourceguard/noncausal-description source checks.
+  Statistic hasnot runyet andcannot be claimed ascompleted fromsource/tests.
