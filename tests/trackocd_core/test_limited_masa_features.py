@@ -73,3 +73,29 @@ def test_semantic_integration_source_seals_before_evaluator_join_and_no_tuning()
     assert "'prototype_coverage':{'available':48,'inherited_known':78,'missing':30" in s
     assert 'known_ids=known_ids' in s and "'Val_tuning':False" in s
     assert "matches={TrackKey(r['video_id'],str(r['physical_track_id'])):None for r in routes}" in s
+
+
+def test_actual_frozen_semantic_integration_all_id_seals_and_denominators():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2];out=root/'outputs/trackocd_core/features/masa_limited_prefix_v1'
+    d=json.loads((out/'integration_result.json').read_text())
+    assert d==json.loads((root/'outputs/trackocd_core/LIMITED_MASA_INTEGRATION_RESULT.json').read_text())
+    assert d['status']=='PASS_FROZEN_FEATURE_BASELINE_POLICY_EVALUATOR_INTEGRATION'
+    assert d['physical_tracks']==892 and len(d['cases'])==40
+    assert not d['scientific_PASS_claimed'] and not d['GT_in_policy_state'] and not d['Val_tuning']
+    assert d['prototype_coverage']=={'available':48,'inherited_known':78,'missing':30,'Val_GT_supplement':False}
+    seals=out/'integration_sealed_predictions.json'
+    assert sha256_file(seals)==d['private_sealed_predictions']['sha256']
+    records=json.loads(seals.read_text());assert len(records)==40
+    identity_sets=[{(e['video_id'],e['physical_id']) for e in r['events']} for r in records]
+    assert all(len(r['events'])==892 and s==identity_sets[0] for r,s in zip(records,identity_sets))
+    assert {c['prefix'] for c in d['cases']}=={1,2,4,8,16}
+    reference=json.loads((root/'outputs/trackocd_core/audit/masa_full_val_physical_result.json').read_text())['results']['MASA_NATIVE']['canonical_tracking']
+    for c in d['cases']:
+        assert c['standard']['old_denominator']==27 and c['standard']['new_denominator']==3
+        assert c['standard']['all_denominator']==30 and c['standard']['missing_predicted_target_count']==23
+        assert c['unmatched_predicted_IDs_retained']==885
+        assert c['same_frozen_full_Val_physical_reference_not_subset_score']==reference
+    assert d['final_expected_fixed_full_GT']=={'known':4413,'novel':819,'reuse_opportunities':[527,529,547,531]}

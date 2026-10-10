@@ -963,3 +963,21 @@
   payloads/everyclippedprefix/nativequality/8compatible reuse verified. Semantic
   integration source uses exact old canonical physical-reference floats and
   completed evaluator-only join SHA1e6b0125...,never rounded invented scores.
+
+## 2026-10-10 — Frozen limited-MASA first4 semantic integration complete
+
+- ba18a50 exact remote registration;40 actual cases (8 methods x5 caps),
+  representative seed1027,all892physicalIDs each seal including885unmatched.
+  51.5387s CPU,847216640B peak RSS,nooptimization/GPU/physicalrerun/Test.
+- Legal48Train prototypes,78inherited Known IDs,30missingprototypeclasses
+  retained;Train-selected thresholds/bias frozen,15-to48prototype deployment
+  shift disclosed. GT geometry only loaded after actual irreversible seals.
+- Subset fullGT27Known/3Novel,23missingmatches consistently retained in all
+  denominators. This integration PASS is engineering only,not scientificPASS
+  or a988videoVal result. Frozen fullVal physical floats separately labelled.
+- Payload/private seals/fullGTjoin/freeze identities verified. Next full
+  encoding uses same registered source/config and reuses the4atomic shards;
+  remaining988-video universe includes every short/unmatchedphysicalID.
+- Scoped core/v2/PANDAS regression328passed/no skips (20.25s),including all
+  40actual all-ID seals,885unmatchedIDs,subset27/3denominators and frozen
+  canonical physical-reference equality. Scientific success not inferred.
