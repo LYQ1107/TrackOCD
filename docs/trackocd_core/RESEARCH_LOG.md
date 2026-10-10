@@ -893,3 +893,24 @@
   Actual local MASA metadata-only inventory304561IDs/114380singletons,1540022
   rawobs/1294110first-at-most16obs,FP16visual1987752960B;no pixels/features or
   physical inference rerun. Formal predicted feature extraction not started.
+
+## 2026-10-10 — T3 actual predicted-memory policy training completed
+
+- d270d37 prereg,18fits=raw/selectedA1/A2 xD1/D2 x3seeds,229legal policy
+  tracks/20epochs x4predicted-memory episodes,80AdamW updates per fit.
+  Every paired initial state/actualdescriptor-order-prefix SHA match;708params.
+- 446.9464s oneCPU,peak847216640B/noGPU,54local checkpoint hashes,313488B.
+  No GT repaired memory,representation updates,Val/Test or final heldout.
+  Protected policy sources unchanged throughout the concurrent representation
+  evaluation and technical routing correction. All finite development curve
+  choices preserved,including unrealizable requested coverage targets.
+- Development checkpoint scores overwhelmingly0,not scientificPASS. Do not
+  hide refusal/coverage loss or change the fixed bias grid/budget after heldout.
+  Next frozen evaluation includes noWAIT/noMemory/noRisk/reset/reliability
+  ablations and explicit coverage comparability flags.
+- Additional frozen-result-only retrieval audit source separates pseudo-Novel
+  query categories from Known probes,retains Known gallery negatives,and pairs
+  conditional video counts without any extra threshold/training/model selection.
+- Scoped core/v2/PANDAS319passed/no skips (19.18s);actual18paired fits,
+  54checkpoint hashes,80updates/input/init/GT-state boundaries and role-gallery
+  negative/unsupported-query tests passed. Scientific result remains pending.

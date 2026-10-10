@@ -103,3 +103,30 @@ def test_registered_heldout_partition_matches_real_feature_supervision():
         source=(root/'scripts/trackocd_core'/name).read_text()
         assert "cfg['heldout_partition']" in source
         assert "'final_heldout_selection'" not in source
+
+
+def test_actual_policy_all18fits80predicted_rollouts_same_capacity_inputs_init():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2];r=json.loads((root/'outputs/trackocd_core/TRAIN_FIRST_POLICY_RESULT.json').read_text())
+    assert len(r['fits'])==18 and not r['GT_repaired_memory'] and not r['final_heldout_opened']
+    assert r['GT_labels_used_only_for_targets_loss_evaluation'] and not r['val_or_test_access']
+    assert not r['DINO_detector_tracker_trained'] and not r['historical_outputs_overwritten']
+    for n,sha in r['source_sha256'].items():assert sha256_file(root/n)==sha
+    for representation in ('A0_RAW','A1_SELECTED','A2_EVIDENCE'):
+        for seed in (1027,1028,1029):
+            fits=[f for f in r['fits'] if f['representation']==representation and f['seed']==seed]
+            assert len(fits)==2 and len({f['initial_state_sha256'] for f in fits})==1
+            assert len({f['training_inputs_order_prefix_sha256'] for f in fits})==1
+            for f in fits:
+                assert f['parameters']==708 and f['optimizer_steps']==80 and f['epochs']==20
+                assert f['policy_train_tracks']==229 and len(f['trace'])==20
+                assert all(len(t['episodes'])==4 for t in f['trace'])
+                assert all(e['memory_updated_by_predictions_only'] for t in f['trace'] for e in t['episodes'])
+                assert [c['epoch'] for c in f['checkpoints']]==[5,10,20]
+                for c in f['checkpoints']:
+                    assert not c['development']['final_heldout_opened']
+                    cp=c['checkpoint'];assert sha256_file(root/cp['path'])==cp['sha256']
+                assert len(f['development_coverage_curve'])==5 and set(f['operating_points'])=={'0.5','0.75','1.0'}
+    assert r['resources']['checkpoint_bytes']==313488 and r['resources']['gpu_used'] is False

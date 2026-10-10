@@ -125,3 +125,13 @@ and representation; PHE remains INCOMPARABLE. Retrieval Recall@1/5/10 and
 spectral rank complement ACC,AUROC,CT,all-Novel wrongKnown and pollution.
 Mean/std across training seed means are distinguished from order variation.
 No heldout-driven redesign or Val Novel tuning is authorized.
+
+## T3 actual frozen policy fits
+
+All18registered raw/A1/A2 xD1/D2 x3seed fits completed:20epochs x4orders,
+80updates each,54private checkpoints totaling313488B,446.9464s oneCPU,
+peak847216640B RSS. Paired initialization and descriptor-order/prefix hashes
+match. Representation weights stayed frozen and actual predicted memory was
+never GT repaired. Most zero-bias development H/CT scores are0; bounded WAIT
+biases can recover commitment coverage but cannot be called correct discovery
+without the frozen heldout/fragmentation/merge evaluation. No extra trials.
