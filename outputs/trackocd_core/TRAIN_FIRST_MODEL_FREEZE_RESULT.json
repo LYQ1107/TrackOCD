@@ -1,0 +1,755 @@
+{
+  "TAO_Test_access": false,
+  "Val_Novel_training_or_tuning": false,
+  "cadence": "ANNOTATED-CADENCE CAUSAL REPLAY",
+  "final_goal_complete": false,
+  "historical_M1_status": "BLOCKED_FRONTEND_QUALITY",
+  "native_MASA_status": "LIMITED_COVERAGE_PROVENANCE_INCOMPLETE_FRONTEND",
+  "policy_operating_points": [
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -1.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -1.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -1.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A0_RAW",
+      "seed": 1027
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A0_RAW",
+      "seed": 1027
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 0.2,
+          "actual_development_total_commitment_coverage": 0.24573643410852714,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -1.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -1.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A0_RAW",
+      "seed": 1028
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A0_RAW",
+      "seed": 1028
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -1.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -1.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -1.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A0_RAW",
+      "seed": 1029
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A0_RAW",
+      "seed": 1029
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 0.8,
+          "actual_development_total_commitment_coverage": 0.7434108527131783,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 0.8,
+          "actual_development_total_commitment_coverage": 0.7434108527131783,
+          "target_coverage": 0.75,
+          "wait_bias": 0.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -1.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A1_SELECTED",
+      "seed": 1027
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 0.6697674418604651,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 0.6697674418604651,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 0.6697674418604651,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A1_SELECTED",
+      "seed": 1027
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 0.5599999999999999,
+          "actual_development_total_commitment_coverage": 0.6914728682170542,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 0.5599999999999999,
+          "actual_development_total_commitment_coverage": 0.6914728682170542,
+          "target_coverage": 0.75,
+          "wait_bias": 0.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -1.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A1_SELECTED",
+      "seed": 1028
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A1_SELECTED",
+      "seed": 1028
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": 0.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": 0.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A1_SELECTED",
+      "seed": 1029
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A1_SELECTED",
+      "seed": 1029
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": 0.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": 0.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 0.6697674418604651,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 0.6697674418604651,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 0.6697674418604651,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 0.52,
+          "actual_development_total_commitment_coverage": 0.6883720930232557,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 0.52,
+          "actual_development_total_commitment_coverage": 0.6883720930232557,
+          "target_coverage": 0.75,
+          "wait_bias": 0.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -1.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": 0.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": 0.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": 0.0
+        }
+      },
+      "policy": "D1_SIMPLE_MLP",
+      "representation": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "points": {
+        "0.5": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.5,
+          "wait_bias": -2.0
+        },
+        "0.75": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 0.75,
+          "wait_bias": -2.0
+        },
+        "1.0": {
+          "actual_development_coverage": 1.0,
+          "actual_development_total_commitment_coverage": 1.0,
+          "target_coverage": 1.0,
+          "wait_bias": -2.0
+        }
+      },
+      "policy": "D2_RISK_AWARE",
+      "representation": "A2_EVIDENCE",
+      "seed": 1029
+    }
+  ],
+  "private_freeze_sha256": "070f2182724449564ee8f6297f902b1c649c2d4a2f55fef5cac9222cbc991822",
+  "protected_sha256": {
+    "configs/trackocd_core/SCOPE_AMENDMENT_TRAIN_FIRST.json": "3ec759463349ac405fac9482e119ce952140777cd4760bf15594214f4492b56c",
+    "configs/trackocd_core/common_features.json": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "configs/trackocd_core/evidence_training.json": "938c687ca88c73f5bae4691c119d64e041a823079120f64e6d6d0faeec469972",
+    "configs/trackocd_core/gt_main_evaluation.json": "520f56cbf5804bdddc8a16d4503b338b06115f6d52c79e08bfc6094dc57469e1",
+    "configs/trackocd_core/persistent_policy_training.json": "e1770fa7d7ba384a7e92e3871282a85ba1c3ac95b659ba957ed59a65e8995d58",
+    "configs/trackocd_core/representation_training.json": "050ff8420b8893a3eed2602a07c26bab12dc798ab0d3dd3b14780dbb7cd4f974",
+    "configs/trackocd_core/training_split.json": "eeebe829463aa47bbb9b5f5bf0f3655aee0faca0330fbebd67eaf658dc9584ab",
+    "outputs/trackocd_core/TRAIN_FIRST_REPRESENTATION_ROLE_ANALYSIS.json": "5199014efdabe04e5022894654c88aa111aa0a96f4a7675d73ee1a263231a462",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888",
+    "outputs/trackocd_core/core_training/train_first_v1/evidence/training_receipt.json": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D1_SIMPLE_MLP_seed1027_epoch5.pt": "5f6f5560cef90d52db032adbee53c1536a1c1d5f306e86f8d874d018b870c192",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D1_SIMPLE_MLP_seed1028_epoch20.pt": "52df80b34e78f5eac9939ffa840d5eb9a2bb917ce30b2819e42a7f3aac0f8909",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D1_SIMPLE_MLP_seed1029_epoch5.pt": "7a59f2d64c40573df4b17dc6a44de66a16792f83c8139c25e4ade174533728d9",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D2_RISK_AWARE_seed1027_epoch5.pt": "1c257d6b8178b0e72f80a4d0b0b0f6d7a457de87cecb770b03cee66222540eda",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D2_RISK_AWARE_seed1028_epoch5.pt": "bc7433d03066efa244bfc63f24a65eac62be3270bf1745c317be456d74e2c03a",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D2_RISK_AWARE_seed1029_epoch5.pt": "775946dc63aa5a29201ad19cc2b34ec8b13a41f72e409f8ea111d8b6d72a90e9",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D1_SIMPLE_MLP_seed1027_epoch20.pt": "4ef56857944aef3d7cb172812ff2e5dd80be76b5f1fae6a8410a35a4e4aba1ac",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D1_SIMPLE_MLP_seed1028_epoch20.pt": "cb90e383ccb5da1f2233d96af4a4b487d58a2747c14014e5c614f225c0944d1e",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D1_SIMPLE_MLP_seed1029_epoch5.pt": "0200285abfc33a584da2396096287d898708594a794a2faf61c6338be0acf2dc",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D2_RISK_AWARE_seed1027_epoch5.pt": "b108a826d34de90e86e7fe77fadc7e9b502afcf7dbeb2c2a9d90922247eb1b70",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D2_RISK_AWARE_seed1028_epoch5.pt": "56be3530e70d38449b6342ab66e439ac26d2e8a97c104cea47a31c5d5b692fa5",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D2_RISK_AWARE_seed1029_epoch5.pt": "131a081ebbac783f5beefef5667c2eba38d4558e53e850a40d134ed48d1f6807",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D1_SIMPLE_MLP_seed1027_epoch5.pt": "f185504a9cf1ab0c2dcd36ac1b4c501b793187859d2e58db351abba111408ec5",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D1_SIMPLE_MLP_seed1028_epoch20.pt": "d659845717997eec4cf45bae39efb7f0290b323021a24e95b4c2750b1570deb7",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D1_SIMPLE_MLP_seed1029_epoch5.pt": "f9bf83b829871991eab753848cec16375a85968609de3f97628a8b27c9454169",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D2_RISK_AWARE_seed1027_epoch5.pt": "7c3bd00eca086685fdcc991e806e97cfa28af1ef0eff9092129af19c36bbf9e2",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D2_RISK_AWARE_seed1028_epoch5.pt": "f677ab154a20bee06af7df75ba0ec611aaa61a8732c519b8099c6addb6ca188e",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D2_RISK_AWARE_seed1029_epoch5.pt": "2f57535c2329f0385db31e76f5daee146dfe02ab182b8033398fb66cbaa24d8a",
+    "outputs/trackocd_core/core_training/train_first_v1/policy/training_receipt.json": "0fdd8c3b4e9e32726cfb53ef64226b16d70fdf7c50314260daf0bb01b477d66e",
+    "outputs/trackocd_core/core_training/train_first_v1/policy_evaluation/results.json": "c224d6d01cdff2ab9d7c1a55441121e9ac51c23e16690c6e9f23257663c43ac1",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_1_seed1027_step500.pt": "5786f9d689d1ab656d5662408040a13cdf693591276a4c27feedc5463d5ae7fe",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_1_seed1028_step250.pt": "fb4958da0e93387fcafa774890d7f7314324dea76d3b80e58c4ebcf541d5061e",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_1_seed1029_step500.pt": "94f9a02181ae70cefec978fd03216b5c4ac366aa6ac6017b05dac74c4c100112",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_5_seed1027_step250.pt": "8675bc5254a5519f5632769ba26349a9a96e9c18f31bd53ee5a477d6bb34f75d",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_5_seed1028_step250.pt": "d6da14ae0af4c2ef55a5f9034a1c82e3463c808e25adb6d3357d6d72120d310a",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_5_seed1029_step500.pt": "db869e25476155d0582a6cfb75a86b0a387c6f020c88da18ee225253288d47ba",
+    "outputs/trackocd_core/core_training/train_first_v1/representation/training_receipt.json": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334",
+    "outputs/trackocd_core/core_training/train_first_v1/representation_evaluation/results.json": "e99142788ea58157abd4f30a8512bf140f3046ae17348368252bb44cdfc7b9cd",
+    "scripts/trackocd_core/train_core_representation.py": "faa2e16faae993231995cc7373863ecba589a8e569fcc15f7bc55aa98e144276",
+    "scripts/trackocd_core/train_persistent_policy.py": "241f6b5ff1940280762f14be05ce4077591e4654be1f34f9056ff3e520f31bec",
+    "src/trackocd_core/persistent_policy.py": "7ae1d13eca0ebd4633e0b1af63cc4f841baa4cd01df6db00f83a949ee4bfab31",
+    "src/trackocd_core/train_first_experiment.py": "d8899471f9b857fe34ef88df2b9f42819711aef9942f6a2d3fb5594ca3b126f9",
+    "src/trackocd_core/train_first_replay.py": "ab7f964a6cc5f88fb811a6d3c74ea5460f0bc27633ffd388a4d8f608405cb9fb",
+    "src/trackocd_core/train_first_representation.py": "d38b53200398326e8e7dbe471150056b8ef9cfee4b4ee43a4f9e5c9a89b2fd01"
+  },
+  "prototype_count_shift": "Train episodes15 to final48: explicit distribution shift,no retuning on Val",
+  "representation_family": "A1_ADAPTER",
+  "representation_thresholds": [
+    {
+      "backend": "B0_frame_snapshot_vote",
+      "representation": "A0_RAW",
+      "seed": null,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.5,
+        "dpmeans_lambda_distance": 0.55,
+        "existing_cosine_threshold": 0.45,
+        "known_cosine_threshold": 0.5
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A0_RAW",
+      "seed": null,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.30000000000000004,
+        "existing_cosine_threshold": 0.7,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B2_track_dpmeans",
+      "representation": "A0_RAW",
+      "seed": null,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.35,
+        "dpmeans_lambda_distance": 0.15000000000000002,
+        "existing_cosine_threshold": 0.85,
+        "known_cosine_threshold": 0.65
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_ADAPTER",
+      "seed": 1027,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.30000000000000004,
+        "existing_cosine_threshold": 0.7,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_ADAPTER",
+      "seed": 1028,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.35,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.65
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_ADAPTER",
+      "seed": 1029,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.35,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.65
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_GEOMETRY_1",
+      "seed": 1027,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_GEOMETRY_1",
+      "seed": 1028,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_GEOMETRY_1",
+      "seed": 1029,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.15000000000000002,
+        "existing_cosine_threshold": 0.85,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_GEOMETRY_5",
+      "seed": 1027,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.15000000000000002,
+        "existing_cosine_threshold": 0.85,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_GEOMETRY_5",
+      "seed": 1028,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_GEOMETRY_5",
+      "seed": 1029,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.15000000000000002,
+        "existing_cosine_threshold": 0.85,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_SELECTED",
+      "seed": 1027,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.30000000000000004,
+        "existing_cosine_threshold": 0.7,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_SELECTED",
+      "seed": 1028,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.35,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.65
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A1_SELECTED",
+      "seed": 1029,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.35,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.65
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A2_EVIDENCE",
+      "seed": 1027,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A2_EVIDENCE",
+      "seed": 1028,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A2_EVIDENCE",
+      "seed": 1029,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.44999999999999996,
+        "existing_cosine_threshold": 0.55,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A2_CAPACITY_CONTROL",
+      "seed": 1027,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A2_CAPACITY_CONTROL",
+      "seed": 1028,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.19999999999999996,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.8
+      }
+    },
+    {
+      "backend": "B1_track_nearest",
+      "representation": "A2_CAPACITY_CONTROL",
+      "seed": 1029,
+      "thresholds": {
+        "dpmeans_known_distance_threshold": 0.35,
+        "dpmeans_lambda_distance": 0.7,
+        "existing_cosine_threshold": 0.3,
+        "known_cosine_threshold": 0.65
+      }
+    }
+  ],
+  "schema_version": "trackocd.core.train-main-frozen.v1",
+  "scientific_PASS_claimed": false,
+  "selection": "Previously registered Train development checkpoint/family/operating points; no Val tuning or heldout redesign",
+  "status": "FROZEN_TRAIN_ONLY_MODELS_AND_OPERATING_POINTS",
+  "val_prototypes": "All48available inheritedKnown classes from151legal Train prototype tracks,same prefix16 mean procedure;30missing Known IDs stay in GT denominator; no Val supplementation"
+}

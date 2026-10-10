@@ -914,3 +914,33 @@
 - Scoped core/v2/PANDAS319passed/no skips (19.18s);actual18paired fits,
   54checkpoint hashes,80updates/input/init/GT-state boundaries and role-gallery
   negative/unsupported-query tests passed. Scientific result remains pending.
+
+## 2026-10-10 — T4 actual full controlled science and model freeze
+
+- be4bc54 exact remote before1800policy heldout cases,256.8800s CPU/847216640B
+  peak. All10methods x3seeds x4orders x5caps x3coverage points kept. Every
+  case CT0. MainD1p16H.118175/FM0;D2 H0/FM.309524;FULL H0/FM.300265.
+  Conditional globalHungarian NewACC is not certified pure token reuse.
+- Full Novel reuse coverage.966931/total.915172;withoutWAIT FM.333333 at100%
+  coverage. No matched-risk success from refusal.377/540paired cases satisfy
+  BOTH coveragegap<=.05,163notcomparable; no desired target pretended achieved.
+- Frozen role diagnostics separate unseen queries fromKnown probes:all16have
+  crossvideo positives;raw NovelmacroRank1p1/p2/p4/p8/p16=.2/.3/.45/.45/.35;
+  A1=.15833/.15833/.18333/.225/.30833;A2no independentgain. Overall rank
+  improvements cannot support unseenRank1 PASS. Partial AUROC/Recall@K gains
+  and sparse4class support disclosed,not blanket claim allmetricscollapse.
+- Actual99local checkpoints retained,33selected fitcheckpoints/52protected
+  model/config/source/result hashes frozen afterallTrain fits/evaluation.
+  2220actual GT controlled rows in PER_ORDER_RESULTS/ERROR_BREAKDOWN. Not
+  final goal completion or scientificPASS. No post-heldout method redesign.
+- Limited MASA first4metadata-video all-ID feature registration source ready,
+  prospective1GPUintegration then8fresh-safe GPUs only afteractual semantic
+  integration. Target304561tracks/1294110prefixobs,~1.85GiB FP16visual,all
+  unknown/unmatchedincluded. No detector/tracker/GT/Test/newasset route.
+- Actual T4/source scoped core/v2/PANDAS323passed/no skips (17.44s),including
+  all fixed science denominators,coverage-comparability,actual negative role
+  results,all52freeze identities and category-agnostic prefix planning.
+- Final pre-encoding scoped325passed/no skips (20.15s),including actual first
+  four frozen native shards:every physical ID/short track/prefixcount retained,
+  current encoder source has GT/Test/network barrier and full-run integration
+  gate. Future formal encoding is not falsely marked complete at registration.

@@ -1,0 +1,5607 @@
+{
+  "analyses": [
+    {
+      "lineage": null,
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.7166666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 1.0,
+            "41": 0.25,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.2536890645586298,
+          "recall_at_1_per_category": {
+            "1144": 0.5,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.8484848484848485,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.855072463768116,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.6402173913043477,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.25,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.2,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": null
+    },
+    {
+      "lineage": null,
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8159420289855073,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.29472990777338604,
+          "recall_at_1_per_category": {
+            "1144": 0.5,
+            "126": 0.3333333333333333,
+            "174": 0.0,
+            "211": 0.7878787878787878,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.8260869565217391,
+            "95": 0.0
+          },
+          "recall_at_5_category_macro": 0.6706521739130434,
+          "recall_at_5_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9565217391304348,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": null
+    },
+    {
+      "lineage": null,
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8083333333333332,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.3037220026350461,
+          "recall_at_1_per_category": {
+            "1144": 0.0,
+            "126": 0.3333333333333333,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.5,
+            "805": 0.8478260869565217,
+            "95": 0.16666666666666666
+          },
+          "recall_at_5_category_macro": 0.6728260869565218,
+          "recall_at_5_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.9782608695652174,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.45,
+          "recall_at_1_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": null
+    },
+    {
+      "lineage": null,
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8666666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 1.0,
+            "805": 1.0,
+            "95": 1.0
+          },
+          "recall_at_1_category_macro": 0.48619894598155466,
+          "recall_at_1_per_category": {
+            "1144": 0.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9090909090909091,
+            "235": 0.5,
+            "347": 0.0,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.8695652173913043,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.7333333333333333,
+          "recall_at_5_per_category": {
+            "1144": 0.5,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.5,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.6,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.45,
+          "recall_at_1_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": null
+    },
+    {
+      "lineage": null,
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.925,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 1.0,
+            "805": 1.0,
+            "95": 1.0
+          },
+          "recall_at_1_category_macro": 0.550691699604743,
+          "recall_at_1_per_category": {
+            "1144": 0.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9090909090909091,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.8478260869565217,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.7909420289855073,
+          "recall_at_5_per_category": {
+            "1144": 0.25,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.35,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": null
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.6554347826086957,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.42167325428195,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.8181818181818182,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.25,
+            "805": 0.8985507246376812,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5995059288537549,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9420289855072463,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 1.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 1.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8568840579710144,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.5685441370223979,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.8484848484848485,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9202898550724637,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.7940711462450593,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.5,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.325,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.125,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.5,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9333333333333333,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.6776350461133069,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9393939393939394,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.75,
+            "805": 0.9202898550724637,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.45,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.5,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.3,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9166666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.759387351778656,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9090909090909091,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.8826086956521738,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.625,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 1.0,
+            "896": 0.5,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9166666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8177206851119895,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 1.0,
+            "211": 0.9090909090909091,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8833333333333332,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.625,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 1.0,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.275,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.7174901185770751,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.25,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.333300395256917,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.9090909090909091,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.8405797101449275,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5979249011857707,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.25,
+            "805": 0.9565217391304348,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8045783926218709,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.36179183135704873,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.8787878787878788,
+            "235": 0.0,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9057971014492754,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.7160408432147563,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.25,
+            "805": 0.9710144927536232,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8666666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.5647233201581028,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.6666666666666666,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 0.3333333333333333,
+            "382": 0.25,
+            "41": 0.5,
+            "805": 0.927536231884058,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8666666666666666,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.325,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.175,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.6587944664031621,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.8985507246376812,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.9137681159420289,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.45,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.6580698287220026,
+          "recall_at_1_per_category": {
+            "1144": 0.5,
+            "126": 0.6666666666666666,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 1.0,
+            "41": 0.5,
+            "805": 0.8913043478260869,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8652173913043477,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.45,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.5962450592885375,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 1.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3071805006587615,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.8181818181818182,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.9202898550724637,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5705204216073781,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 1.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.175,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8258234519104086,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.35800395256916995,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.7575757575757576,
+            "235": 0.25,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.9057971014492754,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.7508234519104084,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.2,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.932608695652174,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.6633399209486166,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8181818181818182,
+            "235": 0.5,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.75,
+            "805": 0.8985507246376812,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9311594202898551,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9782608695652174,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.225,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8026021080368906,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8484848484848485,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.927536231884058,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9123188405797101,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9565217391304348,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.225,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9159420289855073,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8616600790513834,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8484848484848485,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9137681159420289,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.35,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.6516798418972332,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9637681159420289,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.42470355731225296,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.8484848484848485,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.25,
+            "805": 0.8985507246376812,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5661725955204215,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9420289855072463,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 1.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8568840579710144,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.5663702239789197,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.8484848484848485,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.8985507246376812,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.7947957839262187,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.5,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9782608695652174,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.325,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.125,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.5,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.6534584980237155,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 1.0,
+            "211": 0.8787878787878788,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.9057971014492754,
+            "95": 0.8333333333333334
+          },
+          "recall_at_5_category_macro": 0.875,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.5,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.45,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.5,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8833333333333332,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.7563570487483531,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8787878787878788,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.8826086956521738,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.375,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 1.0,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8833333333333332,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.7646903820816864,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 1.0,
+            "211": 0.8787878787878788,
+            "235": 0.5,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8833333333333332,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.625,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 1.0,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.275,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.7174901185770751,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.25,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.333300395256917,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.9090909090909091,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.8405797101449275,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5979249011857707,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.25,
+            "805": 0.9565217391304348,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8295783926218709,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 1.0,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3633728590250329,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.9090909090909091,
+            "235": 0.0,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.8913043478260869,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.7160408432147563,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9710144927536232,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8666666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.5056653491436099,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.3333333333333333,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.5,
+            "805": 0.9202898550724637,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8416666666666666,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.325,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.6254611330698288,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.6666666666666666,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.8985507246376812,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.863768115942029,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.45,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8652173913043477,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.6580698287220026,
+          "recall_at_1_per_category": {
+            "1144": 0.5,
+            "126": 0.6666666666666666,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 1.0,
+            "41": 0.5,
+            "805": 0.8913043478260869,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8652173913043477,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.45,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.5962450592885375,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 1.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3057312252964427,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.8181818181818182,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.9057971014492754,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5697957839262188,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 1.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9782608695652174,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.175,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8272727272727274,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3739459815546772,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.7575757575757576,
+            "235": 0.25,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.8985507246376812,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.7508234519104084,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.2,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.932608695652174,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.6420948616600791,
+          "recall_at_1_per_category": {
+            "1144": 0.5,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8484848484848485,
+            "235": 0.5,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.75,
+            "805": 0.9057971014492754,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9031291172595519,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9696969696969697,
+            "235": 0.5,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9782608695652174,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.225,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9144927536231883,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9782608695652174,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.7776021080368906,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8484848484848485,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.927536231884058,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9092885375494072,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9696969696969697,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9565217391304348,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.375,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 1.0,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.225,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8646903820816864,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8787878787878788,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.910737812911726,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9696969696969697,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.35,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt",
+          "sha256": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 1,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.6547101449275363,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 1.0,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9637681159420289,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.389064558629776,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.3333333333333333,
+            "174": 0.0,
+            "211": 0.8181818181818182,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.25,
+            "805": 0.9057971014492754,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.6002305665349144,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9492753623188406,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 1.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 1.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt",
+          "sha256": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 2,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8538537549407114,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.5859354413702239,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.8484848484848485,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_5_category_macro": 0.735737812911726,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 0.3333333333333333,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.325,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.125,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.5,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.325,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt",
+          "sha256": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 4,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.6776350461133069,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9393939393939394,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.75,
+            "805": 0.9202898550724637,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.45,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.5,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.3,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt",
+          "sha256": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 8,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8833333333333332,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.7601119894598154,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.9090909090909091,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.75,
+            "805": 0.9420289855072463,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.8826086956521738,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.6,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.5,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt",
+          "sha256": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 16,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8833333333333332,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8184453227931489,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 1.0,
+            "211": 0.9090909090909091,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9420289855072463,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8833333333333332,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.625,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 1.0,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.275,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1027
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt",
+          "sha256": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd"
+        },
+        "step": 250,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 1,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.7182147562582346,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.25,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3499670619235837,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.9090909090909091,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.8405797101449275,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.5979249011857707,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 0.3333333333333333,
+            "382": 0.5,
+            "41": 0.25,
+            "805": 0.9565217391304348,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt",
+          "sha256": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd"
+        },
+        "step": 250,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 2,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8045783926218709,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.36034255599472986,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.8787878787878788,
+            "235": 0.0,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.8913043478260869,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.6827075098814228,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 0.75,
+            "41": 0.25,
+            "805": 0.9710144927536232,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.15,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.6,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt",
+          "sha256": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd"
+        },
+        "step": 250,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 4,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.8666666666666666,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.5397233201581028,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.3333333333333333,
+            "174": 0.5,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 0.6666666666666666,
+            "382": 0.25,
+            "41": 0.5,
+            "805": 0.927536231884058,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8666666666666666,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 1.0,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.325,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.175,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.3,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt",
+          "sha256": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd"
+        },
+        "step": 250,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 8,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.6247364953886693,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 0.6666666666666666,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.8913043478260869,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.863768115942029,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.45,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt",
+          "sha256": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd"
+        },
+        "step": 250,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 16,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.6580698287220026,
+          "recall_at_1_per_category": {
+            "1144": 0.5,
+            "126": 0.6666666666666666,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 1.0,
+            "41": 0.5,
+            "805": 0.8913043478260869,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.8652173913043477,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 1.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.3,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.45,
+          "recall_at_5_per_category": {
+            "1229": 1.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1028
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt",
+          "sha256": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 1,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.5962450592885375,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.25,
+            "347": 1.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3071805006587615,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.8181818181818182,
+            "235": 0.0,
+            "347": 0.0,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.9202898550724637,
+            "95": 0.3333333333333333
+          },
+          "recall_at_5_category_macro": 0.5697957839262188,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 0.6666666666666666,
+            "174": 0.0,
+            "211": 0.9696969696969697,
+            "235": 0.0,
+            "347": 1.0,
+            "382": 0.0,
+            "41": 0.25,
+            "805": 0.9782608695652174,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.175,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.7,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt",
+          "sha256": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 2,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.826548089591568,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.5,
+            "211": 0.9393939393939394,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.3746706192358366,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 0.0,
+            "174": 0.0,
+            "211": 0.7575757575757576,
+            "235": 0.25,
+            "347": 0.3333333333333333,
+            "382": 0.0,
+            "41": 0.0,
+            "805": 0.9057971014492754,
+            "95": 0.5
+          },
+          "recall_at_5_category_macro": 0.7508234519104084,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 0.0,
+            "211": 0.9393939393939394,
+            "235": 0.5,
+            "347": 1.0,
+            "382": 0.75,
+            "41": 0.5,
+            "805": 0.9855072463768116,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.225,
+          "recall_at_10_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.2,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.8,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.225,
+          "recall_at_5_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt",
+          "sha256": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 4,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.932608695652174,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.8333333333333334
+          },
+          "recall_at_1_category_macro": 0.6383399209486166,
+          "recall_at_1_per_category": {
+            "1144": 0.75,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8181818181818182,
+            "235": 0.25,
+            "347": 0.0,
+            "382": 0.25,
+            "41": 0.75,
+            "805": 0.8985507246376812,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9311594202898551,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9782608695652174,
+            "95": 0.8333333333333334
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.225,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt",
+          "sha256": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 8,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9152173913043479,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9855072463768116,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8026021080368906,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8484848484848485,
+            "235": 0.75,
+            "347": 0.3333333333333333,
+            "382": 0.75,
+            "41": 0.75,
+            "805": 0.927536231884058,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9115942028985506,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9492753623188406,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.35,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_1_category_macro": 0.225,
+          "recall_at_1_per_category": {
+            "1229": 0.0,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.35,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    },
+    {
+      "lineage": {
+        "checkpoint": {
+          "bytes": 2171676,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt",
+          "sha256": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0"
+        },
+        "step": 500,
+        "training_model": "A2_CAPACITY_CONTROL",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "prefix": 16,
+      "representation": "A2_CAPACITY_CONTROL",
+      "roles": {
+        "known": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 201,
+          "query_tracks": 207,
+          "recall_at_10_category_macro": 0.9159420289855073,
+          "recall_at_10_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9927536231884058,
+            "95": 0.6666666666666666
+          },
+          "recall_at_1_category_macro": 0.8616600790513834,
+          "recall_at_1_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 0.8484848484848485,
+            "235": 0.75,
+            "347": 0.6666666666666666,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9347826086956522,
+            "95": 0.6666666666666666
+          },
+          "recall_at_5_category_macro": 0.9137681159420289,
+          "recall_at_5_per_category": {
+            "1144": 1.0,
+            "126": 1.0,
+            "174": 1.0,
+            "211": 1.0,
+            "235": 0.75,
+            "347": 1.0,
+            "382": 1.0,
+            "41": 0.75,
+            "805": 0.9710144927536232,
+            "95": 0.6666666666666666
+          },
+          "unsupported_queries": 6
+        },
+        "pseudo_novel": {
+          "gallery": "all heldout Known and pseudo-Novel except same video",
+          "queries_with_cross_video_positive": 16,
+          "query_tracks": 16,
+          "recall_at_10_category_macro": 0.475,
+          "recall_at_10_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "recall_at_1_category_macro": 0.35,
+          "recall_at_1_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.0
+          },
+          "recall_at_5_category_macro": 0.475,
+          "recall_at_5_per_category": {
+            "1229": 0.5,
+            "429": 0.9,
+            "896": 0.0,
+            "99": 0.5
+          },
+          "unsupported_queries": 0
+        }
+      },
+      "seed": 1029
+    }
+  ],
+  "model_optimizer_or_selection": false,
+  "new_threshold_trial": false,
+  "paired_p16": [
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.31852631578947366,
+              0.0
+            ],
+            "right_minus_left": -0.2222222222222222,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.22725704600974045,
+              0.6007216241679308
+            ],
+            "right_minus_left": 0.45696333391512156,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "main",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.5,
+              0.0
+            ],
+            "right_minus_left": -0.2857142857142857,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.3288578127695136,
+              0.5949267712307382
+            ],
+            "right_minus_left": 0.4609029189836303,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.46153846153846156,
+              0.0
+            ],
+            "right_minus_left": -0.2857142857142857,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.3266300895107114,
+              0.5883547421668618
+            ],
+            "right_minus_left": 0.45692331840911293,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.32899999999999996,
+              0.0
+            ],
+            "right_minus_left": -0.2222222222222222,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.22790659684333817,
+              0.5981715284177304
+            ],
+            "right_minus_left": 0.45696333391512156,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.3185263157894736
+            ],
+            "right_minus_left": 0.2222222222222222,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.634080391773504
+            ],
+            "right_minus_left": 0.4597846458746795,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "main",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -1.0,
+              0.0
+            ],
+            "right_minus_left": -0.5714285714285714,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.7088617241663764
+            ],
+            "right_minus_left": 0.5891407396321685,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.9230769230769231,
+              0.0
+            ],
+            "right_minus_left": -0.5714285714285714,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.021169950118405802,
+              0.6652446685554197
+            ],
+            "right_minus_left": 0.45847484449083,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.3290000000000001
+            ],
+            "right_minus_left": 0.2222222222222222,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.6349442673533824
+            ],
+            "right_minus_left": 0.46104265402843614,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.31852631578947366,
+              0.0
+            ],
+            "right_minus_left": -0.2222222222222222,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.02747067448680352,
+              0.761739667356494
+            ],
+            "right_minus_left": 0.6125472455047722,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "main",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.02690096327513546,
+              0.6160250291781998
+            ],
+            "right_minus_left": 0.4741079887706347,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.9230769230769231,
+              0.0
+            ],
+            "right_minus_left": -0.5714285714285714,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.7691703725372021
+            ],
+            "right_minus_left": 0.6437352758351828,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.32899999999999996,
+              0.0
+            ],
+            "right_minus_left": -0.2222222222222222,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.027001488019921246,
+              0.7065260730747792
+            ],
+            "right_minus_left": 0.5727586303597969,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A0_RAW",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A1_SELECTED",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.20454657733605916,
+              0.19765513259229572
+            ],
+            "right_minus_left": -0.010308797419782079,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "main",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.5,
+              0.0
+            ],
+            "right_minus_left": -0.2857142857142857,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.26107981093698035,
+              0.24997361135890153
+            ],
+            "right_minus_left": 0.10833501365644421,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.46153846153846156,
+              0.0
+            ],
+            "right_minus_left": -0.2857142857142857,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.26909435019952666,
+              0.15611890384451282
+            ],
+            "right_minus_left": 0.005939785229593542,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              0.0024983738275040058,
+              0.031821134653731084
+            ],
+            "right_minus_left": 0.015456022080031606,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.31852631578947366,
+              0.0
+            ],
+            "right_minus_left": -0.2222222222222222,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.17091824702204167,
+              0.3997227679176255
+            ],
+            "right_minus_left": 0.01265849955424797,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "main",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.1475393321217529,
+              0.3526495888058788
+            ],
+            "right_minus_left": -0.04740988264420132,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.10525044480211401,
+              0.41883353960396036
+            ],
+            "right_minus_left": 0.018878158995101146,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.6579999999999999,
+              0.0
+            ],
+            "right_minus_left": -0.4444444444444444,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.13304049357055242,
+              0.3819965069066981
+            ],
+            "right_minus_left": 0.016350364963503616,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.3185263157894736
+            ],
+            "right_minus_left": 0.2222222222222222,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.25113399018020033,
+              0.6080871391957267
+            ],
+            "right_minus_left": -0.09877321450116683,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "main",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.75,
+              0.0
+            ],
+            "right_minus_left": -0.42857142857142855,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.059594189191633416,
+              0.6164173402656709
+            ],
+            "right_minus_left": 0.06590086093191688,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.23076923076923078
+            ],
+            "right_minus_left": 0.14285714285714285,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.3109806270933546,
+              0.40221823766965903
+            ],
+            "right_minus_left": -0.16767719829567407,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.3290000000000001
+            ],
+            "right_minus_left": 0.2222222222222222,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.27924243712124974,
+              0.63789046814053
+            ],
+            "right_minus_left": -0.08776514226639165,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A1_SELECTED",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.0032529668788015,
+              0.015053386129257947
+            ],
+            "right_minus_left": 0.004274198943249263,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "main",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.0037223558478986533,
+              0.017795630473187423
+            ],
+            "right_minus_left": 0.005460668021721404,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.46153846153846156,
+              0.0
+            ],
+            "right_minus_left": -0.2857142857142857,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.2856088137935214,
+              0.1521440131004611
+            ],
+            "right_minus_left": -0.001940830780049252,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.004533420568434096,
+              0.01860781095445281
+            ],
+            "right_minus_left": 0.005653643937856168,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1027
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.14657348613531887,
+              0.1526462455968281
+            ],
+            "right_minus_left": 0.025788608933587975,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "main",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.08139325082950859,
+              0.005869895289237886
+            ],
+            "right_minus_left": -0.019725878276809827,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.214473689496794,
+              0.006764094441709391
+            ],
+            "right_minus_left": -0.05166916840600255,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.0
+            ],
+            "right_minus_left": 0.0,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.010732096015837625,
+              0.012994636636689523
+            ],
+            "right_minus_left": 0.0024628344011564662,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1028
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.3185263157894736
+            ],
+            "right_minus_left": 0.2222222222222222,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.25297285968753436,
+              0.6080871391957267
+            ],
+            "right_minus_left": -0.09877321450116683,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "main",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              -0.75,
+              0.0
+            ],
+            "right_minus_left": -0.42857142857142855,
+            "valid_resamples": 495
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.061332281417316704,
+              0.6164173402656709
+            ],
+            "right_minus_left": 0.06477227378308964,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1027",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.23076923076923078
+            ],
+            "right_minus_left": 0.14285714285714285,
+            "valid_resamples": 491
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.31707819591660974,
+              0.6450957231608274
+            ],
+            "right_minus_left": -0.13830135197517757,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1028",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    },
+    {
+      "conditional_video_bootstrap": {
+        "conditional_on_frozen_global_mapping_and_predicted_stream_state": true,
+        "independent_video_or_category_observations_claimed": false,
+        "limitation": "Video/category dependence and sparse pseudo classes; not a replay-level causal confidence interval",
+        "metrics": {
+          "correct_commit_ct": {
+            "conditional_video_bootstrap_95pct": [
+              0.0,
+              0.3290000000000001
+            ],
+            "right_minus_left": 0.2222222222222222,
+            "valid_resamples": 494
+          },
+          "h_score": {
+            "conditional_video_bootstrap_95pct": [
+              -0.3360586019904223,
+              0.63789046814053
+            ],
+            "right_minus_left": -0.13124430498621087,
+            "valid_resamples": 500
+          }
+        },
+        "samples": 500,
+        "seed": 1027,
+        "videos": 51
+      },
+      "left": "A2_CAPACITY_CONTROL",
+      "order": "seed1029",
+      "prefix": 16,
+      "right": "A2_EVIDENCE",
+      "seed": 1029
+    }
+  ],
+  "parent_heldout_sha256": "e99142788ea58157abd4f30a8512bf140f3046ae17348368252bb44cdfc7b9cd",
+  "posthoc_diagnostics_do_not_repair_or_replay_memory": true,
+  "preregistration_commit": "be4bc541761bdaee949bbb653ca5015beee25635",
+  "source_sha256": "e47834f60e608856b6afae6e5e6162dff69e1dfc856924a6292fded93e4c1876",
+  "status": "COMPLETE_FROZEN_TRAIN_RESULT_ROLE_DIAGNOSTICS_NOT_NEW_TRIAL",
+  "val_or_test_access": false
+}
