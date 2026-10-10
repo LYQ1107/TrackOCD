@@ -1,0 +1,539 @@
+{
+  "D1_D2_have_different_objectives": true,
+  "Val_or_Test_read": false,
+  "actual_fits": 33,
+  "actual_trace_rows": 15360,
+  "artifacts": {
+    "outputs/trackocd_core/EVIDENCE_TRAINING_LOSS_CURVES.png": {
+      "bytes": 101926,
+      "sha256": "0f11b7f188dfe3aca1506f0b312e2984ce3edfbfbd22b53b2eef45fd6ff2ddd0"
+    },
+    "outputs/trackocd_core/TRAINING_LOSS_CURVES.png": {
+      "bytes": 240270,
+      "sha256": "895dd6e417ea76ea0ca8a9215757ab4d8be4a99ece5c1e5ce0ae497cdeceac9b"
+    },
+    "outputs/trackocd_core/TRAINING_LOSS_TRACES.csv": {
+      "bytes": 1086932,
+      "sha256": "8d4d5aac84bd30c857da1d199147e5635a4c87050f644ba0a02f2b5a41dfd928"
+    }
+  },
+  "display_smoothing_only": 25,
+  "fits": [
+    {
+      "checkpoint": {
+        "bytes": 2102792,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+        "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+      },
+      "family": "representation",
+      "first_loss": 2.6523079872131348,
+      "last_loss": 0.00225752592086792,
+      "model": "A1_ADAPTER",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1027,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102816,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_1_seed1027_step500.pt",
+        "sha256": "5786f9d689d1ab656d5662408040a13cdf693591276a4c27feedc5463d5ae7fe"
+      },
+      "family": "representation",
+      "first_loss": 3.3328452110290527,
+      "last_loss": 0.037764061242341995,
+      "model": "A1_GEOMETRY_1",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1027,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102816,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_5_seed1027_step250.pt",
+        "sha256": "8675bc5254a5519f5632769ba26349a9a96e9c18f31bd53ee5a477d6bb34f75d"
+      },
+      "family": "representation",
+      "first_loss": 6.054994583129883,
+      "last_loss": 0.12047654390335083,
+      "model": "A1_GEOMETRY_5",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1027,
+      "selected_step_or_epoch": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102792,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+        "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+      },
+      "family": "representation",
+      "first_loss": 2.6540544033050537,
+      "last_loss": 0.023508071899414062,
+      "model": "A1_ADAPTER",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1028,
+      "selected_step_or_epoch": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102816,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_1_seed1028_step250.pt",
+        "sha256": "fb4958da0e93387fcafa774890d7f7314324dea76d3b80e58c4ebcf541d5061e"
+      },
+      "family": "representation",
+      "first_loss": 3.2202911376953125,
+      "last_loss": 0.0656583160161972,
+      "model": "A1_GEOMETRY_1",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1028,
+      "selected_step_or_epoch": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102816,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_5_seed1028_step250.pt",
+        "sha256": "d6da14ae0af4c2ef55a5f9034a1c82e3463c808e25adb6d3357d6d72120d310a"
+      },
+      "family": "representation",
+      "first_loss": 5.485238075256348,
+      "last_loss": 0.15020886063575745,
+      "model": "A1_GEOMETRY_5",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1028,
+      "selected_step_or_epoch": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102792,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+        "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+      },
+      "family": "representation",
+      "first_loss": 2.629833221435547,
+      "last_loss": 0.007003813982009888,
+      "model": "A1_ADAPTER",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1029,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102816,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_1_seed1029_step500.pt",
+        "sha256": "94f9a02181ae70cefec978fd03216b5c4ac366aa6ac6017b05dac74c4c100112"
+      },
+      "family": "representation",
+      "first_loss": 3.201418161392212,
+      "last_loss": 0.04669623449444771,
+      "model": "A1_GEOMETRY_1",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1029,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2102816,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_GEOMETRY_5_seed1029_step500.pt",
+        "sha256": "db869e25476155d0582a6cfb75a86b0a387c6f020c88da18ee225253288d47ba"
+      },
+      "family": "representation",
+      "first_loss": 5.487757682800293,
+      "last_loss": 0.16060124337673187,
+      "model": "A1_GEOMETRY_5",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1029,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171296,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+        "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+      },
+      "family": "evidence",
+      "first_loss": 2.6523079872131348,
+      "last_loss": 0.001953810453414917,
+      "model": "A2_EVIDENCE",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1027,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171676,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1027_step500.pt",
+        "sha256": "9161b5b1c508d06bf0add5d39a8c0ae71193408943eed72386f6be0e2b74af59"
+      },
+      "family": "evidence",
+      "first_loss": 2.6530933380126953,
+      "last_loss": 0.002382040023803711,
+      "model": "A2_CAPACITY_CONTROL",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1027,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171296,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+        "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+      },
+      "family": "evidence",
+      "first_loss": 2.6540544033050537,
+      "last_loss": 0.008700340986251831,
+      "model": "A2_EVIDENCE",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1028,
+      "selected_step_or_epoch": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171676,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1028_step250.pt",
+        "sha256": "63a73e4a5b40f3b61012a63810e25d3d73e1af28c8178a2eb738802e7745b2bd"
+      },
+      "family": "evidence",
+      "first_loss": 2.656580924987793,
+      "last_loss": 0.023367106914520264,
+      "model": "A2_CAPACITY_CONTROL",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1028,
+      "selected_step_or_epoch": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171296,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+        "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+      },
+      "family": "evidence",
+      "first_loss": 2.629833221435547,
+      "last_loss": 0.003744184970855713,
+      "model": "A2_EVIDENCE",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1029,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 2171676,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_CAPACITY_CONTROL_seed1029_step500.pt",
+        "sha256": "83b43b1e326fa93e4a27973187fb143978913edf8c38a425f0c70d823c1571b0"
+      },
+      "family": "evidence",
+      "first_loss": 2.6331686973571777,
+      "last_loss": 0.00684809684753418,
+      "model": "A2_CAPACITY_CONTROL",
+      "recorded_steps_or_epochs": 1000,
+      "representation": null,
+      "seed": 1029,
+      "selected_step_or_epoch": 500
+    },
+    {
+      "checkpoint": {
+        "bytes": 5496,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D1_SIMPLE_MLP_seed1027_epoch5.pt",
+        "sha256": "5f6f5560cef90d52db032adbee53c1536a1c1d5f306e86f8d874d018b870c192"
+      },
+      "family": "policy",
+      "first_loss": 1.0687082409858704,
+      "last_loss": 1.012308806180954,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A0_RAW",
+      "seed": 1027,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5496,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D2_RISK_AWARE_seed1027_epoch5.pt",
+        "sha256": "1c257d6b8178b0e72f80a4d0b0b0f6d7a457de87cecb770b03cee66222540eda"
+      },
+      "family": "policy",
+      "first_loss": 3.8143553733825684,
+      "last_loss": 2.7444605231285095,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A0_RAW",
+      "seed": 1027,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5504,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D1_SIMPLE_MLP_seed1028_epoch20.pt",
+        "sha256": "52df80b34e78f5eac9939ffa840d5eb9a2bb917ce30b2819e42a7f3aac0f8909"
+      },
+      "family": "policy",
+      "first_loss": 1.0723941624164581,
+      "last_loss": 1.0113215446472168,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A0_RAW",
+      "seed": 1028,
+      "selected_step_or_epoch": 20
+    },
+    {
+      "checkpoint": {
+        "bytes": 5496,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D2_RISK_AWARE_seed1028_epoch5.pt",
+        "sha256": "bc7433d03066efa244bfc63f24a65eac62be3270bf1745c317be456d74e2c03a"
+      },
+      "family": "policy",
+      "first_loss": 4.076449632644653,
+      "last_loss": 2.7502973675727844,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A0_RAW",
+      "seed": 1028,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5496,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D1_SIMPLE_MLP_seed1029_epoch5.pt",
+        "sha256": "7a59f2d64c40573df4b17dc6a44de66a16792f83c8139c25e4ade174533728d9"
+      },
+      "family": "policy",
+      "first_loss": 1.074472188949585,
+      "last_loss": 1.0203644633293152,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A0_RAW",
+      "seed": 1029,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5496,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A0_RAW_D2_RISK_AWARE_seed1029_epoch5.pt",
+        "sha256": "775946dc63aa5a29201ad19cc2b34ec8b13a41f72e409f8ea111d8b6d72a90e9"
+      },
+      "family": "policy",
+      "first_loss": 3.9594711661338806,
+      "last_loss": 2.7490749955177307,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A0_RAW",
+      "seed": 1029,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5992,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D1_SIMPLE_MLP_seed1027_epoch20.pt",
+        "sha256": "4ef56857944aef3d7cb172812ff2e5dd80be76b5f1fae6a8410a35a4e4aba1ac"
+      },
+      "family": "policy",
+      "first_loss": 1.0841492116451263,
+      "last_loss": 0.9897451847791672,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A1_SELECTED",
+      "seed": 1027,
+      "selected_step_or_epoch": 20
+    },
+    {
+      "checkpoint": {
+        "bytes": 5984,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D2_RISK_AWARE_seed1027_epoch5.pt",
+        "sha256": "b108a826d34de90e86e7fe77fadc7e9b502afcf7dbeb2c2a9d90922247eb1b70"
+      },
+      "family": "policy",
+      "first_loss": 3.6415141224861145,
+      "last_loss": 2.841439127922058,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A1_SELECTED",
+      "seed": 1027,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5992,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D1_SIMPLE_MLP_seed1028_epoch20.pt",
+        "sha256": "cb90e383ccb5da1f2233d96af4a4b487d58a2747c14014e5c614f225c0944d1e"
+      },
+      "family": "policy",
+      "first_loss": 1.067730039358139,
+      "last_loss": 1.0072054266929626,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A1_SELECTED",
+      "seed": 1028,
+      "selected_step_or_epoch": 20
+    },
+    {
+      "checkpoint": {
+        "bytes": 5984,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D2_RISK_AWARE_seed1028_epoch5.pt",
+        "sha256": "56be3530e70d38449b6342ab66e439ac26d2e8a97c104cea47a31c5d5b692fa5"
+      },
+      "family": "policy",
+      "first_loss": 3.8170979022979736,
+      "last_loss": 2.8496397733688354,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A1_SELECTED",
+      "seed": 1028,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5984,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D1_SIMPLE_MLP_seed1029_epoch5.pt",
+        "sha256": "0200285abfc33a584da2396096287d898708594a794a2faf61c6338be0acf2dc"
+      },
+      "family": "policy",
+      "first_loss": 1.072837471961975,
+      "last_loss": 0.9486806988716125,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A1_SELECTED",
+      "seed": 1029,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5984,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A1_SELECTED_D2_RISK_AWARE_seed1029_epoch5.pt",
+        "sha256": "131a081ebbac783f5beefef5667c2eba38d4558e53e850a40d134ed48d1f6807"
+      },
+      "family": "policy",
+      "first_loss": 3.6921151280403137,
+      "last_loss": 2.914378821849823,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A1_SELECTED",
+      "seed": 1029,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5920,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D1_SIMPLE_MLP_seed1027_epoch5.pt",
+        "sha256": "f185504a9cf1ab0c2dcd36ac1b4c501b793187859d2e58db351abba111408ec5"
+      },
+      "family": "policy",
+      "first_loss": 1.0835701525211334,
+      "last_loss": 1.042380839586258,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A2_EVIDENCE",
+      "seed": 1027,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5920,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D2_RISK_AWARE_seed1027_epoch5.pt",
+        "sha256": "7c3bd00eca086685fdcc991e806e97cfa28af1ef0eff9092129af19c36bbf9e2"
+      },
+      "family": "policy",
+      "first_loss": 3.643147826194763,
+      "last_loss": 2.844283699989319,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A2_EVIDENCE",
+      "seed": 1027,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5928,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D1_SIMPLE_MLP_seed1028_epoch20.pt",
+        "sha256": "d659845717997eec4cf45bae39efb7f0290b323021a24e95b4c2750b1570deb7"
+      },
+      "family": "policy",
+      "first_loss": 1.0676555335521698,
+      "last_loss": 0.9660147577524185,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A2_EVIDENCE",
+      "seed": 1028,
+      "selected_step_or_epoch": 20
+    },
+    {
+      "checkpoint": {
+        "bytes": 5920,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D2_RISK_AWARE_seed1028_epoch5.pt",
+        "sha256": "f677ab154a20bee06af7df75ba0ec611aaa61a8732c519b8099c6addb6ca188e"
+      },
+      "family": "policy",
+      "first_loss": 3.815646708011627,
+      "last_loss": 2.8485350012779236,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A2_EVIDENCE",
+      "seed": 1028,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5920,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D1_SIMPLE_MLP_seed1029_epoch5.pt",
+        "sha256": "f9bf83b829871991eab753848cec16375a85968609de3f97628a8b27c9454169"
+      },
+      "family": "policy",
+      "first_loss": 1.0733969509601593,
+      "last_loss": 0.9414645731449127,
+      "model": "D1_SIMPLE_MLP",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A2_EVIDENCE",
+      "seed": 1029,
+      "selected_step_or_epoch": 5
+    },
+    {
+      "checkpoint": {
+        "bytes": 5920,
+        "path": "outputs/trackocd_core/core_training/train_first_v1/policy/A2_EVIDENCE_D2_RISK_AWARE_seed1029_epoch5.pt",
+        "sha256": "2f57535c2329f0385db31e76f5daee146dfe02ab182b8033398fb66cbaa24d8a"
+      },
+      "family": "policy",
+      "first_loss": 3.7127740383148193,
+      "last_loss": 2.9053472876548767,
+      "model": "D2_RISK_AWARE",
+      "recorded_steps_or_epochs": 20,
+      "representation": "A2_EVIDENCE",
+      "seed": 1029,
+      "selected_step_or_epoch": 5
+    }
+  ],
+  "loss_is_not_heldout_metric_or_scientific_PASS": true,
+  "new_training": false,
+  "receipt_lineages": {
+    "evidence": {
+      "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/training_receipt.json",
+      "preregistration_commit": "9dba258f1547c14d803597c742a13659081d21d4",
+      "sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+    },
+    "policy": {
+      "path": "outputs/trackocd_core/core_training/train_first_v1/policy/training_receipt.json",
+      "preregistration_commit": "d270d376173aeb6438f739140a0bdb9cc948e297",
+      "sha256": "0fdd8c3b4e9e32726cfb53ef64226b16d70fdf7c50314260daf0bb01b477d66e"
+    },
+    "representation": {
+      "path": "outputs/trackocd_core/core_training/train_first_v1/representation/training_receipt.json",
+      "preregistration_commit": "ec61fc64d6b183e916b1d2eb25197bd27765a777",
+      "sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+    }
+  },
+  "source_sha256": "9a5c03907aa9babca94fe799e6d397f34f011eabf43bb957045ff3f30c5ad365",
+  "status": "COMPLETE_ACTUAL_TRAIN_LOSS_TRACE_REPORT"
+}

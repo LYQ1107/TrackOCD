@@ -1051,3 +1051,38 @@
   maxcoverageledgers audited;othercoveragepredictions not fabricated.
 - Actual scoped343tests passed/no skips (28.73s),allcorrection countpartitions,
   actualcaseidentities/sourcehashes andfix-minus-newerror nets verified.
+
+## 2026-10-10 — Full features complete; prospective posthoc evaluator
+
+- Actual full feature supervisor terminal receipt: eight owned child exits0,
+  errornull,5126.290s. All988videos/304561IDs/1294110observations;
+  1859256557compressedbytes,114380singletonsretained,eightoldsmokeobservations
+  reused; nooptimizer/newphysicalinference/GT/Test/foreigninterference.
+  Full manifest899625d5b4135c6db450e5c86facbe98383a244b780f49475f436bcdd82fcc74.
+- Full posthoc evaluator registered before any full semantic prediction or
+  metric. All840unique executions required and realterminal fullinference
+  manifest required before finalaggregation;2040logical aliases disclosed.
+  Fixed780paired comparisons/all3points,pairedfixes-and-newerrors,p16primary
+  conditionalvideo500bootstrap;full4413/819denoms/fixed527/529/547/531reuse.
+- Resource-only prospective amendment: rawB0/B1/B2 scheduling separated,
+  18groups,unchanged840executionIDs/frozenmodel/thresholds/biases/matrix.
+  Bounded bank/source memoryaccounting sets4GiBworkerRSSguard instead of6GiB,
+  25%systemreserve andjointunallocated-own-childpeak reservation. No model
+  tuning,GTfiltering,projected diskcache or foreignprocess intervention.
+- Explicit flag distinguishes legalTrainGTlabelsfor48prototypes from forbidden
+  ValGT orlivepolicyGT.30missingKnownprototypes/15→48deploymentshift remain;
+  inferencebarrier also excludesposthocprivateflags andfullmetricreceipt.
+- Completed-case evaluator resume verifiesseal/job/input/sourceidentity;
+  canonicalCSV schema retained,and repeatedT5append rejected.
+- Actual independent fullvalidation:988physicalNPZhashes/atomicmarkers/payloads
+  andall304561IDs/firstframe-image-scoreprefixes exact;114380singletons/eight
+  smoke observations verified.55.6028s/RSS847216640B,noValGT/Test.
+  Initialownedread-onlychecker interrupted after confirmedNPZper-row repeated
+  decompression;onevideoarrays materialized instead,no model/method changes,
+  completedreceipt overwrite or externalprocess action.
+- Actual33fitlossreport:15360recordedsteps/epochs,allthreeTrainreceipts and
+  selectedcheckpointpaths/SHA bound,two nativePNGfigures+rawscalarCSV. Fixed
+  25step display-only smoothing;D1/D2lossobjectives differ,nottestscoregain.
+- Actual349scoped tests passed/no skips (24.53s),includingfullfeature receipt,
+  trueprefix/sourcebinding,actual33loss traces,jointresource reservation,
+  unchanged2040/840/780matrix andprospectivefullGT evaluator safeguards.

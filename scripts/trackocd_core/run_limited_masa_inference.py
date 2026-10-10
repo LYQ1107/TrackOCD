@@ -44,6 +44,24 @@ def inputs():
 def ram():return {k:int(v.split()[0])*1024 for k,v in (s.split(':',1) for s in Path('/proc/meminfo').read_text().splitlines())}
 
 
+def remaining_RAM_reservation(processes,peak):
+    """Unallocated headroom of our actual live children, not foreign processes."""
+    remaining=0
+    for p in processes:
+        if p.poll() is not None:continue
+        try:
+            rss=int(Path(f'/proc/{p.pid}/statm').read_text().split()[1])*os.sysconf('SC_PAGE_SIZE')
+        except FileNotFoundError:continue
+        remaining+=max(0,peak-rss)
+    return remaining
+
+
+def counterpart_reservation(out,filename):
+    path=out/filename
+    if not path.exists():return 0
+    return json.loads(path.read_text())['remaining_RAM_reservation_bytes']
+
+
 def guard(cfg,started):
     m=ram()
     if m['MemAvailable']<m['MemTotal']*cfg['system_RAM_reserve_fraction'] or resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024>cfg['host_planned_peak_per_worker_bytes']:raise RuntimeError('Owned semantic RAM guard')
@@ -55,7 +73,7 @@ def inference_barrier():
         if event in {'socket.connect','socket.getaddrinfo','socket.sendto','subprocess.Popen','os.system'}:raise PermissionError('Semantic inference has no network/child work')
         if event=='open' and isinstance(args[0],(str,bytes)):
             p=os.fsdecode(args[0])
-            if ('/TAO-Amodal/annotations/' in p or '/frames/test/' in p or 'evaluator_only_geometry_join' in p or 'physical_cross_video_support' in p or p.endswith('/case_metrics.json')):raise PermissionError('Semantic inference cannot read ValGT/matches/metrics/Test')
+            if ('/TAO-Amodal/annotations/' in p or '/frames/test/' in p or 'evaluator_only_geometry_join' in p or 'physical_cross_video_support' in p or '/case_flags_' in p or p.endswith(('/case_metrics.json','/full_evaluation_result.json'))):raise PermissionError('Semantic inference cannot read ValGT/matches/metrics/Test')
     sys.addaudithook(audit)
 
 
@@ -122,7 +140,8 @@ def worker(assignment_path,group):
         d={'status':'SEALED_COMPLETE_ALL_PREDICTED_IDS','job':job,'input_identity':identity,'physical_tracks':len(sealed.events),
             'ledger':{'filename':payload.name,'bytes':payload.stat().st_size,'sha256':sha256_file(payload)},'runtime':runtime,
             'model_lineage':lineage,'policy_checkpoint':checkpoints.get(job['policy']),'bank_vector_sha256':bank.sha256,'bank_scalar_sha256':bank.scalar_sha256,
-            'prototypes':{'available':len(proto),'inherited_known':len(known),'ValGTfill':False},'GT_or_Val_metrics_read':False,'TAO_Test_access':False,'new_optimization':False,
+            'prototypes':{'available':len(proto),'inherited_known':len(known),'ValGTfill':False},'Val_GT_or_Val_metrics_read':False,
+            'Train_Known_labels_only_for_legal_prototypes':True,'GT_track_labels_or_geometry_in_live_policy':False,'TAO_Test_access':False,'new_optimization':False,
             'resources':{'wall_seconds':time.monotonic()-case_start,'peak_RSS_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,'peak_GPU_reserved_bytes':torch.cuda.max_memory_reserved()}}
         atomic_json(directory/'sealed_complete.json',d);completed.append(job['id']);del sealed
         print(json.dumps({'group':group,'completed':len(completed),'executions':len(jobs),'case_seconds':d['resources']['wall_seconds']}),flush=True)
@@ -165,19 +184,24 @@ def supervise(commit):
                     gpu,free,util=[s.strip() for s in line.split(',')]
                     if gpu not in occupied and int(free)*2**20>=cfg['GPU_planned_peak_bytes']+cfg['GPU_free_reserve_bytes']:choices.append((int(util)==0,int(free),gpu))
                 m=ram()
-                if choices and m['MemAvailable']-cfg['host_planned_peak_per_worker_bytes']>=m['MemTotal']*.25:
+                own_remaining=remaining_RAM_reservation([p for p,g,gpu in active],cfg['host_planned_peak_per_worker_bytes'])
+                evaluator_remaining=counterpart_reservation(out,'evaluator_progress.json')
+                if choices and m['MemAvailable']-own_remaining-evaluator_remaining-cfg['host_planned_peak_per_worker_bytes']>=m['MemTotal']*.25:
                     gpu=sorted(choices,reverse=True)[0][2];group=pending.pop(0);log=(out/f'{group}_{attempt}.log').open('x');logs.append(log)
                     env={**os.environ,'CUDA_VISIBLE_DEVICES':gpu,'OMP_NUM_THREADS':'1','MKL_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1','PYTHONDONTWRITEBYTECODE':'1'}
                     p=subprocess.Popen([sys.executable,str(Path(__file__).resolve()),'--worker-group',group,'--assignment',str(assignment_path)],cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
                     active.append((p,group,gpu));children.append(p)
                     print(json.dumps({'group':group,'GPU_UUID':gpu,'active_workers':len(active),'pending_groups':len(pending)}),flush=True)
+            atomic_json(out/'inference_supervisor_progress.json',{'active_workers':len(active),'pending_groups':len(pending),'completed_groups':len(done),
+                'remaining_RAM_reservation_bytes':remaining_RAM_reservation([p for p,g,gpu in active],cfg['host_planned_peak_per_worker_bytes']),
+                'seconds':time.monotonic()-started,'attempt':attempt})
             if sum(p.stat().st_size for p in out.rglob('*') if p.is_file())>cfg['new_stage_disk_ceiling_bytes']:raise RuntimeError('Private stage storage guard')
             time.sleep(5)
         records=[completed_case(out,j,identity) for j in plan['jobs'].values()]
         if any(r is None for r in records):raise ValueError('Every registered all-ID execution must complete')
         result={'status':'COMPLETE_FROZEN_FULL_LIMITED_MASA_SEMANTIC_PREDICTIONS_NOT_YET_METRICS','preregistration_commit':commit,'identity':identity,'plan_sha256':sha256_file(plan_path),
             'unique_executions':len(records),'logical_cases':len(plan['logical_cases']),'records':records,'all988videos':True,'all304561physicalIDs_each_execution':True,
-            'GT_or_Val_metrics_in_inference':False,'TAO_Test_access':False,'foreign_interference':False,'wall_seconds':time.monotonic()-started}
+            'Val_GT_or_Val_metrics_in_inference':False,'legal_Train_Known_prototypes_only':True,'TAO_Test_access':False,'foreign_interference':False,'wall_seconds':time.monotonic()-started}
         atomic_json(out/'full_inference_manifest.json',result)
         print(json.dumps({k:v for k,v in result.items() if k not in ('records','identity')}),flush=True)
     except Exception as exc:
@@ -191,6 +215,8 @@ def supervise(commit):
         raise
     finally:
         for log in logs:log.close()
+        atomic_json(out/'inference_supervisor_progress.json',{'active_workers':0,'pending_groups':len(pending),'completed_groups':len(done),
+            'remaining_RAM_reservation_bytes':0,'seconds':time.monotonic()-started,'attempt':attempt,'error':error})
         atomic_json(out/f'supervisor_{attempt}.json',{'error':error,'completed_groups':done,'owned_child_returncodes':[p.returncode for p in children],'foreign_process_interference':False,'wall_seconds':time.monotonic()-started})
 
 

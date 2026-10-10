@@ -22,7 +22,7 @@
   "PHE": {"status": "INCOMPARABLE", "reason": "48/78 prototype coverage and checkpoint/common-feature supervision compatibility unproven; no invented matched-supervision score"},
   "forward_precision": "Unchanged frozen CPU FP32 batch64 helper; common observations FP16; full-dimensional exhaustive search CPU or CUDA FP32/TF32off with canonical NumPy dot refinement",
   "max_concurrent_workers": 8,
-  "host_planned_peak_per_worker_bytes": 6442450944,
+  "host_planned_peak_per_worker_bytes": 4294967296,
   "system_RAM_reserve_fraction": 0.25,
   "GPU_planned_peak_bytes": 4294967296,
   "GPU_free_reserve_bytes": 8589934592,

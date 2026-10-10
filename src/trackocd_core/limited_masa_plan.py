@@ -32,7 +32,10 @@ def make_plan(cfg,freeze,policy,video_ids):
                 point=fit['operating_points'][str(coverage)];add(name,rep,seed,'B1_track_nearest',p,options,coverage,point)
     groups={}
     for job in jobs.values():
-        group=f"{job['representation']}_{job['seed']}_{bool(job['options'].get('no_reliability'))}"
+        # Raw has no projected RAMbank to share;split its three baseline
+        # streams for bounded independent worker scheduling,not new trials.
+        backend=job['backend'] if job['representation']=='A0_RAW' and job['policy'] is None else 'shared'
+        group=f"{job['representation']}_{job['seed']}_{backend}_{bool(job['options'].get('no_reliability'))}"
         groups.setdefault(group,[]).append(job['id'])
     if (len(logical),len(jobs))!=(cfg['expected_logical_cases'],cfg['expected_unique_executions_under_current_frozen_biases']):raise ValueError('Frozen exact-input count changed; not outcome-selected pruning')
     return {'orders':orders,'jobs':jobs,'logical_cases':logical,'groups':groups,'deduplicated_only_exact_inference_identities':True,

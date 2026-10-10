@@ -86,6 +86,15 @@ tracks, fixed4413/819 GT denominators and527/529/547/531 reuse opportunities.
 Both stronger frontend qualification and exact MASA all-stage provenance remain
 unmet. T0 engineering/metadata PASS is not a trained model or scientific PASS.
 
+Actual sealed losses for all33T1/T2/T3fits are in
+`outputs/trackocd_core/TRAINING_LOSS_TRACES.csv` (15360rows), with two native
+PNG plots and `TRAINING_CURVES_RESULT.json`. Curves reproduce receipts without
+training or Val/Test reads;25step smoothing affects display only. D1 and D2
+have different objectives, so loss magnitude is not a superiority metric.
+The final T5 resource-only plan/actual full features and prospective posthoc
+protocol are recorded in `LIMITED_MASA_EVALUATION.md`; no frozen model or
+operating point is amended by scheduler/RAM accounting.
+
 ## T1 actual training and pre-heldout policy registration
 
 Actual T1:9fits,3seeds x3weights,1000steps each,276.5689s wall,56,775,888B
