@@ -1159,3 +1159,10 @@
   Recovery execution requires this source commit pushed/exactremoteverified.
 - Posthoc inputshift statistics and final report remain unexecuted pending
   their actual resource/completeness gates; registration/tests are not results.
+- Sourcec662f76606e23ee2cd054b507db7c0da700dcece pushed/exactremoteverified.
+  Actualdetached recovery verifiesallfeaturemarkers/unchangedplan and adopts
+  eightoriginalworkers; subsequent currentstarttick/command check confirms
+  all eightremain samealive processes. Separateunchanged evaluator parent
+  live; bothprogress filesfresh4seconds/noerror. Snapshot113sealed/77metrics;
+  jointRAMbackpressure holdsadditionalCPUworkers safely. This is actual
+  schedulingstartup,notfull840completion or finalscientificsuccess.

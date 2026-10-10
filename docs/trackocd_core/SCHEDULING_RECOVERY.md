@@ -46,3 +46,22 @@ lifetime (new session, no stdin, bounded logs). This prevents terminal teardown
 from itself sending a hangup; it does not guarantee survival of host failure,
 external termination or loss of the upstream SSH proxy. Actual startup/terminal
 receipts, not this prospective document, establish execution and completion.
+
+## Actual startup verification
+
+The source was pushed and exact remote HEAD verified as
+`c662f76606e23ee2cd054b507db7c0da700dcece` after 362 scoped tests passed.
+The independent recovery parent then verified all common feature markers and
+the exact original plan SHA256
+`eb0636415fe753823b24a248c590170917f660656e3357cdd22e4efa67079b54`.
+Its private atomic startup receipt is
+`recovery_ee443631621240218c40d0a1fdf85633_started.json`.
+It adopted eight original workers; a subsequent start-tick/command identity
+check confirmed all eight were still the same live processes, not replacements.
+The original evaluator source was also launched as a separate detached parent.
+Both parents were observed live, with progress age four seconds and no error.
+At this observation, 113 cases were sealed and 77 had actual posthoc metrics.
+The evaluator was waiting for joint planned RAM headroom, not declared failed
+or complete. These are a point-in-time operational snapshot, not final scores
+or the full 840-execution result. Completion still requires actual terminal
+receipts, all case metrics, fixed paired comparisons and the final report.
