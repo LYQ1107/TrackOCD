@@ -1,5 +1,10 @@
 {
   "schema_version": "trackocd.core.minimal_asset_recovery.v1",
+  "m1_masa_sam_grid_bounded_smoke_plan": "configs/trackocd_core/masa_amg_smoke.json",
+  "m1_masa_sam_grid_source_manifest": "configs/trackocd_core/sam_amg_source_manifest.json",
+  "m1_masa_sam_grid_exact_private_source_bytes": 43189,
+  "m1_masa_sam_grid_new_weight_environment_or_data_bytes": 0,
+  "m1_masa_sam_grid_primary_freeze_permitted": false,
   "status": "EXACT_V2_SOURCE_AND_VAL_METADATA_RECOVERED_FRONTEND_QUALIFICATION_BLOCKED",
   "m1_provenance_receipt": "outputs/trackocd_core/audit/nas_m1_provenance.json",
   "m1_native_covtrack_status": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE",

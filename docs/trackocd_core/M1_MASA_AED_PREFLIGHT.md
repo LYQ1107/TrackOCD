@@ -654,3 +654,54 @@ Completed private allocation2,826,240 B, conservative entire repository plus
 owned isolated environment6,521,024,512 B, below soft15GiB/hard30GiB. The
 nested private directory was measured separately to avoid du's shared-inode
 deduplication understating the root total. No live owned local job remains.
+
+## Separate SAM-grid box candidate: bounded Train interface preregistration
+
+The existing released checkpoint already contains the frozen SAM prompt/mask
+decoder (137 tensors), unused by the audited RPN/ROI proposal route. The final
+SAM backbone block and neck are compatible with its image embedding interface.
+Original M1 explicitly allows low-cost available-weight MASA alternatives; this
+is meaningful untried work within that gate, not permission to weaken the
+primary-quality requirement or extend GT-policy scope. No scope answer received.
+
+Restore only four small pinned Meta SAM source/license files (43,189 B), exact
+Git blobs at6fdee8f2727f4506cfbbe553e23b895e27956588; all76 upstream tree entries
+checked, no AGENTS. Import only two image/math utilities, not SAM builders,
+dataset/text APIs or a new foundation model. Reuse existing419-tensor checkpoint,
+48-wheel isolated environment and four existing chronological Train image paths.
+Pre-existing Known-GT long-track image selection is biased: engineering only,
+not a detector/track coverage estimate. Worker receives no GT fields or annotation.
+
+Preregister no-crop official AMG defaults:32x32 generic positive point grid,
+batch64, predicted-IoU>.88, stability>=.95 at offset1, boxNMS.7, no small-region
+postprocess. Upstream explicitly chose these defaults for ViT-H; available model
+is ViT-B. Do not search thresholds, increase capacity/crop layers, or download
+different weights to rescue this gate. Shared single image encoder supplies SAM
+neck and existing MASA adapter; official PIL resize differs from native cv2.
+
+Separate owned box-only wrapper omits RLE storage and explicitly counts/drops
+zero-area mask boxes, with original max-pixel xyxy convention unchanged. Native
+predicted IoU (possibly outside[0,1]) filters/ranks NMS only. Tracker quality is
+mask stability in[0,1], NOT foreground/class probability; no sigmoid/clipping or
+silent reuse of RPN score semantics. Existing causal tracker and its thresholds
+remain unchanged. Published generic-image supervision/private-stage ledger gap
+is inherited; tensor presence does not prove independent pretrained SAM identity.
+
+Exact remote-verified source/config preregistration precedes one GPU worker;
+4 unique Train images,2 four-image replays,8 forwards max. Invert future frames2,3
+in replay2; exact first2 frame box/track hashes must be invariant. Frozen state
+hash before/after, finite/valid anonymous outputs, host4GiB/GPU8GiB/wall600s,
+25% system RAM headroom,10MiB output and goal15GiB soft/30GiB hard. Fresh idle
+GPU selection, no foreign process intervention; deny worker network/children,
+GT/split/pilot-selection/Val/Test files. No automatic retry after real forwards.
+
+Pass establishes only a runnable bounded causal interface. It cannot qualify
+primary reliability/coverage, change old Val results, authorize full-Val/cache,
+semantic training, a second representation correction, M9, A+B or M11. Any
+future physical comparison needs its own fixed non-GT-selected protocol first.
+
+Local preregistration regression: **242 passed, no skips** (core, recovered v2,
+PANDAS/ByteTrack). An additional legacy frame-online suite attempt had245passed
+and4failures: all4 read hardcoded unavailable old-server paths or its old
+equivalence receipt. These are outside the new route and are disclosed, not
+rewritten or reported as passing. Original historical source/tests unchanged.

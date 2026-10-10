@@ -563,3 +563,23 @@
   repo+isolatedenv6517043200B, fullprediction+eval72204288B. Public aggregate
   3367976B/SHA5d4e2d903204bf6313f6df42a300171d3596413f34ebaf2d731ed4fbb466b220.
   Both GPU/CPU sessions terminal; no owned task live, rawboxes/GT/weights private.
+
+## 2026-10-10 — Untried low-cost M1 SAM-grid proposal interface preregistered
+
+- No user quality-scope reply; retain original reliable-primary gate. Before
+  declaring a three-turn impasse, found unused frozen prompt/mask decoder in
+  already-restored MASA release. Original M1 allows available-weight low-cost
+  alternatives, so bounded source/interface work is possible without expansion.
+- Exact4 SAM source/license files43,189 B at6fdee8f...; upstream76-entry tree
+  has no AGENTS. Two pure utilities only; no new weight/environment/data asset.
+- Separate SAM-grid boxes/unchanged MASA association, no-crop official defaults
+  (chosen upstream for ViT-H, availableViT-B), bounded stability score not
+  foreground probability. No sigmoid, clipping, proposal cap or threshold search.
+- Pre-register first4 existing biased Train image paths,8 forwards across2
+  future-poison replays; no Val/GT/semantic input to worker. Engineering only,
+  not coverage or main-model qualification. Resource, state and exact prefix
+  guards and remote delivery required before run. No old result mutation,
+  primary freeze, full-Val launch, GT-policy expansion, R2 or M11.
+- Local relevant regression242passed/no skips. Broader legacy frame-online
+  check245passed/4failed solely at unavailable hardcoded old-server paths and
+  old equivalence receipt; preserved failures, no unrelated repair or false PASS.

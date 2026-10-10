@@ -1,0 +1,32 @@
+{
+  "schema_version": "trackocd.core.sam_amg_source.v1",
+  "repository": "https://github.com/facebookresearch/segment-anything",
+  "commit": "6fdee8f2727f4506cfbbe553e23b895e27956588",
+  "full_tree_checked": true,
+  "tree_entries": 76,
+  "tree_truncated": false,
+  "upstream_AGENTS": [],
+  "scope": "Two byte-identical pure image/math utilities plus reference-only AMG source and license. No package installer, checkpoint, model registry, dataset, metadata or text APIs.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "segment_anything/utils/amg.py",
+      "bytes": 12712,
+      "git_blob_sha1": "be064071ef399fea96c673ad173689656c23534a"
+    },
+    {
+      "path": "segment_anything/utils/transforms.py",
+      "bytes": 3972,
+      "git_blob_sha1": "c08ba1e3db751f3a5483a003be38c69c2cf2df85"
+    },
+    {
+      "path": "segment_anything/automatic_mask_generator.py",
+      "bytes": 15148,
+      "git_blob_sha1": "d5a8c969207f119feff7087f94e044403acdff00"
+    }
+  ]
+}

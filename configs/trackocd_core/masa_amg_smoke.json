@@ -1,0 +1,61 @@
+{
+  "schema_version": "trackocd.core.masa_amg_smoke.v1",
+  "status": "PREREGISTERED_NOT_RUN",
+  "scope": "Original M1 low-cost alternative candidate only; no acceptance of limited-coverage RPN/ROI primary, full-Val execution, training, M9 or feedback",
+  "route": "Existing frozen MASA-SAM checkpoint -> SAM fixed positive point grid -> no-crop default AMG masks -> anonymous valid mask boxes -> unchanged causal MASA tracker",
+  "separate_from_existing_stream": true,
+  "official_sam_commit": "6fdee8f2727f4506cfbbe553e23b895e27956588",
+  "checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+  "source_manifest": "configs/trackocd_core/sam_amg_source_manifest.json",
+  "unchanged_sources_sha256": {
+    "src/trackocd_core/masa_native.py": "e10422b8a64fbe3125c20ce8afe629b3ba5cce2eef473f3565b4a0cee3520ad8",
+    "scripts/trackocd_core/smoke_masa_native.py": "a8483d1fa4ff8b7ac67e191c113d3fe5273d13e95a0f5c5d1a8f5be265ff02c2",
+    "scripts/trackocd_core/install_masa_runtime.py": "bad723b0af687d882d4ed0350592b263726210caec632045d2f2c63a21f75df0",
+    "configs/trackocd_core/masa_native_source_manifest.json": "b1fe049eb8615b138a17d1ded354570219e82036158ee476448e5211c1e99ca8",
+    "configs/trackocd_core/masa_sam_candidate_smoke.json": "0da078afcdf1e3f285d20e9f40e42f355aeff77ff59c996ce5cfe3964b9e4966"
+  },
+  "amg_defaults": {
+    "points_per_side": 32,
+    "points_per_batch": 64,
+    "pred_iou_thresh": 0.88,
+    "stability_score_thresh": 0.95,
+    "stability_score_offset": 1.0,
+    "box_nms_thresh": 0.7,
+    "crop_n_layers": 0,
+    "min_mask_region_area": 0
+  },
+  "default_caveat": "Upstream says these defaults were chosen for ViT-H; existing model is ViT-B. No threshold search or stronger-model download is authorized by this smoke.",
+  "geometry": "Official PIL ResizeLongestSide1024; one normalization/padding. Shared final block -> SAM neck and multi-level -> MASA adapter. Original xyxy max pixel coordinate convention preserved.",
+  "owned_wrapper_differences": [
+    "Box-only: no RLE/mask archive; crop_n_layers=0 makes crop-edge filter inert",
+    "Count/drop only empty or zero-area mask boxes before physical association; no box repair or GT-driven filter",
+    "Native raw predicted IoU only filters/ranks masks; tracker score is bounded mask stability, not foreground probability, with no sigmoid/clipping/calibration"
+  ],
+  "provenance": "Same published generic-image route and disclosed private-stage ledger gap as existing MASA candidate. Tensor presence is not independent proof of exact pretrained SAM identity.",
+  "selection": "Exactly first four chronological image paths from the already-pinned Train pilot; drop all GT fields before worker. Known long-track selection bias, engineering-only, not coverage estimation.",
+  "forward_plan": "Two chronological four-image replays; invert only future ordinals2,3 in replay2; prefix ordinals0,1 must reproduce exact detection/track hashes",
+  "worker_model_input_fields": ["current_image", "image_geometry", "video_local_frame_ordinal"],
+  "limits": {
+    "unique_train_images": 4,
+    "real_image_forwards": 8,
+    "gpu_workers": 1,
+    "wall_seconds": 600,
+    "host_rss_bytes": 4294967296,
+    "gpu_reserved_bytes": 8589934592,
+    "minimum_ram_headroom_fraction": 0.25,
+    "minimum_disk_headroom_bytes": 4294967296,
+    "output_allocated_bytes": 10485760,
+    "overall_soft_bytes": 16106127360,
+    "overall_hard_bytes": 32212254720
+  },
+  "parent_source_config_guard": "Exact remotely verified preregistration commit for this config, runner, owned wrapper and source manifest; existing native source/checkpoint identities separately verified",
+  "worker_barrier": "No socket/child/GT annotation/splits/GT pilot selection/Val/Test frames. Worker sees only sanitized Train image paths.",
+  "pass_requires": ["Finite non-degenerate anonymous proposals and tracks; original replay must have nonzero proposals and tracks", "Pinned all419 model tensors unchanged/frozen", "Exact prefix0,1 equality with genuinely changed future pixels", "Within time/RAM/GPU/storage guards"],
+  "not_established_by_pass": ["Reliable primary frontend", "Known/Novel coverage or physical HOTA", "Improvement versus RPN/ROI", "Formal cache or semantic learning authority", "M9, A+B, M11 or completed goal"],
+  "primary_freeze_permitted": false,
+  "scientific_pass_permitted": false,
+  "training": false,
+  "test_access": false,
+  "new_image_or_checkpoint_download": false,
+  "publish": "Small aggregate mask/track counts, hashes, timing, resources and explicit quality contract; private image paths and pixels stay local"
+}
