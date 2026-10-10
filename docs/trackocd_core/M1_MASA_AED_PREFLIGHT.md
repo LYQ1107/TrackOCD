@@ -945,3 +945,24 @@ Original M1 full-quality audit is still required for any candidate: a separate
 read-only full-cache field/hash/resource preflight may establish whether this
 same fixed route can be audited cheaply, without selecting/tuning on1 Novel
 target or treating this clip result as full qualification. No full replay yet.
+
+Read-only full-cache preflight subsequently completed: all988video-atomic
+markers/config/plan/payload/array identities verified,36,375images/1,811,677raw
+detections,63,222,355 B existingNPZ. Maxvideo63annotatedframes and64,520 B raw
+detector arrays; finite qrange[.0200076,1],mean.617085. These are distributions,
+not recall/calibration or forbidden-supervision proof. No new assets, pixel/GT/
+weight/Test access, ByteTrack execution or full replay. Ordered source+detector
+array identity d6ef41863d32ca33da70db2913d5903b5954c480f60e9c95afa4984706699141.
+This makes a separately preregistered complete fixed-route original-M1 quality
+audit feasible without physical training; it does not accept limited-native
+primary or modify the already-frozen thresholds from tiny Novel outcomes.
+
+RAM accounting clarification: direct terminal launch reported ru_maxrss
+847,216,640 B before the preflight loop;256MiB guard stopped it. Fresh child
+kept the same256MiB/120s/25%reserve guard, finished5.14350s with reported peak
+65,458,176 B. No budget increase or guard bypass. Likewise the independent
+four-route evaluator's reported847,216,640 B is a conservative inherited
+high-water report, not a separately isolated actual RSS measurement. Keep the
+original result/metric values unchanged and disclose this reporting limitation.
+Preflight/result regression **284 passed, no skips**; conservative repository+
+owned-environment6,529,826,816 allocatedB before preflight delivery, below15GiB.

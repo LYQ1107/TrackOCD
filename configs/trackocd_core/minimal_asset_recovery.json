@@ -263,6 +263,10 @@
       "actual_private_prediction_and_evaluation_allocated_bytes": 3686400,
       "public_result_bytes": 47091,
       "public_result_sha256": "68a48d6f7666e4c2cda173301e8c894d4507fc05829577de482572db13d2dd3b",
+      "full_source_readonly_preflight": "outputs/trackocd_core/audit/rpn_bytetrack_full_cache_preflight.json",
+      "full_cached_source_existing_bytes": 63222355,
+      "full_cached_source_verified_videos": 988,
+      "full_replay_started": false,
       "condition": "Preregister fixed first4x16 clip and existing exact ByteTrack parameters; one CPU, no Torch/pixels/new weights. Full prediction seal and independent identical-GT old3 baseline replay before comparison. Preserve partial runs. Not automatic full-Val/cache/primary or semantic training."
     },
     {

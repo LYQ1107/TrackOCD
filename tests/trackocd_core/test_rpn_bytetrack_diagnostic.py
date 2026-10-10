@@ -184,3 +184,21 @@ def test_actual_four_route_comparison_no_unknown_filter_or_primary_promotion():
     assert route["purity"]["entire_observed_track_matched_to_one_category"] == 4
     assert route["purity"]["observed_multiple_gt_identity_tracks"] == 3
     assert result["resources"]["cpu_workers"] == 1 and not result["resources"]["gpu_used"]
+
+
+def test_full_cache_readonly_preflight_is_not_association_or_qualification():
+    from scripts.trackocd_core.audit_rpn_bytetrack_cache import worker
+    from src.trackocd_v2.io import sha256_file
+    row = json.loads((runner.ROOT / "outputs/trackocd_core/audit/rpn_bytetrack_full_cache_preflight.json").read_text())
+    assert sha256_file(runner.ROOT / row["script"]) == row["script_sha256"]
+    assert row["videos"] == 988 and row["images"] == 36375 and row["raw_detections"] == 1811677
+    assert sum(row["score_histogram_width_0_05"]) == row["raw_detections"]
+    assert row["score_min"] >= 0 and row["score_max"] <= 1
+    assert row["peak_rss_bytes"] <= row["host_rss_limit_bytes"] == 256 * 1024 * 1024
+    assert row["seconds"] <= row["wall_limit_seconds"] and row["fresh_single_cpu_worker"]
+    assert not any(row[k] for k in ("source_mutated", "gt_pixels_weights_test_read", "association_or_model_executed", "full_replay_started", "primary_freeze_permitted", "scientific_pass_permitted"))
+    source = inspect.getsource(worker)
+    assert "input_barrier()" in source and "completed_video(run,v,digest)" in source
+    assert "sha256_file(path) == row[\"npz_sha256\"]" in source
+    assert "sha256_file(mpath) == manifest_before" in source
+    assert "new_tracker(" not in source and "step(" not in source

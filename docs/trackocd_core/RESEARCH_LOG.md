@@ -690,3 +690,15 @@
   Same fixed cachedroute's required full-quality audit would need its own
   read-only fullsource/field/hash/budget preflight and separate preregistration,
   not automatic launch or justification from the1 extra Novel clip target.
+- Read-only full-source preflight: all988markers/hash/arrays verified,36375
+  images/1811677rawdetections/63222355existingNPZbytes. Largestvideo63frames/
+  64520B rawarray. Orderedsource+array d6ef4186...; no GT/pixels/weights/Test,
+  associations or model execution, training/newassets. Same fixedroute's
+  required allValquality audit remains feasible with own preregistration; no
+  invented threshold/modelvariant or tinyNovel-driven tuning/primary claim.
+- Initial directread stopped256MiB guard at inheritedru_maxrss847216640B.
+  Freshchild keptsameguard,5.14350s/65458176B report,exit0. This also limits
+  interpreting the four-route evaluator's published847216640B as isolated
+  actualRSS. Preserve originalmetric/receiptvalues; disclose high-water issue.
+- Preflight/result regression284passed/no skips; conservative repository+
+  ownedenv6,529,826,816 B. Fullfixedroute replay still NOTstarted, no primary.
