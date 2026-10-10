@@ -1086,3 +1086,23 @@
 - Actual349scoped tests passed/no skips (24.53s),includingfullfeature receipt,
   trueprefix/sourcebinding,actual33loss traces,jointresource reservation,
   unchanged2040/840/780matrix andprospectivefullGT evaluator safeguards.
+
+## 2026-10-10 — Formal frozen inference live; first predefined fullstream case
+
+- Feature/evaluator source deliveryeddbc50435e87b85b7141decfb2a5dc32290ef24
+  pushed/exactremoteverified. FreshRAM91GiBavailable/freeDisk78GiB;owned
+  inference61793/evaluator19873 launched,eightfreshUUID inference workers.
+  No newtraining/physicalinference/model-or-point amendment. Pending840.
+- FirstpredefinedRawB0/main/p1 completesall988videos/all304561IDs andposthoc
+  fullGT4413/819. Old22/4413=.00498527,New111/819=.13553114,H=.00961680,
+  pureCT0/527,FM39/527,Novelreusecommit118/527. AllpredictedIDcommit1.0,
+  explicitWAIT0;GTunresolved includes3643physicalmisses,notpolicyrefusal.
+  Sealed-payload/private-metricSHA bound inpublic partialmatrixreceipt;no
+  favorableconfiguration/partialvideo/extrapolatedfinalsuccess claim.
+- Prospective finalreport source refusespartialmatrix or '2040independent'
+  fiction,requires840realfullsealedexecutions/780fixedpairs,allfullGTpenalties,
+  actual99localcheckpointSHA andunchanged52Train-freeze hashes. Finalreport
+  is NOT generated yet; nooldappGoal falselycompleted.
+- Actual352scoped tests passed/no skips(47.64s whileeightworkers run),including
+  truefirstfullstream fixedcase/fullGT/explicitWAIT distinction andfinalreport
+  completeness/actualmeanH gates. NativeGTjoin openedonlypostseal, no newfit.
