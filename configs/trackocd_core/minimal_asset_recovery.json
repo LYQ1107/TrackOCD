@@ -267,6 +267,9 @@
       "full_cached_source_existing_bytes": 63222355,
       "full_cached_source_verified_videos": 988,
       "full_replay_started": false,
+      "complete_fixed_route_quality_config": "configs/trackocd_core/rpn_bytetrack_full_quality.json",
+      "maximum_complete_quality_private_outputs_bytes": 268435456,
+      "maximum_complete_quality_public_result_bytes": 20971520,
       "condition": "Preregister fixed first4x16 clip and existing exact ByteTrack parameters; one CPU, no Torch/pixels/new weights. Full prediction seal and independent identical-GT old3 baseline replay before comparison. Preserve partial runs. Not automatic full-Val/cache/primary or semantic training."
     },
     {

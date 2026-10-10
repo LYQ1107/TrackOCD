@@ -966,3 +966,49 @@ high-water report, not a separately isolated actual RSS measurement. Keep the
 original result/metric values unchanged and disclose this reporting limitation.
 Preflight/result regression **284 passed, no skips**; conservative repository+
 owned-environment6,529,826,816 allocatedB before preflight delivery, below15GiB.
+
+## Complete same fixed RPN/ByteTrack quality audit preregistration
+
+Previous turn actually delivered bounded fixed-route resultbe27b7a and readonly
+entire-cache preflightb7d3e9c,284tests. Original M1 explicitly requires full-Val
+physical quality before selecting any primary. No unresolved limited-native
+acceptance is assumed. Same route is now fixed for its complete quality audit,
+not selected/tuned from tiny1/2Novel or invented as another parameter variant.
+
+Exact988video/36,375annotated-image universe/privateplanbb4ae9b1... and raw
+1,811,677detections/63,222,355existingNPZbytes, manifest8564226a..., ordered
+source+detector identityd6ef4186.... Entire-video causal reset atfirst annotated
+frame, currentboxes/q only, unchanged fixedByteTrack0cb98714.../.5/.1/.8/
+newtrack.6/buffer30/frame_rate30/minarea10/aspectoff. No nativeIDs/GT/text/
+embedding/prototype, score repair/NMS/cap, pixel rerun, training/newassets.
+30annotated-step lost horizon versus nativeMASA10 and PANDAS densehistory
+disclosed; no isolated association/window causation. BaseCPU runtime frozen
+Python3.10.21/NumPy2.2.6/SciPy1.15.3, no Torch/GPU in prediction.
+
+One CPU fresh supervised worker:15min/512MiB prediction,1h/2GiB evaluation,
+25% RAM reserve,4GiB disk reserve,256MiB owned output/20MiB public result ceilings,
+15/30GiB overall budgets. Exactly36,375production+8first4-frame causalprobe
+updates. All988 classical atomic markers/raw-source/array hashes/unchanged
+tracker/full counters and successful worker exit must seal before GT access.
+Preserve partial/failed runs; no automatic restart or overwrite/foreign kills.
+
+Independent freshCPU canonical TAO_OW(all,max300)/HOTA uses unchanged per-video
+scorer, count-weighted full combination, full113,112GTrows and shared4413Known/
+819Novel targets. Compare newroute and same complete native/PANDAS streams;
+reproduce old full/per-video fourmetrics<=1e-12, exact coverage/purity/lengths/
+counts/sourcehashes or reportINCOMPARABLE. Known/Novel labels onlyposthoc, no
+model/selection/parameter input; unknowns and empty/failed coverage retained.
+Only own fresh per-video disposable GT/predJSON scratch is cleaned; original
+GT/source/newNPZ, supervisors, partial attempt and per-video metrics/hash
+evidence retained. No duplicated whole-Val JSON, external project deletion,
+Test, formalDINOcache, primaryfreeze, GT-policy/R2/M11 or maintraining.
+
+9 new preregistration tests pass: all-frame/empty replay/raw-score identity,
+fixedparameters, wholeuniverse, entireseal/baseline-firstGT, no partialrestart,
+scratch-disposal storage-race tolerance, baseline comparison rejecting unknown
+filter/omittedvideo, synthetic full-canonical versus per-video weighted combo
+(including empty predictions). No full replay before exact remote prereg.
+Legacy full-GT annotation insertion order retained before frame traversal,
+including geometric target tie order; test covers nonchronological annotation
+order. The small-clip/old full evaluators remain unchanged. Scoped core/v2/
+PANDAS regression **293 passed, no skips**, not an all-repository claim.

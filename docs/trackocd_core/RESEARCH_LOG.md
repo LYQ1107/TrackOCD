@@ -702,3 +702,26 @@
   actualRSS. Preserve originalmetric/receiptvalues; disclose high-water issue.
 - Preflight/result regression284passed/no skips; conservative repository+
   ownedenv6,529,826,816 B. Fullfixedroute replay still NOTstarted, no primary.
+
+## 2026-10-10 — Same fixed cached RPN/ByteTrack complete-quality audit preregistered
+
+- Previous turn was actual progress: fixed64+8 diagnosticbe27b7a and allsource
+  readonlypreflightb7d3e9c,284tests/verifiedremote. OriginalM1 requires full
+  quality for each candidate; no tinyNovel-based tuning or inferred limited
+  native-primary scope acceptance. Samefixedroute, not a newparameter variant.
+- Exact988videos/36375images/1811677rawdets,existing63MBsource, no newassets,
+  detector/pixel rerun/training/GT/text/nativeID input. ExactpriorByteTrack
+  parameters and CPUruntime3.10.21/NumPy2.2.6/SciPy1.15.3. 30annotated-step
+  horizon versusnative10/PANDASdensehistory disclosed, not isolatedcausation.
+- FreshoneCPU15min/512MiB prediction,1h/2GiB independent evaluation;256MiB
+  output/20MiBpublic,25%RAMreserve/4GiBdisk/15GiBsoft/30GiBhard. Whole988
+  atomicseal/36375+8calls/exit0 beforeGT. Failedpartial attempts retained.
+- Same canonical/per-video geometry/pollution scorer/count-weighted combo,
+  fullGT113112/4413Known/819Novel, oldnative/PANDAS full+per-video exact
+  counts/coverage/purity/lengths/source identities and fourmetric<=1e-12 or
+  INCOMPARABLE. Own only-current-video scratch cleaned, no wholeGT duplicates.
+- 9 new boundary/composition tests passed before execution; no automatic
+  primary/cache/maintrain/GT-policy extension/R2/M11/Test/foreign intervention.
+- Retain old full-GT target annotation insertion order, not clip-style first
+  chronological observation order; protect geometric matching ties. Actual
+  preregistration scoped regression293passed/no skips; old evaluators untouched.
