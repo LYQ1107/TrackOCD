@@ -1185,3 +1185,24 @@
   Frozenformal8workers continue; not fullmatrixcompletion or methodselection.
 - Actual364scoped tests passed/no skips41.60s,including actualreceipt hash
   bindings/allGTprototypecohorts/groupcount/cap-observation reconciliation.
+
+## 2026-10-11 — Final handoff terminal/provenance gates, no new experiment
+
+- Actualinputshift result/docs/tests pushed/exactremoteverified at
+  b1d3dc373165e2c3fa2dfc1bb6ef23fcf8b19792. Matrix snapshot131sealed/131metrics;
+  eightoriginal workers andbothdetachedparents continue, no terminal/error.
+- Finalreport source additionally requires actualsuccessful inference and
+  evaluator parentterminalreceipts, originaladoptedassignments/plan identity,
+  allgroupcompletions andeveryposthoc case bound toitsimmutable seal/source.
+  Adoptedorphanexitcodes remain unavailable, never fabricatedzero; every
+  suchworker needs atomiccompletion proof. Failed/live/Noneexit receipts
+  cannot become acompletedreport. No protected methodsource changed.
+- Separate originalfrozeninference registration, scheduling-only recovery,
+  individualcaseevaluator registrations andfullcollector registration in
+  finalJSON/docs; operationalrecovery afterfirstValmetric is not falsely
+  described as a newscientific preregistration. Hash actualprivate terminal
+  receipts withoutuploading processwitnesses or rawassets.
+- Currentprospectiveevaluationdoc now accurately saysrunning/incomplete.
+  Finalsource checks exactstatusmarker before anyreportwrite, preserves edits
+  andrefuses duplicatecompletion. Actual372scoped tests passed/no skips39.18s.
+  Finalgenerator isstill notexecuted; actual840matrix/780pairs required.

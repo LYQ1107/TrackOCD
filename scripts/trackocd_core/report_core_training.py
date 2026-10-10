@@ -3,12 +3,18 @@
 from __future__ import annotations
 import argparse
 import csv
+import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
 from src.trackocd_v2.io import atomic_json,atomic_write_text,sha256_file
+RUNNING_PROTOCOL_STATUS=('The common predicted-track features are complete. Frozen semantic inference\n'
+    'and sealed-case posthoc metrics are in progress; the full matrix is not yet\n'
+    'complete. This document preserves the protocol registered before execution,\n'
+    'not invented final Val results.')
 
 
 def require_complete(rep,policy,val):
@@ -29,17 +35,85 @@ def table(rows,name):
     return '\n'.join(text)+'\n'
 
 
+def require_terminal(receipt,returncodes_key,adopted_groups=()):
+    codes=receipt.get(returncodes_key)
+    if receipt.get('error') is not None or not isinstance(codes,list) or any(type(c) is not int or c!=0 for c in codes):
+        raise ValueError('Actual successful owned-child terminal receipt required')
+    if receipt.get('legacy_live_workers_left_untouched'):
+        raise ValueError('Cannot finalize while adopted workers are still live')
+    proofs=receipt.get('adopted_original_workers_terminal_proof',[])
+    if len(proofs)!=len(adopted_groups) or {r['group'] for r in proofs}!=set(adopted_groups):
+        raise ValueError('Every adopted worker needs terminal proof; no fabricated zero exit')
+    if any(r.get('orphan_exit_status')!='UNAVAILABLE_NOT_A_CHILD' or r.get('atomic_terminal_and_every_seal_verified') is not True for r in proofs):
+        raise ValueError('Orphan exit status unknown; atomic completion proof mandatory')
+
+
+def terminal_provenance(matrix,inference,val):
+    """Read only completed posthoc/operational receipts, never inference inputs."""
+    plan=json.loads((matrix/'plan.json').read_text());recovery_name=inference.get('scheduling_recovery_receipt')
+    original=[inference['preregistration_commit']];recovery_commit=None;hashes={};adopted=[]
+    if recovery_name:
+        match=re.fullmatch(r'recovery_([0-9a-f]{32})_started\.json',recovery_name)
+        if not match:raise ValueError('Bounded recovery receipt filename required')
+        receipt_path=matrix/recovery_name
+        if receipt_path.is_symlink():raise ValueError('No recovery receipt symlink')
+        recovery=json.loads(receipt_path.read_text());attempt=match.group(1)
+        if recovery['identity']!=inference['identity'] or recovery['plan_sha256']!=inference['plan_sha256'] or recovery['preregistration_commit']!=inference['preregistration_commit']:
+            raise ValueError('Recovery changed original frozen inference identity')
+        recovery_commit=recovery['preregistration_commit']
+        if any(a['identity']!=inference['identity'] or a['plan_sha256']!=inference['plan_sha256'] for a in recovery['prior_assignments'].values()):
+            raise ValueError('Original adopted assignments must retain the same prospective inputs')
+        for name,sha in recovery['source_sha256'].items():
+            if hashlib.sha256(subprocess.check_output(['git','show',f'{recovery_commit}:{name}'])).hexdigest()!=sha:
+                raise ValueError('Actual recovery source not registered at recorded commit')
+        original=sorted({a['preregistration_commit'] for a in recovery['prior_assignments'].values()}) or [recovery_commit]
+        adopted=[w['group'] for w in recovery['adopted_current_host_workers']]
+        hashes[recovery_name]=sha256_file(receipt_path)
+    else:
+        attempt=json.loads((matrix/'inference_supervisor_progress.json').read_text())['attempt']
+        if not re.fullmatch('[0-9a-f]{32}',attempt):raise ValueError('Actual parent attempt required')
+    path=matrix/f'supervisor_{attempt}.json';terminal=json.loads(path.read_text())
+    require_terminal(terminal,'owned_child_returncodes',adopted)
+    if len(terminal['completed_groups'])!=len(plan['groups']) or set(terminal['completed_groups'])!=set(plan['groups']):
+        raise ValueError('All registered groups need actual terminal completion')
+    hashes[path.name]=sha256_file(path)
+    evaluator_receipts=[]
+    for path in matrix.glob('evaluator_supervisor_*.json'):
+        match=re.fullmatch('evaluator_supervisor_([0-9a-f]{32})\\.json',path.name)
+        if not match:continue
+        assignment_path=matrix/f'evaluator_assignment_{match.group(1)}.json'
+        assignment=json.loads(assignment_path.read_text())
+        if assignment['preregistration_commit']!=val['preregistration_commit'] or assignment['source_sha256']!=val['source_sha256']:continue
+        require_terminal(json.loads(path.read_text()),'owned_returncodes')
+        evaluator_receipts.append(path.name);hashes[path.name]=sha256_file(path);hashes[assignment_path.name]=sha256_file(assignment_path)
+    if not evaluator_receipts:raise ValueError('Actual full evaluator terminal receipt required')
+    case_registration=set();records={r['job']['id']:r for r in inference['records']}
+    for key in plan['jobs']:
+        metric=json.loads((matrix/'cases'/key/'case_metrics.json').read_text())
+        if metric['status']!='COMPLETE_FULL_GT_POSTHOC_SEMANTIC_METRICS' or metric['input_identity']!=inference['identity'] or metric['evaluator_source_sha256']!=val['source_sha256'] or metric['sealed_ledger_sha256']!=records[key]['ledger']['sha256']:
+            raise ValueError('Every actual posthoc case must bind the unchanged all-ID seal/source')
+        case_registration.add(metric['evaluator_preregistration_commit'])
+    return {'original_frozen_inference_registration_commits':original,'scheduling_recovery_registration_commit':recovery_commit,
+            'evaluator_collector_registration_commit':val['preregistration_commit'],'actual_case_evaluator_registration_commits':sorted(case_registration),
+            'all_original_and_recovered_scientific_inputs_identical':True,'adopted_worker_exit_status_not_fabricated':True,
+            'actual_successful_terminal_receipts_sha256':hashes}
+
+
 def main(commit):
     out=ROOT/'outputs/trackocd_core';base=out/'core_training/train_first_v1';docs=ROOT/'docs/trackocd_core'
     def read(name):return json.loads((out/(name+'.json')).read_text())
     rep=read('TRAIN_FIRST_REPRESENTATION_HELDOUT_RESULT');policy=read('TRAIN_FIRST_POLICY_HELDOUT_RESULT');val=read('LIMITED_MASA_EVALUATION_RESULT');require_complete(rep,policy,val)
     remote=subprocess.check_output(['git','-c','http.proxy=http://127.0.0.1:17890','ls-remote','origin','refs/heads/codex/trackocd-core-training-limited-masa'],text=True,timeout=25).split()[0]
     if remote!=commit or subprocess.check_output(['git','show',f'{commit}:scripts/trackocd_core/report_core_training.py'])!=Path(__file__).read_bytes():raise ValueError('Final report source must be registered and exact remote')
+    old=(docs/'LIMITED_MASA_EVALUATION.md').read_text()
+    if '## Completed actual full semantic evaluation' in old or old.count(RUNNING_PROTOCOL_STATUS)!=1:
+        raise ValueError('Preserve existing report edits/completion; exact pending status required')
     freeze=json.loads((base/'model_freeze.json').read_text())
     for path,sha in freeze['protected_sha256'].items():
         if sha256_file(ROOT/path)!=sha:raise ValueError('Frozen Train model/protocol changed')
     inference=json.loads((base/'limited_masa_evaluation/full_inference_manifest.json').read_text())
     if sha256_file(base/'limited_masa_evaluation/full_inference_manifest.json')!=val['full_inference_manifest_sha256'] or inference['unique_executions']!=840:raise ValueError('Actual inference lineage lost')
+    lineage=terminal_provenance(base/'limited_masa_evaluation',inference,val)
     checkpoints=[];retained=[];training={}
     for family in ('representation','evidence','policy'):
         path=base/family/'training_receipt.json';receipt=json.loads(path.read_text());training[family]={'receipt_path':str(path),'receipt_sha256':sha256_file(path),'preregistration_commit':receipt['preregistration_commit'],
@@ -102,6 +176,7 @@ def main(commit):
         'scope_authorization_sha256':'cc874517b5366c019b625ce3d6fcf0a33333c359cfb1dd8d03039d2cde290e99',
         'report_source_registration_commit':commit,'source_registration_exact_remote_verified':True,'full_inference_preregistration_commit':inference['preregistration_commit'],
         'posthoc_evaluator_registration_commit':val['preregistration_commit'],
+        'original_registration_and_operational_recovery_provenance':lineage,
         'report_source_sha256':sha256_file(Path(__file__).resolve()),'model_freeze_sha256':sha256_file(base/'model_freeze.json'),'protected_sha256':freeze['protected_sha256'],
         'actual_fits':33,'selected_checkpoints':checkpoints,'retained_checkpoints':retained,'controlled_representation_cases':420,'controlled_policy_cases':1800,
         'limited_MASA_unique_executions':840,'limited_MASA_logical_cases':2040,'canonical_per_order_rows':4260,'actual_loss_trace_rows':15360,
@@ -268,8 +343,18 @@ failureinterpretations and limitations. No post-result model/bias/cost tuning.
 ## Reproduction, checkpoints and provenance
 
 Branch `codex/trackocd-core-training-limited-masa`; report source registered
-and exactremoteverified at `{commit}`, actual fullinference/evaluation prereg
-`{val['preregistration_commit']}`. Model freeze `{result['model_freeze_sha256']}`
+and exactremoteverified at `{commit}`. Original frozen inference registration:
+`{', '.join(lineage['original_frozen_inference_registration_commits'])}`;
+scheduling-only recovery registration:
+`{lineage['scheduling_recovery_registration_commit'] or 'not applicable'}`;
+actual evaluator case registrations:
+`{', '.join(lineage['actual_case_evaluator_registration_commits'])}`;
+full evaluator collector registration `{val['preregistration_commit']}`.
+Recovery did not create new models, points or a new method after Val metrics.
+Both actual successful parent terminal receipts are required; adopted orphan
+exit codes are unavailable and never fabricated as zero. Their atomic group
+completion and every immutable case seal constitute explicit terminal proof.
+Model freeze `{result['model_freeze_sha256']}`
 binds52protectedsource/config/receipt/checkpointhashes. Finalreportcommit and
 exactremote are verified **after** committing these reports; no impossible
 self-referential commit SHA is fabricated inside its own artifact.
@@ -306,10 +391,8 @@ evidence,not scientific PASS. No further safe-feedback/training experiment is
 automatically authorized by this result.
 '''
     atomic_write_text(docs/'CORE_TRAINING_FINAL_REPORT.md',report)
-    old=(docs/'LIMITED_MASA_EVALUATION.md').read_text()
-    old=old.replace('The common predicted-track features are complete. Full semantic inference and\nposthoc metrics have **not** yet run. This document records their prospective\nprotocol, not invented Val results.',
+    old=old.replace(RUNNING_PROTOCOL_STATUS,
         'All common features,840fullstream semantic executions and2040explicit logical\nalias reports are complete. The following frozen protocol was registered before\nthose metrics. Actual results and comparison flags are appended below.')
-    if '## Completed actual full semantic evaluation' in old:raise ValueError('Do not append final metrics twice')
     atomic_write_text(docs/'LIMITED_MASA_EVALUATION.md',old+'\n## Completed actual full semantic evaluation\n\n'+table(val_rows,'Method atp16 Train-devtarget1 or rawrepresentation')+'\n'+support_table+'\nSee full per-order/seed/prefix/coverage JSON andCSV, explicit alias manifest,\nmatchedcoverage flags andintroduced-error counts. Samephysicalreference for all.\n')
     result['final_document_sha256']={n:sha256_file(docs/n) for n in ('CORE_TRAINING_FINAL_REPORT.md','METHOD_ARCHITECTURE.md','TRAINING_PROTOCOL.md','LIMITED_MASA_EVALUATION.md','SCIENTIFIC_CONCLUSION.md')}
     atomic_json(out/'CORE_TRAINING_FINAL_RESULT.json',result)

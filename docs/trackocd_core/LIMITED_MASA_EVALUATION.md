@@ -2,9 +2,16 @@
 
 ## Current execution status
 
-The common predicted-track features are complete. Full semantic inference and
-posthoc metrics have **not** yet run. This document records their prospective
-protocol, not invented Val results.
+The common predicted-track features are complete. Frozen semantic inference
+and sealed-case posthoc metrics are in progress; the full matrix is not yet
+complete. This document preserves the protocol registered before execution,
+not invented final Val results.
+
+The 2026-10-11 scheduling recovery retained all eight live original workers,
+unchanged frozen executors and the 840/2,040 prospective matrix. Both detached
+parents are live. Source/actual startup evidence and restored GitHub delivery
+are in `SCHEDULING_RECOVERY.md`; existing-input descriptive statistics are in
+`INPUT_SHIFT_DIAGNOSTIC.md`. These do not imply final experiment completion.
 
 - 988 existing TAO Validation videos / 36,375 annotated frames.
 - All 304,561 frozen Native MASA physical IDs, including 114,380 singletons.
