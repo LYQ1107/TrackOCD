@@ -152,3 +152,26 @@ print("weighted composition pass")
     result = subprocess.run([sys.executable, "-c", code, str(tmp_path)], cwd=runtime.ROOT, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip().endswith("weighted composition pass")
+
+
+def test_actual_full_prediction_has_exact_complete_source_without_training_or_gt():
+    from src.trackocd_v2.io import sha256_file
+    from scripts.trackocd_core.summarize_rpn_bytetrack_full_prediction import SUMMARY
+    row = json.loads(SUMMARY.read_text())
+    config, plan, records, digest = runtime.load_plan()
+    prediction, sealed = runtime.verify_prediction(config, plan, records, digest)
+    assert row["status"] == "SEALED_COMPLETE_FULL_VAL_CLASSICAL_RPN_BYTETRACK"
+    assert row["videos"] == len(sealed) == 988 and row["images"] == 36375
+    assert row["total_frame_updates_including_probe"] == 36383 and row["raw_detection_rows"] == 1811677
+    assert row["prediction_rows"] == sum(s["prediction_rows"] for s in sealed) == 746803
+    assert row["compressed_npz_bytes"] == sum(s["npz_bytes"] for s in sealed) == 47833116
+    assert row["prediction_manifest_sha256"] == sha256_file(runtime.RUN / "prediction_manifest.json")
+    assert row["ordered_source_and_detector_array_identity_sha256"] == config["ordered_source_and_detector_array_identity_sha256"]
+    assert row["all_classical_markers_and_detector_lineage_verified"] and row["input_arrays_unchanged"]
+    assert not any(row["boundary"].values()) and not row["torch_imported"] and not row["tracker_has_learned_weights"]
+    assert not row["nn_frozen_state_claim"] and not row["primary_freeze_permitted"] and not row["scientific_pass_permitted"]
+    assert not row["formal_feature_cache_started"] and not row["ocd_or_m9_metrics"]
+    assert row["worker_returncode"] == 0 and row["supervisor_error"] is None
+    assert row["resources"]["worker_peak_rss_bytes"] <= config["limits"]["prediction_host_rss_bytes"]
+    assert row["resources"]["worker_seconds"] <= config["limits"]["prediction_seconds"]
+    assert row["causality_probe"]["pass"] and row["causality_probe"]["frame_updates"] == 8

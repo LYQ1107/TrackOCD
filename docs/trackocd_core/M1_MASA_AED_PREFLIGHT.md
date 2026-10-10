@@ -1012,3 +1012,27 @@ Legacy full-GT annotation insertion order retained before frame traversal,
 including geometric target tie order; test covers nonchronological annotation
 order. The small-clip/old full evaluators remain unchanged. Scoped core/v2/
 PANDAS regression **293 passed, no skips**, not an all-repository claim.
+
+## Actual complete fixed RPN/ByteTrack prediction sealed, GT scoring not yet done
+
+Prereg e08a0da273d7ef6c349e19c96d2151875139ab40 exact remote01:40:03Z before
+CPU replay. Completed988atomicvideos/36,375production+8probe updates, all
+1,811,677raw detections retained as exact detector arrays. New746,803trackrows,
+compressedNPZ47,833,116 B, allocatedprediction62,595,072 B. Allsource/payload/
+video/config/array identities verified, orderedsource d6ef4186... unchanged;
+all states classical, no falseNNfrozen-state claim. Exactnonempty causalprefix,
+fixedparams/runtime/source0cb98714..., noTorch/GPU/GT/text/training/newassets.
+
+Workerexit0,446.937s/peak161,869,824 B, supervisor448.026s/sampled160,858,112 B;
+freshworker means reportedRSS is not inherited-terminal highwater. Entire
+prediction seal14dcfb0317593b6340a741de5103ce400260dca199a5121ab568bcde43335dc3.
+Public aggregate summaryd3aa2255844b66e46d985e88f5ae14957672d0b587bd1d886dfb9876063b0b22.
+No rawNPZ/GT/weights published. Complete prediction is NOT quality PASS; GT
+evaluation and exact fullbaseline reproduction still required, no primary/
+formalcache/maintraining/R2/GT-policy/M11. Prediction process terminal, not a
+job to poll again or restart. Repo+ownedenv6,592,942,080 allocatedB before this
+stage delivery, below15GiB/30GiB, about82GiB disk free. Independent freshCPU
+GT phase starts only after tested prediction summary commits/pushes/verifies.
+Actual sealed-prediction regression **294 passed, no skips**; all988 classically
+sealed shards/detector hashes/counts/guards checked. Only2 empty output frames,
+retained rather than omitted; aggregate JSON6,049 B, no GT-derived metrics yet.

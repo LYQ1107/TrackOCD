@@ -1,0 +1,134 @@
+{
+  "all_classical_markers_and_detector_lineage_verified": true,
+  "boundary": {
+    "foreign_process_interference": false,
+    "gpu": false,
+    "gt_or_semantic_or_native_track_input": false,
+    "new_weights": false,
+    "parameter_search": false,
+    "pixel_inference": false,
+    "score_repair": false,
+    "test_access": false,
+    "training": false
+  },
+  "cadence_boundary": "ByteTrack resets at entire-video first registered frame, ordinal annotated-only cadence,30 annotated-step lost horizon with frozen frame_rate30/buffer30; native MASA memo10 differs. PANDAS retains dense-frame history/different detector. Complete route comparison, not isolated threshold/memory/architecture causation.",
+  "causality_probe": {
+    "frame_updates": 8,
+    "pass": true,
+    "replays": [
+      [
+        {
+          "input_sha256": "e5dd16ee925941c73c13372eddac94b9b2ed078dc5ac3816f85190192dfaa21a",
+          "output_sha256": "4157bedb0e133a93d8f9312bf9fd3ab8e6c8feff14d9aaef54b91de4c56e1f24",
+          "tracks": 41
+        },
+        {
+          "input_sha256": "e4ff708e909c02da3d261df1d072a8b88f866133fb301bcaebbef0084e2225c6",
+          "output_sha256": "07119f9e5613165bdb10ef9751950c6c8b5fa1f6e68ab392a4b6106d1fb4d75f",
+          "tracks": 33
+        },
+        {
+          "input_sha256": "82d4bf7f80290dfbbbf253c3c94ce30e67fe336c3cccc8b5759a1f117435fab0",
+          "output_sha256": "5b6c9581f99397f574d193121ef4edfc5192bd6177fbe22f0a15147054ebedb8",
+          "tracks": 39
+        },
+        {
+          "input_sha256": "6174776e0c766e7b32a6c74615cd1d408fb92fec57ba0e08d35c775d319e6e29",
+          "output_sha256": "411c5387c64b5cc614b51880bf0601cb3bfc91e52a56586d9ef5eec44c3fd889",
+          "tracks": 41
+        }
+      ],
+      [
+        {
+          "input_sha256": "e5dd16ee925941c73c13372eddac94b9b2ed078dc5ac3816f85190192dfaa21a",
+          "output_sha256": "4157bedb0e133a93d8f9312bf9fd3ab8e6c8feff14d9aaef54b91de4c56e1f24",
+          "tracks": 41
+        },
+        {
+          "input_sha256": "e4ff708e909c02da3d261df1d072a8b88f866133fb301bcaebbef0084e2225c6",
+          "output_sha256": "07119f9e5613165bdb10ef9751950c6c8b5fa1f6e68ab392a4b6106d1fb4d75f",
+          "tracks": 33
+        },
+        {
+          "input_sha256": "4c33f2f8e338b326d8736cb06cca1db8b6b09de095ef95d550d4c5830b43e2b5",
+          "output_sha256": "a383fa09c7cc1fee5d8f520e92ae32810953de5aee09d254be45121d8f406a48",
+          "tracks": 0
+        },
+        {
+          "input_sha256": "ac8dab8205808c8c0b631b7a4148bc3dcc8dbfb7c338eed146108b3e250729c3",
+          "output_sha256": "2732835f743f709ff39040987c87467a93c55fba86af6b8a9f197e999cbdc070",
+          "tracks": 39
+        }
+      ]
+    ],
+    "scope": "First4 real cached frames, exact first2 outputs; future boxes only shifted, no score repair or production changes"
+  },
+  "compressed_npz_bytes": 47833116,
+  "config_sha256": "0aa0a4c18830b3fa616dcd5e4c4a821820a5c6fa3e8d5d201d97f84bd3e11489",
+  "empty_output_frames": 2,
+  "formal_feature_cache_started": false,
+  "images": 36375,
+  "independent_gt_evaluation_complete": false,
+  "input_arrays_unchanged": true,
+  "nn_frozen_state_claim": false,
+  "ocd_or_m9_metrics": false,
+  "ordered_source_and_detector_array_identity_sha256": "d6ef41863d32ca33da70db2913d5903b5954c480f60e9c95afa4984706699141",
+  "prediction_manifest_sha256": "14dcfb0317593b6340a741de5103ce400260dca199a5121ab568bcde43335dc3",
+  "prediction_rows": 746803,
+  "primary_freeze_permitted": false,
+  "provenance": {
+    "exact_private_sam_release_training_stage_binding_verified": false,
+    "forbidden_supervision_proven": false,
+    "grade": "OFFICIAL_PUBLICATION_AND_PINNED_RELEASE_GENERIC_IMAGE_ROUTE_WITH_DISCLOSED_PRIVATE_STAGE_GAP",
+    "paper": "https://arxiv.org/html/2406.04221v1",
+    "paper_sections": [
+      "4.1",
+      "J.1",
+      "J.2"
+    ],
+    "pinned_route_receipt": "outputs/trackocd_core/audit/masa_training_route.json",
+    "reported_training": "Main models: SA-1B-500K, frozen official SAM foundation; SAM track-head-only final6-epoch phase disclosed in J.2; other BDD/COCO and TETer domain-adaptation experiments are separate, not automatically release lineage",
+    "runtime": "One-class native RPN/ROI, no Detic, vocabulary, semantic checkpoint metadata fallback, text, GT, public detections or offline filtering",
+    "sam_foundation_author_statement": "https://github.com/facebookresearch/segment-anything/issues/53"
+  },
+  "quality_contract": "Unchanged raw RPN/ROI one-class foreground probability det_score in [0,1]; no sigmoid/clamp/normalization/calibration/NMS/cap added by wrapper. Existing ByteTrack built-in fixed gates/minarea and Kalman boxes preserved.",
+  "raw_detection_rows": 1811677,
+  "resources": {
+    "cpu_workers": 1,
+    "fresh_worker": true,
+    "gpu_used": false,
+    "private_allocated_bytes_before_evaluation": 62595072,
+    "supervisor_sampled_peak_owned_tree_rss_bytes": 160858112,
+    "supervisor_seconds": 448.0258588609868,
+    "worker_peak_rss_bytes": 161869824,
+    "worker_seconds": 446.93727283598855
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "python": "3.10.21",
+    "scipy": "1.15.3"
+  },
+  "schema_version": "trackocd.core.rpn_bytetrack_full_prediction_summary.v1",
+  "scientific_pass_permitted": false,
+  "source_checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+  "source_prediction_manifest_sha256": "8564226a67298040af4a51c66ca6c9e1a72d169fa454329fa5eb09e496c1f592",
+  "status": "SEALED_COMPLETE_FULL_VAL_CLASSICAL_RPN_BYTETRACK",
+  "supervisor_error": null,
+  "torch_imported": false,
+  "total_frame_updates_including_probe": 36383,
+  "tracker_has_learned_weights": false,
+  "tracker_parameters": {
+    "filter_mot_aspect": false,
+    "frame_rate": 30,
+    "low_thresh": 0.1,
+    "match_thresh": 0.8,
+    "min_box_area": 10,
+    "mot20": false,
+    "new_track_thresh": 0.6,
+    "track_buffer": 30,
+    "track_thresh": 0.5
+  },
+  "tracker_source_sha256": "0cb987147ca5c5d29941a5e4347f13b413805a9d67ce04feeb36530394d3586d",
+  "videos": 988,
+  "worker_returncode": 0
+}

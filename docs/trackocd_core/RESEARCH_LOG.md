@@ -725,3 +725,20 @@
 - Retain old full-GT target annotation insertion order, not clip-style first
   chronological observation order; protect geometric matching ties. Actual
   preregistration scoped regression293passed/no skips; old evaluators untouched.
+
+## 2026-10-10 — Actual complete fixed RPN/ByteTrack CPU prediction sealed
+
+- Prerege08a0da exactremote01:40:03Z beforeCPUwork. All988videos/36375frames
+  plus8causalprobe calls complete andatomicsealed,1811677rawdets unchanged.
+  New746803trackrows/47833116BcompressedNPZ/62595072allocatedBprediction.
+- Workerexit0,446.937s/peak161869824B; supervisor448.026s/160858112Bsampled.
+  Freshworker,noTorch/GPU/newweights/dependencies/pixels/GT/text/training/Test
+  or foreignintervention. Classicalmarkers not NNstate claims. Sourcearrays,
+  trackerparams/runtime/bytes unchanged, causalprefix exact/d6ef4186sourceID.
+- Seal14dcfb03...; publicaggregated3aa2255... onlyhash/counts/resources,
+  no rawboxes/GT/weight upload. Predicatecomplete, not M1qualityPASS/primary.
+  GTmetrics andcompleteoldbaseline reproduction pending; no cache/maintrain/
+  GT-policy/R2/M11. Predictionownedhandle62289/PID1762381terminal, historical
+  evidence only. Conservative repo+ownedenv6,592,942,080B beforedelivery.
+- Actualprediction regression294passed/no skips; all988atomicseals/source
+  hashes/counters verified. 2emptyframes retained; publicsummary6049B only.
