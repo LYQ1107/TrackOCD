@@ -705,3 +705,45 @@ PANDAS/ByteTrack). An additional legacy frame-online suite attempt had245passed
 and4failures: all4 read hardcoded unavailable old-server paths or its old
 equivalence receipt. These are outside the new route and are disclosed, not
 rewritten or reported as passing. Original historical source/tests unchanged.
+
+## Actual SAM-grid Train interface result (not physical quality qualification)
+
+Preregisteredd1a53d055f4e2b1483d21b128505dfae0bf99b38 independently matched
+remote at00:26:49Z before real work. One freshly idle GPU worker,8 forwards from
+the four existing Train images, terminal exit0. Actual28.09s, reported peak
+hostRSS1,669,341,184 B/GPUallocated3,126,192,640 B/reserved4,246,732,800 B;
+all within registered limits. No additional model, environment or image bytes.
+
+Original-frame detections/tracks36/32/35/40; changed-future replay36/32/37/35.
+Every image used one encoder and16 fixed64-point batches,3072 raw multimasks.
+IoU/stability filters leave241/229/312/386 masks before NMS on original frames,
+then36/32/35/40 anonymous valid boxes; no degenerate boxes or undefined stability
+in any of the8 real frames. There is no new50-box cap. Counts do not estimate
+GT recall, purity, association stability, Known/Novel coverage or improvement.
+
+Raw predicted-IoU maxima1.02014/1.00889/1.00709/1.01145 on original frames,
+also>1 on changed futures. This empirically verifies the disclosed distinction
+from foreground probability; no sigmoid/clipping was added. Association scores
+are mask stability, all within[.950102,.991791] across these8frames. The existing
+RPN/ROI probability route and prior PANDAS score-contract records are unchanged.
+
+Changing future ordinals2,3 actually changed pixels and masks. Detection/track
+arrays on preceding ordinals0,1 reproduce exactly; no noncausal postprocessor.
+All419 frozen state tensors initial/final digest both
+`33443cac52ad4eb4bad4f7c87627443c5c2d04268273c2b96963c6feb373264f`.
+Small worker log/input/result plus marker184,320 allocatedB, private; public
+semantic-free summary23,532 B, SHA256
+`21fca03c67ba900bfd665abcc1fefaf08fb6955c00714cd3668004af6a955b30`.
+
+StatusPASS_BOUNDED_SAM_GRID_INTERFACE_NOT_PRIMARY_QUALIFICATION. This is a
+nontrivial runnable alternative within originalM1, so a genuine overall impasse
+is not established merely from unanswered limited-MASA acceptance. Original
+primary remains unfrozen/reliability requirement unchanged. Next lawful step is
+a separate metadata-fixed bounded physical diagnostic, preregistered before
+pixels and sealed before evaluator-only GT; not automatic full-Val/cache,
+threshold/crop/cap search, policy scope expansion, R2 or M11. No job left live.
+
+Result regression **244 passed, no skips**, including independent real count,
+resource/state/future invariance and explicit non-probability score checks.
+Conservative repository+owned-environment allocation6,521,634,816 B before
+result delivery, below15GiB soft/30GiB hard. Existing main/v2 history preserved.

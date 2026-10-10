@@ -583,3 +583,21 @@
 - Local relevant regression242passed/no skips. Broader legacy frame-online
   check245passed/4failed solely at unavailable hardcoded old-server paths and
   old equivalence receipt; preserved failures, no unrelated repair or false PASS.
+
+## 2026-10-10 — Actual bounded SAM-grid Train interface completed
+
+- Preregd1a53d0 exactremote00:26:49Z precedes8 Train forwards, oneidleGPU;
+  workerexit0,28.09s, host1.67GB/GPUreserved4.25GB, no freshassets/GT/Val/Test.
+- Original boxes/tracks36/32/35/40; changedfuture36/32/37/35. Prefix first2
+  arrays exactlysame, actualfuturechanged; all419 model tensors unchanged,
+  digest33443cac... onbothsides. No future-dependent postprocessing.
+- 3072 rawmasks/frame, official fixedgrid/defaultfilters; no degenerateoutput
+  or proposalcap. Raw predictedIoU actually>1, not foregroundprobability;
+  stabilityscore bounded and explicitlyseparate. No scoreclamp/sigmoidrepair.
+- Public23,532B/SHA21fca03c...; private184,320allocatedB, complete marker.
+  InterfacePASS only, not M1 quality/coverage/primary/scientificPASS. Original
+  requirement and oldresults preserved, no unresolvedscopeanswer assumed.
+  Safe next step: independentlypreregistered bounded physicaldiagnostic,
+  not automatic fullVal/cache/R2/M11. No runningownedjob.
+- Result regression244passed/no skips; conservative repo+ownedenv6,521,634,816B
+  before delivery, withinsoft15GiB/hard30GiB. Main/v2/source assets unchanged.

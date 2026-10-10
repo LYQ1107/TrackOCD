@@ -108,3 +108,37 @@ def test_existing_or_partial_attempt_cannot_be_overwritten(tmp_path, monkeypatch
     monkeypatch.setattr(smoke, "RUN", tmp_path)
     with pytest.raises(ValueError, match="Preserve"):
         smoke.preflight("not-a-commit")
+
+
+def test_actual_bounded_result_is_only_engineering_and_frozen_causal():
+    result = json.loads(smoke.SUMMARY.read_text())
+    assert result["status"] == "PASS_BOUNDED_SAM_GRID_INTERFACE_NOT_PRIMARY_QUALIFICATION"
+    assert result["preregistration_commit"] == "d1a53d055f4e2b1483d21b128505dfae0bf99b38"
+    assert result["config_sha256"] == smoke.sha256_file(smoke.PLAN)
+    assert result["real_image_forwards_started"] == 8 and result["input"]["unique_train_images"] == 4
+    assert result["strict_state_tensor_keys"] == 419 and result["all_parameters_frozen"]
+    assert result["model_state_initial_sha256"] == result["model_state_final_sha256"] == "33443cac52ad4eb4bad4f7c87627443c5c2d04268273c2b96963c6feb373264f"
+    assert result["supervisor"]["worker_returncode"] == 0
+    assert all(c["same_current_pixels"] and c["exact_arrays_equal"] for c in result["prefix_invariance"]["comparisons"])
+    assert result["prefix_invariance"]["future_pixels_actually_changed"]
+    assert not any(result[k] for k in ("primary_freeze_permitted", "scientific_pass_permitted", "training", "optimizer_used",
+                                      "formal_cache_started", "val_or_test_access", "gt_runtime_input", "external_process_interference"))
+    limits = json.loads(smoke.PLAN.read_text())["limits"]
+    assert result["elapsed_seconds"] < limits["wall_seconds"]
+    assert result["peak_host_rss_bytes"] < limits["host_rss_bytes"]
+    assert result["peak_gpu_reserved_bytes"] < limits["gpu_reserved_bytes"]
+    assert result["supervisor"]["private_allocated_bytes"] < limits["output_allocated_bytes"]
+
+
+def test_actual_native_iou_quality_not_silently_treated_as_probability():
+    result = json.loads(smoke.SUMMARY.read_text())
+    assert [[f["detections"]["count"] for f in r["frames"]] for r in result["replays"]] == [[36, 32, 35, 40], [36, 32, 37, 35]]
+    for replay in result["replays"]:
+        for frame in replay["frames"]:
+            assert frame["masks"]["raw_masks"] == 3072 and frame["masks"]["prompt_batches"] == 16
+            assert frame["masks"]["encoder_forwards"] == 1 and frame["masks"]["crop_layers"] == 0
+            assert frame["masks"]["proposal_cap"] is None
+            assert frame["masks"]["raw_predicted_iou_max"] > 1  # Real native quality; no clamp/sigmoid rescue.
+            assert frame["masks"]["degenerate_boxes_excluded"] == 0
+            assert .95 <= frame["tracks"]["score_min"] <= frame["tracks"]["score_max"] <= 1
+            assert "not class/foreground probability" in frame["masks"]["quality_contract"]
