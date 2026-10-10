@@ -1135,3 +1135,27 @@
   full-budgetcountsassignedtoearlycheckpoints is claimed. No rescuefitting.
 - Exposure-clarification source/docs rechecked:354scoped passed/no skips
   (47.37s). Formal inference/evaluator bytes and52frozen hashes unchanged.
+
+## 2026-10-11 — Proxy restored; frozen scheduling recovery registered
+
+- Former17890forward absent; existing17899proxy successfully reads GitHub.
+  Independent bounded loopback17890->17899relay restores the original script
+  entrypoint without sharedproxy/SSH modification or foreign process action.
+  Both pending commits pushed, exact remoteHEAD verified4d80520b618e101ca2e6e88b3a65169cdb3e0d72.
+- Fresh process/disk checks: original inference/evaluator parents absent,
+  parent progress stale, eight original exactassignment workers remain alive
+  underPID1 and continue sealing cases. No original parent terminal receipt;
+  disappearance cause not established. Never assume allworkers imply a live
+  scheduler, and never fabricate a terminal zeroexit for an orphan.
+- Register separate recovery scheduler; frozen inference/evaluator/search,
+  52protected hashes, checkpoints, points, trueprefixes and840/2040plan remain
+  unchanged. Adopt currentUID/script/assignment/startticks/GPUUUID only;
+  exact seal and atomic groupdone proof required on orphan completion.
+  Alreadycompleted groups/cases not recomputed; only new own children eligible
+  for safetycleanup. Original48h stage clock retained; no Val tuning/Test.
+- Newrelay tests verify loopback bytepreservation/halfclose/invalidports;
+  recovery tests verify PIDreuse/commandidentity/RAMheadroom/atomiccompletion
+  and no adopted-worker cleanup. Actual362scoped tests passed/no skips43.46s.
+  Recovery execution requires this source commit pushed/exactremoteverified.
+- Posthoc inputshift statistics and final report remain unexecuted pending
+  their actual resource/completeness gates; registration/tests are not results.
