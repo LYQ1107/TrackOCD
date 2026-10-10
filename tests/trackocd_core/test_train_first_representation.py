@@ -88,3 +88,23 @@ def test_actual_main_representation_three_seeds_and_complete_matched_fits():
                 assert sha256_file(root/cp['path'])==cp['sha256']
                 assert c['development']['final_heldout_opened'] is False
     assert len({v['model'] for v in receipt['selected_geometry'].values()})==1
+
+
+def test_actual_evidence_capacity_and_all_inputs_match_selected_A1():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2]
+    a=json.loads((root/'outputs/trackocd_core/TRAIN_FIRST_REPRESENTATION_RESULT.json').read_text())
+    b=json.loads((root/'outputs/trackocd_core/TRAIN_FIRST_EVIDENCE_RESULT.json').read_text())
+    assert b['phase']=='evidence' and len(b['fits'])==6 and b['matched_A1_selected_checkpoint_steps']
+    assert not b['final_heldout_evaluated'] and not b['val_or_test_access']
+    for f in b['fits']:
+        reference=next(r for r in a['fits'] if (r['model'],r['seed'])==(a['shared_geometry_family'],f['seed']))
+        assert f['adapter_initial_state_sha256']==reference['adapter_initial_state_sha256']
+        assert f['batch_identity_prefix_sha256']==reference['batch_identity_prefix_sha256']
+        assert f['selected_checkpoint']['step']==reference['selected_checkpoint']['step']
+        assert f['parameters']==541889 and f['steps']==1000 and len(f['trace'])==1000
+        assert f['positive_pairs']==reference['positive_pairs'] and f['negative_pairs']==reference['negative_pairs']
+        for checkpoint in f['checkpoints']:
+            cp=checkpoint['checkpoint'];assert sha256_file(root/cp['path'])==cp['sha256']

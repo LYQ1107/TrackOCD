@@ -31,7 +31,7 @@
   "checkpoint_selection": "development-only mean H-score and correct Commit-CT at zero WAIT bias over all five prefixes/main order; ties earlier epoch; all checkpoints kept",
   "wait_bias_grid": [-2.0, -1.0, 0.0, 1.0, 2.0],
   "coverage_targets": [0.5, 0.75, 1.0],
-  "operating_point_selection": "development-only nearest commitment coverage to target; tie lower action error then smaller absolute WAIT bias; report realized coverage, no interpolation or matched claim outside tolerance0.05",
+  "operating_point_selection": "development-only nearest effective commitment coverage on fixed pseudo-Novel cross-video reuse opportunities; tie lower total action error then smaller absolute WAIT bias; report total commitment coverage too; no interpolation or matched claim unless both coverage gaps<=0.05",
   "coverage_match_tolerance": 0.05,
   "frozen_checkpoint_payload_ceiling_bytes": 16777216,
   "training_wall_seconds": 7200,

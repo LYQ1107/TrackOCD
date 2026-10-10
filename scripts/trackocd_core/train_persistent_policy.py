@@ -113,11 +113,12 @@ def main():
                 operating={}
                 for target in cfg['coverage_targets']:
                     def key(row):
-                        coverage=float(np.mean([c['runtime']['commitment_coverage'] for c in row['cases']]))
+                        coverage=float(np.mean([c['persistent']['effective_commit_coverage'] for c in row['cases']]))
                         error=float(np.mean([1-c['standard']['all_acc'] for c in row['cases']]))
                         return (abs(coverage-target),error,abs(row['wait_bias']))
                     chosen=min(curve,key=key);operating[str(target)]={'wait_bias':chosen['wait_bias'],
-                        'actual_development_coverage':float(np.mean([c['runtime']['commitment_coverage'] for c in chosen['cases']])),
+                        'actual_development_coverage':float(np.mean([c['persistent']['effective_commit_coverage'] for c in chosen['cases']])),
+                        'actual_development_total_commitment_coverage':float(np.mean([c['runtime']['commitment_coverage'] for c in chosen['cases']])),
                         'target_coverage':target}
                 fits.append({'representation':representation,'representation_lineage':lineage,'model':name,'seed':seed,
                     'parameters':sum(p.numel() for p in model.parameters()),'initial_state_sha256':initial.hexdigest(),

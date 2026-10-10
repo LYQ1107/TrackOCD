@@ -841,3 +841,24 @@
   Scoped core/v2/PANDAS regression313passed/no skips (16.34s),including actual
   capped-bank/all-WAIT coverage penalty and pollution-gradient smoke tests.
   Next is T2 matched evidence/capacity fits after stage delivery.
+
+## 2026-10-10 — T2 matched temporal and capacity fits completed
+
+- 9dba258f exact remote before evidence optimizer.6real fits,three seeds x
+  existing CategoryEvidence/16833-extra static residual;1000steps each.
+  All actual initialization,batch/prefix SHA,pairs and selected A1 checkpoint
+  steps500/250/500 match. Same541889parameters and no extra reliability loss.
+- 251.3342s,peak allocated81915392B/reserved98566144B/RSS1230462976B;
+  all18checkpoints retained privately. No final heldout,policy,Val/Test or
+  backbone/detector/tracker optimization yet. Completion is not temporalPASS.
+- Before final heldout or policy results, policy coverage target clarified to
+  fixed pseudo-Novel crossvideo opportunities,not Known-dominated total. Both
+  this and total commitment coverage require<=0.05gap for matched-risk claims.
+  Posthoc per-video counts exactly cross-check audited CT;conditional bootstrap
+  holds global mapping/stream state fixed and disclaims video independence.
+- Next: actual first representation heldout table and independently registered
+  predicted-memory policy fits. All architectures/losses/budgets remain frozen
+  before final heldout; do not redesign methods from these upcoming results.
+- Scoped core/v2/PANDAS315passed/no skips (16.83s); an initial new bootstrap
+  test placement NameError was corrected before delivery,not a model change.
+  All18evidence checkpoint hashes and matched A1 identities/steps validated.

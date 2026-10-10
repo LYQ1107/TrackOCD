@@ -9,6 +9,7 @@ import pyarrow.parquet as pq
 from src.trackocd_core.train_first_cache import TrainFirstCache
 from src.trackocd_core.train_first_representation import make_model,prototype_vectors,representation_diagnostics
 from src.trackocd_core.evaluation import Target,TrackKey,join_evaluation,evaluate_standard,evaluate_persistent
+from src.trackocd_core.evaluation.persistent import fixed_cross_video_targets
 from src.trackocd_v2.io import sha256_file
 
 
@@ -89,21 +90,34 @@ def evaluate(sealed,routes,labels):
     targets=[Target(TrackKey(r['video_id'],str(r['physical_track_id'])),by[r['key']]['category_id'],
         'known' if by[r['key']]['simulation_role']=='known' else 'novel') for r in routes]
     join=join_evaluation(sealed,targets,{t.key:t.key for t in targets})
-    standard=evaluate_standard(join);standard.pop('global_anonymous_hungarian_mapping_evaluator_only')
+    standard=evaluate_standard(join);mapping=standard.pop('global_anonymous_hungarian_mapping_evaluator_only')
     persistent=evaluate_persistent(join);commits={c.event.physical_key:c.event for c in sealed.commits}
-    histories=defaultdict(list);contamination=0;wrong_known=0;novel=0
+    histories=defaultdict(list);history_videos=defaultdict(set);contamination=0;wrong_known=0;novel=0
     target_by={t.key:t for t in targets}
+    eligible={t.key for t in fixed_cross_video_targets(targets,sealed.video_order)}
+    per_video={v:{'video_id':v,'known_gt':0,'novel_gt':0,'old_correct':0,'new_correct':0,'reuse_opportunities':0,'correct_ct':0} for v in sealed.video_order}
+    for t in targets:
+        count=per_video[t.key.video_id];e=commits.get(t.key)
+        count['known_gt' if t.role=='known' else 'novel_gt']+=1
+        count['reuse_opportunities']+=t.key in eligible
+        if e is not None:
+            count['old_correct']+=t.role=='known' and e.kind=='KNOWN' and e.known_category_id==t.category_id
+            count['new_correct']+=t.role=='novel' and e.kind in {'NEW','EXISTING'} and mapping.get(e.token)==t.category_id
     for c in sealed.commits:
         e=c.event;t=target_by[e.physical_key]
         if e.kind in {'NEW','EXISTING'}:
             old=histories[e.token];contamination+=bool(old) and any(v!=t.category_id for v in old)
-            old.append(t.category_id)
+            if (t.key in eligible and e.kind=='EXISTING' and old and all(v==t.category_id for v in old)
+                and any(v!=t.key.video_id for v in history_videos[e.token])):per_video[t.key.video_id]['correct_ct']+=1
+            old.append(t.category_id);history_videos[e.token].add(t.key.video_id)
+    if sum(r['correct_ct'] for r in per_video.values())!=persistent['commit_ct_correct']:raise AssertionError('Posthoc CT diagnostics must exactly match audited evaluator')
     for t in targets:
         if t.role=='novel':novel+=1;wrong_known+=commits.get(t.key) is not None and commits[t.key].kind=='KNOWN'
     extra={'all_novel_wrong_known_count':wrong_known,'all_novel_wrong_known_denominator':novel,
         'all_novel_wrong_known_rate':wrong_known/novel if novel else None,
         'memory_contamination_write_events':contamination,
         'contaminated_states':sum(len(set(v))>1 for v in histories.values()),
+        'per_video_conditional_fixed_mapping_counts':list(per_video.values()),
         'GT_controlled_identity_join_not_predicted_track_result':True}
     return {'standard':standard,'persistent':persistent,'errors':extra}
 

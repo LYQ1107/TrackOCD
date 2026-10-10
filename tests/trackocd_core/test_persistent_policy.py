@@ -36,6 +36,17 @@ def test_absorbing_supervision_pollution_not_gt_repair():
     assert costs[1]==10 and costs[2]==3 and costs[3]>0 and target==3 and credit==2
 
 
+def test_paired_video_bootstrap_is_conditional_and_never_changes_mapping():
+    from src.trackocd_core.scientific_statistics import paired_video_bootstrap
+    a=[{'video_id':v,'known_gt':2,'novel_gt':2,'old_correct':1,'new_correct':1,'reuse_opportunities':1,'correct_ct':0} for v in (1,2,3)]
+    b=[{**r,'correct_ct':1} for r in a]
+    result=paired_video_bootstrap(a,b)
+    assert result['metrics']['correct_commit_ct']['right_minus_left']==1
+    assert result['metrics']['correct_commit_ct']['conditional_video_bootstrap_95pct']==[1,1]
+    assert result['conditional_on_frozen_global_mapping_and_predicted_stream_state']
+    assert not result['independent_video_or_category_observations_claimed']
+
+
 def test_short_track_chronological_replay_uses_observed_frame():
     rows=[{'key':'a','video_id':1,'physical_track_id':2,'observation_count':1,'frame_ids':[7]},
           {'key':'b','video_id':1,'physical_track_id':1,'observation_count':2,'frame_ids':[1,8]}]

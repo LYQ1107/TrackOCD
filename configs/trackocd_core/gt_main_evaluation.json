@@ -13,7 +13,7 @@
   "dpmeans_mapping": "distance=1-cosine; exact same finite grid and selection budget",
   "PHE": {"status": "INCOMPARABLE", "reason": "Existing48/78prototype coverage and current common-feature training/checkpoint compatibility not established; no invented score"},
   "policy_variants": ["D1_SIMPLE_MLP", "D2_RISK_AWARE", "WITHOUT_ADAPTER", "WITHOUT_TEMPORAL", "WITHOUT_RELIABILITY", "WITHOUT_WAIT", "WITHOUT_MEMORY", "RESET_PER_VIDEO", "FULL"],
-  "no_risk_and_simple_MLP_alias": "D1_SIMPLE_MLP trained with same capacity, initialization, descriptor order and budget",
+  "no_risk_and_simple_MLP_alias": "Within each representation, D1 trained with same capacity, initialization, descriptor order and budget; D1/D2 main useA1-selected, WithoutRisk usesA2 D1 to match FULL A2 D2",
   "no_reliability_rule": "Inference ablation: quality-only weights on trained A2 adapter, same prototypes recomputed without dynamic reliability; no refit",
   "policy_checkpoint_and_wait_bias_selection": "Train development only, before final heldout; coverage targets0.5/0.75/1.0, actual tolerance0.05 required",
   "paired_bootstrap": {"unit": "video", "samples": 500, "seed": 1027, "confidence": 0.95, "limitation": "Conditional on frozen global mapping and stream state; video/category dependence and sparse pseudo categories prevent independence claims"},

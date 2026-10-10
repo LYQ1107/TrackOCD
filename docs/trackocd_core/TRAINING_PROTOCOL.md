@@ -112,7 +112,9 @@ mixed-category history. External GT bookkeeping supervises losses only.
 All costs,capacity,budget,checkpoint5/10/20 and WAIT bias[-2,-1,0,1,2] fixed
 in persistent_policy_training.json. Development chooses checkpoint and
 coverage-target points; report realized coverage,no false matched-coverage
-claim when difference>0.05. WAIT is censored/unresolved at each independent
+claim unless BOTH fixed pseudo-Novel reuse-opportunity commitment coverage
+and total target commitment coverage differ by<=0.05. Operating points target
+the former, not Known-dominated total coverage. WAIT is censored/unresolved at each independent
 capped-prefix replay, with positive observation-dependent cost,not a proven
 dense frame-online delay controller. Short tracks use their actual count.
 
