@@ -995,3 +995,18 @@
   state/score bytes,frame pretrack snapshots,policy17cues,nearties/clears.
   First4 all40case CPU and GPU sealed-decision equivalence must still be
   measured against actual prior integration before full semantic rollout.
+
+## 2026-10-10 — Actual CPU/CUDA exact decision equivalence complete
+
+- f3c7b61 exact remote;40actual cases/every892decision percase exactly equal
+  prior sealed first4integration on BOTH CPU and CUDA. Every token/order/kind/
+  KnownID/prefix equal. No ValGT/metrics read or source/model/threshold tuning.
+- CPU33.0783s,RSS847216640B;CUDA71.5665s,RSS847216640B,reserved960495616B.
+  Tiny-stream CUDA slower from kernel/transfer overhead; no speedup claim
+  inferred from this proof. Fullscale performance still requires measurement.
+- Registered streamed bank uses unchanged CPUFP32batch64 forward and true
+  prefixes,one256D representation bank inRAM,no projected diskcache or raw
+  replicatedframes. Actual firstvideo raw/A1/A2 allfields exactly equal old
+  bank. Private compactParquet roundtrip preserves canonical audited seals.
+- Actual scoped337passed/no skips (25.99s),including actualCPU/CUDA proof
+  sourcehashes/all40caseidentity and streamedbank/privateledger regressions.

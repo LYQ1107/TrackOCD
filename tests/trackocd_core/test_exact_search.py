@@ -61,3 +61,17 @@ def test_performance_source_has_no_supervision_and_old_baselines_unchanged():
     s=(root/'src/trackocd_core/exact_search.py').read_text()
     assert 'np.dot(vector,self.vectors[i])' in s and '8*self.dimension' in s
     assert 'evaluator_only_geometry_join' not in s and 'category_id' not in s.split('class ExhaustiveMatrix:')[1].split('class ExactNearest')[0]
+
+
+def test_actual_cpu_cuda_all40_prior_seal_equivalence_sources_resources():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2]
+    for name in ('CPU','CUDA'):
+        d=json.loads((root/f'outputs/trackocd_core/EXACT_SEARCH_{name}_PROOF.json').read_text())
+        assert d['status']=='PASS_EXACT_DECISION_EQUIVALENCE' and len(d['cases'])==40
+        assert all(c['exact_equal'] and c['decisions']==892 for c in d['cases'])
+        assert not d['GT_or_metrics_read'] and not d['model_or_threshold_changes'] and d['search_exhaustive']
+        assert d['resources']['peak_GPU_reserved_bytes']<=2*2**30
+        for path,sha in d['source_sha256'].items():assert sha256_file(root/path)==sha
