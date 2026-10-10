@@ -1010,3 +1010,27 @@
   bank. Private compactParquet roundtrip preserves canonical audited seals.
 - Actual scoped337passed/no skips (25.99s),including actualCPU/CUDA proof
   sourcehashes/all40caseidentity and streamedbank/privateledger regressions.
+
+## 2026-10-10 — Full limited-MASA evaluation and paired-error audit registration
+
+- Complete matrix registered:2040logical cases/840distinct fullstream executions,
+  all3trainingseeds/4orders/5trueclippedprefixes/3frozenoperatingpoints,all
+  baseline/staticcapacity/policy/ablations.16representation groups; identical
+  bias andWithoutTemporal aliases explicitly linked,not independenttrials.
+- Full inference only after988all-ID features complete/delivered. FrozenCPU
+  FP32forward unchanged;one projectedfamily RAMbank,eachcompactfeature hash
+  checked thenmtime/size change rejected.6GiBworkerRSS plan,25%RAM reserve,
+  4GiB GPUplan+8GiBfree reserve,max8dynamicallysafe workers,10GiBstage ceiling.
+  Completed exact-identity seals reusable;partials retained,not overwritten.
+- Inference workers prohibit annotations/ValGTjoins/metrics/Test/network/
+  childcalls;all304561IDs per execution. Separateposthoc evaluator source
+  returns audited Standard/CT flags and truecorrected/newerror counts only
+  after sealing. Unknownstates not labelled provenbackground orpureNovel.
+- Posthoc Train-error audit registered against existing420representation+
+  600maxcoveragepolicy ledgers;no live policy rerun,fitting,retuning,Val/Test.
+  207Known/16pseudo fixed. Othercoverageledgers not invented. Scientific
+  failure evidence will include introducederrors,not only improvementcounts.
+- Actual342scoped tests passed/no skips (25.86s),ASTparsing sourcePASS.
+  Full-inference source contains exactproof/frozenfeature lineage,immutable
+  prospectiveplan seal,atomicresume,GT/Test barrier and ownedchild cleanup.
+  This registration is not a claim that840executions/Trainerroraudit ran yet.

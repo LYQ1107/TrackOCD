@@ -55,6 +55,14 @@ def test_policy_exact_cues_and_token_lexical_ties_clear_no_recycling():
     assert slow.apply(2,None,None,z,q)==fast.apply(2,None,None,z,q)=={'kind':'NEW','token':'S:100'}
 
 
+def test_policy_many_identical_scores_preserve_identifier_not_insertion_ties():
+    z=np.zeros(256,np.float32);z[0]=1.;q=np.ones(1,np.float32)
+    slow=CandidateMemory({17:z,2:z});fast=ExactCandidateMemory({17:z,2:z})
+    for i in range(100):slow.apply(2,None,None,z,q);fast.apply(2,None,None,z,q)
+    a=slow.candidates(z,0,1,q,0);b=fast.candidates(z,0,1,q,0)
+    assert np.array_equal(a[0],b[0]) and a[1:]==b[1:]==(2,'S:0')
+
+
 def test_performance_source_has_no_supervision_and_old_baselines_unchanged():
     from pathlib import Path
     root=Path(__file__).resolve().parents[2]
