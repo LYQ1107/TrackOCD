@@ -645,3 +645,24 @@
 - Result regression258passed/no skips; all3842rows/3739unknown preserved,
   exactoldbaseline replay and103box untruncated seal verified. Conservative
   repo+ownedenv6,525,542,400B beforedelivery, belowsoft15GiB/hard30GiB.
+
+## 2026-10-10 — Cached RPN/ByteTrack bounded CPU comparison preregistration
+
+- Meaningful original-M1 cached alternative, not accepted limited-native primary
+  or a new trained/tuned frontend. Reuse exactly first4x16 source raw detectors;
+  only five detector fields, exact existing ByteTrack0cb98714... and inherited
+  fixed parameters. No new weight/env/pixel/GT/semantic model input or Test.
+- OneCPU120s/512MiB,64 production annotated updates plus8 causal-probe updates,
+  10MiB output/25% RAM reserve. No Torch/GPU. Reset video IDs; copied current
+  score identity, source array hashes, nontrivial future-box/prefix check, own
+  classical atomic seals. No false neural frozen-state claim/partial overwrite.
+- Independent canonical four-route evaluation after entire prediction exit0,
+  identical clippedGT, exact old3 metric/coverage/purity reproduction. Unknowns
+  retained; sample26Known/2Novel unchanged, not allVal/M9/semantic quality.
+- Disclose30 annotated-step ByteTrack memory versus nativeMASA10 and PANDAS
+  densehistory; no isolated architecture/time/score causal attribution. No
+  tuning/resampling, automatic allVal/cache, primary, GT-policy/R2/M11 expansion.
+- 23 new synthetic/boundary tests passed before any actual replay. Existing
+  main/v2 and old diagnostic tracker/scorer/stream/result bytes preserved.
+- Scoped core/v2/PANDAS regression281passed/no skips before preregistration;
+  unrelated legacy unavailable-path failures are not hidden or fixed here.

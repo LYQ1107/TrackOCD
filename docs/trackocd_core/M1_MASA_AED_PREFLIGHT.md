@@ -855,3 +855,45 @@ all3842 prediction rows and3739unknown retained/no matched-purity promotion.
 Conservative repository+owned-env6,525,542,400 allocatedB before resultdelivery,
 below15GiB soft/30GiB hard. Read-only next-route preflight receipt is small and
 explicitlyNOT executed/qualified; no semantic or physical improvement inferred.
+
+## Cached RPN/ByteTrack fixed64 CPU diagnostic preregistration
+
+Reuse exactly the frozen original video4/20/22/23 first16-image metadata plan
+f04fce6b... and detector manifest5247f5f7.... Source raw NPZ/pixel/model inference
+never rerun. Only `image_id/frame_index/det_offsets/det_boxes/det_score` are read;
+native physical IDs/track boxes, category, embedding, prototype and GT are not
+tracker inputs. Exact existing NumPy/SciPy ByteTrack0cb98714... with frozen
+thresholds.5/.1/.8/newtrack.6, buffer30/frame_rate30, minarea10 and aspectoff.
+No wrapper sigmoid/clamp/calibration/NMS/cap, new assets/environment or training.
+Score output must be a byte-exact copied current detection probability; Kalman
+box smoothing and existing built-in gates are retained, not silently repaired.
+
+64 production annotated-step calls, plus8 first4-frame causal probe calls.
+The probe changes only future2 boxes by fixed1000px translation, leaves scores
+unchanged and requires nonempty, exact first2 output hashes after tracker reset.
+Probe output never reaches GT evaluation. Buffer30 is30 annotated updates, not
+30 dense frames/real FPS, and differs from MASA memo10; PANDAS retains different
+detector/history. This is a fixed complete route comparison, not proof that any
+one association/threshold/calendar-time detail caused a difference.
+
+One CPU, no Torch/GPU,120s/512MiB prediction guard,25% system RAM reserve;
+10MiB all new outputs,4GiB disk headroom,15GiB/30GiB original storage budgets.
+Video-atomic classical complete markers have source NPZ/array/tracker/config
+hashes; they explicitly do not claim a neural frozen-state hash. Preserve failed
+or partial attempts and reject automatic overwrites/replays.
+
+Independent one-CPU evaluator only after64 production/8 probe calls seal and
+supervisor exit0. Same clipped GT byte hash, canonical TAO_OW(all,max300), full
+denominators, tIoU>=.5 coverage and unknown/pollution scorer. All previous3
+routes' four metrics must reproduce at1e-12 and coverage/purity exactly, else
+INCOMPARABLE. The common scorer is extracted separately; old scorer/source,
+streams and result are unchanged. No sampling to increase the2 Novel targets,
+full-Val/feature-cache launch, primary freeze, policy scope extension, R2/M11,
+training or Test. New diagnostic remains NOT primary/scientific qualification.
+
+23 new synthetic/guard tests pass before replay: current-only inputs, fixed
+parameters, empty-frame processing, exact causal prefix, invalid-score rejection,
+five-field-only raw reader, classical atomic seals, predictor GT/pixel/weight/
+Test/network/child barrier, evaluator seal-first ordering and no partial restart.
+Scoped core/v2/PANDAS regression: **281 passed, no skips**. Historical broader
+legacy hardcoded-path failures remain disclosed; this is not an all-repo claim.
