@@ -862,3 +862,14 @@
 - Scoped core/v2/PANDAS315passed/no skips (16.83s); an initial new bootstrap
   test placement NameError was corrected before delivery,not a model change.
   All18evidence checkpoint hashes and matched A1 identities/steps validated.
+
+## 2026-10-10 — Heldout routing interface correction before metrics
+
+- First representation evaluator stopped with ValueError at count preflight,
+  before output directory/features/calibration/prediction/metrics. Mistyped
+  final_heldout_selection versus actual T0 heldout_selection. No model result
+  was available; no scientific method,split,threshold or training change.
+- Explicit config partition now bound to actual223tracks/207Known/16pseudo;
+  both evaluation scripts tested against real supervision. Preserve failed
+  attempt evidence; new exact remote prerequisite before retry. Policy fits
+  already running are not modified; all their protected source bytes unchanged.

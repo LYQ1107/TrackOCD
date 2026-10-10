@@ -42,7 +42,8 @@ def main():
     for n,sha in training['source_sha256'].items():
         if sha256_file(ROOT/n)!=sha:raise ValueError('Policy training source changed')
     cache,labels,known=load_train(ROOT);by={r['key']:r for r in labels}
-    routes=[r for r in cache.rows if by[r['key']]['partition']=='final_heldout_selection']
+    routes=[r for r in cache.rows if by[r['key']]['partition']==cfg['heldout_partition']]
+    if len(routes)!=223:raise ValueError('Full registered heldout universe required')
     orders=registered_orders(sorted({r['video_id'] for r in routes}));thresholds={}
     # Same representation per risk-only pair; each ablation explicit, not mislabeled.
     variants=[('D1_SIMPLE_MLP','A1_SELECTED','D1_SIMPLE_MLP',{}),('D2_RISK_AWARE','A1_SELECTED','D2_RISK_AWARE',{}),

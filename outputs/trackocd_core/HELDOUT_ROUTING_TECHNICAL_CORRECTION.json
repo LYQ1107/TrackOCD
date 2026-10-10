@@ -1,0 +1,16 @@
+{
+  "status": "PRE_METRIC_INTERFACE_ERROR_CORRECTED_NOT_METHOD_REDESIGN",
+  "failed_preregistration_commit": "d270d376173aeb6438f739140a0bdb9cc948e297",
+  "entry_point": "scripts/trackocd_core/evaluate_core_representation.py",
+  "error": "ValueError: Full registered selection universe required",
+  "cause": "Wrong string final_heldout_selection, actual registered partition heldout_selection",
+  "outputs_created_before_failure": false,
+  "calibration_prediction_or_metrics_before_failure": false,
+  "registered_tracks": 223,
+  "known_gt": 207,
+  "pseudo_novel_gt": 16,
+  "training_source_or_protocol_change": false,
+  "policy_live_source_modified": false,
+  "actual_data_regression_added": true,
+  "retry_requires_new_exact_remote_verification": true
+}

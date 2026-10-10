@@ -39,7 +39,7 @@ def main():
     from src.trackocd_core.train_first_replay import replay
     torch.set_num_threads(1);started=time.monotonic();cache,labels,known=load_train(ROOT);by={r['key']:r for r in labels}
     dev=[r for r in cache.rows if by[r['key']]['partition']=='development']
-    heldout=[r for r in cache.rows if by[r['key']]['partition']=='final_heldout_selection']
+    heldout=[r for r in cache.rows if by[r['key']]['partition']==cfg['heldout_partition']]
     if len(dev)!=258 or len(heldout)!=223:raise ValueError('Full registered selection universe required')
     orders=registered_orders(sorted({r['video_id'] for r in heldout}));devorder=sorted({r['video_id'] for r in dev})
     out.mkdir(parents=True);cases=[];calibrations=[];ledgers=[];modules=[]

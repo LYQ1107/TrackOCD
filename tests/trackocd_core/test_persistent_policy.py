@@ -88,3 +88,18 @@ def test_real_predicted_rollout_risk_gradients_not_gt_memory():
     assert all(p.grad is not None and torch.isfinite(p.grad).all() for p in model.parameters())
     assert len(m.anonymous)==1 and m.anonymous['S:0'].count==3
     assert not h.pure('S:0',10) and h.members['S:0']==[10,11,10]
+
+
+def test_registered_heldout_partition_matches_real_feature_supervision():
+    import json
+    from pathlib import Path
+    from src.trackocd_core.train_first_experiment import load_train
+    root=Path(__file__).resolve().parents[2];cfg=json.loads((root/'configs/trackocd_core/gt_main_evaluation.json').read_text())
+    cache,labels,known=load_train(root);rows=[r for r in labels if r['partition']==cfg['heldout_partition']]
+    assert cfg['heldout_partition']=='heldout_selection' and len(rows)==223
+    assert sum(r['simulation_role']=='known' for r in rows)==207
+    assert sum(r['simulation_role']=='pseudo_novel' for r in rows)==16
+    for name in ('evaluate_core_representation.py','evaluate_persistent_policy.py'):
+        source=(root/'scripts/trackocd_core'/name).read_text()
+        assert "cfg['heldout_partition']" in source
+        assert "'final_heldout_selection'" not in source

@@ -1,6 +1,7 @@
 {
   "schema_version": "trackocd.core.train-first-heldout.v1",
   "scope": "GT-track controlled TAO Train final-heldout-selection, not TAO Val predicted/end-to-end",
+  "heldout_partition": "heldout_selection",
   "representation_variants": ["A0_RAW", "A1_ADAPTER", "A1_GEOMETRY_1", "A1_GEOMETRY_5", "A1_SELECTED", "A2_EVIDENCE", "A2_CAPACITY_CONTROL"],
   "baselines_raw": ["B0_frame_snapshot_vote", "B1_track_nearest", "B2_track_dpmeans"],
   "learned_representation_backend": "B1_track_nearest",
