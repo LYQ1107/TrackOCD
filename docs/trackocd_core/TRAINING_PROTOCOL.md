@@ -22,6 +22,15 @@ eligible. No Val/Test data or descriptor/metric-based split selection.
 | Policy meta-training | 229 | 2586 | Fit Known + 4 other pseudo classes |
 | Final heldout selection | 223 | 2472 | Fit Known + 4 other unseen pseudo classes |
 
+Fitting rows above specify the eligible pool, not exhaustive sampling.
+Actual full1000-step class-balanced T1/T2 runs visit933/938/948 distinct
+tracks for seeds1027/1028/1029,identical across every paired model. The
+separately earlier selected250/500checkpoints do not have an independently
+recorded unique-track footprint; do not assign them the full-budget counts.
+The14714observations likewise describe available first16cache,not an assertion
+that every one was forwarded by each selected checkpoint. No post-result
+resampling/extra epochs are used to enlarge the apparent training exposure.
+
 All five partitions are globally video-disjoint. The representation,development
 pseudo,policy pseudo and final pseudo category sets are disjoint. Known probes
 intentionally share fitting classes, not purported category holdout. Preserve

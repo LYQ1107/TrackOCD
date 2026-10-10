@@ -1123,3 +1123,15 @@
 - Actual354scoped tests passed/noskips(54.05s with8inferenceworkers),trueclip
   counting/postsealing/resourceguard/noncausal-description source checks.
   Statistic hasnot runyet andcannot be claimed ascompleted fromsource/tests.
+- Source f0b4c2043650a172616d3d7cb906507bcb92616d committedlocally,NOT
+  pushed:prior17890proxyclosed,directHTTPS timesout,7890HTTP/TLS fails,
+  SOCKS timesout,andGitHubconnectortransportfails. Last verifiedremote
+  aac8732502450d0ce596685632616d69ae985ef1. Useraskednonblocking torestore
+  existing17890forward;no globalproxy/auth changes orforeignprocess restart.
+  Existing8ownedregisteredinferenceworkers andposthoc evaluationcontinue.
+- Training exposure clarification:1305iseligiblepool; actualdistincttracks
+  touchedoverfull1000steps are933/938/948perseed,pairedT1/T2equal. Earlier
+  selected250/500footprints notseparatelyrecorded; neither all1305visited nor
+  full-budgetcountsassignedtoearlycheckpoints is claimed. No rescuefitting.
+- Exposure-clarification source/docs rechecked:354scoped passed/no skips
+  (47.37s). Formal inference/evaluator bytes and52frozen hashes unchanged.

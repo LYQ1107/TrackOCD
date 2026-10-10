@@ -43,7 +43,10 @@ def main(commit):
     checkpoints=[];retained=[];training={}
     for family in ('representation','evidence','policy'):
         path=base/family/'training_receipt.json';receipt=json.loads(path.read_text());training[family]={'receipt_path':str(path),'receipt_sha256':sha256_file(path),'preregistration_commit':receipt['preregistration_commit'],
-            'actual_fits':len(receipt['fits']),'resources':receipt['resources'],'checkpoint_bytes':receipt.get('checkpoint_bytes',receipt['resources'].get('checkpoint_bytes'))}
+            'actual_fits':len(receipt['fits']),'resources':receipt['resources'],'checkpoint_bytes':receipt.get('checkpoint_bytes',receipt['resources'].get('checkpoint_bytes')),
+            'full_fit_sample_coverage_not_selected_early_checkpoint_footprint':[
+                {'model':f['model'],'seed':f['seed'],'fit_tracks_available':f.get('fit_tracks_available'),
+                 'distinct_fit_tracks_actually_seen_over_full_budget':f.get('fit_tracks_actually_seen')} for f in receipt['fits']]}
         for fit in receipt['fits']:
             for cp in fit['checkpoints']:
                 r=cp['checkpoint'];p=ROOT/r['path']
@@ -199,8 +202,12 @@ M1 stays BLOCKED_FRONTEND_QUALITY; no historical outcomes/assets overwritten.
 ## Legal data and training
 
 TAO Train inherited Known only,500videos/18274images inventory2196tracks /
-48supportedcategories. Actual fitting15classes1305tracks14714observations,
-not 'all48 optimized'. All5partitions video-disjoint; development/policy/final
+48supportedcategories. Eligible fittingpool15classes1305tracks14714available
+observations, not 'all48 optimized' orall1305visited ineachfit. Full1000-step
+class-balanced runs visit933/938/948distincttracks for the three seeds,
+identical acrosspairedmodels. These arefullfit counts,not the separately
+unrecorded footprint ofearlier250/500selectedcheckpoints. All5partitions
+video-disjoint; development/policy/final
 pseudo category reservations disjoint from fitting and each other. 30tracks
 without a lawful selected role excluded explicitly,1026short inventorytracks
 retained eligible. Commonselected2166tracks/24628observations;151prototype
