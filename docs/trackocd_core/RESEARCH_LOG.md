@@ -621,3 +621,27 @@
 - Preregistration256tests/no skips: uncapped60box/emptyframe seals, allbad
   output/overwrite rejections, fixedmetadata, predictorinputbarrier and
   independentseal-before-GT ordering. No imageforwards before remoteprereg.
+
+## 2026-10-10 — Fixed64-image SAM-grid result unfavorable; existing-cache association next
+
+- Prerege7b3e99 exactremote00:40:15Z,64newfrozen forwards/4atomicseals/exit0.
+  GPU111.95s,host1.67GB/GPUreserved4.25GB, all419states unchanged, no newassets.
+  Compact90,265BNPZ; all3842rows retained,max103boxes/image,no ROIcap50.
+- IndependentCPU5.14s/847MB/exit0,identical64images328GTrows; native/PANDAS
+  HOTA/AssA/DetA/DetRe exactdiff0 andcoverage/purity identical. SAM-grid
+  HOTA.098716/AssA.412425/DetA.027225/DetRe.332798,Known2/26vsnative8/26
+  andPANDAS10/26. AllNovel0/2—not fullVal failure/coverage estimate orM9.
+- Grid868IDs/median3/singles30.99%,103matched/3739unknown/4multiindividual;
+  matched-onlymajority1.0notpurity. Native/PANDASunknown2659/4327 preserved.
+  Newpublic35,690B/SHA0ca8cdb9...; private3,530,752allocatedB. No joblive.
+- Unfavorable boundedroute kept, no rescue tuning/fullcache/primaryfreeze,
+  scopeacceptance/GT-policy extension/R2/M11 or fullgoalcompletion assumed.
+- Read-only nextM1cached route: rawRPNdetboxes/scores alreadysealed. Existing
+  exactPANDAS NumPy/SciPy ByteTrack source0cb98714... matches411aedancestor;
+  no learnedweights/newdeps. Raw64clip3200scores mean.629264,1805>=.6,
+ 2960>=.1; inheritedfixedparams nonempty withoutcalibration. Next independently
+  preregisterCPU-only boundedRPN+ByteTrack, disclose30annotated-step memo/time
+  difference, no GT-paramselection or baseline/source mutations. Notrunyet.
+- Result regression258passed/no skips; all3842rows/3739unknown preserved,
+  exactoldbaseline replay and103box untruncated seal verified. Conservative
+  repo+ownedenv6,525,542,400B beforedelivery, belowsoft15GiB/hard30GiB.

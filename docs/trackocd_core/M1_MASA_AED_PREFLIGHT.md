@@ -787,3 +787,71 @@ Preregistration regression **256 passed, no skips**, including full-frame
 60-box/empty-frame seals, overwrite/invalid-output rejection, fixed original
 metadata plan, prediction-side GT/Test/network barrier and evaluator seal-first
 ordering. Inherited sampler/native source and historical streams unchanged.
+
+## Actual fixed64-image SAM-grid physical diagnostic: unfavorable, not global FAIL
+
+Preregisterede7b3e99ddb078cb748d8ab6969476f623c6022a5 matched remote00:40:15Z
+before any new Val forward. Completed64/64,4video-atomic seals, workerexit0,
+prediction111.95s/supervisor113.28s. State digest33443cac... initial/final and
+pervideo unchanged; host peak1,668,984,832 B/GPUreserved4,250,927,104 B. All
+states/defaults/proposals/score contract remain frozen, no additional assets,
+parameter search, future/GT/text/Test input, semantic training or foreign kills.
+
+New compact NPZ90,265 B, detection/track rows3842. Maximum per-image proposals
+103, so not truncated at native ROIcap50. Fullprediction seal SHA256
+`7ae34abeb6bc4bc83e97bfa6a18988771c51db320e7d0b738423eb2561d3798e`.
+Independent1CPU after complete seal,5.14s/reportedpeakRSS847,216,640 B, exit0.
+Identical64images/328GTrows/canonicalGT bytehash; oldnative andPANDAS all4
+metric differences exactly0, coverage/purity reproduced exactly. No source,
+clipped denominator, geometry or preprocessing rewrite produced the comparison.
+
+| Fixed64-frame route | HOTA | AssA | DetA | DetRe | Known | Novel |
+|---|---:|---:|---:|---:|---:|---:|
+| SAM-grid masks/MASA | .098716 | .412425 | .027225 | .332798 | 2/26 | 0/2 |
+| Retained RPN/ROI/MASA | .169655 | .502096 | .059033 | .531611 | 8/26 | 0/2 |
+| Retained PANDAS/ByteTrack | .122697 | .372579 | .041192 | .583440 | 10/26 | 0/2 |
+
+Values0..1, NOT full-Val or semantic/OCD scores. SAM-grid fails to show an
+improvement on this fixed clip diagnostic; do not turn its successful interface
+or103proposal count into detection recall/main qualification. Tiny0/2Novel
+cannot establish full-Val failure, no target-enriched resampling or expensive
+automatic full-Val/cache extension to rescue this weak local route.
+
+SAM-grid868physicalIDs/3842obs, mean4.4263/median3/singles269=30.99%; native
+495IDs/2843obs/median4/singles24.04%; PANDAS2807IDs/4543obs/median1/singles71.71%.
+All are annotated-clip lengths, NOT full-video lifetimes. SAM-grid103matched
+rows/3739unknown,837IDs withoutGTsupport/855IDs withunknown members; observed
+multicategory0/multiindividual4/entireobserved-onecategory13. Matched-only
+majority1.0 cannot certify868tracks pure. Native/PANDAS unknown2659/4327 and
+multiindividual6/5 retain original denominators. Canonical removes0rows on
+these clips for all3; no extra unknown/score/geometry filter. Public35,690 B,
+SHA256`0ca8cdb964d666c10d5b1f7b0c66d13c2374b8e0892221fd4e5e0e081e44112b`.
+Private prediction+canonical evaluation3,530,752 allocatedB, no runningjob.
+
+Primary still unfrozen, original reliability gate and unresolved limited-native
+acceptance unchanged. Read-only next-route preflight found the existing frozen
+RPN/ROI cache contains raw `det_boxes/det_score`, not only tracker outputs.
+Original64-clip raw3200scores are finite [.028465,.9999999], mean.629264;
+1805>=.6/2960>=.1, so the existing exact ByteTrack configuration is non-empty
+without calibration/threshold changes. This is feasibility, not recall/purity.
+
+Current self-contained NumPy/SciPy ByteTrack source SHA256
+`0cb987147ca5c5d29941a5e4347f13b413805a9d67ce04feeb36530394d3586d`
+matches the previously deliveredPANDAS ancestor411aed527d5c7999e4c88c10bed9be0ecd7b043d
+byte-for-byte; snapshot runner hashf7c641cf... remains unchanged. It consumes
+current boxes/scores only, has no learned weights or GT/text/embedding input,
+and is already compatible with the base environment's NumPy/SciPy. Next may
+preregister a bounded CPU-only RPN-detections/ByteTrack candidate with exactly
+the existing .5/.1/.8 thresholds,newtrack.6,buffer30/frame_rate30,minarea10,
+MOT-aspectoff. Keep30annotated-step lost horizon explicitly distinct from
+dense-frame calendar time/native10-step memo; no parameter search or claims
+that reused generic tracker code is recovered new-v2 main. No such new replay
+has run yet. This meaningful available-weight/cached M1 alternative avoids
+declaring an overall impasse solely from the unanswered quality question.
+
+Result regression **258 passed, no skips**, including actual three-route exact
+baseline reproduction, full64 seal/frozen state, real103-box uncapped output,
+all3842 prediction rows and3739unknown retained/no matched-purity promotion.
+Conservative repository+owned-env6,525,542,400 allocatedB before resultdelivery,
+below15GiB soft/30GiB hard. Read-only next-route preflight receipt is small and
+explicitlyNOT executed/qualified; no semantic or physical improvement inferred.
