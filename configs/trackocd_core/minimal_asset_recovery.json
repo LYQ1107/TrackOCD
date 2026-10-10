@@ -1,5 +1,10 @@
 {
   "schema_version": "trackocd.core.minimal_asset_recovery.v1",
+  "m1_masa_sam_grid_physical_diagnostic_plan": "configs/trackocd_core/masa_amg_physical_diagnostic.json",
+  "m1_masa_sam_grid_physical_diagnostic_image_forward_ceiling": 64,
+  "m1_masa_sam_grid_physical_diagnostic_new_data_weight_bytes": 0,
+  "m1_masa_sam_grid_physical_diagnostic_output_ceiling_bytes": 10485760,
+  "m1_masa_sam_grid_physical_diagnostic_is_fullval_or_primary": false,
   "m1_masa_sam_grid_bounded_smoke_plan": "configs/trackocd_core/masa_amg_smoke.json",
   "m1_masa_sam_grid_source_manifest": "configs/trackocd_core/sam_amg_source_manifest.json",
   "m1_masa_sam_grid_exact_private_source_bytes": 43189,

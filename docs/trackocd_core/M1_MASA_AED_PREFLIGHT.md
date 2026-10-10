@@ -747,3 +747,43 @@ Result regression **244 passed, no skips**, including independent real count,
 resource/state/future invariance and explicit non-probability score checks.
 Conservative repository+owned-environment allocation6,521,634,816 B before
 result delivery, below15GiB soft/30GiB hard. Existing main/v2 history preserved.
+
+## Separate SAM-grid fixed64-image physical diagnostic preregistration
+
+Reuse the original sealed metadata-only plan f04fce6b... byte-identically:
+Val videos4/20/22/23, first16 annotated images each, no new category/GT sampling,
+video replacement, longer clip or resampling for more Novel targets. Existing
+clip evaluator has26Known/2Novel targets; this remains a small biased-by-order
+diagnostic, not full-Val/Novel-quality estimation or semantic method selection.
+
+New separate run `masa_amg_val4_first16` uses the completed frozen Train AMG
+interface unchanged (same checkpoint/all419 states, official grid/default
+filters/PIL resize/stability quality). One freshly idle GPU,64 forward maximum,
+600s/host4GiB/GPU8GiB,25% RAM reserve,10MiB entire new output; no data/weights
+copied, training, threshold/grid/crop/cap search, text/GT/future/Test input or
+foreign process intervention. Every full-frame output including empty frames
+retained. New atomic seal validator does not inherit the RPN/ROI cap50;3072 is
+only the mathematical32x32x3 raw mask bound, not a selected proposal cap.
+
+All64 predicted frames/video-atomic shards/state hashes and successful worker
+exit must seal before independent single-CPU evaluator first opens GT/roles.
+Existing canonical TAO_OW(all,max300)/HOTA source hashes, clipped GT, geometry
+tIoU>=.5 Hungarian coverage and posthoc unknown/pollution metrics unchanged.
+Compare all3 routes: SAM-grid, retained native RPN/ROI64-frame stream, retained
+PANDAS dense-history64-frame projection; no baseline inference rerun. Reproduce
+all4 native/PANDAS metrics (tol1e-12), exact coverage/purity and byte-identical
+clipped GT before accepting comparison; otherwiseINCOMPARABLE. Ordinal cadence
+matches between the2 MASA routes, PIL/cv2 resize and proposals/score semantics
+differ; no isolated association-architecture or score ablation claim.
+
+CPU evaluator2GiB/600s/25% RAM reserve, no GPU/semantic training; only aggregate
+small results/hash/resource evidence published. Ground-truth join stays local
+and is never returned as training/memory/sampling input. Neither a high nor a
+zero Novel score on2 targets can qualify/disqualify full-Val reliability. A
+full-Val route audit, formal feature cache, primary freeze, R2/policy expansion
+or M11 is not automatically authorized by this small diagnostic.
+
+Preregistration regression **256 passed, no skips**, including full-frame
+60-box/empty-frame seals, overwrite/invalid-output rejection, fixed original
+metadata plan, prediction-side GT/Test/network barrier and evaluator seal-first
+ordering. Inherited sampler/native source and historical streams unchanged.

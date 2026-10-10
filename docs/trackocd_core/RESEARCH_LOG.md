@@ -601,3 +601,23 @@
   not automatic fullVal/cache/R2/M11. No runningownedjob.
 - Result regression244passed/no skips; conservative repo+ownedenv6,521,634,816B
   before delivery, withinsoft15GiB/hard30GiB. Main/v2/source assets unchanged.
+
+## 2026-10-10 — Separate fixed64-image SAM-grid physical comparison preregistered
+
+- Previous turn was progress: actual8-forward Train interface/result remote
+  delivery6a76160,244tests. Preserve original core goal/reliability, no scope
+  acceptance inferred. Next meaningful M1 low-cost route now separately fixed.
+- Reuse original4Valvideo IDs/first16metadata/hash plan f04fce6b...; no new
+  Novel-target sampling/extension. Exactly64newimageforwards, oneidleGPU,
+  frozen same model/defaults/stabilityquality. New uncapped mask-route atomic
+  shards do not silently carry RPN50-box cap; emptyframes retained.
+- Independent oneCPU canonical3route comparison only after entire prediction
+  seals+workerexit0. Old RPN/PANDAS bytes unchanged/no inference repeat; same
+  clippedGT bytehash and old4metrics/exactcoverage/purity replay required.
+  OtherwiseINCOMPARABLE, never a rescued positive or matched-only headline.
+- Originalsample26Known/2Novel, smallphysicaldiagnostic not fullVal quality,
+  M9/semanticPASS/primaryfreeze. No GT/vocabulary/future/Test modelinput,
+  training, paramsearch, formalcache, R2/GT-policy expansion or M11.
+- Preregistration256tests/no skips: uncapped60box/emptyframe seals, allbad
+  output/overwrite rejections, fixedmetadata, predictorinputbarrier and
+  independentseal-before-GT ordering. No imageforwards before remoteprereg.
