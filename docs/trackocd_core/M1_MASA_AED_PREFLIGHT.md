@@ -595,3 +595,62 @@ sets total1,246,900,563 B already in place; no copied images/weights. CPU module
 imports neither Torch nor TrackEval. The shared opportunity helper keeps all
 existing semantic evaluator tests/formulas intact; a caught stale-variable
 refactor error was fixed before real work, not a new representation correction.
+
+## Actual fixed-opportunity physical support (not semantic Commit-CT)
+
+Preregistration90c7a348954e35579b3fff25866361b6664a6700 independently matched
+remote at23:57:11Z before the single CPU run. Completed all988videos, every
+source NPZ hash and each earlier Known/Novel coverage count reproduced exactly.
+New private evaluator-only target join2,810,042 B, hash
+`1e6b01253e47c858fa73721be6a0f2c9ff7fafff1d49f1d79b32c8d1c1159b2b`;
+not uploaded or exposed to models. No model/HOTA/feature rerun. Actual28.70s,
+reported peak RSS847,216,640 B, no GPU. CPU terminal exited0.
+
+Across the unchanged full GT universe,98 Novel categories have cross-video
+reuse opportunities. Fixed denominators, by registered order, are
+**main527 / seed1027:529 / seed1028:547 / seed1029:531**; both frontends use
+the same denominator for each order. Missing earlier physical targets cannot
+erase GT eligibility. Support means both a current reliable geometry match and
+some strictly earlier-video reliable match of the same GT category have at
+least p annotated observations. It is **not a semantic decision, token-purity
+certificate, causal-model input, or model-correct-reuse score**.
+
+| Physical route | p1 | p2 | p4 | p8 | p16 |
+|---|---:|---:|---:|---:|---:|
+| MASA native prerequisite support | 17.15±0.50% | 17.15±0.50% | 16.64±0.44% | 15.84±0.34% | 13.17±0.46% |
+| PANDAS BT-FG-0 prerequisite support | 1.17±0.09% | 1.17±0.09% | 1.17±0.09% | 1.17±0.09% | 1.17±0.09% |
+
+Four-order arithmetic mean±population std, displayed in percent units; all40
+route/order/prefix rows with exact counts/denominators are published. A falling
+full-p availability count is a length-support diagnostic, **not** falling
+semantic accuracy or an ablation; production capped prefixes still include
+short tracks and the fixed missing-target denominator remains unchanged.
+
+MASA main-order current reliable opportunities118/527:409 currently missing,
+and31 of118 lack any earlier reliable same-category physical source. Pair
+support87/527 atp1,69/527 atp16; other orders p1=93/529,92/547,94/531 and
+p16=68/529,70/547,74/531. Only25 of98 reuse categories have any supported
+p1 pair,23 atp16 (same category counts across four orders). PANDAS main current
+16/527,511 missing and10 of16 without an earlier reliable source, leaving
+6/527 supported pairs, other orders6/529,6/547,7/531;4/98 categories supported.
+Same-video different individuals cannot manufacture cross-video support.
+
+This reveals actual multi-observation cross-video physical evidence that the
+raw median2 alone did not quantify; coverage is still limited and unknown
+members/pollution remain separate. No automatic reliable-primary acceptance,
+GT-guided sampling/threshold choice, R2, GT-policy exception expansion or main
+semantic PASS follows. Primary remains unfrozen awaiting quality-scope choice.
+The private complete join can be independently reused only by future sealed
+evaluation with identical stream/hash/universe, never by training/memory.
+
+Result regression **226 passed, no skips**; independently verify the original
+denominator formula, missing-source/same-video/short-track cases, exact real
+counts across every order/prefix and no semantic/primary promotion. Aggregate
+JSON19,326 B, SHA256
+`c375a1f0e6913fb0c153700deba7e369b1758bef96e86563a43101d8ee311464`;
+CSV3,768 B contains40 data rows, SHA256
+`9d278d9fc844641a3cbb8a804b8a3d4753c118c24efd5e23a4574a715aa4ab37`.
+Completed private allocation2,826,240 B, conservative entire repository plus
+owned isolated environment6,521,024,512 B, below soft15GiB/hard30GiB. The
+nested private directory was measured separately to avoid du's shared-inode
+deduplication understating the root total. No live owned local job remains.

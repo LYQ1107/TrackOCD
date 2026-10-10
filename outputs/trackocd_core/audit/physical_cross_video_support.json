@@ -1,0 +1,444 @@
+{
+  "completed_utc": "2026-10-09T23:58:03.334454+00:00",
+  "config_sha256": "840bbfa92ddf07f092ce02fa234aca5c6fd07f816c4b716f632c2fc233e2cd76",
+  "frontends": {
+    "MASA_NATIVE": {
+      "coverage": {
+        "known": {
+          "gt_tracks": 4413,
+          "reliably_observed": 1400
+        },
+        "novel": {
+          "gt_tracks": 819,
+          "reliably_observed": 189
+        }
+      },
+      "coverage_reproduces_frozen_audit": true,
+      "orders": {
+        "main": {
+          "current_reliable_but_no_earlier_reliable_same_category": 31,
+          "fixed_gt_reuse_opportunities": 527,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 409,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 87,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.1650853889943074
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 69,
+              "categories_with_supported_pairs": 23,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.13092979127134724
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 87,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.1650853889943074
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 85,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.16129032258064516
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 82,
+              "categories_with_supported_pairs": 24,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.1555977229601518
+            }
+          },
+          "reliable_current_opportunities": 118,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        },
+        "seed1027": {
+          "current_reliable_but_no_earlier_reliable_same_category": 30,
+          "fixed_gt_reuse_opportunities": 529,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 406,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 93,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.17580340264650285
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 68,
+              "categories_with_supported_pairs": 23,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.1285444234404537
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 93,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.17580340264650285
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 90,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.17013232514177692
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 84,
+              "categories_with_supported_pairs": 24,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.15879017013232513
+            }
+          },
+          "reliable_current_opportunities": 123,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        },
+        "seed1028": {
+          "current_reliable_but_no_earlier_reliable_same_category": 29,
+          "fixed_gt_reuse_opportunities": 547,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 426,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 92,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.16819012797074953
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 70,
+              "categories_with_supported_pairs": 23,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.12797074954296161
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 92,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.16819012797074953
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 89,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.16270566727605118
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 85,
+              "categories_with_supported_pairs": 24,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.15539305301645337
+            }
+          },
+          "reliable_current_opportunities": 121,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        },
+        "seed1029": {
+          "current_reliable_but_no_earlier_reliable_same_category": 32,
+          "fixed_gt_reuse_opportunities": 531,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 405,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 94,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.17702448210922786
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 74,
+              "categories_with_supported_pairs": 23,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.1393596986817326
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 94,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.17702448210922786
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 91,
+              "categories_with_supported_pairs": 25,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.1713747645951036
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 87,
+              "categories_with_supported_pairs": 24,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.1638418079096045
+            }
+          },
+          "reliable_current_opportunities": 126,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        }
+      },
+      "prefix_four_order_mean_std": {
+        "1": {
+          "mean": 0.1715258504301969,
+          "std_ddof0": 0.0050283941556551635
+        },
+        "16": {
+          "mean": 0.13170116573412377,
+          "std_ddof0": 0.004558760038085022
+        },
+        "2": {
+          "mean": 0.1715258504301969,
+          "std_ddof0": 0.0050283941556551635
+        },
+        "4": {
+          "mean": 0.1663757698983942,
+          "std_ddof0": 0.004428122710428339
+        },
+        "8": {
+          "mean": 0.1584056885046337,
+          "std_ddof0": 0.0034154012718410347
+        }
+      }
+    },
+    "PANDAS_BT_FG0": {
+      "coverage": {
+        "known": {
+          "gt_tracks": 4413,
+          "reliably_observed": 1442
+        },
+        "novel": {
+          "gt_tracks": 819,
+          "reliably_observed": 30
+        }
+      },
+      "coverage_reproduces_frozen_audit": true,
+      "orders": {
+        "main": {
+          "current_reliable_but_no_earlier_reliable_same_category": 10,
+          "fixed_gt_reuse_opportunities": 527,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 511,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.011385199240986717
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.011385199240986717
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.011385199240986717
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.011385199240986717
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 527,
+              "fraction_of_all_fixed_gt_opportunities": 0.011385199240986717
+            }
+          },
+          "reliable_current_opportunities": 16,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        },
+        "seed1027": {
+          "current_reliable_but_no_earlier_reliable_same_category": 12,
+          "fixed_gt_reuse_opportunities": 529,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 511,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.011342155009451797
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.011342155009451797
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.011342155009451797
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.011342155009451797
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 529,
+              "fraction_of_all_fixed_gt_opportunities": 0.011342155009451797
+            }
+          },
+          "reliable_current_opportunities": 18,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        },
+        "seed1028": {
+          "current_reliable_but_no_earlier_reliable_same_category": 10,
+          "fixed_gt_reuse_opportunities": 547,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 531,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.010968921389396709
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.010968921389396709
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.010968921389396709
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.010968921389396709
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 6,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 547,
+              "fraction_of_all_fixed_gt_opportunities": 0.010968921389396709
+            }
+          },
+          "reliable_current_opportunities": 16,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        },
+        "seed1029": {
+          "current_reliable_but_no_earlier_reliable_same_category": 11,
+          "fixed_gt_reuse_opportunities": 531,
+          "gt_categories_with_cross_video_reuse": 98,
+          "missing_current_physical_opportunities": 513,
+          "prefix_support": {
+            "1": {
+              "both_earlier_and_current_have_at_least_p": 7,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.013182674199623353
+            },
+            "16": {
+              "both_earlier_and_current_have_at_least_p": 7,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.013182674199623353
+            },
+            "2": {
+              "both_earlier_and_current_have_at_least_p": 7,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.013182674199623353
+            },
+            "4": {
+              "both_earlier_and_current_have_at_least_p": 7,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.013182674199623353
+            },
+            "8": {
+              "both_earlier_and_current_have_at_least_p": 7,
+              "categories_with_supported_pairs": 4,
+              "fixed_gt_opportunity_denominator": 531,
+              "fraction_of_all_fixed_gt_opportunities": 0.013182674199623353
+            }
+          },
+          "reliable_current_opportunities": 18,
+          "semantic_decisions_or_correct_reuse_computed": false,
+          "short_tracks_removed_from_denominator": false,
+          "unknown_unmatched_rows_assumed_background_or_pure": false
+        }
+      },
+      "prefix_four_order_mean_std": {
+        "1": {
+          "mean": 0.011719737459864644,
+          "std_ddof0": 0.0008599989829875582
+        },
+        "16": {
+          "mean": 0.011719737459864644,
+          "std_ddof0": 0.0008599989829875582
+        },
+        "2": {
+          "mean": 0.011719737459864644,
+          "std_ddof0": 0.0008599989829875582
+        },
+        "4": {
+          "mean": 0.011719737459864644,
+          "std_ddof0": 0.0008599989829875582
+        },
+        "8": {
+          "mean": 0.011719737459864644,
+          "std_ddof0": 0.0008599989829875582
+        }
+      }
+    }
+  },
+  "full_physical_receipt_sha256": "5d4e2d903204bf6313f6df42a300171d3596413f34ebaf2d731ed4fbb466b220",
+  "gt_or_geometry_feedback_to_model": false,
+  "images": 36375,
+  "model_inference_or_training": false,
+  "prefix_boundary": "Counts >=p describe full-p physical evidence availability ONLY; production prefixes still min(p, observed_length) and all short/missing targets remain in denominators. No row/category/video filtering or model threshold change.",
+  "preregistration_commit": "90c7a348954e35579b3fff25866361b6664a6700",
+  "primary_freeze_permitted": false,
+  "private_join": {
+    "bytes": 2810042,
+    "published": false,
+    "sha256": "1e6b01253e47c858fa73721be6a0f2c9ff7fafff1d49f1d79b32c8d1c1159b2b"
+  },
+  "resources": {
+    "conservative_repo_and_owned_env_allocated_bytes_before": 6518157312,
+    "cpu_workers": 1,
+    "gpu_used": false,
+    "peak_rss_bytes": 847216640,
+    "private_allocated_bytes_before_marker": 2818048,
+    "wall_seconds": 28.697199286019895
+  },
+  "schema_version": "trackocd.core.physical_cross_video_support_result.v1",
+  "scope": "M1 physical frontend feasibility diagnostic using M3 fixed-GT-opportunity definition; NOT semantic replay/M9, training, threshold selection, main freeze or full feature cache",
+  "semantic_scientific_pass_permitted": false,
+  "short_tracks_removed_from_denominator": false,
+  "status": "COMPLETE_POSTHOC_PHYSICAL_SUPPORT_NOT_SEMANTIC_SUCCESS",
+  "support_boundary": "For each fixed GT cross-video Novel opportunity, both current reliable predicted identity and some reliable identity of the same GT category in a strictly earlier video have at least p annotated observations. Posthoc prerequisite support only, not a prediction, purity certificate or semantic correctness score.",
+  "test_access": false,
+  "videos": 988
+}

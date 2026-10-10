@@ -22,6 +22,29 @@
   headroom,16MiB new-output cap; existing NPZ1,246,900,563 B read in place,
   zero image/weight transfer. Tests→commit→push→exactremote before CPU audit.
 
+### Actual full physical cross-video prerequisite support
+
+- Prereg90c7a34 exactly verified23:57:11Z, oneCPU completed988videos28.70s,
+  reportedRSS847,216,640 B, noGPU. EveryNPZ/oldper-video coverage verified,
+  sourcejoin2,810,042 B private evaluator-only; no models/HOTA/features rerun.
+-98 true Novel categories have GT cross-video opportunities. Four-order fixed
+  denominators527/529/547/531 are identical across routes and retained despite
+  physical misses. Native p1 supports87/93/92/94, p16 supports69/68/70/74;
+  PANDAS6/6/6/7 for every p. Mean physical support p1=17.15% vs1.17%,
+  p16=13.17% vs1.17%; these are NOT semantic Commit-CT or pure token reuse.
+- Native25/98 categories have supported p1 pairs,23 atp16, PANDAS4/98.
+  Main native118 current reliable opportunities but31 no prior reliable source,
+  plus409 current missing, so raw189/819 coverage is not reuse-opportunity
+  coverage. Full-p support remains a diagnostic, not a short-track filter or
+  a substitute for capped prefixes/full missing-target denominators.
+- New evidence changes feasible-temporal-support assessment beyond raw median2;
+  no invented quality pass/threshold, primary freeze, GT-policy authority,
+  training, fullDINOcache, R2 or M9 claim. Quality-scope choice still required.
+- Result regression **226 passed**, no skips; new target join private, only
+  aggregateJSON19,326 B/CSV3,768 B staged. Completedprivateallocation2,826,240 B;
+  separate nonnested root measurement repo+ownedenv6,521,024,512 B, below budget.
+  No ownedlocaljob remains. Commit/push/exactremote delivery before handoff.
+
 ## 2026-10-10 — M1 bounded real predicted-box feature gate preregistered
 
 - Full physical audit already delivered at1047150: no primary freeze or main
