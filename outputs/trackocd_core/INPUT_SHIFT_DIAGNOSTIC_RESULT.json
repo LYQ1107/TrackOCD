@@ -1,0 +1,137 @@
+{
+  "GT_counts_including_any_other_roles": {
+    "known": 4413,
+    "novel": 819
+  },
+  "GT_to_live_inference": false,
+  "Known_GT_prototype_and_physical_coverage": [
+    {
+      "GT_tracks": 1307,
+      "prototype_group": "fit15",
+      "reliable_physical_match": true
+    },
+    {
+      "GT_tracks": 2793,
+      "prototype_group": "fit15",
+      "reliable_physical_match": false
+    },
+    {
+      "GT_tracks": 87,
+      "prototype_group": "prototype_only33",
+      "reliable_physical_match": true
+    },
+    {
+      "GT_tracks": 202,
+      "prototype_group": "prototype_only33",
+      "reliable_physical_match": false
+    },
+    {
+      "GT_tracks": 6,
+      "prototype_group": "no_prototype30",
+      "reliable_physical_match": true
+    },
+    {
+      "GT_tracks": 18,
+      "prototype_group": "no_prototype30",
+      "reliable_physical_match": false
+    }
+  ],
+  "Native_all": {
+    "at_least16": 24767,
+    "mean_available_observations": 4.249099523576557,
+    "observations": 1294110,
+    "singletons": 114380,
+    "total_observations_at_cap": {
+      "1": 304561,
+      "16": 1294110,
+      "2": 494742,
+      "4": 736677,
+      "8": 1013481
+    },
+    "tracks": 304561
+  },
+  "Native_by_evaluator_reliable_match": {
+    "known": {
+      "at_least16": 887,
+      "mean_available_observations": 12.497857142857143,
+      "observations": 17497,
+      "singletons": 65,
+      "total_observations_at_cap": {
+        "1": 1400,
+        "16": 17497,
+        "2": 2735,
+        "4": 5228,
+        "8": 9742
+      },
+      "tracks": 1400
+    },
+    "novel": {
+      "at_least16": 150,
+      "mean_available_observations": 14.44973544973545,
+      "observations": 2731,
+      "singletons": 1,
+      "total_observations_at_cap": {
+        "1": 189,
+        "16": 2731,
+        "2": 377,
+        "4": 744,
+        "8": 1450
+      },
+      "tracks": 189
+    },
+    "other_matched": {
+      "tracks": 0
+    },
+    "unmatched_unknown": {
+      "at_least16": 23730,
+      "mean_available_observations": 4.204619568805038,
+      "observations": 1273882,
+      "singletons": 114314,
+      "total_observations_at_cap": {
+        "1": 302972,
+        "16": 1273882,
+        "2": 491630,
+        "4": 730705,
+        "8": 1002289
+      },
+      "tracks": 302972
+    }
+  },
+  "Native_feature_manifest_sha256": "899625d5b4135c6db450e5c86facbe98383a244b780f49475f436bcdd82fcc74",
+  "TAO_Test_access": false,
+  "Train_feature_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "Train_selected": {
+    "at_least16": 1147,
+    "mean_available_observations": 11.370267774699908,
+    "observations": 24628,
+    "singletons": 102,
+    "total_observations_at_cap": {
+      "1": 2166,
+      "16": 24628,
+      "2": 4230,
+      "4": 7992,
+      "8": 14373
+    },
+    "tracks": 2166
+  },
+  "Val_training_or_tuning": false,
+  "all_short_tracks_kept": true,
+  "existing_GT_join_sha256": "1e6b01253e47c858fa73721be6a0f2c9ff7fafff1d49f1d79b32c8d1c1159b2b",
+  "missing_prototypes_not_filled_from_Val": true,
+  "model_freeze_sha256": "070f2182724449564ee8f6297f902b1c649c2d4a2f55fef5cac9222cbc991822",
+  "models_or_operating_points_modified": false,
+  "posthoc_description_after_first_Val_metrics_not_preregistered_causal_hypothesis": true,
+  "preregistration_commit": "b79d691bd678b22daca16303cd2ab74ad2a23b18",
+  "resources": {
+    "CPU_workers": 1,
+    "GPU_used": false,
+    "kernel_ru_maxrss_bytes_may_include_preexec_peak": 847216640,
+    "max_observed_RSS_bytes": 153104384,
+    "planned_actual_RSS_ceiling_bytes": 268435456,
+    "wall_seconds": 15.719969719008077
+  },
+  "sealed_reference_sha256": "ec15519c4fc27613788b1b582124486677de83b8daeef2d501be082d1566a2ce",
+  "source_sha256": "71b106f379d7f3479b72454d52b2cad5b66c6486682f08d1575de8c3aa75acfe",
+  "status": "COMPLETE_POSTHOC_DESCRIPTIVE_INPUT_SHIFT_NOT_CAUSAL_INTERVENTION",
+  "unmatched_not_assumed_background_or_proven_pollution": true
+}

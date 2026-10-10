@@ -1166,3 +1166,22 @@
   live; bothprogress filesfresh4seconds/noerror. Snapshot113sealed/77metrics;
   jointRAMbackpressure holdsadditionalCPUworkers safely. This is actual
   schedulingstartup,notfull840completion or finalscientificsuccess.
+
+## 2026-10-11 — Actual bounded descriptive input/prototype coverage
+
+- Exactremote b79d691bd678b22daca16303cd2ab74ad2a23b18 verified before
+  registeredchecker execution; safe jointRAMwindow found, no forceallocation.
+  Actual988featurehashes/52freezehashes/existingGTjoin/referenceallIDseal bind.
+- Train2166/24628 meanlength11.3703 vs Native304561/1294110 mean4.2491;
+  Native114380singletons/24767atleast16,allretained andtrueclip counts saved.
+  ReliableKnown1400/17497 mean12.4979;Novel189/2731 mean14.4497; noother
+  reliableGTroles. Unknownunmatched302972/1273882,notlabelledbackground.
+- KnownGT15fitEligiblecohort4100(match1307/miss2793),33prototype-only289
+  (87/202),30missing-prototype24(6/18); sum4413/reliable1400. Missing30/78
+  classes are not30/78ofGTtracks. Prototype/model/points not Val-repaired.
+- ActualoneCPU/noGPU15.720s, sampledcurrentVmRSS153104384B<256MiB;
+  separatelydisclosedkernelru_maxrss847216640Bmayinclude preexecpeak.
+  Posthoc afterfirstValmetrics,descriptive notpreregisteredcausalhypothesis.
+  Frozenformal8workers continue; not fullmatrixcompletion or methodselection.
+- Actual364scoped tests passed/no skips41.60s,including actualreceipt hash
+  bindings/allGTprototypecohorts/groupcount/cap-observation reconciliation.
