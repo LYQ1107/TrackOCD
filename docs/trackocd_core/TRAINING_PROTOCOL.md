@@ -85,3 +85,41 @@ MASA988/36375 annotated-frame stream without physical reruns, all unmatched
 tracks, fixed4413/819 GT denominators and527/529/547/531 reuse opportunities.
 Both stronger frontend qualification and exact MASA all-stage provenance remain
 unmet. T0 engineering/metadata PASS is not a trained model or scientific PASS.
+
+## T1 actual training and pre-heldout policy registration
+
+Actual T1:9fits,3seeds x3weights,1000steps each,276.5689s wall,56,775,888B
+checkpoints retained locally. All shared initial-adapter and complete batch
+digests match. Development-only mean scores plain0.606502/Gram1 0.596447/
+Gram5 0.585495 select plain A1 globally. Selected steps500/250/500 for seeds
+1027/1028/1029. No final heldout or Val/Test used. GPU peak reserved96,468,992B,
+RSS1,192,591,360B. Training completion is not scientific improvement.
+
+Policy source is now registered before policy fits or final-heldout results.
+D1/D2 share the17-32-4 MLP708parameters,candidate feature definitions,initial
+weights,descriptor order and budget. Candidate geometry/state may diverge
+after their own predicted errors; it is never aligned by GT. Inputs are top2
+Known/anonymous similarities,margins,uncertainty,maturity,quality,elapsed,
+predicted-memory dispersion,count,reliability and candidate-presence masks.
+Known chooses an actual legal ID,Existing chooses the actual top existing
+token,New monotonically allocates S:id,Wait leaves memory untouched.
+
+Train only229policy tracks,20epochs x4orders,cycling5caps,80AdamW updates per
+fit. Frozen raw/A1-selected/A2 families x2policies x3seeds; no representation
+updates. D1 nominal action CE; D2 adds expected costs and delayed credit to
+prior predicted writes when later candidates encounter actual absorbing
+mixed-category history. External GT bookkeeping supervises losses only.
+All costs,capacity,budget,checkpoint5/10/20 and WAIT bias[-2,-1,0,1,2] fixed
+in persistent_policy_training.json. Development chooses checkpoint and
+coverage-target points; report realized coverage,no false matched-coverage
+claim when difference>0.05. WAIT is censored/unresolved at each independent
+capped-prefix replay, with positive observation-dependent cost,not a proven
+dense frame-online delay controller. Short tracks use their actual count.
+
+GT evaluation source/config is fixed before final-heldout results:all finite
+representation trials,3training seeds,4orders,5caps;207Known/16pseudo-Novel
+targets. Thresholds use the same25point development/main/p16 grid per method
+and representation; PHE remains INCOMPARABLE. Retrieval Recall@1/5/10 and
+spectral rank complement ACC,AUROC,CT,all-Novel wrongKnown and pollution.
+Mean/std across training seed means are distinguished from order variation.
+No heldout-driven redesign or Val Novel tuning is authorized.

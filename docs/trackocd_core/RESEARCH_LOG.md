@@ -819,3 +819,25 @@
   actual cached prefix, payload/seal/frozen-source lineage and paired capacity
   checks. Engineering PASS is not scientific PASS. Adapter optimization only
   starts after this stage's commit/push/exact remote verification.
+
+## 2026-10-10 — T1 actual Semantic Adapter training completed
+
+- ec61fc64 exact remote before real optimizer.9fits/3seeds xplain/Gram1/5,
+  1000steps each,1305available fittracks/15classes. Every actual batch has
+  16crossvideo positive/224negative pairs; per-seed init and batch SHA match.
+- 276.5689s,peak GPU reserved96468992B,allocated81032192B,RSS1192591360B;
+  checkpoint payload56775888B,all27retained/private. No Val/Test,backbone/
+  detector/tracker training,historical output overwrite or heldout access.
+- Development family meansplain.606502/Gram1 .596447/Gram5 .585495;
+  chooseplain globally,steps500/250/500. All trials retained rather than
+  favorable-seed selection. Old R1 negative results remain unchanged.
+- Lightweight same-capacity D1/D2 policy and heldout evaluation source are
+  registered now,before any policy fitting or final heldout results. Labels
+  only losses/targets,actual predicted visual memory and absorbing pollution,
+  explicit positive WAIT costs,boundedfinite coverage points. Independent
+  capped-prefix replay is not claimed dense frame-online latency validation.
+- T1 engineering tests include actual complete1000-step traces,all27hashes,
+  available/seen track counts,paircounts and exact initial/batch identities.
+  Scoped core/v2/PANDAS regression313passed/no skips (16.34s),including actual
+  capped-bank/all-WAIT coverage penalty and pollution-gradient smoke tests.
+  Next is T2 matched evidence/capacity fits after stage delivery.

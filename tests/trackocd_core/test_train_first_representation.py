@@ -64,3 +64,27 @@ def test_training_registration_full_cache_and_known_allowlist_before_optimizer()
         assert source.index(required)<boundary
     assert "'final_heldout_evaluated':False" in source
     assert "'policy_or_heldout_features_used_for_fit':False" in source
+def test_actual_main_representation_three_seeds_and_complete_matched_fits():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2]
+    receipt=json.loads((root/'outputs/trackocd_core/TRAIN_FIRST_REPRESENTATION_RESULT.json').read_text())
+    assert receipt['fit_tracks']==1305 and len(receipt['fit_classes'])==15
+    assert receipt['phase']=='representation' and len(receipt['fits'])==9
+    assert not receipt['val_or_test_access'] and not receipt['final_heldout_evaluated']
+    assert not receipt['DINO_detector_tracker_trained'] and not receipt['historical_outputs_overwritten']
+    for seed in (1027,1028,1029):
+        fits=[f for f in receipt['fits'] if f['seed']==seed]
+        assert len(fits)==3 and len({f['adapter_initial_state_sha256'] for f in fits})==1
+        assert len({f['batch_identity_prefix_sha256'] for f in fits})==1
+        for f in fits:
+            assert f['steps']==1000 and len(f['trace'])==1000
+            assert f['positive_pairs']==16000 and f['negative_pairs']==224000
+            assert 12<f['fit_tracks_actually_seen']<=1305
+            assert [c['step'] for c in f['checkpoints']]==[250,500,1000]
+            for c in f['checkpoints']:
+                cp=c['checkpoint'];assert (root/cp['path']).stat().st_size==cp['bytes']
+                assert sha256_file(root/cp['path'])==cp['sha256']
+                assert c['development']['final_heldout_opened'] is False
+    assert len({v['model'] for v in receipt['selected_geometry'].values()})==1
