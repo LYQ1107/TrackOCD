@@ -6,6 +6,7 @@
   "steps": 1000,
   "initialize_adapter_identically_to_A1_per_seed": true,
   "same_observations_categories_pairs_optimizer_budget_as_A1": true,
+  "matched_checkpoint_rule": "evaluate at the selected A1 checkpoint step per seed; training completes all1000 steps, input/pair and initial adapter digests must exactly match",
   "geometry_weight": "selected using representation development fold before heldout evaluation",
   "A2": "Existing CategoryEvidence(True),261-64-1 observed-causal reliability weights",
   "capacity_control": "Mean-only 261-32-256 residual plus scalar = same16833 extra parameters; no dynamic observation weighting",

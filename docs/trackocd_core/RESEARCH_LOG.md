@@ -798,3 +798,24 @@
   T2capacitycontrol/auxlossboundary,T3predicted-memory supervision permitted.
 - Traininghasnotstarted atT0;frozen featureencoding mustfinish first. Do not
   falselylabel encoderinference asAdapteroptimization orclaimscientificPASS.
+
+## 2026-10-10 — Sealed Train-first features and T1/T2 executable preregistration
+
+- T0 exact remote1b544249 before encoding. All2166 selected tracks/24628
+  observations sealed, supervisor/worker exit0; no optimizer, Val/Test access,
+  historical overwrite or foreign process interference.960 compatible old
+  observations reused; historical per-image raw-byte hashes unavailable.
+- Payload total38536805B (36.75MiB): observations37828736B,geometry394176B,
+  index294212B,labels19681B. Exact hashes in TRAIN_FIRST_FEATURE_RESULT.json.
+- One freshly selected GPU UUID;751.6935s wall,1193852928B peak RSS,
+  751251968B allocated/1468006400B reserved GPU. Existing DINO checkpoint
+  0b8b82f8... frozen; extraction is inference, NOT Adapter training.
+- Executable T1/T2 registered before any model/development results. Balanced
+  8x2 different-video batches, true clipped prefixes, all15/1305 lawful fit
+  classes/tracks. Shared initial adapter and complete actual batch/prefix
+  digests; A2 and16833-extra-parameter static control use the selected A1
+  checkpoint step. One geometry family across seeds; all finite trials kept.
+- Scoped core/v2/PANDAS regression306passed/no skips (15.12s), including every
+  actual cached prefix, payload/seal/frozen-source lineage and paired capacity
+  checks. Engineering PASS is not scientific PASS. Adapter optimization only
+  starts after this stage's commit/push/exact remote verification.

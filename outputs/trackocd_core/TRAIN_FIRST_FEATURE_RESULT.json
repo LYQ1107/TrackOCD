@@ -1,0 +1,121 @@
+{
+  "DINO_checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "config_sha256": "eeebe829463aa47bbb9b5f5bf0f3655aee0faca0330fbebd67eaf658dc9584ab",
+  "duplicate_current_image_bbox_encoding_avoided": true,
+  "external_process_interference": false,
+  "historical_cache_reuse": "Exact protocol/checkpoint/annotation/image_id/path/bbox/frame metadata and payload-hashed smoke/pilot observations reused. Historical per-image raw-byte digests unavailable, disclosed rather than newly claimed.",
+  "historical_outputs_overwritten": false,
+  "observations": 24628,
+  "one_image_decode_per_worker_image": true,
+  "optimizer_used": false,
+  "payloads": {
+    "geometry.npy": {
+      "bytes": 394176,
+      "sha256": "b80a75f355e2ef47ad7a663e8298282d971d72ac512900d7cfd852545a4c4b6b"
+    },
+    "index.parquet": {
+      "bytes": 294212,
+      "sha256": "fdf1118fb957202caa75429cb03200d58c0901b2ae7e937802da29ef5fb58bff"
+    },
+    "observations.npy": {
+      "bytes": 37828736,
+      "sha256": "572025f47b537553a9dac0f4fdfde7bd79cb303268d342803291a96b359d13a3"
+    },
+    "train_labels.parquet": {
+      "bytes": 19681,
+      "sha256": "fb674626b260eb1fc01b4a8786844ece42a80ce576db19975a5b6ec0b4ea6e63"
+    }
+  },
+  "prefixes": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "preregistration_commit": "1b5442491b666ce09d5fe28c579b0b7454bc013b",
+  "resources": {
+    "wall_seconds": 751.69354354401,
+    "worker_count": 1
+  },
+  "reuse_source_manifests": [
+    {
+      "cache": "gt_train_known_smoke",
+      "manifest_sha256": "56448950bde92e5b5ede59cc3c592cf7d024d09b7057b258f16b311ed4af71d5",
+      "payloads": {
+        "geometry.npy": {
+          "bytes": 1152,
+          "sha256": "049d7583c86e0206e6542565ec04501b02b4ba4879dd7f02a5a1da4f55459570"
+        },
+        "index.parquet": {
+          "bytes": 6634,
+          "sha256": "f54ea9cd3c275579d4c49812027b85f4e0d322af06f83f41e1a87b7ac69f9f7b"
+        },
+        "observations.npy": {
+          "bytes": 98432,
+          "sha256": "56f44042bcfaa2ad475a96a02f9d10400dfe954bf1373bced2702abec831c1ce"
+        },
+        "prefix_features.npy": {
+          "bytes": 30848,
+          "sha256": "506135c685c7b4a48eede9531b8338d2adc8a7873393b8b2c0bc430ab7c9cd79"
+        },
+        "train_labels.parquet": {
+          "bytes": 1141,
+          "sha256": "f00869177b282e9b1169377c384d86cffc9abd8e5cf30751dbf49a997b2f4c8e"
+        }
+      }
+    },
+    {
+      "cache": "gt_train_known_pilot",
+      "manifest_sha256": "7314e2ca52f69d7d6193ad43f40d804a96fd5e1589842efd4648d1f77d021694",
+      "payloads": {
+        "geometry.npy": {
+          "bytes": 16512,
+          "sha256": "ac444ef02d857f20d20ac6cab69d1142e03f86e37e29a44db9593b4f74dd0da8"
+        },
+        "index.parquet": {
+          "bytes": 30335,
+          "sha256": "9d48c64ab312ef8590e9560dd6defe196492aac478f489b09b847b84e5f3407f"
+        },
+        "observations.npy": {
+          "bytes": 1572992,
+          "sha256": "9780e2cedd8c3d4315e5967f2a03bdd71297d79c1d4c2c9cd76c1d54cc864fa3"
+        },
+        "prefix_features.npy": {
+          "bytes": 491648,
+          "sha256": "523f5e52fd42e8a3885c156cdc7e1f1c5c3c588064b0e20bfdee4534106f3fde"
+        },
+        "train_labels.parquet": {
+          "bytes": 2879,
+          "sha256": "7c0cd36a0730ddf4a91eca335a2cb8bcbf97bc85d71cd5ee11221434dae2ac6c"
+        }
+      }
+    }
+  ],
+  "reused_exact_protocol_observations": 960,
+  "schema_version": "trackocd.core.train-first-features.v1",
+  "scope_sha256": "3ec759463349ac405fac9482e119ce952140777cd4760bf15594214f4492b56c",
+  "selection_plan_sha256": "6259872dd3e59295c23674e6a0e877aadf5164638dd496e441fd80639bcfd4a3",
+  "source_role": "TAO Train Known GT main training, not predicted/end-to-end",
+  "status": "COMPLETE_TRAIN_KNOWN_MAIN_FEATURES_NOT_TRAINING_OR_PREDICTED_RESULT",
+  "tracks": 2166,
+  "unit_GT_quality_not_detector_score": true,
+  "val_or_test_access": false,
+  "visual_protocol_sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+  "workers": [
+    {
+      "batch_forwards": 10243,
+      "completed_observations": 24628,
+      "encoded_images": 10137,
+      "frozen_encoder": true,
+      "gpu_peak_allocated_bytes": 751251968,
+      "gpu_peak_reserved_bytes": 1468006400,
+      "gpu_uuid": "GPU-f931e51b-55b2-c2c2-6506-b6f986864d54",
+      "optimizer_used": false,
+      "peak_rss_bytes": 1193852928,
+      "reused_observations": 960,
+      "wall_seconds": 747.4191272169992,
+      "worker": 0
+    }
+  ]
+}

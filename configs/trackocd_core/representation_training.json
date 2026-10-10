@@ -23,6 +23,7 @@
   "synthetic_corruption": false,
   "auxiliary_reliability_loss_weight": 0.0,
   "checkpoint_selection": "development-only mean of macro cross-video Rank1 and Known/pseudo-Novel prototype-score AUROC; fixed tie-break earlier step then lower geometry weight",
+  "geometry_weight_selection": "one shared weight chosen by mean development checkpoint score across all three seeds; ties lower geometry weight; preserve all trials",
   "final_heldout_access_before_configuration_freeze": false,
   "method_redesign_after_final_heldout": false,
   "known_threshold_grid": [0.5, 0.65, 0.8, 0.9, 0.95],

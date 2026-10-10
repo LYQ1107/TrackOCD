@@ -54,11 +54,17 @@ renamed rerun of R1. Checkpoints250/500/1000; select on development only using
 mean macro cross-video Rank1 and Known/pseudo prototype-score AUROC. Tie-break
 earlier step/lower geometry weight. Raw A0 has no optimizer. No hidden trials,
 final-heldout-driven architecture change or Val Novel selection.
+Geometry family selection uses the mean development score across all three
+seeds and a lower-weight tie-break; all seeds share the selected weight. Every
+trial and checkpoint remains in the report, not a per-seed favorable method.
 
 T2: existing causal CategoryEvidence and a static-mean capacity-matched residual
 control (same16833 extra parameters). Match all A1 observations,pairs,init,
 optimizer and budget. Additional reliability supervision is a separate ablation,
 not an architecture claim. A2 may be dropped if no independent stable gain.
+For the paired architecture comparison, use the selected A1 checkpoint step
+for A2 and the capacity control, not a later favorable checkpoint. Initial
+adapter and entire actual batch/prefix digests must exactly match per seed.
 
 T3 policy is distinct from previous GT representation exception and is now
 explicitly authorized. D1/D2 share candidates/capacity, use predicted-memory

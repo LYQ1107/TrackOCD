@@ -50,3 +50,22 @@ def test_short_prefix_does_not_synthesize_p16_or_read_future():
 def test_split_rejects_non_known_or_no_valid_negatives():
     row={'category_id':8,'video_id':1,'total_observations':1,'observations':[{}]}
     with pytest.raises(ValueError,match='Train Known'): split_tracks([row],{7},{})
+
+
+def test_actual_main_feature_cache_complete_frozen_and_short_prefixes_causal():
+    from src.trackocd_core.train_first_cache import TrainFirstCache
+    from src.trackocd_v2.io import sha256_file
+    root=ROOT/'outputs/trackocd_core/features/train_first_v1';cache=TrainFirstCache(root)
+    m=cache.manifest
+    assert len(cache.rows)==m['tracks']==2166 and m['observations']==24628
+    assert m['DINO_checkpoint_sha256']=='0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73'
+    assert m['config_sha256']==sha256_file(ROOT/'configs/trackocd_core/training_split.json')
+    assert not m['optimizer_used'] and not m['val_or_test_access'] and not m['historical_outputs_overwritten']
+    assert all(w['frozen_encoder'] and not w['optimizer_used'] for w in m['workers'])
+    assert m['reused_exact_protocol_observations']==sum(w['reused_observations'] for w in m['workers'])>0
+    supervisor=json.loads((root/'supervisor.json').read_text())
+    assert supervisor['error'] is None and supervisor['owned_child_returncodes']==[0]
+    for row in cache.rows:
+        for cap in (1,2,4,8,16):
+            v=cache.get_prefix(row['key'],cap)
+            assert len(v.visual)==min(cap,row['observation_count']) and np.isfinite(v.weighted_mean()).all()
