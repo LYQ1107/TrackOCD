@@ -22,3 +22,18 @@ def test_error_corrections_report_losses_as_well_as_wins():
     d=paired_corrections(a,b)
     assert d['standard_correct_all']['errors_corrected']==1 and d['standard_correct_all']['new_errors_introduced']==1
     assert d['CT_correct_novel']['net_correct_change']==0 and d['CT_correct_novel']['denominator']==2
+
+
+def test_actual_train1020_sealed_metric_rechecks_and480_paired_comparisons():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2];d=json.loads((root/'outputs/trackocd_core/TRAIN_FIRST_ERROR_CORRECTION_RESULT.json').read_text())
+    assert len(d['verified_sealed_cases'])==1020 and len(d['comparisons'])==480
+    assert all(r['exact_metrics_equal'] and r['tracks']==223 for r in d['verified_sealed_cases'])
+    assert d['fixed_known_gt']==207 and d['fixed_pseudo_novel_gt']==16 and not d['Val_or_Test_access']
+    for n,sha in d['source_sha256'].items():assert sha256_file(root/n)==sha
+    for r in d['comparisons']:
+        for metric,c in r['counts'].items():
+            assert c['errors_corrected']+c['new_errors_introduced']+c['both_wrong']+c['both_correct']==c['denominator']
+            assert c['errors_corrected']-c['new_errors_introduced']==c['net_correct_change']

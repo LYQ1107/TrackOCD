@@ -51,10 +51,35 @@ orders do not manufacture independent categories. Conditional video bootstrap
 must disclose dependence and hold mapping/stream state fixed. Do not change
 the registered ongoing D1/D2 policy training in response to these results.
 
-## Remaining work
+## Completed paired error correction audit
 
-Real predicted-memory D1/D2 training is running under the unchanged d270d37
-registration. Policy heldout/coverage curves,full fair ablations,error correction
-analysis,candidate freeze and MASA limited predicted evaluation remain pending.
+The posthoc audit exactly reproduced all1,020 retained sealed case metrics
+(420representation+600maxcoveragepolicy).480paired comparisons retain both
+fixes and newly introduced errors. No live policy rerun or newfit/threshold.
+The following are p16 means of target COUNTS over3seeds x4orders,not rates or
+independent48category trials. Standard uses each method's single global
+evaluator-only mapping;these flags are not online GT repairs. CT has no mapping.
+
+| Pair(right minus left) | Standard fixes | New Standard errors | Novel Standard net | Pure CT net |
+|---|---:|---:|---:|---:|
+| rawB1→A1 |131.917|3.750|-1.167|-1.667|
+| A1→A2 |5.583|26.083|+0.750|-0.667|
+| A1→static equalcapacity |4.500|14.583|+1.083|-0.667|
+| D1A1→D2A1 |33.000|29.583|+2.083|0|
+| D1A2(noRisk)→FULL |33.333|53.167|+2.500|0|
+
+Most raw-to-adapter total gains come fromKnown targets,not unseen-category
+improvement. A2's partial StandardNovel gains do not establish pure persistent
+reuse or an advantage overequalcapacitystatic. D2's offlineStandard fixes must
+be read with its introducedKnown errors,coverage differences and zeroCT.
+Every prefix/order/seed and both directions of errors are in
+TRAIN_FIRST_ERROR_CORRECTION_RESULT.json /ERROR_CORRECTION_COMPARISON.csv.
+
+## Remaining work (updated after T4 freeze)
+
+All33real T1/T2/T3 fits,heldout representation/policy/role diagnostics and
+controlled ablations are complete;99checkpoints retained,33selected/frozen.
+The1020case posthoc audit is complete. All988limited-MASA feature extraction
+is running;formal full predicted-track semantics/evaluation/report remain.
 Native MASA still has limited coverage/provenance and annotated-cadence limits;
 M1 is not retroactively PASS. This stage is not the completed final goal.

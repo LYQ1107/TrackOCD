@@ -1034,3 +1034,20 @@
   Full-inference source contains exactproof/frozenfeature lineage,immutable
   prospectiveplan seal,atomicresume,GT/Test barrier and ownedchild cleanup.
   This registration is not a claim that840executions/Trainerroraudit ran yet.
+
+## 2026-10-10 — Actual paired Train errors and introduced errors delivered
+
+- Exact7554bc9 preregistration:1,020retained ledgers exactly reproduce both
+  audited Standard andPersistent metrics;480paired comparisons/2880CSVrows.
+  9.9539s/847216640B RSS/oneCPU,no livepolicy rerun/fit/Val/Test/tuning.
+- p16percase mean rawB1→A1 fixes131.917/allnewerrors3.750,butNovelnet-1.167
+  andpureCTnet-1.667. A1→A2 fixes5.583/newerrors26.083,Novelnet+.750 but
+  pureCT-.667;equalcapacitystaticNovelnet+1.083 andsameCTdecline.
+- D1A1→D2A1 Standardfixes33/newerrors29.583,Novelnet+2.083 butpureCTnet0;
+  A2D1→FULLfixes33.333/newerrors53.167,Novelnet+2.5,pureCTnet0. Not an
+  onlinecorrectness claim or a matched-coverage/pollution improvement PASS.
+- Raw sharedcontrol reused acrossseeds explicitly notindependentrepeats;
+  mapping strictlyevaluator-only andCTnoHungarian. Only actualretainedpolicy
+  maxcoverageledgers audited;othercoveragepredictions not fabricated.
+- Actual scoped343tests passed/no skips (28.73s),allcorrection countpartitions,
+  actualcaseidentities/sourcehashes andfix-minus-newerror nets verified.
