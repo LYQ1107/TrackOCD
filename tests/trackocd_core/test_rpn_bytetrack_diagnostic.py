@@ -142,3 +142,45 @@ def test_evaluator_gt_after_entire_prediction_and_source_seal():
 def test_partial_or_completed_replay_cannot_be_restarted(tmp_path, monkeypatch):
     monkeypatch.setattr(runner, "RUN", tmp_path)
     with pytest.raises(ValueError, match="Preserve"): runner.parent("irrelevant")
+
+
+def test_actual_cpu_prediction_sealed_without_new_pixels_scores_or_torch():
+    config, plan, files, digest = runner.load_plan()
+    prediction = json.loads((runner.RUN / "prediction_manifest.json").read_text())
+    supervisor = json.loads((runner.RUN / "supervisor.json").read_text())
+    assert prediction["status"] == "SEALED_BOUNDED_RPN_BYTETRACK_NOT_QUALIFICATION"
+    assert prediction["production_frame_updates"] == 64 and prediction["total_frame_updates"] == 72
+    assert prediction["causality_probe"]["pass"] and prediction["causal_probe_frame_updates"] == 8
+    assert not prediction["torch_imported"] and prediction["input_arrays_unchanged"] and prediction["tracker_source_unchanged"]
+    assert not any(prediction["boundary"].values()) and not prediction["primary_freeze_permitted"]
+    assert supervisor["worker_returncode"] == 0 and supervisor["error"] is None and not supervisor["gpu_used"]
+    assert prediction["peak_host_rss_bytes"] <= config["limits"]["max_host_rss_bytes"]
+    assert prediction["elapsed_seconds"] <= config["limits"]["max_seconds"]
+    seals = [bt.completed_video(runner.RUN, v, digest, config["tracker_source_sha256"]) for v in plan["videos"]]
+    assert seals == prediction["videos"] and sum(s["prediction_rows"] for s in seals) == 1475
+    assert sum(s["detection_rows"] for s in seals) == 3200 and sum(s["npz_bytes"] for s in seals) == 91943
+    for video, seal in zip(plan["videos"], seals):
+        assert seal["source_detector_arrays_sha256"] == bt.detector_digest(bt.read_detector_video(files[video["video_id"]], video))
+        assert not seal["learned_model_weights"] and not seal["nn_frozen_state_claim"]
+
+
+def test_actual_four_route_comparison_no_unknown_filter_or_primary_promotion():
+    result = json.loads(evaluator.SUMMARY.read_text())
+    assert result["status"] == "BOUNDED_RPN_BYTETRACK_COMPLETE_NOT_PRIMARY_QUALIFICATION"
+    assert result["selected_images"] == 64 and result["selected_gt_rows"] == 328
+    assert result["historical_baselines_reproduced"]
+    assert all(v == 0 for row in result["baseline_absolute_metric_differences"].values() for v in row.values())
+    assert not any(result[k] for k in ("primary_freeze_permitted", "scientific_pass_permitted", "labels_for_model_input_or_tuning", "ocd_or_m9_metrics", "semantic_feedback"))
+    route = result["results"]["RPN_BYTETRACK"]
+    assert route["canonical_tracking"]["HOTA"] == .15107958129314517
+    assert route["raw_prediction_rows"] == route["canonical_evaluated_prediction_rows"] == 1475
+    assert route["canonical_preprocessing_removed_rows"] == 0
+    assert route["coverage"]["known"]["reliably_observed"] == 2 and route["coverage"]["known"]["gt_clip_tracks"] == 26
+    assert route["coverage"]["novel"]["reliably_observed"] == 1 and route["coverage"]["novel"]["gt_clip_tracks"] == 2
+    assert route["annotated_projection_lengths"]["physical_tracks"] == 223
+    assert route["annotated_projection_lengths"]["single_observation_tracks"] == 40
+    assert route["purity"]["matched_rows"] == 85 and route["purity"]["unmatched_unknown_rows"] == 1390
+    assert route["purity"]["tracks_with_unknown_observations"] == 219
+    assert route["purity"]["entire_observed_track_matched_to_one_category"] == 4
+    assert route["purity"]["observed_multiple_gt_identity_tracks"] == 3
+    assert result["resources"]["cpu_workers"] == 1 and not result["resources"]["gpu_used"]

@@ -666,3 +666,27 @@
   main/v2 and old diagnostic tracker/scorer/stream/result bytes preserved.
 - Scoped core/v2/PANDAS regression281passed/no skips before preregistration;
   unrelated legacy unavailable-path failures are not hidden or fixed here.
+
+## 2026-10-10 — Actual cached RPN/ByteTrack fixed64 diagnostic completed
+
+- Prereg29807d7 exactremote01:09:46Z before CPU replay;64production+8probe
+  updates,4classical seals/exit0,0.75462s,peakworkerRSS80,994,304 B,noTorch/GPU.
+  Source arrays unchanged, raw current scores copied, causal prefix exact;
+  compact91,943BNPZ/1475rows. Parent1s sampledRSS90,112B misses short worker
+  peak and is not reported as a reliable resource ceiling.
+- IndependentCPU5.66437s/847,216,640 B/exit0; original64images328GTrows
+  byte-identical clippedGT. All3 historical four-metric diffs0 andcoverage/
+  purity exactlyreproduced. New HOTA.151080/AssA.459124/DetA.052929/
+  DetRe.271983,Known2/26,Novel1/2 versusnative8/26,0/2. One Novel target
+  is not fullVal50%,reliableprimaryPASS or authorization to select/tune onVal.
+- 223IDs/median5/singles40=17.94%,85matched/1390unknown,3multiindividual,
+  219IDswithunknown/4entireobservedonecategory. All1475rows evaluated, no
+  unknown removal; longertracks ormatchedmajority1.0are not global purity.
+- Public47,091B/SHA68a48d6f...; private3,686,400allocatedB. No training,
+  newassets,formalcache,primaryfreeze,R2,GT-policy extension,M11 or Test.
+  Bounded cachedalternative completed; don't fake an indefinite livejob or
+  invent parameter variants while originalquality direction is unresolved.
+- Result regression283passed/no skips, repository+ownedenv6,529,662,976 B.
+  Same fixed cachedroute's required full-quality audit would need its own
+  read-only fullsource/field/hash/budget preflight and separate preregistration,
+  not automatic launch or justification from the1 extra Novel clip target.

@@ -897,3 +897,51 @@ five-field-only raw reader, classical atomic seals, predictor GT/pixel/weight/
 Test/network/child barrier, evaluator seal-first ordering and no partial restart.
 Scoped core/v2/PANDAS regression: **281 passed, no skips**. Historical broader
 legacy hardcoded-path failures remain disclosed; this is not an all-repo claim.
+
+## Actual cached RPN/ByteTrack result: mixed small-clip finding, not reliable primary
+
+Prereg29807d7496d0003db9ae114bc0a8589baf714171 exact remote01:09:46Z before
+actual CPU replay.64 production/8 probe updates,4 classical atomic shards,
+workerexit0,0.75462s/supervisor1.00256s, worker-reported peakRSS80,994,304 B,
+no Torch/GPU. Original five detector arrays and source bytes unchanged, scores
+not transformed and exact causal prefix passes. Parent1s RSS sampling captured
+only90,112 B during startup and misses the subsecond worker peak; report worker
+ru_maxrss, not that sampled value as an actual memory bound. Compact NPZ91,943 B,
+1475 predicted rows. Seal a5590a99e8d4cd8c0543d48023ad131d8b09f84314f1fdc9156f1c873dc9ccfd.
+
+Independent CPU5.66437s/847,216,640 B/exit0 after complete prediction. Identical
+64images/328GTrows/clippedGT hash; all3 old routes' HOTA/AssA/DetA/DetRe exact
+differences0 and coverage/purity identical. No historical source/stream/scorer
+or score/GT denominator change used to obtain a result.
+
+| Fixed64-frame route | HOTA | AssA | DetA | DetRe | Known | Novel |
+|---|---:|---:|---:|---:|---:|---:|
+| Cached RPN/ByteTrack | .151080 | .459124 | .052929 | .271983 | 2/26 | 1/2 |
+| Retained RPN/ROI/MASA | .169655 | .502096 | .059033 | .531611 | 8/26 | 0/2 |
+| Retained PANDAS/ByteTrack | .122697 | .372579 | .041192 | .583440 | 10/26 | 0/2 |
+| Retained SAM-grid/MASA | .098716 | .412425 | .027225 | .332798 | 2/26 | 0/2 |
+
+Values0..1, not percentages/full-Val/M9/OCD. ByteTrack produces223IDs with
+median5/mean6.61435,40singletons17.94%; longer projected tracks are not proof
+of purity or reliable coverage.85matched/1390unknown rows,206IDs withoutGT
+support/219IDs withunknown members,3 observed multiindividual IDs,4 entire
+observed-onecategory IDs. Matched-only majority1.0 remains not global purity.
+All1475 rows survive canonical preprocessing, no unknown-filter rescue.
+
+Relative to native, higher small-clip Novel count but lower Known coverage,
+HOTA and DetRe; one extra observed Novel target is not a50% full-Val estimate,
+method-selection/threshold-tuning authorization or broad quality PASS. Different
+memory/time/built-in gates and Kalman smoothing preclude single-cause claims.
+Original reliable-primary requirement remains; no freeze, automatic full-Val/
+cache, score/window search, GT-policy extension, R2 or M11. This fixed existing
+cached alternative is actually completed, not a live job to keep polling.
+
+Public47,091 B/SHA25668a48d6f7666e4c2cda173301e8c894d4507fc05829577de482572db13d2dd3b.
+Private prediction+all4 canonical audit3,686,400 allocatedB; no new model,
+dataset or environment. Actual outcome and atomic source/causal seals retained.
+Result regression **283 passed, no skips**. Conservative repository plus owned
+MASA environment6,529,662,976 allocatedB before result delivery, within15/30GiB.
+Original M1 full-quality audit is still required for any candidate: a separate
+read-only full-cache field/hash/resource preflight may establish whether this
+same fixed route can be audited cheaply, without selecting/tuning on1 Novel
+target or treating this clip result as full qualification. No full replay yet.

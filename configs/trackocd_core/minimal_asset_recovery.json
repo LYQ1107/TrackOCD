@@ -258,7 +258,11 @@
       "source_manifest_sha256": "5247f5f7bba0706b0a9c4dd4dcd8dd60f4ff154570d955fc120a32091cb8353e",
       "new_weights_data_environment_bytes": 0,
       "maximum_new_prediction_and_evaluation_bytes": 10485760,
-      "availability": "EXISTING_CACHED_RAW_DETECTIONS_AND_BASE_NUMPY_SCIPY; NOT_YET_REPLAYED",
+      "availability": "COMPLETED_FIXED64_CPU_DIAGNOSTIC_NOT_PRIMARY_QUALIFICATION",
+      "actual_new_prediction_npz_bytes": 91943,
+      "actual_private_prediction_and_evaluation_allocated_bytes": 3686400,
+      "public_result_bytes": 47091,
+      "public_result_sha256": "68a48d6f7666e4c2cda173301e8c894d4507fc05829577de482572db13d2dd3b",
       "condition": "Preregister fixed first4x16 clip and existing exact ByteTrack parameters; one CPU, no Torch/pixels/new weights. Full prediction seal and independent identical-GT old3 baseline replay before comparison. Preserve partial runs. Not automatic full-Val/cache/primary or semantic training."
     },
     {
