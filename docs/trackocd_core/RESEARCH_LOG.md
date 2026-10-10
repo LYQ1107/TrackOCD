@@ -873,3 +873,23 @@
   both evaluation scripts tested against real supervision. Preserve failed
   attempt evidence; new exact remote prerequisite before retry. Policy fits
   already running are not modified; all their protected source bytes unchanged.
+
+## 2026-10-10 — First real full Train-heldout representation table completed
+
+- 1a84c22 exact remote after technical interface correction,420replays,
+  3learned seeds/4orders/5prefixes,207Known/16pseudo targets.81.4758s CPU,
+  peak847216640B. All25development calibration trials per backend/model kept;
+  no GT labels/mapping in policy state,no heldout redesign or Val/Test access.
+- p16 rawNearest Old.009662/New.53125/H.018977/CT.396825/FM0;
+  selectedA1 .634461/.458333/.527589/.169312/.402116;
+  A2 .531804/.505208/.513555/.079365/.613757;
+  staticcontrol H.541325. RawFrameVote CT.591270,greater than all learned
+  nearest variants. Higher Known ACC/H is not a persistent Novel success.
+- A1 overall macroRank1 .493351→.644631/AUROC.807669→.852456,but effective
+  rank54.176→8.586,allNovel wrongKnown0→.28125. Novel-only diagnostics still
+  needed; no unseen-category improvement inferred from mixed Known probes.
+- Temporal independent advantage not currently supported. Ongoing registered
+  D1/D2 losses/capacity/budget/input order unchanged; no heldout-driven rescue.
+  Actual local MASA metadata-only inventory304561IDs/114380singletons,1540022
+  rawobs/1294110first-at-most16obs,FP16visual1987752960B;no pixels/features or
+  physical inference rerun. Formal predicted feature extraction not started.

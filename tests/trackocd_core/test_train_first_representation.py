@@ -108,3 +108,25 @@ def test_actual_evidence_capacity_and_all_inputs_match_selected_A1():
         assert f['positive_pairs']==reference['positive_pairs'] and f['negative_pairs']==reference['negative_pairs']
         for checkpoint in f['checkpoints']:
             cp=checkpoint['checkpoint'];assert sha256_file(root/cp['path'])==cp['sha256']
+
+
+def test_actual_full_representation_heldout_same_denominators_and_all_cases():
+    import json
+    from pathlib import Path
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2]
+    r=json.loads((root/'outputs/trackocd_core/TRAIN_FIRST_REPRESENTATION_HELDOUT_RESULT.json').read_text())
+    assert len(r['cases'])==420 and r['known_gt']==207 and r['pseudo_novel_gt']==16
+    assert not r['GT_or_Hungarian_in_prediction_memory'] and not r['val_or_test_access']
+    assert r['all_seeds_orders_prefixes_kept'] and not r['heldout_used_to_redesign_method']
+    assert r['config_sha256']==sha256_file(root/'configs/trackocd_core/gt_main_evaluation.json')
+    assert len(r['calibrations'])==21 and all(len(c['all25trials'])==25 and not c['heldout_used'] for c in r['calibrations'])
+    opportunities={o:set() for o in r['orders']}
+    for c in r['cases']:
+        assert c['standard']['old_denominator']==207 and c['standard']['new_denominator']==16
+        assert c['standard']['all_denominator']==223 and c['persistent']['effective_commit_coverage']==1
+        assert not c['persistent']['posthoc_hungarian_used']
+        opportunities[c['order']].add(c['persistent']['fixed_gt_cross_video_reuse_opportunities'])
+        assert sum(v['correct_ct'] for v in c['errors']['per_video_conditional_fixed_mapping_counts'])==c['persistent']['commit_ct_correct']
+    assert all(len(v)==1 for v in opportunities.values())
+    ledger=r['private_ledger'];assert sha256_file(root/ledger['path'])==ledger['sha256']
