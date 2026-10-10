@@ -1,0 +1,18 @@
+{
+  "schema_version": "trackocd.core.main-persistent-policy-training.v1",
+  "status": "INITIAL_BOUNDED_DESIGN_BEFORE_POLICY_DEVELOPMENT_RESULTS",
+  "split": "configs/trackocd_core/training_split.json",
+  "models": ["D1_SIMPLE_MLP", "D2_RISK_AWARE"],
+  "same_candidate_evidence_and_trainable_capacity": true,
+  "actions": ["KNOWN", "EXISTING", "NEW", "WAIT"],
+  "memory_updates": "predicted actions only; no GT correction/reclustering/oracle prototypes for pseudo-Novel",
+  "supervision": "policy_train pseudo-Novel Train category labels for target/action-risk loss only",
+  "risk_components": ["wrong_known", "wrong_existing_pollution", "wrong_new_fragmentation", "wait_latency", "later_predicted_memory_effect"],
+  "seeds": [1027, 1028, 1029],
+  "maximum_epochs": 20,
+  "development_only_operating_point_selection": true,
+  "final_heldout_method_redesign": false,
+  "wait_has_cost_and_coverage_penalty": true,
+  "same_coverage_false_merge_comparison_required": true,
+  "val_or_test_access": false
+}

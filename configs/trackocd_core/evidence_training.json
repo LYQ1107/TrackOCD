@@ -1,0 +1,18 @@
+{
+  "schema_version": "trackocd.core.main-evidence-training.v1",
+  "parent": "configs/trackocd_core/representation_training.json",
+  "models": ["A2_EVIDENCE", "A2_CAPACITY_CONTROL"],
+  "seeds": [1027, 1028, 1029],
+  "steps": 1000,
+  "initialize_adapter_identically_to_A1_per_seed": true,
+  "same_observations_categories_pairs_optimizer_budget_as_A1": true,
+  "geometry_weight": "selected using representation development fold before heldout evaluation",
+  "A2": "Existing CategoryEvidence(True),261-64-1 observed-causal reliability weights",
+  "capacity_control": "Mean-only 261-32-256 residual plus scalar = same16833 extra parameters; no dynamic observation weighting",
+  "auxiliary_reliability_loss_weight": 0.0,
+  "no_capacity_or_auxiliary_loss_gain_as_architecture_gain": true,
+  "prefixes": [1, 2, 4, 8, 16],
+  "heldout_never_used_for_method_redesign": true,
+  "no_gain_status": "TEMPORAL_EVIDENCE_NOT_SUPPORTED",
+  "val_or_test_access": false
+}

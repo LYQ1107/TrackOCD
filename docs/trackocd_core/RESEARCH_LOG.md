@@ -777,3 +777,24 @@
   completebaseline exactness/universe/unknowncounts/resources/seals/falseprimary
   promotion checked. Not an allrepository claim;registeredconfig/source/scorer
   hashes unchanged. Onlyaggregate scientific evidence/report/test published.
+
+## 2026-10-10 — New user-authorized Train-first main scope, T0
+
+- Newrequestcc874517... explicitly allows Train Known GT representation AND
+  predicted-memory policy training independently of M1. Keep old blockedM1,
+  R0/R1 negative results and no-R2 history;new mainconfiguration/output.
+- Newbranch codex/trackocd-core-training-limited-masa fromverified1e10527.
+  NativeMASA limitedcoverage/provenancegap/annotatedcadence,not strongPASS;
+  no detector/tracker/PANDAS/SimNAS repeats,newweights/data downloads or Test.
+- FreshTrainSHA7eb551fd...,2196Knowntracks/48classes/43380obs,1170len>=16;
+  retain1026short. Allrequiredfirst16pixelslocal;82GiB free,plentyfreeVRAM.
+- Metadata-only category/video split:15fitclasses/1305fittracks14714obs,
+  4development+4policy+4heldout disjointpseudo classes;five globalvideo-disjoint
+  purposes.2166selectedtracks24628prefixobs;30unsupportedroletracks reported.
+  48/78 legalprototypecoverage;noValfill,all78finalKnownGTdenominatorretained.
+- T1 budget/matrix registered before modelresults:three seeds,1000steps per
+  A1/plain+finiteGram1/5,sharedinit/8class×2crossvideo sampler,prefixactualclip,
+  checkpoint250/500/1000selectiondevelopmentonly,no heldoutmethodredesign.
+  T2capacitycontrol/auxlossboundary,T3predicted-memory supervision permitted.
+- Traininghasnotstarted atT0;frozen featureencoding mustfinish first. Do not
+  falselylabel encoderinference asAdapteroptimization orclaimscientificPASS.
