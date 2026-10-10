@@ -981,3 +981,17 @@
 - Scoped core/v2/PANDAS regression328passed/no skips (20.25s),including all
   40actual all-ID seals,885unmatchedIDs,subset27/3denominators and frozen
   canonical physical-reference equality. Scientific success not inferred.
+
+## 2026-10-10 — Exhaustive semantic search performance registration
+
+- Full features running from exact1778489 registration with8fresh-safe GPUs;
+  all4 prior shards retained/reused. No claim that full features are complete.
+- Recovered baseline and52Train-freeze bytes unchanged. New executor screens
+  EVERY live centroid with FP32 GEMV/TF32off,refines all potential winners and
+  ties with canonical np.dot under conservative8*d*eps accumulation bound.
+  Exact update/tie/DPdistance/vote/monotonic token rules preserved;not ANN,
+  subsampling,semantic pruning,newthresholds or changed risk/WAIT behavior.
+- Actual334scoped tests passed/no skips (24.69s),synthetic500stepbaseline
+  state/score bytes,frame pretrack snapshots,policy17cues,nearties/clears.
+  First4 all40case CPU and GPU sealed-decision equivalence must still be
+  measured against actual prior integration before full semantic rollout.
