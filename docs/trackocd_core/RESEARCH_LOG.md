@@ -944,3 +944,22 @@
   four frozen native shards:every physical ID/short track/prefixcount retained,
   current encoder source has GT/Test/network barrier and full-run integration
   gate. Future formal encoding is not falsely marked complete at registration.
+
+## 2026-10-10 — Limited MASA fixed-first4 all-ID features completed
+
+- 1d18a41 exact remote,onefresh-safeGPU;4fixed metadata videos4/20/22/23,
+  all892physicalIDs/5160chronological first-at-most16obs,7423323B compact NPZ.
+  157.7283s,8oldtiny compatible observations reused,payload hashes/atomic marks
+  intact;registered crop/prefix source bytes also equal historical smoke.
+- No GT/role/Test encoding input,optimizer,detector/tracker rerun,newassets,
+  favorable replacement videos,unmatched filtering or foreign intervention.
+  Full988features have NOT started. All incomplete/complete old assets retained.
+- Semantic integration source next registers8methods x5caps,legal48Train
+  prototypes/full78Known ID permission,30missingprototypes no Val supplement,
+  prior Train thresholds/policy bias unchanged. Every GT/geometry target read
+  occurs after irrevocable sealing;all892IDs includingunmatched reach evaluator.
+  Subset denominators explicitly not a full4413/819/527-529-547-531Val claim.
+- Actual feature/semantic-source scoped327passed/no skips (21.52s),all4atomic
+  payloads/everyclippedprefix/nativequality/8compatible reuse verified. Semantic
+  integration source uses exact old canonical physical-reference floats and
+  completed evaluator-only join SHA1e6b0125...,never rounded invented scores.

@@ -41,3 +41,35 @@ def test_feature_source_enforces_freeze_barrier_resume_and_no_physical_rerun():
     assert 'PASS_FROZEN_FEATURE_BASELINE_POLICY_EVALUATOR_INTEGRATION' in source
     assert 'start_new_session=True' in source and 'for p in children:' in source
     assert 'from src.trackocd_core.masa_native' not in source
+
+
+def test_actual_four_video_features_all_ids_quality_payload_and_tiny_reuse():
+    import json
+    from pathlib import Path
+    from src.trackocd_core.limited_masa_features import completed_feature,LimitedMasaVideoCache
+    from src.trackocd_v2.io import sha256_file
+    root=Path(__file__).resolve().parents[2];out=root/'outputs/trackocd_core/features/masa_limited_prefix_v1'
+    manifest=json.loads((out/'integration_manifest.json').read_text())
+    assert manifest['videos']==4 and manifest['tracks']==892 and manifest['observations']==5160
+    assert manifest['reused_smoke_observations']==8
+    assert not manifest['GT_or_role_input'] and not manifest['detector_tracker_inference'] and not manifest['optimizer_used']
+    assert not manifest['TAO_Test_access'] and manifest['limited_not_strong_frontend']
+    for r in manifest['records']:
+        assert completed_feature(out/'shards',r['video_id'],manifest['config_sha256'],r['input_npz_sha256'])==r
+        c=LimitedMasaVideoCache(out/'shards'/r['npz_filename'],r['video_id'])
+        assert len(c.rows)==r['tracks'] and sum(a['observation_count'] for a in c.rows)==r['observations']
+        for row in c.rows:
+            for p in (1,2,4,8,16):
+                v=c.get_prefix(row['key'],p);assert len(v.visual)==min(p,row['observation_count'])
+                assert np.isfinite(v.visual).all() and np.all((v.quality>=0)&(v.quality<=1))
+        c.close()
+    cfg=root/'configs/trackocd_core/limited_masa_features.json';assert manifest['config_sha256']==sha256_file(cfg)
+
+
+def test_semantic_integration_source_seals_before_evaluator_join_and_no_tuning():
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[2];s=(root/'scripts/trackocd_core/integrate_limited_masa.py').read_text()
+    assert s.index('sealed,runtime=replay(')<s.index("gt=json.loads(gt_path.read_text())")
+    assert "'prototype_coverage':{'available':48,'inherited_known':78,'missing':30" in s
+    assert 'known_ids=known_ids' in s and "'Val_tuning':False" in s
+    assert "matches={TrackKey(r['video_id'],str(r['physical_track_id'])):None for r in routes}" in s

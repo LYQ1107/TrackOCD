@@ -1,0 +1,40 @@
+{
+  "GT_or_role_input": false,
+  "TAO_Test_access": false,
+  "annotated_cadence_not_dense_frame_online": true,
+  "config_sha256": "1b8442ce64e5b9b50683a22728449873e3e6e92f1bd35a8473fad6459c9eb964",
+  "detector_tracker_inference": false,
+  "limited_not_strong_frontend": true,
+  "mode": "integration",
+  "model_freeze_sha256": "070f2182724449564ee8f6297f902b1c649c2d4a2f55fef5cac9222cbc991822",
+  "observations": 5160,
+  "optimizer_used": false,
+  "payload_bytes": 7423323,
+  "preregistration_commit": "1d18a4110423937b24edeb24b04a14872fe3c5b7",
+  "private_manifest_sha256": "733f956e87085ba006772cd5f0367ee95bff80133f9eab5867a9f16cb3bd16c8",
+  "reused_smoke_observations": 8,
+  "source_sha256": {
+    "configs/trackocd_core/limited_masa_features.json": "1b8442ce64e5b9b50683a22728449873e3e6e92f1bd35a8473fad6459c9eb964",
+    "scripts/trackocd_core/extract_limited_masa_features.py": "86cf79899364503e3897e53c2954f8d7bb8936b8abe8aec5f1d957eeac0854c2",
+    "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218"
+  },
+  "status": "COMPLETE_ALL_ID_PREFIX_FEATURES_INTEGRATION_ONLY",
+  "tracks": 892,
+  "unmatched_tracks_removed": false,
+  "videos": 4,
+  "wall_seconds": 157.72828099498292,
+  "workers": [
+    {
+      "GPU_peak_allocated_bytes": 1148281856,
+      "GPU_peak_reserved_bytes": 1474297856,
+      "GPU_uuid": "GPU-f931e51b-55b2-c2c2-6506-b6f986864d54",
+      "GT_or_roles_input": false,
+      "observations": 5160,
+      "optimizer_used": false,
+      "peak_rss_bytes": 1223557120,
+      "reused_smoke_observations": 8,
+      "videos": 4,
+      "wall_seconds": 149.44082148501184
+    }
+  ]
+}
