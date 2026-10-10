@@ -742,3 +742,38 @@
   evidence only. Conservative repo+ownedenv6,592,942,080B beforedelivery.
 - Actualprediction regression294passed/no skips; all988atomicseals/source
   hashes/counters verified. 2emptyframes retained; publicsummary6049B only.
+
+## 2026-10-10 — Actual complete fixed RPN/ByteTrack quality audit finished
+
+- Independent freshCPU after e08 prereg/fullseal/0dd prediction delivery:
+  all988videos/36375frames/113112GTrows. Old native/PANDAS full+per-video
+  fourmetrics exactdiff0, counts/coverage/purity/lengths/hash identities exact.
+  No adapter, source, score/parameter or denominator repair after prediction.
+- New HOTA.145289/AssA.344390/DetA.065260/DetRe.439216, reliableKnown527/4413
+  (11.94%)/Novel72/819(8.79%). Native .145054/.440879/.048489/.631809,
+  1400/4413/189/819. Similar HOTA andhigherDetA do not resolve lower reliable
+  coverage/association/recall. No tinyNovel1/2-to-full50% or primaryPASS claim.
+- New80652IDs/median5/mean9.25957/singletons10448(12.95%);58810matched/
+  687993unknown of746803rawrows,713022canonicalrows underunchangedadapter.
+  2105multiindividualIDs/79147IDswithunknown,1462entireobservedonecategory.
+  Matched-only majority.979595 notglobalpurity; no unknownfilter/GTshrink.
+- Worker0/noerror474.915s/467841024B;supervisor476.259s/467898368Bsampled,
+  freshoneCPU/noGPU. Private62607360allocatedB/public5165027B,d7013544SHA.
+  Conservative repo+ownedenv6598270976B beforedelivery, no newassets/env/
+  pixels/train/Test/foreignintervention/rawNPZ-or-GT-or-weightupload.
+- All registered cheap concrete routes now audited or evidence-gated. Native
+  remains limited, COV vocabulary-assisted, Sim all-stage source ledger missing,
+  AED lawful lineage unverified, SAM-grid fixed64 unfavorable(notglobalFAIL).
+  NAS latestread-only status adds noqualifying evidence; existing scoreaudit
+  alreadycomplete, no repeat or pretend livejob. FullfixedRPN route terminal.
+- Same primary-quality choice unresolved across at least6consecutivegoalturns;
+  main cache/policy/M9 remaingated. Preserve all negative GT feasibility/R1,
+  noR2/GT-policy scope expansion/M11. No inferred limited-native acceptance,
+  automaticprimary or arbitrary numeric threshold. BLOCKED_FRONTEND_QUALITY
+  requires explicitlimited-native benchmark direction or strongerlawfulassets;
+  goalnotachieved, not a pause request. Deliver actual evidence before marking
+  genuineimpasse, no further parameter variants or fake indefinite monitoring.
+- Actualfullresult scopedcore/v2/PANDAS regression295passed/no skips(12.69s),
+  completebaseline exactness/universe/unknowncounts/resources/seals/falseprimary
+  promotion checked. Not an allrepository claim;registeredconfig/source/scorer
+  hashes unchanged. Onlyaggregate scientific evidence/report/test published.

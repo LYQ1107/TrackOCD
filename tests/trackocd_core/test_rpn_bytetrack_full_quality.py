@@ -175,3 +175,57 @@ def test_actual_full_prediction_has_exact_complete_source_without_training_or_gt
     assert row["resources"]["worker_peak_rss_bytes"] <= config["limits"]["prediction_host_rss_bytes"]
     assert row["resources"]["worker_seconds"] <= config["limits"]["prediction_seconds"]
     assert row["causality_probe"]["pass"] and row["causality_probe"]["frame_updates"] == 8
+
+
+def test_actual_full_quality_result_reproduces_complete_baselines_without_primary_promotion():
+    from src.trackocd_v2.io import sha256_file
+    config, plan, records, digest = runtime.load_plan()
+    result = json.loads(runtime.SUMMARY.read_text())
+    supervisor = json.loads((runtime.RUN / "evaluation_supervisor.json").read_text())
+    reference = json.loads((runtime.ROOT / config["historical_full_result"]).read_text())
+    assert sha256_file(runtime.SUMMARY) == "d7013544545c32f16118ddcdba66db61163b9d0185c126ead27ecbe7e5a6b364"
+    assert result["status"] == "FULL_VAL_RPN_BYTETRACK_QUALITY_AUDIT_COMPLETE_NOT_AUTOMATIC_PRIMARY_PASS"
+    assert result["videos"] == 988 and result["images"] == 36375 and result["gt_rows"] == 113112
+    assert result["config_sha256"] == digest == supervisor["config_sha256"]
+    assert result["prediction_manifest_sha256"] == sha256_file(runtime.RUN / "prediction_manifest.json")
+    assert result["historical_full_result_sha256"] == sha256_file(runtime.ROOT / config["historical_full_result"])
+    for key in ("annotation_sha256", "roles_sha256", "canonical_adapter_sha256", "canonical_hota_sha256"):
+        assert result[key] == config[key]
+    assert result["historical_full_baselines_reproduced"]
+    expected_videos = [v["video_id"] for v in plan["videos"]]
+    assert [v["video_id"] for v in result["per_video_identical_gt"]] == expected_videos
+    assert all(len(v["sha256"]) == 64 for v in result["per_video_identical_gt"])
+    for name, row in result["results"].items():
+        assert [v["video_id"] for v in row["per_video"]] == expected_videos
+        assert sum(v["images"] for v in row["per_video"]) == 36375
+        assert sum(v["gt_rows"] for v in row["per_video"]) == 113112
+        assert sum(v["raw_prediction_rows"] for v in row["per_video"]) == row["raw_prediction_rows"]
+        assert sum(v["canonical_evaluated_prediction_rows"] for v in row["per_video"]) == row["canonical_evaluated_prediction_rows"]
+        assert row["coverage"]["known"]["gt_tracks"] == 4413 and row["coverage"]["novel"]["gt_tracks"] == 819
+        assert row["purity"]["matched_rows"] + row["purity"]["unmatched_unknown_rows"] == row["raw_prediction_rows"]
+        if name in reference["results"]:
+            reproduction = compare_reference(row, reference["results"][name], 1e-12)
+            assert reproduction == result["baseline_reproduction"][name] and reproduction["pass"]
+            assert all(value == 0 for value in reproduction["absolute_metric_differences"].values())
+            assert reproduction["per_video_max_absolute_metric_difference"] == 0
+            assert all(reproduction["exact_full_fields"].values()) and reproduction["per_video_nonmetric_fields_exact"]
+    row = result["results"]["RPN_BYTETRACK"]
+    assert row["canonical_tracking"] == {"HOTA": 0.14528896200629093, "AssA": 0.3443898463196062,
+                                         "DetA": 0.0652604370274209, "DetRe": 0.4392158121805681}
+    assert row["raw_prediction_rows"] == 746803 and row["canonical_evaluated_prediction_rows"] == 713022
+    assert row["coverage"]["known"]["reliably_observed"] == 527 and row["coverage"]["known"]["missing_or_unreliable"] == 3886
+    assert row["coverage"]["novel"]["reliably_observed"] == 72 and row["coverage"]["novel"]["missing_or_unreliable"] == 747
+    assert row["purity"]["matched_rows"] == 58810 and row["purity"]["unmatched_unknown_rows"] == 687993
+    assert row["purity"]["observed_multiple_gt_identity_tracks"] == 2105
+    lengths = row["annotated_projection_lengths"]
+    assert lengths["physical_tracks"] == 80652 and lengths["single_observation_tracks"] == 10448
+    assert lengths["observation_length_quantiles"]["p50"] == 5
+    assert sum(lengths["exact_length_histogram"].values()) == 80652
+    assert sum(int(k) * n for k, n in lengths["exact_length_histogram"].items()) == 746803
+    assert not any(result[k] for k in ("labels_for_model_input_or_tuning", "primary_freeze_permitted", "scientific_pass_permitted", "ocd_or_m9_metrics", "semantic_feedback"))
+    assert supervisor["worker_returncode"] == 0 and supervisor["error"] is None
+    assert result["resources"]["fresh_worker"] and result["resources"]["cpu_workers"] == 1
+    assert not result["resources"]["gpu_used"] and not supervisor["gpu_used"]
+    assert result["resources"]["peak_rss_bytes"] <= config["limits"]["evaluation_host_rss_bytes"]
+    assert result["resources"]["wall_seconds"] <= config["limits"]["evaluation_seconds"]
+    assert runtime.SUMMARY.stat().st_size <= config["limits"]["max_public_result_bytes"]

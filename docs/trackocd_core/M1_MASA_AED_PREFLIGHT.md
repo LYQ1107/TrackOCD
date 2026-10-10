@@ -1036,3 +1036,63 @@ GT phase starts only after tested prediction summary commits/pushes/verifies.
 Actual sealed-prediction regression **294 passed, no skips**; all988 classically
 sealed shards/detector hashes/counts/guards checked. Only2 empty output frames,
 retained rather than omitted; aggregate JSON6,049 B, no GT-derived metrics yet.
+
+## Actual complete fixed RPN/ByteTrack independent quality result
+
+The fresh CPU evaluation finished after the entire prediction was sealed and
+delivered in `0dd41b5`. All988 videos/36,375 annotated frames/113,112 GT rows;
+the unchanged canonical adapter and full Known4413/Novel819 denominators apply
+to every route. Both old native and PANDAS results reproduce exactly: all four
+full/per-video metric differences0, identical counts/coverage/purity/projected
+lengths/source hashes. This is complete physical M1 evaluation, not M9/OCD.
+
+| Complete-Val route | HOTA | AssA | DetA | DetRe | Reliable Known | Reliable Novel |
+|---|---:|---:|---:|---:|---:|---:|
+| Fixed RPN/ByteTrack | .145289 | .344390 | .065260 | .439216 | 527/4413 (11.94%) | 72/819 (8.79%) |
+| Retained native MASA | .145054 | .440879 | .048489 | .631809 | 1400/4413 (31.72%) | 189/819 (23.08%) |
+| Retained PANDAS/ByteTrack | .110113 | .330246 | .037554 | .578390 | 1442/4413 (32.68%) | 30/819 (3.66%) |
+
+Metrics0..1. The new route has similar HOTA and higher DetA than native, but
+lower AssA, DetRe and Known/Novel reliable coverage. Its80,652 projected tracks
+have median5/mean9.25957 observations,10,448 singletons12.95%; longer tracks
+are not proof of correct identity or improved useful coverage.58,810 matched/
+687,993 unmatched-unknown observations,2,105 observed multiindividual tracks,
+79,147 IDs withunknown observations,1,462 entire observed-onecategory IDs.
+Matched-only majority.979595 is not a global purity certificate. No unknown
+removal or denominator shrink;746,803 raw/713,022 canonical-evaluated rows
+reflect the same inherited partial-annotation/max300 adapter, not a new rescue.
+Cadence, built-in gates, smoothing and association differ; no isolated cause
+or tuned score/window/NMS/cap variant is claimed from this comparison.
+
+Workerexit0,474.915s/467,841,024 B peakRSS; supervisor476.259s/sampled467,898,368 B,
+one freshCPU/noGPU. Private prediction+evaluation62,607,360 allocatedB; public
+aggregate5,165,027 B/SHA256
+`d7013544545c32f16118ddcdba66db61163b9d0185c126ead27ecbe7e5a6b364`.
+Repository+owned MASA environment6,598,270,976 allocatedB before result delivery,
+below15/30GiB. No weights/data/environment added or rawNPZ/GT/weights published.
+No formal feature cache, training, foreign intervention or Test access.
+
+This completes the concrete fixed cached alternative, but does not resolve the
+original reliable-primary requirement. No user-specified numeric quality cutoff
+is invented. Native remains a limited-coverage candidate, not an automatically
+qualified primary. `FROZEN_PHYSICAL_FRONTEND.json` is not created. Other audited
+routes remain vocabulary-assisted (COV-native), unresolved all-stage supervision
+and score contract (SimOWT), unverified lawful asset lineage (AED), or an
+unfavorable fixed64 SAM-grid diagnostic (not a full-Val failure). GT-only
+representation feasibility including the single negative R1 is already done;
+R2/GT decision-policy extension/M11 are not authorized by this outcome.
+
+No owned job is still running; old handles/PIDs are historical evidence only.
+The NAS score distribution is already complete locally; read-only latest NAS
+status revealed no new SimOWT supervision ledger or qualified frontend evidence,
+not a job to monitor. With the same primary-quality dependency unresolved across
+at least six consecutive goal turns and concrete in-scope alternatives now
+completed, further main work requires an explicit limited-native benchmark scope
+decision (retain all full-GT coverage penalties) or stronger lawful pretrained/
+cached assets and their supervision evidence. Report BLOCKED_FRONTEND_QUALITY,
+not a completed goal or a silently weakened end-to-end claim.
+
+Actual full-result scoped core/v2/PANDAS regression **295 passed, no skips**.
+Includes whole-universe/seal/config/resource boundaries, exact old full/per-video
+reproduction, fixed new coverage/pollution/lengths and no primary promotion.
+This is not an all-repository regression claim.
