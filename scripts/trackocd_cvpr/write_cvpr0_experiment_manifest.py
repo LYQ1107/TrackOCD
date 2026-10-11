@@ -14,7 +14,8 @@ DIRECTORIES = ('historical_audit_integer_normalized', 'checkpoint_replay_v1',
     'cross_video_state_forensics_v1', 'train_physical_diagnostic_v1',
     'train_feature_interface_v1', 'train_feature_interface_recovery_v1',
     'tiny_semantic_integration_v1', 'train_features_v1', 'matched_train_semantics_v1',
-    'fixed_history_shadow_v1', 'causal_router_interface_v1')
+    'fixed_history_shadow_v1', 'causal_router_interface_v1',
+    'atomic_legacy_smoke_v1', 'atomic_legacy_smoke_v2')
 
 
 def verified_sources(root, commit, source_sha256):
@@ -72,12 +73,16 @@ def build(root):
             supervisor_path = directory / 'supervisor.json'
             attempts = sorted(directory.glob('supervisor_registered_*.json'))
             supervisor = json.loads(supervisor_path.read_text()) if supervisor_path.exists() else (json.loads(attempts[-1].read_text()) if attempts else None)
-            failed = supervisor is not None and (supervisor.get('returncode', 0) != 0 or
-                any(c != 0 for c in supervisor.get('returncodes', [])))
+            failure_path = directory / 'failure.json'
+            failure = json.loads(failure_path.read_text()) if failure_path.exists() else None
+            failed = failure is not None or (supervisor is not None and (supervisor.get('returncode', 0) != 0 or
+                any(c != 0 for c in supervisor.get('returncodes', []))))
             stages.append({'id': name, 'state': 'FAILED_ACTUAL_PRESERVED_NO_COMPLETED_RECEIPT' if failed else 'REGISTERED_RUNNING_NO_COMPLETED_METRIC',
                 'preregistration_commit': proof['preregistration_commit'],
                 'registered_source_sha256': proof['source_sha256'], 'progress_snapshot': progress,
                 'actual_supervisor': supervisor,
+                'actual_failure_receipt': failure,
+                'failure_receipt_sha256': sha256_file(failure_path) if failure is not None else None,
                 'completed_result_present': False, 'method_success_inferred_from_diagnostic': False})
         else:
             stages.append({'id': name, 'state': 'NOT_EXECUTED_NO_METRICS'})
@@ -89,10 +94,12 @@ def build(root):
         'preserved_failed_attempts': [
             {'path': 'outputs/trackocd_cvpr/cvpr0/historical_audit', 'reason': 'NumPy integer JSON serialization failure', 'not_deleted': True},
             {'path': 'outputs/trackocd_cvpr/cvpr0/memory_controls_v1', 'reason': 'Known denominator registry mismatch correctly refused', 'not_deleted': True},
-            {'path': 'outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1', 'reason': 'Final NumPy int64 JSON failure after NPZ written; failed exit preserved, CPU no-reencoding recovery separate', 'not_deleted': True}],
+            {'path': 'outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1', 'reason': 'Final NumPy int64 JSON failure after NPZ written; failed exit preserved, CPU no-reencoding recovery separate', 'not_deleted': True},
+            {'path': 'outputs/trackocd_cvpr/cvpr0/atomic_legacy_smoke_v1', 'reason': 'Invalid antipodal append fixture caused zero aggregate and correct rejection; no failed attempt overwritten', 'not_deleted': True}],
         'pending': ['ID-independent dense online protocol',
                     'prospective waiting and reversible-memory mechanism acceptance',
-                    '12-source actual-code review', 'new independent Train protocol and at least3mechanisms', 'Goals A/B/C']}
+                    'cross-work root-supported synthesis and lawful frontend binding (12 scoped core reviews already inspected)',
+                    'new independent Train protocol and at least3mechanisms', 'Goals A/B/C']}
 
 
 if __name__ == '__main__':

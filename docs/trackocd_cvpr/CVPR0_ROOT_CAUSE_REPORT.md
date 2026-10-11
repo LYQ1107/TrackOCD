@@ -381,3 +381,25 @@ synthetic fixtures, not claimed as observed in TAO. Result SHA256
 No GT/label decoding, model training, new features, policy logits/actions,
 memory or semantic metrics; controller integration and dense-pixel qualification
 still pending. This result does not retrospectively repair old numeric-ID FAIL.
+
+## Atomic Raw Top1 control: bounded real-input interface diagnostic
+
+Registration379735c first attempt exited1 after41.61s: an appended exact
+antipode cancelled a single-observation prefix. Zero-aggregate rejection and
+all failure/launch metadata preserved. A synthetic rollback/valid-retry test
+was added; no policy/threshold or GT-based tuning.
+
+Separately registered033081c retry completed46.559s, peakRSS847216640B,
+oneCPU/zero optimization and no new features/labels. Fixed first completed
+record video47 uses earliest32of40 cached time indices/all1101observations.
+Three fixed synthetic diagnostic policies each undergo actual ID renumbering,
+frame permutation, laterinput negation and futureobservation/track append;
+17-cue/action/route-correspondence/current-memory digests invariant as required.
+No real exact-input ties; one-write/tie-broadcast is synthetic-test evidence.
+Result SHA256`65fe010fc91eb7bbc79c27ce99893b6bcb5743a3e1e395f0d37ce19f104c3c89`.
+
+This tests new owned router/memory transaction integration only. No learned
+checkpoint, Known prototypes, A1/A2 parity, dense frontend, reversible memory,
+semantic metric or old-controller repair. Legacy repeated-prefix writes remain.
+Category/event/purity/role mutations on an actual future learned model are
+still required; API exclusion alone is not an end-to-end certificate.

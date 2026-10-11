@@ -14,6 +14,17 @@ not renamed as new CVPR experiments. New training remains0; the bounded
 Train physical smoke and57video input run below are diagnostic inference,
 not new semantic method results.
 
+Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
+inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
+real-input atomic Raw control now passes32cached time indices/1101observations
+with three fixed diagnostic policies, not trained-model or dense-video proof.
+Fresh independent Train folds, learned candidate/temporal/versioned-memory
+mechanisms and full scientific acceptance remain pending. Newtraining0/600.
+Storage cleanup actually removed only two verified duplicate COCO imageZIPs,
+~18.77GiB payload; extracted inputs/weights/results/valid caches retained.
+Earlier chronological paragraphs below describe their own historical status,
+not live process/cleanup state. See latest ResearchLog and immutable receipts.
+
 ## Registered execution sequence
 
 CVPR-0 first: retrospective sealed FULL decision distributions for all three
@@ -100,7 +111,8 @@ diagnostic replay is needed for per-state histories, not guessed reconstruction.
 Conditional cleanup is authorized only when storage is insufficient and only
 for verified unused/recomputable assets of this project. Active inputs, unique
 copies, valid checkpoints/shards/history and other projects remain protected;
-ambiguous targets require clarification. No cleanup has been needed or done.
+ambiguous targets require clarification. At this historical snapshot no cleanup
+had been done; verified two-ZIP cleanup subsequently occurred, receipt below.
 
 Latest permission refresh: snapshot2026-10-11T20:42:56Z has18283311104B
 available (roughly17GiB), above10GiB reserve. Project outputs allocate
@@ -171,3 +183,19 @@ futuretrack/observation append preserve prior inputs. CPU35.32s, no training or
 label decode. This is engineering evidence only: retained first<=16annotated
 cadence, no learned controller/memory/evaluator or dense-pixel qualification;
 old historical ID-invariance FAIL remains. No cleanup or asset overwrite.
+
+Latest storage maintenance: full byte/CRC verification118287Train+5000Val
+extracted COCO images against original downloads preceded exact two-ZIP unlink.
+20152447128B archive payload removed; observed diskfree increased by
+20152135680B (~18.77GiB), not exclusive attribution under concurrent writes.
+ZIPs not locally undoable; original public download/SHA validation required
+to restore archives. No extracted data/GT/weights/history/valid shards removed.
+`coco_download_cleanup_20261012.json` retains inventory/hash/resource receipts.
+
+Latest atomic control: preserved exit1 invalid-antipodal future fixture under
+atomic_legacy_smoke_v1. Remote033081c retry completed46.56s/847216640B CPU,
+earliest32of40 cached frames/all1101observations on registeredvideo47. Actual
+fixed-policy cue/action/routing/memory mutation checks pass with no GT or new
+features/optimization. This remains an engineering diagnostic; repeated-prefix
+aggregate bias, old controller FAIL, learned policy and dense protocol remain.
+Result65fe010fc91eb7bbc79c27ce99893b6bcb5743a3e1e395f0d37ce19f104c3c89.

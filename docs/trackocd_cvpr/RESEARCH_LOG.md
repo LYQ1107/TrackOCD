@@ -734,3 +734,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
   unchanged state and valid same-frame retry test. This is not a method repair.
 - Failure wall41.61s, no PASS; full104 engineering tests PASS3.09s before
   retry registration. Small launch/failure metadata published, not input rows.
+
+### Atomic-interface retry: real retained inputs, not trained policy proof
+
+- Remote033081c exact registration, preserved separate_v1 failure. Retry_v2
+  completed46.559s/847216640B RSS, singleCPU and0GPUtraining/optimization.
+  First record video47 uses earliest32of40 cacheframes and all1101observations.
+  Three fixed policies each pass actual ID/frame permutation and future
+  negation/append on 17-cue/action/routing/current-memory digests. Baselines
+  NEW1101; NEW1/EXISTING1100; WAIT1101 are intentionally fixed, not scores.
+- No real identical-prefix ties, Known assets, GT labels, Val/Test, new feature
+  extraction or learned checkpoint. Synthetic tie/rollback checks stay separate.
+  Old ID-dependent controller FAIL, repeated-prefix aggregate weighting and
+  dense/learned/versioned-memory gates unchanged. Not Goal acceptance.
+- Result65fe010fc91eb7bbc79c27ce99893b6bcb5743a3e1e395f0d37ce19f104c3c89;
+  small launch/result metadata public, retained feature inputs unchanged.
+- Manifest now18registered stages/16completed substeps (not16methods); actual
+  failure receipts no longer get misclassified as running without supervisor
+  metadata. Chronological main report now explicitly records actual two-ZIP
+  cleanup, not its stale historical no-cleanup snapshot. Full109tests PASS2.99s
+  before adding the focused manifest-failure classification regression.
+- With that regression included, full110tests PASS2.96s, no skips. Synthetic
+  unit checks, published receipt checks and real input run are reported separately.

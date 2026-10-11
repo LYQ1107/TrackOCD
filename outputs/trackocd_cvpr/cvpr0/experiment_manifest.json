@@ -1,11 +1,11 @@
 {
   "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
-  "manifest_generator_source_sha256": "722cb64f5e148337f7057706f8b8ed1e80735f71601306b4ff0abe78864ee37a",
+  "manifest_generator_source_sha256": "0c077ee9628b4acf9ebf9d76670512a581fa4ab19250b3d719d25b69fe186e8e",
   "no_unique_causal_root_or_new_method_success_claim": true,
   "pending": [
     "ID-independent dense online protocol",
     "prospective waiting and reversible-memory mechanism acceptance",
-    "12-source actual-code review",
+    "cross-work root-supported synthesis and lawful frontend binding (12 scoped core reviews already inspected)",
     "new independent Train protocol and at least3mechanisms",
     "Goals A/B/C"
   ],
@@ -24,6 +24,11 @@
       "not_deleted": true,
       "path": "outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1",
       "reason": "Final NumPy int64 JSON failure after NPZ written; failed exit preserved, CPU no-reencoding recovery separate"
+    },
+    {
+      "not_deleted": true,
+      "path": "outputs/trackocd_cvpr/cvpr0/atomic_legacy_smoke_v1",
+      "reason": "Invalid antipodal append fixture caused zero aggregate and correct rejection; no failed attempt overwritten"
     }
   ],
   "schema_version": "trackocd.cvpr0.experiment-manifest.v1",
@@ -324,6 +329,7 @@
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     },
     {
+      "actual_failure_receipt": null,
       "actual_supervisor": {
         "error": "Owned encoder failed; preserve attempted payload/log",
         "foreign_interference": false,
@@ -332,6 +338,7 @@
         "wall_seconds": 100.65774627699284
       },
       "completed_result_present": false,
+      "failure_receipt_sha256": null,
       "id": "train_feature_interface_v1",
       "method_success_inferred_from_diagnostic": false,
       "preregistration_commit": "43e4a283e0e2cb124e3d237eebbc1c485772fb40",
@@ -555,6 +562,67 @@
       "result_bytes": 23445,
       "result_path": "outputs/trackocd_cvpr/cvpr0/causal_router_interface_v1/result.json",
       "result_sha256": "5d0a1f80f35a5e870f3a5bb9289e719199d37dbf5e63169d17a87f56c838039e",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_failure_receipt": {
+        "complete": false,
+        "error": "Zero/non-finite causal aggregate",
+        "exception_type": "ValueError",
+        "wall_seconds": 41.607747121015564
+      },
+      "actual_supervisor": null,
+      "completed_result_present": false,
+      "failure_receipt_sha256": "cf38c01744436d54b9a604e59bb66d71a8b8faf9bb28c7b0a80d04607eb8f0a9",
+      "id": "atomic_legacy_smoke_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "preregistration_commit": "379735c8ebf27bb43f00b576cb1b26d6c265ec45",
+      "progress_snapshot": {
+        "actual_worker_summaries": []
+      },
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+        "configs/trackocd_cvpr/cvpr0_atomic_legacy_smoke.json": "a0f0fb8fe6dd45a253bbe27b77562fb5a45b667dc39c0ce5a71a0329e5543d16",
+        "scripts/trackocd_cvpr/audit_atomic_legacy_control.py": "4ae956dc5802ac10298911538073e70a6a096d18b6e6ef0912cd1a2d5caa61bd",
+        "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+        "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+        "src/trackocd_core/persistent_policy.py": "7ae1d13eca0ebd4633e0b1af63cc4f841baa4cd01df6db00f83a949ee4bfab31",
+        "src/trackocd_cvpr/atomic_legacy_control.py": "a1d95174ff5d0a00ea41d5da04a5ecfa054c834e2f43f1ac6f1b9774c34597be",
+        "src/trackocd_cvpr/causal_observation_router.py": "85c8c1b1a58d9676a55169266c30e53ccf048ac0c1d72f996fe20a98013d2767",
+        "src/trackocd_cvpr/diagnostic_feature_cache.py": "1a27b9c5e78099eea52b0bd2697c5de8c2ff421c1a2c353f268e16fc4898db01",
+        "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+      },
+      "state": "FAILED_ACTUAL_PRESERVED_NO_COMPLETED_RECEIPT"
+    },
+    {
+      "actual_status": "COMPLETE_TINY_REAL_TRAIN_INPUT_ATOMIC_LEGACY_CONTROL_DIAGNOSTIC",
+      "id": "atomic_legacy_smoke_v2",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "033081c62706bae99f6af4dde637d49db4c5307d",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+        "configs/trackocd_cvpr/cvpr0_atomic_legacy_smoke.json": "82b5ef0bce27f2162ed5e840023334dc38c6298d224d496c1a7a95841a6dd81c",
+        "scripts/trackocd_cvpr/audit_atomic_legacy_control.py": "0fed8fb3cd7469cbf0cb55ed9d3578f8b1a2b89389cdcfee1a5eead88d339545",
+        "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+        "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+        "src/trackocd_core/persistent_policy.py": "7ae1d13eca0ebd4633e0b1af63cc4f841baa4cd01df6db00f83a949ee4bfab31",
+        "src/trackocd_cvpr/atomic_legacy_control.py": "a1d95174ff5d0a00ea41d5da04a5ecfa054c834e2f43f1ac6f1b9774c34597be",
+        "src/trackocd_cvpr/causal_observation_router.py": "85c8c1b1a58d9676a55169266c30e53ccf048ac0c1d72f996fe20a98013d2767",
+        "src/trackocd_cvpr/diagnostic_feature_cache.py": "1a27b9c5e78099eea52b0bd2697c5de8c2ff421c1a2c353f268e16fc4898db01",
+        "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 46.55912448500749
+      },
+      "result_bytes": 5062,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/atomic_legacy_smoke_v2/result.json",
+      "result_sha256": "65fe010fc91eb7bbc79c27ce99893b6bcb5743a3e1e395f0d37ce19f104c3c89",
       "source_receipt_matches_registered_git_bytes": true,
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     }

@@ -1,0 +1,95 @@
+{
+  "GT_or_category_labels_decoded": false,
+  "Val_or_Test_access": false,
+  "cases": [
+    {
+      "baseline": {
+        "actions": {
+          "NEW": 1101
+        },
+        "atomic_groups": 1101,
+        "cutoff_frame": 1050,
+        "exact_tie_groups": 0,
+        "final_memory_sha256": "3f3195ac4dbbccc495a9d3c1d20a680066c7d757a0e7c7c518221b05b9a63f97",
+        "full_output_state_sha256": "8bfe0da3bade83ab882b502c3d6cffcaa2a51b67a214f846373a50a10895675b",
+        "prior_output_state_sha256": "fe674c62c46e268f08e2632b7456a22451171c621e3f144963ad8acb620baf42",
+        "queries": 1101,
+        "retained_output_state_sha256_before_append": "8bfe0da3bade83ab882b502c3d6cffcaa2a51b67a214f846373a50a10895675b"
+      },
+      "fixed_diagnostic_policy": "always_new",
+      "future_append_retained_all_prior_outputs": true,
+      "future_negation_changed_later_not_prior": true,
+      "renumber_and_reverse_equal": true
+    },
+    {
+      "baseline": {
+        "actions": {
+          "EXISTING": 1100,
+          "NEW": 1
+        },
+        "atomic_groups": 1101,
+        "cutoff_frame": 1050,
+        "exact_tie_groups": 0,
+        "final_memory_sha256": "f1d2cdfc01402b426996bae2a7f4914b01f133d3b6f8bc1ef450b36b3e31f65d",
+        "full_output_state_sha256": "74087ce7caecd672ce6fc0bd9e80d3a6ae50fccf6febdaf5db6d5017d67def0c",
+        "prior_output_state_sha256": "2a92c334454bf15c9c1227dc6cbc14f725b902af9e1844bc18d19ef639443249",
+        "queries": 1101,
+        "retained_output_state_sha256_before_append": "74087ce7caecd672ce6fc0bd9e80d3a6ae50fccf6febdaf5db6d5017d67def0c"
+      },
+      "fixed_diagnostic_policy": "existing_if_available_else_new",
+      "future_append_retained_all_prior_outputs": true,
+      "future_negation_changed_later_not_prior": true,
+      "renumber_and_reverse_equal": true
+    },
+    {
+      "baseline": {
+        "actions": {
+          "WAIT": 1101
+        },
+        "atomic_groups": 1101,
+        "cutoff_frame": 1050,
+        "exact_tie_groups": 0,
+        "final_memory_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "full_output_state_sha256": "4ee4f97b0de7f00d028de4a28e95f22cb27d6e4976054936c78b3f74ec37de60",
+        "prior_output_state_sha256": "220bd16bc5b5fe81ed760f8b5a9484f83c3c5ed5676caca51c3562a15353cf90",
+        "queries": 1101,
+        "retained_output_state_sha256_before_append": "4ee4f97b0de7f00d028de4a28e95f22cb27d6e4976054936c78b3f74ec37de60"
+      },
+      "fixed_diagnostic_policy": "always_wait",
+      "future_append_retained_all_prior_outputs": true,
+      "future_negation_changed_later_not_prior": true,
+      "renumber_and_reverse_equal": true
+    }
+  ],
+  "dense_frontend_acceptance": false,
+  "feature_manifest_sha256": "39dcf2f750470c880876e4dc99d35a397d5e38ef10ba7dc3f02d150697d343a3",
+  "feature_result_sha256": "af12c39c6b8513a635cccccd3aa99f0e9c9c5d7fe1a871b5958e35be797954db",
+  "historical_physical_ID_controller_invariance_remains_FAIL": true,
+  "interpretation": "Small real retained Train-input engineering diagnostic using fixed synthetic policies; not trained-checkpoint parity, historical ID failure repair, dense video benchmark, candidate-aware scorer, reversible category memory or Goal A/B/C acceptance. Prefix aggregate writes retain legacy repeated-prefix weighting.",
+  "new_feature_extraction": false,
+  "optimization_steps": 0,
+  "preregistration_commit": "033081c62706bae99f6af4dde637d49db4c5307d",
+  "resources": {
+    "peak_RSS_bytes": 847216640,
+    "training_GPU_hours": 0,
+    "wall_seconds": 46.55912448500749
+  },
+  "selected_cached_frames": 32,
+  "selected_npz_sha256": "70c496ad97967502ee78e655357b5370c09e715c1e1844364cabed48e9fbcddc",
+  "selected_observations": 1101,
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/cvpr0_atomic_legacy_smoke.json": "82b5ef0bce27f2162ed5e840023334dc38c6298d224d496c1a7a95841a6dd81c",
+    "scripts/trackocd_cvpr/audit_atomic_legacy_control.py": "0fed8fb3cd7469cbf0cb55ed9d3578f8b1a2b89389cdcfee1a5eead88d339545",
+    "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+    "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+    "src/trackocd_core/persistent_policy.py": "7ae1d13eca0ebd4633e0b1af63cc4f841baa4cd01df6db00f83a949ee4bfab31",
+    "src/trackocd_cvpr/atomic_legacy_control.py": "a1d95174ff5d0a00ea41d5da04a5ecfa054c834e2f43f1ac6f1b9774c34597be",
+    "src/trackocd_cvpr/causal_observation_router.py": "85c8c1b1a58d9676a55169266c30e53ccf048ac0c1d72f996fe20a98013d2767",
+    "src/trackocd_cvpr/diagnostic_feature_cache.py": "1a27b9c5e78099eea52b0bd2697c5de8c2ff421c1a2c353f268e16fc4898db01",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "COMPLETE_TINY_REAL_TRAIN_INPUT_ATOMIC_LEGACY_CONTROL_DIAGNOSTIC",
+  "total_cached_video_frames": 40,
+  "trained_checkpoint_parity": false
+}
