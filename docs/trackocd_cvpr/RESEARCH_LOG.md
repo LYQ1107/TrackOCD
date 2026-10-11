@@ -259,3 +259,21 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full bounded physical inventory73509first≤16observations/16933IDs,
   112909824B uncompressed visual payload;72216new observations if source
   interface reused. No57feature job launched; matched integration next.
+### Registered tiny semantic/capped-reference engineering integration
+
+- CPU-only45cases: Raw/A1/A2 ×three old frozen D2 checkpoints ×fivecaps;
+  all262valid predicted IDs sealed and Parquet roundtripped before geometry
+  matching/evaluation. Identical fixed model/prototype/WAIT bias also runs
+  inherited GT-controlled inputs; no new fit or operating-point selection.
+- Firstvideo47 has7selected/capped Known GT references/94observations,
+  zeroNovel/cross-video opportunities. Full7targets retained even unmatched;
+  H/Novel/CT null/NOT_APPLICABLE, no discovery success from this small check.
+- Class-free IoU≥.5 per-frame cardinality+IoU matching; canonical one-to-one
+  assignment needs≥2shared observations,≥.5of capped GT support, no other
+  matched GT identity. Labels/roles never used to select matches or enter
+  prediction memory. Unmatched predictions retained and explicitly unknown,
+  not background/pollution. Existing numeric-ID routing remains unrepaired.
+- Source/config/model/cache/recovered-payload verification; CPU600s/RSS4GiB,
+  private ledgers≤16MiB, no GPU/optimizer/Val/Test/final-holdout labels.
+  Actual40CVPR tests and sourceCLI import passed before launch. Full57features
+  still unlaunched; this is not the full matched-input scientific result.
