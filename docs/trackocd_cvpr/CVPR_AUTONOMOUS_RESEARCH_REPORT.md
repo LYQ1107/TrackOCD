@@ -214,3 +214,12 @@ that old preflight selected a diagnostic subset. No pixel decode/hash, label
 array decode, dense frame or corruption certificate. Immediate transfer0bytes.
 Three root-supported R/C/M hypotheses/finite controls are planned, not executed
 or accepted; fresh protocol and lawful-primary gates remain open, newtraining0.
+
+Fixed category-role feasibility ca05ef0 subsequently completed0.421s:
+four cyclic hypotheses retain every source class once as final-pseudo. Necessary
+support deficits0/9/9/0 show two role allocations starved by observed category
+co-occurrence under strict candidate exclusions; two necessary-only PASSs do
+not prove global video disjointness or complete absence. All four negative/
+positive subcases retained, no seed/successful-fold selection. This finite
+diagnostic does not freeze a split or end the active goal. Permissible broader
+reference/support and bounded protocol repair are next, not automatic training.

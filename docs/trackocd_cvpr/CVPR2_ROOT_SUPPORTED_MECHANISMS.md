@@ -132,6 +132,19 @@ binding and current-observation member replacement must be resolved before
 registering any additional predicted cache or training. New weights/caches
 remain unallocated; expected bytes require a concrete frozen fold manifest.
 
+Fixed role feasibility, remote ca05ef0, now measures four cyclic hypotheses
+(seed2093001; every eligible class final-pseudo once). Necessary support
+deficits are0/9/9/0; folds1/2 lose candidate fitting/policy videos under observed
+cross-role co-occurrence exclusions. All four retained, no successful-fold/seed
+cherry-pick. Folds0/3 are necessary-only PASS: candidate sets still overlap,
+complete category absence and global allocation unproven. This is not a method
+failure, data-wide impossibility, finalized split or permission to start training.
+Next: inspect the exact conflict/support and permissible reference scope, then
+register a bounded source/protocol repair; no protected-label borrowing or
+silent relaxation of unseen-class/video isolation. If the lawful pool cannot
+satisfy a complete protocol, document that constraint and research licensed
+auxiliary Train support before any new dataset move or expanded training.
+
 ## Bounded execution and rejection rules
 
 Initial allocation ceilings: R120GPUh, C120GPUh, M120GPUh, frozen combined

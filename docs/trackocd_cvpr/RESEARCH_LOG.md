@@ -848,3 +848,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full133engineering tests PASS3.09s, no skips, before registration. Synthetic
   shared-video fixtures retain all15deficits; disjoint-role metadata cannot
   falsely certify full-category absence or a globally disjoint video split.
+
+### Actual fixed four-role support diagnostic: two necessary support failures
+
+- Exactremoteca05ef0, CPU0.421s/RSS847216640B,0optimization/newtraining.
+  Allfour cyclic hypotheses retained; deficits0/9/9/0. In fold1, candidate
+  fitting/policy sets shrink to4videos after observed co-occurrence exclusions;
+  fold2 has10candidate videos and nine class-role deficits. No seed/class tuning
+  or hidden successful-fold selection. No category names read or individual
+  rows published; only anonymous aggregate class-role support exposed.
+- Folds0/3 necessary-only PASS, NOT global disjoint video allocation or complete
+  absence proof. Current reference metadata is selected/capped; do not conclude
+  whole legalTrain data is impossible or broaden GT access without registered
+  safe boundaries. No new GT annotations, protected labels, images or models.
+- Resultca642ab8504a00fb6682e348bbec74bfc1ba4bf176f7ce3a1af2946e12cb3163.
+  This is protocol feasibility, not scientific mechanism failure or Goal
+  completion. Next exact conflict/source-scope analysis and bounded legal
+  protocol repair; new training waits for a truly frozen lawful protocol.
+- Full135engineering tests PASS3.12s, no skips; actual source/result binding and
+  retained negative-fold facts checked separately from synthetic constraints.

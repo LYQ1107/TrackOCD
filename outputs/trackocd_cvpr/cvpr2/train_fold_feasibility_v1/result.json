@@ -1,0 +1,568 @@
+{
+  "Val_or_Test_access": false,
+  "interpretation": "Fixed-seed four cyclic category-role hypotheses on previously permitted selected/capped reference metadata; every eligible class is final-pseudo once. Exclude observed co-occurrence conflicts from candidate role sets and retain/report all deficits. Necessary-only support, no metric/seed/class selection, global disjoint video allocation, complete category-absence proof, fresh protocol acceptance or training.",
+  "metadata_scope": {
+    "authorized_filtered_label_rows": 1943,
+    "eligible_old_representation_fit_categories": 15,
+    "feature_arrays_decoded": false,
+    "index_columns_decoded": [
+      "key",
+      "video_id",
+      "observation_count"
+    ],
+    "label_columns_decoded": [
+      "key",
+      "category_id",
+      "partition",
+      "simulation_role"
+    ],
+    "label_partitions_decoded": [
+      "representation_fit",
+      "prototype",
+      "policy_train",
+      "development"
+    ],
+    "manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+    "metadata_payload_sha256": {
+      "index.parquet": "fdf1118fb957202caa75429cb03200d58c0901b2ae7e937802da29ef5fb58bff",
+      "train_labels.parquet": "fb674626b260eb1fc01b4a8786844ece42a80ce576db19975a5b6ec0b4ea6e63"
+    },
+    "old_final_heldout_labels_decoded": false
+  },
+  "model_or_new_annotation_or_feature_execution": false,
+  "old_reference_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "optimization_steps": 0,
+  "preregistration_commit": "ca05ef02223846e9edfa02f7b9de0d3f988830bd",
+  "resources": {
+    "peak_RSS_bytes": 847216640,
+    "training_GPU_hours": 0,
+    "wall_seconds": 0.4214455490000546
+  },
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/cvpr2_train_fold_feasibility.json": "06300b7836b7d83f5adacc968392288ec6c3db0102ddcea5875a8e79d120ec12",
+    "scripts/trackocd_cvpr/audit_train_fold_feasibility.py": "12a1190e15f9619babd1a32dda05a8eb45f9b433d6c9f606f99d3c5d1903c1ad",
+    "src/trackocd_cvpr/train_fold_feasibility.py": "9a3903de7b2eac6e374cbdbd7168d07cc573663c9e227646fbce67185af6ba98",
+    "src/trackocd_cvpr/train_protocol_inventory.py": "987b898a24c69fdda6403b11fdedef061a7e965f0332c753e178e941ddb53f7c",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "COMPLETE_FIXED_ROLE_NECESSARY_FEASIBILITY_DIAGNOSTIC_NOT_PROTOCOL_ACCEPTANCE",
+  "summary": {
+    "all_source_categories_final_pseudo_once": true,
+    "class_or_seed_selected_from_metric_or_support_results": false,
+    "fixed_seed": 2093001,
+    "folds": [
+      {
+        "complete_category_absence_in_video_proven": false,
+        "fold": 0,
+        "global_video_disjoint_assignment_proven": false,
+        "necessary_support_deficits": 0,
+        "necessary_support_only_PASS": true,
+        "roles": {
+          "development_pseudo": {
+            "candidate_videos": 351,
+            "categories": 4,
+            "observed_conflict_excluded_videos": 70,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 5,
+                "candidate_videos": 18,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 10,
+                "candidate_videos": 4,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 11,
+                "candidate_videos": 23,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 12,
+                "candidate_videos": 26,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "fit_known": {
+            "candidate_videos": 289,
+            "categories": 5,
+            "observed_conflict_excluded_videos": 132,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 3,
+                "candidate_videos": 7,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 7,
+                "candidate_videos": 82,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 13,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 14,
+                "candidate_videos": 261,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 15,
+                "candidate_videos": 17,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "independent_final_pseudo": {
+            "candidate_videos": 328,
+            "categories": 4,
+            "observed_conflict_excluded_videos": 93,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 4,
+                "candidate_videos": 7,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 6,
+                "candidate_videos": 12,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 8,
+                "candidate_videos": 10,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 9,
+                "candidate_videos": 10,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "policy_train_pseudo": {
+            "candidate_videos": 305,
+            "categories": 2,
+            "observed_conflict_excluded_videos": 116,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 1,
+                "candidate_videos": 4,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 2,
+                "candidate_videos": 12,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "complete_category_absence_in_video_proven": false,
+        "fold": 1,
+        "global_video_disjoint_assignment_proven": false,
+        "necessary_support_deficits": 9,
+        "necessary_support_only_PASS": false,
+        "roles": {
+          "development_pseudo": {
+            "candidate_videos": 328,
+            "categories": 4,
+            "observed_conflict_excluded_videos": 93,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 2,
+                "candidate_videos": 12,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 7,
+                "candidate_videos": 83,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 13,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 14,
+                "candidate_videos": 294,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "fit_known": {
+            "candidate_videos": 4,
+            "categories": 5,
+            "observed_conflict_excluded_videos": 417,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 3,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 4,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 8,
+                "candidate_videos": 4,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 9,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 15,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              }
+            ]
+          },
+          "independent_final_pseudo": {
+            "candidate_videos": 10,
+            "categories": 4,
+            "observed_conflict_excluded_videos": 411,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 5,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 10,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 11,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 12,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "policy_train_pseudo": {
+            "candidate_videos": 4,
+            "categories": 2,
+            "observed_conflict_excluded_videos": 417,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 1,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 6,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "complete_category_absence_in_video_proven": false,
+        "fold": 2,
+        "global_video_disjoint_assignment_proven": false,
+        "necessary_support_deficits": 9,
+        "necessary_support_only_PASS": false,
+        "roles": {
+          "development_pseudo": {
+            "candidate_videos": 10,
+            "categories": 3,
+            "observed_conflict_excluded_videos": 411,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 1,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 3,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 15,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              }
+            ]
+          },
+          "fit_known": {
+            "candidate_videos": 10,
+            "categories": 6,
+            "observed_conflict_excluded_videos": 411,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 4,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 5,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 8,
+                "candidate_videos": 4,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 9,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 10,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 12,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "independent_final_pseudo": {
+            "candidate_videos": 351,
+            "categories": 4,
+            "observed_conflict_excluded_videos": 70,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 2,
+                "candidate_videos": 12,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 7,
+                "candidate_videos": 66,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 13,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 14,
+                "candidate_videos": 320,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "policy_train_pseudo": {
+            "candidate_videos": 10,
+            "categories": 2,
+            "observed_conflict_excluded_videos": 411,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 6,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              },
+              {
+                "anonymous_category_ordinal": 11,
+                "candidate_videos": 0,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "complete_category_absence_in_video_proven": false,
+        "fold": 3,
+        "global_video_disjoint_assignment_proven": false,
+        "necessary_support_deficits": 0,
+        "necessary_support_only_PASS": true,
+        "roles": {
+          "development_pseudo": {
+            "candidate_videos": 345,
+            "categories": 4,
+            "observed_conflict_excluded_videos": 76,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 4,
+                "candidate_videos": 9,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 6,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 8,
+                "candidate_videos": 11,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 9,
+                "candidate_videos": 16,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "fit_known": {
+            "candidate_videos": 303,
+            "categories": 6,
+            "observed_conflict_excluded_videos": 118,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 5,
+                "candidate_videos": 14,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 7,
+                "candidate_videos": 65,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 10,
+                "candidate_videos": 4,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 12,
+                "candidate_videos": 22,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 13,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 14,
+                "candidate_videos": 278,
+                "minimum_necessary_videos": 3,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "independent_final_pseudo": {
+            "candidate_videos": 334,
+            "categories": 3,
+            "observed_conflict_excluded_videos": 87,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 1,
+                "candidate_videos": 6,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 3,
+                "candidate_videos": 8,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 15,
+                "candidate_videos": 17,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          },
+          "policy_train_pseudo": {
+            "candidate_videos": 338,
+            "categories": 2,
+            "observed_conflict_excluded_videos": 83,
+            "per_class": [
+              {
+                "anonymous_category_ordinal": 2,
+                "candidate_videos": 12,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              },
+              {
+                "anonymous_category_ordinal": 11,
+                "candidate_videos": 23,
+                "minimum_necessary_videos": 2,
+                "necessary_support_sufficient": true
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "necessary_condition_does_not_certify_full_GT_or_global_video_allocation": true,
+    "new_training_protocol_frozen": false,
+    "selected_reference_metadata_only": true
+  }
+}
