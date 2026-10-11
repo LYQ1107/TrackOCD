@@ -155,3 +155,11 @@ external future-information diagnostics, not deployable waiting gains.
 Training remains0/600; noVal/Test/heldout labels or cleanup. Full scientific
 GoalA/B/C, denseID-independent protocol/newTrain folds/source review and≥3
 bounded distinct mechanisms remain pending; the active goal is not complete.
+
+Current-observation router preparation now has11real unit mutation tests plus
+57video/73509observed-input pairs verifying opaque IDs and same-frame order do
+not change current views/weighted-mean probes. Actual laterfeature negation and
+futuretrack/observation append preserve prior inputs. CPU35.32s, no training or
+label decode. This is engineering evidence only: retained first<=16annotated
+cadence, no learned controller/memory/evaluator or dense-pixel qualification;
+old historical ID-invariance FAIL remains. No cleanup or asset overwrite.

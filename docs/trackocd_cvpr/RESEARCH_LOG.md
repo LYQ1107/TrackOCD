@@ -445,3 +445,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Instance matching/video-reset slot IDs are not persistent category discovery.
   No source copied/run; CVPR1 twelve-work/two-extra requirement still pending.
 - Broad regression453tests passed40.00s before registered router execution.
+
+### Actual current-input router mutation receipt
+
+- Preregistered a51dfb8817e8103a3eff915fde7212a9cd1a527f was pushed/fetched/
+  exact remote checked before execution.57videos/16933tracks/73509observations
+  tested in35.3209724s CPU-only, peakRSS847216640B. All57opaque-ID+same-frame
+  input-order mutations retain identical current-input/weighted-mean digests.
+- Actual laterfeature negation and extra futuretrack/observation change later
+  digests while preserving firstvideo prior digest through frame1200. Actual
+  data had0exact-tie groups; identical-prefix atomic path tested synthetically.
+- Result SHA2565d0a1f80f35a5e870f3a5bb9289e719199d37dbf5e63169d17a87f56c838039e.
+  No labels/GT decoded, learned model forward, new GPU/features/cache, optimizer,
+  Val/Test or new metric. No claim of repaired historic controller, end-to-end
+  identity-invariance, category/event/role purity or dense video frontend.
+-15completed engineering diagnostics are not15scientific mechanisms. CVPR0/
+  GoalsA/B/C remain unfinished. Disk~20GiB free; only small aggregate receipt
+  added, CVPR~162MiB; no deletion or interference with foreign assets/processes.

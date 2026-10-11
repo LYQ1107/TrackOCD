@@ -531,8 +531,32 @@
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     },
     {
+      "actual_status": "COMPLETE_CURRENT_INPUT_ROUTER_MUTATIONS_NOT_CONTROLLER_OR_DENSE_FRONTEND_ACCEPTANCE",
       "id": "causal_router_interface_v1",
-      "state": "NOT_EXECUTED_NO_METRICS"
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "a51dfb8817e8103a3eff915fde7212a9cd1a527f",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+        "configs/trackocd_cvpr/cvpr0_causal_router_interface.json": "871250103a2b8c8ded337df9a7e642a822c6f5b0da732ee16d55141ddae7dd9f",
+        "scripts/trackocd_cvpr/audit_causal_router_interface.py": "b18fde588d2630bca74f6caf5cc1641d666f04acca22eab1d4148eff3bff3c96",
+        "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+        "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+        "src/trackocd_cvpr/causal_observation_router.py": "85c8c1b1a58d9676a55169266c30e53ccf048ac0c1d72f996fe20a98013d2767",
+        "src/trackocd_cvpr/diagnostic_feature_cache.py": "1a27b9c5e78099eea52b0bd2697c5de8c2ff421c1a2c353f268e16fc4898db01"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 35.32097243802855
+      },
+      "result_bytes": 23445,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/causal_router_interface_v1/result.json",
+      "result_sha256": "5d0a1f80f35a5e870f3a5bb9289e719199d37dbf5e63169d17a87f56c838039e",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     }
   ],
   "status": "IN_PROGRESS",

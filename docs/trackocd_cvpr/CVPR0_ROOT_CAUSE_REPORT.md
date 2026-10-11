@@ -369,3 +369,15 @@ learned controller/memory/evaluator integration is yet tested. Its planned
 weighted-mean probes, not dense-pixel extraction or semantic metrics. Historical
 physical-ID invariance remains FAIL. The existing compact cache omits empty
 frames; the new router supports them, but that is not evidence of dense TAO.
+
+The interface audit subsequently completed57/57videos/16933tracks/73509
+observations in35.3209724s CPU-only, peakRSS847216640B. All57opaque-ID plus
+same-frame row-permutation pairs preserve actual visible-input and weighted-mean
+probe byte digests. Firstvideo laterfeature negation and extra futuretrack/
+observation actually change later digests but preserve prior inputs through
+frame1200. No actual exact-input ties occurred; that branch is tested with
+synthetic fixtures, not claimed as observed in TAO. Result SHA256
+`5d0a1f80f35a5e870f3a5bb9289e719199d37dbf5e63169d17a87f56c838039e`.
+No GT/label decoding, model training, new features, policy logits/actions,
+memory or semantic metrics; controller integration and dense-pixel qualification
+still pending. This result does not retrospectively repair old numeric-ID FAIL.
