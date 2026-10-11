@@ -964,3 +964,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
   clearance or new lawful protocol is inferred. All outputs remain separate.
 - Full180engineering tests PASS3.06s, no skips, before this safety audit's
   remote registration; synthetic contaminated plans are rejected at all levels.
+
+### Safety audit pre-read gates refused twice; register counter repair
+
+- Remote9812b5c registration was pushed/fetched/exactly verified. First safety
+  invocation exited1 at TLS/remote gate, second exited1 at resource gate;
+  neither created launch/result nor read the private plan or any annotations.
+  Separate immutable gate-failure receipts preserve both attempts.
+- Empty Python followup:ru_maxrss847216640B vs kernel VmHWM/VmRSS13864960B;
+  after audit-module import32428032B vs the same ru_maxrss. Original RSS limits
+  were not relaxed. Linux getrusage documentation says usage survives execve;
+  launcher contribution is an inference, not reconstructed historical memory.
+- New separate_v2 attempt registers post-exec own-process VmHWM plus sampled
+  smaps_rollup Rss at the same256MiB ceiling, preserving ru_maxrss separately.
+  VmHWM is approximate; no exact process-tree/unsampled-peak claim is made.
+  Sources: [getrusage](https://www.man7.org/linux/man-pages/man2/getrusage.2.html),
+  [proc status](https://www.man7.org/linux/man-pages/man5/proc_pid_status.5.html).
+- Old reported ru_maxrss/peak_RSS receipts remain immutable; do not reinterpret
+  them as isolated model memory measurements or silently recalculate them.
+  No scientific-access clearance, new GT target-label access or training.

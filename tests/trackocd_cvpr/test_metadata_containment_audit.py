@@ -3,7 +3,7 @@ import hashlib
 import json
 from unittest.mock import patch
 import pytest
-from scripts.trackocd_cvpr.audit_train_metadata_containment import inspect_sanitized_plan, historical_sources, reject_sensitive_open
+from scripts.trackocd_cvpr.audit_train_metadata_containment import inspect_sanitized_plan, historical_sources, reject_sensitive_open, process_memory
 
 
 def synthetic_plan():
@@ -51,3 +51,13 @@ def test_sensitive_direct_opens_refused_but_sanitized_plan_permitted():
     reject_sensitive_open('open', ('/synthetic/private_image_plan.json', 'r', 0))
     reject_sensitive_open('open', (17, 'r', 0))
     reject_sensitive_open('unrelated', ('/synthetic/a.npy',))
+
+
+def test_memory_guard_uses_process_counters_without_subtracting_an_initial_peak():
+    sample = process_memory('VmHWM: 40 kB\n', 'Rss: 42 kB\n')
+    assert sample['guarded_process_RSS_bytes'] == 42 * 1024
+    assert sample['kernel_reported_VmHWM_bytes_approximate'] == 40 * 1024
+    with pytest.raises(RuntimeError):
+        process_memory('VmHWM: 40 kB\n', 'Pss: 20 kB\n')
+    with pytest.raises(RuntimeError):
+        process_memory('VmHWM: 40 bytes\n', 'Rss: 20 kB\n')

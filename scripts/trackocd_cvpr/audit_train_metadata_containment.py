@@ -11,6 +11,10 @@ import subprocess
 import sys
 import time
 
+os.environ['OMP_NUM_THREADS'] = '1'
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
+os.environ['MKL_NUM_THREADS'] = '1'
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from src.trackocd_cvpr.train_physical_resume import validate_plan
@@ -33,6 +37,19 @@ def reject_sensitive_open(event, args):
             or path.name in ('train_labels.parquet', 'roles.json', 'selection_plan.json', 'evaluator_only_geometry_join.json')
             or path.suffix.lower() in ('.npz', '.npy', '.pth', '.jpg', '.jpeg', '.png', '.mp4')):
         raise PermissionError('Containment audit rejects annotation/label/pixel/feature/model reads')
+
+
+def process_memory(status_text=None, rollup_text=None):
+    status = Path('/proc/self/status').read_text() if status_text is None else status_text
+    rollup = Path('/proc/self/smaps_rollup').read_text() if rollup_text is None else rollup_text
+    def field(text, key):
+        lines = [line.split() for line in text.splitlines() if line.startswith(key + ':')]
+        if len(lines) != 1 or len(lines[0]) != 3 or lines[0][2] != 'kB' or int(lines[0][1]) <= 0:
+            raise RuntimeError('Missing/invalid own process memory counter')
+        return int(lines[0][1]) * 1024
+    hwm, rss = field(status, 'VmHWM'), field(rollup, 'Rss')
+    return {'kernel_reported_VmHWM_bytes_approximate': hwm, 'sampled_smaps_rollup_Rss_bytes': rss,
+            'guarded_process_RSS_bytes': max(hwm, rss)}
 
 
 def inspect_sanitized_plan(plan, cfg):
@@ -83,11 +100,15 @@ def main():
     if out.exists():
         raise ValueError('Never overwrite containment attempts')
     started = time.monotonic()
+    peak_sampled_rss = 0
     def guard():
+        nonlocal peak_sampled_rss
+        measured = process_memory()
+        peak_sampled_rss = max(peak_sampled_rss, measured['sampled_smaps_rollup_Rss_bytes'])
         mem = {k: int(v.split()[0]) * 1024 for k, v in
                (line.split(':', 1) for line in Path('/proc/meminfo').read_text().splitlines())}
         if (mem['MemAvailable'] < safety['system_ram_reserve_fraction'] * mem['MemTotal']
-                or resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024 > cfg['rss_bytes_ceiling']
+                or measured['guarded_process_RSS_bytes'] > cfg['rss_bytes_ceiling']
                 or time.monotonic() - started > cfg['wall_seconds_ceiling']
                 or shutil.disk_usage(ROOT).free < safety['disk_free_reserve_bytes']):
             raise RuntimeError('Safety RAM/RSS/wall/disk bound')
@@ -123,7 +144,9 @@ def main():
                   'annotation_target_labels_images_features_models_Val_Test_read': False,
                   'optimization_steps': 0, 'interpretation': cfg['interpretation'],
                   'resources': {'wall_seconds': time.monotonic() - started,
-                                'peak_RSS_bytes': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
+                                **process_memory(), 'peak_sampled_smaps_rollup_Rss_bytes': peak_sampled_rss,
+                                'resource_ru_maxrss_bytes_including_preexec_history': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
+                                'rss_measurement': cfg['rss_measurement'],
                                 'training_GPU_hours': 0, 'disk_free_bytes': shutil.disk_usage(ROOT).free}}
         atomic_json(out / 'result.json', result)
         guard()

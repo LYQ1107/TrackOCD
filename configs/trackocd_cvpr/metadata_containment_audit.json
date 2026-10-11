@@ -1,5 +1,5 @@
 {
-  "schema_version": "trackocd.cvpr.safety-containment-audit.v1",
+  "schema_version": "trackocd.cvpr.safety-containment-audit.v2",
   "incident_path": "outputs/trackocd_cvpr/safety/train_nested_metadata_access_incident_v1.json",
   "preflight_result": "outputs/trackocd_cvpr/cvpr0/train_input_preflight_v1/result.json",
   "preflight_result_sha256": "748dd9ab53e25299f1340d2c9e5a506d7c4242aa6e86f472eb374c3e6d409641",
@@ -14,7 +14,8 @@
   "expected_images": 2065,
   "wall_seconds_ceiling": 120,
   "rss_bytes_ceiling": 268435456,
+  "rss_measurement": "Maximum of kernel-reported VmHWM and sampled smaps_rollup Rss; VmHWM is approximate, not an exact process-tree peak. ru_maxrss retained separately because it includes pre-exec history.",
   "output_bytes_ceiling": 65536,
-  "output_directory": "outputs/trackocd_cvpr/safety/metadata_containment_audit_v1",
+  "output_directory": "outputs/trackocd_cvpr/safety/metadata_containment_audit_v2",
   "interpretation": "Verify only the existing hash-bound sanitized plan/schema and recorded source-file bindings; no annotations, labels, images, features, models or original job execution. PASS is containment evidence, not historical runtime identity, absence of prior access, a lawful unseen-class protocol or scientific clearance."
 }

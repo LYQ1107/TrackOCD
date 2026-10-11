@@ -1,0 +1,14 @@
+{
+  "schema_version": "trackocd.cvpr.safety-audit-preread-network-failure.v1",
+  "recorded_utc": "2026-10-11T23:31:51Z",
+  "registered_commit": "9812b5c229eb536c14ac00c9a25e063885b84400",
+  "status": "FAILED_REMOTE_GATE_BEFORE_PRIVATE_PLAN_OR_ANNOTATION_ACCESS",
+  "tool_session_evidence_only_not_reusable": 61822,
+  "exit_code": 1,
+  "git_exit_code": 128,
+  "error": "gnutls_handshake() failed: The TLS connection was non-properly terminated",
+  "launch_or_result_created_by_failed_attempt": false,
+  "scientific_execution_or_private_plan_read_in_failed_attempt": false,
+  "subsequent_read_only_ls_remote_matches_registered_commit": true,
+  "failure_not_relabelled_as_completed_containment": true
+}

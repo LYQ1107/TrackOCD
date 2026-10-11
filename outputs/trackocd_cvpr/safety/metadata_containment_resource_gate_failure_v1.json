@@ -1,0 +1,26 @@
+{
+  "schema_version": "trackocd.cvpr.safety-audit-preread-resource-failure.v1",
+  "recorded_utc": "2026-10-11T23:33:24Z",
+  "registered_commit": "9812b5c229eb536c14ac00c9a25e063885b84400",
+  "status": "FAILED_RESOURCE_GATE_BEFORE_PRIVATE_PLAN_OR_ANNOTATION_ACCESS",
+  "exit_code": 1,
+  "error": "Safety RAM/RSS/wall/disk bound",
+  "launch_or_result_created_by_failed_attempt": false,
+  "diagnostic_followups_not_the_failed_job_measurements": {
+    "empty_python_ru_maxrss_bytes": 847216640,
+    "empty_python_proc_VmHWM_bytes": 13864960,
+    "empty_python_proc_VmRSS_bytes": 13864960,
+    "after_audit_module_import_ru_maxrss_bytes": 847216640,
+    "after_audit_module_import_proc_VmHWM_bytes": 32428032,
+    "after_audit_module_import_proc_VmRSS_bytes": 32428032,
+    "system_MemAvailable_kib": 101059588,
+    "disk_available_bytes": 29341618176
+  },
+  "interpretation": "The initial ru_maxrss was already above the256MiB registration ceiling while observed post-exec process memory was much smaller. Resource metrics persist across execve according to Linux man-pages; launcher attribution is an inference, not a measured historical process-tree peak. Original failure is retained; do not increase the ceiling to erase it.",
+  "sources": [
+    "https://www.man7.org/linux/man-pages/man2/getrusage.2.html",
+    "https://www.man7.org/linux/man-pages/man5/proc_pid_status.5.html"
+  ],
+  "old_peak_RSS_receipts_not_overwritten_or_recalculated": true,
+  "scientific_execution_or_private_plan_read_in_failed_attempt": false
+}
