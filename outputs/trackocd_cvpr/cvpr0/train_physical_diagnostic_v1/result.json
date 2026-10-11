@@ -1,0 +1,36 @@
+{
+  "GT_or_text_or_Val_or_Test_input": false,
+  "GT_reference": "Same old development videos; 258 cached GT tracks/2949 observations capped16 are truncated reference, not complete GT",
+  "cadence": "Train annotation metadata images, not dense frame-online",
+  "canonical_images": 2065,
+  "config_sha256": "8ea6bb0d65473b49939936c2c16e2e37980681edd8964aac6f7d74df569b4c53",
+  "current_invocation_new_forwards": 2025,
+  "detection_rows": 103042,
+  "explicit_reused_source_videos": 1,
+  "frontend_provenance": "INCOMPLETE; limited diagnostic only",
+  "frozen_state_unchanged": true,
+  "native_checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+  "native_model_config_sha256": "097a653022d84e81a4b20f2d83d7c2f355d19a8133fab779017bc95439ce73c2",
+  "optimizer_steps": 0,
+  "physical_ids": 16933,
+  "prediction_rows": 87130,
+  "primary_frontend_qualified": false,
+  "private_manifest": {
+    "bytes": 47175,
+    "filename": "private_physical_manifest.json",
+    "sha256": "0bdae57cec0e1c21fe8602b39101deaca178e938116e3c4aa59c4ca5a97193a5"
+  },
+  "private_plan_sha256": "4d12af78a8b321540338915a95e358df452704e33282041693c85cde9f78668f",
+  "resources": {
+    "GPU_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "peak_GPU_reserved_bytes": 3443523584,
+    "peak_RSS_bytes": 1628020736,
+    "training_GPU_hours": 0,
+    "wall_seconds": 648.7777437859913
+  },
+  "semantic_score_reported": false,
+  "singleton_physical_ids": 6311,
+  "source_shard_copied_or_reextracted": false,
+  "status": "COMPLETE_BOUNDED_TRAIN_PHYSICAL_INPUT_NOT_MAIN_QUALIFICATION",
+  "videos": 57
+}

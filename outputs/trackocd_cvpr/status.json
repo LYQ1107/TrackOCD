@@ -1,15 +1,15 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_MATCHED_TRAIN_PHYSICAL_RUNNING",
+  "status": "ACTIVE_CVPR0_TRAIN_PHYSICAL_COMPLETE_DINO_INTERFACE_REGISTERED",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 8,
+  "new_experiments_completed": 9,
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Owned bounded Train physical diagnostic running under494615b; retained cross-video forensics complete; register bounded all-ID Train DINO interface before matched semantic comparison"
+  "next": "Execute registered one-video all-ID frozen DINO interface; matched semantic/57video features require separate bounded integration/registration; CVPR0 and Goals A/B/C remain pending"
 }

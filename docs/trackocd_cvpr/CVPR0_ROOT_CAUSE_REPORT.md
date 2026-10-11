@@ -239,3 +239,26 @@ source receipts to actual archived preregistration Git bytes. The old asset
 preflight lacks a commit field; its manifest binding is explicitly posthoc
 to the logged pre-execution18e6c65 registration, not an invented launch receipt.
 The Train physical followup remains RUNNING with no completed semantic metric.
+
+## Completed bounded Train physical input, semantic comparison pending
+
+Registration494615b654cbd7d2163276c318266c3c4efc1f24 completed57videos/
+2065registered images in648.78s worker time,653.10s supervisor; own worker
+244295 exited0, no foreign interference.2025new forwards plus the valid
+40image smoke shard referenced under its original registration, no copy or
+re-extraction.16933physicalIDs/87130observations/103042detections,
+6311singletonIDs. GPUpeak3443523584B/RSS1628020736B; no optimizer/GT/text/
+Val/Test input. Raw57video outputs and47,175B manifest remain local,
+manifest SHA256`0bdae57cec0e1c21fe8602b39101deaca178e938116e3c4aa59c4ca5a97193a5`.
+
+These predictions are not a complete GT census: the258track GT reference is
+an inherited selected/capped subset. Excess predicted IDs are not declared
+background or proven fragmentation solely from this count. Annotated cadence,
+native50ROI cap and incomplete exact release-stage binding remain limitations;
+no clean-primary, HOTA or semantic-method result is claimed.
+
+Next bounded interface registers all262IDs from the reused firstvideo,1293
+first≤16observations including86singletons, frozen common DINO. Current-image
+crop batches only; no score/GT/short-track filtering. Real invisible-tail
+mutations test all five caps, with short tracks retained. This is not a
+57video feature launch or dense-online/semantic/ID-protocol PASS.

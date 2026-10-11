@@ -11,7 +11,8 @@ The 1,715-line taskbook is bound by SHA256
 Overall state: **IN_PROGRESS**, Goals A/B/C not achieved. A single negative
 diagnostic does not end this research goal. Historical results are preserved,
 not renamed as new CVPR experiments. New training remains0; the bounded
-Train physical smoke below is diagnostic inference, not a new method result.
+Train physical smoke and57video input run below are diagnostic inference,
+not new semantic method results.
 
 ## Registered execution sequence
 
@@ -113,3 +114,13 @@ Existing reuses after mixture. Phase experiment_manifest binds actual source
 Git bytes and aggregate outputs, explicitly distinguishes the preflight's
 posthoc registration binding from actual launch receipts. The bounded57video
 Train physical job is running; no matched semantic scores yet. No training.
+
+That registered Train physical diagnostic subsequently completed648.78s:
+57videos/2065images,2025new forwards and valid40image smoke reuse;16933IDs/
+87130observations/6311singletons. Private atomic shards/manifest retained,
+frozen state unchanged, own supervisor exited0 without foreign interference.
+Counts against a selected/capped258GT-track reference cannot establish
+background or full-track fragmentation. No primary qualification or semantic
+scores. The next separately registered interface is all262IDs/1293prefix
+observations from one completed video, common frozen DINO and actual tail
+mutations, not an automatic57video feature launch. Training remains0/600.

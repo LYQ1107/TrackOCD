@@ -212,3 +212,21 @@ new research scope; nothing has been deleted, no storage pressure is present.
   logged pre-execution18e6c65. No measured result altered or receipt invented.
 -37CVPR tests passed3.13s; manifest assembled8completed substeps plus actual
   running physical diagnostic with no fabricated metric/complete-root status.
+### Bounded Train physical actual delivery; all-ID DINO interface registration
+
+- Registration494615b654cbd7d2163276c318266c3c4efc1f24: all57videos/
+  2065registered Train images complete648.7777438s; supervisor653.0950387s,
+  directly owned worker244295 terminal0.2025new forwards, valid40image source
+  shard reused without copying/re-extracting.16933IDs/87130observations/
+  103042detections/6311singletons; GPU3443523584B/RSS1628020736B peaks.
+- Frozen state unchanged; no GT/text/Val/Test/optimizer/foreign interference.
+  Valid atomic shards and manifest stay private. Limited release binding,
+  annotation cadence,50ROI cap and selected/capped GT reference remain explicit.
+- Separate interface registered: same common DINO source/checkpoint/crop/norm,
+  all262video47IDs/1293first≤16observations including86singletons; no score or
+  role filtering. Current-image batches8; one freshly idleGPU8GiBpeak,
+  4GiBfree reserve/RSS4GiB/600s/output8MiB. No57video feature authorization.
+- Real invisible-tail mutation checks cover all five caps with short tracks
+  retained. Module/CLI/real-input preflight tested;38CVPR tests passed6.08s.
+  No training or matched semantic score claimed; manifest updated with actual
+  completed physical result, no stale running metric or data deletion.

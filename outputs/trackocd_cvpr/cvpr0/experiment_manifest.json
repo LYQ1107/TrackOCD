@@ -289,20 +289,12 @@
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     },
     {
-      "completed_result_present": false,
+      "actual_status": "COMPLETE_BOUNDED_TRAIN_PHYSICAL_INPUT_NOT_MAIN_QUALIFICATION",
       "id": "train_physical_diagnostic_v1",
       "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": false,
       "preregistration_commit": "494615b654cbd7d2163276c318266c3c4efc1f24",
-      "progress_snapshot": {
-        "completed_videos": 34,
-        "current_invocation_forwards": 1296,
-        "current_video": 1995,
-        "current_video_frames": 34,
-        "elapsed_seconds": 398.69768544402905,
-        "pid": 244295,
-        "registered_videos": 57,
-        "status": "RUNNING_TRAIN_PHYSICAL_DIAGNOSTIC"
-      },
+      "public_artifacts": [],
       "registered_source_sha256": {
         "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
         "configs/trackocd_cvpr/cvpr0_train_physical_diagnostic.json": "8ea6bb0d65473b49939936c2c16e2e37980681edd8964aac6f7d74df569b4c53",
@@ -313,7 +305,19 @@
         "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
         "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385"
       },
-      "state": "REGISTERED_RUNNING_NO_COMPLETED_METRIC"
+      "registration_binding": "IMMUTABLE_ACTUAL_LAUNCH_REGISTRATION",
+      "resources": {
+        "GPU_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+        "peak_GPU_reserved_bytes": 3443523584,
+        "peak_RSS_bytes": 1628020736,
+        "training_GPU_hours": 0,
+        "wall_seconds": 648.7777437859913
+      },
+      "result_bytes": 1603,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/train_physical_diagnostic_v1/result.json",
+      "result_sha256": "96b1fe76ab0595cad3fbbfcfd070c3b1338d592b2e5caa43166a04a3607a841f",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     }
   ],
   "status": "IN_PROGRESS",
