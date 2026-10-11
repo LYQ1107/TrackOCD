@@ -2,10 +2,9 @@
 
 ## Current execution status
 
-The common predicted-track features are complete. Frozen semantic inference
-and sealed-case posthoc metrics are in progress; the full matrix is not yet
-complete. This document preserves the protocol registered before execution,
-not invented final Val results.
+All common features,840fullstream semantic executions and2040explicit logical
+alias reports are complete. The following frozen protocol was registered before
+those metrics. Actual results and comparison flags are appended below.
 
 The 2026-10-11 scheduling recovery retained all eight live original workers,
 unchanged frozen executors and the 840/2,040 prospective matrix. Both detached
@@ -113,3 +112,34 @@ physical reference: HOTA 0.1450535920, AssA 0.4408791462, DetA 0.0484887546,
 DetRe 0.6318088080. These are frozen physical results, not re-run tracking
 evaluation or gains from semantic postprocessing. No TAO Test, new asset
 downloads, Val training/tuning, new physical inference or safe feedback.
+
+## Completed actual full semantic evaluation
+
+| Method atp16 Train-devtarget1 or rawrepresentation | Old % | New % | mean H % | pure CT % | False Merge % | reuse coverage % |
+|---|---:|---:|---:|---:|---:|---:|
+| A1_SELECTED | 7.81 | 11.33 | 8.93 | 0.00 | 11.07 | 22.87 |
+| A2_CAPACITY_CONTROL | 6.58 | 11.78 | 8.21 | 0.00 | 11.19 | 22.87 |
+| A2_EVIDENCE | 5.08 | 12.34 | 7.15 | 0.00 | 10.38 | 22.87 |
+| B0_frame_snapshot_vote | 0.66 | 14.62 | 1.26 | 0.00 | 6.56 | 22.87 |
+| B1_track_nearest | 0.02 | 13.43 | 0.05 | 0.00 | 1.17 | 22.87 |
+| B2_track_dpmeans | 1.76 | 11.29 | 3.04 | 0.05 | 0.19 | 22.87 |
+| D1_SIMPLE_MLP | 11.90 | 3.14 | 3.80 | 0.00 | 0.00 | 22.87 |
+| D2_RISK_AWARE | 14.38 | 0.57 | 0.00 | 0.00 | 7.62 | 22.87 |
+| FULL | 14.51 | 0.57 | 0.00 | 0.00 | 7.62 | 22.87 |
+| RESET_PER_VIDEO | 14.51 | 4.23 | 0.00 | 0.00 | 3.03 | 22.87 |
+| WITHOUT_ADAPTER | 7.11 | 1.14 | 0.00 | 0.00 | 15.25 | 22.87 |
+| WITHOUT_MEMORY | 14.51 | 0.61 | 0.00 | 0.00 | 0.00 | 15.95 |
+| WITHOUT_RELIABILITY | 14.46 | 0.57 | 0.00 | 0.00 | 7.62 | 22.87 |
+| WITHOUT_RISK | 16.50 | 2.44 | 2.35 | 0.00 | 0.00 | 22.87 |
+| WITHOUT_TEMPORAL | 14.38 | 0.57 | 0.00 | 0.00 | 7.62 | 22.87 |
+| WITHOUT_WAIT | 14.51 | 0.57 | 0.00 | 0.00 | 7.62 | 22.87 |
+
+| Order | fixed GT reuse | current reliable | missed current | both any observed | both>=16 |
+|---|---:|---:|---:|---:|---:|
+| main | 527 | 118 | 409 | 87 | 69 |
+| seed1027 | 529 | 123 | 406 | 93 | 68 |
+| seed1028 | 547 | 121 | 426 | 92 | 70 |
+| seed1029 | 531 | 126 | 405 | 94 | 74 |
+
+See full per-order/seed/prefix/coverage JSON andCSV, explicit alias manifest,
+matchedcoverage flags andintroduced-error counts. Samephysicalreference for all.

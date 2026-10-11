@@ -1250,3 +1250,29 @@
   every completed ledger/feature payload and actual successful terminal
   receipts. These tests establish engineering integrity, not scientific PASS.
   T6 final synthesis has not yet been generated; stage delivery precedes it.
+
+## 2026-10-11 — T6 actual final Core synthesis, scientific negative
+
+- T5 delivery 2f0fe3bce683b0bdd77748ff42e5ae91cd17f486 was pushed and
+  exact remote HEAD verified before executing the unchanged registered
+  report_core_training.py. Actual synthesis completed with no new fit,
+  physical inference, GT join, asset download or operating-point change.
+- The five required Core documents and CORE_TRAINING_FINAL_RESULT.json
+  now bind 33 real fits, 33 selected / 99 retained local checkpoint hashes,
+  52 protected inputs, 840 unique / 2040 aliased Val cases, 4260 canonical
+  controlled-plus-Val rows, 15360 loss trace rows and successful terminals.
+- Independent representation / temporal / decision PASS are false. Partial
+  Known/H and Novel findings remain measurable; full learned persistent CT
+  is zero. This is a complete credible negative Core result, not a strong
+  frontend qualification, dense-frame online system or new-method claim.
+- Task-private file bytes 2958066883 remain below 15 GiB soft / 30 GiB hard
+  budget. Inference peak case RSS 2724122624 B / GPU reserved 960495616 B;
+  same frozen Native physical metrics, missing prototypes and unknown IDs
+  retained. No M11 feedback is authorized.
+- Actual 379 scoped tests passed, no skips, 37.39 s. Added checks bind all
+  final documents / public artifacts and preserve nonzero raw-baseline CT,
+  genuine mean-H (not H of means), terminal uncertainty and alias semantics.
+- Original M0–M10 canonical handoff names, matched-only auxiliary summaries,
+  per-prefix curves and amendment-aware completion audit are being closed
+  separately. Do not interpret this Core-stage receipt alone as completion
+  of the broader original goal or overwrite historical M1 BLOCKED status.
