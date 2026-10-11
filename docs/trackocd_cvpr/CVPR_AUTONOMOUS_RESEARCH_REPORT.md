@@ -132,3 +132,10 @@ and1310prefix checks (477real tail mutations) without duplicate encoding.
 Missing old numerical peaks/state hash are not fabricated. Valid unchanged
 payload remains private and reusable, not a normal-worker PASS or semantic
 score. Matched input study and57video feature extraction remain pending.
+
+Tiny semantic/seal/reference wiring subsequently passed45frozen cases in
+36.85s CPU-only,90private ledgers exact roundtrip,all262predictedIDs retained.
+Class-free geometry finds3canonical targets out of7capped Known references;
+all7denominators retained,259unmatched predictedIDs unknown. ZeroNovel/
+cross-video opportunities, so no H/CT/discovery gain or main result. Larger
+bounded Train feature continuation and matched reference study remain next.

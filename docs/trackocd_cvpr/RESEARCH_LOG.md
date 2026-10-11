@@ -277,3 +277,14 @@ new research scope; nothing has been deleted, no storage pressure is present.
   private ledgers≤16MiB, no GPU/optimizer/Val/Test/final-holdout labels.
   Actual40CVPR tests and sourceCLI import passed before launch. Full57features
   still unlaunched; this is not the full matched-input scientific result.
+### Tiny frozen semantic integration actual delivery
+
+- Exact remote6c7cca9afe7a583aa5acf3d36a0617c012ad087a verified before
+  CPU45cases,36.8506527s,reportedRSS847216640B,no optimizer/GPU/Val/Test.
+- All262predictedIDs/7GT-controlled references retained;90private ledgers
+  seal/reader roundtrip exactly before geometric reference matching.
+-85matched observations,3canonical targets/7selected capped Known GT,
+  259unmatched predictedIDs remain unknown. All7targets in denominators,
+  zeroNovel/cross-video opportunities → H/CT unavailable, not manufactured.
+- Actual wiring pass only; no full matched-study, primary quality, dense
+  protocol or uniquely input-only causal claim. Full57features not launched.

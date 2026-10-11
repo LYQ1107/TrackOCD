@@ -284,3 +284,17 @@ Full57video feature inventory is73509first≤16observations/16933IDs, raw visual
 storage112909824B before metadata/compression; any extraction must explicitly
 reuse the1293valid observations and still needs separate bounded integration
 and registration. No automatic cache or training launch, no deletion.
+
+## Completed tiny semantic/seal/evaluator integration, not matched full study
+
+Registration6c7cca9afe7a583aa5acf3d36a0617c012ad087a:45frozen Raw/A1/A2×
+threeD2seeds×fivecaps completed36.85s CPU-only; all262predictedIDs and7
+GT-controlled reference inputs retained.90private Parquet ledgers roundtrip
+exactly; all predicted ledgers seal before geometry matching/evaluation.
+Class-free matching finds85observation pairs and3canonical GT-reference
+targets;259unmatched predictedIDs remain unknown, not presumed background.
+All7selected capped targets stay in every denominator. No Novel queries,
+no cross-video opportunities; H/Novel/CT null/NOT_APPLICABLE, not perfect.
+This validates wiring with fixed parameters, not discovery gains, primary
+frontend quality, a full57video matched-input study, or uniquely causal
+physical-input attribution. Old numeric-ID stream ordering is not repaired.

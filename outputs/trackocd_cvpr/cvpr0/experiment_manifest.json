@@ -1,6 +1,6 @@
 {
   "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
-  "manifest_generator_source_sha256": "4024e787dedfcdb3a94805dd0be3deb8bbc36d98438eae86378ff89c86612b67",
+  "manifest_generator_source_sha256": "cdd0b0be1f8a8f91ba701284387c988c39102334e73ecf535e5d6ff6adf82a79",
   "no_unique_causal_root_or_new_method_success_claim": true,
   "pending": [
     "matched semantic predicted-vs-truncated-GT comparison",
@@ -384,6 +384,37 @@
       "result_bytes": 2793,
       "result_path": "outputs/trackocd_cvpr/cvpr0/train_feature_interface_recovery_v1/result.json",
       "result_sha256": "b3be30a4cd7a5ab4eae3fb02120613dcf9ea3e44c52ebf0e19c8559753235cd4",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "PASS_TINY_ALL_ID_SEMANTIC_TRUNCATED_REFERENCE_INTEGRATION_NOT_MAIN_METRICS",
+      "id": "tiny_semantic_integration_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "6c7cca9afe7a583aa5acf3d36a0617c012ad087a",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/cvpr0_tiny_semantic_integration.json": "93e64ec5bcc0d71e8d6e361535f73e94523bd2a6e4511ac2b432ce889833d988",
+        "scripts/trackocd_cvpr/integrate_tiny_train_semantics.py": "b263b10b433fb4ea02cca1b96e2f6d10b05026c26ceafda3a7714e20787b86ed",
+        "src/trackocd_core/evaluation/contracts.py": "da3c492c4468f2054387f177f4a05003b506c721678e1f2294a38db628d85614",
+        "src/trackocd_core/evaluation/persistent.py": "b561470eb89ba2aac9b63a2d64b0c3f5dc0801b436ee0cb517a555b9243e8610",
+        "src/trackocd_core/evaluation/standard.py": "4a89de40178aa067e3a2a05a43d58035ea2f0caf2b2451990d72a92069bbafac",
+        "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+        "src/trackocd_core/sealed_parquet.py": "f73e3d651a643e548ec22891be0d55e4b8359eb4332198be6bc53f72301581fa",
+        "src/trackocd_core/train_first_experiment.py": "d8899471f9b857fe34ef88df2b9f42819711aef9942f6a2d3fb5594ca3b126f9",
+        "src/trackocd_core/train_first_replay.py": "ab7f964a6cc5f88fb811a6d3c74ea5460f0bc27633ffd388a4d8f608405cb9fb",
+        "src/trackocd_cvpr/truncated_reference_join.py": "aa9948cb9ee988ed346aa0c2fe0862570bbaef746147baa64579c0e531044f32"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 36.85065266600577
+      },
+      "result_bytes": 362157,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/tiny_semantic_integration_v1/result.json",
+      "result_sha256": "1f0ffd72a39dbea0e2149fedc97b44712abe89f99aee2c35001d55aafcd0bf63",
       "source_receipt_matches_registered_git_bytes": true,
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     }
