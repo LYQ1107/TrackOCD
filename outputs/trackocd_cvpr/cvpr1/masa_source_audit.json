@@ -1,0 +1,159 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_GIVEN_BOX_AND_SA1B_TRAIN_SOURCE_REVIEW_NOT_CATEGORY_DISCOVERY_REPLICATION",
+  "paper_title": "Matching Anything by Segmenting Anything",
+  "year": 2024,
+  "venue": "CVPR2024 official CVF proceedings pp18963-18973",
+  "venue_independently_verified": true,
+  "paper_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Matching_Anything_by_Segmenting_Anything_CVPR_2024_paper.pdf",
+  "repository_url": "https://github.com/siyuanliii/masa",
+  "repository_commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+  "official_repository_verified": true,
+  "official_binding": "Official accepted PDF first page links siyuanliii/masa. Pinned later main is not assumed identical to paper-release weights or local recovered code.",
+  "additional_to_user_supplied_ten": false,
+  "whole_project_license_read": true,
+  "license": "Root Apache2.0 fully read, copyright2024 SiyuanLi; no upstream files copied or executed.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "9caa45f5f120b02e604f8c36db4088a689eb89d6",
+      "entire_file_read": true
+    },
+    {
+      "path": "docs/train.md",
+      "git_blob_sha1": "38f4fe12749850e4ce1e9a63a57d3d571a4f49fa",
+      "entire_file_read": true
+    },
+    {
+      "path": "tools/train.py",
+      "git_blob_sha1": "874877136c95394f4bf12deefde6c40f18ee1936",
+      "entire_file_read": true
+    },
+    {
+      "path": "tools/test.py",
+      "git_blob_sha1": "85fb051cb041f1e5ca6495b8ca1b30ad1fbbeef3",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/default_runtime.py",
+      "git_blob_sha1": "84897158bca71f618dcacfb4dfcc4cd7bb2f1aa8",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/masa-one/masa_r50_plug_and_play.py",
+      "git_blob_sha1": "2fb20f94e800b10aee6ae1fbb0afa3bac7f53d87",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/masa-gdino/masa_gdino_swinb_train.py",
+      "git_blob_sha1": "82cfd3e790c25d7d72cf6f16ef417eb9e8526944",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/datasets/masa_dataset.py",
+      "git_blob_sha1": "e656da18e833f93e86451c1ef161407057ef77c1",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/models/mot/masa.py",
+      "git_blob_sha1": "02d4061b7cf0d180bb76b465111a30848837a93c",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/models/roi_heads/track_heads/masa_track_head.py",
+      "git_blob_sha1": "15b8b1843c42921d5d17c4d71f904a9bb5417b2a",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/models/losses/unbiased_contrastive_loss.py",
+      "git_blob_sha1": "d416aaaea122f88ec554b1a8910a72bc32a8443e",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/models/necks/deform_fusion.py",
+      "git_blob_sha1": "c9052443fca2f72ee9dd152a55a4841185fd8b36",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/models/tracker/masa_tao_tracker.py",
+      "git_blob_sha1": "5d9c00c0105b356a43ab748fb9d4dde9fec3aeff",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/datasets/masa_dataset.py",
+      "git_blob_sha1": "dfc22b60490933e40d98cbbb96a616b13d2aacd1",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/datasets/rsconcat_dataset.py",
+      "git_blob_sha1": "db3e87660f81c0358dd47b1f1089ad012c6dcb94",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/datasets/pipelines/framesample.py",
+      "git_blob_sha1": "ea69e3e1a7e650ec2c94659ee0c9d2e7a2fabff5",
+      "entire_file_read": true
+    },
+    {
+      "path": "masa/datasets/evaluation/tao_teta_metric.py",
+      "git_blob_sha1": "414bf75796d0717300f189fe758f85f9b5995a97",
+      "entire_file_read": true
+    }
+  ],
+  "dependency_source_scope": [
+    {
+      "module": "mmdet3.3.0 QuasiDenseTrackHead",
+      "sha256": "0ae9ef330806abe8a70288fd18daada41e638bbd2641e3f77b1936253ffdf432",
+      "entire_file_read": true
+    },
+    {
+      "module": "mmdet3.3.0 QuasiDenseEmbedHead",
+      "sha256": "e639cfeade4b0b58a887a90d6a79655247a98d315847c992075c9a08520c9d5d",
+      "entire_file_read": true
+    },
+    {
+      "module": "mmdet3.3.0 MarginL2Loss",
+      "sha256": "df4cdbf4eb0189d44126fc4e0e57d4528d409b6544e4ffcd679bb45c084b2808",
+      "entire_file_read": true
+    }
+  ],
+  "dependency_binding": "Read already-installed physical smoke environment source, not exact upstream paper-era dependency lock. No imports/inference/installation or claim that current upstream checkout was executed.",
+  "paper_read_scope": "Main intro/relatedwork/method3.1-3.2.3, given-observation inference, experiments4.1-4.3 and conclusion5 text. Not all plots visually, references or supplement. No explicit main limitations section observed; task/metric limits below are audit interpretation.",
+  "original_task": "Generalizable physical-instance association/zero-shot MOT and MOTS; not persistent unknown semantic category discovery.",
+  "model_inputs": "Training: SAM pseudo proposal boxes and shared instance indices across two augmentations of the same raw image. Given-box inference: current image/boxes/scores plus per-video past appearance/box memory. Semantic detector branches/public detections are separate configurations.",
+  "model_outputs": "256D RoI association embedding and per-frame physical instance IDs, preserving supplied labels and confidence. No cross-video semantic anonymous category outputs.",
+  "losses": "UnbiasedContrastLoss0.25 normalizes multi-positive mass with logsumexp; auxiliary cosine MarginL2Loss1 with neg_pos_ub3/negative margin0.1 and hard mining. Class-agnostic RPN+RoI object-prior distillation on SAM pseudo proposals is also active during offline training. Not semantic category contrastive supervision.",
+  "training_protocol": "Docs/config: SA1B500K raw-image subset and SAM proposal box annotations, random with-replacement sampling of 200000 images per epoch; paired same-image augmented views, affine/MixUp/large scale jitter/crop/flip. GDINO released train config12epochs,8images/GPU,SGD0.08,momentum0.9,wd0.0001,clip35,warmup1000,decays8/11; val_interval4 against TAOVal. No actual dataset, annotation or weights opened, training performed or TAO supervision inferred.",
+  "online_or_offline": "Offline instance-contrastive/distillation training; inspected tracker takes current frame and past memo. Default evaluator full-track category majority vote is retrospective.",
+  "causal_or_noncausal": "MASA.predict processes frames sequentially and resets at frame0; current box/appearance association has no observed future feature use. This is static inspection, not actual GT/ID/future mutation proof. TaoTETAMetric defaulttcc=true uses completed tracks to rewrite all category labels, which cannot certify a causal category ledger.",
+  "state_memory": "Per-video numeric physical IDs, latest box/label/score, EMA appearance and TTL10; no persistent across-video category memory, WAIT, reversible event bank or rollback.",
+  "evaluation": "TaoTETAMetric accumulates per-video predicted rows, globally offsets physical IDs, applies default majority_vote, dumps rows then external TETA; optional external Base/Novel frequency reporting. Config uses TAOVal paths even where variable namedtest. Those assets were not read. No new TAOTest evaluation or validation-based model selection.",
+  "source_config_qualifications": [
+    "R50 plug-and-play config given_dets=true/use_masa_backbone=true/unified_backbone=false uses mmdet QuasiDenseTrackHead; GDINO train config uses custom MasaTrackHead. Same RoI embed family does not imply identical config/training lineage.",
+    "Given four-column boxes are supplied an all-one score by forward; five-column boxes retain input confidence. This is not a foreground calibration certificate and must not silently overwrite frozen confidence.",
+    "with_cats is stored by inspected MasaTaoTracker, but association loop never references it; actual matching combines bisoftmax and cosine, optional spatial soft gating, then score-ordered greedy assignment.",
+    "Memo EMA uses (1-memo_momentum)*old+memo_momentum*current; TTL is numeric frame_id difference, not automatically elapsed real denseframes under annotated cadence.",
+    "Empty-detection return occurs before update/TTL eviction in inspected tracker; do not infer memory aged every empty frame or report an executed failure.",
+    "R50 config max_per_img50 and 1024 resize may affect detector branch; given-box branch bypasses internal detection. Whether local frontend already supplied cap50 must come from local frozen run, not this config alone.",
+    "Paper default SA1B implementation states SGD0.04/batch128; GDINO train config0.08/8perGPU with auto_scale_lr disabled/base_batch_size16. This is a recorded paper/config difference, not silently repaired.",
+    "Training loader builds pseudo instance_id from ann instance_id or ann id and single object category; actual annotations/proposal generation and exact local checkpoint lineage remain unverified.",
+    "Public-detection pickle or unified detector text-bearing branch can depend on supplied semantic classes; anonymous legal given-box branch requires independently qualified detector and lawful supervision.",
+    "Evaluator reads annotation at construction and may recursively clear its selected result directory; audit only, never executed against project outputs.",
+    "RandomSampleConcatDataset ignores requested index and resamples with replacement; get_data_info refers to self.dataset although storage is self.datasets. Static compatibility caveat, not a demonstrated runtime exception."
+  ],
+  "paper_limitations_summary": "Instance similarity distinguishes individual objects, including same-category objects; useful physical continuity but not semantic category representation or cross-video category lifecycle. Public benchmark claims remain paper results, not local measurements.",
+  "TrackOCD_root_connection": "Frozen physical-instance continuity can provide proposal history and current/past reliability cues. Strong instance separation does not repair semantic collapse; it must be evaluated separately from category discrimination and fragmentation coverage.",
+  "what_to_borrow": "Lawful fixed observations, current-image RoI features and same-instance two-view continuity as a controlled physical/instance auxiliary, with Raw/semantic/instance disentanglement controls.",
+  "what_not_to_borrow": "Treating physical IDs as category labels, cross-category negatives without semantic controls, retrospective category voting, supplied Novel vocabulary, or official paper numbers as local results.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Exact local code/config/checkpoint and effective training provenance",
+    "Frozen anonymous foreground-score contract",
+    "Dense chronological frontend and external-only evaluator",
+    "Actual ID/future/GT mutation tests and downstream atomic category policy/memory",
+    "Fresh independent Train folds before method selection"
+  ]
+}

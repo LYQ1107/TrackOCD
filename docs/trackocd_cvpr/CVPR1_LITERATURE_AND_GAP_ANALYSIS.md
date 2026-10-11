@@ -381,12 +381,40 @@ no code exists. `outputs/trackocd_cvpr/cvpr1/dydm_paper_source_availability_audi
 therefore records **paper-only**, not an actual-code or licensed-extra count.
 No third-party paper-note claims substitute for primary paper/source evidence.
 
+### MASA — pinned actual instance model/train/loss/evaluation audit
+
+[Official CVPR2024 paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Matching_Anything_by_Segmenting_Anything_CVPR_2024_paper.pdf)
+binds [author source](https://github.com/siyuanliii/masa/tree/c5472b9c7615f35abdf1188cb1a0c5408fe50d66).
+Root Apache2 read;17 complete source/config/license files and3 installed
+mmdet3.3 dependency files inspected, hashed and scoped in
+`outputs/trackocd_cvpr/cvpr1/masa_source_audit.json`.
+Main method/experiments/ablation/conclusion text read; figures/supplement and
+exact local checkpoint release binding are not certified. No upstream code
+executed or copied, new assets fetched, inference or training started.
+
+Training uses SAM proposals from raw static SA1B images as instance-pair
+supervision, not TAO category training. Given-box current-image RoI inference
+has per-video physical-ID/EMA/TTL memory, not persistent semantic categories.
+The R50 plug-and-play branch uses mmdet QuasiDenseTrackHead while released
+GDINO training uses custom MasaTrackHead. Instance contrastive/distillation
+losses may help physical continuity but same-category instances are distinct;
+this does not by itself repair semantic representation collapse.
+
+Actual tracker is score-ordered greedy bisoftmax/cosine association; stored
+with_cats flag is not used in the inspected matching loop. Empty-frame early
+return bypasses TTL update. Default evaluator's completed-track majority vote
+rewrites historical categories and cannot stand in for an online ledger.
+Given four-column boxes receive confidence1; anonymous-score legality requires
+the separately frozen foreground contract, not this adapter alone.
+Paper/config learning-rate and sampling differences are recorded, not repaired.
+All are static observations, not local performance or mutation certificates.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,
 SlotContrast exact checkpoint release/stream qualification,
 TRACT missing core model/loss release, COVTrack lawful frontend/release binding,
-MASA, OVTR, DYDM author core source, and additional relevant
+MASA exact local frontend/release qualification, OVTR, DYDM author core source, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.
 

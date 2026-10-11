@@ -24,5 +24,20 @@
     "Use recoverable removal when practical; recheck actual space reclaimed and record exact targets",
     "Ambiguous/shared/unique targets require clarification; no broad recursive deletion"
   ],
-  "next": "Keep small source audits and tests running; refuse large feature/training outputs that threaten10GiB reserve. Inventory and reference-check genuinely unused owned targets only if needed."
+  "next": "Keep small source audits and tests running; refuse large feature/training outputs that threaten10GiB reserve. Inventory and reference-check genuinely unused owned targets only if needed.",
+  "followup_20261011T2127Z": {
+    "user_permission": "If storage becomes insufficient, clean unused data; not authorization to delete other projects or active/unique research assets.",
+    "filesystem_available_bytes": 12749856768,
+    "project_allocated_bytes": 4462305280,
+    "project_outputs_allocated_bytes": 3501592576,
+    "shared_uv_cache_allocated_bytes": 10605637632,
+    "historical_pandas_workspace_allocated_bytes": 56138952704,
+    "decision": "SMALL_AUDIT_ONLY_NO_DELETION; free space above10GiB but only about1.87GiB margin, not a large-run reservation.",
+    "attribution": "TrackOCD outputs essentially unchanged versus earlier snapshot; filesystem growth is not attributed to this task. Shared cache may contain hardlinked or otherwise used environment packages; do not clean it globally.",
+    "candidate_status": "No exact substantial task-owned disposable target verified. Historical COCO/PANDAS inputs and outputs are not declared unused merely because current stage is source review. Other project/data roots are out of cleanup scope.",
+    "deleted_paths": [],
+    "reclaimed_bytes": 0,
+    "processes_intervened": false,
+    "large_launch_allowed": false
+  }
 }

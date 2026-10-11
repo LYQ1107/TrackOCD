@@ -597,3 +597,23 @@ new research scope; nothing has been deleted, no storage pressure is present.
   only small public audit docs written. Larger stages require fresh space check.
 - Twelve complete source/paper audits, fresh independentfolds and atomic
   candidate-policy/memory integration remain pending; no scientific completion.
+
+### MASA source and conditional storage permission follow-up
+
+- MASA official CVPR2024 PDF binds author main
+  c5472b9c7615f35abdf1188cb1a0c5408fe50d66; rootApache2 and17 complete
+  relevant model/config/train/loss/dataset/eval/license files read, plus3
+  installed mmdet3.3 dependency sources hashed. Source review is not exact
+  local checkpoint/old release qualification or paper-number reproduction.
+- Training config is static-image SAM pseudo-instance supervision; no new
+  training or actual SA1B annotation/weight access. Current/past physical
+  association is not semantic category discovery. Stored with_cats unused in
+  matching; empty frames bypass TTL update; default evaluator category vote
+  is retrospective. Score/schema/config differences recorded, not repaired.
+- Latest disk snapshot12749856768B (~11.87GiB), only~1.87GiB above10GiB
+  reserve. User permits unused-data cleanup if necessary. TrackOCD outputs
+  stable; shared UV cache and other project roots are not disposable by
+  inference. No exact substantial unused task-owned target verified, no data
+  removed, no space reclaimed or foreign process touched. No large launch.
+- Small source audits continue with active goal; twelve-work acceptance,
+  dense atomic policy/category memory and fresh independent folds pending.
