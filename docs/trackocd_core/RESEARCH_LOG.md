@@ -1276,3 +1276,24 @@
   per-prefix curves and amendment-aware completion audit are being closed
   separately. Do not interpret this Core-stage receipt alone as completion
   of the broader original goal or overwrite historical M1 BLOCKED status.
+
+## 2026-10-11 — Registered canonical M0–M10 handoff source
+
+- Actual T6 Core reports/tests pushed and exact remote verified at
+  e678cde3c74c62a1c1fe4a8c1851c561c17d37c8. The original M0–M10 requirements
+  were reread alongside the latest explicit Train-first amendment. Strong
+  M1 remains BLOCKED; the amended research permits credible negative delivery,
+  not a strong end-to-end claim. M11 gates are false and no feedback is run.
+- New report_final_handoff.py only reads completed public result/receipt
+  summaries and hash-checks the existing Core documents, artifacts and all
+  52 protected sources. No model/pixel/weight/raw annotation/new geometry join.
+  It refuses incomplete science, promoted PASS or existing handoff overwrite.
+- Register canonical filenames and every M0–M10 disposition, explicit CSV
+  byte aliases, full-GT primary vs same-Hungarian matched-only diagnostics,
+  descriptive Train/Val gaps and actual inference/memory/latency summaries.
+  Native five-prefix plots and all frozen target coverage/risk points add
+  no tuning; coincident points retained, no interpolation. Late limited
+  frontend handoff manifest does not backdate a scientific freeze or qualify M1.
+- Actual 385 scoped tests passed, no skips, 40.96 s, including source-only
+  completion safeguards and full 180-group matched/runtime diagnostics.
+  Canonical generator not yet executed: test/commit/push/exact remote first.
