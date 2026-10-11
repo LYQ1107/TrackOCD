@@ -100,3 +100,9 @@ Conditional cleanup is authorized only when storage is insufficient and only
 for verified unused/recomputable assets of this project. Active inputs, unique
 copies, valid checkpoints/shards/history and other projects remain protected;
 ambiguous targets require clarification. No cleanup has been needed or done.
+
+Unchanged per-state Train replay also completed:90cases/21915queries in32.68s,
+exact retained action/logit/order/evaluation parity; all38states across
+independent cases end mixed. Selected-token/member/purity traces are private;
+public `state_trajectories_v1/` exposes aggregate first-error/state histories
+without category values. No repaired memory or new causal-protocol PASS yet.

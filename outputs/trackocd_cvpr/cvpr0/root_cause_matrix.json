@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr0.root-cause-matrix.v1",
-  "status": "IN_PROGRESS_RETAINED_LOGIT_FORENSICS_COMPLETE",
+  "status": "IN_PROGRESS_TRAIN_STATE_TRAJECTORIES_COMPLETE",
   "scientific_success_claimed": false,
   "evidence": "historical_audit_integer_normalized/result.json",
   "seed_collapse": {
@@ -60,6 +60,17 @@
     "new_causal_protocol_repair_required": true
   },
   "same_population_predicted_vs_GT_input": "PENDING_LAWFUL_TRAIN_PREDICTED_STREAM",
+  "train_state_trajectories": {
+    "status": "90_CASES_21915_QUERIES_EXACT_RETAINED_PARITY",
+    "created_states_across_independent_cases": 38,
+    "mixed_states": 38,
+    "A2_D2_dev_main_p16_seed1027_first_bad_write": 144,
+    "A2_D2_dev_main_p16_seed1027_first_cross_category_conflict": 146,
+    "A2_D2_dev_main_p16_seed1027_final_members": 114,
+    "A2_D2_dev_main_p16_seed1027_final_majority_fraction": 0.41228070175438597,
+    "private_raw_trace_published": false,
+    "live_memory_repaired": false
+  },
   "retained_logits_and_controller_errors": {
     "status": "175320_ROWS_720_CASES_1440_ROLE_GROUPS_COMPLETE",
     "seed1027_main_p16_A2_D2_correct_known_top1_rejected": 199,

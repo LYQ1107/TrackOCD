@@ -154,3 +154,14 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - CPU600s/RSS4GiB/output64MiB bounds; no optimizer/GPU/Val/Test/holdout.
 - Actual module regression32passed; source CLI import checked before launch.
   Premature-commit causal counterfactual remains explicitly pending.
+### Per-state Train audit actual delivery
+
+- Registration8851dc0a98a5a612d059c8c5d877b6a772a898a7 verified before
+  actual90case/21915query CPU run;32.6791439s,RSS847216640B.
+- Every retained action/logit/physical-order/evaluator and mixed-count parity
+  passed.38anonymous states across independent cases all end mixed.
+- A2+D2/dev/main/p16/1027: firstbad Known anonymous binding144,
+  firstcross-category conflict146,114members/17categories/31videos,
+  finalmajority0.41228070;113laterwrites,111already-mixed reuses.
+- Raw2,582,885B evaluator trace remains local. Overall root-cause work,
+  matched physical input and new causal protocol remain pending.

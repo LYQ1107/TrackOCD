@@ -1,0 +1,3613 @@
+{
+  "GT_in_live_memory_or_forward": false,
+  "Val_or_Test_access": false,
+  "cases": [
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 124
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 118
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 111
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 104
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 97
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 88
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 79
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 76
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 77
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 73
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 124
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 225,
+          "KNOWN": 32,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 225,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 217,
+          "wrong_existing": 225,
+          "wrong_known": 6
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 32,
+            "birth_video": 346,
+            "category_count": 19,
+            "first_bad_write_sequence": 32,
+            "first_cross_category_conflict_sequence": 33,
+            "member_count": 226,
+            "mixed": true,
+            "purity": 0.5265486725663717,
+            "queries_exposing_mixed_candidate": 224,
+            "reuse_after_first_bad_write": 225,
+            "reuse_after_mixed": 224,
+            "token": "S:0",
+            "video_count": 52
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 257,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 249,
+          "wrong_existing": 257
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 258,
+            "mixed": true,
+            "purity": 0.5736434108527132,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 257,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 256,
+          "KNOWN": 1,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 248,
+          "wrong_existing": 256,
+          "wrong_known": 0
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 257,
+            "mixed": true,
+            "purity": 0.5719844357976653,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 256,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 88
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 221,
+          "KNOWN": 7,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 221,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 207,
+          "wrong_existing": 221,
+          "wrong_known": 3
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 7,
+            "birth_video": 38,
+            "category_count": 19,
+            "first_bad_write_sequence": 7,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 222,
+            "mixed": true,
+            "purity": 0.5630630630630631,
+            "queries_exposing_mixed_candidate": 220,
+            "reuse_after_first_bad_write": 221,
+            "reuse_after_mixed": 220,
+            "token": "S:0",
+            "video_count": 51
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 226,
+          "KNOWN": 2,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 225,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 212,
+          "wrong_existing": 226,
+          "wrong_known": 2
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 2,
+            "birth_video": 16,
+            "category_count": 19,
+            "first_bad_write_sequence": 2,
+            "first_cross_category_conflict_sequence": 4,
+            "member_count": 227,
+            "mixed": true,
+            "purity": 0.5594713656387665,
+            "queries_exposing_mixed_candidate": 224,
+            "reuse_after_first_bad_write": 226,
+            "reuse_after_mixed": 224,
+            "token": "S:0",
+            "video_count": 52
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A0_RAW",
+      "representation_lineage": null,
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 228,
+          "NEW": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 214,
+          "wrong_existing": 228
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 0,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 0,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 229,
+            "mixed": true,
+            "purity": 0.5633187772925764,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 228,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 256,
+          "NEW": 1,
+          "WAIT": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 248,
+          "wrong_existing": 256
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 257,
+            "mixed": true,
+            "purity": 0.5719844357976653,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 256,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 223,
+          "NEW": 1,
+          "WAIT": 34,
+          "cross_category_conflicting_writes": 222,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 215,
+          "wrong_existing": 223
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 34,
+            "birth_video": 346,
+            "category_count": 19,
+            "first_bad_write_sequence": 34,
+            "first_cross_category_conflict_sequence": 36,
+            "member_count": 224,
+            "mixed": true,
+            "purity": 0.5267857142857143,
+            "queries_exposing_mixed_candidate": 221,
+            "reuse_after_first_bad_write": 223,
+            "reuse_after_mixed": 221,
+            "token": "S:0",
+            "video_count": 52
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 154,
+          "NEW": 1,
+          "WAIT": 103,
+          "cross_category_conflicting_writes": 154,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 146,
+          "wrong_existing": 154
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 103,
+            "birth_video": 978,
+            "category_count": 18,
+            "first_bad_write_sequence": 103,
+            "first_cross_category_conflict_sequence": 104,
+            "member_count": 155,
+            "mixed": true,
+            "purity": 0.45161290322580644,
+            "queries_exposing_mixed_candidate": 153,
+            "reuse_after_first_bad_write": 154,
+            "reuse_after_mixed": 153,
+            "token": "S:0",
+            "video_count": 41
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 113,
+          "NEW": 1,
+          "WAIT": 144,
+          "cross_category_conflicting_writes": 112,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 106,
+          "wrong_existing": 113
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 144,
+            "birth_video": 1710,
+            "category_count": 17,
+            "first_bad_write_sequence": 144,
+            "first_cross_category_conflict_sequence": 146,
+            "member_count": 114,
+            "mixed": true,
+            "purity": 0.41228070175438597,
+            "queries_exposing_mixed_candidate": 111,
+            "reuse_after_first_bad_write": 113,
+            "reuse_after_mixed": 111,
+            "token": "S:0",
+            "video_count": 31
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 113,
+          "NEW": 1,
+          "WAIT": 144,
+          "cross_category_conflicting_writes": 112,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 106,
+          "wrong_existing": 113
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 144,
+            "birth_video": 1710,
+            "category_count": 17,
+            "first_bad_write_sequence": 144,
+            "first_cross_category_conflict_sequence": 146,
+            "member_count": 114,
+            "mixed": true,
+            "purity": 0.41228070175438597,
+            "queries_exposing_mixed_candidate": 111,
+            "reuse_after_first_bad_write": 113,
+            "reuse_after_mixed": 111,
+            "token": "S:0",
+            "video_count": 31
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 227,
+          "NEW": 1,
+          "WAIT": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 213,
+          "wrong_existing": 227
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 228,
+            "mixed": true,
+            "purity": 0.5614035087719298,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 227,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 227,
+          "NEW": 1,
+          "WAIT": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 213,
+          "wrong_existing": 227
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 228,
+            "mixed": true,
+            "purity": 0.5614035087719298,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 227,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 225,
+          "NEW": 1,
+          "WAIT": 3,
+          "cross_category_conflicting_writes": 225,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 211,
+          "wrong_existing": 225
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 3,
+            "birth_video": 16,
+            "category_count": 19,
+            "first_bad_write_sequence": 3,
+            "first_cross_category_conflict_sequence": 4,
+            "member_count": 226,
+            "mixed": true,
+            "purity": 0.5619469026548672,
+            "queries_exposing_mixed_candidate": 224,
+            "reuse_after_first_bad_write": 225,
+            "reuse_after_mixed": 224,
+            "token": "S:0",
+            "video_count": 52
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 224,
+          "NEW": 1,
+          "WAIT": 4,
+          "cross_category_conflicting_writes": 224,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 210,
+          "wrong_existing": 224
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 4,
+            "birth_video": 38,
+            "category_count": 19,
+            "first_bad_write_sequence": 4,
+            "first_cross_category_conflict_sequence": 5,
+            "member_count": 225,
+            "mixed": true,
+            "purity": 0.5644444444444444,
+            "queries_exposing_mixed_candidate": 223,
+            "reuse_after_first_bad_write": 224,
+            "reuse_after_mixed": 223,
+            "token": "S:0",
+            "video_count": 51
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1027_step500.pt",
+          "sha256": "9111d5aec9dc5a90daa7c38a3ee0397c6a2a58aab0abb54cdd476eca12835f9c"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 224,
+          "NEW": 1,
+          "WAIT": 4,
+          "cross_category_conflicting_writes": 224,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 210,
+          "wrong_existing": 224
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 4,
+            "birth_video": 38,
+            "category_count": 19,
+            "first_bad_write_sequence": 4,
+            "first_cross_category_conflict_sequence": 5,
+            "member_count": 225,
+            "mixed": true,
+            "purity": 0.5644444444444444,
+            "queries_exposing_mixed_candidate": 223,
+            "reuse_after_first_bad_write": 224,
+            "reuse_after_mixed": 223,
+            "token": "S:0",
+            "video_count": 51
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 95
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 76
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 71
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 68
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 63
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 78
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 77
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 61
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 58
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1028_step250.pt",
+          "sha256": "9dba57810ba046511b2d88d0a8d72fe29bdaf342a36c7f7d559dd36a5dbd5302"
+        },
+        "step": 250,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 53
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 102
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 82
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 81
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 70
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 64
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 86
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 80
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 78
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 72
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A1_SELECTED",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2102792,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/representation/A1_ADAPTER_seed1029_step500.pt",
+          "sha256": "fdece5be977ae917e619a5c661de0eb5ce34ed40e013916f1a425601cfcd0892"
+        },
+        "step": 500,
+        "training_model": "A1_ADAPTER",
+        "training_receipt_sha256": "e1ec85c4baf0ea74612d780e581fc14124575ad7444e50599186dbb886792334"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 64
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 256,
+          "NEW": 1,
+          "WAIT": 1,
+          "cross_category_conflicting_writes": 250,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 248,
+          "wrong_existing": 256
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 47,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 8,
+            "member_count": 257,
+            "mixed": true,
+            "purity": 0.5719844357976653,
+            "queries_exposing_mixed_candidate": 249,
+            "reuse_after_first_bad_write": 256,
+            "reuse_after_mixed": 249,
+            "token": "S:0",
+            "video_count": 57
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 223,
+          "NEW": 1,
+          "WAIT": 34,
+          "cross_category_conflicting_writes": 222,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 215,
+          "wrong_existing": 223
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 34,
+            "birth_video": 346,
+            "category_count": 19,
+            "first_bad_write_sequence": 34,
+            "first_cross_category_conflict_sequence": 36,
+            "member_count": 224,
+            "mixed": true,
+            "purity": 0.5267857142857143,
+            "queries_exposing_mixed_candidate": 221,
+            "reuse_after_first_bad_write": 223,
+            "reuse_after_mixed": 221,
+            "token": "S:0",
+            "video_count": 52
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 154,
+          "NEW": 1,
+          "WAIT": 103,
+          "cross_category_conflicting_writes": 154,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 146,
+          "wrong_existing": 154
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 103,
+            "birth_video": 978,
+            "category_count": 18,
+            "first_bad_write_sequence": 103,
+            "first_cross_category_conflict_sequence": 104,
+            "member_count": 155,
+            "mixed": true,
+            "purity": 0.45161290322580644,
+            "queries_exposing_mixed_candidate": 153,
+            "reuse_after_first_bad_write": 154,
+            "reuse_after_mixed": 153,
+            "token": "S:0",
+            "video_count": 41
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 113,
+          "NEW": 1,
+          "WAIT": 144,
+          "cross_category_conflicting_writes": 112,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 106,
+          "wrong_existing": 113
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 144,
+            "birth_video": 1710,
+            "category_count": 17,
+            "first_bad_write_sequence": 144,
+            "first_cross_category_conflict_sequence": 146,
+            "member_count": 114,
+            "mixed": true,
+            "purity": 0.41228070175438597,
+            "queries_exposing_mixed_candidate": 111,
+            "reuse_after_first_bad_write": 113,
+            "reuse_after_mixed": 111,
+            "token": "S:0",
+            "video_count": 31
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 113,
+          "NEW": 1,
+          "WAIT": 144,
+          "cross_category_conflicting_writes": 112,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 106,
+          "wrong_existing": 113
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 144,
+            "birth_video": 1710,
+            "category_count": 17,
+            "first_bad_write_sequence": 144,
+            "first_cross_category_conflict_sequence": 146,
+            "member_count": 114,
+            "mixed": true,
+            "purity": 0.41228070175438597,
+            "queries_exposing_mixed_candidate": 111,
+            "reuse_after_first_bad_write": 113,
+            "reuse_after_mixed": 111,
+            "token": "S:0",
+            "video_count": 31
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 227,
+          "NEW": 1,
+          "WAIT": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 213,
+          "wrong_existing": 227
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 228,
+            "mixed": true,
+            "purity": 0.5614035087719298,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 227,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 227,
+          "NEW": 1,
+          "WAIT": 1,
+          "cross_category_conflicting_writes": 227,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 213,
+          "wrong_existing": 227
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 1,
+            "birth_video": 13,
+            "category_count": 19,
+            "first_bad_write_sequence": 1,
+            "first_cross_category_conflict_sequence": 2,
+            "member_count": 228,
+            "mixed": true,
+            "purity": 0.5614035087719298,
+            "queries_exposing_mixed_candidate": 226,
+            "reuse_after_first_bad_write": 227,
+            "reuse_after_mixed": 226,
+            "token": "S:0",
+            "video_count": 53
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 225,
+          "NEW": 1,
+          "WAIT": 3,
+          "cross_category_conflicting_writes": 225,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 211,
+          "wrong_existing": 225
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 3,
+            "birth_video": 16,
+            "category_count": 19,
+            "first_bad_write_sequence": 3,
+            "first_cross_category_conflict_sequence": 4,
+            "member_count": 226,
+            "mixed": true,
+            "purity": 0.5619469026548672,
+            "queries_exposing_mixed_candidate": 224,
+            "reuse_after_first_bad_write": 225,
+            "reuse_after_mixed": 224,
+            "token": "S:0",
+            "video_count": 52
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 224,
+          "NEW": 1,
+          "WAIT": 4,
+          "cross_category_conflicting_writes": 224,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 210,
+          "wrong_existing": 224
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 4,
+            "birth_video": 38,
+            "category_count": 19,
+            "first_bad_write_sequence": 4,
+            "first_cross_category_conflict_sequence": 5,
+            "member_count": 225,
+            "mixed": true,
+            "purity": 0.5644444444444444,
+            "queries_exposing_mixed_candidate": 223,
+            "reuse_after_first_bad_write": 224,
+            "reuse_after_mixed": 223,
+            "token": "S:0",
+            "video_count": 51
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1027_step500.pt",
+          "sha256": "e334eb3b3aad40d592ba0541160146e6f2f089206fb2d43407e03e8eee7a957e"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1027,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "EXISTING": 224,
+          "NEW": 1,
+          "WAIT": 4,
+          "cross_category_conflicting_writes": 224,
+          "duplicate_pseudo_novel_birth": 0,
+          "known_anonymous_writes": 210,
+          "wrong_existing": 224
+        },
+        "mixed_state_count": 1,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 1,
+        "states": [
+          {
+            "birth_sequence": 4,
+            "birth_video": 38,
+            "category_count": 19,
+            "first_bad_write_sequence": 4,
+            "first_cross_category_conflict_sequence": 5,
+            "member_count": 225,
+            "mixed": true,
+            "purity": 0.5644444444444444,
+            "queries_exposing_mixed_candidate": 223,
+            "reuse_after_first_bad_write": 224,
+            "reuse_after_mixed": 223,
+            "token": "S:0",
+            "video_count": 51
+          }
+        ],
+        "states_with_bad_write": 1
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 97
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 76
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 73
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 71
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 64
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 78
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 76
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 63
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 57
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1028_step250.pt",
+          "sha256": "ad69c059218d178f9f52f21648de4db4e35a3905cc171acef4fea28335f5c45d"
+        },
+        "step": 250,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1028,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 53
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 99
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 76
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 75
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 65
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "development",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 258,
+          "wrong_known": 60
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 1,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 85
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 2,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 77
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 4,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 75
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 8,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 65
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    },
+    {
+      "exact_retained_logits_actions_order_and_evaluator_parity": true,
+      "order": "main",
+      "partition": "policy_train",
+      "policy": "D2_RISK_AWARE",
+      "prefix": 16,
+      "representation": "A2_EVIDENCE",
+      "representation_lineage": {
+        "checkpoint": {
+          "bytes": 2171296,
+          "path": "outputs/trackocd_core/core_training/train_first_v1/evidence/A2_EVIDENCE_seed1029_step500.pt",
+          "sha256": "0454c5884409725be037c4c03087864dcad9f8d1b216bf63e0322608a13bc888"
+        },
+        "step": 500,
+        "training_model": "A2_EVIDENCE",
+        "training_receipt_sha256": "27cb162a64582278b34c7e30a3ccda3bb62403b122a53ef9ec035d6628585466"
+      },
+      "seed": 1029,
+      "summary": {
+        "GT_controlled_track_reference": true,
+        "category_values_published": false,
+        "counts": {
+          "KNOWN": 229,
+          "wrong_known": 58
+        },
+        "mixed_state_count": 0,
+        "premature_commit_causality": "PENDING_FIXED_HISTORY_CAUSAL_COUNTERFACTUAL",
+        "protocol": "OLD_INDEPENDENT_PREFIX_NUMERIC_ID_ROUTING_NOT_DENSE_ONLINE",
+        "state_count": 0,
+        "states": [],
+        "states_with_bad_write": 0
+      },
+      "wait_bias": -2.0
+    }
+  ],
+  "final_holdout_labels_read": false,
+  "optimization_steps": 0,
+  "pending": [
+    "matched lawful predicted Train input",
+    "fixed-history premature-commit counterfactual",
+    "new dense online identity-independent protocol"
+  ],
+  "preregistration_commit": "8851dc0a98a5a612d059c8c5d877b6a772a898a7",
+  "private_trace": {
+    "bytes": 2582885,
+    "filename": "private_state_trajectories.parquet",
+    "sha256": "1cde037dda55328902e3dc6a533ef29a2e87c713130a76f7a6bae30741d6c78f"
+  },
+  "raw_traces_published": false,
+  "reference_result_sha256": "f0b302430963da915f8841a4069f70a6b9aeef4100e0608d739f9f4b91fccfc5",
+  "resources": {
+    "peak_RSS_bytes": 847216640,
+    "training_GPU_hours": 0,
+    "wall_seconds": 32.67914388800273
+  },
+  "rows": 21915,
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/cvpr0_state_trajectories.json": "dd974ac04ea40ec208e431a4680bcd693fdbdf2b54c45a0d95dc24281ce4555f",
+    "scripts/trackocd_cvpr/audit_train_state_trajectories.py": "bc63bbdbdc098bb551d00830c5f5c66619b505b2cb38fa13f5364133635d87c0",
+    "src/trackocd_cvpr/checkpoint_diagnostics.py": "d0f30cc583424b94ef27eee31cc5b741b0afeafb8691d6a125c5dfb113f57579",
+    "src/trackocd_cvpr/state_trajectories.py": "cac42a6b74a434831fbb86b7b10a21a51eb59581ee2a5a0bff3595c353734211"
+  },
+  "status": "COMPLETE_TRAIN_STATE_TRAJECTORIES_NOT_COMPLETE_CVPR0"
+}

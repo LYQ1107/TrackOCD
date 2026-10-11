@@ -200,3 +200,27 @@ We do not fabricate token histories from aggregate counts. Per-error-state
 trajectories require a separate bounded unchanged-checkpoint replay. Wrong
 commits at prefix≤2 are reported as short-prefix errors, not automatically
 as proven premature commits; histories differ across old prefix replays.
+
+## Completed substep: actual per-state Train trajectories
+
+Exact remote registration8851dc0a98a5a612d059c8c5d877b6a772a898a7;
+90main-order D2 cases and21915queries completed in32.68s CPU-only. Every
+case matches the retained logits, actions, physical order, evaluator metrics
+and mixed-state count exactly. All38 anonymous states created across these
+independent cases end mixed; cases producing onlyKnown/WAIT have no states.
+This is a finite old-protocol diagnostic, not38states in one shared memory.
+The2,582,885B member/purity/token trace remains private, SHA256
+`1cde037dda55328902e3dc6a533ef29a2e87c713130a76f7a6bae30741d6c78f`.
+
+Development/main/p16 A2+D2 seed1027: state birth and first wrong anonymous
+Known write at sequence144; first matched cross-category conflict146;
+113later Existing writes,111after the state is already mixed. Final114members,
+17categories,31videos, majority fraction0.41228070. This separates first
+bad Known binding from later cross-category contamination. Pure fraction and
+membership transitions are directly observed, not guessed from one final
+metric. Exact cross-video reuse counts can be streamed from the private
+video/token chronology; aggregate video_count alone is not that count.
+Other two p16 seeds create no anonymous states. GT-only observation occurs
+after the frozen visual prediction/update; it never repairs live memory.
+No reversible-memory improvement, dense online, inherited-ID-invariance or
+premature-commit causal claim follows from this replay.
