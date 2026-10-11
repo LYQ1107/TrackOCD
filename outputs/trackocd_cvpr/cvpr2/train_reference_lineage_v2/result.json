@@ -1,0 +1,97 @@
+{
+  "Val_or_Test_access": false,
+  "all_transitive_historical_runtime_dependencies_proven": false,
+  "annotation_file_opened_in_this_audit": false,
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "conditional_inference_from_inspected_split_source": "All old representation-fit category tracks retained in every assigned partition; observations capped after track construction. Not an independent current GT census.",
+  "fresh_protocol_or_complete_category_absence_certified": false,
+  "historical_commands_or_workers_executed": false,
+  "historical_registration_commit": "1b5442491b666ce09d5fe28c579b0b7454bc013b",
+  "interpretation": "Verify old manifest/plan/source hashes without decoding private plan rows/summary or role ID arrays. Recorded six-source-file hash binding differs from present-to-historical checks of omitted helper/encoder sources. Historical loaded-runtime module identity remains unproven for ALL checked sources. Source semantics infer retained old fit-class tracks, NOT independent GT census, full category absence or a new protocol.",
+  "new_or_protected_GT_labels_decoded": false,
+  "optimization_steps": 0,
+  "preregistration_commit": "d2af08b40eca03bc29e90aedea1a69b613bc7dfa",
+  "private_plan_bytes": 7241571,
+  "private_plan_rows_or_summary_JSON_decoded": false,
+  "private_plan_sha256": "6259872dd3e59295c23674e6a0e877aadf5164638dd496e441fd80639bcfd4a3",
+  "resources": {
+    "peak_RSS_bytes": 847216640,
+    "training_GPU_hours": 0,
+    "wall_seconds": 2.9415548170218244
+  },
+  "role_ID_arrays_JSON_decoded": false,
+  "source_checks": [
+    {
+      "actual_original_plan_source_hash_recorded": true,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": true,
+      "path": "configs/trackocd_core/training_split.json",
+      "sha256": "eeebe829463aa47bbb9b5f5bf0f3655aee0faca0330fbebd67eaf658dc9584ab"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": true,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": true,
+      "path": "configs/trackocd_core/roles.json",
+      "sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": true,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": true,
+      "path": "configs/trackocd_core/common_features.json",
+      "sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": true,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": true,
+      "path": "configs/trackocd_core/SCOPE_AMENDMENT_TRAIN_FIRST.json",
+      "sha256": "3ec759463349ac405fac9482e119ce952140777cd4760bf15594214f4492b56c"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": true,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": true,
+      "path": "scripts/trackocd_core/prepare_train_first.py",
+      "sha256": "dd06164a6fe4b09c6c30c5c8a189d9e0c3de889727d9b2ff1cb16dd7b7f79b2e"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": true,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": true,
+      "path": "src/trackocd_core/train_first_split.py",
+      "sha256": "693c169086dbb99630f72e7e2327c7e16cb7e18a3162864f6e847da4a4a84548"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": false,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": false,
+      "path": "scripts/trackocd_core/extract_train_first.py",
+      "sha256": "ecd721d1011fea2b0f0933832beb716a82fc991f33629bc8560958610200b8ba"
+    },
+    {
+      "actual_original_plan_source_hash_recorded": false,
+      "current_and_historical_git_bytes_equal": true,
+      "historical_loaded_runtime_module_identity_proven": false,
+      "original_plan_hash_matches_registered_git_bytes": false,
+      "path": "scripts/trackocd_core/audit_assets.py",
+      "sha256": "896f719d54449e27990cf44273a98503ba333f714b0fffa063c6dcd9b9b21eff"
+    }
+  ],
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/cvpr2_train_reference_lineage.json": "2e0c08991bcec01c8a577e1c6a6eba49c80f77b532ea6fec2a7698ee8c889c4c",
+    "scripts/trackocd_cvpr/audit_train_reference_lineage.py": "362f56acce3550caace7428044b659e0632548f37a59460f3abfd4ec3f1a16f5",
+    "src/trackocd_cvpr/metadata_only.py": "fabaf511481802543bc9eb0ae12adc3838fbdb6ebc8424acb501a2f6a2bf7a99",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "COMPLETE_NARROW_PLAN_SOURCE_LINEAGE_NOT_INDEPENDENT_GT_CENSUS"
+}

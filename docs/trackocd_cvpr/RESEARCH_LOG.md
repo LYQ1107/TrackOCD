@@ -901,3 +901,17 @@ new research scope; nothing has been deleted, no storage pressure is present.
   successful protocol. Full139tests PASS2.99s before this wording correction.
 - With immutable v1/erratum binding checks included, full141engineering tests
   PASS3.10s, no skips. Corrected_v2 real rerun still pending registration.
+
+### Corrected source-file binding rerun complete, no new GT census
+
+- Remoted2af08b exact registration; v2 CPU2.942s/RSS847216640B,0training.
+  Six actual recorded source hashes and two current/history comparisons pass;
+  all eight historical loaded-runtime identities explicitly unproven. No private
+  plan rows/summary, role arrays or annotation file decoded/opened. Original
+  v1 measurement/erratum preserved. No code workers/PIDs re-executed.
+- Result69a11cfd565de6738c9d70cc8b54c1dd3836dd373f40b4755aec2b002689e50f.
+  Fitting-class retention is conditional source inference, not independent
+  current GT census, unseen-class absence, new role allocation or Goal progress
+  in scientific metrics. Lawful protocol remains unfrozen; no optimization.
+- Full142engineering tests PASS2.99s, no skips, with corrected actual-v2
+  receipt regression. No source hash alone used as historical runtime proof.

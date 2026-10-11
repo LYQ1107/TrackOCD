@@ -145,6 +145,16 @@ silent relaxation of unseen-class/video isolation. If the lawful pool cannot
 satisfy a complete protocol, document that constraint and research licensed
 auxiliary Train support before any new dataset move or expanded training.
 
+Narrow original-plan lineage verification subsequently matches the recorded
+six source-file hashes to archived1b5442/current bytes and separately checks
+two imported/encoder sources against present/history. Private plan rows and
+summary, role arrays and annotation files not decoded/opened. Corrected_v2
+source metadata explicitly leaves *all* historical loaded-runtime module
+identities unproven. Source semantics conditionally retain fitting-category
+tracks across partitions, but this is not an independent GT census, broad
+category-absence proof or lawful new protocol. An immutable_v1 wording erratum
+is preserved, not hidden by overwriting the old measurement.
+
 ## Bounded execution and rejection rules
 
 Initial allocation ceilings: R120GPUh, C120GPUh, M120GPUh, frozen combined
