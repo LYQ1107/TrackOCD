@@ -502,3 +502,16 @@ new research scope; nothing has been deleted, no storage pressure is present.
   measured runtime failure or imported TrackOCD mechanism.
 - Twelve-work/two-extra literature stage, atomic policy/memory integration,
   dense causal protocol/new folds and GoalsA/B/C remain pending. Training0.
+
+### SlotContrast pinned base active-path review
+
+- OfficialCVF2025venue and author-project-Code link independently verified;
+  actual source55ec66dc02eeade630805789ef4a6c5df06f21ff model/loss/train/eval,
+  configs, frozenencoder/initializer/recurrent processor/decoder read, with
+  partial ranges explicit. MIT read; no upstream code/weights execution.
+- Perframe mapped encoder plus forward recurrent scan is structurally causal,
+  not changed-future certification. Same-instance slot positives/batch-slot
+  negatives and pervideo-reset slots do not implement category persistence.
+  Wholevideo ARI/mBO are not fixedKnown/CT. No new scientific metric or training.
+- Source has custom attention scaling; no silent repair or reproduction claim.
+ 12work/two-extra review and exact release/stream qualification still pending.

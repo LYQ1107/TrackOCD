@@ -184,9 +184,37 @@ Borrow only candidate ambiguity buffering and lawful representation hypotheses;
 do not transfer true labels/counts, test-selected weights, unread bytecode or
 virtual training classes as persistent category tokens. CVPR1 remains PARTIAL.
 
+### SlotContrast — temporal instance consistency is not category persistence
+
+[Official CVF proceedings](https://openaccess.thecvf.com/content/CVPR2025/html/Manasyan_Temporally_Consistent_Object-Centric_Learning_by_Contrasting_Slots_CVPR_2025_paper.html)
+verified through existing proxy after browser403. The
+[author paper](https://arxiv.org/html/2412.14295v2) links
+[project page](https://slotcontrast.github.io/), whose Code link binds
+[martius-lab/slotcontrast](https://github.com/martius-lab/slotcontrast).
+Pinned main`55ec66dc02eeade630805789ef4a6c5df06f21ff`, MIT read; no code/weights
+run or installed. Exact released-checkpoint binding and compatibility untested.
+
+Actual configs/model/head, recurrent scan, initialization, SlotAttention,
+frozen encoder, decoder, contrast/MSE, train and mask-evaluator paths reviewed.
+Complete versus selected ranges are explicit in
+`outputs/trackocd_cvpr/cvpr1/slotcontrast_source_audit.json`.
+Image-only four-frame Train chunks optimize learned slots against detached
+frozen DINO features. Adjacent same-slot positives compete against other
+batch slots, not lawful same-category multi-positive supervision. Current
+slot attention and recurrent prior-state updates are structurally causal;
+whole-video mapped frame encoding alone is not evidence of future leakage.
+No actual future-mutation certification or dense-stream adapter was run.
+
+Slots reset per video, and whole-video ARI/best-mask-overlap assess instances,
+not fixed Known IDs or cross-video category CT. Fixed slots, occlusion and
+disappeared-slot behavior remain limitations. Use temporal consistency only
+as a controlled hypothesis; do not substitute instance IDs for category tokens.
+CVPR1 twelve-work/two-extra requirement remains pending.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
-Correspondence, VC-CGCD readable VC module/paper-release binding, SlotContrast,
+Correspondence, VC-CGCD readable VC module/paper-release binding,
+SlotContrast exact checkpoint release/stream qualification,
 TRACT, COVTrack, MASA, OVTR, discovery/memory decoupling, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.

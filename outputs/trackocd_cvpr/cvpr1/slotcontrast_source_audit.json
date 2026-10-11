@@ -1,0 +1,132 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_BASE_ACTIVE_PATH_AUDIT_NOT_UPSTREAM_REPLICATION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "Temporally Consistent Object-Centric Learning by Contrasting Slots",
+  "year": 2025,
+  "venue": "CVPR2025 pp5401-5411, verified official CVF proceedings page through existing proxy",
+  "venue_independently_verified": true,
+  "paper_url": "https://arxiv.org/html/2412.14295v2",
+  "venue_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Manasyan_Temporally_Consistent_Object-Centric_Learning_by_Contrasting_Slots_CVPR_2025_paper.html",
+  "repository_url": "https://github.com/martius-lab/slotcontrast",
+  "official_repository_verified": true,
+  "official_binding": "Author paper links slotcontrast.github.io whose Code link resolves to martius-lab/slotcontrast; exact experiment-checkpoint release binding is not asserted",
+  "repository_commit": "55ec66dc02eeade630805789ef4a6c5df06f21ff",
+  "license": "MIT2023MaximilianSeitzer/AndriiZadaianchuk read fully. No source copied, executed or trained",
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "ff4292748bccecbd70359110f38b59a0a8c807d1",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/slotcontrast/movi_c.yaml",
+      "git_blob_sha1": "5b8225f39326181279cb4108311e4b0e38a88475",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/slotcontrast/ytvis2021.yaml",
+      "git_blob_sha1": "f5e821306be2c96da44d761b85ba5ff1af302b73",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/losses.py",
+      "git_blob_sha1": "e562a4fdc9177948c32cdfa97f50364c38f9d276",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/modules/video.py",
+      "git_blob_sha1": "04baf7938067c73a9458a3086cc2df89889e64e3",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/modules/groupers.py",
+      "git_blob_sha1": "3e44add37aa8f987d2162864f3c11d83daeb9928",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/modules/initializers.py",
+      "git_blob_sha1": "ae7114bcc2587b7bf72afc43d3d8c0bd2a0098a5",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/modules/encoders.py",
+      "git_blob_sha1": "572276ecde530ab3fc4b8099551f606013d31f65",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/train.py",
+      "git_blob_sha1": "5220f02baeac655b526f7ed663c96dd3d5c73214",
+      "entire_file_read": true
+    },
+    {
+      "path": "slotcontrast/models.py",
+      "git_blob_sha1": "929ecf68964430bf92901067001200a485550a3f",
+      "entire_file_read": false,
+      "read_line_ranges": [
+        [
+          1,
+          482
+        ]
+      ]
+    },
+    {
+      "path": "slotcontrast/modules/decoders.py",
+      "git_blob_sha1": "285cb7c2bbc5af60eff30b41dcb78f92b8a7ac18",
+      "entire_file_read": false,
+      "read_line_ranges": [
+        [
+          1,
+          116
+        ]
+      ]
+    },
+    {
+      "path": "slotcontrast/modules/networks.py",
+      "git_blob_sha1": "f95a5f1d2883a26d62c3f7a0e902af7af4e31211",
+      "entire_file_read": false,
+      "read_line_ranges": [
+        [
+          1,
+          142
+        ],
+        [
+          350,
+          699
+        ]
+      ]
+    },
+    {
+      "path": "slotcontrast/metrics.py",
+      "git_blob_sha1": "6f98fee6442f9c54e5b98770bd7b2acc0271c0fd",
+      "entire_file_read": false,
+      "read_line_ranges": [
+        [
+          1,
+          601
+        ]
+      ]
+    }
+  ],
+  "paper_read_scope": "Abstract/intro, method text3.1-3.2, experiment setup/object-discovery and dynamics text4.1-4.2, ablations4.3/conclusion5, appendixI/J/K/L; not all supplemental training tables or visual figures",
+  "original_task": "Unsupervised video instance segmentation/decomposition and temporal slot consistency, with separately trained dynamics extension",
+  "model_inputs": "Image-only Train video chunks. Frozen DINOv2 per-frame patch features projected into64D slots in inspected MOViC/YTVIS configs; no category text. Validation segmentation masks go to external mask metrics",
+  "model_outputs": "Recurrent slots, per-slot soft pixel/patch masks and reconstructed frozen feature targets; no fixed Known classifier or prediction-owned persistent cross-video category ID",
+  "losses": "Feature MSE weight1 plus adjacent-frame normalized slot cross-entropy weight0.5/temperature0.1. Actual batch_contrast concatenates slots across videos and uses identity soft CE target; all other batch slots are competing alternatives, including potentially same-category different instances",
+  "training_protocol": "Learned fixed initialization,2SlotAttention GRU/MLP iterations(3firstframe),current-slot Transformer predictor, MLP feature decoder. Adam100ksteps, batch64/fourframechunks, frozen DINO encoder. MOViC lr0.0004/YTVIS0.0008; validation full-video mask metrics",
+  "online_or_offline": "Offline self-supervised representation training on chunks; inference uses recurrent scan reset from learned initialization per video. Wholevideo frame encoder is mapped independently before forward recurrent scan",
+  "causal_or_noncausal": "Inspected base recurrent update uses only prior slots/current features and predictor over current slots, not futureframe attention. Structural source evidence is not actual changed-future mutation certification or external persistent stream adapter acceptance. Multi-frame training objectives are not automatically illegal future leakage",
+  "state_memory": "Fixed slots reset pervideo; no inspected crossvideo semantic bank, candidate-set category controller, tentative/confirmed/quarantine state, reversible split/merge event lineage or versioned category tokens",
+  "evaluation": "VideoARI/VideoIoU flatten time within each video; mBO uses independently best-overlap GT mask matching, not fixed Known/category CT. Config MOVi background ignored, YTVIS background included; these instance metrics cannot substitute for TAO category metrics",
+  "static_source_details_not_measured_failures": [
+    "models.py244 initializes each input video afresh; video.pyScanOverTime loops current index and passes state_predicted forward",
+    "Contrast loss treats same slot across adjacent frames as positive and other videos/slots as alternatives; not lawful category-supervised same-category multi-positive learning",
+    "Custom attention sets scale=head_dim**-0.5 then divides q byscale at networks.py516. Do not silently replace this with a different scaling and call it upstream reproduction",
+    "No released checkpoint downloaded or executed; source/dependency compatibility, dense-stream API and exact pretrained release binding remain untested"
+  ],
+  "paper_limitations_summary": "Fixed slot count, mask sharpness, long occlusion errors and uncontrolled behavior of disappeared-object slots",
+  "what_to_borrow": "Temporal visual-consistency controls as a physical/representation hypothesis, explicitly separating identity from semantic category compatibility and retaining Raw/frozen baselines",
+  "what_not_to_borrow": "Cross-instance batch negatives as category multi-positive supervision, pervideo slot index as persistent category, mask overlap/ARI as CT, recurrent source inspection as end-to-end causality PASS",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "TAO_data_access": false
+}
