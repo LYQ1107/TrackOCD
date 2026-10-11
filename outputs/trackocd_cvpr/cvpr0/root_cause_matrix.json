@@ -1,0 +1,27 @@
+{
+  "schema_version": "trackocd.cvpr0.root-cause-matrix.v1",
+  "status": "IN_PROGRESS_RETROSPECTIVE_SUBSTEP_COMPLETE",
+  "scientific_success_claimed": false,
+  "evidence": "historical_audit_integer_normalized/result.json",
+  "seed_collapse": {
+    "status": "OBSERVED_P16_ALL_FOUR_ORDERS",
+    "seed1027": "one NEW then 304560 EXISTING; Old0 New14 H0 CT0",
+    "seed1028": "304561 KNOWN; Old994 New0 H0 CT0",
+    "seed1029": "304561 KNOWN; Old927 New0 H0 CT0"
+  },
+  "first_error_propagation": {
+    "status": "OBSERVED_NOT_YET_INTERVENED",
+    "seed1027_main_p16_first_matched_known_anonymous_write": 92,
+    "seed1027_main_p16_first_proven_cross_category_conflict": 1425,
+    "subsequent_reuses_of_proven_mixed_state": 303135,
+    "unknown_members_are_not_proven_pollution": true
+  },
+  "candidate_topk_and_oracle": "PENDING_TRAIN_ONLY_REPLAY",
+  "gradient_conflict": "PENDING_CHECKPOINT_REPLAY_NOT_HISTORICAL_LOGS",
+  "representation_geometry": "PENDING_TRAIN_ONLY_DIAGNOSTIC",
+  "memory_capacity_known_count": "PENDING",
+  "same_population_predicted_vs_GT_input": "PENDING_LAWFUL_TRAIN_PREDICTED_STREAM",
+  "unique_causal_root_cause": "NOT_ESTABLISHED",
+  "Val_result_used_to_select_new_model": false,
+  "TAO_Test_access": false
+}

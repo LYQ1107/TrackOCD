@@ -1,14 +1,14 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_PREREGISTRATION",
+  "status": "ACTIVE_CVPR0_HISTORICAL_SUBSTEP_COMPLETE",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 0,
+  "new_experiments_completed": 1,
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
-  "next": "Test and remotely register CPU-only FULL historical forensic substep, then Train-development checkpoint diagnostics"
+  "next": "Register and execute bounded Train-only frozen-checkpoint diagnostics; complete remaining CVPR-0 controls"
 }

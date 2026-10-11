@@ -57,4 +57,11 @@ Unmatched predicted tracks are unknown, not proven background/pollution.
 
 Each substage: tests, source/config and aggregate evidence, commit/push, fetch
 and exact remote SHA verification. Raw trajectories, evaluator label joins,
-checkpoints, data and weights remain local. Current new results: pending.
+checkpoints, data and weights remain local.
+
+First new diagnostic completed:60historical FULL executions,18,273,660events,
+75.66s CPU-only and847216640B peak RSS, with exact evaluator-count checks.
+The p16seed-dependent action collapse is documented in
+[CVPR0_ROOT_CAUSE_REPORT.md](CVPR0_ROOT_CAUSE_REPORT.md). This is not a new
+method result or complete root-cause attribution. Train-only checkpoint replay
+and the remaining CVPR-0 controls are next. No training budget spent.

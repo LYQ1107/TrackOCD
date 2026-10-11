@@ -28,3 +28,13 @@ User authorized cleaning unused project data if storage becomes insufficient.
 No deletion is necessary now. Inventory and exact references must precede any
 cleanup; preserve unique assets, active jobs, valid shards, historical results
 and other projects. Ambiguous assets require user confirmation.
+
+Corrected registration `c3a1bbe` pushed/fetched/remotely verified. CPU audit
+completed all60cases in75.66s, peak RSS847216640B. Historical evaluator count
+assertions pass. Atp16 allfourorders seed1027 emits1NEW+304560EXISTING;
+seeds1028/1029 emit304561KNOWN. Observed collapse/propagation, not a unique
+causal explanation. No new training, Val inference or Test read. Next register
+bounded Train-only frozen-checkpoint diagnostics.12new tests pass, including
+real label/role mutation, future append, non-tied ID renumbering and read-only
+gradient replay. Equal-time renumbering remains pending; these limited tests
+do not prove a dense causal-online evaluation protocol.
