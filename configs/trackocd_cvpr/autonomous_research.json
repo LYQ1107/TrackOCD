@@ -1,0 +1,22 @@
+{
+  "schema_version": "trackocd.cvpr.autonomous.v1",
+  "user_request_sha256": "e38de91f68c9ce2aa0ada6b5ff0a6992d44ba789918728b7c298b1724903e0d9",
+  "immutable_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
+  "branch": "research/cvpr-trackocd-autonomous-v2",
+  "goal": "Causally reliable persistent category discovery; Goals A/B/C, not one negative diagnostic",
+  "training_gpu_hours_ceiling": 600,
+  "parallel_gpu_ceiling": 4,
+  "system_ram_reserve_fraction": 0.25,
+  "incremental_storage_soft_bytes": 16106127360,
+  "incremental_storage_hard_bytes": 32212254720,
+  "disk_free_reserve_bytes": 10737418240,
+  "minimum_distinct_evidence_supported_mechanisms": 3,
+  "historical_results_read_only": true,
+  "historical_val_is_not_unobserved_selection_data": true,
+  "TAO_Test_access": false,
+  "unauthorized_holdout_access": false,
+  "novel_vocabulary_or_GT_in_forward": false,
+  "foreign_process_interference": false,
+  "stages": ["CVPR-0 root causes", "CVPR-1 literature and actual code", "CVPR-2 geometry and lawful predicted Train", "CVPR-3 candidate-aware decision", "CVPR-4 reversible memory", "CVPR-5 locked independent evaluation"],
+  "single_failed_mechanism_completes_goal": false
+}
