@@ -307,8 +307,9 @@ Aliased case runtime is not independently repeated timing.
 Paired corrections/780 comparisons are in the actual Val JSON; 84 primary
 p16 comparisons use fixed seed1027/500-video bootstrap **conditional on
 frozen global mapping and replay state**, not independent causal/category
-confidence. NO_MEMORY (no anonymous state) and RESET_PER_VIDEO (no cross-video
-state) differ; zero mergerate without reuse is not safe discovery. WITHOUT_RISK
+confidence. NO_MEMORY (clears anonymous history before every track, permitting
+transient new state) and RESET_PER_VIDEO (no cross-video history) differ;
+zero mergerate without reuse is not safe discovery. WITHOUT_RISK
 is matched learned CE-only ablation; fixed threshold/DP-Means are the separate
 B1/B2 baselines. Static evidence and D1/D2 parameter controls are actual fits.
 
