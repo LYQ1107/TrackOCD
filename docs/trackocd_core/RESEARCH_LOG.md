@@ -1297,3 +1297,44 @@
 - Actual 385 scoped tests passed, no skips, 40.96 s, including source-only
   completion safeguards and full 180-group matched/runtime diagnostics.
   Canonical generator not yet executed: test/commit/push/exact remote first.
+
+## 2026-10-11 — Actual complete amended M0–M10 research handoff
+
+- Canonical report-only source8a593e56601231b38ec365e5f649d8006f057f7a and
+  explicit seed-statistics source278b92fe8262225bfaefa6b67f8fc9bdc578c2a6
+  were each tested, pushed and exact remote verified before execution. Both
+  finished successfully from completed public evidence, no model/GT join.
+- All original M0–M10 requirements audited with separate execution/scientific
+  dispositions. The latest explicit Train-first amendment authorizes a
+  complete credible negative result; M1 strong quality/provenance remains
+  BLOCKED, PHE INCOMPARABLE, learned representation/temporal/persistent gates
+  FAIL and M11 NOT_AUTHORIZED. No strong end-to-end or method-paper success.
+- Added FINAL_REPORT.md, FINAL_RESULT.json, DATA_PROTOCOL_AND_LEAKAGE_AUDIT.md,
+  TRAINING_AND_REPRODUCTION.md, M4_FROZEN_BASELINE_TABLE.md and the late
+  limited FROZEN_PHYSICAL_FRONTEND.json (not a new scientific freeze).
+  Requested canonical baseline/order CSVs are exact byte aliases, explicitly
+  disclosed; 165 learned/control Val aggregate ablations remain separate
+  from controlled Train tables. Added actual510per-seed/four-order mean/SD
+  rows; all2040case references retained, aliases not independent repetitions.
+- Actual180group matched-only/runtime summaries retain the original global
+  mapping (Known1400/Novel189), never replace fullGT4413/819. Main p16
+  error table distinguishes unresolved reuse/missing from explicit WAIT and
+  all-predicted-ID commitment. Native five-prefix and all-point coverage-risk
+  plots visually inspected; coincident points retained without interpolation.
+- Descriptive Train controlled vs Val predicted differences are measured,
+  not same-population causal tracker damage. FULL has meanH0/CT0, A1p16H
+  8.9303%, A2p16H7.1512%; partial findings and rare raw-baseline CT successes
+  preserved. Physical support, missing prototypes, unknown members, clipped
+  shorts, conditional bootstrap and committed-only latency limits disclosed.
+- Actual390scoped tests passed, no skips,41.75s: every canonical document/
+  table/PNG/evidence hash, explicit byte alias, all99checkpointSHA/bytes,
+  all81originalNASrecoveryGit blobs,52protectedscientific files, unchanged
+  main7b1d3c0andbothrecovery stashes verified. No live research job remains.
+- Hash-bound canonical payloads1863912B (excluding FINAL_RESULT.json itself);
+  measured task-private2958066883B
+  (2.7549GiB), safelybelow15/30GiB budget. No deletion, foreign kill, TAOTest,
+  newassetdownload or physical rerun. Private stale pre-amendment BLOCKED
+  progress corrected while retaining historical M1 evidence; actual Goal
+  tool remains ACTIVE until this final result is pushed/exactremoteverified.
+- This final artifact commit is to be followed by actual remote verification
+  and a private delivery receipt, never an invented self-referential SHA.
