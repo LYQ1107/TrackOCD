@@ -140,3 +140,15 @@ def test_unlabelled_interface_and_invalid_observation_preserve_memory():
     assert control.ingest(0, [observation('a')]).events[0].token == 'S:0'
     with pytest.raises(TypeError):
         control.ingest(1, [observation('a')], category_id=4)
+
+
+def test_exact_antipodal_prefix_is_rejected_and_same_frame_valid_retry_succeeds():
+    control = AtomicLegacyControl({}, lambda cues: 2)
+    control.ingest(0, [observation('a')])
+    before = state_bytes(control)
+    opposite = observation('a')
+    opposite.visual[:] *= -1
+    with pytest.raises(ValueError, match='Zero/non-finite causal aggregate'):
+        control.ingest(1, [opposite])
+    assert state_bytes(control) == before
+    assert control.ingest(1, [observation('a')]).events[0].token == 'S:1'

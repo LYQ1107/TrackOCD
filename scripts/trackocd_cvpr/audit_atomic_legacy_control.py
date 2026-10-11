@@ -113,7 +113,7 @@ def probe(reader, frames, cfg, policy_name, mode, guard):
     if mode == 'future_append':
         last = observations[-1]
         step(ordered[-1] + 1, [
-            CurrentObservation(last.routing_id, -last.visual, last.box_normalized_xyxy, last.quality),
+            CurrentObservation(last.routing_id, last.visual, last.box_normalized_xyxy, last.quality),
             CurrentObservation('future_only_external_route', last.visual,
                                last.box_normalized_xyxy, last.quality)],
              {last.routing_id: canonical_ids[last.routing_id], 'future_only_external_route': len(reader.rows)})

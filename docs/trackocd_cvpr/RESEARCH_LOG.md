@@ -720,3 +720,17 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full103 engineering tests PASS7.92s, no skips; four additional synthetic
   runner checks compare actual route/cue/action/state/future mutation digests.
   The real-cache diagnostic has not yet been run at this registration point.
+
+### Tiny atomic-interface attempt1 rejected invalid future fixture
+
+- Actual registration379735c launch/exit1/failure receipt retained under
+  atomic_legacy_smoke_v1. Appending the exact negative last observation to a
+  single-observation physical prefix cancelled the quality-weighted aggregate.
+  Adapter rejected zero evidence; no successful real-cache certification claimed.
+- Bounded fixture correction only: repeat the last observed vector on its
+  existing route and append a new future route. No policy/threshold selection,
+  label access or old-run overwrite. New output_v2 and exact remote registration
+  required before retry. Added explicit synthetic antipodal-prefix rejection,
+  unchanged state and valid same-frame retry test. This is not a method repair.
+- Failure wall41.61s, no PASS; full104 engineering tests PASS3.09s before
+  retry registration. Small launch/failure metadata published, not input rows.
