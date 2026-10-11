@@ -198,3 +198,17 @@ new research scope; nothing has been deleted, no storage pressure is present.
   No new GT labels/model forwards/optimization;120s/RSS1GiB bounds.
 - Actual36CVPR tests passed2.33s including chronological/purity tampering and
   cross-video prior-history fixtures; source CLI import checked.
+### Retained cross-video chronology delivery and actual stage manifest
+
+- Registration833dd77dc559b97c0426c706b8cfa5538c4bed63 verified then21915rows,
+  90cases/38states streamed in0.4748713s, no new model/GT/optimization.
+  Every prior/post member/purity and final state matches the retained audit.
+- A2+D2/dev/main/p16/1027:106of113 Existing writes are true prior-history
+  cross-video reuse;106after firstbad and already-mixed. Allindependent cases:
+  8166cross-video reuses/8128after mixture, not one shared38state memory.
+- Source-backed actual experiment_manifest added. Helper integration first
+  refused an absent asset-preflight launch receipt; corrected binding records
+  original receipt's missing commit and posthoc Git-byte verification against
+  logged pre-execution18e6c65. No measured result altered or receipt invented.
+-37CVPR tests passed3.13s; manifest assembled8completed substeps plus actual
+  running physical diagnostic with no fabricated metric/complete-root status.

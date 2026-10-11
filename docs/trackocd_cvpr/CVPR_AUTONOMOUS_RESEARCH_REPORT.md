@@ -106,3 +106,10 @@ exact retained action/logit/order/evaluation parity; all38states across
 independent cases end mixed. Selected-token/member/purity traces are private;
 public `state_trajectories_v1/` exposes aggregate first-error/state histories
 without category values. No repaired memory or new causal-protocol PASS yet.
+
+Retained cross-video chronology now verified0.47s CPU-only:21915rows/38states,
+all prior/post snapshots exact; p16 development seed1027 has106true cross-video
+Existing reuses after mixture. Phase experiment_manifest binds actual source
+Git bytes and aggregate outputs, explicitly distinguishes the preflight's
+posthoc registration binding from actual launch receipts. The bounded57video
+Train physical job is running; no matched semantic scores yet. No training.

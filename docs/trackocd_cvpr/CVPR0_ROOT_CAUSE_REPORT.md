@@ -224,3 +224,18 @@ Other two p16 seeds create no anonymous states. GT-only observation occurs
 after the frozen visual prediction/update; it never repairs live memory.
 No reversible-memory improvement, dense online, inherited-ID-invariance or
 premature-commit causal claim follows from this replay.
+
+Retained cross-video chronology registration833dd77dc559b97c0426c706b8cfa5538c4bed63
+then verified all21915 prior/post snapshots and final38states, CPU0.47s.
+For the same p16 development state,106of113 Existing writes had another
+video already in that state's history; all106 occurred after both its first
+bad write and proven mixture. Across38states from independent cases,
+8166cross-video reuses,8128already-mixed cross-video reuses. These are actual
+retained-state statistics, not a deployed repair, prospective purity, or
+future-video evidence in the model.
+
+The phase experiment_manifest now binds completed results/CSV hashes and
+source receipts to actual archived preregistration Git bytes. The old asset
+preflight lacks a commit field; its manifest binding is explicitly posthoc
+to the logged pre-execution18e6c65 registration, not an invented launch receipt.
+The Train physical followup remains RUNNING with no completed semantic metric.

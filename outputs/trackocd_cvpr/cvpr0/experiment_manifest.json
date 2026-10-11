@@ -1,0 +1,321 @@
+{
+  "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
+  "manifest_generator_source_sha256": "ea9bfebd8c27ec84e3192a79541fd548c1f07cc408b7ea37eb0226cb5437d726",
+  "no_unique_causal_root_or_new_method_success_claim": true,
+  "pending": [
+    "matched semantic predicted-vs-truncated-GT comparison",
+    "fixed-history premature-commit counterfactual",
+    "ID-independent dense online protocol",
+    "12-source actual-code review",
+    "new independent Train protocol and at least3mechanisms",
+    "Goals A/B/C"
+  ],
+  "preserved_failed_attempts": [
+    {
+      "not_deleted": true,
+      "path": "outputs/trackocd_cvpr/cvpr0/historical_audit",
+      "reason": "NumPy integer JSON serialization failure"
+    },
+    {
+      "not_deleted": true,
+      "path": "outputs/trackocd_cvpr/cvpr0/memory_controls_v1",
+      "reason": "Known denominator registry mismatch correctly refused"
+    }
+  ],
+  "schema_version": "trackocd.cvpr0.experiment-manifest.v1",
+  "stages": [
+    {
+      "actual_status": "COMPLETE_RETROSPECTIVE_SUBSTEP_NOT_COMPLETE_CVPR0",
+      "id": "historical_audit_integer_normalized",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "c3a1bbe20843c81bbf54fa800ce650557362d441",
+      "public_artifacts": [
+        {
+          "bytes": 1741,
+          "path": "outputs/trackocd_cvpr/cvpr0/historical_audit_integer_normalized/memory_first_error.csv",
+          "sha256": "446b0317850ddd1f89b83f384b740d40f0092ab237377812f32367698192c536"
+        },
+        {
+          "bytes": 28968,
+          "path": "outputs/trackocd_cvpr/cvpr0/historical_audit_integer_normalized/seed_action_distribution.csv",
+          "sha256": "ccc1b67d6a581a57ab1db39a374904dd6f9c5ce14d9a1d1b9db3a6b73b448c1d"
+        },
+        {
+          "bytes": 102092,
+          "path": "outputs/trackocd_cvpr/cvpr0/historical_audit_integer_normalized/temporal_action_distribution.csv",
+          "sha256": "0cfbf2e8d83a80e9ad777e8a6b0ecd40efc64fbfb1753e2a4bbd1791f24c612d"
+        }
+      ],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "de7dba3ee61013545e7dec2ec2b5a13e6ed46e64c58a99d087cdd8b08ffd435f",
+        "configs/trackocd_cvpr/cvpr0_historical_audit.json": "f17b710e7f080ebbf570f18b09987ed2f51196e06b962a31d045c8ee46f95d69",
+        "scripts/trackocd_cvpr/audit_historical_full.py": "f5da2b02d21a9ccdf76c32355a1f78ef71968aa8103dc58cea41ab8a7d9dd18e",
+        "src/trackocd_cvpr/historical_forensics.py": "30779edcd53b22d6fd60205df65fe02d20f85eeb76224c74d11bebeb6d8a4649"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "GPU_hours": 0,
+        "cpu_workers": 1,
+        "peak_RSS_bytes": 847216640,
+        "wall_seconds": 75.6583903079736
+      },
+      "result_bytes": 213138,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/historical_audit_integer_normalized/result.json",
+      "result_sha256": "a274a5ce894c01b2e97180758b040bb21f8c1286e833bbc8eeda5af1380957c8",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "COMPLETE_TRAIN_CHECKPOINT_SUBSTEP_NOT_COMPLETE_CVPR0",
+      "id": "checkpoint_replay_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "6d6adbea3d06b52bfc7f6fcc95d0031e3ec157bf",
+      "public_artifacts": [
+        {
+          "bytes": 419334,
+          "path": "outputs/trackocd_cvpr/cvpr0/checkpoint_replay_v1/candidate_oracle_topk.csv",
+          "sha256": "8dba9ac37a04c2e62a1b094add047453b9f85982fc0bc98b36da8f3a49a64bf5"
+        },
+        {
+          "bytes": 4161,
+          "path": "outputs/trackocd_cvpr/cvpr0/checkpoint_replay_v1/checkpoint_gradient_conflict.csv",
+          "sha256": "e54d70a640fe3c84b843f80e6b3a708b226d8e21a8b26723b73c51587f7ebe6c"
+        },
+        {
+          "bytes": 21767,
+          "path": "outputs/trackocd_cvpr/cvpr0/checkpoint_replay_v1/representation_geometry.csv",
+          "sha256": "4f82cc7805a33b1a8d67ed6dbae82c4d42a48c441536c99745d6c51c919162ac"
+        },
+        {
+          "bytes": 174711,
+          "path": "outputs/trackocd_cvpr/cvpr0/checkpoint_replay_v1/seed_action_distribution.csv",
+          "sha256": "add64f992b7ea546ec346f0ab7d5df6cb3ee5f504ddae2d126da1a7ba2b8d2e4"
+        }
+      ],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "de7dba3ee61013545e7dec2ec2b5a13e6ed46e64c58a99d087cdd8b08ffd435f",
+        "configs/trackocd_cvpr/cvpr0_checkpoint_replay.json": "0081efe2b9e5b29b927c4efec502cf551f8b9dbffcff0c9bfcdc01977389b9ce",
+        "scripts/trackocd_cvpr/replay_frozen_checkpoints.py": "9761145eec6db6c5ad4605462210fb4440724e591cedde6a856cb3e51c0cb576",
+        "src/trackocd_cvpr/checkpoint_diagnostics.py": "d0f30cc583424b94ef27eee31cc5b741b0afeafb8691d6a125c5dfb113f57579"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "cpu_workers": 1,
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 243.03013014100725
+      },
+      "result_bytes": 19096181,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/checkpoint_replay_v1/result.json",
+      "result_sha256": "f0b302430963da915f8841a4069f70a6b9aeef4100e0608d739f9f4b91fccfc5",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "COMPLETE_MEMORY_CONTROLS_NOT_COMPLETE_CVPR0",
+      "id": "memory_controls_full_denominator_v2",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "bcb12614a20690ab7a30ce044be4012c1a0f860c",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "de7dba3ee61013545e7dec2ec2b5a13e6ed46e64c58a99d087cdd8b08ffd435f",
+        "configs/trackocd_cvpr/cvpr0_memory_controls.json": "82c1e4800badb6a05677fb3efc5425ffa7fe52e98a4841ba3bc2a4912101c412",
+        "scripts/trackocd_cvpr/audit_memory_controls.py": "ea94b790d4654235aceeec01cff07784761b69bffb53642e84dc63635ba66d63",
+        "src/trackocd_cvpr/checkpoint_diagnostics.py": "d0f30cc583424b94ef27eee31cc5b741b0afeafb8691d6a125c5dfb113f57579",
+        "src/trackocd_cvpr/memory_controls.py": "b258fa2c778e1ef8d5792668f7d83848f5e85a12b43097e1ea17ca704f99c239"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 45.62951358500868
+      },
+      "result_bytes": 4727340,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/memory_controls_full_denominator_v2/result.json",
+      "result_sha256": "72db8c166e898650b0378cc1f3febde4be34755c4c56862ebe36532ec817f2d5",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "COMPLETE_METADATA_ASSET_PREFLIGHT_NOT_PHYSICAL_SMOKE",
+      "id": "train_input_preflight_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": false,
+      "preregistration_commit": "18e6c65104d0005fb368a0d9eb5b29656c561fb9",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py": "fcf2793026088d7cfa974525b595b9aad96453af674509d2a67ea2288fff0603",
+        "src/trackocd_cvpr/metadata_only.py": "505d23ca5b7d921e9d6481453626551ce5191ecca6b5d5bb45c3851d109ab95d"
+      },
+      "registration_binding": "POSTHOC_BYTE_BINDING_TO_LOGGED_PREEXECUTION_COMMIT; original receipt has no commit field",
+      "resources": {
+        "GPU_hours": 0,
+        "disk_free_bytes": 69084364800,
+        "peak_RSS_bytes": 847216640,
+        "wall_seconds": 19.8313863259973
+      },
+      "result_bytes": 1977,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/train_input_preflight_v1/result.json",
+      "result_sha256": "748dd9ab53e25299f1340d2c9e5a506d7c4242aa6e86f472eb374c3e6d409641",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "PASS_BOUNDED_TRAIN_PHYSICAL_SMOKE_NOT_MAIN_QUALIFICATION",
+      "id": "train_physical_smoke_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": false,
+      "preregistration_commit": "82c06a939b3f077d3b743351050e7e0044cb0ccd",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/cvpr0_train_physical_smoke.json": "c80446b3d50eacdb3aade20ef3b588d2087ca0f9abebee063b4c0d4b97d01b39",
+        "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py": "fcf2793026088d7cfa974525b595b9aad96453af674509d2a67ea2288fff0603",
+        "scripts/trackocd_cvpr/smoke_train_physical_inputs.py": "c70362c738f44c4a2ab4160778ce7f06c24e91eaa0572397e91f833cc861f0f6",
+        "src/trackocd_core/masa_native.py": "e10422b8a64fbe3125c20ce8afe629b3ba5cce2eef473f3565b4a0cee3520ad8",
+        "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4"
+      },
+      "registration_binding": "IMMUTABLE_ACTUAL_LAUNCH_REGISTRATION",
+      "resources": {
+        "GPU_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+        "peak_GPU_reserved_bytes": 3443523584,
+        "peak_RSS_bytes": 1618227200,
+        "training_GPU_hours": 0,
+        "wall_seconds": 57.6933494299883
+      },
+      "result_bytes": 1695,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/train_physical_smoke_v1/result.json",
+      "result_sha256": "3e1f8c924a9a8712fd76bba898c031a523dcede56adf3224cc6fa3f75ad89b53",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "COMPLETE_RETAINED_TRAIN_LOGIT_FORENSICS_NOT_COMPLETE_CVPR0",
+      "id": "retained_logit_forensics_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "43e38dee98a6f340c9e5649e144bed24043b1582",
+      "public_artifacts": [
+        {
+          "bytes": 2063833,
+          "path": "outputs/trackocd_cvpr/cvpr0/retained_logit_forensics_v1/action_logits_distribution.csv",
+          "sha256": "32f50a081ba82439af4c89a8b83705070ac487028f0acec5a94f813501eb0daf"
+        },
+        {
+          "bytes": 2067371,
+          "path": "outputs/trackocd_cvpr/cvpr0/retained_logit_forensics_v1/candidate_vs_controller_errors.csv",
+          "sha256": "6652b10c9fc6852900e4d864fe9e36bd0b492d296d35124cdfd791168032dd84"
+        }
+      ],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/cvpr0_logit_forensics.json": "9a993030befb64a0f383512c02b082fd8f0e7bbd4f6608596f6d54710fde39c2",
+        "scripts/trackocd_cvpr/audit_retained_train_logits.py": "36ea83d995ab26c00006b14c0838bad217eb5ec8f6967bd86d6bc1386b2c6267",
+        "src/trackocd_cvpr/logit_forensics.py": "8f1255c64f08592d53069253782429fc7d2425adf576471ad5ad5535ed408982"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "GPU_hours": 0,
+        "peak_RSS_bytes": 847216640,
+        "wall_seconds": 7.819961700006388
+      },
+      "result_bytes": 7023506,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/retained_logit_forensics_v1/result.json",
+      "result_sha256": "7674f69fda264091a3f2ca51d7a1d57eee34cee6bee5b7d3be6d7f8b77698850",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "COMPLETE_TRAIN_STATE_TRAJECTORIES_NOT_COMPLETE_CVPR0",
+      "id": "state_trajectories_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "8851dc0a98a5a612d059c8c5d877b6a772a898a7",
+      "public_artifacts": [
+        {
+          "bytes": 4422,
+          "path": "outputs/trackocd_cvpr/cvpr0/state_trajectories_v1/memory_first_error.csv",
+          "sha256": "942c0a875fa6b21b50ef6785440e91d1c22f8d5db0eec4fd295b1d5a0fde2db5"
+        }
+      ],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+        "configs/trackocd_cvpr/cvpr0_state_trajectories.json": "dd974ac04ea40ec208e431a4680bcd693fdbdf2b54c45a0d95dc24281ce4555f",
+        "scripts/trackocd_cvpr/audit_train_state_trajectories.py": "bc63bbdbdc098bb551d00830c5f5c66619b505b2cb38fa13f5364133635d87c0",
+        "src/trackocd_cvpr/checkpoint_diagnostics.py": "d0f30cc583424b94ef27eee31cc5b741b0afeafb8691d6a125c5dfb113f57579",
+        "src/trackocd_cvpr/state_trajectories.py": "cac42a6b74a434831fbb86b7b10a21a51eb59581ee2a5a0bff3595c353734211"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 32.67914388800273
+      },
+      "result_bytes": 126536,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/state_trajectories_v1/result.json",
+      "result_sha256": "274c1cb503b424bc3a4bfc74e51819fbfe6147fda197fb700b3bbd933ce9ac07",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_status": "COMPLETE_RETAINED_CROSS_VIDEO_FORENSICS_NOT_COMPLETE_CVPR0",
+      "id": "cross_video_state_forensics_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "833dd77dc559b97c0426c706b8cfa5538c4bed63",
+      "public_artifacts": [
+        {
+          "bytes": 4132,
+          "path": "outputs/trackocd_cvpr/cvpr0/cross_video_state_forensics_v1/cross_video_state_reuse.csv",
+          "sha256": "0beb8ac6628ee9c7286a48d431ea819751158bff5d750ef747ea4439f1a7e0ce"
+        }
+      ],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/cvpr0_cross_video_forensics.json": "e82a24e34e83cd38fc984bebd3f8024b378f90947a7c7de2d4765980286f68dd",
+        "scripts/trackocd_cvpr/audit_retained_cross_video_states.py": "056581b102e880d8400e1680228d622393be5fc1274ef9a6e2eef148535f632a",
+        "src/trackocd_cvpr/cross_video_forensics.py": "ba28f2771120bfae57530735625897ac72d9d52e3af26d03101cce3009cf3ce5"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 0.4748713260050863
+      },
+      "result_bytes": 21051,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/cross_video_state_forensics_v1/result.json",
+      "result_sha256": "22d507b59ddb4ca85ee6541ca80e6ec07accc893ed20e991c9b5075ab100b48a",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "completed_result_present": false,
+      "id": "train_physical_diagnostic_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "preregistration_commit": "494615b654cbd7d2163276c318266c3c4efc1f24",
+      "progress_snapshot": {
+        "completed_videos": 34,
+        "current_invocation_forwards": 1296,
+        "current_video": 1995,
+        "current_video_frames": 34,
+        "elapsed_seconds": 398.69768544402905,
+        "pid": 244295,
+        "registered_videos": 57,
+        "status": "RUNNING_TRAIN_PHYSICAL_DIAGNOSTIC"
+      },
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+        "configs/trackocd_cvpr/cvpr0_train_physical_diagnostic.json": "8ea6bb0d65473b49939936c2c16e2e37980681edd8964aac6f7d74df569b4c53",
+        "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py": "fcf2793026088d7cfa974525b595b9aad96453af674509d2a67ea2288fff0603",
+        "scripts/trackocd_cvpr/run_train_physical_diagnostic.py": "a639ef29812adf74e768a1a7c50d2a93d9e2586016410e490cfd53242f81a4bd",
+        "scripts/trackocd_cvpr/smoke_train_physical_inputs.py": "c70362c738f44c4a2ab4160778ce7f06c24e91eaa0572397e91f833cc861f0f6",
+        "src/trackocd_core/masa_native.py": "e10422b8a64fbe3125c20ce8afe629b3ba5cce2eef473f3565b4a0cee3520ad8",
+        "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+        "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385"
+      },
+      "state": "REGISTERED_RUNNING_NO_COMPLETED_METRIC"
+    }
+  ],
+  "status": "IN_PROGRESS",
+  "training_GPU_hours_used": 0
+}
