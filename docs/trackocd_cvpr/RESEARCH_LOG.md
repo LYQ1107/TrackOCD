@@ -777,3 +777,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full117 engineering tests PASS2.95s before remote registration; synthetic
   inventory tests verify explicit label predicates/metadata-only joins and
   distinguish GT-reference video intersection from prediction matching.
+
+### Train support inventory measured; three-mechanism synthesis remains hypotheses
+
+- Remotef832f4c exact launch, CPU0.835s/RSS847216640B,0newtraining. Predicate-
+  filtered1943authorized old label rows; eligible15fit categories yield1867
+  selected capped KnownGT references/21162obs/421videos/92singletons. All15
+  have>=5reference videos,13>=7; no fullGT or matchedPred denominator claim.
+- Existing57video cache intersection has10classes>=2videos,7>=3,3>=5,2>=7.
+  This is cached coverage insufficiency, NOT a claim that pixels are missing.
+  No classes/folds selected, protected heldout labels or feature arrays decoded.
+- Result5117b414c9fe49a35604c1221176f8dab2b0910890dd76650333592e4bc77615;
+  only anonymous aggregate counts/hash/metadata receipts public.
+- Cross-work mechanism agenda now links three separate root-supported
+  hypotheses R/C/M, finite fair controls, Raw-only fresh initialization,
+  strict historical-purity/versioning and new-protocol gates. Not3explored
+  mechanisms or CVPR1/Goal success. Next metadata-only Train pixel inventory
+  is still unexecuted; no large asset move/extraction/training automatically.
+- Full119 engineering tests PASS3.39s, no skips, including exact inventory
+  receipt/source binding. These do not certify a feasible independent fold.

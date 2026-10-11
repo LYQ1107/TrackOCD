@@ -542,3 +542,10 @@ unused parser3 is a CLI/source distinction, not a paper warmup mismatch.
 
 Cross-work root-supported mechanism synthesis, new lawful folds and actual
 dense policy/memory mutation tests remain the next scientific gates.
+
+Cross-work planning synthesis is now recorded in
+[CVPR2_ROOT_SUPPORTED_MECHANISMS.md](CVPR2_ROOT_SUPPORTED_MECHANISMS.md):
+three distinct geometry/candidate-decision/versioned-memory hypotheses with
+finite fair controls, not three explored methods or scientific acceptance.
+New folds, actual learned mechanisms, dense causality and primary frontend
+binding remain open; twelve inspected cores are not twelve replications.
