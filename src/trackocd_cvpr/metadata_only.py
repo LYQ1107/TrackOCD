@@ -35,8 +35,8 @@ def _end_value(data, start):
     raise ValueError('Truncated metadata JSON')
 
 
-def image_video_metadata(path):
-    """Skipped annotations/categories are byte-scanned, never JSON-decoded."""
+def _top_level_fields(path, permitted_fields):
+    """Internal byte scanner; decode only the caller's narrow metadata fields."""
     result = {}
     with open(path, 'rb') as f, mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
         p = 0
@@ -73,13 +73,30 @@ def image_video_metadata(path):
             while p < len(data) and chr(data[p]).isspace():
                 p += 1
             end = _end_value(data, p)
-            if key in ('images', 'videos'):
+            if key in permitted_fields:
                 result[key] = json.loads(data[p:end])
-                if not isinstance(result[key], list):
-                    raise ValueError('Metadata fields must be arrays')
             p = end
         if not closed:
             raise ValueError('Truncated top-level metadata object')
-    if 'images' not in result or 'videos' not in result:
-        raise ValueError('Missing image/video metadata')
+    if set(result) != set(permitted_fields):
+        raise ValueError('Missing permitted top-level metadata')
+    return result
+
+
+def image_video_metadata(path):
+    """Skipped annotations/categories are byte-scanned, never JSON-decoded."""
+    result = _top_level_fields(path, ('images', 'videos'))
+    if any(not isinstance(value, list) for value in result.values()):
+        raise ValueError('Metadata fields must be arrays')
+    return result
+
+
+def train_plan_source_metadata(path):
+    """No plan rows/summary/categories/heldout labels are JSON-decoded."""
+    result = _top_level_fields(path, ('sources', 'annotation_sha256'))
+    if not isinstance(result['sources'], dict) or not isinstance(result['annotation_sha256'], str):
+        raise ValueError('Only source hashes and annotation hash metadata')
+    for value in list(result['sources'].values()) + [result['annotation_sha256']]:
+        if not isinstance(value, str) or len(value) != 64 or any(c not in '0123456789abcdef' for c in value):
+            raise ValueError('Canonical SHA256 metadata required')
     return result

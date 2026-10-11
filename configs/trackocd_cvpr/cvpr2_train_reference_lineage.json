@@ -1,0 +1,26 @@
+{
+  "schema_version": "trackocd.cvpr2.train-reference-lineage.v1",
+  "cache_manifest": "outputs/trackocd_core/features/train_first_v1/manifest.json",
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "private_plan": "outputs/trackocd_core/core_training/train_first_v1/selection_plan.json",
+  "private_plan_sha256": "6259872dd3e59295c23674e6a0e877aadf5164638dd496e441fd80639bcfd4a3",
+  "historical_registration_commit": "1b5442491b666ce09d5fe28c579b0b7454bc013b",
+  "train_annotation_sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+  "expected_plan_source_paths": [
+    "configs/trackocd_core/training_split.json",
+    "configs/trackocd_core/roles.json",
+    "configs/trackocd_core/common_features.json",
+    "configs/trackocd_core/SCOPE_AMENDMENT_TRAIN_FIRST.json",
+    "scripts/trackocd_core/prepare_train_first.py",
+    "src/trackocd_core/train_first_split.py"
+  ],
+  "additional_historical_source_paths": [
+    "scripts/trackocd_core/extract_train_first.py",
+    "scripts/trackocd_core/audit_assets.py"
+  ],
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/train_reference_lineage_v1",
+  "rss_bytes_ceiling": 1073741824,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 131072,
+  "interpretation": "Verify old manifest/plan/source hashes without decoding private plan rows/summary or role ID arrays. Recorded six-source binding differs from present-to-historical byte checks of omitted helper/encoder sources. Source semantics infer retained old fit-class tracks, NOT independent GT census, historical runtime proof of omitted dependencies, full category absence or a new protocol."
+}

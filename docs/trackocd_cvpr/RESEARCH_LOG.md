@@ -867,3 +867,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   protocol repair; new training waits for a truly frozen lawful protocol.
 - Full135engineering tests PASS3.12s, no skips; actual source/result binding and
   retained negative-fold facts checked separately from synthetic constraints.
+
+### Source-only plan-lineage verification preregistration
+
+- Read full original prepare/split/encoder source and imported annotation
+  reader code, not execute them. Split source retains all old fitting-category
+  tracks across assigned partitions and truncates observations only afterward.
+  This is conditional source inference, not independent GT census evidence.
+- New narrow plan reader decodes sources/annotationSHA only; rows and summary
+  including old heldout content byte-skipped. Synthetic sentinel tests prove
+  those fields never reach JSON decoding. Prior image/video reader behavior
+  retained, full139engineering tests PASS3.20s, no skips.
+- Register hash-only old manifest/plan/six actual captured source checks plus
+  two current-to-historical source checks. The latter were NOT captured in
+  original plan source metadata; do not turn present Git equality into runtime
+  byte-history proof. No role-ID arrays, annotations or old heldout labels read.
+- Exact remote registration, singleCPU/RSS1GiB/wall120s/output128KiB/safety
+  reserves; no original command/PID/workers, model, data transfer or training.
