@@ -756,3 +756,24 @@ new research scope; nothing has been deleted, no storage pressure is present.
   before adding the focused manifest-failure classification regression.
 - With that regression included, full110tests PASS2.96s, no skips. Synthetic
   unit checks, published receipt checks and real input run are reported separately.
+
+### Train-protocol support inventory preregistration
+
+- Before allocating fresh folds or training, register a CPU-only external
+  metadata inventory of fifteen old representation-fit Known categories.
+  Read only the four already authorized Train-label partitions by explicit
+  predicate; join key/video/count index metadata on those safe keys. No old
+  heldout labels, full new annotation, visual arrays or checkpoints decoded.
+- Summarize selected/capped reference cross-video support and video intersection
+  with the completed57video predicted feature cache, not GT matching/Pred
+  denominators or full annotation census. Anonymous aggregate class ordinals,
+  no labels/names/individual rows published. No classes/folds selected yet.
+- Crucial comparator restriction: old A1/A2 supervised these fifteen classes.
+  Reusing those weights on newly held-out classes is not legal unseen-class
+  baseline evidence; fresh-fold baselines must train from legal frozen Raw input.
+- Exact remote pre-registration, no output overwrite, oneCPU/RSS1GiB/wall120s/
+  output128KiB,25%RAM/10GiBfree and30GiBproject bounds. No new training, feature
+  extraction, asset movement or Val/Test/unauthorized annotation access.
+- Full117 engineering tests PASS2.95s before remote registration; synthetic
+  inventory tests verify explicit label predicates/metadata-only joins and
+  distinguish GT-reference video intersection from prediction matching.

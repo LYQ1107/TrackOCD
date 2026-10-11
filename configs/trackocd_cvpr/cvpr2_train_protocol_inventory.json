@@ -1,0 +1,15 @@
+{
+  "schema_version": "trackocd.cvpr2.train-protocol-inventory.v1",
+  "cache_directory": "outputs/trackocd_core/features/train_first_v1",
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "predicted_feature_manifest": "outputs/trackocd_cvpr/cvpr0/train_features_v1/private_feature_manifest.json",
+  "predicted_feature_manifest_sha256": "39dcf2f750470c880876e4dc99d35a397d5e38ef10ba7dc3f02d150697d343a3",
+  "expected_predicted_videos": 57,
+  "expected_old_fit_categories": 15,
+  "label_scope": "Predicate-filter only previously authorized representation_fit/prototype/policy_train/development; no old final heldout labels or new annotation sources. Inventory eligible15 old fit classes only, no feature/checkpoint/model scoring.",
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/train_protocol_inventory_v1",
+  "rss_bytes_ceiling": 1073741824,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 131072,
+  "purpose": "Report reusable selected/capped GT-reference cross-video metadata and its video intersection with existing predicted cache. NOT a full GT census, matched predicted denominator, qualified frontend, new fold selection or scientific result. Old adapted checkpoints saw these15 classes and cannot be reused as legal pseudo-Novel baselines on new holdouts."
+}
