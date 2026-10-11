@@ -55,3 +55,11 @@ Register54capacity/known-count conditions and90actual learned-policy plus
 subsets are GT-free; original full label denominators are retained. Actual
 Train time ties exist (p16:114tracks in each diagnostic partition). The old
 numeric-ID tie ordering is a known protocol limitation, not silently fixed.
+
+Registration`836d0ef` pushed, remotely verified and fetched (one transient TLS
+fetch failure, bounded retry succeeded). Memory-control first attempt stopped
+when a removed Known prototype also narrowed the sealed evaluator Known list;
+the evaluator correctly refused to drop the original denominator. Preserve
+the failed attempt, separate evaluator registry IDs from prototype availability,
+add an actual full-denominator integration test and register a separately named
+retry. No denominator filtering, training, Val feedback or history overwrite.

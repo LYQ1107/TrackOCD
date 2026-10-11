@@ -33,7 +33,7 @@ def prototype_subset(prototypes, count):
     return {k: prototypes[k] for k in order[:count]}
 
 
-def controlled_replay(routes, order, prefix, prototypes, bank, predictor, wait_bias, capacity):
+def controlled_replay(routes, order, prefix, prototypes, bank, predictor, wait_bias, capacity, known_ids=None):
     memory = CapacityMemory(prototypes, capacity)
     events, counts = [], Counter()
     maximum = 0
@@ -46,7 +46,10 @@ def controlled_replay(routes, order, prefix, prototypes, bank, predictor, wait_b
         events.append(DecisionEvent(seq, TrackKey(route['video_id'], str(route['physical_track_id'])),
                                     item['actual_prefix'], pred['kind'],
                                     known_category_id=pred.get('category_id'), token=pred.get('token')))
-    return seal_decisions(events, video_order=order, prefix_cap=prefix, known_ids=tuple(prototypes)), {
+    # Keep the frozen evaluator scope even when diagnostic prototypes are removed.
+    # This registered ID list is sealing metadata, never a policy feature.
+    return seal_decisions(events, video_order=order, prefix_cap=prefix,
+                          known_ids=tuple(prototypes) if known_ids is None else tuple(known_ids)), {
         'counts': dict(counts), 'capacity': capacity, 'evictions': memory.evictions,
         'maximum_resident_states': maximum, 'final_resident_states': len(memory.anonymous),
         'known_prototype_count': len(prototypes), 'eviction_rule': 'FIFO_BIRTH_ORDER_NO_GT',

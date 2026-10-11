@@ -120,7 +120,7 @@ def main():
                         for capacity in cfg['capacities']:
                             guard()
                             sealed, runtime = controlled_replay(rows, order, cfg['capacity_prefix'], subset,
-                                bank[cfg['capacity_prefix']], model, bias, capacity)
+                                bank[cfg['capacity_prefix']], model, bias, capacity, known_ids=known)
                             capacity_cases.append({'representation': representation, 'policy': cfg['capacity_policy'],
                                 'seed': seed, 'partition': part, 'prefix': cfg['capacity_prefix'],
                                 'known_count': count, 'capacity': capacity, 'runtime': runtime,
