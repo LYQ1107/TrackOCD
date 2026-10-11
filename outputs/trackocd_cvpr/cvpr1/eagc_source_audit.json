@@ -1,0 +1,108 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_SIMGCD_ACTIVE_PATH_READ_NOT_REPLICATION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery",
+  "year": 2026,
+  "venue": "CVPR2026 pp3563-3573; official CVF independently verified via search and existing proxy after browser403",
+  "venue_independently_verified": true,
+  "paper_url": "https://arxiv.org/html/2604.14176v1",
+  "venue_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zheng_The_Devil_Is_in_Gradient_Entanglement_Energy-Aware_Gradient_Coordinator_for_CVPR_2026_paper.html",
+  "repository_url": "https://github.com/HaiyangZheng/EAGC",
+  "repository_commit": "87af6ff66be58a0fef929c343639443d596d533d",
+  "official_repository_verified": true,
+  "official_binding": "Author paper and official CVF link haiyangzheng.github.io/EAGC whose Code link binds repository; exact paper experiment/checkpoint release not established",
+  "additional_to_user_supplied_ten": true,
+  "actual_model_loss_training_evaluation_source_read": true,
+  "license": "Complete untruncated pinned tree has no root LICENSE/COPYING. Apache2.0 Facebook backbone header read, not a permission grant for entire project. No source copied, installed or executed.",
+  "actual_files_read": [
+    {
+      "path": "methods/SimGCD.py",
+      "git_blob_sha1": "f9737660b63302642771948401ff85deef6be49d",
+      "entire_file_read": true
+    },
+    {
+      "path": "model/model.py",
+      "git_blob_sha1": "c6c9f2807cb7ff25ebeb56a81ff480997250c7aa",
+      "entire_file_read": true
+    },
+    {
+      "path": "model/vision_transformer.py",
+      "git_blob_sha1": "a555ffce879e5e45b42ff26d9f9673c5db54077b",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/get_datasets.py",
+      "git_blob_sha1": "d0ab1a2b806d4defc740223f46a3b6aa79db2c22",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cub.py",
+      "git_blob_sha1": "95f5467b2c9aee48450eb626b5813e24634a5f68",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/data_utils.py",
+      "git_blob_sha1": "99c76360005f4cbb6b9dfe66fd021ec9a1ac47e4",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/augmentations/__init__.py",
+      "git_blob_sha1": "3988aadb4f6390d10f15fdbc161063089df660dc",
+      "entire_file_read": true
+    },
+    {
+      "path": "util/cluster_and_log_utils.py",
+      "git_blob_sha1": "20281b2cf4df81d25d07c579fbb029214149b4d2",
+      "entire_file_read": true
+    },
+    {
+      "path": "scripts/SimGCD/train_cub.sh",
+      "git_blob_sha1": "b45d3fb59a6c8ae4e4fb622b15b56edb04cf8ac4",
+      "entire_file_read": true
+    },
+    {
+      "path": "config1.py",
+      "git_blob_sha1": "1ab8f18a24ff23e08b256eed27a09dc61b9bcbc4",
+      "entire_file_read": true
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob_sha1": "7d7f33c9c7c92af5f6ea1254c7817af7fe0f5e86",
+      "entire_file_read": true
+    }
+  ],
+  "paper_read_scope": "Intro/preliminaries, method4.1-4.3 and Algorithm1, experiment5.1-5.6/conclusion6, appendixB.1-B.4/C.1-C.5/D and qualitative textE; not all statistical tableA, figures visually, other baseline implementations or diagnosis driver.",
+  "original_task": "Offline generalized category discovery on mixed labeled Known and unlabeled Known/Novel image sets, not causal persistent video categories.",
+  "model_inputs": "Two stochastic 224px image views. Labeled Known mask/labels offline only; unlabelled labels retained by dataset but excluded from inspected supervised losses. No text or vocabulary passed to inspected backbone/head.",
+  "model_outputs": "768D backbone features, three-layer 256D contrast projection plus normalized-feature weighted linear Known+Novel classifier. Main training wraps a separate one-layer 768D ReLU MLP before this DINOHead.",
+  "losses": "Masked Known CE/temperature0.1 and SupCon, two-view self-distillation with detached same-step logits and batch entropy regularization, instance InfoNCE. Sup weight0.35. AGA/EEP modify output-feature gradients through hooks, not the printed scalar loss.",
+  "gradient_mechanism": "Frozen labeled-only reference, fixed uncentered Conceptor R(R+aperture^-2 I)^-1 from reference Known Train features. Gradient first g - weight*(g@C) for unlabeled rows then labeled AGA correction weight/(N_labeled_views*D)*(features-reference), with AMP scaler scale applied. Projector parameter gradients themselves are not directly projected.",
+  "training_protocol": "Inspected CUB shell: DINO ViT-B/16, only block11 trainable, SGD/cosine200epochs/batch128/backbone0.1/head1.0; reference30epochs/batch32/lr0.02; AGA0.7/aperture2/EEP0.5. Sampler balances labeled/unlabeled. No code executed or training resources consumed.",
+  "online_or_offline": "Offline joint dataset training and repeated full-unlabelled-Train evaluation. Test forward image-only backbone/projector argmax; no continual inference updates or category bank.",
+  "state_memory": "Frozen reference/backbone conceptor and scalar labeled-energy EMA0.95 are training state, not persistent anonymous-category tokens. No candidate-aware WAIT, tentative/confirmed/quarantine, reversible split/merge or versioned cross-video events.",
+  "evaluation": "Predictions and labels collected separately then Hungarian matching over all categories, including Known. Best epoch chosen by All accuracy of actual unlabelled Train labels; default GT total class count sets classifier cardinality. Neither is transferable to our fixed-Known sealed-label protocol.",
+  "static_findings_not_executed_failures": [
+    "Main SimGCD.py662-667 uses known+novel split lengths for out_dim unless --estk/--ested_k; latter is a supplied value, not an estimator implemented on that active path.",
+    "SimGCD.py477-516 selects/save_best by unlabelled Train GT All ACC, despite no unlabelled GT in inspected direct supervised training losses. This is a model-selection boundary, not a demonstrated online label leak.",
+    "Reference requires_grad false and no_grad true; train() calls reference.train(). Default inspected DINO build has drop/drop_path0 and LayerNorm, so train() alone is not evidence of stochastic-anchor drift on that path. DINOv2 body not reviewed.",
+    "DINOHead classification normalizes its input, not 256D contrast projection; main additional MLP supplies ReLU-transformed768D input. Do not assume vanilla DINOHead bottleneck classifier.",
+    "AGA actual mean-normalized correction and clamped adaptive EEP with labeled energy EMA require explicit convention if borrowing; do not substitute unscaled paper symbols.",
+    "Parser eval_funcs defaults v2,v2p but inspected EVAL_FUNCS has only v2,v2b. CUB script explicitly v2, so default mismatch is not an executed CUB-script failure.",
+    "requirements.txt contains machine-local file:// references and mixed CUDA package generations. No wholesale installation, dependency/environment compatibility claim or dataset/split pickle decoding.",
+    "First epoch initializes best stats but does not save; only strict later improvement reaches save_best. Checkpoint existence was not tested.",
+    "Retained unlabelled targets and official GT K are part of upstream benchmark setup; neither imported into TrackOCD forward/protocol."
+  ],
+  "paper_limitations_summary": "Reference/subspace quality, added training overhead and limited standard-GCD coverage; dynamic/domain-shift generalization remains unproven.",
+  "TrackOCD_root_connection": "Our selected-checkpoint CE/risk cosine antagonism and Raw-versus-adapter geometry loss justify a bounded representation hypothesis, but are not their supervised/unsupervised GDC/SOC measurement, historical optimizer evidence or a confirmed training cause.",
+  "what_to_borrow": "Lawful independent Train reference and geometry-preserving controls; measure actual optimizer gradients, neighborhood/rank/Known/Novel tradeoff against Raw. Candidate hypothesis only after full source review and fresh folds.",
+  "what_not_to_borrow": "Unlabelled/final GT checkpoint selection, oracle Novel count, known-remapping accuracy as fixedKnown/CT, image-pair identity contrast as category positives, offline training hooks as online persistence.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Whole-project license",
+    "Exact release/checkpoint binding",
+    "Actual dependency/run validation if reproducing",
+    "Independent lawful folds/selection and causal policy-memory contract"
+  ]
+}

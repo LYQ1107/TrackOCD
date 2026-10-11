@@ -528,3 +528,19 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full-trajectory named classification broadcast is not anonymous causal
   category persistence. This partial availability audit is not counted toward
   complete twelve-model/loss requirement; continue other source reviews.
+
+### EAGC actual SimGCD source audit — one additional work
+
+- Independently verified officialCVF CVPR2026 venue and author/project/code
+  binding; pinned87af6ff66be58a0fef929c343639443d596d533d actual SimGCD
+  backbone/head/loss/gradient hooks/reference/Train/eval/CUB protocol read.
+  No upstream code/weights/dataset/split pickle executed or downloaded.
+- Actual masked Known supervision excludes unlabelled GT, but GT All accuracy
+  selects checkpoints and default head uses GT class count. Record separately
+  from online leakage; no runtime failure or TrackOCD import claimed.
+- Active gradient-hook normalization, EMA/clamp, separate contrast/classifier
+  branches and ReLU wrapper recorded. Whole-project license and exact release
+  binding unestablished. Requirements with machine-local references not installed.
+- Training-gradient hypothesis is distinct from our selected-checkpoint CE/risk
+  evidence; source review is not a new method or CVPR1 twelve-work/two-extra PASS.
+  Storage freshcheck16590487552B above10GiB reserve; no deletion, training0.

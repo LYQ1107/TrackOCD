@@ -234,6 +234,42 @@ past-visible visual aggregation hypothesis only. This availability finding is
 not counted as a complete source audit toward twelve-model/loss acceptance.
 Evidence: `outputs/trackocd_cvpr/cvpr1/tract_source_availability_audit.json`.
 
+### EAGC — active training-gradient path, not online memory
+
+[Official CVF CVPR2026 proceedings](https://openaccess.thecvf.com/content/CVPR2026/html/Zheng_The_Devil_Is_in_Gradient_Entanglement_Energy-Aware_Gradient_Coordinator_for_CVPR_2026_paper.html)
+and [author paper](https://arxiv.org/html/2604.14176v1) bind
+[project](https://haiyangzheng.github.io/EAGC/) to
+[HaiyangZheng/EAGC](https://github.com/HaiyangZheng/EAGC), pinned
+`87af6ff66be58a0fef929c343639443d596d533d`. This is additional to the supplied
+ten repositories. Actual SimGCD model/loss/hook, Train, CUB split/augmentation,
+shell/config, evaluation and requirements read fully; file blob hashes are in
+`outputs/trackocd_cvpr/cvpr1/eagc_source_audit.json`. No upstream execution.
+No whole-project license in complete pinned tree; Apache backbone header alone
+does not license all sources. Exact paper-checkpoint release unestablished.
+
+Known-only frozen reference anchors labeled feature gradients; a soft Conceptor
+modulates unlabeled gradients by relative Known energy. This is offline image
+GCD, not category memory. Dependence on reference quality and added cost remains,
+and dynamic/domain-shift generalization is unproven. Paper gradient diagnostics
+must not be conflated with our selected-checkpoint CE/risk analysis.
+
+Actual source facts: main adds a768D ReLU MLP; the DINOHead classifies normalized
+768D input, independently of its256D contrast projection. Hooks change backbone
+feature gradients, not head gradients or scalar printed loss. AGA is normalized
+by labeled view count and feature dimension; EEP is clamped and uses a0.95
+labeled-energy EMA. Frozen reference is called in train mode, but inspected
+default DINO dropout/drop-path are zero; this alone does not demonstrate drift.
+
+Unlabeled GT targets are masked out of direct supervised losses, but their All
+ACC selects best checkpoints, and GT Novel cardinality sizes the default head.
+`--estk` accepts an external count, not an active-path estimator. Hungarian
+evaluation can remap Known identities. Those setup/selection rules cannot be
+transferred to our protocol. Parser-default `v2p` has no evaluator registration;
+the inspected CUB shell uses valid `v2`, so no shell-run failure is claimed.
+Machine-local requirements are not installed. Consider reference/geometry
+controls only after lawful independent folds and complete literature review;
+no mechanism chosen, no training, no total CVPR1 acceptance here.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,
