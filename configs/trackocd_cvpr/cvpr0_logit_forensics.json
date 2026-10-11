@@ -1,0 +1,19 @@
+{
+  "schema_version": "trackocd.cvpr0.retained-logit-forensics.v1",
+  "input_directory": "outputs/trackocd_cvpr/cvpr0/checkpoint_replay_v1",
+  "input_result_sha256": "f0b302430963da915f8841a4069f70a6b9aeef4100e0608d739f9f4b91fccfc5",
+  "private_trace_sha256": "016825bf6360e72f3908a8cdd44f021b96097cc9ee236571f01735dd2aae8a9c",
+  "expected_rows": 175320,
+  "expected_actual_cases": 720,
+  "expected_role_groups": 1440,
+  "permitted_partitions": ["development", "policy_train"],
+  "output_directory": "outputs/trackocd_cvpr/cvpr0/retained_logit_forensics_v1",
+  "wall_seconds_ceiling": 300,
+  "rss_bytes_ceiling": 4294967296,
+  "batch_rows": 4096,
+  "model_executed": false,
+  "optimizer_steps": 0,
+  "Val_or_Test_read": false,
+  "final_holdout_labels_read": false,
+  "interpretation": "Existing Train diagnostic traces only; raw and effective WAIT-bias logits, exposed-top1 vs Top8 upper-bound distinction; no unique-cause or premature-commit proof"
+}

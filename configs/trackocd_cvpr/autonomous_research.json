@@ -17,6 +17,8 @@
   "unauthorized_holdout_access": false,
   "novel_vocabulary_or_GT_in_forward": false,
   "foreign_process_interference": false,
+  "conditional_cleanup_authorized_by_user": true,
+  "cleanup_scope": "Only verified unused/recomputable assets of this project if storage insufficient; preserve active inputs, unique copies, valid checkpoints/shards/history and other projects; ask on ambiguous targets",
   "stages": ["CVPR-0 root causes", "CVPR-1 literature and actual code", "CVPR-2 geometry and lawful predicted Train", "CVPR-3 candidate-aware decision", "CVPR-4 reversible memory", "CVPR-5 locked independent evaluation"],
   "single_failed_mechanism_completes_goal": false
 }

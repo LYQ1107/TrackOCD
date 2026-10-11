@@ -119,3 +119,13 @@ tensors unchanged, noGT/text/Val/Test/optimizer.57.69s worker,60.11s supervisor,
 GPU3443523584B/RSS1618227200B peaks; child terminal0.64,204B canonical private
 shard is valid for reuse under a separately registered full57-video plan.
 No full57job or DINO extraction launched. All26CVPR tests pass in2.22s.
+
+Smoke delivery`d7f189b` pushed/fetched/exact-remote verified. Register posthoc
+aggregation of175320retained Train logit rows from720actual frozen replays,
+not a new model execution. Preserve raw/effective WAIT-bias logits, masked
+action counts, exposed-top1controller failures and Top8-only candidate upper
+bounds separately. Premature-commit causality and per-token histories cannot
+be fabricated from independent capped-prefix traces; record those remaining
+gaps. All29CVPR tests passed in2.34s before this registration.
+User's conditional unused-project-data cleanup permission is recorded in the
+new research scope; nothing has been deleted, no storage pressure is present.
