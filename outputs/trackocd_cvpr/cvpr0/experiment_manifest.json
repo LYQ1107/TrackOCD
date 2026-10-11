@@ -420,27 +420,12 @@
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     },
     {
-      "actual_supervisor": null,
-      "completed_result_present": false,
+      "actual_status": "COMPLETE_BOUNDED_TRAIN_ALL_ID_FEATURES_NOT_MAIN_QUALIFICATION",
       "id": "train_features_v1",
       "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
       "preregistration_commit": "a02455f074819dc002def1da6b3acc93073c4fa6",
-      "progress_snapshot": {
-        "actual_worker_summaries": [
-          {
-            "last_video_id": 2215,
-            "new_observations": 26650,
-            "status": "RUNNING_FROZEN_TRAIN_FEATURES",
-            "videos_complete": 21
-          },
-          {
-            "last_video_id": 2202,
-            "new_observations": 27746,
-            "status": "RUNNING_FROZEN_TRAIN_FEATURES",
-            "videos_complete": 20
-          }
-        ]
-      },
+      "public_artifacts": [],
       "registered_source_sha256": {
         "configs/trackocd_core/common_features.json": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
         "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
@@ -461,7 +446,16 @@
         "src/trackocd_cvpr/train_frozen_encoder.py": "b839a03e711fbfa5c36e77a07bed8de4237759f408f9e80633cce5dabec308e9",
         "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385"
       },
-      "state": "REGISTERED_RUNNING_NO_COMPLETED_METRIC"
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "supervisor_wall_seconds": 1155.1163105150335,
+        "training_GPU_hours": 0
+      },
+      "result_bytes": 4245,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/train_features_v1/result.json",
+      "result_sha256": "af12c39c6b8513a635cccccd3aa99f0e9c9c5d7fe1a871b5958e35be797954db",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     },
     {
       "id": "matched_train_semantics_v1",

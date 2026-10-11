@@ -341,3 +341,29 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Batch TTA/Hungarian Known remapping are not our causal/fixed-Known protocol.
   CVPR1 minimum twelve works/additional two/architecture are still pending;
   this preparation does not skip remaining CVPR0 diagnostics or select a method.
+
+### Actual bounded Train feature delivery — 57/57 complete
+
+- Exact a02455f074819dc002def1da6b3acc93073c4fa6 sources/config retained;
+  actual two-worker supervisor returncodes0/0,error null,no foreign interference.
+  Complete57videos/16933IDs/73509observations. New72216, referenced1293,
+  valid source not copied/reencoded and its original failed exit still preserved.
+- Supervisor1155.1163105s (~19.25min); worker elapsed1132.1724115/
+  1148.8610429s, peakGPU reserved945815552B each, peakRSS1156579328/
+  1157853184B. Training GPU-hours0, optimizer0, no GT/role/Val/Test encoding.
+- Actual result SHA256 af12c39c6b8513a635cccccd3aa99f0e9c9c5d7fe1a871b5958e35be797954db;
+  private complete manifest203517B SHA256
+  39dcf2f750470c880876e4dc99d35a397d5e38ef10ba7dc3f02d150697d343a3.
+  Only aggregate result is public; private manifest/NPZ/logs not Git-added.
+- New measured input hashes now bind next preregistered matched-reference
+  protocol before any semantic evaluation. Full reference roles independently
+  rechecked development-only249Known/9pseudo; no heldout labels decoded.
+- Broad actual regression433passed40.67s, including8new feature reader tests.
+  CVPR retained tree165034185B (~157MiB), free disk~30GiB; no deletion needed.
+  These are diagnostic feature results, not main frontend qualification or
+  fullTAO cache/new training/GoalsA/B/C/scientific method success.
+- LTC actual active model/generator/loss/train/evaluation/CUB code audit also
+  recorded. Author arXiv→repo binding verified; Findings venue not independently
+  verified and no LICENSE in pinned tree. Source/paper discrepancies retained,
+  DSU numeric compaction and GT-column topK metrics not imported into TrackOCD.
+  No upstream code executed, copied or trained; literature stage remains partial.

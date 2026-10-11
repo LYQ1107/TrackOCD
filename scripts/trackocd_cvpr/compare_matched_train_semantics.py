@@ -79,6 +79,8 @@ def main():
             raise ValueError('Protected input/source/model changed')
     feature_root = ROOT / cfg['feature_directory']
     feature_result_path = feature_root / 'result.json'
+    if sha256_file(feature_result_path) != cfg['feature_result_sha256']:
+        raise ValueError('Measured completed feature receipt binding differs')
     feature_result = json.loads(feature_result_path.read_text())
     if (feature_result['status'] != 'COMPLETE_BOUNDED_TRAIN_ALL_ID_FEATURES_NOT_MAIN_QUALIFICATION'
             or feature_result['preregistration_commit'] != cfg['feature_preregistration_commit']
@@ -90,7 +92,7 @@ def main():
         if hashlib.sha256(registered).hexdigest() != digest:
             raise ValueError('Completed feature receipt differs from registered archived bytes')
     feature_manifest_path = feature_root / feature_result['private_manifest']['filename']
-    if sha256_file(feature_manifest_path) != feature_result['private_manifest']['sha256']:
+    if not sha256_file(feature_manifest_path) == feature_result['private_manifest']['sha256'] == cfg['completed_predicted_feature_manifest_sha256']:
         raise ValueError('Completed feature manifest changed')
     manifest = json.loads(feature_manifest_path.read_text())
     if not manifest['complete']:

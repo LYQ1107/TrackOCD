@@ -1,0 +1,75 @@
+{
+  "GT_or_roles_or_Val_or_Test_encoder_input": false,
+  "config_sha256": "6e6980454e0700a9717e96f79828e9fabbe25b1f72811b6834779eeef86df5e7",
+  "interpretation": "Bounded old-development physical-input diagnostic; released frontend stage binding incomplete, selected GT reference truncated; not full TAO cache or semantic training",
+  "new_observations_current_attempt": 72216,
+  "no_short_unmatched_or_low_score_track_removed": true,
+  "observations": 73509,
+  "optimization_steps": 0,
+  "preregistration_commit": "a02455f074819dc002def1da6b3acc93073c4fa6",
+  "private_manifest": {
+    "bytes": 203517,
+    "filename": "private_feature_manifest.json",
+    "sha256": "39dcf2f750470c880876e4dc99d35a397d5e38ef10ba7dc3f02d150697d343a3"
+  },
+  "qualified_primary": false,
+  "recovered_source_original_failure_preserved": true,
+  "resources": {
+    "supervisor_wall_seconds": 1155.1163105150335,
+    "training_GPU_hours": 0
+  },
+  "reused_observations": 1293,
+  "semantic_score_reported": false,
+  "source_sha256": {
+    "configs/trackocd_core/common_features.json": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/cvpr0_train_feature_interface.json": "1982c090544ca60595f79f23bfa3fd9d4d293ac43c267b8f1af2f0713e17caf1",
+    "configs/trackocd_cvpr/cvpr0_train_features.json": "6e6980454e0700a9717e96f79828e9fabbe25b1f72811b6834779eeef86df5e7",
+    "configs/trackocd_cvpr/cvpr0_train_physical_diagnostic.json": "8ea6bb0d65473b49939936c2c16e2e37980681edd8964aac6f7d74df569b4c53",
+    "scripts/trackocd_core/run_masa_physical_qualification.py": "809386f3f19e270ff7230097a506a9989e2bb828aced1b9c23ed12ebb341f948",
+    "scripts/trackocd_core/smoke_masa_native.py": "a8483d1fa4ff8b7ac67e191c113d3fe5273d13e95a0f5c5d1a8f5be265ff02c2",
+    "scripts/trackocd_cvpr/extract_train_features.py": "5d352e089552f38b97100d2bdd0b79fd198974bfecaa6184d4f8cf8accf0f3df",
+    "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py": "fcf2793026088d7cfa974525b595b9aad96453af674509d2a67ea2288fff0603",
+    "scripts/trackocd_cvpr/run_train_physical_diagnostic.py": "a639ef29812adf74e768a1a7c50d2a93d9e2586016410e490cfd53242f81a4bd",
+    "scripts/trackocd_cvpr/smoke_train_physical_inputs.py": "c70362c738f44c4a2ab4160778ce7f06c24e91eaa0572397e91f833cc861f0f6",
+    "scripts/trackocd_v2/build_common_features.py": "0290f8fd67695b8a8a6a5933a9e7e8b12cb1f48ba5735b0063beb8bf712208ac",
+    "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+    "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+    "src/trackocd_cvpr/prefix_interface_checks.py": "db27109b6e42b27149dce7afa9247dc8e0632b9fa10401ad573b7fdfc7517dd4",
+    "src/trackocd_cvpr/train_feature_resume.py": "f72ab9daa190696dde00656244a3f42f5dbca08d1fd0bbca9e06f9356a644b6e",
+    "src/trackocd_cvpr/train_frozen_encoder.py": "b839a03e711fbfa5c36e77a07bed8de4237759f408f9e80633cce5dabec308e9",
+    "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385"
+  },
+  "status": "COMPLETE_BOUNDED_TRAIN_ALL_ID_FEATURES_NOT_MAIN_QUALIFICATION",
+  "tracks": 16933,
+  "valid_source_features_copied_or_reencoded": false,
+  "videos": 57,
+  "workers": [
+    {
+      "assigned_videos": 28,
+      "complete_videos": 28,
+      "new_observations": 35389,
+      "resources": {
+        "GPU_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+        "peak_GPU_reserved_bytes": 945815552,
+        "peak_RSS_bytes": 1156579328,
+        "training_GPU_hours": 0,
+        "wall_seconds": 1132.1724114859826
+      },
+      "status": "COMPLETE_OWNED_FEATURE_PARTITION"
+    },
+    {
+      "assigned_videos": 28,
+      "complete_videos": 28,
+      "new_observations": 36827,
+      "resources": {
+        "GPU_uuid": "GPU-5de9a1c2-0cc1-4fda-7d25-493f86f52424",
+        "peak_GPU_reserved_bytes": 945815552,
+        "peak_RSS_bytes": 1157853184,
+        "training_GPU_hours": 0,
+        "wall_seconds": 1148.8610428780084
+      },
+      "status": "COMPLETE_OWNED_FEATURE_PARTITION"
+    }
+  ]
+}

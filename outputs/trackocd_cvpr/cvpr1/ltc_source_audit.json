@@ -1,0 +1,81 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PARTIAL_SOURCE_REVIEW_NOT_CVPR1_COMPLETE",
+  "paper_title": "Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery",
+  "year": 2026,
+  "venue": "CVPR 2026 Findings claimed by repository; official proceedings venue binding not yet verified",
+  "venue_independently_verified": false,
+  "paper_url": "https://arxiv.org/abs/2603.13858",
+  "repository_url": "https://github.com/brandinzhang/LTC",
+  "official_repository_verified": true,
+  "official_binding": "Author arXiv abstract explicitly links brandinzhang/LTC",
+  "repository_commit": "44584bfddae5e6b82bbc182f68588a05e45365bb",
+  "license": "NO LICENSE file in complete pinned recursive tree; permission to copy source not assumed, no code vendored or executed",
+  "actual_files_read": [
+    {
+      "path": "LTCmodel.py",
+      "git_blob_sha1": "510b823261c8d9acfd904bf0c2c6ed426b4c4ebb",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/LTCmodel.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "train_eval.py",
+      "git_blob_sha1": "ffb782cf6f9cd0c6809df5fe9b09637483511f83",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/train_eval.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "mkee.py",
+      "git_blob_sha1": "79503cc90698ea4711bb0d0a4a58710822aae81b",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/mkee.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "main.py",
+      "git_blob_sha1": "41fb5c50edf7e807ddb883909a87c2933c2b1e11",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/main.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "utils/evaluate_utils.py",
+      "git_blob_sha1": "9d46b3515fdb03e9e9b62b8fd46a50362241bcdd",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/utils/evaluate_utils.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/datasets.py",
+      "git_blob_sha1": "84d40300b2941dbb19aa1938dca959782b4a8102",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/data/datasets.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cub.py",
+      "git_blob_sha1": "0b8e12c06e5d8098a7ab0c95143c99c085aedb35",
+      "url": "https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/data/cub.py",
+      "entire_file_read": true
+    }
+  ],
+  "paper_sections_read": [
+    "arXiv method3.1-3.3 partial; remaining experiments/limitations require further reading"
+  ],
+  "original_task": "Image on-the-fly discovery with Known-only supervised offline fitting",
+  "model_inputs": "Active code forces visual-only CLIP image inputs; Known training targets; synthetic image mixup/perturbations; no active vocabulary/text branch in inspected LTCModel",
+  "model_outputs": "Normalized image features, Known logits; nearest-prototype sequential Known/anonymous assignments",
+  "losses": "CE plus weighted SupCon plus Known/pseudo-unknown max-similarity hinge margins; MKEE optimizes input entropy minus RBF batch density; Train quantile/EMA threshold",
+  "training_protocol": "Inspected CUB code labels only Known subset; main reconstructs NCM after each epoch and uses Train tau_ema at unlabeled evaluation; pseudo-unknown generation from current Known batch with gradient-based input perturbation",
+  "online_or_offline": "Offline fitting and own-predicted sequential prototype-growing evaluation",
+  "causal_or_noncausal": "Frozen evaluation encodes batch then sequentially grows/periodically merges prototypes. Not TrackOCD single-event mutation-certified dense online or persistent versioned token accounting",
+  "paper_source_discrepancies": [
+    "Paper describes cross-class mixup; actual sample_mixup randperm has no label/different-class check",
+    "Actual MKEE warmup hardcoded1, parser warmup_epochs_mkee3 unused in train_one_epoch",
+    "Paper illustrative quantiles0.8/0.2 and midpoint differ from actual defaults0.2/0.8 plus margin-adjusted midpoint",
+    "main --eval flag changes log directory, but inspected main still enters training loop; do not run as inference",
+    "Periodic DSU merge compacts prototype indices; retained previous predictions not remapped and no immutable token version map is present",
+    "Evaluation topK limits confusion matrix rows AND GT-index columns; cannot import as fair full denominator metrics"
+  ],
+  "what_to_borrow": "Hypothesis: Known-only simulated off-support margins and Train-only calibration, with Raw-preserving representation controls and no-generator baseline; no claim these synthetic negatives represent true future categories",
+  "what_not_to_borrow": "Unlicensed code, mutable compacting anonymous indices, evaluator GT remapping/column restriction, unsupported --eval execution, image-level pseudo-unknown generator as a drop-in cached-DINO mechanism",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "TAO_data_access": false
+}

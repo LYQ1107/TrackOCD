@@ -298,3 +298,17 @@ no cross-video opportunities; H/Novel/CT null/NOT_APPLICABLE, not perfect.
 This validates wiring with fixed parameters, not discovery gains, primary
 frontend quality, a full57video matched-input study, or uniquely causal
 physical-input attribution. Old numeric-ID stream ordering is not repaired.
+# Bounded predicted Train features now complete; matched semantics still pending
+
+The registered two-worker continuation completed57/57videos,16933predicted IDs,
+73509first≤16observations (1293referenced valid source,72216new). Actual
+supervisor1155.1163105s, ownworker exits0/0, no optimizer/GT/roles/Val/Test.
+Result SHA256`af12c39c6b8513a635cccccd3aa99f0e9c9c5d7fe1a871b5958e35be797954db`;
+private manifest SHA256`39dcf2f750470c880876e4dc99d35a397d5e38ef10ba7dc3f02d150697d343a3`.
+This resolves only the limited all-ID feature input prerequisite. Matched fixed
+semantics will retain249Known/9pseudo cached GT denominators and all16933predictions,
+but selected capped GT cannot certify full ground truth or global purity. Old
+numeric-ID routing, independent prefixes, incomplete frontend release binding and
+missing fixed-history premature-commit/new causal protocol remain. CVPR0 and the
+overall goal are not complete; no Novel/main method gain is claimed here.
+

@@ -47,9 +47,50 @@ and unbounded pseudo-label-driven writes as proven self-correction. The current
 TrackOCD observations (mixed-state reuse and representation collapse) motivate
 testing these hypotheses, but do not prove that TALON will repair them.
 
+## LTC — pinned active-path audit, venue independently unverified
+
+The [author arXiv record](https://arxiv.org/abs/2603.13858) links
+`brandinzhang/LTC`. Actual HEAD/main is
+`44584bfddae5e6b82bbc182f68588a05e45365bb`; the complete tree has no LICENSE.
+CVPR2026 Findings is a repository claim, not yet an independently read proceedings
+binding. No upstream code was copied or executed. Full model, generator, main,
+train/eval, evaluation utilities and CUB dataset construction were read; file
+blob SHA1s and audit fields are in `outputs/trackocd_cvpr/cvpr1/ltc_source_audit.json`.
+
+The [paper methodology](https://arxiv.org/html/2603.13858v1) motivates synthetic
+off-support examples from Known images, a dual similarity-margin objective, and
+Train-only threshold adaptation. This suggests an open-set geometry hypothesis,
+not evidence that synthetic off-support points capture true future categories.
+Method sections were inspected; a full experiment/limitation review is pending.
+
+Actual [model source](https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/LTCmodel.py)
+forces visual-only CLIP with the last visual block trainable; dormant mapper/text
+code is not the executed default. [Training](https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/train_eval.py)
+uses CE, SupCon, Known/pseudo max-similarity hinges and a margin-adjusted Train
+quantile/EMA threshold. [MKEE](https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/mkee.py)
+uses image mixup then one normalized input-gradient step of entropy minus RBF
+feature density. The random permutation does not enforce different-class pairs,
+unlike the paper's described cross-class initialization. The warmup is hardcoded
+to1 despite a parser option; the actual default quantiles/midpoint differ from the
+paper's illustrative values. These are source observations, not measured failures.
+
+Sequential nearest-prototype evaluation periodically merges new prototypes via
+mutual-nearest-neighbor DSU, compacts their numeric indices, and does not remap
+previous emitted predictions. That is not immutable/versioned persistent category
+identity. The [metric source](https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/utils/evaluate_utils.py)
+restricts both prediction rows and GT-index columns when `topK` is used, then uses
+Hungarian mapping. Do not transplant this into full-denominator fixed-Known/CT
+evaluation. The [entry point](https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/main.py)
+does not branch out of its training loop under `--eval`; it was not executed.
+
+Borrow only the hypothesis of lawful Known-only open-set margin training and
+Train-only calibration, with frozen Raw/no-generator controls. A cached-feature
+TrackOCD variant would be our independently designed mechanism, not an official
+LTC reproduction or borrowed-code innovation. New mechanisms remain unselected.
+
 ## Remaining source verification
 
-LTC, the official Assignment-Driven Hash Learning repository (the supplied
+Full LTC paper/venue verification, the official Assignment-Driven Hash Learning repository (the supplied
 Clarence-CV repository is a fork), Grounded Correspondence, VC-CGCD, SlotContrast,
 TRACT, COVTrack, MASA, OVTR, discovery/memory decoupling, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
