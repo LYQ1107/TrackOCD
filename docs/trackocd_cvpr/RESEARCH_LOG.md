@@ -656,3 +656,41 @@ new research scope; nothing has been deleted, no storage pressure is present.
   maintenance, not newtraining or any GoalA/B/C scientific acceptance.
 - Current targeted83tests PASS2.99s, no skips; audit metadata and synthetic
   verifier checks are engineering tests, not upstream or research replication.
+
+### VB-CGCD and HypCD pinned active-path audit
+
+- AcceptedICML2025 VB-CGCD explicitly binds pinned
+  7fe9501b425b5775588d0a06d60c817ee1f04663. Nine whole actual source files,
+  main method/experiments/discussion and selected implementation/count appendices
+  read. No root license in complete tree; no source copied or executed.
+- Released incremental GMM labels are Hungarian-aligned using TrainGT before
+  fitting. Second pass keeps incoming labels after predicted-novel filtering.
+  Empty SVI guide/deterministic parameters/observed likelihood do not establish
+  paper latent Bayesian KL. Whole-session fitting/oracle count and static
+  source-paper differences retained; no dataset/weight assets opened.
+- AcceptedCVPR2025 HypCD binds author main
+  ffc895b7ff38be8502bb7e3bd851f1d2a55dff73. MIT and14 complete relevant
+  HypSimGCD model/loss/train/data/eval scopes read with main paper. Actual
+  direct768D map, fixed-K offline losses, disjoint Test-selected weights and
+  globalHungarian Known remapping are not our persistent causal protocol.
+- Audits are public aggregate/source hash metadata, not scientific reproduction
+  or authorization for upstream imports. Newtraining remains0GPUhours.
+  Dense atomic policy/category-memory, fresh Train folds and GoalsA/B/C pending.
+
+### Twelve scoped actual-core inspection checkpoint
+
+- Completed TALON main experiments/ablations/conclusion and textualA-C
+  limitations review; retained TTAlearning-rate/separation-sign paper/source
+  distinctions. LTC main experiments and textualA-E read; actual official
+  CVPR2026 FindingsPDF firstpage verifies venue and repository, replacing the
+  prior unverified claim. Exact accepted/arxiv equivalence not certified.
+- Coverageindex now counts12 distinct pinned actual active model/loss/train/eval
+  scopes with relevant paper review, including source/config limits. Three
+  MIT extras AGE/DebGCD/HypCD satisfy source-inspection minimum2. Excludes
+  missing-core AssignmentHash/VC/TRACT, paper-onlyDYDM and README-onlyBIAtree.
+  Not12replications, lawful frontend imports, CVPR1 stage or Goal completion.
+- Full85 engineering tests PASS2.95s before new coveragechecks; no GPU training,
+  GT datasets/Novel vocab/TAOTest opened, dependencies installed or processes
+  intervened. Source-review output small; protected recovered assets unchanged.
+- With paper/coverage metadata checks included, full87tests PASS3.00s.
+  No skips or scientific acceptance claimed.

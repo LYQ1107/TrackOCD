@@ -1,0 +1,211 @@
+{
+  "schema_version": "trackocd.cvpr1.review-coverage.v1",
+  "status": "MINIMUM_SCOPED_SOURCE_REVIEW_COVERAGE_MET_NOT_CVPR1_OR_GOAL_ACCEPTANCE",
+  "count_policy": "Unique works with pinned actual active model/loss/train/eval source and relevant main-method/experiment text review; not README, entry-only/missing-core, bytecode or paper-only. Count is scoped inspection, not exact-release replication, causal purity, license authorization or scientific success.",
+  "minimum_required_actual_core_reviews": 12,
+  "scoped_actual_core_reviews": 12,
+  "minimum_required_licensed_extras": 2,
+  "licensed_extra_inspection_reviews": 3,
+  "minimum_scoped_actual_core_reviews_met": true,
+  "minimum_licensed_extra_inspection_reviews_met": true,
+  "entries": [
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/age_source_audit.json",
+      "paper_title": "Adaptive Gaussian Expansion for On-the-fly Category Discovery",
+      "repository_commit": "d54c3147e61caf82a0de808333cebdc552fcf049",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 11,
+      "licensed_extra_for_inspection_substep": true,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/assignment_hash_source_audit.json",
+      "paper_title": "Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery",
+      "repository_commit": "22c94f4d66380256022b264a81383cc7edf6a2e7",
+      "actual_core_scope_review_countable": false,
+      "count_reason": "Imported PHE/core dataset body missing; fork binding to original author Code destination unresolved.",
+      "actual_path_scopes_read": 12,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/covtrack_source_audit.json",
+      "paper_title": "COVTrack: Continuous Open-Vocabulary Tracking via Adaptive Multi-Cue Fusion",
+      "repository_commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 19,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/debgcd_source_audit.json",
+      "paper_title": "DebGCD: Debiased Learning with Distribution Guidance for Generalized Category Discovery",
+      "repository_commit": "9ec30fe3d54dfccd9934a862cf5cb9ff05de6f05",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 13,
+      "licensed_extra_for_inspection_substep": true,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/dydm_paper_source_availability_audit.json",
+      "paper_title": "Decouple Your Discovery and Memory in Continual Generalized Category Discovery",
+      "repository_commit": null,
+      "actual_core_scope_review_countable": false,
+      "count_reason": "Paper-only; author core source not verified.",
+      "actual_path_scopes_read": 0,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/eagc_source_audit.json",
+      "paper_title": "The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery",
+      "repository_commit": "87af6ff66be58a0fef929c343639443d596d533d",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 11,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/grounded_correspondence_source_audit.json",
+      "paper_title": "Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence",
+      "repository_commit": "5d345268797425558b449337519af3ab24aeb6f1",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 12,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": false,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/hypcd_source_audit.json",
+      "paper_title": "Hyperbolic Category Discovery",
+      "repository_commit": "ffc895b7ff38be8502bb7e3bd851f1d2a55dff73",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 14,
+      "licensed_extra_for_inspection_substep": true,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/ltc_source_audit.json",
+      "paper_title": "Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery",
+      "repository_commit": "44584bfddae5e6b82bbc182f68588a05e45365bb",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 7,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/masa_source_audit.json",
+      "paper_title": "Matching Anything by Segmenting Anything",
+      "repository_commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 17,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/ovtr_source_audit.json",
+      "paper_title": "OVTR: End-to-End Open-Vocabulary Multiple Object Tracking with Transformer",
+      "repository_commit": "500e72c19bf5f7f8717546911a5639fdc26bfee5",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 16,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/slotcontrast_source_audit.json",
+      "paper_title": "Temporally Consistent Object-Centric Learning by Contrasting Slots",
+      "repository_commit": "55ec66dc02eeade630805789ef4a6c5df06f21ff",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 13,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/talon_source_audit.json",
+      "paper_title": "TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery",
+      "repository_commit": "4091c2df89100974d316ce05659bc25654fcff1e",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 9,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/tract_source_availability_audit.json",
+      "paper_title": "Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking",
+      "repository_commit": "19f01d72f9f6c212c28fd9cb0171a5432cd41a6a",
+      "actual_core_scope_review_countable": false,
+      "count_reason": "Released tree missing imported core model/classifier/loss/MASA association; training entry is not implementation.",
+      "actual_path_scopes_read": 5,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/vb_cgcd_source_audit.json",
+      "paper_title": "Continual Generalized Category Discovery: Learning and Forgetting from a Bayesian Perspective",
+      "repository_commit": "7fe9501b425b5775588d0a06d60c817ee1f04663",
+      "actual_core_scope_review_countable": true,
+      "count_reason": "Pinned actual active model/loss/train/eval paths read with relevant paper; selected-range/wholefile limits retained in audit. Not implementation acceptance.",
+      "actual_path_scopes_read": 9,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": true,
+      "deployment_or_scientific_replication_certified": false
+    },
+    {
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/vc_cgcd_source_audit.json",
+      "paper_title": "Virtual Category-Guided Continual Generalized Category Discovery",
+      "repository_commit": "6a4e73d966d9e311ec0dfab8d31bf3c232926ef7",
+      "actual_core_scope_review_countable": false,
+      "count_reason": "Core models/vc.py missing; unread .pyc not model-source audit.",
+      "actual_path_scopes_read": 11,
+      "licensed_extra_for_inspection_substep": false,
+      "venue_independently_verified": false,
+      "deployment_or_scientific_replication_certified": false
+    }
+  ],
+  "additional_availability_only": [
+    {
+      "repository": "lytang63/BIA",
+      "commit": "a9618462b7a244fcb3eecd96e3bd9ab75aac50f3",
+      "complete_tree_truncated": false,
+      "tree_files": [
+        "README.md"
+      ],
+      "actual_core_scope_review_countable": false,
+      "scope": "Complete pinned tree contains only README; no actual model/loss/train/eval release in that tree. No global no-code claim or code execution."
+    }
+  ],
+  "remaining_gates": [
+    "Root-supported distinct mechanisms and cross-work gap synthesis",
+    "Exact applicable release/checkpoint/dependency and lawful frontend lineage",
+    "Fresh independent Train/pseudoNovel folds; predictions not GT physical IDs or Novel names",
+    "Dense atomic candidate-policy/versioned category-memory integration and actual GT/future/ID mutations",
+    "Bounded three mechanisms, fair Raw/frozen/reference/multiseed/order/coverage tests and GoalsA/B/C"
+  ],
+  "source_execution_or_new_training": false,
+  "scientific_goal_complete": false,
+  "cvpr1_stage_acceptance_complete": false
+}

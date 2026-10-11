@@ -1,6 +1,21 @@
 {
   "schema_version": "trackocd.cvpr1.source-audit.v1",
-  "status": "PARTIAL_SOURCE_REVIEW_NOT_CVPR1_COMPLETE",
+  "status": "PINNED_ACTIVE_PATH_AND_PAPER_REVIEW_NOT_UPSTREAM_REPLICATION_OR_CVPR1_COMPLETE",
+  "historical_initial_status": "PARTIAL_SOURCE_REVIEW_NOT_CVPR1_COMPLETE",
+  "paper_read_scope": "Author arxiv2603.08075v1 intro/relatedwork/method3.1-3.2.3/Algorithm1, experiments4.1-4.3/setup/metrics/ablations/hyperparameters/conclusion5 and textual appendicesA-C including explicit limitations. Not all figures visually or accepted-versus-arxiv exact equivalence.",
+  "venue_independently_verified": true,
+  "actual_model_loss_training_evaluation_source_read": true,
+  "whole_project_license_read": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "paper_limitations_summary": "Author appendixC.2 notes strong pretrained-backbone/GPU reliance and potential prototype/adaptation instability under very nonstationary or large-category streams. No proven reversible semantic recovery or our dense causal coverage.",
+  "state_memory": "Own-predicted growing normalized Known/anonymous prototypes and batch adaptation, no member-level rollback/quarantine/versioned crossvideo token lineage.",
+  "evaluation": "Top-query-class-count-sized clusters and separate/global Hungarian mapping; those GT cardinality/remapping conventions are not our fixedKnown full-denominator CT. Source test shuffle and non-strict checkpoint loading remain qualified.",
+  "paper_source_followup": [
+    "Paper Eq17/18 has positive beta2 times sum(1-cos) under minimization, which by that literal sign favors similarity; actual trainer188-200 minimizes minus mean(1-cos), favoring separation. Formula sign/normalization distinction, not a measured upstream failure or silent correction.",
+    "Paper main test-time encoder lr1e-4 differs from actual trainer113-130 norm-parameter SGD0.1(CLIP)/0.01(DINO). Exact checkpoint/config binding not verified.",
+    "Main paper describes DINO ViT-B/16; appendixA.2 describes DINOv2ViTBase. Treat release/backbone provenance separately, no exact equivalence claim.",
+    "Paper estimated153 categories on200-classCUB illustrates underdiscovery as well as fragmentation reduction; not category-persistence or ID-invariance proof. Public tables are not our run results."
+  ],
   "required_minimum_works": 12,
   "required_additional_open_source_works": 2,
   "paper_title": "TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery",

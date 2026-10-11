@@ -85,3 +85,71 @@ def test_exact_archive_cleanup_retains_complete_input_receipts():
     assert not review['annotations_read']
     assert not review['external_processes_intervened']
     assert len(review['retained']) == 3
+
+
+def test_vb_cgcd_gt_alignment_and_empty_guide_are_not_hidden():
+    review = public_audit('vb_cgcd_source_audit.json')
+    assert review['repository_commit'] == '7fe9501b425b5775588d0a06d60c817ee1f04663'
+    assert review['official_repository_verified']
+    assert review['actual_model_loss_training_evaluation_source_read']
+    assert not review['whole_project_license_read']
+    assert 'GT' in review['model_inputs']
+    assert 'empty guide' in review['losses']
+    assert 'whole-session' in review['online_or_offline']
+    assert len(review['actual_files_read']) == 9
+    for entry in review['actual_files_read']:
+        assert entry['entire_file_read']
+        assert re.fullmatch('[0-9a-f]{40}', entry['git_blob_sha1'])
+    assert not review['source_execution_or_training']
+    assert not review['twelve_work_two_extra_acceptance_complete']
+
+
+def test_hypcd_license_does_not_certify_causal_category_memory():
+    review = public_audit('hypcd_source_audit.json')
+    assert review['repository_commit'] == 'ffc895b7ff38be8502bb7e3bd851f1d2a55dff73'
+    assert review['official_repository_verified']
+    assert review['whole_project_license_read']
+    assert review['additional_to_user_supplied_ten']
+    assert review['actual_model_loss_training_evaluation_source_read']
+    assert len(review['actual_files_read']) == 14
+    assert all(entry['entire_file_read'] for entry in review['actual_files_read'])
+    assert 'Hungarian' in review['evaluation']
+    assert 'no dynamic birth' in review['state_memory']
+    assert not review['source_execution_or_training']
+    assert not review['TrackOCD_new_method_or_replication_claimed']
+    assert not review['twelve_work_two_extra_acceptance_complete']
+
+
+def test_paper_followups_preserve_static_and_historical_boundaries():
+    talon = public_audit('talon_source_audit.json')
+    ltc = public_audit('ltc_source_audit.json')
+    for review in (talon, ltc):
+        assert review['historical_initial_status'] == 'PARTIAL_SOURCE_REVIEW_NOT_CVPR1_COMPLETE'
+        assert review['venue_independently_verified']
+        assert review['actual_model_loss_training_evaluation_source_read']
+        assert not review['whole_project_license_read']
+        assert not review['source_execution_or_training']
+        assert not review['twelve_work_two_extra_acceptance_complete']
+    assert 'sign' in '\n'.join(talon['paper_source_followup'])
+    assert 'CVPR2026F' in ltc['accepted_paper_url']
+
+
+def test_coverage_counts_scoped_cores_not_availability_or_replication():
+    index = public_audit('review_coverage_index.json')
+    rows = index['entries']
+    assert len({row['audit_file'] for row in rows}) == len(rows)
+    counted = [row for row in rows if row['actual_core_scope_review_countable']]
+    assert len(counted) == index['scoped_actual_core_reviews'] == 12
+    assert sum(row['licensed_extra_for_inspection_substep'] for row in rows) == 3
+    for row in rows:
+        review = json.loads((ROOT / row['audit_file']).read_text())
+        assert review['repository_commit'] == row['repository_commit']
+        assert len(review['actual_files_read']) == row['actual_path_scopes_read']
+        assert not row['deployment_or_scientific_replication_certified']
+    excluded = {Path(row['audit_file']).name for row in rows if not row['actual_core_scope_review_countable']}
+    assert excluded == {'assignment_hash_source_audit.json', 'vc_cgcd_source_audit.json',
+                        'tract_source_availability_audit.json', 'dydm_paper_source_availability_audit.json'}
+    assert index['additional_availability_only'][0]['tree_files'] == ['README.md']
+    assert not index['additional_availability_only'][0]['actual_core_scope_review_countable']
+    assert not index['cvpr1_stage_acceptance_complete']
+    assert not index['scientific_goal_complete']

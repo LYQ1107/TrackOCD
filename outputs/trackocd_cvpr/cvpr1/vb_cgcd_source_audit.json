@@ -1,0 +1,100 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_ACTIVE_PATH_AUDIT_NOT_UPSTREAM_REPLICATION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "Continual Generalized Category Discovery: Learning and Forgetting from a Bayesian Perspective",
+  "year": 2025,
+  "venue": "ICML2025 PMLR267 pp11884-11903",
+  "venue_independently_verified": true,
+  "paper_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/dai25a/dai25a.pdf",
+  "venue_url": "https://proceedings.mlr.press/v267/dai25a.html",
+  "repository_url": "https://github.com/daihao42/VB-CGCD",
+  "repository_commit": "7fe9501b425b5775588d0a06d60c817ee1f04663",
+  "official_repository_verified": true,
+  "official_binding": "Accepted PMLR paper abstract explicitly links daihao42/VB-CGCD; exact experiment/checkpoint release binding not verified.",
+  "additional_to_user_supplied_ten": true,
+  "whole_project_license_read": false,
+  "license": "No LICENSE/COPYING file in complete untruncated pinned tree. Public access is not permission to copy/import; no upstream source copied or executed.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "main.py",
+      "git_blob_sha1": "0def22903d0643e37d25d5b5befc77801529b5d1",
+      "entire_file_read": true
+    },
+    {
+      "path": "classifier/mngmm.py",
+      "git_blob_sha1": "bbc48d44321a1a01569aeca1272a024da3038d3a",
+      "entire_file_read": true
+    },
+    {
+      "path": "clustering/clustering_base.py",
+      "git_blob_sha1": "6af73f1e5b46d66de97f54114187433b5f223ffd",
+      "entire_file_read": true
+    },
+    {
+      "path": "clustering/gmm.py",
+      "git_blob_sha1": "c2d7db4430b1b1b92ae66f69f3435e7bf59df935",
+      "entire_file_read": true
+    },
+    {
+      "path": "utils/dataloader.py",
+      "git_blob_sha1": "17ac64364aacb9b1ab8e95d34461f205bab8a136",
+      "entire_file_read": true
+    },
+    {
+      "path": "dataloaders/cifar100.py",
+      "git_blob_sha1": "9198b36726e1553f5cc6eaa1236c774e187d037c",
+      "entire_file_read": true
+    },
+    {
+      "path": "feature_extractor/sl_finetuned_model.py",
+      "git_blob_sha1": "9f67ce8c3e7dd9936510c0ba5f5f3544014de40a",
+      "entire_file_read": true
+    },
+    {
+      "path": "feature_extractor/dino-cifar100.py",
+      "git_blob_sha1": "42ed368879a52720557e9dc942a5b1030eb23a7b",
+      "entire_file_read": true
+    },
+    {
+      "path": "run.sh",
+      "git_blob_sha1": "fd5b76daaac9cb9358e14be340d10b798961cc63",
+      "entire_file_read": true
+    }
+  ],
+  "paper_read_scope": "Accepted paper introduction/related work, method3.1-3.3/Algorithm1, experiments4.1-4.2/ablations/fewer-labeled setting, conclusion/discussion/impact statement; appendixC.3 hardware/hyperparameters andD.1-D.2 extensions. Not all mathematical appendix proofs, supplemental tables or figures visually.",
+  "original_task": "Session-batched exemplar-free mixed old/new image continual GCD, frozen offline-finetuned backbone, Gaussian class-conditional distribution classifier; not current-frame causal persistent video category discovery.",
+  "model_inputs": "Extracted static-image features, offline Known labels, prescribed base/increment/total class count. Critical active incremental path also reads training GT to align cluster IDs before distribution training; not a label-free path.",
+  "model_outputs": "Fixed num_classes Gaussian mean/full-covariance rows in num_dim PCA space; argmax multivariate-normal log probability over every allocated row, without masking not-yet-introduced rows.",
+  "losses": "Feature extractor uses Known image cross-entropy through BOFT DINO plus linear classifier. Classifier uses NumPyro SVI/Trace_ELBO wrapper but active model has deterministic numpyro.param means/covariances, empty guide and only observed MultivariateNormal sample; no inspected latent prior/variational KL term. Treat as inspected likelihood optimization, not verified Bayesian posterior inference.",
+  "training_protocol": "CIFAR active feature path filters classes<50 then BOFT output.dense/mlp.fc1/mlp.fc2,10epochs/AdamW0.001/batch128/center224. Main defaults1000 distribution steps/batch128/lr4e-6 with100step warmup to10x then exponential0.85/500. PCA384 fitted on first/base training data only and frozen thereafter. Each later session full-data GMM fit then GT-Hungarian aligned labels, initial fit, predicted-novel filtering and second fit.",
+  "online_or_offline": "Offline stage fine-tuning then whole-session clustering/repeated optimization before evaluation. Session-constrained continual benchmark is not single-arrival online inference.",
+  "causal_or_noncausal": "Whole-session GMM and two repeated fitting passes depend on later examples in that session; incremental GT alignment directly influences training state. Pure frozen _predict only features+params but that does not cleanse state lineage. No GT/future/ID mutation certificate.",
+  "state_memory": "Deep-copied fixed-size class means/covariances carry between sessions; no dynamic unknown births, WAIT, quarantine, versioned semantic events or member-level rollback. SVI-state rollback on determinant/NaN stop is optimizer rollback, not category-history correction.",
+  "evaluation": "Direct argmax accuracy on old/new/all/base test sets; training GT Hungarian alignment fixes numerical row labels upstream. Test labels logged every100steps and at stop, but inspected stop decisions are determinant/NaN based, not test-ACC best selection. Do not equate this with lawful label-free discovery or fixed-Known online CT.",
+  "static_source_paper_differences_not_executed_failures": [
+    "main incremental clustering.predict(train_data._x, train_data._y, with_known=True) invokes GT novel_mask/confusion_matrix/Hungarian; matched row labels feed s_classifier.run. This is actual supervised lineage in released path, not merely external evaluation.",
+    "Paper Eq7 describes variational latent means/covariance, prior and KL; model() uses only numpyro.param and observed likelihood with guide=lambda:None. Imported AutoMultivariateNormal is unused. No matrix-normal/inverse-Wishart prior or covariance EMA is implemented in this inspected active path.",
+    "Paper Eq3 includes contrastive loss; sl_finetuned_model actual finetune uses only cross_entropy. Paper appendixC.3 k-means/fixed1e-5 differs from released sklearn GaussianMixture and warmup/exponential4e-6 scheduler.",
+    "Paper relabeling Algorithm1 second SVI uses reassigned labels; train() only filters by predicted>=label_offset and retains original incoming GT-aligned labels for second fitting, not pred_labels as second targets.",
+    "num_classes preallocates future rows; _predict loops every row, including unintroduced zero-mean/identity rows. No active unknown-K/silhouette extension found in inspected tree, despite appendixD.1 result.",
+    "Covariance numpyro.param has no inspected SPD constraint/factor parameterization; determinants in384D may be numerically fragile. No numerical failure was measured; no silent repair or installed NumPyro execution.",
+    "Actual early stopping uses mean determinants, class-count-dependent scale, old determinant >1/<1 branches, step>num_steps/3 and rollback to prior SVI state. Paper Eq11 logarithmic epsilon0.01 rule is not the active comparison.",
+    "scaling_factor and early_stop_ratio are stored but not used in active determinant decisions; do not claim these CLI knobs reproduce paper hyperparameter ablations.",
+    "Main rng_key from args.seed unused; SVI.init hardcodesPRNGKey0 each pass. Source uses typing.override unavailable in basePython3.10; JAX/NumPyro/Optax/continuum/PEFT compatibility not installed or certified.",
+    "StrictPerClassIncrementalLoader computes remainder arrays but returns full x,y pools; reuse across stages can occur by source structure. Not a measured data duplication count or dataset claim.",
+    "Only CIFAR feature/loader path audited; other datasets, checkpoints, external transformers/PEFT/JAX dependency internals and dataset files are unopened."
+  ],
+  "paper_limitations_summary": "Author discussion flags clustering-initialization dependence and small-sample covariance estimation; D.1 count estimation incurs clustering errors. Additional causal/GT/privacy/lifecycle transfer gaps inferred from active source, not author-claimed outcomes.",
+  "TrackOCD_root_connection": "Covariance/likelihood geometry is a testable control for Raw versus adapted discrimination loss and mixed-state reuse, but our historical covariance cause is not established and this GT-aligned session path is not a lawful recovery mechanism.",
+  "what_to_borrow": "Independently implemented bounded Train-only covariance/dispersion diagnostics and frozen-feature controls after lawful fold selection, with full-denominator evaluation and small-sample regularization as hypotheses.",
+  "what_not_to_borrow": "Incremental GT alignment/novel-count oracle/fullsession fitting, inferred Bayesian regularization absent from active code, unsupervised legality by filename, optimizer rollback as reversible semantic memory.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Project license and exact paper/source/checkpoint binding",
+    "Remove GT alignment and session-future dependence in independently implemented lawful control",
+    "Fresh Train-only folds/cardinality/mutation checks; atomic candidate-aware reversible memory"
+  ]
+}

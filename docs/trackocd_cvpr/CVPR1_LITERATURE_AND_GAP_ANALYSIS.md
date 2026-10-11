@@ -1,9 +1,10 @@
 # CVPR-1 literature and gap analysis — partial, not stage acceptance
 
-CVPR-0 remains ongoing. This is read-only source preparation while the registered
-Train feature diagnostic runs; it does not replace the remaining root diagnostics,
-the minimum twelve-work audit, two additional open-source works, independent folds,
-three bounded mechanisms, or Goals A/B/C. No upstream experiment or weights downloaded.
+CVPR-0 remains ongoing; its capped matched-reference/fixed-history diagnostics
+have finished, while dense atomic policy/category-memory integration is pending.
+This is pinned source preparation, not an upstream experiment or a new training
+run. Independent folds, three bounded mechanisms and Goals A/B/C remain pending.
+Historical entries below preserve their original partial-review boundaries.
 
 ## TALON — first pinned model/loss/training/evaluation source review
 
@@ -47,13 +48,14 @@ and unbounded pseudo-label-driven writes as proven self-correction. The current
 TrackOCD observations (mixed-state reuse and representation collapse) motivate
 testing these hypotheses, but do not prove that TALON will repair them.
 
-## LTC — pinned active-path audit, venue independently unverified
+## LTC — pinned active-path audit, Findings venue subsequently verified
 
 The [author arXiv record](https://arxiv.org/abs/2603.13858) links
 `brandinzhang/LTC`. Actual HEAD/main is
 `44584bfddae5e6b82bbc182f68588a05e45365bb`; the complete tree has no LICENSE.
-CVPR2026 Findings is a repository claim, not yet an independently read proceedings
-binding. No upstream code was copied or executed. Full model, generator, main,
+The initial Findings claim was unverified. The later official CVF accepted PDF
+now independently binds CVPR2026 Findings and the author repository (see follow-up
+below). No upstream code was copied or executed. Full model, generator, main,
 train/eval, evaluation utilities and CUB dataset construction were read; file
 blob SHA1s and audit fields are in `outputs/trackocd_cvpr/cvpr1/ltc_source_audit.json`.
 
@@ -61,7 +63,9 @@ The [paper methodology](https://arxiv.org/html/2603.13858v1) motivates synthetic
 off-support examples from Known images, a dual similarity-margin objective, and
 Train-only threshold adaptation. This suggests an open-set geometry hypothesis,
 not evidence that synthetic off-support points capture true future categories.
-Method sections were inspected; a full experiment/limitation review is pending.
+Initial method-only scope was later extended to experiments, conclusion and
+textual appendicesA-E, including explicit limitations. Not all figures were
+visually inspected or accepted/arxiv versions compared line by line.
 
 Actual [model source](https://github.com/brandinzhang/LTC/blob/44584bfddae5e6b82bbc182f68588a05e45365bb/LTCmodel.py)
 forces visual-only CLIP with the last visual block trainable; dormant mapper/text
@@ -434,12 +438,12 @@ static source/config distinctions, not executed failures or silently repaired
 paper replications. Known-only supervision still needs processed-annotation
 lineage: parser does not apply the stored rare-class ignore_ids.
 
-Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
+Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,
 SlotContrast exact checkpoint release/stream qualification,
 TRACT missing core model/loss release, COVTrack lawful frontend/release binding,
-MASA/OVTR exact local frontend/release qualification, DYDM author core source, and additional relevant
+MASA/OVTR exact local frontend/release qualification and DYDM author core source
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.
 
@@ -447,3 +451,94 @@ Matched-reference and fixed-history diagnostics are now completed within
 their capped Train scope; they do not certify dense causal policy/memory.
 Architecture selection still requires the full literature review and lawful
 new folds; no new mechanism is selected here.
+
+### VB-CGCD — covariance hypothesis, released incremental GT path rejected
+
+[Accepted ICML2025 paper](https://proceedings.mlr.press/v267/dai25a.html)
+explicitly binds [author source](https://github.com/daihao42/VB-CGCD/tree/7fe9501b425b5775588d0a06d60c817ee1f04663).
+Nine whole active model/loss/train/data/eval files read and hashed in
+`outputs/trackocd_cvpr/cvpr1/vb_cgcd_source_audit.json`.
+Main method/experiments/ablation/discussion and selected appendixC.3/D.1-D.2
+read; not all proofs, supplemental tables or figures. Complete tree has no
+LICENSE/COPYING; source inspection does not grant copying/import permission.
+
+Actual incremental entry uses true training labels to Hungarian-align GMM
+clusters, then fits the classifier from those aligned labels. The second pass
+filters predicted-new examples but retains incoming targets, rather than using
+classifier reassignment as targets. Whole-session fitting and preallocated
+oracle total class count cannot become causal unlabeled discovery by renaming.
+
+The released SVI wrapper has an empty guide, deterministic class mean/covariance
+parameters and only an observed Gaussian likelihood; no explicit latent prior
+or KL was found on the active path. Neither matrix-normal/inverse-Wishart priors
+nor covariance EMA should be attributed to this inspected implementation.
+Paper contrastive fine-tuning/kmeans/fixed learning rate/stop criterion differ
+from actual CE-only BOFT/GMM/scheduled optimization/determinant stopping.
+Optimizer-state rollback is not reversible semantic membership.
+
+Borrow only as a separately implemented, lawful small-sample dispersion control
+for the observed representation/mixed-memory failures. No upstream execution,
+dataset/weight access, Bayesian replication or scientific improvement claimed.
+
+### HypCD — licensed geometry control, no online category lifecycle
+
+[Accepted CVPR2025 paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_Hyperbolic_Category_Discovery_CVPR_2025_paper.pdf)
+links the [author project](https://visual-ai.github.io/hypcd/) and
+[pinned source](https://github.com/Visual-AI/HypCD/tree/ffc895b7ff38be8502bb7e3bd851f1d2a55dff73).
+MIT license, Apache backbone header and14 whole relevant active-path files
+reviewed in `outputs/trackocd_cvpr/cvpr1/hypcd_source_audit.json`.
+Main method/protocol/experiments/hyperparameters/conclusion read; supplementary,
+other algorithm paths and exact weight release not certified.
+
+Selected HypSimGCD maps DINO CLS768 directly to a clipped Poincare ball and
+Mobius classifier. The declared256 dimension does not build a projection MLP
+in this entry. Known CE/SupCon, self-distillation/mean entropy and angle/distance
+contrastive objectives train a fixed-K offline model; no WAIT, dynamic births,
+versioned events or cross-video semantic membership. Image-only eval is a
+structural observation, not a mutation certificate.
+
+Best checkpoint selection uses disjoint Test old-ACC and mixed-global Hungarian
+mapping, which cannot transfer to our lawful independentfold/fixedKnown protocol.
+Paper versus script curvature/schedule/memax settings remain qualified, not
+silently repaired. No datasets, weights, upstream imports or new training.
+HypCD is another additional MIT source review; AGE and DebGCD already satisfy
+the two licensed-extra source-inspection substep. That does not certify CVPR1
+as complete: remaining exact release, causal/lineage qualification, cross-work
+gap synthesis and actual downstream scientific acceptance are separate.
+
+### Review coverage checkpoint — twelve scoped cores, not twelve replications
+
+`outputs/trackocd_cvpr/cvpr1/review_coverage_index.json` distinguishes the
+inspection substep from scientific acceptance. Twelve unique actual active
+model/loss/train/eval path reviews now have relevant main-method/experiment
+paper text; no README, missing core, unread bytecode or paper-only entry counted.
+Selected ranges remain explicit, not whole-repository claims.
+
+| Work/group | Scope counted | Transfer boundary retained |
+| --- | --- | --- |
+| TALON, LTC | 2 current-image OCD cores | Batch/order, mutable rows, metric remapping and no rollback |
+| Grounded Correspondence, SlotContrast | 2 temporal object-centric cores | Physical slots and adjacent instance consistency != semantic category persistence |
+| COVTrack, MASA, OVTR | 3 physical frontend cores | Vocabulary/supervision/release lineage and retrospective voting |
+| EAGC, DebGCD, HypCD | 3 representation/gradient/distribution cores | Offline fixed-K, test-selected weights, no causal lifecycle |
+| AGE, VB-CGCD | 2 Gaussian-state cores | Unbounded birth/no rollback or session-GT-aligned fitting |
+
+AGE, DebGCD and HypCD are three additional MIT source inspections, surpassing
+the minimum two licensed-extra inspection requirement. This permits neither
+unlicensed-source copying nor automatic import or scientific acceptance.
+AssignmentHash/PHE, VC-CGCD, TRACT and DYDM are excluded from actual-core counts.
+BIA pinned tree contains only README, also availability-only.
+
+TALON follow-up reads main experiments/ablation/hyperparameters/conclusion and
+textual appendicesA-C, including author limits on backbone/GPU dependence and
+large/nonstationary-stream instability. Its actual TTA SGD0.1(CLIP)/0.01(DINO)
+differs from paper1e-4. Literal paper positive separation-distance term differs
+from actual negative mean-distance term; no silent correction or runtime claim.
+LTC follow-up reads experiments and textual appendicesA-E. Accepted
+[Findings paper](https://openaccess.thecvf.com/content/CVPR2026F/papers/Zhang_Learning_through_Creation_A_Hash-Free_Framework_for_On-the-Fly_Category_Discovery_CVPRF_2026_paper.pdf)
+firstpage independently verifies venue/repo. Author old/new tradeoff and possible
+future text do not justify Novel-name input or image-generator equivalence on
+cached track features. The source warmup1 agrees with paper appendixB.2; the
+unused parser3 is a CLI/source distinction, not a paper warmup mismatch.
+
+Cross-work root-supported mechanism synthesis, new lawful folds and actual
+dense policy/memory mutation tests remain the next scientific gates.

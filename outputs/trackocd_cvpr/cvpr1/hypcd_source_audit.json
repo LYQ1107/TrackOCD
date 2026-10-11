@@ -1,0 +1,123 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_HYPSIMGCD_ACTIVE_PATH_AUDIT_NOT_UPSTREAM_REPLICATION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "Hyperbolic Category Discovery",
+  "year": 2025,
+  "venue": "CVPR2025 CVF accepted open-access paper pp9891-9900",
+  "venue_independently_verified": true,
+  "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_Hyperbolic_Category_Discovery_CVPR_2025_paper.pdf",
+  "repository_url": "https://github.com/Visual-AI/HypCD",
+  "repository_commit": "ffc895b7ff38be8502bb7e3bd851f1d2a55dff73",
+  "official_repository_verified": true,
+  "official_binding": "Accepted CVF paper links visual-ai.github.io/hypcd; author's project Code link resolves Visual-AI/HypCD. Exact released evaluation checkpoint not audited.",
+  "additional_to_user_supplied_ten": true,
+  "whole_project_license_read": true,
+  "license": "MIT2025VisualAILab fully read; Apache2Facebook backbone header and pmath attribution to Geoopt also read. No source copied/imported/run.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "b56077b92aee673f8119fe698c759d7d7f3909b8",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/model.py",
+      "git_blob_sha1": "d4b7e4471d08251b0de76c905126ba26c153380c",
+      "entire_file_read": true
+    },
+    {
+      "path": "train/train_HypSimGCD.py",
+      "git_blob_sha1": "9fba3a33280d9ca0c9a72170c27d673ff9d197d5",
+      "entire_file_read": true
+    },
+    {
+      "path": "hyptorch/nn.py",
+      "git_blob_sha1": "152c8652247961c9d455017b274c97b6346d35e2",
+      "entire_file_read": true
+    },
+    {
+      "path": "hyptorch/pmath.py",
+      "git_blob_sha1": "92e95a7db65c439dfb412b062cc1acbe94c224d0",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/vision_transformer.py",
+      "git_blob_sha1": "008bbcdf92cd60fdd4b627b278edc01f58244451",
+      "entire_file_read": true
+    },
+    {
+      "path": "util/cluster_and_log_utils.py",
+      "git_blob_sha1": "344ea1c4a41f8093245b2c18b26b1e2b1495b99d",
+      "entire_file_read": true
+    },
+    {
+      "path": "scripts/train_HypSimGCD.cmd",
+      "git_blob_sha1": "aa686507f8c9fbc3e8f53cdc9e8f7d6e384ef98f",
+      "entire_file_read": true
+    },
+    {
+      "path": "scripts/eval_HypSimGCD.cmd",
+      "git_blob_sha1": "fdc97a48655012e7e37e624d7bc37168f3e47856",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/get_datasets.py",
+      "git_blob_sha1": "362c7ae65c2cfcbca5e362e5dcc5f7f5f8296227",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cub.py",
+      "git_blob_sha1": "396a0516a5ea0cc1b612c59c36cfcb1e1b76f4bf",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/data_utils.py",
+      "git_blob_sha1": "d05d7a10af60cfdb42ae606ffefa28a87e81bed8",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/augmentations/__init__.py",
+      "git_blob_sha1": "3988aadb4f6390d10f15fdbc161063089df660dc",
+      "entire_file_read": true
+    },
+    {
+      "path": "config.py",
+      "git_blob_sha1": "59c47e3a17c92ebd9f7f61804000017d3f6149a8",
+      "entire_file_read": true
+    }
+  ],
+  "paper_read_scope": "Accepted main intro/related work, method3.1-3.5, experiment4.1-4.4/data/protocol/comparison/hyperparameters/qualitative text and conclusion5. Not all supplementary, figures visually or HypGCD/HypSelEx implementation paths.",
+  "original_task": "Offline partially labeled Known and unlabeled Known/Novel image GCD with known total class count; not persistent causal video category discovery.",
+  "model_inputs": "Two224px stochastic views, offline Known labeled mask/classes for supervised CE/SupCon; unlabeled labels retained by dataset but masked out of inspected supervised losses; no text or semantic-name input.",
+  "model_outputs": "DINOv1 ViT-B/16 CLS768 clipped then origin exponential map in same dimensional Poincare ball; Mobius linear+bias projected output supplies fixed Known+Novel logits. args.mlp_out_dim256 does not instantiate a learned projection MLP on this active HypSimGCD path.",
+  "losses": "Known CE/SupCon, all-image detached opposite-view self-distillation plus batch mean-entropy regularizer, and angle-versus-negative-hyperbolic-distance contrastive objectives whose distance weight linearly ramps. Known/unlabeled balance0.35. Distance representation uses same-image positives, not across-video same-category matches.",
+  "training_protocol": "Selected shell DINOv1 lastblock11 trainable,200epochs/batch128/8workers,SGD0.1/momentum0.9/weightdecay5e-5/cosine to0.0001, fixed0.01 RiemannianAdam head optimizer/stabilize10; equal labeled/unlabeled sampling weight mass. Detached same-network teacher temp0.07→0.04 over30epochs, student0.1, shellmemax1. CUB shell examplec0.1/r2.0/angletempscale0.3. Frozen portions remain untouched except through representation gradients to lastblock.",
+  "online_or_offline": "Joint offline training over full mixed dataset; image-only static inference with fixed classifier, no test-time adaptation or arrival updates.",
+  "causal_or_noncausal": "Inspected eval model receives image only and appends labels solely for external batch metrics. No historical state/futureframe input; this structural fact is not an actual GT/future/ID mutation or persistent-memory certificate.",
+  "state_memory": "Fixed known total classifier cardinality; no dynamic birth/token allocation, WAIT, reversible category membership, crossvideo semantic lifecycle or versioned output ledger.",
+  "evaluation": "Eval-only branch skips training but constructs all datasets/loaders first, loads model/projector/classifier and evaluates unlabeled Train queries. Training selects best weights using disjoint Test old-ACC after mixed-global Hungarian; Known IDs can be remapped. This selection/remapping is forbidden for our fixedKnown/independentfold/sealed protocol.",
+  "static_source_paper_differences_not_executed_failures": [
+    "Main HypSimGCD directly ToPoincare(backbone768)→HypLinear768/K; declared mlp dimension256/3layers unused in construction. Paper256 projection concerns nonparametric GCD, not proof that this entry uses256.",
+    "ToPoincare defaults train_c=False/train_x=False, so map has no trainable parameters; standalone HypLinear stores ordinary nn.Parameter, RiemannianAdam actual classifier update path. No claim every tensor is geoopt ManifoldParameter.",
+    "Distance weight=(epoch+1)/200 with default start0/end200, not exactzero firstepoch. Angle temperatures are scaled by script hyper_temp_scale; both distance and angle branches computed even at finalzero blend weight.",
+    "Paper main defaultcurvature0.05 finegrained/0.01 generic differs from shell examplec0.1 andCIFAR100c0.05. Exact paper/source/checkpoint experimental settings not bound.",
+    "Paper main cosine endpoint0.001 differs from source eta_min=args.lr*1e-3=0.0001 forlr0.1. Shellmemax1 differs from main default2.",
+    "test() sets hyperbolic heads eval; next epoch student.train() only. Inspected heads contain no dropout/BatchNorm so this flag distinction is not an asserted training numerical failure.",
+    "Training best-test selection reads disjoint Test targets; eval funcs v2/v2b can globally relabel Known rows. Not lawful Train selection or CT persistence even if image-forward itself ignores labels.",
+    "CUB loader opens attributes for metadata but returns only image/target/index; no attribute/text feed in audited path. No CUB data, split pickle, GT annotations, weights or TAOTest assets were read here.",
+    "Paper covers nonparametric semi-supervised kmeans andHypSelEx; those source bodies, DINOv2 backbone and count estimator were not read/executed, not counted in audited14files.",
+    "Base environment geoopt/hyptorch dependencies not installed, weights not fetched, GPU inference/training not run; static numerical formulas are not performance validation."
+  ],
+  "paper_limitations_summary": "Main hyperparameter studies show curvature/clipping/loss weighting dataset sensitivity; no dedicated main limitations section read. Fixed-K offline GCD and no online lifecycle are inferred transfer limitations, not a claimed proof of hierarchical causality or our adapter-collapse solution.",
+  "TrackOCD_root_connection": "Alternative geometry plus explicit Raw/frozen controls offers a bounded representation mechanism for observed rank/pseudoNovel discrimination loss. Published image results do not establish same-semantic crossvideo consistency or fix early contaminated state writes.",
+  "what_to_borrow": "Independently implemented, Train-selected geometric control with exact loss normalization and Raw comparison, legal predicted-track positives and independent pseudoNovel folds.",
+  "what_not_to_borrow": "True novel cardinality, Test-selected best weights, mixedHungarian remapping as fixedKnownCT, sameinstance contrast as semantic persistence or offline fixed head as versioned memory.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Exact applicable paper/source/weight binding and dependency qualification",
+    "Train-only cardinality/hyperparameters/checkpoint selection",
+    "Actual label/future/ID mutation tests; atomic candidate-aware reversible category memory"
+  ]
+}
