@@ -75,3 +75,9 @@ in2/90learned and7/10fixed-baseline pairs. New causality protocol repair is
 required; old source/results remain intact. Capacities were non-binding,
 not evidence of a general capacity-independent method.
 No training budget spent; no new successful method or CVPR readiness claimed.
+
+Matched-Train asset preflight completed in19.83s without model/GPU:57videos,
+2065local images, verified existing checkpoints and private image-only plan.
+Only a44-forward, one-video physical smoke is now being registered. Full
+predicted-Train execution is not launched; provenance/truncated-reference
+limitations and old ID-routing failure remain explicit.

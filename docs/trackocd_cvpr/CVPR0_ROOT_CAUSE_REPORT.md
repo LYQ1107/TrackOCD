@@ -143,3 +143,21 @@ then actually rerun ID/category/event/purity/future and role isolation tests.
 This protocol repair is required regardless of whether a new model scores well.
 Remaining CVPR-0 evidence: complete action-logit/error/memory traces and a
 matched Train predicted-vs-GT physical input diagnostic; no phase-complete claim.
+
+## Matched Train input preparation, physical smoke not yet run
+
+All57previously frozen development videos have2065local Train annotation-cadence
+images totaling248321596B. Metadata-only preflight byte-skips annotations and
+categories, verifies all current image hashes and existing frozen DINO/MASA
+checkpoint bytes, and binds a private590116B image-only plan by SHA256.
+No new images, weights or environments are needed. Planned new physical and
+feature payload ceiling1GiB; first physical smoke is only one40-image video
+plus4changed-future forwards, separately source/config registered.
+
+The [official MASA paper](https://arxiv.org/html/2406.04221v1) and
+[pinned training documentation](https://github.com/siyuanliii/masa/blob/c5472b9c7615f35abdf1188cb1a0c5408fe50d66/docs/train.md)
+support generic unlabeled-image association learning. This supports a limited
+publication-level diagnostic route, **not an exact checkpoint-stage data/config
+binding or a qualified primary frontend**. The old GT reference has258tracks/
+2949capped observations; it is not full-track truth. Annotated cadence and
+truncated GT must stay explicit in any upcoming matched-input comparison.

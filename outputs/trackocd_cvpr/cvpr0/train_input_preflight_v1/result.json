@@ -1,0 +1,45 @@
+{
+  "DINO": {
+    "bytes": 346378731,
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73"
+  },
+  "GT_cached_observations": 2949,
+  "GT_reference_tracks": 258,
+  "MASA": {
+    "bytes": 558882875,
+    "checkpoint_release_stage_binding": "INCOMPLETE_PUBLIC_ROUTE_ONLY",
+    "native_model_config_sha256": "097a653022d84e81a4b20f2d83d7c2f355d19a8133fab779017bc95439ce73c2",
+    "not_qualified_primary": true,
+    "sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+    "verified_upstream_files": 14
+  },
+  "TAO_Val_or_Test_access": false,
+  "annotation_or_category_arrays_JSON_decoded": false,
+  "config_sha256": "ae81a21387c8357c4af01d5f4766b56524df080ba4801b4061000f2e1355291b",
+  "existing_image_bytes": 248321596,
+  "final_holdout_labels_read": false,
+  "historical_reference_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "image_count": 2065,
+  "interpretation": "Truncated-GT-reference, annotated-cadence, limited-provenance diagnostic; not clean end-to-end main",
+  "model_executed": false,
+  "new_images_weights_or_environments_downloaded": false,
+  "planned_new_physical_and_feature_payload_ceiling_bytes": 1073741824,
+  "private_plan": {
+    "bytes": 590116,
+    "filename": "private_image_plan.json",
+    "sha256": "4d12af78a8b321540338915a95e358df452704e33282041693c85cde9f78668f"
+  },
+  "resources": {
+    "GPU_hours": 0,
+    "disk_free_bytes": 69084364800,
+    "peak_RSS_bytes": 847216640,
+    "wall_seconds": 19.8313863259973
+  },
+  "reuse_existing_environment": "/data3/liuyeqiang/.venvs/trackocd-masa-smoke",
+  "source_sha256": {
+    "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py": "fcf2793026088d7cfa974525b595b9aad96453af674509d2a67ea2288fff0603",
+    "src/trackocd_cvpr/metadata_only.py": "505d23ca5b7d921e9d6481453626551ce5191ecca6b5d5bb45c3851d109ab95d"
+  },
+  "status": "COMPLETE_METADATA_ASSET_PREFLIGHT_NOT_PHYSICAL_SMOKE",
+  "video_count": 57
+}

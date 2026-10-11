@@ -99,3 +99,12 @@ Register no-GPU asset/plan preflight, then a separate native physical smoke.
 Do not pretend this incomplete-release-provenance frontend is a qualified
 primary, or that truncated GT makes a clean full end-to-end input ablation.
 All22CVPR tests passed in2.62s before this preflight registration.
+
+Registration`18e6c65` pushed/fetched/remotely verified. Asset preflight completed
+in19.83s, noGPU/model/training.2065current Train images, DINO346378731B and
+MASA558882875B existing checkpoints byte-hashed;14pinned upstream files verified.
+Private image-plan SHA`4d12af78a8b321540338915a95e358df452704e33282041693c85cde9f78668f`
+and590116B bind the57-video plan. Source-side labels/categories were not decoded.
+Next register only first40-image video +4changed-future forwards (44ceiling),
+one freshly idle GPU,600s/8GiBGPU/4GiBRSS, no new assets or training. This smoke
+does not authorize full57-video execution or qualify a strong clean frontend.
