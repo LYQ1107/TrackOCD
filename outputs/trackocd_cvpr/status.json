@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_MATCHED_TRAIN_PHYSICAL_REGISTERED",
+  "status": "ACTIVE_CVPR0_MATCHED_TRAIN_PHYSICAL_RUNNING",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
@@ -11,5 +11,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Launch bounded registered Train physical diagnostic on fresh idle UUID; stream retained cross-video state reuse while owned inference runs; semantic feature/evaluation followup needs separate registration"
+  "next": "Owned bounded Train physical diagnostic running under494615b; execute registered retained cross-video state reuse; semantic feature/evaluation followup needs separate registration"
 }

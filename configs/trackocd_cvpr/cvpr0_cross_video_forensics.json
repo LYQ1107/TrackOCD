@@ -1,0 +1,18 @@
+{
+  "schema_version": "trackocd.cvpr0.cross-video-forensics.v1",
+  "input_directory": "outputs/trackocd_cvpr/cvpr0/state_trajectories_v1",
+  "input_result_sha256": "274c1cb503b424bc3a4bfc74e51819fbfe6147fda197fb700b3bbd933ce9ac07",
+  "private_trace_sha256": "1cde037dda55328902e3dc6a533ef29a2e87c713130a76f7a6bae30741d6c78f",
+  "expected_cases": 90,
+  "expected_rows": 21915,
+  "expected_states": 38,
+  "output_directory": "outputs/trackocd_cvpr/cvpr0/cross_video_state_forensics_v1",
+  "cpu_workers": 1,
+  "wall_seconds_ceiling": 120,
+  "rss_bytes_ceiling": 1073741824,
+  "GPU_used": false,
+  "model_forward": false,
+  "GT_labels_newly_read": false,
+  "interpretation": "Actual already retained histories; cross-video reuse means a different video was present before this write, not final video count",
+  "raw_private_rows_published": false
+}

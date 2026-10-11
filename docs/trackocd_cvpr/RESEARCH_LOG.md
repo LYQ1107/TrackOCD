@@ -184,3 +184,17 @@ new research scope; nothing has been deleted, no storage pressure is present.
   and no-copy/changed-source reuse tests included. CLI import checked.
   Actual private plan and source video integrity preflight also run before
   any GPU request. No training budget consumed or data deleted.
+### Physical diagnostic launched; cross-video chronology registered
+
+- Registered494615b654cbd7d2163276c318266c3c4efc1f24 pushed/fetched and exact
+  remote SHA checked before owned supervisor started. Fresh idle UUID selected
+  by code, not historical index. Worker244295 observed132.01s/410new forwards,
+  11of57videos complete; current process is ours, foreign jobs untouched.
+- Fresh core/v2/CVPR regression417passed59.48s. Available disk65240059904B;
+  no data cleanup needed/performed. Current physical/source files stay frozen.
+- Separate CPU/no-model registration: stream21915retained state rows from
+  90cases, verify every prior/post member/purity snapshot and final38states;
+  count Existing cross-video reuses from *prior* videos, not final video count.
+  No new GT labels/model forwards/optimization;120s/RSS1GiB bounds.
+- Actual36CVPR tests passed2.33s including chronological/purity tampering and
+  cross-video prior-history fixtures; source CLI import checked.
