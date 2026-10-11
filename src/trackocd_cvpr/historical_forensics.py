@@ -34,6 +34,8 @@ class SealedForensics:
         self.events = 0
 
     def consume(self, video, physical, kind, known, token):
+        # Parquet iterators yield NumPy scalars; keep public JSON native-typed.
+        video, physical, kind, known, token = map(int, (video, physical, kind, known, token))
         if kind not in range(len(KINDS)):
             raise ValueError("Invalid sealed action")
         action = KINDS[kind]

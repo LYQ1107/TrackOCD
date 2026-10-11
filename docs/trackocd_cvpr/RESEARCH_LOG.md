@@ -15,3 +15,16 @@ used an actually idle UUID after process/resource checks; no training occurred.
 The six new tests check absorbing contamination, unknown-member distinction,
 invalid token lifecycle, truncated ledgers and future append. They are forensic
 unit tests, not a claim that the new end-to-end causal protocol is validated.
+
+Registration `20358ac` was pushed, fetched and remotely verified before work.
+The first CPU audit verified all 60 ledgers and all evaluator count assertions,
+but final JSON serialization failed on NumPy integer counters. This is an
+engineering failure, not a scientific finding or a completed delivery. Its
+partial CSVs and progress are preserved. Normalize input scalar types, add a
+strict JSON test, register a separately named bounded retry; no training or
+new inference is involved.
+
+User authorized cleaning unused project data if storage becomes insufficient.
+No deletion is necessary now. Inventory and exact references must precede any
+cleanup; preserve unique assets, active jobs, valid shards, historical results
+and other projects. Ambiguous assets require user confirmation.

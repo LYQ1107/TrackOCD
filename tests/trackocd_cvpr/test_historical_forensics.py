@@ -1,4 +1,6 @@
 import pytest
+import json
+import numpy as np
 from src.trackocd_cvpr.historical_forensics import SealedForensics
 
 
@@ -52,3 +54,10 @@ def test_future_append_keeps_observed_counts_identical():
     b.consume(2, 1, 2, -1, 0)
     assert a.finish()["mixed_states"] == 0
     assert b.finish()["mixed_states"] == 1
+
+
+def test_parquet_numpy_scalars_serialize_to_strict_json():
+    a = SealedForensics({(1, 1): ("known", 7)}, 1)
+    a.consume(*map(np.int64, (1, 1, 0, 7, -1)))
+    result = json.loads(json.dumps(a.finish(), allow_nan=False))
+    assert result['counts']['correct_known'] == 1
