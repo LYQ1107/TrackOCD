@@ -544,3 +544,19 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Training-gradient hypothesis is distinct from our selected-checkpoint CE/risk
   evidence; source review is not a new method or CVPR1 twelve-work/two-extra PASS.
   Storage freshcheck16590487552B above10GiB reserve; no deletion, training0.
+
+### AGE source review and additional-work qualification
+
+- OfficialICLR2026 proceedings/acceptedPDF explicitly bind Ashengl/AGE,
+  letterl; pinned d54c3147e61caf82a0de808333cebdc552fcf049 MIT fullyread.
+  Actual model/loss/Train/held-out-support calibration/Gaussian-update/eval
+  reviewed. No source/data/checkpoint/bytecode run or downloaded.
+- Label-free query-update structural evidence distinguished from evaluator
+  labels and separate oracle-K transductive KMeans comparator. No end-to-end
+  mutation or fixedKnown/CT acceptance claimed. Source numeric/prior/window/
+  scheduling/seed differences recorded, not silently patched.
+- Earlier raw4line source-prefix reader ended curl23; prefix proves literal1
+  followed by comment (valid expression), not a wholefile hash or syntaxfailure.
+- AGE additional MIT audit; EAGC no whole-project license, so second licensed
+  extra not certified. Full twelve-work audit/method choice/new folds and
+  dense causal atomic policy-memory integration pending; training0, no cleanup.

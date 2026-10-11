@@ -270,6 +270,42 @@ Machine-local requirements are not installed. Consider reference/geometry
 controls only after lawful independent folds and complete literature review;
 no mechanism chosen, no training, no total CVPR1 acceptance here.
 
+### AGE — explicit Gaussian update, still no reversible category lifecycle
+
+[ICLR2026 proceedings](https://proceedings.iclr.cc/paper_files/paper/2026/hash/ba9e3d60610f3525717665966d86e0cd-Abstract-Conference.html)
+and its [accepted PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/ba9e3d60610f3525717665966d86e0cd-Paper-Conference.pdf)
+bind [Ashengl/AGE](https://github.com/Ashengl/AGE), letter l (earlier OCR digit1
+not accepted), pinned`d54c3147e61caf82a0de808333cebdc552fcf049`. MIT fully
+read. Actual model/loss/Train/calibration/stream/update/CUBsplit/evaluation
+source reviewed; evidence`outputs/trackocd_cvpr/cvpr1/age_source_audit.json`.
+No source installed/executed, dataset or checkpoint downloaded.
+
+Known-support-only training is followed by held-out Known calibration and
+sequential density-based category discovery. Simple thresholding, covariance
+quality and image-stream benchmark limits remain; no video CT certified.
+
+Actual source: CE plus SupCon0.5 fine-tunes block11 and a256D BN/GELU head;
+calibration fits thresholds/PCA42/covariance on held-out support only. Inliers
+keep Known IDs, outliers create a new row when density argmax is Known or
+update an existing discovered row. Query labels/mask feed metrics, not this
+update. Whole-query frozen feature collection alone is not future leakage;
+separate default-on oracle-K KMeans does not feed AGE updates. No mutation test.
+
+Density exponentiation reintroduces underflow risk after computing log-PDF;
+covariance/features have unresolved float64/float32 conventions. These are
+static issues, not measured failures. New-cluster prior averages all current
+covariances, not exactly fixed global covariance. Percluster window32 does not
+bound total cluster count. Numeric rows append within one evaluation, with no
+WAIT, quarantine, rollback or versioned split/merge. Every5epoch scheduler/saves
+and fixed seed0 also require faithful reporting, not silent reproduction fixes.
+Global Hungarian evaluation can remap Known identities. No best-by-GT selection
+is implemented in this active path, unlike EAGC; no new method chosen here.
+
+AGE is an additional MIT repository source review. EAGC is an additional
+public-code review but has no whole-project license, so it is not certified as
+the second licensed open-source extra. Twelve-work/two-extra acceptance remains
+pending; availability findings cannot replace missing actual core audits.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,

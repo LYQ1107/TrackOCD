@@ -1,0 +1,111 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_ACTIVE_MODEL_LOSS_STREAM_REVIEW_NOT_UPSTREAM_REPLICATION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "Adaptive Gaussian Expansion for On-the-fly Category Discovery",
+  "year": 2026,
+  "venue": "ICLR2026 official proceedings/accepted PDF independently verified",
+  "venue_independently_verified": true,
+  "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ba9e3d60610f3525717665966d86e0cd-Paper-Conference.pdf",
+  "venue_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/ba9e3d60610f3525717665966d86e0cd-Abstract-Conference.html",
+  "repository_url": "https://github.com/Ashengl/AGE",
+  "repository_commit": "d54c3147e61caf82a0de808333cebdc552fcf049",
+  "official_repository_verified": true,
+  "official_binding": "Official proceedings accepted PDF page1 explicitly links Ashengl/AGE, letter l. Earlier search OCR Asheng1/digit1 is not accepted; GitHub digit1 repo404.",
+  "additional_to_user_supplied_ten": true,
+  "whole_project_license_read": true,
+  "license": "MIT2025ChunmingLi fully read; backbone Apache2.0Facebook header also read. No upstream code copied, installed or executed.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "efdfb3758b812efddf848337311124e9648d0c01",
+      "entire_file_read": true
+    },
+    {
+      "path": "main.py",
+      "git_blob_sha1": "dc4e6a87bfe33ce70280957261531aaf65f13402",
+      "entire_file_read": true
+    },
+    {
+      "path": "project_utils/AGE.py",
+      "git_blob_sha1": "45faec3e55eb15d777adfff8e00618a49cd0884a",
+      "entire_file_read": true
+    },
+    {
+      "path": "vision_transformer.py",
+      "git_blob_sha1": "c229b4ffc96bd9bf8068e27b8ab66a46f461bbcc",
+      "entire_file_read": true
+    },
+    {
+      "path": "project_utils/cluster_and_log_utils.py",
+      "git_blob_sha1": "19906b95bab8824446b0d310d030938258614ae1",
+      "entire_file_read": true
+    },
+    {
+      "path": "project_utils/cluster_utils.py",
+      "git_blob_sha1": "a01698bc11ee397684643d2e80b6735fede3aeca",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/get_datasets.py",
+      "git_blob_sha1": "f260ac82ed5e245350c7308589fee463e72de312",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/data_utils.py",
+      "git_blob_sha1": "d05d7a10af60cfdb42ae606ffefa28a87e81bed8",
+      "entire_file_read": true
+    },
+    {
+      "path": "config.py",
+      "git_blob_sha1": "1217bb1959820f123812fac2a6bcd0cc62a92fe2",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cub.py",
+      "git_blob_sha1": "33b56234bf80e149ce14d9050964a64755a6c7b2",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/augmentations/__init__.py",
+      "git_blob_sha1": "0345af0aac31570708d7623883f2208613853a28",
+      "entire_file_read": true
+    }
+  ],
+  "paper_read_scope": "Abstract/intro/method3.1-3.4/experiments4/ablations5/conclusion6; appendixA.6-A.13 pseudocode/stability/order/window/future work and selectedA.1-A.3 text; no visual inspection of all figures or proof certification.",
+  "original_task": "Offline support-only Known image training plus held-out support calibration and sequential class discovery on unseen image query stream.",
+  "model_inputs": "Two224px augmented Known images with labels during training. Held-out support Known images/labels for confidence thresholds, PCA and covariance fitting. Query model/classifier visual input only; labels kept by evaluator, not passed into inspected AGE.add_old_points.",
+  "model_outputs": "Fixed Known head predictions or monotonically appended discovered-category row indices; no physical track-ID input.",
+  "losses": "Known CE of normalized256D head logits divided0.1 plus SupCon0.5 on two-view projected representations. ViT-B/16 backbone only last block11 trainable, 768D input→3layer256D MLP with BN/GELU→weight-normalized Known-only classifier.",
+  "training_protocol": "Actual main defaults100epochs/batch128/headSGD0.005/backboneSGD0.025/momentum0.9/weightdecay5e-5. Every5epochs extraction/evaluation/checkpoint saves. Cosine schedulers step only inside this every5epoch branch, not everyepoch.",
+  "calibration": "Held-out20% of selected Known labeled support, before query exposure. Perclass max-softmax mean-minus0.8sample-std mixed0.5 with global mean threshold. PCA42D fit only support-calibration features; alternate supervised reductions also support labels only.",
+  "stream_update": "Frozen eval image features then arrival-order loop; outliers compare Gaussian densities of Known+discovered rows. If argmax is Known, create novel row with current feature and average covariance over existing cov_known rows; otherwise update chosen discovered mean/count and recent-window LedoitWolf covariance blended with fixed global covariance. Inliers bypass bank to Known class.",
+  "causal_or_noncausal": "Structural AGE state update uses only current feature/earlier bank and frozen support statistics; wholequery feature collection is not by itself future-dependent forward. Optional separate default-on KMeans is transductive/oracle-total-K but its predictions do not feed AGE. No changed-future/ID/role mutation run.",
+  "state_memory": "Known rows not query-updated; discovered numeric indices append without reset within one AGE instance. Instance recreated each full evaluation. Percluster window32 but totalcluster count unbounded; no WAIT/candidate-set classifier/quarantine/reversal/versioned splits/merges.",
+  "evaluation": "All/Old/New uses global GT-Hungarian remapping including Known identities, despite direct Known prediction. Train-unlabelled GT accuracies printed every5epochs; no best-by-GT selection implemented in inspected active path, checkpoints simply overwritten then. No fixedKnown/CommitCT evaluation.",
+  "static_findings_not_executed_failures": [
+    "Paper3.1 says real-time GT received, but active labels/mask used for metrics; query labels do not enter Gaussian updates. No training-supervision or runtime purity certification inferred from either statement.",
+    "Paper Eq13 promotes log-density for underflow avoidance; _pdf_batch computes log_pdf then torch.exp before argmax. Numerical underflow risk not measured.",
+    "Initial cov_matrix uses torch.from_numpy(np.cov(...)) with NumPy float64 while query/features are explicit float32; no uniform dtype cast before triangular solve. Compatibility unexecuted.",
+    "On spawn, prior is mean of all current cov_known including previously discovered covariances; not exactly fixed global covariance. Count/mean history uses all assigned samples, covariance uses window32, paper mainwindow20.",
+    "Seed argument default1 is not honored by seed_torch(0) at entry; inference reseeds0. Multi-seed/order mutation not executed.",
+    "SupCon weight0.5 is hardcoded despite --sup_con_weight; --save_best_thresh unused. Scheduling only every5epochs differs from an assumed100cosinesteps.",
+    "Known support classes absent from calibration can produce empty class_mean/PCA or dimension issues; not validated with user assets.",
+    "Source first line vision_transformer.py is literal1 followed by copyrightcomment, confirmed raw prefix. This is a valid harmless expression, not a syntax error or code-release failure.",
+    "Raw prefix curl|head confirmation ended curl23 after reader closed; no complete-content hash from that prefix and no file downloaded.",
+    "Exact checkpoint release binding/dependency compatibility untested; readable .py source used, never bytecode."
+  ],
+  "paper_limitations_summary": "Simple outlier threshold and dependence on density/subspace quality, limited-sample covariance and ordering/window choices. Paper claims standard image benchmarks, not our video category CT; noisy-routing aggregate accuracy does not certify cross-video memory recovery.",
+  "TrackOCD_root_connection": "OSR/calibrated uncertainty and density-aware anonymous memory are candidate controls for candidate ambiguity and firstbadwrite propagation, but no existing code supplies candidate-aware learned WAIT or reversible memory; dense current-observation router contract still needs atomic integration.",
+  "what_to_borrow": "Support-only covariance/threshold baselines with lawful disjoint calibration, numerical log-space controls, finite uncertainty/density hypotheses and explicit order/coverage tests against frozen baselines.",
+  "what_not_to_borrow": "Global Hungarian Known remapping, query-GT tuning/oracleK/transductive comparator as online result, raw-density equality as safe decision, unbounded append-only clusters as self-correcting versioned memory.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Exact pretrained release binding/run compatibility if reproducing",
+    "Real future/order/label mutation and dense policy-state tests",
+    "Fresh lawful independent folds and fixedKnown/CT selection",
+    "Finite memory and reversible anonymous lifecycle"
+  ]
+}
