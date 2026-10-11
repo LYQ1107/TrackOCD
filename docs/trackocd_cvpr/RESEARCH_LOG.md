@@ -80,3 +80,13 @@ brace check before dataset use; fixed it. No new physical job is authorized by
 this parser alone. Published MASA route was rechecked against its official
 paper and pinned docs; this is publication-level support, not exact private
 release training-stage binding or a qualified strong primary frontend.
+
+Metadata helper post-fix tests caught an indentation regression; `bf98281`
+therefore carries an unready helper (not used on any dataset) alongside the
+completed controls. Preserve that commit, fix forward and require test completion
+before further parser use or registration. The scientific control artifacts
+were produced by the already tested and remote-registered`bcb1261` sources,
+not this helper. No claim of20passing tests was made for`bf98281`.
+
+After the forward fix, all20CVPR tests passed in2.66s. No dataset was parsed
+before this result. `bf98281` delivery was fetched and exact-remote verified.

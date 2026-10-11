@@ -65,11 +65,9 @@ def image_video_metadata(path):
                 raise ValueError('Duplicate top-level metadata key')
             seen.add(key)
             p = end
-        if not closed:
-            raise ValueError('Truncated top-level metadata object')
             while p < len(data) and chr(data[p]).isspace():
                 p += 1
-            if data[p] != ord(':'):
+            if p == len(data) or data[p] != ord(':'):
                 raise ValueError('Expected key-value separator')
             p += 1
             while p < len(data) and chr(data[p]).isspace():
@@ -80,6 +78,8 @@ def image_video_metadata(path):
                 if not isinstance(result[key], list):
                     raise ValueError('Metadata fields must be arrays')
             p = end
+        if not closed:
+            raise ValueError('Truncated top-level metadata object')
     if 'images' not in result or 'videos' not in result:
         raise ValueError('Missing image/video metadata')
     return result
