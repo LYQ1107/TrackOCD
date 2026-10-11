@@ -170,3 +170,33 @@ parameters remain frozen. Valid64,204B video shard is retained for explicit
 reuse. No semantic metrics, strong-frontend qualification, full57video job or
 training follows automatically from this limited PASS. Next work requires its
 own bounded registration and continued provenance/reference limitations.
+
+## Completed substep: retained Train logits and controller errors
+
+Registration `43e38dee98a6f340c9e5649e144bed24043b1582` was pushed, fetched
+and checked against the exact remote before execution. All175320 retained
+rows from720 actual frozen-checkpoint cases yielded1440 role-specific groups
+in7.82s, oneCPU, peakRSS847216640B. No model forward, optimizer, new Val/Test
+or independent final-holdout access. Raw logits remain private; public
+`retained_logit_forensics_v1/` contains aggregate distributions and error counts.
+Unavailable action masks are counted separately, not averaged as -1e9 logits;
+every retained action is checked against the float32 frozen WAIT-bias argmax.
+
+Main/development/p16 A2+D2 seed1027: all199 correct exposed Known-top1 queries
+receive non-Known actions;49 additional correct Known candidates rank2–8 and
+are not exposed by the old top1 interface. Its105 Known-to-EXISTING writes
+are wrong,103 target an already mixed candidate;8 pseudo-Novel-to-EXISTING
+writes also target mixed candidates.114 Known WAITs and1 pseudo-Novel WAIT
+disagree with the nominal current-top1 action target. This nominal diagnostic
+does not prove waiting is causally unnecessary under long-horizon risk.
+Seeds1028/1029 have55/51 wrong Known assignments among249 Known queries,
+plus all9 pseudo-Novel queries incorrectly assigned Known. Allthree actual
+histories lack a correct pure cross-video anonymous candidate for all9
+pseudo-Novel queries. These are separate retrieval-pool, rank and controller
+observations, not a claim that one mechanism alone explains FULL=0.
+
+The old retained Parquet has no selected-token column or member trajectory.
+We do not fabricate token histories from aggregate counts. Per-error-state
+trajectories require a separate bounded unchanged-checkpoint replay. Wrong
+commits at prefix≤2 are reported as short-prefix errors, not automatically
+as proven premature commits; histories differ across old prefix replays.

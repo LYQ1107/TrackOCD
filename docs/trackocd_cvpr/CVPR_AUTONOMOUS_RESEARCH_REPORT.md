@@ -10,7 +10,8 @@ The 1,715-line taskbook is bound by SHA256
 
 Overall state: **IN_PROGRESS**, Goals A/B/C not achieved. A single negative
 diagnostic does not end this research goal. Historical results are preserved,
-not renamed as new CVPR experiments. No new training or inference yet.
+not renamed as new CVPR experiments. New training remains0; the bounded
+Train physical smoke below is diagnostic inference, not a new method result.
 
 ## Registered execution sequence
 
@@ -87,3 +88,15 @@ The registered44-forward Train physical smoke subsequently passed in57.69s:
 parameters, noGT/text/Val/Test/training. Its64,204B valid raw shard stays local
 for reuse. This is limited engineering evidence, not a qualified primary or a
 completed matched-input experiment. Training GPU-hour usage remains0/600.
+
+Retained Train-logit forensic registration43e38de subsequently completed:
+175320rows/720actual cases/1440role groups,7.82s CPU-only, no new forwards.
+Public error counts separate correct-top1 controller rejection from correct
+rank2–8 candidates hidden by the interface and absent healthy anonymous
+candidates. No selected tokens were retained in that old trace; a new bounded
+diagnostic replay is needed for per-state histories, not guessed reconstruction.
+
+Conditional cleanup is authorized only when storage is insufficient and only
+for verified unused/recomputable assets of this project. Active inputs, unique
+copies, valid checkpoints/shards/history and other projects remain protected;
+ambiguous targets require clarification. No cleanup has been needed or done.

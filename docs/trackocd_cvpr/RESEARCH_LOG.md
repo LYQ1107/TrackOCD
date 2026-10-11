@@ -129,3 +129,16 @@ be fabricated from independent capped-prefix traces; record those remaining
 gaps. All29CVPR tests passed in2.34s before this registration.
 User's conditional unused-project-data cleanup permission is recorded in the
 new research scope; nothing has been deleted, no storage pressure is present.
+### Retained-logit forensic delivery
+
+- Exact registration43e38dee98a6f340c9e5649e144bed24043b1582 verified by
+  push/fetch/ls-remote before the registered CPU aggregation.
+- Complete175320rows,720actual cases,1440role groups;7.8199617s,
+  peakRSS847216640B, zero model forwards/optimization/GPU-hours.
+- Main/p16 A2+D2: seed1027 rejects199 correct Known-top1 queries;
+  seeds1028/1029 make55/51 wrong Known assignments plus9/9 pseudo-Novel
+  wrong-Known each. Healthy anonymous pools absent for9/9 pseudo queries.
+- Raw traces remain private. Per-token trajectory was not retained;
+  short-prefix error is not relabeled causal premature commitment.
+- Overall CVPR research remains active; GoalsA/B/C and matched-input study
+  pending. User conditional cleanup recorded; no deletion performed.

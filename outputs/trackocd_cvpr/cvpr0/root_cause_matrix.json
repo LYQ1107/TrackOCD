@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr0.root-cause-matrix.v1",
-  "status": "IN_PROGRESS_MEMORY_CONTROLS_SUBSTEP_COMPLETE",
+  "status": "IN_PROGRESS_RETAINED_LOGIT_FORENSICS_COMPLETE",
   "scientific_success_claimed": false,
   "evidence": "historical_audit_integer_normalized/result.json",
   "seed_collapse": {
@@ -60,6 +60,15 @@
     "new_causal_protocol_repair_required": true
   },
   "same_population_predicted_vs_GT_input": "PENDING_LAWFUL_TRAIN_PREDICTED_STREAM",
+  "retained_logits_and_controller_errors": {
+    "status": "175320_ROWS_720_CASES_1440_ROLE_GROUPS_COMPLETE",
+    "seed1027_main_p16_A2_D2_correct_known_top1_rejected": 199,
+    "seed1027_known_correct_rank2_to8_not_exposed": 49,
+    "seed1028_1029_wrong_known_on_known_queries": [55, 51],
+    "seed1028_1029_wrong_known_on_pseudo_novel_queries": [9, 9],
+    "selected_token_trajectory_retained": false,
+    "premature_commit_causality_proven": false
+  },
   "unique_causal_root_cause": "NOT_ESTABLISHED",
   "Val_result_used_to_select_new_model": false,
   "TAO_Test_access": false

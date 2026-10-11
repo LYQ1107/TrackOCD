@@ -1,15 +1,15 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_TRAIN_PHYSICAL_SMOKE_COMPLETE",
+  "status": "ACTIVE_CVPR0_RETAINED_LOGIT_FORENSICS_COMPLETE",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 5,
+  "new_experiments_completed": 6,
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Aggregate retained Train logits/errors without new inference; register bounded matched Train prediction/feature followup with valid smoke shard reuse; full57job not launched"
+  "next": "Register per-error-state unchanged Train checkpoint replay; continue bounded matched input followup with valid smoke shard reuse, no full57job launched"
 }
