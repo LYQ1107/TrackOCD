@@ -288,3 +288,26 @@ new research scope; nothing has been deleted, no storage pressure is present.
   zeroNovel/cross-video opportunities → H/CT unavailable, not manufactured.
 - Actual wiring pass only; no full matched-study, primary quality, dense
   protocol or uniquely input-only causal claim. Full57features not launched.
+### Registered bounded Train feature continuation after real integration
+
+- Full old-development diagnostic:57videos/16933IDs/73509first≤16observations,
+  allshort/low-score/unmatched IDs retained. Explicitly validate/reference
+  source recovered1293observations (originalfailure remains), no copy/redo;
+  at most72216new observations. No GT/role/Val/Test encoder access.
+- Uncompressed visual planning112909824B. Output≤256MiB, physical+features
+  ≤1GiB via tighter per-run bounds; free10GiB and CVPRincremental hard30GiB
+  reserves remain. No new images/weights/env downloads or deletion.
+- Current-image crop batches8, identical commonDINO source/checkpoint/crop/
+  normalization and FP32/FP16 protocol. Two workers alternate metadata-order
+  videos, no label/score/feature-based assignment. Fresh idle UUID/process
+  checks; perworker GPU8GiBpeak/free4GiB/RSS4GiB,25%systemRAM reserve,
+ 7200swall. Own supervisor stops only its direct children on safety failure.
+- Video-atomic markers/strict JSON/reader validation; preserve attempts and
+  explicitly resume valid complete shards. Worker file barrier denies GT,
+  evaluator integration outputs/Val/Test; engineering status checked only by
+  supervisor and never forwarded as model input. No new semantic training.
+- Actual42CVPR tests passed, including disjoint metadata assignment, strict
+  no-copy recovered-input reuse, changed protocol/physical source refusal.
+  CLI import and actual57video/reused-input preflight passed. Limited
+  frontend release binding, annotated cadence, truncated GT and old numeric
+  routing remain limitations; no main scientific success claim.
