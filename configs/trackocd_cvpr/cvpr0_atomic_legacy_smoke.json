@@ -1,0 +1,22 @@
+{
+  "schema_version": "trackocd.cvpr.atomic_legacy_smoke.v1",
+  "feature_directory": "outputs/trackocd_cvpr/cvpr0/train_features_v1",
+  "feature_result_sha256": "af12c39c6b8513a635cccccd3aa99f0e9c9c5d7fe1a871b5958e35be797954db",
+  "feature_manifest_sha256": "39dcf2f750470c880876e4dc99d35a397d5e38ef10ba7dc3f02d150697d343a3",
+  "video_id": 47,
+  "video_npz_sha256": "70c496ad97967502ee78e655357b5370c09e715c1e1844364cabed48e9fbcddc",
+  "expected_video_tracks": 262,
+  "expected_video_observations": 1293,
+  "selection": "Predeclared first completed manifest record; earliest 32 distinct cached frame indices, all retained observations at those indices; no GT selection",
+  "maximum_distinct_cached_frames": 32,
+  "policies": ["always_new", "existing_if_available_else_new", "always_wait"],
+  "known_prototypes": "empty; no Known or GT assets accessed",
+  "max_tracks": 4096,
+  "max_observations": 65536,
+  "max_anonymous": 4096,
+  "rss_bytes_ceiling": 2147483648,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 131072,
+  "output_directory": "outputs/trackocd_cvpr/cvpr0/atomic_legacy_smoke_v1",
+  "interpretation": "Small real retained Train-input engineering diagnostic using fixed synthetic policies; not trained-checkpoint parity, historical ID failure repair, dense video benchmark, candidate-aware scorer, reversible category memory or Goal A/B/C acceptance. Prefix aggregate writes retain legacy repeated-prefix weighting."
+}

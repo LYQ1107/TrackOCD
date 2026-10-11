@@ -694,3 +694,29 @@ new research scope; nothing has been deleted, no storage pressure is present.
   intervened. Source-review output small; protected recovered assets unchanged.
 - With paper/coverage metadata checks included, full87tests PASS3.00s.
   No skips or scientific acceptance claimed.
+
+### Atomic legacy scheduling adapter: small interface diagnostic preregistration
+
+- New current-input adapter makes content-sorted visible-prefix decisions and
+  memory writes transactional across an entire frame; exact indistinguishable
+  groups make one decision/write and broadcast one result. Physical IDs remain
+  external routing handles, not policy features. Twelve synthetic tests passed,
+  including actual input mutations and rollback after a later group fails.
+- This is a Raw Top1/17-cue engineering control, not learned A1/A2 parity,
+  candidate-aware scoring or reversible category memory. It deliberately retains
+  legacy repeated-prefix aggregate writes, a scientific limitation. Callback
+  side effects outside the owned router/memory cannot be rolled back.
+- Predeclared tiny real-input check: first completed manifest record video47,
+  earliest32 distinct cached frame indices/all retained observations therein;
+  three fixed diagnostic policies NEW, available-EXISTING/NEW and WAIT. Known
+  prototype bank empty; no GT/category assets or actual checkpoint opened.
+  ID renumbering/frame permutation and future negation/append compare actual
+  17-cue/action/routing correspondence/memory digests. Exact remote registration
+  required before execution, no previous output may be overwritten.
+- One CPU worker, RSS2GiB/wall120s/output128KiB guards, at least25%RAM and10GiB
+  free disk. Existing feature SHA/result/manifest validated; no new extraction,
+  GPU inference/training or scientific metric. Old controller ID-invariance FAIL
+  remains; this preregistration is not a run result or Goal acceptance.
+- Full103 engineering tests PASS7.92s, no skips; four additional synthetic
+  runner checks compare actual route/cue/action/state/future mutation digests.
+  The real-cache diagnostic has not yet been run at this registration point.
