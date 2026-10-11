@@ -87,7 +87,8 @@ def main():
                 raise ValueError('Actual recorded plan source differs from registered Git')
             checks.append({'path': name, 'sha256': digest, 'actual_original_plan_source_hash_recorded': captured,
                            'current_and_historical_git_bytes_equal': True,
-                           'original_runtime_byte_identity_proven_from_recorded_plan': captured})
+                           'original_plan_hash_matches_registered_git_bytes': captured,
+                           'historical_loaded_runtime_module_identity_proven': False})
         guard()
         result = {'status': 'COMPLETE_NARROW_PLAN_SOURCE_LINEAGE_NOT_INDEPENDENT_GT_CENSUS',
                   **launch, 'historical_registration_commit': cfg['historical_registration_commit'],

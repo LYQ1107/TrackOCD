@@ -1,0 +1,10 @@
+{
+  "schema_version": "trackocd.cvpr2.lineage-interpretation-erratum.v1",
+  "original_result_sha256": "c69d675df34a6e23d4ec17389abbf5fbac91b0c46dba67bce9e5410e4cfcffca",
+  "original_measured_source_hash_checks_invalidated": false,
+  "original_result_modified_or_deleted": false,
+  "affected_field": "source_checks[].original_runtime_byte_identity_proven_from_recorded_plan",
+  "correction": "For six captured source files, original plan hash equals registered Git bytes. This proves recorded source-file hash binding, NOT that a historical loaded module or every executed instruction had those bytes. Historical loaded runtime identity remains unproven for all eight checked sources.",
+  "protected_GT_or_runtime_reexecuted_for_correction": false,
+  "use_as_independent_GT_census_or_new_protocol_acceptance": false
+}

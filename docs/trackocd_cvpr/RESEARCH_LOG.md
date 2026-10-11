@@ -884,3 +884,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   byte-history proof. No role-ID arrays, annotations or old heldout labels read.
 - Exact remote registration, singleCPU/RSS1GiB/wall120s/output128KiB/safety
   reserves; no original command/PID/workers, model, data transfer or training.
+
+### Narrow source binding measured; preserve interpretation correction
+
+- Remote4ca9d42 v1 audit completed2.994s/RSS847216640B, zero training.
+  Original7,241,571B plan SHA matches manifest; six captured source hashes match
+  archived1b5442 Git/current files; two extra source checks match present to
+  historical bytes only. Plan rows/summary and role-ID arrays not decoded.
+- Resultc69d675df34a6e23d4ec17389abbf5fbac91b0c46dba67bce9e5410e4cfcffca
+  immutable. Per-source runtime-proof wording was too strong: a source-file
+  hash capture does NOT certify historical loaded module identity, even for
+  the six captured hashes. Erratum records this without altering measurements.
+- Corrected field names and separate_v2 output preregistered before rerun;
+  all historical loaded-runtime identities explicitly remain unproven. This
+  is metadata interpretation repair, not new GT/semantic/model evidence or a
+  successful protocol. Full139tests PASS2.99s before this wording correction.
+- With immutable v1/erratum binding checks included, full141engineering tests
+  PASS3.10s, no skips. Corrected_v2 real rerun still pending registration.

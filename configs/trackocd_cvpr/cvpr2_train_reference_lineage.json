@@ -18,9 +18,10 @@
     "scripts/trackocd_core/extract_train_first.py",
     "scripts/trackocd_core/audit_assets.py"
   ],
-  "output_directory": "outputs/trackocd_cvpr/cvpr2/train_reference_lineage_v1",
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/train_reference_lineage_v2",
+  "preserved_attempt": "train_reference_lineage_v1 hash measurements valid but per-source runtime-proof field wording too strong; source-file hash capture is not loaded runtime module identity",
   "rss_bytes_ceiling": 1073741824,
   "wall_seconds_ceiling": 120,
   "output_bytes_ceiling": 131072,
-  "interpretation": "Verify old manifest/plan/source hashes without decoding private plan rows/summary or role ID arrays. Recorded six-source binding differs from present-to-historical byte checks of omitted helper/encoder sources. Source semantics infer retained old fit-class tracks, NOT independent GT census, historical runtime proof of omitted dependencies, full category absence or a new protocol."
+  "interpretation": "Verify old manifest/plan/source hashes without decoding private plan rows/summary or role ID arrays. Recorded six-source-file hash binding differs from present-to-historical checks of omitted helper/encoder sources. Historical loaded-runtime module identity remains unproven for ALL checked sources. Source semantics infer retained old fit-class tracks, NOT independent GT census, full category absence or a new protocol."
 }
