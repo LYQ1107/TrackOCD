@@ -1,5 +1,10 @@
 # Root-supported mechanism agenda — hypotheses, not scientific results
 
+Access erratum2026-10-12: earlier broad statements about metadata-only Train
+reads must be narrowed. The former image/video reader decoded nested video GT
+arrays. See `TRAIN_METADATA_ACCESS_INCIDENT.md`; no current scientific-access
+clearance or blind final protocol is implied by historical inventories below.
+
 Status: planning after twelve scoped paper/actual-core inspections and three
 licensed-extra inspections. No new training, fresh fold acceptance, positive
 semantic result or CVPR contribution claimed. Historical diagnostics remain

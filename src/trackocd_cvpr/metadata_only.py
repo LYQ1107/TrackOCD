@@ -4,6 +4,7 @@ import mmap
 import re
 
 _NUMBER = re.compile(rb'-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?')
+TRAIN_PARTITIONS = ('prototype', 'representation_fit', 'development', 'policy_train', 'heldout_selection')
 
 
 def _space(data, position):
@@ -99,8 +100,14 @@ def _project_object(data, start, end, allowed_fields):
         if key in allowed_fields:
             if data[position] in (ord('{'), ord('[')):
                 raise ValueError('Only scalar image/video metadata fields permitted')
+            expected = allowed_fields[key] if isinstance(allowed_fields, dict) else str if key == 'file_name' else int
+            raw = data[position:value_end]
+            if (expected is int and re.fullmatch(rb'(?:0|[1-9][0-9]*)', raw) is None
+                    or expected is str and data[position] != ord('"')):
+                raise ValueError('Invalid scalar metadata lexical type')
+            if key == 'partition' and raw not in tuple(('"' + part + '"').encode() for part in TRAIN_PARTITIONS):
+                raise ValueError('Only canonical administrative Train partitions permitted')
             value = json.loads(data[position:value_end])
-            expected = str if key == 'file_name' else int
             if type(value) is not expected or (expected is int and value < (1 if key in ('width', 'height') else 0)):
                 raise ValueError('Invalid scalar image/video metadata type or range')
             result[key] = value
@@ -201,3 +208,16 @@ def train_plan_source_metadata(path):
         if not isinstance(value, str) or len(value) != 64 or any(c not in '0123456789abcdef' for c in value):
             raise ValueError('Canonical SHA256 metadata required')
     return result
+
+
+def train_plan_partition_metadata(path):
+    """Administrative video/partition routing only, including exclusion names.
+
+    Category IDs/names, track keys, role labels, observations/bboxes, source
+    summary and all other values are byte-skipped, never JSON-decoded. This
+    does not permit reading any heldout target label or annotation body.
+    """
+    result = _top_level_fields(path, ('rows',), {'rows': {'video_id': int, 'partition': str}})
+    if not result['rows'] or any(set(row) != {'video_id', 'partition'} for row in result['rows']):
+        raise ValueError('Complete nonempty administrative row projection required')
+    return result['rows']

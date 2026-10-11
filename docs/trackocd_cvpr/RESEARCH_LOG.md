@@ -1010,3 +1010,28 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full184engineering tests PASS3.20s, no skips; immutable result/source/incident
   binding and preserved pre-read failures checked. Original preflight and pixel
   result SHA unchanged. No extra deletions; available29340925952B (~27.3GiB).
+
+### Next safe gate: administrative old-video exclusion, not target labels
+
+- Previous goal turn was progress: immutable incident, reader repair, actual
+  sanitized-plan/source containment,184tests and exact remote968d464 delivery.
+  This turn starts clean from that verified commit; no live worker presumed.
+- Re-read original Train-first split/scope and current taskbook isolation:
+  Known Train supervision is allowed outside forward; protected target labels
+  are not. Source claims global video ownership, but source alone is not proof
+  of actual sealed metadata. New scientific execution remains gated.
+- Added scalar administrative projection of original plan rows: only video_id
+  and canonical partition name, including heldout exclusion metadata. Category
+  IDs, semantic roles, track keys, observations/bboxes and summary values remain
+  byte-skipped. Typed/scalar/enum checks reject unsuitable values before decode.
+  Synthetic decode instrumentation/mutations/overlap tests pass48focused tests.
+- Register exact7241571B old-plan/manifest hash binding and every2166selected
+  administrative row, including223heldout rows WITHOUT their target labels.
+  Verify all five video partitions without dropping conflicts; local-only
+  administrative exclusion IDs, aggregate counts/hash public. No category/role
+  arrays, Train annotations, labels, images, features, weights or old commands.
+- OneCPU/256MiB own-process RSS/120s/128KiB output,25%RAM/10GiB disk reserves
+  and exact remote preregistration before execution. This will not certify full
+  category absence, unseen-class blindness, new folds or scientific clearance.
+- Full197engineering tests PASS3.22s, no skips, before remote registration;
+  sensitive-path barrier permits only the exact hash-bound administrative plan.

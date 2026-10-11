@@ -1,0 +1,19 @@
+{
+  "schema_version": "trackocd.cvpr.safety-admin-partition-scope.v1",
+  "cache_manifest": "outputs/trackocd_core/features/train_first_v1/manifest.json",
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "private_plan": "outputs/trackocd_core/core_training/train_first_v1/selection_plan.json",
+  "private_plan_sha256": "6259872dd3e59295c23674e6a0e877aadf5164638dd496e441fd80639bcfd4a3",
+  "private_plan_bytes": 7241571,
+  "historical_registration_commit": "1b5442491b666ce09d5fe28c579b0b7454bc013b",
+  "expected_selected_rows": 2166,
+  "expected_partition_rows": {"prototype": 151, "representation_fit": 1305, "development": 258, "policy_train": 229, "heldout_selection": 223},
+  "decoded_row_fields": ["video_id", "partition"],
+  "forbidden_decoded_values": ["category_id", "simulation_role", "physical_track_id", "key", "observations", "bbox", "summary"],
+  "output_directory": "outputs/trackocd_cvpr/safety/train_partition_scope_v1",
+  "rss_bytes_ceiling": 268435456,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 131072,
+  "scientific_access_clearance_granted": false,
+  "interpretation": "Administrative exclusion index from sealed existing plan only: actual video partition disjointness, not GT labels/category absence/full annotation census/new folds or scientific clearance. Heldout video IDs are bookkeeping only, never model-facing. No Train annotation/target-label table/semantic role array/image/feature/checkpoint/Val/Test access or old job execution. Private exclusion IDs stay local; publish only aggregates/hashes."
+}
