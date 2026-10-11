@@ -262,3 +262,25 @@ first≤16observations including86singletons, frozen common DINO. Current-image
 crop batches only; no score/GT/short-track filtering. Real invisible-tail
 mutations test all five caps, with short tracks retained. This is not a
 57video feature launch or dense-online/semantic/ID-protocol PASS.
+
+### Actual interface failure and CPU-only recovery
+
+Registered43e4a28 encoder completed180batches and wrote the1,860,310B
+all-ID feature payload, but final JSON serialization failed on a NumPyint64
+tail-check counter. Own worker249997 exited1; supervisor100.6577463s.
+The failed directory/log/launch/progress/payload remain untouched. Missing
+numerical GPU/RSS peaks and the frozen-state hash were not persisted; we do
+not fabricate them or call this a normal successful worker exit.
+
+Separately registered682ad5a78cd564bfd86d0063a865cdec6620ae87 CPU recovery
+completed5.78s without a new encoder forward. It verified the original
+archived launch-source hashes, failure code path, payload SHA/bytes, all262IDs/
+1293rows against current registered pixels/geometry/quality/image/frame
+metadata, L2 norms and compact reader. All1310prefix checks pass;477actually
+mutate a nonempty invisible tail. This is a recovered valid input, not a new
+model/evaluation success. Its unchanged private payload SHA256 is
+`70c496ad97967502ee78e655357b5370c09e715c1e1844364cabed48e9fbcddc`.
+Full57video feature inventory is73509first≤16observations/16933IDs, raw visual
+storage112909824B before metadata/compression; any extraction must explicitly
+reuse the1293valid observations and still needs separate bounded integration
+and registration. No automatic cache or training launch, no deletion.

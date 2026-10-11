@@ -1,15 +1,15 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_DINO_RECEIPT_RECOVERY_REGISTERED_AFTER_JSON_FAILURE",
+  "status": "ACTIVE_CVPR0_VALID_DINO_INPUT_RECOVERED_ORIGINAL_FAILURE_PRESERVED",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 9,
+  "new_experiments_completed": 10,
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "CPU-validate retained one-video all-ID DINO NPZ under separately registered recovery, no reencoding; matched semantic/57video features still require bounded integration/registration"
+  "next": "Register tiny frozen semantic/reference integration on valid recovered input, then bounded57video feature continuation with explicit source reuse; no new training or matched main scores yet"
 }

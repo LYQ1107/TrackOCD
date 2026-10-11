@@ -363,8 +363,29 @@
       "state": "FAILED_ACTUAL_PRESERVED_NO_COMPLETED_RECEIPT"
     },
     {
+      "actual_status": "RECOVERED_VALID_ALL_ID_FEATURE_INPUT_AFTER_FAILED_FINAL_JSON_NOT_NORMAL_WORKER_SUCCESS",
       "id": "train_feature_interface_recovery_v1",
-      "state": "NOT_EXECUTED_NO_METRICS"
+      "method_success_inferred_from_diagnostic": false,
+      "original_result_contains_commit": true,
+      "preregistration_commit": "682ad5a78cd564bfd86d0063a865cdec6620ae87",
+      "public_artifacts": [],
+      "registered_source_sha256": {
+        "configs/trackocd_cvpr/cvpr0_train_feature_recovery.json": "230aa19c1eb41244d4d494e4de096a1270f4dab3575de063590d4691e540f5b3",
+        "scripts/trackocd_cvpr/recover_train_feature_receipt.py": "c740ee5f7aa7d8556fcb939e042c12f6b9f4a1051c6f79da866f2f5cd3df4d95",
+        "src/trackocd_cvpr/prefix_interface_checks.py": "db27109b6e42b27149dce7afa9247dc8e0632b9fa10401ad573b7fdfc7517dd4"
+      },
+      "registration_binding": "ACTUAL_RESULT_PREREGISTRATION_RECEIPT",
+      "resources": {
+        "GPU_used": false,
+        "peak_RSS_bytes": 847216640,
+        "training_GPU_hours": 0,
+        "wall_seconds": 5.784604063956067
+      },
+      "result_bytes": 2793,
+      "result_path": "outputs/trackocd_cvpr/cvpr0/train_feature_interface_recovery_v1/result.json",
+      "result_sha256": "b3be30a4cd7a5ab4eae3fb02120613dcf9ea3e44c52ebf0e19c8559753235cd4",
+      "source_receipt_matches_registered_git_bytes": true,
+      "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
     }
   ],
   "status": "IN_PROGRESS",

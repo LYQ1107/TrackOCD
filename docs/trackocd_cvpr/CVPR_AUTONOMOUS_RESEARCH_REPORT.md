@@ -124,3 +124,11 @@ background or full-track fragmentation. No primary qualification or semantic
 scores. The next separately registered interface is all262IDs/1293prefix
 observations from one completed video, common frozen DINO and actual tail
 mutations, not an automatic57video feature launch. Training remains0/600.
+
+The one-video encoder wrote all262IDs/1293features then failed finalJSON
+serialization; failed exit1 and logs preserved. Separate CPU-only5.78s
+recovery verifies source/payload/pixels/metadata/geometry/quality/L2/reader
+and1310prefix checks (477real tail mutations) without duplicate encoding.
+Missing old numerical peaks/state hash are not fabricated. Valid unchanged
+payload remains private and reusable, not a normal-worker PASS or semantic
+score. Matched input study and57video feature extraction remain pending.

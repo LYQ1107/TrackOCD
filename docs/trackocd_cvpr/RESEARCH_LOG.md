@@ -247,3 +247,15 @@ new research scope; nothing has been deleted, no storage pressure is present.
   GT labels/GPU/optimizer, payload copy/rewrite or favorable old-result edit.
 - Fresh38CVPR tests and recovery CLI import passed before registration.
   Full57feature extraction remains unlaunched; scientific goals active.
+### CPU-only feature receipt recovery actual delivery
+
+- Exact remote682ad5a78cd564bfd86d0063a865cdec6620ae87 verified before CPU
+  recovery;5.7846041s,reportedru_maxrss847216640B,GPUfalse/newforwardfalse.
+-262IDs/1293rows/86singletons validated,1310prefix checks/477real tail
+  mutations. Original1,860,310B NPZ SHA70c496ad... unchanged; no copying,
+  rewriting, repeated encoding, new GT/Val/Test or optimizer.
+- Preserve original exit1/100.6577463s, missing numerical GPU/RSS/frozen hash
+  explicitly unretained. Recovery namespace is not a fabricated originalPASS.
+- Full bounded physical inventory73509first≤16observations/16933IDs,
+  112909824B uncompressed visual payload;72216new observations if source
+  interface reused. No57feature job launched; matched integration next.
