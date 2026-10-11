@@ -81,3 +81,9 @@ Matched-Train asset preflight completed in19.83s without model/GPU:57videos,
 Only a44-forward, one-video physical smoke is now being registered. Full
 predicted-Train execution is not launched; provenance/truncated-reference
 limitations and old ID-routing failure remain explicit.
+
+The registered44-forward Train physical smoke subsequently passed in57.69s:
+262physicalIDs/1422observations, actual changed-future prefix equality, frozen
+parameters, noGT/text/Val/Test/training. Its64,204B valid raw shard stays local
+for reuse. This is limited engineering evidence, not a qualified primary or a
+completed matched-input experiment. Training GPU-hour usage remains0/600.

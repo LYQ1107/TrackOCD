@@ -108,3 +108,14 @@ and590116B bind the57-video plan. Source-side labels/categories were not decoded
 Next register only first40-image video +4changed-future forwards (44ceiling),
 one freshly idle GPU,600s/8GiBGPU/4GiBRSS, no new assets or training. This smoke
 does not authorize full57-video execution or qualify a strong clean frontend.
+
+Registration`82c06a939b3f077d3b743351050e7e0044cb0ccd` pushed/fetched/remotely
+verified before smoke. A mistyped full SHA on the first launch command was
+rejected by the exact-remote guard before any GPU/asset action; corrected from
+the actual verified Git output, without weakening the guard. Smoke completed
+44forwards/40canonical frames:262IDs/1422track rows/2000ROI detections. Prefix
+outputs exactly unchanged after actual hashed future-pixel mutation. Frozen
+tensors unchanged, noGT/text/Val/Test/optimizer.57.69s worker,60.11s supervisor,
+GPU3443523584B/RSS1618227200B peaks; child terminal0.64,204B canonical private
+shard is valid for reuse under a separately registered full57-video plan.
+No full57job or DINO extraction launched. All26CVPR tests pass in2.22s.

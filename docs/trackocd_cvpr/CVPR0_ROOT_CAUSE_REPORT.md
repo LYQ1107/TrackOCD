@@ -161,3 +161,12 @@ publication-level diagnostic route, **not an exact checkpoint-stage data/config
 binding or a qualified primary frontend**. The old GT reference has258tracks/
 2949capped observations; it is not full-track truth. Annotated cadence and
 truncated GT must stay explicit in any upcoming matched-input comparison.
+
+Registered physical smoke now completed:40canonical Train frames plus4actual
+changed-future forwards,262physicalIDs/1422observations,2000ROI detections.
+Worker57.69s, GPU3443523584B/RSS1618227200B peaks; terminal0. Hash comparisons
+confirm the firsttwo frames unchanged after inverting later pixels; all
+parameters remain frozen. Valid64,204B video shard is retained for explicit
+reuse. No semantic metrics, strong-frontend qualification, full57video job or
+training follows automatically from this limited PASS. Next work requires its
+own bounded registration and continued provenance/reference limitations.

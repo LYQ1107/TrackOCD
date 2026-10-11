@@ -1,0 +1,44 @@
+{
+  "GT_or_text_or_Val_or_Test_input": false,
+  "actual_forwards": 44,
+  "canonical_images": 40,
+  "changed_future_prefix_equal": true,
+  "config_sha256": "c80446b3d50eacdb3aade20ef3b588d2087ca0f9abebee063b4c0d4b97d01b39",
+  "frozen_state_unchanged": true,
+  "native_checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+  "native_model_config_sha256": "097a653022d84e81a4b20f2d83d7c2f355d19a8133fab779017bc95439ce73c2",
+  "optimizer_steps": 0,
+  "pixel_changes_actually_hashed": [
+    false,
+    false,
+    true,
+    true
+  ],
+  "private_plan_sha256": "4d12af78a8b321540338915a95e358df452704e33282041693c85cde9f78668f",
+  "resources": {
+    "GPU_uuid": "GPU-d3a949d3-b3ef-04b0-92c5-594a63857898",
+    "peak_GPU_reserved_bytes": 3443523584,
+    "peak_RSS_bytes": 1618227200,
+    "training_GPU_hours": 0,
+    "wall_seconds": 57.6933494299883
+  },
+  "scope": "Train annotated-cadence physical engineering only; incomplete release binding; not clean primary or end-to-end score",
+  "shard": {
+    "attempt": "registered_smoke",
+    "config_sha256": "c80446b3d50eacdb3aade20ef3b588d2087ca0f9abebee063b4c0d4b97d01b39",
+    "detection_rows": 2000,
+    "frame_statistics": {
+      "frozen_state_unchanged": true
+    },
+    "images": 40,
+    "npz_bytes": 64204,
+    "npz_filename": "video_0047.registered_smoke.npz",
+    "npz_sha256": "418e451b70721d43dd66e27d501fa0cf12b59e1f4f9379ea0e8160e6a1b59c36",
+    "prediction_rows": 1422,
+    "status": "COMPLETE_VIDEO",
+    "video_id": 47,
+    "video_plan_sha256": "3ac155ee7b5dd948cf6b35f440a6de53c65b94f4292192dc14fc331efec65112"
+  },
+  "status": "PASS_BOUNDED_TRAIN_PHYSICAL_SMOKE_NOT_MAIN_QUALIFICATION",
+  "videos": 1
+}

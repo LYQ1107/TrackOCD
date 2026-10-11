@@ -1,15 +1,15 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_TRAIN_ASSET_PREFLIGHT_COMPLETE",
+  "status": "ACTIVE_CVPR0_TRAIN_PHYSICAL_SMOKE_COMPLETE",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 4,
+  "new_experiments_completed": 5,
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Execute only separately registered 44-forward Train physical smoke; full57video extraction not launched; logit/memory diagnostic followup pending"
+  "next": "Register bounded matched Train prediction/feature followup with valid smoke shard reuse; complete logit/memory diagnostics; full57job not launched"
 }
