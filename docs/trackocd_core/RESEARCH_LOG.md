@@ -1206,3 +1206,47 @@
   Finalsource checks exactstatusmarker before anyreportwrite, preserves edits
   andrefuses duplicatecompletion. Actual372scoped tests passed/no skips39.18s.
   Finalgenerator isstill notexecuted; actual840matrix/780pairs required.
+
+## 2026-10-11 — T5 actual full frozen matrix completed and verified
+
+- All840unique all-ID executions/2040explicit logical references completed;
+  every execution covers988videos/304561predictedIDs. All18groups terminal:
+  ten newly owned child exits are0; eight adopted original workers have
+  atomic group/every-seal completion proof, with exit status explicitly
+  UNAVAILABLE_NOT_A_CHILD. No live legacy worker or terminal error remains.
+  Original inference registrationeddbc50435e87b85b7141decfb2a5dc32290ef24;
+  operational recovery/collector registrationc662f76606e23ee2cd054b507db7c0da700dcece.
+- Evaluator terminalca135cfc297d4f55af0c4a8e1e251f44 has763actual newly
+  owned case exits, all0, and no error. Existing77metrics reused by exact
+  seal/source identity. Inference wall54466.2206s; recovered evaluator
+  wall47573.3757s. Compact sealed ledgers total627651777B; max measured
+  evaluator RSS431505408B. No additional fit, physical rerun, Test access,
+  protected-source/operating-point change or foreign process intervention.
+- All840sealed payload hashes/Parquet304561row footers, private flag hashes,
+  988feature payload hashes,52Train-freeze hashes, parent lineage and full
+  GT4413/819 with fixed527/529/547/531reuse verified. Canonical per-order
+  and error CSVs retain2220controlled rows and append2040T5rows, total4260.
+  All780fixedpairs present;84primaryp16 comparisons have conditional500video
+  bootstrap atseed1027, not independent category/replay causal confidence.
+- Full p16 Old/New/actual-mean-H percentages: B1 .02266/13.43101/.04520;
+  B2 1.75617/11.29426/3.03882; A1 7.81026/11.33496/8.93032;
+  A2 5.08158/12.34229/7.15116; staticcapacity6.58094/11.78266/8.20523;
+  D1 11.90233/3.14408/3.80035; D2 14.38175/.56980/0;
+  FULL14.51016/.56980/0. The latter positive meanOld/meanNew belong to
+  disjoint successful seeds: meanH is actually0, not H of those means.
+- All1800learned-policy cases have pureCT0. Do not falsely say all2040
+  cases do: B1 has one nonzero case, B2 two; B2p16meanCT .04726%.
+  FULLp16FM7.62432% vs D1FM0, with equal main-point reuse22.87295% and
+  predicted-ID commitment100%. No matched-coverage risk benefit or full
+  discovery PASS; all12primaryp16 FULL-vs-B1/B2 andD2-vs-D1 comparisons
+  have no positiveH/CT or matched-risk success. A1 Known/H and some A2
+  Novel/FM partial gains remain reported, not collapsed into universal FAIL.
+- Native HOTA.1450535920/AssA.4408791462/DetA.0484887546/DetRe.6318088080
+  are the same existing frozen physical reference, not new tracking scores.
+  LIMITED_COVERAGE_PROVENANCE_INCOMPLETE_FRONTEND and annotated cadence
+  retained; historical M1 remainsblocked, PHE INCOMPARABLE, noM11 authorized.
+- Actual377scoped tests passed/no skips49.96s, including independent seeded
+  aggregate checks, real nonzero baseline CT exceptions, both coverage gaps,
+  every completed ledger/feature payload and actual successful terminal
+  receipts. These tests establish engineering integrity, not scientific PASS.
+  T6 final synthesis has not yet been generated; stage delivery precedes it.
