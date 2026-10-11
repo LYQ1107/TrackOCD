@@ -64,4 +64,9 @@ First new diagnostic completed:60historical FULL executions,18,273,660events,
 The p16seed-dependent action collapse is documented in
 [CVPR0_ROOT_CAUSE_REPORT.md](CVPR0_ROOT_CAUSE_REPORT.md). This is not a new
 method result or complete root-cause attribution. Train-only checkpoint replay
-and the remaining CVPR-0 controls are next. No training budget spent.
+and geometry diagnostics now also completed:930replays/100geometry/18gradient
+cases,243.03s CPU-only. Zero-bias WAIT collapse, selected-checkpoint gradient
+antagonism and sparse-fold geometry loss are documented, with explicit oracle
+and causality limits. Memory/known-count and real tied-ID controls are next;
+matched lawful predicted Train input and CVPR-1 source review remain pending.
+No training budget spent; no new successful method or CVPR readiness claimed.

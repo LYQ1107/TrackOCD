@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr0.root-cause-matrix.v1",
-  "status": "IN_PROGRESS_RETROSPECTIVE_SUBSTEP_COMPLETE",
+  "status": "IN_PROGRESS_TRAIN_CHECKPOINT_SUBSTEP_COMPLETE",
   "scientific_success_claimed": false,
   "evidence": "historical_audit_integer_normalized/result.json",
   "seed_collapse": {
@@ -16,9 +16,32 @@
     "subsequent_reuses_of_proven_mixed_state": 303135,
     "unknown_members_are_not_proven_pollution": true
   },
-  "candidate_topk_and_oracle": "PENDING_TRAIN_ONLY_REPLAY",
-  "gradient_conflict": "PENDING_CHECKPOINT_REPLAY_NOT_HISTORICAL_LOGS",
-  "representation_geometry": "PENDING_TRAIN_ONLY_DIAGNOSTIC",
+  "candidate_topk_and_oracle": {
+    "status": "OBSERVED_TRAIN_CONTROLLED_NOT_METHOD_SUCCESS",
+    "actual_main_p16_FULL_pure_anonymous_correct_candidates": 0,
+    "known_prototype_available": "249/249 all three seeds",
+    "known_top1_hits": [199, 194, 198],
+    "known_top8_hits": [248, 245, 248],
+    "candidate_only_oracle_H": [0, 0, 0],
+    "action_only_oracle_H": [0.8883928571428571, 0.830390583199572, 0.8394276629570747],
+    "first_bad_write_isolation_H": [0, 0, 0],
+    "oracle_interventions_change_history_and_coverage": true
+  },
+  "gradient_conflict": {
+    "status": "SELECTED_CHECKPOINT_REPLAY_NOT_HISTORICAL_GRADIENTS",
+    "A2_D2_main_policy_train_p16_CE_expected_cost_cosine": [-0.9813347458839417, -0.9946560263633728, -0.9937225580215454],
+    "delayed_events_on_this_zero_bias_replay": [0, 0, 0],
+    "unique_optimization_cause_proven": false
+  },
+  "representation_geometry": {
+    "status": "OBSERVED_SPARSE_TRAIN_DEV_NOT_GENERAL_NOVEL_PROOF",
+    "Raw_p16_uncentered_effective_rank": 55.55168865177801,
+    "A1_p16_uncentered_effective_rank": [6.91546791890514, 9.072419286137068, 6.918410696884575],
+    "Raw_pseudo_Novel_macro_rank1": 0.25,
+    "A1_pseudo_Novel_macro_rank1": [0.16666666666666666, 0.08333333333333333, 0.08333333333333333],
+    "A2_pseudo_Novel_macro_rank1": [0.16666666666666666, 0.16666666666666666, 0.16666666666666666],
+    "development_pseudo_Novel_query_count": 9
+  },
   "memory_capacity_known_count": "PENDING",
   "same_population_predicted_vs_GT_input": "PENDING_LAWFUL_TRAIN_PREDICTED_STREAM",
   "unique_causal_root_cause": "NOT_ESTABLISHED",
