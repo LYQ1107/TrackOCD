@@ -367,3 +367,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
   verified and no LICENSE in pinned tree. Source/paper discrepancies retained,
   DSU numeric compaction and GT-column topK metrics not imported into TrackOCD.
   No upstream code executed, copied or trained; literature stage remains partial.
+
+### Fixed actual-history future-input shadow preregistration
+
+-72finite cases Raw/A1/A2 x3frozenD2seeds x2Trainpartitions(dev258/policy229)
+  x4earlier prefixes1/2/4/8,17532queries. Each compares an external p16shadow
+  at exactly the original prior visual memory, only when later evidence exists.
+  No extra cache/inference/training, no heldout/Val/Test labels. Actual decision
+  and shadow each predict visually before the GT-only nominal-cost observer.
+- Both visual history and external observer are updated ONLY by original
+  current-prefix predictions. Hash-check visual bank before/after each query;
+  original sealed actions/logits/tokens/order/evaluation must exactly match
+  retained unchanged state replay. Short tracks remain no-later-evidence cases.
+- Count laterzero-nominal-cost, laterWAIT and laterstill-wrong outcomes against
+  actual wrong commitments with laterinput, plus correct→wrong flips; these
+  are future-information upper bounds, NOT observed waiting gain, unique
+  early-commit causality, long-horizon regret, dense online, or model selection.
+-4real tests passed: changedfuture changes onlyshadow; changedGTrole/category
+  changes onlyexternalcost; deliberatelyillegal shadow write is refused;
+  singleton gets no fabricated future. CPU1/RSS4GiB/wall600s/output32MiB.
+  Actual execution waits for current matched-input CPU work, not yet complete.
+- Documentation formatting correction: the preceding delivery had a diff-check
+  warning for an extra EOF blank line; now corrected forward, no history rewritten.

@@ -298,7 +298,8 @@ no cross-video opportunities; H/Novel/CT null/NOT_APPLICABLE, not perfect.
 This validates wiring with fixed parameters, not discovery gains, primary
 frontend quality, a full57video matched-input study, or uniquely causal
 physical-input attribution. Old numeric-ID stream ordering is not repaired.
-# Bounded predicted Train features now complete; matched semantics still pending
+
+## Bounded predicted Train features now complete; matched semantics still pending
 
 The registered two-worker continuation completed57/57videos,16933predicted IDs,
 73509first≤16observations (1293referenced valid source,72216new). Actual
@@ -311,4 +312,3 @@ but selected capped GT cannot certify full ground truth or global purity. Old
 numeric-ID routing, independent prefixes, incomplete frontend release binding and
 missing fixed-history premature-commit/new causal protocol remain. CVPR0 and the
 overall goal are not complete; no Novel/main method gain is claimed here.
-
