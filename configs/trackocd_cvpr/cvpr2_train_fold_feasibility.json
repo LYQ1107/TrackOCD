@@ -1,0 +1,18 @@
+{
+  "schema_version": "trackocd.cvpr2.train-fold-feasibility.v1",
+  "cache_directory": "outputs/trackocd_core/features/train_first_v1",
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "expected_safe_tracks": 1867,
+  "expected_safe_videos": 421,
+  "expected_eligible_classes": 15,
+  "seed": 2093001,
+  "folds": 4,
+  "policy_pseudo_classes": 2,
+  "minimum_fit_candidate_videos": 3,
+  "minimum_eval_candidate_videos": 2,
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/train_fold_feasibility_v1",
+  "rss_bytes_ceiling": 1073741824,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 131072,
+  "interpretation": "Fixed-seed four cyclic category-role hypotheses on previously permitted selected/capped reference metadata; every eligible class is final-pseudo once. Exclude observed co-occurrence conflicts from candidate role sets and retain/report all deficits. Necessary-only support, no metric/seed/class selection, global disjoint video allocation, complete category-absence proof, fresh protocol acceptance or training."
+}

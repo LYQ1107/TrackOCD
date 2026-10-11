@@ -829,3 +829,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Fresh-fold/exclusion/label-boundary checks remain necessary before new training.
 - Full127engineering tests PASS3.18s, no skips; exact pixel-inventory source
   receipts/coverage facts checked separately from synthetic path fixtures.
+
+### Fresh-role feasibility hypotheses preregistration, not new folds
+
+- Fixedseed2093001/four cyclic category groups, each of15eligible source classes
+  final-pseudo exactly once. Next cyclic group development-pseudo, two remaining
+  classes policy-training pseudo, rest fittingKnown. No frequency/metric/seed
+  search or difficult-category removal. Model training still0.
+- Exclude observed cross-role category co-occurrences from candidate video sets;
+  report every class deficit, minimum3fit candidate videos/2other candidates.
+  These sets overlap and selected references cannot prove complete category
+  absence: necessary-only diagnostics, NOT global video allocation or frozen
+  lawful main protocol. Full role/prototype/Known-probe allocation remains open.
+- Uses only same four previously authorized filtered old Train partitions;
+  no new annotation, feature, checkpoint, old heldout labels, Val/Test or assets.
+  Exact remote preregistration, oneCPU/RSS1GiB/wall120s/output128KiB and safety
+  reserves apply. All failures/deficits retained; no automatic GPU execution.
+- Full133engineering tests PASS3.09s, no skips, before registration. Synthetic
+  shared-video fixtures retain all15deficits; disjoint-role metadata cannot
+  falsely certify full-category absence or a globally disjoint video split.
