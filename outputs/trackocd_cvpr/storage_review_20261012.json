@@ -39,5 +39,13 @@
     "reclaimed_bytes": 0,
     "processes_intervened": false,
     "large_launch_allowed": false
+  },
+  "later_cleanup_receipt": "outputs/trackocd_cvpr/coco_download_cleanup_20261012.json",
+  "later_cleanup_summary": {
+    "deleted": "Only redundant original COCO train2017.zip and val2017.zip in old task-owned PANDAS download directory, after complete extracted-image size/CRC and original archive SHA checks; no inputs or results deleted.",
+    "observed_available_bytes": 32353411072,
+    "observed_free_space_increase_bytes": 20152135680,
+    "recoverability": "ZIP files not locally undoable; original public image downloads can be fetched again and checked using retained hashes. Extracted inputs retained.",
+    "large_launch_allowed": "No blanket authorization: fresh disk/RAM/GPU/output-budget preflight required. Stage soft15GiB plus10GiB reserve now fits this snapshot, hard30GiB plusreserve does not."
   }
 }

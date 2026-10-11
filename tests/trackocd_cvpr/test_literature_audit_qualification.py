@@ -53,3 +53,35 @@ def test_conditional_storage_permission_does_not_claim_cleanup():
     assert latest['reclaimed_bytes'] == 0
     assert not latest['processes_intervened']
     assert not latest['large_launch_allowed']
+
+
+def test_ovtr_static_source_scope_is_not_legal_frontend_acceptance():
+    review = public_audit('ovtr_source_audit.json')
+    assert review['repository_commit'] == '500e72c19bf5f7f8717546911a5639fdc26bfee5'
+    assert review['official_repository_verified']
+    assert review['actual_model_loss_training_evaluation_source_read']
+    assert not review['source_execution_or_training']
+    assert not review['TrackOCD_new_method_or_replication_claimed']
+    assert not review['twelve_work_two_extra_acceptance_complete']
+    assert len(review['actual_files_read']) == 16
+    assert sum(entry['entire_file_read'] for entry in review['actual_files_read']) == 12
+    for entry in review['actual_files_read']:
+        assert re.fullmatch('[0-9a-f]{40}', entry['git_blob_sha1'])
+        if not entry['entire_file_read']:
+            assert entry['line_ranges_read']
+    assert 'not referenced' in review['causal_or_noncausal']
+    assert 'not an actual GT/future/ID mutation certificate' in review['causal_or_noncausal']
+    assert 'mutation checks' in review['requires_before_qualified_import'][2]
+
+
+def test_exact_archive_cleanup_retains_complete_input_receipts():
+    review = json.loads((ROOT / 'outputs/trackocd_cvpr/coco_download_cleanup_20261012.json').read_text())
+    targets = review['verification']['targets']
+    assert [target['verified_images'] for target in targets] == [118287, 5000]
+    assert review['deleted_paths'] == [target['archive_path'] for target in targets]
+    assert sum(target['archive_bytes'] for target in targets) == review['removed_payload_bytes']
+    assert all(isinstance(target['archive_signature'][3], str) for target in targets)
+    assert review['reclaimed_bytes'] == review['filesystem_available_after_bytes'] - review['filesystem_available_before_bytes']
+    assert not review['annotations_read']
+    assert not review['external_processes_intervened']
+    assert len(review['retained']) == 3

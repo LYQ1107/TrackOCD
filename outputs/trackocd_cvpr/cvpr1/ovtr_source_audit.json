@@ -1,0 +1,175 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_NATIVE_VOCABULARY_QUERY_TRACKER_SOURCE_REVIEW_NOT_ANONYMOUS_CATEGORY_METHOD",
+  "paper_title": "OVTR: End-to-End Open-Vocabulary Multiple Object Tracking with Transformer",
+  "year": 2025,
+  "venue": "ICLR2025 official conference proceedings",
+  "venue_independently_verified": true,
+  "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/7cdbcf7f2037db2ccbfb9636db50399d-Paper-Conference.pdf",
+  "paper_html_url": "https://arxiv.org/html/2503.10616v1",
+  "repository_url": "https://github.com/jinyanglii/OVTR",
+  "repository_commit": "500e72c19bf5f7f8717546911a5639fdc26bfee5",
+  "official_repository_verified": true,
+  "official_binding": "Official ICLR accepted PDF firstpage explicitly links jinyanglii/OVTR; author arxiv release also binds repo. Current pinned main not exact local checkpoints/paper numerical replication.",
+  "additional_to_user_supplied_ten": false,
+  "whole_project_license_read": true,
+  "license": "MIT2025JinyangLi root read; derivative MOTR/DeformableDETR/GroundingDINO headers retained in source and not treated as permission to discard upstream attributions. No copying/imports here.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "bcbaf2ea0fc98964fad399a233b95057e5cb7826",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/models/ovtr.py",
+      "git_blob_sha1": "7d8590e4461fd2c12711c73cfb9a1fb15d294c4d",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/models/transformer.py",
+      "git_blob_sha1": "8ef256dda9a53e498d31fb839fc9ceb7c796ccc2",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/models/updater.py",
+      "git_blob_sha1": "112a70c1badcf77496d81d7b860baeb47d6eebc2",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/engine.py",
+      "git_blob_sha1": "84c6d868ba0bb59cd163dc3b50965bb2902bd5eb",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/main.py",
+      "git_blob_sha1": "735a75345e599455bb2c2a5b91b1b912034ef071",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/config/ovtr_5_frame_train_val.py",
+      "git_blob_sha1": "6de0030606e39470f269131374d9fb851025b856",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/tools/ovtr_multi_frame_train.sh",
+      "git_blob_sha1": "330c3650076e460a10cbbba6eda450808bc153ae",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/tools/ovtr_ovmot_eval_e15_val.sh",
+      "git_blob_sha1": "bf2458da61d8899ce2ba7b50b8672fabb0d29cee",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/util/clip_utils.py",
+      "git_blob_sha1": "5aa3d56090964bc7181f043a898e2b7f43fb4916",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/datasets/__init__.py",
+      "git_blob_sha1": "bfb2ed61c7b02ba2fb55753282f67dbb1c021c49",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/datasets/tao_dataset.py",
+      "git_blob_sha1": "79fb2594370f5d5aadc2324d167858c966789b21",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtr/eval.py",
+      "git_blob_sha1": "49136e83e8882610516cf434007ba429980c79d4",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          207,
+          416
+        ]
+      ]
+    },
+    {
+      "path": "ovtr/models/utils.py",
+      "git_blob_sha1": "b9d0d9724a80ca4c7ce008ca6eb96f10be8bb998",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          233,
+          351
+        ]
+      ]
+    },
+    {
+      "path": "ovtr/datasets/lvis_seqs.py",
+      "git_blob_sha1": "440f28abe2f668d36a6b803236b1c69f1d9e6fb7",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          224
+        ],
+        [
+          239,
+          575
+        ]
+      ]
+    },
+    {
+      "path": "ovtr/datasets/coco_video_dataset.py",
+      "git_blob_sha1": "da4c444fb875e2eb77316ff3b8d98183d973c844",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          135,
+          147
+        ],
+        [
+          205,
+          281
+        ]
+      ]
+    }
+  ],
+  "paper_read_scope": "Arxiv main intro/relatedwork/method3.1-3.5/experiments4.1-4.5/conclusion, appendixA-D textual method/implementation/experiments. Official acceptedPDF firstpage venue/repo binding separately read. Not all plots/qualitative figures visually or a line-by-line accepted-versus-arxiv equivalence check.",
+  "original_task": "Physical open-vocabulary MOT with known and novel category text embeddings provided, not discovering unnamed semantic categories across videos.",
+  "model_inputs": "Current image, ResNet50/multiscale features, provided CLIP category text embeddings, learned900detect queries and previous physical-track query content/refboxes. Offline Train has image-sequence GTboxes/labels/instanceIDs and category-mean CLIP image distillation targets.",
+  "model_outputs": "Frame category logits/boxes, OFA aligned embedding, CTI semantic embedding and per-video physical IDs/query state.",
+  "losses": "Matched and maintained physical queries have sigmoid focal category loss2(alpha.25,gamma2), boxL1=5, GIoU=2, normalized predicted-embedding to category-image-embedding MSEalignment=2, auxiliary decoder losses. Actual loss_align sums512dimensions then dividesbyobjectcount; paperEq1 divides byn*d. No autonomous category discovery/WAIT or corruption correction loss.",
+  "training_protocol": "Offline LVIS processedimages/HDF5 plus artificial sameimage sequences/dynamicMosaic/randomocclusion, image2/3/4/5 at sampler steps4/7/14; current script first1epoch with pretrain2e-4(backbone2e-5), then second call16epochs4e-5(backbone4e-6), AdamWwd1e-4,clip.1. Frozen backbone/encoder and selected detector keys; updater/decoder-training rules. Main train loop saves everyepoch and no active Val-best selection shown. Actual annotation/checkpoint assets never opened.",
+  "online_or_offline": "Offline supervised synthetic-sequence Train; current-image/past query physical inference; default completed-track formatting retrospectively votes categories.",
+  "causal_or_noncausal": "inference_single_image reads current imgs[0] and previous queries, resets at frame0; GT label field included by native val loader but not referenced in this inspected inference path. Native generic forward always consumes gt_instances and computes fullclip GTclasscount; it is not a pure legal online API. Static callgraph is not an actual GT/future/ID mutation certificate.",
+  "state_memory": "Per-video physical query content256/refbox/disappear counters/semantic index; CIP aggregates current OFA features plus currenttrack content with selfattention/residualMLP. No across-video anonymous category event bank, WAIT/versionedrollback/corrective removal.",
+  "evaluation": "Sequential native validation loader, per-source-domain filename selects threshold/miss/IoU settings, confidence/area filtering, external TETA after native TaoDataset fulltrack majority_vote tcc=true. Val shell references Liteconfig with5frameweights; currentcfg test dictionary points tovalidation_ours_v1.json. Variabletest/publicpaper Testtables do not authorize TAOTest assets; none accessed.",
+  "contract_rejections": [
+    "Text features influence encoder top900 proposal ranking, decoder CTI and later-layer attention isolation. OFA output is not vocabulary-independent simply because its own branch precedes textcrossattention in the currentlayer: earlierdecoderlayer CTI query content and text-ranked proposals already affect it.",
+    "Text-loaded category logits produce tracking scores and threshold decisions; deleting class outputs does not yield anonymous foreground/calibration purity.",
+    "Category isolation uses KL between supplied-text category distributions; cannot use Novelvocabulary or split knowledge in TrackOCD.",
+    "Current config training uses allLVISclass list and builds ignore_ids for rareclasses, but inspected _parse_ann_info does not applyignore_ids. Known-only claim therefore depends on processed annotation/content lineage, not filename/sourceprint.",
+    "Native val dataset reads GT category labels into inputs; inspected image-only inference does not consume those fields. Must externalizeobserver and run actual mutation before calling pure.",
+    "Wholetrack majority_vote rewrites earlier categories using future predictions; native formatted results are not causal category memory."
+  ],
+  "static_source_paper_differences_not_executed_failures": [
+    "Paper encoder multimodal prefusion exists as optionalmodule; current5frameconfig use_fusion_layer=false, so actualencoder bypasses BiAttentionBlock. Record implementation/config distinction.",
+    "Paper firstdecoder-layer content isolation: actual transformerforward290-296 leaves this mask commented and initializesNone. Later-layer categoryKLmask exists; this is not both paper strategies implemented on selectedpath.",
+    "Main parser args.eval defaults truthy['track']; resume optimizer/scheduler/start_epoch restoration is guarded by notargs.eval. With the inspected train script, second call restores model weights but the guard does not restore optimizer/epoch; static path finding, no upstream run or silentfix.",
+    "Paper main16epoch4e-5 schedule differs current script1epoch2e-4 plus16call; restored-state caveat affects whether this is intended fine-tuning or exactcontinuation. No paper replication asserted.",
+    "Paper alignmentMSE averages n*d; actual normalized prediction squaredsum/objectcount withlossweight2 changes scale.",
+    "Native eval selects7source-domain score/IoU/miss profiles from file_path string and sets KLratio5 versus decoderTrain10; these are not our frozen ID-free input contract.",
+    "Currentconfidence=maxsigmoidcategory not provedobjectness; anonymous frozenforeground contract needed.",
+    "Missing _track_discard/keep_indices variables on train_with_artificial_img_seqs=false branch are static compatibility caveats; currentconfig flagtrue, so not asserted failures of activepath.",
+    "Legacytorch1.10/MMCV/mmdet/detectron2/deformable CUDA requirements not installed or executed; existingA100/masa environments do not automatically qualify this code."
+  ],
+  "paper_limitations_summary": "Provided-vocabulary OVMOT, source-domain inference profiles, annotation-cadence benchmarking and no reversible cross-video category lifecycle. Novel recognition via provided text is different from semantic category discovery. These are audit task/protocol limits, not claimed author explicit limitations.",
+  "TrackOCD_root_connection": "Disentangled physical/localization and semantic representations plus current/past query state are hypothesis sources for geometrycollapse and stability diagnostics. Native source does not supply lawful anonymous semantic targets or correct persistent-memory corruption.",
+  "what_to_borrow": "Independently qualify current/past visual-state representations and category-versus-instance gradient/geometry controls; bounded candidate-conditioned memory mechanisms without semantic text or GTforward.",
+  "what_not_to_borrow": "Provided Novelnames/text, native domain-string hyperparameter selection, fulltrackcategory voting, physical-ID-as-semanticcategory, or copying a vocabulary-conditioned OFA branch and declaring it anonymous.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Fresh independent lawful Train folds",
+    "Exact effective-supervision/checkpoint/config/release binding",
+    "Vocabulary-free frozen current-frame inputs and actual ID/GT/future mutation checks",
+    "Atomic category-policy/memory and external-only evaluator",
+    "Resource preflight before any newGPU/largeoutput"
+  ]
+}

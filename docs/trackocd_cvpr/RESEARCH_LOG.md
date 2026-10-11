@@ -617,3 +617,42 @@ new research scope; nothing has been deleted, no storage pressure is present.
   removed, no space reclaimed or foreign process touched. No large launch.
 - Small source audits continue with active goal; twelve-work acceptance,
   dense atomic policy/category memory and fresh independent folds pending.
+
+### OVTR native source review
+
+- OfficialICLR2025 acceptedPDF binds authorrepo
+  500e72c19bf5f7f8717546911a5639fdc26bfee5; rootMIT and16actual pathscopes
+  reviewed, selectedrange/wholefile scope explicit. Public paper main and
+  textualappendicesA-D read, not allfigures or exactrelease weights.
+- CIP current/past physical-query state != acrossvideo anonymous category
+  memory. Text-ranked proposals/CTIcontent/semanticKL mean OFA is not
+  automatically anonymous. Default fulltrack category voting is retrospective.
+- Actual configprefusion=false/contentmaskcommented/resumeguardtruthy-eval/
+  alignmentdimension-sum differences retained as static observations only.
+  Processedannotation needed for known-only effective-supervision proof;
+  native parser stores but does not apply rareignoreIDs. No data/weights/
+  category-list assets opened, upstream code executed or newtraining.
+
+### Conditional storage cleanup: verified duplicate COCO downloads only
+
+- Subsequent metadata inventory identified two original downloaded imageZIPs
+  in the old task-owned PANDAS workspace, distinct from retained inputs.
+  Fresh314.48s singleCPU check verified originalarchiveSHA against assets.json
+  and every extracted118287Train/5000Val image size/CRC; aggregate imageSHA
+  receipts retained. Reported ru_maxrss827360KiB, not a claimed256MiB cap.
+  No COCOannotation/TAOTest labels or newGT read. Eight synthetic verifier
+  tests passed; verifier itself never deletes data.
+- Canonical ownedregular single-link paths and unchanged device/inode/size/
+  mtime verified; fuser found no holders after checker finished, and scoped
+  runtime source search found no archive references. Only exact train2017.zip
+  and val2017.zip were unlinked; no recursive or other-project cleanup.
+- Payload20152447128B removed. Available bytes12201275392→32353411072,
+  observed increase20152135680B (~18.77GiB), not exclusive attribution under
+  concurrent filesystemwrites. Extractedimages/annotations/weights/results/
+  validshards/cache/history/sharedenvironments retained. ZIPs not locally
+  undoable, re-download+originalSHA check required to restore archives.
+  Receipt: outputs/trackocd_cvpr/coco_download_cleanup_20261012.json.
+- Fresh large-run output/RAM/GPU checks still required; this is storage
+  maintenance, not newtraining or any GoalA/B/C scientific acceptance.
+- Current targeted83tests PASS2.99s, no skips; audit metadata and synthetic
+  verifier checks are engineering tests, not upstream or research replication.

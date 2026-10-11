@@ -1,0 +1,67 @@
+{
+  "schema_version": "trackocd.cvpr.storage-cleanup.v1",
+  "status": "COMPLETED_TWO_VERIFIED_REDUNDANT_IMAGE_DOWNLOAD_ARCHIVES_ONLY",
+  "permission": "User permits unused-data cleanup if storage insufficient. Only two reproducible old PANDAS/COCO downloaded archives; extracted inputs and research results remain protected.",
+  "need": "Available~11.36GiB does not cover contemplated15GiB stage soft budget plus10GiB reserve. Avoid deleting valid inputs/results/shared cache/other projects.",
+  "verification": {
+    "status": "READ_ONLY_DUPLICATE_DOWNLOAD_VERIFICATION_PASS",
+    "targets": [
+      {
+        "archive_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/data/coco/downloads/train2017.zip",
+        "archive_bytes": 19336861798,
+        "archive_sha256": "69a8bb58ea5f8f99d24875f21416de2e9ded3178e903f1f7603e283b9e06d929",
+        "archive_signature": [
+          1810,
+          19928267,
+          19336861798,
+          "1790670176631207259"
+        ],
+        "extracted_root": "/data3/liuyeqiang/pandas_bytetrack_tao_val/data/coco/train2017",
+        "verified_images": 118287,
+        "verified_extracted_bytes": 19314466396,
+        "extracted_sha256_receipt_in_zip_order": "4c55f1e31c0f3d9421ab197a7295c1cc9d6ba6c7020c0f201b2ee12951ba0272",
+        "verification": "All expected image sizes/CRC match pinned original ZIP; files stable during checks. SHA256 aggregate retained; no annotation decoded.",
+        "delete_authorized_by_verifier": false
+      },
+      {
+        "archive_path": "/data3/liuyeqiang/pandas_bytetrack_tao_val/data/coco/downloads/val2017.zip",
+        "archive_bytes": 815585330,
+        "archive_sha256": "4f7e2ccb2866ec5041993c9cf2a952bbed69647b115d0f74da7ce8f4bef82f05",
+        "archive_signature": [
+          1810,
+          19923256,
+          815585330,
+          "1790668918738091492"
+        ],
+        "extracted_root": "/data3/liuyeqiang/pandas_bytetrack_tao_val/data/coco/val2017",
+        "verified_images": 5000,
+        "verified_extracted_bytes": 814705164,
+        "extracted_sha256_receipt_in_zip_order": "cba05c61bce4bca06ce93e2e23bb7cf44cf9f8f8b931980e578db353809e04c4",
+        "verification": "All expected image sizes/CRC match pinned original ZIP; files stable during checks. SHA256 aggregate retained; no annotation decoded.",
+        "delete_authorized_by_verifier": false
+      }
+    ],
+    "elapsed_seconds": 314.47992804896785,
+    "peak_rss_kib": 827360,
+    "deleted_paths": [],
+    "annotations_read": false
+  },
+  "reference_check": "No archive or coco/downloads references found in TrackOCD src/scripts/configs or old PANDAS scripts/vendor-pandas code; only retained historical audit receipts reference original downloads.",
+  "deleted_paths": [
+    "/data3/liuyeqiang/pandas_bytetrack_tao_val/data/coco/downloads/train2017.zip",
+    "/data3/liuyeqiang/pandas_bytetrack_tao_val/data/coco/downloads/val2017.zip"
+  ],
+  "removed_payload_bytes": 20152447128,
+  "filesystem_available_before_bytes": 12201275392,
+  "filesystem_available_after_bytes": 32353411072,
+  "reclaimed_bytes": 20152135680,
+  "measurement": "df available-byte difference immediately before/after exact two-file unlink; concurrent outside writes mean this is observed free-space change, not exclusive attribution. Both archives owned regular single-link files; fuser found no open holders after verifier completed. No recursive deletion.",
+  "retained": [
+    "All118287COCOTrain and5000COCOVal extracted images, checked size/CRC and SHA256aggregate receipts",
+    "COCOannotations, all checkpoints/weights, PANDASdetections/tracking/results/logs/audits",
+    "TrackOCD valid shards/features/cache/checkpoints/history and other projects/shared environments"
+  ],
+  "recovery": "Extracted image inputs retained. Original ZIP deletion is not locally undoable; original COCO2017 public downloads can be obtained again and verified against retained exact SHA256. No immediate download or assumption of endpoint availability.",
+  "external_processes_intervened": false,
+  "annotations_read": false
+}

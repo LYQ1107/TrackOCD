@@ -409,12 +409,37 @@ the separately frozen foreground contract, not this adapter alone.
 Paper/config learning-rate and sampling differences are recorded, not repaired.
 All are static observations, not local performance or mutation certificates.
 
+### OVTR — native query-state/source audit, not anonymous discovery
+
+[Official ICLR2025 paper](https://proceedings.iclr.cc/paper_files/paper/2025/file/7cdbcf7f2037db2ccbfb9636db50399d-Paper-Conference.pdf)
+binds [author source](https://github.com/jinyanglii/OVTR/tree/500e72c19bf5f7f8717546911a5639fdc26bfee5).
+RootMIT and16 actual model/train/loss/data/eval file scopes reviewed, with
+wholefile/selectedrange hashes in `outputs/trackocd_cvpr/cvpr1/ovtr_source_audit.json`.
+Paper methods/experiments/conclusion and textual appendicesA-D reviewed;
+accepted-versus-arxiv exact equivalence/local checkpoints not certified.
+
+OFA/CTI dual branches and CIP carry physical query state across frames.
+Supplied text already affects proposal ranking and previous decoder content;
+OFA is not automatically vocabulary-free. Novel text/category-KL isolation,
+source-domain filename-selected thresholds and completed-track majority votes
+cannot be imported as anonymous causal category discovery. Native validation
+loader includes GT labels, although inspected image-only inference does not
+reference them; no actual mutation certificate is claimed.
+
+Selected config disables encoder fusion; firstlayer content mask is commented
+out in actual transformer. Main's truthy default eval list prevents its resume
+optimizer/epoch guard from running under the inspected train script. Actual
+alignment loss sums dimensions rather than paper n*d averaging. These are
+static source/config distinctions, not executed failures or silently repaired
+paper replications. Known-only supervision still needs processed-annotation
+lineage: parser does not apply the stored rare-class ignore_ids.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,
 SlotContrast exact checkpoint release/stream qualification,
 TRACT missing core model/loss release, COVTrack lawful frontend/release binding,
-MASA exact local frontend/release qualification, OVTR, DYDM author core source, and additional relevant
+MASA/OVTR exact local frontend/release qualification, DYDM author core source, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.
 
