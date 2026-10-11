@@ -90,3 +90,12 @@ not this helper. No claim of20passing tests was made for`bf98281`.
 
 After the forward fix, all20CVPR tests passed in2.66s. No dataset was parsed
 before this result. `bf98281` delivery was fetched and exact-remote verified.
+
+`8bd2473` pushed/fetched/exact-remote verified. Metadata-only read confirms
+57frozen Train-development videos /2065annotation-cadence images, already
+local248321596B; no annotations/categories decoded. FixedGT reference remains
+258tracks/2949cached observations (prefix-capped, not full track truth).
+Register no-GPU asset/plan preflight, then a separate native physical smoke.
+Do not pretend this incomplete-release-provenance frontend is a qualified
+primary, or that truncated GT makes a clean full end-to-end input ablation.
+All22CVPR tests passed in2.62s before this preflight registration.
