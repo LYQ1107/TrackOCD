@@ -1,0 +1,83 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PARTIAL_SOURCE_REVIEW_NOT_CVPR1_COMPLETE",
+  "required_minimum_works": 12,
+  "required_additional_open_source_works": 2,
+  "paper_title": "TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery",
+  "year": 2026,
+  "venue": "CVPR 2026, official CVF record verified",
+  "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wu_TALON_Test-time_Adaptive_Learning_for_On-the-Fly_Category_Discovery_CVPR_2026_paper.html",
+  "repository_url": "https://github.com/ynanwu/TALON",
+  "official_repository_verified": true,
+  "official_binding": "CVF paper page code link points to ynanwu/TALON",
+  "repository_commit": "4091c2df89100974d316ce05659bc25654fcff1e",
+  "license": "NO LICENSE file in complete pinned recursive tree; reuse permission not assumed, no code vendored or executed",
+  "actual_files_read": [
+    {
+      "path": "methods/talon/model.py",
+      "git_blob_sha1": "869267541ba1d1670d77ace55d4f25b8cf0c8af9",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/methods/talon/model.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "methods/talon/trainer.py",
+      "git_blob_sha1": "5ba5dfd13050b85fb769cc40b25b69a9f57a6e2c",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/methods/talon/trainer.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "tools/losses.py",
+      "git_blob_sha1": "ff253892481b1f0a5c37c420a02f620696b9e16f",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/tools/losses.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "tools/evaluate_utils.py",
+      "git_blob_sha1": "54c044632d91231d82567f5c5723b353823d846e",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/tools/evaluate_utils.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "train.py",
+      "git_blob_sha1": "dd53d8a20dfc51358ffaa5ee888b3364e5dc51df",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/train.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "test.py",
+      "git_blob_sha1": "5295eaed59ed36f4a710170e9f8f4a449c9a9b9d",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/test.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "methods/talon/utils.py",
+      "git_blob_sha1": "e101bbd52bab492fb327f3e95d2d18fa866ae555",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/methods/talon/utils.py",
+      "entire_file_read": true
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob_sha1": "f1e955b48aee02259d14b90cf7005f3f7bfe358d",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/pyproject.toml",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cub.py",
+      "git_blob_sha1": "d9d153e6bf56c435968e2ae82331f03342a8f470",
+      "url": "https://github.com/ynanwu/TALON/blob/4091c2df89100974d316ce05659bc25654fcff1e/data/cub.py",
+      "entire_file_read": true
+    }
+  ],
+  "original_task": "Image-level on-the-fly category discovery",
+  "model_inputs": "Images and own predicted assignments for TTA; offline Known labels only in inspected CUB training construction",
+  "model_outputs": "Unit image features and incremental Known/anonymous prototype assignment",
+  "losses": "Offline angular-margin CE plus supervised contrastive; TTA entropy minus own pseudo-cluster/prototype agreement and intercluster separation",
+  "training_protocol": "CUB Known labelled subset only; NCM prototypes on Known training data; shuffled unlabelled evaluation called each epoch; Train-quantile helper computed but evaluation uses supplied self.tau",
+  "online_or_offline": "Known-only offline fitting then batch-stream test-time encoder/prototype adaptation",
+  "causal_or_noncausal": "Prediction path does not use label in inspected evaluate; features are encoded as whole batch, assignment is sequential, encoder/EMA update after batch. Not demonstrated dense event-causal TrackOCD; future-within-batch adaptation at chunk boundaries must not be relabelled event-level PASS",
+  "what_to_borrow": "Train-calibrated Known cosine margins, bounded own-predicted support-weighted prototype updates as hypotheses; compare frozen/noTTA control",
+  "what_not_to_borrow": "Evaluation-label Hungarian Known remapping, shuffled image protocol as causal video order, batch test adaptation or mutable Known prototypes without TrackOCD preregistration and safety proofs; no unlicensed source copying",
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "source_execution_or_training": false,
+  "TAO_data_access": false
+}

@@ -311,3 +311,33 @@ new research scope; nothing has been deleted, no storage pressure is present.
   CLI import and actual57video/reused-input preflight passed. Limited
   frontend release binding, annotated cadence, truncated GT and old numeric
   routing remain limitations; no main scientific success claim.
+
+### Running feature continuation and matched-reference preregistration
+
+- Two owned frozen DINO workers are actually running, not training. Latest
+  observed summaries: worker0 20complete videos/25567new observations and
+  worker1 18complete videos/25827new observations; these are progress snapshots,
+  not a completed57video result. Valid source1293observations remain referenced.
+- Registered next45cases: Raw/A1/A2 x3frozen D2 seeds x5independent prefixes,
+  both all16933predicted IDs and all258selected/capped GT references in the
+  same actual metadata video order, same frozen Known proto/checkpoint/bias.
+  All90private ledgers seal/roundtrip before category-free geometric joining.
+  Keep249Known/9pseudo-Novel GT denominators and all unmatched prediction IDs.
+  Matching cannot certify full GT completeness/global track purity. Old numeric
+  ID routing and independent prefix semantics remain explicitly unrepaired.
+- Completed feature result/manifest must actually exist and bind to exact
+  a02455f registration/config. Their hashes will be measured at launch, not
+  fabricated at preregistration. One-video-resident reader keeps every low-score
+  singleton;8actual tests pass, including hidden-tail mutation/hash/count/path
+  refusals. CPU1/RSS4GiB/wall5400s/output128MiB/no GPU/no optimizer/no Val/Test.
+- Fresh broad regression425passed46.34s before the8new reader tests; no missing
+  terminal output was assumed a PASS. Current free disk about34GiB; no cleanup
+  needed or performed. User conditional cleanup limited to confirmed unused,
+  recomputable project inputs; active inputs/valid shards/unique history and
+  other projects preserved. No external process interference.
+- Read-only TALON audit now includes full pinned model/loss/train/test/CUBsplit
+  source and official CVF→repo binding. No LICENSE in complete pinned tree,
+  so code reuse permission is not assumed; no source executed or vendored.
+  Batch TTA/Hungarian Known remapping are not our causal/fixed-Known protocol.
+  CVPR1 minimum twelve works/additional two/architecture are still pending;
+  this preparation does not skip remaining CVPR0 diagnostics or select a method.

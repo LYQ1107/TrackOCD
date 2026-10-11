@@ -13,7 +13,7 @@ DIRECTORIES = ('historical_audit_integer_normalized', 'checkpoint_replay_v1',
     'train_physical_smoke_v1', 'retained_logit_forensics_v1', 'state_trajectories_v1',
     'cross_video_state_forensics_v1', 'train_physical_diagnostic_v1',
     'train_feature_interface_v1', 'train_feature_interface_recovery_v1',
-    'tiny_semantic_integration_v1')
+    'tiny_semantic_integration_v1', 'train_features_v1', 'matched_train_semantics_v1')
 
 
 def verified_sources(root, commit, source_sha256):
@@ -67,8 +67,12 @@ def build(root):
             proof = json.loads(proof_path.read_text())
             verified_sources(root, proof['preregistration_commit'], proof['source_sha256'])
             progress = json.loads((directory / 'progress.json').read_text()) if (directory / 'progress.json').exists() else {}
-            supervisor = json.loads((directory / 'supervisor.json').read_text()) if (directory / 'supervisor.json').exists() else None
-            failed = supervisor is not None and supervisor['returncode'] != 0
+            progress['actual_worker_summaries'] = [json.loads(p.read_text()) for p in sorted(directory.glob('worker*_summary.json'))]
+            supervisor_path = directory / 'supervisor.json'
+            attempts = sorted(directory.glob('supervisor_registered_*.json'))
+            supervisor = json.loads(supervisor_path.read_text()) if supervisor_path.exists() else (json.loads(attempts[-1].read_text()) if attempts else None)
+            failed = supervisor is not None and (supervisor.get('returncode', 0) != 0 or
+                any(c != 0 for c in supervisor.get('returncodes', [])))
             stages.append({'id': name, 'state': 'FAILED_ACTUAL_PRESERVED_NO_COMPLETED_RECEIPT' if failed else 'REGISTERED_RUNNING_NO_COMPLETED_METRIC',
                 'preregistration_commit': proof['preregistration_commit'],
                 'registered_source_sha256': proof['source_sha256'], 'progress_snapshot': progress,
