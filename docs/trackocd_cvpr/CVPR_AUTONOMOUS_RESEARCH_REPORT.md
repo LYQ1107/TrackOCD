@@ -69,4 +69,9 @@ cases,243.03s CPU-only. Zero-bias WAIT collapse, selected-checkpoint gradient
 antagonism and sparse-fold geometry loss are documented, with explicit oracle
 and causality limits. Memory/known-count and real tied-ID controls are next;
 matched lawful predicted Train input and CVPR-1 source review remain pending.
+Memory/known-count controls now also completed:54cases plus100actual
+ID-renumber pairs,45.63s CPU-only. Old physical-ID invariance fails: H changes
+in2/90learned and7/10fixed-baseline pairs. New causality protocol repair is
+required; old source/results remain intact. Capacities were non-binding,
+not evidence of a general capacity-independent method.
 No training budget spent; no new successful method or CVPR readiness claimed.

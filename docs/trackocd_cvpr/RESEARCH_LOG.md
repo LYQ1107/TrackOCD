@@ -63,3 +63,20 @@ the evaluator correctly refused to drop the original denominator. Preserve
 the failed attempt, separate evaluator registry IDs from prototype availability,
 add an actual full-denominator integration test and register a separately named
 retry. No denominator filtering, training, Val feedback or history overwrite.
+
+Corrected registration`bcb1261` pushed/fetched/remotely verified.54capacity/
+Known-count cases,90learned renumber pairs and10fixed Raw-B1 pairs completed
+in45.63s. Capacities are non-binding (no evictions), all54H/CT0. Actual old
+equal-time ID dependence changes H in2/90learned and7/10baseline pairs.
+Record old-protocol invariance FAIL; do not change historical outputs or claim
+benign token renumbering explains metric changes. New causal protocol repair
+is mandatory. Fresh broader regression before the latest denominator test:
+405passed in50.83s; the16new CVPR tests include the denominator integration.
+
+Preparing a metadata-only input inventory for the still-missing matched Train
+physical counterfactual. New parser byte-skips annotation/category arrays and
+decodes only images/videos. A truncated-object fixture caught a missing final
+brace check before dataset use; fixed it. No new physical job is authorized by
+this parser alone. Published MASA route was rechecked against its official
+paper and pinned docs; this is publication-level support, not exact private
+release training-stage binding or a qualified strong primary frontend.

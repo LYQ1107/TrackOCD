@@ -1,14 +1,15 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_CHECKPOINT_SUBSTEP_COMPLETE",
+  "status": "ACTIVE_CVPR0_MEMORY_CONTROLS_SUBSTEP_COMPLETE",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 2,
+  "new_experiments_completed": 3,
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
-  "next": "Register and execute memory/known-count and real equal-time ID controls; establish lawful matched Train predicted-track comparison"
+  "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
+  "next": "Complete action-logit/memory-trace diagnostics and matched Train predicted-vs-GT inputs; new ID-independent causal protocol required"
 }

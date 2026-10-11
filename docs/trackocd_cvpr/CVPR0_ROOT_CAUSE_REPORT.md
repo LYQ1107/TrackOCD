@@ -108,3 +108,38 @@ Evidence-supported next mechanism directions remain tentative pending code
 review and a new frozen independent Train protocol: Raw-preserving geometry,
 candidate-conditioned calibrated actions, and repeated no-GT reversible
 memory validation rather than a single first-write suppression.
+
+## Completed substep: memory/known-count and ID controls
+
+Corrected registration`bcb1261` was pushed/fetched/remotely verified. All54
+capacity/known-count cases,90learned-policy ID-renumber pairs and10fixed Raw-B1
+pairs completed in45.63s, CPU-only, peak RSS847216640B. The first attempted
+Known-subset seal correctly failed the original-denominator contract; its
+partial outputs are preserved. The retry keeps the full15Known evaluator ID
+registry separate from availability of4/8/15visual prototypes. All249Known
+and9pseudo-Novel development queries remain in denominators.
+
+Capacity16/64/unbounded never triggers eviction: these collapsed policies
+create at most one anonymous state. All54cases have H0/CT0. This is a
+non-binding-capacity observation, **not proof that memory budget is generally
+irrelevant**. Known-count shift changes seed1027 development actions from
+1NEW+257EXISTING (four prototypes) to1NEW+113EXISTING+144WAIT (15prototypes).
+Other seeds remain all-Known on this fold.
+
+### Actual physical-ID invariance FAIL in the old protocol
+
+Only physical IDs were bijectively renumbered; evidence, frame times, video
+orders, model parameters and labels were unchanged. All90learned pairs have
+changed equal-time event ordering. Raw decisions/action-or-token strings change
+in12/90pairs (16Raw,6A1,6A2individual output differences summed across cases),
+and H changes in2/90. Raw token string differences alone could reflect benign
+token permutations; the H changes establish more than that. In fixed Raw-B1,
+H changes in7/10pairs. Old numeric-ID tie ordering is therefore a real
+protocol dependence, not an end-to-end invariance PASS.
+
+Preserve all old code/results. A new namespace must define a current-observation
+ordering or simultaneous-event contract without numeric identity shortcuts,
+then actually rerun ID/category/event/purity/future and role isolation tests.
+This protocol repair is required regardless of whether a new model scores well.
+Remaining CVPR-0 evidence: complete action-logit/error/memory traces and a
+matched Train predicted-vs-GT physical input diagnostic; no phase-complete claim.

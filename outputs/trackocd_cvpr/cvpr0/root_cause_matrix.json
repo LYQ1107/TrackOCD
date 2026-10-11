@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr0.root-cause-matrix.v1",
-  "status": "IN_PROGRESS_TRAIN_CHECKPOINT_SUBSTEP_COMPLETE",
+  "status": "IN_PROGRESS_MEMORY_CONTROLS_SUBSTEP_COMPLETE",
   "scientific_success_claimed": false,
   "evidence": "historical_audit_integer_normalized/result.json",
   "seed_collapse": {
@@ -42,7 +42,23 @@
     "A2_pseudo_Novel_macro_rank1": [0.16666666666666666, 0.16666666666666666, 0.16666666666666666],
     "development_pseudo_Novel_query_count": 9
   },
-  "memory_capacity_known_count": "PENDING",
+  "memory_capacity_known_count": {
+    "status": "54_REAL_CONTROLS_COMPLETE_FULL_DENOMINATORS",
+    "capacities": [16, 64, null],
+    "known_counts": [4, 8, 15],
+    "H_and_CT_all_zero": true,
+    "evictions": 0,
+    "capacity_limits_were_non_binding": true
+  },
+  "physical_ID_renumbering": {
+    "status": "FAIL_OLD_NUMERIC_ID_EQUAL_TIME_ROUTING",
+    "learned_pairs": 90,
+    "learned_pairs_with_H_changed": 2,
+    "fixed_Raw_B1_pairs": 10,
+    "fixed_Raw_B1_pairs_with_H_changed": 7,
+    "old_sources_and_results_preserved": true,
+    "new_causal_protocol_repair_required": true
+  },
   "same_population_predicted_vs_GT_input": "PENDING_LAWFUL_TRAIN_PREDICTED_STREAM",
   "unique_causal_root_cause": "NOT_ESTABLISHED",
   "Val_result_used_to_select_new_model": false,
