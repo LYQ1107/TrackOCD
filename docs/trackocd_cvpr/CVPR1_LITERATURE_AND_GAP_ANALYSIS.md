@@ -211,11 +211,35 @@ disappeared-slot behavior remain limitations. Use temporal consistency only
 as a controlled hypothesis; do not substitute instance IDs for category tokens.
 CVPR1 twelve-work/two-extra requirement remains pending.
 
+### TRACT — official repository, incomplete core release
+
+[Official ICCV2025 CVF abstract](https://openaccess.thecvf.com/content/ICCV2025/html/Li_Attention_to_Trajectory_Trajectory-Aware_Open-Vocabulary_Tracking_ICCV_2025_paper.html)
+explicitly binds [Nathan-Li123/TRACT](https://github.com/Nathan-Li123/TRACT).
+Pinned commit`19f01d72f9f6c212c28fd9cb0171a5432cd41a6a` has no `models` tree:
+the imported track dataset, TraCLIP classifier/loss and MASA association
+implementation are missing. Entry, Train/Val scripts and conversion/metric
+utilities read, not a complete actual-model/loss review or runnable reproduction.
+Root/TraCLIP license unestablished; no upstream code copied or run.
+
+The [paper](https://arxiv.org/html/2503.08145v1) separates previous-trajectory
+association history from final full-trajectory, category-name-assisted
+classification. The latter uses Novel names/attributes and is outside our
+vocabulary-free causal contract. Source converter broadcasts one final class
+back to every detection, not a versioned prefix category event. No referenced
+Test asset or class-name file opened and no source entry executed.
+
+Missing classifier source means entry-passed evaluation labels are neither
+proven harmless nor a demonstrated runtime leak. Retain a narrowly controlled
+past-visible visual aggregation hypothesis only. This availability finding is
+not counted as a complete source audit toward twelve-model/loss acceptance.
+Evidence: `outputs/trackocd_cvpr/cvpr1/tract_source_availability_audit.json`.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,
 SlotContrast exact checkpoint release/stream qualification,
-TRACT, COVTrack, MASA, OVTR, discovery/memory decoupling, and additional relevant
+TRACT missing core model/loss release, COVTrack, MASA, OVTR,
+discovery/memory decoupling, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.
 

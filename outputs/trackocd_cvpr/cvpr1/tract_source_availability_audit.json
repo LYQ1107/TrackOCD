@@ -1,0 +1,68 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "SOURCE_AVAILABILITY_AND_PROTOCOL_AUDIT_INCOMPLETE_CORE_MODEL_LOSS_NOT_READ",
+  "paper_title": "Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking",
+  "year": 2025,
+  "venue": "ICCV2025pp14390-14398, official CVF proceedings inspected through existing proxy",
+  "venue_independently_verified": true,
+  "paper_url": "https://arxiv.org/html/2503.08145v1",
+  "venue_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_Attention_to_Trajectory_Trajectory-Aware_Open-Vocabulary_Tracking_ICCV_2025_paper.html",
+  "repository_url": "https://github.com/Nathan-Li123/TRACT",
+  "official_repository_verified": true,
+  "official_binding": "Official CVF abstract explicitly promises release at this exact repository",
+  "repository_commit": "19f01d72f9f6c212c28fd9cb0171a5432cd41a6a",
+  "license": "Complete pinned tree has only masa/LICENSE, not a root or TraCLIP license; do not assume it covers omitted classifier sources. No upstream source copied or executed",
+  "actual_files_read": [
+    {
+      "path": "TraCLIP/main.py",
+      "git_blob_sha1": "5d7b39a0e88f07c96ffe8e5ab423a020e4a0d8e5",
+      "entire_file_read": true
+    },
+    {
+      "path": "TraCLIP/scripts/train_lvis.sh",
+      "git_blob_sha1": "508de25d016eeb386d040dd4e30b16c50cbdf9ae",
+      "entire_file_read": true
+    },
+    {
+      "path": "TraCLIP/scripts/val_transformerclip.sh",
+      "git_blob_sha1": "ebde5168c30faf7076b60621dccc255fcb7eade6",
+      "entire_file_read": true
+    },
+    {
+      "path": "TraCLIP/tools/transfer_trackets_to_teta.py",
+      "git_blob_sha1": "dcb7146a29c55892fa838005ecad6b77ceb82571",
+      "entire_file_read": true
+    },
+    {
+      "path": "TraCLIP/tools/calculate_accuracy.py",
+      "git_blob_sha1": "fcbe6f824f453fc8926fa070252b9b1a98f48221",
+      "entire_file_read": true
+    }
+  ],
+  "core_source_unavailable": [
+    "models/data/track_dataset.py imported byTraCLIP/main.py",
+    "models/track_classifier.py imported byTraCLIP/main.py",
+    "No models tree at any path in complete untruncated pinned repository, including masa/masa/models"
+  ],
+  "paper_read_scope": "Abstract/intro, methods3.1-3.5 and setup4.1; paper metrics are existing public literature, not our TAO run. Remaining experiment analysis/supplement not fully read",
+  "original_task": "Open-vocabulary trajectory association and final text-vocabulary-assisted classification, not vocabulary-free category discovery",
+  "training_entry": "Frozen CLIP ViTL14, trainable TraCLIP fusion with optimizerAdam; labels passed to model for training. InspectedLVISscript contrastive/fiveepochs; actual loss body missing so reproduction unestablished",
+  "evaluation_entry": "eval_only still builds Train and validation loaders, passes labels alongside visual inputs, then top1 and pertrack JSON. Missing classifier/data source prevents proving whether labels influence inference or how track sampling behaves",
+  "model_inputs": "Paper association uses previous trajectory visual/category banks; final TraCLIP takes complete trajectory clips and base+novel category names/attribute descriptions. Actual entry supplies train/test class-name files",
+  "model_outputs": "Final named category/score for a whole track, broadcast by transfer utility to every detection in that track; not a versioned causal anonymous category stream",
+  "losses": "Paper frozen-CLIP contrastive fusion training; unread missing actual TraCLIP loss/model implementation is not filled in from paper/chat",
+  "causal_or_noncausal": "Paper previous-frame association bank is potentially causal. Complete-trajectory final classification and retroactive pertrack output are not first-frame prefix causal. No actual future-mutation test performed",
+  "evaluation": "PublicOV-TAO TETA/LocA/AssA/ClsA, not our category discovery H/CT; inspected auxiliary accuracy ignores missing prediction/reference joins and optional filtered IDs, so does not establish our fixed denominator",
+  "static_findings_not_executed_failures": [
+    "Complete pinned source lacks core model/data/association modules; do not call this a complete or executed reproduction",
+    "Actual entry passes evaluation labels to missing model; neither leakage nor purity proven without that source",
+    "Public converter contains historical Test-path defaults, but was only read as source, never executed and no referenced asset opened",
+    "Class-name/attribute files not fetched, novel vocabulary not instantiated, no TAO annotations/data/weights/caches read"
+  ],
+  "what_to_borrow": "Only past-visible visual trajectory aggregation and physical association history as independently controlled hypotheses",
+  "what_not_to_borrow": "Novel names/attribute prompts, complete-track confidence sampling or final-category retroactive writes as causal, unread model inferred from chat or filtered accuracy as fair coverage",
+  "source_execution_or_training": false,
+  "TAO_data_access": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_complete_actual_model_loss_audit_countable": false
+}

@@ -515,3 +515,16 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Wholevideo ARI/mBO are not fixedKnown/CT. No new scientific metric or training.
 - Source has custom attention scaling; no silent repair or reproduction claim.
  12work/two-extra review and exact release/stream qualification still pending.
+
+### TRACT source availability boundary
+
+- OfficialCVF ICCV2025pp14390-14398 explicitly links Nathan-Li123/TRACT;
+  pinned19f01d72f9f6c212c28fd9cb0171a5432cd41a6a complete tree lacks every
+  models directory, including imported TraCLIP model/data and MASA association.
+  Actual entry/TrainValscripts/utilities read, missing model/loss not guessed.
+- Only source paths read; no TAO assets, Novel class-name files, Test data,
+  weights or caches opened/downloaded; no entry executed. Public historical
+  Test path strings do not authorize executing them. License/release gaps held.
+- Full-trajectory named classification broadcast is not anonymous causal
+  category persistence. This partial availability audit is not counted toward
+  complete twelve-model/loss requirement; continue other source reviews.
