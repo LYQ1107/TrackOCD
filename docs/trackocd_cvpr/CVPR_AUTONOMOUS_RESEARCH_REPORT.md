@@ -102,6 +102,14 @@ for verified unused/recomputable assets of this project. Active inputs, unique
 copies, valid checkpoints/shards/history and other projects remain protected;
 ambiguous targets require clarification. No cleanup has been needed or done.
 
+Latest permission refresh: snapshot2026-10-11T20:42:56Z has18283311104B
+available (roughly17GiB), above10GiB reserve. Project outputs allocate
+3501510656B and CVPR169144320B. No deletion or approved cleanup targets;
+the valid57video feature cache and private diagnostic receipts remain needed.
+Do not attribute wider workspace growth to this project without evidence.
+Before any large run, recheck free space and explicit incremental bounds.
+See `outputs/trackocd_cvpr/storage_review_20261012.json` for cleanup conditions.
+
 Unchanged per-state Train replay also completed:90cases/21915queries in32.68s,
 exact retained action/logit/order/evaluation parity; all38states across
 independent cases end mixed. Selected-token/member/purity traces are private;

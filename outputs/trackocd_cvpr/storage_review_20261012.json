@@ -1,0 +1,28 @@
+{
+  "schema_version": "trackocd.cvpr.storage-review.v1",
+  "observed_at_utc": "2026-10-11T20:42:56Z",
+  "scope": "Conditional unused-project-data cleanup permission, not broad deletion authorization",
+  "filesystem_available_bytes": 18283311104,
+  "minimum_free_bytes": 10737418240,
+  "project_outputs_allocated_bytes": 3501510656,
+  "cvpr_outputs_allocated_bytes": 169144320,
+  "measurement": "stat -f available blocks*4096 and separate du -B1 -s scans; snapshot, not reservation or growth attribution",
+  "decision": "NO_DELETION_NEEDED_FOR_SMALL_CURRENT_STAGE; large runs require fresh checks and bounded output plans",
+  "deleted_paths": [],
+  "reclaimed_bytes": 0,
+  "approved_cleanup_targets": [],
+  "retention": [
+    "57video valid frozen Train features and verified recovered firstvideo input",
+    "Matched/reference and state/future shadow prediction ledgers needed for reproducibility",
+    "Unique checkpoints/weights/shards and historical negative results/logs/manifests",
+    "Active inputs and all foreign-project assets/processes"
+  ],
+  "cleanup_requirements": [
+    "Confirm exact path resolves inside task-owned storage; inspect symlinks and actual ownership",
+    "Verify no active run, config, manifest, continuation or report relies on target",
+    "Confirm disposable/recomputable status, retaining source/config/hash and provenance; do not infer redundancy from filenames or failure alone",
+    "Use recoverable removal when practical; recheck actual space reclaimed and record exact targets",
+    "Ambiguous/shared/unique targets require clarification; no broad recursive deletion"
+  ],
+  "next": "Keep small source audits and tests running; refuse large feature/training outputs that threaten10GiB reserve. Inventory and reference-check genuinely unused owned targets only if needed."
+}

@@ -149,12 +149,49 @@ This incomplete release-binding audit does not select a new TrackOCD mechanism.
 
 ## Remaining source verification
 
+### VC-CGCD — readable release and unlabeled protocol gaps
+
+The [author paper](https://arxiv.org/abs/2607.04984) directly links
+[VC-CGCD](https://github.com/Mrxjh105/VC-CGCD); pinned commit
+`6a4e73d966d9e311ec0dfab8d31bf3c232926ef7`. ECCV2026 acceptance is an author
+claim, not independently checked proceedings. MIT root and Apache2.0 backbone
+header read. Actual model/head, loss, offline/session training, evaluation,
+prototype and dataset paths inspected with explicit full/partial ranges in
+`outputs/trackocd_cvpr/cvpr1/vc_cgcd_source_audit.json`. No upstream execution.
+
+The [paper](https://arxiv.org/html/2607.04984v1) proposes ambiguity-buffered
+virtual-category supervision and expanded-neighbor learning in unlabeled
+image sessions, not persistent frame-causal track memory. Unknown category
+count and noisy early predictions remain limitations.
+
+The complete pinned tree lacks `models/vc.py`, retaining only CPython3.8
+bytecode; no bytecode decoded or run. More importantly, the online entry passes
+retained dataset labels into VC loss, which prefers valid true labels for
+nonconfusing samples despite an all-zero labeled mask. Classifier size also
+counts true novel labels. Best test accuracy chooses the checkpoint loaded by
+the next session. These inspected paths cannot be adopted into our label-free,
+unknown-K, locked-validation protocol. This is static evidence about this
+commit, not an executed failure or a rebuttal of reported paper performance.
+
+The inspected optimizer precedes construction of the extra VC-specific head;
+its parameters are absent from that student parameter group. Missing VCHAP
+source limits complete gradient-flow verification. Expanded-neighbor code
+hardcodes256 and counts K*K rather than constructed K*expanded_K. Default
+splits/sessions/learning rate/neighbors differ from the paper, so exact release
+reproduction is not established. Optimal test-GT remapping includes Known IDs.
+
+Borrow only candidate ambiguity buffering and lawful representation hypotheses;
+do not transfer true labels/counts, test-selected weights, unread bytecode or
+virtual training classes as persistent category tokens. CVPR1 remains PARTIAL.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
-Correspondence, VC-CGCD, SlotContrast,
+Correspondence, VC-CGCD readable VC module/paper-release binding, SlotContrast,
 TRACT, COVTrack, MASA, OVTR, discovery/memory decoupling, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.
 
-Architecture selection is pending CVPR-0 matched-reference and fixed-history
-diagnostics and the full literature review; no new mechanism is selected here.
+Matched-reference and fixed-history diagnostics are now completed within
+their capped Train scope; they do not certify dense causal policy/memory.
+Architecture selection still requires the full literature review and lawful
+new folds; no new mechanism is selected here.

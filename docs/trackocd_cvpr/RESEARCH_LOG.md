@@ -481,3 +481,24 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - PDF URI diagnostic consumed a capped10MB prefix and ended curl23; no partial
   digest misreported as full file hash. Subsequent pdftohtml link attempt failed
   silently; no new filesystem PDF or dataset, no asset cleanup.
+
+### Storage permission refresh and VC-CGCD static protocol audit
+
+- User conditional cleanup authorization retained: only verified unused,
+  recomputable owned project targets if needed; never active/unique/valid
+  assets, historical negative evidence, other projects or external processes.
+  Snapshot2026-10-11T20:42:56Z: available18283311104B, project outputs
+  allocated3501510656B, CVPR169144320B. No deletion, reclaimed0B; no approved
+  cleanup targets. Large launches require fresh10GiB reserve checks.
+- Previous stage716263a4fcef9ea5a687cf5c3acfd099f5b608c7 verified through
+  GitHub branch API and git fetch/ls-remote exact local SHA. Old17899 proxy
+  absent; existing7890 worked with per-command proxy, no relay restart,
+  credential/global-config change or foreign-process interference.
+- Author-linked VC-CGCD source pinned6a4e73d966d9e311ec0dfab8d31bf3c232926ef7:
+  actual model/loss/train/eval/prototype/dataset/license audit, no code run.
+  Readable VC module missing (bytecode not substituted). Unlabeled entry
+  passes true retained labels to VC loss and true novel counts to head size;
+  test accuracy selects next-session initialization. Static risks, not a
+  measured runtime failure or imported TrackOCD mechanism.
+- Twelve-work/two-extra literature stage, atomic policy/memory integration,
+  dense causal protocol/new folds and GoalsA/B/C remain pending. Training0.

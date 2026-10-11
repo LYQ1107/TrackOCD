@@ -1,0 +1,104 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PARTIAL_STATIC_PROTOCOL_AND_SOURCE_AUDIT_NOT_UPSTREAM_EXECUTION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "Virtual Category-Guided Continual Generalized Category Discovery",
+  "year": 2026,
+  "venue": "Author arXiv comments report ECCV2026 acceptance; proceedings independently unverified",
+  "venue_independently_verified": false,
+  "paper_url": "https://arxiv.org/html/2607.04984v1",
+  "repository_url": "https://github.com/Mrxjh105/VC-CGCD",
+  "official_repository_verified": true,
+  "official_binding": "Author arXiv2607.04984v1 abstract directly links this repository; latest inspected source is not independently bound to paper experiment release",
+  "repository_commit": "6a4e73d966d9e311ec0dfab8d31bf3c232926ef7",
+  "license": "MIT2026VC-CGCDAuthors fully read. vision_transformer.py Facebook Apache2.0 header read. No source copied, installed or executed",
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "8afdb4e1c1d49b2cedb9ac43aed95b94255261e3",
+      "entire_file_read": true
+    },
+    {
+      "path": "train.py",
+      "git_blob_sha1": "d712259eb5be83402c560fc096fc22171ed86e23",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/utils_proto_aug.py",
+      "git_blob_sha1": "8fa32f4237b1b4a0cd1a6b96dfcb75a182c605dc",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/utils_simgcd_pro.py",
+      "git_blob_sha1": "6514384b171b0d2dcb72cbbae591ac23e3dadf51",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/utils_simgcd.py",
+      "git_blob_sha1": "16f969cbb8236ebb8c06b114b9c635ea8649a4f7",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/vision_transformer.py",
+      "git_blob_sha1": "6b656589a59e31d046f979c67b5a4830d6a42738",
+      "entire_file_read": true
+    },
+    {
+      "path": "project_utils/cluster_and_log_utils.py",
+      "git_blob_sha1": "7fa3e51387d8e0cbb15bbc0cc4ed9c25c898c76c",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/get_datasets.py",
+      "git_blob_sha1": "b214df7c05f79d88008ebb4d4af03b5673e09092",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/data_utils.py",
+      "git_blob_sha1": "040c05df6063d4e32b8b386336369b0fa9f0c81d",
+      "entire_file_read": true
+    },
+    {
+      "path": "config.py",
+      "git_blob_sha1": "066f3153066c54506bf3f38e589f0fd3b1ad7ea8",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cifar.py",
+      "git_blob_sha1": "b1fa0863b62c9f3dbcf92330c360f0b08f9e7d69",
+      "entire_file_read": false,
+      "read_line_ranges": [
+        [
+          1,
+          170
+        ],
+        [
+          221,
+          346
+        ]
+      ]
+    }
+  ],
+  "paper_read_scope": "Abstract/intro/preliminaries, methods3.2-3.4, setup4.1, comparison/ablation text4.2-4.3, conclusion5 and limitationsE.1-E.2; not full supplementary algorithms or visual figures",
+  "original_task": "Known-labelled offline initialization followed by full-session unlabeled image continual generalized category discovery",
+  "model_inputs": "DINO ViTB16 weak/strong augmented image views, projection/weight-normalized classifier and current-session feature-bank neighbors; supplied entry also passes true dataset labels to VC loss",
+  "model_outputs": "Parametric class logits plus per-sample virtual logit during training; expansion size uses benchmark novel class counts. Evaluation outputs classifier argmax then external GT-Hungarian remap",
+  "losses": "Offline KnownCE+SupCon, detached cross-view distillation and entropy regularization. Session training distillation/group-wise entropy, expanded-neighbor CE, hardness-aware Gaussian prototype augmentation, previous-feature distillation and VC CE",
+  "training_protocol": "Shuffled whole-session minibatch SGD and multi-epoch fitting, not frozen pretrained-only inference. Default100offline/30online epochs, four sessions, lastViTblock trainable. Test accuracy selects saved best checkpoint that seeds next session",
+  "online_or_offline": "Session-incremental training on available full-session pool, with optional whole-session clustering. Not per-frame irrevocable deployment predictions or mutation-certified current-frame causal stream",
+  "static_reproducibility_findings_not_measured_runtime_failures": [
+    "Complete pinned tree has models/__pycache__/vc.cpython-38.pyc but lacks imported models/vc.py. Bytecode is not reviewed/executed as a substitute for readable VCClassifier/WeightGenerator/VCHAP source",
+    "Online train.py400 passes class_labels.repeat(2) into VCloss although mask_lab is zero. VCloss138-140 prefers any valid0<=target<K non-ignore ground-truth label on nonconfusing samples. MergedUnlabelledDataset and CIFAR wrappers retain labels, and get_datasets remaps them into the classifier range. This supplied path is not label-free; its actual end-to-end execution is not claimed",
+    "train.py890-902 counts unique true novel labels to set num_cur_novel_classes and945 classifier size; num_novel_class_per_session also derives from benchmark class-set sizes. This is oracle cardinality, not an unknown-K discovery protocol",
+    "Offline and online best models are chosen by disjoint test accuracy; subsequent sessions load that best checkpoint. Cannot import this selection into locked TAO Val",
+    "Optimizer is built from student at306-307 before new student_classifier337; new VC-specific head is not in those parameter groups unless shared elsewhere. Missing VCHAP source prevents complete gradient/update audit",
+    "Expanded-neighbor implementation hardcodes256 rows/features and reportsK*K expanded neighbors despite constructingK*expanded_K; defaultK4 andexpanded_K1 differ. Paper-described adaptive margin and FAISS-neighbor active path are not established in this inspected torch-based function",
+    "Defaults CIFAR80Known/four sessions/lr0.1/neighbors4 differ from paper50%Known/five main-table sessions/lr0.01/neighbors3. No exact paper command or release binding assumed"
+  ],
+  "evaluation": "Global Hungarian matching remaps classifier predictions, including Known, at each test set. All/Old/New ACC and forgetting/discovery summaries do not certify fixed Known IDs or persistent cross-video category tokens",
+  "state_memory": "Offline labelled visual prototypes retained; session novel prototypes are predicted-label means after best-checkpoint load, with FC-weight fallback. No inspected reversible category-event log, quarantine, split/merge lineage or versioned public prediction repair",
+  "what_to_borrow": "Only ambiguity-buffer/candidate-set and lawful multi-positive representation hypotheses; independently design with observed prefixes and Train-only supervision/calibration",
+  "what_not_to_borrow": "True online labels/cardinality, test-selected checkpoints, unread bytecode as source, virtual class as persistent category token, full-session replay as dense causal inference or optimal remapping as fixed Known accuracy",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "TAO_data_access": false
+}
