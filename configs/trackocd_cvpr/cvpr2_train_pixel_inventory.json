@@ -1,0 +1,16 @@
+{
+  "schema_version": "trackocd.cvpr2.train-pixel-inventory.v1",
+  "cache_directory": "outputs/trackocd_core/features/train_first_v1",
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "train_annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+  "train_annotation_sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+  "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "expected_safe_reference_videos": 421,
+  "expected_safe_reference_tracks": 1867,
+  "expected_eligible_categories": 15,
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/train_pixel_inventory_v1",
+  "rss_bytes_ceiling": 2147483648,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 131072,
+  "interpretation": "Path/stat-only all annotated-image coverage in421 safe previously authorized reference videos; annotation/categories arrays byte-skipped, pixels not decoded or hashed. Not dense frame availability, feature validity, full GT census, new split, primary frontend qualification or model result. Missing bytes not guessed."
+}

@@ -796,3 +796,19 @@ new research scope; nothing has been deleted, no storage pressure is present.
   is still unexecuted; no large asset move/extraction/training automatically.
 - Full119 engineering tests PASS3.39s, no skips, including exact inventory
   receipt/source binding. These do not certify a feasible independent fold.
+
+### Train pixel availability: path/stat-only preregistration
+
+- Predeclared421safe reference videos/1867rows/15eligible classes from the
+  measured allowed inventory. Re-filter the same four permitted label partitions;
+  parse only registered Train image/video metadata, byte-skip category/annotation
+  arrays. Check all annotated-image paths in selected videos by stat only.
+- No pixel decode/hash, missing-byte guess, downloads, inference, training,
+  deletion, old heldout labels, Val/Test or fullGT census. Complete annotated
+  image presence is NOT dense-frame/corruption/source-provenance acceptance.
+- Exact remote registration/no output overwrite; oneCPU/RSS2GiB/wall120s/
+  output128KiB and25%RAM/10GiBdisk reserve. Report partial/missing videos and
+  anonymous class support, never silently discard them to improve results.
+- Full125engineering tests PASS3.14s, no skips, before remote registration;
+  synthetic path tests cover partial/missing/zero-byte and escaping/duplicate
+  paths without real image decode. Real pixel inventory still unexecuted here.
