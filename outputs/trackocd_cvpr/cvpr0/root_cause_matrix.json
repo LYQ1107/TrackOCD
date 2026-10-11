@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr0.root-cause-matrix.v1",
-  "status": "IN_PROGRESS_TRAIN_STATE_TRAJECTORIES_COMPLETE",
+  "status": "IN_PROGRESS_MATCHED_AND_FIXED_HISTORY_DIAGNOSTICS_COMPLETE",
   "scientific_success_claimed": false,
   "evidence": "historical_audit_integer_normalized/result.json",
   "seed_collapse": {
@@ -59,7 +59,25 @@
     "old_sources_and_results_preserved": true,
     "new_causal_protocol_repair_required": true
   },
-  "same_population_predicted_vs_GT_input": "TRAIN_PHYSICAL_COMPLETE_57_VIDEOS_ONE_VIDEO_FEATURES_RECOVERED; MATCHED_SEMANTIC_DIAGNOSTIC_PENDING; TRUNCATED_GT_REFERENCE",
+  "same_population_predicted_vs_GT_input": {
+    "status": "45_FROZEN_CASES_COMPLETE_SELECTED_CAPPED_REFERENCE_NOT_MAIN_QUALIFICATION",
+    "predicted_tracks": 16933,
+    "reference_targets": 258,
+    "canonical_matched_reference_targets": 107,
+    "unknown_unmatched_predicted_tracks": 16826,
+    "fixed_Known_pseudo_Novel_CT_denominators": [249, 9, 5],
+    "verified_private_ledgers": 90,
+    "retained_events": 773595,
+    "all_correct_commit_CT_zero": true,
+    "nonzero_H_cases": [
+      {"representation": "A0_RAW", "seed": 1029, "prefix": 2, "input": "predicted", "H": 0.015503875968992248},
+      {"representation": "A0_RAW", "seed": 1029, "prefix": 2, "input": "GT_controlled", "H": 0.15902140672782872},
+      {"representation": "A0_RAW", "seed": 1029, "prefix": 16, "input": "GT_controlled", "H": 0.007936507936507936}
+    ],
+    "unique_physical_input_only_causal_proof": false,
+    "old_numeric_ID_routing_not_repaired": true,
+    "result_sha256": "a0ee9f8d5891c3b9abc30ad5ff5b9d7c8cfb018e223bd3edcea460c96b79111d"
+  },
   "train_state_trajectories": {
     "status": "90_CASES_21915_QUERIES_EXACT_RETAINED_PARITY",
     "created_states_across_independent_cases": 38,
@@ -79,6 +97,20 @@
     "seed1028_1029_wrong_known_on_pseudo_novel_queries": [9, 9],
     "selected_token_trajectory_retained": false,
     "premature_commit_causality_proven": false
+  },
+  "fixed_actual_history_future_information": {
+    "status": "72_CASES_17532_QUERIES_EXACT_ACTUAL_PARITY_NOT_WAITING_POLICY_PROOF",
+    "aggregates_are_repeated_independent_case_queries_not_unique_tracks": true,
+    "Known_wrong_commits_with_later_input": 7624,
+    "Known_later_zero_nominal_cost_WAIT_still_wrong": [877, 12, 6735],
+    "Known_correct_commit_later_wrong_commit": 369,
+    "pseudo_Novel_wrong_commits_with_later_input": 790,
+    "pseudo_Novel_later_zero_nominal_cost_WAIT_still_wrong": [18, 0, 772],
+    "A2_D2_dev_seed1027_p8_Known_pseudo_wrong_with_later": [85, 7],
+    "A2_D2_dev_seed1027_p8_later_corrections": [0, 0],
+    "future_shadow_wrote_memory_or_GT_observer": false,
+    "unique_early_commit_causality_or_deployable_wait_gain_proven": false,
+    "result_sha256": "baff0a80b892f59981ff722d7ba9b25d1752621114534483579b1b5d476984f5"
   },
   "unique_causal_root_cause": "NOT_ESTABLISHED",
   "Val_result_used_to_select_new_model": false,

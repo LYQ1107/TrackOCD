@@ -13,7 +13,8 @@ DIRECTORIES = ('historical_audit_integer_normalized', 'checkpoint_replay_v1',
     'train_physical_smoke_v1', 'retained_logit_forensics_v1', 'state_trajectories_v1',
     'cross_video_state_forensics_v1', 'train_physical_diagnostic_v1',
     'train_feature_interface_v1', 'train_feature_interface_recovery_v1',
-    'tiny_semantic_integration_v1', 'train_features_v1', 'matched_train_semantics_v1')
+    'tiny_semantic_integration_v1', 'train_features_v1', 'matched_train_semantics_v1',
+    'fixed_history_shadow_v1')
 
 
 def verified_sources(root, commit, source_sha256):
@@ -89,8 +90,8 @@ def build(root):
             {'path': 'outputs/trackocd_cvpr/cvpr0/historical_audit', 'reason': 'NumPy integer JSON serialization failure', 'not_deleted': True},
             {'path': 'outputs/trackocd_cvpr/cvpr0/memory_controls_v1', 'reason': 'Known denominator registry mismatch correctly refused', 'not_deleted': True},
             {'path': 'outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1', 'reason': 'Final NumPy int64 JSON failure after NPZ written; failed exit preserved, CPU no-reencoding recovery separate', 'not_deleted': True}],
-        'pending': ['matched semantic predicted-vs-truncated-GT comparison',
-                    'fixed-history premature-commit counterfactual', 'ID-independent dense online protocol',
+        'pending': ['ID-independent dense online protocol',
+                    'prospective waiting and reversible-memory mechanism acceptance',
                     '12-source actual-code review', 'new independent Train protocol and at least3mechanisms', 'Goals A/B/C']}
 
 

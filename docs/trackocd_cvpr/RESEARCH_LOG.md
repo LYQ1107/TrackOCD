@@ -389,3 +389,31 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Actual execution waits for current matched-input CPU work, not yet complete.
 - Documentation formatting correction: the preceding delivery had a diff-check
   warning for an extra EOF blank line; now corrected forward, no history rewritten.
+
+### Actual matched inputs and fixed-history shadow delivery
+
+- Registered ed699ab20448ccce30ac08ce59f49f350e814c84 matched run completed
+  45cases in700.4741298s CPU-only, peakRSS1665089536B, training0. All90
+  retained ledger hashes/bytes/rows rechecked,773595events. Full fixed
+  denominators249Known/9pseudo/5reuse;107canonical matches out of258selected
+  capped references,16826unknown unmatched Pred IDs. No GT in Pred inference.
+- All CT0, but H is not universally0: Raw1029p2 Pred0.015503876/
+  GT0.159021407 and Raw1029GTp16 .007936508. No selective denominator removal,
+  main-quality claim, unique physical-input cause or numeric-ID repair.
+- Registered356a38672e56d5b550b56d17c771c184e5e9b060 shadow completed72cases/
+  17532queries in35.4547905s CPU-only, peakRSS847216640B. All actual actions,
+  logits,tokens,order,metrics match original; shadow cannot update either
+  visual history or external GT observer. Private trace976524B/hash/rows verified.
+- Repeated-case sums (not unique tracks):7624Known wrong-with-later split
+  877zero-nominal-cost/12WAIT/6735still-wrong;369correct→wrong.790pseudo wrong
+  with later split18/0/772. A2dev1027p8 all85Known+7pseudo wrong stay wrong.
+  Do not infer live wait gain, long-horizon regret or unique early-commit cause.
+- Added aggregate table preserving the distinctions among input commitment,
+  reference prediction/non-WAIT and reuse coverage; four actual input mutations
+  are refused.59CVPR tests passed2.80s; broader442tests passed39.35s.
+- User conditional cleanup policy remains in force; free disk~27GiB and own
+  bounded outputs far below15GiB soft ceiling. Subsequent check shows23GiB
+  free; the cause of workspace-wide growth is not attributed to any process.
+  No files deleted; no external
+  process interference, new weights, optimizer, Val/Test or heldout access.
+  Both result receipts/CSV public; feature/prediction/GT traces stay private.

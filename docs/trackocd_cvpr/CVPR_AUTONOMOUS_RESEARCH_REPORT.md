@@ -139,3 +139,19 @@ Class-free geometry finds3canonical targets out of7capped Known references;
 all7denominators retained,259unmatched predictedIDs unknown. ZeroNovel/
 cross-video opportunities, so no H/CT/discovery gain or main result. Larger
 bounded Train feature continuation and matched reference study remain next.
+
+The bounded feature prerequisite and matched study subsequently completed.
+Matched45cases/90sealed ledgers/773595events retain all16933Pred inputs and
+249Known/9pseudo-Novel/5reuse reference denominators;107/258capped references
+match canonically.16826unmatched predictions remain unknown. All CT0;
+Rawseed1029p2 has nonzeroH(Pred0.01550/GT0.15902), so this is not blanket
+all-H0. It is not a fullGT census, unique input-only causality or main success.
+
+Registered72case fixed-history shadow also completed35.45s/17532queries with
+exact original actual prediction/evaluation parity. Some later evidence
+corrects nominal errors, others flip correct→wrong; under collapsing A2seed1027
+devp8,85Known+7pseudo wrong commitments all remain wrong at p16. These are
+external future-information diagnostics, not deployable waiting gains.
+Training remains0/600; noVal/Test/heldout labels or cleanup. Full scientific
+GoalA/B/C, denseID-independent protocol/newTrain folds/source review and≥3
+bounded distinct mechanisms remain pending; the active goal is not complete.

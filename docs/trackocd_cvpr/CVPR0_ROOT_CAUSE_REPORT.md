@@ -312,3 +312,51 @@ but selected capped GT cannot certify full ground truth or global purity. Old
 numeric-ID routing, independent prefixes, incomplete frontend release binding and
 missing fixed-history premature-commit/new causal protocol remain. CVPR0 and the
 overall goal are not complete; no Novel/main method gain is claimed here.
+
+## Actual matched Train semantics — 45 cases, not a primary quality result
+
+Preregistered ed699ab20448ccce30ac08ce59f49f350e814c84 execution completed
+700.4741298s CPU-only, peakRSS1665089536B, optimization steps0. All16933Pred
+and258selected cappedGT inputs remain:90private sealed ledgers/773595events
+independently rechecked for hash, byte count, row count and full fixed
+249Known/9pseudo-Novel/5cross-video-opportunity denominators. Canonical
+class-free post-seal matching covers107/258references;16826unmatched Pred
+tracks remain unknown, not background. Pred reference coverage is107/258
+when all matched targets commit; it is distinct from all-Pred action coverage.
+
+All45cases in both input conditions have correct-commitCT0. Do not say all
+H values are0: Raw seed1029 p2 has PredH0.01550387597 versus GTH0.15902140673;
+its GT p16H0.00793650794. Every other H is0. At p16 A2seeds1028/1029,
+PredOld90/249 and86/249 versus GTOld194/249 and198/249; New/H/CT0 in each.
+A2seed1027 Pred1NEW+16932EXISTING versus GT1NEW+113EXISTING+144WAIT;
+PredOld0/New2/9 versus GTOld0/New3/9, H/CT0. All90aggregate rows are in
+`matched_train_semantics_v1/summary.csv`; unchanged result SHA256
+`a0ee9f8d5891c3b9abc30ad5ff5b9d7c8cfb018e223bd3edcea460c96b79111d`.
+
+This does not isolate physical-input causality: input universe, temporal
+schedule and routing also change. Selected truncated GT, only9pseudo-Novel
+references, old numeric-ID ties, independent prefix replay and incomplete
+released-frontend binding remain. No main benchmark or selected-model gain.
+
+## Fixed actual-history future-information shadow — 72 cases
+
+Preregistered356a38672e56d5b550b56d17c771c184e5e9b060 run completed
+35.4547905s CPU-only, peakRSS847216640B. All17532queries across72independent
+cases exactly preserve original actual actions/logits/tokens/order/evaluation;
+shadow p16 queries never write visual memory or external GT observer. Private
+976524B trace/hash/row count verified, raw labels/queries never Git-published.
+Result SHA256`baff0a80b892f59981ff722d7ba9b25d1752621114534483579b1b5d476984f5`.
+
+Across repeated cases,7624Known wrong commitments have later evidence:
+877shadowzero-nominal-cost,12shadowWAIT,6735still-wrong.369previously correct
+Known commitments flip wrong.790pseudo-Novel wrong commitments with later
+evidence split18zero-nominal-cost/0WAIT/772still-wrong. These are sums across
+representations/seeds/partitions/prefixes, not unique-track counts or causal
+policy gains. A2seed1027 developmentp8 alone has85Known+7pseudo wrong
+commitments with laterinput; all92remain wrong at p16 under that same history.
+
+Longer evidence sometimes changes compatibility, but does not generally cure
+controller or mixed-history failure. No waiting-policy gain, long-horizon
+regret reduction or unique premature-commit causality follows. Dense causal
+ID-independent protocol, independent larger lawful Train folds, full source
+review and prospective bounded mechanisms remain necessary. CVPR0 ongoing.
