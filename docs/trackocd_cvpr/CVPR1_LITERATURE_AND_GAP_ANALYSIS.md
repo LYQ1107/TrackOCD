@@ -336,12 +336,57 @@ supplied ten; EAGC remains public-code-only with licensing unresolved. This
 substep does not complete the full twelve-work audit, fair protocol or any
 mechanism. Missing release/core sources remain explicitly partial.
 
+### COVTrack — actual native path is not an anonymous causal category frontend
+
+[Official ICCV2025 paper](https://openaccess.thecvf.com/content/ICCV2025/papers/Qian_COVTrack_Continuous_Open-Vocabulary_Tracking_via_Adaptive_Multi-Cue_Fusion_ICCV_2025_paper.pdf)
+explicitly binds [author repository](https://github.com/zekunqian/COVTrack),
+pinned `9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b`.
+Root Apache2 license fully read. Actual C-TAO config/runner, detector/RoI,
+fusion/association losses, current/past tracker and format/evaluation path
+reviewed. Full-file versus selected line-range reads and blob hashes are in
+`outputs/trackocd_cvpr/cvpr1/covtrack_source_audit.json`. No weights,
+annotations, vocabulary lists or bytecode opened; no upstream code executed.
+
+The paper's cue-reliability framework motivates a visual/geometry control,
+not persistent category identity. Native source uses supplied vocabulary
+before output: text embeddings, validation category subset and Novel-role blend
+affect classification, dynamic thresholds and NMS. Removing output names does
+not remove these dependencies. Per-video physical-instance IDs reset at frame0;
+default formatting performs full-track majority-vote category rewriting.
+This postprocessing is retrospective, not a causal category ledger.
+
+Actual fusion uses residual appearance plus squared low-confidence scale,
+not paper Eq5's convex blend. Actual training detaches inter-frame confidence
+diagonals; cycle-MSE is disabled. Raw bbox coordinates enter the active fusion
+path. Source/config/run/paper schedules differ; none is silently corrected.
+Tracker's optional default-on host-specific GT observer remains inside forward;
+logging indices do not select fusedfeature rows in inspected code, but no actual
+GT/future/ID mutation certificate or legal supervision provenance is claimed.
+Valid recovered shards remain protected assets, not accepted frontend evidence.
+
+### DYDM — discovery/memory decoupling paper read, author source not verified
+
+[Official CVPR2026 main paper](https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Decouple_Your_Discovery_and_Memory_in_Continual_Generalized_Category_Discovery_CVPR_2026_paper.pdf)
+and [supplement](https://openaccess.thecvf.com/content/CVPR2026/supplemental/Yu_Decouple_Your_Discovery_CVPR_2026_supplemental.pdf)
+reviewed for method, experiments, Algorithm1 and implementation. The framework
+separates trainable discovery from a frozen-basis analytical memory classifier,
+fitted to newly predicted classes after each dataset stage. It is a useful
+decoupling hypothesis, not an implemented TrackOCD method. Whole-stage training
+and final refitting are not arrival-time causal discovery; global Hungarian ACC
+is not fixedKnown categoryCT. No inspected reversible memory lifecycle.
+
+Official page/selected paper text and targeted repository searches did not yield
+a verified author core source. This is scoped search evidence, not proof that
+no code exists. `outputs/trackocd_cvpr/cvpr1/dydm_paper_source_availability_audit.json`
+therefore records **paper-only**, not an actual-code or licensed-extra count.
+No third-party paper-note claims substitute for primary paper/source evidence.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,
 SlotContrast exact checkpoint release/stream qualification,
-TRACT missing core model/loss release, COVTrack, MASA, OVTR,
-discovery/memory decoupling, and additional relevant
+TRACT missing core model/loss release, COVTrack lawful frontend/release binding,
+MASA, OVTR, DYDM author core source, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.
 

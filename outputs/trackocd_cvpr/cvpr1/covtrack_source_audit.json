@@ -1,0 +1,208 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_ACTIVE_CTAO_PATH_AUDIT_NOT_LAWFUL_FRONTEND_OR_UPSTREAM_REPLICATION",
+  "paper_title": "COVTrack: Continuous Open-Vocabulary Tracking via Adaptive Multi-Cue Fusion",
+  "year": 2025,
+  "venue": "ICCV2025 official CVF proceedings pp10054-10063",
+  "venue_independently_verified": true,
+  "paper_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Qian_COVTrack_Continuous_Open-Vocabulary_Tracking_via_Adaptive_Multi-Cue_Fusion_ICCV_2025_paper.pdf",
+  "repository_url": "https://github.com/zekunqian/COVTrack",
+  "repository_commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b",
+  "official_repository_verified": true,
+  "official_binding": "Accepted CVF PDF page1 explicitly links zekunqian/COVTrack. Exact weights/run/config-paper numerical reproduction not verified; current main includes later release/QA changes.",
+  "additional_to_user_supplied_ten": false,
+  "whole_project_license_read": true,
+  "license": "Apache2.0 root LICENSE fully read; no imported code/assets.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "6c1b021ac2fc5e08b05c28f67d17efa1cce02cb0",
+      "entire_file_read": true
+    },
+    {
+      "path": "configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+      "git_blob_sha1": "1099e6caaca06620c0638e178204bd534b556f18",
+      "entire_file_read": true
+    },
+    {
+      "path": "run_later.py",
+      "git_blob_sha1": "1c527e354b017564ffa3a60d5b4a6d577c2c36a8",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/models/roi_heads/bbox_heads/convfc_bbox_head.py",
+      "git_blob_sha1": "326a3e1dc348b9c060824636a5ed2c4d5b299083",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/models/losses/multipos_cross_entropy_loss.py",
+      "git_blob_sha1": "dafa4e165144018f591841d13bb4fc843289b494",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/models/losses/l2_loss.py",
+      "git_blob_sha1": "e2306663b143c8ee8a9258f38fbe60704c3ca259",
+      "entire_file_read": true
+    },
+    {
+      "path": "tools/train.py",
+      "git_blob_sha1": "71f08331c646f0a042ae5eb850e604c4ce4f41eb",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/apis/train.py",
+      "git_blob_sha1": "969a26c1151f308913817d34dbd2a984360acff9",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/apis/test.py",
+      "git_blob_sha1": "53a3676e60a532a599a02cd40ad6ddf23468e80c",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/datasets/tao_dataset.py",
+      "git_blob_sha1": "b6c7d26a80263bb05085236c898b8a4b8069fe60",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/datasets/builder.py",
+      "git_blob_sha1": "d929f337a2ad8ff3d9279cf0e56677c29a740960",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/datasets/samplers/distributed_video_sampler.py",
+      "git_blob_sha1": "c5fb3dee43afdac59ca0385a2ff224c040271feb",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/core/track/similarity.py",
+      "git_blob_sha1": "84806e63a5aa9601ba6d6af30f4cb29c2f7a4c37",
+      "entire_file_read": true
+    },
+    {
+      "path": "ovtrack/models/mot/ovtrack.py",
+      "git_blob_sha1": "ff34fdf858593e4faca2ca123b963ce5d75b0255",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          246
+        ]
+      ]
+    },
+    {
+      "path": "ovtrack/models/roi_heads/ovtrack_roi_head.py",
+      "git_blob_sha1": "b077efbf1337e7a2741f5ea43bbd0f926dcafc01",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          30
+        ],
+        [
+          1392,
+          2678
+        ],
+        [
+          2860,
+          2994
+        ],
+        [
+          3067,
+          3505
+        ]
+      ]
+    },
+    {
+      "path": "ovtrack/models/roi_heads/track_heads/quasi_dense_embed_head.py",
+      "git_blob_sha1": "ab7c03cda5c6b01a121421b19f9b90613cc73867",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          275
+        ]
+      ]
+    },
+    {
+      "path": "ovtrack/models/losses/cyc_loss.py",
+      "git_blob_sha1": "f5696c3c22de5fd6c9c21f9afeff80da88c8ff15",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          147
+        ]
+      ]
+    },
+    {
+      "path": "ovtrack/datasets/coco_video_dataset.py",
+      "git_blob_sha1": "6183d33f447b11d49cc327fc98cf658659e0a91a",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          273
+        ]
+      ]
+    },
+    {
+      "path": "tools/test.py",
+      "git_blob_sha1": "43b82428eaedd17950742fd0f5214405e0306c48",
+      "entire_file_read": false,
+      "line_ranges_read": [
+        [
+          1,
+          200
+        ],
+        [
+          393,
+          530
+        ]
+      ]
+    }
+  ],
+  "paper_read_scope": "Main PDF intro/task/dataset3/method4.1-4.6/experiments5.1-5.4/conclusion6 text. Not all diagrams visually or references/supplement/++extension.",
+  "original_task": "Instance-level open-vocabulary MOT with supplied Base and Novel class vocabulary, not autonomous persistent unknown-category discovery.",
+  "model_inputs": "Current image, frozen FasterRCNN/ResNet50 proposals, 1203 precomputed LVIS text embeddings and validation category-ID/Novel-role subset; previous per-video track memory. Training image pairs and GT boxes/match-index/labels use C-TAO annotation path unopened here.",
+  "model_outputs": "Per-frame class-scored boxes,256D appearance embedding,512D mean normalized text/image RoI projections and per-video physical track IDs.",
+  "losses": "GT positive proposal-pair association: unbiased multi-positive CE weight0.25 plus hard-negative mined cosine L2 weight1, on original appearance and fused representations after iteration1000. Explicit cycle-MSE disabled by active config/run. Cycle-softmax diagonals are computed for fusion but detached before fusion in actual Train path.",
+  "training_protocol": "Config SGD0.002/momentum0.9/wd0.0001, samples12perGPU,4GPUs run_later, class-balanced base.json-path dataset and original-frame+extra8x sampling, uniformreference +/-30frames. Config10epochs; runner override20epochs. No command executed/no raw annotation opened.",
+  "online_or_offline": "Offline paired-frame supervised tracker Train; image-plus-past physical-instance association at inference; full-track majority-vote category rewrite during default result formatting.",
+  "causal_or_noncausal": "Inference association inspected uses current RoI+past memo, but formatter rewrites every category in a completed physical track using future predictions. This is not a causal category ledger. Training +/-30pairs is offline supervision, not itself inference future leakage.",
+  "state_memory": "Per-video tracker reset at frame0, numeric instance IDs, EMA embed update, lastbox/lastclass and TTL10config/50runner. No crossvideo anonymous category bank, WAIT, rollback or versioned category events.",
+  "evaluation": "Actual dataset evaluator formats all tracks with tcc=true, computes TETA using GT only externally; optional TAOTrackAP/LVISdetAP. run_later evaluates epoch checkpoint directory and writes Base/Novel results; no evaluated-best auto-selection demonstrated in inspected directory path and none used here.",
+  "contract_rejections": [
+    "Output anonymization cannot remove upstream dependency: precomputed class text embedding, validation category mask, Novel-role-conditioned image/text geometric blend and vocabulary-size dynamicthreshold all affect detection/NMS before labels are removed.",
+    "Native class_name.py import references global vocabulary and split lists; file contents/class names/data were not read. No new vocabulary created or enabled.",
+    "GT visualization defaultvis=true conditionally opens a host-specific annotation pickle inside tracker construction; match accesses GT to choose logging indices and writes GT-containing diagnostics. Inspected fusion indices select observer returns, not actual fusedfeature rows. This still violates external-observer boundary; no actual GTmutation certificate.",
+    "Whole-track majority vote defaulttcc=true uses future predicted classes to rewrite historical outputs. Disabling this would define a different qualified frontend rather than reproduce native postprocessing.",
+    "Training class list includes all LVIS categories; base-only annotation filename alone proves no effective supervision legality. Actual source filters by configured catIDs, not explicit Knownfrequency. C-TAO effective labels/checkpoint training lineage not audited here."
+  ],
+  "static_source_paper_differences_not_executed_failures": [
+    "Paper fusion Eq5 confidence-weighted convex blend; source uses residual appearance + maxratio*(1-assoc_conf)^2*MLP, auxiliary gates additionally times0.5. Do not silently replace source and assert paper replication.",
+    "Paper location cue normalized by frame dimensions; active fusion feeds raw sampled or returned bbox coordinates intoLinear4to256. normalize_detections helper elsewhere not on inspected path.",
+    "Paper says end-to-end trainable interconfidence; actual Train cycle diagonals detached before fusion, with explicit cycle-MSE disabled. Gate/residual/appearance losses exist, but no interconfidence gradient claim.",
+    "Paper10epochs/threshold0.35/memo30 versus config10/.5/10/max50 and runner20/.37/50/max80/momentum0.4. Keep all three configurations separate.",
+    "Projection and projection_for_image belong toRoI head outside frozen bboxhead list; freeze_detector flag does not itself prove all detector-derived semantic projections frozen.",
+    "RoI classifier already softmax-normalizes text/image scores and geometrically blends them, then bboxhead get_bboxes applies softmax again. These are category scores, not a certified foreground-probability calibration.",
+    "Uncertainty simple_test exception tries host-specific torch.save then sys.exit(0); native exitstatus alone not a cache success marker. This source path not executed.",
+    "simple_test builds filename slice at literalval substring even on other scoped inputs; portability/staticqualification only, no observed failure.",
+    "CocoVideoDataset np.int legacy source incompatible with unmodified modernNumPy alias removal; full legacyMMCV/mmdet/clip stack/requirements not installed or run. ExistingMASA smoke environment is not automatically COVTrack-ready."
+  ],
+  "paper_limitations_summary": "Paper reports OVMOT supplied-vocabulary instance association, dense-pair benefits and diminishing returns of full annotation. No anonymous crossvideo category lifecycle, selfcorrection/versioned rollback or our metric acceptance demonstrated.",
+  "TrackOCD_root_connection": "Confidence-aware visual/geometry fusion is a bounded cue reliability hypothesis. Physical-instance memo and fulltrack category voting cannot serve as persistent category identity. Valid recovered shards remain evidence/assets, not certified lawful frontend by this review.",
+  "what_to_borrow": "After lawful independent Train qualification, explicit current/past cue reliabilities and Raw-versus-fusion controls, using anonymous visual/location-only inputs.",
+  "what_not_to_borrow": "Novel text/split masks/dynamic vocabulary thresholds, in-forward GTvisualization, wholetrack retrospective class rewriting or supplied semantic classification as discovery.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Exact local source/checkpoint/config binding",
+    "Known-only effective training provenance",
+    "Vocabulary-free candidate/input design",
+    "Actual future/ID/GT mutation checks including formatter",
+    "Dense chronological atomically updated policy-category memory"
+  ]
+}

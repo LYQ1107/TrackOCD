@@ -575,3 +575,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
   causal policy/memory/newfolds/method choices still pending, training0.
 - Latest targeted70tests PASS5.20s (before documentation-only DebGCD additions).
   Storage15661084672B above10GiB reserve; no approved cleanup targets/deletions.
+
+### COVTrack native source / DYDM primary-paper qualification
+
+- COVTrack officialICCV2025 PDF binds repo9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b.
+  RootApache2 read; actual Train/config/runner/model/fusion/loss/current-past
+  tracker/format/eval audited with explicit wholefile vs selectedrange scope.
+  Native vocabulary/split-mask/dynamicthreshold dependencies and retrospective
+  track-majority category rewrite preclude anonymous strictcausal acceptance.
+- Source fusion/grads/coordinates and runner/paper/config differences recorded,
+  not patched or executed. GT observer condition distinguished from actual
+  fusedfeature dependencies; source-only is not endtoend purity proof. Training
+  basefilename alone is not legal effective-supervision/checkpoint certificate.
+- DYDM officialCVPR2026 main/supp method/experiments/algorithm/implementation
+  read; no verified authorcore source in scoped searches. Paper-only record,
+  not counted as complete codeaudit or third licensedextra. Whole-stage fitting
+  and RLS accumulation are not prospective WAIT/reversible category lifecycle.
+- No upstream source copied/executed, no data/vocabulary/weights/testassets
+  opened or downloaded, no newtraining, no foreignprocess changes/deletion.
+  Latest available storage14529511424B (~13.53GiB) above10GiB safetyreserve;
+  only small public audit docs written. Larger stages require fresh space check.
+- Twelve complete source/paper audits, fresh independentfolds and atomic
+  candidate-policy/memory integration remain pending; no scientific completion.
