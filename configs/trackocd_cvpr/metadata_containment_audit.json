@@ -1,0 +1,20 @@
+{
+  "schema_version": "trackocd.cvpr.safety-containment-audit.v1",
+  "incident_path": "outputs/trackocd_cvpr/safety/train_nested_metadata_access_incident_v1.json",
+  "preflight_result": "outputs/trackocd_cvpr/cvpr0/train_input_preflight_v1/result.json",
+  "preflight_result_sha256": "748dd9ab53e25299f1340d2c9e5a506d7c4242aa6e86f472eb374c3e6d409641",
+  "private_sanitized_plan": "outputs/trackocd_cvpr/cvpr0/train_input_preflight_v1/private_image_plan.json",
+  "private_sanitized_plan_sha256": "4d12af78a8b321540338915a95e358df452704e33282041693c85cde9f78668f",
+  "private_sanitized_plan_bytes": 590116,
+  "physical_registration": "outputs/trackocd_cvpr/cvpr0/train_physical_diagnostic_v1/registration.json",
+  "physical_registration_sha256": "ec0785d799d7b4cb90040675d3e002921741ff3c8b7a9ba35f083998b1797df3",
+  "physical_registration_commit": "494615b654cbd7d2163276c318266c3c4efc1f24",
+  "physical_config": "configs/trackocd_cvpr/cvpr0_train_physical_diagnostic.json",
+  "expected_videos": 57,
+  "expected_images": 2065,
+  "wall_seconds_ceiling": 120,
+  "rss_bytes_ceiling": 268435456,
+  "output_bytes_ceiling": 65536,
+  "output_directory": "outputs/trackocd_cvpr/safety/metadata_containment_audit_v1",
+  "interpretation": "Verify only the existing hash-bound sanitized plan/schema and recorded source-file bindings; no annotations, labels, images, features, models or original job execution. PASS is containment evidence, not historical runtime identity, absence of prior access, a lawful unseen-class protocol or scientific clearance."
+}

@@ -1,5 +1,11 @@
 # CVPR research log
 
+Safety erratum (2026-10-12): historical blanket "no labels decoded" claims
+for image/video metadata access are too broad. The former reader decoded
+nested video GT arrays. Original chronology/receipts are preserved below;
+consult `TRAIN_METADATA_ACCESS_INCIDENT.md` and its immutable incident receipt
+for corrected scope. No new scientific-access clearance is implied.
+
 ## 2026-10-12 — CVPR-0 preregistration
 
 Read the full new taskbook and prior core reports/source. Created the new
@@ -915,3 +921,46 @@ new research scope; nothing has been deleted, no storage pressure is present.
   in scientific metrics. Lawful protocol remains unfrozen; no optimization.
 - Full142engineering tests PASS2.99s, no skips, with corrected actual-v2
   receipt regression. No source hash alone used as historical runtime proof.
+
+### Safety containment: nested Train video GT metadata access
+
+- Found the old reader decoded whole images/videos arrays, including
+  `neg_category_ids`/`not_exhaustive_category_ids`, before permitted-video
+  selection. Top-level annotation/category skipping is not a no-GT-access
+  certificate. Field-name-only counts:500/500 occurrences,492/367 nonempty;
+  no category values/names/rows emitted. No new training or model selection.
+- Original preflight/pixel receipts preserved exactly; immutable safety
+  incident binds their SHA/source bytes and narrows target-label-Parquet
+  assertions. Dependent diagnostic access attestations remain unresolved;
+  source projections are not proof of every historical runtime or blindness.
+- Replaced whole-object decoding with individual scalar whitelist projection;
+  added actual synthetic decode instrumentation, nested-GT mutation,
+  malformed JSON/type/depth checks. Source-only remediation, not a real data
+  rerun, clean-access PASS, fresh protocol, model gain or Goal acceptance.
+- Hardened-reader first synthetic run had5failures/31passes due to an internal
+  separator check placed after a key rather than its value. Corrected without
+  real inputs; focused36tests subsequently passed0.10s. No failed scientific
+  attempt or sealed result was overwritten. Full-suite verification follows.
+- No additional cleanup: available29345988608B at this snapshot (>10GiB
+  reserve); only the earlier two verified duplicate ZIPs had been removed.
+  New GT access/training/cache/model selection remains gated pending safety
+  resolution and independent lawful protocol; no goal-complete claim.
+
+### Preregister sealed-plan/source containment audit, no real annotation read
+
+- Full174engineering tests PASS3.15s after scalar-reader containment; no skips.
+  The historical owned reader is also tested on a synthetic sentinel only:
+  old decoding actually exposes the nested value, the repaired reader does not.
+- Register CPU-only examination of the existing590116B sanitized private
+  image plan, exact original preflight/physical-registration hashes and their
+  source-file bindings. No real annotations, target-label partitions, images,
+  features, models, GT census, old job commands or training are permitted.
+- Exact remote source preregistration required; one process/256MiB RSS/120s/
+  64KiB output;25% system RAM and10GiB free disk reserves. Additional direct
+  sensitive-open barrier is not claimed a complete subprocess sandbox.
+- PASS would prove only that the existing sealed downstream plan has the exact
+  sanitized schema and recorded source/config bindings. No historical loaded
+  runtime identity, reversal of GT access, final-holdout blindness, scientific
+  clearance or new lawful protocol is inferred. All outputs remain separate.
+- Full180engineering tests PASS3.06s, no skips, before this safety audit's
+  remote registration; synthetic contaminated plans are rejected at all levels.

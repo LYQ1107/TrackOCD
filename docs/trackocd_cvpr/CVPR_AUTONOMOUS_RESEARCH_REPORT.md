@@ -25,6 +25,13 @@ Storage cleanup actually removed only two verified duplicate COCO imageZIPs,
 Earlier chronological paragraphs below describe their own historical status,
 not live process/cleanup state. See latest ResearchLog and immutable receipts.
 
+Current safety correction: the former metadata reader decoded nested video GT
+arrays while skipping only top-level annotations/categories. Earlier blanket
+no-label-access statements are withdrawn; original measurements are preserved
+with an explicit access erratum. Source-only/synthetic containment is underway,
+**not scientific clearance**; no new GT read, training or model selection is
+launched. See [TRAIN_METADATA_ACCESS_INCIDENT.md](TRAIN_METADATA_ACCESS_INCIDENT.md).
+
 ## Registered execution sequence
 
 CVPR-0 first: retrospective sealed FULL decision distributions for all three

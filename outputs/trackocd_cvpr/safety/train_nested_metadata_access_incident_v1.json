@@ -1,0 +1,71 @@
+{
+  "schema_version": "trackocd.cvpr.safety-access-incident.v1",
+  "recorded_utc": "2026-10-11T23:24:33Z",
+  "status": "ACCESS_SCOPE_BREACH_RECORDED_REMEDIATION_ONLY_NOT_SCIENTIFIC_CLEARANCE",
+  "baseline_commit_before_remediation": "d6ec793d142c7e50e485e3d4bb4bb06b4629553a",
+  "incident": "The former image_video_metadata reader JSON-decoded entire images/videos arrays. Skipping top-level annotations/categories did not skip nested video GT metadata, including neg_category_ids and not_exhaustive_category_ids. Filtering later is not equivalent to avoiding access.",
+  "train_source_sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+  "field_name_only_observations": {
+    "neg_category_ids_occurrences": 500,
+    "neg_category_ids_nonempty_numeric_arrays": 492,
+    "not_exhaustive_category_ids_occurrences": 500,
+    "not_exhaustive_category_ids_nonempty_numeric_arrays": 367,
+    "method": "rg field-name-only and nonempty-array lookahead counts; no category values, row copies or names emitted",
+    "no_independent_category_or_track_census": true
+  },
+  "affected_direct_receipts": [
+    {
+      "result_path": "outputs/trackocd_cvpr/cvpr0/train_input_preflight_v1/result.json",
+      "result_sha256": "748dd9ab53e25299f1340d2c9e5a506d7c4242aa6e86f472eb374c3e6d409641",
+      "registered_commit": "18e6c65104d0005fb368a0d9eb5b29656c561fb9",
+      "registered_reader_sha256": "505d23ca5b7d921e9d6481453626551ce5191ecca6b5d5bb45c3851d109ab95d",
+      "original_commit_binding": "Posthoc Git-byte binding to the logged preexecution registration; original result has no commit field",
+      "correction": "Top-level annotation/category arrays were skipped, but nested video GT metadata was decoded for the whole Train metadata source, before selecting 57 development videos. final_holdout_labels_read=false must NOT be read as a blanket guarantee that no heldout-associated video GT metadata entered CPU memory."
+    },
+    {
+      "result_path": "outputs/trackocd_cvpr/cvpr2/train_pixel_inventory_v1/result.json",
+      "result_sha256": "e0c0ad8777f13d5002d4bff29cef70fa633d12767bb6b374a6ba87afd66171ef",
+      "registered_commit": "8e499515e3ce49b843529a2f097d9d733c29e2ab",
+      "registered_reader_sha256": "505d23ca5b7d921e9d6481453626551ce5191ecca6b5d5bb45c3851d109ab95d",
+      "correction": "Path/stat counts are preserved, not a clean metadata-access certificate. old_final_heldout_labels_decoded=false is scoped ONLY to the explicit four-partition target-label Parquet filter, not nested GT metadata in train.json."
+    }
+  ],
+  "dependent_cvpr0_stages_access_attestation_not_revalidated": [
+    "train_physical_smoke_v1", "train_physical_diagnostic_v1", "train_feature_interface_v1",
+    "train_feature_interface_recovery_v1", "tiny_semantic_integration_v1", "train_features_v1",
+    "matched_train_semantics_v1", "fixed_history_shadow_v1", "causal_router_interface_v1",
+    "atomic_legacy_smoke_v1", "atomic_legacy_smoke_v2"
+  ],
+  "limited_downstream_source_evidence": [
+    {
+      "path": "src/trackocd_core/physical_qualification.py",
+      "sha256": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+      "observation": "metadata_universe emits only video_id/images and image_id/frame_index/image_path; it does not forward other image/video fields."
+    },
+    {
+      "path": "src/trackocd_cvpr/train_physical_resume.py",
+      "sha256": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385",
+      "observation": "validate_plan enforces exact video/image field sets on the sanitized downstream plan."
+    }
+  ],
+  "limits": {
+    "downstream_source_projection_does_not_undo_prior_access": true,
+    "all_historical_runtime_leakage_absent_proven": false,
+    "old_final_heldout_target_label_parquet_read_by_this_incident_investigation": false,
+    "new_training_or_model_selection_performed_during_remediation": false,
+    "new_annotation_or_nested_gt_values_json_decoded_during_remediation": false,
+    "Val_or_Test_access_during_remediation": false,
+    "original_receipts_or_valid_assets_overwritten_or_deleted": false
+  },
+  "remediation_contract": {
+    "image_allowlist": ["id", "video_id", "frame_index", "file_name", "width", "height"],
+    "video_allowlist": ["id"],
+    "unknown_nested_values_json_decoded": false,
+    "synthetic_decoder_instrumentation_required": true,
+    "synthetic_nested_gt_mutation_and_downstream_projection_required": true,
+    "real_metadata_rerun_performed_in_this_receipt": false,
+    "automatic_new_gt_reads_training_or_full_cache_launch": false,
+    "scientific_access_clearance_granted": false
+  },
+  "next_gate": "Finish synthetic/source-only containment; independently resolve the affected access attestations and register a lawful fresh protocol before any new GT target-label read, scientific cache run, training or model selection. Do not relabel historical diagnostics or caches as fresh unseen-class evidence."
+}
