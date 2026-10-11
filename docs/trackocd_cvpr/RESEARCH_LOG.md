@@ -417,3 +417,31 @@ new research scope; nothing has been deleted, no storage pressure is present.
   No files deleted; no external
   process interference, new weights, optimizer, Val/Test or heldout access.
   Both result receipts/CSV public; feature/prediction/GT traces stay private.
+
+### Current-observation router interface preregistration (not dense acceptance)
+
+- New isolated router ingests only the current frame, accumulates only seen
+  observations, and keeps opaque physical routing IDs outside PrefixView.
+  Same-frame groups are ordered by complete visible input bytes, never ID.
+  Exactly indistinguishable complete prefixes form an atomic group rather
+  than arbitrary ID-ordered writes; downstream policy integration must broadcast
+  one decision and apply one group write. No old replay/controller changed.
+-11actual tests passed0.13s: ID bijection plus event reorder, changed/added
+  future input, exact ties and later separation, different prior histories,
+  input alias mutation, nonfinite/negative/shape/duplicate refusal, chronology,
+  empty frames and observed resource bounds. Interface field rejection is NOT
+  a substitute for end-to-end category/event/role mutation tests.
+- Registered nextCPU audit uses all57existing annotated-cadence first<=16
+  feature inputs, no extra cache/labels/GT decode/GPU/training. Compare visible
+  input and weighted-mean byte digests under opaque ID/row mutations; actual
+  future-feature negation/extra futuretrack checks on firstvideo. CPU1/RSS2GiB/
+  wall600s/output4MiB. No learned policy/actions/memory/semantic evaluator, so
+  cannot report historical ID-invariance repair or dense-pixel acceptance.
+- Grounded Correspondence author-linked project page successfully read via
+  existing proxy after browser tool failed; official repo link now verified.
+  Pinned base model/loss/train/evaluation/greedy initialization/Hungarian scan
+  source reviewed with explicit partial ranges; MIT license read. LatestHEAD
+  includes later extensions; exact conference-release/venue binding unverified.
+  Instance matching/video-reset slot IDs are not persistent category discovery.
+  No source copied/run; CVPR1 twelve-work/two-extra requirement still pending.
+- Broad regression453tests passed40.00s before registered router execution.

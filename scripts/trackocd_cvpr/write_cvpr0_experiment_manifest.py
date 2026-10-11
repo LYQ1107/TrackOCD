@@ -14,7 +14,7 @@ DIRECTORIES = ('historical_audit_integer_normalized', 'checkpoint_replay_v1',
     'cross_video_state_forensics_v1', 'train_physical_diagnostic_v1',
     'train_feature_interface_v1', 'train_feature_interface_recovery_v1',
     'tiny_semantic_integration_v1', 'train_features_v1', 'matched_train_semantics_v1',
-    'fixed_history_shadow_v1')
+    'fixed_history_shadow_v1', 'causal_router_interface_v1')
 
 
 def verified_sources(root, commit, source_sha256):

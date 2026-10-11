@@ -88,10 +88,40 @@ Train-only calibration, with frozen Raw/no-generator controls. A cached-feature
 TrackOCD variant would be our independently designed mechanism, not an official
 LTC reproduction or borrowed-code innovation. New mechanisms remain unselected.
 
+## Grounded Correspondence — pinned base active path, not category memory
+
+The [author paper record](https://arxiv.org/abs/2605.03650) links its
+[project page](https://magenta-sherbet-85b101.netlify.app/), whose read-only
+response explicitly links the [repository](https://github.com/LiZhYun/ICML2026-RethinkingOCL).
+Pinned actual HEAD`5d345268797425558b449337519af3ab24aeb6f1` includes later
+extensions, so exact paper-release binding remains unverified. MIT license
+read; no code executed/copied. Conference acceptance independently unverified.
+
+Actual MOVi-D [configuration](https://github.com/LiZhYun/ICML2026-RethinkingOCL/blob/5d345268797425558b449337519af3ab24aeb6f1/configs/grounded_correspondence/movi_d.yaml)
+trains video-only chunks against detached frozen feature targets. Current-frame
+greedy feature seeds feed learned SlotAttention and an MLP mask decoder;
+cosine Hungarian correspondence reorders slots and resets per video. Feature
+MSE and adjacent-frame same-slot contrastive CE are active; category-supervised
+multi-positive compatibility and immutable cross-video category memory are not.
+Full file versus selected active-path read ranges are explicitly distinguished
+in `outputs/trackocd_cvpr/cvpr1/grounded_correspondence_source_audit.json`.
+
+The [paper](https://arxiv.org/html/2605.03650v1) evaluates instance segmentation,
+not persistent semantic categories. Its stated limitations include occlusion
+reappearance and fixed slot count; baseline batch size differs from its original
+setting. No dense-causal mutation certification or TrackOCD gain is inferred.
+
+Transfer hypothesis: first separate physical identity alignment from semantic
+category compatibility, comparing frozen correspondence against learned dynamics.
+Do not use video-reset slot IDs as category tokens or instance-negative contrast
+as category grouping. This source review is preparation, not architecture selection
+or acceptance of the twelve-work literature stage.
+
 ## Remaining source verification
 
 Full LTC paper/venue verification, the official Assignment-Driven Hash Learning repository (the supplied
-Clarence-CV repository is a fork), Grounded Correspondence, VC-CGCD, SlotContrast,
+Clarence-CV repository is a fork), original-release/venue binding for Grounded
+Correspondence, VC-CGCD, SlotContrast,
 TRACT, COVTrack, MASA, OVTR, discovery/memory decoupling, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
 audits are recorded. README descriptions are not counted as completed code audits.

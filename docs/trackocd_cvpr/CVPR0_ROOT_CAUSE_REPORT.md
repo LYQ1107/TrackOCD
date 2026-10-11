@@ -360,3 +360,12 @@ controller or mixed-history failure. No waiting-policy gain, long-horizon
 regret reduction or unique premature-commit causality follows. Dense causal
 ID-independent protocol, independent larger lawful Train folds, full source
 review and prospective bounded mechanisms remain necessary. CVPR0 ongoing.
+
+The next registered engineering interface removes IDs from current-input
+ordering, groups identical visible prefixes atomically and accepts strictly
+chronological current observations only.11real unit mutations pass, but no
+learned controller/memory/evaluator integration is yet tested. Its planned
+57video mutation audit uses retained first<=16annotated-cadence features and
+weighted-mean probes, not dense-pixel extraction or semantic metrics. Historical
+physical-ID invariance remains FAIL. The existing compact cache omits empty
+frames; the new router supports them, but that is not evidence of dense TAO.

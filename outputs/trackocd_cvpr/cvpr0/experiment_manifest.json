@@ -1,6 +1,6 @@
 {
   "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
-  "manifest_generator_source_sha256": "7cc64f8b427bbb088da7659c0e5d9be42c9786f532564209be5e8cc34e72ef70",
+  "manifest_generator_source_sha256": "722cb64f5e148337f7057706f8b8ed1e80735f71601306b4ff0abe78864ee37a",
   "no_unique_causal_root_or_new_method_success_claim": true,
   "pending": [
     "ID-independent dense online protocol",
@@ -529,6 +529,10 @@
       "result_sha256": "baff0a80b892f59981ff722d7ba9b25d1752621114534483579b1b5d476984f5",
       "source_receipt_matches_registered_git_bytes": true,
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "id": "causal_router_interface_v1",
+      "state": "NOT_EXECUTED_NO_METRICS"
     }
   ],
   "status": "IN_PROGRESS",
