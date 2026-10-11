@@ -1,0 +1,120 @@
+{
+  "schema_version": "trackocd.cvpr1.source-audit.v1",
+  "status": "PINNED_ACTIVE_PATH_AUDIT_NOT_UPSTREAM_REPLICATION_OR_CVPR1_ACCEPTANCE",
+  "paper_title": "DebGCD: Debiased Learning with Distribution Guidance for Generalized Category Discovery",
+  "year": 2025,
+  "venue": "ICLR2025 official proceedings accepted PDF",
+  "venue_independently_verified": true,
+  "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/789fc893d4b6e5b384f4eb058a35e31d-Paper-Conference.pdf",
+  "venue_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/789fc893d4b6e5b384f4eb058a35e31d-Abstract-Conference.html",
+  "repository_url": "https://github.com/Visual-AI/DebGCD",
+  "repository_commit": "9ec30fe3d54dfccd9934a862cf5cb9ff05de6f05",
+  "official_repository_verified": true,
+  "official_binding": "Accepted proceedings paper links visual-ai.github.io/debgcd whose Code link resolves Visual-AI/DebGCD. Exact experiment/checkpoint release not verified.",
+  "additional_to_user_supplied_ten": true,
+  "whole_project_license_read": true,
+  "license": "MIT2025VisualAILab fully read, Apache2.0Facebook backbone header also read; no upstream source copied/run.",
+  "actual_model_loss_training_evaluation_source_read": true,
+  "actual_files_read": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "b56077b92aee673f8119fe698c759d7d7f3909b8",
+      "entire_file_read": true
+    },
+    {
+      "path": "model.py",
+      "git_blob_sha1": "b794feba2649057cbb15ca958ad74f47fbde4d73",
+      "entire_file_read": true
+    },
+    {
+      "path": "train_DebGCD.py",
+      "git_blob_sha1": "ac019b50a0b8c8c0bfc98231bc286e13ad7daab8",
+      "entire_file_read": true
+    },
+    {
+      "path": "models/vision_transformer.py",
+      "git_blob_sha1": "0713c76770353e8ea17878c8707c9ed290783040",
+      "entire_file_read": true
+    },
+    {
+      "path": "scripts/train_cub.cmd",
+      "git_blob_sha1": "27c3a14fea6d6e9998bc3ba62b27692f32476440",
+      "entire_file_read": true
+    },
+    {
+      "path": "scripts/eval.cmd",
+      "git_blob_sha1": "a39ac528b85543ccb90a62847e1dbcac38f417c1",
+      "entire_file_read": true
+    },
+    {
+      "path": "util/cluster_and_log_utils.py",
+      "git_blob_sha1": "389f26919403e4eb2cd816791c7d303b9bedd310",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/get_datasets.py",
+      "git_blob_sha1": "7f15f51ae7e5eab8b8ad945df2be9287e2c7c61e",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/cub.py",
+      "git_blob_sha1": "8a312528840a0287e86ef4fd05c9246509e7d5a8",
+      "entire_file_read": true
+    },
+    {
+      "path": "config.py",
+      "git_blob_sha1": "9938fd8c7d1afd4e1b6b4ecab616524404a28b4f",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/data_utils.py",
+      "git_blob_sha1": "d05d7a10af60cfdb42ae606ffefa28a87e81bed8",
+      "entire_file_read": true
+    },
+    {
+      "path": "data/augmentations/__init__.py",
+      "git_blob_sha1": "51e934aaea3bbd8efbb856ddb7c950f693b6732c",
+      "entire_file_read": true
+    },
+    {
+      "path": "util/general_utils.py",
+      "git_blob_sha1": "c684a2b63352cb7369b9b51a178bedf8eec9771b",
+      "entire_file_read": true
+    }
+  ],
+  "paper_read_scope": "Abstract/intro, preliminaries3, method4.1-4.3/Algorithm1, experiments5.1-5.3/ablations and conclusion6; not all supplemental/figures visually or other backbone paths. No explicit limitation section found in14page main proceedings PDF.",
+  "original_task": "Offline mixed labeledKnown/unlabelledKnownNovel image GCD with fixed total classifier cardinality, not autonomous online category birth.",
+  "model_inputs": "Two224px stochastic views, offline Known labeled mask/labels. Unlabelled retained GT excluded from inspected direct supervised losses. No text or semantic vocabulary.",
+  "model_outputs": "768D raw features feed normalized GCD and auxiliary debiased K-way classifiers; separate5layer256D normalized distribution branch yields2*Known logits; separate3layer256D contrast projection.",
+  "losses": "SimGCD labeledCE/SupCon versus unlabelled self-distillation/memax/instanceInfoNCE, plus Known OVA positive/hardnegative loss and unlabelled entropy/two-view consistency; auxiliary Known CE and unlabelled hard predicted-target CE masked by softmax threshold and detached OVA certainty abs(2*OODscore-1).",
+  "training_protocol": "CUB shell DINOv1 ViT-B/16 last2blocks grad_from10,200epochs/batch128/SGD0.1/momentum0.9/weightdecay5e-5/cosine, supervisedmix0.35, memax2, ADL4/SDL0.005/pseudoCEbalance0.5/threshold0.65. Source defaults differ; warmup path host-specific and unopened.",
+  "online_or_offline": "Joint offline dataset training; eval image-only argmax with no inference adaptation or dynamic memory.",
+  "causal_or_noncausal": "Static eval backbone is image-only; no futureframe/history candidate at all. Structural input purity not actual future/label mutation certification.",
+  "state_memory": "Known+Novel classifier rows established by input class count; no unknown birth/token allocation, persistent crossvideo bank, WAIT, quarantine, reversible split/merge or versioned category events.",
+  "evaluation": "Wholequery targets outside forward but global Hungarian reassigns Known IDs. Best checkpoint selected by Old ACC on disjoint test set after mixedclass Hungarian mapping; this selection is forbidden for our sealed/fixedKnown protocol.",
+  "static_source_paper_differences_not_executed_failures": [
+    "Paper Eq9/11 task-consistency gate F compares predictedKnownNovel role against OVA sign; inspected train169-179 only threshold*certainty masks auxiliary unlabeled CE. No F term in active entry. Do not silently add it and claim upstream replication.",
+    "Paper says only GCD retained at inference; DebGCDHead.forward84-91 still computes OOD/contrast/debiased branches and test reads both classifiers. No trimmed deployment/timing run demonstrated.",
+    "Main defaultgrad_from11 versus CUB shell10; mainSDL0.01/ADL1/threshold0.95 versus shell0.005/4/0.65. Paper/shell/defaults are separate configurations.",
+    "Classifier K defaults actual Known+Novel class split lengths. --class_num accepts external total K but no estimator on this active path.",
+    "Parser default eval_funcs v2,v2p; registry onlyv2,v2b; inspected scripts explicitlyv2. Not an executed script failure.",
+    "eval_only correctly skips training but still constructs datasets/sampler/trainloader and host-specific warmup path first; no blindly executing eval script.",
+    "scripts/eval.cmd references shell dino variable without defining it. No shell run or repair; saved-script release qualification pending.",
+    "Seed controls accepted args.seed, while CUB dataset/subsampling resetNumPy0 for fixed split. Distinguish model seed variation from independent data folds.",
+    "Known supervised loss rows mask GT; pseudo targets and OVA scores detached. This does not permit finalNovel/Val labels, oracleGT cardinality or evaluator state in our training/forward.",
+    "Actual imported util/osr_utils.py fetched but not read, unused by inspected entry, not listed as fully audited. DINOv2/other dataset bodies, requirements compatibility and checkpoints not audited/executed."
+  ],
+  "paper_limitations_summary": "Main benchmark evidence concerns offline fixed-K image GCD and threshold selection; no persistent video lifecycle or dynamic category recovery established. Task-specific validation and representation/uncertainty generalization are transfer gaps inferred from inspected protocol, not an author limitation quote.",
+  "TrackOCD_root_connection": "Separate geometry/distribution and auxiliary objectives are a controlled representation hypothesis for observed adapter geometry loss and Known bias; not proof of our historical optimizer conflict or a ready candidate-aware causal controller.",
+  "what_to_borrow": "Lawful independentfold representation/uncertainty controls and explicit Raw/frozen comparisons, detached pseudo-targets and ambiguity weighting as bounded hypotheses.",
+  "what_not_to_borrow": "Query/sealedGT checkpoint selection or K, KnownHungarianremap as fixedKnownCT, implied paper task gate absent from source, offline fixedrows as online selfcorrecting category memory.",
+  "source_execution_or_training": false,
+  "TrackOCD_new_method_or_replication_claimed": false,
+  "twelve_work_two_extra_acceptance_complete": false,
+  "requires_before_qualified_import": [
+    "Exact activepaper/source/checkpoint binding",
+    "Lawful independent Train selection/cardinality",
+    "Actual model/label/future mutation tests",
+    "Candidate-aware dense atomic policy and reversible memory"
+  ]
+}

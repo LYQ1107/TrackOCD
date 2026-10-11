@@ -306,6 +306,36 @@ public-code review but has no whole-project license, so it is not certified as
 the second licensed open-source extra. Twelve-work/two-extra acceptance remains
 pending; availability findings cannot replace missing actual core audits.
 
+### DebGCD — second MIT extra, source/paper gates distinguished
+
+[Accepted ICLR2025 proceedings paper](https://proceedings.iclr.cc/paper_files/paper/2025/file/789fc893d4b6e5b384f4eb058a35e31d-Paper-Conference.pdf)
+links [project](https://visual-ai.github.io/debgcd/) whose Code link binds
+[Visual-AI/DebGCD](https://github.com/Visual-AI/DebGCD), pinned
+`9ec30fe3d54dfccd9934a862cf5cb9ff05de6f05`. MIT2025VisualAILab read.
+Actual head/loss/Train/evaluation/DINOv1/CUBsplit/config/script paths reviewed;
+file hashes in`outputs/trackocd_cvpr/cvpr1/debgcd_source_audit.json`.
+No upstream code or asset executed, installed or downloaded.
+
+The paper proposes separate distribution and auxiliary classifier branches for
+offline image GCD. This is a representation hypothesis, not a persistent video
+category memory. Actual source uses a5layer distribution MLP,2*Known OVA logits,
+two768D normalized K-way classifiers and a separate256D contrast projection.
+Masked Known labels supervise CE/SupCon/OVA, while detached predictions and OVA
+certainty weight unlabelled hard-target learning. No direct unlabelled GT loss.
+
+Paper task-consistency gate F(Eq9/11) is absent from the inspected auxiliary
+loss path, which uses only confidence mask and certainty. Actual head also
+computes all branches during evaluation; paper-only inference pruning is not
+assumed. Source defaults/CUBshell differ explicitly. No silent source repairs
+or claimed upstream replication. Wholequery Hungarian can remap Known; disjoint
+test Old ACC selects best weights, and default head size uses GT totalK. These
+selection/cardinality rules cannot transfer into our sealed protocol.
+
+AGE and DebGCD now provide two additional MIT actual-source reviews beyond the
+supplied ten; EAGC remains public-code-only with licensing unresolved. This
+substep does not complete the full twelve-work audit, fair protocol or any
+mechanism. Missing release/core sources remain explicitly partial.
+
 Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
 link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD readable VC module/paper-release binding,

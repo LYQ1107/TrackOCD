@@ -560,3 +560,18 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - AGE additional MIT audit; EAGC no whole-project license, so second licensed
   extra not certified. Full twelve-work audit/method choice/new folds and
   dense causal atomic policy-memory integration pending; training0, no cleanup.
+
+### DebGCD additional MIT actual-source review
+
+- AcceptedICLR2025 paper/project/Code chain independently binds Visual-AI
+  repo9ec30fe3d54dfccd9934a862cf5cb9ff05de6f05; MIT fullread,13actual
+  source/config/script/license files reviewed. Unused osr_utils fetched but
+  not listed as read; no source/weights/data/pickle/environment execution.
+- Paper task-consistency gate absent in active loss; actual fullhead eval still
+  computes auxiliary branches. Distinguish release/default/shell/paper paths
+  without silently repairing or asserting reproduced performance.
+- TestOldACC mixedGT-Hungarian checkpoint choice/default oracleK cannot transfer.
+  AGE and DebGCD are2additional MIT reviews; full twelve-work requirement and
+  causal policy/memory/newfolds/method choices still pending, training0.
+- Latest targeted70tests PASS5.20s (before documentation-only DebGCD additions).
+  Storage15661084672B above10GiB reserve; no approved cleanup targets/deletions.
