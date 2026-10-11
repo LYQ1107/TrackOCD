@@ -28,9 +28,11 @@ not live process/cleanup state. See latest ResearchLog and immutable receipts.
 Current safety correction: the former metadata reader decoded nested video GT
 arrays while skipping only top-level annotations/categories. Earlier blanket
 no-label-access statements are withdrawn; original measurements are preserved
-with an explicit access erratum. Source-only/synthetic containment is underway,
+with an explicit access erratum. Synthetic reader checks and a bounded actual
+sealed-plan audit now pass (57videos/2065images, exact sanitized schema),
 **not scientific clearance**; no new GT read, training or model selection is
-launched. See [TRAIN_METADATA_ACCESS_INCIDENT.md](TRAIN_METADATA_ACCESS_INCIDENT.md).
+launched. The scientific-access/fresh blind-protocol gate remains unresolved.
+See [TRAIN_METADATA_ACCESS_INCIDENT.md](TRAIN_METADATA_ACCESS_INCIDENT.md).
 
 ## Registered execution sequence
 

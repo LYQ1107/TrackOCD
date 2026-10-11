@@ -1,0 +1,83 @@
+{
+  "all_historical_runtime_leakage_absent_proven": false,
+  "annotation_target_labels_images_features_models_Val_Test_read": false,
+  "direct_sensitive_open_barrier_installed_not_complete_sandbox": true,
+  "incident_sha256": "4df93a3ec16b0ee7b46701fee112a77d19d95a0994ab7845528bcaae03050bf8",
+  "interpretation": "Verify only the existing hash-bound sanitized plan/schema and recorded source-file bindings; no annotations, labels, images, features, models or original job execution. PASS is containment evidence, not historical runtime identity, absence of prior access, a lawful unseen-class protocol or scientific clearance.",
+  "optimization_steps": 0,
+  "preregistration_commit": "8222946d80dd161700850f692fa004d13abce9a9",
+  "prior_GT_metadata_access_undone": false,
+  "recorded_physical_sources": [
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "configs/trackocd_cvpr/autonomous_research.json",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "configs/trackocd_cvpr/cvpr0_train_physical_diagnostic.json",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "scripts/trackocd_cvpr/run_train_physical_diagnostic.py",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "scripts/trackocd_cvpr/smoke_train_physical_inputs.py",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "src/trackocd_core/masa_native.py",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "src/trackocd_core/physical_qualification.py",
+      "recorded_source_file_binding_matches_git": true
+    },
+    {
+      "historical_loaded_runtime_module_identity_proven": false,
+      "path": "src/trackocd_cvpr/train_physical_resume.py",
+      "recorded_source_file_binding_matches_git": true
+    }
+  ],
+  "resources": {
+    "disk_free_bytes": 29341024256,
+    "guarded_process_RSS_bytes": 35024896,
+    "kernel_reported_VmHWM_bytes_approximate": 35024896,
+    "peak_sampled_smaps_rollup_Rss_bytes": 35024896,
+    "resource_ru_maxrss_bytes_including_preexec_history": 847216640,
+    "rss_measurement": "Maximum of kernel-reported VmHWM and sampled smaps_rollup Rss; VmHWM is approximate, not an exact process-tree peak. ru_maxrss retained separately because it includes pre-exec history.",
+    "sampled_smaps_rollup_Rss_bytes": 35024896,
+    "training_GPU_hours": 0,
+    "wall_seconds": 0.08325532398885116
+  },
+  "sanitized_plan": {
+    "exact_sanitized_plan_schema": true,
+    "images": 2065,
+    "nested_GT_fields_in_sanitized_plan": false,
+    "no_category_or_video_values_published": true,
+    "videos": 57
+  },
+  "sanitized_plan_sha256": "4d12af78a8b321540338915a95e358df452704e33282041693c85cde9f78668f",
+  "scientific_access_clearance_granted": false,
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/metadata_containment_audit.json": "9816e8dd2b232eb8a24c2e3e334413f83f29e70512932743f367b7acec2e198e",
+    "outputs/trackocd_cvpr/safety/train_nested_metadata_access_incident_v1.json": "4df93a3ec16b0ee7b46701fee112a77d19d95a0994ab7845528bcaae03050bf8",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+    "src/trackocd_cvpr/metadata_only.py": "88d7a8c42e6e23ee229d3c93e4bbd56d6c4d9caa584e7f5e4a0ffad829d8a0ed",
+    "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "PASS_SEALED_PLAN_SOURCE_CONTAINMENT_NOT_SCIENTIFIC_CLEARANCE"
+}

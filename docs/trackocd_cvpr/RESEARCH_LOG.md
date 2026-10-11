@@ -983,3 +983,30 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Old reported ru_maxrss/peak_RSS receipts remain immutable; do not reinterpret
   them as isolated model memory measurements or silently recalculate them.
   No scientific-access clearance, new GT target-label access or training.
+
+### Actual sealed-plan containment complete; scientific-access gate still open
+
+- New remote8222946 registration pushed/fetched/verified; full181engineering
+  tests had passed3.13s before execution. Two additional Git TLS interruptions
+  during delivery were retried; no remote verification bypass was used.
+- Separate_v2 CPU audit completed0.083255s. Existing590116B plan SHA unchanged;
+  exact schema contains57videos/2065images and no nested GT/category fields.
+  All eight recorded physical source-file hashes match archived Git bytes;
+  config binds the same sanitized plan. No historical loaded runtime identity
+  is inferred. No original worker, annotation, target labels, images, features,
+  models, Val/Test or new training was accessed/executed by this audit.
+- Kernel VmHWM and sampled smaps_rollup Rss35024896B (~33.4MiB), below unchanged
+  256MiB limit; ru_maxrss847216640B retained separately with pre-exec-history
+  interpretation. These are own-process kernel/sampled counters, not a precise
+  unsampled process-tree peak. Available disk29341024256B (~27.3GiB).
+- Result55dff1469bee381d512b9723fa463f9bece55d3ff90119cfa194d26ec418e67b,
+  launch519e8df2f368fb5bef83cec2c98a12e201b8381d96207febd4df0b9f7e0a6318.
+  Prior GT-metadata access NOT undone; historical access attestations and blind
+  fresh-protocol clearance remain unresolved. PASS is scoped containment only,
+  not a restored clean holdout, qualified primary, new mechanism or Goal PASS.
+- New target-label reads/scientific cache/training/model selection remain
+  gated. Continue source-only impact assessment and lawful protocol design;
+  never silently broaden access or relabel affected diagnostics as blind tests.
+- Full184engineering tests PASS3.20s, no skips; immutable result/source/incident
+  binding and preserved pre-read failures checked. Original preflight and pixel
+  result SHA unchanged. No extra deletions; available29340925952B (~27.3GiB).

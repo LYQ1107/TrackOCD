@@ -1,0 +1,14 @@
+{
+  "incident_sha256": "4df93a3ec16b0ee7b46701fee112a77d19d95a0994ab7845528bcaae03050bf8",
+  "preregistration_commit": "8222946d80dd161700850f692fa004d13abce9a9",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/metadata_containment_audit.json": "9816e8dd2b232eb8a24c2e3e334413f83f29e70512932743f367b7acec2e198e",
+    "outputs/trackocd_cvpr/safety/train_nested_metadata_access_incident_v1.json": "4df93a3ec16b0ee7b46701fee112a77d19d95a0994ab7845528bcaae03050bf8",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+    "src/trackocd_cvpr/metadata_only.py": "88d7a8c42e6e23ee229d3c93e4bbd56d6c4d9caa584e7f5e4a0ffad829d8a0ed",
+    "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}

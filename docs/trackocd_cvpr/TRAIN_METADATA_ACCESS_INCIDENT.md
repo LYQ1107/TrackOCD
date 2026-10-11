@@ -75,3 +75,24 @@ alone cannot certify a blind final holdout. Do not reset the old history,
 reuse old adapted models as unseen-class baselines, select a convenient new
 holdout from observed labels or call this goal complete. Source-only safety
 repair and audit may proceed; no authorization to widen GT access is inferred.
+
+## Completed bounded containment, not clearance
+
+Remote registration `8222946d80dd161700850f692fa004d13abce9a9` subsequently
+bound a source/sealed-plan-only audit. It read the existing sanitized plan,
+not the Train annotation source: unchanged SHA, 57 videos/2065 images,
+exact field sets and no nested GT metadata. Eight recorded physical source
+hashes match Git; historical loaded-runtime identity remains unproven.
+The result is `outputs/trackocd_cvpr/safety/metadata_containment_audit_v2/result.json`,
+SHA `55dff1469bee381d512b9723fa463f9bece55d3ff90119cfa194d26ec418e67b`.
+It explicitly does **not** grant scientific-access clearance.
+
+The earlier TLS/resource gate refusals are preserved separately. The latter
+used `ru_maxrss`, which was already847216640B in an empty Python process.
+The corrected attempt kept the256MiB ceiling and separately recorded
+kernel-reported/sampled process RSS35024896B and original `ru_maxrss`.
+Usage metrics can survive exec; launcher attribution is an inference.
+[Linux getrusage documentation](https://www.man7.org/linux/man-pages/man2/getrusage.2.html)
+and [proc status documentation](https://www.man7.org/linux/man-pages/man5/proc_pid_status.5.html)
+also distinguish these counters and note `/proc` estimates' limitations.
+Old memory receipts and access claims were not silently rewritten.
