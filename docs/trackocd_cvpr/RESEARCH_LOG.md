@@ -142,3 +142,15 @@ new research scope; nothing has been deleted, no storage pressure is present.
   short-prefix error is not relabeled causal premature commitment.
 - Overall CVPR research remains active; GoalsA/B/C and matched-input study
   pending. User conditional cleanup recorded; no deletion performed.
+### Registered bounded per-state Train audit
+
+- Separate unchanged actual D2 checkpoint replay:90main-order cases across
+  Raw/A1/A2,three seeds,two permitted Train partitions,five caps;21915queries.
+- Source observer accepts labels only after visual prediction and memory
+  update; GT member histograms remain in a separate evaluator object.
+- Require exact retained action/logit/order and evaluator parity per case.
+  Private token/member/purity trajectories stay local; publish only state
+  aggregates without category values. No dense-online/ID-invariance claim.
+- CPU600s/RSS4GiB/output64MiB bounds; no optimizer/GPU/Val/Test/holdout.
+- Actual module regression32passed; source CLI import checked before launch.
+  Premature-commit causal counterfactual remains explicitly pending.
