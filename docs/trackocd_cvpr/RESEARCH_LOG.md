@@ -230,3 +230,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   retained. Module/CLI/real-input preflight tested;38CVPR tests passed6.08s.
   No training or matched semantic score claimed; manifest updated with actual
   completed physical result, no stale running metric or data deletion.
+### All-ID DINO worker failed final JSON; no duplicate encoding retry
+
+- Registration43e4a283e0e2cb124e3d237eebbc1c485772fb40 remotely verified before
+  owned worker249997. Actual180batch forwards reached image39,1293features
+  written to1,860,310B private NPZ. Final result.json failed NumPyint64
+  serialization in tail-check count; worker exited1, supervisor100.6577463s.
+- Preserve original directory/log/progress/launch/NPZ. No normal PASS or
+  invented GPU/RSS numeric peaks: these values were not persisted before
+  JSON failure. Source path passed frozen/tail/compact-reader guards before
+  the final serialization; hash value itself not retained.
+- Correct helper boundary to native ints and add strictJSON regression.
+  Separately register CPU120s/RSS1GiB recovery that verifies original archived
+  source/log/payload bindings; all262ID/1293row metadata/geometry/quality,
+  current pixels/L2/reader and actual prefix-tail mutations. No new encoder,
+  GT labels/GPU/optimizer, payload copy/rewrite or favorable old-result edit.
+- Fresh38CVPR tests and recovery CLI import passed before registration.
+  Full57feature extraction remains unlaunched; scientific goals active.

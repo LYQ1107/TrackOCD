@@ -1,0 +1,20 @@
+{
+  "schema_version": "trackocd.cvpr0.train-feature-recovery.v1",
+  "failed_directory": "outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1",
+  "failed_preregistration_commit": "43e4a283e0e2cb124e3d237eebbc1c485772fb40",
+  "launch_sha256": "4e88ef6124e77c238bb564dd890bfa71f2a4d6467cb3633a6fe394f964722c92",
+  "private_log_sha256": "ae504f66b9231bf7232fbf287de5795a65623e2395ac807b42ee32d66b30b817",
+  "feature_filename": "video_0047.all_id_prefix_features.npz",
+  "feature_bytes": 1860310,
+  "feature_sha256": "70c496ad97967502ee78e655357b5370c09e715c1e1844364cabed48e9fbcddc",
+  "output_directory": "outputs/trackocd_cvpr/cvpr0/train_feature_interface_recovery_v1",
+  "cpu_workers": 1,
+  "wall_seconds_ceiling": 120,
+  "rss_bytes_ceiling": 1073741824,
+  "GPU_used": false,
+  "new_encoder_forward": false,
+  "expected_tracks": 262,
+  "expected_observations": 1293,
+  "original_exit_code": 1,
+  "interpretation": "Validate retained completed feature payload after final JSON serialization failure; preserve failed receipt/log, no repeated encoding, missing original numerical peaks not fabricated"
+}

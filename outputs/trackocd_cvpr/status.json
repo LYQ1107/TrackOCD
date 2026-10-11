@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_TRAIN_PHYSICAL_COMPLETE_DINO_INTERFACE_REGISTERED",
+  "status": "ACTIVE_CVPR0_DINO_RECEIPT_RECOVERY_REGISTERED_AFTER_JSON_FAILURE",
   "phase": "CVPR-0",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
@@ -11,5 +11,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Execute registered one-video all-ID frozen DINO interface; matched semantic/57video features require separate bounded integration/registration; CVPR0 and Goals A/B/C remain pending"
+  "next": "CPU-validate retained one-video all-ID DINO NPZ under separately registered recovery, no reencoding; matched semantic/57video features still require bounded integration/registration"
 }

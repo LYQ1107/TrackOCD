@@ -1,4 +1,5 @@
 import numpy as np
+import json
 from src.trackocd_cvpr.prefix_interface_checks import check_prefix_tails
 
 
@@ -9,3 +10,4 @@ def test_real_tail_mutation_and_short_track_not_discarded():
                                 np.array([0, 1, 2, 0]), np.array([0, 3, 4]))
     assert result['prefix_checks'] == 10
     assert result['checks_with_real_tail_mutation'] == 2
+    assert json.loads(json.dumps(result, allow_nan=False)) == result

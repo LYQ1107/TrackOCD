@@ -11,7 +11,8 @@ from src.trackocd_v2.io import atomic_json, sha256_file
 DIRECTORIES = ('historical_audit_integer_normalized', 'checkpoint_replay_v1',
     'memory_controls_full_denominator_v2', 'train_input_preflight_v1',
     'train_physical_smoke_v1', 'retained_logit_forensics_v1', 'state_trajectories_v1',
-    'cross_video_state_forensics_v1', 'train_physical_diagnostic_v1')
+    'cross_video_state_forensics_v1', 'train_physical_diagnostic_v1',
+    'train_feature_interface_v1', 'train_feature_interface_recovery_v1')
 
 
 def verified_sources(root, commit, source_sha256):
@@ -60,13 +61,17 @@ def build(root):
                 'public_artifacts': [{'path': str(p.relative_to(root)), 'bytes': p.stat().st_size, 'sha256': sha256_file(p)}
                                      for p in sorted(directory.glob('*.csv'))],
                 'method_success_inferred_from_diagnostic': False})
-        elif registration.exists():
-            proof = json.loads(registration.read_text())
+        elif registration.exists() or (directory / 'launch.json').exists():
+            proof_path = registration if registration.exists() else directory / 'launch.json'
+            proof = json.loads(proof_path.read_text())
             verified_sources(root, proof['preregistration_commit'], proof['source_sha256'])
             progress = json.loads((directory / 'progress.json').read_text()) if (directory / 'progress.json').exists() else {}
-            stages.append({'id': name, 'state': 'REGISTERED_RUNNING_NO_COMPLETED_METRIC',
+            supervisor = json.loads((directory / 'supervisor.json').read_text()) if (directory / 'supervisor.json').exists() else None
+            failed = supervisor is not None and supervisor['returncode'] != 0
+            stages.append({'id': name, 'state': 'FAILED_ACTUAL_PRESERVED_NO_COMPLETED_RECEIPT' if failed else 'REGISTERED_RUNNING_NO_COMPLETED_METRIC',
                 'preregistration_commit': proof['preregistration_commit'],
                 'registered_source_sha256': proof['source_sha256'], 'progress_snapshot': progress,
+                'actual_supervisor': supervisor,
                 'completed_result_present': False, 'method_success_inferred_from_diagnostic': False})
         else:
             stages.append({'id': name, 'state': 'NOT_EXECUTED_NO_METRICS'})
@@ -77,7 +82,8 @@ def build(root):
         'no_unique_causal_root_or_new_method_success_claim': True,
         'preserved_failed_attempts': [
             {'path': 'outputs/trackocd_cvpr/cvpr0/historical_audit', 'reason': 'NumPy integer JSON serialization failure', 'not_deleted': True},
-            {'path': 'outputs/trackocd_cvpr/cvpr0/memory_controls_v1', 'reason': 'Known denominator registry mismatch correctly refused', 'not_deleted': True}],
+            {'path': 'outputs/trackocd_cvpr/cvpr0/memory_controls_v1', 'reason': 'Known denominator registry mismatch correctly refused', 'not_deleted': True},
+            {'path': 'outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1', 'reason': 'Final NumPy int64 JSON failure after NPZ written; failed exit preserved, CPU no-reencoding recovery separate', 'not_deleted': True}],
         'pending': ['matched semantic predicted-vs-truncated-GT comparison',
                     'fixed-history premature-commit counterfactual', 'ID-independent dense online protocol',
                     '12-source actual-code review', 'new independent Train protocol and at least3mechanisms', 'Goals A/B/C']}

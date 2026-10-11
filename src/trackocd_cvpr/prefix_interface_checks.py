@@ -6,7 +6,8 @@ from src.trackocd_core.features import prefix_view
 def check_prefix_tails(visual, geometry, quality, frames, offsets):
     checks = mutated = 0
     for begin, end in zip(offsets, offsets[1:]):
-        arrays = [np.array(a[int(begin):int(end)], copy=True) for a in (visual, geometry, quality, frames)]
+        begin, end = int(begin), int(end)
+        arrays = [np.array(a[begin:end], copy=True) for a in (visual, geometry, quality, frames)]
         for cap in (1, 2, 4, 8, 16):
             n = min(cap, int(end - begin))
             original = prefix_view(*arrays, n)
@@ -20,6 +21,6 @@ def check_prefix_tails(visual, geometry, quality, frames, offsets):
                 np.testing.assert_array_equal(a, b)
             np.testing.assert_array_equal(original.weighted_mean(), altered.weighted_mean())
             checks += 1
-            mutated += n < end - begin
+            mutated += int(n < end - begin)
     return {'prefix_checks': checks, 'checks_with_real_tail_mutation': mutated,
             'interface_only_not_dense_online_or_end_to_end_ID_invariance': True}

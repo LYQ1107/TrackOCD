@@ -1,6 +1,6 @@
 {
   "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
-  "manifest_generator_source_sha256": "ea9bfebd8c27ec84e3192a79541fd548c1f07cc408b7ea37eb0226cb5437d726",
+  "manifest_generator_source_sha256": "4024e787dedfcdb3a94805dd0be3deb8bbc36d98438eae86378ff89c86612b67",
   "no_unique_causal_root_or_new_method_success_claim": true,
   "pending": [
     "matched semantic predicted-vs-truncated-GT comparison",
@@ -20,6 +20,11 @@
       "not_deleted": true,
       "path": "outputs/trackocd_cvpr/cvpr0/memory_controls_v1",
       "reason": "Known denominator registry mismatch correctly refused"
+    },
+    {
+      "not_deleted": true,
+      "path": "outputs/trackocd_cvpr/cvpr0/train_feature_interface_v1",
+      "reason": "Final NumPy int64 JSON failure after NPZ written; failed exit preserved, CPU no-reencoding recovery separate"
     }
   ],
   "schema_version": "trackocd.cvpr0.experiment-manifest.v1",
@@ -318,6 +323,48 @@
       "result_sha256": "96b1fe76ab0595cad3fbbfcfd070c3b1338d592b2e5caa43166a04a3607a841f",
       "source_receipt_matches_registered_git_bytes": true,
       "state": "COMPLETE_SUBSTEP_NOT_GOAL_COMPLETE"
+    },
+    {
+      "actual_supervisor": {
+        "error": "Owned encoder failed; preserve attempted payload/log",
+        "foreign_interference": false,
+        "owned_pid": 249997,
+        "returncode": 1,
+        "wall_seconds": 100.65774627699284
+      },
+      "completed_result_present": false,
+      "id": "train_feature_interface_v1",
+      "method_success_inferred_from_diagnostic": false,
+      "preregistration_commit": "43e4a283e0e2cb124e3d237eebbc1c485772fb40",
+      "progress_snapshot": {
+        "batch_forwards": 180,
+        "current_image_position": 39,
+        "elapsed_seconds": 79.14175012597116,
+        "pid": 249997,
+        "status": "RUNNING_ALL_ID_TRAIN_DINO_INTERFACE"
+      },
+      "registered_source_sha256": {
+        "configs/trackocd_core/common_features.json": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+        "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+        "configs/trackocd_cvpr/cvpr0_train_feature_interface.json": "1982c090544ca60595f79f23bfa3fd9d4d293ac43c267b8f1af2f0713e17caf1",
+        "scripts/trackocd_core/run_masa_physical_qualification.py": "809386f3f19e270ff7230097a506a9989e2bb828aced1b9c23ed12ebb341f948",
+        "scripts/trackocd_core/smoke_masa_native.py": "a8483d1fa4ff8b7ac67e191c113d3fe5273d13e95a0f5c5d1a8f5be265ff02c2",
+        "scripts/trackocd_cvpr/prepare_train_input_counterfactual.py": "fcf2793026088d7cfa974525b595b9aad96453af674509d2a67ea2288fff0603",
+        "scripts/trackocd_cvpr/run_train_physical_diagnostic.py": "a639ef29812adf74e768a1a7c50d2a93d9e2586016410e490cfd53242f81a4bd",
+        "scripts/trackocd_cvpr/smoke_train_feature_interface.py": "460d3c45075993d9eba093b51f3c65cddfe7e66a22a5b2f428c23a87b3d06cc9",
+        "scripts/trackocd_cvpr/smoke_train_physical_inputs.py": "c70362c738f44c4a2ab4160778ce7f06c24e91eaa0572397e91f833cc861f0f6",
+        "scripts/trackocd_v2/build_common_features.py": "0290f8fd67695b8a8a6a5933a9e7e8b12cb1f48ba5735b0063beb8bf712208ac",
+        "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+        "src/trackocd_core/limited_masa_features.py": "1334566a1b3fb413309aea741eaea6ccf4e9d6e8f00e0552644c3ac2410d9218",
+        "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+        "src/trackocd_cvpr/prefix_interface_checks.py": "cf37109da9da400e0157a74c40b54be2d207fab2322e880410e2e63d6b525b0d",
+        "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385"
+      },
+      "state": "FAILED_ACTUAL_PRESERVED_NO_COMPLETED_RECEIPT"
+    },
+    {
+      "id": "train_feature_interface_recovery_v1",
+      "state": "NOT_EXECUTED_NO_METRICS"
     }
   ],
   "status": "IN_PROGRESS",
