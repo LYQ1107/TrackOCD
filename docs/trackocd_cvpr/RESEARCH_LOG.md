@@ -462,3 +462,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
 -15completed engineering diagnostics are not15scientific mechanisms. CVPR0/
   GoalsA/B/C remain unfinished. Disk~20GiB free; only small aggregate receipt
   added, CVPR~162MiB; no deletion or interference with foreign assets/processes.
+
+### Assignment-driven hash source audit — no upstream run claimed
+
+- Actual pinned source22c94f4d66380256022b264a81383cc7edf6a2e7 inspected for
+  model/loss/train/eval/CUBsplit, with full versus partial read ranges recorded.
+  MIT root/Apache2.0 backbone header read. Supplied Clarence repo is a fork.
+  Official CVF paper successfully streamed via existing proxy after browser403;
+  Code-link destination extraction failed, so officialrepo binding still false.
+- Complete source tree lacks PHE.py and several imported dataset modules;
+  config placeholders, FPA local-name shadowing, unresolved total-loss names,
+  NumPy-to-torch.cat collection and FPA view/target ordering discrepancies
+  recorded as static findings, not an executed upstream failure or a paper
+  performance rebuttal. No source patched/copied/run or weights downloaded.
+- Only geometry hypothesis can be considered later against lawful controls;
+  sign-hash clusters and GT-Hungarian Known remapping are not persistent
+  category-memory acceptance. Twelve-work/two-extra audit and methods pending.
+- PDF URI diagnostic consumed a capped10MB prefix and ended curl23; no partial
+  digest misreported as full file hash. Subsequent pdftohtml link attempt failed
+  silently; no new filesystem PDF or dataset, no asset cleanup.

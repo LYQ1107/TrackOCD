@@ -117,10 +117,40 @@ Do not use video-reset slot IDs as category tokens or instance-negative contrast
 as category grouping. This source review is preparation, not architecture selection
 or acceptance of the twelve-work literature stage.
 
+## Assignment-driven hash learning — source availability is not reproducibility
+
+Read the [official CVF paper](https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Assignment-Driven_Hash_Learning_in_a_Hyper-Semantic_Space_for_On-the-Fly_Category_CVPR_2026_paper.pdf)
+through the existing proxy after browser403, streamed text only, no storedPDF.
+The supplied Clarence-CV repository is a fork of
+[KeibingYang's repository](https://github.com/KeibingYang/Assignment-Driven-Hash-Learning-in-a-Hyper-Semantic-Space-for-OCD),
+actual pinned main`22c94f4d66380256022b264a81383cc7edf6a2e7`.
+The author PDF Code-link destination is not yet independently bound, so
+official-code status stays unverified. MIT read; backbone Apache2.0 header
+retained. No code copied, installed or run.
+
+The paper studies Known-only hash geometry with augmented prototype pairs,
+interpolated regions and soft assignments. Its image clustering evaluation is
+not fixed Known recognition or persistent cross-video category memory.
+
+Full actual training, hashhead, FPA, augmentation, CUB split and metric paths
+were inspected. Pinned tree lacks imported PHE/dataset modules; training has
+local-class-name shadowing and unresolved loss names; evaluator collects NumPy
+arrays then calls torch.cat. FPA view-major features use sample-major repeated
+labels, and top-k settings do not prune its inspected update. These static source
+findings are not claimed as our measured execution failures. No speculative
+patch or upstream reproduction. The inspected default semantic output is12D,
+not a independently bound768D paper branch. File-level evidence and read ranges
+are in `outputs/trackocd_cvpr/cvpr1/assignment_hash_source_audit.json`.
+
+Use only the hypothesis of lawful multi-positive geometry controls, with Raw
+preservation and no synthetic-negative baseline. Do not label sign-hash memory
+as persistent semantics or substitute optimal-GT remapping for fixed Known IDs.
+This incomplete release-binding audit does not select a new TrackOCD mechanism.
+
 ## Remaining source verification
 
-Full LTC paper/venue verification, the official Assignment-Driven Hash Learning repository (the supplied
-Clarence-CV repository is a fork), original-release/venue binding for Grounded
+Full LTC paper/venue verification, Assignment-Driven Hash Learning's author-Code
+link/release completeness, original-release/venue binding for Grounded
 Correspondence, VC-CGCD, SlotContrast,
 TRACT, COVTrack, MASA, OVTR, discovery/memory decoupling, and additional relevant
 open-source methods remain unaccepted until their actual source/venue/license
