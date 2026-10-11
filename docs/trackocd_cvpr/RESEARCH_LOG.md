@@ -165,3 +165,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
   finalmajority0.41228070;113laterwrites,111already-mixed reuses.
 - Raw2,582,885B evaluator trace remains local. Overall root-cause work,
   matched physical input and new causal protocol remain pending.
+### Registered matched-Train physical diagnostic, not main qualification
+
+- Separate source/config registration for57old Train-development videos,
+  all2065metadata-cadence images; one frozen MASA worker, noGT/text/Val/Test.
+- Explicitly validate and reference the completed40frame/64,204B video47
+  smoke under its original config/result/shard hashes, without copying or
+  re-extracting it. At most2025new forwards; no semantic training.
+- Exact release-stage provenance remains incomplete. This route is a limited
+  diagnostic, not primary-frontend qualification or full TAO prediction cache.
+  Old258track/2949observation GT reference is capped16, not complete GT.
+- Fresh idle UUID and process/RAM/disk checks at launch; oneGPU8GiBpeak,
+  4GiBfreeGPU reserve, RSS4GiB,7200swall,64MiBphysicaloutput ceiling.
+  Subsequent physical+feature planning capped1GiB; project incremental hard
+  30GiB and free10GiB reserves maintained. Only directly owned child may stop
+  on failure; all completed shards/logs preserved and resume is explicit.
+- Actual34CVPR tests passed2.27s; strict plan/category/split/cadence mutation
+  and no-copy/changed-source reuse tests included. CLI import checked.
+  Actual private plan and source video integrity preflight also run before
+  any GPU request. No training budget consumed or data deleted.
