@@ -812,3 +812,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full125engineering tests PASS3.14s, no skips, before remote registration;
   synthetic path tests cover partial/missing/zero-byte and escaping/duplicate
   paths without real image decode. Real pixel inventory still unexecuted here.
+
+### Actual Train pixels already local: no immediate asset migration
+
+- Remote8e49951 exact registration; CPU12.149s/RSS847216640B,0newtraining.
+  All421safe reference videos have every registered annotatedimage path present:
+  15275images/1798339000B, missing0/invalid0/partial0. Stat only; no pixel
+  decode/hash, category/annotation array decode, old protected labels or model.
+- This corrects any assumption that only57videos' pixels are local. Earlier
+  preflight selected57old-development videos, not a full pixel census. Cache
+  coverage remains57; pixel presence does not establish dense cadence,
+  corruption-free images, fullGT reference, primaryfrontend or freshfold legality.
+- Resulte0c0ad8777f13d5002d4bff29cef70fa633d12767bb6b374a6ba87afd66171ef.
+  Minimal immediate transfer0bytes for these Train images/existing protected
+  caches/weights/env. No deletion/download/inference or historical overwrite.
+  Fresh-fold/exclusion/label-boundary checks remain necessary before new training.
+- Full127engineering tests PASS3.18s, no skips; exact pixel-inventory source
+  receipts/coverage facts checked separately from synthetic path fixtures.

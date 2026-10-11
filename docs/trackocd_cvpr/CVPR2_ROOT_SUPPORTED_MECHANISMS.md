@@ -116,6 +116,22 @@ do not fill missing prototypes from Val GT. Existing selected-reference labels
 alone cannot certify full video category absence; lawful census/exclusion
 checks and pixel/cadence coverage remain prerequisites, not assumed solved.
 
+Subsequent registered8e49951 path/stat inventory finds all421safe reference
+videos have complete *annotated-image* presence:15275images/1798339000B,
+missing/invalid files0. Thus the previous57video preflight was a selected
+diagnostic subset, NOT a census proving other Train pixels absent. All15class
+reference support is locally present by this stat-only criterion. No decoding,
+per-pixel hash, fullGT census, dense cadence or fold/source qualification follows.
+
+Minimal immediate asset plan: preserve current code/env/checkpoints,1867safe
+reference rows and their legal frozenRaw cache, existing57MASA/DINOshards and
+the already present421video images; transfer/download0bytes for these items.
+No whole archive/full dataset migration or duplicate feature extraction.
+Fresh-fold selection, legal full-reference label boundaries, frontend release
+binding and current-observation member replacement must be resolved before
+registering any additional predicted cache or training. New weights/caches
+remain unallocated; expected bytes require a concrete frozen fold manifest.
+
 ## Bounded execution and rejection rules
 
 Initial allocation ceilings: R120GPUh, C120GPUh, M120GPUh, frozen combined

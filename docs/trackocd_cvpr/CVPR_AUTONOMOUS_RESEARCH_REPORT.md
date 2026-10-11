@@ -199,3 +199,18 @@ fixed-policy cue/action/routing/memory mutation checks pass with no GT or new
 features/optimization. This remains an engineering diagnostic; repeated-prefix
 aggregate bias, old controller FAIL, learned policy and dense protocol remain.
 Result65fe010fc91eb7bbc79c27ce99893b6bcb5743a3e1e395f0d37ce19f104c3c89.
+
+Fresh-protocol feasibility inventory now completed on four permitted old Train
+partitions: fifteen old-fit Known classes/1867selected cappedGT references/
+21162observations/421videos. All15classes have>=5reference videos, but existing
+57video predicted-cache intersection has only3classes>=5. It is not a new
+split, fullGT census, Pred matching/denominator or scientific result. Old A1/A2
+weights saw these classes and cannot be legal unseen-class new-fold baselines.
+
+Separately registered8e49951 path/stat inventory completed12.15s: all421safe
+reference videos'15275annotated images present locally,1798339000B (~1.67GiB),
+missing/invalid0. Corrects any assumption that only57videos have local pixels;
+that old preflight selected a diagnostic subset. No pixel decode/hash, label
+array decode, dense frame or corruption certificate. Immediate transfer0bytes.
+Three root-supported R/C/M hypotheses/finite controls are planned, not executed
+or accepted; fresh protocol and lawful-primary gates remain open, newtraining0.
