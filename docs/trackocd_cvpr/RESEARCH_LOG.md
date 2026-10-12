@@ -3036,3 +3036,26 @@ new research scope; nothing has been deleted, no storage pressure is present.
   feedback/semanticexposure/GT-control limits andlearnedM/strongPred remainopen.
 - Full524tests PASS7.43s; receipts explicitlydistinguishmanyExisting actions
   fromzerooptimizer crossvideopositives, preservingthirdseedinstability.
+
+### Eighth C fixed fit complete; third-seed shared-context regime differs
+
+- Previous turn deliveredC7atb40829c6da202619da7323573e1989505866fa91:
+  progress. Sameownedhandle82779 nowactualterminalexit0 forTop8_pool_context/
+  seed1029/200freshupdates. ResultSHA
+  3a8e3672f48e467ba86140493b51b7a5bc64329762b461a50fb3486e4e801bd4,
+  endpoint24295B/SHAb1331bc75e0be5b6ded5255da7262c4fe847b865735e501de0af4c00731bb9ed,
+  strictreopen/after958ab5db6d622c879d3721098b7c520ce88559be60bc15f7d33698e4ff7ea641.
+  Sameinitiald6a7d71d.../708parameters asconditionedpair, fullfourpolicy
+  episodes10/54/1268/374/1empty. Owned108.804392241s/worker101.339078395s/
+  RSS949698560B/11OSthreads/noguardstop/noCUDA/0trainingGPUh.
+- ActualoptimizerKnown266/pseudo183/fourclasses/TWOpseudo classes,
+  ZEROactualcrossvideo-positiveupdate groups. Rawactions ep0KNOWN1187/WAIT81;
+  ep1KNOWN1082/NEW35/EXISTING151;ep2KNOWN1100/NEW5/EXISTING163;
+  ep3KNOWN361/NEW46/EXISTING861, withwhole-episodecrossvideo-positive
+  opportunities0/22/44/89. Differencesfromconditioned1k+Existing regime not
+  certifiedprecision/semanticreuse or aheldoutwin; no modelselectionfrom counts.
+- Eightof9 C/eightof12 R done. LastTop1 thirdseed then all9registered
+  fixed-endpoint/terminal/source/hash gate before causaldevelopment. No dev/
+  final/Val/Test tuning, resource/asset expansion or Goalpause/completion.
+- Full525tests PASS10.75s, actualthirdseedshared-context endpoint/coverage/
+  opportunity receipts verified; rawExisting notpromoted to semanticcorrectness.
