@@ -1319,3 +1319,52 @@ new research scope; nothing has been deleted, no storage pressure is present.
   every case/denominator/necessary deficit and resource/access declarations,
   without decoding private membership output. Full338tests PASS5.78s, no skips,
   before delivering public aggregates and source only. No private index staged.
+
+### Finite joint class/video structural repair registration preparation
+
+- Previous turn actual8-case negative evidence, not a live training wait.
+  Clean0b02a2d rechecked; disk186.2GB/RAM78.8GB available. ExistingSciPy1.15.3,
+  no new environment/dependency/asset installed. Goal fullscience still open.
+- Consulted exact SciPy1.15.3milp and officialHiGHS options docs; inspected
+  installed option validation: threads/random_seed/parallel forwarded with
+  explicit RuntimeWarning, boolparallel translated tooff. No warning silence
+  or unsupported assertion that automatic threading is constrained by env alone.
+- Same uniform>=3video23class pool, same fit3/eval2quotas, four balanced final
+  groups, cyclic next-group development, policy2/fit>=2classes, every poolclass
+  final once. Joint policy membership replaces prior fixed sorted tail; no
+  permanent-frequencyKnown/class pruning/positive video-conflict relaxation.
+  Design informed by prior GT structural failures, not blind preregistration.
+- Integer certificate: if |V_X minus V_Y|<2, X cannot be a non-final role in
+  Y's final fold, so X/Y must sharefinal group. Transitive component above any
+  balanced-group capacity refutes this family exactly. Also checks stronger
+  component+dev1+policy2+fit2>pool necessary capacity, even without balance.
+  Exact private edges/memberships local; public only anonymous counts/sizes.
+- If no integer contradiction, one zero-objective sparse binaryMILP with
+  groups/roles/videos jointly constrained; same video may support multiple
+  classes within its one role. Max8960vars/60000rows/250000nonzeros,30s/5000nodes,
+  threads1/paralleloff/seed2093001. Returned allocation independently verifies
+  memberships, cyclic roles, positive conflicts, global video disjointness and
+  actual per-class quotas. Time limit not infeasibility; solver status2 scoped,
+  not a formal arbitrary-data certificate. No solver/core training GPU usage.
+- Own newly spawned worker monitored every0.2s via exact child process handle,
+  sampledRSS256MiB, job120s including imports/network/native solver,25%RAM/
+  10GiB disk/1MiB outputs. May stop only this owned handle; no oldPID/state-file
+  reuse, group/broad kill, proxy/global changes or external process interference.
+- Focused first11synthetic tests PASS0.56s, including actual bounded synthetic
+  MILP, exact contradiction skipping solver and true certificate corruption.
+  Actual429video joint check NOT run before new remote registration.
+- Expanded14focused tests/full352tests PASS3.97s, no skips, before adding
+  explicit contradictory backend-status refusal regression. Current full
+  scientific output still only previous fixed-case failures; new proof/MILP
+  not yet run on real private index. Newregistration publication gate remains.
+- Worker-B plus new never-existing pycache prefix prevents old compiled cache
+  reuse/write; worker rejects direct invocation without these flags. Source
+  bytes still compare against actual remote-registered Git commit before GT.
+  Fresh-source execution is not a retroactive historical runtime certificate.
+- At most3numbered owned launch attempts, preserving supervisor receipt per
+  attempt; retry allowed only after prior recorded terminal failure AND no
+  actual output directory, never a missing observation/live-worker restart.
+  Once any real private-output attempt starts, no overwrite or same-path retry.
+- Final15focused synthetic tests/full353tests PASS4.18s, no skips, after
+  fresh-source worker flags and numbered pre-output retry design. No actual
+ 429video proof/solver results yet; outputs still await new registration gate.
