@@ -1944,3 +1944,26 @@ new research scope; nothing has been deleted, no storage pressure is present.
   ScientificR/C/Mmechanismtrials0, training0/600GPUh, GoalA/B/C stillopen.
 - V3ownedtotal55.732367061s, oneThread/1222565888Bsamplepeak/noguardstop.
   PublicresultSHAcecb4e80341ed607da21509a808086c938b23f156f49c97823a94435dad168c4.
+
+### Fit-only GT geometric crop and numeric-prefix integration preregistration
+
+- Continuation classified lastturn as actualfrozenCPUprogress, not trained
+  science. Pendingpushhandle41942 terminalexit0, then freshfetch exact8e408d9
+  (HEAD/FETCH_HEAD/origintracking); cleanworktree,183.1GBdisk/50.5GBRAMavailable.
+- Newfinitefixture reads ONLYfit geometry rows from approvedphysicalindex,
+  video gate BEFORE observationbody decode, opaqueGTtrackID values not decoded.
+  Firstfittrack chosen byvideo/firstframe/firstvisiblebox; firstup-to2observations,
+  singleton retained, no category/ID/score/length/difficulty selection. This is
+  offlinefixture selection, not a frame-online policy or semantic tie breaker.
+- GTxywh->xyxy canonicalcontext0.1 crop withsamepinnedfrozenCPU DINO. NumericR
+  receives current/pastvisual, unclippednormalizedamodal GTgeometry, explicit
+  constantGTcontrolquality1 andelapsedfromfirstobservedframe. This GTgeometric
+  oracle input isNOT a GTfreePred frontend or calibratedpredictedscore. No
+  semanticGTlabels/roles/ID/futurelength toR or classconditionedcrop selection.
+- Actual1..2prefix checks compare identity-startR toRaw and mutate allfuture
+  numeric tails whilepastview unchanged. No gradients/optimizer/newfit. Small
+  localdescriptorfixture only, not fullcache/trajectory/mainqualification or
+  source-family compatiblePredgeometry guarantee. Fixed407role/class/fullGT/
+ 781emptyGT-frame denominators remain unchanged; noprotocolfreeze yet.
+- Three synthetic projection/singleton/identity-future cases/full431engineering
+  tests PASS10.48s, no skips. RealfitGTcrop/prefix awaits source preregistration.

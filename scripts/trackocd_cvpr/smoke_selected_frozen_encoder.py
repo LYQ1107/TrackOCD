@@ -89,10 +89,14 @@ def worker(args, cfg, safety):
             raise RuntimeError('Owned CPU smoke guard:' + str(reason))
     atomic_json(out / 'launch.json', {'preregistration_commit': args.preregistration_commit,
         'live_remote_registration_proof': proof, 'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES},
-        'scope': 'Only two fit images, CPU, no GT/class/role/text in numeric forward; not trajectories/crop validity'})
+        'scope': ('Fit-only GT-geometric-control crop/prefix fixture, no semantic labels/IDs in numeric forward, not predicted'
+                  if cfg.get('fit_GT_crop_prefix_smoke', False) else
+                  'Only two fit images, CPU, no GT/class/role/text in numeric forward; not trajectories/crop validity')})
     try:
         common = json.loads((ROOT / cfg['common_config']).read_text())
         inputs = {'private_assignment': ROOT / cfg['private_assignment'], 'private_image_plan': ROOT / cfg['private_image_plan']}
+        if cfg.get('fit_GT_crop_prefix_smoke', False):
+            inputs['private_physical_GT'] = ROOT / cfg['private_physical_GT']
         for name, path in inputs.items():
             if path.is_symlink() or sha256_file(path) != cfg[name + '_sha256']:
                 raise ValueError('Fixed scalar metadata input hash')
@@ -100,10 +104,19 @@ def worker(args, cfg, safety):
         plan = json.loads(inputs['private_image_plan'].read_text())
         if plan['semantic_labels_or_GT_boxes_in_image_plan'] is not False:
             raise ValueError('Label-free image plan required')
-        rows = sorted((r for r in plan['image_metadata'] if r['video_id'] in fit),
-                      key=lambda r: (r['video_id'], r['frame_index'], r['id']))[:2]
-        if len(rows) != 2:
-            raise ValueError('Exactly two fit images required')
+        if cfg.get('fit_GT_crop_prefix_smoke', False):
+            authority = json.loads((ROOT / cfg['physical_approval']).read_text())
+            if (authority['status'] != 'USER_APPROVED_LIMITED_PHYSICAL_GT_AUDIT_ONLY'
+                    or authority['bound_private_assignment_sha256'] != cfg['private_assignment_sha256']
+                    or authority['nonKnown_category_IDs_names_Novel_vocabulary_video_GT_arrays_allowed'] is not False):
+                raise ValueError('Original exact physical geometry authority required')
+            from src.trackocd_cvpr.fit_crop_prefix import fit_physical_tracks, select_fit_prefix
+            rows = select_fit_prefix(plan, fit_physical_tracks(inputs['private_physical_GT'], fit))
+        else:
+            rows = sorted((r for r in plan['image_metadata'] if r['video_id'] in fit),
+                          key=lambda r: (r['video_id'], r['frame_index'], r['id']))[:2]
+        if not 1 <= len(rows) <= 2 or any(r['video_id'] not in fit for r in rows):
+            raise ValueError('One or two fit images; no singleton filtering')
         repo = ROOT / common['local_repository']
         if (subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=repo).decode().strip() != common['upstream_commit']
                 or subprocess.check_output(['git', 'status', '--porcelain'], cwd=repo).strip()):
@@ -167,9 +180,10 @@ def worker(args, cfg, safety):
                 rgb = raw.convert('RGB'); rgb.load()
                 if rgb.size != (row['width'], row['height']):
                     raise ValueError('Decoded shape differs from scalar metadata')
-                # Explicit whole-image box: validates backbone/current RGB,
-                # NOT GT/predicted boxes, multi-prefix crops or trajectory quality.
-                tensor = transform(crop_box(rgb, [0, 0, rgb.width, rgb.height], common['crop_context_fraction_per_side']))
+                # Default is whole image. The separately registered GT-control
+                # fixture uses actual GT geometry; never silently a Pred crop.
+                box = row.get('GT_control_xyxy', [0, 0, rgb.width, rgb.height])
+                tensor = transform(crop_box(rgb, box, common['crop_context_fraction_per_side']))
             with torch.inference_mode():
                 feature = torch.nn.functional.normalize(model.forward_features(tensor[None])['x_norm_clstoken'], dim=-1)
             if feature.shape != (1, 768) or not torch.isfinite(feature).all() or abs(feature.norm().item() - 1) > 1e-5:
@@ -185,12 +199,17 @@ def worker(args, cfg, safety):
             raise ValueError('CPU repeat/frozen parameters differ')
         if torch.cuda.is_initialized():
             raise ValueError('CPU-only smoke must not initialize CUDA')
+        prefix_check = None
+        if cfg.get('fit_GT_crop_prefix_smoke', False):
+            from src.trackocd_cvpr.fit_crop_prefix import check_actual_prefixes
+            prefix_check = check_actual_prefixes(np.concatenate(outputs), rows)
         guard()
         private = out / 'private_two_fit_descriptors.npz'
         np.savez(private, visual=np.concatenate(outputs))
-        result = {'status': 'VERIFIED_TWO_FIT_IMAGE_CPU_FROZEN_BACKBONE_NOT_TRACK_FEATURES',
-            'live_remote_registration_proof': proof, 'images_decoded': 2, 'actual_forward_calls': 3,
-            'descriptor_shape': [2, 768], 'CPU_repeat_exact': True, 'frozen_parameters_unchanged': True,
+        result = {'status': ('VERIFIED_FIT_GT_CROP_PREFIX_FIXTURE_NOT_TRAINED_OR_PREDICTED' if prefix_check else
+                            'VERIFIED_TWO_FIT_IMAGE_CPU_FROZEN_BACKBONE_NOT_TRACK_FEATURES'),
+            'live_remote_registration_proof': proof, 'images_decoded': len(rows), 'actual_forward_calls': len(rows) + 1,
+            'descriptor_shape': [len(rows), 768], 'CPU_repeat_exact': True, 'frozen_parameters_unchanged': True,
             'frozen_parameter_sha256': before, 'checkpoint_sha256': common['checkpoint_sha256'],
             'encoder_repository_commit': common['upstream_commit'], 'verified_tracked_encoder_python_files': len(source_hashes),
             'verified_actual_imported_encoder_modules': imported_encoder_modules,
@@ -199,6 +218,8 @@ def worker(args, cfg, safety):
             'encoder_source_manifest_sha256': hashlib.sha256(json.dumps(source_hashes, sort_keys=True).encode()).hexdigest(),
             'selected_pixel_sha256': pixel_hashes, 'GT_class_role_text_or_ID_in_forward': False,
             'development_or_final_pixels_read': False, 'GT_or_predicted_crop_features_verified': False,
+            'GT_geometric_localization_used_as_explicit_control': prefix_check is not None,
+            'limited_actual_GT_crop_prefix_check': prefix_check,
             'full_cache_or_training_started': False, 'new_protocol_frozen': False,
             'private_descriptor': {'bytes': private.stat().st_size, 'sha256': sha256_file(private)},
             'resources': {'wall_seconds_excluding_network': time.monotonic() - started,
@@ -216,8 +237,13 @@ def main():
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
     parser.add_argument('--config', choices=(SOURCES[0], 'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v2_sparse.json',
-                        'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v3_terminal.json'), default=SOURCES[0])
+                        'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v3_terminal.json',
+                        'configs/trackocd_cvpr/selected_fit_crop_prefix_smoke_v1.json'), default=SOURCES[0])
     args = parser.parse_args(); SOURCES = (args.config, *SOURCES[1:])
+    if args.config.endswith('selected_fit_crop_prefix_smoke_v1.json'):
+        SOURCES = (*SOURCES[:-1], 'src/trackocd_cvpr/fit_crop_prefix.py',
+                   'src/trackocd_cvpr/raw_preserving_evidence.py', 'src/trackocd_core/features.py',
+                   'configs/trackocd_cvpr/physical_gt_scope_approval_v1.json', SOURCES[-1])
     cfg = json.loads((ROOT / args.config).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker: worker(args, cfg, safety); return 0
