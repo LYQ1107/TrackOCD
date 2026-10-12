@@ -2853,3 +2853,46 @@ new research scope; nothing has been deleted, no storage pressure is present.
   before actualdevlabels; learnedM/qualifiedstrongPred/lockedfinal remainopen.
 - Full507tests PASS9.49s before publicreceipt delivery; different training
   action/opportunity counts are preserved, not scored as a heldout win.
+
+### Complete seed1027 C controls and external strict-history audit source
+
+- Sameowned Top1handle82817 actuallyterminalexit0 fromregistered
+  c1f5e286639cf2a3f115d6097b2c79b20ec34a14, fixed200fresh708parameter updates,
+  sameinitiala4b4ab7e.../fourcomplete10/54/1268/374policyepisodes.
+  ResultSHA67cdd2052717d364cd88bfea8b30d0f68b19ccb615dc74cfdc65dbd5cec50569,
+  endpoint24295B/SHA110e20b737349f906efdb8ced1493ae6371fa89905956f3aecf9b4a5f98612c0,
+  strictreopen/afterdb351e2e2abcd1acf57f8927520dfc2807041ea6fc3e2e88c1515426a5256bbb.
+  Owned113.161229319s/worker106.176587431s/RSS949551104B/11OSthreads,
+  no guardstop/CUDA/0trainingGPUh; no dev/final/Val/Test fitting/selection.
+- Actualoptimizer Known359/policy-pseudo110,5classes/2pseudo classes vsTop8
+  Known538/pseudo106or107,4classes/1pseudo class. K1absence masks249additional
+  targets perepisode; samephysical input/parameters/steps doesNOTmatch actual
+  semantictraining exposure. Report this intrinsic/endogenous opportunity
+  confound before any candidate-expansion/scoring causalclaim or repairs.
+  Top1ep0KNOWN1236/NEW32;ep1/2/3KNOWN1268 each, zeroExisting/crossvideo
+  opportunities/optimizer crossvideo positives. Threeof9 C fits, allseed1027,
+  NOT all3 independentlytrainedseeds or a development/generalization finding.
+- Added external causal outcome audit source forregistered future evaluator.
+  It has no policy/model/bank handle or GTfeedback output; observes actual
+  predictions afteratomicframe, allExisting GTsummaries fromonepre-frame
+  history before anypeerlabels append. Physical unknown/outside/singleton/short
+  tracks staydenominators; unscorable history not BG/Novel or assertedFP.
+- Report qualifiedother-physical/crossvideo history reuse separately from
+  selfcontinuation, Knownrecognition/absorption, allphysicalcommit coverage,
+  firstbadcanonicalgroup andfinalstrict-history status. Prefix1/2/4/8/16/all
+  are posthoc snapshots ofONE uncappedstream, NOT separatelycappedreplays;
+  no futurelength or labels go to scorer. No fullsemanticGT Hscore/officialCT/
+  selfexcluded-support/strongPred or Goalacceptance claim fromthissource.
+- Actual route reassignments create conservativeparent provenance edges,
+  independent ofGT; freshchild tokens retainancestor pollution. Cycles safely
+  retainhistory. Synthetic realcontroller tests cover sameframepeer pollution,
+  parentmoves/cycles, unknownreuse, GT-label/ID changes leavingactualpolicy
+  scores/state unchanged. No realprivate devreads or actualmetrics run yet;
+  full9endpoint registration/executable bounded driver/order/metric protocol
+  are still needed before development evaluation. Learned M remains open.
+- Static per-route truth is explicitly GT-control only: predicted ID-switch/
+  framecorrespondence/unmatched handling requires a separatequalified bridge.
+  Do not label an entirePredroute from one GT match or treatthis as GoalB.
+- Full513tests PASS13.79s includingthreeactualC endpoints andsynthetic
+  externalGT-control audit. No actualdevmetric, calibratedCT or trainedM proof
+  is implied by the newlibrary tests; complete remainingfixedseeds/sourcegates.
