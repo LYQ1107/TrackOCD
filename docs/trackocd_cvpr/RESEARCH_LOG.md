@@ -1199,3 +1199,35 @@ new research scope; nothing has been deleted, no storage pressure is present.
   3.74s, no skips. Actual protected/unlisted-value mutations and decode-call
   instrumentation passed, including target fields before video ID and nested
   box refusal. These are parser/isolation tests, not real GT census results.
+- Registered/pushed/fetched/compared7887151617bf7a4433e088594240c98674806bc2.
+  Two push and one fetch TLS failures preceded successful unchanged retries;
+  first executor's fresh network gate also failed before any GT/roles/index
+  read. Separate pre-read failure receipt preserved; no gate bypass.
+- Second unchanged executor passed fresh registration and completed real census
+  32.1715s:54639annotation records structurally scanned;5608old heldout and1669
+  unlisted records target values skipped.47362allowed records,8682nonKnown
+  transient category filters only,38680retained Known positives/1962tracks/
+  all429videos/48of78inherited Known classes. Private318880B index local only.
+- All short tracks retained (93single-observation); no p16 cap, annotated-track
+  counts1..40. Not dense full-video pixel evidence or new features. Support
+  highly unequal:20classes only1video,18>=5,13>=7,max376/429videos. More observed
+  classes do not establish independent-role feasibility; no role/model-score
+  cherry-pick or proof of complete visual absence.
+- Actual sample peak57389056B (~54.7MiB), kernel approximateHWM55762944B;
+  pre-exec ru_maxrss847216640B retained separately, not called worker RSS.
+  Diskfree at result186510548992B: larger than starting29.3GB due external
+  filesystem changes, NOT attributed to this task. No further cleanup.
+- ResultSHAb60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0;
+  launch5628576d5c67d13795029537a554c1924dd7c0346629dc501823dfea781bd9d2;
+  private94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7.
+- OpenAI Docs confirmed goal lifecycle resume is user/system controlled, not
+  an active status the model can set. User performed original-goal resume and
+  replied“已完成”; subsequentget_goal actuallyactive, fullobjective unchanged.
+  Initial blocked snapshot kept intact; no replacement or completion. Next:
+  separately registered independent fresh class/video protocol feasibility,
+  explicit unresolved absence/scalability/frontend/tensor lineage gates; no
+  automatic formal training. Newtraining0/600GPUh and GoalsA/B/C all open.
+- Four aggregate-only actual receipt regressions verify source hashes, complete
+  count reconciliation, access/resource boundaries and original Goal recovery;
+  tests do not decode the private GT index. Full307tests PASS3.91s, no skips,
+  before publishing only small public receipts/reports. Private index not staged.

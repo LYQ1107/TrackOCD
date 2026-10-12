@@ -1,0 +1,19 @@
+{
+  "schema_version": "trackocd.cvpr.census-pre-read-gate-failure.v1",
+  "registered_commit": "7887151617bf7a4433e088594240c98674806bc2",
+  "client_date": "2026-10-12",
+  "attempt": 1,
+  "stage": "Fresh script-entry git ls-remote before annotation/roles/exclusion-index open",
+  "exception_type": "CalledProcessError",
+  "git_exit_code": 128,
+  "error": "gnutls_handshake() failed: The TLS connection was non-properly terminated.",
+  "remote_commit_had_already_been_pushed_fetched_and_compared": true,
+  "script_fresh_remote_gate_not_bypassed": true,
+  "annotation_roles_private_index_read_in_this_attempt": false,
+  "GT_values_decoded_in_this_attempt": false,
+  "census_output_directory_created_in_this_attempt": false,
+  "optimization_steps": 0,
+  "training_GPU_hours": 0,
+  "complete": false,
+  "next_action": "Bounded retry of same unchanged registered executor; preserve this receipt"
+}

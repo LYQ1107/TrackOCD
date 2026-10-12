@@ -266,3 +266,30 @@ not prove global video disjointness or complete absence. All four negative/
 positive subcases retained, no seed/successful-fold selection. This finite
 diagnostic does not freeze a split or end the active goal. Permissible broader
 reference/support and bounded protocol repair are next, not automatic training.
+
+The later metadata-access incident and administrative containment remain in
+`TRAIN_METADATA_ACCESS_INCIDENT.md`; old metadata-only access claims above
+must not be read as a blanket clean-access certificate. Historical receipts
+remain immutable. User now explicitly approved429Train videos only, excluding
+51old heldout and all other videos, for an external Known-only positive census.
+Approval receipt is separate from the unchanged pending proposal; no video GT
+arrays/category names/Novel vocabulary or protected target values permitted.
+
+Remotely registered7887151 scoped byte reader actually completed32.17s CPU:
+47362allowed positive annotations include38680Known retained observations,
+1962tracks/429videos/48supported inheritedKnown classes.5608heldout and1669
+other records' target values skipped before decoding;8682nonKnown numeric
+membership filters not retained. No short-track removal or p16 cap.93single-
+observation tracks retained; maximum40annotated observations is not dense
+pixel/full-runtime track evidence. No new image/feature/model/Val/Test access.
+Actual resultb60f9bcd and private index94d1e1e1 hashes/aggregate receipts kept;
+private318880B label-bearing support index is local only, never model-facing.
+
+Full positive census broadens the old selected/capped reference evidence but
+does not prove independent held-out roles or full visual category absence:
+20classes have just1video,18have>=5,13have>=7; largest class occurs in376/429
+videos. New protocol remains unfrozen, all model/mechanism/GoalA/B/C gates open,
+newtraining0/600GPUh. Next is separately registered class/video-disjoint
+protocol feasibility from this lawful index, not automatic cache or training.
+The original full Goal was genuinely restored toactive after the user's host
+resume action; an earlier blocked snapshot was not silently rewritten.
