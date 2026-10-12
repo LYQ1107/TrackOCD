@@ -1,0 +1,15 @@
+{
+  "status": "INTERRUPTED_INCOMPLETE_NO_SCIENTIFIC_RESULT",
+  "observed_at_UTC": "2026-10-12 22:45:40 UTC",
+  "execution_tool_session": 53729,
+  "execution_tool_exit_code": 143,
+  "last_progress_completed_order": 1028,
+  "progress_sha256": "a9a8ecdaa3c49d8f67f9d0dad98ac5e048cc0e272c410fed1488cb2535199089",
+  "launch_sha256": "2392333746a052cabf7530bfd2eec6055be24505061f16e299a01ddfae3f91e1",
+  "normal_supervisor_terminal_receipt_present": false,
+  "complete_result_present": false,
+  "matching_worker_and_supervisor_processes_present_at_followup": false,
+  "owned_worker_exit_code": null,
+  "termination_source_or_guard_reason_proven": false,
+  "interpretation": "Execution session terminated; normal supervisor receipt absent. Do not infer RAM/OOM/wall guard or worker exit143. Preserve original attempt and partial progress; no complete metrics or invariance acceptance. Transport recovery uses a new namespace and unchanged scientific protocol/resource ceilings."
+}

@@ -3123,3 +3123,31 @@ new research scope; nothing has been deleted, no storage pressure is present.
   and actual third Rseed receipt. No live worker dependencies changed; no
   original GT/data/weights moved or uploaded, no external processes affected.
   Preserve Goal active and continue remaining controls/M/stronglegalPred/final.
+
+### Raw causal evaluator interrupted; preserve evidence and separate execution recovery
+
+- After a5291d40fcdc169858636d20adb5af01a9fa5640 actual push/fetch/exact-ref
+  verification, Raw execution handle53729 returned143. Earlier process sample
+  briefly showed worker PPID1; followup found neither evaluator nor supervisor.
+  No result.json, failure.json or normal supervisor terminal receipt exists.
+  The tool code143 is NOT a measured worker exit/normal guard/OOM diagnosis.
+  Last immutable progress completed order1028; first two order aggregates were
+  never finalized/published, full ID/future checks never passed. No complete
+  scientific result claimed. Original launch/progress/observation preserved.
+- Registered transport_retry1 changes ONLY output namespace. Same all9 fit
+  gate/weights/GTprojection/full472denominator/threeorders/.65-.55 thresholds/
+  perturbations/zerooptimizer/3000s/3GiB/16MiB; fresh entire evaluation, no
+  reuse/selective merge of partial metrics. Original failed namespace immutable.
+  This is execution recovery, not a scientific mechanism repair or a new seed.
+- New narrowly scoped launcher freshly verifies Git/source and starts ONLY
+  this owned guarded C supervisor in its own session. Worker keeps original
+  independent source/private-input and resource gates; no foreign daemon,
+  process, proxy or service touched. Monitoring receipt includes actual PID,
+  Linux start ticks and command digest: PID alone is not identity or success.
+  Start receipt is not a terminal success receipt. No private assets read by
+  launcher, stdout contains only worker aggregate/failure output and is local.
+- Full547 tests PASS8.33s: unchanged scientific/guard configuration, recorded
+  failed attempt, finite recovery family and guarded worker argument forwarding
+  independently tested. Register/fetch/refverify before restart; continue R
+  third-seed timelessCE as the next single fit, not another parallel fit.
+  Goal active; M/strongPred/final scientific requirements remain open.

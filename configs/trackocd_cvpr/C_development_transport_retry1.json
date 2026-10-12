@@ -1,0 +1,16 @@
+{
+  "status": "TRANSPORT_RECOVERY_ONLY_SCIENTIFIC_PROTOCOL_UNCHANGED",
+  "original_config": "configs/trackocd_cvpr/C_GT_causal_development_v1.json",
+  "output_prefix": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_transport_retry1",
+  "allowed_model": "Raw_Top1",
+  "allowed_seed": 1027,
+  "original_attempt": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Raw_Top1",
+  "evidence": {
+    "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Raw_Top1/launch.json": "2392333746a052cabf7530bfd2eec6055be24505061f16e299a01ddfae3f91e1",
+    "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Raw_Top1/progress.json": "a9a8ecdaa3c49d8f67f9d0dad98ac5e048cc0e272c410fed1488cb2535199089"
+  },
+  "observation": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Raw_Top1_interrupted_observation.json",
+  "continue_or_reuse_partial_science_metrics": false,
+  "change_orders_labels_thresholds_weights_checkpoints_guards_or_selection": false,
+  "execution": "Fresh full evaluation under owned detached supervisor, not an optimizer/scientific repair or baseline selection. Original failed attempt remains immutable."
+}

@@ -45,6 +45,8 @@ def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify
             extra += ['--variant', args.variant, '--seed', str(args.seed)]
     elif worker_script == 'scripts/trackocd_cvpr/evaluate_C_development.py':
         extra = ['--model', args.model, '--seed', str(args.seed)]
+        if getattr(args, 'recovery_attempt', None) is not None:
+            extra += ['--recovery-attempt', args.recovery_attempt]
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / worker_script), '--worker',
         '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy] + extra, cwd=ROOT)

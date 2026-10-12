@@ -17,6 +17,7 @@ from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memor
 from scripts.trackocd_cvpr.qualify_policy_training_input import supervise
 
 CONFIG = 'configs/trackocd_cvpr/C_GT_causal_development_v1.json'
+RECOVERY = 'configs/trackocd_cvpr/C_development_transport_retry1.json'
 VARIANTS = ('Top1_conditioned', 'Top8_conditioned', 'Top8_pool_context')
 SEEDS = (1027, 1028, 1029)
 MODELS = ('Raw_Top1', 'Raw_Top8', *VARIANTS)
@@ -41,6 +42,30 @@ BASE_SOURCES = (CONFIG, 'scripts/trackocd_cvpr/evaluate_C_development.py',
     'outputs/trackocd_cvpr/cvpr2/fit_GT_video_cache_v1_supervisor_attempt_1.json',
     'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v3_resource_retry/result.json',
     'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v3_resource_retry_supervisor_attempt_1.json')
+
+
+def recovery_configuration(root, cfg, args):
+    """Only output namespace may differ; preserve every scientific/guard key."""
+    if getattr(args, 'recovery_attempt', None) is None:
+        return dict(cfg), ()
+    r = json.loads((root / RECOVERY).read_text())
+    if (args.recovery_attempt != 'transport_retry1' or args.model != r['allowed_model']
+            or args.seed != r['allowed_seed'] or r['original_config'] != CONFIG
+            or r['status'] != 'TRANSPORT_RECOVERY_ONLY_SCIENTIFIC_PROTOCOL_UNCHANGED'
+            or r['continue_or_reuse_partial_science_metrics']
+            or r['change_orders_labels_thresholds_weights_checkpoints_guards_or_selection']):
+        raise ValueError('Only recorded Raw transport recovery, no scientific repair')
+    old = root / r['original_attempt']
+    if (old / 'result.json').exists() or old.with_name(old.name + '_supervisor_attempt_1.json').exists():
+        raise ValueError('Recorded incomplete attempt required, not another successful trial')
+    for path, expected in r['evidence'].items():
+        if sha256_file(root / path) != expected:
+            raise ValueError('Original interruption evidence differs')
+    observation = json.loads((root / r['observation']).read_text())
+    if observation['status'] != 'INTERRUPTED_INCOMPLETE_NO_SCIENTIFIC_RESULT' or observation['complete_result_present']:
+        raise ValueError('Preserved interruption evidence required')
+    result = dict(cfg); result['output_prefix'] = r['output_prefix']
+    return result, (RECOVERY, *r['evidence'], r['observation'])
 
 
 def cohort_sources():
@@ -80,7 +105,8 @@ def verified_cohort(root):
 def worker(args, cfg, safety):
     if not sys.dont_write_bytecode or sys.pycache_prefix != str(ROOT / cfg['output_directory'] / '_fresh_no_write_cache'):
         raise ValueError('Fresh no-write evaluation worker')
-    sources = (*BASE_SOURCES, *cohort_sources(), 'configs/trackocd_cvpr/autonomous_research.json')
+    _, recovery_sources = recovery_configuration(ROOT, json.loads((ROOT / CONFIG).read_text()), args)
+    sources = (*BASE_SOURCES, *recovery_sources, *cohort_sources(), 'configs/trackocd_cvpr/autonomous_research.json')
     proof = verify_registration(ROOT, safety['branch'], args.preregistration_commit, args.git_proxy, allow_public_api=True)
     for path in sources:
         if subprocess.check_output(['git', 'show', args.preregistration_commit + ':' + path], cwd=ROOT) != (ROOT / path).read_bytes():
@@ -183,8 +209,10 @@ def main():
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--model', choices=MODELS, required=True)
     parser.add_argument('--seed', type=int, choices=SEEDS, required=True)
+    parser.add_argument('--recovery-attempt', choices=('transport_retry1',))
     args = parser.parse_args(); cfg = json.loads((ROOT / CONFIG).read_text())
     if args.model.startswith('Raw_') and args.seed != 1027: raise ValueError('Raw not fake independent trained seeds')
+    cfg, _ = recovery_configuration(ROOT, cfg, args)
     cfg['output_directory'] = cfg['output_prefix'] + '_' + args.model + ('_s' + str(args.seed) if args.model in VARIANTS else '')
     safety = json.loads((ROOT / 'configs/trackocd_cvpr/autonomous_research.json').read_text())
     if args.worker: worker(args, cfg, safety); return 0

@@ -514,3 +514,15 @@ only, zero M updates; no lifecycle/versioned CT/scientific-M acceptance. Full
 539 tests pass. Separate three-seed trained M and prospective memory integration,
 fair full-cohort causal development, legal strong predicted frontend and locked
 final GoalsA/B/C remain open. Goal active, not achieved.
+
+Execution update supersedes the preceding *live* Raw evaluator status: session
+53729 subsequently returned143, matching processes disappeared and neither
+complete result nor normal supervisor terminal receipt exists. Last progress
+order1028 remains partial evidence only. Worker exit/termination source and
+resource guard reason are not proven; do not attribute to OOM or claim metrics.
+Separate transport_retry1 preserves original attempt, changes only namespace,
+retains exact scientific/data/resource protocol and freshly replays all gates.
+A source-registered owned detached supervisor addresses tool-session lifetime
+dependence; no external process/service changes or private uploads. Full547
+tests pass. Launched is not completed; normal result/terminal and actual causal
+invariance checks are still required for any C development acceptance.
