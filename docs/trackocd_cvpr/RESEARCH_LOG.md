@@ -1748,3 +1748,17 @@ new research scope; nothing has been deleted, no storage pressure is present.
   old51/Val/Test/other-videos exclusion, localprivateindex/publicaggregate only,
   no training/cache/rawGTupload. Request is NOT authorization; originalGoal
   remainsactive/incomplete. Do not selfgrant via automaticgoalcontinuation.
+- Human replied to actualquestioncall_eabab51be7d743348ff4d88487b189f2:
+  “同意上述限定的类别无关 GT 审计”. New separatephysicalscope receipt records
+ 407videos bound toexpandedassignmenthash, permittedgeometry/opaqueID/frame
+  fields, no nonKnowncategoryID/name/Novel/videoGTarray/protectedvideo decoding,
+  no training/fullcache/rawGTupload. OriginalKnownapproval/incident preserved.
+- Preparedv10physicalbyteprojection: administrativevideo gate FIRST for both
+  image metadata and annotationgeometry; categories whollybyte-skipped even
+  when preceding videoID. Validate frame/image links, nondegeneratefiniteboxes,
+  duplicates and every407video represented; no repair/cap/filter. Localgeometry
+  index only, no model-facing labels or dense-frame/imageavailability claims.
+  Three synthetic tests PASS0.06s prove malformedcategoryvalues/protectedtarget
+  bodies skipped and selectedgeometry/duplicate rejection. Sameowned256MiB/
+ 120s worker; privateindex ceiling16MiB justified for approvedgeometry fields,
+  within oldstoragebudget, not a newcache. RealGTreading awaits remote prereg.

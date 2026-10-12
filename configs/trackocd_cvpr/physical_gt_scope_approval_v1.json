@@ -1,0 +1,19 @@
+{
+  "schema_version": "trackocd.cvpr.explicit-category-agnostic-GT-approval.v1",
+  "status": "USER_APPROVED_LIMITED_PHYSICAL_GT_AUDIT_ONLY",
+  "user_message_verbatim": "同意上述限定的类别无关 GT 审计",
+  "question_call_id": "call_eabab51be7d743348ff4d88487b189f2",
+  "authorization_source": "Actual human reply to the 407-video category-agnostic audit question, not automatic goal continuation",
+  "client_date": "2026-10-12",
+  "client_timezone": "Asia/Shanghai",
+  "allowlisted_video_count": 407,
+  "bound_private_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+  "permitted_annotation_fields": ["video_id_for_scope_gate", "image_id", "opaque_track_id", "bbox"],
+  "permitted_image_fields": ["video_id_for_scope_gate", "id", "frame_index"],
+  "nonKnown_category_IDs_names_Novel_vocabulary_video_GT_arrays_allowed": false,
+  "old_51_heldout_Val_Test_other_videos_allowed": false,
+  "local_private_index_and_public_aggregates_only": true,
+  "training_full_cache_or_raw_GT_upload_allowed": false,
+  "original_Known_only_approval_and_access_incident_preserved": true,
+  "approval_is_not_evidence_of_execution_or_protocol_freeze": true
+}
