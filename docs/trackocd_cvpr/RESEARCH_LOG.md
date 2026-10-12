@@ -2113,3 +2113,40 @@ new research scope; nothing has been deleted, no storage pressure is present.
   No fallback on a live foreign GPU, no process intervention or data selection.
   New rule test covers busy+unknown+idle and a conflicting second-check; full
  443tests PASS8.63s. Cache not yet launched merely by this source publication.
+- Fresh rule preflight found15MiB/0%/no apps after earlier external task ended;
+  registered01e7383cf6e66ab225dc0b1d73604765bdd9110c actually pushed/fetched
+  exactthree refs, then launched newly owned bounded fit worker. Runtime fresh
+  source/ref/hash/projection/pilot reuse checks passed before CUDA. Liveprogress
+  later61/257completed videos,2193newimages/2847batches, nooptimizer. This is
+  progress only, not terminal completion; current source/receipts stay intact.
+
+### Full current-weight support and fit-only external loss projection
+
+- Separate numerical API `exact_support_reduction.py` sums original unit
+  member evidence before ONE full-candidate normalization; never averages
+  normalized chunk prototypes. Keeps current R gradients through every support,
+  no stale adapted bank/pruning/hidden detach, same five candidate statistics.
+  Explicit bounds4096groups/65536observations/16384per whole-member traversal
+  chunk; refuse an oversized temporal member, do not truncate it. All graphs
+  remain until backward: traversal is NOT an activation-memory bound or actual
+  full-benchmark scale qualification. Runtime resource guard still required.
+- Synthetic value/parameter/input-gradient parity against unpartitioned old
+  function,16400-observation two-support backward exceeding old16384bound,
+  empty/fresh-weights/semantic-input/oversized wholecall rejection all PASS.
+  The original bounded helper remains unchanged as historical/control API.
+  No optimizer or actual fullKnown input used by these four source tests.
+- Fit-only loss projector decodes fixed fit5 classes and257video allowlist from
+  approved assignment, gates each existingKnown row by video BEFORE category,
+  then exposes only fit5targets as private external bindings. Otherrole class
+  values /dev/final targets skipped; no rawTrainJSON/Novel vocab/pixels. Missing
+  semantic target is None, never BG/newclass. Source fixtures prove1158/5/257
+  cannot be relaxed silently, unrelated role values/otherKnown IDs not forwarded.
+- Public previous role-denominator receipt already binds fit5's1158tracks /
+ 22279observations vs1401/28326physical:223no-retainedKnown +20otherKnown
+  tracks must remain physically represented but without fit5semantic targets.
+  The projector has not yet run on actual privateinputs: fresh source/hash/
+  cache-completion gates must precede the real training launch.
+- Four support plus two projection source tests/full449engineering suite PASS
+ 11.38s. New scientific training still0/600GPUh, three fitted mechanisms and
+  finalGoals stillopen. These APIs enable a registered bounded training pilot,
+  not a learned result, deployment memory repair or primaryPred qualification.

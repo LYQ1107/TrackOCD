@@ -182,3 +182,28 @@ coverage/latency without historical purity laundering. Report failures and
 missing opportunities, not only favorable denominators. GoalB uses the same
 frozen physical frontend/full GT denominators after method lock; historical
 repeatedly observed Val cannot select models. GoalA/B/C remain unachieved.
+
+## Later explicit scope and numerical training prerequisites
+
+The later human cache/training approval and fixed
+`frozen_global_data_GT_control_v1.json` supersede the earlier *pending*
+permission/role feasibility discussion, not the incident or historical results.
+Current assignment:407Train videos,5/2/8/8class roles and257/10/72/68video
+roles;1158fit5 Known tracks/22279observations, fullphysicalfit1401/28326.
+Additional223unlabeled and20outside-fit Known tracks have no fit5semantic loss
+target, remain physical inputs, never BG/Novel. Dev/final labels cannot train.
+Data/cache I/O freeze is not a final selected method or strongPred certificate.
+
+The genuine2fit-video frozen-DINO pilot completed16uncapped tracks/418
+observations with atomic hashes/reopen, everyprefix tail mutation and fixed
+CPU/GPU/float16 firstcrop precision gates. Bounded fit-only preparation now
+reuses those two valid shards rather than extracting again; no dev/final or
+automatic407cache/optimizer. Numerical exact-support reducer permits complete
+current-weight support beyond old16384observations without adapted detach or
+normalizing chunks independently. All member autograd graphs remain: traversal
+does NOT bound activation memory, and actual scale needs its owned guard.
+Fit-loss projection skips otherrole values and leaves unknown targets absent;
+bindings are external to numerical forward. Six new tests/full449PASS, not
+trained mechanisms or any GoalA/B/C acceptance. First bounded optimizer run,
+losses/seeds/controls/selection and complete fullsupport scale checks still need
+separate real preregistration/execution; source-only backward is not training.
