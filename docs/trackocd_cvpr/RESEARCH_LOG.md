@@ -2896,3 +2896,46 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full513tests PASS13.79s includingthreeactualC endpoints andsynthetic
   externalGT-control audit. No actualdevmetric, calibratedCT or trainedM proof
   is implied by the newlibrary tests; complete remainingfixedseeds/sourcegates.
+
+### Eighth R fit complete; executable all9-gated causal C development source
+
+- Previous turn completedseed1027Ccontrols/strictaudit source at
+  7f6c2f01d6ff86c0cc5156d20f818e46b5b6a511: progress. SameownedRhandle68403
+  actuallyterminalexit0 for timeless_Raw_teacher/seed1028/200steps.
+  ResultSHAd055c0f41a4b930ae03d5f9c340e10a074908a86c46d70ff7255d20d3705770c,
+  endpoint616115B/SHA4a8c6fa658120b5b5a38d31608e85705d463e0231dade243c9056cb4951e85e8,
+  strictreopen/after7fa524014fcec791e3beb8687e947c9e574bf080af60cc112c92044b48cb0881.
+  Owned614.839849015s/worker606.289692834s/RSS1594671104B/11OSthreads,
+  no guardstop/CUDA/0trainingGPUh. AllfourRvariants nowactualtrained for
+  seeds1027and1028, pairwiseinitial/sampling/supportfootprint matched; eightof12,
+  notall3seeds or evidence ofnewNovel gain. Earlierone-seedmixeddev staysvalid.
+- New Cdevelopment numerical replay+registeredboundedworker is executable,
+  butnotlaunched: ALL9trainedfit launch/result/ownedterminal receipts, same
+  actualwindow/kernel/loss/scorer hashes and privatefixed200endpoint hashes
+  mustfreshregister/verify before anyprivate devGTprojection or feature read.
+  Currentlyonly3of9 exist; no partialmatrix selection or heldoutlabel shortcut.
+- Full72dev/472physical/8753obs/2562metadataframes/116empty, Known302/
+  declaredpseudo119/outside2/unknown49 allretained; unchangedfit5offlineRawprior.
+  Three NumPyvideo-ordinal permutations1027/28/29, categorymemory persists
+  acrossvideos; router alone resets. Prefix1/2/4/8/16/all are seals fromone
+  uncappedstream, not truncatedtracks/independentcapreplays. GTonlyexternal
+  audit, no optimizer/labeltuning/prototyperepair/final/Val/Test/originaldata.
+- RawTop1/Top8 reuse existingfixed.65/.55 gates and Existing>=bestKnown
+  arbitration, neveroldupdate/ID-tie parity or a25pointgrid. Common latestprefix
+  bank, tie/bindingambiguity WAIT. BothRaw controls cannot rerank a max-cosine
+  winner justbyK expansion; syntheticactualstream equality checked. Trained
+  controls preserve708weights/checkpoint200, no temporalR choice or step10warm.
+- Actualfull first-order IDrename/reversed-input replay mustmatchoriginal
+  numericalevents/audit. First-video genuinefuturevisual mutation compares
+  nonvacuous earlier sealed events; absentfuture reportedunavailable, never
+  causalproof. In-memorycounterfactuals after verifiedcache load, no assetrewrite
+  or post-perturbation scientificmetric claim. Full3order metrics onlyaggregate
+  on disk; weights/GT/feature/rawprediction rows notuploaded.
+- OneCPUownedworker/model/seed,3GiB/3000s/16MiB plus25%RAM/originaldisk
+  limits;Rawnotfaketrainedseeds. Source/authority precede privatehashes/reads.
+  Semanticmetrics certifiedlowerbounds/conservative route-ancestorhistory,
+  notcompleteGT Hscore, learnedM split/merge CT, self-excluded support or
+  predictedID-switch/matching evaluation. AllGoalA/B/C criteria remainopen.
+- Full520tests PASS8.55s, includingfullseed1028Rreceipt matching, actual
+  syntheticreadonlyCstreams/RawK1K8 equivalence andmissing-cohort/childdispatch
+  gates. No actualCdevlabels/metrics run from thisregistration; finishfits first.

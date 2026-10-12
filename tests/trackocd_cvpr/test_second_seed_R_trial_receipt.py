@@ -55,3 +55,19 @@ def test_second_seed_temporal_teacher_fixed_endpoint_and_matched_sampling():
     terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
     assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
     assert terminal['guard_stop_reason'] is None
+
+
+def test_second_seed_all_four_registered_R_variants_completed_and_paired_sampling():
+    out = OUT.with_name('R_GT_window_v1_timeless_Raw_teacher_s1028')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == 'd055c0f41a4b930ae03d5f9c340e10a074908a86c46d70ff7255d20d3705770c'
+    r = json.loads((out / 'result.json').read_text())
+    for variant in ('temporal_CE', 'timeless_CE', 'temporal_Raw_teacher', 'timeless_Raw_teacher'):
+        other_out = OUT.with_name('R_GT_window_v1_' + variant + '_s1028')
+        other = json.loads((other_out / 'result.json').read_text())
+        assert other['completed_optimizer_steps'] == 200 and other['seed'] == 1028
+        assert other['model_parameter_sha256_before'] == r['model_parameter_sha256_before']
+        assert [(x['support_members'], x['support_observations']) for x in other['loss_curve']] == [
+            (x['support_members'], x['support_observations']) for x in r['loss_curve']]
+        assert other['endpoint']['reopen_exact'] and not other['dev_final_Val_Test_targets_or_pixels_used']
+        t = json.loads(other_out.with_name(other_out.name + '_supervisor_attempt_1.json').read_text())
+        assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None

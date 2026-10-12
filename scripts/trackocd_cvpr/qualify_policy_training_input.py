@@ -31,7 +31,8 @@ SOURCES = (CONFIG, 'scripts/trackocd_cvpr/qualify_policy_training_input.py',
 
 def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify_policy_training_input.py'):
     if worker_script not in ('scripts/trackocd_cvpr/qualify_policy_training_input.py',
-                             'scripts/trackocd_cvpr/pilot_candidate_optimizer.py'):
+                             'scripts/trackocd_cvpr/pilot_candidate_optimizer.py',
+                             'scripts/trackocd_cvpr/evaluate_C_development.py'):
         raise ValueError('Explicit registered owned CPU worker only')
     out = ROOT / cfg['output_directory']; receipt = out.with_name(out.name + '_supervisor_attempt_1.json')
     if out.exists() or receipt.exists(): raise ValueError('Preserve all previous attempts')
@@ -42,6 +43,8 @@ def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify
         extra = ['--config', args.config]
         if args.config == 'configs/trackocd_cvpr/C_GT_scientific_window_v1.json':
             extra += ['--variant', args.variant, '--seed', str(args.seed)]
+    elif worker_script == 'scripts/trackocd_cvpr/evaluate_C_development.py':
+        extra = ['--model', args.model, '--seed', str(args.seed)]
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / worker_script), '--worker',
         '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy] + extra, cwd=ROOT)
