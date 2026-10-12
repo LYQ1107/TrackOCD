@@ -2184,3 +2184,31 @@ new research scope; nothing has been deleted, no storage pressure is present.
   satisfy >=3trainedmechanisms/seeds, novelgeometry gains or GoalA/B/C. Do not
   start this fitter until complete cache and terminal artifacts are genuinely
   published/fetched; current cache worker/source/history remain untouched.
+- Optimizer source d92915c847e03de3ed08b39a9ab31aebd8c53909 actually
+  pushed/fetched with exact three refs. No actual optimizer launch yet.
+
+### Completed fit-only uncapped GT-control feature preparation
+
+- Owned cache01e7383 terminalexit0/no guardstop/1711.835480938s total,
+ 1704.931417991s worker excludingnetwork, peakRSS1381654528B sampled.
+  Actual257videos/1401tracks/28326observations/all9345metadataframes,580
+  emptyGT frames retained in clocks, not BG targets; no policy/dev/final pixels.
+ 8690newGT-referenced images decoded,75priorpilot images reused,10565new
+  batches+1repeat. Metadata emptyframes are retained but not pixel corruption
+  certificates. No full407cache launch or scientific qualification.
+- First2qualifiedoriginal payloads337910/325222B reused by private reference,
+  zero duplicate extraction/copy. Fullfeaturepayload45288938B inclreused,
+ 44625806B new. Every28326visibleprefix checked,26925actualfuturetail
+  mutations; all257manifest/hash/completion/exactreopen proofs verified.
+- Firstnewcrop CPU/GPU maxerror8.67992639541626e-7, GPUbatch/single
+ 5.662441253662109e-7, float16-reader3.0294060707092285e-5; allfixedgates
+  pass. FrozenDINO42c4c180... unchanged. Allocatorpeak687865856B, CUDAcontext
+  overhead separate,4sampledOSthreads/onecomputeworker/GPU. Frozen-cache
+  allocation0.462477223GPUh in this run,0actualoptimizersteps/0trainingGPUh.
+- Public resultSHA
+  c45ffc1e199ab558c4ee6b943b0f91c4c25ffc28e125f67adffa85267519e1f6.
+  Publish onlylaunch/result/terminal summaries, not privateindex/NPZ/manifests
+  containing GT IDs/pixelreceipts. No originalGTJSON reopened by cache worker.
+- Now publish/fetch actualcompletedcache artifacts to open separate first
+ 10stepfitKnownCPUoptimizer gate; do not claim Novel gain, primaryPred, three
+  trainedmechanisms/seeds, causalonline controller or GoalA/B/C from this cache.
