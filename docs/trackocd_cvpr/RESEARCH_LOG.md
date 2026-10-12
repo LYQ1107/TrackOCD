@@ -2270,3 +2270,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   clarifying selected-image counters/launch scope. Subsequent run stillneeds
   actualsource publication/fetch/freshref/hash/currentGPU checks; no cache
   completion or scientificselection inferred merely from this preparation.
+- Registered1a34bcdb5bef0f6532bcf7c30a54bc7488e13a0c actualpush/fetch,
+  exactHEAD/FETCH_HEAD/origintracking. Focused scope2tests PASS0.17s after
+  clarifying counters. Newowned attempt truly ran, freshsource/ref/hash and
+  geometry/pilot qualification gates passed, then currentGPUidle guard found
+  no free slot. It exited1 BEFORE torch import/model/CUDA allocation/pixel
+  decode/feature extraction/optimizer, not observationtimeout or livework.
+- Ownedterminal failedreceipt/no parentguardstop/19.744987748s total,
+  peakRSS110211072B/oneOSthread/0trainingGPUh. Preserve launch/failure/terminal
+  exactly, no samepath overwrite or restart based on historicalGPU/PID. Earlier
+  GPU2/8idle snapshot expired when external applications started; do not use
+  GPU4unknownutilization or intervene with foreign processes. A later NVML
+  snapshot again showsGPU8idle, but cannot infer reserved availability.
+- Resource rejection is not a scientific mechanism failure or fullGoal blocker:
+  real policy/dev pixels/features remain0, Rsmoke10updates unchanged. Next
+  keepCPU scientific/control/frontend work moving and register a fresh output
+  namespace before a validated resource retry; do not declare cache complete,
+  start devselection, or autoexpand final/semanticGT scope from this failure.
