@@ -2963,3 +2963,26 @@ new research scope; nothing has been deleted, no storage pressure is present.
   all9-gateddevelopment, trainedM/strongPred/lockedfinal remainopen.
 - Full521tests PASS9.33s; currentnegativeExisting andindependentseed/exposure
   receipts retained; no partialmatrix semanticwin or futureGT scope inferred.
+
+### Seed1028 shared-context C control actual terminal, same limited reuse outcome
+
+- Previous turn deliveredC4at0bd1a1d1dd862414579c29e27f66a6a7737d549c:
+  progress. Sameownedhandle38998 reachedactualterminalexit0 forTop8_pool_context/
+  seed1028/200freshupdates. ResultSHA
+  696ebf8b3b6d58fc31f52cf5c86e9e5d1d74ba26e93042b202f32887ee3582be,
+  endpoint24295B/SHA88cc435fc7298af8728c221b77bdf04e79f129019acf1b180801ccd9a0a3689a,
+  strictreopen/after7699d42faaa66106b4ef6b86d78ee041e50e23e991302dd7710c344536dab08f.
+  Sameinitial24645d1e.../708parameters asconditionedseed1028, no sourcechange
+  or restart tohide pooroutcome. Owned107.603864731s/worker100.114232791s/
+  RSS949964800B/11OSthreads/noguardstop/noCUDA/0trainingGPUh.
+- Fourcompletepolicyepisodes10/54/1268obs/374frames/1empty each. Actual
+  optimizerKnown381/pseudo97/fourclasses/TWOpseudo classes/19crossvideo
+  positivegroups, identicalfamilycounts toconditionedpair. Full90/80ep0/ep3
+  crossvideo opportunities doNOT mean actualreuse: ExistingZEROeveryepisode.
+  ep0KNOWN1247/NEW21;ep1/2KNOWN1268 each;ep3KNOWN1177/NEW91. Retain
+  allKnown bias, do notclaim calibratedscoring improvement from actioncounts.
+- Fiveof9 C/eightof12 R fits done. All9-gated causaldev unexecuted; no
+  dev/final/Val/Test selection or parametersweep. Continue fixedTop1/seed1028
+  andthirdseed; no singlefailure pause or prematureGoal acceptance.
+- Full522tests PASS7.99s, preservingactual equalexposure andzeroExisting
+  forbothseed1028Top8 controls; no newheldoutmetric or semanticwin inferred.
