@@ -3229,3 +3229,46 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Continue remaining2Rthirdseed teacher fits; persistent RawC live/CPUbusy with
   order1028 complete, sameguard/identity/no unnecessary restart. Goalactive,
   stronglegalPred/fullfinal/three-mechanism scientific acceptance stillopen.
+
+### Third R temporal teacher complete; full finite M control matrix frozen
+
+- Previous goal turn delivered e89d887 and4a85de0 actualpush/fetch/refverified:
+  progress. Same owned handle38369 nowterminalexit0 temporal_Raw_teacher/
+  seed1029/200freshsteps. PublicSHA
+  88c26b6aa46e49bc8d63f7f8a9bef16372995fb4563b1704710087a13d9bf2ac;
+  exact616115B endpointSHA1f3bacdabdc901db7d8e900d0761ad46937d8840f2bc595d89bc09d18c658b2f,
+  after0e0ae7d6dfba966d57f29dc178ef829ac77b88228fd39443f875abb09beaef20.
+  Sameinitial5c3a6971... and full200support/query footprints aspairedthirdseedCE.
+  Owned599.95658382s/worker592.446113041s/RSS1398685696B/11OSthreads/
+  noguardstop/noCUDA/0GPUh. R11/12complete; thirdseedstaticteacher stillpending,
+  not replaced by a favorable seed/loss or a claimed Novelgeneralization gain.
+- Mscientific window fixed BEFORE actualformalM/privateGT use:3independent
+  seeds1027/28/29 xrelative_quarantine/relative_weighted/pooled_weighted,
+  same161nominalparameters, freshidentity-mean start, four50update episodes,
+  fixed200endpoint/20-50-100-200privatecheckpoints/AdamW.001/.0001/clip1.
+  Common perseed NumPyvideoordinal order/full374frame1268observation clock,
+  first50 finite-nonzero classmacro loss frames each episode then frozen tail.
+  Actual exposure/masking/zero-gradient/positive-fractional-negative targets
+  reported, not assumed matched from identical nominalupdate counts.
+- SameRawKnownprior/K8/.65-.55, no chosen R/C/pilot weights, dev/final selection
+  or newNonKnown labels. Unknown/conflicting support masks whole state loss,
+  singleton not self-certified. Fresh training-simulation history per episode,
+  everywrong commit privatelyretained; no GT-triggered evaluator reset.
+  CPU1fit/RSS3GiB/wall3000s/out32MiB/max2evidence-driven repairs; no all9
+  automatic sweep. Pilotqualification checked before private inputs but its
+  oneKnownclass-only update limitation not promoted to scientific acceptance.
+- Strictactual versionlineage audit integrated AFTER every complete episode,
+  no auditfeedback to controller/optimizer. Preserved ownprevious/actualmove
+  source parents/watermarks/allancestorsemantics/tombstones; rejectmissing/
+  cyclic/future/omittedtransfer ancestry instead of washing pollution. These
+  strictstatus counts are not officialCT/currentactivepurity/fullsemanticGT/
+  self-excludedreuse or Pred proof. ConfirmedKnown-only memory remainsbad.
+- Full573tests PASS122.09s plus targetedthirdseedRreceipt3PASS0.12s after
+  itsnew endpoint appeared. FullactualMkernel exercised4episodes/200updates
+  on PUREsynthetic completeclock, freshpairedseed layouts and explicit worker
+  config/variant/seed forwarding. Synthetic execution NOT realformalMresult.
+  PropercausalEMA/coverage/selfexclusion/baseline+all9-gateddev stillopen.
+- RawpersistentC supervisor/worker verifiedlive/CPUbusy; all3orders1027/28/29
+  complete, actualID/future perturbation gates stillinprogress. Preserve same
+  attempt; no restart or wholeGoal completion. Register/fetch/refverify and
+  start onlyfirstboundedformalMfit after completedRfit, not parallelfitting.

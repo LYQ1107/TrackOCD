@@ -42,3 +42,19 @@ def test_third_seed_static_CE_fixed_endpoint_and_sampling_match_temporal():
     terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
     assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
     assert terminal['guard_stop_reason'] is None and terminal['last_persisted_completed_optimizer_steps'] == 200
+
+
+def test_third_seed_temporal_teacher_fresh_fixed_endpoint_and_sampling():
+    out = OUT.with_name('R_GT_window_v1_temporal_Raw_teacher_s1029')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == '88c26b6aa46e49bc8d63f7f8a9bef16372995fb4563b1704710087a13d9bf2ac'
+    r = json.loads((out / 'result.json').read_text()); pair = json.loads((OUT / 'result.json').read_text())
+    assert r['seed'] == pair['seed'] == 1029 and r['variant'] == 'temporal_Raw_teacher'
+    assert r['completed_optimizer_steps'] == 200 and r['checkpoint_selection'] == 'Fixed200 endpoint'
+    assert r['model_parameter_sha256_before'] == pair['model_parameter_sha256_before']
+    assert [(x['support_members'], x['support_observations']) for x in r['loss_curve']] == [
+        (x['support_members'], x['support_observations']) for x in pair['loss_curve']]
+    assert r['endpoint'] == {'bytes': 616115, 'sha256': '1f3bacdabdc901db7d8e900d0761ad46937d8840f2bc595d89bc09d18c658b2f', 'reopen_exact': True}
+    assert not r['dev_final_Val_Test_targets_or_pixels_used'] and not r['old_fitted_adapter_initialization']
+    terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
+    assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
+    assert terminal['guard_stop_reason'] is None and terminal['last_persisted_completed_optimizer_steps'] == 200

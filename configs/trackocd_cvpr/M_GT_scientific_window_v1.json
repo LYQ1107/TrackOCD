@@ -1,0 +1,41 @@
+{
+  "schema_version": "trackocd.cvpr.frozen-M-GT-scientific-window.v1",
+  "status": "REGISTERED_FIXED_M_CONTROLS_ACTUAL_TRIALS_PENDING",
+  "scope": "One memory-direction intervention with matched nominal-capacity controls; not a selected joint R/C/M method or Goal acceptance",
+  "pilot_result_sha256": "5bbe27d48f96959775dcb558f85255c4d3c139210591a05a74e78ad58fd21e59",
+  "pilot_limitation": "Actual10updates coveredONEKnownclass/20groups, no policy-pseudo optimizer signal;1410versions allTentative. Do not infer quarantine gain, complete supervision or Novel acceptance.",
+  "training_seed_replicates": [1027, 1028, 1029],
+  "variants": {
+    "relative_quarantine": {"pooled_control": false, "quarantine": true},
+    "relative_weighted": {"pooled_control": false, "quarantine": false},
+    "pooled_weighted": {"pooled_control": true, "quarantine": false}
+  },
+  "trainable_parameters_each": 161,
+  "input": "Full policy10videos/54physical/1268observations/374metadataframes/1empty; existingKnown34/policy-pseudo10/unknown10. Legitimate offlinefit5 Raw priors; no selected R/C/M/oldpilot initialization",
+  "raw_fixed_thresholds": {"tau_known": 0.65, "tau_existing": 0.55},
+  "training": {
+    "learning_rate": 0.001, "weight_decay": 0.0001, "gradient_clip": 1.0,
+    "episodes": 4, "updates_per_episode": 50, "optimizer_steps": 200,
+    "checkpoint_steps": [20, 50, 100, 200],
+    "schedule": "Perseed NumPy default_rng video-ordinal permutation per episode, identical across controls. First50 finite nonzero classmacro-support-loss gradient frames each episode, then freeze through full tail. Preserve zero-gradient/masked/exposure differences, no alternate orders or favorable subsets.",
+    "loss": "External lawful fit/policy Known only. Fraction of OTHER currently committed Raw groups sharing member label; self excluded. Singleton/unknown/conflicting scopes mask whole token loss, not BG/Novel or negatives. Prediction-owned histories only, no GT majority placement/removal/quarantine/reset.",
+    "episode_reset": "Fresh owned training-simulation bank per fixed episode, mistakes retained privately in each complete trace; NEVER GT-triggered evaluator lineage reset",
+    "endpoint": "Fresh seed -> fixed200 endpoint, no pilot warmstart/bestloss/dev/final selection",
+    "matching_caveat": "Same161nominal parameters/fullphysicalclock/order/optimizer/updates, not same information/function class or endogenous loss calendar/labels; report all actual update family/class/positive-negative-target/masking and lifecycle exposure"
+  },
+  "memory": {
+    "gates": {"quarantine": 0.25, "confirmation": 0.75, "confirmation_dispersion": 0.25, "confirmation_minimum_groups": 2},
+    "interpretation": "Fixed experimental lifecycle gates, NOT calibrated semantic purity or independent-instance support. Every Raw/commit/version/tombstone retained; quarantined support can prospectively recover. No past prediction rewrites.",
+    "max_versions": 65536,
+    "strict_lineage": "Allactual commits via monotone commit_watermark, prior own version plus REAL member-transfer source versions. Entire ancestor semantics retained even after active support moved/removed/recovered. Unknown stays unscorable; Known anonymous history/mixed declaredpseudo history certified bad. Whole-union bound500000 fails audit, never prunes dirty ancestors.",
+    "version_evaluator": "src/trackocd_cvpr/version_lineage_audit.py",
+    "strict_counts_are_official_CT_or_full_semantic_GT_or_self_excluded_reuse": false
+  },
+  "evaluation_gate": "All9 freshfit/ownedterminal/endpoint/source receipts before any Mdev. Separately freeze complete causal72video/472physical/119pseudo-query stream,3orders, actualID/futureprefix perturbations and preframechosenversion outcomes; current-active purity not inferred from weight hashes. No dev/final selection.",
+  "required_baselines_before_development_acceptance": ["Raw latest-per-member mean", "proper frame-atomic causal EMA with alias/latest-prefix fairness", "same161parameter pooled control", "weighted without quarantine", "full relative quarantine", "all-commit AND independent-reuse/latency matched coverage"],
+  "baseline_status": "Mean inheritedRaw control available; EMA/coverage/self-exclusion executable qualification pending. Training manifest does not certify these baselines or authorize partial acceptance.",
+  "proposed_execution": {"execution_device": "CPU", "concurrent_workers": 1, "rss_bytes_ceiling": 3221225472, "wall_seconds_ceiling": 3000, "output_bytes_ceiling": 33554432},
+  "maximum_evidence_driven_scientific_repairs": 2,
+  "full_scientific_fit_automatic_start": false,
+  "three_seed_M_qualified_Pred_joint_method_or_Goal_accepted": false
+}

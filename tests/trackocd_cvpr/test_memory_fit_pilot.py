@@ -9,10 +9,10 @@ from scripts.trackocd_cvpr.pilot_memory_optimizer import CONFIG, validate_config
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def test_synthetic_full_clock_optimizer_updates_not_real_dataset_or_science():
+def synthetic_policy_clock():
     # Synthetic aliases exercise the real controller/loss/optimizer plumbing.
     # No private files, deployed purity claims or scientific fit counted here.
-    cfg = json.loads((ROOT / CONFIG).read_text()); videos = []; targets = {}
+    videos = []; targets = {}
     extras = 895
     for video in range(10):
         tracks = 5 if video < 6 else 6
@@ -34,6 +34,12 @@ def test_synthetic_full_clock_optimizer_updates_not_real_dataset_or_science():
             'quality': np.ones(len(visual), np.float32)}
         videos.append((video, arrays))
         targets.update({(video, track): ('Known', 0) for track in range(tracks)})
+    return videos, targets
+
+
+def test_synthetic_full_clock_optimizer_updates_not_real_dataset_or_science():
+    cfg = json.loads((ROOT / CONFIG).read_text())
+    videos, targets = synthetic_policy_clock()
     model, optimizer, summary, sealed, history, versions, commits = fit_memory_pilot(
         videos, SimpleNamespace(targets=targets), {}, cfg, lambda: None, lambda row, curve: None)
     assert summary['optimizer_steps'] == 10 and summary['trainable_parameters'] == 161

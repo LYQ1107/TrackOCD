@@ -19,6 +19,7 @@ from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memor
 from scripts.trackocd_cvpr.pilot_candidate_optimizer import SOURCES as C_SOURCES
 
 CONFIG = 'configs/trackocd_cvpr/memory_optimizer_pilot_v1.json'
+SCIENTIFIC_CONFIG = 'configs/trackocd_cvpr/M_GT_scientific_window_v1.json'
 SOURCES = (*C_SOURCES, CONFIG, 'scripts/trackocd_cvpr/pilot_memory_optimizer.py',
     'src/trackocd_cvpr/member_reliability.py', 'src/trackocd_cvpr/reliability_support_bridge.py',
     'src/trackocd_cvpr/committed_support_bridge.py', 'src/trackocd_cvpr/versioned_reliability_memory.py',
@@ -29,12 +30,20 @@ SOURCES = (*C_SOURCES, CONFIG, 'scripts/trackocd_cvpr/pilot_memory_optimizer.py'
 
 
 def validate_configuration(cfg, authority):
+    scientific = cfg.get('scientific_M_trial', False)
     if (authority['status'] != 'USER_APPROVED_FREEZE_THEN_BOUNDED_CACHE_AND_TRAIN'
-            or cfg['status'] != 'REGISTERED_TEN_M_STEPS_FULL_POLICY_PREDICTION_OWNED_HISTORY_REQUIRED'
-            or cfg['optimizer_steps'] != 10 or cfg['seed'] != 1027 or cfg['execution_device'] != 'CPU'
+            or cfg['status'] != ('REGISTERED_FIXED_M_CONTROLS_ACTUAL_TRIALS_PENDING' if scientific else
+                                'REGISTERED_TEN_M_STEPS_FULL_POLICY_PREDICTION_OWNED_HISTORY_REQUIRED')
+            or cfg['optimizer_steps'] != (200 if scientific else 10)
+            or cfg['seed'] not in ((1027, 1028, 1029) if scientific else (1027,)) or cfg['execution_device'] != 'CPU'
             or cfg['K_per_family'] != 8 or cfg['full_scientific_fit_automatic_start'] is not False
             or cfg['dev_final_Val_Test_new_nonKnown_labels_or_pixels']):
-        raise ValueError('Exact authorized bounded ten-step M pilot only')
+        raise ValueError('Exact authorized bounded M execution only')
+    if scientific and (cfg['variant'] not in ('relative_quarantine', 'relative_weighted', 'pooled_weighted')
+            or cfg['training']['episodes'] != 4 or cfg['training']['updates_per_episode'] != 50
+            or cfg['trainable_parameters_each'] != 161 or cfg['memory']['gates'] !=
+            {'quarantine': .25, 'confirmation': .75, 'confirmation_dispersion': .25, 'confirmation_minimum_groups': 2}):
+        raise ValueError('Frozen four-episode/161-parameter M controls and actual lifecycle constants')
 
 
 def supervise(args, cfg, safety):
@@ -44,7 +53,9 @@ def supervise(args, cfg, safety):
     if resources_ok(cfg, safety, ROOT, started, 0): raise RuntimeError('Pre-spawn M resource guard')
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / 'scripts/trackocd_cvpr/pilot_memory_optimizer.py'), '--worker',
-        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy], cwd=ROOT)
+        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy]
+        + (['--config', SCIENTIFIC_CONFIG, '--variant', args.variant, '--seed', str(args.seed)]
+           if cfg.get('scientific_M_trial', False) else []), cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')
@@ -89,6 +100,14 @@ def worker(args, cfg, safety):
         if subprocess.check_output(['git', 'show', args.preregistration_commit + ':' + path], cwd=ROOT) != (ROOT / path).read_bytes():
             raise ValueError('Actual M pilot source/cache/authority registration required')
     validate_configuration(cfg, json.loads((ROOT / cfg['approval']).read_text()))
+    scientific = cfg.get('scientific_M_trial', False)
+    if scientific:
+        pilot = ROOT / 'outputs/trackocd_cvpr/cvpr4/memory_optimizer_pilot_v1'
+        p = json.loads(pilot.with_name(pilot.name + '_supervisor_attempt_1.json').read_text())
+        if (sha256_file(pilot / 'result.json') != cfg['pilot_result_sha256']
+                or not p['successful_owned_execution'] or p['owned_worker_exit_code'] != 0 or p['guard_stop_reason'] is not None
+                or p['last_persisted_completed_optimizer_steps'] != 10):
+            raise ValueError('Actual successful10step M qualification before private data; no pilot warmstart')
     qualification = ROOT / 'outputs/trackocd_cvpr/cvpr2/policy_training_input_qualification_v1'
     terminal = json.loads(qualification.with_name(qualification.name + '_supervisor_attempt_1.json').read_text())
     if (sha256_file(qualification / 'result.json') != cfg['policy_input_qualification_sha256']
@@ -108,7 +127,8 @@ def worker(args, cfg, safety):
             raise RuntimeError('Owned M pilot guard:' + str(reason))
     atomic_json(out / 'launch.json', {'live_remote_registration_proof': proof,
         'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES},
-        'scope': 'Ten actual M updates on full prediction-owned policy history, no dev/scientific acceptance'})
+        'scope': 'Fixed200 fresh M trial/fourfullprediction-owned episodes' if scientific else
+                 'Ten actual M updates on full prediction-owned policy history, no dev/scientific acceptance'})
     try:
         import torch
         from src.trackocd_cvpr.policy_training_data import load_completed_policy_videos
@@ -136,6 +156,53 @@ def worker(args, cfg, safety):
         with torch.inference_mode():
             raw, _, _, _ = reencode_batched_supports(raw_model, support_groups(fit_tracks, -1, 5), torch.ones(5), torch.ones(5))
         known = {i: row.numpy().copy() for i, row in enumerate(raw)}
+        if scientific:
+            from src.trackocd_cvpr.memory_scientific_training import scientific_memory_fit
+            def save_checkpoint(current, opt, step, episode, episode_step, rng):
+                path = out / ('private_step' + str(step) + '_checkpoint.pt')
+                if path.exists(): raise ValueError('Preserve immutable scientific checkpoint')
+                temporary = out / (path.name + '.partial')
+                with temporary.open('xb') as handle:
+                    torch.save({'model_state': current.state_dict(), 'optimizer_state': opt.state_dict(),
+                        'step': step, 'seed': cfg['seed'], 'variant': cfg['variant'],
+                        'episode': episode, 'episode_step': episode_step, 'numpy_rng_state': rng,
+                        'torch_rng_state': torch.get_rng_state(), 'not_automatic_causal_bank_resume': True}, handle)
+                    handle.flush(); os.fsync(handle.fileno())
+                os.replace(temporary, path)
+            model, optimizer, summary, episodes = scientific_memory_fit(videos, targets, known, cfg,
+                cfg['variant'], cfg['seed'], guard,
+                lambda row, curve: (atomic_json(out / 'progress.json', row), atomic_json(out / 'loss_curve.json', curve)),
+                save_checkpoint)
+            endpoint = out / 'private_step200_checkpoint.pt'
+            verifier = MemberReliabilityMLP(pooled_control=cfg['variants'][cfg['variant']]['pooled_control'])
+            verifier.load_state_dict(torch.load(endpoint, map_location='cpu', weights_only=True)['model_state'], strict=True)
+            if digest(verifier) != digest(model) or torch.cuda.is_initialized(): raise ValueError('Exact fixed200 CPU M endpoint')
+            private = []
+            for episode, (order, sealed, history, versions, commits) in enumerate(episodes):
+                version_rows = []
+                for version in versions:
+                    row = asdict(version); prototype = row.pop('prototype_float64_bytes')
+                    row['prototype_sha256'] = hashlib.sha256(prototype).hexdigest() if prototype is not None else None
+                    version_rows.append(row)
+                private.append({'episode': episode, 'video_ordinal_order': order, 'versions': version_rows,
+                    'actual_bank_commits': [asdict(c) for c in commits], 'anonymous_commit_labels': [asdict(r) for r in history],
+                    'actual_predictions': [{'video_id': video, 'frame_index': r.frame_index,
+                        'routing_groups': r.routing_groups, 'chosen_preframe_versions': chosen,
+                        'events': [{'action': e.action, 'category_id': e.category_id, 'token': e.token,
+                                    'ambiguity_reason': e.ambiguity_reason} for e in r.events]} for video, r, chosen in sealed]})
+            history_path = out / 'private_prediction_history.json'; atomic_json(history_path, private); guard()
+            result = {'status': 'COMPLETED_FIXED_M_TRIAL_NOT_DEV_PRED_JOINT_OR_GOAL_ACCEPTANCE',
+                'live_remote_registration_proof': proof, 'variant': cfg['variant'], 'seed': cfg['seed'],
+                'summary': summary, 'policy_scope': policy_proof, 'offline_fit_prior_scope': fit_proof,
+                'endpoint': {'bytes': endpoint.stat().st_size, 'sha256': sha256_file(endpoint), 'reopen_exact': True},
+                'private_prediction_history': {'bytes': history_path.stat().st_size, 'sha256': sha256_file(history_path)},
+                'checkpoint_selection': 'Fixed200 endpoint', 'old_R_C_M_or_pilot_warmstart': False,
+                'dev_final_Val_Test_or_new_nonKnown_labels_used': False,
+                'three_seed_M_strict_CT_Pred_or_Goal_accepted': False,
+                'resources': {'peak_guarded_RSS_bytes': peak, 'wall_seconds_excluding_network': time.monotonic() - started,
+                              'training_GPU_hours': 0, 'CUDA_initialized': False}}
+            atomic_json(out / 'result.json', result)
+            print(json.dumps({k: v for k, v in result.items() if k != 'summary'}), flush=True); return
         model, optimizer, summary, sealed, history, versions, commits = fit_memory_pilot(videos, targets, known, cfg, guard,
             lambda row, curve: (atomic_json(out / 'progress.json', row), atomic_json(out / 'loss_curve.json', curve)))
         endpoint = out / 'private_step10_checkpoint.pt'; temporary = out / 'private_step10_checkpoint.partial'
@@ -178,10 +245,24 @@ def worker(args, cfg, safety):
 
 
 def main():
+    global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true')
-    args = parser.parse_args(); cfg = json.loads((ROOT / CONFIG).read_text())
+    parser.add_argument('--config', choices=(CONFIG, SCIENTIFIC_CONFIG), default=CONFIG)
+    parser.add_argument('--variant', choices=('relative_quarantine', 'relative_weighted', 'pooled_weighted'))
+    parser.add_argument('--seed', type=int, choices=(1027, 1028, 1029))
+    args = parser.parse_args(); cfg = json.loads((ROOT / args.config).read_text())
+    if args.config == SCIENTIFIC_CONFIG:
+        if args.variant is None or args.seed is None: raise ValueError('Explicit fixed M variant and independent seed')
+        base = json.loads((ROOT / CONFIG).read_text()); window = cfg
+        cfg = {**base, **window, **window['training'], **window['proposed_execution'],
+            'scientific_M_trial': True, 'seed': args.seed, 'variant': args.variant,
+            'output_directory': 'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_' + args.variant + '_s' + str(args.seed)}
+        SOURCES = (*SOURCES, SCIENTIFIC_CONFIG, 'src/trackocd_cvpr/memory_scientific_training.py',
+            'src/trackocd_cvpr/version_lineage_audit.py',
+            'outputs/trackocd_cvpr/cvpr4/memory_optimizer_pilot_v1/result.json',
+            'outputs/trackocd_cvpr/cvpr4/memory_optimizer_pilot_v1_supervisor_attempt_1.json')
     safety = json.loads((ROOT / 'configs/trackocd_cvpr/autonomous_research.json').read_text())
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)

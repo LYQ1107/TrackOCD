@@ -564,3 +564,20 @@ notyet audited bynewsource. Full569tests pass. Need genuine full Mcontrols,
 threefreshseeds/order/coverage, independent actualhistoryaudit and qualified
 Pred/final. R10/12done, C9/9fitdone, Rawpersistent evaluator live/order1028;
 no GoalA/B/C completion or methodselection claim.
+
+Latest R:11/12complete. Thirdseed temporalteacher200freshsteps/ownedexit0/
+exact616115B endpoint; publicSHA88c26b6aa46e49bc8d63f7f8a9bef16372995fb4563b1704710087a13d9bf2ac.
+Sameinitial/query-support footprint aspairedseed1029controls; no Novelwin
+inferred from MeanTrainloss. Thirdseedstatict teacher stillpending.
+
+Fullfinite Mtraining window nowregistered for3controls x3independentseeds,
+fresh161parameters,4fullpolicyepisodes x50nonzero-gradient updates, sameRaw
+prior/K8/.65-.55/fixed200endpoint/checkpoints and strict external ancestry
+audit AFTER predictions. Same nominalbudget not same information/function
+class/endogenousloss exposure. First formalM trial notyet executed at this
+registration; realpilot oneKnownclass limitation preserved. Rawmean available,
+propercausalEMA/coverage/selfexclusion/qualifiedall9-gatedMdev stillpending.
+All573existing+newMwindow tests pass, plus3targeted realthirdseed receipts.
+Synthetic4episode/200step test is NOT actualdataset trial. RawC all3orders
+complete but ID/future invariance gates stillrunning. Goalactive/not achieved;
+trainedmultiseed mechanisms/fairbaselines/stronglegalPred/lockedfinal remain.
