@@ -1762,3 +1762,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
   bodies skipped and selectedgeometry/duplicate rejection. Sameowned256MiB/
  120s worker; privateindex ceiling16MiB justified for approvedgeometry fields,
   within oldstoragebudget, not a newcache. RealGTreading awaits remote prereg.
+- Full415engineering tests PASS5.13s, no skips. Preregdecedf4 actualpush/fetch
+  exit0, HEAD/FETCH_HEAD/origintracking exactdecedf4. Same strictSSH process
+  transport; v10worker independentlyfreshref/source/authority/inputhashes verified
+  before originalTrain geometrydecoded. OldKnownscope and newhumanapproval both
+  checked; selected407 is strictsubset of429 and disjoint from51oldheldout.
+- Actual physicalaudit407/407videos represented,14798image/frame metadata rows,
+ 2222physicalGTtracks/45450observations/95singleobservedtracks. All54639annotation
+  records bytescanned:45450authorizedretained+5608oldheldoutskipped+3581other
+  unlistedskipped. Category values/names/Novel/videoGTarrays remain byte-skipped;
+  no imagepaths/pixels/features/models read. This is annotated-frame physical
+  support NOT dense-video, image availability, semanticNovelGT or scientificgain.
+- Workerreported33.265975469s excludingnetwork, peak128684032B; training0,
+  oldresults preserved and privategeometry NEVERstaged. Newresultexplicitly
+  flags originalTraingeometryread=True; oldcombinedno-readflag setnull rather
+  than falselyclaiming noGTread now. Newauthority permits only this localindex/
+  publicaggregate audit, not training/fullcache/rawGTupload or protectedlabels.
+- Next externally reconcile physicalkeys/frames with existingKnown-only labels
+  and fixed407roles, then validate lawfulimage/featureprovenance before freezing
+  protocol. No semanticclass reconstruction for additionalcategory-agnosticGT.
+- Ownedv10total38.650704262s/noguardstop/oneThread,128684032Bsamplepeak.
+  Privategeometry5265962B (~5.02MiB), localonly; publicresultSHA
+  f1e170a3d3d288bcef3caa2aca4a71ad4c42c2597f7ee6a6e80fa04410dbd070.

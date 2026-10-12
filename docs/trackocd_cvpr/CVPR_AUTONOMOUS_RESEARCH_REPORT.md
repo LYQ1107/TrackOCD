@@ -77,6 +77,17 @@ OriginalKnown-only authority does not itself grant new category-agnostic GT
 access, so a bounded407video physicalGT audit was proposed to the user, not
 executed or selfauthorized. No training/model/Val/Test/newGT read; Goalactive.
 
+Subsequent actual human approval authorized only407video category-agnostic
+physicalGT geometry/opaqueIDs/frame fields. Registered v10 now completed:
+407videos,2222physicaltracks,45450annotatedobservations,14798image/frame metadata
+rows,95single-observationtracks. NonKnowncategoryIDs/names/Novel vocabulary,
+videoGTarrays and protectedvideo targetvalues remain skipped. Privategeometry
+local only, no rawGTupload/training/fullcache/model/pixel read. This supplies
+annotated-frame physicalcounts, not dense-video completeness, semanticNovel
+labels or decodedvisualinput proof; subsequent role/Known key reconciliation
+and image/feature provenance still required before protocolfreeze. Existing
+metadata-access incident and all oldKnown-only results remain preserved.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations
