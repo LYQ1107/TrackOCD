@@ -546,3 +546,21 @@ weights, full policy physical rollout, registered source/cache/authority gate,
 boundedresources and private endpoint/history exact checks. Actual pilot and
 three-seed fair Mean/EMA/static/full/coverage/strictlineage evaluation remain
 pending at this record. No source-only thirdmechanism or Goal acceptance.
+
+Actual Mpilot subsequently completed under registered e89d887:10fresh161param
+updates/full1268observations/374frames/54physical policy universe/ownedexit0,
+exact12323B ownendpoint,100.31s worker/0.949GB RSS/noCUDA/0trainingGPUh.
+All1268anonymouscommits and1410append-only version records retained privately.
+Public result SHA5bbe27d48f96959775dcb558f85255c4d3c139210591a05a74e78ad58fd21e59.
+Exposure LIMIT: actualoptimization20Known supportgroups/ONEcategory, nopseudo
+groups; all1410versions Tentative, no actual quarantine/confirmation. Raw
+Existing1227/NEW41 cannot substitute for correctness, strictpurity or Novelgain.
+Do not count this pilot as a full three-seed Mmechanism/scientific acceptance.
+
+External strictversion-lineage audit source/tests now require allprior/actual
+transfer ancestry and truecommit watermarks, retainingunknown/pollution across
+clean-looking children/tombstones. Source/synthetic only; actualprivate Mhistory
+notyet audited bynewsource. Full569tests pass. Need genuine full Mcontrols,
+threefreshseeds/order/coverage, independent actualhistoryaudit and qualified
+Pred/final. R10/12done, C9/9fitdone, Rawpersistent evaluator live/order1028;
+no GoalA/B/C completion or methodselection claim.

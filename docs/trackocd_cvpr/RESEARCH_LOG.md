@@ -3192,3 +3192,40 @@ new research scope; nothing has been deleted, no storage pressure is present.
   result or scientific third-mechanism exploration. Actual Mpilot not yetrun
   at this registration; no three-seed-M/Novel gain/strictCT/Pred/Goal claim.
   Register/push/fetch/refverify then execute bounded actualpilot, not allMmatrix.
+
+### First actual M optimizer pilot complete; exposed limits retained
+
+- Actual source/authority/input protocol e89d887492ba2fc5caa1f75338c23a8a34e975e7
+  pushed/fetched/exact-refverified before any Mworker private reads. Owned
+  handle69181 terminalexit0/noguardstop:10actual161parameter AdamWupdates,
+  full10policyvideos/54physical/1268observations/374frames/1empty. Raw .65/.55
+  K8 arbitration plus prediction-owned versioned M; no C/R/warmstart. ResultSHA
+  5bbe27d48f96959775dcb558f85255c4d3c139210591a05a74e78ad58fd21e59,
+  private12323B endpointSHA0a12dafdfb80b3cbb51a2170c6814bce6e6e62963f4c00dd45c9dc6f94b337b7,
+  exactreopen. Initiale9b7aa64... ->afterb125a4ccdc6480ed31b1f5321ce96d653b856cd63063145de291badd7becd63b.
+- Owned106.830298588s/worker100.307531585s/RSS949395456B/11OSthreads/noCUDA/
+  0trainingGPUh. Full1268anonymouscommits retained; private1598741B actual
+  predictions+commit-labels/versionparent+watermark historySHA
+  1ec60e1c1d785b7b714774bf27a372ac3b77222738d24e9cc3b74ea176a96f83.
+  No originalGTJSON/pixels/dev/final/protected label reads or private uploads.
+- Critical exposure limit: actualupdates ONLY20Known supportgroups/ONEsemantic
+  class, no policy-pseudo optimizer groups. Fullclock lossopportunities1400
+  eligible/7087singleton/164unknown-or-conflict plan evaluations; opportunity
+  totals NOTactual optimizer coverage. All1410versionrecords Tentative, zero
+  actualconfirmation/quarantine. RawactionNEW41/Existing1227 is NOTcorrect
+  semanticreuse/purity or evidence that memory repairs actualerror propagation.
+  This is real optimizer/history plumbing, not three-seed M scientific result.
+- New EXTERNAL versionlineage audit source follows everyactual commit watermark,
+  ownpriorversion and actualtransfer source edge; all ancestor truth retained
+  aftermoves/quarantine/tombstones. Reject missing/cyclic/future/omittedtransfer
+  parents and wholeunion bound rather than silently prune dirt. Unknown never
+  pseudo/background. Synthetic firstbad-Known source survives move to a fresh
+  clean-looking child. No controllerfeedback/currentactivepurity/officialCT/
+  Pred/fullsemanticGT/self-excluded reuse claim. Actualprivate Mhistory notyet
+  read by this newly added auditor; separate actualregistration still required.
+- Full569tests PASS28.85s, realpilot receipt/coverage/exposure/status limits and
+  strictsource DAGtests included. Next freeze full Mcontrols/3freshseeds/steps/
+  orders/coverage/lineage before scientific training; pilotendpoint notwarmstart.
+  Continue remaining2Rthirdseed teacher fits; persistent RawC live/CPUbusy with
+  order1028 complete, sameguard/identity/no unnecessary restart. Goalactive,
+  stronglegalPred/fullfinal/three-mechanism scientific acceptance stillopen.
