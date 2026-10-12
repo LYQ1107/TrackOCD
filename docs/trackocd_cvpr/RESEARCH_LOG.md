@@ -1664,3 +1664,21 @@ new research scope; nothing has been deleted, no storage pressure is present.
   lineage, then freeze actual protocol before any new scientificallytrained fit.
 - Publicrealreceipt/sourcehash/resource checks plus full403engineering tests
   PASS4.86s, no skips; privateassignment not opened by public receipt tests.
+
+### Fixed-class coverage audit preregistration
+
+- Clean989985c rechecked,184.5GBdisk/71.3GBRAMavailable. Hashverified v6private
+  witness e7557a4e695c69c7abecd7ee60b0ca623979445e033a1c4044a826c06d83d363;
+  onlybytes hashed before newregistered gate, no privatecontent newlydecoded.
+- v7holds v6classassignments fixed, independently verifies original witness,
+  adds every unassigned uniquelylegal positive-own-role video. No metric,
+  difficulty, numericIDtie-break, rolechange or new GT. Report unassigned
+  conflicts/no-ownsupport/ambiguous rather than fabricate background/dropdata.
+  Reverify actualoriginalvideo disjointness/positiveconflicts/fit3/eval2after.
+- Aggregate class/track/observation/video and cross-video annotatedtrack query
+  potential, including singletons; private perclass numericcounts staylocal.
+  Potentialquerycounts do NOT prove decodedvisualfeatures or onlineevaluation.
+  No protocolfreeze/fit/checkpoint access. Same256MiB/120s/oneCPU/freshrefsource
+  guards; new privateassignment and oldv6publicresult bound to source/inputhash.
+- Three synthetic coverage/idempotence/conflict/nonpool cases/full406engineering
+  tests PASS4.84s, no skips. Actual dataaudit awaits newpublication/registration.

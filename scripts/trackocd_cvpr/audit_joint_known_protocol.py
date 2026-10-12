@@ -22,6 +22,7 @@ from scripts.trackocd_cvpr.audit_known_census_protocol import exact_open_barrier
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from src.trackocd_v2.io import atomic_json, sha256_file
 from src.trackocd_cvpr.remote_registration import verify_registration
+from src.trackocd_cvpr.global_protocol_coverage import audit_global_coverage
 
 SOURCES = ('configs/trackocd_cvpr/joint_known_protocol_v1.json',
            'scripts/trackocd_cvpr/audit_joint_known_protocol.py', 'src/trackocd_cvpr/joint_known_protocol.py',
@@ -30,6 +31,7 @@ SOURCES = ('configs/trackocd_cvpr/joint_known_protocol_v1.json',
            'src/trackocd_cvpr/metadata_only.py', 'scripts/trackocd_cvpr/audit_train_metadata_containment.py',
            'src/trackocd_v2/io.py', 'configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json',
            'src/trackocd_cvpr/remote_registration.py',
+           'src/trackocd_cvpr/global_protocol_coverage.py',
            'outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json',
            'configs/trackocd_cvpr/autonomous_research.json')
 
@@ -123,6 +125,8 @@ def worker(args, cfg, safety):
     if out.exists():
         raise ValueError('No attempt overwrite')
     names = ('private_Known_index', 'private_exclusion_index', 'roles', 'census_result')
+    if cfg.get('fixed_global_coverage_audit', False):
+        names += ('private_global_assignment',)
     paths = {name: ROOT / cfg[name] for name in names}
     for path in paths.values():
         if path.is_symlink() or not path.is_file():
@@ -161,11 +165,17 @@ def worker(args, cfg, safety):
             raise ValueError('Actual census binding differs')
         allowed, excluded = validate_video_scope(json.loads(paths['private_exclusion_index'].read_text()))
         known = inherited_known_ids(paths['roles'])
-        presence, counts = known_presence(json.loads(paths['private_Known_index'].read_text()), allowed, known)
+        known_index = json.loads(paths['private_Known_index'].read_text())
+        presence, counts = known_presence(known_index, allowed, known)
         if counts != cfg['expected']:
             raise ValueError('Every original census row retained/reconciled')
         guard()
-        if cfg.get('single_global_four_role_split', False):
+        if cfg.get('fixed_global_coverage_audit', False):
+            prior_assignment = json.loads(paths['private_global_assignment'].read_text())
+            if set(prior_assignment) != {'not_model_facing', 'assignment'} or prior_assignment['not_model_facing'] is not True:
+                raise ValueError('Exact verified global external assignment schema')
+            public, private = audit_global_coverage(presence, known_index, prior_assignment['assignment'])
+        elif cfg.get('single_global_four_role_split', False):
             public, private = global_joint_feasibility(presence)
         elif cfg.get('exhaustive_component_necessary_only', False):
             public, private = exhaustive_component_necessary(presence)
@@ -210,10 +220,13 @@ def main():
                                           'configs/trackocd_cvpr/joint_known_protocol_v3_unbalanced_ref_transport.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v4_compressed.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v5_exhaustive.json',
-                                          'configs/trackocd_cvpr/joint_known_protocol_v6_global.json'),
+                                          'configs/trackocd_cvpr/joint_known_protocol_v6_global.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v7_coverage.json'),
                         default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
+    if args.config.endswith('joint_known_protocol_v7_coverage.json'):
+        SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v6_global/result.json', SOURCES[-1])
     cfg = json.loads((ROOT / SOURCES[0]).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker:
