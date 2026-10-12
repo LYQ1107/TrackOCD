@@ -37,9 +37,14 @@ def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify
     if out.exists() or receipt.exists(): raise ValueError('Preserve all previous attempts')
     started, peak, threads, reason = time.monotonic(), 0, 0, None
     if resources_ok(cfg, safety, ROOT, started, 0): raise RuntimeError('Pre-spawn resource guard')
+    extra = []
+    if worker_script == 'scripts/trackocd_cvpr/pilot_candidate_optimizer.py':
+        extra = ['--config', args.config]
+        if args.config == 'configs/trackocd_cvpr/C_GT_scientific_window_v1.json':
+            extra += ['--variant', args.variant, '--seed', str(args.seed)]
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / worker_script), '--worker',
-        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy], cwd=ROOT)
+        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy] + extra, cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')

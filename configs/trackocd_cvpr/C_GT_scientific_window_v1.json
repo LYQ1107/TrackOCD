@@ -1,0 +1,40 @@
+{
+  "schema_version": "trackocd.cvpr.frozen-C-GT-scientific-window.v1",
+  "status": "REGISTERED_FIXED_C_CONTROLS_ACTUAL_TRIALS_PENDING",
+  "scope": "One candidate-direction intervention with matched controls; not three distinct R/C/M mechanisms or selected joint method",
+  "data_protocol": "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json",
+  "pilot_result_sha256": "71f664b63f1a035ca034d8430d6db6b8269896f0470863e22b559519fac0a8a8",
+  "training_seed_replicates": [1027, 1028, 1029],
+  "variants": {
+    "Top1_conditioned": {"K_per_family": 1, "candidate_statistics": "individual"},
+    "Top8_conditioned": {"K_per_family": 8, "candidate_statistics": "individual"},
+    "Top8_pool_context": {"K_per_family": 8, "candidate_statistics": "shared canonical pool mean in columns2:5, not fabricated Known support"}
+  },
+  "trainable_parameters_each": 708,
+  "input": "Complete Raw-only common DINO GT-control policy10/54tracks/1268obs/374clockframes with Known34/policy-pseudo10/masked10; no old capped cache or selected R/policy weights",
+  "Known_prior": "Legitimate immutable offlinefit5/1158 support tracks; sorted fit loss bindings equal policy Known bindings",
+  "training": {
+    "optimizer": "AdamW", "learning_rate": 0.001, "weight_decay": 0.0001,
+    "gradient_clip": 1.0, "episodes": 4, "updates_per_episode": 50, "optimizer_steps": 200,
+    "checkpoint_steps": [20, 50, 100, 200],
+    "schedule": "Perseed NumPy random video-ordinal permutation per episode, common across variants, strict complete current frame clock; first50 eligible-loss frames per episode then freeze scorer through full remaining episode",
+    "loss": "Current-frame per-eligible-class macro mean of pure prediction-owned history multi-positive C loss; all labels external, unknowns masked not BG/Novel, absentKnown/uncertainNEW masked, binding ambiguity WAIT",
+    "episode_memory": "Fresh prediction-owned simulation bank each registered episode/order, append-only actual mistakes retained separately; no GT-triggered reset or deleting evaluation lineage",
+    "initialization": "Fresh seeded 708 parameters, no step10 warmstart or old policy",
+    "endpoint": "Fixed200 weights, no bestloss/dev/final selection",
+    "matching_caveat": "Same nominal parameters/full physical input/order/optimizer/update count, not identical function class/active information or endogenous candidate/target availability; report opportunity and masked-loss differences"
+  },
+  "source_qualification": "Actual optimizer-family/class/exposed-independent/crossvideo-positive counts at every update; preserve all orders/checkpoints/history and genuine failures; no silently replacing poor-exposure seeds",
+  "planned_evaluation": {
+    "development": "Frozen72 Train-development videos, full472physical/302Known/119declaredpseudoNovel+49unknown+2outsideKnown retained",
+    "orders": "Three independently registered fixed video permutations plus actual ID/future-prefix perturbations, exact shared causal clock across controls",
+    "baselines": ["Raw Top1 fixed cosine", "Raw Top8 fixed cosine", "trained Top1", "trained Top8 pool-context", "trained Top8 conditioned"],
+    "claims": "Separate candidate expansion from candidate-specific scoring; report full fixed physical coverage, Known stability, certified pseudoNovel reuse/first mistakes/strict history pollution/latency and all-commit vs independent-reuse coverage",
+    "gate": "Executable evaluator/source/metric/matching invariants must be separately frozen before actual dev labels or selection; no final/Val/Test selection"
+  },
+  "proposed_execution": {"execution_device": "CPU", "concurrent_workers": 1, "rss_bytes_ceiling": 3221225472, "wall_seconds_ceiling": 3000, "output_bytes_ceiling": 16777216},
+  "maximum_evidence_driven_scientific_repairs": 2,
+  "full_scientific_fit_automatic_start": false,
+  "all3seeds_or_M_Pred_or_Goal_acceptance_from_manifest": false,
+  "open_requirements": ["Actual registered trials", "Executable frozen multiorder causal development and matched coverage", "Self-excluded independent support control", "Joint learned R/C and trained lifecycle M", "qualified anonymous Pred and matching", "locked independent final evaluation"]
+}

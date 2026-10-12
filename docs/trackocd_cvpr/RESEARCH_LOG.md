@@ -2739,3 +2739,50 @@ new research scope; nothing has been deleted, no storage pressure is present.
   withcoverage/independentreuse/mistake-history safeguards, not moreplumbing.
 - Full499tests PASS8.07s withactual C receipt/zeroEXISTING retained. Public
   launch/result/terminal and report only; private model/GT/trajectory data excluded.
+
+### Seventh R endpoint and substantive fixed C window registration
+
+- Previous turn completed sixthR+Cactualpilot and preserved zeroExisting at
+  f1fe4986e5dd2a0a2b28b717ade7fac041733546: progress, not an unchanged wait.
+  SameRhandle17655 actuallycompleted temporal_Raw_teacher/seed1028/200steps,
+  no restart or dev/seed/winner selection. ResultSHA
+  e2df96a62d717cf35db4362d2ff6aa38acc11dace182ddddb1339aa94178791d,
+  endpoint616115B/SHA29bd09d44505cd5a710e3cd11a185e114481bd83e57dc4cb13d95105c521dac4,
+  after38381843e332ce064d4f62b3579516d70b42b304daca92dcf95ee7b8f83c7c86.
+  Initial3ff19664.../fullsupport footprint agree withseed1028CEcontrols.
+  Ownedexit0/no guardstop/588.096691141s total/580.853716050s worker,
+  RSS1398984704B/11OSthreads/noCUDA/0trainingGPUh. Sevenof12 R fits complete,
+  one R direction; no new scientific dev metrics inferred from fit loss.
+- New Cwindow is substantive candidate-direction training, not another10step
+  plumbing job:200freshupdates/fourfullpolicy episodes/50eligibleframes per
+  episode,9models (seeds1027/28/29 xTop1conditioned/Top8conditioned/Top8shared
+  pool-context). Same708nominalparameters, Rawfeatures/offlinefit5prior/order/
+  optimizer/fixed200endpoint. Top1→Top8 isolates expansion; Top8sharedpool vs
+  individualstats isolates conditioning. Not identical function class/active
+  information/endogenous target availability, and NOT three distinctdirections.
+- Perupdate exact Known/policy-pseudo group exposure, actualclasses, masks,
+  independentphysical andcrossvideo positiveopportunities logged separately
+  fromall-frame counts; no inferring trainingexposure fromfrozenrollout tails.
+  Perframe eligible-class macro loss usescanonicalnumeric reductions; no GT in
+  score inputs/bank writes, masked/unknowns remain physicalinputs, allmistakes
+  stayinprivateappend-only trainingepisode histories. Epochsimulation reset is
+  NOT a GTtriggered evaluation reset or lineagewashing; test/evalmemory rules
+  remain separately required. Selfcontinuation allowed but NOT independentreuse.
+- Fourepisodes retainall10policyvideos/54tracks/1268obs/374clockframes each.
+  Same perseed NumPy ordinalpermutations acrosscontrols; no arbitrary seeded
+  parameter/threshold search or silent replacement ofpoor-exposure variants.
+  Fixed20/50/100/200 privatecheckpoints includeoptimizer/RNG/episode markers,
+  explicitly NOT automaticcausal-bank resume or step10warmstart authority.
+- Newdriver enforces actualpilot/qualifiedpolicy/cache/source/authority gates;
+  supervisor forwards exact scientificconfig/variant/seed to itsfreshchild
+  (mockcommand regression test prevents silentlyrunningthe oldpilot). Oneowned
+  CPUfit/3GiB/3000s/16MiB output,25%RAM and originalstorage bounds; no other
+  project's processes touched or protecteddata/weights moved.
+- Complete C causaldev evaluator/metric/order/coverage protocol must be separately
+  registered before actualdevelopment reads; final/Val/Test selectionclosed.
+  Conditioned/scoring repair success, all3seeds, learnedjointR/C/M, stronglegal
+  Pred/matching, strictlineage/matchedcoverage and GoalA/B/C remain unproven.
+- Full505tests PASS8.42s before realCscientific launch. PriorSSHcontrolsocket
+  no longerexisted; freshnonmultiplexed SSH443 throughsameproxy succeeded
+  withsameofficial ED25519 pin/identity and exactcurrentremote f1fe4986...,
+  without proxy/foreignprocess modification. Usefreshconnection, not oldPID.
