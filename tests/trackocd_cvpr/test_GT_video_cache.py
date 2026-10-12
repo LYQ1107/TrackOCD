@@ -118,3 +118,17 @@ def test_bounded_fit_cache_preregistration_excludes_other_roles_and_reuses_pilot
     assert cfg['reuse_first_video_shards'] == 2 and cfg['maximum_observations_per_track'] is None
     assert cfg['wall_seconds_ceiling'] == 3600 and cfg['output_bytes_ceiling'] == 100 * 1024**2
     assert not cfg['full_cache_or_optimizer_automatic_start']
+
+
+def test_fresh_GPU_rule_skips_external_unknown_and_rechecks_exact_selected_UUID(monkeypatch):
+    from scripts.trackocd_cvpr import pilot_GT_video_cache as pilot
+    cfg = {'GPU_uuid': 'FIRST_FRESH_IDLE_UUID', 'GPU_idle_max_used_MiB': 64, 'GPU_idle_max_utilization_percent': 0}
+    gpu_rows = b'GPU-busy, 714, 20\nGPU-unknown, 15, [N/A]\nGPU-idle, 15, 0\n'
+    monkeypatch.setattr(pilot.subprocess, 'check_output', lambda cmd, **kw:
+                        gpu_rows if 'uuid,memory.used,utilization.gpu' in cmd[1] else b'GPU-busy\n')
+    chosen = pilot.require_idle_gpu(cfg)['GPU_uuid']
+    assert chosen == 'GPU-idle'
+    monkeypatch.setattr(pilot.subprocess, 'check_output', lambda cmd, **kw:
+                        gpu_rows if 'uuid,memory.used,utilization.gpu' in cmd[1] else b'GPU-busy\nGPU-idle\n')
+    with pytest.raises(RuntimeError): pilot.require_idle_gpu({**cfg, 'GPU_uuid': chosen})
+    with pytest.raises(RuntimeError): pilot.require_idle_gpu(cfg)

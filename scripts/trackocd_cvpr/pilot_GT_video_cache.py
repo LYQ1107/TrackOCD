@@ -33,16 +33,31 @@ SOURCES = (CONFIG, 'scripts/trackocd_cvpr/pilot_GT_video_cache.py',
 def require_idle_gpu(cfg):
     rows = subprocess.check_output(['nvidia-smi', '--query-gpu=uuid,memory.used,utilization.gpu',
                                     '--format=csv,noheader,nounits'], timeout=10).decode().splitlines()
-    chosen = [r.split(',') for r in rows if r.split(',')[0].strip() == cfg['GPU_uuid']]
+    apps = subprocess.check_output(['nvidia-smi', '--query-compute-apps=gpu_uuid',
+                                   '--format=csv,noheader'], timeout=10).decode().splitlines()
+    occupied = {r.strip() for r in apps}
+    wanted = cfg['GPU_uuid']
+    if wanted == 'FIRST_FRESH_IDLE_UUID':
+        eligible = []
+        for row in rows:
+            fields = [v.strip() for v in row.split(',')]
+            if len(fields) != 3 or fields[0] in occupied:
+                continue
+            try: used, utilization = map(int, fields[1:])
+            except ValueError: continue  # unknown/N/A is not idle
+            if 0 <= used <= cfg['GPU_idle_max_used_MiB'] and 0 <= utilization <= cfg['GPU_idle_max_utilization_percent']:
+                eligible.append(fields[0])
+        if not eligible:
+            raise RuntimeError('No fresh idle GPU; wait without foreign intervention')
+        wanted = eligible[0]
+    chosen = [r.split(',') for r in rows if r.split(',')[0].strip() == wanted]
     if len(chosen) != 1:
         raise RuntimeError('Exactly one currently visible chosen GPU UUID')
     used, utilization = (int(v.strip()) for v in chosen[0][1:])
-    apps = subprocess.check_output(['nvidia-smi', '--query-compute-apps=gpu_uuid',
-                                   '--format=csv,noheader'], timeout=10).decode().splitlines()
-    if (cfg['GPU_uuid'] in [r.strip() for r in apps] or used > cfg['GPU_idle_max_used_MiB']
+    if (wanted in occupied or used < 0 or utilization < 0 or used > cfg['GPU_idle_max_used_MiB']
             or utilization > cfg['GPU_idle_max_utilization_percent']):
         raise RuntimeError('Chosen GPU no longer idle; do not intervene with external work')
-    return {'GPU_uuid': cfg['GPU_uuid'], 'memory_used_MiB': used, 'utilization_percent': utilization,
+    return {'GPU_uuid': wanted, 'memory_used_MiB': used, 'utilization_percent': utilization,
             'chosen_GPU_compute_applications_before_launch': 0}
 
 
@@ -123,6 +138,7 @@ def worker(args, cfg, safety):
             raise ValueError('Clean pinned encoder / checkpoint')
         source_hashes, absent, tree_count = verified_encoder_sources(repo, common['upstream_commit'])
         guard(); idle = require_idle_gpu(cfg)
+        cfg = {**cfg, 'GPU_uuid': idle['GPU_uuid']}  # runtime resource binding, not experiment/data selection
         os.environ['CUDA_VISIBLE_DEVICES'] = cfg['GPU_uuid']
         import torch
         from PIL import Image

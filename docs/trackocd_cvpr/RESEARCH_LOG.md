@@ -2104,3 +2104,12 @@ new research scope; nothing has been deleted, no storage pressure is present.
   separately register exact validshard references, not blanket rerun or reuse
   an old PID. This preparation alone proves no actualfit-cache completion,
   representation/candidate/memory training or GoalA/B/C gain.
+- Bounded-fit preregistration6f416f67d4b5fb2ae1ebf1d9e1d6b4b2a59b8fd7
+  pushed/fetched with exact three refs. GPU placement is being made a fresh
+  resource rule instead of freezing a now-busy historical slot: first currently
+  idle UUID in NVML enumeration, no compute apps/used<=64MiB/utilization0.
+  Unknown/N/A or occupied GPUs are skipped. Pin the chosen UUID at runtime,
+  recheck that same UUID immediately before allocation; refuse if it changes.
+  No fallback on a live foreign GPU, no process intervention or data selection.
+  New rule test covers busy+unknown+idle and a conflicting second-check; full
+ 443tests PASS8.63s. Cache not yet launched merely by this source publication.
