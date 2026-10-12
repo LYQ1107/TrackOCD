@@ -2048,3 +2048,32 @@ new research scope; nothing has been deleted, no storage pressure is present.
   contracts, hash/reopen/tamper and current foreign GPU work rejection.
   Full438 engineering tests passed9.48s. Actual pilot not yet executed; fresh
   remote ref/source/hash checks remain mandatory, training0/600GPUh.
+- Registered3072fb2474bbe63ae699c3bbc8ff6e792ed03c18 truly pushed/fetched,
+  exact three Git refs; actual worker fresh ls-remote and source/hash checks
+  passed. GPU UUID recheck immediately before allocation found15MiB/0%/no
+  compute apps. Only owned worker used it; postterminal GPU0 back15MiB/0%.
+- Actual pilot PASS/ownedexit0/noguardstop,2complete video shards9+7tracks,
+ 213+205observations,40+35metadata frames. All75 decoded fit images,125GPU
+  encoding batches +1singlecrop repeat,1CPU comparison. No dev/final/protected
+  pixels, no original annotation file reopened, no class/role/ID/futurelength
+  in numerical encoder. Neither video has an emptyGT frame: global781emptyGT
+  frames remain unprocessed/preserved, their retention also has synthetic test.
+- All418visible prefixes checked,402with actual futuretail mutation. Atomic
+  payloads337910+325222B, hash/manifests/completion and exact reopen verified.
+  Private features, routing IDs and selected-pixel receipts remain local only.
+- GPUbatch/single maxerror5.122274160385132e-7; CPU/GPU7.82310962677002e-7;
+  firstcrop float16-reader3.127753734588623e-5. All preregistered gates passed.
+  These are firstcrop precision checks, not allcrop CPU parity. Cosine slightly
+  above1 on one float32 result is rounding, not a similarity beyond its bound.
+  DINO frozenparameter digest42c4c180... unchanged; no gradients/optimizer.
+- Ownedtotal84.810158087s, worker78.828579645s excluding network,
+  peakRSS1313456128B, GPUallocator reservedpeak687865856B (driver/context
+  overhead separately present). Four sampled OS threads include CUDA background
+  threads, not four compute workers/GPUs. CacheGPU allocation0.009527668h,
+  training0/600GPUh. PublicresultSHA
+  da4375c4502280fd3ec244812e79a258315e3197bd7f33f6edf5b85126d09fdd.
+- Pilot cache is now usable within this exact GT-control lineage, not qualified
+  Pred, a trained representation, fullscope cache or Goal A/B/C evidence.
+  Next preregister bounded cache coverage and complete training/loss/seed/order
+  contracts; fix exact differentiable fullsupport aggregation before jointfit,
+  never silently truncate fullKnown support at the old16384-observation bound.

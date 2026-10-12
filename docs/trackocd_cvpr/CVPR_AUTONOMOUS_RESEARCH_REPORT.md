@@ -437,3 +437,37 @@ Next finite repair keeps all23classes and isolation but explicitly examines
 unbalanced groups/union-support closure before a bounded joint solver. Unequal
 folds require per-class and within-fold fairness reporting, not cherry-picking.
 No protocol frozen, learned mechanism accepted or full Goal completion.
+
+## Latest authorized data freeze and real GT-control cache pilot
+
+The later explicit human reply `同意，先冻结协议，再有限缓存与训练`
+authorizes a new step after the preceding audit-only receipts; it does not
+retroactively clear the metadata-access incident. Frozen global data/GT-control
+contract f75714f fixes 407 Train videos, roles257/10/72/68, classroles5/2/8/8,
+2222 annotated physical tracks/45450 observations and all14798 metadata frames,
+including781 with no GT reference. Only fit/policy's existing retained Known
+targets can train; dev only Train-development, final never selects models.
+343 geometry-only tracks remain without retained semantic truth, not background
+or fabricated Novel classes. Data/cache I/O is frozen; the final learned method,
+qualified anonymous Pred frontend and scientific evaluation still are not.
+
+Registered3072fb2 actually ran a bounded frozen-DINO GT-control pilot, not
+training: first2fixed fit videos,16uncapped tracks/418observations/75frames,
+two video-atomic payloads totalling663132B, all418visible prefixes checked
+(402actual futuretail mutations), verified hashes/completion/exact reopen.
+GT amodal geometry is unclipped normalized xyxy, quality1 an explicit oracle
+control, not predicted localization/score. Both pilot videos have0emptyGTframes;
+this does not imply all781global emptyframes were processed. No semantic labels,
+role/track IDs/futurelength into numerical encoder; no dev/final/protected pixels
+or original annotation-file reopening in the cache worker.
+
+Firstcrop CPU/GPU maxerror7.82e-7 and float16-reader3.13e-5 passed fixed5e-4 /
+cosine>=0.99999 thresholds; GPUbatch/single repeat also passed. Frozenparameter
+digest42c4c180... unchanged. One freshly idle GPU, no foreign interference,
+ownedworkerexit0/no guardstop;84.81s total,1.31GB RSS,0.688GB GPU allocator
+reservedpeak. Frozen-cache allocation0.00953GPUh, newtraining still0/600GPUh.
+Source and publicreceipt hashes preserve provenance; private GT/IDs/pixels/
+features/weights were not uploaded. This engineering qualification is NOT
+trained R/C/M gain, qualified Pred, full cache completion or GoalA/B/C acceptance.
+The next finite steps are bounded coverage and preregistered training contracts,
+with exact current-weight support gradients rather than cap/prune/detach.
