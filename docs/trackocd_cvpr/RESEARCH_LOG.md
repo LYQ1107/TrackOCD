@@ -2212,3 +2212,40 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Now publish/fetch actualcompletedcache artifacts to open separate first
  10stepfitKnownCPUoptimizer gate; do not claim Novel gain, primaryPred, three
   trainedmechanisms/seeds, causalonline controller or GoalA/B/C from this cache.
+
+### Actual first fit-Known R optimizer smoke, not scientific acceptance
+
+- Complete cache/preregistration2f05201a9ae667b9d7669d7b5490ea03c5cac610
+  genuinely pushed/fetched exact3refs, then newowned CPUworker freshremote/
+  source/cache/terminal/permission/label-index gates passed. Exactfit5 labels
+ 1158tracks/22279observations join full1401physical tracks;243unknown/other
+  Known tracks retained with no semantic loss target, never BG or inferredNovel.
+- Exactly10realTAO-fit CPUAdamWupdates completed; query/currentR support grads
+  positive every step, supports1148--1156groups/21981--22266observations per
+  query, no legacy16384cap, hidden supportdetach or same-query-video fallback.
+  This is the first actual approvedfit update, NOT a scientifically accepted
+  R/C/M mechanism or three independent scientific seeds. No policy/dev/final
+  targets, originalGTJSON/pixels/DINOweights read; CUDA remained uninitialized.
+- Parameterdigest before1d53ed7e... afterc7f17ae7..., private616115B model+
+  optimizer/RNG checkpoint hash
+  a979d33f245962ec021f18152cf183e8e8cac581f02c5ab0cef6d7571c603fbb,
+  strict modelstep10/reopen identical. Fixedendpoint, no bestloss/Val selection;
+  checkpoint remains private, only scalarcurves/hash/report uploaded.
+- Ownedexit0/noguardstop/85.031559647s total,79.166397145s worker excluding
+  network; sampledpeakRSS895762432B. Oneowned CPUworker, intraopthreads1
+  requested but11OSthreads observed: do not claim single-OS-thread execution
+  or attribute threads toCUDA (uninitialized). 0trainingGPUh, realupdates10.
+- RawGram term0 atidentity then0.023096779 atstep10 on changingqueries.
+  This proves drift, NOT geometry-preservation/Novel improvement or a fixed
+  evaluation comparison. Variablequery/class/prefix traininglosses are not an
+  accuracy/generalization claim; representative final loss1.266940832.
+- PublicresultSHA
+  2e8b2dc57185be352bc9423df24ef19987e9d6bec761cafb98753837d186c851.
+  Embedded label-projection proof `not_cache_or_training_execution:true`
+  describes that projection subroutine, NOT the surrounding real10-step run;
+  immutable enclosing status/curves/parameter/checkpoint/terminal prove updates.
+- Next freeze fair scientific R trials/static+Raw/freshbaseline controls and
+  seeds/orders/selectors, then boundedpolicy/dev preparation. Strong lawful
+  Pred frontend, learned C/M, multiseed causal rollout, finalunseen validation
+  and GoalA/B/C remain open. OriginalGoal active, not replaced or completed by
+  this numerical pilot. Do not silently expand semanticGT/final selection scope.

@@ -471,3 +471,27 @@ features/weights were not uploaded. This engineering qualification is NOT
 trained R/C/M gain, qualified Pred, full cache completion or GoalA/B/C acceptance.
 The next finite steps are bounded coverage and preregistered training contracts,
 with exact current-weight support gradients rather than cap/prune/detach.
+
+The fit-only cache subsequently completed all257videos/1401physical tracks /
+28326observations and9345metadata frames,580emptyGT frames retained; two
+qualifiedpilot payloads reused without extraction. Everyprefix28326checks /
+26925actualtail mutations passed. Featurepayload45.29MB includingreused,
+44.63MBnew,1711.84s ownedterminal/no guardstop,0.46248frozen-cache GPUh.
+Source01e7383 and publicc45ffc1e... receipt preserve qualification; no dev/final
+pixels or optimizer in the encoder. This is GT-oracle preparation, not Pred.
+
+After actualremote2f05201 registered this completion and loss/source contract,
+the first10realR AdamWsteps ran onCPU: fit5existingKnown only,1158supervised
+tracks/22279observations, full1401physical tracks kept with243masked targets.
+Everyquery excludes allsamevideo offlineKnown support; currentR support grads
+retained on~22k observations, no legacycap/hidden detach. Parameters changed;
+private616115B model+optimizer/RNG fixedstep10checkpoint reopened exactly.
+85.03s ownedtotal/0.896GB peakRSS/exit0/no guardstop/0GPUtrainingh;11OSthreads
+observed despite requested intraop1, so no single-thread certificate. No original
+GTJSON/pixels/DINOweights/dev/final target read, CUDA uninitialized. Embedded
+projection-only nontraining flag does not negate the enclosing real10updates.
+RawGram drift rises0->0.0231 on changingqueries: NOT a Novel gain, geometry
+preservation, evaluation or acceptedscientificmechanism. OriginalGoal remains
+active; separate fair multiseed R/C/M trials/controls, lawfulPred, causal memory
+rollout and finalheld validation stillrequired. Privateweights/labels/data not
+uploaded; publicresult2e8b2dc5... and immutable losses/hashes preserve evidence.

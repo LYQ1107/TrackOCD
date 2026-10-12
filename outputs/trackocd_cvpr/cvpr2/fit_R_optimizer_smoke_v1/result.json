@@ -1,0 +1,165 @@
+{
+  "completed_optimizer_steps": 10,
+  "development_final_pixels_or_labels_originalGT_or_DINOweights_loaded": false,
+  "label_and_physical_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "2f05201a9ae667b9d7669d7b5490ea03c5cac610"
+  },
+  "loss_curve": [
+    {
+      "Known_CE": 0.6312759518623352,
+      "Raw_Gram": 0.0,
+      "gradient_norm_before_clip": 3.749507188796997,
+      "loss": 0.6312759518623352,
+      "query_gradient_norm": 4.103824615478516,
+      "same_track_past_prefix": 0.0,
+      "step": 1,
+      "support_gradient_norm": 5.675870418548584,
+      "support_groups": 1148,
+      "support_observations": 22266
+    },
+    {
+      "Known_CE": 0.28723183274269104,
+      "Raw_Gram": 0.00011009068111889064,
+      "gradient_norm_before_clip": 1.5271350145339966,
+      "loss": 0.294673889875412,
+      "query_gradient_norm": 2.0093557834625244,
+      "same_track_past_prefix": 0.07414507865905762,
+      "step": 2,
+      "support_gradient_norm": 2.8080856800079346,
+      "support_groups": 1156,
+      "support_observations": 22211
+    },
+    {
+      "Known_CE": 0.054302461445331573,
+      "Raw_Gram": 0.0008674527052789927,
+      "gradient_norm_before_clip": 0.7059919238090515,
+      "loss": 0.0713513046503067,
+      "query_gradient_norm": 0.6848504543304443,
+      "same_track_past_prefix": 0.16831976175308228,
+      "step": 3,
+      "support_gradient_norm": 0.6022127270698547,
+      "support_groups": 1149,
+      "support_observations": 22113
+    },
+    {
+      "Known_CE": 0.49994927644729614,
+      "Raw_Gram": 0.0021215882152318954,
+      "gradient_norm_before_clip": 3.6242358684539795,
+      "loss": 0.5365666747093201,
+      "query_gradient_norm": 3.1382999420166016,
+      "same_track_past_prefix": 0.3608699440956116,
+      "step": 4,
+      "support_gradient_norm": 4.466855049133301,
+      "support_groups": 1149,
+      "support_observations": 21981
+    },
+    {
+      "Known_CE": 1.4425854682922363,
+      "Raw_Gram": 0.004144090227782726,
+      "gradient_norm_before_clip": 7.373767375946045,
+      "loss": 1.4487208127975464,
+      "query_gradient_norm": 5.769045829772949,
+      "same_track_past_prefix": 0.050992608070373535,
+      "step": 5,
+      "support_gradient_norm": 8.554910659790039,
+      "support_groups": 1153,
+      "support_observations": 22121
+    },
+    {
+      "Known_CE": 0.5137748718261719,
+      "Raw_Gram": 0.006584125570952892,
+      "gradient_norm_before_clip": 3.91115403175354,
+      "loss": 0.5262614488601685,
+      "query_gradient_norm": 3.787658452987671,
+      "same_track_past_prefix": 0.10840505361557007,
+      "step": 6,
+      "support_gradient_norm": 5.031581401824951,
+      "support_groups": 1152,
+      "support_observations": 22250
+    },
+    {
+      "Known_CE": 0.14405924081802368,
+      "Raw_Gram": 0.009621115401387215,
+      "gradient_norm_before_clip": 1.4406092166900635,
+      "loss": 0.17024803161621094,
+      "query_gradient_norm": 1.252078890800476,
+      "same_track_past_prefix": 0.23783499002456665,
+      "step": 7,
+      "support_gradient_norm": 1.667422890663147,
+      "support_groups": 1152,
+      "support_observations": 22210
+    },
+    {
+      "Known_CE": 2.451510190963745,
+      "Raw_Gram": 0.014116348698735237,
+      "gradient_norm_before_clip": 14.059828758239746,
+      "loss": 2.4953041076660156,
+      "query_gradient_norm": 12.372910499572754,
+      "same_track_past_prefix": 0.4026493430137634,
+      "step": 8,
+      "support_gradient_norm": 11.563803672790527,
+      "support_groups": 1149,
+      "support_observations": 22113
+    },
+    {
+      "Known_CE": 0.20085763931274414,
+      "Raw_Gram": 0.016998253762722015,
+      "gradient_norm_before_clip": 2.0217061042785645,
+      "loss": 0.21676723659038544,
+      "query_gradient_norm": 1.5847221612930298,
+      "same_track_past_prefix": 0.11660045385360718,
+      "step": 9,
+      "support_gradient_norm": 2.0424211025238037,
+      "support_groups": 1149,
+      "support_observations": 22092
+    },
+    {
+      "Known_CE": 1.2561815977096558,
+      "Raw_Gram": 0.023096779361367226,
+      "gradient_norm_before_clip": 7.9206013679504395,
+      "loss": 1.2669408321380615,
+      "query_gradient_norm": 5.654767036437988,
+      "same_track_past_prefix": 0.04985058307647705,
+      "step": 10,
+      "support_gradient_norm": 8.014602661132812,
+      "support_groups": 1153,
+      "support_observations": 22121
+    }
+  ],
+  "model_parameter_sha256_after": "c7f17ae79be3a57abf3d87f546ab3b8291aec4a93c4e098de75b4dc811574ca3",
+  "model_parameter_sha256_before": "1d53ed7e3d9a65e3066b94ace4850626591591fecf87b17aed812307873ccaf4",
+  "numeric_model_inputs_contain_labels_roles_IDs_or_futurelength": false,
+  "offline_GT_training_augmentation_not_frame_online_controller": true,
+  "private_checkpoint": {
+    "bytes": 616115,
+    "reopen_exact": true,
+    "sha256": "a979d33f245962ec021f18152cf183e8e8cac581f02c5ab0cef6d7571c603fbb"
+  },
+  "queryself_or_samevideo_in_offline_Known_support": false,
+  "resources": {
+    "CUDA_initialized": false,
+    "execution_device": "CPU",
+    "peak_guarded_RSS_bytes": 891609088,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 79.16639714495977
+  },
+  "seed": 1027,
+  "status": "VERIFIED_TEN_REAL_FIT_KNOWN_CPU_R_OPTIMIZER_STEPS_NOT_SCIENTIFIC_ACCEPTANCE",
+  "trained_scientific_seeds_or_R_C_M_mechanisms_or_Goal_A_B_C_accepted": false
+}
