@@ -1446,3 +1446,37 @@ new research scope; nothing has been deleted, no storage pressure is present.
   SHA/ref/type rejection, both-failbounded and unchanged v2data/safety rules.
   Actual newv3 private input/proof stillawaitnew registration. Goal remains
   active; no science FAIL/transportrough edge substitutes fullcompletion.
+
+### Differentiable Raw-support reencoding while publication remains pending
+
+- New turn rechecked clean09a41fa, disk185.3GB/RAM79.3GBavailable. Prior turn
+  actual source/transport preparation, no unbalanced real-data result. Normal
+  proxyGit push and connector fail; proxy7890listener present but HTTPS handshake
+  timedout, bounded directGit25s also timedout. No external service/proxy/global
+  credentials modified or processes terminated. Original Goal remains active.
+- Core missing step independent of protocol choice: existingNumPy memory path
+  detaches R. Added numeric Raw visible support reencoder using current R weights
+  for each already-latest/alias-deduplicated support group; equal-group Raw and
+  adapted prototypes stay Torch tensors. Raw dispersion/groupcount/quality and
+  candidate-kind/bindingcount only, not classID/GTpurity/evaluator labels or text.
+  Caller still must prove legal visible/raw lineage/retrieval/group deduplication;
+  this is not a transactional full controller or trained adaptive memory.
+- Inputs cloned before R so external snapshot mutation cannot corrupt saved
+  backward values. Hard4096candidate/group and16384visible-observation bounds:
+  reject whole call, no silent class/member/track truncation. Not fullbenchmark
+  scalability proof. No real labels/features/models/dataset/GPU/optimizer opened.
+- First focused run1failed/5passed4.20s: test incorrectly unpacked scorer into
+  two outputs; actual registered scorer returns concatenated logits. Fixed test
+  only to actual API/rows attribute, no scorer/tolerance/model-rule change.
+  Then6passed3.58s. Both query embedding and reencoded candidate prototype retain
+  gradients, input leaves and R/Cparameters receive true synthetic CE backward;
+  weights unchanged, nooptimizer. Separate deliberate synthetic bias mutation
+  verifies current-parameter reencoding, NOT a fitted checkpoint or efficacy.
+- Added hard observation-budget refusal test. Next actual unbalanced/union
+  check still requires09a41fa or valid descendant remote registration and fresh
+  exactref gate; no local execution or extra v2attempt bypass of publication.
+  Main scientific R/C/M trials0, training0/600GPUh, protocol/GoalA/B/C allopen.
+- Seven focused support-bank cases/full378engineering tests PASS4.71s, no skips;
+  both R and C state_dict snapshots unchanged after synthetic CE backward.
+  New bridge is necessary source preparation, not silently declaring the old
+  NumPy controller fully differentiable or source-only work empirical science.
