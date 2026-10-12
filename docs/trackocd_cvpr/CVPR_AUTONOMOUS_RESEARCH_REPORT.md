@@ -54,6 +54,18 @@ samplepeak83804160B; no training. Finalprotocol freeze requires effective
 track/query coverage and causal input/label provenance audits. Eight final
 classes are support-feasible, not empirical Novel-generalization success.
 
+Fixed-role coverage extension v8 now assigns407of429candidatevideos, preserving
+v6classes and independently verifying disjointness/positiveconflicts. Role
+support: fit5classes/257videos/1158tracks; policy2/10/10; dev8/72/119;
+final8/68/93. The22remainingvideos have no legal positive-own-role placement,
+not deleted or asserted background. Final perclass support is3..36tracks and
+2..26videos;93cross-video query tracks are annotation potential, not decoded
+features or online results. Actualv7schema failure preserved; validator fixed
+to existing non-frozen wrapper in separatelyregistered v8. No training/newGT/
+Novel/Val/Test/model/pixel read; source1c9e42b remotelyregistered. Expanded
+assignment remains local and NOT yet a frozen scientific protocol: forward
+provenance, image/feature availability and evaluation denominators still open.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations

@@ -1,0 +1,288 @@
+{
+  "census_reconciliation": {
+    "observations": 38680,
+    "positive_Known_classes": 48,
+    "tracks": 1962,
+    "videos": 429
+  },
+  "fresh_source_no_existing_bytecode_cache": true,
+  "interpretation": "Same v7 coverage/data/safety rules, fix validator to exact existing writer three-field wrapper including not_a_frozen_protocol=true. Preserve v7 real failure. Fixed classes, all uniquely legal positive-own-role videos, aggregate annotated track/observation/query potential only; not decoded features or online results, no protocol freeze or new GT authority.",
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "1c9e42b67908d9fb38d65d7c9bcf57b85eeadb28"
+  },
+  "optimization_training_steps": 0,
+  "original_annotation_old_target_tables_names_Novel_Val_Test_pixels_features_models_read": false,
+  "owned_launch_attempt": 1,
+  "preregistration_commit": "1c9e42b67908d9fb38d65d7c9bcf57b85eeadb28",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "private_global_assignment": "e7557a4e695c69c7abecd7ee60b0ca623979445e033a1c4044a826c06d83d363",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+  },
+  "private_output": {
+    "bytes": 10408,
+    "sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a"
+  },
+  "resources": {
+    "disk_free_bytes": 184470515712,
+    "guarded_process_RSS_bytes": 81506304,
+    "kernel_reported_VmHWM_bytes_approximate": 81506304,
+    "peak_guarded_worker_RSS_bytes": 81506304,
+    "resource_ru_maxrss_bytes_including_preexec_history": 80973824,
+    "sampled_smaps_rollup_Rss_bytes": 81506304,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 0.0719168899813667
+  },
+  "scipy_version": "1.15.3",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/joint_known_protocol_v8_coverage_schema.json": "e941eac20ebfdafcf9373b2daee280ee90f99048e55adffcb13e5cff71952f65",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v6_global/result.json": "1c7d7a7a74cb997fe744b3538815114e64ad02e16134cf13dec8dc4517f9bcdb",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "ab34a6fb65e24b86ad42c564a4cc02764cefcc225ecbd712d5bb153a868ceb87",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/global_protocol_coverage.py": "f147c3e2739b063d96bd5567b66d5602dec1451a46c01bd10665909f4bfabf2f",
+    "src/trackocd_cvpr/joint_known_protocol.py": "230f2ed6f2b1480ee61dbd11f3eb07882f9da157b106bf4f6ffa78175f5d4aef",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "VERIFIED_FIXED_CLASS_COVERAGE_EXTENSION_NOT_FROZEN_PROTOCOL",
+  "structural_result": {
+    "added_unique_role_videos": {
+      "development_pseudo": 53,
+      "fit_known": 245,
+      "independent_final_pseudo": 51,
+      "policy_train_pseudo": 4
+    },
+    "all_original_videos_retained_as_candidates": 429,
+    "base_assigned_videos": 54,
+    "base_support": {
+      "development_pseudo": {
+        "assigned_videos": 19,
+        "classes": 8,
+        "observations": {
+          "max": 116,
+          "min": 40,
+          "sum": 579
+        },
+        "positive_videos_per_class": {
+          "max": 5,
+          "min": 2,
+          "sum": 20
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 6,
+          "min": 2,
+          "sum": 30
+        },
+        "single_annotation_tracks": 0,
+        "tracks": {
+          "max": 6,
+          "min": 2,
+          "sum": 30
+        }
+      },
+      "fit_known": {
+        "assigned_videos": 12,
+        "classes": 5,
+        "observations": {
+          "max": 529,
+          "min": 107,
+          "sum": 1122
+        },
+        "positive_videos_per_class": {
+          "max": 9,
+          "min": 3,
+          "sum": 21
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 23,
+          "min": 5,
+          "sum": 59
+        },
+        "single_annotation_tracks": 2,
+        "tracks": {
+          "max": 23,
+          "min": 5,
+          "sum": 59
+        }
+      },
+      "independent_final_pseudo": {
+        "assigned_videos": 17,
+        "classes": 8,
+        "observations": {
+          "max": 167,
+          "min": 19,
+          "sum": 619
+        },
+        "positive_videos_per_class": {
+          "max": 2,
+          "min": 2,
+          "sum": 16
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 8,
+          "min": 2,
+          "sum": 24
+        },
+        "single_annotation_tracks": 0,
+        "tracks": {
+          "max": 8,
+          "min": 2,
+          "sum": 24
+        }
+      },
+      "policy_train_pseudo": {
+        "assigned_videos": 6,
+        "classes": 2,
+        "observations": {
+          "max": 63,
+          "min": 35,
+          "sum": 98
+        },
+        "positive_videos_per_class": {
+          "max": 2,
+          "min": 2,
+          "sum": 4
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 3,
+          "min": 3,
+          "sum": 6
+        },
+        "single_annotation_tracks": 0,
+        "tracks": {
+          "max": 3,
+          "min": 3,
+          "sum": 6
+        }
+      }
+    },
+    "class_assignment_changed": false,
+    "complete_visual_category_absence_proven": false,
+    "expanded_assigned_videos": 407,
+    "expanded_support": {
+      "development_pseudo": {
+        "assigned_videos": 72,
+        "classes": 8,
+        "observations": {
+          "max": 764,
+          "min": 122,
+          "sum": 2743
+        },
+        "positive_videos_per_class": {
+          "max": 20,
+          "min": 4,
+          "sum": 77
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 29,
+          "min": 5,
+          "sum": 119
+        },
+        "single_annotation_tracks": 2,
+        "tracks": {
+          "max": 29,
+          "min": 5,
+          "sum": 119
+        }
+      },
+      "fit_known": {
+        "assigned_videos": 257,
+        "classes": 5,
+        "observations": {
+          "max": 18756,
+          "min": 107,
+          "sum": 22279
+        },
+        "positive_videos_per_class": {
+          "max": 239,
+          "min": 3,
+          "sum": 321
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 867,
+          "min": 5,
+          "sum": 1158
+        },
+        "single_annotation_tracks": 71,
+        "tracks": {
+          "max": 867,
+          "min": 5,
+          "sum": 1158
+        }
+      },
+      "independent_final_pseudo": {
+        "assigned_videos": 68,
+        "classes": 8,
+        "observations": {
+          "max": 879,
+          "min": 20,
+          "sum": 2337
+        },
+        "positive_videos_per_class": {
+          "max": 26,
+          "min": 2,
+          "sum": 72
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 36,
+          "min": 3,
+          "sum": 93
+        },
+        "single_annotation_tracks": 2,
+        "tracks": {
+          "max": 36,
+          "min": 3,
+          "sum": 93
+        }
+      },
+      "policy_train_pseudo": {
+        "assigned_videos": 10,
+        "classes": 2,
+        "observations": {
+          "max": 103,
+          "min": 103,
+          "sum": 206
+        },
+        "positive_videos_per_class": {
+          "max": 5,
+          "min": 3,
+          "sum": 8
+        },
+        "possible_cross_video_query_tracks": {
+          "max": 6,
+          "min": 4,
+          "sum": 10
+        },
+        "single_annotation_tracks": 0,
+        "tracks": {
+          "max": 6,
+          "min": 4,
+          "sum": 10
+        }
+      }
+    },
+    "integer_necessary_conditions": {
+      "class_pool": 23
+    },
+    "model_scores_or_names_used": false,
+    "new_protocol_frozen": false,
+    "numeric_ID_or_difficulty_tie_break": false,
+    "possible_queries_are_annotated_track_potential_not_decoded_features_or_online_results": true,
+    "status": "VERIFIED_FIXED_CLASS_COVERAGE_EXTENSION_NOT_FROZEN_PROTOCOL",
+    "training_GPU_hours": 0,
+    "unassigned_ambiguous_positive_role_videos": 0,
+    "unassigned_no_legal_positive_own_role_videos": 22
+  }
+}

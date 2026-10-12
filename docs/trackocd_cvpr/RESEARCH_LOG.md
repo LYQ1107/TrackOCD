@@ -1695,3 +1695,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
   config/output, samecoverage rules/budgets/sourcegate. No v7samepathretry or
   overwrite. Added actualwriter-format synthetic regression; full407tests
   PASS4.80s, no skips. v8realcoverage stillawaitregisteredsource.
+- Registered1c9e42b actualpush/fetch exit0; HEAD/FETCH_HEAD/origintracking exact.
+  Sameprocess-only strictSSH443 via17890; actualv8freshGitref/sourcegate passed.
+  Wrappercorrected, originalv6privateassignment/hash unchanged, classrolesfixed.
+- Actualcoverage extension adds245fit/4policy/53dev/51final videos,54->407.
+  All429candidatevideos accounted:407assigned,0ambiguous,22without a legal
+  positive-own-role placement. No IDtie-break/model/difficulty ranking or
+  silent removal. Originalvideo verification passes after deterministicextension.
+- Expanded fit5classes/257videos/1158tracks/22279observations; policy2/10/10/206;
+  dev8/72/119/2743; final8/68/93/2337. Perfinalclass3..36tracks and2..26positive
+  videos,2singleannotationtracks retained. These93possiblecrossvideoquerytracks
+  are annotatedsupport potential, NOT decodedimage/feature/onlinequery results.
+  Outsidepool classes/mixedfitKnown evaluation denominators remain separate
+  concerns; no blanketBG/absence claim. No scientificmetrics or protocolfreeze.
+- v8terminalexit0; no newGT/Novel/Val/Test/pixels/features/model reads or training.
+  Next bind expandedprivateassignment and register pixel/feature/inputprovenance
+  plus effectivequery/denominator audit before freezing actualprotocol or fit.
+- v8ownedtotal5.514153753s, peak81510400B/oneThread/noguardstop. Publicresult
+  SHA085abab372c2ab57edda729b5d828c6faabe94d0ac7b977473f53057ef2c851d;
+  privateexpanded SHA b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a.
