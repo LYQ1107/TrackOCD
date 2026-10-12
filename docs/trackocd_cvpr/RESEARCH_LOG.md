@@ -2513,3 +2513,47 @@ new research scope; nothing has been deleted, no storage pressure is present.
   labelprojection andGT metrics. Fixedfirstpair temporal/static teacher only,
   allremainingtrials stillrequired; report interimscorability/lowerbounds, never
   declare winner or complete mainPred/semanticGT/purity/Hscore/Goal acceptance.
+- Newfull478tests PASS7.91s; cache+CE+evaluator9f168dd67a8f68c911360500d3df3f894b529087
+  actuallypushed/fetched exactthree refs before evaluator launched.
+
+### Actual first-pair Train-development result, mixed and no temporal benefit yet
+
+- Newowned readonlyCPUworker freshremote/source/cache/endpoint/authority
+  gates passed, then FIRST actualdev-existingKnown projection. Classvalues
+  andlabels used EXTERNALLY only, no fitting/prototype repair/GT inRforward.
+  Full72dev/472physical/8753observations/2562clockframes; Known302,
+  declaredpseudoNovel119/eightclasses, outsideKnown2/unlabeled49 retained.
+  Everyprefix usesfull472gallery, samevideo excluded, no short/unmatched/
+  unknown filtering or GTbackground labels. Known302queries have3observed
+  classes ofthe5fitprototypes, not a five-class devsupport certificate.
+- Ownedexit0/no guardstop/29.368835836s total,worker25.951692429s,
+  peakRSS1138069504B/oneOSthread/noCUDA/zerooptimizer/GPUh. Model states
+  unchanged, privateweights/features/GTlabels notuploaded. PublicresultSHA
+  4cfab1308f6e01843cc27824a9071501844ae9e971a8aa4dd0610ed5cee66483.
+- Fixedseed1027teacherpair vsRaw (certifiedexisting-truth lowerbounds, NOT
+  fullGT semantic Hscore/purity or finalPredmetrics):
+
+  | Prefix | Raw macroR1 | Temporal macroR1 | Timeless macroR1 | Raw Knownmicro | Temporal Knownmicro | Timeless Knownmicro |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 1 | .453954 | .447848 | .447848 | .860927 | .894040 | .894040 |
+  | 2 | .525149 | .493889 | .493889 | .903974 | .923841 | .923841 |
+  | 4 | .495144 | .519390 | .519390 | .920530 | .933775 | .937086 |
+  | 8 | .601715 | .602687 | .602687 | .920530 | .940397 | .940397 |
+  | 16 | .598164 | .610490 | .610490 | .920530 | .943709 | .943709 |
+  | All available | .669205 | .658837 | .658837 | .933775 | .950331 | .950331 |
+
+- Bothteacher models have EXACTLY the same retrievalmetrics at allprefixes;
+  no observed temporal contribution. P16macroR1+1.23pp butp1/2 andallavailable
+  regress; allmicroR1Raw.739496 vsadapted.731092. R5mixed (p4macro drops)
+  despiteallmacroR5Raw.792160 vsadapted.818405. Preserve ALL outcomes, not
+  onlyp16 gain. Fullall-prefix effective rankRaw53.6726/temporal68.5706/
+  timeless67.6353: oldcollapse pattern not reproduced here, but rankrisealone
+  is NOT Novel gain, causalproof or scientificallyacceptedmechanism.
+- Main119pseudoqueries allhaveverifiedcross-videopositives; unknown-top ties
+  stillreported. Singleton2pseudoqueries/2classes andshort12queries/5classes
+  remain fullgallery; no stable population-wide shorttrack claim from tinystrata.
+- No model/checkpoint/architecture winner selected or final/Val/Test/new
+  nonKnown GT/vocabulary read. These are interimone-seed GTcontrol results,
+  not complete3seedscientific comparison. Finishremaining fixedCE/static/
+  teacher seeds before evidence-drivenR repair; candidate/memory/qualifiedPred
+  andfinalcausal/matchedcoverage verification remain open. OriginalGoal active.
