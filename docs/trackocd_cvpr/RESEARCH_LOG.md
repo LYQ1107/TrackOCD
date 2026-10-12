@@ -1986,3 +1986,34 @@ new research scope; nothing has been deleted, no storage pressure is present.
   contract, legalfuture physicalfrontend and real>=3mechanism/multiseed fits.
 - Ownedfitcropfixture total76.395003103s/oneThread/noguardstop/sample1222602752B.
   PublicresultSHA cc931849d7485d64cb084c836f5daecb2c7e68ec736bc37f5e8c5f96e6277f1d.
+
+### Explicit cache/training permission and immutable data / GT-control I/O
+
+- Actual human answer to call_7615b60f5d3242c4845bc67f9c9e08b9:
+  `同意，先冻结协议，再有限缓存与训练`. Separate permission receipt
+  `configs/trackocd_cvpr/formal_research_scope_approval_v1.json` preserves the
+  preceding audit-only approvals and access incident; no retrospective waiver.
+- `frozen_global_data_GT_control_v1.json` freezes the hash-bound 407 Train
+  allocation (257/10/72/68 videos; 5/2/8/8 classes), known-label loss boundary,
+  all annotated physical denominators (2222 tracks /45450 observations), and
+  common GT-control cache I/O. The 14798 metadata frames include 781 with no
+  GT reference; those remain in the causal clock, never background targets.
+- Only fit/policy's existing retained Known supervision can train (1202
+  tracks). Dev is Train-development, independent final never selects models.
+  The additional 343 geometry-only tracks have no retained semantic truth;
+  no invented Novel labels, background assignment or full semantic GT claim.
+- This freezes DATA/GT-control I/O, not the final learned method, qualified
+  anonymous Pred frontend, or final evaluation. GT geometry remains an oracle
+  control: unclipped normalized amodal xyxy, quality1, pinned frozen DINO,
+  float32 inference /float16 storage /float32 reader normalization. Uncapped
+  observations, video-atomic completion; no semantic labels/roles/IDs/future
+  length in numerical encoder/R input, no GT memory repair.
+- Fresh full engineering suite: 433 passed in 9.13s. No new optimizer, GPU
+  cache or training execution yet. Data permissions alone do not launch all
+  407 videos: next register a small fit-only uncapped video-shard pilot and
+  check current resources, integrity, prefix/precision contracts first.
+- Current resource snapshot: ~171GiB free disk, 68.42GB available RAM;
+  GPU0/1 appear idle. Other GPU processes remain untouched; placement must
+  be rechecked by the new worker, never inherited from historical GPU IDs.
+  Original 600 training GPU-hours, max4 GPUs, 25% RAM, 15/30GiB incremental
+  storage and 10GiB free disk limits remain. Training0, Goal A/B/C open.

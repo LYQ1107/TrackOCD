@@ -1,0 +1,64 @@
+{
+  "schema_version": "trackocd.cvpr.frozen-global-data-GT-control.v1",
+  "status": "FROZEN_DATA_ROLES_AND_GT_CONTROL_CACHE_IO_NOT_FINAL_METHOD",
+  "approval": "configs/trackocd_cvpr/formal_research_scope_approval_v1.json",
+  "freeze_scope": "Immutable407Train roles, known-label loss boundary, annotated physical denominator and commonGT-control cache I/O; not selected learned method or qualified Predfrontend",
+  "input_sha256": {
+    "private_global_assignment": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+    "private_Known_support": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_physical_GT": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+    "private_image_plan": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+    "administrative_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d"
+  },
+  "roles": {
+    "fit_known": {"classes": 5, "videos": 257, "named_Known_supervised_tracks": 1158},
+    "policy_train_pseudo": {"classes": 2, "videos": 10, "fit_Known_supervised_tracks": 34, "pseudo_supervised_tracks": 10},
+    "development_pseudo": {"classes": 8, "videos": 72, "for_training_loss": false},
+    "independent_final_pseudo": {"classes": 8, "videos": 68, "for_training_loss_or_model_selection": false}
+  },
+  "training_labels": {
+    "source": "ExistingretainedKnown only, fit5 and policy2 role classes; label targets/bindings external to numeric forward",
+    "supervised_class_exposure": 7,
+    "named_Known_prototypes": "Fit5 only; offlinefit supervision, never dev/final/anonymous live GT repair",
+    "eligible_supervised_track_count": 1202,
+    "outside_eligible_Known_and_no_retained_Known_label": "Masked semantic targets, not background or inferredNovel labels",
+    "semantic_labels_GT_purity_roles_IDs_or_futurelength_in_numeric_forward": false,
+    "GT_repair_of_live_prediction_owned_memory": false
+  },
+  "annotated_physical_scope": {
+    "videos": 407, "tracks": 2222, "observations": 45450,
+    "metadata_images": 14798, "images_without_GT_reference": 781,
+    "all_metadata_frames_in_causal_frame_clock": true,
+    "no_short_low_quality_unmatched_or_empty_frame_drop": true,
+    "role_track_denominators": {"fit_known": 1401, "policy_train_pseudo": 54, "development_pseudo": 472, "independent_final_pseudo": 295},
+    "retained_Known_tracks": 1879, "additional_geometry_only_tracks": 343,
+    "semantic_GT_for_additional_geometry_only_tracks": false,
+    "dense_original_video_coverage_claim": false,
+    "positive_Known_class_isolation_is_not_visual_absence_certificate": true
+  },
+  "GT_control_feature_IO": {
+    "encoder_config": "configs/trackocd_core/common_features.json",
+    "encoder_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "encoder_frozen": true,
+    "crop_context_per_side": 0.1, "RGB_resize": [518, 518], "interpolation": "PIL bilinear",
+    "GT_geometric_localization_is_oracle_control_not_Pred": true,
+    "visual": "L2x_norm_clstoken768, inferencefloat32 TF32disabled, storedfloat16, readerfloat32 renormalization",
+    "geometry": "GTxywh toxyxy divided bycurrent decoded width/height, unclippedamodal, float32",
+    "quality": "Constant1 explicitlyGTcontrol, not calibratedvisibility/predictedscore",
+    "chronology": "Exactimage/frame IDs, strictly increasing pertrack, elapsed fromfirstobservedframe inmodel view",
+    "maximum_observations_per_track": null,
+    "prefixes": "Anyobservedprefix only, not fulltrack mean/length/futuretail",
+    "GT_labels_roles_or_opaque_IDs_in_encoder_or_R_forward": false,
+    "atomic_shard_unit": "Video, private arrays/metadata, hash+manifest+completion proof; no pertrack million-smallfile layout"
+  },
+  "execution_gates": {
+    "fresh_remote_source_registration_and_inputhashes": true,
+    "small_pilot_cache_qualification_first": true,
+    "full_cache_automatic_start_from_this_manifest": false,
+    "training_run_configs_losses_seeds_orders_resources_registered_before_fit": true,
+    "unqualified_57video_capped_Pred_features_as_main_input": false,
+    "qualified_anonymous_Pred_frontend_and_matching_protocol_required_for_GoalB": true,
+    "training_started_or_Goal_A_B_C_achieved": false
+  }
+}
