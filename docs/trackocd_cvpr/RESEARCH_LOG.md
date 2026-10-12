@@ -2705,3 +2705,37 @@ new research scope; nothing has been deleted, no storage pressure is present.
   candidate permutation/unknownmask/wronghistory/ID/future-prefix checks are
   executable qualifications only; actual C optimizer evidence still pending
   this preregistration, no scientific minimum-mechanism acceptance inferred.
+
+### First actual C optimizer pilot complete; no persistent reuse yet
+
+- Registered1be024c331dbe10aafd016bda110a818c97e8941 actuallyran ten C optimizer
+  steps, then froze weights and finished10videos/54tracks/1268observations/
+  374metadataframes including1empty. Ownedexit0/noguardstop/69.477909285s
+  total/63.516983124s worker/RSS949325824B/11OSthreads/noCUDA/0GPUh.
+  ResultSHA71f664b63f1a035ca034d8430d6db6b8269896f0470863e22b559519fac0a8a8.
+- Fresh708parameter C optimizer gradients nonzero inall10updates, private
+  endpoint23975B/hash49df63b33f1cf0c9544f83c89349b82f99b8876c128288c40e8a6314de9fb862,
+  strictreopen/afterdigest5f81910561f335c1206a228159d850974b2a8cb198b777cef6159c6ae174a296.
+  No pretrained/fitted R/policy weights, originalGT/pixels, dev/final/Val/Test
+  targets or newnonKnown labels used. Actualfit/policy bindingorder equality
+  passed; previouspolicycountsreceipt remains unchanged.
+- Realphysicalactions NEW655/KNOWN613/EXISTING0/WAIT0. Anonymous655actual
+  writes and655allocatedtokens retained, withfullprivatechronologicalhistory
+  369358B/hash93aefdbbb9aa21d3b4055d8c08f1eac077748d9556955841ae262241db5959eb.
+  This is NOT a persistence repair or positive discovery outcome: no Existing
+  reuse at all, despite exposedresolvable correctness-loss plans. Do not hide
+  fragmentation or reinterpret initialten-step plumbing as trainedscientificC.
+- All1268lossplans logged:994exposedresolvablecorrect,2verifiedNEW,
+  271maskedquery/conflictingalias,1uncertainpseudo/absentKnown. Eligiblefamily
+  counts Known791/policy-pseudo205 refer to ALL frames INCLUDING the frozen
+  post-step10 rollout, NOT actual optimizer-family exposure counts. Perupdate
+  family/class/masked/gradient logging remains required in formalC source;
+  do not infer pseudo-training exposure from these aggregatecounts.
+- Unknown10physicaltracks/271observations remain inrollout masked, noBG/Novel
+  labels or GTrepair ofmemory. Publicaggregate counts only; allweights/raw
+  target/prototype/trajectory assets localprivate, not GitHub. No purity/Hscore/
+  causalstrongPred or all3seeds/directions/GoalA/B/C accepted. Next complete
+  unchangedRteacher controls and freeze/train substantive matched C/M trials,
+  withcoverage/independentreuse/mistake-history safeguards, not moreplumbing.
+- Full499tests PASS8.07s withactual C receipt/zeroEXISTING retained. Public
+  launch/result/terminal and report only; private model/GT/trajectory data excluded.
