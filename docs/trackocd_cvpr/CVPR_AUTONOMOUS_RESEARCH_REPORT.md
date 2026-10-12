@@ -14,6 +14,23 @@ not renamed as new CVPR experiments. New training remains0; the bounded
 Train physical smoke and57video input run below are diagnostic inference,
 not new semantic method results.
 
+Current update (2026-10-12): subsequent explicit Known-only authority covered
+429 allowlisted Train videos and excluded the old51heldout; actual positive
+census completed, without retracting the metadata access incident. On the
+23 uniformly eligible Known classes, balanced allocation has an integer
+capacity contradiction; the full unbalanced four-role family was then tested
+without class/video pruning or quota relaxation. Registered v4 exact video
+pattern compression retained all429videos/38680observations/1962tracks,
+65patterns, and one bounded HiGHS run reported SOLVER_SCOPED_INFEASIBLE.
+This is scoped to the stated cyclic four-role/exclusion/quota family, not a
+formal global impossibility of TAO research or arbitrary other protocols.
+Worker exit0,13.534s total,140693504B sampled peakRSS, one thread; no training.
+Fresh source registration was ddc434c, actually pushed/fetched via strict
+official-key-verified SSH443 through17890. Original pending dbd ancestor also
+published. Older paragraphs' permission/pending network statements describe
+historical snapshots, not current authority or transport state. New fresh
+protocol still not frozen; GoalA/B/C and trained mechanism trials remain open.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations

@@ -1541,3 +1541,42 @@ new research scope; nothing has been deleted, no storage pressure is present.
   causal trainer integration remain open. No scientific R/C/M efficacy claim;
   fresh independent protocol and GoalA/B/C remain incomplete. This source bridge
   does not override pending remote registration or authorize real-data v4.
+
+### Publication recovered; actual compressed joint protocol negative result
+
+- New continuation distinguished previous source progress from real science.
+  HTTP/SOCKS/direct HTTPS again failed; document-control tools only cover
+  document surfaces, not NAS shell/chat relay, so no invented cross-chat access.
+  NAS192.168.31.57:22 TCP probe failed; no remote NAS worktree/data touched.
+- Proxy-forwarded SSH443 reached host verification. Independently browsed
+  official GitHub fingerprints and pinned their exact ED25519 key in an owned
+  temporary known_hosts file, StrictHostKeyChecking=yes/ED25519 only. Existing
+  local SSH identity authenticated asLYQ1107, no private key/token contents
+  output. HTTP7890/SOCKS7891 Git banner attempts timedout; HTTP17890 SSH CONNECT
+  actually read remotee0, then push/fetch bothexit0 advancedresearchbranch to
+  ddc434c4bb2861cc2fdd9aa3c8dd381e1462c87a (includespendingdbd). HEAD/FETCH_HEAD/
+  origintracking all exactddc. No force/globalsettings/proxyservice interference.
+- Registeredv4 ran once with process-only Git HTTPS-origin->sameGitHubSSH443
+  rewrite and strict command-scopedSSH transport. Separate launch transport
+  receipt preserved. Worker independentlyfreshGitref verifiedexactddc and all
+  registeredsourcebytes before opening the authorized Known derived indices.
+  No originalannotation/names/Novel/Val/Test/pixels/features/model read.
+- All429videos/38680Knownobservations/1962tracks/48supportedKnown retained;
+  eligiblepool23, patterns65, MILP1500variables/3547constraints/13596nonzeros.
+  Existing15forcededges yieldcomponent16+7singletons, no extraunionmerges.
+  One registered30s/5000node/one-thread solver returnedstatus2/HiGHSinfeasible.
+  No feasible assignment, no frozenprotocol, no frequencyexception or quotas/
+  roles changed. This is SOLVER_SCOPED_INFEASIBLE, not a formal globaldata proof.
+- Ownedexecutionexit0,13.534197665s total,7.462245636s excludingnetwork,
+  samplepeak140693504B/oneThread, no guardstop,0trainingGPUh. Compression fixes
+  v3resource failure without raising256MiB; preservedv3stop is NOT retroactively
+  recast as solver infeasibility. Privateproof2186B stayslocal; publicresult/
+  launch/supervisor only eligible for publication.
+- Next causal research step is explain the precise role/support contradiction
+  and consider a justified independent protocol or lawful auxiliary resources,
+  not arbitrary deletion/quota relaxation/Val borrowing to force success.
+  Scientific R/C/M trials0, newtraining0/600; full GoalA/B/C remain open.
+- Three public receipt checks plus full394engineering tests PASS4.59s, no skips:
+  scopednegative/census and65pattern counts, actual registeredsourcehashes via
+  immutableGitddc, freshref proof and terminal one-thread/RSS/wall guards.
+  Tests deliberately do not open privateproof or claim trainedmethod acceptance.

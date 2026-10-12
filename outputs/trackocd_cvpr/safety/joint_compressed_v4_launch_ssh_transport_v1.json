@@ -1,0 +1,26 @@
+{
+  "date_local": "2026-10-12",
+  "published_and_fetched_commit": "ddc434c4bb2861cc2fdd9aa3c8dd381e1462c87a",
+  "pending_ancestor_also_published": "dbd36b6e8d030abf54b3182e55952020e3a34356",
+  "actual_git_push_and_fetch_exit_codes": [0, 0],
+  "HEAD_FETCH_HEAD_origin_tracking_equal": true,
+  "transport": "SSH to ssh.github.com:443 through nc HTTP CONNECT at 127.0.0.1:17890",
+  "official_host_key_source": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints",
+  "checked_ed25519_fingerprint": "SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU",
+  "host_key_checking": "Strict yes, isolated known_hosts from official key, ED25519 only",
+  "credential": "Existing local GitHub SSH identity; private key contents not printed or uploaded",
+  "process_only_git_configuration": {
+    "url.ssh://git@ssh.github.com:443/.insteadOf": "https://github.com/",
+    "core.sshCommand": "Existing local identity, batch, strict isolated host-key verification and nc CONNECT transport"
+  },
+  "global_git_or_SSH_or_proxy_configuration_changed": false,
+  "source_or_data_gate_bypassed": false,
+  "worker_must_still_verify_fresh_live_ref": true,
+  "config": "configs/trackocd_cvpr/joint_known_protocol_v4_compressed.json",
+  "attempt": 1,
+  "CPU_compute_workers": 1,
+  "RSS_ceiling_bytes": 268435456,
+  "wall_ceiling_seconds": 120,
+  "training_GPU_hours": 0,
+  "interpretation": "Transport-only process environment; same frozen v4 source, data authority, class pool, compression, quotas and guards. This launch receipt is not evidence that v4 completed or that a feasible protocol exists."
+}

@@ -1,0 +1,110 @@
+{
+  "census_reconciliation": {
+    "observations": 38680,
+    "positive_Known_classes": 48,
+    "tracks": 1962,
+    "videos": 429
+  },
+  "fresh_source_no_existing_bytecode_cache": true,
+  "interpretation": "Same full v3unbalanced structural family, every class/video/quota retained. Exact projection: videos with same eligible-positive category set are exchangeable under current constraints; bounded integer role counts replace individual binary video variables, deterministic disjoint real-video expansion then independent original-witness verifier. No memory ceiling increase, class/video pruning, new metrics/seed/threshold or physics-rule relaxation. v3owned RSS stop preserved, not solver/data infeasibility. Same one30s/5000node call and256MiB guard; no formal training or frozen protocol.",
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "ddc434c4bb2861cc2fdd9aa3c8dd381e1462c87a"
+  },
+  "optimization_training_steps": 0,
+  "original_annotation_old_target_tables_names_Novel_Val_Test_pixels_features_models_read": false,
+  "owned_launch_attempt": 1,
+  "preregistration_commit": "ddc434c4bb2861cc2fdd9aa3c8dd381e1462c87a",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+  },
+  "private_output": {
+    "bytes": 2186,
+    "sha256": "8f45ca9d575e73a7596372843cf2ccdf34e14b2f28e9ac3010120f39fbaae283"
+  },
+  "resources": {
+    "disk_free_bytes": 184583991296,
+    "guarded_process_RSS_bytes": 139935744,
+    "kernel_reported_VmHWM_bytes_approximate": 139935744,
+    "peak_guarded_worker_RSS_bytes": 139935744,
+    "resource_ru_maxrss_bytes_including_preexec_history": 139935744,
+    "sampled_smaps_rollup_Rss_bytes": 117469184,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 7.462245636037551
+  },
+  "scipy_version": "1.15.3",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/joint_known_protocol_v4_compressed.json": "1e651f0fcac4895b1778b9a2a03c3d7fb2368485d202d67f871ee18affae4cba",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "5ac69db9cd65991639adcb7d91ae8141168d5d35ccf3866aaa2264620769c0d3",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/joint_known_protocol.py": "6ddc151e938341e2d4b329e2b4ad7b755306c1a7e45ea0bff949ac129e5807ad",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "SOLVER_SCOPED_INFEASIBLE",
+  "structural_result": {
+    "all_original_videos_retained": 429,
+    "complete_visual_category_absence_proven": false,
+    "constraints": 3547,
+    "distinct_presence_patterns": 65,
+    "exact_presence_pattern_count_compression": true,
+    "feasible_joint_assignment_verified": false,
+    "forwarded_option_warnings": [
+      "Unrecognized options detected: {'parallel', 'random_seed', 'threads'}. These will be passed to HiGHS verbatim."
+    ],
+    "frequency_always_Known_exception": false,
+    "integer_necessary_conditions": {
+      "balanced_family_integer_capacity_contradiction": true,
+      "balanced_group_max_classes": 6,
+      "class_pool": 23,
+      "direct_component_sizes_before_union": [
+        16,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "forced_component_sizes_sorted": [
+        16,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "forced_equality_edges": 15,
+      "nonempty_four_role_unbalanced_capacity_contradiction": false,
+      "scope": "Same eligible Known pool, every class final-pseudo once, >=2videos in every role; Y-positive videos excluded from every non-final role in Y final fold; not arbitrary other protocol/data",
+      "unbalanced_final_capacity_ceiling_with_dev1_policy2_fit2": 18,
+      "union_group_closure_enabled": true,
+      "union_support_forced_merges": 0
+    },
+    "model_scores_or_names_used": false,
+    "new_protocol_frozen": false,
+    "nonzeros": 13596,
+    "solver_executed": true,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "solver_reported_scoped_infeasibility_not_formal_global_data_proof": true,
+    "solver_status": 2,
+    "status": "SOLVER_SCOPED_INFEASIBLE",
+    "training_GPU_hours": 0,
+    "variables": 1500
+  }
+}
