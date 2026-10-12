@@ -526,3 +526,23 @@ A source-registered owned detached supervisor addresses tool-session lifetime
 dependence; no external process/service changes or private uploads. Full547
 tests pass. Launched is not completed; normal result/terminal and actual causal
 invariance checks are still required for any C development acceptance.
+
+R latest:10/12 fixed fits complete. Seed1029 staticCE actual200steps/exact
+endpoint/ownedexit0, sameinitial and support schedule as temporalCE; result
+SHA5728502a03ec131ea9b7db41d6a224364eaa2573fea68790ca96dc61714c0e24.
+Teacherthirdseed controls remain pending; no model selection or Novel claim.
+Raw persistent evaluator remains live/CPUbusy with first complete order1027,
+not another failure merely because second-order progress is pending.
+
+M prospective version controller/external support-agreement loss are now
+executable. Source/synthetic565tests passed; old support, commits, version
+parents/watermarks/tombstones preserved. GT cannot trigger quarantine, move,
+reset, rollback or prediction rewriting. Experimental lifecycle thresholds
+and sigmoid are not calibrated purity; repeated groups not proven independent
+instances. Unknown/conflicting support masks loss, not BG/Novel. Active-version
+agreement differs from strict ancestor purity and official semantic CT.
+Ten-step CPU Mpilot protocol fixed before real private reads/execution; fresh
+weights, full policy physical rollout, registered source/cache/authority gate,
+boundedresources and private endpoint/history exact checks. Actual pilot and
+three-seed fair Mean/EMA/static/full/coverage/strictlineage evaluation remain
+pending at this record. No source-only thirdmechanism or Goal acceptance.

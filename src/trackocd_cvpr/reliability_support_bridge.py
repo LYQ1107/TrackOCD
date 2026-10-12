@@ -11,7 +11,7 @@ from .committed_support_bridge import _decode
 from .member_reliability import weighted_support
 
 
-def committed_reliability(model, snapshot, selected_token, *, device='cpu'):
+def committed_reliability_inputs(snapshot, selected_token, *, device='cpu'):
     snapshot = tuple(snapshot)
     if (len(snapshot) > 4096 or type(selected_token) is not str
             or any(type(row) is not CommittedRawSupport for row in snapshot)
@@ -41,5 +41,9 @@ def committed_reliability(model, snapshot, selected_token, *, device='cpu'):
             weights = torch.ones_like(weights)
         vectors.append((prefix.visual * weights[:, None]).sum(dim=0) / weights.sum())
         quality.append(prefix.quality.mean())
-    return weighted_support(model, torch.stack(vectors), torch.stack(quality),
-                            torch.tensor(counts, dtype=torch.float32, device=device))
+    return (torch.stack(vectors), torch.stack(quality),
+            torch.tensor(counts, dtype=torch.float32, device=device))
+
+
+def committed_reliability(model, snapshot, selected_token, *, device='cpu'):
+    return weighted_support(model, *committed_reliability_inputs(snapshot, selected_token, device=device))

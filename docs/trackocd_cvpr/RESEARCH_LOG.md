@@ -3151,3 +3151,44 @@ new research scope; nothing has been deleted, no storage pressure is present.
   independently tested. Register/fetch/refverify before restart; continue R
   third-seed timelessCE as the next single fit, not another parallel fit.
   Goal active; M/strongPred/final scientific requirements remain open.
+
+### Third R seed static CE complete; freeze actual M pilot before execution
+
+- Previous turn produced a5291d4 and0cbabe7 actual pushed/fetched/refverified:
+  progress. Same owned Rhandle58286 nowterminalexit0 for timeless_CE/seed1029,
+  200freshupdates/exact616115B endpoint. ResultSHA
+  5728502a03ec131ea9b7db41d6a224364eaa2573fea68790ca96dc61714c0e24;
+  endpointSHAd4046cdf07a885b01f5968787ccd2eba53633fc2e4757cd98e3ea5a1f8feb405,
+  aftera2f94e3f49bb6bcea6c50fda8fde5ffe9215797da21d0c382986cdc2f156c679.
+  Sameinitial5c3a6971... and all200support/query footprints as temporal pair,
+  not warmstart/reusedfit. Owned624.02420836s/worker616.88699515s/RSS1590272000B/
+  11OSthreads/noguardstop/noCUDA/0GPUh. Full1401/1158eligible/243masked fit
+  scope unchanged. R10of12 complete, teacherthirdseed controls stillpending.
+- Revalidated owned persistent Raw C supervisor/child both live and CPUbusy,
+  matching launch identity/arguments; completedfirstorder1027 afterfullstream.
+  No restart based on missing next-order progress, no final metrics claim.
+- Actual M integration now prospectively versions latest committed support:
+  immutable parents/support+numeric hashes/commit-watermarks/Tentative,
+  Confirmed,Quarantined; member moves inherit preserved prior source and
+  destination versions. Emptytombstones and all Raw/commit/oldversion histories
+  retained. Quarantine affects ONLY future candidates; all current peers see
+  same pre-frame memory, no GT action/rollback or past prediction rewrite.
+  Gates .25/.75/dispersion.25 and>=2groups are experimental constants, NOT
+  calibratedpurity or independent physical-instance support certificates.
+- External Mloss on prediction-owned latestsupport: fraction of OTHER groups
+  sharing each member's lawful fit/policy Known label. Singleton/unknown/alias
+  conflicts masked, no BG/Novel invention, GT majority pruning or state repair.
+  Identical Rawpayloads with conflicting cross-scope GT conservatively masked.
+  Active-support agreement is NOT strict historical purity; preserved full
+  parent DAG/version+commit history must enter future external strict audit.
+- Frozen ten-step Mpilot uses fresh161parameters/RawKnownprior/fixedK8/.65-.55,
+  first10 finite nonzero classmacro-gradient frames then frozen full10video/
+  54physical/1268observation/374frame/1empty policy rollout. CPU1/RSS3GiB/
+  wall900s/out16MiB, exact ownendpoint/optimizerRNG/hash+reopen, no oldweights,
+  privateGT/prediction/version history upload or dev/final input. Entire source,
+  live ref/authority/cache proof must verify BEFORE private assets/labels.
+- Full565tests PASS28.15s, includingactual prospective-controller/loss and
+  pure synthetic ten-update full-clock plumbing. Synthetic fit NOT dataset
+  result or scientific third-mechanism exploration. Actual Mpilot not yetrun
+  at this registration; no three-seed-M/Novel gain/strictCT/Pred/Goal claim.
+  Register/push/fetch/refverify then execute bounded actualpilot, not allMmatrix.
