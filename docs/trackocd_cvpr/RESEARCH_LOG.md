@@ -3010,3 +3010,29 @@ new research scope; nothing has been deleted, no storage pressure is present.
   No dev/final/Val/Test selection, modelreplacement or Goalpause/completion.
 - Full523tests PASS21.83s, actualtriplet/seed/coverage/zeroExisting endpoints
   validated; source/memory/plumbing tests do not replace GoalA/B/C acceptance.
+
+### Third independent C conditioned seed completed, opposite action collapse
+
+- Previous turn deliveredC6ate3177335a92785528242ea0ea2a8f1cd6d6d6675:
+  progress. Sameownedhandle77807 actualterminalexit0 forTop8_conditioned/
+  seed1029/200fresh708parameter updates. ResultSHA
+  0b53c928b5fc0f4001bffe5b475452e39162f00a8e244b360a73225d120350f6,
+  endpoint24295B/SHAefff1c4ccde0be25f0f70138d8ded4722538ad8ff30b0de264e51480b91a22c6,
+  strictreopen/after4eee91d7db058e27175392f38a8310e4abea0e7db1cc54ff5f8e80c7ce33ea80.
+  Initiald6a7d71df813b347726d0d536d01970a94fd669d55e99bce56e2141db8c1b620
+  differsbothpreviousseeds; no warmstart/reusedfit. Owned119.678592560s/
+  worker111.711402021s/RSS948948992B/11OSthreads/no guardstop/CUDA/0GPUh.
+- ActualoptimizerKnown266/pseudo178/fourclasses/TWOpseudo classes, ZERO
+  actualcrossvideo-positiveupdate groups. Allfourpolicyepisodes10/54/1268/
+  374 retained. ep0KNOWN1187/WAIT81;ep1EXISTING1169/KNOWN73/NEW26;
+  ep2EXISTING1210/KNOWN55/NEW3;ep3EXISTING1194/KNOWN46/NEW28.
+  ep1andep2 havezeroall-framecrossvideo-positiveopportunities despiteveryhigh
+  Existing; ep3has60opportunities. Different collapse regime fromKnown-only
+  earlierseeds, not a certified reuse/purity/generalization win. Do not replace
+  semanticcorrectness by rawExistingfrequency or cherry-pickthisseed.
+- Sevenof9C/eightof12R complete; conditionedC now3independentlytrainedseeds,
+  butothercontrolthirdseeds stillpending. All9-gateddev notrun, no dev/final/
+  Val/Test selection. Completeunchangedmatrix then use actualcausal metrics;
+  feedback/semanticexposure/GT-control limits andlearnedM/strongPred remainopen.
+- Full524tests PASS7.43s; receipts explicitlydistinguishmanyExisting actions
+  fromzerooptimizer crossvideopositives, preservingthirdseedinstability.
