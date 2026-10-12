@@ -16,6 +16,7 @@ from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok, kerne
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 
 CONFIG = 'configs/trackocd_cvpr/fit_R_optimizer_smoke_v1.json'
+BENCH_CONFIG = 'configs/trackocd_cvpr/fit_R_batched_qualification_v1.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/smoke_fit_R_optimizer.py',
     'src/trackocd_cvpr/fit_R_training.py', 'src/trackocd_cvpr/fit_loss_supervision.py',
     'src/trackocd_cvpr/exact_support_reduction.py', 'src/trackocd_cvpr/differentiable_support_bank.py',
@@ -38,7 +39,8 @@ def supervise(args, cfg, safety):
     if resources_ok(cfg, safety, ROOT, started, 0): raise RuntimeError('Pre-spawn guard')
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / 'scripts/trackocd_cvpr/smoke_fit_R_optimizer.py'), '--worker',
-        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy], cwd=ROOT)
+        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy,
+        '--config', args.config], cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')
@@ -84,9 +86,10 @@ def worker(args, cfg, safety):
         if subprocess.check_output(['git', 'show', args.preregistration_commit + ':' + p], cwd=ROOT) != (ROOT / p).read_bytes():
             raise ValueError('Source or completed cache receipt not truly registered')
     authority = json.loads((ROOT / cfg['approval']).read_text())
+    benchmark = cfg.get('batched_qualification_only', False)
     if (authority['status'] != 'USER_APPROVED_FREEZE_THEN_BOUNDED_CACHE_AND_TRAIN'
-            or cfg['status'] != 'REGISTERED_OPTIMIZER_PLUMBING_SOURCE_CACHE_COMPLETION_REQUIRED'
-            or cfg['execution_device'] != 'CPU' or cfg['optimizer_steps'] != 10 or cfg['seed'] != 1027
+            or cfg['status'] != ('REGISTERED_NO_OPTIMIZER_BATCH_QUALIFICATION' if benchmark else 'REGISTERED_OPTIMIZER_PLUMBING_SOURCE_CACHE_COMPLETION_REQUIRED')
+            or cfg['execution_device'] != 'CPU' or cfg['optimizer_steps'] != (0 if benchmark else 10) or cfg['seed'] != 1027
             or cfg['class_count'] != 5 or cfg['full_scientific_fit_automatic_start'] is not False):
         raise ValueError('Exact new authority / bounded first optimizer smoke only')
     out = ROOT / cfg['output_directory']
@@ -103,7 +106,8 @@ def worker(args, cfg, safety):
             raise RuntimeError('Owned CPU optimization guard:' + str(reason))
     atomic_json(out / 'launch.json', {'preregistration_commit': args.preregistration_commit,
         'live_remote_registration_proof': proof, 'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES},
-        'scope': 'Ten fit5 Known optimizer steps on complete GT-control feature cache, no dev/final or scientific acceptance'})
+        'scope': ('Actual fit/checkpoint batch/reference numeric+gradient/timing qualification, zero optimizer' if benchmark else
+                  'Ten fit5 Known optimizer steps on complete GT-control feature cache, no dev/final or scientific acceptance')})
     try:
         import torch
         from src.trackocd_cvpr.fit_R_training import load_completed_fit_tracks, bounded_fit_steps
@@ -119,6 +123,55 @@ def worker(args, cfg, safety):
         sys.addaudithook(barrier)
         guard(); tracks, label_proof = load_completed_fit_tracks(ROOT, cfg, guard)
         model = RawPreservingEvidence().train()
+        if benchmark:
+            import gc
+            from src.trackocd_cvpr.fit_R_training import support_groups
+            from src.trackocd_cvpr.exact_support_reduction import reencode_exact_supports
+            from src.trackocd_cvpr.batched_evidence import reencode_batched_supports
+            checkpoint = ROOT / cfg['private_checkpoint']
+            if checkpoint.is_symlink() or sha256_file(checkpoint) != cfg['private_checkpoint_sha256']:
+                raise ValueError('Exact immutable prior step10 checkpoint')
+            restored = torch.load(checkpoint, map_location='cpu', weights_only=True)
+            model.load_state_dict(restored['model_state'], strict=True)
+            before = digest(model)
+            query = next(t for t in tracks if t.loss_target is not None)
+            groups = support_groups(tracks, query.video, cfg['class_count'])
+            probe = torch.linspace(-1, 1, 768)
+            flags = torch.ones(len(groups)); bindings = torch.ones(len(groups))
+            guard(); tick = time.monotonic()
+            reference = reencode_exact_supports(model, groups, flags, bindings)
+            reference[1].mul(probe).sum().backward()
+            reference_seconds = time.monotonic() - tick
+            reference_values = [x.detach().clone() for x in reference[:3]]
+            gradients = {k: p.grad.clone() for k, p in model.named_parameters()}
+            del reference; model.zero_grad(set_to_none=True); gc.collect(); guard()
+            tick = time.monotonic()
+            batched = reencode_batched_supports(model, groups, flags, bindings)
+            batched[1].mul(probe).sum().backward()
+            batched_seconds = time.monotonic() - tick
+            error = max(float((a - b).abs().max()) for a, b in zip(reference_values, batched[:3]))
+            if error > cfg['max_forward_absolute_error']:
+                raise ValueError('Preregistered fullsupport forward/statistic parity')
+            grad_error = 0
+            for name, parameter in model.named_parameters():
+                torch.testing.assert_close(parameter.grad, gradients[name],
+                    atol=cfg['parameter_gradient_atol'], rtol=cfg['parameter_gradient_rtol'])
+                grad_error = max(grad_error, float((parameter.grad - gradients[name]).abs().max()))
+            if digest(model) != before or torch.cuda.is_initialized():
+                raise ValueError('No parameter update or CUDA allocation allowed')
+            guard()
+            result = {'status': 'VERIFIED_ACTUAL_FIT_CURRENT_R_BATCH_PARITY_AND_TIMING_NOT_OPTIMIZED_OR_SCIENTIFIC_ACCEPTANCE',
+                'live_remote_registration_proof': proof, 'label_and_physical_scope': label_proof,
+                'support_members': len(batched[3].raw), 'support_observations': sum(len(p.quality) for g in groups for p in g),
+                'forward_and_statistics_max_absolute_error': error, 'parameter_gradients_max_absolute_error': grad_error,
+                'reference_forward_backward_seconds': reference_seconds, 'batched_forward_backward_seconds': batched_seconds,
+                'single_pair_timing_ratio_not_general_performance_claim': reference_seconds / batched_seconds,
+                'all_current_R_support_gradients_retained': True, 'model_parameter_sha256_unchanged': before,
+                'optimizer_steps': 0, 'dev_final_labels_pixels_originalGT_DINOweights_read': False,
+                'private_checkpoint_weights_uploaded': False, 'trained_scientific_mechanism_or_Goal_A_B_C_accepted': False,
+                'resources': {'peak_guarded_RSS_bytes': peak, 'wall_seconds_excluding_network': time.monotonic() - started,
+                              'training_GPU_hours': 0, 'CUDA_initialized': False}}
+            atomic_json(out / 'result.json', result); print(json.dumps(result), flush=True); return
         before = digest(model)
         if sum(p.numel() for p in model.parameters()) != 50113:
             raise ValueError('Fresh registered R parameter budget')
@@ -157,10 +210,17 @@ def worker(args, cfg, safety):
 
 
 def main():
+    global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true')
-    args = parser.parse_args(); cfg = json.loads((ROOT / CONFIG).read_text()); safety = json.loads((ROOT / SOURCES[-1]).read_text())
+    parser.add_argument('--config', choices=(CONFIG, BENCH_CONFIG), default=CONFIG)
+    args = parser.parse_args()
+    SOURCES = (args.config, *SOURCES[1:])
+    if args.config == BENCH_CONFIG:
+        SOURCES = (*SOURCES[:-1], 'src/trackocd_cvpr/batched_evidence.py',
+            'outputs/trackocd_cvpr/cvpr2/fit_R_optimizer_smoke_v1/result.json', SOURCES[-1])
+    cfg = json.loads((ROOT / args.config).read_text()); safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)
 

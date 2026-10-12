@@ -2287,3 +2287,39 @@ new research scope; nothing has been deleted, no storage pressure is present.
   keepCPU scientific/control/frontend work moving and register a fresh output
   namespace before a validated resource retry; do not declare cache complete,
   start devselection, or autoexpand final/semanticGT scope from this failure.
+
+### Batched R, genuinely timeless matched-parameter control and qualification
+
+- Previous turn progress, not no-progress: policy/dev registration19b3ca3
+  and authoritative before-CUDA resource rejection. Worktree clean before
+  newCPU work; no oldPID/session replay or live cache to overwrite. Fresh GPU
+  snapshots againchanged, hence continue legalCPU path, not force occupation.
+- `batched_evidence.py` packs ONLY supplied visible observations into ragged
+  offsets; no padding, truncation, futurefull-length/ID/role/category fields.
+  Shared linear R runs once over complete flat observations; per-prefix sums,
+  temporal/pooled gates, zero-quality and extreme-logit fallback preserve the
+  reference formulation within declared FP32 tolerances. Complete candidate
+  prototypes normalize original-member sums once, no chunk-prototype averaging
+  or adapted detach. Exposes member Raw/adapted tensors for richer geometry
+  losses than just five class averages. Runtime activationmemory stillguarded.
+- `TimelessStaticEvidence` matches50113 trainable parameters but uses eight
+  pooled spatial mean/std features, not motion/elapsed/order. Canonical numeric
+  ordering keeps raw/embedding exactly permutation-invariant, no semantic IDs
+  or forwardgradient detach; returnweights restored to original observation
+  order. Different function/active capacity not falsely claimed identical.
+- Six tests cover original per-member forward/parameter/input-gradient parity,
+  true static order/time invariance, visibleweight alignment, zeroquality /
+  extremegate fallback, semanticinput/chronology rejection, fullcandidate
+  prototype/gradient parity. Initial one failure was comparing canonical
+  quality sum with noncanonical sum EXACTLY (max1.49e-8); use2e-7 numeric
+  comparison there while keeping actual static permutation checks bit-exact.
+  Full463tests PASS15.25s. No realdata/model/optimizer in these new fixtures.
+- Register separate actual fit/current-step10R CPUqualification against the
+  serial reference: one firsteligible storage-order query, ALL other-video
+  fitKnown support; fixedforward1e-5/parametergradatol+rtol2e-4. Frozen prior
+  checkpoint a979d33f..., nooptimizer or parameter changes. Same complete-cache/
+  humanauthority/inputhash/remote-source gates,3GiBRSS/600s/1MiBout. One timed
+  pair is not a general speed claim, scientific model selection or Novelgain.
+- This enables genuine multi-seed matchedrepresentation studies; those and
+  candidate/memory trainedmechanisms stillunexecuted. Policy/dev/final targets
+  remain outside this qualifier, no sourceSemanticGT expansion or Valselection.
