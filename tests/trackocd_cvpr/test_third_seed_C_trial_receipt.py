@@ -47,3 +47,30 @@ def test_third_seed_pool_control_preserves_action_variance_and_zero_optimizer_cr
     assert r['endpoint']['reopen_exact'] and not r['dev_final_Val_Test_or_new_nonKnown_labels_used']
     t = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
     assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None
+
+
+def test_full_nine_C_matrix_actual_endpoints_and_third_Top1_exposure_not_a_win():
+    out = OUT.with_name('C_GT_window_v1_Top1_conditioned_s1029')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == 'eee833acf5576e67bde892bdd392ab7d217d2d46d2f019feaea9e73d0a967776'
+    r = json.loads((out / 'result.json').read_text()); s = r['summary']
+    assert s['actual_optimizer_family_groups'] == {'Known': 210, 'policy_pseudo': 185}
+    assert s['actual_optimizer_policy_pseudo_classes'] == 2
+    assert sum(x['positive_other_video_groups_this_update'] for x in s['loss_curve']) == 0
+    assert [e['physical_actions'].get('EXISTING', 0) for e in s['episodes']] == [0, 0, 70, 36]
+    initial = {}
+    for variant in ('Top1_conditioned', 'Top8_conditioned', 'Top8_pool_context'):
+        for seed in (1027, 1028, 1029):
+            p = OUT.with_name('C_GT_window_v1_' + variant + '_s' + str(seed))
+            x = json.loads((p / 'result.json').read_text()); q = x['summary']
+            assert x['variant'] == variant and x['seed'] == seed
+            assert q['optimizer_steps'] == 200 and q['trainable_parameters'] == 708
+            assert len(q['episodes']) == 4
+            assert all((e['videos'], e['metadata_frames'], e['physical_observations']) == (10, 374, 1268) for e in q['episodes'])
+            assert x['endpoint']['reopen_exact'] and x['checkpoint_selection'] == 'Fixed200 endpoint'
+            assert not x['dev_final_Val_Test_or_new_nonKnown_labels_used']
+            assert not x['all3seeds_or_distinct_R_C_M_or_qualified_Pred_or_Goal_accepted']
+            initial.setdefault(seed, set()).add(q['model_parameter_sha256_before'])
+            t = json.loads(p.with_name(p.name + '_supervisor_attempt_1.json').read_text())
+            assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None
+    assert all(len(v) == 1 for v in initial.values())
+    assert len(set(next(iter(v)) for v in initial.values())) == 3
