@@ -75,7 +75,8 @@ def supervise(args, cfg, safety):
         raise RuntimeError('Pre-spawn resource guard')
     worker_script = cfg.get('worker_script', 'scripts/trackocd_cvpr/audit_joint_known_protocol.py')
     if worker_script not in ('scripts/trackocd_cvpr/audit_joint_known_protocol.py',
-                             'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py'):
+                             'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py',
+                             'scripts/trackocd_cvpr/pilot_GT_video_cache.py'):
         raise ValueError('Only registered owned audit/smoke worker paths')
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
                               str(ROOT / worker_script), '--worker',

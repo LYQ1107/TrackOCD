@@ -2017,3 +2017,34 @@ new research scope; nothing has been deleted, no storage pressure is present.
   be rechecked by the new worker, never inherited from historical GPU IDs.
   Original 600 training GPU-hours, max4 GPUs, 25% RAM, 15/30GiB incremental
   storage and 10GiB free disk limits remain. Training0, Goal A/B/C open.
+
+### Bounded uncapped GT-control video cache pilot preregistration
+
+- Data freeze f75714f14c7f69f428243cec1ff04cc5404c9c79 genuinely pushed,
+  fetched, with HEAD/FETCH_HEAD/origin tracking equal before new cache source.
+- New pilot selects the first two fixed fit video IDs in administrative order,
+  not labels/quality/difficulty: all16 annotated tracks,418 observations and75
+  metadata frames. This is a bounded inventory choice, not a reduced scientific
+  denominator. Singletons accepted; no p16 cap or automatic full407 launch.
+- Video-atomic private NPZ -> verified reopen -> hashed manifest -> completion;
+  payload completion is deliberately separate from whole-pilot qualification.
+  Public counts/hashes only, never pixel/box/ID/label arrays or weights. Retain
+  emptyGT frames in complete clock without turning them into negative targets.
+- Prefix reader copies only visible observations and normalizes float16 visual
+  vectors in float32. Every available prefix is checked against actual future
+  tail mutation; storage keys stay external to numerical forward. Unclipped
+  GT normalized geometry/quality1 remain explicitly geometric oracle controls,
+  not calibrated predicted visibility or frontend detections.
+- First-crop CPU/GPU comparison, GPU batch/single repeat and float16 readback
+  preregister max absolute error0.0005 and cosine>=0.99999. All parameters
+  frozen, no optimizer or learned metric. Real whole-cache/Pred/R/C/M training
+  and final method/evaluation registration are still separate requirements.
+- One freshly idle A100 UUID, rechecked before owned CUDA allocation; batch4,
+  owned3GiB RSS/5GiB GPU reserve8GiB,900s wall/20MiB output. GlobalRAM25%,
+  soft15GiB/hard30GiB and disk10GiB remain; refuse foreign work/unknown GPU
+  utilization rather than intervene. Only newly created Popen worker managed.
+- Five new synthetic tests cover uncapped18-observation+singleton trajectories,
+  emptyframe retention, external IDs vs numerical model view, precision/cache
+  contracts, hash/reopen/tamper and current foreign GPU work rejection.
+  Full438 engineering tests passed9.48s. Actual pilot not yet executed; fresh
+  remote ref/source/hash checks remain mandatory, training0/600GPUh.
