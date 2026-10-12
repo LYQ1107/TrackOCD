@@ -2077,3 +2077,30 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Next preregister bounded cache coverage and complete training/loss/seed/order
   contracts; fix exact differentiable fullsupport aggregation before jointfit,
   never silently truncate fullKnown support at the old16384-observation bound.
+
+### Bounded fit-only cache preparation, not an automatic launch
+
+- Pilot public delivery061bdadc659bd06b34b3d4b188da5eaaefd6115c truly pushed,
+  fetched and exactHEAD/FETCH_HEAD/origin tracking. Full439tests PASS8.27s.
+- Registered next coverage plan is fit partition ONLY:257videos/1401physical
+  tracks/28326observations/all9345metadataframes, no policy/dev/final pixels,
+  semantic targets, optimizer or automatic407cache. Expected~45MiB features,
+  hard100MiB output/3600s ownedjob/oneGPU; original resource bounds unchanged.
+- First2qualifiedpilot shards must be reused without extraction, exact frozen
+  protocol/checkpoint/physical/imageplan lineage and ALL uncapped routing,
+  geometry, quality, chronology and frame-clock arrays checked against current
+  plan. No sourcecommit equality pretending to be numeric compatibility.
+  Private index references original atomic payloads, not duplicate copies.
+- Project allselected geometry in one gated byte scan, replacing one full
+  private-index scan per video. Two-video equivalence and reuse/tamper tests
+  added; all442engineering tests PASS10.66s. Keep original3072fb2pilot source,
+  immutable receipts and payloads; no samepath reexecution/history rewrite.
+- Fresh resources changed: GPUs0/1 now736MiB/7%/6%, thus no longeridle; GPU4
+  utilizationunknown is not a safe substitute. No newcache launched. Leave
+  external work untouched, continue CPU source/training-contract work and
+  recheck current availability before any ownedCUDA allocation. RAMavailable
+ 49.42GB remains above25%reserve; no storage cleanup or authority expansion.
+- Complete video payloads survive a boundedjob stop; any future resume must
+  separately register exact validshard references, not blanket rerun or reuse
+  an old PID. This preparation alone proves no actualfit-cache completion,
+  representation/candidate/memory training or GoalA/B/C gain.

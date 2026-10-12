@@ -12,6 +12,29 @@ from .scoped_train_census import top_ranges, object_ranges, array_ranges, intege
 
 def video_plan(path, video, image_plan):
     """Gate video before decoding any observation or opaque routing ID."""
+    return selected_video_plans(path, [video], image_plan)[0]
+
+
+def selected_video_plans(path, videos, image_plan):
+    """One projected scan, not one full index scan per small video shard."""
+    videos = tuple(videos)
+    if not videos or len(set(videos)) != len(videos) or any(type(v) is not int or v < 0 for v in videos):
+        raise ValueError('Explicit unique video allowlist')
+    grouped = {v: [] for v in videos}
+    with open(path, 'rb') as handle, mmap.mmap(handle.fileno(), 0, access=mmap.ACCESS_READ) as data:
+        for bounds in array_ranges(data, *top_ranges(data)['tracks']):
+            fields = object_ranges(data, *bounds)
+            video = integer_value(data, fields['video_id'])
+            if video not in grouped:
+                continue
+            track = integer_value(data, fields['opaque_track_id'])
+            if track < 0:
+                raise ValueError('Nonnegative opaque routing key')
+            grouped[video].append({'track_id': track, 'observations': json.loads(data[slice(*fields['observations'])])})
+    return [_assemble_video(v, grouped[v], image_plan) for v in videos]
+
+
+def _assemble_video(video, tracks, image_plan):
     images = sorted((r for r in image_plan['image_metadata'] if r['video_id'] == video),
                     key=lambda r: (r['frame_index'], r['id']))
     if (not images or len({r['id'] for r in images}) != len(images)
@@ -19,27 +42,19 @@ def video_plan(path, video, image_plan):
             or any(type(r[k]) is not int or r[k] < 0 for r in images for k in ('id', 'frame_index'))):
         raise ValueError('Unique complete metadata frame clock required')
     by_image = {r['id']: r for r in images}
-    tracks = []
-    with open(path, 'rb') as handle, mmap.mmap(handle.fileno(), 0, access=mmap.ACCESS_READ) as data:
-        for bounds in array_ranges(data, *top_ranges(data)['tracks']):
-            fields = object_ranges(data, *bounds)
-            if integer_value(data, fields['video_id']) != video:
-                continue
-            track = integer_value(data, fields['opaque_track_id'])  # external routing only
-            if track < 0:
-                raise ValueError('Nonnegative opaque routing key')
-            obs = json.loads(data[slice(*fields['observations'])])
-            if not obs:
-                raise ValueError('No empty tracks or filtering')
-            last = -1
-            for o in obs:
-                if (type(o) is not list or len(o) != 6 or any(type(v) is not int for v in o[:2])
-                        or any(type(v) not in (int, float) or not np.isfinite(v) for v in o[2:])
-                        or min(o[4:]) <= 0 or o[1] <= last or o[0] not in by_image
-                        or by_image[o[0]]['frame_index'] != o[1]):
-                    raise ValueError('Exact finite positive geometry / chronology / image binding')
-                last = o[1]
-            tracks.append({'track_id': track, 'observations': obs})
+    for track in tracks:
+        obs = track['observations']
+        if not obs:
+            raise ValueError('No empty tracks or filtering')
+        last = -1
+        for o in obs:
+            if (type(o) is not list or len(o) != 6 or any(type(v) is not int for v in o[:2])
+                    or any(type(v) not in (int, float) or not np.isfinite(v) for v in o[2:])
+                    or min(o[4:]) <= 0 or o[1] <= last or o[0] not in by_image
+                    or by_image[o[0]]['frame_index'] != o[1]):
+                raise ValueError('Exact finite positive geometry / chronology / image binding')
+            last = o[1]
+
     if not tracks or len({t['track_id'] for t in tracks}) != len(tracks):
         raise ValueError('All unique physical tracks required')
     tracks.sort(key=lambda r: r['track_id'])  # storage only, not frame-policy ordering
@@ -177,3 +192,17 @@ def read_verified_shard(directory, ordinal):
             or record['empty_GT_frames'] != len(set(arrays['clock_image_id']) - set(arrays['image_id']))):
         raise ValueError('Manifest denominator differs')
     return arrays, record
+
+
+def validate_reuse_plan(arrays, planned, record, *, video, frozen_sha, physical_sha, images_sha, checkpoint_sha):
+    """Exact metadata/lineage binding; source commit may differ, numeric protocol may not."""
+    validate_arrays(arrays)
+    expected = {'opaque_video_id': video, 'frozen_protocol_sha256': frozen_sha,
+                'physical_index_sha256': physical_sha, 'image_plan_sha256': images_sha,
+                'checkpoint_sha256': checkpoint_sha}
+    if any(record['lineage'].get(k) != v for k, v in expected.items()):
+        raise ValueError('Prior shard provenance not this exact frozen GT control')
+    for key in set(planned) - {'visual'}:
+        np.testing.assert_array_equal(arrays[key], planned[key])
+    if arrays['visual'].shape != planned['visual'].shape:
+        raise ValueError('Prior shard uncapped visual extent differs')

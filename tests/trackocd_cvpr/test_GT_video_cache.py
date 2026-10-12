@@ -3,7 +3,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 from src.trackocd_cvpr.GT_video_cache import (video_plan, validate_arrays, observed_prefix,
-                                            check_every_prefix, write_atomic_shard, read_verified_shard)
+                                            check_every_prefix, write_atomic_shard, read_verified_shard,
+                                            selected_video_plans, validate_reuse_plan)
 
 
 def fixture(tmp_path):
@@ -79,3 +80,41 @@ def test_current_GPU_idle_guard_refuses_foreign_work_and_unknown_utilization(mon
     with pytest.raises(RuntimeError): pilot.require_idle_gpu(cfg)
     monkeypatch.setattr(pilot.subprocess, 'check_output', lambda cmd, **kw: b'GPU-fixture, 15, [N/A]\n')
     with pytest.raises(ValueError): pilot.require_idle_gpu(cfg)
+
+
+def test_single_scan_matches_independent_video_plan_and_rejects_duplicate_scope(tmp_path):
+    images, boxes, arrays = fixture(tmp_path)
+    p = tmp_path / 'geometry.json'; raw = json.loads(p.read_text())
+    raw['tracks'].append({'video_id': 11, 'opaque_track_id': 8, 'observations': [[51, 3, 0, 0, 2, 2]]})
+    p.write_text(json.dumps(raw))
+    metadata = {'image_metadata': images + [dict(id=51, frame_index=3, video_id=11, width=20, height=10,
+                                               file_name='train/second_fixture.jpg')]}
+    joint = selected_video_plans(p, [10, 11], metadata)
+    for v, (image_rows, current_boxes, current_arrays) in zip((10, 11), joint):
+        independent_images, independent_boxes, independent_arrays = video_plan(p, v, metadata)
+        assert image_rows == independent_images
+        np.testing.assert_array_equal(current_boxes, independent_boxes)
+        for key in current_arrays: np.testing.assert_array_equal(current_arrays[key], independent_arrays[key])
+    with pytest.raises(ValueError): selected_video_plans(p, [10, 10], metadata)
+
+
+def test_prior_shard_requires_exact_lineage_and_all_uncapped_metadata(tmp_path):
+    _, _, arrays = fixture(tmp_path)
+    values = dict(video=10, frozen_sha='protocol', physical_sha='geometry', images_sha='frames', checkpoint_sha='weight')
+    lineage = dict(opaque_video_id=10, frozen_protocol_sha256='protocol', physical_index_sha256='geometry',
+                   image_plan_sha256='frames', checkpoint_sha256='weight')
+    record = write_atomic_shard(tmp_path, 0, arrays, lineage)
+    validate_reuse_plan(arrays, arrays, record, **values)
+    with pytest.raises(ValueError): validate_reuse_plan(arrays, arrays, record, **{**values, 'checkpoint_sha': 'other'})
+    altered = {k: v.copy() for k, v in arrays.items()}; altered['clock_image_id'][-1] += 1
+    with pytest.raises(AssertionError): validate_reuse_plan(arrays, altered, record, **values)
+
+
+def test_bounded_fit_cache_preregistration_excludes_other_roles_and_reuses_pilot():
+    root = Path(__file__).resolve().parents[2]
+    cfg = json.loads((root / 'configs/trackocd_cvpr/fit_GT_video_cache_v1.json').read_text())
+    assert cfg['bounded_fit_partition_only']
+    assert (cfg['pilot_videos'], cfg['expected_tracks'], cfg['expected_observations'], cfg['expected_metadata_frames']) == (257, 1401, 28326, 9345)
+    assert cfg['reuse_first_video_shards'] == 2 and cfg['maximum_observations_per_track'] is None
+    assert cfg['wall_seconds_ceiling'] == 3600 and cfg['output_bytes_ceiling'] == 100 * 1024**2
+    assert not cfg['full_cache_or_optimizer_automatic_start']
