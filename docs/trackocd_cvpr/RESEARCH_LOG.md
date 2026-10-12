@@ -1818,3 +1818,24 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - v11ownedtotal6.136930964s/oneThread/noguardstop/samplepeak98631680B.
   Localreferenceindex393476B; publicresultSHA
  37f785f46f208baaa9253ffd6e69d8cc9041b454114db749ee1f402c1c66758e.
+
+### Selected image path/stat preregistration and existing cache boundaries
+
+- Rechecked clean0904544. Newv12 projects ONLY407video image scalarpaths/
+  dimensions/frame IDs aftervideogate; annotations/categories/nestedvideoGT
+  byte-skipped. Cross-check every existingphysicalGTimage/frame, stat regular
+  containedTrain-root files perrole; no pixels hashed/decoded, downloads, cache,
+  new labels/model or training. Existingphysical/Known reconciliation reruns
+  beforemetadata use; sameowned256MiB/120s guards, localpathplan <=8MiB.
+- Two scopedmetadata synthetic tests/full421engineering tests PASS4.87s,
+  no skips. Protectedvideo path/geometry fields remain undecoded even when
+  precedingvideoID; invalidselected scalars fail instead of repair.
+- Read existingPUBLIC oldfeature receipt and pinnedconfig/source, not private
+  manifests/NPZ/protectedlabels. Existing57video/73509observation Predfeatures
+  have max16 cap and qualified_primary=false. Thus no blanketreuse as full407
+  uncappedGT/commonqualified-main features. Retain validassets; per-shard/prefix/
+  scope/provenance reuse stillrequiresinspection, not delete/reencode blindly.
+- Pinned FrozenDINOv2 ViT-B14 config checkpoint/source/preprocess hashes remain
+  candidate commonencoder, not proof of currentpixels/checkpoint/sourcevalidity,
+  currentfrozenprotocol or qualifiedphysicalfrontend. No newfeature/model loaded.
+  Newv12 actualmetadata/stat awaits remote registration; GoalA/B/C stillopen.
