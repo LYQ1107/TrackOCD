@@ -495,3 +495,22 @@ preservation, evaluation or acceptedscientificmechanism. OriginalGoal remains
 active; separate fair multiseed R/C/M trials/controls, lawfulPred, causal memory
 rollout and finalheld validation stillrequired. Privateweights/labels/data not
 uploaded; publicresult2e8b2dc5... and immutable losses/hashes preserve evidence.
+
+Latest fixed-window update: R9/12 fits and C9/9 fits complete. TemporalCE now
+has all three independent training seeds; third-seed matched R controls remain
+pending. Seed1029 temporalCE completed200 updates/ownedexit0 with private exact
+endpoint SHA b31db960e730c52994646f026bdc49897111bdd82d86b9afec211c60a599ceff;
+public result SHA5f21e0f1147ede151fb3ccf19566c07660447ab1d46bea936f6c401c648ca506.
+No development/final checkpoint selection or Novel improvement inferred from
+training loss. Full raw C causal development worker is still live: orders1027
+and1028 finished, full metrics/invariance gates not complete at this record.
+
+Prepared161-parameter M member reliability numeric interface and immutable
+support adapter, with self excluded from peer reference and equal-mean start,
+same nominal-capacity pooled control, explicit absent/cancelled evidence and
+whole-call bounds. Positive support weights do not implement quarantine or
+history repair, and sigmoid is not calibrated semantic truth. Source/bank tests
+only, zero M updates; no lifecycle/versioned CT/scientific-M acceptance. Full
+539 tests pass. Separate three-seed trained M and prospective memory integration,
+fair full-cohort causal development, legal strong predicted frontend and locked
+final GoalsA/B/C remain open. Goal active, not achieved.

@@ -3088,3 +3088,38 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full526tests PASS9.72s; exactall9 privatecheckpoint/window/kernel/loss/
   scorer fingerprint andsuccessfulownedterminal gate independentlyreturned9.
   This is actualcohortqualification, not developmentmetric or Goalacceptance.
+
+### Third R seed CE endpoint complete; M numeric support interface prepared
+
+- Registered a329c46e28ad86bfcc2fdfa86bd19f720cd1320f, same owned handle2271
+  completed temporal_CE/seed1029 with 200 actual fresh updates, exit0/no guard
+  stop. Result SHA5f21e0f1147ede151fb3ccf19566c07660447ab1d46bea936f6c401c648ca506;
+  endpoint616115B/SHAb31db960e730c52994646f026bdc49897111bdd82d86b9afec211c60a599ceff,
+  exact reopen. Initial5c3a6971df00698e14c2f16d960a0158e23fb8456e189af12aaf799ebe034690
+  differs both prior seeds; after46452a182c400a6ad64eea178f52e3e4f295d0ad25797f741cef4a3cb4ca5a54.
+  Owned506.172994421s/worker497.501120094s/peak sampledRSS1398439936B,
+  11OSthreads/noCUDA/0trainingGPUh. Full1401 physical inputs,1158 eligible
+  fitKnown tracks/22279observations,243masked; no dev/final/protected targets.
+- R9of12 complete; temporalCE has three independently trained seeds, but full
+  matched third-seed controls remain pending. No Novel gain/checkpoint winner
+  inferred from final training CE. C9of9 fits already complete; its first Raw
+  causal evaluator remains live, with orders1027/1028 completed so far. No
+  final C development metrics claimed before all orders and invariance gates.
+- New M numeric interface uses 161-parameter relative-member reliability vs
+  matched nominal-parameter pooled control. Peer direction/cosine explicitly
+  excludes the member itself; absent/cancelled peers distinguished. Immutable
+  committed Raw snapshots replace cumulative votes, exact aliases share one
+  group; token/route/GT/role/futurelength absent from numerical forward. Float64
+  peer sum removes self without quadratic feature allocation. All weights
+  initially equal; fixed positive floor retains ALL support, zero resultant
+  returns None. Logits/sigmoid are not calibrated purity or independent-sample
+  probabilities. Bounds refuse whole calls, not prune or truncate.
+- This is source/synthetic preparation ONLY: no M optimizer, lifecycle,
+  quarantine, revision, strict-version CT or trained third mechanism yet.
+  Snapshot timing and lawful prediction-owned history are caller obligations;
+  new bridge cannot certify them. Freeze prospective loss/lifecycle/lineage
+  protocol and actual pilot before counting scientific exploration.
+- Full539tests PASS16.25s, including12 new M numeric/actual-bank adapter tests
+  and actual third Rseed receipt. No live worker dependencies changed; no
+  original GT/data/weights moved or uploaded, no external processes affected.
+  Preserve Goal active and continue remaining controls/M/stronglegalPred/final.

@@ -1,0 +1,20 @@
+{
+  "schema_version": "trackocd.cvpr.source-member-reliability.v1",
+  "status": "SOURCE_SYNTHETIC_AND_BANK_ADAPTER_ONLY_NOT_TRAINED_M",
+  "parameters": 161,
+  "numeric_inputs": ["leave_other_groups_out_direction_cosine", "mean_other_group_pair_cosine", "other_group_dispersion", "visible_group_mean_quality", "log1p_observed_prefix_count", "log1p_other_group_count", "no_other_group_flag", "cancelled_other_resultant_flag"],
+  "self_in_reference_direction_or_pair_mean": false,
+  "category_token_route_ID_GT_role_future_length_or_purity_features": false,
+  "groups_are_certified_independent_observations": false,
+  "prototype": "All current committed, exact-alias-deduplicated support groups. Positive numeric weight 0.001 + 0.999*sigmoid(logit); no pruning, zero resultant returns None.",
+  "logits_or_sigmoid_are_calibrated_semantic_purity": false,
+  "fresh_initialization": "Zero final layer gives uniform support weights, exactly normalized equal-group mean when defined",
+  "control": "Same161-parameter pooled feature control lacks relative-member discrimination; same nominal capacity, not same function class",
+  "snapshot": "Caller must take pre-frame bank snapshot; adapter cannot certify timing or semantic history. Latest-prefix/alias grouping inherited from PrefixMemberBank; immutable snapshots survive future commits.",
+  "bounds": {"groups_per_selected_token": 512, "visible_observations_per_selected_token": 16384, "whole_call_rejection_no_truncation": true},
+  "training_steps_or_private_GT_reads_for_this_source_stage": 0,
+  "Tentative_Confirmed_Quarantined_version_lineage_implemented": false,
+  "strict_historical_purity_or_CT_Measured": false,
+  "required_before_scientific_M_fit": ["External legal Known-only loss projection with unknown/conflicting support masked, not background", "Prediction-owned causal controller/lifecycle and append-only revision provenance", "Freeze losses, seeds, steps, controls, coverage and strict lineage metrics before execution", "Owned pilot with actual optimizer updates and verified source/asset registration"],
+  "M_direction_explored_or_Goals_A_B_C_accepted": false
+}
