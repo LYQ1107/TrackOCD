@@ -1729,3 +1729,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
   remain unproven; no protocolfreeze/fullGT or trainedsuccess claim.
 - Three synthetic aggregate/rowreconciliation/conflict/wrapper cases prepared;
   actualKnownaudit awaits source publication and same freshref/256MiB/120s gate.
+- Full411engineering tests PASS4.70s, no skips. Registered2e3dd43 actualpush/
+  fetch exit0 andHEAD/FETCH_HEAD/origintracking exact; sameprocess-only strictSSH
+ 443 via17890, newworker freshGitref/sourceproof independently verified2e3.
+- v9retainedKnown role totals fit1178tracks/22848obs; policy44/997; dev423/7622;
+  final234/5652. Final splits135fitKnown/93ownpseudo/6outsideeligibleKnown.
+  AssignedKnown1879tracks/37119obs + unassigned83/1561 = original1962/38680.
+  Allother-rolepseudopositiveconflicts zero. Outsidepool notbackground; 93isNOT
+  finalallKnown or fullGTdenominator. No classroles changed/evaluationgrades.
+- Actualexit0,6.109172292s total/0.04743652s excludingnetwork,
+  samplepeak80900096B/oneThread/noguardstop,0training. No neworiginalGT,Novel,
+  Val/Test/videoGTarrays/pixels/features/model read. FullphysicalGT unknown
+  because lawfulKnowncensus neverretained nonKnownGT; pixelavailabilityunproven.
+- Readactualapprovalreceipt: USER_APPROVED_SCOPED_EXTERNAL_CENSUS_ONLY, category
+  names/Novel/videoGTarrays/Val/Test prohibited and noautomaticfullcache/fit.
+  Asked realuser for bounded407video category-agnostic physicalGT audit only
+  (image_id/anonymous track_id/bbox/frame; no nonKnowncategoryIDs/names), strict
+  old51/Val/Test/other-videos exclusion, localprivateindex/publicaggregate only,
+  no training/cache/rawGTupload. Request is NOT authorization; originalGoal
+  remainsactive/incomplete. Do not selfgrant via automaticgoalcontinuation.

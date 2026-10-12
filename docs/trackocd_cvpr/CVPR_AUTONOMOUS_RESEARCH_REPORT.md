@@ -66,6 +66,17 @@ Novel/Val/Test/model/pixel read; source1c9e42b remotelyregistered. Expanded
 assignment remains local and NOT yet a frozen scientific protocol: forward
 provenance, image/feature availability and evaluation denominators still open.
 
+Registered v9 denominator audit distinguishes target-only counts from all
+retainedKnown: final68videos contain234Knowntracks (135fitKnown+93pseudo+
+6outsideeligibleKnown),5652observations. All407assignedvideos contain1879Known
+tracks,37119obs; with83tracks/1561obs unassigned, exactcensus1962/38680
+reconciles. Zero other-rolepseudo positive conflicts. OutsideeligibleKnown is
+not background. Known-only is NOT fullphysicalGT: nonKnowngeometry/track
+denominators were neverretained; fullGT/visualquery/inputprovenance remain open.
+OriginalKnown-only authority does not itself grant new category-agnostic GT
+access, so a bounded407video physicalGT audit was proposed to the user, not
+executed or selfauthorized. No training/model/Val/Test/newGT read; Goalactive.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations
