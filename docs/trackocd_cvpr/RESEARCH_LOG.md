@@ -1621,3 +1621,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   family must register allconstraints before reading outcomes, retain fullpool,
   no model/difficulty objective, report effectiveclass/track/query support and
   stay within authorizedKnown indices. No newprotocol currently frozen.
+
+### Registered global four-role feasibility, not a cyclic-family repair
+
+- Rechecked clean dd4e427,184.5GBfree/52.8GBavailableRAM, no live scientificjob.
+  Taskbook6.3doesnot mandate allclassfinalonce acrossfourfolds; actualv5ruledout
+  that extra requirement without forbidding requested singleindependentsplit.
+- Newv6single global four-role assignment keeps all23uniformeligibleclasses
+  and all429videos, same positiveconflicts/globalvideoisolation/fit3/eval2.
+  Final>=8 doubles oldfour-class final breadth, dev>=2/policyexact2/fit>=2.
+  These class-role quotas registered BEFORE actual outcome; no named/frequency
+  alwaysKnown exception/modelmetric/difficulty objective. Zeroobjective one
+ 30s/5000node/oneThreadMILP, exactvideo-patterncounts and originalvideo verifier.
+- No cyclicrotation ofcategoryroles; future>=3actuallytrainedseeds shareone
+  frozenprotocol and are NOT relabeledfolds. A feasible support witness alone
+  cannotfreezeprotocol, certify visualabsence or launch fit: must still audit
+  effectiveclass/track/query supports and causalforward input/labelprovenance.
+  Existingv4/v5negative outputs remain intact; no class/video/quota pruning.

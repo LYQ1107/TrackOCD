@@ -15,7 +15,7 @@ for variable in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'):
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 import scipy
-from src.trackocd_cvpr.joint_known_protocol import joint_feasibility, exhaustive_component_necessary
+from src.trackocd_cvpr.joint_known_protocol import joint_feasibility, exhaustive_component_necessary, global_joint_feasibility
 from src.trackocd_cvpr.known_census_protocol import known_presence
 from src.trackocd_cvpr.scoped_train_census import inherited_known_ids, validate_video_scope
 from scripts.trackocd_cvpr.audit_known_census_protocol import exact_open_barrier
@@ -165,7 +165,9 @@ def worker(args, cfg, safety):
         if counts != cfg['expected']:
             raise ValueError('Every original census row retained/reconciled')
         guard()
-        if cfg.get('exhaustive_component_necessary_only', False):
+        if cfg.get('single_global_four_role_split', False):
+            public, private = global_joint_feasibility(presence)
+        elif cfg.get('exhaustive_component_necessary_only', False):
             public, private = exhaustive_component_necessary(presence)
         else:
             public, private = joint_feasibility(presence, time_limit=cfg['solver_time_limit_seconds'], node_limit=cfg['solver_node_limit'],
@@ -207,7 +209,8 @@ def main():
                                           'configs/trackocd_cvpr/joint_known_protocol_v2_unbalanced.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v3_unbalanced_ref_transport.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v4_compressed.json',
-                                          'configs/trackocd_cvpr/joint_known_protocol_v5_exhaustive.json'),
+                                          'configs/trackocd_cvpr/joint_known_protocol_v5_exhaustive.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v6_global.json'),
                         default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])

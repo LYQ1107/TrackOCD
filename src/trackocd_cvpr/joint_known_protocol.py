@@ -105,6 +105,115 @@ def category_support(presence):
     return support, pool
 
 
+def verify_global_assignment(presence, assignment):
+    """Original-video independent verifier for the registered single split."""
+    support, pool = category_support(presence)
+    if set(assignment) != {'classes', 'video_ids'}:
+        raise ValueError('Exact global assignment schema')
+    if any(set(assignment[key]) != set(ROLES) for key in assignment):
+        raise ValueError('Exact four roles')
+    for mapping in assignment.values():
+        if any(type(values) is not list or any(type(v) is not int or v < 0 for v in values)
+               or len(set(values)) != len(values) for values in mapping.values()):
+            raise ValueError('Unique exact administrative integer lists')
+    classes = {role: set(assignment['classes'][role]) for role in ROLES}
+    if (sorted(c for cs in classes.values() for c in cs) != pool
+            or len(classes[ROLES[0]]) < 2 or len(classes[ROLES[1]]) != 2
+            or len(classes[ROLES[2]]) < 2 or len(classes[ROLES[3]]) < 8):
+        raise ValueError('Full eligible pool and registered broad class-role quotas')
+    candidates = role_candidates(presence, classes)
+    seen = set()
+    for r, role in enumerate(ROLES):
+        videos = set(assignment['video_ids'][role])
+        if seen & videos or not videos <= candidates[role]:
+            raise ValueError('Global video isolation or positive conflict violation')
+        seen |= videos
+        if any(len(videos & support[c]) < (3 if r == 0 else 2) for c in classes[role]):
+            raise ValueError('Insufficient cross-video positive support')
+    return True
+
+
+def global_joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp):
+    """One global four-role split, >=8 final classes, zero-objective feasibility.
+
+    All eligible classes assigned exactly once, no permanent-frequency Known
+    exception, no cyclic relabeling, no difficulty/model objective. Same video
+    exclusions/quotas as v4. Three future training seeds are NOT three splits.
+    """
+    if time_limit != 30 or node_limit != 5000:
+        raise ValueError('Fixed finite solver budget')
+    support, pool = category_support(presence)
+    buckets = defaultdict(list)
+    for vid in sorted(presence):
+        buckets[tuple(c for c in pool if c in presence[vid])].append(vid)
+    units = [buckets[key] for key in sorted(buckets)]
+    n, m = len(pool), len(units)
+    z = lambda c, r: c * 4 + r
+    y = lambda v, r: n * 4 + v * 4 + r
+    rows, cols, values, lower, upper = [], [], [], [], []
+    def add(items, lo, hi):
+        row = len(lower)
+        for col, value in items:
+            rows.append(row); cols.append(col); values.append(value)
+        lower.append(lo); upper.append(hi)
+    for c, category in enumerate(pool):
+        add([(z(c, r), 1) for r in range(4)], 1, 1)
+        for r in range(4):
+            add([(y(v, r), 1) for v, group in enumerate(units) if group[0] in support[category]]
+                + [(z(c, r), -(3 if r == 0 else 2))], 0, np.inf)
+    for r, (lo, hi) in enumerate(((2, n), (2, 2), (2, n), (8, n))):
+        add([(z(c, r), 1) for c in range(n)], lo, hi)
+    forbidden = ((1, 2, 3), (2, 3), (1, 3), (1, 2))
+    for v, group in enumerate(units):
+        cap = len(group)
+        add([(y(v, r), 1) for r in range(4)], 0, cap)
+        for c, category in enumerate(pool):
+            if category in presence[group[0]]:
+                for r in range(4):
+                    add([(y(v, r), 1)] + [(z(c, q), cap) for q in forbidden[r]], -np.inf, cap)
+    matrix = coo_matrix((values, (rows, cols)), shape=(len(lower), 4 * (n + m))).tocsc()
+    bounds_upper = np.concatenate((np.ones(n * 4), np.repeat([len(group) for group in units], 4)))
+    with warnings.catch_warnings(record=True) as captured:
+        warnings.simplefilter('always')
+        result = solve(c=np.zeros(matrix.shape[1]), integrality=np.ones(matrix.shape[1]),
+            bounds=Bounds(0, bounds_upper), constraints=LinearConstraint(matrix, lower, upper),
+            options={'time_limit': 30, 'node_limit': 5000, 'mip_rel_gap': 0, 'presolve': True,
+                     'threads': 1, 'parallel': False, 'random_seed': 2093001})
+    public = {'integer_necessary_conditions': {'class_pool': n}, 'single_global_four_role_split': True,
+              'minimum_final_pseudo_classes': 8, 'all_original_videos_retained': len(presence),
+              'distinct_presence_patterns': m, 'variables': matrix.shape[1], 'constraints': matrix.shape[0],
+              'nonzeros': matrix.nnz, 'solver_executed': True, 'solver_status': int(result.status),
+              'solver_message': str(result.message), 'forwarded_option_warnings': [str(w.message) for w in captured],
+              'model_scores_or_names_used': False, 'new_protocol_frozen': False,
+              'complete_visual_category_absence_proven': False, 'training_GPU_hours': 0,
+              'feasible_joint_assignment_verified': False,
+              'scope': 'Registered single global class/video isolated four-role split, not four cyclic folds'}
+    if result.x is None:
+        public['status'] = 'SOLVER_SCOPED_INFEASIBLE' if result.status == 2 else 'INCONCLUSIVE_NO_VERIFIED_ASSIGNMENT'
+        return public, {'not_model_facing': True}
+    vector = np.asarray(result.x)
+    if (result.status not in (0, 1) or vector.shape != bounds_upper.shape or not np.isfinite(vector).all()
+            or np.max(np.abs(vector - np.rint(vector))) > 1e-7 or np.min(vector) < -1e-7
+            or np.any(vector > bounds_upper + 1e-7)):
+        raise ValueError('Invalid integer-count witness')
+    x = np.rint(vector).astype(int)
+    assignment = {'classes': {role: [pool[c] for c in range(n) if x[z(c, r)]] for r, role in enumerate(ROLES)},
+                  'video_ids': {role: [] for role in ROLES}}
+    for v, group in enumerate(units):
+        cursor = 0
+        for r, role in enumerate(ROLES):
+            count = x[y(v, r)]
+            assignment['video_ids'][role].extend(group[cursor:cursor + count])
+            cursor += count
+        if cursor > len(group):
+            raise ValueError('Pattern expansion violates video capacity')
+    verify_global_assignment(presence, assignment)
+    public.update(status='VERIFIED_GLOBAL_KNOWN_ASSIGNMENT_NOT_FROZEN_PROTOCOL', feasible_joint_assignment_verified=True,
+                  role_class_counts={r: len(cs) for r, cs in assignment['classes'].items()},
+                  role_video_counts={r: len(vs) for r, vs in assignment['video_ids'].items()})
+    return public, {'not_model_facing': True, 'assignment': assignment}
+
+
 def forced_group_certificate(presence, *, union_support=False):
     """If |V_X minus V_Y|<2, X must share Y's final-pseudo group.
 
