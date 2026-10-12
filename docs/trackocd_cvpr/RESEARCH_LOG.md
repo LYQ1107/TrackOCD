@@ -2986,3 +2986,27 @@ new research scope; nothing has been deleted, no storage pressure is present.
   andthirdseed; no singlefailure pause or prematureGoal acceptance.
 - Full522tests PASS7.99s, preservingactual equalexposure andzeroExisting
   forbothseed1028Top8 controls; no newheldoutmetric or semanticwin inferred.
+
+### Second C seed full triplet complete, all three zero Existing
+
+- Previous turn deliveredC5at8fdf7e57e673af8c5aeb657c13a2404a668b8c70:
+  progress. Sameownedhandle37594 nowactualterminalexit0 forTop1_conditioned/
+  seed1028/200freshupdates. ResultSHA
+  4e8c2bca7fde4be2a90d1f5f24caff012e2cdfd55ca9b1483105408f0bc46180,
+  endpoint24295B/SHAd33d7cbd12438f79929380cec5f9011148fbff593fbfc0f40aa613338945dff1,
+  strictreopen/after38e626c2bc52adce27dec91352a7413f343099657b0da8c8e6a069d4ca07d748.
+  Sameinitial24645d1e.../708parameters asbothTop8controls. Owned131.369525764s/
+  worker123.840296684s/RSS950136832B/11OSthreads/noguardstop/noCUDA/0GPUh.
+- Fullfour10/54/1268/374policyepisodes retained. ActualoptimizerKnown274/
+  pseudo100/fourclasses/TWOpseudo classes, vsTop8Known381/pseudo97; K1masks
+  differenttargets andmoveseligible-update calendar. 59all-framecrossvideo
+  candidatepositiveopportunities inep0, ZERO inactualoptimizerupdates.
+  ep0KNOWN1257/NEW11;ep1/2/3KNOWN1268 each. ZeroExisting acrossallthree
+  seed1028controls, not just poorseed1027 class exposure. No scientificdev
+  generalization/frozenfront-end gain inferred fromtraining actioncounts.
+- Sixof9 C/eightof12 R complete; allCvariants have2independentseeds butthird
+  remainsrequired. PreserveKnownbias/absence/feedback-opportunity limits,
+  unchangedfixedthirdseed before bounded repairs andall9-gatedcausaldev.
+  No dev/final/Val/Test selection, modelreplacement or Goalpause/completion.
+- Full523tests PASS21.83s, actualtriplet/seed/coverage/zeroExisting endpoints
+  validated; source/memory/plumbing tests do not replace GoalA/B/C acceptance.
