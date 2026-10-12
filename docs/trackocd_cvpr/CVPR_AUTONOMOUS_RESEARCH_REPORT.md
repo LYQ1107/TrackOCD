@@ -99,6 +99,17 @@ training. Causalforward/label separation and image/feature availability still
 required before freezing protocol; denseframe and semanticNoveltruth remain
 unproven. This is input-integrity evidence, not trainedscientificacceptance.
 
+Selected407video stat-only preflight v12 now verifies all14798declaredimage
+files present as containedregularTrain files, no missing/invalid files. Role
+images9345fit/374policy/2562dev/2517final; all45450GTobs align with image/frame
+metadata. 14017images have GTreferences;781do not. These781must remain in full
+available-frame physical rollout, not be dropped or assertedbackground. Original
+Train JSON scopedpathmetadata read, targetarrays byte-skipped; no pixel hash/
+decode, feature/model/training or cache extraction. Older57video capped16Pred
+features are retained but NOT automatically full407uncapped/provenance-qualified
+inputs. Actualattempt1 networkpregate failure preserved; attempt2 reused an
+owned verifiedSSHconnection, freshremote/sourcegate stillrequired andpassed.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations

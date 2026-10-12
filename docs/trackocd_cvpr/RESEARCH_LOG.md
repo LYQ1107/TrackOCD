@@ -1839,3 +1839,28 @@ new research scope; nothing has been deleted, no storage pressure is present.
   candidate commonencoder, not proof of currentpixels/checkpoint/sourcevalidity,
   currentfrozenprotocol or qualifiedphysicalfrontend. No newfeature/model loaded.
   Newv12 actualmetadata/stat awaits remote registration; GoalA/B/C stillopen.
+- Initial sourcepush reachedGitHub but commit_refs remoteerror; actualfetch
+  showedold0904544, not falselymarkedregistered. Boundedsecondpush/fetch exit0,
+  HEAD/FETCH_HEAD/origintracking exact62c6233. v12attempt1 bothfreshreftransports
+  failed beforeprivateinputs/outdirectory, exit1/12.296347s/79720448B/oneThread,
+  noguardstop. Preserved terminalreceipt, not a pixel/datafailure.
+- Established newowned strictED25519 SSH443via17890 controlconnection, actually
+  checkedlive masterhandle, then process-only coreSSH reusedthatconnection for
+  attempt2. No globalsettings/otherprocess intervention/ref bypass. Worker
+  freshGitref exact62c6233/sourcehashes stillchecked beforeprivateinputs.
+- Actual407selectedvideos/14798imagemetadata rows, all14798containedregular
+  imagefiles present, zeroMissing/invalid. Role imagecounts fit9345/policy374/
+  dev2562/final2517, all257/10/72/68videos complete atmetadata cadence. Public
+  sourcefile bytes totals recorded, not pixel hash/decode or densevideo proof.
+- All45450GTobservations crosschecked against14017referencedimages. Remaining
+ 781metadata images withoutGTreference must NOT be silentlydropped or treated
+  as certifiedbackground/absent categories. Fullavailable-frame rollout must
+  preserve them; GT-crop features alone cannot cover all predicted-frame inputs.
+- No annotation/category/videoGTtarget valuesdecoded duringv12; originalTrain
+  file WAS read for scopedscalarpath metadata (explicitsource-readflagTrue),
+  not a blanketno-file-access certificate. No newfeatures/model/training/cache.
+  Workerreported46.716232428s excludingnetwork/131334144Bpeak; protocolfreeze,
+  truefeature/pixeldecode and strongprimaryfrontend stillopen.
+- Ownedv12attempt2 total49.383291347s/oneThread/noguardstop/sample130199552B;
+  localscalarimageplan2930648B, no semanticlabels/GTboxes inplan. Publicresult
+  SHAd060b0168c28e4729f24e2fa1970202574c9031e28619f15cf4c991ed0b21f85.

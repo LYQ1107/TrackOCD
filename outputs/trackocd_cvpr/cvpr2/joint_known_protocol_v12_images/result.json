@@ -1,0 +1,148 @@
+{
+  "census_reconciliation": {
+    "observations": 38680,
+    "positive_Known_classes": 48,
+    "tracks": 1962,
+    "videos": 429
+  },
+  "fresh_source_no_existing_bytecode_cache": true,
+  "interpretation": "Selected407Train scalar path/image/frame/size metadata with video gate first; annotation/category/videoGTarrays byte-skipped. Cross-check approved physical image/frame keys, stat-only regular Train-root-contained files perrole. No pixel/hash/model/feature/cache extraction or download/deletion. Path metadata is not decoded pixels, valid common features, dense video, primaryfrontend qualification or frozen protocol.",
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "62c6233fc18c050c651367e8b4c55ea057be2e69"
+  },
+  "optimization_training_steps": 0,
+  "original_Train_annotation_geometry_read_under_new_explicit_authority": false,
+  "original_annotation_old_target_tables_names_Novel_Val_Test_pixels_features_models_read": false,
+  "owned_launch_attempt": 2,
+  "preregistration_commit": "62c6233fc18c050c651367e8b4c55ea057be2e69",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "private_global_assignment": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+    "private_physical_GT": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
+    "train_annotation": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0"
+  },
+  "private_output": {
+    "bytes": 2930648,
+    "sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba"
+  },
+  "resources": {
+    "disk_free_bytes": 184260521984,
+    "guarded_process_RSS_bytes": 131334144,
+    "kernel_reported_VmHWM_bytes_approximate": 131334144,
+    "peak_guarded_worker_RSS_bytes": 131334144,
+    "resource_ru_maxrss_bytes_including_preexec_history": 131334144,
+    "sampled_smaps_rollup_Rss_bytes": 120991744,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 46.716232428036164
+  },
+  "scipy_version": "1.15.3",
+  "selected_Train_path_metadata_source_read_without_target_decoding": true,
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/joint_known_protocol_v12_images.json": "37268bbaf576f586865974adb713a65fa1c3e9aa59410b75b18cfee29fad413b",
+    "configs/trackocd_cvpr/physical_gt_scope_approval_v1.json": "3bb875081595142c419f78cd663faf3defbf0fe00ae17bead5caf63103b2ad68",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/result.json": "f1e170a3d3d288bcef3caa2aca4a71ad4c42c2597f7ee6a6e80fa04410dbd070",
+    "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/result.json": "085abab372c2ab57edda729b5d828c6faabe94d0ac7b977473f53057ef2c851d",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "00305abf3018be9110809927a75cf6fe848fd138285a4ba539c39dc213c7c782",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/global_protocol_coverage.py": "5b0b2377a10394973563fb9f46bf9e61e7545aee0416413d031d9b020ab41cde",
+    "src/trackocd_cvpr/joint_known_protocol.py": "230f2ed6f2b1480ee61dbd11f3eb07882f9da157b106bf4f6ffa78175f5d4aef",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/physical_gt_census.py": "44e15a50031d581eb9e1b73d16961eb47e700117260b21faf5cff118f7cbbe95",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_cvpr/selected_image_inventory.py": "8fd76f274cce5332b0cedf10d56db868e078531a27eb5aa0377e54503b235786",
+    "src/trackocd_cvpr/train_pixel_inventory.py": "741116a22939dac44433c0abf5265a87ba111cb79b211acf9116ac9d1df1d8f7",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "SELECTED_TRAIN_IMAGE_PATH_STAT_PREFLIGHT_NOT_DECODED_FEATURES",
+  "structural_result": {
+    "GT_observations_cross_checked": 45450,
+    "GT_referenced_images": 14017,
+    "annotation_category_video_GT_values_decoded": false,
+    "dense_frame_coverage_proven": false,
+    "features_loaded_or_extracted": false,
+    "integer_necessary_conditions": {
+      "class_pool": 23
+    },
+    "new_protocol_frozen": false,
+    "pixel_bytes_hashed_or_decoded": false,
+    "role_pixel_inventory": {
+      "development_pseudo": {
+        "annotated_images": 2562,
+        "asset_download_or_deletion": false,
+        "complete_annotated_image_videos": 72,
+        "dense_frame_coverage_certified": false,
+        "invalid_existing_files": 0,
+        "missing_image_bytes_known": false,
+        "missing_images": 0,
+        "no_present_image_videos": 0,
+        "partial_image_videos": 0,
+        "pixel_bytes_hashed_or_decoded": false,
+        "present_bytes": 316252901,
+        "present_images": 2562,
+        "selected_safe_reference_videos": 72
+      },
+      "fit_known": {
+        "annotated_images": 9345,
+        "asset_download_or_deletion": false,
+        "complete_annotated_image_videos": 257,
+        "dense_frame_coverage_certified": false,
+        "invalid_existing_files": 0,
+        "missing_image_bytes_known": false,
+        "missing_images": 0,
+        "no_present_image_videos": 0,
+        "partial_image_videos": 0,
+        "pixel_bytes_hashed_or_decoded": false,
+        "present_bytes": 1175391934,
+        "present_images": 9345,
+        "selected_safe_reference_videos": 257
+      },
+      "independent_final_pseudo": {
+        "annotated_images": 2517,
+        "asset_download_or_deletion": false,
+        "complete_annotated_image_videos": 68,
+        "dense_frame_coverage_certified": false,
+        "invalid_existing_files": 0,
+        "missing_image_bytes_known": false,
+        "missing_images": 0,
+        "no_present_image_videos": 0,
+        "partial_image_videos": 0,
+        "pixel_bytes_hashed_or_decoded": false,
+        "present_bytes": 229763974,
+        "present_images": 2517,
+        "selected_safe_reference_videos": 68
+      },
+      "policy_train_pseudo": {
+        "annotated_images": 374,
+        "asset_download_or_deletion": false,
+        "complete_annotated_image_videos": 10,
+        "dense_frame_coverage_certified": false,
+        "invalid_existing_files": 0,
+        "missing_image_bytes_known": false,
+        "missing_images": 0,
+        "no_present_image_videos": 0,
+        "partial_image_videos": 0,
+        "pixel_bytes_hashed_or_decoded": false,
+        "present_bytes": 39454656,
+        "present_images": 374,
+        "selected_safe_reference_videos": 10
+      }
+    },
+    "selected_image_metadata_rows": 14798,
+    "selected_metadata_images_without_GT_reference": 781,
+    "selected_videos": 407,
+    "status": "SELECTED_TRAIN_IMAGE_PATH_STAT_PREFLIGHT_NOT_DECODED_FEATURES",
+    "training_GPU_hours": 0
+  }
+}
