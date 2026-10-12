@@ -33,9 +33,12 @@ class CandidateSnapshot:
 
 def unit(vector):
     value = np.asarray(vector, dtype=np.float32)
-    if value.shape != (768,) or not np.isfinite(value).all() or np.linalg.norm(value) <= 1e-12:
+    if value.shape != (768,) or not np.isfinite(value).all():
         raise ValueError('Finite nonzero common768D evidence required')
-    return value / np.linalg.norm(value)
+    norm = np.linalg.norm(value)
+    if not np.isfinite(norm) or norm <= 1e-12:
+        raise ValueError('Finite nonzero common768D evidence required')
+    return value / norm
 
 
 def build_candidates(view, known, state_evidence, *, K=8, max_groups=4096):
@@ -113,20 +116,24 @@ def resolve_scores(snapshot, scores):
 
 
 class CandidateScoreMLP(nn.Module):
-    """708 parameters, shared row scoring; not checkpoint-compatible with D1/D2.
+    """Default708 parameters, shared row scoring; not old-checkpoint-compatible.
 
     New and WAIT depend on numeric query/pool context. Candidate permutation
     permutes only candidate scores; output bindings never enter forward.
-    Initialization/gradient tests do not constitute any fit or calibration.
+    Declared wider tensor-bridge variants have larger budgets. Initialization/
+    gradient tests do not constitute any fit or calibration.
     """
-    def __init__(self):
+    def __init__(self, *, feature_count=FEATURE_COUNT):
         super().__init__()
-        self.rows = nn.Sequential(nn.Linear(FEATURE_COUNT, 32), nn.GELU(), nn.Linear(32, 1))
+        if type(feature_count) is not int or feature_count < 1:
+            raise ValueError('Positive declared numeric feature dimension required')
+        self.feature_count = feature_count
+        self.rows = nn.Sequential(nn.Linear(feature_count, 32), nn.GELU(), nn.Linear(32, 1))
         self.actions = nn.Sequential(nn.Linear(CONTEXT_COUNT, 32), nn.GELU(), nn.Linear(32, 2))
         self.log_temperature = nn.Parameter(torch.zeros(()))
 
     def forward(self, features, context):
-        if features.ndim != 2 or features.shape[1] != FEATURE_COUNT or context.shape != (CONTEXT_COUNT,):
+        if features.ndim != 2 or features.shape[1] != self.feature_count or context.shape != (CONTEXT_COUNT,):
             raise ValueError('Numeric candidate/query shapes differ')
         if not torch.isfinite(features).all() or not torch.isfinite(context).all():
             raise ValueError('Nonfinite numeric scorer input')

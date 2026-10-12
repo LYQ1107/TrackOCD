@@ -107,3 +107,9 @@ def test_synthetic_backward_checks_gradient_without_fitting_or_changing_weights(
         assert all(torch.equal(before[key], value) for key, value in model.state_dict().items())
         with pytest.raises(TypeError):
             model(torch.zeros(0, 11), torch.zeros(6), category_id=7)
+
+
+def test_finite_overflowing_prototype_not_silently_normalized_to_zero():
+    with np.errstate(over='ignore'):
+        with pytest.raises(ValueError, match='nonzero common768D'):
+            build_candidates(view(), {7: np.full(768, 1e30, np.float32)}, {})

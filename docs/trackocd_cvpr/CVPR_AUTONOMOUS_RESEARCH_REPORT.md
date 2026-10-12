@@ -59,6 +59,15 @@ permission. Known decisions retain old anonymous support; same-frame peer birth
 reuse and differentiable joint R/C training remain unresolved. Old controllers,
 metrics and raw assets unchanged. See source_candidate_control_contract.json.
 
+Source-only R preparation now also provides an identity-start Raw-residual
+prefix encoder and a differentiable14feature candidate bridge. Synthetic
+backward reaches both R and C without optimizer updates. Wider C has804params,
+not708; the50113parameter pooled/temporal R modes share layout, not function
+class, and pooled mode retains pooled time/motion. This is not fitted novelty
+generalization or full joint training: the existing NumPy controller still
+detaches representations, prototypes/retrieval/trainer integration and lawful
+data protocol remain open. GT confirmation still pending; newtraining0/600.
+
 ## Registered execution sequence
 
 CVPR-0 first: retrospective sealed FULL decision distributions for all three

@@ -1134,3 +1134,42 @@ new research scope; nothing has been deleted, no storage pressure is present.
   708parameters, no self-authorized GT/training or hidden scientific/scalability
   claims. Full254engineering tests PASS3.48s, no skips, before delivery. Only
   sources/tests/config/contract logs change; no raw trajectories or model weights.
+
+### Source-only R evidence and differentiable R/C bridge while GT stays pending
+
+- Revalidated cleana6a1cf5, pending GT-read authority and source-only contracts.
+  Prior turn was actual integration progress, not a running process wait.
+  The scientific GT/protocol gate is unresolved across consecutive turns;
+  automatic goal messages are not consent. No new GT/source-data/cache read.
+- Identified another necessary safe source step: NumPy candidate features
+  detach representation gradients. Added independent tensor evidence/feature
+  bridge, NOT silent conversion of the existing controller into joint training.
+  Raw-only708parameter path remains unchanged by default.
+- New identity-start50113parameter residual evidence model preserves actual
+  magnitude/quality-weighted Raw output at initialization, then can learn
+  visible geometry/time gates. Pooled and per-frame-gate variants share layout;
+  pooled control retains pooled time/motion and is not a pure timeless/static
+  or capacity-equivalent claim. No learned reliability/generalization result.
+- Tensor candidate14features add Raw cosine, adapt/Raw difference and adapted
+  margin, with adapted primary cosine. Wider same-framework scorer804params:
+  do not call it the old708parameter budget or old-checkpoint compatible. Raw
+  teacher Gram loss detaches teacher only; no class IDs or label inputs.
+- Fourteen focused synthetic tests PASS2.48s: exact initial identity, differing
+  future buffers excluded before model input, quality fallback, malformed
+  prefixes, unchanged weights, actual gradient flow into both R/C and exact
+  candidate permutation. No optimizer, fit, data-derived labels, GT, Val/Test,
+  images/features/checkpoints or trained scientific mechanism/metric result.
+- Remaining: explicit tensor/support/prototype/retrieval lineage integration,
+  fresh lawful data protocol and authority, empirical actual training gradient
+  logs/fair capacity controls, all three learned mechanism trials and Goals
+  A/B/C. More synthetic code is not a substitute for any of these acceptances.
+- Full268tests first passed3.43s before numerical boundary tests. Added norm
+  overflow refusal (including existing Raw candidate normalizer) and stable
+  log-domain evaluation of the same positive geometry weights at extreme
+  finite negative gates; no GT/member filtering or threshold-based model repair.
+  Expanded suite first had1failure/272passes: normalized float32 weights were
+  incorrectly required to sum bit-exactly1. Fixed only that scalar normalization
+  check to2machine eps; candidate permutations/identity equality stay strict.
+- Final full273engineering tests PASS3.72s, no skips, before delivery. No real
+  GT permission, fitted model, empirical new gradient logs, full controller
+  tensor integration, metric gain or three-direction scientific acceptance.
