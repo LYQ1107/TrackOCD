@@ -4,12 +4,87 @@ No model scores, names, extra category pool, frequency exceptions or GT repair.
 Integer necessary-condition certificate precedes one bounded feasibility MILP.
 """
 from collections import defaultdict
+from itertools import product, combinations
 import warnings
 import numpy as np
 from scipy.optimize import Bounds, LinearConstraint, milp
 from scipy.sparse import coo_matrix
 
 from .known_census_protocol import ROLES, role_candidates
+
+
+def exhaustive_component_necessary(presence):
+    """Complete bounded component partitions, necessary support tests only.
+
+    Final groups are cyclic, hence rotating all groups/folds preserves every
+    constraint: fix the largest forced component in group0. All other component
+    placements and all two-class policy choices are retained. A surviving case
+    is NOT a video-disjoint witness. No difficulty/model/seed selection.
+    """
+    support, pool = category_support(presence)
+    certificate, private = forced_group_certificate(presence, union_support=True)
+    components = private['components']
+    if len(components) > 8:
+        raise ValueError('Exhaustive bound8components; no pruning or sampling')
+    videos = sorted(presence)
+    masks = {c: sum(1 << i for i, v in enumerate(videos) if v in support[c]) for c in pool}
+    full = (1 << len(videos)) - 1
+    total = legal = survivors = options = 0
+    failures = [0] * 4
+    deficient = {role: 0 for role in ROLES}
+    for placement in product(range(4), repeat=len(components) - 1):
+        total += 1
+        groups = [set() for _ in range(4)]
+        for cs, group in zip(components, (0, *placement)):
+            groups[group].update(cs)
+        if any(not 1 <= len(cs) <= len(pool) - 5 for cs in groups):
+            continue
+        if any(len(set(pool) - groups[f] - groups[(f + 1) % 4]) < 4 for f in range(4)):
+            continue
+        legal += 1
+        passed = True
+        for f in range(4):
+            final, dev = groups[f], groups[(f + 1) % 4]
+            remaining = set(pool) - final - dev
+            accepted = False
+            for pair in combinations(sorted(remaining), 2):
+                options += 1
+                policy = set(pair)
+                fit = remaining - policy
+                roles = (fit, policy, dev, final)
+                denied = (policy | dev | final, dev | final, policy | final, policy | dev)
+                bad = None
+                for r, (cs, excluded) in enumerate(zip(roles, denied)):
+                    mask = 0
+                    for c in excluded:
+                        mask |= masks[c]
+                    allowed = full ^ mask
+                    if any((masks[c] & allowed).bit_count() < (3 if r == 0 else 2) for c in cs):
+                        bad = ROLES[r]
+                        break
+                if bad is None:
+                    accepted = True
+                    break
+                deficient[bad] += 1
+            if not accepted:
+                failures[f] += 1
+                passed = False
+                break
+        if passed:
+            survivors += 1
+    status = ('EXHAUSTIVE_NECESSARY_SUPPORT_CONTRADICTION_FOR_DECLARED_FAMILY'
+              if survivors == 0 else 'INCONCLUSIVE_NECESSARY_SUPPORT_SURVIVORS')
+    return {'status': status, 'integer_necessary_conditions': certificate,
+            'enumerated_component_placements': total, 'expected_placements': 4 ** (len(components) - 1),
+            'rotational_symmetry_only_fixed_first_component': True,
+            'legal_class_partitions': legal, 'necessary_support_survivors': survivors,
+            'first_rejecting_fold_partition_counts': failures,
+            'policy_options_examined': options, 'first_deficient_role_option_counts': deficient,
+            'all_original_videos_retained': len(presence), 'solver_executed': False,
+            'class_pool': len(pool), 'model_scores_or_names_used': False,
+            'feasible_joint_assignment_verified': False, 'new_protocol_frozen': False,
+            'complete_visual_category_absence_proven': False, 'training_GPU_hours': 0,
+            'scope': 'Same v4 unbalanced cyclic four-role family; exhaustive necessary support, not arbitrary protocol/data impossibility'}, {'proof': private}
 
 
 def category_support(presence):

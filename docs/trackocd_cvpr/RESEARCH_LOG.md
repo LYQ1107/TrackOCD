@@ -1580,3 +1580,20 @@ new research scope; nothing has been deleted, no storage pressure is present.
   scopednegative/census and65pattern counts, actual registeredsourcehashes via
   immutableGitddc, freshref proof and terminal one-thread/RSS/wall guards.
   Tests deliberately do not open privateproof or claim trainedmethod acceptance.
+
+### Finite combinatorial explanation preregistration after v4 scoped negative
+
+- Rechecked clean3b90061. v4negative is not global impossibility or new training.
+  Preparedv5 necessary-support enumeration, same23uniformeligiblepool/fourcyclic
+  classroles/exclusions/fit3/eval2videoquotas. Forcedcomponents cannot split.
+  Fix one component atgroup0 by cyclic rotation ONLY, enumerate all remaining
+  placements (max8components/4^7=16384), every legal class partition, and all
+  two-class policy choices until a fold has one necessary-support survivor.
+  No legal partition discarded by metric/difficulty or numeric-ID priority.
+- Every role/class must have enough positive videos outside forbidden-role
+  unions; exact bitset counts replace set intersections. Zero all-fold survivors
+  certifies contradiction for this declared family; any survivors remain
+  inconclusive because disjoint role-video allocation was NOT verified. No
+  solver/extra seeds/pruning/quota relaxation/data scope expansion. Same owned
+  freshref/source gate,256MiB/120s/oneCPU, newoutput and no historical overwrite.
+  Actual Known enumeration awaits new source publication and independent gate.
