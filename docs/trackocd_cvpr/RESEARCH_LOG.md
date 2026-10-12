@@ -1597,3 +1597,27 @@ new research scope; nothing has been deleted, no storage pressure is present.
   solver/extra seeds/pruning/quota relaxation/data scope expansion. Same owned
   freshref/source gate,256MiB/120s/oneCPU, newoutput and no historical overwrite.
   Actual Known enumeration awaits new source publication and independent gate.
+- Full398engineering tests passed4.88s without skips. Sourcecd880dd pushed;
+  firstSSH fetch banner timedout (not falselyverified), secondfetch exit0 and
+  HEAD/FETCH_HEAD/origintracking all exactcd880dd. Same process-only strictSSH
+  transport asv4, no globalconfig or scientific resource/scope changes.
+- Actualv5worker freshGitref exactcd880dd before Known inputs. Exhaustive16384
+  placements,3402legal classpartitions,270230policy options examined, zero
+  all-fold necessarysupport survivors. First-rejecting foldcounts1875/933/594/0.
+  First-deficient rolecountsfit262483/policy5205/dev355/final66: these depend
+  on fit-first/fold-first checking and are NOT independent causal fractions or
+  proof every failure is fit-only. All429videos reconciled, no solver/training.
+- Terminalexit0,7.343433216s total/1.387447433s excludingnetwork,
+  sampledpeak81481728B/oneThread/noguardstop. Scoped combinatorial contradiction
+  for EXACT v4fourcyclicroles/everyclassfinalonce; not arbitrary Train protocols.
+  No originalGT/names/Novel/Val/Test/pixels/features/model read,0GPUh.
+- Taskbook6.3 requires class/video isolation, cross-video support, freeze before
+  fit and no difficulty/result selection. It does NOT explicitly require every
+  eligibleclassfinalonce acrossfourcyclicfolds. That self-imposed family has now
+  been ruled out, not the entire requested research. Next examine a separately
+  justified single global four-role split with sufficiently broad independent
+  pseudo-Novel and multiple actual trainedseeds, rather than keep rerunning the
+  disproven cyclicfamily or silently weaken video/class isolation. Any new
+  family must register allconstraints before reading outcomes, retain fullpool,
+  no model/difficulty objective, report effectiveclass/track/query support and
+  stay within authorizedKnown indices. No newprotocol currently frozen.

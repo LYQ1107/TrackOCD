@@ -31,6 +31,18 @@ published. Older paragraphs' permission/pending network statements describe
 historical snapshots, not current authority or transport state. New fresh
 protocol still not frozen; GoalA/B/C and trained mechanism trials remain open.
 
+Further registered v5 explanation enumerated all16384 forced-component
+placements modulo cyclic rotation,3402 cardinality-legal class partitions and
+270230 policy options; none passed every fold's necessary positive-video
+support. This is a scoped combinatorial contradiction independent of MILP
+status, with7.343s total/81481728B peak/one thread/no training. First-deficient
+role counts are check-order-dependent, not independent causal proportions.
+The taskbook's requested isolation/independent pseudo-Novel protocol need not
+rotate every eligible class through final-pseudo four times; this ruled-out
+self-imposed family does not justify stopping research or borrowing Val/Test.
+A new global isolated split must be separately registered and audited before
+training, preserving broad heldout support/no difficulty or model selection.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations
