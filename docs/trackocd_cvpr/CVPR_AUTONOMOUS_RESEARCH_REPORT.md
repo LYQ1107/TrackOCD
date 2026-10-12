@@ -120,6 +120,16 @@ qualify GT/predictedbox/prefix crops, trajectories, primaryfrontend, learned
 R/C/M, Novelmetrics or fullprotocolfreeze. No optimizer or fullcache launched;
 commonbackbone readiness is limitedto theseactualfit inputs andchecks.
 
+Finitefit-only GTgeometric-control crop/prefix fixture now passed: two actual
+GT-cropped RGB observations, three frozenCPUbackbone calls and visibleRprefix
+1/2 checks. Identity-startR exactlypreservesRaw, futuretailmutation unchanged,
+noR/DINOparameterupdates. Uses unclippednormalizedamodal GTboxes/constantGT
+quality1 explicitly, not predictedframe-online inputs or calibratedscores.
+No semanticlabels/IDs to numericforward, no dev/finalpixels/training/fullcache.
+This narrows input-integration uncertainty but doesnot establish learned
+Novelgeneralization, cache-wide compatibility, physicalqualification or
+GoalA/B/C. Formalprotocolfreeze/authorizedfullcache and actualfits remainopen.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations

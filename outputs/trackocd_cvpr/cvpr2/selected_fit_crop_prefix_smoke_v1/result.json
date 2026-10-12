@@ -1,0 +1,59 @@
+{
+  "CPU_repeat_exact": true,
+  "GT_class_role_text_or_ID_in_forward": false,
+  "GT_geometric_localization_used_as_explicit_control": true,
+  "GT_or_predicted_crop_features_verified": false,
+  "actual_forward_calls": 3,
+  "checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "descriptor_shape": [
+    2,
+    768
+  ],
+  "development_or_final_pixels_read": false,
+  "encoder_Git_tree_python_entries": 157,
+  "encoder_repository_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "encoder_source_manifest_sha256": "a54679bf8dd4cac1e29dfaf861ea3b7cffbafcf39b5ea6287a99ad3bbacbc517",
+  "frozen_parameter_sha256": "42c4c180dbaa825ee5bfecc6e6bf392af6439a1d2aa97f05095ac09b5e7097a9",
+  "frozen_parameters_unchanged": true,
+  "full_cache_or_training_started": false,
+  "images_decoded": 2,
+  "limited_actual_GT_crop_prefix_check": {
+    "GT_control_quality_constant": 1,
+    "GT_geometry_unclipped_amodal_normalized": true,
+    "R_identity_start_Raw_exact": true,
+    "R_parameters_untrained_unchanged": true,
+    "actual_observation_prefixes_checked": [
+      1,
+      2
+    ],
+    "future_tail_mutation_prefix_exact": true,
+    "not_a_frame_online_controller_or_trained_method": true
+  },
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "f5c947b4bc6481209a6c3b527a6a0444edd4be7a"
+  },
+  "new_protocol_frozen": false,
+  "private_descriptor": {
+    "bytes": 6410,
+    "sha256": "ef241c40534dfc08d363945f23ffa1af7b25df83615a4f3bcd2caa8d32c8dc72"
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 1220321280,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 69.69780985399848
+  },
+  "selected_pixel_sha256": [
+    "543b40e5b62629dd80dfbc0faf7727ad83ba65db3d39b909b6f9e16e77033ac4",
+    "9853f65764facf658b30e9a6dba13235ee6ed0ede29aba2063883ed0c01dba8a"
+  ],
+  "sparse_absent_python_paths_not_imported": [
+    "setup.py"
+  ],
+  "status": "VERIFIED_FIT_GT_CROP_PREFIX_FIXTURE_NOT_TRAINED_OR_PREDICTED",
+  "torch_version": "2.6.0+cu118",
+  "verified_actual_imported_encoder_modules": 15,
+  "verified_tracked_encoder_python_files": 156
+}

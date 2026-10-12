@@ -1967,3 +1967,22 @@ new research scope; nothing has been deleted, no storage pressure is present.
  781emptyGT-frame denominators remain unchanged; noprotocolfreeze yet.
 - Three synthetic projection/singleton/identity-future cases/full431engineering
   tests PASS10.48s, no skips. RealfitGTcrop/prefix awaits source preregistration.
+- Registeredf5c947b actualpush/fetch exit0, HEAD/FETCH_HEAD/origintracking exact.
+  WorkerfreshGitref/source/geometryauthority/inputhash gates passed using current
+  ownedSSHcontrol connection. No protected/source categoryvalues decoded.
+- Actual twoGT-control crops onfitpixels/3frozenCPUforwards, finiteunit[2,768],
+  exactsamecrop repeat andDINOparamsunchanged. Rvisibleprefix1/2 identity-start
+  embedding exactlyRaw; allfuture numeric tails mutation leavespastembedding
+  exact; Rparams unchanged/untrained. GTamodal geometryunclippednormalized and
+  GTquality1 explicitlyoraclecontrol, not Predinput/score or scientificgain.
+- Ownedworkerexit0/noguardstop/oneThread, workerreported69.697809854s excluding
+  network/1220321280Bpeak. Localdescriptor6410B, no gradients/optimizer/fullcache,
+  no CUDA/dev/finalpixels or actualframe-online-controller qualification. Full
+ 407/2222physicalGT/781emptyGT image and semantic-null denominators preserved.
+- Next align formaldatafreeze with actualauthorizedscope. ExistingKnown-only
+  census and407physicalGT approval are deliberately audit-only, not themselves
+  permission to start fullGTcache/training or broaden semanticGT. Coreoriginal
+  goal remains unchanged/active; actualscience requires complete label/forward
+  contract, legalfuture physicalfrontend and real>=3mechanism/multiseed fits.
+- Ownedfitcropfixture total76.395003103s/oneThread/noguardstop/sample1222602752B.
+  PublicresultSHA cc931849d7485d64cb084c836f5daecb2c7e68ec736bc37f5e8c5f96e6277f1d.
