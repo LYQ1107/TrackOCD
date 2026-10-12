@@ -1886,3 +1886,18 @@ new research scope; nothing has been deleted, no storage pressure is present.
   PASS28.03s, no skips. Source path crop helper imports inspected; constructor
   pretrained=False never invokes download URL route. Actualdecode/model smoke
   awaits remote source preregistration; no newtraining/protocolfreeze claimed.
+- Preregca2b441 actualpush/fetch exit0 via newowned strictSSH controlconnection,
+  HEAD/FETCH_HEAD/origintracking exact. v1freshref/source gate passed and fit
+  metadata decoded; stopped at vendor/setup.py missing BEFOREcheckpoint load,
+  Torchmodel/importedencoder/pixel decode or forwards. Terminalexit1,
+ 3.261439615s/92307456B/oneThread/noguardstop; failure/launch/supervisor retained.
+- Actualcore.sparseCheckout=true and git ls-files -t reports ONLY'S setup.py'.
+  Correction to earlier inventory wording:157are Git-treePythonentries, not
+ 157present workingfiles;156present tracked sources plus1intentionallyabsent
+  sparse packaging script. V1validation wrongly required unrelatedsetup.py.
+- v2newoutput/config retainsall model/data/selection/budget rules. Verify every
+  presenttrackedPythonbyte; missingONLYGit skip-worktree withpaths recorded.
+  EveryACTUALLYimported encoder module still mustresolveinsidepinnedrepo and
+  hashmatchverifiedsource. Missing importneeded source fails; no installedmodel
+  fallback/vendor edit/envinstall/download. New sparsefixture regression rejects
+  unflaggedmissing and changedsource. Realv2inference awaits newregistration.

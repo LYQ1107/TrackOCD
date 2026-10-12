@@ -49,6 +49,26 @@ def digest(model):
     return value.hexdigest()
 
 
+def verified_encoder_sources(repo, commit, run=subprocess.check_output):
+    source_hashes, sparse_absent = {}, []
+    records = run(['git', 'ls-files', '-t', '*.py'], cwd=repo).decode().splitlines()
+    for record in records:
+        tag, path = record.split(' ', 1)
+        target = repo / path
+        if not target.is_file():
+            if tag != 'S':
+                raise ValueError('Missing encoder source not marked skip-worktree')
+            sparse_absent.append(path)
+            continue
+        original = run(['git', 'show', commit + ':' + path], cwd=repo)
+        if target.read_bytes() != original:
+            raise ValueError('Encoder tracked source bytes differ')
+        source_hashes[path] = hashlib.sha256(original).hexdigest()
+    if not source_hashes:
+        raise ValueError('No verified encoder source')
+    return source_hashes, sparse_absent, len(records)
+
+
 def worker(args, cfg, safety):
     if not sys.dont_write_bytecode or sys.pycache_prefix != str(ROOT / cfg['output_directory'] / '_fresh_no_write_cache'):
         raise ValueError('Fresh no-write bytecode worker required')
@@ -88,12 +108,7 @@ def worker(args, cfg, safety):
         if (subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=repo).decode().strip() != common['upstream_commit']
                 or subprocess.check_output(['git', 'status', '--porcelain'], cwd=repo).strip()):
             raise ValueError('Pinned clean encoder repository required')
-        source_hashes = {}
-        for path in subprocess.check_output(['git', 'ls-files', '*.py'], cwd=repo).decode().splitlines():
-            original = subprocess.check_output(['git', 'show', common['upstream_commit'] + ':' + path], cwd=repo)
-            if (repo / path).read_bytes() != original:
-                raise ValueError('Encoder tracked source bytes differ')
-            source_hashes[path] = hashlib.sha256(original).hexdigest()
+        source_hashes, sparse_absent, tree_python_files = verified_encoder_sources(repo, common['upstream_commit'])
         checkpoint = ROOT / common['checkpoint']
         if sha256_file(checkpoint) != common['checkpoint_sha256']:
             raise ValueError('Pinned encoder weights hash mismatch')
@@ -179,6 +194,7 @@ def worker(args, cfg, safety):
             'frozen_parameter_sha256': before, 'checkpoint_sha256': common['checkpoint_sha256'],
             'encoder_repository_commit': common['upstream_commit'], 'verified_tracked_encoder_python_files': len(source_hashes),
             'verified_actual_imported_encoder_modules': imported_encoder_modules,
+            'encoder_Git_tree_python_entries': tree_python_files, 'sparse_absent_python_paths_not_imported': sparse_absent,
             'torch_version': str(torch.__version__),
             'encoder_source_manifest_sha256': hashlib.sha256(json.dumps(source_hashes, sort_keys=True).encode()).hexdigest(),
             'selected_pixel_sha256': pixel_hashes, 'GT_class_role_text_or_ID_in_forward': False,
@@ -195,11 +211,13 @@ def worker(args, cfg, safety):
 
 
 def main():
+    global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
-    parser.add_argument('--config', choices=(SOURCES[0],), default=SOURCES[0])
-    args = parser.parse_args(); cfg = json.loads((ROOT / args.config).read_text())
+    parser.add_argument('--config', choices=(SOURCES[0], 'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v2_sparse.json'), default=SOURCES[0])
+    args = parser.parse_args(); SOURCES = (args.config, *SOURCES[1:])
+    cfg = json.loads((ROOT / args.config).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)

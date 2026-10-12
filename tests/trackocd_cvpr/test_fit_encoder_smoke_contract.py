@@ -1,6 +1,6 @@
 import json
 import pytest
-from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import fit_video_ids
+from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import fit_video_ids, verified_encoder_sources
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -26,3 +26,20 @@ def test_real_config_CPU_smoke_not_training_cache_or_heldout_validation():
     assert cfg['maximum_CPU_forward_calls'] == 3 and cfg['training_GPU_hours'] == 0
     assert cfg['rss_bytes_ceiling'] == 2147483648 and cfg['wall_seconds_ceiling'] == 180
     assert cfg['worker_script'] == 'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py'
+
+
+def test_present_sources_exact_and_missing_only_Git_skip_worktree(tmp_path):
+    (tmp_path / 'backbone.py').write_bytes(b'fixture')
+    def run(args, cwd):
+        if args[1] == 'ls-files': return b'H backbone.py\nS setup.py\n'
+        return b'fixture'
+    hashes, missing, total = verified_encoder_sources(tmp_path, 'a' * 40, run)
+    assert set(hashes) == {'backbone.py'} and missing == ['setup.py'] and total == 2
+    def missing_unexpected(args, cwd):
+        return b'H backbone.py\nH setup.py\n' if args[1] == 'ls-files' else b'fixture'
+    with pytest.raises(ValueError, match='skip-worktree'):
+        verified_encoder_sources(tmp_path, 'a' * 40, missing_unexpected)
+    def changed(args, cwd):
+        return b'H backbone.py\n' if args[1] == 'ls-files' else b'changed'
+    with pytest.raises(ValueError, match='differ'):
+        verified_encoder_sources(tmp_path, 'a' * 40, changed)

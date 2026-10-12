@@ -1,0 +1,22 @@
+{
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "ca2b441abe14069c7733fbf7f7ad520308690eec"
+  },
+  "preregistration_commit": "ca2b441abe14069c7733fbf7f7ad520308690eec",
+  "scope": "Only two fit images, CPU, no GT/class/role/text in numeric forward; not trajectories/crop validity",
+  "source_sha256": {
+    "configs/trackocd_core/common_features.json": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/selected_frozen_encoder_smoke_v1.json": "04ab027320e0b165285dd5300839ed0dee5f5da0a75ecbdc2981b2a2cff8a6cf",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "4dbb4452bc91fa2d1ba82474d65e10ade14c8c6a58089aafc888ecbc701c725a",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py": "abadca4d77e1b7ebb88771b8f922a82401cff3ef099e81c5a5cb7086c87d84b5",
+    "scripts/trackocd_v2/build_common_features.py": "0290f8fd67695b8a8a6a5933a9e7e8b12cb1f48ba5735b0063beb8bf712208ac",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}
