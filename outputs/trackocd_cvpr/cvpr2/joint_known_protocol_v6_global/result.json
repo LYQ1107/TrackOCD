@@ -1,0 +1,94 @@
+{
+  "census_reconciliation": {
+    "observations": 38680,
+    "positive_Known_classes": 48,
+    "tracks": 1962,
+    "videos": 429
+  },
+  "fresh_source_no_existing_bytecode_cache": true,
+  "interpretation": "Single global isolated Train protocol instead of disproven extra cyclic requirement. All23eligible classes assigned exactlyonce; no frequency exception, class/video pruning or model/difficulty objective. Final>=8 doubles the historical four-class final breadth; dev>=2/policy2/fit>=2 and unchanged fit3/eval2 distinct-video quotas. Independent original-video verifier required. Feasibility not protocolfreeze: effective track/query support, forward provenance and truly independent future >=3 trainedseeds still required.",
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "b202b55615843c4166117487329ba7c358b787e1"
+  },
+  "optimization_training_steps": 0,
+  "original_annotation_old_target_tables_names_Novel_Val_Test_pixels_features_models_read": false,
+  "owned_launch_attempt": 1,
+  "preregistration_commit": "b202b55615843c4166117487329ba7c358b787e1",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+  },
+  "private_output": {
+    "bytes": 1442,
+    "sha256": "e7557a4e695c69c7abecd7ee60b0ca623979445e033a1c4044a826c06d83d363"
+  },
+  "resources": {
+    "disk_free_bytes": 184520060928,
+    "guarded_process_RSS_bytes": 86654976,
+    "kernel_reported_VmHWM_bytes_approximate": 86654976,
+    "peak_guarded_worker_RSS_bytes": 86654976,
+    "resource_ru_maxrss_bytes_including_preexec_history": 85762048,
+    "sampled_smaps_rollup_Rss_bytes": 86654976,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 0.1187694130348973
+  },
+  "scipy_version": "1.15.3",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/joint_known_protocol_v6_global.json": "4b71f8d9cc78754a731abf0441eadfa12fc54150cf59a76f3b5d4f9fe61b571a",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "cea6c1ed386791a4183279ea10daf64ae47e29eae2c9a229039af5d435641685",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/joint_known_protocol.py": "230f2ed6f2b1480ee61dbd11f3eb07882f9da157b106bf4f6ffa78175f5d4aef",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "VERIFIED_GLOBAL_KNOWN_ASSIGNMENT_NOT_FROZEN_PROTOCOL",
+  "structural_result": {
+    "all_original_videos_retained": 429,
+    "complete_visual_category_absence_proven": false,
+    "constraints": 836,
+    "distinct_presence_patterns": 65,
+    "feasible_joint_assignment_verified": true,
+    "forwarded_option_warnings": [
+      "Unrecognized options detected: {'parallel', 'threads', 'random_seed'}. These will be passed to HiGHS verbatim."
+    ],
+    "integer_necessary_conditions": {
+      "class_pool": 23
+    },
+    "minimum_final_pseudo_classes": 8,
+    "model_scores_or_names_used": false,
+    "new_protocol_frozen": false,
+    "nonzeros": 3307,
+    "role_class_counts": {
+      "development_pseudo": 8,
+      "fit_known": 5,
+      "independent_final_pseudo": 8,
+      "policy_train_pseudo": 2
+    },
+    "role_video_counts": {
+      "development_pseudo": 19,
+      "fit_known": 12,
+      "independent_final_pseudo": 17,
+      "policy_train_pseudo": 6
+    },
+    "scope": "Registered single global class/video isolated four-role split, not four cyclic folds",
+    "single_global_four_role_split": true,
+    "solver_executed": true,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_status": 0,
+    "status": "VERIFIED_GLOBAL_KNOWN_ASSIGNMENT_NOT_FROZEN_PROTOCOL",
+    "training_GPU_hours": 0,
+    "variables": 352
+  }
+}

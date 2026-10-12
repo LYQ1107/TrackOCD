@@ -1638,3 +1638,29 @@ new research scope; nothing has been deleted, no storage pressure is present.
   cannotfreezeprotocol, certify visualabsence or launch fit: must still audit
   effectiveclass/track/query supports and causalforward input/labelprovenance.
   Existingv4/v5negative outputs remain intact; no class/video/quota pruning.
+- Synthetic global positive solver/independent verifier, negative cooccurrence
+  and fixedbudget refusal plus full402engineering tests PASS18.39s, no skips.
+  Sourceb202b55615843c4166117487329ba7c358b787e1 actualpush/fetch exit0,
+  HEAD/FETCH_HEAD/origintracking exactb202; sameprocess-only strictSSH443 via
+ 17890/originrewrite, no globalconfiguration changes. Rechecked75.1GB RAM.
+- Actualv6attempt1 freshGitref/source gate verifiedb202. One solverstatus0,
+ 352variables/836constraints/3307nonzeros/65patterns, original-video independent
+  verifier passed. Classcounts fit5/policy2/dev8/final8; video12/6/19/17 globally
+  disjoint and positiveconflict-free for the selected eligible classes, with
+  originalfit3/eval2 perclass quotas. All23eligibleclasses assigned once.
+- Important boundary: ALL429videos remain in candidate formulation, but the
+  zeroobjective support witness assigns ONLY54videos;375are not assigned. This
+  is NOT the full scientific protocol or proof of effective track/query coverage.
+  No blanketabsence/background claim for outsidepool or unseen annotations.
+  Need separatelyregistered coverage/extension audit before protocolfreeze;
+  do not optimize witness using modeloutcomes or quietly call minimal witness
+  all-data training. Independent8-class final is potential, not trainedsuccess.
+- Actualworkerexit0,5.519416453s total/0.118769413s excludingnetwork,
+  supervisor sample83804160B/oneThread; workerreportedhighwater86654976B,
+  no guardstop. No originalGT/Novel/Val/Test/pixels/features/models read;
+  training0/600GPUh and GoalA/B/C remain open. Private assignment stayslocal,
+  public support result/launch/supervisor only published. Next audit effective
+  category/track/observation/query and cross-video coverage plus causal input
+  lineage, then freeze actual protocol before any new scientificallytrained fit.
+- Publicrealreceipt/sourcehash/resource checks plus full403engineering tests
+  PASS4.86s, no skips; privateassignment not opened by public receipt tests.

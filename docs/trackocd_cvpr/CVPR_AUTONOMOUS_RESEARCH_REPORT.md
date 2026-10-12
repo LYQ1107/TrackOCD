@@ -43,6 +43,17 @@ self-imposed family does not justify stopping research or borrowing Val/Test.
 A new global isolated split must be separately registered and audited before
 training, preserving broad heldout support/no difficulty or model selection.
 
+Registered v6 global four-role feasibility now gives an independently verified
+positive support witness: all23eligibleclasses assigned as5fit/2policy/8dev/
+8final, globally disjoint12/6/19/17videos. All429videos were available to the
+zero-objective solver, but only54are in this witness (375unassigned); it must
+NOT be mislabeled an all-data frozen training protocol. Samefit3/eval2 support
+and positive-conflict isolation, no model/difficulty objective or named/frequency
+Known exception. Fresh registeredsourceb202, actualexit0/5.519s/oneThread,
+samplepeak83804160B; no training. Finalprotocol freeze requires effective
+track/query coverage and causal input/label provenance audits. Eight final
+classes are support-feasible, not empirical Novel-generalization success.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations
