@@ -2825,3 +2825,31 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full506tests PASS11.40s; actualreceipt asserts both allKnown episodes and
   later108Existing/104opportunities but only2optimizer crossvideopositives,
   preserves1/2pseudo-class exposure rather than falselydeclaringfullcoverage.
+
+### Actual matched Top8 shared-context C control complete
+
+- Previous turn progressedR7+firstformalC andregistered200-stepwindow. Same
+  ownedhandle65738 nowterminalexit0 forTop8_pool_context/seed1027 from
+  2e9b7ae298c5084d16d951ad60d1c13692ac4070. No timeout/PID restart or source
+  editswhilefitactive. ResultSHA
+  5296266b2c617855c538659b5686ba0e7453a004d2e08c43fe1dac1f382b5db2.
+- Actual200freshupdates/fourcompleteepisodes, each10/54/1268obs/374frames/
+  1empty, same708parameters/initiala4b4ab7e... asconditionedpair. Endpoint
+  24295B/SHA8922cef21357d3445f1fcfc27a7d15baa39061f9e3c7b014c12ad51c06248291,
+  strictreopen/after0093c5e373ea712f411f6208c424be18df0895eb73707d2fbf965e255020dfdc.
+  Owned111.757540038s/worker104.612754526s/RSS949493760B/11OSthreads,
+  no guardstop/CUDA/0trainingGPUh. No dev/final/Val/Test fitting/selection.
+- Actual optimizer Known538/policy-pseudo107 vsconditioned538/106,4classes
+  includingonlyONE of2pseudo classes. Samefullinput/order/nominalbudget does
+  NOT mean identicalendogenous targetavailability. Bothhave2actualoptimizer
+  crossvideo-positivegroups; sharedcontrolfull last-episode opportunities41
+  vsconditioned104, not41vs104trainedpositivegroups orcorrectsemanticreuses.
+- Rawtrainingactions:ep0KNOWN1235/NEW33;ep1andep2KNOWN1268 each;
+  ep3KNOWN1166/NEW75/EXISTING27 vsconditioned1073/87/108. AllKnowncollapse
+  andlimitedpseudo-class exposure preserved. Differentactioncounts on training
+  histories are NOT a causaldev/generalization win or reason to pickmodel now.
+- Twoof9 C fits/sevenof12 R fits. ContinueunchangedTop1 control/allseeds,
+  freeze executable causaldev scoring/order/coverage and independentreuse
+  before actualdevlabels; learnedM/qualifiedstrongPred/lockedfinal remainopen.
+- Full507tests PASS9.49s before publicreceipt delivery; different training
+  action/opportunity counts are preserved, not scored as a heldout win.
