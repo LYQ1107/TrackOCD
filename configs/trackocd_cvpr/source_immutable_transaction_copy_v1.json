@@ -1,0 +1,11 @@
+{
+  "status": "MECHANICAL_TRANSACTION_COPY_ONLY_NOT_NEW_SCIENTIFIC_MECHANISM",
+  "purpose": "Avoid recursively reallocating the entire append-only past at every atomic frame",
+  "bank": "Copy mutable member dictionary/token set; share bank-produced frozen scalar/bytes supports and append-only commit tuple. No arrays/tensors/adapted embeddings in these records.",
+  "version_memory": "Copy mutable current-binding dictionary; share frozen parent/hash/prototype-bytes version tuple. EMA additionally copies mutable latent dictionary with immutable byte values.",
+  "unchanged": ["all Raw payloads and past commits", "member replacement/alias grouping", "candidate math and thresholds", "optimizer/loss/seed/order/steps", "bounds/whole-frame rollback", "strict ancestry", "source and private asset gates"],
+  "parity_tests": "Actual Raw/M controllers against exact prior recursive-object-copy semantics, events/numeric features/versions/commits/rollback/snapshot independence. Synthetic fixtures, not blanket full-dataset runtime proof.",
+  "full_dataset_gate": "Register new source before next real run; compare actual RawTop8 baseline results to prior RawTop1 where maximum-cosine policy equivalence is independently specified, retaining any differences rather than inferring equality from tests.",
+  "first_M_trial_source_stays_historical": "e9c894ed0b3ef70b3fc1bc9651893de7a38b3030; later trials use declared equivalent copy implementation, not falsely identical source fingerprints",
+  "GT_reads_training_or_Goal_acceptance_from_this_manifest": false
+}

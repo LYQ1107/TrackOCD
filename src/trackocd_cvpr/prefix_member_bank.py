@@ -91,6 +91,23 @@ class PrefixMemberBank:
         self._members, self._tokens, self._commits = {}, set(), ()
         self._epoch, self._last_frame = 0, None
 
+    def __deepcopy__(self, memo):
+        """Copy mutable containers, share ONLY bank-produced immutable records.
+
+        _Support and MemberCommit are frozen scalar/bytes records; history is
+        an append-only tuple. No mutable arrays/tensors or learned embeddings
+        reside here. Transactions replace containers/records, never mutate a
+        support payload or old commit. Bounds, Raw/provenance and semantics are
+        unchanged; this avoids recursively reallocating the entire past at
+        every frame. Private-field injection is outside this class's contract.
+        """
+        other = type(self).__new__(type(self)); memo[id(self)] = other
+        other._bounds = self._bounds
+        other._members, other._tokens = dict(self._members), set(self._tokens)
+        other._commits = self._commits
+        other._epoch, other._last_frame = self._epoch, self._last_frame
+        return other
+
     def start_next_video(self):
         if self._epoch + 1 >= self._bounds[4]:
             raise ValueError('Video bound; no history or category reset')

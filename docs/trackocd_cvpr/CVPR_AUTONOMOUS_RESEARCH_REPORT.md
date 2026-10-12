@@ -581,3 +581,29 @@ All573existing+newMwindow tests pass, plus3targeted realthirdseed receipts.
 Synthetic4episode/200step test is NOT actualdataset trial. RawC all3orders
 complete but ID/future invariance gates stillrunning. Goalactive/not achieved;
 trainedmultiseed mechanisms/fairbaselines/stronglegalPred/lockedfinal remain.
+
+First actual M fixed200trial now complete (relative_quarantine/1027), fourfull
+policy episodes/ownedexit0/exact ownendpoint. Known519/pseudo89 actualgradient
+groups, onlyONEpseudo class andTWOtotalclasses; allfour lateststrictKnownbad
+counts28--32, confirmedrecords243/145 inlasttwoepisodes butZEROquarantine.
+No scientificrepair or Novelwin inferred. M1/9; otherseeds/controls/dev pending.
+PublicSHA148aeaa013e2a89f30ab63e63821d083af5bc5c217fbde413c946d0e6332decb.
+
+First complete RawTop1 causal GTdev receipt now REAL: full72/472/8753/2562/
+116empty/threeorders/actualID+futurechecks passed, ownedexit0/38.2min/noCUDA.
+At finalavailable prefix orders1027/28/29: Knowncorrect12/6/4 outof302;
+certifiedcrossvideo declaredpseudo reuse13/8/13 outof119; bad/mixed strict
+anonymoushistories159/153/146. Allphysicalcommitcoverage100%, firstKnownbad
+writegroup0 EACHorder. Severe Knowncollapse and historypollution despitehigh
+Existing frequency. Lowerbounds NOTofficialCT/Hscore/fullsemantictruth or
+self-excluded/Pred/robustbaseline gain. Publice63831f1...; originalinterrupted
+attempt remainsfailed. No model selection/final/Val/Test reads.
+
+Explicit frameatomic state-EMA(.9) and latest-memberMean(0) ZERO-fit baseline
+source/tests implemented; not per-observation/prefix-voteEMA or new fitted
+mechanism. No Mdev yet. Mechanicalimmutabletransactioncopy removes repeated
+past-record allocations without numeric/seed/loss/clock/guard change; Raw/M
+recursive-copy shadow tests exact. Full586tests pass. Originaltraining sources
+remain recorded, later runsource changes declared rather than falselyidentical.
+Need actual full-data baseline comparisons, allC/Mseeds, coverage/self-exclusion,
+qualifiedlegalPred, independent lockedfinal and GoalsA/B/C; Goalactive/unachieved.

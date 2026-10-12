@@ -1,0 +1,12 @@
+{
+  "status": "SOURCE_SYNTHETIC_ONLY_ZERO_FIT_PARAMETERS_NOT_DEVELOPMENT_ACCEPTANCE",
+  "baselines": {"latest_member_mean": {"momentum": 0.0}, "frame_atomic_state_EMA": {"momentum": 0.9}},
+  "rule": "Unnormalized latent state <- momentum*previous + (1-momentum)*complete latest-group Raw mean; initialize from first actual mean. Update at most once per changed token/frame Raw multiset; no decay/update on empty/unchanged refresh. Normalize only for candidate direction; zero resultant explicit.",
+  "not_incoming_observation_or_track_prefix_vote_EMA": true,
+  "fairness": "Same uncapped current-frame delivery/K/RawKnownprior and prediction-owned latest-prefix bank. Exact aliases one group, later divergence separate; no scalar-ID/time-tie ranking. Same-frame peers score from identical prior state, EMA update after all own commits.",
+  "history": "All old Raw commits/moves/parents/versions/empty tombstones retained. Empty token unavailable despite old latent state; revival retains latent/history, never clean reset. Ledger includes commit watermark and actual EMA numeric/prototype hashes, not the mean helper's prototype misreported as EMA.",
+  "semantic_purity_quarantine_calibration_independent_support_or_self_exclusion_proof": false,
+  "current_active_purity_inferred_from_prototype_hash": false,
+  "model_selection_or_new_GT_read_or_optimizer_steps": false,
+  "required_before_acceptance": "Actual source/cache/authority qualification, full cohort causal development all trained seeds/orders, real ID/future-prefix checks, strict ancestor/version outcome audit and full all-commit/independent-reuse/latency matched coverage; no partial-stage Goal claim"
+}

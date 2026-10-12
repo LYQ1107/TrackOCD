@@ -3272,3 +3272,56 @@ new research scope; nothing has been deleted, no storage pressure is present.
   complete, actualID/future perturbation gates stillinprogress. Preserve same
   attempt; no restart or wholeGoal completion. Register/fetch/refverify and
   start onlyfirstboundedformalMfit after completedRfit, not parallelfitting.
+
+### First complete Raw causal dev and actual M scientific endpoint delivered
+
+- Previous goal turn delivered e9c894e actualpush/fetch/refverified and genuine
+  firstM updates: progress. OwnedMhandle43302 nowterminalexit0/fixed200 fresh
+  relative_quarantine/seed1027/161parameters/fourcomplete374frame1268obs
+  policyepisodes. PublicSHA148aeaa013e2a89f30ab63e63821d083af5bc5c217fbde413c946d0e6332decb;
+  exact12515B endpointSHA6674a0fbefd25f9e1e5d12c00c9e5a9c7b6825abe43f14dc739be46983b68729,
+  afterf97ea675b6cb6dc38f7d82f83955aaa8c97d8ce4cdb2826d90d82d964857d41d.
+  Owned375.022519537s/worker367.845793221s/RSS950112256B/11OSthreads/noCUDA/
+  0trainingGPUh; private8427649B fullactualhistory/versions/labels retained.
+- Actualgradient Known519/policy-pseudo89 groups, TWOclasses but onlyONEof2
+  policy-pseudo classes; targetone454/zero154, nofractionalactualupdates. Four
+  episode lateststrictKnownbad states32/45,28/45,31/44,31/45; confirmedversion
+  records0/0/243/145, ZEROquarantinedversion records. Moreepochs/confirmation
+  notsemanticrepair, and highExisting1223/1223/1224/1223 notcorrectreuse.
+  Strictancestor audits actuallyran aftereverywholeepisode, neverfedpolicy.
+  M1of9formaltrial complete, not allthree mechanism scientific acceptance.
+- PersistentRawTop1 retry1 endednormally: ownedworkerexit0/noguardstop,
+  2292.623927459s/worker2286.284814233s/RSS963653632B/ONEOSthread/noCUDA.
+  PublicSHAe63831f1f6485ced2f09c164099eafc1674f589c7b322b05503366788d454b89.
+  ALL72devvideos/472physical/8753observations/2562frames/116empty retained;
+  threeorders plus actualfullIDrename/reversedelivery equal,39actualfuture
+  observationsmutated/nonvacuoussealedpast equality. Failedoriginalattempt
+  stillimmutable, not retroactively a success. No model/checkpoint selection.
+
+  | order | final Known correct /302 | certified cross-video declared-pseudo queries /119 | bad/mixed strict anonymous histories |
+  | --- | --- | --- | --- |
+  |1027|12 (3.9735%)|13 (10.9244%)|159/233|
+  |1028|6 (1.9868%)|8 (6.7227%)|153/224|
+  |1029|4 (1.3245%)|13 (10.9244%)|146/222|
+
+  Allphysicalcommitcoverage1.0; firstKnownanonymouswrite canonicalgroup0 for
+  EACHorder. Finalpseudo macrocertifiedreuse.076021/.066220/.082435, Known
+  macro.032/.016/.010667. These are conservative actualhistory lowerbounds,
+  NOTfullsemanticGT Hscore/officialCT/qualifiedPred/self-excludedproof or a
+  robustbaseline. No claim learnedmodels improved beforematchedcomparison.
+- New ZEROtrained-parameter frameatomic STATE-EMA baseline: latent current
+  full latest-group Rawmean smoothed withfixedmomentum.9, Meancontrol0.0;
+  updateonceperchangedRawstate afterallframecommits. NOTan incoming-observation
+  or cumulative-prefix-vote EMA. Exactaliases onegroup, latestprefixreplaces,
+  emptytombstones unavailable/dirtylatent retained for revival, realEMA hashes
+  and allparent/version provenance retained. Source/synthetic only, no Mdev.
+- After BOTHactualjobs terminal, mechanicaltransactioncopy safely shares ONLY
+  immutable support/commit/version/scalar/byte tuples and copies mutablemaps.
+  No math/data/loss/order/threshold/guard change. Raw/M recursive-copy shadow
+  fixtures/events/numerics/versions exact; independentclone/rollback verified.
+  Newrealruns mustfreshregister and retain any full-data differences. Do NOT
+  call later source byte-identical to originalMtrial or this a new mechanism.
+- Full586tests PASS58.65s. Suite timing is not controlled application-speed
+  evidence. Next bounded RawTop8 actual comparison and remainingRstaticteacher,
+  then complete unchanged Mmatrix/Ctraineddev and coverage/stronglegalPred/
+  final gates. Goalactive; positive scientificacceptance stillunproved.

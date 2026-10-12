@@ -42,6 +42,14 @@ class VersionedReliabilityMemory:
         self._max = max_versions
         self._versions, self._current, self._commit_count = (), {}, 0
 
+    def __deepcopy__(self, memo):
+        """Frozen version/parent/prototype bytes share; mutable bindings copy."""
+        other = type(self).__new__(type(self)); memo[id(self)] = other
+        other.quarantine, other._gates, other._max = self.quarantine, self._gates, self._max
+        other._versions, other._current = self._versions, dict(self._current)
+        other._commit_count = self._commit_count
+        return other
+
     def versions(self):
         return self._versions
 
