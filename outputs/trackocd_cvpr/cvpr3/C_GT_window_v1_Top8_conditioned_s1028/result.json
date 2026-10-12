@@ -1,0 +1,3092 @@
+{
+  "all3seeds_or_distinct_R_C_M_or_qualified_Pred_or_Goal_accepted": false,
+  "checkpoint_selection": "Fixed200 endpoint",
+  "dev_final_Val_Test_or_new_nonKnown_labels_used": false,
+  "endpoint": {
+    "bytes": 24295,
+    "reopen_exact": true,
+    "sha256": "729686858c1337a9e37be1cd080e0ab9f842d8ec9b86dd4ad9ae574eeec7d197"
+  },
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "baf86399722a1b96de8de176e8453802dd786e7d"
+  },
+  "model_parameter_sha256_after": "0f415b50d9b4f81f454a6cc221ba212844d6bb1e67d1890b053df07b46c72883",
+  "offline_fit_prior_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "offline_known_prior_and_policy_loss_binding_order_exact": true,
+  "old_pilot_or_R_or_policy_warmstart": false,
+  "policy_scope": {
+    "GT_localization_oracle_control_not_qualified_Pred": true,
+    "development_final_or_other_video_payload_bodies_opened": false,
+    "development_final_or_other_video_semantic_values_decoded": false,
+    "empty_GT_frames": 1,
+    "existing_Known_target_counts": {
+      "Known": 34,
+      "policy_pseudo": 10
+    },
+    "external_loss_only_not_observation_or_model_features": true,
+    "masked_loss_tracks": 10,
+    "masked_tracks_dropped_or_declared_background": false,
+    "metadata_frames": 374,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 1268,
+    "physical_label_strata": {
+      "Known": 34,
+      "no_retained_semantic_truth": 10,
+      "policy_pseudo": 10
+    },
+    "physical_tracks": 54,
+    "videos": 10
+  },
+  "private_prediction_history": {
+    "bytes": 1217682,
+    "sha256": "9e293506c80750c0fd1873a42e1c3da388c343c98b76a64e0f2fa49dbac99e53"
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 949485568,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 103.41289435798535
+  },
+  "seed": 1028,
+  "status": "COMPLETED_FIXED_C_TRIAL_NOT_DEV_M_PRED_OR_GOAL_ACCEPTANCE",
+  "summary": {
+    "GT_repair_or_deleted_wrong_history": false,
+    "actual_optimizer_family_groups": {
+      "Known": 381,
+      "policy_pseudo": 97
+    },
+    "actual_optimizer_policy_pseudo_classes": 2,
+    "actual_optimizer_semantic_classes": 4,
+    "both_Known_and_pseudo_received_optimizer_loss": true,
+    "episodes": [
+      {
+        "actual_anonymous_commits_retained": 25,
+        "actual_bank_commits_retained": 25,
+        "allocated_tokens": 25,
+        "canonical_groups": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 791,
+          "policy_pseudo": 103
+        },
+        "empty_frames": 1,
+        "episode": 0,
+        "loss_plan_counts_all_frames": {
+          "EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 893,
+          "MASKED_QUERY_OR_CONFLICTING_ALIASES": 271,
+          "MASKED_UNCERTAIN_PSEUDO_OR_ABSENT_KNOWN_CANDIDATE": 103,
+          "NEW_NO_VERIFIED_PURE_CANDIDATE": 1
+        },
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "KNOWN": 1243,
+          "NEW": 25
+        },
+        "physical_observations": 1268,
+        "positive_other_physical_groups_all_frames": 90,
+        "positive_other_video_groups_all_frames": 90,
+        "videos": 10
+      },
+      {
+        "actual_anonymous_commits_retained": 0,
+        "actual_bank_commits_retained": 0,
+        "allocated_tokens": 0,
+        "canonical_groups": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 791,
+          "policy_pseudo": 206
+        },
+        "empty_frames": 1,
+        "episode": 1,
+        "loss_plan_counts_all_frames": {
+          "EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 791,
+          "MASKED_QUERY_OR_CONFLICTING_ALIASES": 271,
+          "NEW_NO_VERIFIED_PURE_CANDIDATE": 206
+        },
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "KNOWN": 1268
+        },
+        "physical_observations": 1268,
+        "positive_other_physical_groups_all_frames": 0,
+        "positive_other_video_groups_all_frames": 0,
+        "videos": 10
+      },
+      {
+        "actual_anonymous_commits_retained": 0,
+        "actual_bank_commits_retained": 0,
+        "allocated_tokens": 0,
+        "canonical_groups": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 791,
+          "policy_pseudo": 206
+        },
+        "empty_frames": 1,
+        "episode": 2,
+        "loss_plan_counts_all_frames": {
+          "EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 791,
+          "MASKED_QUERY_OR_CONFLICTING_ALIASES": 271,
+          "NEW_NO_VERIFIED_PURE_CANDIDATE": 206
+        },
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "KNOWN": 1268
+        },
+        "physical_observations": 1268,
+        "positive_other_physical_groups_all_frames": 0,
+        "positive_other_video_groups_all_frames": 0,
+        "videos": 10
+      },
+      {
+        "actual_anonymous_commits_retained": 131,
+        "actual_bank_commits_retained": 131,
+        "allocated_tokens": 131,
+        "canonical_groups": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 791,
+          "policy_pseudo": 103
+        },
+        "empty_frames": 1,
+        "episode": 3,
+        "loss_plan_counts_all_frames": {
+          "EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 881,
+          "MASKED_QUERY_OR_CONFLICTING_ALIASES": 271,
+          "MASKED_UNCERTAIN_PSEUDO_OR_ABSENT_KNOWN_CANDIDATE": 103,
+          "NEW_NO_VERIFIED_PURE_CANDIDATE": 13
+        },
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "KNOWN": 1137,
+          "NEW": 131
+        },
+        "physical_observations": 1268,
+        "positive_other_physical_groups_all_frames": 80,
+        "positive_other_video_groups_all_frames": 80,
+        "videos": 10
+      }
+    ],
+    "loss_curve": [
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 0.6012127995491028,
+        "loss": 1.9200464487075806,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 1,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 0.4072430431842804,
+        "loss": 2.206953525543213,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 2,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 0.5195631980895996,
+        "loss": 2.1927387714385986,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 3,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 0.5192049145698547,
+        "loss": 2.1906027793884277,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 4,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 0.4021163284778595,
+        "loss": 2.198643445968628,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 5,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 0.5183436274528503,
+        "loss": 2.1838767528533936,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 6,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 0.5171813368797302,
+        "loss": 2.180006742477417,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 7,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 0.5151185393333435,
+        "loss": 2.175771951675415,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 8,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 0.5130824446678162,
+        "loss": 2.171203374862671,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 9,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 0.5106752514839172,
+        "loss": 2.166429042816162,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 10,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 0.508125364780426,
+        "loss": 2.161484479904175,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 11,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 0.5055994987487793,
+        "loss": 2.156400442123413,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 12,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 0.5027804970741272,
+        "loss": 2.1512343883514404,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 13,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 0.3769114017486572,
+        "loss": 2.1753716468811035,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 14,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 0.37258365750312805,
+        "loss": 2.172609806060791,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 15,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 0.4945636987686157,
+        "loss": 2.13659405708313,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 16,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 0.36942964792251587,
+        "loss": 2.1677675247192383,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 17,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 0.3692476153373718,
+        "loss": 2.165391445159912,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 18,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 0.36792925000190735,
+        "loss": 2.1626572608947754,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 19,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 0.48393961787223816,
+        "loss": 2.119354486465454,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 20,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 0.4815788269042969,
+        "loss": 2.1152777671813965,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 21,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 0.47921842336654663,
+        "loss": 2.1110384464263916,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 22,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 0.4770407974720001,
+        "loss": 2.1066226959228516,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 23,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 0.47454914450645447,
+        "loss": 2.1020617485046387,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 24,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 0.35427024960517883,
+        "loss": 2.145268201828003,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 25,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 0.4700152277946472,
+        "loss": 2.093013048171997,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 26,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 0.35032936930656433,
+        "loss": 2.140204429626465,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 27,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 0.4655643403530121,
+        "loss": 2.0844647884368896,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 28,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 0.4632885754108429,
+        "loss": 2.080179452896118,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 29,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 0.3451150953769684,
+        "loss": 2.1325860023498535,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 30,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 0.34339213371276855,
+        "loss": 2.1301522254943848,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 31,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 0.3419102430343628,
+        "loss": 2.1274452209472656,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 32,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 0.4494127631187439,
+        "loss": 2.1098644733428955,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 33,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 0.44614940881729126,
+        "loss": 2.0904994010925293,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 34,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.4452487826347351,
+        "loss": 2.0837273597717285,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 35,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.4436211585998535,
+        "loss": 2.0780727863311768,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 36,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.4428783655166626,
+        "loss": 2.0729048252105713,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 37,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.4428386986255646,
+        "loss": 2.0680787563323975,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 38,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.4418507218360901,
+        "loss": 2.063112735748291,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 39,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.44118931889533997,
+        "loss": 2.0582497119903564,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 40,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.4405365586280823,
+        "loss": 2.053393602371216,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 41,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.4403000771999359,
+        "loss": 2.0486886501312256,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 42,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.4398467540740967,
+        "loss": 2.0439624786376953,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 43,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.439278781414032,
+        "loss": 2.03918194770813,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 44,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.4390941858291626,
+        "loss": 2.03446888923645,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 45,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 0,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.4380975365638733,
+        "loss": 2.0292999744415283,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 46,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 0,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.43312254548072815,
+        "loss": 2.0563645362854004,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 47,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 0,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.4297564625740051,
+        "loss": 2.041403293609619,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 48,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 0,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.42837828397750854,
+        "loss": 2.0250978469848633,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 49,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 0,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.42891213297843933,
+        "loss": 2.0172924995422363,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 50,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 0.3712899684906006,
+        "loss": 1.7993659973144531,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 51,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 0.34736940264701843,
+        "loss": 1.7733430862426758,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 52,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 0.34060654044151306,
+        "loss": 1.764514446258545,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 53,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 0.3347781300544739,
+        "loss": 1.7578368186950684,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 54,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 0.3299308121204376,
+        "loss": 1.752435564994812,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 55,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 0.32573166489601135,
+        "loss": 1.7475827932357788,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 56,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 0.3217896819114685,
+        "loss": 1.743207573890686,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 57,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 0.31795305013656616,
+        "loss": 1.7387334108352661,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 58,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 0.3144628405570984,
+        "loss": 1.7343841791152954,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 59,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 0.31082165241241455,
+        "loss": 1.7302137613296509,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 60,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 0.3074188232421875,
+        "loss": 1.7261943817138672,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 61,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 0.976239800453186,
+        "loss": 2.1214988231658936,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 62,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 1.072068214416504,
+        "loss": 2.1926181316375732,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 63,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 1.0986039638519287,
+        "loss": 2.204932689666748,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 64,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 1.1117833852767944,
+        "loss": 2.2091453075408936,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 65,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 1.1183809041976929,
+        "loss": 2.2089285850524902,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 66,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 1.1206172704696655,
+        "loss": 2.2060935497283936,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 67,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 1.125441551208496,
+        "loss": 2.2051334381103516,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 68,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 1.1227022409439087,
+        "loss": 2.19844913482666,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 69,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 1.1161720752716064,
+        "loss": 2.1895604133605957,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 70,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 1.108441710472107,
+        "loss": 2.17984938621521,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 71,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 1.0987805128097534,
+        "loss": 2.16890811920166,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 72,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 1.0888035297393799,
+        "loss": 2.157318592071533,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 73,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 1.0778274536132812,
+        "loss": 2.145136594772339,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 74,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 1.066759467124939,
+        "loss": 2.1325366497039795,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 75,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 1.054166316986084,
+        "loss": 2.1191823482513428,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 76,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 1.0427517890930176,
+        "loss": 2.1065592765808105,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 77,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 0.3402766287326813,
+        "loss": 1.7366904020309448,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 78,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 0.34504619240760803,
+        "loss": 1.7393180131912231,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 79,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 0.3491975963115692,
+        "loss": 1.7412738800048828,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 80,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 0.35265737771987915,
+        "loss": 1.742892861366272,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 81,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 0.3558100759983063,
+        "loss": 1.7439161539077759,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 82,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 0.3583502173423767,
+        "loss": 1.7445696592330933,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 83,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 1,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 0.3654930889606476,
+        "loss": 1.74237060546875,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 84,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "episode": 1,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.36220583319664,
+        "loss": 1.7447961568832397,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 85,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.9818020462989807,
+        "loss": 2.035689353942871,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 86,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.9805250763893127,
+        "loss": 2.0308356285095215,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 87,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.9778658151626587,
+        "loss": 2.0247695446014404,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 88,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.9761393666267395,
+        "loss": 2.0249271392822266,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 89,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.972172737121582,
+        "loss": 2.0133838653564453,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 90,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.7732269763946533,
+        "loss": 1.978416919708252,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 91,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.8256774544715881,
+        "loss": 1.9921451807022095,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 92,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.38221338391304016,
+        "loss": 1.793332815170288,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 93,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.38362917304039,
+        "loss": 1.7916457653045654,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 94,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.8723174333572388,
+        "loss": 1.9813833236694336,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 95,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.3875475823879242,
+        "loss": 1.7913010120391846,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 96,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.3895755708217621,
+        "loss": 1.7920050621032715,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 97,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.39133748412132263,
+        "loss": 1.7922558784484863,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 98,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.3927648365497589,
+        "loss": 1.7925087213516235,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 99,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 1,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.39385291934013367,
+        "loss": 1.7923513650894165,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 100,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 0.7421090602874756,
+        "loss": 1.936837077140808,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 101,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 0.7944977283477783,
+        "loss": 1.9471577405929565,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 102,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 0.3968459367752075,
+        "loss": 1.8035744428634644,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 103,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 0.3971715569496155,
+        "loss": 1.8003326654434204,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 104,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 0.8540734648704529,
+        "loss": 1.9433073997497559,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 105,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 0.39885982871055603,
+        "loss": 1.7972936630249023,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 106,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 0.3997471034526825,
+        "loss": 1.7968103885650635,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 107,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 0.40038079023361206,
+        "loss": 1.7959126234054565,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 108,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 0.40069249272346497,
+        "loss": 1.795109510421753,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 109,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 0.4007166624069214,
+        "loss": 1.7939608097076416,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 110,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 0.4004320502281189,
+        "loss": 1.792581558227539,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 111,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 0.399882972240448,
+        "loss": 1.7910879850387573,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 112,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 0.3991541862487793,
+        "loss": 1.7891442775726318,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 113,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 0.9204287528991699,
+        "loss": 1.9428569078445435,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 114,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 0.9311771392822266,
+        "loss": 1.9417519569396973,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 115,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 0.39886611700057983,
+        "loss": 1.7851665019989014,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 116,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 0.9376617670059204,
+        "loss": 1.938331961631775,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 117,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 0.939055323600769,
+        "loss": 1.9340903759002686,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 118,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 0.937643826007843,
+        "loss": 1.9291332960128784,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 119,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 0.40602347254753113,
+        "loss": 1.7843012809753418,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 120,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 0.4083160161972046,
+        "loss": 1.7848718166351318,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 121,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 0.4100664258003235,
+        "loss": 1.7850348949432373,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 122,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 0.4112635552883148,
+        "loss": 1.7849140167236328,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 123,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 0.4122675955295563,
+        "loss": 1.7840681076049805,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 124,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 0.9420652985572815,
+        "loss": 1.9105839729309082,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 125,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 0.41442933678627014,
+        "loss": 1.782705545425415,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 126,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 0.9452881217002869,
+        "loss": 1.906785011291504,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 127,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 0.4174904227256775,
+        "loss": 1.7820903062820435,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 128,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 0.41920822858810425,
+        "loss": 1.7815957069396973,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 129,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 0.9491548538208008,
+        "loss": 1.90012526512146,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 130,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 0.9501644968986511,
+        "loss": 1.8975809812545776,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 131,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 0.9480570554733276,
+        "loss": 1.8932349681854248,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 132,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 0.37631362676620483,
+        "loss": 1.8596898317337036,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 133,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 0.42997628450393677,
+        "loss": 1.8549814224243164,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 134,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.42025119066238403,
+        "loss": 1.8042505979537964,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 135,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.42631396651268005,
+        "loss": 1.8017537593841553,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 136,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.42886680364608765,
+        "loss": 1.8022503852844238,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 137,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.45132994651794434,
+        "loss": 1.8460102081298828,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 138,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.458414763212204,
+        "loss": 1.844077467918396,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 139,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.4663938581943512,
+        "loss": 1.8414884805679321,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 140,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 2,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.47097715735435486,
+        "loss": 1.781123399734497,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 141,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.44676896929740906,
+        "loss": 1.8016468286514282,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 142,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.4498121440410614,
+        "loss": 1.8012408018112183,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 143,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.4521265923976898,
+        "loss": 1.7999217510223389,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 144,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.45303037762641907,
+        "loss": 1.798943281173706,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 145,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.4534061551094055,
+        "loss": 1.7976335287094116,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 146,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.4542544186115265,
+        "loss": 1.7960814237594604,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 147,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.4533901512622833,
+        "loss": 1.7943148612976074,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 148,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.4531882405281067,
+        "loss": 1.7924036979675293,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 149,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 2,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.4518618881702423,
+        "loss": 1.789916753768921,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 150,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 0.7560198903083801,
+        "loss": 1.8723094463348389,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 151,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 0.8170410394668579,
+        "loss": 1.8733100891113281,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 152,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 0.8704184889793396,
+        "loss": 1.8670177459716797,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 153,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 0.4213393032550812,
+        "loss": 1.797938585281372,
+        "masked_groups_this_frame": 0,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 154,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 0.9004049301147461,
+        "loss": 1.8643183708190918,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 155,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 0.9159400463104248,
+        "loss": 1.8628363609313965,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 156,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 0.928082287311554,
+        "loss": 1.859121561050415,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 157,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 0.9489884376525879,
+        "loss": 1.8501147031784058,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 158,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 0.9569066762924194,
+        "loss": 1.8431768417358398,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 159,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 0.9597903490066528,
+        "loss": 1.836913824081421,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 160,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 0.9597470164299011,
+        "loss": 1.8295331001281738,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 161,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 0.962783694267273,
+        "loss": 1.8201258182525635,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 162,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 0.9601448178291321,
+        "loss": 1.8113130331039429,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 163,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 0.9611177444458008,
+        "loss": 1.79984712600708,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 164,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 0.510750949382782,
+        "loss": 2.0109715461730957,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 165,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 0.46290963888168335,
+        "loss": 2.1315464973449707,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 166,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 0.5293405652046204,
+        "loss": 2.0846848487854004,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 167,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 0.5860430598258972,
+        "loss": 2.1927127838134766,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 168,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 0.5980993509292603,
+        "loss": 2.1961827278137207,
+        "masked_groups_this_frame": 2,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 169,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 0.6060886383056641,
+        "loss": 2.1972830295562744,
+        "masked_groups_this_frame": 4,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 170,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 0.6140924692153931,
+        "loss": 2.1991539001464844,
+        "masked_groups_this_frame": 4,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 171,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 0.6197711229324341,
+        "loss": 2.2002134323120117,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 172,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "episode": 3,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 0.6232178211212158,
+        "loss": 2.1993188858032227,
+        "masked_groups_this_frame": 4,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 173,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 0.4413316547870636,
+        "loss": 2.2443184852600098,
+        "masked_groups_this_frame": 4,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 174,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 0.44164830446243286,
+        "loss": 2.2454049587249756,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 175,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 0.4424884617328644,
+        "loss": 2.2455852031707764,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 176,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 0.44234198331832886,
+        "loss": 2.2451095581054688,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 177,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 0.4417612850666046,
+        "loss": 2.2439613342285156,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 178,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 0.4401005506515503,
+        "loss": 2.242558002471924,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 179,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 0.43951475620269775,
+        "loss": 2.240262031555176,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 180,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 0.4329206943511963,
+        "loss": 2.238492488861084,
+        "masked_groups_this_frame": 3,
+        "positive_other_physical_groups_this_update": 0,
+        "positive_other_video_groups_this_update": 0,
+        "step": 181,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 0.32404616475105286,
+        "loss": 2.2209789752960205,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 182,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 0.34950000047683716,
+        "loss": 2.077552080154419,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 183,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 0.35673826932907104,
+        "loss": 2.0741465091705322,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 184,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.3606972396373749,
+        "loss": 2.084195375442505,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 185,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.36305472254753113,
+        "loss": 2.0828845500946045,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 186,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.36525920033454895,
+        "loss": 2.0802197456359863,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 187,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.3674067258834839,
+        "loss": 2.0766148567199707,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 188,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.36704638600349426,
+        "loss": 2.0608808994293213,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 189,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.3656829595565796,
+        "loss": 2.0579257011413574,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 190,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.36398518085479736,
+        "loss": 2.05525279045105,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 191,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.3611416518688202,
+        "loss": 2.0526657104492188,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 192,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.3577093183994293,
+        "loss": 2.050147771835327,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 193,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.35437777638435364,
+        "loss": 2.0479776859283447,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 194,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.35148343443870544,
+        "loss": 2.0455048084259033,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 195,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.3487097918987274,
+        "loss": 2.0428645610809326,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 196,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.34576043486595154,
+        "loss": 2.0403223037719727,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 197,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.34306713938713074,
+        "loss": 2.0381524562835693,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 198,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.34077540040016174,
+        "loss": 2.035810947418213,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 199,
+        "supervised_classes_this_update": 3
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "episode": 3,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.3388712704181671,
+        "loss": 2.0332319736480713,
+        "masked_groups_this_frame": 1,
+        "positive_other_physical_groups_this_update": 1,
+        "positive_other_video_groups_this_update": 1,
+        "step": 200,
+        "supervised_classes_this_update": 3
+      }
+    ],
+    "model_parameter_sha256_before": "24645d1e9a4ad0804b4ec06e133ed317ee1448bb01c0ee80f2f38570257a3f25",
+    "optimizer_steps": 200,
+    "self_support_exclusion_or_Pred_or_M_or_Goal_acceptance": false,
+    "trainable_parameters": 708,
+    "training_episode_resets_not_evaluation_GT_reset": true
+  },
+  "variant": "Top8_conditioned"
+}

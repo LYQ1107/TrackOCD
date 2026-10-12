@@ -2939,3 +2939,27 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full520tests PASS8.55s, includingfullseed1028Rreceipt matching, actual
   syntheticreadonlyCstreams/RawK1K8 equivalence andmissing-cohort/childdispatch
   gates. No actualCdevlabels/metrics run from thisregistration; finishfits first.
+
+### Independent C seed1028 conditioned fit completed; no Existing despite exposure
+
+- Previous turn completedR8/registeredgated Cdev source at
+  baf86399722a1b96de8de176e8453802dd786e7d, hence progress. Sameownedhandle
+  82945 nowactualterminalexit0 forTop8_conditioned/seed1028/fixed200updates.
+  ResultSHA27259d030b247d8780971078486d46863ee77708c1944765dc5997a6c9ae5353,
+  endpoint24295B/SHA729686858c1337a9e37be1cd080e0ab9f842d8ec9b86dd4ad9ae574eeec7d197,
+  strictreopen/after0f415b50d9b4f81f454a6cc221ba212844d6bb1e67d1890b053df07b46c72883.
+  Initial24645d1e9a4ad0804b4ec06e133ed317ee1448bb01c0ee80f2f38570257a3f25
+  differsseed1027, genuine independentfit/no warmstart or seedrenaming.
+- Actual optimizer Known381/pseudo97/fourclasses/TWOpseudo classes,
+  19crossvideo-positivegroups inupdates vsseed1027two. Fullfourpolicyepisodes
+  retained10videos/54tracks/1268obs/374clockframes/1empty each. Actions
+  ep0KNOWN1243/NEW25;ep1andep2KNOWN1268 each;ep3KNOWN1137/NEW131;
+  ZEROExisting throughout despite90/80whole-episode candidatepositive
+  opportunities inep0/ep3. Greatertrainingexposure alone is NOT a reusewin.
+- Owned110.673145301s/worker103.412894358s/RSS949485568B/11OSthreads,
+  no guardstop/CUDA/0trainingGPUh, no dev/final/Val/Test/sourceprotocol change.
+  Fourof9 C/eightof12 R complete. Preservenegativeoutcomes andcontinuefixed
+  sharedcontext/Top1 andseed1029 before anyfinite exposure/feedback repair;
+  all9-gateddevelopment, trainedM/strongPred/lockedfinal remainopen.
+- Full521tests PASS9.33s; currentnegativeExisting andindependentseed/exposure
+  receipts retained; no partialmatrix semanticwin or futureGT scope inferred.
