@@ -16,6 +16,64 @@ def verified_global_wrapper_assignment(value):
     return value['assignment']
 
 
+def audit_global_denominators(presence, index, wrapper):
+    """Every retained Known row in assigned videos, not only own-role targets.
+
+    This cannot certify full GT denominators: non-Known GT was never retained
+    by the authorized census. No new labels/boxes are inferred or opened here.
+    """
+    if (type(wrapper) is not dict or set(wrapper) != {'not_model_facing', 'not_a_frozen_protocol',
+                                                    'assignment', 'role_class_support'}
+            or wrapper['not_model_facing'] is not True or wrapper['not_a_frozen_protocol'] is not True):
+        raise ValueError('Exact external expanded non-frozen wrapper')
+    assignment = wrapper['assignment']
+    verify_global_assignment(presence, assignment)
+    classes = {r: set(cs) for r, cs in assignment['classes'].items()}
+    pool = set().union(*classes.values())
+    by_video = {v: role for role, vs in assignment['video_ids'].items() for v in vs}
+    result = {role: {kind: {'tracks': 0, 'observations': 0} for kind in
+        ('fit_Known', 'own_role_pseudo', 'other_role_pseudo_conflict', 'outside_eligible_Known')}
+        for role in ROLES}
+    unassigned_tracks = unassigned_observations = 0
+    for row in index['tracks']:
+        role = by_video.get(row['video_id'])
+        if role is None:
+            unassigned_tracks += 1; unassigned_observations += row['annotation_count']
+            continue
+        c = row['category_id']
+        if c in classes[ROLES[0]]:
+            kind = 'fit_Known'
+        elif c not in pool:
+            kind = 'outside_eligible_Known'
+        elif c in classes[role]:
+            kind = 'own_role_pseudo'
+        else:
+            kind = 'other_role_pseudo_conflict'
+        result[role][kind]['tracks'] += 1
+        result[role][kind]['observations'] += row['annotation_count']
+    if any(result[r]['other_role_pseudo_conflict']['tracks'] for r in ROLES):
+        raise ValueError('Cross-role positive conflicts in full retained Known census')
+    for role in ROLES:
+        result[role]['all_retained_Known'] = {
+            k: sum(row[k] for row in result[role].values()) for k in ('tracks', 'observations')}
+    total_tracks = sum(row['all_retained_Known']['tracks'] for row in result.values()) + unassigned_tracks
+    total_obs = sum(row['all_retained_Known']['observations'] for row in result.values()) + unassigned_observations
+    if total_tracks != len(index['tracks']) or total_obs != sum(row['annotation_count'] for row in index['tracks']):
+        raise ValueError('Every original Known row must reconcile')
+    return {'status': 'VERIFIED_RETAINED_KNOWN_DENOMINATORS_FULL_GT_STILL_UNPROVEN',
+            'integer_necessary_conditions': {'class_pool': len(pool)},
+            'role_denominators': result,
+            'unassigned_retained_Known': {'tracks': unassigned_tracks, 'observations': unassigned_observations},
+            'reconciled_Known_tracks': total_tracks, 'reconciled_Known_observations': total_obs,
+            'full_GT_denominator_proven': False, 'nonKnown_GT_for_assigned_videos_retained': False,
+            'outside_eligible_Known_declared_background': False,
+            'Known_rows_are_not_all_physical_ground_truth': True,
+            'new_protocol_frozen': False, 'training_GPU_hours': 0,
+            'pixel_feature_availability_proven': False,
+            'model_scores_or_names_used': False}, {'not_model_facing': True,
+                'not_a_frozen_protocol': True, 'assignment_unchanged': True}
+
+
 def _support(index, assignment):
     output, private = {}, {}
     for role in ROLES:

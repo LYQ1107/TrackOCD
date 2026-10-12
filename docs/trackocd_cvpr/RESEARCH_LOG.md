@@ -1714,3 +1714,18 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - v8ownedtotal5.514153753s, peak81510400B/oneThread/noguardstop. Publicresult
   SHA085abab372c2ab57edda729b5d828c6faabe94d0ac7b977473f53057ef2c851d;
   privateexpanded SHA b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a.
+
+### All-retained-Known denominator audit preregistration
+
+- Rechecked clean07f1957/184.5GBfree. Fixed407videoexpandedassignment bound to
+  originalprivate SHA b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a.
+  Existing positivecensus retained ONLYKnown tracks, not fullphysicalGT; the
+ 93final own-role tracks cannot silently stand in for allGT denominator.
+- v9counts every retainedKnown row in assignedvideo: cooccurringfitKnown,
+  own-rolepseudo, forbiddenother-rolepseudo (mustzero), outsideeligibleKnown
+  (NOTbackground). Reconcile assigned+unassigned with all1962tracks/38680obs.
+  Originalclassroles/witness unchanged, no newGT/Novel/Val/Test/feature/model/
+  pixel read. NonKnown GT denominator and dense-frame/image/feature availability
+  remain unproven; no protocolfreeze/fullGT or trainedsuccess claim.
+- Three synthetic aggregate/rowreconciliation/conflict/wrapper cases prepared;
+  actualKnownaudit awaits source publication and same freshref/256MiB/120s gate.
