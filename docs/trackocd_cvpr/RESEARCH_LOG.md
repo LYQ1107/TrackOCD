@@ -2361,3 +2361,27 @@ new research scope; nothing has been deleted, no storage pressure is present.
   seeds/negativecases must ultimately be delivered. FreshA1/A2 comparators,
   qualifiedPred/matching, learnedcandidate/memory and finalcausal validation
   remain open; Rwindow alone never fulfills originalGoalA/B/C.
+- Source4d551cc published; its sole finalblank-line diff-check warning in a
+  newtest was fixed by separate11dad1895b7f9e098b05a75553422307e9476d84,
+  preserving publishedhistory. Freshfetch confirms HEAD/FETCH_HEAD/origin equal.
+- Newly owned first scientific trial actually launched from11dad18:
+  temporal_Raw_teacher/seed1027, freshinitialization/fixed200endpoint,
+  ALLmember teacher and fit5only, no dev/finalselection. Livehandle confirmed
+  running; observedstep29 then80, step20/50 checkpoints andscalarheartbeat
+  preserved. This is genuinefit progress, not terminalcompletion/Novelgain;
+  other variants/seeds remain required, do not drop them based on this result.
+
+### Resource-only policy/dev cache retry namespace
+
+- V1ownedterminal GPUrejection preserved19b3ca3. NewV2 wrapper changes ONLY
+  outputnamespace, inherits exactregistered82video/526track/10021obs/2936frame
+  protocol, parameters/budgets unchanged. Loader verifies originalfailure+
+  terminal BEFORE permitting retry; no restart of live work, no overwritten
+  evidence/pixels/features/model/GTsemantic expansion. Pending namespace has
+  no execution merely by configuration. All source/parentconfig/oldfailure
+  bytes must be newly remotereregistered, fresh GPUidle check stillrequired.
+- Rdriver/checkpoint source files remain untouched while currentCPUfit runs.
+  One newcache GPU only if currentlyidle; all externalapplications respected.
+  Current snapshots change: busy earlier, later3/5/6lowmemory/0% candidates,
+  not reservedGPU promises. UnknownGPU4 remains ineligible. Full467tests
+  PASS8.78s inclresource-wrapper contract; no new scientificacceptance claim.

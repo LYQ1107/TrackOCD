@@ -23,3 +23,12 @@ def test_fixed_policy_dev_count_and_no_final_or_automatic_fit():
     assert c['expected_metadata_frames'] == 2936 and c['maximum_observations_per_track'] is None
     assert not c['full_cache_or_optimizer_automatic_start']
     assert set(c['expected_role_totals']) == {'policy_train_pseudo', 'development_pseudo'}
+
+
+def test_resource_retry_changes_namespace_only_and_preserves_terminal_old_attempt():
+    r = Path(__file__).resolve().parents[2]
+    c = json.loads((r / 'configs/trackocd_cvpr/policy_dev_GT_video_cache_v2_resource_retry.json').read_text())
+    assert set(c) == {'schema_version', 'base_config', 'output_directory'}
+    assert c['base_config'] == 'configs/trackocd_cvpr/policy_dev_GT_video_cache_v1.json'
+    old = json.loads((r / 'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v1_supervisor_attempt_1.json').read_text())
+    assert not old['successful_owned_execution'] and old['owned_worker_exit_code'] == 1
