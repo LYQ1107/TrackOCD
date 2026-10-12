@@ -21,6 +21,7 @@ from src.trackocd_cvpr.scoped_train_census import inherited_known_ids, validate_
 from scripts.trackocd_cvpr.audit_known_census_protocol import exact_open_barrier
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from src.trackocd_v2.io import atomic_json, sha256_file
+from src.trackocd_cvpr.remote_registration import verify_registration
 
 SOURCES = ('configs/trackocd_cvpr/joint_known_protocol_v1.json',
            'scripts/trackocd_cvpr/audit_joint_known_protocol.py', 'src/trackocd_cvpr/joint_known_protocol.py',
@@ -28,6 +29,7 @@ SOURCES = ('configs/trackocd_cvpr/joint_known_protocol_v1.json',
            'scripts/trackocd_cvpr/audit_known_census_protocol.py', 'src/trackocd_cvpr/scoped_train_census.py',
            'src/trackocd_cvpr/metadata_only.py', 'scripts/trackocd_cvpr/audit_train_metadata_containment.py',
            'src/trackocd_v2/io.py', 'configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json',
+           'src/trackocd_cvpr/remote_registration.py',
            'outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json',
            'configs/trackocd_cvpr/autonomous_research.json')
 
@@ -112,11 +114,8 @@ def worker(args, cfg, safety):
     if (approval['external_known_only_Train_census_authorized'] is not True
             or (approval['allowlisted_videos'], approval['excluded_old_heldout_videos']) != (429, 51)):
         raise ValueError('Actual user-authorized derived Known scope required')
-    git = ['git'] + (['-c', f'http.proxy={args.git_proxy}'] if args.git_proxy else []) + ['-c', 'http.version=HTTP/1.1']
-    remote = subprocess.check_output(git + ['ls-remote', 'origin', f"refs/heads/{safety['branch']}"], cwd=ROOT,
-                                    text=True, timeout=35, env={**os.environ, 'GIT_TERMINAL_PROMPT': '0'}).split()
-    if not remote or remote[0] != args.preregistration_commit:
-        raise ValueError('Exact fresh current remote registration before private input open')
+    registration = verify_registration(ROOT, safety['branch'], args.preregistration_commit, args.git_proxy,
+        allow_public_api=cfg.get('equivalent_fresh_public_ref_API_fallback', False))
     for name in SOURCES:
         if subprocess.check_output(['git', 'show', f'{args.preregistration_commit}:{name}'], cwd=ROOT) != (ROOT / name).read_bytes():
             raise ValueError('Registered source differs')
@@ -147,7 +146,7 @@ def worker(args, cfg, safety):
               'source_sha256': {name: sha256_file(ROOT / name) for name in SOURCES},
               'private_input_sha256': {name: cfg[name + '_sha256'] for name in names},
               'scipy_version': scipy.__version__, 'fresh_source_no_existing_bytecode_cache': True,
-              'owned_launch_attempt': args.attempt}
+              'owned_launch_attempt': args.attempt, 'live_remote_registration_proof': registration}
     atomic_json(out / 'launch.json', launch)
     try:
         for name, path in paths.items():
@@ -201,7 +200,8 @@ def main():
     parser.add_argument('--worker', action='store_true')
     parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
     parser.add_argument('--config', choices=('configs/trackocd_cvpr/joint_known_protocol_v1.json',
-                                          'configs/trackocd_cvpr/joint_known_protocol_v2_unbalanced.json'),
+                                          'configs/trackocd_cvpr/joint_known_protocol_v2_unbalanced.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v3_unbalanced_ref_transport.json'),
                         default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])

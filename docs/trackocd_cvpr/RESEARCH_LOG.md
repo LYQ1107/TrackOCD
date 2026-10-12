@@ -1424,3 +1424,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
   union-only implication missed pairwise, exact2boundary, retained unbalanced
   allclass witness, actual video-overlap corruption, contradiction skipping
   solver and timeout not feasibility. Disk185.7GB/RAM93.8GBavailable; no cleanup.
+- Registered/pushed/fetchedb5b0a99379963a26014b70085857f08d57a9ce6e, allthree
+  refs exactmatch. v2ownedattempt1/2/3 allterminalexit1 at fresh-git TLS gate,
+  before Known index/privateoutput. Supervisor receipts preserved; peakworker
+  oneThread/80.19MB,82.25MB,80.41MB; times7.15/7.81/6.99s. No union proof/MILP
+  or data result exists forv2, and no fourth v2launch or invented outcome.
+- Finite transport repair v3 gets its own config/output/source registration;
+  same exact v2classpool/structuralconditions and budget. Primary livegitref
+  first; only transportfail/timeout permits bounded anonymous HTTPS GitHub
+  GET /repos/LYQ1107/TrackOCD/git/ref/heads/research/cvpr-trackocd-autonomous-v2,
+  validate exactref/objecttype/fullSHA. Valid Git SHA mismatch stops without
+  fallback; API invalid/mismatch/missing/login/error and both paths failure
+  stillclose gate. No local receipt, credentials, SSLdisable, external proxy/
+  branch/history change or new GT authority. Both networkchannels same remote
+  registration evidence goal; current exactsource files stillcompareGit bytes.
+- Consulted official GitHub Get-reference primary docs; no wildcard matching
+  references or ambiguous-prefix endpoint used. Existingcurl8.5.0 supports
+  HTTPS-only/12s/64KiB bound; atmost2APIcalls after35sgit, monitored120s total.
+- Nine focused transport synthetic tests/full371tests PASS5.33s, no skips:
+  validgitmismatchneverfallback, exactHTTPS refmetadata and no creds, mutated
+  SHA/ref/type rejection, both-failbounded and unchanged v2data/safety rules.
+  Actual newv3 private input/proof stillawaitnew registration. Goal remains
+  active; no science FAIL/transportrough edge substitutes fullcompletion.
