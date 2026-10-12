@@ -1,0 +1,21 @@
+{
+  "schema_version": "trackocd.cvpr.two-fit-image-frozen-CPU-smoke.v3-kernel-terminal",
+  "worker_script": "scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py",
+  "common_config": "configs/trackocd_core/common_features.json",
+  "private_assignment": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+  "private_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+  "private_image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+  "private_image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+  "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "selection": "Same first two fit-only metadata images, no class/GT/difficulty filtering",
+  "maximum_images_decoded": 2,
+  "maximum_CPU_forward_calls": 3,
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 2147483648,
+  "wall_seconds_ceiling": 180,
+  "output_bytes_ceiling": 1048576,
+  "supervisor_poll_seconds": 0.2,
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/selected_frozen_encoder_smoke_v3_terminal",
+  "training_GPU_hours": 0,
+  "interpretation": "Same v2 data/model/preprocess/budget/source checks. Preserve v2 workerPASS/supervisorFALSE endrace. On missing owned counters, only actual kernelZ/X terminal status allows reaping; live/missing/unknown state stillfails bounded guard, no grace. New output verifies end-to-end CPU smoke, not trajectories/crops/frontend/training/protocolfreeze."
+}

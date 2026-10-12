@@ -52,6 +52,15 @@ def resources_ok(cfg, safety, root, started, rss):
     return None
 
 
+def kernel_terminal_status(status):
+    # Z/X are kernel terminal states, not a guessed idle/live process or a
+    # historical PID. Caller reads only its newly-owned Popen child's status.
+    fields = next((line.split(':', 1)[1].split()
+                   for line in status.splitlines() if line.startswith('State:')), [])
+    state = fields[0] if fields else ''
+    return state in ('Z', 'X', 'x')
+
+
 def supervise(args, cfg, safety):
     out = ROOT / cfg['output_directory']
     receipt = out.with_name(out.name + f'_supervisor_attempt_{args.attempt}.json')
@@ -83,6 +92,15 @@ def supervise(args, cfg, safety):
                 fields = {line.split(':', 1)[0]: line.split(':', 1)[1] for line in status.splitlines() if ':' in line}
                 peak_threads = max(peak_threads, int(fields['Threads'].strip()))
             except (FileNotFoundError, ProcessLookupError, RuntimeError):
+                if child.poll() is not None:
+                    break
+                try:
+                    terminal = kernel_terminal_status(status_path.read_text())
+                except (FileNotFoundError, ProcessLookupError):
+                    terminal = False
+                if terminal:
+                    child.wait(timeout=1)  # Kernel says already dead; no live unmeasured grace period.
+                    break
                 if child.poll() is not None:
                     break
                 if time.monotonic() - started > 2:

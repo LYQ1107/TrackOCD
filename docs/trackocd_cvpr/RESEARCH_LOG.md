@@ -1901,3 +1901,24 @@ new research scope; nothing has been deleted, no storage pressure is present.
   hashmatchverifiedsource. Missing importneeded source fails; no installedmodel
   fallback/vendor edit/envinstall/download. New sparsefixture regression rejects
   unflaggedmissing and changedsource. Realv2inference awaits newregistration.
+- Full426engineering tests PASS9.22s; actualpush/fetch/source9ebd19d65e3103e0e308835c5e9e9d2657b84e72
+  verified. v2attempt1 operator manuallysupplied WRONGfullSHA9ebd19dbbefa01bd9395d4cda9f7813a6e7c453e;
+  correctfreshGit mismatched andrefusedwithoutfallback/privateinputs/outputdir,
+  exit1/4.695112s/82325504B/oneThread. Preservedreceipt; attempt2 takesactual
+  currentGitHEAD programmatically, not inventedhex or cachedproof bypass.
+- v2attempt2 actualfreshref/sourcepassed:156presenttracked sources verified,
+ 15actualimportedDINOmodules insidepinnedrepo/hashmatching; Git-tree157 with
+  sparseabsentsetup.py explicitlyrecorded. Strictweightsload onCPU, twofitRGB
+  decoded and3forwards produceunitfloat32[2,768], exactCPUsameinputrepeat.
+  Frozendigest42c4c180dbaa825ee5bfecc6e6bf392af6439a1d2aa97f05095ac09b5e7097a9
+  unchanged; requires_grad=False, CUDAuninitialized, noGT/class/role/ID/text
+  inforward, no dev/finalpixels. Tiny6410Bdescriptor remainslocal.
+- Workerresult written/exit0,49.010848597s excludingnetwork; BUT supervisor
+  flaggedowned_memory_counter_unavailable atending, successful_owned_execution
+  FALSE, total55.902128524s/1220636672B/oneThread. Not advertised as complete
+  ownedclean smoke. Preservepositiveworker result AND failedsupervisorreceipt.
+- Finitev3newoutput/source changes onlyterminalhandling: aftercounterloss,
+  freshownedPopenchild kernelZ/X deadstate permits boundedwait/reap; live/missing/
+  unknownstate stillfailsresourceguard, no unconditionalgrace or oldPIDreuse.
+  Additionalpoll closesexit race, no budgetraise/model/data/preprocesschange.
+  Kernelstate tests rejectrunning/sleeping/idle/stopped/missing/truncatedstatus.

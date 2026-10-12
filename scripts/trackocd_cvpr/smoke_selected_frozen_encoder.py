@@ -215,7 +215,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
-    parser.add_argument('--config', choices=(SOURCES[0], 'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v2_sparse.json'), default=SOURCES[0])
+    parser.add_argument('--config', choices=(SOURCES[0], 'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v2_sparse.json',
+                        'configs/trackocd_cvpr/selected_frozen_encoder_smoke_v3_terminal.json'), default=SOURCES[0])
     args = parser.parse_args(); SOURCES = (args.config, *SOURCES[1:])
     cfg = json.loads((ROOT / args.config).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
