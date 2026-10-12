@@ -1,0 +1,14 @@
+{
+  "schema_version": "trackocd.cvpr.owned-launch-transport-env.v1",
+  "client_date": "2026-10-12",
+  "source_commit": "e0d76a278fdd268c64445edf58d128a859442fe7",
+  "config": "configs/trackocd_cvpr/joint_known_protocol_v3_unbalanced_ref_transport.json",
+  "process_only_environment": {"GIT_SSL_VERSION": "tlsv1.2"},
+  "process_only_proxy_argument": "http://127.0.0.1:7890",
+  "certificate_verification_disabled": false,
+  "global_git_or_proxy_or_certificate_configuration_changed": false,
+  "reason": "Exact source push succeeded with command-scoped TLS1.2 after repeated default GnuTLS handshake failures. Compatibility hypothesis only, not proof of network root cause or arbitrary outage recovery.",
+  "data_scope_or_structural_conditions_or_training_permission_changed": false,
+  "new_training_GPU_hours": 0,
+  "launch_guard": "Actual fresh exact remote ref check plus registered source bytes and all existing resource/input boundaries remain mandatory"
+}

@@ -166,7 +166,8 @@ def worker(args, cfg, safety):
             raise ValueError('Every original census row retained/reconciled')
         guard()
         public, private = joint_feasibility(presence, time_limit=cfg['solver_time_limit_seconds'], node_limit=cfg['solver_node_limit'],
-            balanced=cfg['four_balanced_final_groups'], union_support=cfg.get('union_support_closure', False))
+            balanced=cfg['four_balanced_final_groups'], union_support=cfg.get('union_support_closure', False),
+            compress_patterns=cfg.get('exact_presence_pattern_count_compression', False))
         if public['integer_necessary_conditions']['class_pool'] != cfg['expected_eligible_pool']:
             raise ValueError('Uniformly eligible class pool changed')
         guard()
@@ -201,7 +202,8 @@ def main():
     parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
     parser.add_argument('--config', choices=('configs/trackocd_cvpr/joint_known_protocol_v1.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v2_unbalanced.json',
-                                          'configs/trackocd_cvpr/joint_known_protocol_v3_unbalanced_ref_transport.json'),
+                                          'configs/trackocd_cvpr/joint_known_protocol_v3_unbalanced_ref_transport.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v4_compressed.json'),
                         default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])

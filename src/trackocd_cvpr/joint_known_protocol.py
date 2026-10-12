@@ -143,10 +143,16 @@ def verify_assignment(presence, assignment, *, balanced=True):
     return True
 
 
-def build_joint(presence, *, balanced=True):
+def build_joint(presence, *, balanced=True, compress_patterns=False):
     support, pool = category_support(presence)
-    videos = sorted(presence)
-    n, m = len(pool), len(videos)
+    if compress_patterns:
+        buckets = defaultdict(list)
+        for vid in sorted(presence):
+            buckets[tuple(c for c in pool if c in presence[vid])].append(vid)
+        units = [buckets[key] for key in sorted(buckets)]
+    else:
+        units = [[vid] for vid in sorted(presence)]
+    n, m = len(pool), len(units)
     group = lambda c, g: c * 4 + g
     role = lambda c, f, r: n * 4 + (c * 4 + f) * 4 + r
     video = lambda v, f, r: n * 20 + (v * 4 + f) * 4 + r
@@ -164,7 +170,7 @@ def build_joint(presence, *, balanced=True):
             add([(role(c, f, 3), 1), (group(c, f), -1)], 0, 0)
             add([(role(c, f, 2), 1), (group(c, (f + 1) % 4), -1)], 0, 0)
             for r in range(4):
-                add([(video(v, f, r), 1) for v, vid in enumerate(videos) if vid in support[pool[c]]]
+                add([(video(v, f, r), 1) for v, members in enumerate(units) if members[0] in support[pool[c]]]
                     + [(role(c, f, r), -(3 if r == 0 else 2))], 0, np.inf)
     for g in range(4):
         add([(group(c, g), 1) for c in range(n)], n // 4 if balanced else 1, (n + 3) // 4 if balanced else n - 5)
@@ -172,22 +178,23 @@ def build_joint(presence, *, balanced=True):
     for f in range(4):
         add([(role(c, f, 1), 1) for c in range(n)], 2, 2)
         add([(role(c, f, 0), 1) for c in range(n)], 2, np.inf)
-        for v, vid in enumerate(videos):
-            add([(video(v, f, r), 1) for r in range(4)], 0, 1)
+        for v, members in enumerate(units):
+            capacity, vid = len(members), members[0]
+            add([(video(v, f, r), 1) for r in range(4)], 0, capacity)
             for c, category in enumerate(pool):
                 if category in presence[vid]:
                     for r in range(4):
-                        add([(video(v, f, r), 1)] + [(role(c, f, q), 1) for q in forbidden[r]], -np.inf, 1)
+                        add([(video(v, f, r), 1)] + [(role(c, f, q), capacity) for q in forbidden[r]], -np.inf, capacity)
     if variables > 8960 or len(lower) > 60000 or len(values) > 250000:
         raise ValueError('Declared sparse formulation resource bound')
     matrix = coo_matrix((values, (rows, cols)), shape=(len(lower), variables)).tocsc()
-    return matrix, np.array(lower), np.array(upper), pool, videos
+    return matrix, np.array(lower), np.array(upper), pool, units
 
 
-def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp, balanced=True, union_support=False):
+def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp, balanced=True, union_support=False, compress_patterns=False):
     if type(time_limit) not in (int, float) or not 0 < time_limit <= 30 or type(node_limit) is not int or not 1 <= node_limit <= 5000:
         raise ValueError('One bounded registered solver attempt only')
-    if type(balanced) is not bool or type(union_support) is not bool:
+    if any(type(flag) is not bool for flag in (balanced, union_support, compress_patterns)):
         raise ValueError('Explicit boolean structural family flags required')
     certificate, private_proof = forced_group_certificate(presence, union_support=union_support)
     common = {'integer_necessary_conditions': certificate,
@@ -198,10 +205,11 @@ def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp, b
     if contradiction:
         return {**common, 'status': 'INTEGER_CAPACITY_CONTRADICTION_FOR_DECLARED_JOINT_FAMILY',
                 'solver_executed': False, 'feasible_joint_assignment_verified': False}, {'proof': private_proof}
-    matrix, lower, upper, pool, videos = build_joint(presence, balanced=balanced)
+    matrix, lower, upper, pool, units = build_joint(presence, balanced=balanced, compress_patterns=compress_patterns)
+    bounds_upper = np.concatenate((np.ones(len(pool) * 20), np.repeat([len(members) for members in units], 16)))
     with warnings.catch_warnings(record=True) as captured:
         warnings.simplefilter('always')
-        result = solve(c=np.zeros(matrix.shape[1]), integrality=np.ones(matrix.shape[1]), bounds=Bounds(0, 1),
+        result = solve(c=np.zeros(matrix.shape[1]), integrality=np.ones(matrix.shape[1]), bounds=Bounds(0, bounds_upper),
                        constraints=LinearConstraint(matrix, lower, upper), options={
                            'time_limit': time_limit, 'node_limit': node_limit, 'mip_rel_gap': 0,
                            'presolve': True, 'threads': 1, 'parallel': False, 'random_seed': 2093001})
@@ -210,6 +218,9 @@ def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp, b
               'nonzeros': matrix.nnz, 'forwarded_option_warnings': [str(w.message) for w in captured],
               'solver_reported_scoped_infeasibility_not_formal_global_data_proof': result.status == 2,
               'feasible_joint_assignment_verified': False}
+    if compress_patterns:
+        public.update(exact_presence_pattern_count_compression=True, all_original_videos_retained=len(presence),
+                      distinct_presence_patterns=len(units))
     if result.x is None:
         public['status'] = 'SOLVER_SCOPED_INFEASIBLE' if result.status == 2 else 'INCONCLUSIVE_NO_VERIFIED_ASSIGNMENT'
         return public, {'proof': private_proof}
@@ -218,15 +229,24 @@ def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp, b
     vector = np.asarray(result.x)
     if (vector.shape != (matrix.shape[1],) or not np.isfinite(vector).all()
             or np.max(np.abs(vector - np.rint(vector))) > 1e-7
-            or np.min(vector) < -1e-7 or np.max(vector) > 1 + 1e-7):
-        raise ValueError('Solver vector is not a verified binary witness')
+            or np.min(vector) < -1e-7 or np.any(vector > bounds_upper + 1e-7)):
+        raise ValueError('Solver vector is not a verified binary/integer-count witness')
     x = np.rint(vector).astype(int)
     n = len(pool)
     groups = [[pool[c] for c in range(n) if x[c * 4 + g]] for g in range(4)]
     folds = []
     for f in range(4):
+        assigned = {name: [] for name in ROLES}
+        for v, members in enumerate(units):
+            cursor = 0
+            for r, name in enumerate(ROLES):
+                count = int(x[n * 20 + (v * 4 + f) * 4 + r])
+                assigned[name].extend(members[cursor:cursor + count])
+                cursor += count
+            if cursor > len(members):
+                raise ValueError('Count expansion exceeds real disjoint video capacity')
         folds.append({'classes': {name: [pool[c] for c in range(n) if x[n * 4 + (c * 4 + f) * 4 + r]] for r, name in enumerate(ROLES)},
-                      'video_ids': {name: [vid for v, vid in enumerate(videos) if x[n * 20 + (v * 4 + f) * 4 + r]] for r, name in enumerate(ROLES)}})
+                      'video_ids': assigned})
     assignment = {'groups': groups, 'folds': folds}
     verify_assignment(presence, assignment, balanced=balanced)
     public.update(status='VERIFIED_POSITIVE_KNOWN_JOINT_ASSIGNMENT_NOT_FROZEN_PROTOCOL', feasible_joint_assignment_verified=True)

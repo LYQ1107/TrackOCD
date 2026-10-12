@@ -1480,3 +1480,30 @@ new research scope; nothing has been deleted, no storage pressure is present.
   both R and C state_dict snapshots unchanged after synthetic CE backward.
   New bridge is necessary source preparation, not silently declaring the old
   NumPy controller fully differentiable or source-only work empirical science.
+- Command-only TLS1.2 with certificate validation stillenabled normalpush
+  succeeded e0d76a278fdd268c64445edf58d128a859442fe7, including09a41fa ancestor.
+  Normalfetchexit0 and HEAD/FETCH_HEAD/originref exacte0d76a2; independentGitHub
+  connector also fetched exactcommit. Compatibility observation NOT proof of
+  TLS root cause/permanent recovery; no global proxy/SSLconfig/service changes.
+- Recorded process-only GIT_SSL_VERSION=tlsv1.2 launch environment separately;
+  v3worker originalfreshgitfailed, equivalentcanonicalAPIattempt2 returnedexact
+  e0d76a2/ref and opened registered Known inputs. Actual launch includes source
+  SHA/data/registration proof; no bypass or local receipts as remoteevidence.
+- v3ownednative solver attempt stopped by parentguard at268517376B sampledRSS
+  (256.078125MiB), configuredceiling268435456B. Only newly spawned worker killed,
+  exit-9/25.591s/observedThreads1, training0. Launch preserved, no result/private
+  assignment. This is a resource failure NOT solver/data infeasibility; no
+  same-path retry or memory limit increase. Any input-access statement must
+  acknowledge actual authorized Known index opened, not pre-GT failure.
+- Exact memory repair v4: exchangeable videos have same eligible-positive
+  category set; role counts perpattern replace individualbinaryy. Capacity
+  sumcounts<=numbervideos; quota sums and big-M positive-role exclusions exact.
+  Every originalvideo retained in pattern list, no class/video/observation prune
+  or quota/rule/objective change. Deterministically expand to unique real IDs
+  then original independent class/role/video/quota verifier. Not LP relaxation.
+- New v4ownoutput/registration, same23pool/one30s5000node solver/256MiB limits.
+  Five focused tests pass including real compressed synthetic solver plus
+  independent expansion verifier and constructed binary→integer projection
+  satisfying both exact constraint systems. Original v3 failure remains intact.
+- Five focused tests PASS0.82s/full383engineering tests PASS7.43s, no skips.
+  v4not yet run on actual429videos; publication/registration gate required.
