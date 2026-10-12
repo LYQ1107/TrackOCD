@@ -2595,3 +2595,28 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full483tests PASS7.40s (including actual four-control receipt qualification
   and synthetic policy-boundary checks). This is executable/receipt validation,
   not accepted Novel discovery, trained C/M or final strong-Pred evidence.
+
+### Registered actual policy input qualification, without optimizer
+
+- Previous turn completed the seed1027four-control R matrix and source-only
+  policy interface at a5374e0a873f8eccabc97633d719542fd8f2ef6e. It was progress,
+  not an unchanged wait. Same owned temporal_CE/seed1028 handle54568 rechecked
+  live and observed actual completed steps; no historical PID/state-file restart.
+- Added complete policy input loader: completed V3 frozen-cache public SHA,
+  actual owned successful terminal, pinned encoder parameter digest, frozen
+  private assignment/Known hashes, every policy shard completion/payload hash
+  and frozen GT-control lineage required. Only10policy NPZ bodies opened;
+  dev/final bodies not read. Full54/1268obs/374metadataframes/1emptyGTframe,
+  Known34/policy-pseudo10 and10masked semantic targets required without subsets.
+- New registered CPU qualification worker compares actual canonical numeric
+  prefixes under bijective ID rename plus reversed observation delivery at
+  every frame. Full clock/physical denominator retained, only aggregate proof
+  published. No optimizer, encoder, original annotation/pixels, trained C/M,
+  memory-based discovery metric or qualified predicted frontend claim.
+- Fresh remote/source/authority gates precede private reads. Owned3GiB/900s/
+  1MiB output bound,25%systemRAM reserve and original disk/storage limits.
+  Worker is not launched merely by adding a manifest; source must first be
+  actually pushed/fetched exact, then an explicit scoped qualification command.
+- Full485tests PASS13.01s including unqualified-cache rejection before private
+  target reads. Real qualification still pending at this source registration;
+  synthetic green tests do not establish actual private input completeness.

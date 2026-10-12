@@ -7,12 +7,16 @@ Labels never enter observations, candidate features or prediction-owned memory.
 """
 from collections import Counter
 from dataclasses import dataclass
+import json
 import mmap
+from pathlib import Path
 
 import numpy as np
 
 from .causal_observation_router import CurrentObservation
 from .scoped_train_census import top_ranges, object_ranges, array_ranges, integer_value
+from .GT_video_cache import read_verified_shard
+from src.trackocd_v2.io import sha256_file
 
 
 @dataclass(frozen=True, slots=True)
@@ -89,6 +93,80 @@ def reconcile_policy_targets(physical_keys, projection, *, physical_tracks=54,
     return targets, {'physical_tracks': physical_tracks, 'masked_loss_tracks': masked,
                      'physical_label_strata': dict(counts),
                      'masked_tracks_dropped_or_declared_background': False}
+
+
+def load_completed_policy_videos(root, cfg, guard):
+    """Private policy geometry/targets only, following caller registration.
+
+    Source/authority registration is the worker's responsibility. Cache success,
+    protocol, aggregate denominators, completion hashes and routing are required
+    here before data reach the numeric frame adapter. No dev NPZ body opened.
+    """
+    root = Path(root); directory = root / cfg['policy_dev_cache_directory']
+    result_path = directory / 'result.json'
+    if result_path.is_symlink() or sha256_file(result_path) != cfg['policy_dev_result_sha256']:
+        raise ValueError('Immutable qualified policy/dev aggregate receipt')
+    result = json.loads(result_path.read_text())
+    terminal = json.loads(directory.with_name(directory.name + '_supervisor_attempt_1.json').read_text())
+    if (result['status'] != 'VERIFIED_POLICY_DEV_UNCAPPED_GT_CONTROL_CACHE_NOT_FINAL_OR_PRED_OR_TRAINED'
+            or result['live_remote_registration_proof']['sha'] != cfg['policy_dev_execution_commit']
+            or not terminal['successful_owned_execution'] or terminal['owned_worker_exit_code'] != 0
+            or terminal['guard_stop_reason'] is not None or result['independent_final_or_protected_pixels_read']
+            or result['development_or_final_semantic_values_decoded']
+            or not result['frozen_parameters_unchanged']
+            or result['frozen_parameter_sha256'] != '42c4c180dbaa825ee5bfecc6e6bf392af6439a1d2aa97f05095ac09b5e7097a9'
+            or result['optimizer_or_formal_training_started']):
+        raise ValueError('Real successful frozen-cache execution, no protected data')
+    expected = {'videos': 10, 'tracks': 54, 'observations': 1268, 'metadata_frames': 374, 'empty_GT_frames': 1}
+    if any(result['role_totals']['policy_train_pseudo'][key] != value for key, value in expected.items()):
+        raise ValueError('Full frozen policy denominators')
+    frozen_path = root / cfg['frozen_protocol']
+    frozen = json.loads(frozen_path.read_text())
+    if frozen['status'] != 'FROZEN_DATA_ROLES_AND_GT_CONTROL_CACHE_IO_NOT_FINAL_METHOD':
+        raise ValueError('Frozen authorized data protocol required')
+    for field, key in (('private_assignment', 'private_global_assignment'),
+                       ('private_Known_support', 'private_Known_support')):
+        path = root / cfg[field]
+        if path.is_symlink() or sha256_file(path) != frozen['input_sha256'][key]:
+            raise ValueError('Immutable existing Known targets/assignment')
+    projection, proof = project_policy_loss_targets(root / cfg['private_assignment'], root / cfg['private_Known_support'])
+    index_path = directory / 'private_shard_index.json'
+    if index_path.is_symlink(): raise ValueError('No redirected private routing')
+    index = json.loads(index_path.read_text())  # administrative video/ordinal routing only
+    if (len(index) != 82 or len({r['video_id'] for r in index}) != 82
+            or sorted(r['ordinal'] for r in index) != list(range(82))):
+        raise ValueError('Complete qualified input routing, no duplicate aliases')
+    selected = [r for r in index if r['video_id'] in projection.videos]
+    if len(selected) != 10 or {r['video_id'] for r in selected} != set(projection.videos):
+        raise ValueError('Every authorized policy video, no successful subset')
+    public = {r['ordinal']: r for r in result['shards']}
+    if len(public) != 82: raise ValueError('All registered public shard receipts')
+    videos = []; physical_keys = []; observations = frames = empty = 0
+    for row in sorted(selected, key=lambda r: r['ordinal']):
+        guard()
+        if row['source_directory'] != cfg['policy_dev_cache_directory']:
+            raise ValueError('No alternate/redirected payload source')
+        arrays, record = read_verified_shard(directory, row['ordinal'])
+        lineage = record['lineage']
+        required = {'opaque_video_id': row['video_id'], 'frozen_protocol_sha256': sha256_file(frozen_path),
+                    'physical_index_sha256': frozen['input_sha256']['private_physical_GT'],
+                    'image_plan_sha256': frozen['input_sha256']['private_image_plan'],
+                    'checkpoint_sha256': frozen['GT_control_feature_IO']['checkpoint_sha256']}
+        if (any(lineage.get(k) != v for k, v in required.items())
+                or record['payload']['sha256'] != row['payload_sha256']
+                or record['payload']['sha256'] != public[row['ordinal']]['private_payload_sha256']):
+            raise ValueError('Exact frozen oracle-control lineage and private/public payload binding')
+        videos.append((row['video_id'], arrays))
+        physical_keys.extend((row['video_id'], int(t)) for t in arrays['track_id'])
+        observations += len(arrays['visual']); frames += len(arrays['clock_frame_index'])
+        empty += record['empty_GT_frames']
+    _, joined = reconcile_policy_targets(physical_keys, projection)
+    if (observations, frames, empty) != (1268, 374, 1):
+        raise ValueError('Full physical observations and empty-frame clock retained')
+    return videos, projection, {**proof, **joined, 'videos': 10, 'observations': observations,
+        'metadata_frames': frames, 'empty_GT_frames': empty,
+        'development_final_or_other_video_payload_bodies_opened': False,
+        'GT_localization_oracle_control_not_qualified_Pred': True}
 
 
 def policy_current_frames(arrays, *, routing_bindings=None):

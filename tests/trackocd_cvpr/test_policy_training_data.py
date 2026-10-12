@@ -5,7 +5,7 @@ import numpy as np
 import pytest
 
 from src.trackocd_cvpr.policy_training_data import (
-    project_policy_loss_targets, reconcile_policy_targets, policy_current_frames,
+    project_policy_loss_targets, reconcile_policy_targets, policy_current_frames, load_completed_policy_videos,
 )
 from src.trackocd_cvpr.causal_observation_router import CurrentObservation, CurrentObservationRouter, visible_bytes
 
@@ -87,3 +87,31 @@ def test_bad_external_routing_refuses_without_trimming_physical_tracks():
         list(policy_current_frames(arrays(), routing_bindings={12: 'same', 99: 'same'}))
     with pytest.raises(ValueError):
         list(policy_current_frames(arrays(), routing_bindings={12: 'one'}))
+
+
+def test_unqualified_cache_rejected_before_private_targets_or_arrays(tmp_path):
+    import hashlib
+    cache = tmp_path / 'cache'; cache.mkdir()
+    receipt = cache / 'result.json'; receipt.write_text('{}')
+    cfg = {'policy_dev_cache_directory': 'cache', 'policy_dev_result_sha256': 'not-a-valid-hash',
+           'private_assignment': 'MUST_NOT_OPEN', 'private_Known_support': 'MUST_NOT_OPEN'}
+    with pytest.raises(ValueError, match='Immutable qualified'):
+        load_completed_policy_videos(tmp_path, cfg, lambda: None)
+    cfg['policy_dev_result_sha256'] = hashlib.sha256(receipt.read_bytes()).hexdigest()
+    (tmp_path / 'cache_supervisor_attempt_1.json').write_text('{}')
+    receipt.write_text(json.dumps({'status': 'NOT_COMPLETED'}))
+    cfg['policy_dev_result_sha256'] = hashlib.sha256(receipt.read_bytes()).hexdigest()
+    with pytest.raises(ValueError, match='Real successful'):
+        load_completed_policy_videos(tmp_path, cfg, lambda: None)
+
+
+def test_registered_policy_qualification_not_fitting_or_final_selection():
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[2]
+    cfg = json.loads((root / 'configs/trackocd_cvpr/policy_training_input_qualification_v1.json').read_text())
+    assert cfg['policy_videos'] == 10 and cfg['physical_tracks'] == 54
+    assert cfg['eligible_Known_targets'] + cfg['eligible_policy_pseudo_targets'] + cfg['masked_semantic_targets'] == 54
+    assert cfg['observations'] == 1268 and cfg['metadata_frames'] == 374 and cfg['empty_GT_frames'] == 1
+    assert cfg['optimizer_steps'] == 0
+    assert not cfg['development_final_Val_Test_or_other_video_payloads_or_targets']
+    assert not cfg['training_or_scientific_acceptance_from_this_manifest']
