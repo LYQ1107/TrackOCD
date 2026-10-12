@@ -1,0 +1,27 @@
+{
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "04d2865fc700fddc855f4d5353c5e36fb9c9e792"
+  },
+  "scope": "Policy input qualification, zero optimization",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/formal_research_scope_approval_v1.json": "bf828e599e2a91c1630b14a62b2a2ccb26f562a22038875818cb8645993bd860",
+    "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+    "configs/trackocd_cvpr/policy_training_input_qualification_v1.json": "21335557d3e679d4a1ff7b254408367f641b659c9dbba4dd56ce453a7ffe6e99",
+    "outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v3_resource_retry/result.json": "b6747cbc8d4802620cc56f2a2af25b6e172e664ab6903e79d04cda4ab2a9e0be",
+    "outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v3_resource_retry_supervisor_attempt_1.json": "4722515cfd9a658ee0effbcb95478d71b4aa5e51043a300fc7937ac1665fdf8b",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "7000482df013f8eeb62a211024a7aeacaa757d2a0647972d6db201e0c8ed6811",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "scripts/trackocd_cvpr/qualify_policy_training_input.py": "0b4a087d95490dcac1624df66f6d9f6ef08fb9738d577e1b57a7a9877a4fa4de",
+    "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+    "src/trackocd_cvpr/GT_video_cache.py": "2e414a8d4a1d64e849354d518cc767486d5dfe4f0954f5c61f0ca4e66bd90b29",
+    "src/trackocd_cvpr/causal_observation_router.py": "85c8c1b1a58d9676a55169266c30e53ccf048ac0c1d72f996fe20a98013d2767",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/policy_training_data.py": "e99ed2a8cd1bc026b41620a9c625d2ecb81e39014129250e094d58b6b35e72bb",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}

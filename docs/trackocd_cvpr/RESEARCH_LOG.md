@@ -2620,3 +2620,43 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full485tests PASS13.01s including unqualified-cache rejection before private
   target reads. Real qualification still pending at this source registration;
   synthetic green tests do not establish actual private input completeness.
+
+### Actual policy input qualification completed
+
+- Freshregistered04d2865fc700fddc855f4d5353c5e36fb9c9e792 worker actually
+  completed ownedexit0/no guardstop:5.718304053s total/2.822350016s worker,
+  RSS86839296B/oneOSthread/zerooptimizer/0GPUh. ResultSHA
+  bdc762881ad0656115ac118e8f9c6d538d749803147ee7e181ce2d5fb5719993.
+- Complete10policyvideos/54physicaltracks/1268observations/374metadataframes
+  including1emptyGTframe. Actualexternal Known34/policy-pseudo10 and
+  no-retained-truth10 joined; all10unknownmaskretained, no inferredBG/Novel.
+  Originalannotations/pixels/weights/protectedsemantics notopened, no dev/final
+  NPZbody. No raw labels/keys/frame metadata/visual arrays uploaded.
+- Actual1268canonicalprefix inputs overALL374clockframes were identical under
+  bijective route rename plus reversed observationdelivery. No aliascollapse
+  in these realinputs (1268groups), not a certificate of Predtrack independence
+  or actual learned controller/memory causal correctness. GTlocalization still
+  oraclecontrol; stronglegalPred/matching and learned C/M mechanisms remainopen.
+- Policy input readiness is now supported by real source/hash/denominator/owned
+  terminal proof, not only synthetictests. This result is a prerequisite, not
+  trained calibration, self-correction, semantic Hscore/purity or GoalA/B/C.
+
+### Second training seed first fixed R control actually completed
+
+- temporal_CE/seed1028 launched from a5374e0a873f8eccabc97633d719542fd8f2ef6e
+  completed200realCPUoptimizersteps. Sameownedhandle54568 reachedterminalexit0;
+  no timeout restart, overwritten output or bestloss/dev selection. ResultSHA
+  0a751b7aec4adc19bac75c9b8354eee4c0043f8b8e5d3834516ecfe2a15ac58b,
+  endpoint616115B/SHA675a5490459a459a21f17b8ea139f1f562053b35f4e795d66dc72b742337840f,
+  strictreopen and finalparameterdigestd77f765b2811fb3113412248d2dc36e3b1bae928bdeac8ce55b0199d6b455810.
+- Initialparameterdigest3ff196641d46c49ddee7c6d754dd8b63e51696770551079605957e911a3d5470
+  and actualsampling/supportfootprint differ fromseed1027: independentlytrained,
+  not seedrenaming/reusedweights. Samefrozenfullfit1401/1158eligible/243masked;
+  CE-only objective, no policy/dev/final/Val/Test loss targets or pixels.
+- Ownedtotal565.673565912s/worker561.786870603s/peakRSS1398722560B/11OSthreads,
+  no guardstop/CUDA/0trainingGPUh. Fiveof12fixedRtrials complete, stillONE R
+  mechanism; C/M and all3seeds remainopen. No new scientificdev/Pred/causal
+  outcome asserted from another completedoptimizer alone. Nextunchanged
+  timeless_CE/seed1028 endpoint200, thenteacher controls/seed1029.
+- Full487tests PASS10.38s including actual policy input and independentseed
+  endpoint receipts. Receipt tests are not a new dev result or Goal acceptance.
