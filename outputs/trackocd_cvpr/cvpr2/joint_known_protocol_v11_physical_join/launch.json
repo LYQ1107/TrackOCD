@@ -1,0 +1,40 @@
+{
+  "fresh_source_no_existing_bytecode_cache": true,
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "c083ecd2d9461b978a1d379ba0cc857878bf367f"
+  },
+  "owned_launch_attempt": 1,
+  "preregistration_commit": "c083ecd2d9461b978a1d379ba0cc857878bf367f",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "private_global_assignment": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+    "private_physical_GT": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+  },
+  "scipy_version": "1.15.3",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/joint_known_protocol_v11_physical_join.json": "95b6f2cfbb4b124cefeaae62e24d7ead12cf1b034323752cb842883e1c95981f",
+    "configs/trackocd_cvpr/physical_gt_scope_approval_v1.json": "3bb875081595142c419f78cd663faf3defbf0fe00ae17bead5caf63103b2ad68",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/result.json": "f1e170a3d3d288bcef3caa2aca4a71ad4c42c2597f7ee6a6e80fa04410dbd070",
+    "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/result.json": "085abab372c2ab57edda729b5d828c6faabe94d0ac7b977473f53057ef2c851d",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "2d5a9a7a183b973a1a0a5c7f6e6e55c4cda96ea11cbc9973009b3e5827632256",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/global_protocol_coverage.py": "5b0b2377a10394973563fb9f46bf9e61e7545aee0416413d031d9b020ab41cde",
+    "src/trackocd_cvpr/joint_known_protocol.py": "230f2ed6f2b1480ee61dbd11f3eb07882f9da157b106bf4f6ffa78175f5d4aef",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/physical_gt_census.py": "44e15a50031d581eb9e1b73d16961eb47e700117260b21faf5cff118f7cbbe95",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}

@@ -1800,3 +1800,21 @@ new research scope; nothing has been deleted, no storage pressure is present.
  120s/oneCPU guards. No geometry duplication, training/cache, semanticNovelGT,
   densecoverage/imageavailability or protocolfreeze claim. Actualjoin awaits
   preregistration; GoalA/B/C remain open.
+- Full418engineering tests PASS4.90s, no skips. Preregc083ecd actualpush/fetch
+  exit0; HEAD/FETCH_HEAD/origintracking exactc083ecd. Sameprocess-only strictSSH
+ 443 via17890; workerfreshGitref/source/approval/inputhash gate passed before
+  existingprivatephysicalindex opened. Originalannotations not reread.
+- Actualjoin1879Knownkeys matched physicalGT, zeroMissing/CountMismatch;
+ 2222physicaltracks/45450obs,343geometry-only tracks withno retainedKnownlabel.
+  Never declaredBG or reconstructedNovelclass; privateexternalrefs only, no
+  geometry duplication/modelpolicy/purityrepair/training/pixel access.
+- Annotatedphysical role totals fit1401tracks/28326obs; policy54/1268;
+  dev472/8753; final295/7103. Final retains135fitKnown+93ownpseudo+6outsideKnown+
+ 61unlabeledphysicalGT. Thus93isnot fullphysicaldenominator. These refer to
+  annotatedframes, not denseframecompleteness or trueNovelsemanticGT.
+- Workerreported0.370116753s excludingnetwork and98131968Bpeak. Images/features
+  availability, causalforward/label separation and finalprotocolfreeze still
+  open; scientifictrainedtrials0/training0of600GPUh/GoalA/B/C incomplete.
+- v11ownedtotal6.136930964s/oneThread/noguardstop/samplepeak98631680B.
+  Localreferenceindex393476B; publicresultSHA
+ 37f785f46f208baaa9253ffd6e69d8cc9041b454114db749ee1f402c1c66758e.

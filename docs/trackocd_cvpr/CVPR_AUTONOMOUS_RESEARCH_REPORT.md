@@ -88,6 +88,17 @@ labels or decodedvisualinput proof; subsequent role/Known key reconciliation
 and image/feature provenance still required before protocolfreeze. Existing
 metadata-access incident and all oldKnown-only results remain preserved.
 
+Registered v11 local key reconciliation now matches all1879retainedKnown
+tracks in assigned407videos to physicalGT with zero key/count discrepancies.
+343additionalgeometry-only tracks remain unlabeled, not background or inferred
+Novelclasses. Annotatedphysical denominators byrole: fit1401tracks/28326obs,
+policy54/1268,dev472/8753,final295/7103. Final contains135fitKnown,93pseudo,
+6outsideeligibleKnown and61geometry-only;93alone is not the full denominator.
+No originalannotation reread, newsemanticGT, model/pixel/feature access or
+training. Causalforward/label separation and image/feature availability still
+required before freezing protocol; denseframe and semanticNoveltruth remain
+unproven. This is input-integrity evidence, not trainedscientificacceptance.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations
