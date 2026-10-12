@@ -9,6 +9,13 @@ from .known_census_protocol import ROLES, role_candidates
 from .joint_known_protocol import verify_global_assignment
 
 
+def verified_global_wrapper_assignment(value):
+    if (type(value) is not dict or set(value) != {'not_model_facing', 'not_a_frozen_protocol', 'assignment'}
+            or value['not_model_facing'] is not True or value['not_a_frozen_protocol'] is not True):
+        raise ValueError('Exact external non-frozen global assignment wrapper')
+    return value['assignment']
+
+
 def _support(index, assignment):
     output, private = {}, {}
     for role in ROLES:

@@ -22,7 +22,7 @@ from scripts.trackocd_cvpr.audit_known_census_protocol import exact_open_barrier
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from src.trackocd_v2.io import atomic_json, sha256_file
 from src.trackocd_cvpr.remote_registration import verify_registration
-from src.trackocd_cvpr.global_protocol_coverage import audit_global_coverage
+from src.trackocd_cvpr.global_protocol_coverage import audit_global_coverage, verified_global_wrapper_assignment
 
 SOURCES = ('configs/trackocd_cvpr/joint_known_protocol_v1.json',
            'scripts/trackocd_cvpr/audit_joint_known_protocol.py', 'src/trackocd_cvpr/joint_known_protocol.py',
@@ -172,9 +172,8 @@ def worker(args, cfg, safety):
         guard()
         if cfg.get('fixed_global_coverage_audit', False):
             prior_assignment = json.loads(paths['private_global_assignment'].read_text())
-            if set(prior_assignment) != {'not_model_facing', 'assignment'} or prior_assignment['not_model_facing'] is not True:
-                raise ValueError('Exact verified global external assignment schema')
-            public, private = audit_global_coverage(presence, known_index, prior_assignment['assignment'])
+            public, private = audit_global_coverage(presence, known_index,
+                verified_global_wrapper_assignment(prior_assignment))
         elif cfg.get('single_global_four_role_split', False):
             public, private = global_joint_feasibility(presence)
         elif cfg.get('exhaustive_component_necessary_only', False):
@@ -221,11 +220,12 @@ def main():
                                           'configs/trackocd_cvpr/joint_known_protocol_v4_compressed.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v5_exhaustive.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v6_global.json',
-                                          'configs/trackocd_cvpr/joint_known_protocol_v7_coverage.json'),
+                                          'configs/trackocd_cvpr/joint_known_protocol_v7_coverage.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v8_coverage_schema.json'),
                         default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
-    if args.config.endswith('joint_known_protocol_v7_coverage.json'):
+    if args.config.endswith(('joint_known_protocol_v7_coverage.json', 'joint_known_protocol_v8_coverage_schema.json')):
         SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v6_global/result.json', SOURCES[-1])
     cfg = json.loads((ROOT / SOURCES[0]).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())

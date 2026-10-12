@@ -1682,3 +1682,16 @@ new research scope; nothing has been deleted, no storage pressure is present.
   guards; new privateassignment and oldv6publicresult bound to source/inputhash.
 - Three synthetic coverage/idempotence/conflict/nonpool cases/full406engineering
   tests PASS4.84s, no skips. Actual dataaudit awaits newpublication/registration.
+- Source1299d1f actualfirstpushSSHbannerfailed, boundedsecondpush/fetch exit0;
+  HEAD/FETCH_HEAD/origintracking exact1299. v7freshGitref/source gate passed,
+  authorizedKnown and originalprivatev6assignment actuallydecoded. Worker
+  ValueError: validator expectedtwo wrapperfields but originalwriter addsthird
+  not_a_frozen_protocol=true. No coverage result/privateexpanded witness exists.
+  Terminalexit1,7.967578441s/79704064B/oneThread; supervisor recorded
+  owned_memory_counter_unavailable while workerended; preserve both error and
+  supervisorreason, not imply RSSfailure/data insufficiency or pre-GT failure.
+- Fix exactthreefield wrapper validation withbothflagsTrue; unknownfields/
+  missingflag/falseflag stillrefuse. Originalprivatefile/hashunchanged. Newv8
+  config/output, samecoverage rules/budgets/sourcegate. No v7samepathretry or
+  overwrite. Added actualwriter-format synthetic regression; full407tests
+  PASS4.80s, no skips. v8realcoverage stillawaitregisteredsource.

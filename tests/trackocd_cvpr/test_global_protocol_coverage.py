@@ -1,7 +1,9 @@
 from copy import deepcopy
+import pytest
 from src.trackocd_cvpr.global_protocol_coverage import audit_global_coverage
 from src.trackocd_cvpr.joint_known_protocol import verify_global_assignment
 from src.trackocd_cvpr.known_census_protocol import ROLES
+from src.trackocd_cvpr.global_protocol_coverage import verified_global_wrapper_assignment
 
 
 def data():
@@ -48,3 +50,13 @@ def test_extension_idempotent_all_remaining_candidates_accounted():
     assert first['expanded_support'] == second['expanded_support']
     assert (second['expanded_assigned_videos'] + second['unassigned_ambiguous_positive_role_videos']
             + second['unassigned_no_legal_positive_own_role_videos']) == len(p)
+
+
+def test_actual_writer_three_field_wrapper_and_flag_unknown_schema_refusals():
+    _, _, assignment = data()
+    value = {'not_model_facing': True, 'not_a_frozen_protocol': True, 'assignment': assignment}
+    assert verified_global_wrapper_assignment(value) is assignment
+    for bad in ({'not_model_facing': True, 'assignment': assignment},
+                {**value, 'not_a_frozen_protocol': False}, {**value, 'GT': []}):
+        with pytest.raises(ValueError):
+            verified_global_wrapper_assignment(bad)
