@@ -15,6 +15,19 @@ def video_plan(path, video, image_plan):
     return selected_video_plans(path, [video], image_plan)[0]
 
 
+def policy_dev_video_ids(path, *, policy_count=10, dev_count=72):
+    """Project only authorized policy/dev video lists; no class/final values."""
+    with open(path, 'rb') as handle, mmap.mmap(handle.fileno(), 0, access=mmap.ACCESS_READ) as data:
+        assignment = object_ranges(data, *top_ranges(data)['assignment'])
+        roles = object_ranges(data, *assignment['video_ids'])
+        groups = {role: [integer_value(data, span) for span in array_ranges(data, *roles[role])]
+                  for role in ('policy_train_pseudo', 'development_pseudo')}
+    if (len(groups['policy_train_pseudo']) != policy_count or len(groups['development_pseudo']) != dev_count
+            or len(set().union(*map(set, groups.values()))) != policy_count + dev_count):
+        raise ValueError('Fixed disjoint policy/dev video counts')
+    return {video: role for role, ids in groups.items() for video in ids}
+
+
 def selected_video_plans(path, videos, image_plan):
     """One projected scan, not one full index scan per small video shard."""
     videos = tuple(videos)

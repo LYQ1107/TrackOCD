@@ -18,6 +18,7 @@ from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import fit_video_ids, d
 
 CONFIG = 'configs/trackocd_cvpr/pilot_GT_video_cache_v1.json'
 FIT_CONFIG = 'configs/trackocd_cvpr/fit_GT_video_cache_v1.json'
+POLICY_DEV_CONFIG = 'configs/trackocd_cvpr/policy_dev_GT_video_cache_v1.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/pilot_GT_video_cache.py',
     'src/trackocd_cvpr/GT_video_cache.py', 'scripts/trackocd_cvpr/audit_joint_known_protocol.py',
     'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py',
@@ -71,11 +72,14 @@ def worker(args, cfg, safety):
     frozen = json.loads((ROOT / cfg['frozen_protocol']).read_text())
     approval = json.loads((ROOT / cfg['approval']).read_text())
     bounded_fit = cfg.get('bounded_fit_partition_only', False)
+    policy_dev = cfg.get('policy_dev_cache_only', False)
     if (frozen['status'] != 'FROZEN_DATA_ROLES_AND_GT_CONTROL_CACHE_IO_NOT_FINAL_METHOD'
             or approval['status'] != 'USER_APPROVED_FREEZE_THEN_BOUNDED_CACHE_AND_TRAIN'
             or approval['bound_private_assignment_sha256'] != frozen['input_sha256']['private_global_assignment']
             or approval['new_nonKnown_semantic_GT_or_Novel_vocabulary_authorized'] is not False
-            or cfg['pilot_videos'] != (257 if bounded_fit else 2) or cfg['maximum_observations_per_track'] is not None
+            or (bounded_fit and policy_dev)
+            or cfg['pilot_videos'] != (82 if policy_dev else 257 if bounded_fit else 2)
+            or cfg['maximum_observations_per_track'] is not None
             or cfg['full_cache_or_optimizer_automatic_start'] is not False):
         raise ValueError('Exact authorized frozen tiny pilot only')
     names = {'private_assignment': 'private_global_assignment', 'private_image_plan': 'private_image_plan',
@@ -101,12 +105,14 @@ def worker(args, cfg, safety):
     atomic_json(out / 'launch.json', {'preregistration_commit': args.preregistration_commit,
         'live_remote_registration_proof': proof, 'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES},
         'frozen_protocol_sha256': sha256_file(ROOT / cfg['frozen_protocol']),
-        'scope': 'Fixed fit-only uncapped annotated GT-control shards; bounded preparation, not Pred or optimizer'})
+        'scope': ('Fixed policy/dev-only GT-control preparation; dev pixels authorized, no dev labels/final/optimizer'
+                  if policy_dev else 'Fixed fit-only uncapped annotated GT-control shards; bounded preparation, not Pred or optimizer')})
     try:
         import numpy as np
-        from src.trackocd_cvpr.GT_video_cache import (selected_video_plans, write_atomic_shard, read_verified_shard,
+        from src.trackocd_cvpr.GT_video_cache import (selected_video_plans, policy_dev_video_ids, write_atomic_shard, read_verified_shard,
                                                     check_every_prefix, validate_reuse_plan)
-        fit = sorted(fit_video_ids(ROOT / cfg['private_assignment']))[:cfg['pilot_videos']]
+        video_roles = policy_dev_video_ids(ROOT / cfg['private_assignment']) if policy_dev else {}
+        fit = sorted(video_roles) if policy_dev else sorted(fit_video_ids(ROOT / cfg['private_assignment']))[:cfg['pilot_videos']]
         plan = json.loads((ROOT / cfg['private_image_plan']).read_text())
         tasks = selected_video_plans(ROOT / cfg['private_physical_GT'], fit, plan)
         if (sum(len(a['track_id']) for _, _, a in tasks) != cfg['expected_tracks']
@@ -115,16 +121,16 @@ def worker(args, cfg, safety):
             raise ValueError('Uncapped exact preregistered pilot denominators')
         common = json.loads((ROOT / cfg['common_config']).read_text())
         reused = {}
-        if bounded_fit:
+        if bounded_fit or policy_dev:
             pilot = ROOT / cfg['qualified_pilot_directory']
             if (cfg['qualified_pilot_directory'] != 'outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1'
                     or sha256_file(pilot / 'result.json') != cfg['qualified_pilot_result_sha256']
-                    or cfg['reuse_first_video_shards'] != 2):
+                    or cfg['reuse_first_video_shards'] != (0 if policy_dev else 2)):
                 raise ValueError('Exact prior qualified two-video pilot')
             terminal = json.loads(pilot.with_name(pilot.name + '_supervisor_attempt_1.json').read_text())
             if not terminal['successful_owned_execution'] or terminal['owned_worker_exit_code'] != 0 or terminal['guard_stop_reason'] is not None:
                 raise ValueError('Prior payload completion not sufficient without overall pilot qualification')
-            for ordinal in range(2):
+            for ordinal in range(cfg['reuse_first_video_shards']):
                 arrays, record = read_verified_shard(pilot, ordinal)
                 validate_reuse_plan(arrays, tasks[ordinal][2], record, video=fit[ordinal],
                     frozen_sha=sha256_file(ROOT / cfg['frozen_protocol']),
@@ -206,7 +212,7 @@ def worker(args, cfg, safety):
                     'every_visible_prefix': check, 'reopen_exact': True, 'reused_without_extraction': True})
                 private_index.append({'ordinal': ordinal, 'source_directory': cfg['qualified_pilot_directory'],
                                       'video_id': fit[ordinal], 'payload_sha256': record['payload']['sha256']})
-                atomic_json(out / 'progress.json', {'completed_videos': ordinal + 1, 'decoded_fit_images': decoded,
+                atomic_json(out / 'progress.json', {'completed_videos': ordinal + 1, 'decoded_selected_images' if policy_dev else 'decoded_fit_images': decoded,
                     'forward_batches': forwards, 'reused_video_shards': len(reused), 'not_optimizer_or_fullscope': True})
                 continue
             for row in images:
@@ -229,7 +235,7 @@ def worker(args, cfg, safety):
                 if (path.stat().st_size, path.stat().st_mtime_ns) != (stat.st_size, stat.st_mtime_ns):
                     raise ValueError('Current pixels changed')
                 decoded += 1
-                atomic_json(out / 'progress.json', {'completed_videos': ordinal, 'decoded_fit_images': decoded,
+                atomic_json(out / 'progress.json', {'completed_videos': ordinal, 'decoded_selected_images' if policy_dev else 'decoded_fit_images': decoded,
                     'forward_batches': forwards, 'not_optimizer_or_fullscope': True})
             check = check_every_prefix(a); guard()
             record = write_atomic_shard(out, ordinal, a, {'registered_commit': args.preregistration_commit,
@@ -246,7 +252,7 @@ def worker(args, cfg, safety):
             private_index.append({'ordinal': ordinal, 'source_directory': cfg['output_directory'],
                                   'video_id': fit[ordinal], 'payload_sha256': record['payload']['sha256']})
             atomic_json(out / 'private_shard_index.json', private_index)
-            atomic_json(out / 'progress.json', {'completed_videos': ordinal + 1, 'decoded_fit_images': decoded,
+            atomic_json(out / 'progress.json', {'completed_videos': ordinal + 1, 'decoded_selected_images' if policy_dev else 'decoded_fit_images': decoded,
                 'forward_batches': forwards, 'reused_video_shards': len(reused), 'not_optimizer_or_fullscope': True})
         repeat = encode(first_tensor); forwards += 1
         GPU_peak = torch.cuda.max_memory_reserved()
@@ -267,19 +273,34 @@ def worker(args, cfg, safety):
         if digest(model) != before or any(p.requires_grad for p in model.parameters()):
             raise ValueError('Frozen model parameters changed')
         guard(); atomic_json(out / 'private_pixel_receipts.json', pixel_receipts)
-        result = {'status': ('VERIFIED_FIT_PARTITION_UNCAPPED_GT_CONTROL_FEATURE_CACHE_NOT_PRED_OR_TRAINED' if bounded_fit else
+        role_totals = {r: {'videos': 0, 'tracks': 0, 'observations': 0, 'metadata_frames': 0, 'empty_GT_frames': 0}
+                       for r in set(video_roles.values())}
+        for video, shard in zip(fit, shards):
+            if policy_dev:
+                totals = role_totals[video_roles[video]]; totals['videos'] += 1
+                for name in ('tracks', 'observations', 'metadata_frames', 'empty_GT_frames'): totals[name] += shard[name]
+        if policy_dev:
+            for role, expected in cfg['expected_role_totals'].items():
+                if any(role_totals[role][k] != v for k, v in expected.items()):
+                    raise ValueError('Every policy/dev physical denominator must reconcile separately')
+        result = {'status': ('VERIFIED_POLICY_DEV_UNCAPPED_GT_CONTROL_CACHE_NOT_FINAL_OR_PRED_OR_TRAINED' if policy_dev else
+                            'VERIFIED_FIT_PARTITION_UNCAPPED_GT_CONTROL_FEATURE_CACHE_NOT_PRED_OR_TRAINED' if bounded_fit else
                              'VERIFIED_TWO_FIT_VIDEO_UNCAPPED_GT_CONTROL_CACHE_PILOT_NOT_PRED_OR_TRAINED'),
             'live_remote_registration_proof': proof, 'shards': shards,
             'pilot_videos': len(tasks), 'tracks': sum(r['tracks'] for r in shards),
             'videos': len(tasks), 'reused_video_shards_without_extraction': len(reused),
             'observations': sum(r['observations'] for r in shards), 'metadata_frames': sum(r['metadata_frames'] for r in shards),
-            'decoded_fit_images': decoded, 'GPU_forward_batches_including_repeat': forwards, 'CPU_comparison_forwards': 1,
+            'decoded_selected_images' if policy_dev else 'decoded_fit_images': decoded,
+            'GPU_forward_batches_including_repeat': forwards, 'CPU_comparison_forwards': 1,
             'GPU_idle_before_owned_allocation': idle, 'frozen_parameters_unchanged': True, 'frozen_parameter_sha256': before,
             'encoder_source_files_verified': len(source_hashes), 'encoder_source_tree_entries': tree_count,
             'sparse_absent_not_imported': absent, 'imported_encoder_modules_verified': imported,
             'precision_GPU_batch_single_repeat': GPU_repeat, 'precision_CPU_GPU_firstcrop': CPU_GPU,
             'precision_float16_reader_firstcrop': fp16, 'semantic_GT_roles_IDs_futurelength_in_numeric_forward': False,
-            'development_final_or_protected_pixels_read': False, 'optimizer_or_formal_training_started': False,
+            'development_final_or_protected_pixels_read': policy_dev,
+            'development_pixels_read': policy_dev, 'independent_final_or_protected_pixels_read': False,
+            'development_or_final_semantic_values_decoded': False, 'role_totals': role_totals,
+            'optimizer_or_formal_training_started': False,
             'full407_cache_automatic_launch': False, 'qualified_Pred_or_Goal_A_B_C_achieved': False,
             'resources': {'wall_seconds_excluding_network': time.monotonic() - started, 'peak_guarded_RSS_bytes': peak,
                 'GPU_peak_reserved_bytes': GPU_peak, 'frozen_cache_GPU_hours': (time.monotonic() - GPU_started) / 3600,
@@ -297,11 +318,11 @@ def main():
     global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
-    parser.add_argument('--config', choices=(CONFIG, FIT_CONFIG), default=CONFIG)
+    parser.add_argument('--config', choices=(CONFIG, FIT_CONFIG, POLICY_DEV_CONFIG), default=CONFIG)
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
-    if args.config == FIT_CONFIG:
+    if args.config in (FIT_CONFIG, POLICY_DEV_CONFIG):
         SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1/result.json',
                    'outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1_supervisor_attempt_1.json', SOURCES[-1])
     cfg = json.loads((ROOT / args.config).read_text())

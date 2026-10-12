@@ -2249,3 +2249,24 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Pred frontend, learned C/M, multiseed causal rollout, finalunseen validation
   and GoalA/B/C remain open. OriginalGoal active, not replaced or completed by
   this numerical pilot. Do not silently expand semanticGT/final selection scope.
+
+### Fixed policy/dev GT-control input preparation preregistration
+
+- Previous turn classified progress: real fit257cache and10R CPUupdates,
+  public9cd1a24453246ab6e0c80587d5e13d608ee6cdc7, not Goal acceptance.
+  Worktree clean/newowned jobs terminal before cache-source extension.
+- Next hash-bound geometry/pixels only: policy10videos/54tracks/1268obs/
+ 374frames +Train-development72/472/8753/2562 =82/526/10021/2936.
+  Project ONLY these two video lists before GTbody decode; class/fit/final
+  value lists skipped. Full per-role denominators checked independently.
+  Developmentpixels are intentionally read under new407scope, not mislabeled
+  asfit or falsely reported unread. Devsemantic values stay undecoded; final/
+  oldheldout/Val/Test/protected pixels stillforbidden, no optimizer/selection.
+- Same qualifiedpilot/common frozenDINO/GTamodalunclipped/q1 protocol; no fit
+  rerun/reuse because these roles disjoint. Expected~16MiB newfeatures, hard
+ 40MiB/1800s/onefreshidleGPU/3GiBRSS, original25%RAM/globalstorage limits.
+  Alltracks/observations/frameclock retained, no unlabeledBG or newNovellabels.
+- Two new scope/overlap/count/source tests and full457tests PASS11.97s before
+  clarifying selected-image counters/launch scope. Subsequent run stillneeds
+  actualsource publication/fetch/freshref/hash/currentGPU checks; no cache
+  completion or scientificselection inferred merely from this preparation.
