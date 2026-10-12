@@ -1922,3 +1922,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
   unknownstate stillfailsresourceguard, no unconditionalgrace or oldPIDreuse.
   Additionalpoll closesexit race, no budgetraise/model/data/preprocesschange.
   Kernelstate tests rejectrunning/sleeping/idle/stopped/missing/truncatedstatus.
+- Full427tests PASS7.37s before truncatedstate refinement; focusedterminal
+  testthenPASS0.34s. Registereddb96482 actualpush/fetch exit0 and HEAD/FETCH_HEAD/
+  origintracking exact; worker freshref/sourcechecks andownedcontrol transport
+  stillrequired, no caches/proof bypass. No v2samepath rerun/historyoverwrite.
+- Actualv3 clean exit0, twofitRGBimages/3CPUforwards, float32unit[2,768], exact
+  repeatedinput descriptor and frozenmodeldigestunchanged; CUDAuninitialized.
+ 156present trackedsourcefiles +15actualimportedmodules verified against pinned
+  Gitcommit;157treeentries/1sparseabsentsetup recorded. Weights hash samepinned
+  checkpoint, no vendor/environment edits/downloads. xFormers warnings indicate
+  optionalCPUfallback, not missing mandatorydependency requiring installation.
+- V3private6410Bdescriptorhash matches earlier v2validworker descriptors exactly,
+  butv2failedsupervisor result remains FALSE/preserved. Newv3 is end-to-end
+  ownedclean smoke, NOT retroactive repair of v2receipt. Workerreported
+ 49.836519378s excludingnetwork/1222565888Bpeak, no optimizer/training/fullcache
+  or dev/finalpixels. Wholeimage smoke NOT GT/predcrop/trajectory, modelquality,
+  Novelgeneralization, qualifiedfrontend or frozenprotocol evidence.
+- Next preregister finite fit-only actualbox/prefix integration and freeze
+  scientificprotocol/forward-label separation before any fullcache/newfit.
+  Preserve unavailable/unlabeled/fullGT/781emptyGT frames and stage budgets.
+  ScientificR/C/Mmechanismtrials0, training0/600GPUh, GoalA/B/C stillopen.
+- V3ownedtotal55.732367061s, oneThread/1222565888Bsamplepeak/noguardstop.
+  PublicresultSHAcecb4e80341ed607da21509a808086c938b23f156f49c97823a94435dad168c4.

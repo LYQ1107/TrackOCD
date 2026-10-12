@@ -110,6 +110,16 @@ features are retained but NOT automatically full407uncapped/provenance-qualified
 inputs. Actualattempt1 networkpregate failure preserved; attempt2 reused an
 owned verifiedSSHconnection, freshremote/sourcegate stillrequired andpassed.
 
+Fit-only frozen-backbone CPU integrity smoke subsequentlypassed end-to-end:
+twoRGBimages/threeforwards (oneexactrepeat), finiteunit768Doutputs, strict
+pinnedcheckpoint and actualimportedsource hashes, frozenparamsunchanged and
+CUDAuninitialized. PresenttrackedPython156/imported15, Git-tree157 withsparse
+setup.pyabsence explicit. Earlier missingpackagingscript/operatorSHA/ending
+supervisor failures preserved, not erased. This WHOLE-IMAGE smoke doesnot
+qualify GT/predictedbox/prefix crops, trajectories, primaryfrontend, learned
+R/C/M, Novelmetrics or fullprotocolfreeze. No optimizer or fullcache launched;
+commonbackbone readiness is limitedto theseactualfit inputs andchecks.
+
 Latest checkpoint:12 scoped paper/actual-core inspections and3 licensed-extra
 inspections meet the review-count substep, not CVPR1/Goal acceptance. A tiny
 real-input atomic Raw control now passes32cached time indices/1101observations
