@@ -1,0 +1,22 @@
+{
+  "schema_version": "trackocd.cvpr.scoped-known-Train-census.v1",
+  "approval": "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json",
+  "proposal": "configs/trackocd_cvpr/clean_train_gt_scope_proposal.json",
+  "proposal_sha256": "19ae8fee4eb5696aad7ac1b4b827593df002cb93f41df41b46b8450200d26a47",
+  "private_exclusion_index": "outputs/trackocd_cvpr/safety/train_partition_scope_v1/private_partition_video_index.json",
+  "private_exclusion_index_sha256": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+  "private_index_source_plan_sha256": "6259872dd3e59295c23674e6a0e877aadf5164638dd496e441fd80639bcfd4a3",
+  "allowlisted_videos": 429,
+  "excluded_old_heldout_videos": 51,
+  "roles": "configs/trackocd_core/roles.json",
+  "roles_sha256": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062",
+  "train_annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+  "train_annotation_sha256": "7eb551fdeeeebc76b876ae255f91dc5662c7270a125955c5f1be2d9bd30921d0",
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1",
+  "rss_bytes_ceiling": 268435456,
+  "wall_seconds_ceiling": 120,
+  "output_bytes_ceiling": 8388608,
+  "CPU_workers": 1,
+  "training_GPU_hours": 0,
+  "interpretation": "All positive annotations in429 explicitly allowed Train videos, Known membership filtering only; no observation cap or short-track filter. Category names/Novel vocab/nested video GT values/protected video target values skipped before decode. Census external, not model input, category-absence proof, frozen new protocol or model result. Private Known numeric support/track index stays local; public only aggregate counts and hashes."
+}

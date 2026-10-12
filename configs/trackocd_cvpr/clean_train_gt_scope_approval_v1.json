@@ -1,0 +1,23 @@
+{
+  "schema_version": "trackocd.cvpr.explicit-user-scope-approval.v1",
+  "status": "USER_APPROVED_SCOPED_EXTERNAL_CENSUS_ONLY",
+  "user_message_verbatim": "同意上述范围，恢复原 Goal",
+  "client_date": "2026-10-12",
+  "client_timezone": "Asia/Shanghai",
+  "message_identifier_available": false,
+  "bound_proposal": "configs/trackocd_cvpr/clean_train_gt_scope_proposal.json",
+  "bound_proposal_sha256": "19ae8fee4eb5696aad7ac1b4b827593df002cb93f41df41b46b8450200d26a47",
+  "proposal_and_historical_incident_preserved": true,
+  "allowlisted_videos": 429,
+  "excluded_old_heldout_videos": 51,
+  "all_other_video_IDs_default_deny": true,
+  "authorization_source": "Actual human reply approving the immediately preceding scoped proposal, not an automatic continuation or self-grant",
+  "external_known_only_Train_census_authorized": true,
+  "automatic_training_or_full_cache_authorized_by_this_receipt": false,
+  "category_names_Novel_vocabulary_video_GT_arrays_Val_Test_other_protected_labels_authorized": false,
+  "positive_GT_proves_visual_absence": false,
+  "new_protocol_must_be_frozen_before_fit": true,
+  "original_full_goal_preserved": true,
+  "host_goal_status_at_first_check": "blocked",
+  "host_active_transition_performed_or_claimed": false
+}

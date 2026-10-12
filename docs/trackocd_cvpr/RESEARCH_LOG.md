@@ -1173,3 +1173,29 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Final full273engineering tests PASS3.72s, no skips, before delivery. No real
   GT permission, fitted model, empirical new gradient logs, full controller
   tensor integration, metric gain or three-direction scientific acceptance.
+
+### Explicit human approval: scoped Known Train census (client 2026-10-12)
+
+- User actually replied “同意上述范围，恢复原 Goal”. Added separate immutable
+  approval receipt bound to the original proposal SHA19ae8fee; original pending
+  proposal, nested-GT incident and all old receipts remain unchanged. No invented
+  message identifier or retroactive blind-access certificate.
+- Only429 allowlisted Train videos;51 old heldout and every other video default
+  deny. Video administrative ID decoded before any target value, even if category
+  and bbox appear first in JSON. Existing Known numeric IDs projected alone;
+  no names/Novel vocabulary/video nested-GT values. NonKnown numeric membership
+  filters transient only; their boxes/tracks not decoded or retained.
+- Registered implementation/tests before real census: no track observation cap,
+  no short-track removal, no GT repair or metric/model-driven filtering. Private
+  Known positive support/track index local only; public aggregates/hashes only.
+  One CPU,256MiB RSS,120s,8MiB output,25% system RAM and10GiB disk reserves.
+- Initial goal tool still returned blocked after the human reply; available
+  status API cannot set active. Original full objective preserved, no replacement
+  goal and no false active claim; directly requested scoped work continues.
+- Positive annotations cannot certify visual category absence. Fresh independent
+  classes/videos and protocol must still freeze before fit. This approval does
+  not automatically launch full cache or training; new training remains0/600GPUh.
+- Synthetic scoped-reader suite30passed0.28s; full engineering suite303passed
+  3.74s, no skips. Actual protected/unlisted-value mutations and decode-call
+  instrumentation passed, including target fields before video ID and nested
+  box refusal. These are parser/isolation tests, not real GT census results.
