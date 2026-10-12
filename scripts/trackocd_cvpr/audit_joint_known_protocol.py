@@ -64,8 +64,12 @@ def supervise(args, cfg, safety):
     started, peak, reason, peak_threads = time.monotonic(), 0, None, 0
     if resources_ok(cfg, safety, ROOT, started, 0):
         raise RuntimeError('Pre-spawn resource guard')
+    worker_script = cfg.get('worker_script', 'scripts/trackocd_cvpr/audit_joint_known_protocol.py')
+    if worker_script not in ('scripts/trackocd_cvpr/audit_joint_known_protocol.py',
+                             'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py'):
+        raise ValueError('Only registered owned audit/smoke worker paths')
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
-                              str(Path(__file__).resolve()), '--worker',
+                              str(ROOT / worker_script), '--worker',
                               '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy,
                               '--attempt', str(args.attempt), '--config', args.config], cwd=ROOT)
     try:

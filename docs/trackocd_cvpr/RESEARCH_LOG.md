@@ -1864,3 +1864,25 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Ownedv12attempt2 total49.383291347s/oneThread/noguardstop/sample130199552B;
   localscalarimageplan2930648B, no semanticlabels/GTboxes inplan. Publicresult
   SHAd060b0168c28e4729f24e2fa1970202574c9031e28619f15cf4c991ed0b21f85.
+
+### Fit-only frozen-backbone integrity smoke preregistration
+
+- Rechecked cleanc44816d,184.2GBdisk/75.7GBRAMavailable. PinnedDINOvendor
+  HEAD7764ea0 clean;157trackedPythonfiles exist. Actualcheckpoint346378731B
+  SHA0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73
+  matches commonconfig. These asset checks are not descriptor/performance proof.
+- New CPU smoke selects only firsttwo scalarfitimage rows in fixedchronological
+  order, no class/GT/score/difficulty/length filtering. FitvideoIDs projected
+  without classes/otherrolesupport decoding. Whole-image explicitcropbox,
+ 518bilinear/RGB/normalization protocol and frozenDINO768; NOT GT/pred box,
+  multiframe track descriptors or releasedfrontend qualification. TwoRGBdecodes,
+  threeCPUforwards including exactrepeat, strictlocalweights/157sourcechecks+
+  actualimportedmodulehashes, frozenstate digest before/after, CUDAuninitialized.
+- Newregisteredowned worker path whitelist; sameRAMreserve/ownPopenonly,
+ 2GiB/180s cap for frozenmodelresidentCPU, oneThread/zeroGPU/optimizer. Network
+  barred afterregistration, datasetopen limited to twoexactfitpaths. Private
+  tiny smoke descriptors only, no pixels/weights/GT upload or fullcache.
+- Three synthetic fit-only/invalidscope/config tests/full425engineering tests
+  PASS28.03s, no skips. Source path crop helper imports inspected; constructor
+  pretrained=False never invokes download URL route. Actualdecode/model smoke
+  awaits remote source preregistration; no newtraining/protocolfreeze claimed.

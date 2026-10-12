@@ -1,0 +1,22 @@
+{
+  "schema_version": "trackocd.cvpr.two-fit-image-frozen-CPU-smoke.v1",
+  "worker_script": "scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py",
+  "common_config": "configs/trackocd_core/common_features.json",
+  "private_assignment": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+  "private_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+  "private_image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+  "private_image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+  "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "selection": "First two image metadata rows of fit257video scope in(video_id,frame_index,image_id) order; no class/GT/score/difficulty or length filtering",
+  "scope": "Whole-current-RGB-image backbone integrity only, not GT/pred crops/trajectories/fullcache",
+  "maximum_images_decoded": 2,
+  "maximum_CPU_forward_calls": 3,
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 2147483648,
+  "wall_seconds_ceiling": 180,
+  "output_bytes_ceiling": 1048576,
+  "supervisor_poll_seconds": 0.2,
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/selected_frozen_encoder_smoke_v1",
+  "training_GPU_hours": 0,
+  "interpretation": "Fit-only CPU two-image decode and current-image DINO768 smoke with frozen strict pinnedcheckpoint and localtrackedsource verification, exactrepeat and state digest.2GiB bounds frozenmodel residency, no GPU/optimizer/download/GTlabels inforward. Private tiny descriptors only, no source pixels/weights upload. Not trajectory/crop compatibility, qualifiedfrontend, scientific metric, fullcache or protocolfreeze."
+}
