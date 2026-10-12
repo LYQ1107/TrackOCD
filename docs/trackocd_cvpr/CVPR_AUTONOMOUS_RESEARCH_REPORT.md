@@ -34,6 +34,13 @@ sealed-plan audit now pass (57videos/2065images, exact sanitized schema),
 launched. The scientific-access/fresh blind-protocol gate remains unresolved.
 See [TRAIN_METADATA_ACCESS_INCIDENT.md](TRAIN_METADATA_ACCESS_INCIDENT.md).
 
+Administrative old-plan projection subsequently verifies480selected videos
+in five disjoint partitions;429previously authorized Train videos and51old
+heldout videos are now separated by a local-only exclusion index. No target
+labels were decoded. Changed external GT-census authority is pending user
+direction after the incident; no new GT read/training/full-cache launch.
+This is not the fresh category/video protocol or independent model evidence.
+
 ## Registered execution sequence
 
 CVPR-0 first: retrospective sealed FULL decision distributions for all three

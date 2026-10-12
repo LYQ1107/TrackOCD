@@ -96,3 +96,21 @@ Usage metrics can survive exec; launcher attribution is an inference.
 and [proc status documentation](https://www.man7.org/linux/man-pages/man5/proc_pid_status.5.html)
 also distinguish these counters and note `/proc` estimates' limitations.
 Old memory receipts and access claims were not silently rewritten.
+
+## Administrative exclusion evidence, not permission to read GT
+
+A separately registered administrative projection (`d4badaa...`) decoded only
+`video_id`/partition in every2166selected old-plan row. Actual five-way global
+video ownership is disjoint:480selected videos,429in the four previously
+authorized Train partitions and51in old heldout. Category values, semantic
+roles, observations and summary were skipped; no annotation source was opened.
+The private5971B exclusion index stays local. Public source-bound result:
+`outputs/trackocd_cvpr/safety/train_partition_scope_v1/result.json`,
+SHA `eaa932dcacbf70167e77f5e4c6ca9132b49e4a29c1642f7c7bf942ac4df65408`.
+
+This evidence supports an explicit allowlist/default-deny reader design, not
+category absence, fresh folds, retroactive access compliance or scientific
+clearance. A changed external Known-only Train GT census scope has been put to
+the user after this incident; `clean_train_gt_scope_proposal.json` remains
+pending and cannot authorize itself. No new GT read or training is executed
+while that direction is unresolved. Named protected data stay forbidden.

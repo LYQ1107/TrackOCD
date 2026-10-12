@@ -106,6 +106,8 @@ def main():
                           'source_plan_sha256': cfg['private_plan_sha256'], 'partitions': private,
                           'not_model_facing': True, 'semantic_target_labels': False})
         guard()
+        snapshot = process_memory()
+        peak_sampled_rss = max(peak_sampled_rss, snapshot['sampled_smaps_rollup_Rss_bytes'])
         result = {'status': 'COMPLETE_ADMIN_VIDEO_SCOPE_NOT_GT_CENSUS_OR_SCIENTIFIC_CLEARANCE', **launch,
                   'partition_scope': public,
                   'private_exclusion_index': {'bytes': path.stat().st_size, 'sha256': sha256_file(path)},
@@ -115,8 +117,8 @@ def main():
                   'direct_sensitive_open_barrier_not_complete_sandbox': True,
                   'historical_commands_executed': False, 'optimization_steps': 0,
                   'scientific_access_clearance_granted': False, 'interpretation': cfg['interpretation'],
-                  'resources': {'wall_seconds': time.monotonic() - started, **process_memory(),
-                                'peak_sampled_smaps_rollup_Rss_bytes': peak_sampled_rss,
+                  'resources': {'wall_seconds': time.monotonic() - started, **snapshot,
+                                'peak_sampled_smaps_rollup_Rss_bytes_through_result_snapshot': peak_sampled_rss,
                                 'resource_ru_maxrss_bytes_including_preexec_history': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
                                 'training_GPU_hours': 0, 'disk_free_bytes': shutil.disk_usage(ROOT).free}}
         guard()

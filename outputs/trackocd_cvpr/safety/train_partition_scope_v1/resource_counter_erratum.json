@@ -1,0 +1,14 @@
+{
+  "schema_version": "trackocd.cvpr.resource-counter-interpretation-erratum.v1",
+  "original_result_sha256": "eaa932dcacbf70167e77f5e4c6ca9132b49e4a29c1642f7c7bf942ac4df65408",
+  "original_result_not_overwritten": true,
+  "issue": "peak_sampled_smaps_rollup_Rss_bytes records guard samples before result construction, not the later result-snapshot sample.",
+  "guard_sample_peak_bytes_before_result": 33984512,
+  "reported_result_snapshot_sample_bytes": 33992704,
+  "maximum_of_recorded_samples_bytes": 33992704,
+  "kernel_reported_VmHWM_bytes_approximate": 40394752,
+  "registered_ceiling_bytes": 268435456,
+  "scope_or_video_partition_result_affected": false,
+  "exact_unsampled_or_process_tree_peak_claimed": false,
+  "future_counter_fix_required": "Include the result snapshot before computing the sampled peak and name its sampling endpoint explicitly; never silently edit this receipt."
+}

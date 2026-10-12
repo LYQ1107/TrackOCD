@@ -1,0 +1,73 @@
+{
+  "annotation_target_label_tables_roles_images_features_models_Val_Test_read": false,
+  "cache_manifest_sha256": "4bc1890c7067d3603753f3e735fe722344c57239bfca2c2b1ec21e31634f75dd",
+  "category_role_observation_summary_values_JSON_decoded": false,
+  "direct_sensitive_open_barrier_not_complete_sandbox": true,
+  "historical_commands_executed": false,
+  "interpretation": "Administrative exclusion index from sealed existing plan only: actual video partition disjointness, not GT labels/category absence/full annotation census/new folds or scientific clearance. Heldout video IDs are bookkeeping only, never model-facing. No Train annotation/target-label table/semantic role array/image/feature/checkpoint/Val/Test access or old job execution. Private exclusion IDs stay local; publish only aggregates/hashes.",
+  "optimization_steps": 0,
+  "partition_scope": {
+    "category_absence_or_complete_annotation_census_proven": false,
+    "new_protocol_or_scientific_access_cleared": false,
+    "old_nested_GT_access_undone": false,
+    "old_selected_plan_global_video_disjointness_verified": true,
+    "partitions": {
+      "development": {
+        "selected_rows": 258,
+        "videos": 57
+      },
+      "heldout_selection": {
+        "selected_rows": 223,
+        "videos": 51
+      },
+      "policy_train": {
+        "selected_rows": 229,
+        "videos": 53
+      },
+      "prototype": {
+        "selected_rows": 151,
+        "videos": 39
+      },
+      "representation_fit": {
+        "selected_rows": 1305,
+        "videos": 280
+      }
+    },
+    "protected_video_exclusion_partition": "heldout_selection",
+    "selected_rows": 2166,
+    "selected_videos": 480
+  },
+  "preregistration_commit": "d4badaa591997bfc8d2be3f375feae36213c3a50",
+  "private_exclusion_index": {
+    "bytes": 5971,
+    "sha256": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d"
+  },
+  "private_plan_sha256": "6259872dd3e59295c23674e6a0e877aadf5164638dd496e441fd80639bcfd4a3",
+  "resources": {
+    "disk_free_bytes": 29343797248,
+    "guarded_process_RSS_bytes": 40394752,
+    "kernel_reported_VmHWM_bytes_approximate": 40394752,
+    "peak_sampled_smaps_rollup_Rss_bytes": 33984512,
+    "resource_ru_maxrss_bytes_including_preexec_history": 847216640,
+    "sampled_smaps_rollup_Rss_bytes": 33992704,
+    "training_GPU_hours": 0,
+    "wall_seconds": 5.205159981967881
+  },
+  "row_value_fields_JSON_decoded": [
+    "video_id",
+    "partition"
+  ],
+  "scientific_access_clearance_granted": false,
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/train_partition_scope_audit.json": "e8d27ea4d96375b973f1e6a3a246041fc41387679056f3ac21ed0cb26a2ed5bb",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "scripts/trackocd_cvpr/audit_train_partition_scope.py": "d84296871166fa7756c16902c34e50a639a7ad840e4b6654db31f2734beb27b3",
+    "src/trackocd_core/physical_qualification.py": "61d5b2b6f035655be60f37a5e5f49647c520be57315b371f5a918a2d496539c4",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/train_partition_scope.py": "9f9f869348142964c60019b3c2b6442492c7dc1099763300e59595e921e3a2bf",
+    "src/trackocd_cvpr/train_physical_resume.py": "4f384e775beed224834b6a759b6fad65b303e7fee9f7f2c566974569f2dee385",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "COMPLETE_ADMIN_VIDEO_SCOPE_NOT_GT_CENSUS_OR_SCIENTIFIC_CLEARANCE"
+}

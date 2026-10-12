@@ -1035,3 +1035,36 @@ new research scope; nothing has been deleted, no storage pressure is present.
   category absence, unseen-class blindness, new folds or scientific clearance.
 - Full197engineering tests PASS3.22s, no skips, before remote registration;
   sensitive-path barrier permits only the exact hash-bound administrative plan.
+
+### Actual old-video exclusion verified; changed GT boundary requires direction
+
+- Exactremoted4badaa source registration pushed/fetched/verified. Actual audit
+  completed5.205160s CPU, own kernel VmHWM40394752B (<256MiB),0training.
+  All2166selected plan rows project only video_id/partition; five disjoint
+  video sets total480: prototype39, fit280, development57, policy53, heldout51.
+  The four permitted administrative partitions therefore cover429videos,
+  disjoint from51protected old-heldout videos. Other videos default-deny.
+  The old500video Train total suggests20outside the selected plan; this audit
+  did NOT open/recount the annotation universe. No category values/names or
+  per-video IDs/rows were printed/published. Local-only5971B exclusion index.
+- Resulteaa932dcacbf70167e77f5e4c6ca9132b49e4a29c1642f7c7bf942ac4df65408,
+  launch155c373754482187205ac637a1aea75f051289d98c5774f7b8cb71f74c08993f,
+  private indexSHAee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d.
+  No actual new GT/category/role-array, image, feature, model, Val/Test read or
+  scientific-access clearance. Original nested-metadata breach not undone.
+- Preserve small resource-counter wording erratum: guard-sample peak33984512B
+  excludes later result sample33992704B; original receipt unchanged. Future
+  counter includes/names result-snapshot endpoint; no rerun or altered counts.
+  Guard used larger kernel HWM; no ceiling increase or exact-tree-peak claim.
+- Requested user direction on a materially changed, bounded external GT
+  census scope after the access incident: only429allowlisted Train videos,
+  deny51old-heldout/allothers before category/box decoding; inspect numeric
+  IDs only for inheritedKnown filtering, never names/Novel vocabulary or
+  model-facing GT. No nested video GT arrays. No label read executed while
+  waiting; pending scope proposal cannot grant itself permission or training.
+- This is a safety-authority decision, not routine per-stage approval or a
+  scientific negative result. Goal A/B/C, fresh lawful protocol and all three
+  actual learned mechanism experiments remain unachieved. Newtraining0/600.
+- Full201engineering tests PASS3.27s, no skips; actual administrative source
+  binding/counts, immutable counter erratum and non-self-authorizing pending
+  scope checked. Private exclusion index remains ignored/untracked and local.
