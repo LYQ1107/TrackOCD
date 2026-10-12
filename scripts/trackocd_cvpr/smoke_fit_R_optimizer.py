@@ -17,6 +17,7 @@ from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memor
 
 CONFIG = 'configs/trackocd_cvpr/fit_R_optimizer_smoke_v1.json'
 BENCH_CONFIG = 'configs/trackocd_cvpr/fit_R_batched_qualification_v1.json'
+SCIENTIFIC_CONFIG = 'configs/trackocd_cvpr/R_GT_scientific_window_v1.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/smoke_fit_R_optimizer.py',
     'src/trackocd_cvpr/fit_R_training.py', 'src/trackocd_cvpr/fit_loss_supervision.py',
     'src/trackocd_cvpr/exact_support_reduction.py', 'src/trackocd_cvpr/differentiable_support_bank.py',
@@ -40,7 +41,8 @@ def supervise(args, cfg, safety):
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / 'scripts/trackocd_cvpr/smoke_fit_R_optimizer.py'), '--worker',
         '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy,
-        '--config', args.config], cwd=ROOT)
+        '--config', args.config] + (['--variant', args.variant, '--seed', str(args.seed)]
+                                  if args.config == SCIENTIFIC_CONFIG else []), cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')
@@ -87,9 +89,12 @@ def worker(args, cfg, safety):
             raise ValueError('Source or completed cache receipt not truly registered')
     authority = json.loads((ROOT / cfg['approval']).read_text())
     benchmark = cfg.get('batched_qualification_only', False)
+    scientific = cfg.get('scientific_R_trial', False)
     if (authority['status'] != 'USER_APPROVED_FREEZE_THEN_BOUNDED_CACHE_AND_TRAIN'
-            or cfg['status'] != ('REGISTERED_NO_OPTIMIZER_BATCH_QUALIFICATION' if benchmark else 'REGISTERED_OPTIMIZER_PLUMBING_SOURCE_CACHE_COMPLETION_REQUIRED')
-            or cfg['execution_device'] != 'CPU' or cfg['optimizer_steps'] != (0 if benchmark else 10) or cfg['seed'] != 1027
+            or cfg['status'] != ('REGISTERED_FIXED_R_SCIENTIFIC_TRIAL_EXECUTION_DEV_QUALIFICATION_PENDING' if scientific else
+                                 'REGISTERED_NO_OPTIMIZER_BATCH_QUALIFICATION' if benchmark else 'REGISTERED_OPTIMIZER_PLUMBING_SOURCE_CACHE_COMPLETION_REQUIRED')
+            or cfg['execution_device'] != 'CPU' or cfg['optimizer_steps'] != (200 if scientific else 0 if benchmark else 10)
+            or cfg['seed'] not in ([1027, 1028, 1029] if scientific else [1027])
             or cfg['class_count'] != 5 or cfg['full_scientific_fit_automatic_start'] is not False):
         raise ValueError('Exact new authority / bounded first optimizer smoke only')
     out = ROOT / cfg['output_directory']
@@ -106,7 +111,8 @@ def worker(args, cfg, safety):
             raise RuntimeError('Owned CPU optimization guard:' + str(reason))
     atomic_json(out / 'launch.json', {'preregistration_commit': args.preregistration_commit,
         'live_remote_registration_proof': proof, 'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES},
-        'scope': ('Actual fit/checkpoint batch/reference numeric+gradient/timing qualification, zero optimizer' if benchmark else
+        'scope': ('Fixed seeded R trial on fitKnown only; endpoint200, no dev/final selection' if scientific else
+                  'Actual fit/checkpoint batch/reference numeric+gradient/timing qualification, zero optimizer' if benchmark else
                   'Ten fit5 Known optimizer steps on complete GT-control feature cache, no dev/final or scientific acceptance')})
     try:
         import torch
@@ -123,6 +129,43 @@ def worker(args, cfg, safety):
         sys.addaudithook(barrier)
         guard(); tracks, label_proof = load_completed_fit_tracks(ROOT, cfg, guard)
         model = RawPreservingEvidence().train()
+        if scientific:
+            from src.trackocd_cvpr.fit_R_training import scientific_R_steps
+            from src.trackocd_cvpr.batched_evidence import TimelessStaticEvidence
+            if cfg['variant'].startswith('timeless'):
+                torch.manual_seed(cfg['seed']); model = TimelessStaticEvidence().train()
+            before = digest(model)
+            def save_checkpoint(current, optimizer, step, rng):
+                path = out / ('private_step' + str(step) + '_checkpoint.pt')
+                if path.exists(): raise ValueError('Preserve every checkpoint')
+                temporary = out / (path.name + '.partial')
+                with temporary.open('xb') as handle:
+                    torch.save({'model_state': current.state_dict(), 'optimizer_state': optimizer.state_dict(),
+                        'step': step, 'variant': cfg['variant'], 'seed': cfg['seed'], 'torch_rng_state': torch.get_rng_state(),
+                        'numpy_rng_state': rng, 'fit_GT_control_not_Pred': True}, handle)
+                    handle.flush(); os.fsync(handle.fileno())
+                os.replace(temporary, path)
+            def progress(row, curve):
+                atomic_json(out / 'progress.json', row); atomic_json(out / 'loss_curve.json', curve)
+            curve = scientific_R_steps(model, tracks, cfg, cfg['variant'], cfg['seed'], guard, progress, save_checkpoint)
+            after = digest(model); endpoint = out / 'private_step200_checkpoint.pt'
+            if after == before or torch.cuda.is_initialized(): raise ValueError('Real CPU fit update required')
+            restored = torch.load(endpoint, map_location='cpu', weights_only=True)
+            verifier = TimelessStaticEvidence() if cfg['variant'].startswith('timeless') else RawPreservingEvidence()
+            verifier.load_state_dict(restored['model_state'], strict=True)
+            if digest(verifier) != after: raise ValueError('Endpoint model reopen differs')
+            guard()
+            result = {'status': 'COMPLETED_FIXED_R_FIT_TRIAL_NOT_DEV_VALIDATED_OR_GOAL_ACCEPTED',
+                'live_remote_registration_proof': proof, 'variant': cfg['variant'], 'seed': cfg['seed'],
+                'completed_optimizer_steps': len(curve), 'label_and_physical_scope': label_proof,
+                'model_parameter_sha256_before': before, 'model_parameter_sha256_after': after,
+                'endpoint': {'bytes': endpoint.stat().st_size, 'sha256': sha256_file(endpoint), 'reopen_exact': True},
+                'loss_curve': curve, 'checkpoint_selection': 'Fixed200 endpoint',
+                'dev_final_Val_Test_targets_or_pixels_used': False, 'old_fitted_adapter_initialization': False,
+                'all3seeds_or_distinct_R_C_M_mechanisms_or_Goal_A_B_C_accepted': False,
+                'resources': {'peak_guarded_RSS_bytes': peak, 'wall_seconds_excluding_network': time.monotonic() - started,
+                              'training_GPU_hours': 0, 'CUDA_initialized': False}}
+            atomic_json(out / 'result.json', result); print(json.dumps(result), flush=True); return
         if benchmark:
             import gc
             from src.trackocd_cvpr.fit_R_training import support_groups
@@ -214,13 +257,24 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true')
-    parser.add_argument('--config', choices=(CONFIG, BENCH_CONFIG), default=CONFIG)
+    parser.add_argument('--config', choices=(CONFIG, BENCH_CONFIG, SCIENTIFIC_CONFIG), default=CONFIG)
+    parser.add_argument('--variant', choices=('temporal_CE', 'timeless_CE', 'temporal_Raw_teacher', 'timeless_Raw_teacher'))
+    parser.add_argument('--seed', type=int, choices=(1027, 1028, 1029))
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
-    if args.config == BENCH_CONFIG:
+    if args.config in (BENCH_CONFIG, SCIENTIFIC_CONFIG):
         SOURCES = (*SOURCES[:-1], 'src/trackocd_cvpr/batched_evidence.py',
             'outputs/trackocd_cvpr/cvpr2/fit_R_optimizer_smoke_v1/result.json', SOURCES[-1])
     cfg = json.loads((ROOT / args.config).read_text()); safety = json.loads((ROOT / SOURCES[-1]).read_text())
+    if args.config == SCIENTIFIC_CONFIG:
+        if args.variant is None or args.seed is None: raise ValueError('Explicit registered variant and independent training seed')
+        window = cfg; template = json.loads((ROOT / BENCH_CONFIG).read_text())
+        cfg = {**template, **window, **window['proposed_execution'], 'scientific_R_trial': True, 'batched_qualification_only': False,
+               'seed': args.seed, 'variant': args.variant, 'optimizer_steps': window['training']['steps_per_variant_and_seed'],
+               'class_count': 5, 'execution_device': 'CPU', 'wall_seconds_ceiling': window['proposed_execution']['job_wall_seconds_ceiling'],
+               'rss_bytes_ceiling': window['proposed_execution']['job_RSS_bytes_ceiling'], 'output_bytes_ceiling': 8388608,
+               'output_directory': 'outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_' + args.variant + '_s' + str(args.seed)}
+        SOURCES = (*SOURCES[:-1], BENCH_CONFIG, 'outputs/trackocd_cvpr/cvpr2/fit_R_batched_qualification_v1/result.json', SOURCES[-1])
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)
 

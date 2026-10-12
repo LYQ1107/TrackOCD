@@ -1,0 +1,41 @@
+{
+  "all_current_R_support_gradients_retained": true,
+  "batched_forward_backward_seconds": 2.458037248987239,
+  "dev_final_labels_pixels_originalGT_DINOweights_read": false,
+  "forward_and_statistics_max_absolute_error": 2.2351741790771484e-08,
+  "label_and_physical_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "14d06436782151aa8ea4cdd3869a88f0c5f5d708"
+  },
+  "model_parameter_sha256_unchanged": "c7f17ae79be3a57abf3d87f546ab3b8291aec4a93c4e098de75b4dc811574ca3",
+  "optimizer_steps": 0,
+  "parameter_gradients_max_absolute_error": 1.239776611328125e-05,
+  "private_checkpoint_weights_uploaded": false,
+  "reference_forward_backward_seconds": 7.740123596042395,
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 1230278656,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 28.418811634008307
+  },
+  "single_pair_timing_ratio_not_general_performance_claim": 3.148904110070538,
+  "status": "VERIFIED_ACTUAL_FIT_CURRENT_R_BATCH_PARITY_AND_TIMING_NOT_OPTIMIZED_OR_SCIENTIFIC_ACCEPTANCE",
+  "support_members": 1149,
+  "support_observations": 22066,
+  "trained_scientific_mechanism_or_Goal_A_B_C_accepted": false
+}

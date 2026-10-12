@@ -2323,3 +2323,41 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - This enables genuine multi-seed matchedrepresentation studies; those and
   candidate/memory trainedmechanisms stillunexecuted. Policy/dev/final targets
   remain outside this qualifier, no sourceSemanticGT expansion or Valselection.
+- Actual14d06436782151aa8ea4cdd3869a88f0c5f5d708 pushed/fetched exactthree
+  refs; newownedCPU qualifier passedfreshsource/cache/checkpoint/permission
+  gates. 1149currentR supportmembers/22066obs, forward/statistic maxerror
+ 2.2351741790771484e-8, parametergrad maxerror1.239776611328125e-5 pass
+  registered gates. Serialforward+backward7.740123596s vsbatched2.458037249s,
+  ratio3.1489 for ONEpair, not median/generalperformance or Novel benefit.
+- Samec7f17ae7... modeldigestunchanged, nooptimizer, noCUDA/dev/final/rawGT
+  or DINOweight read. Ownedexit0/noguardstop/36.200000861s total,
+  peakRSS1230278656B/11observedOSthreads. PublicresultSHA
+  83a9dfc9a3cb8ace64a87af6e08b4d0486cbe92deae2e69dfed5b223718dcda9.
+
+### Fixed scientific R window and first complete training execution source
+
+- Fourcontrolled variants: temporal/timeless CEonly and temporal/timeless
+  Rawteacher, eachfresh50113parameters with3independent seeds1027/1028/1029,
+  samefeatures/supervision/query+prefixschedule/optimizer/200steps. Rawfrozen
+  baseline separate; do NOT reuse oldA1/A2 fittedon15classes or warmstart the
+ 10stepplumbing model. These are ONErepresentation intervention/controls,
+  not substitutes for three distinct fittedR/C/M mechanisms or a selectedmethod.
+- FixedAdamWlr0.0003/wd0.0001/temperature0.1/clip1; teacher variants use
+ 1.0Gram on ALLcurrent supportmember embeddings+query, not onlyfiveprototype
+  means, plus0.1same-track pastprefix consistency. CEcontrols zero bothterms.
+  Fullfit5eligible1158/22279, allphysical1401preserved/243withoutsemanticloss.
+  Teacher labels remain outside numericalmodel; no unknownBG/newNovel labels.
+- Fixedstep200endpoint and20/50/100/200private model+optimizer/RNG checkpoints,
+  public scalarheartbeat/curves. Exactoptimizer/RNG/variant/seed/step resume
+  kernel test matches continuous trajectory and allparameters bit-exact; a
+  separately registered recovery namespace/receipt is stillrequired for CLI
+  resume after any realresource stop, not oldPID/samepath blindrestart.
+- CPUoneownedworker/3GiBRSS/3000s/8MiB perjob, no concurrentnewfits or data/
+  weightsupload. New fulltraining driver and frozenwindow genuinely need
+  publication/freshremote checks before first200step seed1027 teachertrial.
+  Devinput qualification/retainedlabel evaluator stillpending; no dev/final/
+  Val/Test modelselection, scientificsuccess or fullGoal completion inferred.
+- Full466tests PASS10.13s; oldfixture/failure receipts preserved. Allvariants/
+  seeds/negativecases must ultimately be delivered. FreshA1/A2 comparators,
+  qualifiedPred/matching, learnedcandidate/memory and finalcausal validation
+  remain open; Rwindow alone never fulfills originalGoalA/B/C.

@@ -1,0 +1,46 @@
+{
+  "schema_version": "trackocd.cvpr.frozen-R-GT-scientific-window.v1",
+  "status": "REGISTERED_FIXED_R_SCIENTIFIC_TRIAL_EXECUTION_DEV_QUALIFICATION_PENDING",
+  "scope": "One representation mechanism with four matched-controls, not three distinct R/C/M mechanisms or final selected method",
+  "data_protocol": "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json",
+  "fit_cache_result_sha256": "c45ffc1e199ab558c4ee6b943b0f91c4c25ffc28e125f67adffa85267519e1f6",
+  "batched_qualification_result_sha256": "83a9dfc9a3cb8ace64a87af6e08b4d0486cbe92deae2e69dfed5b223718dcda9",
+  "training_seed_replicates": [1027, 1028, 1029],
+  "variants": {
+    "temporal_CE": {"representation": "RawPreservingEvidence temporal", "geometry_weight": 0.0, "consistency_weight": 0.0},
+    "timeless_CE": {"representation": "TimelessStaticEvidence", "geometry_weight": 0.0, "consistency_weight": 0.0},
+    "temporal_Raw_teacher": {"representation": "RawPreservingEvidence temporal", "geometry_weight": 1.0, "consistency_weight": 0.1},
+    "timeless_Raw_teacher": {"representation": "TimelessStaticEvidence", "geometry_weight": 1.0, "consistency_weight": 0.1}
+  },
+  "trainable_parameters_each": 50113,
+  "matching": "Same frozen visual features, input/supervision scope, query/prefix RNG schedule per seed, optimizer/steps and parameter budget; distinct temporal/static function classes explicitly reported",
+  "Raw_baseline": "Frozen quality-weighted visible-prefix mean, same legitimate offlinefit Known bank; zero trainedparameters, no old fitted adapters",
+  "training": {
+    "fit_supervised_classes": 5, "fit_supervised_tracks": 1158, "fit_supervised_observations": 22279,
+    "all_physical_fit_tracks": 1401, "tracks_without_fit5_semantic_targets": 243,
+    "optimizer": "AdamW", "learning_rate": 0.0003, "weight_decay": 0.0001,
+    "temperature": 0.1, "gradient_clip": 1.0, "steps_per_variant_and_seed": 200,
+    "query_schedule": "Cyclic class-balanced loss bindings, uniform eligible fit track and1..allobserved prefix, identical perseed across variants; offlineaugmentation, not online scheduling",
+    "support": "All currentR fitKnown fullprefixes except entirequeryvideo, same absolute-frame/video Raw aliases deduplicated, no member pruning/adapter detach",
+    "Raw_teacher": "Gram penalty on ALL current support member embeddings plus query, not only5class prototype means; Raw teacher detached, adapted tensors differentiable",
+    "consistency": "Current query observedprefix vs its first past observation; fitKnown only, no unknownGT/background/Novel labels",
+    "initialization": "Fresh seeded identity-start adapters; do NOT warmstart or select the step10 plumbing checkpoint",
+    "checkpoint_steps": [20, 50, 100, 200], "checkpoint_selection": "Fixed200 endpoint, no bestloss/dev/final selection"
+  },
+  "development": {
+    "role": "Train-development72 videos, full472physicaltracks/8753observations",
+    "main_label_strata": "302fitKnown +119declaredpseudoNovel8 tracks; outsideeligibleKnown2 and semantic-unavailable49 reported separately, all472retain physical coverage",
+    "metrics": ["cross-video different-instance pseudoNovel retrieval R1/R5 micro and macro", "effective rank and Raw cosine drift", "Known recognition under fixed offlinefit bank", "prefix1/2/4/8/16/allavailable, singleton/short strata"],
+    "eligibility": "No devtargets in fitting/prototypes or originalannotation reads; retainedKnown labels projected only after fullmodel/metric protocol registration",
+    "scorability": "No inventing GT for semantic-unavailable objects or calling them BG; do not advertise conditional semantic metrics as complete fullGT semantic truth"
+  },
+  "frozen_controls": ["Raw", "sameparameter timeless", "CEonly", "Rawteacher", "time/order payload perturbation with legal chronology", "fixed original query/prefix/data denominator"],
+  "acceptance": "All3trainedseeds and allvariants reported, Novel retrieval/geometry and Known stability versus Raw/matchedstatic; uncertainty and failures preserved. Not acceptance via one lucky seed/MeanTrainCE",
+  "independent_final_or_Val_Test_for_model_selection": false,
+  "training_GPU_hours_ceiling_for_direction": 120,
+  "proposed_execution": {"device": "CPU initially", "concurrent_workers": 1, "job_wall_seconds_ceiling": 3000, "job_RSS_bytes_ceiling": 3221225472},
+  "maximum_evidence_driven_scientific_repairs": 2,
+  "full_scientific_fit_automatic_start": false,
+  "automatic_launch_or_Goal_completion_from_manifest": false,
+  "open_requirements": ["Executable fulltraining/resume driver and actualsource registration", "qualified policy/dev cache", "licensed fresh A1/A2 comparators within fit5", "candidate and selfcorrecting memory trained mechanisms", "qualified anonymous predicted frontend and matching", "final locked multiseed/order/coverage causal evaluation"]
+}

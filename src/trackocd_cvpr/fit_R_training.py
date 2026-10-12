@@ -157,3 +157,56 @@ def bounded_fit_steps(model, tracks, cfg, guard, progress):
                'support_groups': proof['groups_reencoded'], 'support_observations': proof['observations_reencoded']}
         curve.append(row); progress(row)
     return optimizer, curve, rng.bit_generator.state
+
+
+def scientific_R_steps(model, tracks, window, variant, seed, guard, progress, save_checkpoint, *, resume=None, previous_curve=()):
+    """Fixed endpoint seeded R trial; no dev/final/GT memory repair inputs.
+
+    One representation direction, NOT three distinct scientific mechanisms.
+    All support member embeddings, not just prototype averages, receive the
+    Raw teacher geometry constraint. Query scheduling remains offline fit.
+    """
+    from .batched_evidence import reencode_batched_supports
+    setting = window['variants'][variant]; cfg = window['training']
+    rng = np.random.default_rng(seed)
+    by_class = [[t for t in tracks if t.loss_target == c] for c in range(cfg['fit_supervised_classes'])]
+    if any(not rows for rows in by_class): raise ValueError('All fixed fit classes, no favorable subset')
+    optimizer = torch.optim.AdamW(model.parameters(), lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'])
+    curve = list(previous_curve); start = 0
+    if resume is not None:
+        start = resume['step']
+        if (resume['seed'] != seed or resume['variant'] != variant or len(curve) != start
+                or not 0 < start < cfg['steps_per_variant_and_seed']):
+            raise ValueError('Exact prior variant/seed/step/curve, no silent fresh restart')
+        model.load_state_dict(resume['model_state'], strict=True)
+        optimizer.load_state_dict(resume['optimizer_state'])
+        rng.bit_generator.state = resume['numpy_rng_state']; torch.set_rng_state(resume['torch_rng_state'])
+    for step in range(start, cfg['steps_per_variant_and_seed']):
+        guard(); target = step % len(by_class)
+        query_track = by_class[target][int(rng.integers(len(by_class[target])))]
+        observed = int(rng.integers(1, query_track.count() + 1))
+        groups = support_groups(tracks, query_track.video, len(by_class))
+        optimizer.zero_grad(set_to_none=True)
+        raw, adapted, _, members = reencode_batched_supports(model, groups, torch.ones(len(groups)), torch.ones(len(groups)))
+        prefix = query_track.visible(observed)
+        query = model(prefix.visual, prefix.boxes, prefix.quality, prefix.elapsed)
+        first = model(prefix.visual[:1], prefix.boxes[:1], prefix.quality[:1], prefix.elapsed[:1])
+        adapted.retain_grad(); query.embedding.retain_grad()
+        CE = torch.nn.functional.cross_entropy((adapted @ query.embedding / cfg['temperature'])[None], torch.tensor([target]))
+        geometry = raw_geometry_loss(torch.cat((members.raw, query.raw[None])),
+                                     torch.cat((members.embedding, query.embedding[None])))
+        consistency = (1 - (query.embedding * first.embedding).sum()).clamp(0, 2)
+        loss = CE + setting['geometry_weight'] * geometry + setting['consistency_weight'] * consistency
+        if not torch.isfinite(loss): raise ValueError('Finite fixed scientific loss')
+        loss.backward(); norm = torch.nn.utils.clip_grad_norm_(model.parameters(), cfg['gradient_clip'])
+        if (not torch.isfinite(norm) or adapted.grad.norm() <= 0 or query.embedding.grad.norm() <= 0):
+            raise ValueError('Finite real currentR support/query gradients')
+        optimizer.step(); guard()
+        row = {'step': step + 1, 'loss': float(loss.detach()), 'Known_CE': float(CE.detach()),
+               'all_member_Raw_Gram': float(geometry.detach()), 'past_prefix_consistency': float(consistency.detach()),
+               'gradient_norm_before_clip': float(norm), 'support_members': len(members.raw),
+               'support_observations': sum(len(p.quality) for group in groups for p in group)}
+        curve.append(row); progress(row, curve)
+        if step + 1 in cfg['checkpoint_steps']:
+            save_checkpoint(model, optimizer, step + 1, rng.bit_generator.state)
+    return curve

@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 import torch
-from src.trackocd_cvpr.fit_R_training import FitTrack, support_groups, current_R_fit_loss, bounded_fit_steps
+from src.trackocd_cvpr.fit_R_training import FitTrack, support_groups, current_R_fit_loss, bounded_fit_steps, scientific_R_steps
 from src.trackocd_cvpr.raw_preserving_evidence import RawPreservingEvidence
 
 
@@ -61,3 +61,22 @@ def test_config_remains_pending_realcache_and_executable_not_scientific_launch()
     assert cfg['status'] == 'REGISTERED_OPTIMIZER_PLUMBING_SOURCE_CACHE_COMPLETION_REQUIRED'
     assert not cfg['full_scientific_fit_automatic_start']
     assert cfg['future_independent_scientific_seeds_not_automatic_launch'] == [1027, 1028, 1029]
+
+
+def test_fixed_scientific_member_teacher_and_exact_optimizer_rng_resume():
+    import copy
+    tracks = [track(v, c, v) for c, v in ((0, 10), (0, 11), (1, 12), (1, 13))] + [track(99, None, 99)]
+    window = {'variants': {'test': {'geometry_weight': 1., 'consistency_weight': 0.1}},
+              'training': dict(fit_supervised_classes=2, steps_per_variant_and_seed=4, learning_rate=0.0003,
+                              weight_decay=0.0001, temperature=0.1, gradient_clip=1., checkpoint_steps=[2, 4])}
+    torch.manual_seed(1027); full = RawPreservingEvidence(); snapshots = {}
+    def save(model, optimizer, step, rng):
+        snapshots[step] = copy.deepcopy(dict(model_state=model.state_dict(), optimizer_state=optimizer.state_dict(),
+            step=step, variant='test', seed=1027, numpy_rng_state=rng, torch_rng_state=torch.get_rng_state()))
+    curve = scientific_R_steps(full, tracks, window, 'test', 1027, lambda: None, lambda row, curve: None, save)
+    resumed = RawPreservingEvidence()
+    resumed_curve = scientific_R_steps(resumed, tracks, window, 'test', 1027, lambda: None, lambda row, curve: None,
+        lambda *args: None, resume=snapshots[2], previous_curve=curve[:2])
+    assert resumed_curve == curve
+    assert all(torch.equal(t, resumed.state_dict()[k]) for k, t in full.state_dict().items())
+    assert tracks[-1].loss_target is None
