@@ -29,13 +29,16 @@ SOURCES = (CONFIG, 'scripts/trackocd_cvpr/qualify_policy_training_input.py',
     'configs/trackocd_cvpr/autonomous_research.json')
 
 
-def supervise(args, cfg, safety):
+def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify_policy_training_input.py'):
+    if worker_script not in ('scripts/trackocd_cvpr/qualify_policy_training_input.py',
+                             'scripts/trackocd_cvpr/pilot_candidate_optimizer.py'):
+        raise ValueError('Explicit registered owned CPU worker only')
     out = ROOT / cfg['output_directory']; receipt = out.with_name(out.name + '_supervisor_attempt_1.json')
     if out.exists() or receipt.exists(): raise ValueError('Preserve all previous attempts')
     started, peak, threads, reason = time.monotonic(), 0, 0, None
     if resources_ok(cfg, safety, ROOT, started, 0): raise RuntimeError('Pre-spawn resource guard')
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
-        str(ROOT / 'scripts/trackocd_cvpr/qualify_policy_training_input.py'), '--worker',
+        str(ROOT / worker_script), '--worker',
         '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy], cwd=ROOT)
     try:
         while child.poll() is None:

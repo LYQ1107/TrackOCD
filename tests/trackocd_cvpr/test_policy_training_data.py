@@ -115,3 +115,16 @@ def test_registered_policy_qualification_not_fitting_or_final_selection():
     assert cfg['optimizer_steps'] == 0
     assert not cfg['development_final_Val_Test_or_other_video_payloads_or_targets']
     assert not cfg['training_or_scientific_acceptance_from_this_manifest']
+
+
+def test_policy_named_loss_bindings_match_sorted_offline_fit_bank(tmp_path):
+    a, k = fixture(tmp_path)
+    assignment = json.loads(a.read_text()); assignment['assignment']['classes']['fit_known'] = [9, 3]
+    a.write_text(json.dumps(assignment))
+    tracks = json.loads(k.read_text()); tracks['tracks'].append({'video_id': 10, 'track_id': 5, 'category_id': 9})
+    k.write_text(json.dumps(tracks))
+    projection, _ = project_policy_loss_targets(a, k, fit_classes=2, pseudo_classes=1,
+        videos=1, known_tracks=2, pseudo_tracks=1)
+    assert projection.fit_bindings == {3: 0, 9: 1}
+    assert projection.targets[(10, 1)] == ('Known', 0)
+    assert projection.targets[(10, 5)] == ('Known', 1)

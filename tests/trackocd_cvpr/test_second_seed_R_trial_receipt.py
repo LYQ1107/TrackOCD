@@ -24,3 +24,19 @@ def test_second_training_seed_is_actual_fixed_fit_not_reused_or_selected_endpoin
     terminal = json.loads(OUT.with_name(OUT.name + '_supervisor_attempt_1.json').read_text())
     assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
     assert terminal['guard_stop_reason'] is None and terminal['last_persisted_completed_optimizer_steps'] == 200
+
+
+def test_second_seed_timeless_CE_is_matched_fixed_endpoint_not_a_dev_selected_variant():
+    out = OUT.with_name('R_GT_window_v1_timeless_CE_s1028')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == '314b5f12811696184f6524f6ccf1466f9e4e6f94f568ba3df6f2f3e01cb3c5b5'
+    r = json.loads((out / 'result.json').read_text()); paired = json.loads((OUT / 'result.json').read_text())
+    assert r['seed'] == paired['seed'] == 1028 and r['variant'] == 'timeless_CE'
+    assert r['completed_optimizer_steps'] == 200 and r['endpoint']['reopen_exact']
+    assert r['model_parameter_sha256_before'] == paired['model_parameter_sha256_before']
+    assert [(x['support_members'], x['support_observations']) for x in r['loss_curve']] == [
+        (x['support_members'], x['support_observations']) for x in paired['loss_curve']]
+    assert all(x['loss'] == x['Known_CE'] for x in r['loss_curve'])
+    assert not r['dev_final_Val_Test_targets_or_pixels_used']
+    terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
+    assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
+    assert terminal['guard_stop_reason'] is None

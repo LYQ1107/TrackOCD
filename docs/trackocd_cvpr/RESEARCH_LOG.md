@@ -2660,3 +2660,48 @@ new research scope; nothing has been deleted, no storage pressure is present.
   timeless_CE/seed1028 endpoint200, thenteacher controls/seed1029.
 - Full487tests PASS10.38s including actual policy input and independentseed
   endpoint receipts. Receipt tests are not a new dev result or Goal acceptance.
+
+### Sixth fixed R model and registered prediction-owned C optimizer pilot
+
+- Previous turn delivered real policy completeness and fifth R endpoint at
+  b24988132d20eee5adab0ef34a74f1715bd761b5, hence progress. Sameowned handle
+  97185 rechecked throughout and actuallyterminalexit0: timeless_CE/seed1028
+  completed200steps; pairedinitial3ff19664... and every supportfootprint agree
+  with temporal_CE/seed1028, no dev/seed/checkpoint selection. ResultSHA
+  314b5f12811696184f6524f6ccf1466f9e4e6f94f568ba3df6f2f3e01cb3c5b5,
+  endpoint616115B/SHA725eb4d78b2d50dff25dc83133f2447ea30dc3d9d0b9874a6b5aced8a79777c9,
+  after2611dfe42d40844af5b26e1d9fb7960980dd1908c1ffc0af9bdfe83433562c1a.
+  Owned651.201078407s/worker647.006316821s/peakRSS1587937280B/11OSthreads,
+  no guardstop/CUDA/0GPUh. Sixof12Rtrials, oneRdirection, not all3mechanisms.
+- New external C loss uses actual predicted anonymous commits from the frozen
+  pre-frame history. GT only supplies eligiblefit/policy loss labels; it cannot
+  create/reassign tokens, repair bank, or erase old pollution after a member
+  moves. Everyactualcommit retained; repeatedphysicalprefixes don't become
+  independent supervisedsemanticvotes. Modelcallback sees numericfeatures only.
+- Pure predicted-history candidates or exposed unique Known candidates can be
+  positive. Mask unknowncandidate competitors; do not label uncertain absent
+  pseudo-candidates as NEW. Mask unlabeled/conflictingaliases/absentKnown targets;
+  still run allphysicalinputs. Exactbindingambiguity has WAITtarget rather than
+  GTchoosinga token. Self-continuation distinguished from otherphysical/video
+  evidence and NOT a certified categoryreusewin. Selfexclusion/controlcoverage/
+  strictsemantic lifecycle/freshmultiseed C window remainrequired.
+- Fixed10step C pilot is Rawonly708parameters/freshseed1027/TopK8/AdamWlr.001,
+  first10eligibleframeupdates then freeze but runALL54tracks/1268obs/374frames.
+  Fullprediction-owned trajectories/actualwronghistories stayprivate; publish
+  aggregatecounts/fingerprints only. No learnedR checkpoint choice, originalGT/
+  pixels/encoderweights/dev/final/Val/Test target reads or automaticformalfit.
+  Pilot is optimizerplumbing, NOT scientificallyaccepted C/M or min3directions.
+- Corrected potential binding-order mismatch BEFORE C fitting: policyfitKnown
+  bindings now use the established sorted offlinefit-bank order. Synthetic
+  unsortedassignment fixture confirms it; no actual earlier metric/training
+  mismatch asserted. Previous policy receipt proved counts/inputgeometry only,
+  not fittedlosses; preserve it, no retroactive rewrite. Cworker requires exact
+  actualfit/policy binding equality before optimization.
+- Csource/permission/cache/qualifiedinput hashes must be freshregistered and
+  verified before private reads. Reuse ownedCPU supervisor with explicit path
+  whitelist,3GiB/900s/8MiB bounds/25%RAM and original storage safety. R6 is now
+  terminal; no concurrentfit is launched during first real C pilot.
+- Full498tests PASS7.33s before actual C pilot. Synthetic C optimization,
+  candidate permutation/unknownmask/wronghistory/ID/future-prefix checks are
+  executable qualifications only; actual C optimizer evidence still pending
+  this preregistration, no scientific minimum-mechanism acceptance inferred.

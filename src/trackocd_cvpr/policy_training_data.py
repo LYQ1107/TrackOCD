@@ -40,7 +40,8 @@ def project_policy_loss_targets(assignment_path, known_path, *, fit_classes=5,
         assignment = object_ranges(data, *top_ranges(data)['assignment'])
         classes = object_ranges(data, *assignment['classes'])
         video_roles = object_ranges(data, *assignment['video_ids'])
-        fit = [integer_value(data, b) for b in array_ranges(data, *classes['fit_known'])]
+        # Match the established offline fit prototype binding order exactly.
+        fit = sorted(integer_value(data, b) for b in array_ranges(data, *classes['fit_known']))
         pseudo = [integer_value(data, b) for b in array_ranges(data, *classes['policy_train_pseudo'])]
         selected = [integer_value(data, b) for b in array_ranges(data, *video_roles['policy_train_pseudo'])]
     if (len(fit) != fit_classes or len(pseudo) != pseudo_classes or len(selected) != videos
