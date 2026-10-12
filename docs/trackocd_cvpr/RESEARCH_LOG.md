@@ -1368,3 +1368,36 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Final15focused synthetic tests/full353tests PASS4.18s, no skips, after
   fresh-source worker flags and numbered pre-output retry design. No actual
  429video proof/solver results yet; outputs still await new registration gate.
+- Registered159732dd2ce2eac03ebd443ffa8bb9ef98035f63 normalpush after bounded
+  TLS retries. Independent GitHub connector fetched exactcommitobject; normal
+  fetch still intermittent. First ownedworker fresh-git gate failedTLS pre-GT/
+  pre-output, exited1/7.126s; numbered supervisor receipt preserved. No bypass.
+- Second registered ownedworker fresh-git current-ref and exact source checks
+  passed; actual Known index reconciled all1962tracks/38680obs/429videos/48classes.
+  Integer structure0.06343s; supervisor5.502s total including imports/network,
+  sampled peak82706432B (~78.875MiB), observedThreads1, exit0/no guardstop.
+  Original annotation/old target labels/names/Novel/Val/Test/pixels/models notread.
+- Actual23class pool yields15forced-equality edges, components16/1/1/1/1/1/1/1.
+  Giant16must sharefinal group; balanced groupmax6, so this balanced joint family
+  is refuted by integer capacity, not solver timeout or unlucky seed. MILP
+  skipped with explicit reason, no numerical solver-infeasible/globaldata claim.
+  Unbalanced necessary capacitymax18 NOT violated; do NOT say TAO or all possible
+  video-disjoint protocols impossible. No category dropping/frequencyexceptions.
+- ResultSHAa0b7cc192ece6266171da9b1c05cd6ebb2c0e500e0bcf56d6fb72dbe91e20399;
+  launch2845eb79ddbedd8fb98f5dc17a84d1359b6979cb850691ae3aeae8725cd213c2;
+  private2146B SHA66347f5fafedbb3cb6f6afe9f152ac0c35865687c45aea944879df5dd209c11f,
+  exact Known dependency members/edges private local only. Preserve both owned
+  attempt receipts f940381d/93de094f; no historical PID/session replay.
+- Next finite repair: retainall23 and video/class exclusions, investigate
+  unbalanced final-group sizes and stronger union-of-forced-component support
+  constraints before bounded joint solver. Change balance ONLY explicitly in
+  new preregistration; no hidden class/frequency/metric/seed/role relaxation.
+  Fair per-class/within-fold baseline reporting required if imbalance used;
+  unequalfolds not independent model samples. Newtraining0/600GPUh; fullGoal
+  stillactive, alllearnedmechanism/GoalA/B/C gatesopen and no frozen protocol.
+- Normal Git fetch subsequentlyexit0 from5d8684f→159732d, and actual
+  HEAD/FETCH_HEAD/originref all159732d. This also retrieves prior0b02a2d ancestor;
+  not only a push acknowledgment or connector metadata check.
+- Three aggregate-only actual receipt regressions PASS; full356tests PASS4.70s,
+  no skips, before public receipt delivery. Private exact edge/member file NOT
+  decoded by tests or staged for publication; both owned attempt receipts kept.

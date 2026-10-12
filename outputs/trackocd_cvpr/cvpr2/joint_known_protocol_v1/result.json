@@ -1,0 +1,80 @@
+{
+  "census_reconciliation": {
+    "observations": 38680,
+    "positive_Known_classes": 48,
+    "tracks": 1962,
+    "videos": 429
+  },
+  "fresh_source_no_existing_bytecode_cache": true,
+  "interpretation": "Same authorized Known positive census/pool and video/class isolation. Design informed by earlier8failed fixed layouts, not blind preregistration. Joint structural role/video choice is not model selection. Integer forced-equality component proof or one finite MILP; status timeout is inconclusive, solver infeasibility scoped/not formal all-data proof, returned assignments independently verified. No permanent frequent-Known exception, class pruning, video-rule relaxation, protocol freeze or training. Private exact memberships/proof local only. Supervisor manages only its own newly spawned worker.",
+  "optimization_training_steps": 0,
+  "original_annotation_old_target_tables_names_Novel_Val_Test_pixels_features_models_read": false,
+  "owned_launch_attempt": 2,
+  "preregistration_commit": "159732dd2ce2eac03ebd443ffa8bb9ef98035f63",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+  },
+  "private_output": {
+    "bytes": 2146,
+    "sha256": "66347f5fafedbb3cb6f6afe9f152ac0c35865687c45aea944879df5dd209c11f"
+  },
+  "resources": {
+    "disk_free_bytes": 185930825728,
+    "guarded_process_RSS_bytes": 82706432,
+    "kernel_reported_VmHWM_bytes_approximate": 82706432,
+    "peak_guarded_worker_RSS_bytes": 82706432,
+    "resource_ru_maxrss_bytes_including_preexec_history": 81899520,
+    "sampled_smaps_rollup_Rss_bytes": 82706432,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 0.0634337060037069
+  },
+  "scipy_version": "1.15.3",
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/joint_known_protocol_v1.json": "663faed82cb46d4f3c035a9696e12fdf8010b6424281b77885a32381641dc1d6",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "ff7836b2bf30fd64090eaab46715e7fc9e23b49bff24c56ade29b0a16e6a129f",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/joint_known_protocol.py": "1357bb802cdd47481e42df8b0256f046535924cc0b2563a0ec6c33c144586145",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "INTEGER_CAPACITY_CONTRADICTION_FOR_DECLARED_JOINT_FAMILY",
+  "structural_result": {
+    "complete_visual_category_absence_proven": false,
+    "feasible_joint_assignment_verified": false,
+    "frequency_always_Known_exception": false,
+    "integer_necessary_conditions": {
+      "balanced_family_integer_capacity_contradiction": true,
+      "balanced_group_max_classes": 6,
+      "class_pool": 23,
+      "forced_component_sizes_sorted": [
+        16,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "forced_equality_edges": 15,
+      "nonempty_four_role_unbalanced_capacity_contradiction": false,
+      "scope": "Same eligible Known pool, every class final-pseudo once, >=2videos in every role; Y-positive videos excluded from every non-final role in Y final fold; not arbitrary other protocol/data",
+      "unbalanced_final_capacity_ceiling_with_dev1_policy2_fit2": 18
+    },
+    "model_scores_or_names_used": false,
+    "new_protocol_frozen": false,
+    "solver_executed": false,
+    "status": "INTEGER_CAPACITY_CONTRADICTION_FOR_DECLARED_JOINT_FAMILY",
+    "training_GPU_hours": 0
+  }
+}

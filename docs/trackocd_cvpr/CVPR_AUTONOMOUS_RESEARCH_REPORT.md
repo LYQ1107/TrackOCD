@@ -306,3 +306,18 @@ Result2d387399 and private94521869 preserve all cases; private memberships and
 179723B witnesses stay local. Next finite step is jointly constrained class/
 video allocation on the same eligible pool, without permanent-frequencyKnown
 exceptions or GT role leakage. Newtraining remains0/600GPUh; Goal stillactive.
+
+Registered159732d joint structural check now yields an exact scoped capacity
+contradiction:15positive-support implications force16of23eligible classes to
+share one final-pseudo group, whereas balanced fourfold groups hold at most6.
+This is stronger than a random-layout failure and avoids redundant MILP calls.
+The separate unbalanced necessary ceiling18 is not violated; this does NOT
+prove every class/video-disjoint protocol or the dataset impossible. Exact
+Known memberships/edges remain private2146B; publica0b7cc19 keeps anonymous
+component sizes and all source/resource receipts. Owned pre-GT TLS failure and
+successful retry both preserved; successful worker78.875MiB/observed1thread,
+5.50s job,0.063s structure, no GPU/model/optimizer or additional GT source read.
+Next finite repair keeps all23classes and isolation but explicitly examines
+unbalanced groups/union-support closure before a bounded joint solver. Unequal
+folds require per-class and within-fold fairness reporting, not cherry-picking.
+No protocol frozen, learned mechanism accepted or full Goal completion.
