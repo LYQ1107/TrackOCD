@@ -15,8 +15,10 @@ def project_fit_loss_targets(assignment_path, known_path, *, expected_classes=5,
         class_roles = object_ranges(data, *assignment['classes'])
         video_roles = object_ranges(data, *assignment['video_ids'])
         classes = sorted(integer_value(data, r) for r in array_ranges(data, *class_roles['fit_known']))
-        videos = {integer_value(data, r) for r in array_ranges(data, *video_roles['fit_known'])}
-    if len(classes) != expected_classes or len(set(classes)) != len(classes) or len(videos) != expected_videos:
+        video_list = [integer_value(data, r) for r in array_ranges(data, *video_roles['fit_known'])]
+        videos = set(video_list)
+    if (len(classes) != expected_classes or len(set(classes)) != len(classes)
+            or len(videos) != expected_videos or len(video_list) != expected_videos):
         raise ValueError('Exact frozen fit class/video counts')
     bindings = {c: index for index, c in enumerate(classes)}
     targets = {}; counts = {'eligible_supervised_tracks': 0, 'eligible_supervised_observations': 0,

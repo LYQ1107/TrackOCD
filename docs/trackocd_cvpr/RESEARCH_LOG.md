@@ -2150,3 +2150,37 @@ new research scope; nothing has been deleted, no storage pressure is present.
  11.38s. New scientific training still0/600GPUh, three fitted mechanisms and
   finalGoals stillopen. These APIs enable a registered bounded training pilot,
   not a learned result, deployment memory repair or primaryPred qualification.
+
+### First bounded optimizer plumbing source (not scientific selection)
+
+- Fullsupport/projection e2215f613c19780839a62e12e2f69b178fce7134 genuinely
+  pushed/fetched with exact three refs; actual fit cache remains pinned to its
+ 01e7383 execution source, not silently rebound when the research branch moves.
+- New separately owned CPU script/config fits fresh identity-start temporal R
+  for exactly10steps, seed1027, fixedstep10checkpoint (not bestloss/dev/final).
+  AdamWlr0.001/wd0.0001, CEtemperature0.1 +0.25RawGram +0.1past-prefix
+  consistency, clip1. Class-balanced0..4 loss bindings, uniform fitKnown track
+  and1..allobserved prefix offlineaugmentation, NOT a frame-online controller.
+- OfflineKnown support reencoded under current R on ALL other fit videos;
+  entirequeryvideo excluded, samevideo/sameABSOLUTEframe/sameRawaliases onevote,
+  differentvideo or shiftedframe equalpayloads remain distinct. No missingclass
+  fallback, pruning, staleadapted cache or detached support; query/support
+  gradients required before actual AdamWstep. Fullphysical1401tracks retained,
+ 243without fit5semantic targets cannot be classified as BG/Novel trainingloss.
+- Cache COMPLETE result+successfulownedterminal must be tracked in actual
+  remote preregistration before private targets/model fitting. Source/approval/
+  index/role/hash/reopen/checkpoint/parameterdigest gates; no rawannotation,
+  DINOweights/pixels/dev/final labels loaded by fitter. All realKnown labels
+  remain external to numeric R.forward. Private model+optimizer/RNG endpoint
+  checkpoint only, no weights/data upload. Proposed fit is CPUoneworker,
+ 3GiB RSS/1200s/2MiBout with original global safety limits, not a GPU launch.
+- Initial unitfixture3failures were missing its external track_id array, before
+  any realdata/training; fixture corrected without weakening cache-reader checks.
+  New fourtests cover video/absolute-frame alias exclusion, loss gradients,
+  UNKNOWN masking and two genuine SYNTHETIC optimizer updates; these toy steps
+  are not realTAO scientific training. Full453tests PASS12.44s.
+- Actual fit cache live238/257videos at latercheck,8115newdecodedimages /
+ 9916batches. RealTrainoptimizer steps still0; scripts/config alone do not
+  satisfy >=3trainedmechanisms/seeds, novelgeometry gains or GoalA/B/C. Do not
+  start this fitter until complete cache and terminal artifacts are genuinely
+  published/fetched; current cache worker/source/history remain untouched.
