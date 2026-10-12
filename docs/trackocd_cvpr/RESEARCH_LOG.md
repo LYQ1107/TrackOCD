@@ -2458,3 +2458,58 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - V3resource-only namespace inherits same82video cacheprotocol and verifies
   V2terminalrejection before anyretry; no overwrite. No newGPU cache launched
   by its merecreation; freshavailability/ref/sourcechecks required.
+
+### Complete policy/dev common GT features and read-only development evaluator
+
+- Previous turn progress: secondfixedRmodel+metricsource delivered, CEcontrol
+  CPUhandle andV3cacheGPUhandle truly spawned. Both samehandles rechecked
+  live: CE97steps/cache33 then62videos. No restart/PIDreplay/historyoverwrite.
+- V3actuallycompleted fromd3eaf6035ac1deaa92582bf46fe6966f88e70032,
+  total82videos/526tracks/10021obs/2936metadataframes. Rolepolicy10/54/1268/
+ 374/1emptyGT anddev72/472/8753/2562/116emptyGT independentlyverified.
+  No final/protected pixels, no devsemantic values decoded by extractor,
+  no optimizer/full407cache. Earlierresource-only failures preserved.
+- Ownedexit0/noguardstop/531.501459708s total,526.091048674s worker,
+  RSS1330356224B/4OSthreads/oneGPU, frozenallocation0.140544879GPUh,
+ 0trainingGPUh. PublicresultSHA
+  b6747cbc8d4802620cc56f2a2af25b6e172e664ab6903e79d04cda4ab2a9e0be.
+  Onlyaggregate launch/result/terminal pushed, not GTIDs/feature/pixelpayloads.
+- Newread-only CPUevaluator requires freshregistered SOURCE+completecache/
+  successfulterminal+endpoint receipts BEFORE anyactualprivateGT projection.
+  Projectdevonly72 BEFORE category/trackvalue decode, joinKnown302/pseudo119/
+  otherKnown2/unknown49 tofull472, decode no originalTrainJSON/nonKnown/Novel
+  vocabulary/final/policy targets. No label/role/ID toRnumericforward.
+- Fixed200 temporal/static teacherseed1027 checkpoints only; allfutureseeds/
+  controls remainrequired, interimanalysis is NOT a winnerselection. Legitimate
+  immutablefit5Knownbank fromfullfit, no devGT prototype repair. Prefix1/2/4/
+ 8/16/allavailable retainsall472gallery+119queries andshort/singleton strata,
+  counts/scorability/unknown-top ties reported. Compute an independentfrozenRaw
+  baseline with sharedprefixfootprint so staticcanonical floating sums cannot
+  changeRaw reference. Certified lowerbound retrieval not fullGT Hscore/purity.
+- Two initialevaluator fixtures andfull475tests PASS7.69s before finalcache/
+  executioncontract tests; noactualprivate devlabels/metric run yet. Planned
+  ownedCPU3GiB/900s/2MiB; nooptimizer/DINOweight/pixels/final/Valselection.
+  Numericalstate/cache/source guards precede realrun, endpoints unchanged.
+- Full477tests PASS13.06s inclcache/evaluatorcontracts. Rawbaseline is now
+  computed by an independentfrozenidentity model with sharedprefixfootprint,
+  not temporal/static summation-layout variants; no label/role/ID leaks or
+  retrospective evalthreshold edits. Singleton/shortquery metrics retain the
+  fullphysical gallery and report absentquerystrata rather than cherry-pick.
+
+### Completed temporal CE-only fixed control
+
+- temporal_CE/seed1027 fromd3eaf60 completed200realCPUsteps, sameinitial
+ 1d53ed7e... and samepairedsupport footprint/sampling schedule as temporal
+  teacher. Nogeometry/consistency weight inobjective, not droppedcontrols.
+  Endpointdigeste7f2535d...,616115B/hash
+  2896723cfbf6ea8efb4cbe6ba9f39653e90616cebcf9b3eb71f2142d50074863,
+  strictreopen. PublicresultSHA
+  389da9973dbca675352e71e96b816bc7ca946f34672a51ea018d444095295a75.
+- Ownedexit0/noguardstop/570.27459619s total,564.373650489s worker,
+  sampledpeakRSS1399771136B/11OSthreads, noCUDA/0trainingGPUh. Threeof12
+  fixedRwindow models complete, stillone representation mechanism/seed1027,
+  NOT all3scientificseeds or R/C/M. No dev/final/Val/Test fitting/selection.
+- Now publish/cache/source/evaluator freshregister before first actualdev
+  labelprojection andGT metrics. Fixedfirstpair temporal/static teacher only,
+  allremainingtrials stillrequired; report interimscorability/lowerbounds, never
+  declare winner or complete mainPred/semanticGT/purity/Hscore/Goal acceptance.

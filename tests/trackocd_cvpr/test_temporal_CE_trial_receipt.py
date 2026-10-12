@@ -1,0 +1,21 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / 'outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_CE_s1027'
+
+
+def test_actual_CE_control_matches_fixed_endpoint_and_supervision_without_teacher_selection():
+    p = OUT / 'result.json'
+    assert hashlib.sha256(p.read_bytes()).hexdigest() == '389da9973dbca675352e71e96b816bc7ca946f34672a51ea018d444095295a75'
+    r = json.loads(p.read_text())
+    reference = json.loads((ROOT / 'outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_Raw_teacher_s1027/result.json').read_text())
+    assert r['variant'] == 'temporal_CE' and r['completed_optimizer_steps'] == 200 and r['seed'] == 1027
+    assert r['model_parameter_sha256_before'] == reference['model_parameter_sha256_before']
+    assert [(x['support_members'], x['support_observations']) for x in r['loss_curve']] == [
+        (x['support_members'], x['support_observations']) for x in reference['loss_curve']]
+    assert not r['dev_final_Val_Test_targets_or_pixels_used'] and not r['old_fitted_adapter_initialization']
+    assert not r['all3seeds_or_distinct_R_C_M_mechanisms_or_Goal_A_B_C_accepted']
+    terminal = json.loads(OUT.with_name(OUT.name + '_supervisor_attempt_1.json').read_text())
+    assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0

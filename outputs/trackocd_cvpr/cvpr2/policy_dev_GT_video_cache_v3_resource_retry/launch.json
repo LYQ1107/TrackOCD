@@ -1,0 +1,33 @@
+{
+  "frozen_protocol_sha256": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "d3eaf6035ac1deaa92582bf46fe6966f88e70032"
+  },
+  "preregistration_commit": "d3eaf6035ac1deaa92582bf46fe6966f88e70032",
+  "scope": "Fixed policy/dev-only GT-control preparation; dev pixels authorized, no dev labels/final/optimizer",
+  "source_sha256": {
+    "configs/trackocd_core/common_features.json": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/formal_research_scope_approval_v1.json": "bf828e599e2a91c1630b14a62b2a2ccb26f562a22038875818cb8645993bd860",
+    "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+    "configs/trackocd_cvpr/policy_dev_GT_video_cache_v1.json": "c7bd72deefc55a06b45a5b6b62d8bd7ab8645223106b1bc4b32591fd26abb46f",
+    "configs/trackocd_cvpr/policy_dev_GT_video_cache_v3_resource_retry.json": "40d3d6dfc483072c09e09ebdbf0ad19f7ec7433be7d7297a3609b655c3e09179",
+    "outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1/result.json": "da4375c4502280fd3ec244812e79a258315e3197bd7f33f6edf5b85126d09fdd",
+    "outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1_supervisor_attempt_1.json": "f409436ef15b2b6a4375df62ec3eed1f54e2635abd87718a78fd913cd38afcc6",
+    "outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v2_resource_retry/failure.json": "a614777d81bd2faf4c60c772ab7453cc37d9e723c0df90202c1f5b181626f7c1",
+    "outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v2_resource_retry_supervisor_attempt_1.json": "fe5dced2492ef089731fb1b9a0ac4ba8cce1bf652bda3619cbb23b7ba2cbff15",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "7000482df013f8eeb62a211024a7aeacaa757d2a0647972d6db201e0c8ed6811",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "scripts/trackocd_cvpr/pilot_GT_video_cache.py": "f6d878e3ba716ce8e60c6d2d696c84a07172604aa343e7d6347141af2f629223",
+    "scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py": "381dfb9885d3ea74426a54d4cc1e011aa4b81597b5a149288b72d8711e4a1462",
+    "scripts/trackocd_v2/build_common_features.py": "0290f8fd67695b8a8a6a5933a9e7e8b12cb1f48ba5735b0063beb8bf712208ac",
+    "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+    "src/trackocd_cvpr/GT_video_cache.py": "2e414a8d4a1d64e849354d518cc767486d5dfe4f0954f5c61f0ca4e66bd90b29",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}
