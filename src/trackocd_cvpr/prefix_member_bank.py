@@ -37,6 +37,13 @@ class MemberCommit:
 
 
 @dataclass(frozen=True, slots=True)
+class CommittedRawSupport:
+    # Token is an external binding, never a representation/scorer input.
+    token: str
+    payloads: tuple[bytes, ...]
+
+
+@dataclass(frozen=True, slots=True)
 class StateEvidence:
     token: str
     support_groups: int
@@ -92,6 +99,20 @@ class PrefixMemberBank:
 
     def commit_history(self):
         return self._commits  # Immutable records; no GT or writable arrays.
+
+    def raw_support_snapshot(self):
+        """Immutable latest committed, exact-alias-deduplicated Raw prefixes.
+
+        Same grouping as state_evidence, including distinct video/frame scopes.
+        No routing IDs, GT, old cumulative votes or learned cached embeddings.
+        Call before any current-frame assignment to avoid peer self-support.
+        Empty token tombstones remain explicit, not silently revived/pruned.
+        """
+        by_token = {token: {} for token in self._tokens}
+        for item in self._members.values():
+            by_token[item.token][(item.epoch, item.frame, item.payload)] = item.payload
+        return tuple(CommittedRawSupport(token, tuple(groups[key] for key in sorted(groups)))
+                     for token, groups in sorted(by_token.items()))
 
     def state_evidence(self):
         result = {}

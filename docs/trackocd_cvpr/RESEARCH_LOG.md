@@ -1507,3 +1507,37 @@ new research scope; nothing has been deleted, no storage pressure is present.
   satisfying both exact constraint systems. Original v3 failure remains intact.
 - Five focused tests PASS0.82s/full383engineering tests PASS7.43s, no skips.
   v4not yet run on actual429videos; publication/registration gate required.
+
+### Actual committed Raw-bank bridge; publication still incomplete (2026-10-12)
+
+- Revalidated clean pending dbd36b6 source before edits. Fresh SOCKS/HTTP public
+  reference probes and connected commit read failed this turn; no live scientific
+  job, v4 remains unexecuted. Previous alternate transport did verify parent e0
+  and one public blob, but not complete commit/tree/ref. No proxy fault diagnosis,
+  SSL bypass, external process changes or false pushed/fetched claim.
+- PrefixMemberBank now exports immutable Raw payload snapshots using exactly
+  its existing latest-committed per-route and epoch/frame/exact-payload alias
+  grouping. Tombstones preserved; no route IDs or learned cached embeddings
+  exported. Distinct video/frame scopes retain separate support groups even
+  with identical bytes. Future commits do not mutate prior snapshots.
+- New committed_support_bridge decodes exact bounded visible byte framing and
+  reencodes anonymous selected supports with CURRENT R weights. External token
+  bindings used solely for selection/correspondence, never passed to R/C.
+  Group/observation budgets checked before tensor allocation; whole-call refusal,
+  not support pruning, hidden sampling or memory-bound increase.
+- Actual synthetic bank/router -> snapshot -> R -> candidate14 -> C -> CE
+  backward has nonzero candidate-adapted/R/C gradients; state_dict unchanged,
+  no optimizer. First focused run27pass/2fail2.58s because fixture assumed route
+  input order, while router correctly sorts visible bytes. Fixed fixture tokens
+  against synthetic visible vectors, not production ordering/tolerance. Next
+  focused29pass2.53s, then eight bridge cases/full391pass5.37s, no skips.
+- Covers actual alias deduplication, prefix replacement, immutable future
+  snapshots, cross-video scope, reassignment tombstones, external route/token
+  renaming, order correspondence, malformed/bounded input and empty selection.
+  No real labels/pixels/features/models opened. New training remains0/600GPUh.
+- Still NOT a full learned controller: caller must select/retrieve legitimate
+  support and take snapshot before current-frame commits; Known support training,
+  loss supervision, same-frame births, self-support exclusion/quarantine and
+  causal trainer integration remain open. No scientific R/C/M efficacy claim;
+  fresh independent protocol and GoalA/B/C remain incomplete. This source bridge
+  does not override pending remote registration or authorize real-data v4.
