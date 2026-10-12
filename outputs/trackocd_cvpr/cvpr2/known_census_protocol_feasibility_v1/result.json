@@ -1,0 +1,698 @@
+{
+  "aggregate_support_previously_observed_not_blind_preregistration": true,
+  "annotation_old_target_tables_names_Novel_Val_Test_pixels_features_models_read": false,
+  "census_reconciliation": {
+    "observations": 38680,
+    "positive_Known_classes": 48,
+    "tracks": 1962,
+    "videos": 429
+  },
+  "hypotheses": [
+    {
+      "all_folds_retained_no_successful_fold_or_metric_selection": true,
+      "class_pool": 48,
+      "classes_outside_pool": 0,
+      "eligibility_video_support": 0,
+      "every_pool_class_final_pseudo_exactly_once": true,
+      "fixed_seed": 2093001,
+      "folds": [
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 0,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 27,
+          "matched_slots": 73,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 118,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                5,
+                6,
+                10,
+                17,
+                26
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                3,
+                5,
+                14,
+                18,
+                209
+              ],
+              "classes": 22,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                6,
+                6,
+                8,
+                9,
+                88
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                5,
+                11
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        },
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 1,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 37,
+          "matched_slots": 34,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 118,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                1,
+                1,
+                1,
+                2,
+                3,
+                4,
+                5,
+                15,
+                20,
+                287
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                2,
+                19
+              ],
+              "classes": 22,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                4,
+                7
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                2
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        },
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 2,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 36,
+          "matched_slots": 39,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 118,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                2
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                3,
+                4,
+                7,
+                20
+              ],
+              "classes": 22,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                3,
+                4,
+                4,
+                16,
+                22,
+                316
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                0
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        },
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 3,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 26,
+          "matched_slots": 79,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 118,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                4,
+                6,
+                7,
+                10,
+                12,
+                97
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                3,
+                4,
+                4,
+                5,
+                9,
+                15,
+                15,
+                21,
+                228
+              ],
+              "classes": 22,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                5,
+                12,
+                22
+              ],
+              "classes": 12,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                4,
+                4
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        }
+      ],
+      "new_protocol_frozen": false,
+      "observed_positive_scope_only_not_complete_visual_absence": true,
+      "outside_pool_not_declared_background": true,
+      "positive_supported_Known_classes": 48
+    },
+    {
+      "all_folds_retained_no_successful_fold_or_metric_selection": true,
+      "class_pool": 23,
+      "classes_outside_pool": 25,
+      "eligibility_video_support": 3,
+      "every_pool_class_final_pseudo_exactly_once": true,
+      "fixed_seed": 2093001,
+      "folds": [
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 0,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 5,
+          "matched_slots": 48,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 55,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                1,
+                3,
+                4,
+                15,
+                20,
+                21
+              ],
+              "classes": 6,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                2,
+                2,
+                2,
+                4,
+                4,
+                5,
+                9,
+                196
+              ],
+              "classes": 9,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                6,
+                8,
+                9,
+                17,
+                26,
+                84
+              ],
+              "classes": 6,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                2,
+                12
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        },
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 1,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 15,
+          "matched_slots": 19,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 55,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                3,
+                5,
+                10,
+                12,
+                243
+              ],
+              "classes": 6,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                3,
+                6
+              ],
+              "classes": 9,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "classes": 6,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                29
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        },
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 2,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 14,
+          "matched_slots": 20,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 56,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                1,
+                3
+              ],
+              "classes": 5,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5
+              ],
+              "classes": 10,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                2,
+                3,
+                4,
+                9,
+                12,
+                287
+              ],
+              "classes": 6,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                0,
+                33
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        },
+        {
+          "candidate_scope": "Exclude observed positive Known conflicts for declared pseudo roles; Known fit classes may occur in evaluation videos",
+          "candidate_semantic_scope_requires_separate_registered_role_filter": true,
+          "complete_visual_category_absence_proven": false,
+          "failure_proves_general_assignment_impossible": false,
+          "fold": 3,
+          "globally_video_disjoint_sufficient_witness_found": false,
+          "individual_necessary_support_deficits": 3,
+          "matched_slots": 50,
+          "model_executed": false,
+          "multiple_classes_per_video_can_make_general_assignment_easier": true,
+          "new_protocol_frozen": false,
+          "required_category_video_slots": 56,
+          "roles": {
+            "development_pseudo": {
+              "candidate_support_counts_sorted": [
+                6,
+                9,
+                10,
+                21,
+                28,
+                93
+              ],
+              "classes": 6,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "fit_known": {
+              "candidate_support_counts_sorted": [
+                1,
+                1,
+                2,
+                4,
+                4,
+                9,
+                14,
+                18,
+                19,
+                235
+              ],
+              "classes": 10,
+              "minimum_distinct_videos_per_class": 3
+            },
+            "independent_final_pseudo": {
+              "candidate_support_counts_sorted": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "classes": 5,
+              "minimum_distinct_videos_per_class": 2
+            },
+            "policy_train_pseudo": {
+              "candidate_support_counts_sorted": [
+                3,
+                12
+              ],
+              "classes": 2,
+              "minimum_distinct_videos_per_class": 2
+            }
+          },
+          "training_GPU_hours": 0,
+          "unmatched_slot_count_is_not_general_infeasibility_lower_bound": true
+        }
+      ],
+      "new_protocol_frozen": false,
+      "observed_positive_scope_only_not_complete_visual_absence": true,
+      "outside_pool_not_declared_background": true,
+      "positive_supported_Known_classes": 48
+    }
+  ],
+  "interpretation": "Fixed class-disjoint hypotheses with positive-known conflict exclusion and sufficient globally video-disjoint slot certificates; retain all8cases including failures. Restrictive matching failure not general impossibility. Positive annotations do not certify full visual absence, no frozen protocol/training or main scientific acceptance. New private membership/allocation evidence local only, aggregate public summaries. No Train annotation reopening, old target-label tables, names/Novel values, Val/Test, pixels/features/models or model scores.",
+  "labels_in_forward_or_live_memory": false,
+  "optimization_steps": 0,
+  "preregistration_commit": "5d8684f7cebd26f255c297f2c85efa0a6aad0428",
+  "private_input_sha256": {
+    "census_result": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "private_Known_index": "94d1e1e1bba5645fc7848aa5f56912fa2d890d05d01385390379f5195d35a2a7",
+    "private_exclusion_index": "ee0d0ea48688506bbba51579eaf5b6db1b901fff4d4ce478e77281a6725fda5d",
+    "roles": "7e85e5dda202e230de7a8cc57d9425d1ffd0b0413009a9ed27c927829dc22062"
+  },
+  "private_output": {
+    "bytes": 179723,
+    "sha256": "94521869748c9cf1c92a23fc99d693824cd5899860e05d7a66f15f945c81219b"
+  },
+  "resources": {
+    "disk_free_bytes": 186237362176,
+    "guarded_process_RSS_bytes": 35258368,
+    "kernel_reported_VmHWM_bytes_approximate": 35258368,
+    "peak_sampled_smaps_rollup_Rss_bytes_through_result_snapshot": 35258368,
+    "resource_ru_maxrss_bytes_including_preexec_history": 847216640,
+    "sampled_smaps_rollup_Rss_bytes": 35258368,
+    "training_GPU_hours": 0,
+    "wall_seconds": 0.10715994401834905
+  },
+  "source_sha256": {
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/clean_train_gt_scope_approval_v1.json": "4a87b1bdd7215e8087ebca6c6040344592c25c442268f08c0e3e719275c29e96",
+    "configs/trackocd_cvpr/known_census_protocol_feasibility_v1.json": "6fcc8042097e9bac63329f4aa74e5ed6abc9344c7129a39fa278f5c9b058e58e",
+    "outputs/trackocd_cvpr/cvpr2/clean_train_gt_census_v1/result.json": "b60f9bcd769f7d3b45ef5b01590c0821f863918b83455f165bbd1ec60b18cdd0",
+    "scripts/trackocd_cvpr/audit_known_census_protocol.py": "cf5da096c37331781407adb2764f43dcf5569d5081051b32f3a1ef71ea858145",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "src/trackocd_cvpr/disjoint_video_witness.py": "421bb5763eea1ef9e57a4f0b99e93c521e68b65edd086c663d84ebda91f97dd1",
+    "src/trackocd_cvpr/known_census_protocol.py": "e2995a27972c85047230b0d544be3e6f20b19767d29f857b66ac80e33a6f25a8",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  },
+  "status": "COMPLETE_FIXED_POSITIVE_KNOWN_FEASIBILITY_NOT_FROZEN_PROTOCOL_OR_MODEL_RESULT"
+}

@@ -1292,3 +1292,30 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Additional ls-remote failedTLS, not falsely reported as another successful
   request. Separate successful-fetch receipt preserves prior pending handoff.
   New executor/config still needs new commit/push/fetch/fresh remote gate.
+- Registered/pushed/fetched5d8684f7cebd26f255c297f2c85efa0a6aad0428; allthree
+  refs exactmatch. First unchanged worker fresh current-remote gate passed;
+  executed0.10716sCPU/35258368B sampledRSS,0GPU/optimizersteps. Exact declared
+  private Known inputs reconciled all1962tracks/38680obs/429videos/48classes;
+  no original annotation/old target table/names/Novel/Val/Test/pixels/models.
+- All8actual cases retained. All48classes: necessarysupport deficits27/37/36/26,
+  restrictive matchedslots73/34/39/79 of118 each. Uniform>=3video23class pool:
+  deficits5/15/14/3, matched48/19/20/50 of55/55/56/56. No sufficient globally
+  disjoint witness in anycase; no protocol frozen or scientific mechanism gain.
+  Positive deficits refute these fixed class-role hypotheses under their own
+  observed-positive conflict/quota rules, NOT arbitrary other class assignments
+  or global dataset impossibility. Failed restrictive slot count NOT general
+  unsatisfiable proof. Do not cherry-pick a closest case or drop failing classes.
+- ResultSHA2d3873990058f7c1853f391609953620a30a56d5477725e3e817fcc5c1a78128;
+  launch59727344abf074ac399cd2f0d06fd5e7b46c2d995dbc297d2b600fa302435cea;
+  private179723B SHA94521869748c9cf1c92a23fc99d693824cd5899860e05d7a66f15f945c81219b,
+  private class/allocation/partial witnesses retained locally, never pushed.
+- Next finite structural repair: joint class-role/video constraint assignment
+  on the same uniformly eligible pool, not metric/difficulty/seed/threshold
+  search. No science FAIL ends the full Goal. ExistingSciPy available; inspect
+  and preregister solver/constraint bounds before actual labels/solver execution.
+  Do not silently make frequent categories alwaysKnown or relax video exclusion.
+  Newtraining0/600GPUh; GoalsA/B/C and actual>=3trainedmechanisms allopen.
+- Three public-receipt regressions now verify original registered hashes,
+  every case/denominator/necessary deficit and resource/access declarations,
+  without decoding private membership output. Full338tests PASS5.78s, no skips,
+  before delivering public aggregates and source only. No private index staged.

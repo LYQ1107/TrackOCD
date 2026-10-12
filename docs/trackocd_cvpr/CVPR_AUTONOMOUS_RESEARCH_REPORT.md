@@ -293,3 +293,16 @@ newtraining0/600GPUh. Next is separately registered class/video-disjoint
 protocol feasibility from this lawful index, not automatic cache or training.
 The original full Goal was genuinely restored toactive after the user's host
 resume action; an earlier blocked snapshot was not silently rewritten.
+
+Separately registered5d8684f class/video feasibility now actually ran0.107s CPU,
+retaining all eight fixed cases. All48positive classes have necessary quota
+deficits27/37/36/26; uniform>=3positive-video23classes still5/15/14/3. No full
+disjoint slot witness in any case. This refutes these fixed class-role layouts
+under the registered positive-conflict rules, not the dataset or all possible
+class/video assignments. Restrictive matching failure is not a general solver
+infeasibility proof. No successful-fold selection, extra seed/threshold search,
+role relaxation, new frozen protocol, learned mechanism or training result.
+Result2d387399 and private94521869 preserve all cases; private memberships and
+179723B witnesses stay local. Next finite step is jointly constrained class/
+video allocation on the same eligible pool, without permanent-frequencyKnown
+exceptions or GT role leakage. Newtraining remains0/600GPUh; Goal stillactive.
