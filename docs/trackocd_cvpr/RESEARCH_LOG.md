@@ -1231,3 +1231,33 @@ new research scope; nothing has been deleted, no storage pressure is present.
   count reconciliation, access/resource boundaries and original Goal recovery;
   tests do not decode the private GT index. Full307tests PASS3.91s, no skips,
   before publishing only small public receipts/reports. Private index not staged.
+
+### Global video allocation preparation while public receipt delivery retries
+
+- Previous turn was actual progress: scoped census,307tests, original Goal
+  genuinely restored toactive. Full scientific objective not complete; new
+  training0 and three accepted mechanism trials0. No further actual GT read.
+- Public receipt commitfce49207b88d256c5649f686d89df3c28783f324 local. Multiple
+  bounded normal push TLS failures; normal fetch/ls-remote and connector failed
+  too. API readonly branch fetch once confirmed7887151, existing authentication
+  reused without displaying/storing secrets. Exact-commit API fallback tried
+  only seven explicit public paths; bounded TLS failures before verified first
+  blob and before any branch PATCH. Remote delivery NOT claimed successful.
+- Next protocol cannot rely on overlapping candidate counts. Added external
+  deterministic augmenting-path category/video slot matching and independent
+  certificate verifier. A full witness proves global video ownership and per-
+  class quotas under supplied candidate scope; class roles must be disjoint.
+  Candidate semantic filtering must separately register; positive GT never
+  certifies complete visual absence. No model-facing API or GT memory repair.
+- Deliberate one-video-per-category-slot restriction yields sufficient proof
+  only. Actual synthetic counterexample: two videos each support two fitting
+  classes and two other videos supportheldout, general allocation feasible but
+  restrictive six-slot matching fails. Failure NOT called general impossibility,
+  and no quota/class/video dropping. At most512slots, no external solver/deps.
+- Source/synthetic preparation only, not another scientific mechanism trial or
+  actual429video allocation. Publication gate remains required before private
+  index execution; preserve same scope/incident/preregistered census result.
+- Twelve actual synthetic certificate regressions pass, including conflicting
+  globally shared videos, augmenting-path reassignment, reordered inputs and
+  corrupted slot/role/category certificates. Full319engineering tests PASS3.98s,
+  no skips. No actual new role hypothesis selected/frozen or model run.
