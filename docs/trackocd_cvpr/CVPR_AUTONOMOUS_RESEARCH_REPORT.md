@@ -41,6 +41,13 @@ labels were decoded. Changed external GT-census authority is pending user
 direction after the incident; no new GT read/training/full-cache launch.
 This is not the fresh category/video protocol or independent model evidence.
 
+Source-only preparation now also adds a latest-committed-prefix member bank:
+replaces repeated cumulative-prefix votes, separates diverging input aliases,
+retains past commits/tombstones and refuses partial/bounded-invalid writes.
+Only synthetic inputs have run. No legacy result changed, policy integration,
+learned quarantine, real-data causality, GT clearance or mechanism PASS claimed.
+See [PREFIX_MEMBER_BANK_CONTRACT.md](PREFIX_MEMBER_BANK_CONTRACT.md).
+
 ## Registered execution sequence
 
 CVPR-0 first: retrospective sealed FULL decision distributions for all three

@@ -1068,3 +1068,32 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full201engineering tests PASS3.27s, no skips; actual administrative source
   binding/counts, immutable counter erratum and non-self-authorizing pending
   scope checked. Private exclusion index remains ignored/untracked and local.
+
+### Source-only memory prerequisite while GT authority remains pending
+
+- Revalidated clean3d54095, pending scope explicitly false for new GT reads
+  and training. Automatic goal continuation is not approval. Previous turn
+  was actual administrative-isolation progress, not a running training wait.
+- A remaining safe action directly supports the requested persistent-memory
+  mechanism: replace repeated whole-prefix votes with latest committed member
+  support. Inspected actual legacy/router/prefix code; original control and
+  historical metrics remain unchanged. No new GT/cached/image/model reads.
+- Added independent bounded PrefixMemberBank: exact same-frame aliases share
+  support, later divergence splits prospectively, WAIT retains committed
+  evidence, cross-video handles are scoped, changed state binding preserves
+  immutable commit history and empty-token tombstones. Opposing members remain
+  recorded with unusable zero resultant, never silently dropped as pollution.
+- Inputs/chronology/fingerprint/past-prefix/bounds checked before atomic commit;
+  no route-ID score features, GT/purity parameter or automatic token allocation.
+  This is a Raw engineering prerequisite, not learned reliability, semantic
+  self-correction, full policy integration, independent-sample confidence,
+  real causal benchmark or one of the three required scientific mechanisms.
+- Source/synthetic work can proceed within existing authority, but changed
+  real GT-census read scope remains pending. No old protected labels, dataset,
+  shards, weights, external process interference or training. Scientific
+  acceptance, fresh protocol and full Goal remain open; newtraining0/600.
+- Full225engineering tests PASS3.38s, no skips. Twenty-four new synthetic bank
+  cases execute repeated-prefix bias, alias divergence, paired changed-future
+  streams, whole-frame rollback, history preservation and hard bounds. Equal
+  payloads are physically interned without merging cross-video support; no
+  full-dataset scalability or scorer/CT-purity acceptance inferred.
