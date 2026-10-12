@@ -2786,3 +2786,42 @@ new research scope; nothing has been deleted, no storage pressure is present.
   no longerexisted; freshnonmultiplexed SSH443 throughsameproxy succeeded
   withsameofficial ED25519 pin/identity and exactcurrentremote f1fe4986...,
   without proxy/foreignprocess modification. Usefreshconnection, not oldPID.
+
+### First substantive C trial actually completed: mixed, insufficient exposure
+
+- Fromregistered1cadefc1a7d71e436e7528a4c11bfa36d9d01022, Top8_conditioned/
+  seed1027fresh708parameter C completed200updates, fourfullpolicyepisodes
+  each10videos/54tracks/1268obs/374clockframes/1empty. Ownedexit0/noguardstop,
+  122.519512358s total/115.642862015s worker/RSS949841920B/11OSthreads,
+  noCUDA/0trainingGPUh. ResultSHA
+  31104366407bd5956aa3ed78ffa1794e444f6dd6d47ff53f855d3a1aa9b48077.
+- Fixed200endpoint24295B/SHA7e956b54646a6e12d0de52c23560601ab648f1992fae27b072f23cbd766fe86d,
+  strictreopen, initiala4b4ab7ec6f68cc4f4d5f530ce25e658af80519004cfb19a62fdcbc90390636b,
+  after43a0d70b9dc6d34008278fb84881ffcb52291895d787f8771184827841d37917.
+  No step10/oldpolicy/R warmstart or dev/final/Val/Test selection. Fullactual
+  privatehistory1232180B/SHAedad84a27c540543ff553e7d2a6aefa3f27700f010fca53e026c82393d082195
+  retained, notuploaded; publicaggregate receipts only.
+- Actual optimizer group exposure Known538/policy-pseudo106,4classes total,
+  onlyONE of2policy-pseudo classes receivedoptimizerloss. Bothfamilies YES
+  doesnot establish fullpolicyclass coverage. Actualperupdate groups:
+  ep0Known175/pseudo0;ep1Known164/pseudo32;ep2Known100/pseudo13;
+  ep3Known99/pseudo61. First50eligibleframes/episode preferentialexposure is
+  a realscientific qualification limitation, not a reason to silentlychange
+  seeds/orders or declare full7class C training.
+- Fullrawtraining rollout (NOT frozen dev/generalization metrics): ep0NEW26/
+  KNOWN1242;ep1andep2KNOWN1268 each;ep3KNOWN1073/NEW87/EXISTING108.
+  Onlyep3has104candidate-positive groups involvingotherphysical/video members;
+  justTWO suchgroups occurredin actualoptimizer updates. All-frame104 is NOT
+  104trainedcrossvideopositives or 104correctpredictedsemanticreuses.
+- Corrected commentary: truncatedstdout initiallymadeall-episode opportunity
+  seemzero; fullaggregate provesep3has108Existing/104crossvideopportunities.
+  No immutablefiles changed. Preserveboth allKnownepisodecollapse andlaterreuse;
+  neither all-zero claim nor positiveNovelwin justified. TrueGT labels external
+  only, unknown10physicaltracks keptmasked, allwronghistories retained.
+- Oneof9C scientific fits complete, sevenof12 R fits; stillno complete3seed
+  C comparison/learnedM/qualifiedstrongPred/lockedfinal or GoalA/B/C. Finish
+  unchangedcontrols before bounded exposure/feedback repair; formaldevprotocol
+  gate remains closed until executable source/metrics/order/coverage frozen.
+- Full506tests PASS11.40s; actualreceipt asserts both allKnown episodes and
+  later108Existing/104opportunities but only2optimizer crossvideopositives,
+  preserves1/2pseudo-class exposure rather than falselydeclaringfullcoverage.
