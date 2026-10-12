@@ -61,7 +61,7 @@ def supervise(args, cfg, safety):
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
                               str(Path(__file__).resolve()), '--worker',
                               '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy,
-                              '--attempt', str(args.attempt)], cwd=ROOT)
+                              '--attempt', str(args.attempt), '--config', args.config], cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')
@@ -166,7 +166,8 @@ def worker(args, cfg, safety):
         if counts != cfg['expected']:
             raise ValueError('Every original census row retained/reconciled')
         guard()
-        public, private = joint_feasibility(presence, time_limit=cfg['solver_time_limit_seconds'], node_limit=cfg['solver_node_limit'])
+        public, private = joint_feasibility(presence, time_limit=cfg['solver_time_limit_seconds'], node_limit=cfg['solver_node_limit'],
+            balanced=cfg['four_balanced_final_groups'], union_support=cfg.get('union_support_closure', False))
         if public['integer_necessary_conditions']['class_pool'] != cfg['expected_eligible_pool']:
             raise ValueError('Uniformly eligible class pool changed')
         guard()
@@ -193,12 +194,17 @@ def worker(args, cfg, safety):
 
 
 def main():
+    global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True)
     parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true')
     parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
+    parser.add_argument('--config', choices=('configs/trackocd_cvpr/joint_known_protocol_v1.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v2_unbalanced.json'),
+                        default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
+    SOURCES = (args.config, *SOURCES[1:])
     cfg = json.loads((ROOT / SOURCES[0]).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker:

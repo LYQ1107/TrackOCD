@@ -30,7 +30,7 @@ def category_support(presence):
     return support, pool
 
 
-def forced_group_certificate(presence):
+def forced_group_certificate(presence, *, union_support=False):
     """If |V_X minus V_Y|<2, X must share Y's final-pseudo group.
 
 In Y's final fold every non-final role excludes positive Y, and every role
@@ -58,22 +58,54 @@ balanced group cannot fit. This is a scoped integer proof, not MILP status.
     for c in pool:
         groups[root(c)].append(c)
     components = sorted(groups.values(), key=lambda cs: (-len(cs), cs))
+    direct_sizes = [len(cs) for cs in components]
+    union_witnesses = []
+    if union_support:
+        # Every member of an already-forced component is final together. In
+        # that fold every other role excludes their entire positive union.
+        # One merge per round; at most pool-1 merges, no solver/seed search.
+        while True:
+            changed = False
+            for group in components:
+                denied = set().union(*(support[c] for c in group))
+                for other in components:
+                    if other == group:
+                        continue
+                    forcing = next((c for c in other if len(support[c] - denied) < 2), None)
+                    if forcing is None:
+                        continue
+                    union_witnesses.append({'category_X': forcing, 'already_forced_group': group.copy(),
+                                            'X_videos_without_group_union': len(support[forcing] - denied)})
+                    components = sorted([cs for cs in components if cs != group and cs != other]
+                                        + [sorted(group + other)], key=lambda cs: (-len(cs), cs))
+                    changed = True
+                    break
+                if changed:
+                    break
+            if not changed:
+                break
     sizes = [len(cs) for cs in components]
     balanced_max = (len(pool) + 3) // 4
     # Even without balanced groups, final component + nonempty development +
     # two policy classes + at least two fit classes needs at least S+5classes.
     unbalanced_max = len(pool) - 5
-    return {'class_pool': len(pool), 'forced_equality_edges': len(edges),
+    public = {'class_pool': len(pool), 'forced_equality_edges': len(edges),
             'forced_component_sizes_sorted': sizes, 'balanced_group_max_classes': balanced_max,
             'balanced_family_integer_capacity_contradiction': sizes[0] > balanced_max,
             'nonempty_four_role_unbalanced_capacity_contradiction': sizes[0] > unbalanced_max,
             'unbalanced_final_capacity_ceiling_with_dev1_policy2_fit2': unbalanced_max,
-            'scope': 'Same eligible Known pool, every class final-pseudo once, >=2videos in every role; Y-positive videos excluded from every non-final role in Y final fold; not arbitrary other protocol/data'}, {
+            'scope': 'Same eligible Known pool, every class final-pseudo once, >=2videos in every role; Y-positive videos excluded from every non-final role in Y final fold; not arbitrary other protocol/data'}
+    private = {
                 'components': components, 'directed_support_witnesses': edges,
                 'not_model_facing': True}
+    if union_support:
+        public.update(union_group_closure_enabled=True, direct_component_sizes_before_union=direct_sizes,
+                      union_support_forced_merges=len(union_witnesses))
+        private['union_forced_group_witnesses'] = union_witnesses
+    return public, private
 
 
-def verify_assignment(presence, assignment):
+def verify_assignment(presence, assignment, *, balanced=True):
     """Independent combinatorial verification, not just solver residuals."""
     support, pool = category_support(presence)
     if set(assignment) != {'groups', 'folds'} or len(assignment['groups']) != 4 or len(assignment['folds']) != 4:
@@ -83,8 +115,8 @@ def verify_assignment(presence, assignment):
     groups = [set(cs) for cs in assignment['groups']]
     if (sorted(c for cs in groups for c in cs) != pool
             or any(len(cs) != len(assignment['groups'][i]) for i, cs in enumerate(groups))
-            or any(not len(pool) // 4 <= len(cs) <= (len(pool) + 3) // 4 for cs in groups)):
-        raise ValueError('Every eligible class exactly once in balanced final groups')
+            or any(not (len(pool) // 4 if balanced else 1) <= len(cs) <= ((len(pool) + 3) // 4 if balanced else len(pool) - 5) for cs in groups)):
+        raise ValueError('Every eligible class exactly once in declared final-group capacity')
     for f, fold in enumerate(assignment['folds']):
         if set(fold) != {'classes', 'video_ids'} or set(fold['classes']) != set(ROLES) or set(fold['video_ids']) != set(ROLES):
             raise ValueError('Exact independent witness roles required')
@@ -111,7 +143,7 @@ def verify_assignment(presence, assignment):
     return True
 
 
-def build_joint(presence):
+def build_joint(presence, *, balanced=True):
     support, pool = category_support(presence)
     videos = sorted(presence)
     n, m = len(pool), len(videos)
@@ -135,7 +167,7 @@ def build_joint(presence):
                 add([(video(v, f, r), 1) for v, vid in enumerate(videos) if vid in support[pool[c]]]
                     + [(role(c, f, r), -(3 if r == 0 else 2))], 0, np.inf)
     for g in range(4):
-        add([(group(c, g), 1) for c in range(n)], n // 4, (n + 3) // 4)
+        add([(group(c, g), 1) for c in range(n)], n // 4 if balanced else 1, (n + 3) // 4 if balanced else n - 5)
     forbidden = ((1, 2, 3), (2, 3), (1, 3), (1, 2))
     for f in range(4):
         add([(role(c, f, 1), 1) for c in range(n)], 2, 2)
@@ -152,18 +184,21 @@ def build_joint(presence):
     return matrix, np.array(lower), np.array(upper), pool, videos
 
 
-def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp):
+def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp, balanced=True, union_support=False):
     if type(time_limit) not in (int, float) or not 0 < time_limit <= 30 or type(node_limit) is not int or not 1 <= node_limit <= 5000:
         raise ValueError('One bounded registered solver attempt only')
-    certificate, private_proof = forced_group_certificate(presence)
+    if type(balanced) is not bool or type(union_support) is not bool:
+        raise ValueError('Explicit boolean structural family flags required')
+    certificate, private_proof = forced_group_certificate(presence, union_support=union_support)
     common = {'integer_necessary_conditions': certificate,
               'model_scores_or_names_used': False, 'frequency_always_Known_exception': False,
               'complete_visual_category_absence_proven': False, 'new_protocol_frozen': False,
               'training_GPU_hours': 0}
-    if certificate['balanced_family_integer_capacity_contradiction']:
+    contradiction = certificate['balanced_family_integer_capacity_contradiction'] if balanced else certificate['nonempty_four_role_unbalanced_capacity_contradiction']
+    if contradiction:
         return {**common, 'status': 'INTEGER_CAPACITY_CONTRADICTION_FOR_DECLARED_JOINT_FAMILY',
                 'solver_executed': False, 'feasible_joint_assignment_verified': False}, {'proof': private_proof}
-    matrix, lower, upper, pool, videos = build_joint(presence)
+    matrix, lower, upper, pool, videos = build_joint(presence, balanced=balanced)
     with warnings.catch_warnings(record=True) as captured:
         warnings.simplefilter('always')
         result = solve(c=np.zeros(matrix.shape[1]), integrality=np.ones(matrix.shape[1]), bounds=Bounds(0, 1),
@@ -193,6 +228,6 @@ def joint_feasibility(presence, *, time_limit=30, node_limit=5000, solve=milp):
         folds.append({'classes': {name: [pool[c] for c in range(n) if x[n * 4 + (c * 4 + f) * 4 + r]] for r, name in enumerate(ROLES)},
                       'video_ids': {name: [vid for v, vid in enumerate(videos) if x[n * 20 + (v * 4 + f) * 4 + r]] for r, name in enumerate(ROLES)}})
     assignment = {'groups': groups, 'folds': folds}
-    verify_assignment(presence, assignment)
+    verify_assignment(presence, assignment, balanced=balanced)
     public.update(status='VERIFIED_POSITIVE_KNOWN_JOINT_ASSIGNMENT_NOT_FROZEN_PROTOCOL', feasible_joint_assignment_verified=True)
     return public, {'proof': private_proof, 'assignment': assignment}

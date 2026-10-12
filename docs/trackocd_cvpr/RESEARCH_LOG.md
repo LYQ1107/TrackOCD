@@ -1401,3 +1401,26 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Three aggregate-only actual receipt regressions PASS; full356tests PASS4.70s,
   no skips, before public receipt delivery. Private exact edge/member file NOT
   decoded by tests or staged for publication; both owned attempt receipts kept.
+
+### Unbalanced family and union-support closure preparation
+
+- Rechecked cleanaffba0f after actual fetched balanced contradiction. Next
+  finite family changes group-balance condition only; retains all23classes,
+  eachfinalonce/cyclicdev, policy2/fit>=2classes, fit3/eval2videos and original
+  positive class/video exclusions. No permanent-frequencyKnown or class prune.
+- Add necessary union closure: an already-forced component is final together;
+  a class with<2videos outside its entire positive union must join it. One
+  verified merge per round, at mostpool-1; transitive fixed point. Exact2outside
+  not merged. Private source members/witnesses local only, aggregate sizes public.
+- Previous v1 defaults/schema/source receipts preserved; new v2 explicit
+  unbalanced/union flags and own output. If unbalanced necessary capacity not
+  violated, one bounded jointMILP; no unsupported inference from noncontradiction
+  to feasibility. Returned witnesses still verify class/video/positive rules.
+- Existing executor takes only two whitelisted config paths, passes selected
+  config to own fresh-B worker; same256MiB/120s/1MiB/25%RAM/10GiB/3pre-output
+  attempt bounds and oneCPU. Source version must newly register before real
+  Known index read. No new external GT/assets/cache/model or training authorized.
+- Six focused new synthetic regressions/full362tests PASS4.50s, no skips:
+  union-only implication missed pairwise, exact2boundary, retained unbalanced
+  allclass witness, actual video-overlap corruption, contradiction skipping
+  solver and timeout not feasibility. Disk185.7GB/RAM93.8GBavailable; no cleanup.
