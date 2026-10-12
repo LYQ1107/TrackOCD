@@ -1784,3 +1784,19 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Ownedv10total38.650704262s/noguardstop/oneThread,128684032Bsamplepeak.
   Privategeometry5265962B (~5.02MiB), localonly; publicresultSHA
   f1e170a3d3d288bcef3caa2aca4a71ad4c42c2597f7ee6a6e80fa04410dbd070.
+
+### Annotated physical/Known key reconciliation preregistration
+
+- Rechecked clean3be60f5,184.4GBdisk/104.4GBavailableRAM. Newv11binds existing
+  physicalindexSHA7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899
+  and unchanged407role/Known indices; no new originalannotation or labels read.
+- Externaljoin validates exactgeometry wrapper/key/finitebox/image/frame/
+  chronology and retainedKnown pertrack annotation/distinctimage counts. Missing
+  Knownkeys or alteredcounts/duplicates/conflicts refuse, not GT repair. Full
+  annotatedphysical totals byrole include everygeometry track; no-retainedKnown
+  labels stayNone, never background, inferredNovel category or modelinput.
+- Source-only tests exercise a realdictionary join plus missing/duplicate/
+  count/box/out-of-scope refusals. Samefreshref/sourcehash/authority/256MiB/
+ 120s/oneCPU guards. No geometry duplication, training/cache, semanticNovelGT,
+  densecoverage/imageavailability or protocolfreeze claim. Actualjoin awaits
+  preregistration; GoalA/B/C remain open.

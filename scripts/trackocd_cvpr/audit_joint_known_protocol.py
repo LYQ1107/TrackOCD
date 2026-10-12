@@ -23,7 +23,7 @@ from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memor
 from src.trackocd_v2.io import atomic_json, sha256_file
 from src.trackocd_cvpr.remote_registration import verify_registration
 from src.trackocd_cvpr.global_protocol_coverage import audit_global_coverage, verified_global_wrapper_assignment, audit_global_denominators
-from src.trackocd_cvpr.physical_gt_census import physical_census
+from src.trackocd_cvpr.physical_gt_census import physical_census, reconcile_physical_known
 
 SOURCES = ('configs/trackocd_cvpr/joint_known_protocol_v1.json',
            'scripts/trackocd_cvpr/audit_joint_known_protocol.py', 'src/trackocd_cvpr/joint_known_protocol.py',
@@ -117,7 +117,7 @@ def worker(args, cfg, safety):
     if (approval['external_known_only_Train_census_authorized'] is not True
             or (approval['allowlisted_videos'], approval['excluded_old_heldout_videos']) != (429, 51)):
         raise ValueError('Actual user-authorized derived Known scope required')
-    if cfg.get('category_agnostic_physical_GT_audit', False):
+    if cfg.get('category_agnostic_physical_GT_audit', False) or cfg.get('physical_Known_join_audit', False):
         physical_approval = json.loads((ROOT / cfg['physical_approval']).read_text())
         if (physical_approval['status'] != 'USER_APPROVED_LIMITED_PHYSICAL_GT_AUDIT_ONLY'
                 or physical_approval['allowlisted_video_count'] != 407
@@ -135,10 +135,12 @@ def worker(args, cfg, safety):
         raise ValueError('No attempt overwrite')
     names = ('private_Known_index', 'private_exclusion_index', 'roles', 'census_result')
     if (cfg.get('fixed_global_coverage_audit', False) or cfg.get('fixed_global_denominator_audit', False)
-            or cfg.get('category_agnostic_physical_GT_audit', False)):
+            or cfg.get('category_agnostic_physical_GT_audit', False) or cfg.get('physical_Known_join_audit', False)):
         names += ('private_global_assignment',)
     if cfg.get('category_agnostic_physical_GT_audit', False):
         names += ('train_annotation',)
+    if cfg.get('physical_Known_join_audit', False):
+        names += ('private_physical_GT',)
     paths = {name: ROOT / cfg[name] for name in names}
     for path in paths.values():
         if path.is_symlink() or not path.is_file():
@@ -182,7 +184,11 @@ def worker(args, cfg, safety):
         if counts != cfg['expected']:
             raise ValueError('Every original census row retained/reconciled')
         guard()
-        if cfg.get('category_agnostic_physical_GT_audit', False):
+        if cfg.get('physical_Known_join_audit', False):
+            public, private = reconcile_physical_known(presence, known_index,
+                json.loads(paths['private_global_assignment'].read_text()),
+                json.loads(paths['private_physical_GT'].read_text()))
+        elif cfg.get('category_agnostic_physical_GT_audit', False):
             wrapper = json.loads(paths['private_global_assignment'].read_text())
             # Reuse independent full Known denominator/assignment validation,
             # not its aggregate as a physical GT certificate.
@@ -249,7 +255,8 @@ def main():
                                           'configs/trackocd_cvpr/joint_known_protocol_v7_coverage.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v8_coverage_schema.json',
                                           'configs/trackocd_cvpr/joint_known_protocol_v9_denominators.json',
-                                          'configs/trackocd_cvpr/joint_known_protocol_v10_physical_GT.json'),
+                                          'configs/trackocd_cvpr/joint_known_protocol_v10_physical_GT.json',
+                                          'configs/trackocd_cvpr/joint_known_protocol_v11_physical_join.json'),
                         default='configs/trackocd_cvpr/joint_known_protocol_v1.json')
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
@@ -257,10 +264,12 @@ def main():
         SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v6_global/result.json', SOURCES[-1])
     if args.config.endswith('joint_known_protocol_v9_denominators.json'):
         SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/result.json', SOURCES[-1])
-    if args.config.endswith('joint_known_protocol_v10_physical_GT.json'):
+    if args.config.endswith(('joint_known_protocol_v10_physical_GT.json', 'joint_known_protocol_v11_physical_join.json')):
         SOURCES = (*SOURCES[:-1], 'src/trackocd_cvpr/physical_gt_census.py',
                    'configs/trackocd_cvpr/physical_gt_scope_approval_v1.json',
                    'outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/result.json', SOURCES[-1])
+    if args.config.endswith('joint_known_protocol_v11_physical_join.json'):
+        SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/result.json', SOURCES[-1])
     cfg = json.loads((ROOT / SOURCES[0]).read_text())
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker:
