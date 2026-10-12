@@ -2392,3 +2392,31 @@ new research scope; nothing has been deleted, no storage pressure is present.
   indefinitely from transientNVML snapshots, claim completion or useGPU4N/A.
   ScientificCPUtrial remains live, laterobserved147/200; currentupdates and
  20/50/100checkpoint continuity are progress, not a blocked wholeGoal.
+- V2resourcefailure19.9244053s/109883392B/exit1/zeroCUDA orpixels,
+  public52c6201f0ac71008769262d52f05c2d4d58c6d07 pushed/fetched exactrefs.
+  No further transient-GPU retries started; Rfit observed191 thenterminal.
+
+### First real fixed scientific R training model completed
+
+- temporal_Raw_teacher/seed1027 from11dad18 completed200realCPUsteps,
+  originalfit5/1158/22279/fullphysical1401/243masked scope unchanged. Full
+  current-member Rawteacher and samevideo exclusion; no warmstart selected
+  step10 model, no dev/final/Val/Test pixels or targets for fitting/selection.
+- Ownedsupervisor exit0/noguardstop/638.853901149s total,worker634.049951376s,
+  sampledpeakRSS1401667584B/11OSthreads; CPUintraop1 requested, not single
+  OSthread certification. NoCUDA/0trainingGPUh. Four20/50/100/200private
+  checkpoints retain model/optimizer/torch+numpyRNG; no data/weights uploaded.
+- Before1d53ed7e... after8c5fa014..., fixed200endpoint616115B/hash
+  ef97dfe1db63bfdae1254a2b9f116706a12f21fbda2aa38d13cdb7e36c2d73bc,
+  strictreopen identical. PublicresultSHA
+  981fc224e844d4531a7e97a3fd9db54a9967b76550a1c93a82efd69c701dfcee.
+- Firstloss0.631275654, lastloss0.02747817; lastKnownCE0.003117109,
+  allmemberRawGram0.009427041, prefixconsistency0.149340212. Differentquery/
+  prefix draws, so NOT a paired accuracy/generalization improvement or evidence
+  geometry is preserved on Novel. No developmentretrieval/effrank results yet.
+- This is1/12fixedwindow trainedmodels, ONErepresentation hypothesis, not
+  three independent scientificallyvalidated mechanisms or all3trainedseeds.
+  Next same-seed timeless_Raw_teacher matchedcontrol, then allremaining
+  seeds/CEcontrols/freshbaselines; hold protocol and denoms, do not pickwinner
+  from this loss. QualifiedPred, candidate/selfcorrectingmemory, dev/fullcausal
+  metrics and independentfinal remainopen; originalGoal active and unchanged.
