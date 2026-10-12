@@ -73,7 +73,28 @@ WAIT, cross-video scope, antipodal contradiction, whole-frame rollback and
 bounds. They do not run a learned scorer or a real-data benchmark.
 
 The existing legacy controller, old checkpoints/ledgers/metrics and actual
-cached diagnostic receipts are unchanged. Integration into a policy-owned
-atomic scheduler remains required before any learned rollout or causal-bank
-claim. Fresh lawful protocol, GT scope authorization, empirical R/C/M trials,
+cached diagnostic receipts are unchanged. Separate synthetic scheduler
+integration is described below; formal trained-policy/data integration and
+acceptance remain required. Fresh lawful protocol, GT scope authorization, empirical R/C/M trials,
 matched strong baselines and Goals A/B/C remain unmet.
+
+## Separate synthetic controller integration
+
+`AtomicMemberControl` now connects this bank to a separate numeric candidate
+interface. Every current group sees the same pre-frame support snapshot; all
+scores and anonymous births are staged before a single bank commit. Callback
+failures or bank bounds roll back router, bank and birth counter, not callback
+side effects or RNG. Callback purity requires separate verification.
+
+Known/anonymous output IDs remain outside the initialized shared-row scorer.
+Indistinguishable numeric candidate groups and equal score maxima explicitly
+WAIT, never pick a numeric ID. K counts feature-distinguishable groups per
+family; similarity ties at its boundary expand within a refusal bound.
+No coverage or semantic success follows from this ambiguity rule.
+
+This is Raw-only synthetic integration. It keeps earlier anonymous support
+on KNOWN/WAIT, does not reuse same-frame peer births, exclude self-support,
+learn quarantine, qualify a frontend or prove a dense data run. Bank token
+allocation is supplied by the new controller; the primitive still does not
+infer semantic births. GT permission/fresh protocol/training and formal
+scientific acceptance remain pending.

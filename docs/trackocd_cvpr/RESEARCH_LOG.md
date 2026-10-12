@@ -1097,3 +1097,40 @@ new research scope; nothing has been deleted, no storage pressure is present.
   streams, whole-frame rollback, history preservation and hard bounds. Equal
   payloads are physically interned without merging cross-video support; no
   full-dataset scalability or scorer/CT-purity acceptance inferred.
+
+### Source-only candidate scoring and atomic prefix-bank integration
+
+- Revalidated cleanefe723e and pending GT authority. Previous goal turn was
+  code/test progress, not a running process wait. No automatic continuation
+  grants the changed GT-census read permission; real GT/data/training stay gated.
+- Added numeric candidate snapshots with external Known/anonymous bindings,
+  fixed finiteK1/3/5/8 per feature-group family and bounded tie expansion.
+  Indistinguishable candidate bindings/equal maximal action scores explicitly
+  WAIT, never numeric-ID selection. This may reduce coverage; no purity gain
+  claimed and future matched-coverage/latency accounting remains required.
+- New shared-row/query MLP has708parameters, equal count but not the same
+  function class/features or checkpoint layout as old D1/D2. Synthetic backward
+  verifies nonzero gradients and unchanged weights, no optimizer/fitting.
+  Initial exact candidate-row permutation test failed (1failure/24passes)
+  due to batch floating-point differences. Fixed canonical numeric-feature
+  computation/restored row order; exact CPU float32 test then passed, including
+  nonunit temperature. No looser tolerance, GT or metric-driven change.
+- Atomic controller owns router, prefix bank and monotonic anonymous births;
+  groups read one pre-frame bank, scores stage before one bounded frame commit.
+  Aliases score once/broadcast; divergence replaces supports; late callback or
+  bank failure rolls back all owned state but not external callback effects.
+  Known IDs/tokens/routeIDs never enter numeric callback; output bindings are
+  retained separately for external losses/evaluation after decisions.
+- Synthetic actual-ID rename/reorder, changed-future paired reexecution,
+  ambiguity, exact ties, cross-video scope, full-frame retries, immutable arrays
+  and initialized-model callback integration verified. No dataset, new GT,
+  pixels/features/checkpoints, Val/Test, optimizer or trained model result.
+- Full252engineering tests PASS4.84s, no skips. Raw-only control still lacks
+  learned R/adapt agreement, differentiable joint R/C training, self-support
+  exclusion, Known-driven detachment, same-frame joint births, trained memory
+  quarantine/version-CT and qualified/dense frontend. No one of three required
+  scientific mechanisms accepted; full Goal A/B/C and GT authority remain open.
+- Added explicit interface-contract regression:11candidate/6query dimensions,
+  708parameters, no self-authorized GT/training or hidden scientific/scalability
+  claims. Full254engineering tests PASS3.48s, no skips, before delivery. Only
+  sources/tests/config/contract logs change; no raw trajectories or model weights.

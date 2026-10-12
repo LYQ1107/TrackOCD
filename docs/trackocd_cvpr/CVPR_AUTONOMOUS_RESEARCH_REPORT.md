@@ -44,9 +44,20 @@ This is not the fresh category/video protocol or independent model evidence.
 Source-only preparation now also adds a latest-committed-prefix member bank:
 replaces repeated cumulative-prefix votes, separates diverging input aliases,
 retains past commits/tombstones and refuses partial/bounded-invalid writes.
-Only synthetic inputs have run. No legacy result changed, policy integration,
-learned quarantine, real-data causality, GT clearance or mechanism PASS claimed.
+Only synthetic inputs have run. The bank alone is not a policy; no legacy
+result changed, learned quarantine, real-data causality, GT clearance or
+mechanism PASS claimed.
 See [PREFIX_MEMBER_BANK_CONTRACT.md](PREFIX_MEMBER_BANK_CONTRACT.md).
+
+That source-only prerequisite now has a separate atomic candidate controller
+and initialized708parameter shared-row scorer, exercised on synthetic inputs.
+Numeric IDs/tokens remain external bindings; candidate/action ambiguities WAIT
+explicitly rather than use ID order; same-frame groups use a pre-frame bank.
+This is Raw-only prototype integration, not an old-checkpoint-compatible policy,
+trained C/M experiment, matched-coverage gain, learned quarantine or new GT
+permission. Known decisions retain old anonymous support; same-frame peer birth
+reuse and differentiable joint R/C training remain unresolved. Old controllers,
+metrics and raw assets unchanged. See source_candidate_control_contract.json.
 
 ## Registered execution sequence
 
