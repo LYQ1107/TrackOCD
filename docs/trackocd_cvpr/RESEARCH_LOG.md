@@ -2385,3 +2385,10 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Current snapshots change: busy earlier, later3/5/6lowmemory/0% candidates,
   not reservedGPU promises. UnknownGPU4 remains ineligible. Full467tests
   PASS8.78s inclresource-wrapper contract; no new scientificacceptance claim.
+- Retrysource3f66f373d7afc855639e5c9bac9a43283c0adc1d truly pushed/fetched
+  exactthree refs; V2freshsource/input/pilot/oldterminal gates passed. Its new
+  ownedhandle thenverified exit1, AGAIN beforetorch/CUDA/pixels/features, for
+  nofreshidleGPU. Preserve separateV2launch/failure/terminal; do not retry
+  indefinitely from transientNVML snapshots, claim completion or useGPU4N/A.
+  ScientificCPUtrial remains live, laterobserved147/200; currentupdates and
+ 20/50/100checkpoint continuity are progress, not a blocked wholeGoal.
