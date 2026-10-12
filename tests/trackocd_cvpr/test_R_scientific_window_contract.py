@@ -14,4 +14,3 @@ def test_frozen_R_window_requires_actual_seeded_matched_trials_not_smoke_or_thre
     assert not c['automatic_launch_or_Goal_completion_from_manifest']
     assert c['maximum_evidence_driven_scientific_repairs'] == 2
     assert 'ALL current support member embeddings' in c['training']['Raw_teacher']
-
