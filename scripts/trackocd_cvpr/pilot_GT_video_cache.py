@@ -20,6 +20,7 @@ CONFIG = 'configs/trackocd_cvpr/pilot_GT_video_cache_v1.json'
 FIT_CONFIG = 'configs/trackocd_cvpr/fit_GT_video_cache_v1.json'
 POLICY_DEV_CONFIG = 'configs/trackocd_cvpr/policy_dev_GT_video_cache_v1.json'
 POLICY_DEV_RETRY_CONFIG = 'configs/trackocd_cvpr/policy_dev_GT_video_cache_v2_resource_retry.json'
+POLICY_DEV_RETRY_V3_CONFIG = 'configs/trackocd_cvpr/policy_dev_GT_video_cache_v3_resource_retry.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/pilot_GT_video_cache.py',
     'src/trackocd_cvpr/GT_video_cache.py', 'scripts/trackocd_cvpr/audit_joint_known_protocol.py',
     'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py',
@@ -319,27 +320,29 @@ def main():
     global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
-    parser.add_argument('--config', choices=(CONFIG, FIT_CONFIG, POLICY_DEV_CONFIG, POLICY_DEV_RETRY_CONFIG), default=CONFIG)
+    parser.add_argument('--config', choices=(CONFIG, FIT_CONFIG, POLICY_DEV_CONFIG, POLICY_DEV_RETRY_CONFIG, POLICY_DEV_RETRY_V3_CONFIG), default=CONFIG)
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1, 2, 3), default=1)
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
-    if args.config in (FIT_CONFIG, POLICY_DEV_CONFIG, POLICY_DEV_RETRY_CONFIG):
+    if args.config in (FIT_CONFIG, POLICY_DEV_CONFIG, POLICY_DEV_RETRY_CONFIG, POLICY_DEV_RETRY_V3_CONFIG):
         SOURCES = (*SOURCES[:-1], 'outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1/result.json',
                    'outputs/trackocd_cvpr/cvpr2/pilot_GT_video_cache_v1_supervisor_attempt_1.json', SOURCES[-1])
     cfg = json.loads((ROOT / args.config).read_text())
-    if args.config == POLICY_DEV_RETRY_CONFIG:
+    if args.config in (POLICY_DEV_RETRY_CONFIG, POLICY_DEV_RETRY_V3_CONFIG):
+        version = 'v3' if args.config == POLICY_DEV_RETRY_V3_CONFIG else 'v2'
         if (set(cfg) != {'schema_version', 'base_config', 'output_directory'} or cfg['base_config'] != POLICY_DEV_CONFIG
-                or cfg['output_directory'] != 'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v2_resource_retry'):
+                or cfg['output_directory'] != 'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_' + version + '_resource_retry'):
             raise ValueError('Only new resource-retry output namespace, no protocol changes')
-        prior = ROOT / 'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v1_supervisor_attempt_1.json'
+        previous = 'policy_dev_GT_video_cache_v2_resource_retry' if version == 'v3' else 'policy_dev_GT_video_cache_v1'
+        prior = ROOT / ('outputs/trackocd_cvpr/cvpr2/' + previous + '_supervisor_attempt_1.json')
         terminal = json.loads(prior.read_text())
-        failure = json.loads((prior.with_name('policy_dev_GT_video_cache_v1') / 'failure.json').read_text())
+        failure = json.loads((prior.with_name(previous) / 'failure.json').read_text())
         if (terminal['successful_owned_execution'] is not False or terminal['owned_worker_exit_code'] != 1
                 or failure['error'] != 'No fresh idle GPU; wait without foreign intervention'):
             raise ValueError('Verified terminal resource rejection required, never restart live work')
         cfg = {**json.loads((ROOT / POLICY_DEV_CONFIG).read_text()), 'output_directory': cfg['output_directory']}
         SOURCES = (*SOURCES[:-1], POLICY_DEV_CONFIG, prior.relative_to(ROOT).as_posix(),
-                   'outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v1/failure.json', SOURCES[-1])
+                   'outputs/trackocd_cvpr/cvpr2/' + previous + '/failure.json', SOURCES[-1])
     safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)

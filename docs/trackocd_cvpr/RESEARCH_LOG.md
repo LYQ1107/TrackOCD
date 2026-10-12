@@ -2420,3 +2420,41 @@ new research scope; nothing has been deleted, no storage pressure is present.
   seeds/CEcontrols/freshbaselines; hold protocol and denoms, do not pickwinner
   from this loss. QualifiedPred, candidate/selfcorrectingmemory, dev/fullcausal
   metrics and independentfinal remainopen; originalGoal active and unchanged.
+
+### Same-seed timeless controlled fit and external development metric rules
+
+- Previous turn realprogress: completed temporal200seed1027 and spawned
+  staticcontrol; same livehandle rechecked,19then169steps then actualterminal.
+  No restart onstatefile/oldPID or protected-semantic expansion. Worktreeclean
+ 7c2688b atstart; GPU snapshots allbusy, no shared/unknownGPU intervention.
+- timeless_Raw_teacher/seed1027 from7c2688b completed200CPUsteps, exactsame
+  initialdigest1d53ed7e... and pairedsupportmember/observation footprint each
+  step. Endpointdigest6a5a9e48...,616115B checkpoint/hash
+  f255fb077c4ea4654a738de69fa90f77b0a6da92ac9755838c729a213ae6df0c,
+  reopenexact. SameGTfeatures/fit5/1158/22279/1401fullphysical/243masked,
+  fixed200, no dev/final/Val/Test target/pixel use or loss-selected winner.
+- Ownedexit0/noguardstop/741.821006393s total,736.343050925s worker,
+  sampledpeakRSS1592688640B/11OSthreads, noCUDA/0trainingGPUh. PublicSHA
+  878b8adc1cd81d8022a77323da28cda1e3f7d37d9cfba382fb03b5dedb1afbe9.
+  Two of12window models completed, not3trainedseeds or distinctR/C/M,
+  no development/Novel/effrank result yet. Temporal vsstatic loss not used
+  to decide benefit; allremaining controls/seeds still required.
+- New externaldev projection reads ONLYfit5+dev8 existingKnown classlists
+  and72devvideo IDs; rowvideo gate BEFORE anycategory/trackdecode. Policy/
+  final/other video targetvalues skipped, no rawGT/nonKnown/vocabulary reads.
+  ExactKnown302/pseudo119 join all472physicalGT, otherKnown2+unlabeled49
+  remain withoutmainsemantic target, not BG or fabricatedNovel. Realprivate
+  projection/evaluation has NOT run; Source/hash/cache gates stillrequired.
+- Frozen devmetric rules: all472gallery, samevideo excluded, all119declared
+  pseudoqueries remain (including noverifiedpositive). Exact-score boundary
+  ties useuniformR1 andhypergeometricR5 expectedcertifiedTP probability, not
+  arbitrary ID/favorabletie expansion. Unknownsemantics get reported and
+  lowerbound, NOT falseBG/fullGT Hscore/purity. Macroclass counts, singleton/
+  short/prefix1/2/4/8/16/all scope andfixedofflinefit5protos mandatory.
+- Three synthetic projection/unknown/tie/permutation/no-positive tests plus
+  frozenmetriccontract/full472tests PASS8.99s. No actual devsemantic values
+  decoded in these tests or winner selection; source/class data rules frozen
+  before actualreader use. Cache/evaluator stillneeds realqualification.
+- V3resource-only namespace inherits same82video cacheprotocol and verifies
+  V2terminalrejection before anyretry; no overwrite. No newGPU cache launched
+  by its merecreation; freshavailability/ref/sourcechecks required.

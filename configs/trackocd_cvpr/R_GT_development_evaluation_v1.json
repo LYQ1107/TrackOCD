@@ -1,0 +1,23 @@
+{
+  "schema_version": "trackocd.cvpr.frozen-external-R-development-metrics.v1",
+  "status": "REGISTERED_METRIC_RULES_CACHE_AND_EXECUTABLE_QUALIFICATION_PENDING",
+  "training_window": "configs/trackocd_cvpr/R_GT_scientific_window_v1.json",
+  "role": "development_pseudo72 only; no fit/policy/final semantic values projected by evaluator",
+  "physical_tracks": 472,
+  "main_Known_query_tracks": 302,
+  "declared_pseudoNovel_query_tracks": 119,
+  "outside_eligible_Known_retained_without_main_target": 2,
+  "semantic_truth_unavailable_tracks_retained": 49,
+  "embedding_inputs": "Same complete frozenGT-control cache and recorded fixed200endpoint models; no GTlabels/roles/IDs in numeric R.forward",
+  "prefixes": [1, 2, 4, 8, 16, "all_available"],
+  "gallery": "All472physical tracks, only wholequeryvideo excluded; no short/unlabeled/unmatched track filtering",
+  "retrieval": "Certified cross-video different-instance R1/R5 lowerbounds, micro and macro across declaredpseudoNovel8; queries without verifiedpositive remain in denominator",
+  "exact_score_ties": "Uniform expectation among boundary ties; R5 hypergeometric inclusion probability, not ID order or favorabletie expansion",
+  "unknown_truth": "Never BG or inventedNovel; report unscorable top ties/strata. Certified lowerbound is not complete fullGT semantictruth/Hscore/purity",
+  "other_metrics": ["Known recognition against immutable offlinefit5 prototype bank", "effective rank across full472embeddings", "cosine drift to Raw", "singleton/short and perprefix support counts"],
+  "prototype_scope": "fitKnown5 only; no dev/final targets to make prototypes or repair liveprediction-owned memory",
+  "checkpoint_selection": "Fixed200 endpoint for allvariants/all3independentseeds; not selected by these devmetrics",
+  "No_original_Train_JSON_or_new_nonKnown_semantic_GT_or_Novel_vocabulary": true,
+  "independent_final_Val_Test_model_selection": false,
+  "automatic_evaluation_training_or_Goal_acceptance": false
+}
