@@ -1,0 +1,36 @@
+{
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "cf55d1774cede4344cde550000c055e0381906e1"
+  },
+  "preregistration_commit": "cf55d1774cede4344cde550000c055e0381906e1",
+  "scope": "Fixed seeded R trial on fitKnown only; endpoint200, no dev/final selection",
+  "source_sha256": {
+    "configs/trackocd_cvpr/R_GT_scientific_window_v1.json": "4591efadbb5b937b841fa1e6c1ccec9e399ff270a4df18c3334e70ff4e7cf81f",
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/fit_R_batched_qualification_v1.json": "a9a7188bfefbef60110c5e5efcc9acf8b7a08424852d94628a614e4ce9a509a4",
+    "configs/trackocd_cvpr/formal_research_scope_approval_v1.json": "bf828e599e2a91c1630b14a62b2a2ccb26f562a22038875818cb8645993bd860",
+    "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+    "outputs/trackocd_cvpr/cvpr2/fit_GT_video_cache_v1/result.json": "c45ffc1e199ab558c4ee6b943b0f91c4c25ffc28e125f67adffa85267519e1f6",
+    "outputs/trackocd_cvpr/cvpr2/fit_GT_video_cache_v1_supervisor_attempt_1.json": "32c9ab0f64f3a1869fbb9ef6d0a0a3659cc90a3fea69eec21624e681edfedb74",
+    "outputs/trackocd_cvpr/cvpr2/fit_R_batched_qualification_v1/result.json": "83a9dfc9a3cb8ace64a87af6e08b4d0486cbe92deae2e69dfed5b223718dcda9",
+    "outputs/trackocd_cvpr/cvpr2/fit_R_optimizer_smoke_v1/result.json": "2e8b2dc57185be352bc9423df24ef19987e9d6bec761cafb98753837d186c851",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "7000482df013f8eeb62a211024a7aeacaa757d2a0647972d6db201e0c8ed6811",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "scripts/trackocd_cvpr/smoke_fit_R_optimizer.py": "dda3783255122f2e2d4d1e85f1f9dca14b8698e458c25fd5c58e910c0b0ab331",
+    "scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py": "381dfb9885d3ea74426a54d4cc1e011aa4b81597b5a149288b72d8711e4a1462",
+    "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+    "src/trackocd_cvpr/GT_video_cache.py": "2e414a8d4a1d64e849354d518cc767486d5dfe4f0954f5c61f0ca4e66bd90b29",
+    "src/trackocd_cvpr/batched_evidence.py": "5bba22cbcf09afe0a5b6bab9c531091be54855353ce00d36c8cb38f43312c340",
+    "src/trackocd_cvpr/differentiable_support_bank.py": "8c7cd82de017274b180a703b0d9089ad5e50d33ccc9f4b1a35c67a651116cce3",
+    "src/trackocd_cvpr/exact_support_reduction.py": "e7f1726f6a32a956acec2bf72b3eddab26949b2d9f2ba293739dbca0512fb63c",
+    "src/trackocd_cvpr/fit_R_training.py": "3107446e3a0608df66d99931e92e0e70f57fa775e4568283893260eede49ab40",
+    "src/trackocd_cvpr/fit_loss_supervision.py": "1d9427ae26163c45fd78049d560ce557adc03bbebabab8e93d55e1745ff540f6",
+    "src/trackocd_cvpr/metadata_only.py": "082cda18cff96a68f178f8fcef97abc9596b2b2e4cc9e0870cbfc2dfb4c60afd",
+    "src/trackocd_cvpr/raw_preserving_evidence.py": "17f4c1b38d9aabffe33e4a5ea3d63191a4ae328f66f279f50d116172463404c1",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}

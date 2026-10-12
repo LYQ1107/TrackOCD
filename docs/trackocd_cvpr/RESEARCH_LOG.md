@@ -2557,3 +2557,41 @@ new research scope; nothing has been deleted, no storage pressure is present.
   not complete3seedscientific comparison. Finishremaining fixedCE/static/
   teacher seeds before evidence-drivenR repair; candidate/memory/qualifiedPred
   andfinalcausal/matchedcoverage verification remain open. OriginalGoal active.
+
+### Complete first-seed four-control fixed R matrix; policy training data boundary
+
+- Previous turn was scientific progress: actual first-pair development evidence,
+  including regressions and no temporal retrieval advantage, published at
+  cf55d1774cede4344cde550000c055e0381906e1. Same live timeless_CE handle19867
+  rechecked, then actual owned exit0; no historical PID replay or timeout restart.
+- timeless_CE/seed1027 completed200 CPU optimizer steps from that preregistration.
+  ResultSHA995fe30f1f3eba279c29f7be7e341435239b4c670f7986b22b370801fa924606,
+  endpoint616115B/SHA8a425104a13afb5ac5922758183c1aa4b44bd3262a2eaf49c095b6195e9b1aa5,
+  parameterdigest1df72a9456933e6731b05db52308a3ff7c78366d177bff1b974de704f0033516.
+  Exact reopen, fixed200 endpoint, no dev/final/Val/Test fitting or model choice.
+  Ownedterminal698.704788926s/worker694.796187756s/RSS1590554624B/11OSthreads,
+  no guardstop/CUDA/0trainingGPUh. All fourseed1027 models now complete;
+  matched initialparameters/support member+observation schedule verified across
+  all four, CE-only objectives do not include logged Gram/consistency terms.
+  Fourof12 planned fixed R trials; still ONE representation direction, not
+  three independently trained R/C/M mechanisms or accepted Novel gain.
+- Added policy external-target byteprojection: read onlyfit5/policy2 classlists
+  and policy10 videolist; skip non-policy track bodies before category/track
+  values, skip dev/final assignment values. Full54 physical join required;
+  Known34/policy-pseudo10 eligible, remaining10 masked rather than BG/Novel.
+  Only synthetic inputs exercised this new interface so far; realprivate reads
+  still require fresh registered worker/source/authority/hash/cache qualification.
+- Added current-frame adapter for already verified label-free GT-control video
+  shards. Every metadata clock frame including empty frames delivered, all
+  physical observations retained. Only current visual/box/quality copied and
+  normalized; opaque route external, no GT/role/total length in numeric inputs.
+  Synthetic router checks preserve prior model inputs after future visual
+  mutation and bijective ID rename. Offline frame-index delivery planning is
+  NOT a dense-video certificate or proof of full learned online deployment.
+- No actual C/M optimization claimed from this interface. Next finish independent
+  seeds1028/1029 under unchanged four-control window and train candidate/memory
+  on lawful prediction-owned histories, not GT-repaired memory. Interimdev
+  negatives remain immutable; no post-result seed/control/metric selection.
+- Full483tests PASS7.40s (including actual four-control receipt qualification
+  and synthetic policy-boundary checks). This is executable/receipt validation,
+  not accepted Novel discovery, trained C/M or final strong-Pred evidence.
