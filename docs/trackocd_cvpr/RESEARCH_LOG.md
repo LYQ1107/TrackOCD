@@ -1261,3 +1261,34 @@ new research scope; nothing has been deleted, no storage pressure is present.
   globally shared videos, augmenting-path reassignment, reordered inputs and
   corrupted slot/role/category certificates. Full319engineering tests PASS3.98s,
   no skips. No actual new role hypothesis selected/frozen or model run.
+
+### Registered Known-positive class/video feasibility preparation
+
+- Rechecked clean7af57fa, RAM80.0GB available/134.8GB total and disk186.4GB
+  free. Previous turn actual progress, not verified worker wait; no science
+  fit/three mechanism acceptance or final protocol completion. Remote fetch
+  still transientTLS; no old worker/PID replay or external interference.
+- New executor uses only SHA-bound318880B Known-positive census index, old
+  administrative exclusion index and numeric known_ids projection. Exact-open
+  barrier denies every other path except declared sources/proc/output; no
+  original Train annotation reopening, old target labels/names/Novel/Val/Test,
+  pixels/features/models. Reconciles all1962tracks/38680obs/429videos/48classes.
+- Two fixed structural hypotheses: all48positive classes, then uniform>=3
+  positive videos as necessary fit-role capacity. Aggregate support already
+  seen; explicitly not blind/data-unseen preregistration. No model difficulty,
+  metric, additional seed/threshold or successful-fold selection. Rare classes
+  retained in unfiltered diagnostic; eligibility exclusion count reported,
+  ignored categories NOT declared background or filtered physical predictions.
+- Seed2093001, four cyclic class-disjoint roles, fit>=3/eval>=2video quotas,
+  two policy-pseudo classes; all8cases retained. Actual observed Known conflict
+  filtering before global sufficient slot certificate. Successful certificate
+  remains positive-Known scoped, not complete visual-absence proof or frozen
+  experiment. Failed restrictive matching not general allocation impossibility.
+- Sixteen focused synthetic tests PASS0.20s. Actual new429video hypotheses
+  NOT executed until source/config registered and fresh remote gate passes.
+  OneCPU/256MiB/120s/1MiB output and25%RAM/10GiB disk reserves. Newtraining0.
+- Full335engineering tests PASS4.05s, no skips. Normal fetch finallyexit0,
+  updatedorigin7887151→7af57fa; HEAD/FETCH_HEAD/originref exact7af57fa allmatch.
+  Additional ls-remote failedTLS, not falsely reported as another successful
+  request. Separate successful-fetch receipt preserves prior pending handoff.
+  New executor/config still needs new commit/push/fetch/fresh remote gate.
