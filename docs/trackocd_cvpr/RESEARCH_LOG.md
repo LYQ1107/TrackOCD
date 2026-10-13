@@ -6178,3 +6178,44 @@ no private GT/cache/weights opened for this check):
   62.786153771s inclusive/peak861978624B/zero GPU-hours. No new real private
   input or calibration job launched. Code/config/tests/established logs only
   staged; next implement registered own guarded dual-control pilot executor.
+
+### Registered one guarded actual dual Raw-membership pilot executor
+
+- Previous two-control source stage pushed/fetched/exactverified99bf44425598...
+  and is implementation/test progress, not actual calibration. Fresh entry
+  tree clean and no live owned research worker; RAMavailable99405590528B/
+  free106273251328B, no cleanup/install/GPU/foreign process changes.
+- NEW pilot CLI only, original tested model/protocol and all old trained/eval
+  code unchanged. Explicit fixed1027calendar50/oneFULL10policy clock and
+  ONE deterministic fullpolicy solver<=50iterations/250analyticfunctioncalls.
+  Complete ALL6matrix/original18public receipts and142source/input-qualification
+  paths bound; fresh remote/source equality and actual407Train fit/policy
+  human authority checked BOTH parent and worker BEFORE private data load.
+- Original qualified257fit/1158Known priors and10policy/54tracks/1268obs/
+  374frames/1empty with unknowns retained; no dev/final/Val/Test/newsemantic
+  labels/original annotation/pixels/pilot/oldweights. Network denied after
+  registration, only own fresh .pt/.partial allowed; scope/stage follows
+  actual human approval, not an automatic Goal message or config flag alone.
+- Same3GiB/3000s/output16MiB/25%RAM+plannedRSS/storage bounds, one own
+  Popen CPU compute worker plus at most one identified bounded native driver
+  helper, no duplicate live fit/M/dev/pilot. Terminal requires exit0+no guard+
+  complete result. Missing counters briefly reap only actual dying child,
+  never excuse an active unobservable process. Existing namespace refuses.
+- Fixed calendar checkpoint exact model/AdamW/NumPy+Torch RNG reopen;
+  fullpolicy checkpoint exact model+solver TERMINATION record only, NOT
+  internal L-BFGS continuation/Hessian state. Both local600/non-overwritten;
+  calendar coordinates stay private600, scalar/label table stays in memory.
+- Record actual both-role update exposure/finite gradient, solver success/
+  initial analytic gradient/changed own parameters and actual full clocks.
+  Potential later-registration flag only, NEVER automatic formal/dev/pilot
+  warmstart. Fullpolicy solver nonconvergence remains reported even if owned
+  process completed; finite weights or reduced training loss are not success.
+  NLL/Brier/ECE are resubstitution on SAME training data, no calibration
+  transfer/deployment posterior/foreground/purity or scientific winner claim.
+- Sixteen targeted control/executor tests pass5.22s: exact synthetic
+  checkpoints/permissions/nooverwrite, duplicate refusal before source/Popen,
+  explicit worker forwarding and missing-result failure. Actual pilot still
+  awaits full regression/publication/live exact remote gate. Goal unchanged.
+- Final bounded combined CVPR/v2 suite1050pass63.15s, ownedwait0/guardNONE/
+  64.847276072s inclusive/peak863174656B/zero GPU-hours. No actual private
+  pilot input read in registration; publish/fetch/exact proof before invocation.

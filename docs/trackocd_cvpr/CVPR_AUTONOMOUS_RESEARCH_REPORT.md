@@ -1605,3 +1605,33 @@ fair calibration/coverage/latency/fullM/joint/strongPred/dense/final unfinished.
 Final bounded combined CVPR/v2 suite1046pass61.20s, ownedexit0/guardNONE,
 inclusive62.7862s/peak861978624B/zero GPU-hours. Next is a registered own guarded
 pilot executor, not automatic fitting or a claimed calibration result.
+
+## Prospective actual dual-control pilot: strict inputs, no calibration acceptance
+
+A new explicit gated CLI implements the fixed1027/oneFULLpolicy-clock
+calendar50updates plus deterministic fullpolicy solver<=50iterations/
+250analyticfunctioncalls. Complete six-model C evidence/source/input proofs,
+fresh live exact registration and real scoped407Train human approval precede
+all private inputs. Use ONLY qualified fit5 priors and policy2existing labels;
+unknowns physical-but-masked, no dev/final/Val/Test/newsemantics/pixels/oldweights.
+
+One new owned Popen compute worker, original3GiB/3000s/16MiB/25%RAM+planned
+RSS/storage bounds and at most one identified bounded driver helper; no
+foreign process handling or duplicate live research jobs. Source/authority
+gates repeat inside fresh hidden-GPU/no-write worker, then no network and only
+its own new checkpoints. Normal terminal requires COMPLETE result, not exit0
+or stale startup alone. Every earlier result/failed attempt remains intact.
+
+Calendar model/AdamW/RNG exact reopen differs from fullpolicy model+solver
+termination record: no L-BFGS internal resume/Hessian state is claimed. Private
+weights/calendars remain600/local; scalar+label table not exported. Actual
+solver success/finite gradient/both-role exposure and current clocks are
+prerequisites for later registration, not automatic formal/dev or warmstarts.
+NLL/Brier/ECE on the SAME training samples are resubstitution, not transfer
+calibration or a selected winner. Existing gate/foreground/purity/deployment
+posterior calibration and total Goal remain open.
+Sixteen targeted source/checkpoint/duplicate/missing-result/executor tests pass
+5.22s. Actual pilot has NOT run at this prospective registration stage;142
+dependencies found, no private data load or new optimization yet.
+Final bounded combined CVPR/v2 suite1050pass63.15s, ownedexit0/guardNONE,
+inclusive64.8473s/peak863174656B/zero GPU-hours. Publication precedes actual pilot.
