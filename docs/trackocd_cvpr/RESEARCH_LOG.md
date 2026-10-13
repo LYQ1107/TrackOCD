@@ -6540,3 +6540,69 @@ no private GT/cache/weights opened for this check):
   small Raw qualification, docs/status. Actual second result51774B unchanged,
   no private .pt/GT/scalar-label tables/calendars/progress/stdout. ALL4 final
   comparison remains pending; remaining endpoint1029 after exact publication.
+
+### Actual third full dev calendar trial (3/4) and synthetic rule diagnostic
+
+- Previous turn was real progress: second complete outcome/source reference
+  pushed/fetched/triple-SHA3866da2222fedd1b84f0ebaf3f4885b65dcd8312, then
+  calendar1029 launched from fresh exact registration. Same boot/start/command
+  supervisor561190/worker561386 confirmed live; now both terminal (historical
+  PIDs, not restart handles). Normal exit0/guardNONE/result present,
+ 666.630887278s inclusive/964513792B sampled peak/oneCPU+oneOSthread/no
+  native helper/noCUDA/zero trainingGPUhours. Entry availableRAM103403212800B
+  of134792282112B/free disk75916009472B; no cleanup or external intervention.
+- Own fixed actual calendar1029 endpoint, ALL13 private fingerprints BEFORE
+  dev. Each3orders complete72videos/472tracks/8753obs/2562frames/116empty;
+  full ID/reverse numeric-event/outcome parity and full future39obs perturbation
+  preserves nonempty earlier events. No optimizer/checkpoint/threshold/bin/order
+  selection or shortened probes. Same8753canonical groups4808Known/2743pseudo/
+ 1202masked,7551eligible over11classes; all track-prefix tasks472/421eligible/
+ 51masked, unknown/outside not negatives or inventedNovel.
+- GROUP initial->formal microNLL0.714641857255->0.679278795156/Brier
+ 0.260557177963->0.243146119105/ECE0.186443183680->0.135482496773 improve;
+  classmacroNLL0.633307795708->0.676184226925/Brier0.220388133969->
+ 0.241587024254/ECE0.182533139556->0.243002716812 worsen. TRACK allavailable
+  microNLL0.702945608085->0.651206757669/Brier0.254788661725->
+ 0.229240053250/ECE0.247378173126->0.194880706698 improve; classmacroNLL
+ 0.636911872000->0.682303396951/Brier0.222151422613->0.244631899415/
+  ECE0.188705539840->0.260124390136 worsen. Distinct conditional priors and
+  repeated prefixes do not prove deployment calibration or choose a winner.
+- Full order Knownmicro0.119205298013/0.122516556291/0.142384105960,
+  Knownmacro0.196183908046/0.415739463602/0.426482758621; certified crossvideo
+  pseudo microLB0.050420168067/0.109243697479/0.109243697479 and macroLB
+ 0.038972701149/0.094494047619/0.104910714286. Coverage1.0 all3, pseudo
+  Known-absorbed7/5/6, anonymous112/114/113, unscorable-reuse172/187/184;
+  tokens183/179/181 retain mixed/unknown histories. Three-order descriptive
+  meanKnownmicro0.128035320088/Knownmacro0.346135376756/reuse microLB
+ 0.089635854342/macroLB0.079459154351, not independent trained repetitions.
+- Result51753B SHA1af219e92fba0ca36344c276ff4eda472e5d7d1f3a133538b28943286fe417cc;
+  launch2bc247bac98815ab1c6e2dcf149990cbefe647a65cd6aa45de411d7bb3a36d11;
+  terminala09ebd5b889cc5476560e77975a50966025cf6a97fbf31b91d8ea89796b9df1b.
+  Public normal/source/cohort/endpoint/clock/probe validation passes. Actual
+  complete fullpolicy endpoint remains pending; three calendar fits are NOT ALL4.
+- New separate SOURCE/SYNTHETIC diagnostic, no real TAO GT/pixels/weights/
+  rows or changes to original149fit/168dev source closure. Existing-first .55/
+  >=maxKnown arbitration bypasses fitted Known membership branch. A constructed
+  one-route prefix(.6,.8) then eight(1,0) observations births one anonymous
+  token; Knowncos0.600000024->0.995701253 and positive Known gate on all8later
+  frames, yet all8actual decisions EXISTING because its sole prior own support
+  cosine remains >=Known (last0.999926567). Nine normal commits/one support,
+  not certified category evidence from other physical objects or videos.
+- Explicitly FORCED diagnostic Known output (not a proposed production scorer)
+  retains old anonymous numeric support AND exact immutable history. Negative
+  case starting along Known prototype gives3KNOWN/noanonymous birth: absorption
+  is not inevitable for every sequence. These concrete synthetic transactions
+  establish rule behavior only, NOT the actual frequency/causal explanation of
+  measured Known loss or a scientific fix. Followup real attribution requires
+  a separate frozen matched audit AFTER complete ALL4 results; no GT cleanup,
+  history rewriting, threshold search or production change now.
+- Fifty-one targeted actual-dev/source/reference/new synthetic tests pass3.86s.
+  Original Goal active/unachieved. Remaining ONE fullpolicy/full4comparison,
+  fair coverage/latency/fullM/joint R/C/M/lawful strongPred/dense/lockedfinal
+  and Goal A/B/C still required; no single partial/synthetic win acceptance.
+- Final bounded combined CVPR/v2 suite1117pass74.12s, ownedexit0/guardNONE/
+  inclusive76.284604591s/peak838844416B/zero trainingGPUhours. Only ten public
+  files explicitly staged: third normal triplet, synthetic-only source/test/
+  small report, actual third receipt test, docs/status. Original third result
+ 51753B unchanged; no private model/GT/scalar-label tables/calendars/progress/
+  stdout. Remaining ONE fullpolicy starts only after push/fetch/exact proof.

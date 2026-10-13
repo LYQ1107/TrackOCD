@@ -1,0 +1,100 @@
+{
+  "status": "SYNTHETIC_ONLY_SOURCE_RULE_DIAGNOSTIC_NOT_ACTUAL_TAO_ATTRIBUTION_OR_Goal",
+  "source_sha256": "49fc47bb9fde941081f26b33dbd4cd2fdf2124ae3051824161c63e23977d2aa2",
+  "registered_real_formal_numerical_source_unchanged": true,
+  "synthetic_self_support_counterexample": {
+    "status": "SYNTHETIC_SOURCE_COUNTEREXAMPLE_NOT_EMPIRICAL_CAUSE_OR_SCIENCE_WIN",
+    "frames": [
+      {
+        "frame": 1,
+        "max_Known_cosine": 0.6000000238418579,
+        "max_Existing_cosine": null,
+        "frozen_named_membership_gate_positive": false,
+        "actual_action": "NEW"
+      },
+      {
+        "frame": 2,
+        "max_Known_cosine": 0.8944272398948669,
+        "max_Existing_cosine": 0.8944272994995117,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 3,
+        "max_Known_cosine": 0.9557790160179138,
+        "max_Existing_cosine": 0.9863939881324768,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 4,
+        "max_Known_cosine": 0.9761870503425598,
+        "max_Existing_cosine": 0.9968152642250061,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 5,
+        "max_Known_cosine": 0.9852117896080017,
+        "max_Existing_cosine": 0.9989200830459595,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 6,
+        "max_Known_cosine": 0.9899495244026184,
+        "max_Existing_cosine": 0.9995412826538086,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 7,
+        "max_Known_cosine": 0.9927337765693665,
+        "max_Existing_cosine": 0.9997737407684326,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 8,
+        "max_Known_cosine": 0.9945054650306702,
+        "max_Existing_cosine": 0.9998760223388672,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      },
+      {
+        "frame": 9,
+        "max_Known_cosine": 0.995701253414154,
+        "max_Existing_cosine": 0.9999265670776367,
+        "frozen_named_membership_gate_positive": true,
+        "actual_action": "EXISTING"
+      }
+    ],
+    "anonymous_tokens": 1,
+    "actual_commits": 9,
+    "sole_member_support_groups": [
+      1
+    ],
+    "GT_labels_weights_data_or_dev_predictions_read": false,
+    "registered_real_experiment_rule_or_history_changed": false,
+    "actual_dev_attribution_or_Goal_accepted": false
+  },
+  "synthetic_forced_Known_transaction": {
+    "status": "SYNTHETIC_FORCED_OUTPUT_TRANSACTION_DIAGNOSTIC_NOT_NEW_POLICY",
+    "first_actual_action": "NEW",
+    "diagnostic_forced_second_action": "KNOWN",
+    "prior_commits_unchanged_and_retained": true,
+    "prior_anonymous_numeric_support_retained": true,
+    "GT_history_repair_or_actual_dev_attribution": false
+  },
+  "synthetic_negative_case": {
+    "actions": [
+      "KNOWN",
+      "KNOWN",
+      "KNOWN"
+    ],
+    "anonymous_tokens": 0,
+    "anonymous_commits": 0,
+    "self_absorption_claimed_inevitable_for_all_sequences": false
+  },
+  "actual_TAO_GT_pixels_weights_or_rows_read": false
+}

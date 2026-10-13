@@ -1828,3 +1828,35 @@ calendar1029/fullpolicy pending, full scientific/strongPred/dense/final Goal ope
 Final bounded CVPR/v2 suite1113pass76.49s, ownedexit0/guardNONE,78.5879s
 inclusive/838631424B peak/zero GPUhours. Eleven public files only, original
 second result51774B unchanged; no private weights/GT/scalars/streams/calendar.
+
+## Third calendar endpoint complete: 3/4, source-level self-support evidence
+
+Calendar1029 normal666.6309s/964513792B/oneCPU+oneOSthread/noGPU;
+full3orders72videos/472tracks/8753obs/2562frames/116empty and full ID/reverse/
+future39observation checks. ALL13 actual snapshot fingerprints before dev,
+no optimization/selection. Same7551group/421track conditional targets,
+unknown/outside physically retained/masked, no negative/Novel invention.
+GROUP microNLL0.714642->0.679279/Brier0.260557->0.243146/ECE0.186443->
+0.135482 improve; classmacroNLL0.633308->0.676184/Brier0.220388->0.241587/
+ECE0.182533->0.243003 worsen. TRACK classmacroNLL0.636912->0.682303
+and ECE0.188706->0.260124 worsen while microNLL0.702946->0.651207 improves.
+No global deployment quality claim. Knownmicro0.119205/0.122517/0.142384,
+certified reuse microLB0.050420/0.109244/0.109244, coverage1.0; descriptive
+meansKnownmicro0.128035/Knownmacro0.346135/reuse microLB0.089636/macroLB
+0.079459, not independent order repetitions. Result SHA256
+`1af219e92fba0ca36344c276ff4eda472e5d7d1f3a133538b28943286fe417cc`.
+
+Separate source-only deterministic SYNTHETIC transactions show Existing-first
+arbitration can bypass an already positive Known gate: after one anonymous
+birth, Knowncos rises0.60->0.9957 but sole own-support Existing remains higher
+and all8later actions stay Existing. A deliberately forced diagnostic Known
+output retains old anonymous support/history; initially Known-only sequence
+never births anonymous memory. This establishes a possible rule failure mode,
+NOT actual dev attribution, a production repair or cross-object/category gain.
+Original149fit/168dev dependencies unchanged; no actual GT/pixels/weights/rows.
+51targeted tests pass3.86s. Only3/4complete; ONE fullpolicy still pending before
+matched ALL4 comparison or new real-data mechanism inference. Goal active,
+full coverage/latency/fullM/joint/strongPred/dense/lockedfinal unfinished.
+Final bounded combined CVPR/v2 suite1117pass74.12s, ownedexit0/guardNONE,
+76.2846s inclusive/838844416B peak/zero GPUhours. Ten public files only,
+third original result51753B unchanged, no private weights/GT/scalar tables.

@@ -23,6 +23,12 @@ def test_actual_second_complete_raw_membership_dev_retains_distinct_fixed_endpoi
     assert not b['private_weights_or_GT_loaded_by_verifier']
 
 
+def test_actual_third_complete_calendar_control_all_full_probes_without_fullpolicy_substitution():
+    r = receipts.verified_trial(ROOT, CONTROL, 1029)
+    assert r['calendar_seed'] == 1029 and r['all3_full_orders_and_complete_probes_verified']
+    assert not r['full_deployment_calibration_fair_match_control_winner_or_Goal_accepted']
+
+
 def forbid_private_stat(monkeypatch):
     original = Path.stat
     def guard(path, *args, **kwargs):
