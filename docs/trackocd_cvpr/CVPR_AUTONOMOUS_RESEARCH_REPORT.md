@@ -826,3 +826,17 @@ Publicall9C aggregation driver andseparate exactfrozenRaw derived-statistics
 cache source are prepared, not executed/integrated respectively. Allnumeric
 guards/oldfailures/dirtyhistories preserved. StrongPred/fullM evaluation/fair
 baselines/self-excludedpurity/joint/final andwholeGoal remainopen.
+
+Original C all9 development now completes andpasses its fullpublic gate.
+Last pooled/1029 public `f334c220...` has Known173/164/175-of302 and certified
+reuse6/8/4-of119 acrossorders. Diagnostic fullprefix three-training-seed means:
+Top1 Known.932671/reuse0; Top8 Known.622517/reuse.018674; pooledKnown.810155/
+reuse.016807. No selectedseed/order, no balanced persistentdiscovery acceptance.
+Registered all9public aggregate packaging withRawreferences stillpending.
+
+Original M Mean evaluation failed its unchanged3000s wallguard aftertwoorders:
+actualownedworker-9, nofullresult, failedreceipt/partialprogress preserved.
+No limitrelaxation/inputpruning orclaimedpartialwin. Prepared actualnumeric
+cache qualification withnoGTsemantic values/labels/weights/pixels oroptimizer;
+it isNOTexecuted orintegrated atthisrecord. FullM evaluation, fairbaselines,
+selfexcludedpurity/coverage/strongPred/joint/final andfullGoal remainopen.

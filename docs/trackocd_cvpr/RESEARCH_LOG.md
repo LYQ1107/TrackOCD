@@ -3909,3 +3909,47 @@ no private GT/cache/weights opened for this check):
 - Full666tests pass in53.96s. C8actualopposite-collapse receipt and exact
   Rawstatistic syntheticcache tests included; fullMean orC9aggregate stillnot
   completed and noprivate cachequalification ornewrepairtraining executed.
+
+### Original C all9 development completes; Mean hits unchanged wall guard
+
+- C last pooled/1029 evaluation fromb71dc3e normally completes, publicSHA
+  `f334c220d4922d723297d9112aa1ef288f19c5f6de206e259446cb8b03e0c068`.
+  All3orders/full472/8753/2562/116, actualID/future checks. Known correct
+  173/164/175 of302; pseudoKnown absorption46/33/48 of119, anonymous73/86/71;
+  certifiedcrossvideoreuse6/8/4 of119. Not a winningseed orstrong balanced
+  discovery. Owned631.85s/RSS963043328B/ONEOSthread/CPU/nooptimizer/GPUh.
+- PUBLIC complete-matrix verifier actuallypasses all9original trial records,
+  actualnumeric source/protocol/clocks/invariance/full denominators, normal
+  terminals andone exactoldcounter-observation exception. Original registration
+  failures remainunchanged. Diagnostic all-available three-training-seed means
+  (firstaverageorders within eachseed, not9independenttrainingreplicates):
+
+| Original C variant | Known micro | Certified pseudo cross-video micro lower bound |
+|---|---:|---:|
+| Top1 conditioned |0.9326710817|0|
+| Top8 conditioned |0.6225165563|0.0186741363|
+| Top8 pooled |0.8101545254|0.0168067227|
+
+- These diagnostic PUBLIC computations are not a selectedcheckpoint/order,
+  officialCT/fullsemantictruth/strongPred orfullGoal acceptance. Separately
+  registered public aggregate driver will nowpackage allprefixes/seed/orders
+  andfixedRawcontrols after registering the lastCresult; noprivate inputs.
+- Mean original fullMdevelopment has an ACTUAL terminal failure: supervisor
+  successfulFALSE, guardowned_job_wall, ownedworker-9, complete_resultFALSE,
+  total3000.2867s/RSS961814528B/ONEOSthread/zeroGPUh. Onlytwoorders completed,
+  progress1028, noresult.json. Preserve failed namespace andpartialprogress;
+  do NOT use twoorders as a full scientificresult, restartoldPID, changewall/
+  RAM limits, pruneinputs or silentlyresume favorable metrics.
+- Prepared registered actual-prefix numeric qualification forfrozenRaw cache:
+  full72dev/472/8753/2562/116, exactoriginal CPU tensors vsnewcache miss/hit,
+  duplicateRaw scopes remainseparate. Only administrativepolicy/dev video
+  lists byte-projected; ALLclass/final values skipped, privateKnown labelindex
+  unopened. Private routingindex hashpinned BEFOREJSONdecode; exactqualified
+  shardhashes/manifests/lineage checked; auditbarrier rejectsoriginalTAO,
+  weights/otherroleNPZ/network. No pixels/model/optimizer/GTsemanticdecoder.
+  Read-only CPU512MiB/600s/nooutputbloat; source tests areNOT actualqualification
+  orcontroller integration. Need actualnumeric proof andregisteredshadow before
+  anymechanical optimization; original Mean failure staysvisible.
+- Full669tests pass in51.58s, including actualall9C matrix, exactlastCresult,
+  preserved Mean wallfailure andnumeric-only source boundary. Commit/push/
+  fetch/ref verify required before actualpublicaggregate/privateRawqualification.
