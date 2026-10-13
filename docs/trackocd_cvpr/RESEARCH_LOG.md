@@ -3988,3 +3988,37 @@ no private GT/cache/weights opened for this check):
   Full671tests pass in48.47s, including immutableactualall9public aggregate,
   full8753numericprefix bytequalification andpreservedMeanfailure. Neither
   numericalcache proof norunbalancedCaggregate markswholeGoal achieved.
+
+### Register full-policy OLD/cache controller shadow before development replay
+
+- Previous39c3d2d actualpublicC9matrix and all8753semantic-free Rawprefix
+  bytequalification were delivered/pushed/fetched/refverified. Current
+  worktree initiallyclean; originalMeanownedwallfailure remainsunchanged.
+- Added explicit PROCESS-LOCAL Rawreduction context foronlythe existing
+  stateEMA/reliability module input aliases. Exactoriginalbindings required,
+  nesting/unknownpatch refused, originalbindings restored evenonexception.
+  Snapshot/type/token/wholegroup/observation bounds unchanged; nonCPU uses
+  originalfunction. Cache stores onlyfrozenRawderivedbytes andreturns fresh
+  tensors; no model/GT/ID/role/prediction state cached orbankhistory removed.
+  No old numericcontroller/sourcefile edited or foreignprocess/globalservice
+  changed; context use is explicit and must bepreregistered inownworker.
+- Sixsynthetic full-controller shadows pass acrossMean/stateEMA/3Mfamilies:
+  exactevent/candidatefeature/score/routing/chosen-version/entirenumericledger
+  andoutcome equality, including restoration/nesting refusal. This is NOT
+  actualfull-policy/full72dev parity or a speedup/scientificresult.
+- Registered real ALL11 pairedshadow: twozero-fit baselines andall9fixedM
+  endpoints, eachfreshOLD/cache full10policy/54physical/1268observations/
+  374metadataframes/1empty, fixedorder1027. Freshsource/authority/actual8753
+  numericproof/all9endpoint gates beforeprivatefit/policydata. External
+  existingKnown-derived policylabels only forpostprediction outcome audit,
+  nevercache keys ormemoryrepairs. No optimizer/encoder/newcache extraction,
+  dev/final/Val/Test supervision or candidate/member pruning. ANYdifference
+  failswholequalification, no selectingpassingcases.
+- Owned detachedsupervisor retainsCPU1/3GiB/3000s/3MiB output/systemRAM25%
+  andstoragelimits, managesONLYitsactualPopenchild. Privateeventtrace stays
+  ephemeral; publicdigests/counters andshared-host sequentialpair timings,
+  NOTisolatedspeedupclaim. Full72development remainsseparatereplay stage.
+  Stage codeprepared, realshadow NOTexecuted atthisrecord. WholeGoalopen.
+- Full680tests passed in67.39s, including inputoverlay restoration/fullsynthetic
+  controller equality andrealshadow missing-cohort/source-boundary tests.
+  Noactual shadowacceptance fromthese tests; register/push/fetch beforelaunch.

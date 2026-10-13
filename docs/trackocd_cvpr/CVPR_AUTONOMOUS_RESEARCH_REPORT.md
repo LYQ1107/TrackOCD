@@ -853,3 +853,15 @@ duplicate-scope tensors, class/finalvalues skipped/Knownindex unopened,
 no model/optimizer/pixel/weights/encoder.64.85s/RSS497MB/bounded64MiB cache.
 No integration/controllerparity/speedup orscientificgain inferred. Preserve
 oldMeanwallfailure; require realcontroller shadow andregistered fullreplay.
+
+Prepared explicitprocess-local CPU Rawcache overlay withsameoriginaltensor
+contract andexception restoration; syntheticfullcontroller paritypasses
+Mean/stateEMA/all3Mfamilies. No existingnumericcontroller changed andnoactual
+policy/dev shadow result inferred fromsource tests.
+
+Registered realALL11 OLD/cache fullpolicy pairs: 10videos/54physical/1268obs/
+374frames/1empty, originalsameorder andall9ownfixedMendpoints, postprediction
+Known-derived outcome auditonly, zerooptimizer. Exacteveryevent/score/chosen
+version/numericledger/outcome equalityrequired. Original3000sMeanfailure,
+allinput/CPU/RAM/storage bounds anddirtyhistory remainpreserved. Realshadow,
+fullMdev/strongPred/self-exclusion/joint/baselines/final stillopen.
