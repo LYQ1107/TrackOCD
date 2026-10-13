@@ -6414,3 +6414,64 @@ no private GT/cache/weights opened for this check):
   original149source closure and new full-clock configuration reverified after
   tests. Only nine new/updated source/config/test/docs/status files published;
   no dev/private result implied by registration. Execution follows exact proof.
+
+### Actual first complete ALL4-window dev trial: calendar1027 (1/4)
+
+- Actual preregistration460200412644663fd2c79e01cf9eb7b6aab51bf8 was
+  pushed/fetched/triple-SHA exact before live parent/worker gates. Boot/start/
+  command identity proved supervisor538513/worker538699 live during observation;
+  both now terminal, these PIDs are historical evidence, not restart handles.
+  Normal terminal exit0/guardNONE/result present,717.871834791s inclusive,
+  peak964325376B/one CPU compute worker/one OS thread/no native helper/noCUDA/
+  zero trainingGPUhours. No parallel researcher/foreign process interference.
+- ALL13 actual private snapshots matched before opening dev. Own fixed formal
+  calendar1027 parameter fingerprinta77fd36d... unchanged; no fitting/selection.
+  All72dev videos/472tracks/8753observations/2562metadataframes/116empty traversed
+  in EACH of three orders1027/28/29. Actual full ID-bijection/reverse delivery
+  outcome AND events equal; full future perturbation39observations preserves
+  nonempty sealed earlier events. No shortened probes or partial science result.
+- Input-only reliability pass retains8753canonical groups:4808Known/2743
+  declared-pseudo/1202masked,7551eligible group observations over11existing
+  classes. Each observed-prefix task retains472tracks; all_available302Known/
+ 119declared-pseudo/51masked. Unknown/outside not negative BG or inventedNovel,
+  no private scalar-target tuples/semantic IDs/names exported. Distinct role/
+  class composition and group versus track sampling imply different conditional
+  priors; these are not full deployment/posterior/foreground calibration tests.
+- Complete GROUP diagnostics initial->formal: classmacroNLL0.633307795708->
+ 0.676301290327/Brier0.220388133969->0.241645570669/fixed10binECE
+ 0.182533139556->0.243517520919 WORSEN. MicroNLL0.714641857255->
+ 0.679165158266/Brier0.260557177963->0.243090774731/ECE0.186443183680->
+ 0.135411374997 improve. All-available TRACK classmacroNLL0.636911872000->
+ 0.682447854688/Brier0.222151422613->0.244703990728/ECE0.188705539840->
+ 0.262063792013 worsen; microNLL0.702945608085->0.650967549765 improves.
+  Mixed conditional diagnostics cannot select a winner or claim probability
+  quality everywhere. SAME-training NLL reductions did not ensure these dev
+  classmacro improvements; repeated groups/orders are not independent replicas.
+- Full order Knownmicro:0.125827814570/0.122516556291/0.142384105960;
+  Knownmacro:0.202268199234/0.415739463602/0.426482758621. Certified crossvideo
+  pseudo reuse micro lower bounds0.075630252101/0.109243697479/0.109243697479,
+  macro0.051903735632/0.094494047619/0.104910714286. Coverage1.0 all3;
+  pseudo Known-absorbed7/5/6, anonymous112/114/113 of119; unscorable-reuse
+  queries185/187/184 remain. Tokens182/179/181 retain mixed/unknown histories,
+  not inferred all-semantic purity or trained-M CT. Three-order descriptive
+  means Knownmicro0.130242825607/Knownmacro0.348163473819/reuse microLB
+ 0.098039215686/macroLB0.083769499179, not3independent training runs.
+- Original public result51749B SHA8ddaeb2718f37ab06ac406cedaa12ea2a29abd5ca7513e1e5a0526ad783bdece;
+  launch3c109195404799c24d34f61f22e9e54ef51baa8180a65452791bd6818b0078bb;
+  terminalc2d598057ae673eaa8e426746738ae69eba112f66da5299695fa952594a16fad.
+  New PUBLIC-only normal-trial verifier binds original source/cohort/endpoint/
+  complete-clock/diagnostic masks/probes before any followup; ALL4 verifier
+  rejects a one-trial substitute and requires same real initial Raw diagnostic
+  corpus/actual video schedules in allfour. No private model/GT read by verifier.
+- Forty-four targeted new-dev/actual-fit/normal-receipt regressions pass3.54s,
+  including eleven false partial/selected/wrong-denominator/unbounded/probe
+  mutations and private file stat tripwires. Only1/4normal dev trials complete;
+  three remaining explicit endpoints still required, no control/seed/bin/threshold
+  sweep or winner. Original Goal active; fair latency/coverage, fullM/joint R/C/M,
+  lawful strongPred/dense/lockedfinal and Goal A/B/C remain unachieved.
+- Final bounded combined CVPR/v2 suite1105pass75.15s, ownedexit0/guardNONE/
+  inclusive76.874198719s/peak864215040B/zero trainingGPUhours. Original first
+  complete result bytes unchanged; publish only its three public receipts,
+  public verifier/regressions/docs/status, not private weights/GT/calendars/
+  scalar-label tables/progress/stdout. Remaining endpoint1028 launches only after
+  publication/fetch/exact proof; keep one owned CPU compute worker at a time.

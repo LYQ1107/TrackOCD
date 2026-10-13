@@ -1,0 +1,1427 @@
+{
+  "actual_full_ID_rename_reverse_stream_equal": true,
+  "actual_future_probe": {
+    "future_observations_mutated": 39,
+    "verified_same_prior_events": true
+  },
+  "all4_fits_and_all13_private_snapshot_fingerprints_checked": true,
+  "calendar_seed": 1027,
+  "conditional_reliability": {
+    "Existing_gate_foreground_purity_or_full_posterior_calibrated": false,
+    "all_physical_tracks_and_unknowns_retained": true,
+    "bin_threshold_seed_model_checkpoint_or_control_selection": false,
+    "class_macro_or_role_conditional_task_is_deployment_prior": false,
+    "complete_group_observation_task": {
+      "fixed_formal_endpoint_task_score": {
+        "Known_groups": 4808,
+        "bins": [
+          {
+            "bin_index": 0,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 1,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 2,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 3,
+            "class_macro_mass": 0.007795679081903689,
+            "lawful_group_count": 57
+          },
+          {
+            "bin_index": 4,
+            "class_macro_mass": 0.41002616370655803,
+            "lawful_group_count": 3593
+          },
+          {
+            "bin_index": 5,
+            "class_macro_mass": 0.5711417532858969,
+            "lawful_group_count": 3731
+          },
+          {
+            "bin_index": 6,
+            "class_macro_mass": 0.011036403925641279,
+            "lawful_group_count": 170
+          },
+          {
+            "bin_index": 7,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 8,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 9,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          }
+        ],
+        "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+        "class_macro_Brier": 0.24164557066895692,
+        "class_macro_NLL": 0.6763012903273855,
+        "declared_pseudo_groups": 2743,
+        "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+        "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+        "fixed_10_bin_class_macro_ECE": 0.24351752091890583,
+        "fixed_10_bin_micro_ECE": 0.13541137499722813,
+        "independent_Train_dev_no_optimizer_or_selection": true,
+        "lawful_groups": 7551,
+        "micro_Brier": 0.2430907747312421,
+        "micro_NLL": 0.6791651582657257,
+        "observed_eligible_semantic_classes": 11
+      },
+      "initial_fixed_Raw_task_score": {
+        "Known_groups": 4808,
+        "bins": [
+          {
+            "bin_index": 0,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 1,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 2,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 3,
+            "class_macro_mass": 0.16605881296587582,
+            "lawful_group_count": 1271
+          },
+          {
+            "bin_index": 4,
+            "class_macro_mass": 0.6716819868393182,
+            "lawful_group_count": 4937
+          },
+          {
+            "bin_index": 5,
+            "class_macro_mass": 0.16225920019480589,
+            "lawful_group_count": 1343
+          },
+          {
+            "bin_index": 6,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 7,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 8,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          },
+          {
+            "bin_index": 9,
+            "class_macro_mass": 0.0,
+            "lawful_group_count": 0
+          }
+        ],
+        "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+        "class_macro_Brier": 0.22038813396948775,
+        "class_macro_NLL": 0.6333077957076343,
+        "declared_pseudo_groups": 2743,
+        "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+        "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+        "fixed_10_bin_class_macro_ECE": 0.18253313955603342,
+        "fixed_10_bin_micro_ECE": 0.18644318367961701,
+        "independent_Train_dev_no_optimizer_or_selection": true,
+        "lawful_groups": 7551,
+        "micro_Brier": 0.26055717796285977,
+        "micro_NLL": 0.7146418572553457,
+        "observed_eligible_semantic_classes": 11
+      }
+    },
+    "fixed_observed_prefix_track_tasks": {
+      "1": {
+        "fixed_formal_endpoint_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.02391978449972181,
+              "lawful_group_count": 6
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.46900448506561365,
+              "lawful_group_count": 197
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.5070757304346646,
+              "lawful_group_count": 218
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.2366439128113333,
+          "class_macro_NLL": 0.6662191490798095,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.2198094764071885,
+          "fixed_10_bin_micro_ECE": 0.21894800773888862,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.24174084149368416,
+          "micro_NLL": 0.6765292191799692,
+          "observed_eligible_semantic_classes": 11
+        },
+        "initial_fixed_Raw_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.17262302378916797,
+              "lawful_group_count": 59
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.7943630935417769,
+              "lawful_group_count": 321
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.033013882669055084,
+              "lawful_group_count": 41
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.2175733145188226,
+          "class_macro_NLL": 0.6274922779000627,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.18672996184400645,
+          "fixed_10_bin_micro_ECE": 0.27037444310845576,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.2685247295436146,
+          "micro_NLL": 0.7305405198265714,
+          "observed_eligible_semantic_classes": 11
+        },
+        "masked_tracks": 51,
+        "physical_tracks": 472
+      },
+      "16": {
+        "fixed_formal_endpoint_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.012033682096378022,
+              "lawful_group_count": 3
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.3784614732185266,
+              "lawful_group_count": 135
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.5880962762420443,
+              "lawful_group_count": 253
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.02140856844305119,
+              "lawful_group_count": 30
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.24383092696812853,
+          "class_macro_NLL": 0.6806965570300163,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.2580104714733318,
+          "fixed_10_bin_micro_ECE": 0.19325721028851667,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.22894450605489997,
+          "micro_NLL": 0.6506176808631806,
+          "observed_eligible_semantic_classes": 11
+        },
+        "initial_fixed_Raw_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.12866168627610636,
+              "lawful_group_count": 40
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.7016739947617692,
+              "lawful_group_count": 252
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.1696643189621246,
+              "lawful_group_count": 129
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.2216848692886581,
+          "class_macro_NLL": 0.6359375145487042,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.1862819523181331,
+          "fixed_10_bin_micro_ECE": 0.24867710822466638,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.2547788299169642,
+          "micro_NLL": 0.7029283795744135,
+          "observed_eligible_semantic_classes": 11
+        },
+        "masked_tracks": 51,
+        "physical_tracks": 472
+      },
+      "2": {
+        "fixed_formal_endpoint_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.017193034238488787,
+              "lawful_group_count": 3
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.3619748130657222,
+              "lawful_group_count": 148
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.6186503345139709,
+              "lawful_group_count": 267
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0021818181818181815,
+              "lawful_group_count": 3
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.23964808166959362,
+          "class_macro_NLL": 0.6722535304324964,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.2314753172518056,
+          "fixed_10_bin_micro_ECE": 0.2120588930242018,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.235918288050558,
+          "micro_NLL": 0.664788590121465,
+          "observed_eligible_semantic_classes": 11
+        },
+        "initial_fixed_Raw_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.16550442399815438,
+              "lawful_group_count": 54
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.7799402692396422,
+              "lawful_group_count": 299
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.054555306762203326,
+              "lawful_group_count": 68
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.2192024670621484,
+          "class_macro_NLL": 0.6308398699452018,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.20954047469589288,
+          "fixed_10_bin_micro_ECE": 0.261006111447772,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.2623855008786163,
+          "micro_NLL": 0.71817595893071,
+          "observed_eligible_semantic_classes": 11
+        },
+        "masked_tracks": 51,
+        "physical_tracks": 472
+      },
+      "4": {
+        "fixed_formal_endpoint_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.011511216056670603,
+              "lawful_group_count": 2
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.37640803240646503,
+              "lawful_group_count": 139
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.6040807515368645,
+              "lawful_group_count": 269
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.008,
+              "lawful_group_count": 11
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.24163452772158436,
+          "class_macro_NLL": 0.6762665172091189,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.2412769121704512,
+          "fixed_10_bin_micro_ECE": 0.20287028174923583,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.23200459485027566,
+          "micro_NLL": 0.6568711569878793,
+          "observed_eligible_semantic_classes": 11
+        },
+        "initial_fixed_Raw_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.13310264761361948,
+              "lawful_group_count": 47
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.744928808913135,
+              "lawful_group_count": 271
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.12196854347324569,
+              "lawful_group_count": 103
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.22041091109760824,
+          "class_macro_NLL": 0.6332973881765134,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.1825608893027156,
+          "fixed_10_bin_micro_ECE": 0.25461019963926956,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.25818880651091214,
+          "micro_NLL": 0.7097707262387803,
+          "observed_eligible_semantic_classes": 11
+        },
+        "masked_tracks": 51,
+        "physical_tracks": 472
+      },
+      "8": {
+        "fixed_formal_endpoint_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.011511216056670603,
+              "lawful_group_count": 2
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.3751040114535413,
+              "lawful_group_count": 138
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.5968623064500806,
+              "lawful_group_count": 258
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.016522466039707417,
+              "lawful_group_count": 23
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.24254847825077028,
+          "class_macro_NLL": 0.6780934328055503,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.25180575870468785,
+          "fixed_10_bin_micro_ECE": 0.1987220691449103,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.22982301830580434,
+          "micro_NLL": 0.6524139977673797,
+          "observed_eligible_semantic_classes": 11
+        },
+        "initial_fixed_Raw_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.13963347310996216,
+              "lawful_group_count": 46
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.6675453188399897,
+              "lawful_group_count": 250
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.19282120805004813,
+              "lawful_group_count": 125
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.2207969023502979,
+          "class_macro_NLL": 0.6341211074213078,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.19707266314171104,
+          "fixed_10_bin_micro_ECE": 0.25095502607944187,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.25581201953183763,
+          "micro_NLL": 0.7050104657872294,
+          "observed_eligible_semantic_classes": 11
+        },
+        "masked_tracks": 51,
+        "physical_tracks": 472
+      },
+      "all_available": {
+        "fixed_formal_endpoint_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.011511216056670603,
+              "lawful_group_count": 2
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.3575348423781026,
+              "lawful_group_count": 132
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.6078860209800648,
+              "lawful_group_count": 255
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.023067920585161963,
+              "lawful_group_count": 32
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.24470399072815135,
+          "class_macro_NLL": 0.682447854688315,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.2620637920133588,
+          "fixed_10_bin_micro_ECE": 0.19463282552925526,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.22912362209017173,
+          "micro_NLL": 0.6509675497651445,
+          "observed_eligible_semantic_classes": 11
+        },
+        "initial_fixed_Raw_task_score": {
+          "Known_groups": 302,
+          "bins": [
+            {
+              "bin_index": 0,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 1,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 2,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 3,
+              "class_macro_mass": 0.1266371303722401,
+              "lawful_group_count": 41
+            },
+            {
+              "bin_index": 4,
+              "class_macro_mass": 0.6437012376338396,
+              "lawful_group_count": 243
+            },
+            {
+              "bin_index": 5,
+              "class_macro_mass": 0.22966163199392042,
+              "lawful_group_count": 137
+            },
+            {
+              "bin_index": 6,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 7,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 8,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            },
+            {
+              "bin_index": 9,
+              "class_macro_mass": 0.0,
+              "lawful_group_count": 0
+            }
+          ],
+          "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+          "class_macro_Brier": 0.22215142261347065,
+          "class_macro_NLL": 0.6369118720004423,
+          "declared_pseudo_groups": 119,
+          "declared_pseudo_is_existing_Known_derived_not_new_Novel_GT": true,
+          "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+          "fixed_10_bin_class_macro_ECE": 0.1887055398403804,
+          "fixed_10_bin_micro_ECE": 0.24737817312553956,
+          "independent_Train_dev_no_optimizer_or_selection": true,
+          "lawful_groups": 421,
+          "micro_Brier": 0.25478866172500914,
+          "micro_NLL": 0.7029456080851894,
+          "observed_eligible_semantic_classes": 11
+        },
+        "masked_tracks": 51,
+        "physical_tracks": 472
+      }
+    },
+    "full_clock": {
+      "Known_groups": 4808,
+      "canonical_groups": 8753,
+      "declared_pseudoNovel_groups": 2743,
+      "empty_frames": 116,
+      "masked_groups": 1202,
+      "metadata_frames": 2562,
+      "physical_observations": 8753
+    },
+    "private_score_target_tables_exported": false,
+    "repeated_observations_prefixes_are_independent_replicates": false,
+    "unknown_conflicting_groups_as_negative_BG_Novel": false
+  },
+  "control": "calendar_matched",
+  "dev_model_seed_threshold_bin_or_checkpoint_selection": false,
+  "development_scope": {
+    "counts": {
+      "Known": 302,
+      "declared_pseudoNovel": 119,
+      "outside_eligible_Known": 2
+    },
+    "external_evaluator_only_not_model_or_loss_input": true,
+    "fit_policy_final_or_other_video_target_values_decoded": false,
+    "metadata_frames": 2562,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 8753,
+    "physical_label_strata": {
+      "Known": 302,
+      "declared_pseudoNovel": 119,
+      "no_retained_semantic_truth": 49,
+      "outside_eligible_Known": 2
+    },
+    "physical_tracks": 472
+  },
+  "evaluated_endpoint": {
+    "AdamW_and_RNG_reopened": true,
+    "bytes": 7884,
+    "control": "calendar_matched",
+    "reopen_exact": true,
+    "sha256": "6c768b6c299beb8930d55156f4b23e0ffd4d8f16638be07b97677d3f1eac417b",
+    "solver_internal_resume_state_claimed": false,
+    "step": 200
+  },
+  "evaluated_model_parameter_sha256": "a77fd36d485d468aff268082a060c5c0e918920e5f7abb103f7f09877b748a6b",
+  "final_Val_Test_original_pixels_or_new_nonKnown_semantics_read": false,
+  "foreground_Existing_gate_full_deployment_calibration_or_fair_latency_coverage_claimed": false,
+  "full_semantic_truth_Hscore_CT_joint_Pred_final_or_Goal_accepted": false,
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "460200412644663fd2c79e01cf9eb7b6aab51bf8"
+  },
+  "offline_fit_prior_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "optimizer_steps": 0,
+  "orders": {
+    "1027": {
+      "GT_oracle_control_not_Pred": true,
+      "allocated_tokens": 182,
+      "canonical_groups": 8753,
+      "empty_frames": 116,
+      "first_Known_anonymous_write_canonical_group": 1,
+      "first_pseudo_absorbed_as_Known_canonical_group": 55,
+      "metadata_frames": 2562,
+      "model_state_unchanged": true,
+      "observations": 8753,
+      "optimizer_steps": 0,
+      "order_seed": 1027,
+      "physical_actions": {
+        "EXISTING": 7928,
+        "KNOWN": 643,
+        "NEW": 182
+      },
+      "prefix_slices_one_uncapped_causal_stream_not_separately_capped_replays": true,
+      "prefix_snapshots": {
+        "1": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3813639846743295,
+          "Known_micro_accuracy": 0.22847682119205298,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.0519037356321839,
+          "certified_cross_video_reuse_micro_lower_bound": 0.07563025210084033,
+          "declared_pseudo_absorbed_as_Known_queries": 26,
+          "declared_pseudo_anonymous_commit_queries": 93,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 112
+        },
+        "16": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.20493486590038312,
+          "Known_micro_accuracy": 0.1291390728476821,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.0519037356321839,
+          "certified_cross_video_reuse_micro_lower_bound": 0.07563025210084033,
+          "declared_pseudo_absorbed_as_Known_queries": 7,
+          "declared_pseudo_anonymous_commit_queries": 112,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 183
+        },
+        "2": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3424521072796935,
+          "Known_micro_accuracy": 0.17549668874172186,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.0519037356321839,
+          "certified_cross_video_reuse_micro_lower_bound": 0.07563025210084033,
+          "declared_pseudo_absorbed_as_Known_queries": 14,
+          "declared_pseudo_anonymous_commit_queries": 105,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 160
+        },
+        "4": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.20268199233716477,
+          "Known_micro_accuracy": 0.1291390728476821,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.0519037356321839,
+          "certified_cross_video_reuse_micro_lower_bound": 0.07563025210084033,
+          "declared_pseudo_absorbed_as_Known_queries": 12,
+          "declared_pseudo_anonymous_commit_queries": 107,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 173
+        },
+        "8": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.20493486590038312,
+          "Known_micro_accuracy": 0.1291390728476821,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.0519037356321839,
+          "certified_cross_video_reuse_micro_lower_bound": 0.07563025210084033,
+          "declared_pseudo_absorbed_as_Known_queries": 8,
+          "declared_pseudo_anonymous_commit_queries": 111,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 183
+        },
+        "all_available": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.20226819923371644,
+          "Known_micro_accuracy": 0.12582781456953643,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.05190373563218391,
+          "certified_cross_video_reuse_micro_lower_bound": 0.07563025210084033,
+          "declared_pseudo_absorbed_as_Known_queries": 7,
+          "declared_pseudo_anonymous_commit_queries": 112,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 185
+        }
+      },
+      "private_video_ordinal_order_sha256": "b01d5db92b7f44a386cd08f9054d070ebcf53a9b8ba10668aabe0d12063a1007",
+      "self_support_exclusion_or_full_semantic_GT_Hscore_CT_or_Goal_acceptance": false,
+      "strict_route_reassignment_history": {
+        "certified_pseudo_history": 43,
+        "semantic_unscorable_history": 23,
+        "verified_non_pseudo_or_mixed_history": 116
+      },
+      "unknown_declared_background_or_Novel": false
+    },
+    "1028": {
+      "GT_oracle_control_not_Pred": true,
+      "allocated_tokens": 179,
+      "canonical_groups": 8753,
+      "empty_frames": 116,
+      "first_Known_anonymous_write_canonical_group": 0,
+      "first_pseudo_absorbed_as_Known_canonical_group": 1,
+      "metadata_frames": 2562,
+      "model_state_unchanged": true,
+      "observations": 8753,
+      "optimizer_steps": 0,
+      "order_seed": 1028,
+      "physical_actions": {
+        "EXISTING": 7993,
+        "KNOWN": 581,
+        "NEW": 179
+      },
+      "prefix_slices_one_uncapped_causal_stream_not_separately_capped_replays": true,
+      "prefix_snapshots": {
+        "1": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3733639846743295,
+          "Known_micro_accuracy": 0.2185430463576159,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09895833333333333,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 18,
+          "declared_pseudo_anonymous_commit_queries": 101,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 108
+        },
+        "16": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.30196168582375477,
+          "Known_micro_accuracy": 0.11589403973509933,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09895833333333333,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 5,
+          "declared_pseudo_anonymous_commit_queries": 114,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 184
+        },
+        "2": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.43031417624521073,
+          "Known_micro_accuracy": 0.1490066225165563,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09895833333333333,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 12,
+          "declared_pseudo_anonymous_commit_queries": 107,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 160
+        },
+        "4": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3050421455938697,
+          "Known_micro_accuracy": 0.12251655629139073,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09895833333333333,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 9,
+          "declared_pseudo_anonymous_commit_queries": 110,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 177
+        },
+        "8": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.30729501915708807,
+          "Known_micro_accuracy": 0.12251655629139073,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.11979166666666666,
+          "certified_cross_video_reuse_micro_lower_bound": 0.12605042016806722,
+          "declared_pseudo_absorbed_as_Known_queries": 8,
+          "declared_pseudo_anonymous_commit_queries": 111,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 179
+        },
+        "all_available": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.4157394636015326,
+          "Known_micro_accuracy": 0.12251655629139073,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09449404761904762,
+          "certified_cross_video_reuse_micro_lower_bound": 0.1092436974789916,
+          "declared_pseudo_absorbed_as_Known_queries": 5,
+          "declared_pseudo_anonymous_commit_queries": 114,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 187
+        }
+      },
+      "private_video_ordinal_order_sha256": "381505f29a0589524cb3565bdace0150a0759de202eb40ffe1fd08cd6b60f389",
+      "self_support_exclusion_or_full_semantic_GT_Hscore_CT_or_Goal_acceptance": false,
+      "strict_route_reassignment_history": {
+        "certified_pseudo_history": 35,
+        "semantic_unscorable_history": 24,
+        "verified_non_pseudo_or_mixed_history": 120
+      },
+      "unknown_declared_background_or_Novel": false
+    },
+    "1029": {
+      "GT_oracle_control_not_Pred": true,
+      "allocated_tokens": 181,
+      "canonical_groups": 8753,
+      "empty_frames": 116,
+      "first_Known_anonymous_write_canonical_group": 88,
+      "first_pseudo_absorbed_as_Known_canonical_group": 3,
+      "metadata_frames": 2562,
+      "model_state_unchanged": true,
+      "observations": 8753,
+      "optimizer_steps": 0,
+      "order_seed": 1029,
+      "physical_actions": {
+        "EXISTING": 7899,
+        "KNOWN": 673,
+        "NEW": 181
+      },
+      "prefix_slices_one_uncapped_causal_stream_not_separately_capped_replays": true,
+      "prefix_snapshots": {
+        "1": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3547739463601532,
+          "Known_micro_accuracy": 0.20198675496688742,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.08110119047619047,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 18,
+          "declared_pseudo_anonymous_commit_queries": 101,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 121
+        },
+        "16": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3172873563218391,
+          "Known_micro_accuracy": 0.1423841059602649,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.10937499999999999,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 6,
+          "declared_pseudo_anonymous_commit_queries": 113,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 179
+        },
+        "2": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.43497318007662833,
+          "Known_micro_accuracy": 0.16225165562913907,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09151785714285714,
+          "certified_cross_video_reuse_micro_lower_bound": 0.12605042016806722,
+          "declared_pseudo_absorbed_as_Known_queries": 13,
+          "declared_pseudo_anonymous_commit_queries": 106,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 160
+        },
+        "4": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3177011494252874,
+          "Known_micro_accuracy": 0.1456953642384106,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.09151785714285715,
+          "certified_cross_video_reuse_micro_lower_bound": 0.12605042016806722,
+          "declared_pseudo_absorbed_as_Known_queries": 10,
+          "declared_pseudo_anonymous_commit_queries": 109,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 173
+        },
+        "8": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.3199540229885058,
+          "Known_micro_accuracy": 0.1456953642384106,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.10937499999999999,
+          "certified_cross_video_reuse_micro_lower_bound": 0.11764705882352941,
+          "declared_pseudo_absorbed_as_Known_queries": 7,
+          "declared_pseudo_anonymous_commit_queries": 112,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 176
+        },
+        "all_available": {
+          "Known_classes_observed": 3,
+          "Known_macro_accuracy": 0.42648275862068963,
+          "Known_micro_accuracy": 0.1423841059602649,
+          "Known_queries": 302,
+          "all_physical_commit_track_coverage": 1.0,
+          "certified_cross_video_reuse_macro_lower_bound": 0.10491071428571427,
+          "certified_cross_video_reuse_micro_lower_bound": 0.1092436974789916,
+          "declared_pseudo_absorbed_as_Known_queries": 6,
+          "declared_pseudo_anonymous_commit_queries": 113,
+          "declared_pseudo_classes": 8,
+          "declared_pseudo_queries": 119,
+          "physical_tracks": 472,
+          "unscorable_reuse_queries_retained": 184
+        }
+      },
+      "private_video_ordinal_order_sha256": "5c05e14ed09a701909ff9b0e229c592b00cc27bb3994c119442267ba2f04d893",
+      "self_support_exclusion_or_full_semantic_GT_Hscore_CT_or_Goal_acceptance": false,
+      "strict_route_reassignment_history": {
+        "certified_pseudo_history": 40,
+        "semantic_unscorable_history": 23,
+        "verified_non_pseudo_or_mixed_history": 118
+      },
+      "unknown_declared_background_or_Novel": false
+    }
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 964325376,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 710.2854595169993
+  },
+  "status": "MEASURED_FULL_RAW_MEMBERSHIP_DEV_NOT_SELECTED_JOINT_PRED_FINAL_OR_GOAL"
+}

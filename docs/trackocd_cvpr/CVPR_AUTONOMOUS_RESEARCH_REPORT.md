@@ -1760,3 +1760,38 @@ remaining fullM/joint/strongPred/dense/locked-final requirements preserved.
 Final bounded combined CVPR/v2 suite1091pass68.05s, ownedexit0/guardNONE,
 inclusive69.8396s/peak836812800B/zero GPUhours. Original149numerical/source
 closure reverified unchanged. Nine public source/config/tests/docs/status only.
+
+## First actual full scalar-control dev trial: 1/4, not a winner
+
+Calendar1027 frozen formal endpoint completed normally after exact4602004...
+registration:717.8718s/964325376B/oneCPU+oneOSthread/noGPU. All72videos/
+472tracks/8753obs/2562frames/116empty in all3orders plus actual FULL ID-reverse
+event/outcome parity and39future-observation perturbations preserving earlier
+events. ALL13 private fingerprints checked before dev, no optimizer/selection.
+
+Complete group task7551eligible observations over11existing classes,1202masked;
+track task302Known/119declared-pseudo/51masked retained. Initial->formal GROUP
+classmacro NLL0.633308->0.676301/Brier0.220388->0.241646/ECE0.182533->
+0.243518 worsen while MICRO NLL0.714642->0.679165/Brier0.260557->0.243091/
+ECE0.186443->0.135411 improve. All-available TRACK classmacro NLL0.636912->
+0.682448/ECE0.188706->0.262064 worsen. Different role/class composition and
+observation-versus-track sampling imply different conditional priors; no global
+probability-quality/full deployment/foreground/Existing-gate calibration claim.
+
+Per-order Knownmicro0.125828/0.122517/0.142384; certified crossvideo pseudo
+reuse microLB0.075630/0.109244/0.109244, full coverage1.0. Pseudo absorbed
+Known7/5/6, anonymous112/114/113 of119; unscorable-reuse185/187/184 retained.
+Descriptive three-order meanKnownmicro0.130243/Knownmacro0.348163/reuse
+microLB0.098039/macroLB0.083769, not3independent fitted models. Histories
+mixed/unknown remain; no full semantic purity or learned-M CT/Goal acceptance.
+Result SHA256`8ddaeb2718f37ab06ac406cedaa12ea2a29abd5ca7513e1e5a0526ad783bdece`;
+terminal`c2d598057ae673eaa8e426746738ae69eba112f66da5299695fa952594a16fad`.
+Public-only complete receipt verifier and44targeted regressions pass3.54s,
+including false clock/probe/selection/endpoint/mask/guard mutations without
+private weight reads. Only1/4trials complete; retain all3remaining endpoints,
+no winner/threshold/seed/bin/checkpoint selection. Original Goal active, full
+latency/coverage/fullM/joint/strongPred/dense/lockedfinal still unfinished.
+Final bounded CVPR/v2 suite1105pass75.15s, ownedexit0/guardNONE,76.8742s
+inclusive/864215040B peak/zero trainingGPUhours. Original public result51749B
+unchanged; first complete triplet/public verifier/tests/docs/status only, no
+private weights, scalar-target table, GT, calendar, progress or stdout export.
