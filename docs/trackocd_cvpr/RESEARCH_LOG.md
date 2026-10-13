@@ -4773,3 +4773,28 @@ no private GT/cache/weights opened for this check):
   accepting metrics or starting remaining formal M trials. Never replay PID,
   relaunch namespace, increase wall or promote partial orders. Goal active and
   unachieved; full9M/freshbaselines/strongPred/joint/independent final remain open.
+
+### Full M evaluation terminal system-RAM stop, not cache or scientific result
+
+- Actual full replay from5ddaf135... terminates after92.35s, owned-9/
+  system_RAM_reserve/no result/no profile/no progress. Peak961794048B/one
+  thread/zero trainingGPUh; output contains only launch.json. Exact terminal
+  SHA5781a9a91c2c41398077299403e5c8169721f9430049c3445927251d8a2182a3.
+  Original supervisor managed only own Popen child, never an external PID.
+- Rechecked system MemAvailable7.58GB versus required33.70GB of134.79GB;
+  original25% guard correctly stopped work. A later actual sample recovered
+  to109.19GB without our intervention. No RAM threshold reduction, cache
+  dropping, external process interference or storage cleanup. No model/data/
+  numeric/policy cache failure or full-dev runtime conclusion from this stop.
+- NEW bounded RAM_retry1 namespace-only factory binds exact original terminal,
+  launchSHA/preregistration/source/profile/model/kernel/protocol. Only this
+  relative_quarantine1027 trial qualifies; no partial metrics exist/reused.
+  Fresh full replay/actual ALL11/cohort/authority/live registration and same
+  original guards, not training or selection. Original attempt untouched.
+- Retry requires fresh adequate RAM margin before launch; no automatic infinite
+  retry loop. No new heavy process while reserve unmet. Full Goal active and
+  unachieved; scientific requirements are unchanged.
+- 5 targeted tests and full811tests pass in49.63s; full-suite own-child wrapper
+  also maintained25% reserve, normal actualwait0/no guard/57.21s total. These
+  tests do not replace real full-dev completion. Subsequent available RAM is
+  healthy again; next resource preflight must still be fresh at launch.
