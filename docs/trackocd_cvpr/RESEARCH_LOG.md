@@ -6124,3 +6124,57 @@ no private GT/cache/weights opened for this check):
   original public triplet/startup/matrix/source/tests/docs staged; private
   stdout/weights/GT/features/traces excluded. Current stage published before
   any new calibration private loads; no live job to blindly restart.
+
+### Frozen two Raw NamedKnown-membership score-fitting CONTROL sources
+
+- Prior ALL6matrix stage pushed/fetched/exactverified3e8243cb..., scientific
+  negative but concrete progress. Current tree clean on entry, no live owned
+  research worker; availableRAM97606930432B/free118855995392B, no cleanup/
+  GPU/install/foreign process interference. Original trained sources preserved.
+- NEW source/protocol only, PUBLIC actual complete C matrix SHAf78a108a...
+  prerequisite. No new private index/features/weights/GT loaded. Two float64
+  monotone parameters a>=0,b; logit=a*current Raw maxfitKnowncos+b, initial
+  (1,-0.65). Known proposals from original frozen1158fit5 supports/257videos.
+  Float64 is required to preserve inherited float32 cosine/.65 boundary;
+  synthetic exact initial Raw arbitration/ties/nextafter cases pass.
+- Binary target is ONLY membership in fit5 NamedKnown:eligibleKnown1 versus
+  existing Known-derived policy2role0, not foreground/BG/newNovel category or
+  individual Existing/NEW/WAIT target. Unknown/outside/conflicting aliases
+  remain physical frames/observations but MASKED in loss/diagnostics. No
+  labels/IDs/role fields enter scalar model or prediction-owned memory.
+- Predeclare BOTH controls, never choose by dev outcomes: calendar-matched
+  fresh2param AdamW200/threevideo-order seeds/fourfull policy episodes/same
+  midpointKnown50anchors/epoch/fixed20/50/100/200snapshots; versus ONE
+  deterministic fullpolicy class-macro BCE+anchored1e-4ridge L-BFGS-B,
+  a>=0/maxiter200/maxfun1000/analyticgradient/fixedftol1e-12/gtol1e-8.
+  First shares frames/budget, NOT target information/capacity/objective; second
+  has more full-policy exposure/different optimizer and is NOT calendar-matched
+  or three independent trained seeds. No optimizer/threshold/coefficient search.
+- Existing>=bestKnown and>=0.55 arbitration retained; then fittedKnownlogit>=0
+  elseNEW, with unchanged common ambiguityWAIT. Existing gate NOT calibrated.
+  Class-macro task weighting is not deployment prior; conditional score fitting
+  does NOT prove foreground/purity/fullposterior or transfer calibration.
+  Fixed10bin micro/class-macro ECE+Brier+NLL report ONLY lawful binary groups,
+  no bestbin/threshold/model selection or unknown-negative injection.
+- Pilot fixed1027:onecompleteclock/50calendarupdates plus fullpolicy solver
+  atmost50iterations/250functioncalls; actualbothrole gradients/own exactreopen
+  required before separately registered formal expansion. No oldweights/pilot
+  warmstart/automatic private reads or launch. Original3GiB/3000s/output16MiB/
+  25%RAM/storage gates retained for future executor; actual pilot not run yet.
+- Primary method reference inspected:
+  https://proceedings.mlr.press/v70/guo17a.html (posthoc probability calibration,
+  not evidence our new angular membership mapping is calibrated).
+  Actual installedSciPy1.15.3/API and official solver constraints inspected:
+  https://docs.scipy.org/doc/scipy-1.15.3/reference/optimize.minimize-lbfgsb.html .
+  Not a literal neural-softmax temperature-scaling reproduction.
+- Twelve tests pass5.35s:actualfull6public gates, exactinitial arbitration,
+  analyticgradient/autograd/finite-difference agreement, actual synthetic
+  solver success bounds, full150observation/51frame mask retention, real50step
+  syntheticcalendar fit, fixedplan future-prefix logits and diagnostic refusal
+  of fullcalibration/scope claims. Registered gated actual pilot CLI still
+  REQUIRED; helper functions cannot grant private asset access. Goal active,
+  all scientific fairness/fullM/joint/Pred/dense/final gaps retained.
+- Final bounded combined CVPR/v2 suite1046pass61.20s, ownedwait0/guardNONE/
+  62.786153771s inclusive/peak861978624B/zero GPU-hours. No new real private
+  input or calibration job launched. Code/config/tests/established logs only
+  staged; next implement registered own guarded dual-control pilot executor.

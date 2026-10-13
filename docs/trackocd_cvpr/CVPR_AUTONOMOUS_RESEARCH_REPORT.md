@@ -1565,3 +1565,43 @@ negative research window is completed, not the total Goal.
 Final bounded combined CVPR/v2 suite1034pass58.75s, ownedexit0/guardNONE,
 inclusive60.3622s/peak837533696B/zero GPU-hours. Private assets remain local;
 new calibration still requires explicit frozen source/live gates and actual pilot.
+
+## Prospective Raw membership controls: implementation, not calibrated results
+
+New public-gated source requires the actual complete six-model C matrix and
+defines two FIXED controls using existing fit/policy Known labels only. A
+two-parameter float64 monotone affine logit maps current Raw maxNamedKnown
+cosine to a task membership score, initial(1,-0.65). Tests prove exact initial
+inherited Raw arbitration even at float32 threshold/nextafter/ties. Existing
+cosine0.55/Existing>=bestKnown and common ambiguityWAIT remain unchanged.
+
+Calendar-matched AdamW200 reuses C's actual offlineKnown uniform-rank plans/
+threevideo-order seeds/fourcompleteclocks/fixedsnapshots, but NOT its target
+information, capacity or function class. A separate SINGLE deterministic
+fullpolicy L-BFGS-B fit has broader lawful query exposure and a different
+optimizer, maxiter200/maxfun1000/fixedanchoredridge1e-4/analytic gradients.
+It is not three trained seeds or calendar-matched. Both will be reported, no
+dev-selected control/optimizer/threshold or posthoc coefficient sweep.
+
+EligiblefitKnown=1/existing Known-derived policy2=0 means membership in the
+five NAMED classes, not objectness/BG/Novel categorical truth or individual
+anonymous actions. Unknown/outside/conflicting groups stay in physical
+denominators but are masked from binary loss/diagnostics. Current numeric
+model accepts no labels/IDs. Class-macro weighting changes the conditional
+task prior; no deployment/foreground/purity/fullposterior calibration claim.
+Fixed10bin ECE/NLL/Brier will distinguish conditional-lawful-group diagnostics
+from allphysical scope. Existing gate and full transfer calibration remain open.
+
+The affine mapping is Platt-style in spirit, not literal neural-temperature
+scaling or a proved calibrated method; primary reference inspected:
+[Guo et al., 2017](https://proceedings.mlr.press/v70/guo17a.html).
+Actual installedSciPy1.15.3 and [official L-BFGS-B bounds/stopping options](https://docs.scipy.org/doc/scipy-1.15.3/reference/optimize.minimize-lbfgsb.html)
+were checked; finite parameters never substitute a solver-success receipt.
+Twelve synthetic/public-source tests pass5.35s. No real private asset load,
+fit or calibration outcome yet. A fixed50update/50iteration/250functioncall
+pilot and registered own guarded executor still REQUIRED before expansion.
+Original limits/protected roles/old artifacts unchanged; Goal A/B/C active,
+fair calibration/coverage/latency/fullM/joint/strongPred/dense/final unfinished.
+Final bounded combined CVPR/v2 suite1046pass61.20s, ownedexit0/guardNONE,
+inclusive62.7862s/peak861978624B/zero GPU-hours. Next is a registered own guarded
+pilot executor, not automatic fitting or a claimed calibration result.
