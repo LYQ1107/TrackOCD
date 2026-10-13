@@ -5073,3 +5073,31 @@ no private GT/cache/weights opened for this check):
   Full matrix evaluator/cohort+private endpoint gates, all15 actual fits,
   full9M probes/results, calibrated/joint method, lawful Pred/dense/full
   denominators and lockedfinal/report remainOPEN. Goal unachieved/unchanged.
+
+### 2026-10-13 23:01 CST — Owned GitHub connection recovery
+
+- Human requested independent endpoint investigation and reconnection. Fresh
+  checks found no 17890 listener; shared 7890 listened but GitHub TLS timed out.
+  Direct GitHub and direct NAS SSH also timed out. The configured NAS readonly
+  reverse endpoint 24557 was absent; NAS connectivity was NOT restored.
+- Existing scheduling-recovery documentation identified 17899 as a previously
+  usable HTTP proxy. Fresh HTTPS verification returned GitHub 200 and a real
+  branch read returned aa55113c15d006a9f0016d659743cde07872f25f. The anonymous
+  GitHub API probe returned rate-limit 403, not a transport failure.
+- Existing loopback relay passed eight tests (0.07s). Started a NEW owned,
+  detached relay from 17890 to 17899, loopback-only, maximum 16 connections,
+  without logging proxy traffic or changing shared proxy/SSH services. Observed
+  current relay PID 259944 and session 259944 with start time 23:00:53; these
+  are a point-in-time receipt, never authority to reuse a PID after restart.
+  Relay/upstream survival across another host reboot is not claimed. The cause
+  of the former relay disappearance remains unestablished.
+- Pending committed results were genuinely pushed and fetched through 17899:
+  HEAD/FETCH_HEAD/origin tracking all exactly
+  7bc92f536c9008596a9e08bf08c6293b51c69c8e. Restored 17890 independently returned
+  GitHub HTTPS 200 with TLS verification result zero, and live Git branch SHA
+  matched 7bc92f5. No tokens/private keys printed, global Git config changed,
+  foreign process restarted, data uploaded or research training launched.
+- Four uncommitted full-development source/test files remain separate pending
+  review and full tests; they are NOT published or actual experiment results.
+  Source-only preparation, M wall failure and all remaining scientific gates
+  retain their previous interpretation. Original Goal remains active/unachieved.
