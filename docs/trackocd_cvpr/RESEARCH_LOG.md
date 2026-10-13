@@ -4756,3 +4756,20 @@ no private GT/cache/weights opened for this check):
 - 11 targeted actual/pure gates and full806tests pass (46.17s). Current actual
   all-model qualification passes before private development inputs. Public
   summaries/receipts only will be registered/pushed; no private traces/assets.
+
+### Fresh full trained-M development launched after actual qualification
+
+- Preregistered/remote fetched and exact-ref verified5ddaf135be385ef659abf678aeeaeed4d991d1af.
+  NEW namespace M_GT_causal_dev_all_model_fingerprints_v1_relative_quarantine_s1027:
+  persistent launch AND actual fresh worker data launch present; own supervisor
+  PID/start/argv identity verified, own worker one OS thread/~614268KiB VmRSS.
+  Original all9/authority/source/actual ALL11 prerequisites passed before dev.
+- SAME frozen relative_quarantine1027 Fixed200 model. This is full development
+  EVALUATION, zero new training/optimizer/GPUh, original complete data/3orders/
+  ID/reverse/future/limits. Old failed namespace and partial metrics untouched.
+  No result/execution profile/terminal yet: launched is NOT completed.
+- Continue checking this exact namespace's live identity/progress and require
+  complete result + bound execution_profile + actual normal owned wait before
+  accepting metrics or starting remaining formal M trials. Never replay PID,
+  relaunch namespace, increase wall or promote partial orders. Goal active and
+  unachieved; full9M/freshbaselines/strongPred/joint/independent final remain open.
