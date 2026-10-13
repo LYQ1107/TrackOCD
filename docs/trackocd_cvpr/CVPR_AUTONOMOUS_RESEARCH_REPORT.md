@@ -684,3 +684,22 @@ supervisor e19468ea... unchanged, no proof ofeverymemorysample, no rerun/
 privateGT/cache/weight read. Scientific CLOSED-SET FAILURE unchanged, not
 discovery acceptance. Full610tests pass. Mremainingindependentseeds/allotherC
 dev/fairbaselines/self-exclusion/legalPred/lockedfinal stillopen; Goalactive.
+
+Second M seed's relative-quarantine fit is now complete (4/9 total): genuine
+fresh 200 updates, both policy-pseudo classes exposed, some quarantine in
+intermediate training episodes, but bad Known histories persist. No M dev
+or matched purity/coverage improvement has been measured. Public result
+`7ead572e...`; private weights/history retained locally.
+
+C Top-8 conditioned/1027 full three-order development is normally complete
+(2/9 trained endpoints evaluated), public `06323d59...`. Known accuracy is
+282/302, but 117/119 pseudo-Novel queries are absorbed as Known, only 2/119
+have anonymous commits and certified cross-video reuse remains zero. Actual
+ID and future checks pass; 100% total commit coverage is not discovery gain.
+Negative outcomes are retained, not replaced by selected seeds or new gates.
+
+M all-nine endpoint gate and causal rollout source are now prepared with
+synthetic tests. The metrics manifest explicitly keeps execution-driver
+status pending: no actual M development evaluation, strong Pred, matched
+self-excluded purity/coverage, joint method, or final/Goal acceptance follows
+from these source tests. Continue the frozen matrix and open research work.

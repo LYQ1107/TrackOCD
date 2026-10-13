@@ -3498,3 +3498,50 @@ new research scope; nothing has been deleted, no storage pressure is present.
   twoindependentMseeds pending; C onlyfirsttrainedendpoint evaluated, all8
   remainingcontrols pending. Resume nextfixedMseed andfixedCcontrol, preserving
   fullgoal/budgets/asset boundaries; no pause/completion from readback.
+
+### Second M seed begins; Top-8 C development remains closed-set dominated
+
+- Rechecked actual files after tool observation handles expired. Both owned
+  terminals report exit 0, no guard reason, and normal successful execution;
+  no task was restarted on the basis of an expired handle.
+- M relative_quarantine/1028: four complete policy episodes and fixed 200
+  optimizer updates, 161 parameters, a fresh initialization distinct from
+  seed 1027. Public result SHA256
+  `7ead572e684de3ad448cf353e2df30b2deb3e01d6096df3c4bb22be471236d1a`;
+  fixed endpoint SHA256
+  `316db258f372e4ebcfe802200efb69c7854ebe7e1477cd46f702b74a9b532744`.
+  Actual optimizer exposure: Known 491 groups, policy-pseudo 122 groups,
+  both policy-pseudo classes, targets one/zero/fractional = 358/249/6.
+  Quarantined version records per episode: 0/184/824/0. Latest-version
+  verified bad anonymous Known histories: 30/81/203/28. These are training
+  diagnostics, not matched coverage, active-purity, or development gains.
+  Five Known actions in episode 1 leave 1263 anonymous commits, not 1268;
+  full physical observation denominator stays 1268. Private histories and
+  weights remain local. Worker 414.07 s, total 423.12 s, RSS 949760000 B,
+  CPU-only/zero training GPU-hours. M fits now 4/9.
+- C Top8_conditioned/1027: all three full development orders completed,
+  472 physical tracks / 8753 observations / 2562 frames / 116 empty frames,
+  actual full ID/reversed-delivery check and 39-observation future probe pass.
+  Public result SHA256
+  `06323d59e5d605f31e52551a8681b9f5c79374c6f7498e8ebec8dd683e87388e`.
+  Each order: KNOWN/EXISTING/NEW actions = 8614/131/8; at all-available
+  Known accuracy 282/302, 117/119 pseudo queries absorbed as Known, only
+  2/119 anonymous commits, certified cross-video reuse lower bound zero.
+  All-commit coverage 100% is not discovery/reuse coverage. Worker 536.02 s,
+  total 543.11 s, RSS 960847872 B, one OS thread, no CUDA/optimizer.
+  Normal owned success does not change the negative scientific conclusion.
+  Two of nine trained C endpoints now evaluated; no seed/model selection.
+- Added source-only M development cohort/rollout prerequisites and explicit
+  metrics manifest. ALL 27 public cohort records must exist before private
+  endpoints; fixed all-nine fits, normal terminals, fresh seed binding,
+  numeric source and endpoint fingerprints required. Only exact Git-pinned
+  original/optimized immutable-copy implementations are accepted. New source
+  passes synthetic Mean/state-EMA/three M-family causal and ID probes; this
+  is NOT a private development run. Execution driver remains pending.
+- Continue unchanged M/C matrix and then real matched baseline/coverage
+  development. Strong legal Pred, self-exclusion, joint mechanisms, final
+  lock and Goals A/B/C remain open. Goal active, no protected split access,
+  no new cache, no cleanup or foreign process changes in this stage.
+- Full 619 tests passed in 72.31 s, including exact new public result hashes,
+  normal terminals, negative-outcome boundaries, and source-only prerequisites.
+  Commit/push/fetch/ref verification is required before subsequent workers.

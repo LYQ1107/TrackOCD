@@ -1,0 +1,22 @@
+{
+  "status": "REGISTERED_CAUSAL_M_METRICS_AND_ROLLOUT_ALL9_FITS_REQUIRED_EXECUTION_DRIVER_PENDING",
+  "data_config": "configs/trackocd_cvpr/C_GT_causal_development_v1.json",
+  "models": ["Mean_latest", "StateEMA_latest", "relative_quarantine", "relative_weighted", "pooled_weighted"],
+  "training_seeds": [1027, 1028, 1029],
+  "order_seeds": [1027, 1028, 1029],
+  "baseline_seeds_are_not_independent_training_runs": true,
+  "physical_tracks": 472, "observations": 8753, "metadata_frames": 2562, "empty_frames": 116,
+  "raw_fixed_thresholds": {"tau_known": 0.65, "tau_existing": 0.55},
+  "prefix_snapshots": [1, 2, 4, 8, 16],
+  "max_versions": 65536,
+  "before_any_private_GT": "Freshregistered source/authority/qualifiedcache and ALL9 actualfixed200 Mfit owned-success/source/window/loss/endpoint checks. Declared copy-only implementation difference permitted, not falsely byte-identical firsttrial.",
+  "memory_baselines": "Zero-fit latest-mean(momentum0) and frameatomic stateEMA(momentum.9), no per-prefix independentvote claim; sameuncappedphysicalclock/Rawprior/K8/thresholds andappend-onlyactualversionhistory.",
+  "metrics": "Chosen PRE-FRAME versionstrictancestor-history certifiedcrossvideo reuse lowerbounds/302Known/119declaredpseudo/472commit coverage; allownprevious/actualtransfer parents/tombstones retained. Unknown51 not BG/Novel. Currentactivepurity NOTinferred from hashes/counts; this is NOT officialCT/fullsemanticGT/self-excludedindependence or Pred.",
+  "coverage": "Publish fullphysical allcommit and declaredpseudo anonymouscommit/absorption/reuse perprefix, no posthoc subsetmatching or callingempty memory pure. Unequal independentreuse/latency coverage explicitly INCOMPARABLE, not an acceptedpurity win.",
+  "required_actual_checks": "Full first-order IDbijection/reversedelivery and realfuture-suffix cachedvisual mutation/sealedpast invariance beforecomplete result, unavailable/no-op probe not pass",
+  "execution_device": "CPU", "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472, "wall_seconds_ceiling": 3000, "output_bytes_ceiling": 16777216,
+  "optimizer_steps": 0, "select_model_or_checkpoint": false,
+  "final_Val_Test_encoder_externalweights_newNonKnown_truth_or_vocabulary": false,
+  "execution_or_Model_Goal_acceptance_from_this_manifest": false
+}
