@@ -1,0 +1,34 @@
+{
+  "status": "REGISTERED_FULL_POLICY_CONTROLLER_RAW_CACHE_SHADOW_ALL9_ENDPOINTS_REQUIRED",
+  "data_config": "configs/trackocd_cvpr/memory_optimizer_pilot_v1.json",
+  "numeric_qualification": "outputs/trackocd_cvpr/cvpr4/qualified_frozen_raw_statistics_v1/result.json",
+  "numeric_qualification_sha256": "35743611e5eb395bd4091fac50b9e815515a6404c2f95ad5328c594580144f57",
+  "models": [
+    "Mean_latest",
+    "StateEMA_latest",
+    "relative_quarantine",
+    "relative_weighted",
+    "pooled_weighted"
+  ],
+  "training_seeds": [
+    1027,
+    1028,
+    1029
+  ],
+  "order_seed": 1027,
+  "scope": "Entire10policy videos/54physical/1268observations/374metadataframes/1empty, no frame/subset pruning. Twozero-fit baselines andall9fixedtrainedMendpoints, OLD andcache fullfreshreplays. No newoptimizer/checkpoint/seed selection.",
+  "required_equality": "All outcome counters/prefixes plus EVERYactual event/score/candidatefeature/chosenversion/numericversionhistory ledger and routed predictions. IDs/GTneverinputs tocache. Separate private trace digest only, no raw row upload.",
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 3145728,
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/M_member_feature_cache_shadow_v1",
+  "old_full_development_failure": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_v1_Mean_latest_supervisor_attempt_1.json",
+  "old_failure_overwritten_or_guards_relaxed": false,
+  "full72development_parity_speedup_purity_or_Goal_acceptance": false,
+  "cache_execution_profile": "RAW32MiB_SHA15.5MiB_MEMBER_INPUT16MiB_TEMP_INDEX0.5MiB_TOTAL64MiB",
+  "qualified_all11_result_sha256": "9b552ebd1f3919d2f697df034aa3843d4a98fa39b08ea8be53716a52b52f595f",
+  "preserved_full_M_RAM_retry_terminal_sha256": "97b6ee70217340a4a4dd2a094469343ef6a74f03d25995f81bf09c9abf3193da",
+  "learned_output_memo_controller_refresh_skip_or_full_development_use": false
+}

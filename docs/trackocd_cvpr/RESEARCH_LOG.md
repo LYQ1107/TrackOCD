@@ -5434,3 +5434,42 @@ no private GT/cache/weights opened for this check):
   Full9M/probes, fair calibrated controls, joint R/C/M, legal strongPred and
   locked independent-final/report remainOPEN. Negative baselines do not end
   GoalA/B/C; original Goal active/unachieved, no model/checkpoint selected.
+
+### 2026-10-14 — Registered input-only M runtime memo qualification source
+
+- Previous goal turn completed/published all15 native baselines/full90 cases;
+  this is concrete scientific progress, not a wait or overall acceptance. Fresh
+  process inventory finds no owned full-M/baseline worker;98.14GB available RAM
+  exceeds25%reserve+3GiB planning margin. Existing strict TLS GitHub route live.
+- Latest trained-M full-dev RAM retry is genuinely terminal: unchanged3000s
+  wall stop/-9/noresult, all3 main orders done but full probes absent. Preserve
+  SHA97b6ee70... and namespace; no partial metric salvage or unchanged rerun.
+  Earlier complete policy profile supports examining repeated snapshot lookup
+  and numeric member feature construction; it is NOT proof of full-dev cause.
+- NEW source-only input memo uses complete ordered FP32 Raw/quality/observed
+  count bytes, not IDs/digests/learned outputs. Original member feature operations
+  on misses and fresh exact FP32 outputs on hits; gradients/noncontiguous/nonCPU
+  inputs keep original path. Invalid values refuse, oversized complete calls
+  recompute without pruning. Model logits/prototypes always computed afresh.
+- Current immutable bank tuple lookup is validated once during refresh only;
+  borrowed snapshot released afterwards, all original refresh/version/history/
+  lifecycle/decision operations retained. New logical budget partitions Raw32MiB,
+  SHA15.5MiB, numeric-input16MiB and temporary lookup bookkeeping0.5MiB within
+  existing64MiB derived budget; separate3GiB actualRSS/25%RAM/3000s guards remain.
+  Logical accounting is not a claim that Python allocator uses exactly64MiB.
+- Synthetic first fixture had one merged state, so whole-event parity passed
+  but lookup-hit assertion could not be exercised. Added an actual second
+  synthetic support state, not relaxed the hit gate. All24 targeted tests now
+  pass2.64s: miss/hit/mutation/eviction/gradient/invalid/model-change/restore plus
+  five complete synthetic controller families and frozen configuration gates.
+  Full920 tests pass51.55s, ownedwait0/no guard/53.0323s/peak808017920B.
+- Register fresh actual ALL11 OLD/NEW full-policy shadow using existing
+ 10videos/54physical/1268obs/374frames/1empty, twozero-fit controls+all9 actual
+  Fixed200 M endpoints. No new optimizer/data/weights/dev/final/Val/Test inputs.
+  Exact prior qualified ALL11 trace digests/result and latest full-dev failure
+  bind the gate; launcher/worker require fresh live/source/authority proof before
+  private inputs. Compare every event/score/version/ledger/outcome, with each
+  relevant cache actually exercised. Tests/source are NOT actual qualification;
+  all11 normal receipts required before any separate full-development proposal.
+  No full M launch, guard relaxation, model selection, speedup guarantee or
+  scientific Goal acceptance from this prospective source stage.
