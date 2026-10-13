@@ -6475,3 +6475,68 @@ no private GT/cache/weights opened for this check):
   public verifier/regressions/docs/status, not private weights/GT/calendars/
   scalar-label tables/progress/stdout. Remaining endpoint1028 launches only after
   publication/fetch/exact proof; keep one owned CPU compute worker at a time.
+
+### Actual second complete scalar-control dev trial: calendar1028 (2/4)
+
+- Previous turn made actual progress: first normal result published/fetched/
+  triple-SHA566e9372f35184d6ec0ddebbb8ab871ab73898ee and second endpoint
+  launched only after no live researcher was found. This turn verified SAME
+  boot/start/command supervisor549233/worker549431 until normal termination.
+  Historical PIDs now terminal, not restart instructions. Exit0/guardNONE,
+ 755.376670204s inclusive/964243456B peak/oneCPU+oneOSthread/no native helper/
+  noCUDA/zero trainingGPUhours. RAMavailable104396546048B of134792282112B,
+  free disk78829920256B on entry; no cleanup or foreign process interference.
+- ALL13 formal fingerprints before dev, own fixed calendar1028 endpoint. All
+ 72videos/472tracks/8753obs/2562frames/116empty in EACH3orders and complete
+  ID/reverse outcome+event parity/full future39obs perturbation prefix parity.
+  No optimizer, late checkpoint/threshold/bin/order selection or shortened probe.
+  Same7551eligible canonical groups4808Known/2743declared-pseudo/1202masked,
+ 11existing classes; all track tasks472physical/302Known/119pseudo/51masked.
+- Complete GROUP initial->formal microNLL0.714641857255->0.678680605764/
+  Brier0.260557177963->0.242853482258/ECE0.186443183680->0.134607738920
+  improve; classmacroNLL0.633307795708->0.677070470792/Brier0.220388133969->
+ 0.242027861622/ECE0.182533139556->0.245287767566 worsen. All-available
+  TRACK microNLL0.702945608085->0.650187862300/Brier0.254788661725->
+ 0.228742705041/ECE0.247378173126->0.193696955995 improve, classmacroNLL
+ 0.636911872000->0.683272052559/Brier0.222151422613->0.245113649692/
+  ECE0.188705539840->0.264080800297 worsen. Conditional role/class/observation
+  priors differ; not global calibration success/failure or a selected winner.
+- Full order Knownmicro0.125827814570/0.122516556291/0.145695364238,
+  Knownmacro0.201517241379/0.415739463602/0.428398467433; certified pseudo
+  crossvideo reuse microLB0.075630252101/0.109243697479/0.109243697479,
+  macroLB0.051903735632/0.094494047619/0.104910714286. Coverage1.0 all3;
+  pseudo Known-absorbed7/5/6, anonymous112/114/113 of119, unscorable-reuse
+ 182/187/184, tokens179/179/180 with mixed/unknown histories retained. Three-
+  order descriptive means Knownmicro0.131346578366/Knownmacro0.348551724138/
+  reuse microLB0.098039215686/macroLB0.083769499179, not independent replications.
+- Original result51774B SHA b05e7cd1fac3d448617525fab36b5bbec01ac10e8700812aac410ddc09d9b692;
+  launch5a72327f58f19ce322b5ae6345b63186de8a226ece053346d92ab42a5ec78790;
+  terminale9bc5813eefcc06ecf2b646e711320c7519b4738f67917fa146fb5123e3ecb58.
+  Public complete-trial/source/endpoint/clock/probe verification passes. No new
+  private GT/weights/scalar-table reads by receipt/reference checks.
+- Historical zero-fit Raw Top8 source/public reference separately qualified:
+  original exact88b5c56a814f2be9eaf7f760bcf172f7d248f3bd, immutable triplet
+  hashes; all original source hashes match that Git commit. Only two CURRENT
+  drivers differ (registration retry support and settled counter reaping),
+  original/current numerical/private-input/outcome/probe worker AST IDENTICAL,
+  all other actual numeric/input/clock sources unchanged. Actual offline prior,
+  dev scope and all3ordinal video schedules equal both new completed trials.
+  This is historical PUBLIC evidence, not rerunning Raw or matching wall latency.
+- New ALL4-only public comparator refuses before baseline aggregation if any
+  endpoint incomplete. Separates zero-fit Raw, three real calendar schedules,
+  ONE deterministic fullpolicy, original ALL6 paired C; allprefix/order outcomes
+  and per-endpoint conditional diagnostics retained, no best seed/model/order/
+  threshold/bin selection, fabricated independent solver seeds or fullposterior/
+  Hscore/CT/Goal claim. No private prediction row/GT/weight export. Seven new
+  reference/comparison regressions and actual second-trial test;52targeted tests
+  pass3.73s. First exploratory inline audit type error(str vs Path hashing) was
+  corrected without changing files/processes; no false success inferred from it.
+- Only2/4 endpoints complete; calendar1029 and ONE fullpolicy still required.
+  Original Goal active/unachieved. Fair measured coverage/latency, fullM/joint
+  R/C/M/lawful strongPred/dense/lockedfinal and Goal A/B/C remain OPEN.
+- Final bounded combined CVPR/v2 suite1113pass76.49s, ownedexit0/guardNONE/
+  inclusive78.587888214s/peak838631424B/zero trainingGPUhours. Eleven explicitly
+  public files only: second normal triplet, source/reference/comparator tests,
+  small Raw qualification, docs/status. Actual second result51774B unchanged,
+  no private .pt/GT/scalar-label tables/calendars/progress/stdout. ALL4 final
+  comparison remains pending; remaining endpoint1029 after exact publication.

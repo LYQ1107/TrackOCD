@@ -1795,3 +1795,36 @@ Final bounded CVPR/v2 suite1105pass75.15s, ownedexit0/guardNONE,76.8742s
 inclusive/864215040B peak/zero trainingGPUhours. Original public result51749B
 unchanged; first complete triplet/public verifier/tests/docs/status only, no
 private weights, scalar-target table, GT, calendar, progress or stdout export.
+
+## Second full scalar-control endpoint: 2/4, mixed conditional diagnostics
+
+Calendar1028 normal termination755.3767s/964243456B/oneCPU+oneOSthread/
+zero GPUhours; same complete72videos/472tracks/8753obs/2562frames/116empty
+in all3orders, fullID-reverse events/outcomes and39future-observation prefix
+probe. ALL13 private fingerprints before inputs, unchanged fixed formal head.
+Same group7551eligible/1202masked and track302Known/119pseudo/51masked
+denominators, no optimization/selection/unknown-as-negative.
+
+GROUP microNLL0.714642->0.678681/Brier0.260557->0.242853/ECE0.186443->
+0.134608 improve, but classmacroNLL0.633308->0.677070/Brier0.220388->
+0.242028/ECE0.182533->0.245288 worsen. TRACK all-available classmacroNLL
+0.636912->0.683272/ECE0.188706->0.264081 worsen while microNLL0.702946->
+0.650188 improves. Different role/class/sampling priors prohibit global
+calibration/control-winner conclusions. Per-order Knownmicro0.125828/0.122517/
+0.145695, reuse microLB0.075630/0.109244/0.109244, coverage1.0. Descriptive
+meansKnownmicro0.131347/Knownmacro0.348552/reuse microLB0.098039/macroLB
+0.083769; no independent order-replication claim or full semantic purity.
+Result`b05e7cd1fac3d448617525fab36b5bbec01ac10e8700812aac410ddc09d9b692`,
+terminal`e9bc5813eefcc06ecf2b646e711320c7519b4738f67917fa146fb5123e3ecb58`.
+
+Historical PUBLIC Raw reference verified against original88b5c56a... commit/
+immutable receipts. All numeric sources unchanged; two supervision/registration
+driver changes preserve identical numerical/input/probe worker AST. Actual
+prior/dev/ordinal schedules equal new completed trials, not a latency match or
+new private evaluation. ALL4-only comparator added; zero-fit Raw/3calendar
+schedules/ONE fullpolicy/original6C remain distinct, no selected outcome, fake
+solver seeds or private rows.52targeted tests pass3.73s. Only2/4trials complete;
+calendar1029/fullpolicy pending, full scientific/strongPred/dense/final Goal open.
+Final bounded CVPR/v2 suite1113pass76.49s, ownedexit0/guardNONE,78.5879s
+inclusive/838631424B peak/zero GPUhours. Eleven public files only, original
+second result51774B unchanged; no private weights/GT/scalars/streams/calendar.

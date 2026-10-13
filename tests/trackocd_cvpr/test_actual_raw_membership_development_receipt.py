@@ -15,6 +15,14 @@ def test_actual_first_complete_raw_membership_dev_has_all_clocks_and_probes_not_
     assert not proof['full_deployment_calibration_fair_match_control_winner_or_Goal_accepted']
 
 
+def test_actual_second_complete_raw_membership_dev_retains_distinct_fixed_endpoint_and_same_clock():
+    a = receipts.verified_trial(ROOT, CONTROL, SEED)
+    b = receipts.verified_trial(ROOT, CONTROL, 1028)
+    assert a['result_sha256'] != b['result_sha256']
+    assert b['all3_full_orders_and_complete_probes_verified']
+    assert not b['private_weights_or_GT_loaded_by_verifier']
+
+
 def forbid_private_stat(monkeypatch):
     original = Path.stat
     def guard(path, *args, **kwargs):
