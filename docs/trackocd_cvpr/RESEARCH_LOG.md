@@ -5512,3 +5512,13 @@ no private GT/cache/weights opened for this check):
   Only source/tests/small public results and profiles staged; private data,
   weights, shards, traces and runtime logs remain local. Original Goal active,
   calibrated/joint R/C/M/strongPred/dense/locked-final scientific gates OPEN.
+
+- Actual complete-policy receipt+full-M source published/fetched/exact-remote
+  c099c5ac6e7f575b55f6f9a2f84284cbab26990e. A NEW full relative_quarantine/1027
+  worker independently passed all real ALL11/profile/remote/source/cohort/input
+  gates at that commit; no old attempt overwritten or old progress resumed.
+  Point-in-time owned supervisor318434/startticks1806274 and child318447 were
+  matched current UID/script/kernel state/parent relation; boot-bound startup
+  observation stored separately. This is live execution, NOT normal completion
+  or an accepted metric. All original3000s/3GiB/25%RAM/probes retained, zero
+  optimizer. PIDs/terminal handles are evidence only, never authority to reuse.
