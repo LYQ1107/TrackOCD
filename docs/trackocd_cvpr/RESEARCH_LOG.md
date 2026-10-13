@@ -3424,3 +3424,56 @@ new research scope; nothing has been deleted, no storage pressure is present.
   calibrated/freshA1A2/EMA/coverage/selfexcluded baselines, licensedstrongPred
   and lockedfinal. Goalactive; meaningfulnegativeevidence not reason to pause,
   discardfailedseeds, substituteplumbing acceptance or endwhole scientificgoal.
+
+### First trained C dev exposes closed-set collapse; pooled M first seed complete
+
+- Previousgoalturn delivereda5ab89b actualpush/fetch/refverified and genuine
+  Rfulldata/M2 parity: progress. SameownedMhandle61239 nowterminalexit0,
+  pooled_weighted/seed1027/fixed200/161parameters/fourfullpolicyepisodes.
+  PublicSHA9e0c41b34eef69b16f6ef6475359bc1843b444f3c39b78fea82a0ad0f74c947d;
+  exact12515B endpointSHA9d84f34ec27243fc9576fffc9649ec2b146f1e9f158efbbad02cbde828259315,
+  afterbcf076c392dad75939e0256ba363b2c535e13a4ba8ffc48a16030346cec5f95a.
+  Sameinitiale9b7aa64... asbothmatchedcontrols, differentlearnedendpoint;
+  NOTanotherindependentseed. Known518/pseudo90actualgroups/ONEpseudo class,
+  targetone456/zero152. Policyactions1223/1223/1224/1223Existing, strictlatest
+  Knownbad32/28/31/31 unchanged, confirmedrecords243/150 inlasttwoepisodes.
+  No semanticgain from counts/confirmation; M3/9firstseedtripletcomplete.
+  Owned256.81884896s/worker250.206185033s/RSS951320576B/11OSthreads/noCUDA/
+  0GPUh, private8429346B actualhistory retained, neveruploaded.
+- FirsttrainedC dev Top1_conditioned/1027 worker wrotecomplete publicresult
+  SHA1dca96ab2c4dbfa3090ee52b346226d86c946029a19cf033b1ddfde02d7ae3ec:
+  all3orders/full72/472/8753/2562/116empty/fullIDreverse+39futuremutation gates.
+  EVERY8753physicalobservation emittedKNOWN inEACHorder. Atallavailable:
+  Known282/302=.933775/macro.959433, ALL119declaredpseudo queries absorbed
+  asKnown,0anonymouscommits/0certifiedreuse/0histories. Commitcoverage100%
+  cannot standin for novelty/reuse coverage or repairedmemorypurity. This
+  fixesclosed-setrecognition versusgreedyRaw butdoesNOT solve discovery.
+- Criticalexecutionreceipt: actualownedPopenexit0, supervisororiginalsuccess
+  FALSE withreasonowned_memory_counter_unavailable; publicterminalSHA
+  e19468ea38d9f348c60b3e41a39fc027e427742d5ecf5e6bc2cd320d13a9ea08.
+  LastobservedworkerRSS963325952B/ONEOSthread/344.383993164s, total350.384240694s,
+  belowregisteredlimits. Do NOTrewriteoriginalflag or claim normal supervisor
+  acceptance. Existingcounter-error pathcanraceprocess exit beforewaitreaps
+  it; future supervisorbrieflywaitsONLYitsactualPopenchild(.1s), STILL-LIVE
+  unreadablecounter workers remainfail/stop, otherRAM/time/outputguards intact.
+- RegisteredPUBLIC-ONLY readback planned: exactimmutableworker/terminal hashes,
+  executedsourcefingerprints checkedagainstoriginala5ab89b, actualexit0,
+  completefixedscope/frozenstate/invariance/withinlimits/counter-onlyreason.
+  Separatequalificationreceipt, no PID reuse/privateGT/cache/weights reread,
+  rerun/resampling/modelselection or originalreceipt overwrite. Not proof
+  that everyparent memorysample existed. Result remainsprovisionaluntil
+  thisfreshregistered readbackactuallyexecutes; no scientificwin eitherway.
+- Newchosen-versionexternalGT-control audit uses<=4096physicalbitsets for
+  completepastancestor/member unions, preservingallactualparents/commits/
+  tombstones. Existingmustreferencepre-frame watermark/version; postframe
+  peerGT cannot certifyearlierdecisions. Short/unknown/full denominators kept,
+  pastsealedcorrectness immutable afterlaterpollution. Failure/bound/missing/
+  futureparent freezeswholeaudit asfailed, not favorablepartialsubset.
+  These historicalreuse bounds areNOTcurrentactivepurity/self-exclusion/
+  officialCT/fullsemantictruth/qualifiedPred. Source+synthetic only; all9M
+  fits andseparateregisteredmatchedbaseline/coverage eval stillrequired.
+- Full609tests PASS39.88s, actualCterminal exception/nongain checks, lifecycle
+  bitset/lateKnownpollution/unknown/IDpermutation/future-version refusals and
+  exactfirstseedMtriplet receipts verified. Stopnothingexternal, noprotected
+  data access/newcache orGoalpause/completion. Register/push/fetch/refverify
+  beforepublicreadback andnextunchangedMseed/Cfitdev.

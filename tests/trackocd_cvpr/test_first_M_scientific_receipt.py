@@ -41,3 +41,22 @@ def test_actual_second_M_control_has_exact_summary_parameter_and_private_trace_p
     assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
     assert terminal['guard_stop_reason'] is None and terminal['last_persisted_completed_optimizer_steps'] == 200
 
+
+def test_actual_pooled_M_control_completes_first_seed_triplet_without_fake_independent_seeds():
+    out = OUT.with_name('M_GT_window_v1_pooled_weighted_s1027')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == '9e0c41b34eef69b16f6ef6475359bc1843b444f3c39b78fea82a0ad0f74c947d'
+    r = json.loads((out / 'result.json').read_text()); full = json.loads((OUT / 'result.json').read_text())
+    assert r['variant'] == 'pooled_weighted' and r['seed'] == 1027
+    s = r['summary']; assert s['optimizer_steps'] == 200 and s['trainable_parameters'] == 161
+    assert s['model_parameter_sha256_before'] == full['summary']['model_parameter_sha256_before']
+    assert s['model_parameter_sha256_after'] != full['summary']['model_parameter_sha256_after']
+    assert s['actual_optimizer_family_groups'] == {'Known': 518, 'policy_pseudo': 90}
+    assert s['actual_optimizer_policy_pseudo_classes'] == 1
+    assert r['endpoint'] == {'bytes': 12515, 'sha256': '9d84f34ec27243fc9576fffc9649ec2b146f1e9f158efbbad02cbde828259315', 'reopen_exact': True}
+    for episode in s['episodes']:
+        assert (episode['videos'], episode['metadata_frames'], episode['physical_observations'], episode['empty_frames'], episode['optimizer_steps']) == (10, 374, 1268, 1, 50)
+        assert episode['external_strict_version_lineage']['all_parent_history_and_empty_tombstones_retained']
+    terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
+    assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0 and terminal['guard_stop_reason'] is None
+    assert not r['three_seed_M_strict_CT_Pred_or_Goal_accepted']
+

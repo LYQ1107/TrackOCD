@@ -29,6 +29,19 @@ SOURCES = (CONFIG, 'scripts/trackocd_cvpr/qualify_policy_training_input.py',
     'configs/trackocd_cvpr/autonomous_research.json')
 
 
+def settled_after_counter_error(child):
+    """A dying owned child can lose /proc counters before poll reaps it.
+
+    Briefly reap ONLY the actual Popen child; a still-live unobservable worker
+    is NOT excused. Exit codes and all real RAM/time/output guards remain.
+    """
+    try:
+        child.wait(timeout=.1)
+        return True
+    except subprocess.TimeoutExpired:
+        return False
+
+
 def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify_policy_training_input.py'):
     if worker_script not in ('scripts/trackocd_cvpr/qualify_policy_training_input.py',
                              'scripts/trackocd_cvpr/pilot_candidate_optimizer.py',
@@ -64,6 +77,7 @@ def supervise(args, cfg, safety, *, worker_script='scripts/trackocd_cvpr/qualify
                 except (FileNotFoundError, ProcessLookupError): terminal = False
                 if terminal: child.wait(timeout=1); break
                 if child.poll() is not None: break
+                if settled_after_counter_error(child): break
                 if time.monotonic() - started > 2: reason = 'owned_memory_counter_unavailable'; child.kill(); break
                 time.sleep(.2); continue
             reason = resources_ok(cfg, safety, ROOT, started, peak)

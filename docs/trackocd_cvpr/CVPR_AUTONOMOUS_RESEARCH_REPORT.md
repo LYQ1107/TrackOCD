@@ -651,3 +651,27 @@ from zero excludedmembers. M2/9, sameONEpseudo-class exposure limitation.
 Full596tests pass aftercorrecting overbroadR5 testassertion and its unrelated
 approxsyntaxerror; rawresults immutable. AllremainingC/Mcontrols/strongPred/
 fairbaselines/lockedfinal and GoalsA/B/C open; originalGoalactive/unachieved.
+
+M firstseed triplet now complete (3/9fits): pooledweighted200actualupdates/
+ownedexit0/fullpolicy/same161nominalparameters/initialseed, differentendpoint.
+Known518/pseudo90groups,ONEpseudo-class limit; strictKnownbadfinalstatecounts
+32/28/31/31, Existingfrequency unchanged. No gain frompromotion or a third
+independentseed implied. Public9e0c41b3...; privatehistory/weights notuploaded.
+
+FirsttrainedC Top1/1027 fullworkerresult produced: all3orders8753KNOWNactions,
+Knownaccuracy282/302=.933775,119/119pseudo absorbedKnown,zeroNovelreuse/anonymous
+memory at100%commitcoverage. CLOSED-SET COLLAPSE, not researchsuccess, unlike
+rawKnowncollapse. ActualID/future invariance passes. However originalsupervisor
+markedFALSE(counterunavailable) withactualPopenexit0. Result is PROVISIONAL
+pendingregistered separatepubliconlycompletionreadback; originalfailedreceipt
+mustremainimmutable. Futurecountererror reapsdyingownedchildbriefly, still-live
+unobservablechild andrealRAM/time/outputguard failures NOTexcused. No rerun
+forfavorablemetrics. Publicworker1dca96ab.../terminale19468ea... preserved.
+
+ExternalM chosenversion bitset-auditor source/tests preservewholepast lineages
+withoutGTfeedback/pruning; no postframepeer certification, unknown notBG,
+pastversions immutable. Not currentactivepurity/self-excludedsupport/fullGT
+semantictruth/officialCT/Pred. Source-onlybeforeall9-fit/registeredMdev gates.
+Full609tests pass; publicreadback notyetexecuted atthisrecord. Mremainingseeds,
+allCtrainedcontrols/qualifiedlegalPred/faircoverage/baselines/lockedfinal and
+GoalsA/B/C remainopen; Goalactive/no smaller-success substitution.
