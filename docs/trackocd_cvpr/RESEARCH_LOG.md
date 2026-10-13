@@ -3709,3 +3709,47 @@ no private GT/cache/weights opened for this check):
   preserved original transport failure, alias-scope/video exclusion invariance,
   explicit empty tombstones and fabricated-payload refusal. No private assets
   or protected split labels opened by the new source-only exclusion tests.
+
+### Third M seed starts with a complete fit; second C registration failure preserved
+
+- Previous `21f3d6180cdbcad9165cfacf77e2cca8d72de14c` delivery was pushed,
+  fetched and exact-ref verified. M relative_quarantine/1029 completed normally:
+  public result SHA256
+  `06d60507428e03b97c6f05c6d46661f563e6ecf7514582f89744e1260e663bbc`,
+  fixed endpoint `08891915c65ceaa6b6ed1b025cc3e48f90e1f1bbedb2d51f088331a63f780941`.
+  Fresh initial `7daf96df...` differs from both preceding seeds; 200 actual
+  updates/161parameters/fullfourpolicyepisodes. Optimizer Known/pseudo groups
+  577/113, both pseudo classes, one/zero/fractional targets432/238/20.
+  Latest bad Known histories28/29/31/31, final also1mixed-pseudo history,
+  all actual commits/parents retained. Zero Quarantined lifecycle records does
+  NOT establish zero excluded active members or a mechanism win. Worker310.33s,
+  total320.37s, RSS949321728B/11OSthreads/CPU/zero training GPU-hours.
+  M7/9fits complete; no M development yet.
+- C Top8_pool_context/1028 supervisor actually exited1 after the worker's
+  fresh registration failed before any output directory/private-input stage.
+  Normal terminal SHA256
+  `e6315ce9eb14c5b583c8ecfe9d3e46a6a7eb8abb13e72e342e1c78a9292a987c`;
+  successFALSE/no guard reason/total14.23s/RSS80199680B/zeroGPUh. Local-only
+  original traceback fingerprint `fcde981a...` is preserved, not uploaded.
+  This is not a development metric or trained-seed failure; C remains5/9.
+- Registered one exact-source/config/failed-terminal/traceback-bound C namespace
+  recovery, only Top8_pool_context/1028. It changes output prefix ONLY and
+  replays the entire fixed three-order protocol; no partial metrics, new seed,
+  guard relaxation, scientific rerun or original overwrite. Old Raw interrupted
+  transport recovery remains a separate unchanged rule. Actual caller source
+  is bound to21f3d61/b8a109ee..., C scientific/data config14b408e6... unchanged.
+  No live M dependency was edited; C evaluation scripts were not dependencies
+  of the in-flight M worker, and shared numeric sources/supervisor untouched.
+  Future launches will be sequential through successful source registration;
+  avoiding a connection burst is a precaution, not a proven proxy diagnosis.
+- Read existing local MASA native/AMG source only while waiting: native proposal
+  route has disclosed50-per-image cap, AMG wrapper uses fixed no-crop generic
+  point grid with no proposal cap and mask stability (NOT foreground posterior).
+  No model import/weights/pixels/evaluation/cache/prompt access occurred. These
+  are source contract facts, not proof of supervision legality, stronger
+  coverage, dense frame availability or primary Pred qualification. Existing
+  57-video/cap16 cache and historical Val metrics remain references, not the
+  new407-video protocol or selection evidence. Strong legal Pred still open.
+- Full646tests passed in59.45s, including actual third-M-seed dirty-history
+  receipt, namespace-only C recovery and unchanged old Raw recovery rules.
+  Register/push/fetch/ref verify before any new recovery/private-input worker.

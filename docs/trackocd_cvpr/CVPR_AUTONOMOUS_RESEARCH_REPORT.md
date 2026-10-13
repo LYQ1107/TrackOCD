@@ -755,3 +755,16 @@ or current-video support without editing real memory/dirty histories. Pinned
 internal bank dependency is explicit. This does not yet establish actual
 self-excluded evaluation, independent semantic support, matched purity/coverage
 or strong legal Pred. Full Goal remains unachieved and active.
+
+M third-seed first control now completes (7/9fits), public `06d60507...`:
+fresh independent initialization/fixed200/fullpolicy, normal owned terminal.
+Bad Known histories and one final mixed-pseudo history remain; no development
+or purification gain inferred from training diagnostics.
+
+C pooled/1028 evaluation launch separately failed at pre-input registration,
+original terminal `e6315ce9...` retained. Exact namespace-only full replay is
+registered, not yet complete at this record; raw traceback stays local.
+C remains5/9evaluated. Strong Pred remains unqualified: existing image-only
+MASA source options do not themselves establish legal supervision, dense input
+coverage or new407-video physical performance. Remaining matrices, fair
+baselines, self-excluded measurements/joint training and locked final are open.

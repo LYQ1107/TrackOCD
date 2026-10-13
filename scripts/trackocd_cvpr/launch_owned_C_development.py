@@ -36,7 +36,7 @@ def main():
     parser.add_argument('--git-proxy', default='')
     parser.add_argument('--model', choices=MODELS, required=True)
     parser.add_argument('--seed', choices=(1027, 1028, 1029), type=int, required=True)
-    parser.add_argument('--recovery-attempt', choices=('transport_retry1',))
+    parser.add_argument('--recovery-attempt', choices=('transport_retry1', 'registration_retry1'))
     args = parser.parse_args()
     if args.model.startswith('Raw_') and args.seed != 1027:
         raise ValueError('Raw is not three independent trained seeds')

@@ -15,6 +15,7 @@ from src.trackocd_cvpr.remote_registration import verify_registration
 from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from scripts.trackocd_cvpr.qualify_policy_training_input import supervise
+from src.trackocd_cvpr.C_registration_recovery import registration_recovery
 
 CONFIG = 'configs/trackocd_cvpr/C_GT_causal_development_v1.json'
 RECOVERY = 'configs/trackocd_cvpr/C_development_transport_retry1.json'
@@ -22,6 +23,7 @@ VARIANTS = ('Top1_conditioned', 'Top8_conditioned', 'Top8_pool_context')
 SEEDS = (1027, 1028, 1029)
 MODELS = ('Raw_Top1', 'Raw_Top8', *VARIANTS)
 BASE_SOURCES = (CONFIG, 'scripts/trackocd_cvpr/evaluate_C_development.py',
+    'src/trackocd_cvpr/C_registration_recovery.py',
     'src/trackocd_cvpr/C_development_rollout.py', 'src/trackocd_cvpr/causal_category_audit.py',
     'src/trackocd_cvpr/R_development_evaluation.py', 'src/trackocd_cvpr/R_development_metrics.py',
     'src/trackocd_cvpr/fit_R_training.py', 'src/trackocd_cvpr/fit_loss_supervision.py',
@@ -48,6 +50,8 @@ def recovery_configuration(root, cfg, args):
     """Only output namespace may differ; preserve every scientific/guard key."""
     if getattr(args, 'recovery_attempt', None) is None:
         return dict(cfg), ()
+    if args.recovery_attempt == 'registration_retry1':
+        return registration_recovery(root, cfg, args)
     r = json.loads((root / RECOVERY).read_text())
     if (args.recovery_attempt != 'transport_retry1' or args.model != r['allowed_model']
             or args.seed != r['allowed_seed'] or r['original_config'] != CONFIG
@@ -209,7 +213,7 @@ def main():
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--model', choices=MODELS, required=True)
     parser.add_argument('--seed', type=int, choices=SEEDS, required=True)
-    parser.add_argument('--recovery-attempt', choices=('transport_retry1',))
+    parser.add_argument('--recovery-attempt', choices=('transport_retry1', 'registration_retry1'))
     args = parser.parse_args(); cfg = json.loads((ROOT / CONFIG).read_text())
     if args.model.startswith('Raw_') and args.seed != 1027: raise ValueError('Raw not fake independent trained seeds')
     cfg, _ = recovery_configuration(ROOT, cfg, args)

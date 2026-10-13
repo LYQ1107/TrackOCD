@@ -1,0 +1,18 @@
+{
+  "status": "PRE_INPUT_REGISTRATION_RECOVERY_ONLY_C_PROTOCOL_UNCHANGED",
+  "allowed_model": "Top8_pool_context",
+  "allowed_seed": 1028,
+  "original_config": "configs/trackocd_cvpr/C_GT_causal_development_v1.json",
+  "original_config_sha256": "14b408e643958f2ce05f55462bbde5ac673eab319ec9e957e55da8a95e951657",
+  "original_execution_commit": "21f3d6180cdbcad9165cfacf77e2cca8d72de14c",
+  "original_worker_source_sha256": "b8a109eee2eeb889d3172ee26100e712565b0eb5d239bf313753f109b1927f22",
+  "original_attempt": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Top8_pool_context_s1028",
+  "original_terminal": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Top8_pool_context_s1028_supervisor_attempt_1.json",
+  "original_terminal_sha256": "e6315ce9eb14c5b583c8ecfe9d3e46a6a7eb8abb13e72e342e1c78a9292a987c",
+  "local_only_original_stdout": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Top8_pool_context_s1028_persistent_stdout.log",
+  "local_only_original_stdout_sha256": "fcde981a9318614581507b66431bc88a62986976b027a6dfcc8548fe1597edd3",
+  "output_prefix": "outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_registration_retry1",
+  "observed_error": "RuntimeError: Both bounded live remote-ref transports failed; private input gate remains closed",
+  "resume_partial_metrics_or_change_scientific_protocol_or_guards": false,
+  "original_attempt_overwrite": false
+}
