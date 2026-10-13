@@ -675,3 +675,12 @@ semantictruth/officialCT/Pred. Source-onlybeforeall9-fit/registeredMdev gates.
 Full609tests pass; publicreadback notyetexecuted atthisrecord. Mremainingseeds,
 allCtrainedcontrols/qualifiedlegalPred/faircoverage/baselines/lockedfinal and
 GoalsA/B/C remainopen; Goalactive/no smaller-success substitution.
+
+Completion-observation update: registered8213426 public-only readback actually
+executed, oldsource SHAset verified againsta5ab89b, actualcomplete worker/exit0/
+fullscope/frozenmodel/invariance/resources checked. Separate889df238... receipt
+qualifiescompleteworker withcounter-observation exception; originalfailed
+supervisor e19468ea... unchanged, no proof ofeverymemorysample, no rerun/
+privateGT/cache/weight read. Scientific CLOSED-SET FAILURE unchanged, not
+discovery acceptance. Full610tests pass. Mremainingindependentseeds/allotherC
+dev/fairbaselines/self-exclusion/legalPred/lockedfinal stillopen; Goalactive.

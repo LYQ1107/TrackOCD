@@ -1,5 +1,6 @@
 from copy import deepcopy
 import json
+import hashlib
 from pathlib import Path
 import subprocess
 import pytest
@@ -53,3 +54,16 @@ def test_nonzero_exit_memory_violation_missing_order_and_actual_invariance_failu
         if change == 'order': del r['orders']['1029']
         if change == 'future': r['actual_future_probe']['verified_same_prior_events'] = False
         with pytest.raises(ValueError): qualified_completed_C(r, t, limits)
+
+
+def test_actual_registered_public_readback_receipt_preserves_failed_original_and_no_rerun():
+    path = OUT.with_name(OUT.name + '_terminal_requalification_v1.json')
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == '889df238859053535dce995a9ea428e32af227e25ed02d4ac2f394ab049d5280'
+    q = json.loads(path.read_text())
+    assert q['effective_completed_worker_qualification'] and q['executed_source_fingerprints_checked_against_original_commit']
+    assert q['own_Popen_wait_exit_code'] == 0
+    assert q['live_remote_registration_proof']['sha'] == '82134262bbc22db13f3a2a85f9f1f0009346c176'
+    assert not q['original_supervisor_successful_owned_execution'] and not q['all_supervisor_memory_samples_certified']
+    assert not q['original_failed_flag_rewritten_or_rerun_or_scientific_gain'] and not q['private_assets_or_GT_read']
+    assert hashlib.sha256(OUT.with_name(OUT.name + '_supervisor_attempt_1.json').read_bytes()).hexdigest() == q['original_terminal_sha256']
+    assert hashlib.sha256((OUT / 'result.json').read_bytes()).hexdigest() == q['result_sha256']

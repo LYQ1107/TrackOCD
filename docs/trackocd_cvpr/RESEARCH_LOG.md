@@ -3477,3 +3477,24 @@ new research scope; nothing has been deleted, no storage pressure is present.
   exactfirstseedMtriplet receipts verified. Stopnothingexternal, noprotected
   data access/newcache orGoalpause/completion. Register/push/fetch/refverify
   beforepublicreadback andnextunchangedMseed/Cfitdev.
+
+### Public-only terminal completion readback executed, original failure preserved
+
+- Fresh82134262bbc22db13f3a2a85f9f1f0009346c176 push/fetch/refverified before
+  actualscriptqualify_C_terminal_readback, ownedtoolhandle92322exit0. Original
+  executedsource SHAset checkedagainst a5ab89b Gitobjects, exactworker1dca96ab...
+  andfailedterminal e19468ea... hashes unchanged. All3orders/fullscope/frozen
+  model/actualID+future checks/resources/actualPopenwait0 verified, no GT/cache/
+  checkpoint/privatehistory read, no oldPID process use, no reeval/resampling.
+- Newseparate receiptSHA889df238859053535dce995a9ea428e32af227e25ed02d4ac2f394ab049d5280:
+  effectivecomplete-worker qualification TRUE withcounter-observation exception;
+  originalsupervisor.success FALSE remains, allsufficientmemorysamplescertified
+  FALSE remains. Not a blanketguard bypass: nonzeroexit/realRAM/time/output/
+  incomplete scope or failedinvariance rejected. TheactualCscientificoutcome
+  stays CLOSED-SET COLLAPSE (Known282/302, all119pseudoKnown, zeroanonymous),
+  not success or proof that protected final/Val/Test labels may nowbe read.
+- Full610tests PASS41.42s, immutableactualseparatereceipt/source/ref/readscope
+  andoriginalfailedhash checks included. Mfirstseedtriplet3of9 done, other
+  twoindependentMseeds pending; C onlyfirsttrainedendpoint evaluated, all8
+  remainingcontrols pending. Resume nextfixedMseed andfixedCcontrol, preserving
+  fullgoal/budgets/asset boundaries; no pause/completion from readback.
