@@ -5656,3 +5656,25 @@ no private GT/cache/weights opened for this check):
   posthoc schedule change nor skipped Known/pseudo physical frames permitted.
   FullM/runtime, calibrated Raw, actual C mechanism/joint/Pred/dense/lockedfinal
   stay OPEN. Original Goal active/unachieved; no science gain claimed.
+
+### Registered read-only Known-anchor frame opportunity audit
+
+- Previous real paired50 pilot is normal but uninformative:206full-rollout
+  rejection opportunities/0onupdates/0extra gradient. Preserve exact result,
+  do not expand or change seed/steps. Fresh branch clean360e2c7, no live owned
+  M/paired/freshfit;100.70GB availableRAM/free158.16GB, no cleanup/install/GPU.
+- NEW scoped public-source audit: existing qualified fit/policy caches and
+  existing authorized fit5/policy2 labels ONLY, original seed1027/frame clock/
+  Raw alias groups/full static Known Top8 proposals. Count Known/pseudo/unknown
+  group and frame opportunities, whole-clock cooccurrence versus first50.
+  No model/checkpoint inference, optimizer, private history or new labels.
+  Offline Raw prior computation remains same authorized fit-only path.
+- Actual pilot calendar hash must match exact original before interpretation;
+  output only aggregate/ordinal counts/hashes, no raw frame/GT/semantic names
+  or pertrack rows. Source/live/authority/input proofs before private loads,
+  same own-child3GiB/3000s/25%RAM/storage gates. No new calendar/model selection.
+- Synthetic cooccurring versus disjoint-video fixtures prove the audit can
+  distinguish truncation from absent Known/pseudo cooccurrence; not a real
+  conclusion yet. Three targeted tests pass2.10s; full951pass51.79s, ownwait0/
+  no guard/53.2462s/peak808402944B/25%reserve+3GiB planning. Actual audit awaits
+  source push/fetch/exact registration; full Goal and science gates remainOPEN.
