@@ -6219,3 +6219,51 @@ no private GT/cache/weights opened for this check):
 - Final bounded combined CVPR/v2 suite1050pass63.15s, ownedwait0/guardNONE/
   64.847276072s inclusive/peak863174656B/zero GPU-hours. No actual private
   pilot input read in registration; publish/fetch/exact proof before invocation.
+
+### Actual dual Raw-membership pilot normal: operational proof, not calibrated deployment
+
+- Executor source stage pushed/fetched/exactverified0c9d3b7998dd19c5f8267e47116e2c43e66b70d3;
+  all142 registered paths byte-matched and no live owned research job before
+  sole invocation. Parent/worker live/source/realhuman/cache gates succeeded.
+  Normal ownedexit0/guardNONE/complete:42.019888164s/peak951570432B,
+  one CPU compute worker plus one bounded native driver helper, zero CUDA/
+  trainingGPU-hours. No rerun, oldweights or expanded data role.
+- Complete10policy/54physical/1268observations/374frames/1empty;
+  scalar collectionKnown791/policyPseudo206/masked271canonicalgroups,
+  5observed supervised classes. All997lawful scalar groups private/in-memory;
+  unknowns physically retained, not BG/Novel/anonymous-action negatives.
+  Exact initial named gate verified on actual angular samples. Complete
+  fit-only257video/1158Known priors, no dev/final/Val/Test/protected pixels.
+- Calendar50actual AdamW steps ALL positive gradients,119Known/26policyPseudo
+  group contributions; exact common C calendar1fd8b98b... . Fresh initial
+  3ca6d4d8... to5a6a3152..., actual full clock incl all271masked groups.
+  Own model/AdamW/NumPy+Torch RNG step50 snapshot7948B reopened exactly,
+  private SHA10e549aa... . Fullpolicy ONE deterministic solver converged:
+  12iterations/13functionevaluations/status0/successTRUE, initial gradient
+  0.182367772120624, projectedgradinfinity1.2194726297016546e-10,
+  endpoint0ef76565... . Model+termination-record7192B reopened exactly,
+  SHA426928ac...; no internal L-BFGS resume/Hessian state claimed.
+- Both operational prerequisites TRUE for potential NEW registration, no
+  automaticformal/dev, pilot warmstart or control selection. Training-sample
+  classmacro NLLinitial0.6753925356483739->calendar0.6660553125974948/
+  fullpolicy0.5483225408629959 (regularized solver objective0.5494494793015353).
+  Classmacro Brier0.2414205014->0.2367054226/0.1822585726; weightedECE
+  0.2243151221->0.2283775328/0.0782822450. Calendar weightedECE WORSENS;
+  do not conflate reduced NLL/Brier with blanket probability-quality gains.
+  All are SAME-data resubstitution, not independent calibration/Novel reuse.
+- Exact result6ca65d67e4fc68a565009f8054672bdeae35db672ca2f23d39973f7a1451df7b;
+  launch51e36d502d89d753f0cce56e39b0770c72f919c4e7ca65c0097f24a7166a09c5;
+  normal terminal7463b69ff7109b6792de64b11201a31bca5b599ce381d33e01f5a5873352e6ab.
+  PUBLIC-only exact qualifier binds normal/source/role/gradient/calendar/solver/
+  checkpoint/resubstitution proof without new private weights or GT reads.
+- Eighteen actual/source/executor regressions pass5.73s. Both private snapshots
+  total15140B and calendar stay local600; scalar/GT/prediction table not
+  exported. Own job now terminal, not stalled. Next separately register fresh
+  calendarFixed2003seeds plus ONE fullpolicy<=200 solver, followed by lawful
+  full-dev diagnostics and causal rollout; do not promote pilot as formal.
+  Existing gate/foreground/purity/fullposterior/calibration transfer and fair
+  coverage/latency/fullM/joint/Pred/dense/final Goal A/B/C still OPEN/active.
+- Final bounded combined CVPR/v2 suite1052pass66.07s, ownedwait0/guardNONE/
+  67.730809171s inclusive/peak837980160B/zero GPU-hours. Public original
+  launch/result/normalterminal and exact qualifier/tests/docs only staged;
+  original result29745B unchanged, private snapshots/calendar/scalars excluded.

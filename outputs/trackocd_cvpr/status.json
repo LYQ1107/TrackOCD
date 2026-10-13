@@ -36,10 +36,12 @@
   "paired_C_spread_full_dev_complete_matrix": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_all6_full_dev_matrix_v1.json",
   "paired_C_spread_full_dev_complete_matrix_sha256": "f78a108a3a2d00dcf02c1b87b3af7f171e1a549e1fb7f0ae12c808b63719e5ad",
   "paired_C_repair_window_dev_selected_expansion": false,
-  "raw_named_membership_controls": "SOURCE_ONLY_TWO_FIXED_CONTROLS: calendar-matched2param AdamW and single deterministic fullpolicy L-BFGS-B. No actual private pilot/fit/quality yet; no foreground/Existing/purity/deploymentposterior claim or automatic expansion",
+  "raw_named_membership_controls": "TWO_FIXED_CONTROLS_ACTUAL_PILOT_COMPLETE: calendar-matched2param AdamW and ONE deterministic fullpolicy L-BFGS-B, actual own fitting prerequisites verified. Formal endpoints/dev transfer calibration still unmeasured; no foreground/Existing/purity/deploymentposterior claim or automatic expansion",
   "raw_named_membership_control_protocol": "configs/trackocd_cvpr/raw_known_membership_controls_v1.json",
   "raw_named_membership_pilot_executor": "scripts/trackocd_cvpr/pilot_raw_known_membership_controls.py",
-  "raw_named_membership_actual_pilot": "PENDING exact published source/live/authority/cache gate; one calendar50+fullpolicy<=50iterations, no oldweights/dev or calibration acceptance",
+  "raw_named_membership_actual_pilot": "ACTUAL_NORMAL_FIXED_DUAL_PILOT: calendar50 finite-gradient updates, fullpolicy solver12iterations/13functioncalls converged, two exact private snapshots. Same-data resubstitution only; calendar weightedECE worsens despite NLL/Brier improvement. No calibrated deployment/control selection or automatic formal expansion",
+  "raw_named_membership_pilot_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_dual_pilot50_v1/result.json",
+  "raw_named_membership_pilot_result_sha256": "6ca65d67e4fc68a565009f8054672bdeae35db672ca2f23d39973f7a1451df7b",
   "paired_C_spread_full_dev_baseline1029_result": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1029/result.json",
   "paired_C_spread_full_dev_baseline1029_result_sha256": "51263a725782c87c0e34b7c0e36fb4497fd9dc0f906e9bef71477706840bfdcf",
   "paired_C_spread_full_dev_seed1028_pair_summary": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_dev_pair_s1028_public_summary_v1.json",
@@ -59,5 +61,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Implement registered own guarded dual Raw NamedKnown-membership control pilot executor, then exact live/source/authority/cache proof before existing approved fit/policy private inputs. Actual finite-gradient/role-exposure/checkpoint proof before separate formal expansion; no automatic training, detector/full posterior claim, coefficient/seed/step search or dev selection. Qualify full trained-M runtime/probes; develop evidence-supported joint R/C/M. Preserve all old results; lawful strongPred/dense and locked independent-final still required. No forbidden roles, new Novel GT/vocabulary or foreign process interference."
+  "next": "Separately register fresh Raw NamedKnown-membership formal controls: three calendarFixed200 fits and ONE fullpolicy<=200 solver, no pilot warmstart, then complete lawful full-dev conditional reliability diagnostics and causal rollouts. Both controls retained, no dev-selected model/seed/threshold or detector/fullposterior claim. Qualify full trained-M runtime/probes; develop joint R/C/M. Preserve all old results; lawful strongPred/dense and locked independent-final still required. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }

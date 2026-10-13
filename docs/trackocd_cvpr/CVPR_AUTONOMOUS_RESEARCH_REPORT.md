@@ -1635,3 +1635,42 @@ Sixteen targeted source/checkpoint/duplicate/missing-result/executor tests pass
 dependencies found, no private data load or new optimization yet.
 Final bounded combined CVPR/v2 suite1050pass63.15s, ownedexit0/guardNONE,
 inclusive64.8473s/peak863174656B/zero GPU-hours. Publication precedes actual pilot.
+
+## Actual dual-control pilot: complete fitting prerequisites, not calibration success
+
+The sole explicit pilot is NORMAL after0c9d3b7998dd19c5f8267e47116e2c43e66b70d3
+source/live/realhuman/cache proof:42.0199s/peak951570432B, one CPU compute
+worker plus one bounded native driver helper, zero CUDA/training GPU-hours.
+Complete10policy videos/54physical/1268observations/374frames/1empty retained;
+791Known+206lawful policyPseudo scalar groups and271masked groups. All997
+binary-supervised scalars remain private, unknowns not negative/BG/Novel.
+
+Calendar control executes50real finite-gradient steps with119Known/26policy
+group contributions and the exact original C spread calendar. Fullpolicy
+solver converges in12iterations/13functionevaluations, status0/successTRUE,
+projected-gradient infinity1.21947e-10, initial-gradient0.182368. Both fresh
+2param endpoints differ from initial. Calendar model/AdamW/RNG and fullpolicy
+model+solver TERMINATION record reopen exactly,15140B total private snapshots;
+no fabricated L-BFGS resume state, oldweights or pilot-formal warmstart.
+
+SAME-training-sample diagnostics (not calibration transfer): classmacro NLL
+0.675393->calendar0.666055/fullpolicy0.548323; Brier0.241421->0.236705/
+0.182259; weightedECE0.224315->0.228378/0.078282. Calendar NLL/Brier improve
+while its weighted ECE worsens. Neither this mixture nor fullpolicy fitting
+selects a winner or proves unseen-data/deployment-prior calibration. Existing
+gate/foreground/purity/fullposterior calibration remains unmeasured.
+
+Result SHA256:
+`6ca65d67e4fc68a565009f8054672bdeae35db672ca2f23d39973f7a1451df7b`.
+Normal terminal:
+`7463b69ff7109b6792de64b11201a31bca5b599ce381d33e01f5a5873352e6ab`.
+Public-only exact source/normal/role/calendar/gradient/checkpoint/solver
+qualification passes; eighteen targeted regressions pass5.73s. Operational
+prerequisites TRUE permit only a NEW explicit formal registration, not automatic
+expansion or private access. Next fresh3calendarFixed200fits and ONE deterministic
+fullpolicy<=200solver, then complete independent Train-dev diagnostics/causal
+rollouts, still without model/seed/threshold selection. Goal A/B/C active;
+fair coverage/latency/fullM/joint/lawful strongPred/dense/lockedfinal unfinished.
+Final bounded combined CVPR/v2 suite1052pass66.07s, ownedexit0/guardNONE,
+inclusive67.7308s/peak837980160B/zero GPU-hours. Only public results/source
+qualifications are published, no private model/calendar/GT/scalar table.
