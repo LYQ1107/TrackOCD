@@ -840,3 +840,16 @@ No limitrelaxation/inputpruning orclaimedpartialwin. Prepared actualnumeric
 cache qualification withnoGTsemantic values/labels/weights/pixels oroptimizer;
 it isNOTexecuted orintegrated atthisrecord. FullM evaluation, fairbaselines,
 selfexcludedpurity/coverage/strongPred/joint/final andfullGoal remainopen.
+
+Actual fullpublic C aggregate now runs underfresh5db8bb3, publicSHA45911586...:
+all9trials/allorders/prefixes andoldRawcontrols retained, noprivateinputs.
+RawKnown.024283/reuse.095238 vsTop1.932671/0, Top8.622517/.018674 andpooled
+.810155/.016807 (three-training-seed means, not selectedoutputs or9independent
+replicates). No balancedpersistentdiscovery/officialCT/Pred/Goalacceptance.
+
+Actual semantic-free Rawstatistics qualification also completes: ALL8753
+canonicalprefixes in72dev/472physical/2562frames/116empty, exactCPU miss/hit/
+duplicate-scope tensors, class/finalvalues skipped/Knownindex unopened,
+no model/optimizer/pixel/weights/encoder.64.85s/RSS497MB/bounded64MiB cache.
+No integration/controllerparity/speedup orscientificgain inferred. Preserve
+oldMeanwallfailure; require realcontroller shadow andregistered fullreplay.

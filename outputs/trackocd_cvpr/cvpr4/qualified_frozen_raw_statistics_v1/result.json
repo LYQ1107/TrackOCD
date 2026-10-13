@@ -1,0 +1,28 @@
+{
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "5db8bb3a9ef8ce57d82dd0ef95fcb8fa38f154bd"
+  },
+  "numeric_qualification": {
+    "canonical_visible_prefixes_checked": 8753,
+    "derived_cache_max_bytes": 67108864,
+    "empty_frames": 116,
+    "exact_CPU_original_cached_miss_hit_and_duplicate_scope_tensor_bytes": true,
+    "full_controller_shadow_integration_speedup_or_method_gain": false,
+    "metadata_frames": 2562,
+    "model_parameters_or_prediction_memory_or_GT_feedback_or_optimizer": false,
+    "physical_observations": 8753,
+    "physical_tracks": 472,
+    "retained_derived_cache_bytes": 67024460,
+    "semantic_class_final_values_Known_index_or_GT_labels_decoded": false,
+    "videos": 72
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 497377280,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_registration": 64.84555724600796
+  },
+  "status": "ACTUAL_ALL_DEV_PREFIX_RAW_STATISTIC_BYTE_EQUALITY_NOT_FULL_SHADOW_INTEGRATION_OR_GOAL_ACCEPTANCE"
+}

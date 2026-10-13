@@ -1,0 +1,34 @@
+{
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "5db8bb3a9ef8ce57d82dd0ef95fcb8fa38f154bd"
+  },
+  "source_sha256": {
+    "configs/trackocd_cvpr/C_GT_causal_development_v1.json": "14b408e643958f2ce05f55462bbde5ac673eab319ec9e957e55da8a95e951657",
+    "configs/trackocd_cvpr/autonomous_research.json": "6ed366f0892a0e5b31ae3d37396158063d2042fec69edbac1dc73b472d62e155",
+    "configs/trackocd_cvpr/formal_research_scope_approval_v1.json": "bf828e599e2a91c1630b14a62b2a2ccb26f562a22038875818cb8645993bd860",
+    "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+    "configs/trackocd_cvpr/qualify_frozen_raw_statistics_v1.json": "59a4151af5c2498c43c3e42e8214e3c231288138353fb248526ef6f5e23919f2",
+    "configs/trackocd_cvpr/source_frozen_raw_statistics_cache_v1.json": "d9be79cf45f6dfd5b35878c69e32b5739a09a36f9d460a339a48cfecc515dba8",
+    "outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v3_resource_retry/result.json": "b6747cbc8d4802620cc56f2a2af25b6e172e664ab6903e79d04cda4ab2a9e0be",
+    "outputs/trackocd_cvpr/cvpr2/policy_dev_GT_video_cache_v3_resource_retry_supervisor_attempt_1.json": "4722515cfd9a658ee0effbcb95478d71b4aa5e51043a300fc7937ac1665fdf8b",
+    "scripts/trackocd_cvpr/audit_joint_known_protocol.py": "7000482df013f8eeb62a211024a7aeacaa757d2a0647972d6db201e0c8ed6811",
+    "scripts/trackocd_cvpr/audit_train_metadata_containment.py": "be4e6df08a6495007d64d6211662c30eed0561d302b624c36cf11d79178cacef",
+    "scripts/trackocd_cvpr/qualify_frozen_raw_statistics.py": "3a777f9fdc715d0eb92373c3fd024807f145bce68a982b02c5de18405c674e02",
+    "src/trackocd_core/features.py": "4ee4974390374cc5e256389a0085ea8249aa78b7c64f797e544b82a5713fdea7",
+    "src/trackocd_cvpr/GT_video_cache.py": "2e414a8d4a1d64e849354d518cc767486d5dfe4f0954f5c61f0ca4e66bd90b29",
+    "src/trackocd_cvpr/causal_observation_router.py": "85c8c1b1a58d9676a55169266c30e53ccf048ac0c1d72f996fe20a98013d2767",
+    "src/trackocd_cvpr/committed_support_bridge.py": "f55cbcf9db904f6354765767abab90e969abfc4d808327794ae74d3d3f8a413b",
+    "src/trackocd_cvpr/differentiable_support_bank.py": "8c7cd82de017274b180a703b0d9089ad5e50d33ccc9f4b1a35c67a651116cce3",
+    "src/trackocd_cvpr/frozen_raw_statistics_cache.py": "b2a9bac6c0bf78c171a31dafdfd9cc8bbf159b188dfde039498f3797ce5efb54",
+    "src/trackocd_cvpr/member_reliability.py": "1ec246809fe85c25209dd175953889339e55ca412a3b767347f5d89d0ac652b8",
+    "src/trackocd_cvpr/policy_training_data.py": "636df282acff408e9a111c266e3a0e9db7a7271f0ac2818f5c6078e061845d8d",
+    "src/trackocd_cvpr/prefix_member_bank.py": "a454f7192bacd5d4762d468b46a08afd6b2f94d27ea755e5b1ccd56b81a03e71",
+    "src/trackocd_cvpr/raw_statistics_qualification.py": "f7df051cc614c7bf1f2599d2e6b3dfa44e47348df41e843e21c2c55427a3c7d6",
+    "src/trackocd_cvpr/reliability_support_bridge.py": "0724641ca460f416eafe4c77fd7926a1b108f83029f6b214b0f3758bf9ea3f27",
+    "src/trackocd_cvpr/remote_registration.py": "b5925921f194acef5f61c2ac6b0ac47b8eb03c986ba8c1b2a9834c0e444888b8",
+    "src/trackocd_cvpr/scoped_train_census.py": "dcaf78f4dfc54c6e37d7eaf832941fa77d0c986a06c54ab99d1e1e116969d236",
+    "src/trackocd_v2/io.py": "4ed6c912855fc94056e223eeae8febad5ed399a745f382475c9f11959d304031"
+  }
+}

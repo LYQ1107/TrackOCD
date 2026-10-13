@@ -3953,3 +3953,38 @@ no private GT/cache/weights opened for this check):
 - Full669tests pass in51.58s, including actualall9C matrix, exactlastCresult,
   preserved Mean wallfailure andnumeric-only source boundary. Commit/push/
   fetch/ref verify required before actualpublicaggregate/privateRawqualification.
+
+### Actual public C aggregate and semantic-free full Raw-prefix qualification execute
+
+- Registered/pushed/fetched/refverified
+  `5db8bb3a9ef8ce57d82dd0ef95fcb8fa38f154bd` beforeboth realCLI executions.
+  PublicCaggregate ownedtool85955exit0, resultSHA
+  `45911586efe6112045c4233aa47a685764b2e166f286122398b29baaf9ba0e3d`.
+  All9originalmodels/all3trainingseeds/all3orders/all6prefixes retained,
+  failedreceipts/exactexception bindings preserved, RawTop1/Top8 originals
+  remainzero-fit references (entireorder metricdicts equal, not privateevent
+  traceparity). NoGT/cache/weights/pixels/optimizer/modelselection.
+  RSS77881344B/.05148s afterregistration. AveragedRawKnown.02428256 and
+  certifiedcrossvideoreuse.09523810; trainedTop1Known.93267108/reuse0,
+  Top8.62251656/.01867414, pooled.81015453/.01680672. Raw itselfisweak/collapsed
+  Known; nobalancedpersistentdiscovery orCT/Hscore/Pred/Goalacceptance.
+- Actualnumeric qualification ownedtool87977exit0 underfreshsamecommit:
+  72devvideos/472physicaltracks/2562metadataframes/116empty/8753observations,
+  EVERY8753canonicalcausalprefix comparedexactoriginal CPU tensors vsderived
+  cache miss/hit withduplicateRawscopes. Alltensorbytes equal; no rowpruning,
+  floatingtolerance, modelparams/optimizer/GTsemanticdecoder. Administrative
+  policy/dev videolists only; class/finalvalues byte-skipped, Knownindex barred,
+  exactimmutable routing/payload/manifest/frozenlineage checked; no pixels,
+  checkpoint, encoder orotherroleNPZ read. Cache retained67024460B<=64MiB;
+  peakRSS497377280B<=512MiB,64.85s<=600s,noCUDA/zeroGPUtrainingh.
+- This qualifies actualRawstatistics ONLY, not allcontroller/state/event parity
+  orspeedup, not criterion/model improvement. No liveworker dependencies were
+  edited. Mean originalwallfailure unchanged. Nextregistered realfull-policy
+  controllershadow required, then freshnamespace fullM replay underunchanged
+  CPU/RAM/wall/physicalcoverage limits. No two-order partialmetrics promoted
+  into a result or hidden scientificseed/checkpoint choice.
+- Actual Rawqualification result SHA256
+  `35743611e5eb395bd4091fac50b9e815515a6404c2f95ad5328c594580144f57`.
+  Full671tests pass in48.47s, including immutableactualall9public aggregate,
+  full8753numericprefix bytequalification andpreservedMeanfailure. Neither
+  numericalcache proof norunbalancedCaggregate markswholeGoal achieved.
