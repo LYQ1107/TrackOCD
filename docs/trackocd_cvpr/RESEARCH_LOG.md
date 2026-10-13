@@ -5522,3 +5522,50 @@ no private GT/cache/weights opened for this check):
   observation stored separately. This is live execution, NOT normal completion
   or an accepted metric. All original3000s/3GiB/25%RAM/probes retained, zero
   optimizer. PIDs/terminal handles are evidence only, never authority to reuse.
+
+### 2026-10-14 — Source-only paired C Known-set rejection window
+
+- Previous goal turn produced/published actual ALL11 input-memo parity and
+  started new full M: concrete progress. Fresh boot/starttick/script checks
+  confirm same owned supervisor/worker still live. At01:11CST all3 main orders
+  1027/1028/1029 completed; original full ID/reverse/future probes still running.
+  No terminal or result, no partial metric acceptance, restart or guard change.
+- Existing original full9C aggregation SHA45911586... and recorded-action loss
+  audit SHA53522917... are real complete prerequisites. The latter had56-163
+  positive NEW update plans per trial; missing NEW supervision is contradicted,
+  not a root cause. Actual permission permits fit5/policy2 existing Known losses,
+  not new nonKnown labels or dev/final/Val/Test losses. No real private input
+  read, model loading, C optimizer run or additional GT audit this source turn.
+- NEW bounded two-arm source window: fresh Raw768/Top8/708 each, same actual
+  per-seed initialization, independent AdamW/banks/histories. Baseline retains
+  original pure-history class-macro loss; repair adds FIXED0.25 separate class-
+  macro fit-Known-set rejection for verified policy-pseudo queries only. It
+  assigns no individual Existing/NEW/WAIT GT-positive/negative and unknown
+  queries stay masked. Not calibrated posterior/foreground or selected method.
+- Update calendar is Known-anchored: first50 current frames/episode with lawful
+  original Known loss, same current raw alias groups and identical actual Known
+  eligibility counts across arms. Raw Top8 includes all5 static Known proposals;
+  no treatment-dependent anonymous/pseudo-only eligibility chooses update time.
+  Each arm's endogenous candidates/base/rejection opportunities still differ
+  and are reported; same frames is not identical loss/gradient supervision.
+  New baseline is not an old C checkpoint/calendar replica. No history repair.
+- Prospective pilot: seed1027/one FULL policy episode/50actual updates per arm,
+  requires measured nonzero rejection gradient and exact private checkpoint
+  reopen before any formal expansion. Formal NEW three-seed pairs,4full episodes
+  x50steps, fixed20/50/100/200 snapshots, no pilot warmstart/selection. Full10/
+  54/1268/374/1 clock and34Known/10policy-pseudo/10masked physical tracks retained.
+  Only one fixed repair window; no coefficient/seed/grid search. Gated real
+  execution CLI/pilot still pending, helper/window cannot grant asset access.
+- Synthetic zero/zero pair on matched Known-update fixture exactly matches
+  old single-arm model/loss/complete private histories; initial test failure was
+  a list-versus-tuple return container, not numeric difference. Returned private
+  episode sequences are now immutable tuples, equality passes. Real data's new
+  Known-anchor calendar need not equal old endogenous scheduling. Treatment
+  .25 gives nonzero extra gradient and shared frame hashes; unknown/pseudo-only
+  frames cannot fabricate updates, future suffix cannot rewrite prior episode
+  predictions, malformed scope/guard/coefficient changes refuse.
+- Actual13 targeted pass3.68s. Full942pass54.66s, ownedwait0/no guard/56.0696s/
+  peak790507520B,25%system RAM reserve plus6GiB joint M+test planning margin.
+  Original pinned M/C kernels, assets and completed experiments untouched.
+  Fair calibrated Raw/coverage/latency controls, actual repair fits/dev, joint
+  R/C/M/strongPred/dense/lockedfinal remainOPEN. Goal active/unachieved.

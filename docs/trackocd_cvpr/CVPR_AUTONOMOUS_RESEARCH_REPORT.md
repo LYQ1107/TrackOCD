@@ -1147,3 +1147,31 @@ full-M namespace retains all472tracks, three orders, full ID/reverse/future
 replays, original3000s/3GiB and frozen endpoints/thresholds. It must pass fresh
 remote/source/authority gates before dev input and complete normally before
 metrics acceptance; qualification alone is not full9M completion or Goal A/B/C.
+
+## 2026-10-14 — Prospective paired Known-set C intervention, no real fit yet
+
+All9 original C development and the real historical loss reconstruction are
+complete. Positive NEW plans existed; no unsupported claim of missing NEW
+supervision is used. A limited source-only loss window now fixes two fresh
+Raw768/Top8/708-parameter arms, three seeds and independent prediction-owned
+episode histories. Repair adds0.25 separate policy-pseudo class-macro fit-Known-
+set rejection to the original base loss, with no individual anonymous action
+target, unknown-as-background label, GT bank repair or new semantic vocabulary.
+
+Both arms update on the same Known-anchored physical frames, with actual Known
+eligibility equality checked. All5 static fit Known proposals are included in
+Top8, so anonymous/treatment-dependent state history does not choose update
+timing. Full input clocks, masks and wrong histories remain. Each arm still has
+different endogenous candidate/loss opportunities; nominal calendar equality
+is not identical supervision. The baseline is a new matched training protocol,
+not reused historical weights or a real-data replica of old scheduling.
+
+The prospective full-policy pilot is one seed/one episode/50updates per arm,
+with actual rejection-gradient/checkpoint proof before new3seed/200step pairs.
+No real C optimizer/asset load or new GT read occurred yet. Source-only thirteen
+tests include exact matched-fixture zero-intervention weight/loss/history parity,
+extra gradient, shared hashes, immutable histories, prefix causality and scope
+refusals; full942 tests pass. A gated real executor/pilot remains required.
+This objective is NOT posterior/foreground calibration; calibrated Raw and
+coverage/latency-matched controls, actual full development, learned joint R/C/M,
+legal strong-Pred/dense transfer and independent final remain unfinished.
