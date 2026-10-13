@@ -27,3 +27,15 @@ def test_actual_Raw_causal_full_dev_and_invariance_complete_without_selection():
     assert not r['model_or_checkpoint_selection'] and not r['full_semantic_truth_Hscore_CT_M_Pred_or_Goal_accepted']
     t = json.loads(OUT.with_name(OUT.name + '_supervisor_attempt_1.json').read_text())
     assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None
+
+
+def test_actual_RawTop8_all_order_results_equal_RawTop1_not_a_K_expansion_gain():
+    out = OUT.with_name('C_GT_causal_dev_v1_Raw_Top8')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == 'e6fae9929d29358da18005fe52833c96de3a8abe61f50d8160665fcba9d99320'
+    r = json.loads((out / 'result.json').read_text()); first = json.loads((OUT / 'result.json').read_text())
+    assert r['model'] == 'Raw_Top8' and r['training_seed'] is None
+    assert r['orders'] == first['orders']
+    assert r['actual_full_ID_rename_reverse_stream_equal'] and r['actual_future_probe'] == first['actual_future_probe']
+    assert not r['model_or_checkpoint_selection'] and not r['full_semantic_truth_Hscore_CT_M_Pred_or_Goal_accepted']
+    t = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
+    assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None

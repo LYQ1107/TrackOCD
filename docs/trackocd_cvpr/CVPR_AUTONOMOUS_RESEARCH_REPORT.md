@@ -607,3 +607,21 @@ recursive-copy shadow tests exact. Full586tests pass. Originaltraining sources
 remain recorded, later runsource changes declared rather than falselyidentical.
 Need actual full-data baseline comparisons, allC/Mseeds, coverage/self-exclusion,
 qualifiedlegalPred, independent lockedfinal and GoalsA/B/C; Goalactive/unachieved.
+
+R ALL12 fixed fits now complete (4variants x3genuinelyindependentseeds), third
+staticteacher endpoint/ownedexit0/source88b5c56 preserved; publicSHA
+1e823b0ac3a2ca344eabdf8ba233ded5a0d7f4cad1bbf1860eef740928dba966.
+Actualall12 samewindow/kernel/loss/pairedinitialization/supportcalendar/private
+checkpoint/terminal gate passes beforeprivateGT. Fullread-only matrix protocol
+frozen:allmodels/allseeds/allprefixes/oneRawreference/full472physical gallery,
+119pseudoqueries/302Known/51unscorable, no winner/checkpoint/prefix selection.
+Actualone-track future/time/order numeric probes explicitly limited, not full
+onlinecausality or temporalbenefit. Fullall12 metrics notyetmeasured atrecord.
+
+RawTop8 realfulldev run completednormally with allID/futurechecks: complete
+threeorder METRICDICTS exactequal RawTop1, no Kexpansion gain or repairedKnown
+collapse. Publice6fae992.../834.69sworker/RSS0.963GB/noCUDA. Speedcompares
+differentK/hostconditions, not isolatedcontrolledcopybenchmark. Oldreceipts
+unaltered; no fullprivate-policy-row parity claim from aggregates. Full592
+tests+2targetedRawreceiptchecks pass. NextfullRmatrix/singleMcontrol/learnedC
+dev/fairMbaselines/stronglegalPred/lockedfinal stillrequired; Goalactive.

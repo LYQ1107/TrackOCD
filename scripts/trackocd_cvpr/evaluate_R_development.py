@@ -16,6 +16,7 @@ from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok, kerne
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 
 CONFIG = 'configs/trackocd_cvpr/R_development_first_pair_v1.json'
+FULL_CONFIG = 'configs/trackocd_cvpr/R_development_all12_v1.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/evaluate_R_development.py',
     'src/trackocd_cvpr/R_development_evaluation.py', 'src/trackocd_cvpr/R_development_metrics.py',
     'src/trackocd_cvpr/fit_R_training.py', 'src/trackocd_cvpr/fit_loss_supervision.py',
@@ -44,7 +45,8 @@ def supervise(args, cfg, safety):
     if resources_ok(cfg, safety, ROOT, started, 0): raise RuntimeError('Pre-spawn resource guard')
     child = subprocess.Popen([sys.executable, '-B', '-X', 'pycache_prefix=' + str(out / '_fresh_no_write_cache'),
         str(ROOT / 'scripts/trackocd_cvpr/evaluate_R_development.py'), '--worker',
-        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy], cwd=ROOT)
+        '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy]
+        + (['--config', FULL_CONFIG] if cfg.get('full_matrix', False) else []), cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')
@@ -87,10 +89,18 @@ def worker(args, cfg, safety):
         if subprocess.check_output(['git', 'show', args.preregistration_commit + ':' + path], cwd=ROOT) != (ROOT / path).read_bytes():
             raise ValueError('Source / complete cache / fixedendpoint receipt not truly registered')
     permission = json.loads((ROOT / cfg['approval']).read_text())
+    full = cfg.get('full_matrix', False)
     if (permission['status'] != 'USER_APPROVED_FREEZE_THEN_BOUNDED_CACHE_AND_TRAIN'
-            or cfg['models'] != ['temporal_Raw_teacher', 'timeless_Raw_teacher'] or cfg['seed'] != 1027
+            or (not full and (cfg['models'] != ['temporal_Raw_teacher', 'timeless_Raw_teacher'] or cfg['seed'] != 1027))
+            or (full and (cfg['status'] != 'REGISTERED_READONLY_R_DEV_ALL12_FITS_REQUIRED'
+                or cfg['models'] != ['temporal_CE', 'timeless_CE', 'temporal_Raw_teacher', 'timeless_Raw_teacher']
+                or cfg['seeds'] != [1027, 1028, 1029] or cfg['optimizer_steps'] != 0))
             or cfg['checkpoint_step'] != 200 or cfg['select_model_or_checkpoint'] is not False):
-        raise ValueError('Fixed firstpair dev analysis, never a winning-seed selection')
+        raise ValueError('Fixed registered dev cohort, never a winning-seed selection')
+    cohort = None
+    if full:
+        from src.trackocd_cvpr.R_development_cohort import verified_cohort
+        cohort = verified_cohort(ROOT)  # ALL12 BEFORE any private GT/feature projection.
     out = ROOT / cfg['output_directory']
     if out.exists(): raise ValueError('No overwrite')
     out.mkdir(parents=True); started, peak = time.monotonic(), 0
@@ -103,7 +113,9 @@ def worker(args, cfg, safety):
         if reason or size > cfg['output_bytes_ceiling'] or prior_bytes + size > safety['incremental_storage_soft_bytes']:
             raise RuntimeError('Owned development evaluator guard:' + str(reason))
     atomic_json(out / 'launch.json', {'live_remote_registration_proof': proof,
-        'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES}, 'scope': 'Read-only firstpair GT Train-development, no fitting/selection/final'})
+        'source_sha256': {p: sha256_file(ROOT / p) for p in SOURCES},
+        'scope': 'Read-only all12 fixed GT Train-development endpoints' if full else
+                 'Read-only firstpair GT Train-development, no fitting/selection/final'})
     try:
         import torch
         from src.trackocd_cvpr.R_development_evaluation import (load_completed_dev_tracks, known_prototypes,
@@ -113,27 +125,31 @@ def worker(args, cfg, safety):
         from src.trackocd_cvpr.batched_evidence import TimelessStaticEvidence
         from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import digest
         torch.set_num_threads(1); torch.manual_seed(1027)
+        allowed_checkpoints = ({p.resolve() for p, _ in cohort.values()} if full else set())
         def barrier(event, values):
             if event == 'socket.connect': raise PermissionError('No network after registration')
             if event == 'open' and isinstance(values[0], (str, bytes)):
                 p = Path(os.fsdecode(values[0])).resolve()
                 if p.is_relative_to(Path('/data3/liuyeqiang/TAO-Amodal')):
                     raise PermissionError('No original annotation / dataset pixels, qualified cache only')
+                if full and p.suffix in ('.pt', '.pth') and p not in allowed_checkpoints:
+                    raise PermissionError('Own complete fixed R cohort only, no encoder/external/old weights')
         sys.addaudithook(barrier)
         guard(); dev_tracks, labels, label_proof = load_completed_dev_tracks(ROOT, cfg, guard)
         fit_tracks, fit_proof = load_completed_fit_tracks(ROOT, cfg, guard)
         bindings, _, _ = project_fit_loss_targets(ROOT / cfg['private_assignment'], ROOT / cfg['private_Known_support'])
-        table = {}; raw_reference = {}; raw_vectors = {}
+        table = {}; raw_reference = {}; raw_vectors = {}; probes = {}
         raw_model = RawPreservingEvidence().eval().requires_grad_(False)
         raw_prototypes, _ = known_prototypes(raw_model, fit_tracks)
         for cap in cfg['prefixes']:
             raw, _, actual = embed_complete_role(raw_model, dev_tracks, cap, guard)
             raw_vectors[str(cap)] = (raw, actual)
-        for variant in cfg['models']:
-            directory = ROOT / ('outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_' + variant + '_s1027')
+        trials = [(v, seed) for v in cfg['models'] for seed in (cfg['seeds'] if full else [1027])]
+        for variant, seed in trials:
+            directory = ROOT / ('outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_' + variant + '_s' + str(seed))
             receipt = json.loads((directory / 'result.json').read_text())
             terminal = json.loads(directory.with_name(directory.name + '_supervisor_attempt_1.json').read_text())
-            if (receipt['completed_optimizer_steps'] != 200 or receipt['variant'] != variant or receipt['seed'] != 1027
+            if (receipt['completed_optimizer_steps'] != 200 or receipt['variant'] != variant or receipt['seed'] != seed
                     or not terminal['successful_owned_execution'] or terminal['owned_worker_exit_code'] != 0
                     or receipt['dev_final_Val_Test_targets_or_pixels_used'] or receipt['old_fitted_adapter_initialization']):
                 raise ValueError('Fixed actualfit endpoint, not best dev/loss checkpoint')
@@ -143,6 +159,8 @@ def worker(args, cfg, safety):
             model = TimelessStaticEvidence() if variant.startswith('timeless') else RawPreservingEvidence()
             model.load_state_dict(torch.load(checkpoint, map_location='cpu', weights_only=True)['model_state'], strict=True)
             model.eval().requires_grad_(False); before = digest(model)
+            if full and (before != receipt['model_parameter_sha256_after'] or sum(p.numel() for p in model.parameters()) != 50113):
+                raise ValueError('Actual completed frozen50113-parameter endpoint, no substituted weights')
             _, adapted_prototypes = known_prototypes(model, fit_tracks)
             rows = {}
             for cap in cfg['prefixes']:
@@ -158,28 +176,44 @@ def worker(args, cfg, safety):
                 else: raw_reference[key] = current['Raw']
                 rows[key] = current
                 atomic_json(out / 'progress.json', {'completed_variant': variant, 'completed_prefix': key,
-                    'physical_tracks': len(dev_tracks), 'no_training_or_winner_selection': True})
+                    'training_seed': seed, 'physical_tracks': len(dev_tracks), 'no_training_or_winner_selection': True})
+            if full:
+                from src.trackocd_cvpr.R_development_probes import numeric_probes
+                probes.setdefault(variant, {})[str(seed)] = numeric_probes(model, dev_tracks, guard, timeless=variant.startswith('timeless'))
             if digest(model) != before or torch.cuda.is_initialized(): raise ValueError('Read-only CPU model state unchanged')
-            table[variant] = rows
+            if full: table.setdefault(variant, {})[str(seed)] = rows
+            else: table[variant] = rows
         guard()
-        result = {'status': 'MEASURED_FIRSTPAIR_GT_TRAIN_DEVELOPMENT_NOT_ALL_SEEDS_PRED_OR_GOAL_ACCEPTANCE',
+        result = {'status': ('MEASURED_ALL12_FIXED_R_GT_DEV_NOT_PRED_JOINT_OR_GOAL_ACCEPTANCE' if full else
+                            'MEASURED_FIRSTPAIR_GT_TRAIN_DEVELOPMENT_NOT_ALL_SEEDS_PRED_OR_GOAL_ACCEPTANCE'),
             'live_remote_registration_proof': proof, 'development_scope': label_proof, 'fit_prototype_scope': fit_proof,
-            'seed': 1027, 'checkpoint_step': 200, 'results': table, 'Raw_reference': raw_reference,
+            'seed': None if full else 1027, 'checkpoint_step': 200, 'results': table, 'Raw_reference': raw_reference,
             'optimizer_steps': 0, 'model_or_checkpoint_selection': False,
             'final_Val_Test_or_new_nonKnown_semantic_values_read': False,
             'complete_semantic_truth_Hscore_purity_or_R_C_M_Goal_accepted': False,
             'resources': {'peak_guarded_RSS_bytes': peak, 'wall_seconds_excluding_network': time.monotonic() - started,
                           'training_GPU_hours': 0, 'CUDA_initialized': False}}
-        atomic_json(out / 'result.json', result); print(json.dumps(result), flush=True)
+        if full:
+            result['seeds'] = cfg['seeds']; result['actual_numeric_probes'] = probes
+        atomic_json(out / 'result.json', result)
+        print(json.dumps({k: v for k, v in result.items() if k not in ('results', 'Raw_reference')}) if full else json.dumps(result), flush=True)
     except Exception as error:
         atomic_json(out / 'failure.json', {'exception_type': type(error).__name__, 'error': str(error), 'complete': False}); raise
 
 
 def main():
+    global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
     parser.add_argument('--worker', action='store_true')
-    args = parser.parse_args(); cfg = json.loads((ROOT / CONFIG).read_text()); safety = json.loads((ROOT / SOURCES[-1]).read_text())
+    parser.add_argument('--config', choices=(CONFIG, FULL_CONFIG), default=CONFIG)
+    args = parser.parse_args(); cfg = json.loads((ROOT / args.config).read_text())
+    if args.config == FULL_CONFIG:
+        from src.trackocd_cvpr.R_development_cohort import cohort_sources
+        cfg = {**json.loads((ROOT / CONFIG).read_text()), **cfg, 'full_matrix': True}
+        SOURCES = (*SOURCES[:-1], FULL_CONFIG, 'src/trackocd_cvpr/R_development_cohort.py',
+            'src/trackocd_cvpr/R_development_probes.py', *cohort_sources(), SOURCES[-1])
+    safety = json.loads((ROOT / SOURCES[-1]).read_text())
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)
 

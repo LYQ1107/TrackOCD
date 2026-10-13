@@ -3325,3 +3325,46 @@ new research scope; nothing has been deleted, no storage pressure is present.
   evidence. Next bounded RawTop8 actual comparison and remainingRstaticteacher,
   then complete unchanged Mmatrix/Ctraineddev and coverage/stronglegalPred/
   final gates. Goalactive; positive scientificacceptance stillunproved.
+
+### All twelve R fixed fits complete; Raw K8 actual control matches K1
+
+- Previous goal turn delivered88b5c56 actualpush/fetch/refverified plus complete
+  firstRaw/M receipts/EMA/copysource: progress. Same Rhandle34286 nowterminal
+  exit0 for timeless_Raw_teacher/seed1029/200freshsteps. PublicSHA
+  1e823b0ac3a2ca344eabdf8ba233ded5a0d7f4cad1bbf1860eef740928dba966;
+  exact616115B endpointSHAdb9b0c99f1ea7041fe5174933a3aec94cdd244ba02da5871470fb656f6bc4d12,
+  afterdb586504ce1250033395422ff37724e55d3dba4cb85a7f08e7b259ca07dd4535.
+  Sameinitial5c3a6971.../all200query-support footprints asallthirdseedcontrols.
+  Owned659.764796229s/worker652.649834976s/RSS1589760000B/11OSthreads/
+  noguardstop/noCUDA/0trainingGPUh. ALL12R nowcomplete:fourcontrols xthree
+  genuinelyindependentseedfits, not repeatedorders ofone model or reusedweights.
+- NewfullRdev execution registered BEFORE ownweight/devGTread: ALL12public
+  launches/results/ownedterminals +same actualwindow/kernel/loss +actualprivate
+  endpointbytes/SHA required before anyprivateGT/featureprojection. Perseed
+  initialization/support calendars matched; between-seed initialdigestsdistinct.
+  Frozen200 each, oneRaw reference, same full472gallery/302Known/119pseudo/
+  51unscorable, sixprefixes and existingexacttie/short/singleton/geometryrules.
+  Modelstate/digest/50113parameter layout/CPUreadonly checked, no selectors.
+- Everyfrozenendpoint alsoactualfuture-visible-prefix probe on qualifiedGTcache
+  one-track copy, actualobserved-order reversal/legalcompressed-timing probe;
+  timeless exact invariance, temporaldifferences measured notdeclaredbenefit.
+  Explicitone-trackinput scope, not fullonlinecontroller/cadence guarantee.
+  Originalfirstpair receipt immutable; all12cohort results pendingexecution,
+  no old interimwinner or final/Val/Test/encoder/newnonKnown GT read.
+- RawTop8 detachedsupervisor nowownedterminalexit0/noguardstop/fullall3orders/
+  fullIDrename+reverse+39futuremutations. PublicSHA
+  e6fae9929d29358da18005fe52833c96de3a8abe61f50d8160665fcba9d99320.
+  ActualcompleteTHREEorder metricdicts EXACTequal RawTop1, includingfullprefix
+  coverage/Knowncollapse/pseudoreuselowerbounds/firsterrors/stricthistories.
+  This is realfull-datacomparison, not inferred from source/smalltests. K-only
+  expansion undermaximumcosine arbitration hasNO measuredgain. Do not call
+  aggregate equality a savedfullprivate-policy-row equality certificate.
+  Owned841.542804115s/worker834.693970399s/RSS963190784B/ONEOSthread/noCUDA;
+  originalK1worker2286.28s. DifferentK/hosttiming, NOTcontrolledisolatedspeed
+  proof. Sourcecopy fixdeclared, scientificmath/denominators unchanged.
+- Full592tests PASS71.06s, including actualall12 endpoint/window/loss/footprint
+  gate andnumericprobes; then2targetedRawreceiptchecks PASS0.06s afternew
+  receiptappeared. No extraGPU/data/weights moves orprivatehistoryuploads.
+  Nextregister/fetch/refverify thenboundedRall12eval andsingleMnextcontrol;
+  learnedCdev/allremainingM/coverage/selfexclusion/stronglegalPred/final open.
+  Goalactive, no R/C/M scientificacceptance or smaller-success substitution.
