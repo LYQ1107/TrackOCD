@@ -4429,3 +4429,45 @@ no private GT/cache/weights opened for this check):
   under complete registered scopes; weighted-M fingerprint memo is still absent,
   so no unmeasured execution-time guarantee. Independent support/strong Pred/
   calibrated fresh baselines/joint training/locked final remain necessary.
+
+### Register actual whole-policy Mean support-exclusion controls
+
+- Previous807ccd5 delivered real complete Mean/C audit results and launched
+  StateEMA. Current EMA supervisor identity/start ticks/argv hash revalidated
+  live, two order passes through1028; no full result yet. Original in-flight
+  dependencies/weights/data/guards remain untouched.
+- NEW policy experiment promotes the earlier self-excluded Mean source control
+  into an actual full-clock comparison: Mean versus whole query-alias-scope
+  exclusion versus current-video exclusion, all3 fixed video orders, full10
+  policy/54 physical/1268 observations/374 frames/1 empty, all6 prefixes, fixed
+  fit5 prior/K8/.65/.55. These are zero-fit controls, not three new independent
+  trained directions or M/EMA self-exclusion. No source-only acceptance.
+- New trace includes actual query-aligned selected Raw/numeric-view receipts
+  alongside prediction events/chosen original versions/entire numeric ledger.
+  Full actual ID-bijection/reverse and non-noop first-video future mutation
+  compare every one of these fields and outcomes. No omitted empty/short/unknown
+  input, current peer writes, cached polluted EMA latent or GT memory repair.
+- Important metric boundary: original versions still refer to full dirty parent
+  history, not the query-specific filtered prototype. Strict past-history reuse
+  remains a conservative historical statistic, NOT current effective support
+  purity or semantic-independent support certification. Different route/video
+  is not a semantic independence certificate. Any later active-support audit
+  needs explicit filtered provenance and its own complete external evaluator.
+- Bounded own-process extra Raw-input alias uses the same qualified exact CPU
+  statistics/32+32MiB derived ceiling with exception restoration and nesting
+  refusal. Each actual full control must FIRST pass complete OLD/cache event/
+  score/routing/chosen-version/numeric-ledger/query-view/outcome equality. Mean
+  baseline standard trace must match previous actual policy SHA7461015c... .
+  No original controller/model source edited; cache eviction only recomputes.
+- New persistent worker requires fresh remote/source/authority/complete M
+  cohort/actual old fingerprint proof before fit/policy inputs; existing M
+  endpoints byte-hashed only, not deserialized. Labels external audit only,
+  no optimizer/encoder/pixels/new semantics or dev/final/Val/Test bodies. Retains
+  CPU1/3GiB/3000s/3MiB/25%RAM/storage bounds and owns only its own Popen child.
+  Shared-host timings are not isolated speedup or matched-purity superiority.
+- Full748tests pass in47.24s, including full synthetic exclusion streams,
+  exact original Mean baseline, actual ID/future/query-view comparisons,
+  cache restoration, whole clock/model/scope refusal. Actual policy experiment
+  has NOT run at this record; register/push/fetch before launch. Whole Goal
+  active/unachieved; completed baseline is not research success, remaining
+  EMA/all9M/fresh calibrated baselines/strong Pred/joint/final still required.
