@@ -1,0 +1,34 @@
+{
+  "artifact_sha256": {
+    "outputs/trackocd_cvpr/cvpr3/Known_anchor_opportunity_audit_v1/launch.json": "1f366ad67bb660f3d30e37e92623b56510905a87ff4fbbf3c1436a1ee245127b",
+    "outputs/trackocd_cvpr/cvpr3/Known_anchor_opportunity_audit_v1/result.json": "b5c868c4eb5396616292a9cc762607a607a65086d3531972904e7eb5929a46b4",
+    "outputs/trackocd_cvpr/cvpr3/Known_anchor_opportunity_audit_v1_supervisor_attempt_1.json": "ed36aede312c0f4f46a7e21df41d9d2b91ef64a8eb4deb958ad7fe3bbbadc5af"
+  },
+  "counter_failure_cause_proven": false,
+  "effective_complete_worker_qualification": true,
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "f00cfbc3451c410550cddb636a734926f8552bb8"
+  },
+  "new_training_model_or_calendar_selection": false,
+  "no_dataset_GT_weights_or_private_history_read": true,
+  "original_supervisor_successful_owned_execution": false,
+  "original_terminal_rewritten": false,
+  "scope_counts": {
+    "Known_eligible_frames": 333,
+    "Known_groups": 791,
+    "cooccurring_Known_pseudo_frames": 174,
+    "empty_frames": 1,
+    "masked_groups": 271,
+    "metadata_frames": 374,
+    "physical_observations": 1268,
+    "pseudo_eligible_frames": 189,
+    "pseudo_groups": 206,
+    "pseudo_groups_on_all_Known_anchor_frames": 176,
+    "selected_Known_groups": 175,
+    "selected_pseudo_groups": 0,
+    "selected_update_frames": 50
+  },
+  "status": "QUALIFIED_COMPLETE_READONLY_AUDIT_WITH_DECLARED_COUNTER_OBSERVATION_EXCEPTION"
+}

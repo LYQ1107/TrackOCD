@@ -5705,3 +5705,21 @@ no private GT/cache/weights opened for this check):
 - Five targeted qualification/opportunity tests pass2.11s; full953pass52.53s,
   ownwait0/no guard/54.0571s/peak808329216B. No private weight/dataset/history
   reads in the public qualification, no extra optimizer or chosen threshold.
+
+- Counter qualification was actually run after source/public artifacts pushed/
+  fetched/exactverifiedf00cfbc3451c410550cddb636a734926f8552bb8. Separate receipt
+  SHA932d3dbd1d3d6b5cdc1f58aec0cb08e5fc6ba56a0939665237a94c7defa41db2:
+  effective_complete_workerTRUE, original_supervisor_successFALSE, terminal
+  rewrittenFALSE, counter cause provenFALSE, no private inputs/newtraining or
+  selected calendar. This is declared ONE-case exception, never normal terminal.
+- Actual counts settle the earlier exposure question:176pseudo groups occur
+  on later eligible Known anchors, so prefix-first50 coverage is the observed
+  problem, not structural absence of Known/pseudo cooccurrence.174cooccurring/
+  333Known eligible frames across full374clock; no gradient or objective-effect
+  claim follows from opportunities. New exposure correction must remain
+  separately frozen, same legal data/seeds/coefficients/actual step budget and
+  full physical clock, no old-artifact alteration or pilot warmstart.
+- Six public qualification/opportunity regressions pass1.96s; full954pass
+  55.13s, ownwait0/no guard/56.4314s/peak833835008B/25%reserve+3GiB margin.
+  Zero new optimizer/model-inference/GT-role expansion in this audit/qualification
+  stage. Original Goal active/unachieved; all remaining science gates retained.

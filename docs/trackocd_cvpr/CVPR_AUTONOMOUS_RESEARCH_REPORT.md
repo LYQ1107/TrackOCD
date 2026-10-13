@@ -1222,3 +1222,29 @@ All948 tests pass including the exact exposure/source/receipt regression.
 A separately preregistered bounded exposure remedy and genuinely informative
 pilot are still needed, along with fair calibrated controls, complete M,
 joint/predicted/dense/locked-final evidence. Goal A/B/C remain unachieved.
+
+## Read-only exposure diagnosis, with explicit counter-observation exception
+
+The original pilot's update calendar was reconstructed EXACTLY from approved
+existing fit/policy caches/static Known Top8 proposals, no model checkpoint,
+new inference or training. Full374frames/1empty/1268observations contain333
+Known-eligible and189pseudo-eligible frames,174ofwhich cooccur. Across all Known
+anchors there are176pseudo group opportunities; original first50 anchors cover
+175Known groups and0pseudo. Prefix concentration, rather than absent whole-
+clock cooccurrence, explains the measured optimizer exposure gap. These are
+opportunity counts, not independent samples, gradients or objective success.
+
+The worker produced a complete result and exit0, but the ORIGINAL supervisor
+is unsuccessful with `owned_memory_counter_unavailable` (19.3882s, sampled
+RSS951398400B, one OS thread). It is NOT rewritten or called a normal receipt.
+A separately registered/executed PUBLIC-only qualification binds exact source,
+result, launch, terminal, full counts/calendar and3GiB/3000s proof; this ONE
+exit0/complete-audit counter-observation exception does not authorize generic
+guard bypass, rerun or scientific completion. Counter-failure cause unproven.
+Result SHA256:
+`b5c868c4eb5396616292a9cc762607a607a65086d3531972904e7eb5929a46b4`.
+Separate qualification:
+`932d3dbd1d3d6b5cdc1f58aec0cb08e5fc6ba56a0939665237a94c7defa41db2`.
+All954 tests pass. No new calendar/model was selected and no optimizer steps
+added; a bounded exposure correction still requires new prospective protocol,
+actual informative pilot and fair controls before any expanded research claim.
