@@ -1366,3 +1366,34 @@ transfer and locked independent-final remain OPEN.
 Final bounded combined CVPR/v2 suite1018pass53.62s, ownedexit0/no guard,
 inclusive55.2521s/peak862539776B/zero GPU-hours. Source closure has115paths;
 this regression evidence is not a real dev outcome or permission bypass.
+
+## Actual first full paired-C Train-dev result: baseline seed1027
+
+The first newly registered complete trial is now normal:292.2238s,
+peak964710400B, one CPU/OS thread, zero helper/CUDA/optimizer/GPU-hours.
+Every three-order replay preserves72videos/472physical tracks/8753observations/
+2562frames/116empty. The complete IDrename+reverse trace/metrics agree, and
+39actual future observations were changed with identical nonempty earlier
+sealed events. All6private Fixed200 endpoint fingerprints preceded dev input;
+only baseline1027 was deserialized, no checkpoint/model selection or new GT.
+
+Each order predicts KNOWN for ALL8753observations. Allavailable Known micro
+accuracy282/302=93.3775%, macro95.9433%; physical commit track coverage100%.
+ALL119declaredpseudo queries are absorbed asKnown, anonymous commit queries0,
+certified crossvideo pseudo reuse micro+macro lower bounds0. High coverage here
+is NOT correct discovery. Truth-unavailable/outside51physical tracks remain;
+these lower bounds are not full-semantic-GT Hscore/purity or strong Pred/CT.
+No trained-M efficacy inference is justified from a controller with no tokens.
+
+Result SHA256:
+`e8e0782ea78c4bb4e124932cf58719f279862e7cb8efeb13fbe9dfad51450314`.
+Normal terminal:
+`9e8cc0807e2cde5c791ab29ceeda6a38ff00a4bd1c7385534ca346d9ad4e0bc0`.
+This is only ONE of6planned endpoint trials. Public full-matrix aggregation
+explicitly refuses incomplete coverage; repair1027 and remaining4trials still
+required, no pair effect/seed winner. Eighteen targeted checks pass2.38s,
+including exact real hashes and failed/vacuous-probe/selection refusals. Goal
+active; calibrated controls/fullM/joint/Pred/dense/locked-final remain open.
+Final bounded combined CVPR/v2 suite1024pass53.05s, ownedexit0/guardNONE,
+inclusive54.5140s/peak835760128B/zero GPU-hours. Next is the unmeasured matching
+repair1027 endpoint, preserving the fixed ALL6 protocol and all earlier trials.

@@ -5903,3 +5903,38 @@ no private GT/cache/weights opened for this check):
 - Final combined bounded CVPR/v2 suite1018pass53.62s, ownedwait0/guardNONE/
   55.252085677s inclusive/peak862539776B/zero GPU-hours. All115 prerequisite
   paths exist; no actual dev input/weights were read during source registration.
+
+### Actual first full paired-C development: baseline/1027 normal, Known-only
+
+- Registered4b16297b53a3418f7ccd7f4ec09718a5188ace29 pushed/fetched/exact
+  verified and all115 source paths byte-matched before persistent launch.
+  Newly owned supervisor/worker observed with boot/startticks/command and
+  live kernel child proof, never an old PID restart. Both source/live/authority
+  checks passed; all6 private Fixed200 endpoints fingerprinted before dev load.
+- Actual BASELINE1027 ONLY now normal exit0/guardNONE/complete result,
+  wall292.223827628s/maxRSS964710400B/one OS+CPU thread/zero helper/CUDA/
+  optimizer/GPU-hours. All72videos/472physical tracks/8753observations/
+  2562frames/116empty in EACH3order retained. Full IDrename/reverse replay
+  equal; actual39future observations changed and nonempty earlier events equal.
+  No probe timeout, shortened scope or incomplete-result qualification.
+- ALL8753observations predict KNOWN in each order. Allavailable Known
+  accuracy282/302=0.9337748344370861, macro0.9594329501915708, physical
+  commit track coverage1.0. ALL119declaredpseudo queries absorbed asKnown,
+  anonymous commit queries0/certified crossvideo reuse micro+macro lower
+  bounds0. This is an observed Known-only dev endpoint, NOT calibrated success,
+  semantic purity/fullNovel GT or strong Pred evidence. Unknown51remain in
+  physical denominator. No trained-M failure claim follows from absent tokens.
+- Exact resulte8e0782ea78c4bb4e124932cf58719f279862e7cb8efeb13fbe9dfad51450314;
+  launch46dd78f69dffa7e773c0ab914793f8c9ddfa32987ef459f0a3b597d0f1d34e73;
+  normal terminal9e8cc0807e2cde5c791ab29ceeda6a38ff00a4bd1c7385534ca346d9ad4e0bc0.
+  Original startup receipt retained as startup-only, not normal success proof.
+- NEW PUBLIC-only trial/full-matrix qualifier binds frozen source, real6fit
+  endpoints, all physical/query/prefix/order counts and normal whole-probe
+  completion; no weights/GT reloaded. ALL6 aggregate REFUSES this single trial.
+  Eighteen targeted actual/source/probe/scope refusal regressions pass2.38s.
+  Repair1027 and other4trials remain pending; no paired effect, bestseed,
+  coefficient change or Goal acceptance. Original Goal remains active/open.
+- Final bounded combined CVPR/v2 suite1024pass53.05s, ownedwait0/guardNONE/
+  54.514020026s inclusive/peak835760128B/zero GPU-hours. No owned fit/M/dev
+  worker remained live after authoritative normal terminal; next explicit
+  trial is same-seed repair1027, not a restart of baseline or changed protocol.
