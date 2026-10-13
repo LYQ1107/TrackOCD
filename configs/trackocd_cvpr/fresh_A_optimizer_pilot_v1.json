@@ -1,0 +1,17 @@
+{
+  "status": "REGISTERED_FRESH_FIT5_FIVE_FAMILY_PILOT_ACTUAL_EXECUTION_PENDING",
+  "protocol": "configs/trackocd_cvpr/fresh_A_fit5_baselines_v1.json",
+  "data_config": "configs/trackocd_cvpr/fit_R_optimizer_smoke_v1.json",
+  "approval": "configs/trackocd_cvpr/formal_research_scope_approval_v1.json",
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 33554432,
+  "output_directory": "outputs/trackocd_cvpr/cvpr2/fresh_A_fit5_optimizer_pilot_v1",
+  "full_scientific_fit_automatic_start": false,
+  "private_input_gate": "Fresh live exact remote ref plus byte-identical registered source/authority/cache receipts; complete fit-only cache verifies all lineage and loss target hashes",
+  "pilot_scope": "Ten fresh fit-only steps per each of five families, seed1027; exact actual initialization and batch-calendar parity; private checkpoint reopen; no formal warmstart, dev or winner selection",
+  "public_output": "Aggregate census, model/init/calendar hashes, losses, gradient norms and checkpoint hashes only; never raw scheduling correspondence or weights",
+  "formal15fits_development_or_Goal_accepted": false
+}

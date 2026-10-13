@@ -4798,3 +4798,86 @@ no private GT/cache/weights opened for this check):
   also maintained25% reserve, normal actualwait0/no guard/57.21s total. These
   tests do not replace real full-dev completion. Subsequent available RAM is
   healthy again; next resource preflight must still be fresh at launch.
+
+### Actual post-stop host restart/network boundary; fresh A1/A2 preparation
+
+- Host uptime now reports boot2026-10-13T19:26:36, after prior resource-stopped
+  trial. Old /tmp official GitHub known-host file no longer exists. Restored
+  NEW user-owned persistent public-host file, exact previously trusted ED25519
+  SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU recomputed from public key.
+  Strict checking remains enabled, no private-key/globalSSH/foreign-process edit.
+- Recovery commit9089b0d local only at this observation: push stopped on missing
+  host-key file; after restoration live SSH still closes,17890 HTTPS CONNECT
+  times out,7890 connects but TLS times out, direct GitHub fails, connected
+  GitHub read and web tools fail transport. Do not pretend remote registration
+  or blame unknown cause. Three RAM preflight samples115GB passed, but actual
+  retry launcher remote source gate failed before namespace/private inputs.
+  RAM_retry1 directory/worker/receipt not created; never call that live work.
+- Added NEW fresh fit5 A1/A2/static capacity source prerequisite and fixed200
+  protocol, not training/result. Reuse original project architectures/loss only:
+  A1 525056params; A2 and matched static541889; all256D. SAME seed adapter init,
+  same canonical five-class/two-cross-video-group prefix batches; full257video/
+  1401physical census,1158fitKnown eligible/243 masked, no old15labels/loaders/
+  selected weight warmstart. Unknown never BG/Novel. No dev in supervisedloss.
+- Whole exact Raw/absolute frame alias equality and conflict refusal, short
+  prefixes grouped without padding, labels/videos only external contrastive
+  loss. Current same-seed batch plans invariant under supplied-row reorder,
+  sequential updates refuse repeats/skips. Nominal baseline capacity differs
+  from50113R and is explicitly reported, not secretly called matchedcapacity.
+- Original R drift metric cannot dot256D with768D; define full pairwise Gram
+  comparison plus original full472 gallery retrieval/Known/rank, no invalid
+  Raw-space cosine or changed semantic denominator. Formal driver/cohort/dev
+  and genuine registration/pilot still required; no train/data/weight read by
+  this source-only work. Corrected toy gradient fixture to include actual
+  changing observed vectors: constant vectors make dynamic weights' gradients
+  legitimately zero; did not fabricate a temporal learning claim or alter core.
+- Whole Goal remains active/unachieved. Remote upload and formal recovery
+  pending network; meaningful local baseline preparation continues safely.
+- Original A1 geometry0/1/5 controls also retained as separate fixed200 trials,
+  not a deliberately weak selected comparator. Five families xthree seeds =15
+  complete fits required; A2 and static fixedgeometry0 compare directly with
+  A1_ADAPTER, no legacy15class devselected teacher weight transplant. Pilot
+  covers all5families first, no warmstart. Zero adapted resultant refuses rather
+  than dropping a physical row; singleton temporal gradient can legitimately
+  be zero while adapter learns, so future trainer must not fake/reject that.
+
+### Fresh fit5 baseline pilot execution source; actual training still pending
+
+- Added bounded owned CPU pilot entry, all five families x10steps/seed1027.
+  Source/live exact ref/authority/public cache receipts precede private loader
+  and namespace; complete original fit-only loader retains1401physical,
+  1158eligible/243masked. No original annotation/pixel access or network after
+  registration; no policy/dev/final target, old15weight or pilot warmstart.
+- Real execution must compare actual adapter initialization and PRIVATE batch
+  calendar hashes across all5, not merely expected seeds/config. Each actual
+  pilot step compares ragged batching against individual numerical forward
+  and parameter gradients, with tolerances declared BEFORE execution. These
+  are FP32 numeric qualifications, not exact learned trajectory parity or a
+  scientific generalization claim. Checkpoint model AND AdamW state reopen
+  exactly; preserve five private checkpoints, never upload them.
+- Fixed200 numeric trainer supports independent fresh runs and all20/50/100/
+  200 snapshots, but CLI currently launches ONLY the ten-step pilot. Formal15
+  trial registration/cohort/full-dev evaluator still required separately.
+  Full eligible census is NOT all groups actually visited: aggregate sampled
+  canonical-group/video coverage is reported without exporting correspondence.
+- Clarified phase gates: live registration/cache required before ANY actual
+  input; successful pilot/parity before formal fits; all15 normal fixed fits
+  and full frozen development before full baseline acceptance. Removed the
+  circular wording that required pilot/all15fits before pilot's own input.
+- 30 targeted source/numeric tests pass11.81s. Latest complete841tests pass
+  46.46s; actual owned wait0/no guard,47.98s supervisor total with25% reserve.
+  Synthetic optimizer/checkpoint tests are NOT dataset training/results.
+  Fail-closed worker tests verify unavailable remote/mismatched source cannot
+  reach private loader or create namespace. No new training/cache/model read
+  outside synthetic fixtures, no CUDA initialization or GPU-hour use.
+- Actual network diagnosis:7890 local Mihomo running, IPv6 selected upstream;
+  webpage and node API health probe intermittently succeed, repeated actual
+  API/Git HTTPS fail handshake.17890 listens but TLS fails; direct times out;
+  configured alternate IPv4 node API probe504, no global node switch/restart.
+  A fresh strict-pinned SSH7890 ls-remote DOES return exact21b7dd1c8632ba1b39f16189b171fd92a48d45c5;
+  subsequent push9089b0d fails SSH banner timeout. Reading once is not a stable
+  upload path. No host-key/TLS bypass/foreign-process change or fake remote
+  receipt. Source saved locally; remote registration and actual pilot pending.
+- Full Goal ACTIVE/unachieved: full9M dev, all15fresh baselines, calibrated
+  controls, joint trained R/C/M, legal Pred/GT+Pred/dense/full physical evidence
+  and locked independent final/report remain open. No partial-stage acceptance.
