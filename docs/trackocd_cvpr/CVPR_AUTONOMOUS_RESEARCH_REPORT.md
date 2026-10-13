@@ -1248,3 +1248,42 @@ Separate qualification:
 All954 tests pass. No new calendar/model was selected and no optimizer steps
 added; a bounded exposure correction still requires new prospective protocol,
 actual informative pilot and fair controls before any expanded research claim.
+
+## Corrected exposure pilot: real rejection gradients, no measured discovery gain
+
+The separately preregistered midpoint-uniform Known-rank pilot completed
+normally at5fc8847ce3bc2e0e01ee5733a1c31ebf49ff8b68:43.2447s,
+peak952098816B, one CPU compute worker plus one bounded native driver helper,
+zero CUDA/training GPU-hours. Both fresh708parameter arms took50updates using
+the SAME frozen calendar from333Known-eligible frames, then completed the full
+10policy videos/54physical tracks/1268observations/374frames/1empty episode.
+The calendar uses offline complete Known availability, not deployed label-free
+online training; numerical inputs remain current prefixes and no pseudo/dev
+opportunity or endogenous prediction selects update frames.
+
+Both arms now have119Known/15existing policy-pseudo base group contributions
+and26extra rejection opportunities at update frames. The repair produces an
+actual nonzero rejection parameter gradient on26/50steps, peak0.1630205077;
+the baseline coefficient0 has none. Endpoints differ despite identical fresh
+initialization. Each arm nevertheless emits the SAME aggregate1094KNOWN/174NEW
+actions and retains174anonymous/bank commits. Exposure is qualified, discovery
+improvement is NOT measured or accepted. Counts are not independent samples,
+and the objective is not posterior or foreground-score calibration.
+
+Both private own model/AdamW/RNG step50 snapshots reopened exactly, remain
+local, and cannot warmstart formal training. No dev/final/Val/Test input was
+used. A failed17890 source-network gate preceded Popen/output/private loads;
+live exact17899 verification subsequently enabled the sole optimizer attempt.
+No external proxy/service/foreign process changed or guard bypass occurred.
+
+Result SHA256:
+`aff6bc17536e538a4c0833e18d075e8d965abbb55e7288dbda900aea48283e79`.
+Normal terminal:
+`7ba2f6a05e89ca98000c91ba9fd37af5edc2553bd5e895136f0d2d0dec00c6d4`.
+Eight targeted source/receipt/exposure regressions pass3.52s. This is only an
+informative pilot prerequisite for a new explicit formal registration, not
+automatic expansion or a scientific winner. Formal multi-seed/full development,
+fair calibrated Raw/coverage/latency controls, qualified full M, joint R/C/M,
+lawful strong Pred/dense transfer and locked-final Goal A/B/C remain unfinished.
+The final bounded combined CVPR/v2 regression run passes997tests in54.97s,
+ownedexit0/no guard, inclusive56.4253s/peak834846720B/zero GPU-hours.

@@ -5753,3 +5753,39 @@ no private GT/cache/weights opened for this check):
   Six targeted pass3.34s; full960pass57.29s, ownwait0/no guard/58.8566s/
   peak808267776B/25%reserve+3GiB margin. Execution follows exact remote
   publication; original Goal/science scope unchanged and unachieved.
+
+### Actual corrected exposure pilot: exercised intervention, not a discovery gain
+
+- Exact source registration5fc8847ce3bc2e0e01ee5733a1c31ebf49ff8b68 was
+  verified live before private loads. Initial17890 network gate failed BEFORE
+  Popen/output creation/private input; subsequent exact Git proof through17899
+  permitted the sole corrected optimizer trial. No external proxy/service or
+  process changed, no repeated training attempt or cached registration bypass.
+- Normal ownedexit0/guardNONE/complete result:43.244659624s inclusive wall,
+  peak952098816B, one CPU compute worker plus one bounded native driver helper,
+  zero CUDA/training GPU-hours. Fresh paired50/708parameters, same initial
+  a4b4ab7e... and calendar1fd8b98b... from333eligible Known frames; offline
+  midpoint-uniform plan frozen before updates, not pseudo/dev/history ranking.
+- Each full10video/54physical/1268observation/374frame/1empty episode retained
+  every predicted wrong history. Updated frames contribute119Known/15existing
+  policy-pseudo base groups and26rejection opportunities. Repair has actual
+  nonzero extra parameter gradient on26/50steps (peak0.1630205077); baseline
+  extra-gradient0 by coefficient0. Full-rollout206opportunities not samples.
+- Endpoints differ: baseline16495d6b... versus repair07623ded..., yet SAME
+  aggregate actions1094KNOWN/174NEW,174anonymous and bank commits each.
+  This qualifies actual intervention exposure ONLY, not discovery improvement,
+  foreground/posterior calibration, semantic reuse, formal fit or Goal success.
+- Both own step50model/AdamW/NumPy+Torch RNG snapshots reopened exactly;
+  private weights/calendar/histories stay local, no formal pilot warmstart.
+  ResultSHA aff6bc17536e538a4c0833e18d075e8d965abbb55e7288dbda900aea48283e79;
+  launch963ed084987263f3109eb29ae0ad34c80d0b7e574c2b2d01d839b91983adbd80;
+  normal terminal7ba2f6a05e89ca98000c91ba9fd37af5edc2553bd5e895136f0d2d0dec00c6d4.
+- Public-only exact source/receipt qualification and eight targeted tests pass
+  3.52s. Formal3seed/200step pairs require separately frozen registration and
+  fresh execution; no automatic start, extra pilot, coefficient/seed search or
+  expanded GT scope. Full M/runtime, calibrated Raw controls, joint/Pred/dense/
+  independent-final and Goal A/B/C remain OPEN; original Goal remains active.
+- Final bounded regression run covers BOTH tests/trackocd_cvpr and
+  tests/trackocd_v2:997pass54.97s, ownedwait0/guardNONE/56.425345291s inclusive,
+  peak834846720B, planned25%RAM reserve+3GiB headroom and zero GPU-hours.
+  Public receipts only are staged; private snapshots/calendar/history excluded.
