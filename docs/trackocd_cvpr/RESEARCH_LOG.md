@@ -3368,3 +3368,59 @@ new research scope; nothing has been deleted, no storage pressure is present.
   Nextregister/fetch/refverify thenboundedRall12eval andsingleMnextcontrol;
   learnedCdev/allremainingM/coverage/selfexclusion/stronglegalPred/final open.
   Goalactive, no R/C/M scientificacceptance or smaller-success substitution.
+
+### Complete R development matrix and second M fixed fit: limits remain
+
+- Registered5245eebf27a21bb0222c45145ca545cad9704a38, actual Rall12 worker
+  handle62277 completedownedexit0/noguardstop/zerooptimizer. Full72devvideos/
+  472physical/8753observations/2562frames,302Known/119declaredpseudo/51unscorable
+  retained; ALL12endpoints beforeGTgate passed. PublicresultSHA
+  704d0e20b59e85d78a46835dd54fe53099717361f8b789e2559a5c3a95531e70.
+  Owned92.319903617s/worker85.019211298s/RSS1144594432B/ONEOSthread/noCUDA/
+  0trainingGPUh. All12actualfutureprefix probes mutated32future rows withsame
+  sealedfirst-prefix; timeless order/time exact, temporalnumeric differences
+  measured butNOT proof of temporalbenefit/wholeonlinecontroller correctness.
+
+  | all-available prefix | macro R1, mean of 3 trained seeds | macro R5, mean of 3 trained seeds | Known micro recognition, mean |
+  | --- | --- | --- | --- |
+  | Raw, zero fitted parameters | .669205 | .792160 | .933775 |
+  | Temporal CE | .673765 | .819893 | .928256 |
+  | Timeless CE | .673765 | .819893 | .927152 |
+  | Temporal Raw teacher | .657349 | .809657 | .945916 |
+  | Timeless Raw teacher | .657349 | .808220 | .945916 |
+
+  CE R1seedvalues .695960/.662186/.663148 straddleRaw, notstableacrossseedgain.
+  Eachpairedtemporal/staticCE FULLretrievaldict identicalatallavailable; paired
+  teacher R1 identical but teacher R5 differsforseed1028: macro.792160 versus
+  .787850 (micro104/119 versus103/119). Earlierbroad teacherwhole-dict equality
+  testwasincorrect andcorrected to R1; immutablemetrics notmodified. Preserve
+  both R1/R5/otherprefix effects rather than cherry-pickp8/p16/seed1027.
+  Atp16 CEmeans .637166temporal/.644110static versusRaw.598164; not a special
+  temporalwin. Oldeffective-rank collapse not reproduced: endCERrank79.72--81.69,
+  teacher65.63--68.80 versusRaw53.67. PartialR5/Knownbenefits do not qualify
+  noveltemporalcontribution or GoalA/B/C; no final/Val/Test selection.
+- Sameactualregisteredsource, Mhandle23197 completedrelative_weighted/seed1027/
+  fixed200/161parameters/fourfullpolicyepisodes; publicSHA
+  ed91a858d0153210a4e76c9c5826274abc4f62bf82aa93384f5542579194a5ef.
+  Exact12515B ownendpointSHA1f90a897056efd38034d522bad6ae2b125d79c02ed735d39485751f43880b086.
+  Owned257.486383897s/worker250.017862485s/RSS949841920B/11OSthreads/noCUDA/
+  0GPUtrainingh. ENTIREactualsummary/modeldigestf97ea675.../losscurve and
+  private8427649B historySHAe81307ef... EXACTmatch relative_quarantine partner.
+  DifferentendpointfileSHA reflectsdifferentcontrol metadata, NOTweights.
+  Twofreshfits are differentregisteredcontrols, NOTtwoindependenttrainingseeds.
+- Importantquarantineinterpretation checked: zeroQuarantined lifecycle records
+  alone would NOT prove zeroexcludedmembers. Read ONLYactive_groups and
+  retained_groups numericmetadata streamingfromhash-verifiedfirstMprivate
+  artifact (noGTlabels/roles/prediction arrays decoded/copied/uploaded):8313
+  records,0withactive<retained,0excluded-group occurrences. Combined with real
+  completepartnertrace equality this actuallyproves no intervention inthisseed,
+  not improvedpureCT/coverage or missingotherclasses resolved. M2of9complete,
+  Known519/pseudo89/ONEpseudo class limitations identical.
+- Full596tests PASS41.76s. Afirstnewreceipt testoverclaimedteacherR5equality;
+  this scientificassertion corrected, thenaPythonchainedapprox-comparison
+  syntaxerror splitintotwoassertions. No model/data/result changed to maketests
+  pass. EveryrawR metric and source/probe/privatehistory hash retained.
+- Next unchangedthirdMcontrol then remainingseeds, alltrainedC9causaldev,
+  calibrated/freshA1A2/EMA/coverage/selfexcluded baselines, licensedstrongPred
+  and lockedfinal. Goalactive; meaningfulnegativeevidence not reason to pause,
+  discardfailedseeds, substituteplumbing acceptance or endwhole scientificgoal.

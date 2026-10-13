@@ -27,3 +27,17 @@ def test_first_real_M_fixed200_receipt_has_full_trace_strict_audit_and_exposure_
     t = json.loads(OUT.with_name(OUT.name + '_supervisor_attempt_1.json').read_text())
     assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None
 
+
+def test_actual_second_M_control_has_exact_summary_parameter_and_private_trace_parity():
+    out = OUT.with_name('M_GT_window_v1_relative_weighted_s1027')
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == 'ed91a858d0153210a4e76c9c5826274abc4f62bf82aa93384f5542579194a5ef'
+    r = json.loads((out / 'result.json').read_text()); full = json.loads((OUT / 'result.json').read_text())
+    assert r['variant'] == 'relative_weighted' and r['seed'] == 1027
+    assert r['summary'] == full['summary']
+    assert r['private_prediction_history'] == full['private_prediction_history']
+    assert r['endpoint'] == {'bytes': 12515, 'sha256': '1f90a897056efd38034d522bad6ae2b125d79c02ed735d39485751f43880b086', 'reopen_exact': True}
+    assert not r['old_R_C_M_or_pilot_warmstart'] and not r['three_seed_M_strict_CT_Pred_or_Goal_accepted']
+    terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
+    assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0
+    assert terminal['guard_stop_reason'] is None and terminal['last_persisted_completed_optimizer_steps'] == 200
+

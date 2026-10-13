@@ -625,3 +625,29 @@ differentK/hostconditions, not isolatedcontrolledcopybenchmark. Oldreceipts
 unaltered; no fullprivate-policy-row parity claim from aggregates. Full592
 tests+2targetedRawreceiptchecks pass. NextfullRmatrix/singleMcontrol/learnedC
 dev/fairMbaselines/stronglegalPred/lockedfinal stillrequired; Goalactive.
+
+The full R development matrix is now actually measured, publicSHA
+704d0e20b59e85d78a46835dd54fe53099717361f8b789e2559a5c3a95531e70:
+all12fixedendpoints/full472gallery/119queries/sixprefixes, ownedexit0/85.02s/
+1.145GB RSS/zerooptimizer/noCUDA. Allactual firstprefix futureprobes pass;
+static exact time/order invariance, temporal small numeric sensitivity NOT
+proof of a contribution. Atallavailable, RawmacroR1=.669205; CEmean=.673765
+(seedvalues .695960/.662186/.663148, mixed), teachermean=.657349(regression).
+Temporal/static R1 equal for EACHpairedseed. CER5mean=.819893 vsRaw.792160,
+butstaticCER5 same; teacherR5 .809657temporal/.808220static with ONLYseed1028
+R5difference. Preserve this realdifference, not whole-dict equality or selected
+prefix/seed claim. KnownrecognitionRaw.933775/CE.928256/teacher.945916; newrank
+collapse not observed. Representationbenefits mixed, no temporalmechanism or
+fullR/Goalacceptance. Final/Val/Test unused for selection.
+
+Second Mfixedfit (relative_weighted/1027) completed200freshupdates/fullfour
+policyepisodes/ownedexit0, publiced91a858.../privateendpoint exact. Entire
+summary/afterparameterdigest/losscurve/privatehistorySHA matchesquarantine
+partner: no quarantine gain inthisseed, not a secondindependentseed. Streamed
+onlyactive/retained group integer metadata fromhash-verifiedprivatefirsttrace:
+8313versions,0active-group exclusions, no GTlabel/prediction payload decoding
+or upload. This stronger metadata check distinguishes zero token-quarantine
+from zero excludedmembers. M2/9, sameONEpseudo-class exposure limitation.
+Full596tests pass aftercorrecting overbroadR5 testassertion and its unrelated
+approxsyntaxerror; rawresults immutable. AllremainingC/Mcontrols/strongPred/
+fairbaselines/lockedfinal and GoalsA/B/C open; originalGoalactive/unachieved.
