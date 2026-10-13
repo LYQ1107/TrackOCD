@@ -1287,3 +1287,21 @@ fair calibrated Raw/coverage/latency controls, qualified full M, joint R/C/M,
 lawful strong Pred/dense transfer and locked-final Goal A/B/C remain unfinished.
 The final bounded combined CVPR/v2 regression run passes997tests in54.97s,
 ownedexit0/no guard, inclusive56.4253s/peak834846720B/zero GPU-hours.
+
+## Prospective formal paired C window after actual exposure qualification
+
+The new explicit formal CLI freezes three seeds1027/1028/1029, two fresh
+708parameter arms perseed, four COMPLETE policy episodes and200updates each.
+All seed/episode midpoint-uniform Known plans are frozen before optimization;
+matched initializations/calendars and full prediction-owned histories remain.
+Only the fixed0.25complement term differs; same RawTop8/fit5priors, existing
+policy2 Known-derived labels, masked unknowns, AdamW and loss kernels are
+retained byte-identical to the actual informative pilot. Snapshots20/50/100/200
+are fixed monitoring, not dev/final selection or pilot warmstarts. One explicit
+seed pair and one owned CPU compute worker at a time; unchanged3GiB/3000s and
+storage/reserve guards, no automatic development or scientific acceptance.
+Actual formal results are still pending at registration. Twelve targeted tests
+pass3.76s; combined CVPR/v2 bounded suite1001pass52.98s/ownedexit0/guardNONE/
+54.5036s inclusive/peak837386240B/zero GPU-hours. This registration does not
+claim calibrated control parity, learned joint R/C/M, strong Pred/dense transfer,
+or independent-final performance. Goal A/B/C remain open.

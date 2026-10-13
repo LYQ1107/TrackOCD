@@ -5789,3 +5789,35 @@ no private GT/cache/weights opened for this check):
   tests/trackocd_v2:997pass54.97s, ownedwait0/guardNONE/56.425345291s inclusive,
   peak834846720B, planned25%RAM reserve+3GiB headroom and zero GPU-hours.
   Public receipts only are staged; private snapshots/calendar/history excluded.
+
+### Frozen formal spread-calendar C pair window (execution pending)
+
+- Previous completed pilot/public evidence was pushed/fetched/exact verified
+  8ac70ef5bf60774f5355ae528eb37ac11e45afc3. This is genuine progress, not a
+  scientific acceptance or a reason to repeat the one exposure pilot.
+- NEW formal config/protocol/gated CLI only. Source paths qualified by the
+  actual informative pilot remain byte-identical. Three fixed seeds1027/28/29,
+  fresh matched708parameter pair perseed, four complete policy episodes,
+ 50updates/episode/200total each; fixed20/50/100/200model+AdamW+RNG snapshots.
+  Same0.25/RawTop8/static complete fit5priors/original masked base objective,
+  approved policy2 complement labels and prediction-owned histories. No pilot
+  or old C weights, coefficient/seed search, extra steps, GT state repair,
+  unknown-as-background or role expansion. Both arms retain full clocks and
+  their own mistakes; shared calendar is not identical endogenous loss states.
+- Each seed's complete administrative Known-rank plan is frozen before all
+  optimizer steps;333eligible anchors per real episode expected but verified
+  by actual execution, not asserted as observed at this source-only stage.
+  One explicit pair perinvocation, at most one actual training attempt perseed,
+  no concurrent owned research fit/M job. Current proc inspection foundnone,
+  RAMavailable101022670848B/free disk158067961856B, no cleanup/install/GPU.
+- Exact fresh live remote/source/authority/fullinput qualification precedes
+  private loads; only own fresh output weights may be opened. Original
+  own-child3GiB/3000s/output16MiB/25%RAM/free10GiB/15GiB soft storage limits;
+  reserve plus full planned3GiB required pre-spawn. No guard relaxation,
+  automatic dev/final launch, calibration/independent semantic reuse claims
+  or Goal acceptance. Twelve targeted regressions pass3.76s, including real
+  pilot source fingerprints, scope refusal and actual synthetic4episode fit.
+- Combined bounded CVPR/v2 suite1001pass52.98s, ownedwait0/guardNONE/
+  54.503564458s inclusive/peak837386240B/zero GPU-hours. All real formal fits
+  remain pending source push/fetch/exact verification; no new private input
+  read or optimizer run occurred during this registration stage.
