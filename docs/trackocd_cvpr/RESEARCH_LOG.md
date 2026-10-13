@@ -5596,3 +5596,28 @@ no private GT/cache/weights opened for this check):
   Continue bounded C intervention and full-M large-scope runtime investigation,
   retaining calibrated Raw/coverage/latency, joint/strongPred/dense/final gates.
   Original Goal active/unachieved, not completed by this runtime failure.
+
+### Registered gated paired C pilot execution source
+
+- Previous turn produced/published paired C source and actual M wall terminal;
+  concrete progress, no live full-M remains. Fresh branch clean atcd7aee5,
+  available100.93GB RAM/free158.19GB disk. No cleanup/dependency/GPU action.
+- NEW explicit pilot-only CLI: one fresh seed1027 pair,50updates each, full
+  approved10policy videos/54tracks/1268observations/374frames/1empty; offline
+  fit5 prototypes from current complete qualified fit cache, no selected R/C
+  weights. Window/public full9C/audit prerequisites and latest live Git/source/
+  authority/qualified-input hashes precede every private payload. Failed gate
+  cannot create output. Busy real M/fresh-fit/paired worker refuses new spawn.
+- Own child retains3GiB/3000s/25%RAM/storage guard; hidden GPU/intra/inter1,
+  at most one previously qualified <=100ms native driver helper (not a second
+  CPU compute worker). Only that Popen child managed, no PID history replay.
+  Own50-step model+AdamW+NumPy/Torch RNG snapshots atomically saved/private600
+  permissions/reopened exactly. No pixel/annotation/old-weight reads after gate,
+  no dev/final/Val/Test or raw private-history export; no formal auto-start.
+- Pilot completion requires both actual50/fullclock paths; informative flag
+  additionally requires observed nonzero extra rejection gradient. Uninformative
+  completed plumbing must NOT qualify formal expansion or be called a science
+  gain. Actual run still pending until this source is pushed/fetched/verified.
+- Actual17 targeted pass3.72s; full947pass52.18s, ownwait0/no guard/53.6631s/
+  peak807931904B and25%reserve+3GiB planning margin. No numeric/source changes
+  to frozen pair objective/calendar or original completed experiments.
