@@ -4929,3 +4929,40 @@ no private GT/cache/weights opened for this check):
 - Latest32targetedtests pass10.51s; complete843tests pass47.56s with fresh
   RAM margin/25% reserve/actual owned wait0/no guard,48.97s supervisor total.
   No private actual retry launched by these synthetic/receipt tests.
+
+### Actual complete fresh A1/A2 fit5 pilot; not formal15fits or dev acceptance
+
+- Recovery source28ad15966c35fe893ab99a008d5423913db5a347 genuinely push/fetch/
+  exactHEAD/FETCH_HEAD/origin verified; actual worker repeats live registration.
+  NEW CPU_visibility_retry1 completes allfivefamilies x10steps/seed1027.
+  Normal ownedwait0/no guard/fullresult,24.7357s including network/imports,
+  peak667885568B/twoOSthreads/one identified driverhelper/oneCPUcompute/0GPUh.
+  Actual intra/inter-op1/noCUDAinitialized guard throughout. Original failed
+  attempt untouched; no global/foreignprocess changes or tolerated compute pool.
+- resultSHA363e5a523db3e2ecd855a0afb77642cdd6c8862a5dd35505a6b4a60ca65dd0ce;
+  terminalSHAfcaed77e08b583909e270c4cbf81176d6a3727806611cca7eedb870199bc9248;
+  launchSHAfd96409e0543ec42201e1b56e9f6b123b07c70fcdcb0edf2549fd8438b7ae3b2.
+  Allcomplete1401physical/1158Knowneligible/243masked census retained, no new
+  BG/Novel target. Actualshared10batchcalendar samples60canonicalgroups/53videos
+  per family, NOT all1158 groups trained. Common actual adapter init/calendar
+  hashes match; allfive modelhashes change with nonzero actual loss gradients.
+- Every actual pilot step qualifies batched/individual numerical forward and
+  parameter gradients under predeclared tolerances: maxembedding4.47e-8,
+  maxparametergradient3.58e-7. A2 evidence extra gradient peak.0032534,
+  matched static.102082; singleton evidence gradients may legitimately vanish.
+  These demonstrate connected optimizer plumbing, not calibrated reliability,
+  foreground probability, Novel generalization or temporal/static superiority.
+- Five private10step checkpoints model+AdamW reopen exactly; private output
+  total32011805B <32MiB, no weight/data/rawGT upload. Public result keeps scoped
+  target-projection utility flag not_cache_or_training_execution: that refers
+  ONLY to target projection, not whole worker (actual ten steps/family explicit).
+  Neither projection flag nor loss curve selects a model/checkpoint/winner.
+- Onlypilotqualification complete. Formalall15freshFixed200fits/three seeds,
+  full472gallerydev metrics/new256D evaluator, fair calibration/jointR-C-M,
+  all9fullM, legalPred/fullcausaldenominators/lockedfinal/report stillOPEN.
+  No pilot warmstart, dev/final/Val/Test use or fullGoal completion claim.
+- Actual publicreceipt test passes1.74s; full844tests pass46.59s, guarded own
+  wait0/no guard/47.97s total. Public launch/result/terminal only to GitHub;
+  five checkpoints, curves and private data remain local. Next safe work is
+  full frozen M RAM-recovery evaluation (no optimization), plus formal fresh
+  baseline source registration; do not count either as already complete.
