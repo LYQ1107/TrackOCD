@@ -18,13 +18,31 @@ from src.trackocd_v2.io import atomic_json, sha256_file
 
 SCRIPT = 'scripts/trackocd_cvpr/audit_effective_Mean_policy.py'
 CONFIG = 'configs/trackocd_cvpr/effective_Mean_policy_audit_v1.json'
+RECOVERY = 'configs/trackocd_cvpr/effective_Mean_policy_registration_retry1.json'
 PILOT = 'outputs/trackocd_cvpr/cvpr4/self_excluded_Mean_policy_pilot_v1'
-SOURCES = (SCRIPT, CONFIG, 'src/trackocd_cvpr/effective_mean_observer.py',
+SOURCES = (SCRIPT, CONFIG, RECOVERY,
+    'outputs/trackocd_cvpr/cvpr4/effective_Mean_policy_audit_v1_supervisor_attempt_1.json',
+    'src/trackocd_cvpr/effective_mean_observer.py',
     'src/trackocd_cvpr/effective_excluded_mean_audit.py', 'configs/trackocd_cvpr/source_effective_excluded_mean_audit_v1.json',
     PILOT + '/launch.json', PILOT + '/result.json', PILOT + '_supervisor_attempt_1.json')
 
 
 def configuration(root, profile):
+    recovery = profile.get('registration_recovery')
+    output = profile['output_directory']
+    if recovery is not None:
+        expected = '768141eee7da3cff9a43e9d9a8964ad97a1b31b629ce21a5c29d7866041d118f'
+        failed = root / 'outputs/trackocd_cvpr/cvpr4/effective_Mean_policy_audit_v1'
+        terminal = failed.with_name(failed.name + '_supervisor_attempt_1.json')
+        if (recovery != {'original_terminal_sha256': expected, 'source_transport_only_no_private_inputs': True}
+                or output != 'outputs/trackocd_cvpr/cvpr4/effective_Mean_policy_audit_registration_retry1'
+                or failed.exists() or sha256_file(terminal) != expected):
+            raise ValueError('Exact pre-input registration failure/new namespace only')
+        t = json.loads(terminal.read_text())
+        if t['successful_owned_execution'] or t['complete_result_present'] or t['owned_worker_exit_code'] != 1 or t['guard_stop_reason'] is not None:
+            raise ValueError('Original source-gate transport failure unchanged')
+        profile = {k: v for k, v in profile.items() if k != 'registration_recovery'}
+        profile['output_directory'] = 'outputs/trackocd_cvpr/cvpr4/effective_Mean_policy_audit_v1'
     if (profile['status'] != 'REGISTERED_EXTERNAL_EFFECTIVE_MEAN_FULL_POLICY_AUDIT_NOT_M_EMA_PRED_OR_GOAL'
             or profile['base_config'] != original.CONFIG
             or profile['prior_result_sha256'] != '9987e002ece8e906fe4ad85750c8f08f622dee8253011587b78dfe996b9df914'
@@ -40,13 +58,13 @@ def configuration(root, profile):
     terminal = json.loads((root / (PILOT + '_supervisor_attempt_1.json')).read_text())
     if not terminal['successful_owned_execution'] or terminal['owned_worker_exit_code'] != 0 or terminal['guard_stop_reason'] is not None:
         raise ValueError('Original pilot actually completed normally, not a partial chosen case')
-    cfg = dict(base); cfg['output_directory'] = profile['output_directory']
+    cfg = dict(base); cfg['output_directory'] = output
     return cfg
 
 
 def main():
     runtime = original.runtime; original_gate, original_stream = runtime.source_gate, rollout.readonly_excluded_stream
-    runtime.SCRIPT, runtime.CONFIG = SCRIPT, CONFIG
+    runtime.SCRIPT, runtime.CONFIG = SCRIPT, RECOVERY
     runtime.SOURCES = tuple(dict.fromkeys((*runtime.SOURCES, *original.SOURCES, *SOURCES)))
     records = []
     def gate(args, profile, safety):

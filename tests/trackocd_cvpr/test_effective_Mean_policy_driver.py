@@ -21,3 +21,13 @@ def test_after_prediction_only_hook_requires_original_actor_full_trace_and_all18
     assert "'effective_support_result.json'" in s
     o = (ROOT / 'src/trackocd_cvpr/effective_mean_observer.py').read_text()
     assert o.index('result = parent(frame, rows)') < o.index('observer.observe(' , o.index('result = parent(frame, rows)'))
+
+
+def test_exact_preinput_source_transport_recovery_preserves_original_protocol():
+    from scripts.trackocd_cvpr.audit_effective_Mean_policy import RECOVERY
+    original = configuration(ROOT, json.loads((ROOT / CONFIG).read_text()))
+    retry = json.loads((ROOT / RECOVERY).read_text()); new = configuration(ROOT, retry)
+    assert {k:v for k,v in new.items() if k != 'output_directory'} == {k:v for k,v in original.items() if k != 'output_directory'}
+    assert new['output_directory'].endswith('registration_retry1')
+    retry['registration_recovery']['source_transport_only_no_private_inputs'] = False
+    with pytest.raises(ValueError): configuration(ROOT, retry)

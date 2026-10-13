@@ -4610,3 +4610,19 @@ no private GT/cache/weights opened for this check):
   record; register/push/fetch first. M needs actual runtime profiling/equivalent
   qualification before new full replay. Individual failure does not end, pause
   or block main Goal. Whole M/fresh baselines/strong Pred/joint/final remain open.
+
+### Effective audit source registration fails before private inputs; bounded recovery
+
+- The launchedf872c9145c748452170f9ec661111256a7691887 audit attempt fails its
+  worker's fresh remote-ref gate, not experiment/model/numeric checks. Original
+  terminalSHA768141eee7da3cff9a43e9d9a8964ad97a1b31b629ce21a5c29d7866041d118f,
+  ownedexit1/no guard/fullresultFALSE/15.84s. Output DIRECTORY absent; no launch
+  data record/private cache/GT payload/model read or observation occurred.
+  Raw local traceback kept private, SHA db170a0e...; no log/credentials upload.
+- Source transport-only recovery uses NEW registration_retry1 namespace;
+  exact old failed terminal/absent data directory checked. All original18
+  streams/data/probes/thresholds/limits/effective observer unchanged, fresh live
+  remote/source proof still mandatory. No cached receipt or API bypass, no
+  proxy/global Git/foreign process edits. Original attempt never relaunched.
+- 9 targeted tests pass after recovery configuration/scope refusal addition.
+  Actual recovery pending register/push/fetch; Goal remains active/unachieved.
