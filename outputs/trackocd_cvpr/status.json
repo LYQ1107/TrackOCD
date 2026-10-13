@@ -1,15 +1,30 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_CVPR0_CURRENT_INPUT_ROUTER_VERIFIED_POLICY_INTEGRATION_PENDING",
-  "phase": "CVPR-0",
+  "status": "ACTIVE_FRESH_ALL15_BASELINES_AND_FULL_DEV_MEASURED_JOINT_PRED_FINAL_OPEN",
+  "phase": "CVPR-2/3/4 evidence-supported mechanism iteration",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
   "scientific_success_claimed": false,
   "training_gpu_hours_used": 0,
-  "new_experiments_completed": 15,
+  "latest_actual_fresh_fixed200_fit_count": 15,
+  "latest_actual_native_development_model_prefix_cases": 90,
+  "latest_development_scope": {"physical_tracks": 472, "observations": 8753, "metadata_frames": 2562, "Known_queries": 302, "declared_pseudo_queries": 119, "unscorable_tracks": 49, "outside_eligible_Known": 2},
+  "latest_fresh_baseline_warmstart_or_dev_selection": false,
+  "latest_actual_fit_receipt": "outputs/trackocd_cvpr/cvpr2/fresh_A_fixed200_all15_fit_receipt_v1.json",
+  "latest_actual_dev_result": "outputs/trackocd_cvpr/cvpr2/fresh_A_development_all15_v1/result.json",
+  "latest_posthoc_dev_summary": "outputs/trackocd_cvpr/cvpr2/fresh_A_development_all15_v1/posthoc_summary.json",
+  "latest_all_available_baseline_result": "Every family/seed below zero-fit Raw on pseudo macro R1/R5; dynamic A2 macro R1 below matched static in all3seeds; no scientific winner selected",
+  "CPU_training_is_not_zero_optimizer_work": true,
+  "full9M_development": "UNQUALIFIED: RAM retry completed three main orders but original3000s guard stopped before full probes/result; no partial-metric acceptance or unchanged retry",
+  "historical_status_snapshot_not_current": {
+    "status": "ACTIVE_CVPR0_CURRENT_INPUT_ROUTER_VERIFIED_POLICY_INTEGRATION_PENDING",
+    "phase": "CVPR-0",
+    "new_experiments_completed": 15,
+    "next": "Integrate/test current-frame atomic policy/memory after57video observed-input router mutations; finish12actual-source literature audits and new independent lawful Train folds before mechanism selection/training. Existing capped annotated cadence is not dense-pixel protocol. Old ID-controller failure remains. No training"
+  },
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Integrate/test current-frame atomic policy/memory after57video observed-input router mutations; finish12actual-source literature audits and new independent lawful Train folds before mechanism selection/training. Existing capped annotated cadence is not dense-pixel protocol. Old ID-controller failure remains. No training"
+  "next": "Qualify full trained-M runtime/probes without silent guard relaxation; develop fair calibrated Raw/C and evidence-supported joint R/C/M. Preserve all baselines and failed attempts; lawful strong anonymous Pred/dense fullphysical transfer and locked independent-final remain required. No Val/Test selection, fabricated Novel supervision or arbitrary geometry-weight sweep."
 }

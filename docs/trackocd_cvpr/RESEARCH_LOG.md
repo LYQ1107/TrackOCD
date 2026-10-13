@@ -5385,3 +5385,52 @@ no private GT/cache/weights opened for this check):
   32 passed in 2.26s. Only small public launch/result/terminal staged;
   private checkpoints/data/cache stay local, qualified training sources unchanged.
 - Completed-stage registration: A2_CAPACITY_CONTROL/s1029; independent full15 dev remains pending.
+
+### Complete all15 fresh baseline matrix and actual full native development
+
+- All15 actual normal Fixed200 fits complete; verified exact common qualified
+  sources, same actual seeded initialization/calendar within each five-family
+  group, three distinct seeds. Full public cohort receipt SHA256
+  bb1f3ce701987c6e0af42569911348ece5278aa4cc962fbf4e091111325bf879.
+  Summed own wall376.4358s/maxRSS659542016B/zeroGPUh. All60 private checkpoints
+  total383636004B retained locally. Sampled groups/videos498/226,495/221,498/223;
+  none is a claim of all1158 eligible groups visited. Each completed fit was
+  separately tested/pushed/fetched/exact-remote verified before the next trial.
+- A test-only busy-guard fixture originally reused A2_EVIDENCE's real output
+  namespace, so completed training correctly triggered preserve-existing guard
+  before the mocked busy guard. Isolated the test root with tmp_path; likewise
+  missing-cohort tests now use empty temporary roots instead of depending on
+  real experiments remaining absent. No qualified training sources changed,
+  no failed/repeated optimizer run or real-output deletion occurred.
+- Full development source/ALL45 public fits independently live-registered at
+  b07526d0f7611179ea4ce144dc01e7d539b4e4c9 before private endpoints/cache input.
+  Actual normal0/no guard/112.7806s/peak964435968B/oneOSthread/zero optimizer/
+  GPUh/noCUDA. Full472/8753/2562, Known302/pseudo119/outside2/unscorable49,
+  all15model x sixprefixes =90cases. All short/singleton/unknown tracks retained,
+  complete canonical offline fit5 prototypes only; no final/Val/Test access.
+  Resultb6b4358162dc3c1384bfe8ce9d377960594b32b8039f651a9e308c0baafe8e65;
+  terminal6512e0fb415f1394fd3b55282161a7e32c551e5f959e1eec1ff680e03a9dd972;
+  launchaeb7e13c6cac92ecec063f251f4db8670a91caf83e7cbb4c00fe388e72e2982c.
+- At allavailable, zero-fit Raw macroR1/R5 .669205/.792160. Three-seed means
+  plainA1 .400333/.571476; geometry1 .418208/.635472; geometry5 .437894/.668675;
+  dynamicA2 .379497/.574949; staticA2 .396109/.576903. ALL15 belowRaw both
+  retrieval metrics. Dynamic-static R1 difference negative everyseed, mean
+  -.016612; R5 mixed signs, mean-.001954. Known micro gain does not hide plain/
+  dynamic macro regression (.871561 vsRaw .959433). Native effective ranks
+  ~3.95-6.07 vsRaw53.67 and full paired Gram drift measured; not causal proof
+  by themselves, not a geometry hyperparameter winner or temporal benefit.
+- New posthoc public-result-only aggregation validates actual complete scope,
+  no selector/optimizer, all prefixes/queries/prototypes/numeric probes before
+  mean/std/range/paired differences. Raw is ONE zero-fit control, not3training
+  seeds; sample std is not a significance test/CI. SummarySHA256
+  aa209ebc14fed069d9612658317389122111b7b483a37b3c89b5eca8fdf88462.
+  Actual one-track changed-future/ID probes are not full persistent causality.
+  GT-track diagnostic is not lawful strongPred/dense/fulltruth/final acceptance.
+- Actual24 targeted tests pass2.51s; full896pass62.16s, ownedwait0/no guard/
+  63.7005s total/peak807944192B,25%RAM reserve. Reporting/status headers now
+  distinguish actual CPU training from zeroGPUh and historical pending text.
+  Preserve old status snapshot and all failed attempts; no foreign process,
+  shared service, protected GT, raw asset/weight upload or storage cleanup.
+  Full9M/probes, fair calibrated controls, joint R/C/M, legal strongPred and
+  locked independent-final/report remainOPEN. Negative baselines do not end
+  GoalA/B/C; original Goal active/unachieved, no model/checkpoint selected.

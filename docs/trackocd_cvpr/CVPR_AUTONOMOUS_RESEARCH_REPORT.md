@@ -2,7 +2,7 @@
 
 ## Scope and state
 
-Client date: 2026-10-12, Asia/Shanghai. New research branch:
+Latest update: 2026-10-13, Asia/Shanghai. New research branch:
 `research/cvpr-trackocd-autonomous-v2`, immutable parent
 `7546527e5f9540d351785ade34c8e3292a74441d`.
 The 1,715-line taskbook is bound by SHA256
@@ -10,9 +10,14 @@ The 1,715-line taskbook is bound by SHA256
 
 Overall state: **IN_PROGRESS**, Goals A/B/C not achieved. A single negative
 diagnostic does not end this research goal. Historical results are preserved,
-not renamed as new CVPR experiments. New training remains0; the bounded
-Train physical smoke and57video input run below are diagnostic inference,
-not new semantic method results.
+not renamed as new CVPR experiments. The original bounded Train physical
+smoke and57video input run below were diagnostic inference, not training.
+Subsequent authorized fresh fits are documented below. Most recently, all15
+fresh fit5 Fixed200 baselines and their complete90-case Train-development
+evaluation finished normally; these negative GT-track diagnostic results do
+not establish a joint persistent discovery method, predicted frontend transfer
+or locked independent-final success. CPU training is not zero optimizer work
+merely because its GPU-hours are zero.
 
 Current update (2026-10-12): subsequent explicit Known-only authority covered
 429 allowlisted Train videos and excluded the old51heldout; actual positive
@@ -1033,3 +1038,81 @@ really exercised within same Raw32MiB+SHA32MiB. Numeric hashes/globalhash/model/
 data/history/limits unchanged; no learned memo. Qualifies equivalent new full-M
 profile, not isolated speedup/full-dev scientific gain. Old wall-failure remains
 untouched; full9M/freshbaselines/strongPred/joint/independent final still open.
+
+## 2026-10-13 — Actual fresh five-family, three-seed baseline matrix
+
+All15 independently initialized fit5 baselines completed200 optimizer steps,
+with20/50/100/200 model+AdamW snapshots and exact reopen checks. Same-seed actual
+adapter initialization and batch-calendar hashes match across all five families;
+all three seeds are distinct. No pilot or old15-class weights/loader warmstart.
+Full1401-track fit census retains1158 eligible Known groups and243 masked
+other/unlabeled tracks. Actual distinct groups/videos sampled were498/226,
+495/221 and498/223 by seed, not every1158 group. Only existing fit5 Known labels
+form the loss, outside numeric forward; no unknown-as-background supervision.
+
+The aggregate fifteen-fit receipt is
+`outputs/trackocd_cvpr/cvpr2/fresh_A_fixed200_all15_fit_receipt_v1.json`.
+All60 snapshots remain private (383636004B). All runs exited normally; summed
+owned wall time376.4358s, maximum sampled RSS659542016B, one CPU compute worker
+plus at most one identified native driver helper. Training GPU-hours are zero.
+Every trial's public launch/result/terminal was pushed and exact-remote verified
+before continuing, without changing qualified training code between families.
+
+Full native development was registered at
+`b07526d0f7611179ea4ce144dc01e7d539b4e4c9`; both launcher and worker verified
+all45 public receipts and live/source/authority gates before private endpoints
+and data. Normal exit0/no guard,112.7806s, peak964435968B/one OS thread/no CUDA,
+zero optimizer steps. Full472 physical tracks/8753 observations/2562 metadata
+frames, all15 models and six observed prefixes (90 cases), no padding or dropped
+short/unknown tracks. Complete offline canonical fit5 prototypes only; no dev
+prototype fitting or checkpoint selection. Final/Val/Test were not read.
+
+All-available results below are means over three actual training seeds, except
+Raw, which is one zero-fit reference. Retrieval is certified cross-video macro
+lower-bound recall on119 declared pseudo-Novel queries with the full472-track
+gallery; Known accuracy has302 queries. Unknown49 remain unscorable, not Novel
+or background. The full result includes all six prefixes, short/singleton
+query strata, per-seed ranges/std and paired differences; this table is not a
+replacement for those scopes or a complete semantic H-score/purity metric.
+
+| Family | pseudo macro R@1 | pseudo macro R@5 | Known micro | Known macro | Effective rank |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Raw, zero-fit | 66.92% | 79.22% | 93.38% | 95.94% | 53.67 |
+| A1 adapter | 40.03% | 57.15% | 97.02% | 87.16% | 4.29 |
+| A1 geometry weight1 | 41.82% | 63.55% | 97.68% | 94.92% | 3.95 |
+| A1 geometry weight5 | 43.79% | 66.87% | 98.12% | 98.81% | 6.07 |
+| A2 dynamic evidence | 37.95% | 57.49% | 97.02% | 87.16% | 4.28 |
+| A2 static capacity control | 39.61% | 57.69% | 97.35% | 91.01% | 4.32 |
+
+Every trained family/seed is below Raw on both full-prefix pseudo macro R@1
+and R@5. Geometry weight5 reduces this retrieval deficit relative to plain A1
+but does not restore Raw; no extra geometry-weight sweep or selection is made.
+Known micro improvement must not hide the plain/dynamic adapter's worse Known
+macro accuracy. Low effective ranks and paired Gram drift are measured
+representation diagnostics, not alone a proof of causation. Dynamic A2 macro
+R@1 is below its matched static control in all three seeds; R@5 differences
+have mixed signs. No temporal-generalization improvement is demonstrated.
+
+Each endpoint passed an actual one-track future visual suffix mutation and
+routing-ID rename prefix-invariance probe. Order/time changes were measured,
+not upgraded into full online controller causality or beneficial temporal
+reasoning; static control is not claimed strictly timeless. No model is chosen.
+These are GT-track/cache diagnostics, not anonymous physical predicted-track
+or dense-clock results. The posthoc reporting module does not retune inference.
+
+Public development result SHA256:
+`b6b4358162dc3c1384bfe8ce9d377960594b32b8039f651a9e308c0baafe8e65`.
+Normal terminal SHA256:
+`6512e0fb415f1394fd3b55282161a7e32c551e5f959e1eec1ff680e03a9dd972`.
+Reports: `outputs/trackocd_cvpr/cvpr2/fresh_A_development_all15_v1/result.json`
+and `posthoc_summary.json`; the latter is explicitly posthoc, not a selector,
+new preregistered inference or three independently trained Raw controls.
+
+The M RAM retry subsequently completed its three main orders but hit the
+original3000s wall guard before full extra probes/results; full9M remains
+unqualified, with no partial-metric salvage or unchanged-bound restart.
+Next work must address that runtime qualification, calibrated candidate/Raw
+controls and evidence-supported joint R/C/M mechanisms, retaining legal
+strong-Pred/dense physical denominators and locked-final gates. This baseline
+failure is not overall Goal completion and does not authorize Val tuning,
+Novel supervision, arbitrary hyperparameter search or resource relaxation.

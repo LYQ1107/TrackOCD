@@ -1,0 +1,282 @@
+{
+  "status": "COMPLETED_ALL15_FRESH_FIXED200_FITS_NOT_DEV_OR_GOAL_ACCEPTANCE",
+  "cohort": {
+    "all15_actual_complete_fixed_fits": true,
+    "same_seed_initialization_and_calendar_verified": true,
+    "three_distinct_actual_seeds_verified": true,
+    "trials": [
+      {
+        "family": "A1_ADAPTER",
+        "seed": 1027,
+        "result_sha256": "089dbeb6cdb0360de9959c22a484e1347d818c5705485e6fe40f296404106845",
+        "terminal_sha256": "633bd965a9adedb119350ba83982d12e7c95cc1c4d127bf216dab0070dc4baf9",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "7c7b632fcb637cbd08048bea92f759210cad9c5a3c6a453ef679fc72aa4daea2",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_ADAPTER",
+        "seed": 1028,
+        "result_sha256": "de1691b194c895b84627a1b297d7eb5d21bcc3cf13e7b856c753f58f790015eb",
+        "terminal_sha256": "695d611b04832f09cc7a4eb35b4d48aee2ee8fbf020eb6bed23f5715812c7e15",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "ee050f11b76ce8f65e3598c006a813b9ce8c8c328b8996eb3ed926585ce4ea2c",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_ADAPTER",
+        "seed": 1029,
+        "result_sha256": "3124fa64667cf052e2a7499139c2e4009fbed971c63639d8a1513a2b5e1bc246",
+        "terminal_sha256": "beb0121293392fad7d3179157265f352d1f9361025c8c4009fde9a354587e462",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "8859e2d78f25e62feb7faedf6a7f535fbfa212f3d95eee2c379c1e10799372c5",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_GEOMETRY_1",
+        "seed": 1027,
+        "result_sha256": "f1099d1b2675df756eaea4512792ba695083c91248c471c2c9f22fba598f3b4a",
+        "terminal_sha256": "75a0b6b620efeec3ca1fe1fb4ec9879f90bfb782686c3359591ee6499d944a3d",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "82e122d6fd6ef7339f160059654abee3c294e6405c19045d5a4fbe0406427d2d",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_GEOMETRY_1",
+        "seed": 1028,
+        "result_sha256": "51015185842aae0731704497f07d03d24d99f29ee4b245c245e7eedaa15feb24",
+        "terminal_sha256": "3f607b823d0489750700485dea4a650d2779698eed08336a912d11e5e331b120",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "93c795d3f781794d745f79e044a2b6d57cc0d2b10a8ce8a1528191bf2e5e1909",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_GEOMETRY_1",
+        "seed": 1029,
+        "result_sha256": "90c44afcd848e32f68d337bf542f3ad0aa8000d667f9ba200abc2ba049c528b3",
+        "terminal_sha256": "eef79afcbe1463b05b5a1ebe0a83bad7c03dde030d2c25035328e2d63844d24a",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "1a43842a2189042820e86363cbf10f8a513699f7c93dd4802acee48e6d561ae7",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_GEOMETRY_5",
+        "seed": 1027,
+        "result_sha256": "de4f7aafd8bad1ebf954ffeb65f8662866f726d35b7ea32ade87dc41446a33ee",
+        "terminal_sha256": "18e517a764aa02609b0ae15780d99112fdc39a18b42946388d62a57a1286b505",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "19880b77e9cb6356da6063b0e866c00d98886826ecd3e8248a3ad7827e97251a",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_GEOMETRY_5",
+        "seed": 1028,
+        "result_sha256": "5f40ab28a06c6056558765c92f9718c5cd197ab1188212aa609ef19ca6665eb2",
+        "terminal_sha256": "db5a6eb0621a63f60cb50bad3d5a7caa907cddfba5d3a3a2f67f1222eaa52037",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "1d438320e7b1f6f852728fe3626c4405f2a7d9fe06e3cc4031a0517ae83a8e0f",
+          "step": 200
+        }
+      },
+      {
+        "family": "A1_GEOMETRY_5",
+        "seed": 1029,
+        "result_sha256": "8811e7c18dea8268e1a2d936846f8ef86834f938ed8ad477f5f938458fa0543b",
+        "terminal_sha256": "9c2bb9088096f4b870787fbb29fbbbdeca32846922b309c0d5a42c26b49973f3",
+        "endpoint": {
+          "bytes": 6311267,
+          "reopen_exact": true,
+          "sha256": "e0276212b7638083e860d209df59ed5791d345552430cfa63b42c01f691200c3",
+          "step": 200
+        }
+      },
+      {
+        "family": "A2_EVIDENCE",
+        "seed": 1027,
+        "result_sha256": "6a07043f3340fcbc893cd9a83c2118f0ac65ffcd6861e614e1b040d2850dc64e",
+        "terminal_sha256": "3297a6dba7607be434da8974775d83469a0b3bcae6c53049eada8563f7a1eb0d",
+        "endpoint": {
+          "bytes": 6517491,
+          "reopen_exact": true,
+          "sha256": "843830bbd4d04f95881759438d2aaabaddc6ceda126993de70835db27a3b4d04",
+          "step": 200
+        }
+      },
+      {
+        "family": "A2_EVIDENCE",
+        "seed": 1028,
+        "result_sha256": "6d8e5ab1c401d1de9c47b3890d1b74ed99baa01dbb8be738880d3d5b9e8312ef",
+        "terminal_sha256": "62950048d555b1aa80b7cd9db2780e6c41123d165c7d93ef0294c59aceb42b14",
+        "endpoint": {
+          "bytes": 6517491,
+          "reopen_exact": true,
+          "sha256": "6f5dd8de8bf6ad6b931b31458e2ee92c94ba703a36f164de99507c919c88e947",
+          "step": 200
+        }
+      },
+      {
+        "family": "A2_EVIDENCE",
+        "seed": 1029,
+        "result_sha256": "e3baaeffe8ebc9994f3934a44cecd40d8fc0d355f298ddb323ee04a8f24bd1e2",
+        "terminal_sha256": "50966695cf4f6f2bf3b0e271f16e8b2322e08003cbf6f44b802653a7f8807ef2",
+        "endpoint": {
+          "bytes": 6517491,
+          "reopen_exact": true,
+          "sha256": "fc06280029e4b789fb60a3ac59a7dfd8936a620ed2772281bd018e78c8cb9077",
+          "step": 200
+        }
+      },
+      {
+        "family": "A2_CAPACITY_CONTROL",
+        "seed": 1027,
+        "result_sha256": "0b811de123c776073f4d6a3cabe5773bd7313ec1eb2cdc096c8c64624e264044",
+        "terminal_sha256": "598dec7f4687f6bfd30b8ac1d1c39fd0acab73dc75050ce76eb93fcb07bf55ae",
+        "endpoint": {
+          "bytes": 6518375,
+          "reopen_exact": true,
+          "sha256": "212f0a819ca05b16ddac7b736b0a3f7bb5d324f02e598f47b06964e8cba611a3",
+          "step": 200
+        }
+      },
+      {
+        "family": "A2_CAPACITY_CONTROL",
+        "seed": 1028,
+        "result_sha256": "2f4530f308145909da4cc44bce69555f6b40e3a23f8db192a43e60af84819f67",
+        "terminal_sha256": "eb3006ea9f460e29ac39815221830e58c38c653b9d468b8bc6362af82ea09a2a",
+        "endpoint": {
+          "bytes": 6518375,
+          "reopen_exact": true,
+          "sha256": "ea5ee34cf51535bf8222202969e0d7b7d2d9aed589d95509198d222ff67ad1a6",
+          "step": 200
+        }
+      },
+      {
+        "family": "A2_CAPACITY_CONTROL",
+        "seed": 1029,
+        "result_sha256": "b30567f4fd10d9d3fce3c27e8031cbd5b343b1b9fd4be851186ee2e64aa4a31d",
+        "terminal_sha256": "e8aee4cd6f8eff1ac68e1a3fe1affcc10e4820ebc371a1cd6c30d1ce8e512c1a",
+        "endpoint": {
+          "bytes": 6518375,
+          "reopen_exact": true,
+          "sha256": "6316057be4b3ba9815c4df969040a9d00481f936e8448786fbe44e6c29c7dd27",
+          "step": 200
+        }
+      }
+    ],
+    "full_dev_or_Goal_accepted": false,
+    "private_endpoint_hashes_checked": false
+  },
+  "actual_exposure_per_seed": {
+    "1027": [
+      {
+        "family": "A1_ADAPTER",
+        "groups": 498,
+        "videos": 226
+      },
+      {
+        "family": "A1_GEOMETRY_1",
+        "groups": 498,
+        "videos": 226
+      },
+      {
+        "family": "A1_GEOMETRY_5",
+        "groups": 498,
+        "videos": 226
+      },
+      {
+        "family": "A2_EVIDENCE",
+        "groups": 498,
+        "videos": 226
+      },
+      {
+        "family": "A2_CAPACITY_CONTROL",
+        "groups": 498,
+        "videos": 226
+      }
+    ],
+    "1028": [
+      {
+        "family": "A1_ADAPTER",
+        "groups": 495,
+        "videos": 221
+      },
+      {
+        "family": "A1_GEOMETRY_1",
+        "groups": 495,
+        "videos": 221
+      },
+      {
+        "family": "A1_GEOMETRY_5",
+        "groups": 495,
+        "videos": 221
+      },
+      {
+        "family": "A2_EVIDENCE",
+        "groups": 495,
+        "videos": 221
+      },
+      {
+        "family": "A2_CAPACITY_CONTROL",
+        "groups": 495,
+        "videos": 221
+      }
+    ],
+    "1029": [
+      {
+        "family": "A1_ADAPTER",
+        "groups": 498,
+        "videos": 223
+      },
+      {
+        "family": "A1_GEOMETRY_1",
+        "groups": 498,
+        "videos": 223
+      },
+      {
+        "family": "A1_GEOMETRY_5",
+        "groups": 498,
+        "videos": 223
+      },
+      {
+        "family": "A2_EVIDENCE",
+        "groups": 498,
+        "videos": 223
+      },
+      {
+        "family": "A2_CAPACITY_CONTROL",
+        "groups": 498,
+        "videos": 223
+      }
+    ]
+  },
+  "resources": {
+    "sum_owned_wall_seconds": 376.4358364189975,
+    "maximum_sampled_RSS_bytes": 659542016,
+    "training_GPU_hours": 0,
+    "private_checkpoints_bytes": 383636004
+  },
+  "dev_or_Goal_accepted": false
+}
