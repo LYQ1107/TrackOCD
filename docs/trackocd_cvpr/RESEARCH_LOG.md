@@ -4720,3 +4720,39 @@ no private GT/cache/weights opened for this check):
   no encoder/optimizer/model selection/protected labels or changed limits.
   Whole Goal stays active/unachieved; numerical policy parity not full dev
   parity, isolated speedup, active purity, Pred, joint or final acceptance.
+
+### Actual complete external effective Mean audit and ALL11 M SHA shadow
+
+- Effective recovery b53a25b completes normally: actual wait0/no guard/2296.30s/
+  RSS950419456B/no CUDA/new optimizer/GPUh. Actor result917d6198b3c06a9cd615a73e2a6050e43714b0f0f107aa74aa4cf2446eb2ac31,
+  supplementalbd68eb8223bed59db0aa747db7e369620a76de3b9d236397b4a9c744c6736266.
+  Separate supplemental binds actor SHA. ALL3 controls/3orders/full54/1268/
+  374/1/all6 prefixes, full OLD/cache/ID/reverse and actual prior-future audits;
+  every original actor outcome and fullorder1027 trace EXACT prior9987e002...
+  No policy changed by external GT observer or relabeled old history metrics.
+- At all_available (34Known/10pseudo): Mean Known0/0/0, effective cross-video
+  lower bound0/0/0; query-excluded Known2/2/2, cross0/0/0; video-excluded
+  Known3/3/3, current effective cross2/2/2. Video's conservative dirty HISTORY
+  cross remains0/1/0, not rewritten. Current selected-support lower bound
+  differs from strict dirty ancestry; it is not full semantic/statistical
+  independence, whole-memory active purity, trained-M/EMA/Pred or formaldev win.
+  Unknown reuse retained Mean11/11/11, query16/15/16, video1/2/0. Video absorbs
+  one pseudo into Known each order; overall Known accuracy still only3/34.
+  Early prefix variation and repeated selected-support status counts are not
+  independent samples; no model/order selection or final/Goal acceptance.
+- Actual ALL11 support-SHA frome3671f1 completes normal0/no guard/642.03s/
+  RSS951865344B/zero optimizer/GPUh. Result9b552ebd1f3919d2f697df034aa3843d4a98fa39b08ea8be53716a52b52f595f,
+  profilee219dccd1108c7ede224dbd3ce9de9f1c02e8dbdbdffad67ecd66bc105234688.
+  All11 complete OLD/cache actor/outcome/score/version/ledger traces EXACT and
+  digests EXACT prior shadow. ALL11 actual hash hits inclall9M; Raw33549000B,
+  fingerprint33465044–33508988B, each <=32MiB/combined<=64MiB. No numeric/
+  learned-output memo, globalhash/model/data/history/guards changed.
+- Actual paired relative_quarantine1027 policy OLD33.73/cache25.51s, shared-
+  host sequential measured timings NOT isolated causal speedup/full-dev proof.
+  Qualify NEW full-M profile with actual fingerprints, not guessed pending
+  values. Old failed full-M terminal3c459299... untouched; no partialmetrics.
+  Full9Mdev remains incomplete, main Goal active/unachieved. Next fresh full
+  relative_quarantine1027 replay retains original orders/probes/3000s guard.
+- 11 targeted actual/pure gates and full806tests pass (46.17s). Current actual
+  all-model qualification passes before private development inputs. Public
+  summaries/receipts only will be registered/pushed; no private traces/assets.

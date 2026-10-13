@@ -1015,3 +1015,21 @@ additive/isolated SHA cost/full-dev cause or scientific gain. Source supports
 testing exact Raw fingerprint memoization for M; actual ALL11 parity and
 unchanged numeric model/history/resource bounds required first. Full trained-M
 dev matrix/freshbaselines/strongPred/effectiveM/joint/independent final open.
+
+Complete external effective Mean policy audit now passes normally, actor917d6198...
+and supplementalbd68eb82..., actual2296.30s/RSS950419456B/no optimizer/GPUh.
+All original3controls/3orders/18streams/clock/ID/reverse/future and original actor
+outcome/fulltrace equality pass. At all_available, video exclusion current
+selected-support cross-video lower bound2/10 EVERYorder differs from preserved
+dirty-history0/1/0. Mean/query-excluded current cross0/0/0. Known0/2/3 of34,
+video pseudo-to-Known1/order and unknowns retained. This separates real effective
+support from ancestry without GT feedback or past repair; only small-policy
+evidence, not fulltruth/statistical independence/active purity/EMA/M/Pred/Goal win.
+
+ALL11 support-SHA shadow e3671f1 also completes: result9b552ebd..., profile
+e219dccd..., actual642.03s/RSS951865344B/no optimizer/GPUh/all11 full OLD/cache
+traces/outcomes and prior trace fingerprints EXACT. Every trained-M SHA cache
+really exercised within same Raw32MiB+SHA32MiB. Numeric hashes/globalhash/model/
+data/history/limits unchanged; no learned memo. Qualifies equivalent new full-M
+profile, not isolated speedup/full-dev scientific gain. Old wall-failure remains
+untouched; full9M/freshbaselines/strongPred/joint/independent final still open.
