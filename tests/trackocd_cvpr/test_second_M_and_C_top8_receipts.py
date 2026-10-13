@@ -95,3 +95,22 @@ def test_C_first_seed_pooled_control_full3orders_no_certified_reuse():
     assert not r['model_or_checkpoint_selection'] and not r['full_semantic_truth_Hscore_CT_M_Pred_or_Goal_accepted']
     t = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
     assert t['successful_owned_execution'] and t['owned_worker_exit_code'] == 0 and t['guard_stop_reason'] is None
+
+
+def test_C_second_independent_Top1_seed_repeats_actual_closed_set_collapse():
+    out = ROOT / 'outputs/trackocd_cvpr/cvpr3/C_GT_causal_dev_v1_Top1_conditioned_s1028'
+    assert hashlib.sha256((out / 'result.json').read_bytes()).hexdigest() == '6cfe231185e2ce5bb4f5db02aff58fc1ee11b4207147abbb990f526c6431baba'
+    r = json.loads((out / 'result.json').read_text())
+    assert r['model'] == 'Top1_conditioned' and r['training_seed'] == 1028
+    assert r['actual_full_ID_rename_reverse_stream_equal'] and r['actual_future_probe']['verified_same_prior_events']
+    for row in r['orders'].values():
+        end = row['prefix_snapshots']['all_available']
+        assert row['physical_actions'] == {'KNOWN': 8753}
+        assert end['Known_micro_accuracy'] == pytest.approx(282 / 302)
+        assert end['declared_pseudo_absorbed_as_Known_queries'] == 119
+        assert end['declared_pseudo_anonymous_commit_queries'] == 0
+        assert end['certified_cross_video_reuse_micro_lower_bound'] == 0
+        assert end['physical_tracks'] == 472 and end['all_physical_commit_track_coverage'] == 1
+    assert not r['model_or_checkpoint_selection'] and not r['full_semantic_truth_Hscore_CT_M_Pred_or_Goal_accepted']
+    terminal = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
+    assert terminal['successful_owned_execution'] and terminal['owned_worker_exit_code'] == 0 and terminal['guard_stop_reason'] is None

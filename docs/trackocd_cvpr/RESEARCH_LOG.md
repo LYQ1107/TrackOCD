@@ -3597,3 +3597,49 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full 631 tests passed in 65.81 s, including immutable M5/C3 public receipts,
   nonvacuous M future probes, absent-cohort refusal and fixed guard/baseline
   semantics. Source readiness is not an executed development result.
+
+### Preserved M registration-only failure and exact namespace transport recovery
+
+- Delivered `de4dfdb92ee098ed049711668a7c3b17bbd6ebcd` with successful
+  push/fetch and equal full remote/local refs. New pooled M/1028 worker then
+  actually failed in `verify_registration`: both bounded live transports
+  failed. Owned tool session 36382 terminal exit 1, supervisor normal wait 1,
+  no guard reason, zero optimizer steps, zero training GPU-hours, no output
+  directory/launch receipt. Failed terminal SHA256
+  `311856168731045c5e6ac46ab4f5d5ac32fe0c59cb2268c59c3160f06ffb5afc`.
+  Actual original worker source is bound to Git de4dfdb and SHA256
+  `6210712f0e2262117e62423fd463792f08ae3948a27bdaa16e0eb63e4acf0dca`.
+  Registration occurs before the output/private-input stage; this is not a
+  failed trained seed or justification for scientific repair/model selection.
+- A fresh read-only SSH443 exact-ref check subsequently succeeded and returned
+  de4dfdb; connection observation alone does not complete the failed trial.
+  Original failed terminal remains unchanged, no old PID/handle restart.
+- Added exact variant/seed/window/source/failed-terminal-bound transport-only
+  recovery: pooled_weighted/1028, new `_transport_retry1` namespace, full fresh
+  fixed-200 training. Only output path changes; no partial reuse, warmstart,
+  protocol/seed/order/loss/threshold/guard change or successful-seed rerun.
+  Original output must remain absent and old terminal nonzero with zero steps;
+  any original partial/successful output or changed fingerprint refuses retry.
+  The M cohort now uses this one predeclared replacement, requiring the old
+  failed terminal/recovery registration AND all nine effective fit endpoints.
+  Numeric training kernels remain unchanged; runtime wrapper change declared.
+- C Top1/1028 started from de4dfdb with successful fresh registration and
+  confirmed actual supervisor identity; all three science orders reached
+  progress records, full invariance/terminal completion still pending here.
+  Do not call a progress record a complete result. Goal remains active.
+- Subsequent disk verification: C Top1/1028 has now completed normally, public
+  SHA256 `6cfe231185e2ce5bb4f5db02aff58fc1ee11b4207147abbb990f526c6431baba`.
+  Actual full ID/future checks pass; all three orders again emit 8753 KNOWN
+  actions, Known correct 282/302, ALL119 pseudo queries absorbed as Known,
+  zero anonymous commits/certified reuse at full472 commit coverage. This
+  repeats closed-set collapse for a second genuinely trained Top1 seed, not
+  discovery acceptance. Owned total 464.98 s, RSS 962469888 B, one OS thread,
+  no CUDA/optimizer. C development now 4/9; remaining five still required.
+- Initial full recovery tests caught a wrapper-argument compatibility error:
+  an existing synthetic supervisor fixture lacks the new optional attribute.
+  Fixed optional `getattr(..., None)` without changing numeric kernel, seed,
+  history, guard or old terminal. No scientific data/results rewritten.
+- Corrected full suite: 634 passed in 66.78 s; the subsequently added exact
+  C-second-Top1 receipt check separately passed (1 test, 0.15 s). Transport
+  recovery still requires fresh registration and actual successful fit; source
+  tests/connection recovery do not count as M6 completion.

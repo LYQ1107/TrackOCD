@@ -1,0 +1,19 @@
+{
+  "status": "PRE_INPUT_TRANSPORT_RECOVERY_ONLY_SCIENTIFIC_WINDOW_UNCHANGED",
+  "allowed_variant": "pooled_weighted",
+  "allowed_seed": 1028,
+  "original_window": "configs/trackocd_cvpr/M_GT_scientific_window_v1.json",
+  "original_window_sha256": "626699f36bdf26e9cf464339a45a7a2a320b27fbe9fef597dd4f9f90eb779e3d",
+  "original_execution_commit": "de4dfdb92ee098ed049711668a7c3b17bbd6ebcd",
+  "original_worker_source_sha256": "6210712f0e2262117e62423fd463792f08ae3948a27bdaa16e0eb63e4acf0dca",
+  "original_attempt": "outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_pooled_weighted_s1028",
+  "original_terminal": "outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_pooled_weighted_s1028_supervisor_attempt_1.json",
+  "original_terminal_sha256": "311856168731045c5e6ac46ab4f5d5ac32fe0c59cb2268c59c3160f06ffb5afc",
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_pooled_weighted_s1028_transport_retry1",
+  "observed_error": "RuntimeError: Both bounded live remote-ref transports failed; private input gate remains closed",
+  "original_tool_session": 36382,
+  "original_tool_terminal_exit_code": 1,
+  "resume_partial_metrics_or_training": false,
+  "change_orders_labels_thresholds_weights_initialization_steps_guards_or_selection": false,
+  "original_attempt_overwrite": false
+}

@@ -17,6 +17,7 @@ from src.trackocd_cvpr.remote_registration import verify_registration
 from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok, kernel_terminal_status
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from scripts.trackocd_cvpr.pilot_candidate_optimizer import SOURCES as C_SOURCES
+from src.trackocd_cvpr.memory_transport_recovery import recovery_configuration
 
 CONFIG = 'configs/trackocd_cvpr/memory_optimizer_pilot_v1.json'
 SCIENTIFIC_CONFIG = 'configs/trackocd_cvpr/M_GT_scientific_window_v1.json'
@@ -26,7 +27,8 @@ SOURCES = (*C_SOURCES, CONFIG, 'scripts/trackocd_cvpr/pilot_memory_optimizer.py'
     'src/trackocd_cvpr/reliability_member_control.py', 'src/trackocd_cvpr/reliability_training_loss.py',
     'src/trackocd_cvpr/memory_fit_pilot.py', 'src/trackocd_cvpr/candidate_scientific_training.py',
     'src/trackocd_cvpr/C_development_rollout.py', 'src/trackocd_cvpr/R_development_evaluation.py',
-    'src/trackocd_cvpr/R_development_metrics.py', 'src/trackocd_cvpr/causal_category_audit.py')
+    'src/trackocd_cvpr/R_development_metrics.py', 'src/trackocd_cvpr/causal_category_audit.py',
+    'src/trackocd_cvpr/memory_transport_recovery.py')
 
 
 def validate_configuration(cfg, authority):
@@ -55,7 +57,8 @@ def supervise(args, cfg, safety):
         str(ROOT / 'scripts/trackocd_cvpr/pilot_memory_optimizer.py'), '--worker',
         '--preregistration-commit', args.preregistration_commit, '--git-proxy', args.git_proxy]
         + (['--config', SCIENTIFIC_CONFIG, '--variant', args.variant, '--seed', str(args.seed)]
-           if cfg.get('scientific_M_trial', False) else []), cwd=ROOT)
+           if cfg.get('scientific_M_trial', False) else [])
+        + (['--recovery-attempt', args.recovery_attempt] if getattr(args, 'recovery_attempt', None) else []), cwd=ROOT)
     try:
         while child.poll() is None:
             status_path = Path(f'/proc/{child.pid}/status')
@@ -252,6 +255,7 @@ def main():
     parser.add_argument('--config', choices=(CONFIG, SCIENTIFIC_CONFIG), default=CONFIG)
     parser.add_argument('--variant', choices=('relative_quarantine', 'relative_weighted', 'pooled_weighted'))
     parser.add_argument('--seed', type=int, choices=(1027, 1028, 1029))
+    parser.add_argument('--recovery-attempt', choices=('transport_retry1',))
     args = parser.parse_args(); cfg = json.loads((ROOT / args.config).read_text())
     if args.config == SCIENTIFIC_CONFIG:
         if args.variant is None or args.seed is None: raise ValueError('Explicit fixed M variant and independent seed')
@@ -263,6 +267,8 @@ def main():
             'src/trackocd_cvpr/version_lineage_audit.py',
             'outputs/trackocd_cvpr/cvpr4/memory_optimizer_pilot_v1/result.json',
             'outputs/trackocd_cvpr/cvpr4/memory_optimizer_pilot_v1_supervisor_attempt_1.json')
+    cfg, recovery_sources = recovery_configuration(ROOT, cfg, args.recovery_attempt)
+    SOURCES = tuple(dict.fromkeys((*SOURCES, *recovery_sources)))
     safety = json.loads((ROOT / 'configs/trackocd_cvpr/autonomous_research.json').read_text())
     if args.worker: worker(args, cfg, safety); return 0
     return supervise(args, cfg, safety)

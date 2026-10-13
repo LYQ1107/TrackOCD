@@ -722,3 +722,17 @@ numeric version-history fingerprints, rejecting absent/no-op future probes.
 Mean/state-EMA are zero-fit controls, not independently trained seeds. These
 source tests do not certify all-video causality, active purity, self-excluded
 independent reuse, matched coverage/latency superiority, Pred or full Goal.
+
+One subsequent M launch (pooled/1028) failed at remote registration before
+private input/output initialization, zero optimizer steps. Preserved failed
+terminal `31185616...`; this is transport failure, not a bad trained seed.
+Registered a single exact-source/window-bound fresh namespace replacement,
+not a protocol change or rerun of a scientific result. All-nine M gate requires
+the replacement and original failure evidence. C second-seed evaluation is
+progressing separately; no completion inferred from progress files.
+
+C Top1's second independent training seed (1028) is now normally evaluated,
+public `6cfe2311...`: three orders all8753 KNOWN actions, Known282/302, ALL119
+pseudo queries absorbed as Known, zero anonymous commits/certified reuse.
+Actual ID/future checks pass. Closed-set failure repeats across two fitted
+Top1 seeds; full C matrix still pending (4/9), not a discovery win.

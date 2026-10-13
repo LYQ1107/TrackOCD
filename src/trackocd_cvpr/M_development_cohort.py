@@ -3,6 +3,7 @@ import hashlib
 import json
 import subprocess
 from src.trackocd_v2.io import sha256_file
+from .memory_transport_recovery import cohort_directory, verify_original_preinput_failure
 
 VARIANTS = ('relative_quarantine', 'relative_weighted', 'pooled_weighted')
 SEEDS = (1027, 1028, 1029)
@@ -10,9 +11,9 @@ SEEDS = (1027, 1028, 1029)
 
 def cohort_sources():
     return tuple(path for v in VARIANTS for s in SEEDS for path in (
-        f'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_{v}_s{s}/launch.json',
-        f'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_{v}_s{s}/result.json',
-        f'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_{v}_s{s}_supervisor_attempt_1.json'))
+        cohort_directory(v, s) + '/launch.json',
+        cohort_directory(v, s) + '/result.json',
+        cohort_directory(v, s) + '_supervisor_attempt_1.json'))
 
 
 def verified_cohort(root):
@@ -25,6 +26,7 @@ def verified_cohort(root):
             raise FileNotFoundError(candidate)
         if candidate.is_symlink():
             raise ValueError('Public cohort records must be regular local files')
+    verify_original_preinput_failure(root)
     # Original M1 used recursive copying; later copy-only optimization is
     # declared, not falsely identical runtime source. Numeric kernels below
     # must still match; actual M1/M2 summary/history parity is separately saved.
@@ -37,7 +39,7 @@ def verified_cohort(root):
         raise ValueError('Current runtime must be one exact pinned declared copy implementation')
     for variant in VARIANTS:
         for seed in SEEDS:
-            out = root / f'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_{variant}_s{seed}'
+            out = root / cohort_directory(variant, seed)
             r = json.loads((out / 'result.json').read_text())
             t = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
             if (r['variant'] != variant or r['seed'] != seed or r['summary']['optimizer_steps'] != 200
