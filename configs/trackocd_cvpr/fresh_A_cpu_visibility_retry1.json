@@ -1,0 +1,16 @@
+{
+  "status": "REGISTERED_NAMESPACE_ONLY_CPU_VISIBILITY_RECOVERY_ACTUAL_PILOT_PENDING",
+  "original_namespace": "outputs/trackocd_cvpr/cvpr2/fresh_A_fit5_optimizer_pilot_v1",
+  "new_namespace": "outputs/trackocd_cvpr/cvpr2/fresh_A_fit5_optimizer_pilot_v1_CPU_visibility_retry1",
+  "original_preregistration_commit": "bcc2044d88250eb5d5b3bc5544374c5cbdc2b697",
+  "original_terminal_sha256": "d8cb60788573d50fc8784d30db872073a78bbf6a80688f0f9287e9fc26d4a249",
+  "original_launch_sha256": "5a7a86739c0f88ca9b04d30c1659b72377bcf974d53b433104d2632388de8572",
+  "allowed_original_guard": "owned_worker_threads",
+  "unchanged": "All five families, fit-only census, losses, seeds, ten steps, numerics, output/RAM/wall and one CPU compute worker; no partial metrics or weights recovered",
+  "only_runtime_fix": "CUDA_VISIBLE_DEVICES empty only in our owned CPU worker before import; intra/inter-op1. Classify at most one identified bounded native CUDA driver helper separately from compute workers; never permit per-GPU autograd threads, GPU optimization or foreign/global changes",
+  "CPU_compute_workers": 1,
+  "native_driver_helper_threads_ceiling": 1,
+  "native_driver_helper_CPU_seconds_ceiling": 0.1,
+  "total_OS_threads_ceiling": 2,
+  "infinite_retry_or_training_success_claim": false
+}

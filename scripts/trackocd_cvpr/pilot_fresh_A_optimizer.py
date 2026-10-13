@@ -15,6 +15,7 @@ from src.trackocd_cvpr.remote_registration import verify_registration
 from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok,kernel_terminal_status
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from scripts.trackocd_cvpr.smoke_fit_R_optimizer import SOURCES as FIT_SOURCES
+from src.trackocd_cvpr.fresh_A_CPU_recovery import recovery_configuration,verify_original,inspect_owned_threads,RETRY,SOURCES as RECOVERY_SOURCES
 
 CONFIG='configs/trackocd_cvpr/fresh_A_optimizer_pilot_v1.json'
 PROTOCOL='configs/trackocd_cvpr/fresh_A_fit5_baselines_v1.json'
@@ -25,10 +26,13 @@ SOURCES=tuple(dict.fromkeys((*FIT_SOURCES,CONFIG,PROTOCOL,
     'src/trackocd_cvpr/train_physical_resume.py','src/trackocd_cvpr/joint_known_protocol.py',
     'src/trackocd_cvpr/known_census_protocol.py','src/trackocd_cvpr/global_protocol_coverage.py',
     'src/trackocd_cvpr/physical_gt_census.py','src/trackocd_cvpr/selected_image_inventory.py',
-    'scripts/trackocd_cvpr/audit_known_census_protocol.py')))
+    'scripts/trackocd_cvpr/audit_known_census_protocol.py','src/trackocd_cvpr/fresh_A_CPU_recovery.py',
+    'configs/trackocd_cvpr/fresh_A_cpu_visibility_retry1.json')))
 
 
 def validate_execution(cfg,authority):
+    namespace=(RETRY if cfg.get('CPU_visibility_recovery')=='cpu_visibility_retry1'
+               else 'outputs/trackocd_cvpr/cvpr2/fresh_A_fit5_optimizer_pilot_v1')
     if (authority['status']!='USER_APPROVED_FREEZE_THEN_BOUNDED_CACHE_AND_TRAIN'
             or cfg['status']!='REGISTERED_FRESH_FIT5_FIVE_FAMILY_PILOT_ACTUAL_EXECUTION_PENDING'
             or cfg['protocol']!=PROTOCOL or cfg['data_config']!='configs/trackocd_cvpr/fit_R_optimizer_smoke_v1.json'
@@ -36,7 +40,7 @@ def validate_execution(cfg,authority):
             or cfg['execution_device']!='CPU' or cfg['CPU_compute_workers']!=1
             or cfg['rss_bytes_ceiling']!=3221225472 or cfg['wall_seconds_ceiling']!=3000
             or cfg['output_bytes_ceiling']!=33554432
-            or cfg['output_directory']!='outputs/trackocd_cvpr/cvpr2/fresh_A_fit5_optimizer_pilot_v1'
+            or cfg['output_directory']!=namespace
             or cfg['full_scientific_fit_automatic_start'] or cfg['formal15fits_development_or_Goal_accepted']):
         raise ValueError('Exact bounded five-family fit-only pilot authority/configuration')
 
@@ -51,12 +55,13 @@ def output_bytes(out):
 def supervise(args,cfg,safety):
     out=ROOT/cfg['output_directory']; receipt=out.with_name(out.name+'_supervisor_attempt_1.json')
     if out.exists() or receipt.exists(): raise ValueError('Preserve original namespace/terminal')
-    started=time.monotonic(); peak=0; threads=0; reason=None
+    started=time.monotonic(); peak=0; threads=0; driver_helpers=0; reason=None
     if resources_ok(cfg,safety,ROOT,started,0): raise RuntimeError('Pre-spawn resource guard')
     child=subprocess.Popen([sys.executable,'-B','-X','pycache_prefix='+str(out/'_fresh_no_write_cache'),
         str(ROOT/'scripts/trackocd_cvpr/pilot_fresh_A_optimizer.py'),'--worker',
-        '--preregistration-commit',args.preregistration_commit,'--git-proxy',args.git_proxy],cwd=ROOT,
-        env={**os.environ,'OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1','MKL_NUM_THREADS':'1'})
+        '--preregistration-commit',args.preregistration_commit,'--git-proxy',args.git_proxy]
+        + (['--recovery-attempt',args.recovery_attempt] if getattr(args,'recovery_attempt',None) else []),cwd=ROOT,
+        env={**os.environ,'CUDA_VISIBLE_DEVICES':'','OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1','MKL_NUM_THREADS':'1'})
     try:
         while child.poll() is None:
             status_path=Path(f'/proc/{child.pid}/status')
@@ -75,7 +80,11 @@ def supervise(args,cfg,safety):
                 time.sleep(.2); continue
             reason=resources_ok(cfg,safety,ROOT,started,peak)
             if output_bytes(out)>cfg['output_bytes_ceiling']: reason='owned_output_size'
-            if threads>1: reason='owned_worker_threads'
+            try: driver_helpers=max(driver_helpers,inspect_owned_threads(child.pid))
+            except ValueError: reason='owned_worker_threads'
+            except (FileNotFoundError,ProcessLookupError):
+                if child.poll() is not None: break
+                reason='owned_thread_inventory_unavailable'
             if reason:
                 if child.poll() is None: child.kill()  # ONLY our newly created Popen child
                 break
@@ -89,6 +98,7 @@ def supervise(args,cfg,safety):
         'successful_owned_execution':code==0 and reason is None,'full_result_present':(out/'result.json').is_file(),
         'only_new_owned_Popen_worker_managed':True,'peak_sampled_owned_worker_RSS_bytes':peak,
         'peak_sampled_worker_threads':threads,'wall_seconds_including_imports_and_network':time.monotonic()-started,
+        'peak_identified_native_driver_helpers':driver_helpers,'CPU_compute_workers':1,
         'training_GPU_hours':0,'execution_device':'CPU'})
     return 0 if code==0 and reason is None else 1
 
@@ -102,6 +112,8 @@ def worker(args,cfg,safety):
         if (ROOT/p).is_symlink() or subprocess.check_output(['git','show',args.preregistration_commit+':'+p],cwd=ROOT)!=(ROOT/p).read_bytes():
             raise ValueError('Exact registered pilot/source/authority/cache receipt required')
     validate_execution(cfg,json.loads((ROOT/cfg['approval']).read_text()))
+    if cfg.get('CPU_visibility_recovery'): verify_original(ROOT)
+    if os.environ.get('CUDA_VISIBLE_DEVICES')!='': raise ValueError('Owned CPU worker must hide GPUs before import')
     import torch
     from src.trackocd_cvpr.fresh_A_training import validate_protocol,fit_baseline,verify_matched_pilot,checkpoint_state_equal
     from src.trackocd_cvpr.fresh_A_baseline import FAMILIES,fresh_model
@@ -109,7 +121,7 @@ def worker(args,cfg,safety):
     from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import digest
     protocol=json.loads((ROOT/PROTOCOL).read_text()); validate_protocol(protocol)
     if out.exists(): raise ValueError('No pilot output overwrite')
-    torch.set_num_threads(1)
+    torch.set_num_threads(1); torch.set_num_interop_threads(1)
     def barrier(event,values):
         if event=='socket.connect': raise PermissionError('No network after registration')
         if event=='open' and isinstance(values[0],(str,bytes)):
@@ -125,6 +137,8 @@ def worker(args,cfg,safety):
         reason=resources_ok(cfg,safety,ROOT,started,peak); size=output_bytes(out)
         if reason or size>cfg['output_bytes_ceiling'] or prior+size>safety['incremental_storage_soft_bytes']:
             raise RuntimeError('Owned baseline guard:'+str(reason or 'output_storage'))
+        if torch.get_num_threads()!=1 or torch.get_num_interop_threads()!=1 or torch.cuda.is_initialized():
+            raise RuntimeError('Exactly one intra/inter-op CPU compute worker, no CUDA tensors')
     atomic_json(out/'launch.json',{'preregistration_commit':args.preregistration_commit,
         'live_remote_registration_proof':proof,'source_sha256':{p:sha256_file(ROOT/p) for p in SOURCES},
         'scope':'Fresh five-family fit5 pilot only, no formal warmstart/dev/scientific acceptance'})
@@ -170,10 +184,14 @@ def worker(args,cfg,safety):
 
 
 def main():
+    global SOURCES
     p=argparse.ArgumentParser(); p.add_argument('--preregistration-commit',required=True)
-    p.add_argument('--git-proxy',default=''); p.add_argument('--worker',action='store_true'); args=p.parse_args()
+    p.add_argument('--git-proxy',default=''); p.add_argument('--worker',action='store_true')
+    p.add_argument('--recovery-attempt',choices=('cpu_visibility_retry1',)); args=p.parse_args()
     cfg=json.loads((ROOT/CONFIG).read_text()); safety=json.loads((ROOT/'configs/trackocd_cvpr/autonomous_research.json').read_text())
     validate_execution(cfg,json.loads((ROOT/cfg['approval']).read_text()))
+    cfg=recovery_configuration(ROOT,cfg,args.recovery_attempt)
+    if args.recovery_attempt: SOURCES=tuple(dict.fromkeys((*SOURCES,*RECOVERY_SOURCES)))
     if args.worker: worker(args,cfg,safety); return 0
     return supervise(args,cfg,safety)
 

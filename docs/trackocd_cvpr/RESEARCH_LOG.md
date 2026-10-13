@@ -4881,3 +4881,51 @@ no private GT/cache/weights opened for this check):
 - Full Goal ACTIVE/unachieved: full9M dev, all15fresh baselines, calibrated
   controls, joint trained R/C/M, legal Pred/GT+Pred/dense/full physical evidence
   and locked independent final/report remain open. No partial-stage acceptance.
+- Later actual transport progress: HTTPS push through7890 with existing local
+  GitHub CLI credential helper succeeds,21b7dd1 ->bcc2044d88250eb5d5b3bc5544374c5cbdc2b697,
+  including9089b0d RAM-recovery source. Per-command helper/proxy only; no global
+  configuration or credential/key output. Subsequent HTTP and SOCKS fetches
+  fail TLS, so local remote-tracking ref remains21b7dd1 and fresh fetch/exact
+  remote verification is still pending. Do not confuse push acknowledgement
+  with complete registration workflow. Rechecked boot remains19:26:36 with
+  same boot UUID, local proxy running; available RAM112.87GB/free disk175GB.
+  Fresh baseline pilot namespace/terminal absent, no actual pilot launched.
+- Next bounded strict-pinned SSH17890 fetch succeeds: HEAD/FETCH_HEAD/origin
+  all EXACTbcc2044d88250eb5d5b3bc5544374c5cbdc2b697, genuinely completing source
+  registration. Now attempting actual owned five-family pilot with fresh live
+  worker gate; launch/complete/normal terminal still require actual evidence.
+
+### Actual first baseline pilot thread stop; bounded runtime classification fix
+
+- Worker frombcc2044 passes actual live exact Git registration and creates only
+  launch.jsonSHA5a7a86739c0f88ca9b04d30c1659b72377bcf974d53b433104d2632388de8572.
+  Owned terminalSHAd8cb60788573d50fc8784d30db872073a78bbf6a80688f0f9287e9fc26d4a249:
+  -9/owned_worker_threads/no result/32.5266s/619175936B/two OSthreads/0GPUh.
+  No progress/checkpoint/accepted metrics. Absence of progress alone is not a
+  proof of zero transient optimizer calls; no accepted completed steps claimed.
+  Original launch+terminal preserved; only newly owned child managed.
+- Asset-free local reproduction finds default CUDA-build CPU backward starts
+  native cuda... driver helper +per-device pt_autograd_* threads. Hiding GPUs
+  ONLY in own CPU process removes per-device workers, BUT does NOT remove the
+  one native driver helper. Corrected initial hypothesis; did not pretend the
+  empty GPU mask alone qualified an unchanged total-OS-thread==1 predicate.
+- Actual hidden-GPU/intra/inter-op1 CPU toy reports CUDA_initializedFalse and
+  one native cuda00001400006 helper: sleeping in poll_schedule_timeout with
+  zero CPUticks, briefly runnable during shutdown/two ticks. Worker remains
+  one CPU compute stream. This is local plumbing, not real-data loss/result.
+- NEW single retry1 source explicitly corrects OS-thread-versus-compute-worker
+  classification: one main worker, at most one identified cuda[0-9a-f]{11}
+  native helper, <=100ms accumulated helper CPU; every unknown, second helper,
+  per-GPU autograd worker refuses. Numerical engine intra/inter-op1 and noCUDA
+  initialized checked throughout; own worker hides GPUs before Torch import.
+  Same RAM/RSS/wall/output/loss/data/seeds/steps and no external/global edit.
+  This is an explicit registered runtime guard correction, not silently
+  ignoring thread evidence or a generic larger compute pool.
+- Retry factory binds exact original failure+launch/source commit, requires
+  only launch in old directory, all four frozen scientific/numeric sources
+  byte-identical tobcc2044; new namespace only, no metrics/checkpoint salvage,
+  no unbounded retries. Must test/push/fetch/live verify new source BEFORE
+  actual retry. Formal15fits/dev/M/joint/Pred/final goals remain unachieved.
+- Latest32targetedtests pass10.51s; complete843tests pass47.56s with fresh
+  RAM margin/25% reserve/actual owned wait0/no guard,48.97s supervisor total.
+  No private actual retry launched by these synthetic/receipt tests.
