@@ -3867,3 +3867,45 @@ no private GT/cache/weights opened for this check):
   or acceptance inferred fromprogress. CompleteCmatrix/newloss trainingpending.
 - Full660tests pass in74.94s, including actualfullM9cohort and preserved exact
   normalterminal replica. Register lastfit before real Mdevelopment inputs.
+
+### Real M Mean development begins; third-seed C Top-8 exposes opposite collapse
+
+- AllM9 fit results were registered/delivered as
+  `d7130d3f15cba48b06aa79a7b6c01c053ab90db2` with push/fetch/equalrefs.
+  Actual Mean_latest development launched fromthiscommit, passes fresh source/
+  authority/all9endpoint/cache gates and has a confirmed live ownedsupervisor.
+  This is zero-fit full72development, nooptimizer/encoder/newcache/final/Val/
+  Test. No full Mean result/ownedterminal atthisrecord; no metric inferred
+  from launch orCPUtime. Live dependencies remainunmodified.
+- C Top8_conditioned/1029 now normally completes from175e51d, publicSHA
+  `6f29e226715ac307022955ddfbff9f3066e73acef1baa45612e24019c349045a`.
+  All3orders/full472/8753/2562/116 andactualID+39futurechecks. ZERO Known
+  recognition ineachorder; no KNOWN actions, all119pseudo queries anonymous.
+  Certifiedcrossvideoreuse9/119,7/119,4/119 respectively; unscorable existing
+  query histories320/341/326 retained, notdeclaredpure/background. Total
+  commitcoverage100% doesNOT compensateKnowncollapse orcertifystrongNovel
+  memory. Owned814.31s/RSS963002368B/ONEOSthread/CPU/zerooptimizer/GPUh.
+  C8/9evaluated; finalpooled/1029 stillrequired.
+- This is the opposite attractor from firsttwo seeds' allKnown outputs, not
+  a selected winningseed. Known-vs-anonymous balance andtraininghistory
+  distribution are an evidence-backed issue, but specificloss/calibration/
+  self-support causal mechanism remainsunproved. Updated source-only
+  complementaryKnown-rejection hypothesis withthisrisk; coefficientunchanged,
+  noautomatic realtraining or claimedremedy.
+- Added executable PUBLIC-only fullC9aggregate entry point: fresh source/
+  all27trialrecords/exactexceptions/oldRawresult registration, noprivate GT/
+  cache/pixel/weight opens, allprefixes/seed/order outputs andseparatezero-fit
+  Rawcontrols. No winner, officialCT, scientificGoal ornewloss start; actual
+  execution waitsfor completeC9 andnewsource registration.
+- Prepared separate bounded frozenRaw-statistics cache prerequisite while
+  Mean islive: exact original CPU Torch weightedmean/quality/count, immutable
+  bytes andfresh tensors,64MiB LRU forDERIVEDstatistics only. Identical payloads
+  remainseparate scopedrows; evictionrecomputes, neverprunesreal support or
+  history. Five synthetictests exact foruniform/zero/nonuniformquality,
+  repeatedrows, outputmutation andoversize. NOTintegratedintoanyliveworker,
+  NOTactualfull-data bytevalidation/shadow/speedup ormethodgain. Possible
+  repeatedRaw reduction cost is a performancehypothesis, not a proven cause
+  of resourcefailure; original guards stay unchanged.
+- Full666tests pass in53.96s. C8actualopposite-collapse receipt and exact
+  Rawstatistic syntheticcache tests included; fullMean orC9aggregate stillnot
+  completed and noprivate cachequalification ornewrepairtraining executed.

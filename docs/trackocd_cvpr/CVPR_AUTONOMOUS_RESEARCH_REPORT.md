@@ -812,3 +812,17 @@ history; no purification or discovery gain inferred from fitcompletion.
 Proceed to preregistered full read-only Mean/stateEMA/all9M development, not
 newtraining or selectedcheckpoints. C remainingmatrix/newloss execution and
 strongPred/matchedpuritycoverage/selfexclusion/joint/final remainrequired.
+
+Real full-development Mean baseline is now running after all9M-gates/source
+registration; no completedresult yet. Nooptimizer/newcache orprotected split.
+
+C Top8/1029 normally completes (8/9), public `6f29e226...`, oppositeall-anonymous
+collapse: Knownaccuracy0, pseudoanonymous119/119, only9/7/4-of119 certifiedreuse
+acrossorders. Highcommitcoverage andone nonzeroNovel seed do not establish
+balanced persistentdiscovery. One-sidedKnown-rejection may worsen this;
+sourcehypothesis riskupdated, no actualrepairtrained/selected.
+
+Publicall9C aggregation driver andseparate exactfrozenRaw derived-statistics
+cache source are prepared, not executed/integrated respectively. Allnumeric
+guards/oldfailures/dirtyhistories preserved. StrongPred/fullM evaluation/fair
+baselines/self-excludedpurity/joint/final andwholeGoal remainopen.

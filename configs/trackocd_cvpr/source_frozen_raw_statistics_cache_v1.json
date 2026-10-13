@@ -1,0 +1,11 @@
+{
+  "status": "SOURCE_AND_SYNTHETIC_DERIVED_RAW_CACHE_NOT_INTEGRATED_OR_REAL_SPEEDUP_QUALIFIED",
+  "implementation": "src/trackocd_cvpr/frozen_raw_statistics_cache.py",
+  "derived_cache_max_bytes": 67108864,
+  "cached_values": "Immutable CPU float32 quality-weighted Raw group mean, mean quality and observed count, using exact original Torch operation/order. No learned/adapted embedding, GT, ID, role, logits, token or memory assignment in keys/values.",
+  "eviction": "ONLY derived statistics; cache misses and oversize recompute exact original values. All actual members/commits/versions/tombstones remain untouched; same whole support bounds/no pruning.",
+  "scope": "Identical payloads may share derived values but remain separate input rows in different alias/video/frame groups. Fresh output tensors prevent mutation/autograd cache corruption.",
+  "before_integration": "Do not edit live worker dependencies. Require separately registered all-prefix numerical byte equality on qualified actual inputs and full controller shadow/source qualification. Preserve any old resource failure; no silent wall/RAM/coverage limit relaxation.",
+  "actual_real_input_byte_validation_full_shadow_speedup_or_method_gain": false,
+  "automatic_asset_read_or_experiment_launch": false
+}

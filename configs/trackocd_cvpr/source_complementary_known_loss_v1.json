@@ -1,11 +1,11 @@
 {
   "status": "SOURCE_AND_SYNTHETIC_COMPLEMENTARY_LOSS_NOT_TRAINED_OR_SELECTED",
   "implementation": "src/trackocd_cvpr/complementary_known_loss.py",
-  "root_evidence": "Actual C first two seeds often predict all Known despite nonzero policy-pseudo optimizer loss. Public full-rollout NEW plans include frozen tails; absence of NEW optimizer gradients or causal root NOT proved.",
+  "root_evidence": "Actual C first two seeds often predict all Known despite nonzero policy-pseudo optimizer loss. Third-seed Top8 now predicts entirely anonymous with zero Known accuracy and weak9/7/4-of119 reuse, revealing opposite attractor collapse. Public full-rollout NEW plans include frozen tails; absence of NEW optimizer gradients or causal root NOT proved.",
   "hypothesis": "When pure state/NEW target is uncertain but an existing Known-derived policy-pseudo query is legally verified disjoint from fit Known, retain limited Known-versus-notKnown set supervision instead of losing all supervision. This may fail or worsen unknown-state reuse; no causal or calibration gain assumed.",
   "coefficient": 0.25,
   "supervision": "EXTERNAL only, fit/policy existing Known labels. Unknown/unlabeled query remains masked; no dev/final/Val/Test/Novel supervision. No individual unknown candidate is GT-negative or assigned a positive category/state/action.",
-  "known_limitations": "Complementary set likelihood can redistribute mass among uncertified Existing/NEW/WAIT actions. It does NOT certify their correctness or prevent polluted-state selection. Endogenous eligible update calendar changes; matching nominal updates alone is not identical exposure.",
+  "known_limitations": "Complementary set likelihood can redistribute mass among uncertified Existing/NEW/WAIT actions. It does NOT certify their correctness or prevent polluted-state selection; actual third-seed all-anonymous collapse makes unilateral rejection particularly risky. No presumed remedy or automatic train from this source. Endogenous eligible update calendar changes; matching nominal updates alone is not identical exposure.",
   "before_actual_repair_training": "Finish and report all9 original C causal development endpoints, register one bounded new objective/control window with full fixed data/clock/seeds/parameters/steps and actual target-action/exposure instrumentation; preserve negative original results. Source tests cannot start training.",
   "actual_fit_calibration_development_or_repair_accepted": false,
   "automatic_asset_read_or_experiment_launch": false
