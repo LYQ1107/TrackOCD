@@ -5277,3 +5277,21 @@ no private GT/cache/weights opened for this check):
   32 passed in 2.27s. Only small public launch/result/terminal staged;
   private checkpoints/data/cache stay local, qualified training sources unchanged.
 - Completed-stage registration: A2_EVIDENCE/s1028; independent full15 dev remains pending.
+
+
+### Actual fresh Fixed200 A2_CAPACITY_CONTROL / seed 1028
+
+- Registered e018889b7290c5b80b97c93e549c6d2247ecd2f7; complete200 with actual normal exit0/no
+  guard, 23.7049s, peak624181248B, oneCPU compute plus <=one
+  identified native helper, zeroGPUh/CUDA not initialized. Full1401/1158Known/
+  243masked census; actually sampled495canonical groups/221videos, not all1158.
+  All20/50/100/200 private model+AdamW checkpoints reopened exactly, no warmstart
+  or dev/final selection. Public actual resultSHA256
+  2f4530f308145909da4cc44bce69555f6b40e3a23f8db192a43e60af84819f67.
+- Actual init 319bc3fbaf6aeeef512d7edc1d0f07536b260d002c927beb476133f246f77816
+  and calendar 9a5a28ec0c3abe9f9a828c9384390c9d8e64e277d43b296835d01636f88a90ac
+  are checked against each available same-seed family by actual public tests;
+  no claim of generalization or scientific acceptance from optimizer completion.
+  32 passed in 2.24s. Only small public launch/result/terminal staged;
+  private checkpoints/data/cache stay local, qualified training sources unchanged.
+- Completed-stage registration: A2_CAPACITY_CONTROL/s1028; independent full15 dev remains pending.

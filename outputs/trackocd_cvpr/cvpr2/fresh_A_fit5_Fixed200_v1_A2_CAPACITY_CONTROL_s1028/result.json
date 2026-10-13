@@ -1,0 +1,1698 @@
+{
+  "checkpoint_selection": "Fixed200, never dev/final/Val/Test selection",
+  "dev_final_Val_Test_inputs_used": false,
+  "formal15fits_dev_or_Goal_accepted": false,
+  "label_and_physical_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "e018889b7290c5b80b97c93e549c6d2247ecd2f7"
+  },
+  "pilot_or_historical_checkpoint_warmstart": false,
+  "pilot_prerequisite": {
+    "all_five_actual_qualified": true,
+    "formal_initialization": "fresh same-seed adapter",
+    "pilot_result_sha256": "363e5a523db3e2ecd855a0afb77642cdd6c8862a5dd35505a6b4a60ca65dd0ce",
+    "pilot_weights_read": false
+  },
+  "private_checkpoints": [
+    {
+      "bytes": 6518375,
+      "reopen_exact": true,
+      "sha256": "918911065db1d2b71cb132d81bfb9a9f90c7e5af59c7cd9163d17a106c4cd1bd",
+      "step": 20
+    },
+    {
+      "bytes": 6518375,
+      "reopen_exact": true,
+      "sha256": "42d46427a6d097924a06958b5214586859ad5e608f8cf003461c99643f5ee82e",
+      "step": 50
+    },
+    {
+      "bytes": 6518375,
+      "reopen_exact": true,
+      "sha256": "33c96cd4b5d162654f08bab9e2237fbac03b99552bbff32b42e12707d7e1c185",
+      "step": 100
+    },
+    {
+      "bytes": 6518375,
+      "reopen_exact": true,
+      "sha256": "ea5ee34cf51535bf8222202969e0d7b7d2d9aed589d95509198d222ff67ad1a6",
+      "step": 200
+    }
+  ],
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 624181248,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 17.59311936299855
+  },
+  "status": "COMPLETED_ONE_FRESH_FIXED200_FIT_NOT_ALL15_DEV_OR_GOAL_ACCEPTANCE",
+  "trial": {
+    "actually_sampled_canonical_groups": 495,
+    "actually_sampled_videos": 221,
+    "adapter_initialization_sha256": "319bc3fbaf6aeeef512d7edc1d0f07536b260d002c927beb476133f246f77816",
+    "adapter_loss_gradient_norm_peak": 33.26096191978804,
+    "batch_calendar_sha256": "9a5a28ec0c3abe9f9a828c9384390c9d8e64e277d43b296835d01636f88a90ac",
+    "batched_individual_embedding_max_absolute_error": 0.0,
+    "batched_individual_numerically_qualified_steps": 0,
+    "batched_individual_parameter_gradient_max_absolute_error": 0.0,
+    "complete_eligible_census_is_not_claim_of_all_groups_visited": true,
+    "completed_optimizer_steps": 200,
+    "dev_final_Val_Test_inputs_used": false,
+    "extra_loss_gradient_norm_peak": 0.3306797444657624,
+    "family": "A2_CAPACITY_CONTROL",
+    "loss_curve": [
+      {
+        "adapter_loss_gradient_norm": 1.2199639123037131,
+        "extra_loss_gradient_norm": 0.0171728635168539,
+        "gradient_norm_before_clip": 1.2213281393051147,
+        "loss": 2.122148036956787,
+        "step": 1,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 1.3324378894748259,
+        "extra_loss_gradient_norm": 0.025572787837350293,
+        "gradient_norm_before_clip": 1.3351294994354248,
+        "loss": 2.0783004760742188,
+        "step": 2,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 1.404067949303148,
+        "extra_loss_gradient_norm": 0.03361060813202702,
+        "gradient_norm_before_clip": 1.408490538597107,
+        "loss": 2.027764320373535,
+        "step": 3,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 1.3934835029497434,
+        "extra_loss_gradient_norm": 0.023718876160134673,
+        "gradient_norm_before_clip": 1.3954966068267822,
+        "loss": 2.076627254486084,
+        "step": 4,
+        "visible_observations": 79
+      },
+      {
+        "adapter_loss_gradient_norm": 1.8409749823636339,
+        "extra_loss_gradient_norm": 0.05072052190357178,
+        "gradient_norm_before_clip": 1.8477582931518555,
+        "loss": 1.9121415615081787,
+        "step": 5,
+        "visible_observations": 121
+      },
+      {
+        "adapter_loss_gradient_norm": 2.670334165339026,
+        "extra_loss_gradient_norm": 0.06959482212457538,
+        "gradient_norm_before_clip": 2.6788086891174316,
+        "loss": 1.7336795330047607,
+        "step": 6,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 2.435831128306592,
+        "extra_loss_gradient_norm": 0.058471636259465026,
+        "gradient_norm_before_clip": 2.4408226013183594,
+        "loss": 1.735464334487915,
+        "step": 7,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 2.4531456557698075,
+        "extra_loss_gradient_norm": 0.06485770671641182,
+        "gradient_norm_before_clip": 2.4595348834991455,
+        "loss": 1.6655712127685547,
+        "step": 8,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 2.323790063512667,
+        "extra_loss_gradient_norm": 0.05742136063647449,
+        "gradient_norm_before_clip": 2.328172206878662,
+        "loss": 1.6183677911758423,
+        "step": 9,
+        "visible_observations": 63
+      },
+      {
+        "adapter_loss_gradient_norm": 2.8854884828427885,
+        "extra_loss_gradient_norm": 0.08798076193176803,
+        "gradient_norm_before_clip": 2.8935325145721436,
+        "loss": 1.4662082195281982,
+        "step": 10,
+        "visible_observations": 110
+      },
+      {
+        "adapter_loss_gradient_norm": 2.3974356500414657,
+        "extra_loss_gradient_norm": 0.04853647136609493,
+        "gradient_norm_before_clip": 2.3999202251434326,
+        "loss": 1.394982099533081,
+        "step": 11,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 3.4721225804760882,
+        "extra_loss_gradient_norm": 0.08908704498680742,
+        "gradient_norm_before_clip": 3.4776127338409424,
+        "loss": 1.0787245035171509,
+        "step": 12,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 3.633396634956154,
+        "extra_loss_gradient_norm": 0.09225752125967732,
+        "gradient_norm_before_clip": 3.6377134323120117,
+        "loss": 1.015622854232788,
+        "step": 13,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 3.947537721884915,
+        "extra_loss_gradient_norm": 0.10298164707937589,
+        "gradient_norm_before_clip": 3.9522242546081543,
+        "loss": 1.0205949544906616,
+        "step": 14,
+        "visible_observations": 63
+      },
+      {
+        "adapter_loss_gradient_norm": 3.292894120462385,
+        "extra_loss_gradient_norm": 0.0729283866411296,
+        "gradient_norm_before_clip": 3.2949883937835693,
+        "loss": 0.9834631085395813,
+        "step": 15,
+        "visible_observations": 111
+      },
+      {
+        "adapter_loss_gradient_norm": 3.8287030153446038,
+        "extra_loss_gradient_norm": 0.07356895944880422,
+        "gradient_norm_before_clip": 3.830325126647949,
+        "loss": 0.6949402689933777,
+        "step": 16,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 4.727392782632517,
+        "extra_loss_gradient_norm": 0.04693983640674459,
+        "gradient_norm_before_clip": 4.727737903594971,
+        "loss": 1.081463098526001,
+        "step": 17,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 4.79448909010617,
+        "extra_loss_gradient_norm": 0.09053019458176861,
+        "gradient_norm_before_clip": 4.795487403869629,
+        "loss": 0.7861313819885254,
+        "step": 18,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 3.531635752850608,
+        "extra_loss_gradient_norm": 0.04948879701004394,
+        "gradient_norm_before_clip": 3.5320045948028564,
+        "loss": 1.140868902206421,
+        "step": 19,
+        "visible_observations": 67
+      },
+      {
+        "adapter_loss_gradient_norm": 3.5433944648264295,
+        "extra_loss_gradient_norm": 0.04670680215592024,
+        "gradient_norm_before_clip": 3.543696641921997,
+        "loss": 0.6053932309150696,
+        "step": 20,
+        "visible_observations": 126
+      },
+      {
+        "adapter_loss_gradient_norm": 5.153650680573124,
+        "extra_loss_gradient_norm": 0.05520684584382983,
+        "gradient_norm_before_clip": 5.154228687286377,
+        "loss": 0.47891443967819214,
+        "step": 21,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 6.047682360785054,
+        "extra_loss_gradient_norm": 0.06507524724737829,
+        "gradient_norm_before_clip": 6.048076629638672,
+        "loss": 0.8021668195724487,
+        "step": 22,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 4.621684793578205,
+        "extra_loss_gradient_norm": 0.049851115336042265,
+        "gradient_norm_before_clip": 4.622297286987305,
+        "loss": 0.6016277074813843,
+        "step": 23,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 4.779558056927003,
+        "extra_loss_gradient_norm": 0.061328426434564265,
+        "gradient_norm_before_clip": 4.7800116539001465,
+        "loss": 0.7933057546615601,
+        "step": 24,
+        "visible_observations": 72
+      },
+      {
+        "adapter_loss_gradient_norm": 2.7652703289481115,
+        "extra_loss_gradient_norm": 0.045102203645648355,
+        "gradient_norm_before_clip": 2.766676425933838,
+        "loss": 0.4082571864128113,
+        "step": 25,
+        "visible_observations": 101
+      },
+      {
+        "adapter_loss_gradient_norm": 6.394328790534431,
+        "extra_loss_gradient_norm": 0.062453093566288934,
+        "gradient_norm_before_clip": 6.395184516906738,
+        "loss": 0.3215939998626709,
+        "step": 26,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 1.9372511211642591,
+        "extra_loss_gradient_norm": 0.02520653379835961,
+        "gradient_norm_before_clip": 1.9375810623168945,
+        "loss": 0.05447740480303764,
+        "step": 27,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 5.430623979562898,
+        "extra_loss_gradient_norm": 0.05662244998944036,
+        "gradient_norm_before_clip": 5.4310526847839355,
+        "loss": 0.28811222314834595,
+        "step": 28,
+        "visible_observations": 36
+      },
+      {
+        "adapter_loss_gradient_norm": 6.0284280450644046,
+        "extra_loss_gradient_norm": 0.061018113975665096,
+        "gradient_norm_before_clip": 6.03093957901001,
+        "loss": 0.32920560240745544,
+        "step": 29,
+        "visible_observations": 79
+      },
+      {
+        "adapter_loss_gradient_norm": 7.700728656921641,
+        "extra_loss_gradient_norm": 0.07122822960086928,
+        "gradient_norm_before_clip": 7.701074123382568,
+        "loss": 0.31964945793151855,
+        "step": 30,
+        "visible_observations": 139
+      },
+      {
+        "adapter_loss_gradient_norm": 8.558782619828108,
+        "extra_loss_gradient_norm": 0.07506421914965052,
+        "gradient_norm_before_clip": 8.559231758117676,
+        "loss": 0.30662602186203003,
+        "step": 31,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 1.0831988125813947,
+        "extra_loss_gradient_norm": 0.01659440253678972,
+        "gradient_norm_before_clip": 1.0833491086959839,
+        "loss": 0.03419065475463867,
+        "step": 32,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 2.756233422452245,
+        "extra_loss_gradient_norm": 0.02436198368484672,
+        "gradient_norm_before_clip": 2.756939172744751,
+        "loss": 0.09751377254724503,
+        "step": 33,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 4.737430291682091,
+        "extra_loss_gradient_norm": 0.05931094081044806,
+        "gradient_norm_before_clip": 4.737920761108398,
+        "loss": 0.37403029203414917,
+        "step": 34,
+        "visible_observations": 67
+      },
+      {
+        "adapter_loss_gradient_norm": 5.297744049528322,
+        "extra_loss_gradient_norm": 0.06389544062401091,
+        "gradient_norm_before_clip": 5.299708366394043,
+        "loss": 0.6783891916275024,
+        "step": 35,
+        "visible_observations": 130
+      },
+      {
+        "adapter_loss_gradient_norm": 6.853413939570972,
+        "extra_loss_gradient_norm": 0.06786368500286083,
+        "gradient_norm_before_clip": 6.85421895980835,
+        "loss": 0.30570119619369507,
+        "step": 36,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 5.309108773708572,
+        "extra_loss_gradient_norm": 0.05208331529671635,
+        "gradient_norm_before_clip": 5.309988498687744,
+        "loss": 0.1349620819091797,
+        "step": 37,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 12.14556666365546,
+        "extra_loss_gradient_norm": 0.15011126252442245,
+        "gradient_norm_before_clip": 12.147073745727539,
+        "loss": 0.9494466781616211,
+        "step": 38,
+        "visible_observations": 37
+      },
+      {
+        "adapter_loss_gradient_norm": 7.074409941475688,
+        "extra_loss_gradient_norm": 0.056196439056567536,
+        "gradient_norm_before_clip": 7.076138496398926,
+        "loss": 0.17728109657764435,
+        "step": 39,
+        "visible_observations": 78
+      },
+      {
+        "adapter_loss_gradient_norm": 1.048228012253522,
+        "extra_loss_gradient_norm": 0.01592957735422038,
+        "gradient_norm_before_clip": 1.0487780570983887,
+        "loss": 0.02561669424176216,
+        "step": 40,
+        "visible_observations": 129
+      },
+      {
+        "adapter_loss_gradient_norm": 33.26096191978804,
+        "extra_loss_gradient_norm": 0.3306797444657624,
+        "gradient_norm_before_clip": 33.26559829711914,
+        "loss": 2.1385581493377686,
+        "step": 41,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 19.31270226431299,
+        "extra_loss_gradient_norm": 0.12220594119402307,
+        "gradient_norm_before_clip": 19.315210342407227,
+        "loss": 0.6161974668502808,
+        "step": 42,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 9.436901907253073,
+        "extra_loss_gradient_norm": 0.04921464088353414,
+        "gradient_norm_before_clip": 9.437554359436035,
+        "loss": 0.28583842515945435,
+        "step": 43,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 5.134365549386463,
+        "extra_loss_gradient_norm": 0.05250156607404843,
+        "gradient_norm_before_clip": 5.135125637054443,
+        "loss": 0.4525505006313324,
+        "step": 44,
+        "visible_observations": 71
+      },
+      {
+        "adapter_loss_gradient_norm": 0.29996014115418734,
+        "extra_loss_gradient_norm": 0.0077257366507404186,
+        "gradient_norm_before_clip": 0.30023160576820374,
+        "loss": 0.011282729916274548,
+        "step": 45,
+        "visible_observations": 115
+      },
+      {
+        "adapter_loss_gradient_norm": 5.183835999175834,
+        "extra_loss_gradient_norm": 0.05510644108224637,
+        "gradient_norm_before_clip": 5.184144020080566,
+        "loss": 0.36965125799179077,
+        "step": 46,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 1.973610615027402,
+        "extra_loss_gradient_norm": 0.02463961636360343,
+        "gradient_norm_before_clip": 1.9738926887512207,
+        "loss": 0.10465764999389648,
+        "step": 47,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 6.880975051500918,
+        "extra_loss_gradient_norm": 0.06683257420221926,
+        "gradient_norm_before_clip": 6.881385803222656,
+        "loss": 0.359902560710907,
+        "step": 48,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 2.6387336096893823,
+        "extra_loss_gradient_norm": 0.0408131306778065,
+        "gradient_norm_before_clip": 2.6391074657440186,
+        "loss": 0.14070634543895721,
+        "step": 49,
+        "visible_observations": 71
+      },
+      {
+        "adapter_loss_gradient_norm": 0.8843544389808081,
+        "extra_loss_gradient_norm": 0.015043794683592548,
+        "gradient_norm_before_clip": 0.8845462799072266,
+        "loss": 0.03202877193689346,
+        "step": 50,
+        "visible_observations": 106
+      },
+      {
+        "adapter_loss_gradient_norm": 0.5407116238979278,
+        "extra_loss_gradient_norm": 0.010294638729870116,
+        "gradient_norm_before_clip": 0.5408201813697815,
+        "loss": 0.01765909232199192,
+        "step": 51,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.8363189673601682,
+        "extra_loss_gradient_norm": 0.01509778301169914,
+        "gradient_norm_before_clip": 0.8364583849906921,
+        "loss": 0.030434226617217064,
+        "step": 52,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 4.704801393750066,
+        "extra_loss_gradient_norm": 0.05907779498124444,
+        "gradient_norm_before_clip": 4.705177307128906,
+        "loss": 0.2968677878379822,
+        "step": 53,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 7.487022584651054,
+        "extra_loss_gradient_norm": 0.07608921964532296,
+        "gradient_norm_before_clip": 7.487687110900879,
+        "loss": 0.6321101188659668,
+        "step": 54,
+        "visible_observations": 73
+      },
+      {
+        "adapter_loss_gradient_norm": 0.5851191177860944,
+        "extra_loss_gradient_norm": 0.010817277011354366,
+        "gradient_norm_before_clip": 0.585570216178894,
+        "loss": 0.018708229064941406,
+        "step": 55,
+        "visible_observations": 116
+      },
+      {
+        "adapter_loss_gradient_norm": 3.3094873268797116,
+        "extra_loss_gradient_norm": 0.028333797473778982,
+        "gradient_norm_before_clip": 3.309645891189575,
+        "loss": 0.1445927619934082,
+        "step": 56,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 2.4983753886085833,
+        "extra_loss_gradient_norm": 0.0268194061462277,
+        "gradient_norm_before_clip": 2.498772621154785,
+        "loss": 0.04205303266644478,
+        "step": 57,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 1.1957274259074997,
+        "extra_loss_gradient_norm": 0.021261694351687576,
+        "gradient_norm_before_clip": 1.1959502696990967,
+        "loss": 0.045009613037109375,
+        "step": 58,
+        "visible_observations": 34
+      },
+      {
+        "adapter_loss_gradient_norm": 0.42156861911069576,
+        "extra_loss_gradient_norm": 0.007308090641135243,
+        "gradient_norm_before_clip": 0.42163845896720886,
+        "loss": 0.011753177270293236,
+        "step": 59,
+        "visible_observations": 68
+      },
+      {
+        "adapter_loss_gradient_norm": 8.153398475724646,
+        "extra_loss_gradient_norm": 0.15890672491233793,
+        "gradient_norm_before_clip": 8.155192375183105,
+        "loss": 1.1420927047729492,
+        "step": 60,
+        "visible_observations": 119
+      },
+      {
+        "adapter_loss_gradient_norm": 7.0057007617718225,
+        "extra_loss_gradient_norm": 0.052466806531279955,
+        "gradient_norm_before_clip": 7.0058979988098145,
+        "loss": 0.2908608019351959,
+        "step": 61,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 8.619793191008803,
+        "extra_loss_gradient_norm": 0.07556833019319129,
+        "gradient_norm_before_clip": 8.62015151977539,
+        "loss": 0.24490194022655487,
+        "step": 62,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 1.0219919063470184,
+        "extra_loss_gradient_norm": 0.014229331122443636,
+        "gradient_norm_before_clip": 1.0220963954925537,
+        "loss": 0.02787313424050808,
+        "step": 63,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05212954055345554,
+        "extra_loss_gradient_norm": 0.0013801471058522289,
+        "gradient_norm_before_clip": 0.05214812234044075,
+        "loss": 0.0017698288429528475,
+        "step": 64,
+        "visible_observations": 79
+      },
+      {
+        "adapter_loss_gradient_norm": 3.912604907643349,
+        "extra_loss_gradient_norm": 0.03652277882289314,
+        "gradient_norm_before_clip": 3.912803888320923,
+        "loss": 0.14909228682518005,
+        "step": 65,
+        "visible_observations": 91
+      },
+      {
+        "adapter_loss_gradient_norm": 6.520697213439145,
+        "extra_loss_gradient_norm": 0.05951094930696455,
+        "gradient_norm_before_clip": 6.521173000335693,
+        "loss": 0.252829372882843,
+        "step": 66,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.1026178854591679,
+        "extra_loss_gradient_norm": 0.002096677479721245,
+        "gradient_norm_before_clip": 0.10264639556407928,
+        "loss": 0.0031650543678551912,
+        "step": 67,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 1.8128501619616626,
+        "extra_loss_gradient_norm": 0.015248593679378735,
+        "gradient_norm_before_clip": 1.8129191398620605,
+        "loss": 0.0369967445731163,
+        "step": 68,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 0.1957400065920803,
+        "extra_loss_gradient_norm": 0.003912286279950228,
+        "gradient_norm_before_clip": 0.19578172266483307,
+        "loss": 0.00511856097728014,
+        "step": 69,
+        "visible_observations": 69
+      },
+      {
+        "adapter_loss_gradient_norm": 0.33823875728603153,
+        "extra_loss_gradient_norm": 0.0063581107454556834,
+        "gradient_norm_before_clip": 0.3385116755962372,
+        "loss": 0.00881261844187975,
+        "step": 70,
+        "visible_observations": 110
+      },
+      {
+        "adapter_loss_gradient_norm": 1.6480505611200333,
+        "extra_loss_gradient_norm": 0.021630369519847713,
+        "gradient_norm_before_clip": 1.648434042930603,
+        "loss": 0.041103459894657135,
+        "step": 71,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.37176154809277223,
+        "extra_loss_gradient_norm": 0.005751437745741099,
+        "gradient_norm_before_clip": 0.3718385100364685,
+        "loss": 0.012997197918593884,
+        "step": 72,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.8362909265091427,
+        "extra_loss_gradient_norm": 0.01178089688097097,
+        "gradient_norm_before_clip": 0.8366027474403381,
+        "loss": 0.02030191384255886,
+        "step": 73,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 5.99695823973453,
+        "extra_loss_gradient_norm": 0.050614527116845796,
+        "gradient_norm_before_clip": 5.997172832489014,
+        "loss": 0.14408759772777557,
+        "step": 74,
+        "visible_observations": 67
+      },
+      {
+        "adapter_loss_gradient_norm": 0.15244951076945354,
+        "extra_loss_gradient_norm": 0.0035411052743123,
+        "gradient_norm_before_clip": 0.1524919867515564,
+        "loss": 0.00439376849681139,
+        "step": 75,
+        "visible_observations": 118
+      },
+      {
+        "adapter_loss_gradient_norm": 14.475341350108067,
+        "extra_loss_gradient_norm": 0.12869020056749564,
+        "gradient_norm_before_clip": 14.47852897644043,
+        "loss": 0.4247574806213379,
+        "step": 76,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 7.79837193003875,
+        "extra_loss_gradient_norm": 0.17892006782722253,
+        "gradient_norm_before_clip": 7.800692558288574,
+        "loss": 1.041152834892273,
+        "step": 77,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.04014592087343122,
+        "extra_loss_gradient_norm": 0.0008186743981412909,
+        "gradient_norm_before_clip": 0.040160324424505234,
+        "loss": 0.0010007858509197831,
+        "step": 78,
+        "visible_observations": 36
+      },
+      {
+        "adapter_loss_gradient_norm": 0.11832029087624363,
+        "extra_loss_gradient_norm": 0.0017112202195093131,
+        "gradient_norm_before_clip": 0.11845117062330246,
+        "loss": 0.0023314952850341797,
+        "step": 79,
+        "visible_observations": 77
+      },
+      {
+        "adapter_loss_gradient_norm": 0.11300050439388394,
+        "extra_loss_gradient_norm": 0.0017029311048218554,
+        "gradient_norm_before_clip": 0.1132405549287796,
+        "loss": 0.003181076142936945,
+        "step": 80,
+        "visible_observations": 135
+      },
+      {
+        "adapter_loss_gradient_norm": 1.1306207928966738,
+        "extra_loss_gradient_norm": 0.01063082600159877,
+        "gradient_norm_before_clip": 1.130723476409912,
+        "loss": 0.022861003875732422,
+        "step": 81,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.6437208600763615,
+        "extra_loss_gradient_norm": 0.010611295075996912,
+        "gradient_norm_before_clip": 0.6438073515892029,
+        "loss": 0.019652938470244408,
+        "step": 82,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.03236937240421678,
+        "extra_loss_gradient_norm": 0.0006987463502066635,
+        "gradient_norm_before_clip": 0.03237910196185112,
+        "loss": 0.0009837150573730469,
+        "step": 83,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 2.6159094123758786,
+        "extra_loss_gradient_norm": 0.02831549252762361,
+        "gradient_norm_before_clip": 2.616131067276001,
+        "loss": 0.06348047405481339,
+        "step": 84,
+        "visible_observations": 75
+      },
+      {
+        "adapter_loss_gradient_norm": 1.2590542610838127,
+        "extra_loss_gradient_norm": 0.012684024096372402,
+        "gradient_norm_before_clip": 1.2591488361358643,
+        "loss": 0.0207488052546978,
+        "step": 85,
+        "visible_observations": 127
+      },
+      {
+        "adapter_loss_gradient_norm": 11.805307045109894,
+        "extra_loss_gradient_norm": 0.07837335981467487,
+        "gradient_norm_before_clip": 11.805558204650879,
+        "loss": 0.1525035798549652,
+        "step": 86,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 17.067114069905635,
+        "extra_loss_gradient_norm": 0.17030427780558824,
+        "gradient_norm_before_clip": 17.071956634521484,
+        "loss": 0.7062438726425171,
+        "step": 87,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.07861780440900548,
+        "extra_loss_gradient_norm": 0.0019563829958074482,
+        "gradient_norm_before_clip": 0.0786459743976593,
+        "loss": 0.0027772902976721525,
+        "step": 88,
+        "visible_observations": 35
+      },
+      {
+        "adapter_loss_gradient_norm": 0.08335896191197446,
+        "extra_loss_gradient_norm": 0.0015285763190802453,
+        "gradient_norm_before_clip": 0.083450086414814,
+        "loss": 0.0028799057472497225,
+        "step": 89,
+        "visible_observations": 71
+      },
+      {
+        "adapter_loss_gradient_norm": 0.25632333095122806,
+        "extra_loss_gradient_norm": 0.003540331028115816,
+        "gradient_norm_before_clip": 0.2563956081867218,
+        "loss": 0.006042957305908203,
+        "step": 90,
+        "visible_observations": 85
+      },
+      {
+        "adapter_loss_gradient_norm": 11.998829029489439,
+        "extra_loss_gradient_norm": 0.2853637003585432,
+        "gradient_norm_before_clip": 12.0023832321167,
+        "loss": 1.5911989212036133,
+        "step": 91,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.09285314674333857,
+        "extra_loss_gradient_norm": 0.0017562254414401459,
+        "gradient_norm_before_clip": 0.09286972135305405,
+        "loss": 0.0029102801345288754,
+        "step": 92,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 10.053559614231203,
+        "extra_loss_gradient_norm": 0.14043143315085777,
+        "gradient_norm_before_clip": 10.055118560791016,
+        "loss": 0.8685251474380493,
+        "step": 93,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 0.46953248437982625,
+        "extra_loss_gradient_norm": 0.007305777325688857,
+        "gradient_norm_before_clip": 0.46968361735343933,
+        "loss": 0.010351181030273438,
+        "step": 94,
+        "visible_observations": 62
+      },
+      {
+        "adapter_loss_gradient_norm": 1.2338206156877314,
+        "extra_loss_gradient_norm": 0.01703486369094337,
+        "gradient_norm_before_clip": 1.234147548675537,
+        "loss": 0.030050277709960938,
+        "step": 95,
+        "visible_observations": 125
+      },
+      {
+        "adapter_loss_gradient_norm": 0.5177434315399495,
+        "extra_loss_gradient_norm": 0.01096273011711671,
+        "gradient_norm_before_clip": 0.5179224610328674,
+        "loss": 0.015289974398911,
+        "step": 96,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.3481033455989899,
+        "extra_loss_gradient_norm": 0.005062740354291484,
+        "gradient_norm_before_clip": 0.3481464385986328,
+        "loss": 0.007061481475830078,
+        "step": 97,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 6.238231985988068,
+        "extra_loss_gradient_norm": 0.09546484663955822,
+        "gradient_norm_before_clip": 6.238955497741699,
+        "loss": 0.7847115993499756,
+        "step": 98,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 12.788567423340778,
+        "extra_loss_gradient_norm": 0.16045322774532655,
+        "gradient_norm_before_clip": 12.790556907653809,
+        "loss": 0.5538643002510071,
+        "step": 99,
+        "visible_observations": 59
+      },
+      {
+        "adapter_loss_gradient_norm": 0.03919667412789725,
+        "extra_loss_gradient_norm": 0.0008329369868173924,
+        "gradient_norm_before_clip": 0.03921113163232803,
+        "loss": 0.0010097504127770662,
+        "step": 100,
+        "visible_observations": 125
+      },
+      {
+        "adapter_loss_gradient_norm": 1.1934283497258058,
+        "extra_loss_gradient_norm": 0.020699190151935453,
+        "gradient_norm_before_clip": 1.193709373474121,
+        "loss": 0.043112754821777344,
+        "step": 101,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 12.908380438807129,
+        "extra_loss_gradient_norm": 0.21785023269654435,
+        "gradient_norm_before_clip": 12.910223960876465,
+        "loss": 0.945933997631073,
+        "step": 102,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 0.04937140895929408,
+        "extra_loss_gradient_norm": 0.0011292838104332071,
+        "gradient_norm_before_clip": 0.04938428848981857,
+        "loss": 0.0012616157764568925,
+        "step": 103,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 5.646536627270066,
+        "extra_loss_gradient_norm": 0.07518082872459306,
+        "gradient_norm_before_clip": 5.647251129150391,
+        "loss": 0.35512036085128784,
+        "step": 104,
+        "visible_observations": 80
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05132591788395369,
+        "extra_loss_gradient_norm": 0.0009815949334324515,
+        "gradient_norm_before_clip": 0.05137738212943077,
+        "loss": 0.0013417244190350175,
+        "step": 105,
+        "visible_observations": 110
+      },
+      {
+        "adapter_loss_gradient_norm": 5.938667865137825,
+        "extra_loss_gradient_norm": 0.11701377742478465,
+        "gradient_norm_before_clip": 5.939956188201904,
+        "loss": 0.9155739545822144,
+        "step": 106,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.30983102211561286,
+        "extra_loss_gradient_norm": 0.004261296403394221,
+        "gradient_norm_before_clip": 0.30986273288726807,
+        "loss": 0.00625233631581068,
+        "step": 107,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.4472917107716956,
+        "extra_loss_gradient_norm": 0.010937888157551505,
+        "gradient_norm_before_clip": 0.447433203458786,
+        "loss": 0.016449641436338425,
+        "step": 108,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 0.10047872973387845,
+        "extra_loss_gradient_norm": 0.002955458498028468,
+        "gradient_norm_before_clip": 0.10052576661109924,
+        "loss": 0.004075527191162109,
+        "step": 109,
+        "visible_observations": 73
+      },
+      {
+        "adapter_loss_gradient_norm": 0.22780221857671643,
+        "extra_loss_gradient_norm": 0.006428948590198697,
+        "gradient_norm_before_clip": 0.22791112959384918,
+        "loss": 0.007139110472053289,
+        "step": 110,
+        "visible_observations": 129
+      },
+      {
+        "adapter_loss_gradient_norm": 5.330218756733058,
+        "extra_loss_gradient_norm": 0.0661986019872579,
+        "gradient_norm_before_clip": 5.330770015716553,
+        "loss": 0.32264167070388794,
+        "step": 111,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.41876818729517856,
+        "extra_loss_gradient_norm": 0.010364223123025892,
+        "gradient_norm_before_clip": 0.418958842754364,
+        "loss": 0.015105771832168102,
+        "step": 112,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.08420918837235816,
+        "extra_loss_gradient_norm": 0.002204246382018643,
+        "gradient_norm_before_clip": 0.08423832058906555,
+        "loss": 0.0022780417930334806,
+        "step": 113,
+        "visible_observations": 36
+      },
+      {
+        "adapter_loss_gradient_norm": 0.699963987650267,
+        "extra_loss_gradient_norm": 0.009208402196416497,
+        "gradient_norm_before_clip": 0.7000254392623901,
+        "loss": 0.010683584026992321,
+        "step": 114,
+        "visible_observations": 67
+      },
+      {
+        "adapter_loss_gradient_norm": 1.9137496848327258,
+        "extra_loss_gradient_norm": 0.0240646221530199,
+        "gradient_norm_before_clip": 1.9138983488082886,
+        "loss": 0.04105038568377495,
+        "step": 115,
+        "visible_observations": 95
+      },
+      {
+        "adapter_loss_gradient_norm": 1.4771988723539857,
+        "extra_loss_gradient_norm": 0.015181103659370294,
+        "gradient_norm_before_clip": 1.4772922992706299,
+        "loss": 0.034485768526792526,
+        "step": 116,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.16125694031020035,
+        "extra_loss_gradient_norm": 0.0038099618741423468,
+        "gradient_norm_before_clip": 0.16130326688289642,
+        "loss": 0.005049276165664196,
+        "step": 117,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 0.4622171165934434,
+        "extra_loss_gradient_norm": 0.008358547205623677,
+        "gradient_norm_before_clip": 0.4623267650604248,
+        "loss": 0.011394118890166283,
+        "step": 118,
+        "visible_observations": 37
+      },
+      {
+        "adapter_loss_gradient_norm": 0.04189587862675788,
+        "extra_loss_gradient_norm": 0.0009761106785644438,
+        "gradient_norm_before_clip": 0.04191630333662033,
+        "loss": 0.001512718154117465,
+        "step": 119,
+        "visible_observations": 70
+      },
+      {
+        "adapter_loss_gradient_norm": 2.2654341058221803,
+        "extra_loss_gradient_norm": 0.019258736736172868,
+        "gradient_norm_before_clip": 2.2656664848327637,
+        "loss": 0.04007739946246147,
+        "step": 120,
+        "visible_observations": 124
+      },
+      {
+        "adapter_loss_gradient_norm": 0.3289666875778388,
+        "extra_loss_gradient_norm": 0.003047398619384952,
+        "gradient_norm_before_clip": 0.32904139161109924,
+        "loss": 0.004583597183227539,
+        "step": 121,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 2.0201167691114255,
+        "extra_loss_gradient_norm": 0.02061963174951938,
+        "gradient_norm_before_clip": 2.020230293273926,
+        "loss": 0.03559989854693413,
+        "step": 122,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.21509900968218146,
+        "extra_loss_gradient_norm": 0.0031646269275963823,
+        "gradient_norm_before_clip": 0.2151683121919632,
+        "loss": 0.0050657750107347965,
+        "step": 123,
+        "visible_observations": 37
+      },
+      {
+        "adapter_loss_gradient_norm": 0.09158415001057396,
+        "extra_loss_gradient_norm": 0.0012379156586231953,
+        "gradient_norm_before_clip": 0.09159981459379196,
+        "loss": 0.0016355991829186678,
+        "step": 124,
+        "visible_observations": 69
+      },
+      {
+        "adapter_loss_gradient_norm": 16.930965049714338,
+        "extra_loss_gradient_norm": 0.14138422392374989,
+        "gradient_norm_before_clip": 16.9321231842041,
+        "loss": 0.2865360379219055,
+        "step": 125,
+        "visible_observations": 118
+      },
+      {
+        "adapter_loss_gradient_norm": 17.067938584128918,
+        "extra_loss_gradient_norm": 0.14331145160363473,
+        "gradient_norm_before_clip": 17.074464797973633,
+        "loss": 0.7832847833633423,
+        "step": 126,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 1.0540630823377488,
+        "extra_loss_gradient_norm": 0.008811652732741326,
+        "gradient_norm_before_clip": 1.0541198253631592,
+        "loss": 0.01176915131509304,
+        "step": 127,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.42678400500509484,
+        "extra_loss_gradient_norm": 0.006021321440263174,
+        "gradient_norm_before_clip": 0.4268316328525543,
+        "loss": 0.008074331097304821,
+        "step": 128,
+        "visible_observations": 34
+      },
+      {
+        "adapter_loss_gradient_norm": 0.17446100424540245,
+        "extra_loss_gradient_norm": 0.003327788348221631,
+        "gradient_norm_before_clip": 0.17449340224266052,
+        "loss": 0.004029559902846813,
+        "step": 129,
+        "visible_observations": 71
+      },
+      {
+        "adapter_loss_gradient_norm": 10.714965285593424,
+        "extra_loss_gradient_norm": 0.131574766759176,
+        "gradient_norm_before_clip": 10.71599006652832,
+        "loss": 0.32363831996917725,
+        "step": 130,
+        "visible_observations": 131
+      },
+      {
+        "adapter_loss_gradient_norm": 15.574609357854863,
+        "extra_loss_gradient_norm": 0.3212540942297156,
+        "gradient_norm_before_clip": 15.5847749710083,
+        "loss": 1.9188222885131836,
+        "step": 131,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.03954073622381788,
+        "extra_loss_gradient_norm": 0.001133295837864862,
+        "gradient_norm_before_clip": 0.039556942880153656,
+        "loss": 0.001245212508365512,
+        "step": 132,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06164297438599582,
+        "extra_loss_gradient_norm": 0.0010972162242297776,
+        "gradient_norm_before_clip": 0.06165793538093567,
+        "loss": 0.0014088631141930819,
+        "step": 133,
+        "visible_observations": 36
+      },
+      {
+        "adapter_loss_gradient_norm": 0.18099694642977232,
+        "extra_loss_gradient_norm": 0.0031405736812227503,
+        "gradient_norm_before_clip": 0.18102410435676575,
+        "loss": 0.0032285689376294613,
+        "step": 134,
+        "visible_observations": 69
+      },
+      {
+        "adapter_loss_gradient_norm": 0.14308456966335792,
+        "extra_loss_gradient_norm": 0.0020881137442578805,
+        "gradient_norm_before_clip": 0.1431044340133667,
+        "loss": 0.0038917541969567537,
+        "step": 135,
+        "visible_observations": 110
+      },
+      {
+        "adapter_loss_gradient_norm": 0.01796790484133061,
+        "extra_loss_gradient_norm": 0.00036769858196037384,
+        "gradient_norm_before_clip": 0.017987797036767006,
+        "loss": 0.0008682251209393144,
+        "step": 136,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 4.4398945674105805,
+        "extra_loss_gradient_norm": 0.04982941816407868,
+        "gradient_norm_before_clip": 4.440168380737305,
+        "loss": 0.05718426778912544,
+        "step": 137,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.07448829350460644,
+        "extra_loss_gradient_norm": 0.0010434773340377952,
+        "gradient_norm_before_clip": 0.07452844828367233,
+        "loss": 0.001275730086490512,
+        "step": 138,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 0.056769443438989715,
+        "extra_loss_gradient_norm": 0.0009105556832083314,
+        "gradient_norm_before_clip": 0.056802764534950256,
+        "loss": 0.0014472961192950606,
+        "step": 139,
+        "visible_observations": 73
+      },
+      {
+        "adapter_loss_gradient_norm": 0.03506020312978561,
+        "extra_loss_gradient_norm": 0.00043217687144270206,
+        "gradient_norm_before_clip": 0.03506333380937576,
+        "loss": 0.0009657859918661416,
+        "step": 140,
+        "visible_observations": 113
+      },
+      {
+        "adapter_loss_gradient_norm": 2.3749196390309417,
+        "extra_loss_gradient_norm": 0.023010464063046448,
+        "gradient_norm_before_clip": 2.3750295639038086,
+        "loss": 0.04577965661883354,
+        "step": 141,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05842112927422868,
+        "extra_loss_gradient_norm": 0.0007893741597773525,
+        "gradient_norm_before_clip": 0.05842653661966324,
+        "loss": 0.0012008666526526213,
+        "step": 142,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.011417750600750712,
+        "extra_loss_gradient_norm": 0.0002826477068150248,
+        "gradient_norm_before_clip": 0.011421524919569492,
+        "loss": 0.0003245353582315147,
+        "step": 143,
+        "visible_observations": 33
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05724297728909007,
+        "extra_loss_gradient_norm": 0.001003591281974692,
+        "gradient_norm_before_clip": 0.05725572258234024,
+        "loss": 0.0010608673328533769,
+        "step": 144,
+        "visible_observations": 74
+      },
+      {
+        "adapter_loss_gradient_norm": 0.01908843456064476,
+        "extra_loss_gradient_norm": 0.0004283953965333028,
+        "gradient_norm_before_clip": 0.019098328426480293,
+        "loss": 0.0005536079406738281,
+        "step": 145,
+        "visible_observations": 135
+      },
+      {
+        "adapter_loss_gradient_norm": 0.3724042390217046,
+        "extra_loss_gradient_norm": 0.005474432347258526,
+        "gradient_norm_before_clip": 0.3724450170993805,
+        "loss": 0.009584140963852406,
+        "step": 146,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.04126141441876801,
+        "extra_loss_gradient_norm": 0.0009683299569580735,
+        "gradient_norm_before_clip": 0.0412738174200058,
+        "loss": 0.0012366294395178556,
+        "step": 147,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.01848794023503098,
+        "extra_loss_gradient_norm": 0.0005204944079126442,
+        "gradient_norm_before_clip": 0.018496805801987648,
+        "loss": 0.000537013984285295,
+        "step": 148,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 0.3854602072797041,
+        "extra_loss_gradient_norm": 0.005917918488059201,
+        "gradient_norm_before_clip": 0.3856070041656494,
+        "loss": 0.0074707986786961555,
+        "step": 149,
+        "visible_observations": 64
+      },
+      {
+        "adapter_loss_gradient_norm": 11.388965480567576,
+        "extra_loss_gradient_norm": 0.09377059052271684,
+        "gradient_norm_before_clip": 11.389450073242188,
+        "loss": 0.2979968190193176,
+        "step": 150,
+        "visible_observations": 133
+      },
+      {
+        "adapter_loss_gradient_norm": 0.02686091917713658,
+        "extra_loss_gradient_norm": 0.0006780712779574908,
+        "gradient_norm_before_clip": 0.02687152288854122,
+        "loss": 0.0008772850269451737,
+        "step": 151,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.035297281559232126,
+        "extra_loss_gradient_norm": 0.0006387805135286864,
+        "gradient_norm_before_clip": 0.03530401736497879,
+        "loss": 0.0006399154663085938,
+        "step": 152,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 6.295079450916424,
+        "extra_loss_gradient_norm": 0.057735821559183644,
+        "gradient_norm_before_clip": 6.295345306396484,
+        "loss": 0.4122723639011383,
+        "step": 153,
+        "visible_observations": 35
+      },
+      {
+        "adapter_loss_gradient_norm": 0.15558285967425678,
+        "extra_loss_gradient_norm": 0.0024814190716089964,
+        "gradient_norm_before_clip": 0.15564145147800446,
+        "loss": 0.00267372140660882,
+        "step": 154,
+        "visible_observations": 74
+      },
+      {
+        "adapter_loss_gradient_norm": 0.10325857683776857,
+        "extra_loss_gradient_norm": 0.001921862999495176,
+        "gradient_norm_before_clip": 0.1032920554280281,
+        "loss": 0.002113723661750555,
+        "step": 155,
+        "visible_observations": 108
+      },
+      {
+        "adapter_loss_gradient_norm": 1.057302658919647,
+        "extra_loss_gradient_norm": 0.01354115028934806,
+        "gradient_norm_before_clip": 1.0573889017105103,
+        "loss": 0.014918232336640358,
+        "step": 156,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.08127070705248077,
+        "extra_loss_gradient_norm": 0.0016936347984314278,
+        "gradient_norm_before_clip": 0.08129523694515228,
+        "loss": 0.001850986503995955,
+        "step": 157,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 1.614238598127066,
+        "extra_loss_gradient_norm": 0.0215625246242223,
+        "gradient_norm_before_clip": 1.6144487857818604,
+        "loss": 0.0300600528717041,
+        "step": 158,
+        "visible_observations": 37
+      },
+      {
+        "adapter_loss_gradient_norm": 0.10583509045893258,
+        "extra_loss_gradient_norm": 0.0012900064406624683,
+        "gradient_norm_before_clip": 0.1058739572763443,
+        "loss": 0.0014979362022131681,
+        "step": 159,
+        "visible_observations": 70
+      },
+      {
+        "adapter_loss_gradient_norm": 7.799341060241468,
+        "extra_loss_gradient_norm": 0.06290989117550246,
+        "gradient_norm_before_clip": 7.799620151519775,
+        "loss": 0.39413776993751526,
+        "step": 160,
+        "visible_observations": 121
+      },
+      {
+        "adapter_loss_gradient_norm": 0.622084580022781,
+        "extra_loss_gradient_norm": 0.008407298395979774,
+        "gradient_norm_before_clip": 0.6221576929092407,
+        "loss": 0.011778068728744984,
+        "step": 161,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06950338240003814,
+        "extra_loss_gradient_norm": 0.0009141353630522817,
+        "gradient_norm_before_clip": 0.06950947642326355,
+        "loss": 0.0010342597961425781,
+        "step": 162,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 4.287408826097708,
+        "extra_loss_gradient_norm": 0.03813353234985114,
+        "gradient_norm_before_clip": 4.287570476531982,
+        "loss": 0.0994945541024208,
+        "step": 163,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06055316416509419,
+        "extra_loss_gradient_norm": 0.001009514743240933,
+        "gradient_norm_before_clip": 0.060563940554857254,
+        "loss": 0.00129108433611691,
+        "step": 164,
+        "visible_observations": 73
+      },
+      {
+        "adapter_loss_gradient_norm": 0.014866824605540932,
+        "extra_loss_gradient_norm": 0.00033380914931478305,
+        "gradient_norm_before_clip": 0.014878157526254654,
+        "loss": 0.00046644211397506297,
+        "step": 165,
+        "visible_observations": 101
+      },
+      {
+        "adapter_loss_gradient_norm": 0.8865581778782992,
+        "extra_loss_gradient_norm": 0.01241422757935477,
+        "gradient_norm_before_clip": 0.8866616487503052,
+        "loss": 0.015259122475981712,
+        "step": 166,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.019247783975593628,
+        "extra_loss_gradient_norm": 0.00036802742572941173,
+        "gradient_norm_before_clip": 0.019251976162195206,
+        "loss": 0.0004741668817587197,
+        "step": 167,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.18343917447061867,
+        "extra_loss_gradient_norm": 0.0025153701954921527,
+        "gradient_norm_before_clip": 0.18345625698566437,
+        "loss": 0.002988481428474188,
+        "step": 168,
+        "visible_observations": 38
+      },
+      {
+        "adapter_loss_gradient_norm": 0.09704842594142238,
+        "extra_loss_gradient_norm": 0.0017258058415934611,
+        "gradient_norm_before_clip": 0.09706363081932068,
+        "loss": 0.0025688172318041325,
+        "step": 169,
+        "visible_observations": 73
+      },
+      {
+        "adapter_loss_gradient_norm": 0.010024638133140579,
+        "extra_loss_gradient_norm": 0.0002600197301306071,
+        "gradient_norm_before_clip": 0.010028026066720486,
+        "loss": 0.0003570556582417339,
+        "step": 170,
+        "visible_observations": 120
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06797959039827908,
+        "extra_loss_gradient_norm": 0.0012563298119344245,
+        "gradient_norm_before_clip": 0.06799113005399704,
+        "loss": 0.0013607025612145662,
+        "step": 171,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 2.6305666437108934,
+        "extra_loss_gradient_norm": 0.025644579779847035,
+        "gradient_norm_before_clip": 2.6308250427246094,
+        "loss": 0.04218273237347603,
+        "step": 172,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 12.251911403463954,
+        "extra_loss_gradient_norm": 0.10306438942731082,
+        "gradient_norm_before_clip": 12.252453804016113,
+        "loss": 0.21851858496665955,
+        "step": 173,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 2.345383125985198,
+        "extra_loss_gradient_norm": 0.034576204742028584,
+        "gradient_norm_before_clip": 2.345789670944214,
+        "loss": 0.04481162875890732,
+        "step": 174,
+        "visible_observations": 73
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06716511465743633,
+        "extra_loss_gradient_norm": 0.001158404011326602,
+        "gradient_norm_before_clip": 0.06719138473272324,
+        "loss": 0.0012100220192223787,
+        "step": 175,
+        "visible_observations": 112
+      },
+      {
+        "adapter_loss_gradient_norm": 12.27757441139858,
+        "extra_loss_gradient_norm": 0.2875915188288314,
+        "gradient_norm_before_clip": 12.282000541687012,
+        "loss": 1.6474567651748657,
+        "step": 176,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 3.7199306216743473,
+        "extra_loss_gradient_norm": 0.039404595698466764,
+        "gradient_norm_before_clip": 3.7201552391052246,
+        "loss": 0.09899506717920303,
+        "step": 177,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.028931132093498676,
+        "extra_loss_gradient_norm": 0.0006470807820574541,
+        "gradient_norm_before_clip": 0.028939547017216682,
+        "loss": 0.0007384300115518272,
+        "step": 178,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 0.040980744023090994,
+        "extra_loss_gradient_norm": 0.0007371967826784988,
+        "gradient_norm_before_clip": 0.04099726676940918,
+        "loss": 0.0008979797130450606,
+        "step": 179,
+        "visible_observations": 67
+      },
+      {
+        "adapter_loss_gradient_norm": 0.17879925236762842,
+        "extra_loss_gradient_norm": 0.0026944543951179572,
+        "gradient_norm_before_clip": 0.17885391414165497,
+        "loss": 0.005840492434799671,
+        "step": 180,
+        "visible_observations": 79
+      },
+      {
+        "adapter_loss_gradient_norm": 9.944303091265233,
+        "extra_loss_gradient_norm": 0.072712609312204,
+        "gradient_norm_before_clip": 9.945869445800781,
+        "loss": 0.24500755965709686,
+        "step": 181,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 1.5481399508152047,
+        "extra_loss_gradient_norm": 0.03199444394256472,
+        "gradient_norm_before_clip": 1.5485440492630005,
+        "loss": 0.03454647213220596,
+        "step": 182,
+        "visible_observations": 19
+      },
+      {
+        "adapter_loss_gradient_norm": 0.03262932753226027,
+        "extra_loss_gradient_norm": 0.0006869591754613098,
+        "gradient_norm_before_clip": 0.03263836354017258,
+        "loss": 0.0006811142084188759,
+        "step": 183,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 0.5193676655156216,
+        "extra_loss_gradient_norm": 0.008478955024443749,
+        "gradient_norm_before_clip": 0.5194644927978516,
+        "loss": 0.010196590796113014,
+        "step": 184,
+        "visible_observations": 66
+      },
+      {
+        "adapter_loss_gradient_norm": 3.903689269913592,
+        "extra_loss_gradient_norm": 0.0328234475203777,
+        "gradient_norm_before_clip": 3.903826951980591,
+        "loss": 0.04993562772870064,
+        "step": 185,
+        "visible_observations": 104
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05395864821722765,
+        "extra_loss_gradient_norm": 0.0010835553489018876,
+        "gradient_norm_before_clip": 0.053971514105796814,
+        "loss": 0.0014798163902014494,
+        "step": 186,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06584242580511529,
+        "extra_loss_gradient_norm": 0.0013116039394927134,
+        "gradient_norm_before_clip": 0.06586240231990814,
+        "loss": 0.002026176545768976,
+        "step": 187,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.06964588211642099,
+        "extra_loss_gradient_norm": 0.0017977232122125704,
+        "gradient_norm_before_clip": 0.06966941058635712,
+        "loss": 0.0019589425064623356,
+        "step": 188,
+        "visible_observations": 40
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05781372819502853,
+        "extra_loss_gradient_norm": 0.0010691260842206757,
+        "gradient_norm_before_clip": 0.057839103043079376,
+        "loss": 0.0012505531776696444,
+        "step": 189,
+        "visible_observations": 76
+      },
+      {
+        "adapter_loss_gradient_norm": 0.05971946082641561,
+        "extra_loss_gradient_norm": 0.0009529415273174822,
+        "gradient_norm_before_clip": 0.05975724011659622,
+        "loss": 0.0011989593040198088,
+        "step": 190,
+        "visible_observations": 121
+      },
+      {
+        "adapter_loss_gradient_norm": 0.16238527202510034,
+        "extra_loss_gradient_norm": 0.002646241593611379,
+        "gradient_norm_before_clip": 0.16240733861923218,
+        "loss": 0.0032935142517089844,
+        "step": 191,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 0.1862062977386245,
+        "extra_loss_gradient_norm": 0.004268778937073805,
+        "gradient_norm_before_clip": 0.18625593185424805,
+        "loss": 0.004837417509406805,
+        "step": 192,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.021973007914590042,
+        "extra_loss_gradient_norm": 0.00041375204144088727,
+        "gradient_norm_before_clip": 0.021985694766044617,
+        "loss": 0.0004949569702148438,
+        "step": 193,
+        "visible_observations": 37
+      },
+      {
+        "adapter_loss_gradient_norm": 0.032829832976255045,
+        "extra_loss_gradient_norm": 0.000766614946730569,
+        "gradient_norm_before_clip": 0.032852161675691605,
+        "loss": 0.0008998870616778731,
+        "step": 194,
+        "visible_observations": 72
+      },
+      {
+        "adapter_loss_gradient_norm": 0.22859688225029093,
+        "extra_loss_gradient_norm": 0.0028605860138081595,
+        "gradient_norm_before_clip": 0.22862441837787628,
+        "loss": 0.003908061888068914,
+        "step": 195,
+        "visible_observations": 85
+      },
+      {
+        "adapter_loss_gradient_norm": 0.011638598885860362,
+        "extra_loss_gradient_norm": 0.0002401596027676088,
+        "gradient_norm_before_clip": 0.011641375720500946,
+        "loss": 0.00035114289494231343,
+        "step": 196,
+        "visible_observations": 10
+      },
+      {
+        "adapter_loss_gradient_norm": 4.117036400470757,
+        "extra_loss_gradient_norm": 0.040422054242675386,
+        "gradient_norm_before_clip": 4.117267608642578,
+        "loss": 0.07571015506982803,
+        "step": 197,
+        "visible_observations": 20
+      },
+      {
+        "adapter_loss_gradient_norm": 0.010635286590598708,
+        "extra_loss_gradient_norm": 0.00021502747818734949,
+        "gradient_norm_before_clip": 0.01063749473541975,
+        "loss": 0.00029478073702193797,
+        "step": 198,
+        "visible_observations": 39
+      },
+      {
+        "adapter_loss_gradient_norm": 0.37634104364216,
+        "extra_loss_gradient_norm": 0.0049908106208460855,
+        "gradient_norm_before_clip": 0.3765740394592285,
+        "loss": 0.007220602128654718,
+        "step": 199,
+        "visible_observations": 76
+      },
+      {
+        "adapter_loss_gradient_norm": 0.42678183917884577,
+        "extra_loss_gradient_norm": 0.005579094692296883,
+        "gradient_norm_before_clip": 0.4268193542957306,
+        "loss": 0.00767750758677721,
+        "step": 200,
+        "visible_observations": 122
+      }
+    ],
+    "model_parameter_sha256_after": "701f1b6f0fbf74f743a305b499fdbb322b8ced45c3a20d0c1827e2f0ff1a6100",
+    "model_parameter_sha256_before": "ad57251c21d33dfecd410bd4b8756c6c9335d570038e644eaf226274e35871a1",
+    "parameter_count": 541889,
+    "parameter_movement_is_not_temporal_or_Novel_generalization_evidence": true,
+    "scope": {
+      "all_input_physical_tracks_accounted": true,
+      "canonical_known_groups": 1158,
+      "eligible_known_physical_tracks": 1158,
+      "exact_same_video_Raw_aliases_deduplicated": 0,
+      "masked_no_fit5_target_tracks": 243,
+      "physical_tracks": 1401,
+      "supervised_classes": 5
+    },
+    "seed": 1028,
+    "singleton_extra_gradient_may_be_zero": true,
+    "stage": "Fixed200",
+    "training_GPU_hours": 0
+  }
+}
