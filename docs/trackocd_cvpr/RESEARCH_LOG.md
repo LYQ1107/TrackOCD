@@ -4056,3 +4056,40 @@ no private GT/cache/weights opened for this check):
 - Full684tests pass in57.02s, including actualALL11shadow receipt/gate and
   original-vs-cached config equality/pendingfingerprint refusal. Registeractual
   proof+wrapper before fullreplay, not acceptsourcechecks as result.
+
+### Read-only image-only frontend asset/provenance recheck during Mean replay
+
+- Previous63aebf6 delivery/refverification andactualqualifiedMeanreplay are
+  genuineprogress. CurrentliveMeanownedsupervisor identity/startticks/cmdhash
+  reconfirmed; firstorder1027 completed, no fullresult atthisrecord. No in-flight
+  source/data/model/guard modification or duplicateeval started.
+- Read-only MASA asset check: existingregular558882875B sam_vitb_masa.pth
+  wholefileSHA441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c
+  matchesexistingpinnedLFSspec. Hashingdoesnot deserializemodel/classmetadata.
+  Secondconditional SAM checkpointabsent; no download/dependency inferred:
+  earlierprojectledger reports419tensor firstrelease coverage, not repeated
+  currenttensorloading. Native14sourcefiles125292B andAMG4files43189B actually
+  matchfixedgitblob manifests. Isolatedruntimeexists, installeddistribution
+  metadata Python3.10.21/torch2.1.2+cu118/torchvision.16.2/numpy1.26.4/mmcv2.1/
+  mmdet3.3/mmengine.10.7. No freshmodel/CUDA/librarycompatibility claim.
+- Currentimagewrapper facts: nativeRCNNcap50, uncappedno-cropAMGgenericgrid,
+  frame_id usesvideo-localordinal; maskstability isnotforegroundposterior.
+  Publishedgenericbbox/object route supported byoldpinnedprojectledger but
+  exactSAM-B releasestage trainingconfig/privateledger remainsmissing. No
+  stronger407-video frontend/source/supervision/physicalperformance guarantee
+  from existingassets oroldVal/57video-cap16 results.
+- Checkpointloader selectsstate_dict AFTERtorch.load(weights_only,mmap), so
+  whole-rootnon-tensor metadata may becreated first. This identifies a potential
+  semantic-read boundary, NOT evidence thatforbiddencategory metadata actually
+  exists or oldexecutions violatedscope. No checkpointmetadata/categorynames
+  decoded inthisrecheck. Resolve selective loading orprovegenericmetadata
+  before anynewprimary run; weights_only alone isnot a semantic-read filter.
+- Smallpublicartifact cvpr5/image_only_frontend_asset_recheck_v1.json andscope
+  regression added; no source/weight/environment/data/cache recoverybytes,
+  inference/training/annotation/pixel/Test reads orforeignprocess changes.
+  Onlytaskreports/tests changed; existingmodelcode andliveMeandependencies
+  untouched. WholeGoal active/unachieved; actualfullMdev stillpending.
+- Full685tests passed in56.47s; afterclarifyingreport fields toexclude newly
+  addedlocalreports/tests fromzero recoveredupstreambytes/modelcode mutation,
+  targetedasset-scope testpasses (.04s). Allnewfacts scopedtoactualread-only
+  evidence, no newprimary/runtime/metric acceptance.

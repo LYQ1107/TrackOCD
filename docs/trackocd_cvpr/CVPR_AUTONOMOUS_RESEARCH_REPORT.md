@@ -877,3 +877,16 @@ data/model/seed/order/prefix/threshold/3000s/RAM/physicalcoverage andactual
 ID/future checks. RequiresactualALL11 resultfingerprint/normalterminal and
 8753prefixnumericproof, oldfailedMeanreceipt immutable. Actualfullreplay
 stillpending, no two-order partialmetric reuse orscientificacceptance.
+
+CurrentMeanqualifiedreplay hascompletedfirstorder andisactuallylive; no full
+scientificresult yet. Independentfrontendread-only recheck confirms existing
+559MB MASAweightSHA and18pinnedimage-source files, installedisolatedpackage
+metadata; no model/GPU/importcompatibility ornewinference/GT/pixels read.
+
+PrimaryPred stillunqualified: exactSAM-B trainingstage ledger/config and
+new407-video physical/cadence coverage remainopen. Existingwholecheckpoint
+loader may deserializeunusedmetadata beforestate_dict selection; actual
+forbiddencategory metadata presence/scopeviolation NOTproved, no values
+decodedhere. Resolve safeselective loading/genericmetadata beforeprimary use.
+HistoricalVal andcapped57Train assetsremainreferences, notmodelselection or
+completednewfullGoal. No assetdownloads/environmentmutation/dependencyreinstall.
