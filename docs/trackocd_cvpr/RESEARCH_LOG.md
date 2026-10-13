@@ -3838,3 +3838,32 @@ no private GT/cache/weights opened for this check):
 - Full659tests passed in72.88s. A subsequent strict no-fullTruth/no-unknown-BG
   public-matrix boundary check also passed all4targeted receipt/gate tests in
   .11s. No actual full9aggregate execution or newloss training yet.
+
+### All nine M fits actually complete and whole-cohort endpoint gate passes
+
+- Last pooled_weighted/1029 fit from preregistered175e51d completes normally:
+  publicSHA `a3334abec084c2723ab46ea98449916beae30f31ded462b8fec10da9dfb5027b`,
+  private12515B endpointSHA
+  `123dca39f04c5bd008a39152e9d706dc9407586f60cc878971d3c929f027e5f7`.
+  Fourfullpolicyepisodes/fixed200actualupdates/161parameters, optimizer Known/
+  pseudo576/114groups, BOTH pseudo classes, one/zero/fractional434/236/20.
+  Freshinit7daf96df... matchesother1029controls, different learnedendpoint.
+  Latest badKnownhistory counts28/29/31/31, final also1mixedpseudo history:
+  not memorypurification, matchedcoverage, Novel or Pred acceptance.
+  Worker313.74s/total320.87s/RSS952074240B/11OSthreads/CPU/zero trainingGPUh.
+- Actual whole M cohort verifier now passes all9fixedprivateendpoint hashes,
+  normal ownedterminals, currentnumericwindow/kernel/features/loss/control,
+  exactdeclared copy implementations, matchedcontrol initials and3distinct
+  trainingseed initials. OldM6pre-input failure preserved; M8unobserved143
+  preserved and replaced ONLY by exactnumericallyequal normal completion
+  replica. No rejected seed discarded or anotherseed substituted.
+- This opens the alreadyregistered read-only M development stage, beginning
+  with zero-fit Mean then frameatomic stateEMA andall9trainedendpoints, each
+  full3orders/fullphysicalclock/allprefixes/actualID+numericfuturechecks.
+  No newoptimizer/cache/modelchoice/final/Val/Test access. Historical chosen-
+  version lowerbounds remainNOTactivepurity/selfexcluded/fullsemantictruth/
+  officialCT/qualifiedPred; all9fits alone doNOT achieve M or fullGoal.
+- C Top8/1029 remainsactuallylive withtwoorder progress atthisrecord; no result
+  or acceptance inferred fromprogress. CompleteCmatrix/newloss trainingpending.
+- Full660tests pass in74.94s, including actualfullM9cohort and preserved exact
+  normalterminal replica. Register lastfit before real Mdevelopment inputs.

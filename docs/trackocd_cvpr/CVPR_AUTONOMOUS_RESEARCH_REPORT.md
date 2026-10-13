@@ -802,3 +802,13 @@ scope and exact old completion exceptions; no private inputs or modelchoice.
 Ordermeans are not independent training replicates. Actualall9 aggregate and
 newloss training remainpending. StrongPred/self-excludedpurity/coverage/joint/
 fairbaselines/final and wholeGoal stillopen.
+
+All9 M fixed fits now actually complete, last public `a3334abe...`, normal
+ownedwait0/fixed200/fullpolicy. Entirecohort passes actualwindow/kernel/source/
+privateendpoint/terminal/threeindependentinitialseed checks with both preserved
+transport exceptions properly bound. Lastfit stillhas badKnown/mixedpseudo
+history; no purification or discovery gain inferred from fitcompletion.
+
+Proceed to preregistered full read-only Mean/stateEMA/all9M development, not
+newtraining or selectedcheckpoints. C remainingmatrix/newloss execution and
+strongPred/matchedpuritycoverage/selfexclusion/joint/final remainrequired.
