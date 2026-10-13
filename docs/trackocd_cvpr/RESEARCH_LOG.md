@@ -4243,3 +4243,37 @@ no private GT/cache/weights opened for this check):
   source changed, new weights/data extracted, protected labels read or external
   process touched. Whole Goal remains active/unachieved; qualify shadow before
   another new full M replay, then scientific controls/strong Pred/joint/final.
+
+### Prepare fail-closed complete M fingerprint-cache replay while ALL11 shadow runs
+
+- Previouse35fca6 made real profiling/source/launch progress. Current new
+  fingerprint ALL11 shadow's supervisor PID/start ticks/argv hash are actually
+  revalidated live, not inferred from a lock or receipt. Seven cases through
+  relative_weighted/1028 have passed entire old/new comparisons. Final result,
+  execution profile and normal owned terminal remain unavailable at this record;
+  no whole qualification, baseline superiority or full-development acceptance.
+- NEW full-replay config/helper/wrapper retain the exact original frozen M config
+  SHA2943bdd9..., all9 fixed fit/cohort gates,72 dev/472 physical/8753 observations/
+  2562 frames/116 empty, all3 orders/all6 prefix reports, full actual ID/reverse
+  and first-video future mutation probes, thresholds/CPU1/3GiB/3000s/16MiB output/
+  25%RAM/storage bounds. Only new output namespace and explicit equivalent derived
+  cache scope differ; neither previous failed Mean namespace is reused.
+- New public gate requires both actual new result/profile SHA fingerprints,
+  all11 complete cases/normal ownedwait0/bounds, exact original private trace
+  hashes per case, expectede35fca6 source/registration, actual exercised Mean/EMA
+  fingerprint cache and32+32MiB scope counters. Original actual8753 tensor proof,
+  original ALL11 Raw cache proof and both old failures remain required unchanged.
+  Missing/null/partial evidence fails closed before private inputs; scope/source
+  tests do not supply fingerprints. Values remain NULL pending actual completion.
+- New driver composes the original full worker/supervisor and writes a separate
+  execution-profile receipt tied to its result. It does not replace actual probes
+  with hashes/source assertions, reduce full input/dirty history or raise the guard.
+  Qualification is full POLICY parity only, not full72-development parity or a
+  performance guarantee; no old partial metric reuse/model selection.
+- Full723tests pass in49.67s, including unchanged full configs, pending-proof
+  refusal and explicitly synthetic validator faults (missing cases/scopes,
+  different traces, bad exits, excess bytes, no cache use and nonfinite/negative
+  counters). Synthetic fixtures are NOT real new-shadow receipts. Original live
+  job dependencies untouched; no new eval/pixels/optimizer/GT or asset extraction.
+  Whole Goal active/unachieved. Fill proofs only after actual full normal result,
+  then register/push/fetch before a fresh full Mean replay.
