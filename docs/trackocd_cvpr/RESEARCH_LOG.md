@@ -6042,3 +6042,31 @@ no private GT/cache/weights opened for this check):
   59.393120916s inclusive/peak862937088B/zero GPU-hours. All four original
   complete trial validators pass; partial4/6aggregation independently refuses.
   Public triplet/startup/pair summary/tests/docs only, private assets excluded.
+
+### Actual baseline1029 complete: all three baseline seeds Known-only
+
+- Original boot/startticks/command-bound process remained live through all3
+  main orders/probes; now normal exit0/guardNONE/complete at preregistration
+  a47438d0e7fddacb14976bec191cd4c9f288ff4d. No re-launch or partial acceptance.
+  Wall320.367336554s/peak963661824B/one CPU+OS thread/zero helper/CUDA/
+  optimizer/GPU-hours, original3GiB/3000s/source/authority/ALL6endpoint gates.
+- Complete72videos/472physical/8753observations/2562frames/116empty per3orders,
+  full IDrename/reverse equality and39changed future observations with nonempty
+  prior-event equality. PUBLIC aggregates match the other two fresh baselines
+  despite distinct parameters:8753KNOWN/order, Known micro282/302/macro
+  0.9594329501915708/coverage1.0,119pseudo absorption/anonymous queries0/
+  certified crossvideo reuse lower bounds0. No logits/private trace parity,
+  pooled sample independence or controlled latency claim.
+- Exact result51263a725782c87c0e34b7c0e36fb4497fd9dc0f906e9bef71477706840bfdcf;
+  launch196a9d15dce7919d45f545337092c447b02169d4aa2420aef4dcc9200eb35b4b;
+  normal terminala2131207ee725cdc290ce2c2370f19b15fa5c9c3c6225c1d8719f96a6966013b.
+  Original startup evidence retained, private stdout/weights/GT/histories not
+  exported. PUBLIC-only all5complete trial validators pass, partial5/6matrix
+  aggregation still REFUSES. Twenty-four targeted tests pass3.05s; no owned
+  research worker remains live after normal terminal. Next fixed trial is
+  repair1029; no third paired outcome, overall winner or Goal success inferred.
+  Calibrated controls/fullM/joint/Pred/dense/lockedfinal still OPEN/active.
+- Final bounded combined CVPR/v2 suite1030pass57.79s, ownedwait0/guardNONE/
+  59.416989206s inclusive/peak837472256B/zero GPU-hours. Public original
+  triplet/startup/tests/docs only are staged; private assets/stdout excluded.
+  Source publication and exact remote proof precede final fixed repair1029.

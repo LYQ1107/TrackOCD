@@ -1482,3 +1482,28 @@ calibration/fullM/joint/strong Pred/dense/locked independent-final still open.
 Final bounded combined CVPR/v2 suite1029pass57.80s, ownedexit0/guardNONE,
 inclusive59.3931s/peak862937088B/zero GPU-hours. All4complete trial validators
 pass; partial4/6aggregation refuses. No private assets are published.
+
+## Actual baseline1029: all three fresh baseline endpoints retain Known bias
+
+The fifth planned full-development endpoint completes normally:320.3673s,
+peak963661824B, one CPU/OS thread, zero helper/CUDA/optimizer/GPU-hours.
+Every72video/472track/8753observation/2562frame/116empty three-order replay
+and complete IDrename/reverse+39future-observation nonempty-prefix probes pass.
+The existing task was observed, never restarted or shortened for acceptance.
+
+PUBLIC aggregate rows match both other baselines despite distinct parameters:
+8753KNOWN/order, Known micro93.3775%/macro95.9433%/coverage100%,119pseudo
+absorption, anonymous queries0/certified crossvideo reuse lower bounds0.
+All three baseline seeds show this bias within the fixed GT-control protocol.
+This is not equality of private scores/traces or a third repair outcome.
+
+Result SHA256:
+`51263a725782c87c0e34b7c0e36fb4497fd9dc0f906e9bef71477706840bfdcf`.
+Normal terminal:
+`a2131207ee725cdc290ce2c2370f19b15fa5c9c3c6225c1d8719f96a6966013b`.
+All5original complete trial validators pass; partial5/6matrix aggregation
+refuses. Twenty-four targeted tests pass3.05s. Finish repair1029 before full
+matrix conclusions; no model/seed/parameter selection. Goal A/B/C unachieved,
+calibrated controls/fullM/joint/lawful strong Pred/dense/lockedfinal still open.
+Final bounded combined CVPR/v2 suite1030pass57.79s, ownedexit0/guardNONE,
+inclusive59.4170s/peak837472256B/zero GPU-hours. No private assets published.
