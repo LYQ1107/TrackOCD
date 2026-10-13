@@ -1175,3 +1175,21 @@ refusals; full942 tests pass. A gated real executor/pilot remains required.
 This objective is NOT posterior/foreground calibration; calibrated Raw and
 coverage/latency-matched controls, actual full development, learned joint R/C/M,
 legal strong-Pred/dense transfer and independent final remain unfinished.
+
+## Actual full-M member-input replay terminates at original wall bound
+
+The previously live new quarantine/1027 full development is now terminal:
+owned-9/owned_job_wall,3000.2786s, peak965148672B, one OS thread, zero optimizer/
+GPU-hours and no complete result/profile. All three full main orders completed,
+but original full ID/reverse/future probes lack completed receipts. No main-
+order metric is salvaged or invented, and equal progress-file bytes do not
+prove whole-trace equality. All failed attempts and startup evidence remain.
+
+Terminal SHA256:
+`5fa18163351e49df16b5e04102ed82500c2396cb7618b62d68a5122ffb9c359f`.
+Whole small-policy ALL11 memo equivalence is still valid; it did not guarantee
+full-development completion/scalability. This is runtime/resource failure,
+not demonstrated learned-M accuracy failure or a proven isolated bottleneck.
+No same-bound unchanged restart, enlarged bound, timer reset or removed probes.
+Current943 tests include actual terminal/absence checks; full9M metrics,
+real paired-C pilot, calibrated controls, joint/Pred/dense/final remain OPEN.

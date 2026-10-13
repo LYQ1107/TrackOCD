@@ -5569,3 +5569,30 @@ no private GT/cache/weights opened for this check):
   Original pinned M/C kernels, assets and completed experiments untouched.
   Fair calibrated Raw/coverage/latency controls, actual repair fits/dev, joint
   R/C/M/strongPred/dense/lockedfinal remainOPEN. Goal active/unachieved.
+
+### Actual member-input full-M terminal: original wall bound, no accepted metric
+
+- Current authoritative terminal now exists: ownedchild-9/owned_job_wall,
+  successfulFALSE/resultFALSE,3000.2786s/peak965148672B/oneOSthread/zeroGPUh.
+  Worker and supervisor no longer in current process inventory, not a poll
+  timeout or stale PID assumption. Only the supervisor's own Popen child was
+  stopped by the original bound; no foreign process or live-worker restart.
+- TerminalSHA5fa18163351e49df16b5e04102ed82500c2396cb7618b62d68a5122ffb9c359f.
+  Three full main orders1027/1028/1029 reached final progress, SHA
+  8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9;
+  same progress framing as old retry is NOT whole-trace equality or proof of
+  completed extra probes. Namespace contains only launch+progress+boot-bound
+  owned startup observation; no result/executionprofile/exception failure file.
+  Preserve all files and immutable old attempts; no partial metrics salvaged.
+- Real ALL11 small-policy input-memo equality remains valid, but it did not
+  establish full72/472 runtime qualification under3000s. This is resource/
+  runtime failure, NOT a demonstrated numeric/model/scientific Novel failure
+  or a proven cache/bottleneck cause. No unchanged restart, limit increase,
+  split-clock timer reset or probe/physical-denominator reduction authorized.
+  Full9M science remainsOPEN; further engineering needs new evidence/protocol.
+- Terminal regression+paired-source tests14pass3.69s. Full943pass52.83s,
+  ownedwait0/no guard/54.2334s/peak808517632B/25%RAM reserve. SourceC window
+  published58e7dae/exactremote earlier; C real pilot/gated executor still pending.
+  Continue bounded C intervention and full-M large-scope runtime investigation,
+  retaining calibrated Raw/coverage/latency, joint/strongPred/dense/final gates.
+  Original Goal active/unachieved, not completed by this runtime failure.
