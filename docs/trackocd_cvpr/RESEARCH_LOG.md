@@ -5044,3 +5044,32 @@ no private GT/cache/weights opened for this check):
   49.75s, guarded ownwait0/no guard/51.19s total,25%reserve maintained. M no
   longerlive; fresh formal execution can begin only after latest real source
   publication/fetch/live exact gate, never use expired process observations.
+
+### Native baseline full-prefix encoding source while remote writes unavailable
+
+- Fresh observation: HEADa67de9e local, remote-tracking last1211483; no reboot
+  since19:26:36, no live M/freshfit after actual wall terminal. Reattempted
+  HTTPS7890 and strict-pinned SSH17890 writes: TLS/banner failures, no remote
+  acknowledgement. Read-only existing IPv6/IPv4 proxy-node GitHub probes both
+  return504. No proxy selection/global/service/foreignprocess changes. Actual
+  formal private inputs remain behind fresh live/source gate, no fake receipt.
+- NEW native256D full-prefix encoder/gated-caller prerequisite: six declared
+  int snapshots/allavailable, every physical/short trajectory retained, actual
+  lengths/no observation padding or silent truncation, frozenCPU/nontraining
+  model only, <=128tracks/65536observations per numeric call. Alias/label/video
+  bookkeeping never enters numeric forward, model digest unchanged in tests.
+- Offlinefit5 prototype builder reuses EXACT successful-pilot canonicalization
+  (full immutable Raw/absolute frames, conflicts refuse), all canonical Known
+  complete tracks/equal member mean, masked unknown not background/prototype.
+  External fit slots organize prototypes only. Raw must use original frozen
+  R path: do not substitute a numerically different aggregation or pad256D.
+- Five targeted synthetic tests pass2.06s; full871tests pass47.33s, actual
+  ownwait0/no guard/48.77s supervisor total, fresh3GiB RAM margin+25%reserve.
+  ID routing rename and actual NON-NO-OP future visual mutation keep earlier
+  one-observation vectors exact; these are bounded numerical examples, not
+  full actual ALL15 dev/causal controller/strongPred/final qualification.
+- Source/artifacts saved locally for genuine push/fetch/registration recovery.
+  No actual formalfit or new dev label/data/weight reads in this source work.
+  Full matrix evaluator/cohort+private endpoint gates, all15 actual fits,
+  full9M probes/results, calibrated/joint method, lawful Pred/dense/full
+  denominators and lockedfinal/report remainOPEN. Goal unachieved/unchanged.
