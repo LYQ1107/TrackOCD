@@ -1734,3 +1734,29 @@ inclusive64.2752s/peak837754880B/zero trainingGPUhours. Initial mutation-test
 fixture missing a public calendar prerequisite was corrected without changing
 any numerical source or actual fit; its original1065pass/1FAIL is recorded.
 Explicit18 public files only, no private checkpoints/calendars/scalar tables.
+
+## Prospective ALL4 full Train-dev scalar controls
+
+New explicit full-dev protocol retains all3calendar200 endpoints and ONE
+no-seed fullpolicy endpoint.168original/new/public source paths, actual ALL4
+fit proofs and ALL13 private byte fingerprints gate BEFORE dev inputs. Frozen
+two-parameter adapter reuses exact original Top8 float32 input/control/bank/
+outcome kernels, not a708parameter C architecture; initial synthetic full
+events/outcomes equal Raw in all3orders/ID-reverse delivery. No149fit-source edits.
+
+All72dev videos/472tracks/8753observations/2562frames/116empty retained.
+Conditional302Known/119declared-pseudo targets only AFTER input-only score;
+outside2/unknown49 and conflicting aliases physically retained/masked, not BG/
+Novel negatives. Separate complete group-observation and fixed1/2/4/8/16/all
+track-prefix micro/classmacro NLL/Brier/fixed10binECE tasks. Class weighting
+and repeated prefixes/observations are not deployment prevalence or independent
+replicates. Both initial score and each fixed endpoint measured, no selection.
+Each complete3order causal run requires full ID/reverse/future probes. Original
+3GiB/3000s/25%RAM/storage/oneCPU guards unchanged; no automatic next endpoint.
+Thirty targeted tests pass2.53s. This is source registration only, not measured
+full-dev calibration/science/foreground/Existing-gate/purity/coverage-latency.
+Actual read-only evaluation follows publication/exact proof. Goal active; all
+remaining fullM/joint/strongPred/dense/locked-final requirements preserved.
+Final bounded combined CVPR/v2 suite1091pass68.05s, ownedexit0/guardNONE,
+inclusive69.8396s/peak836812800B/zero GPUhours. Original149numerical/source
+closure reverified unchanged. Nine public source/config/tests/docs/status only.

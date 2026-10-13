@@ -6364,3 +6364,53 @@ no private GT/cache/weights opened for this check):
   Explicit18-file public staging audit excludes .pt/private calendar/scalars/
   original GT/pixels/semantic lists and model/optimizer/RNG state. Derived
   aggregate exactly matches public cohort verifier after documentation changes.
+
+### Prospective ALL4 independent full Train-dev scalar-control evaluation
+
+- Previous turn made actual progress: ALL4 formal fit evidence published/fetched/
+  triple-SHA10b1930b4e03bcd3ddc93b98575a38251bfce3f8; clean worktree and
+  public/source cohort reverified now. No live owned research worker. Existing
+ 17899 transport listening; no new proxy/config/credential/foreign-process work.
+  RAMavailable106204110848B of134792282112B/free disk82862198784B,
+  current research outputs771MiB. No cleanup, dataset/weight download or GPU job.
+- NEW frozen protocol/driver/boot-bound persistent launcher require actual ALL4
+  public receipts/source closure and ALL13 private snapshot fingerprints BEFORE
+  private dev inputs. Parent and worker fresh exact remote/source/human407scope
+  checks,168source/public paths. Fullpolicy remains ONE no-seed endpoint;
+  calendar1027/28/29 fixed200 endpoints all retained. No warmstart/refit/selection.
+- Frozen two-parameter adapter uses the exact float32 Top8_conditioned numeric
+  copy interface only, NOT a708parameter trained C. Reuses unchanged original
+  readonly_C_stream/resolver/router/bank/external outcome audit. Initial adapter
+  reproduces actual synthetic Raw scores/events/full outcomes for all3orders and
+  ID/reverse delivery. Original149fit numerical/source paths still byte-exact.
+- New input-only maxKnown current-prefix pass traverses ALL72videos/472tracks/
+ 8753observations/2562metadataframes/116empty. External labels are applied AFTER
+  the numeric score kernel. Existing302Known/119declared-pseudo semantic targets
+  conditional only;2outside/49unknown remain physical denominators, not negative
+  BG/Novel. Atomic conflicting aliases masked rather than individually relabeled.
+  Complete group-observation and fixed1/2/4/8/16/all_available track-prefix tasks
+  separately report micro/classmacro NLL/Brier/fixed10prob-bin ECE and counts.
+  Repeated groups/prefixes are not independent replicas; classmacro/prior is not
+  deployment prevalence. No private scalar/target tables or semantic IDs output.
+- EACH explicitly chosen endpoint requires all3full causal orders and COMPLETE
+  first-order ID-bijection/reversed-delivery trace parity plus nonvacuous future
+  mutation/full-stream comparison of sealed earlier events. Original3GiB/3000s/
+ 16MiB/25%RAM+plannedRSS/storage guards, one CPU compute worker, bounded native
+  helper/noCUDA preserved. No unchanged retry, automatic next control, truncating
+  probe/clock or raised bound. Own boot/start/command identity is not completion.
+- Thirty targeted actual-cohort/new-dev tests pass2.53s: exact Raw adapter parity,
+  changed-model future causality, independent-label no policy feedback, unknown/
+  short/empty denominators, explicit conflicting mask, exact binary diagnostics,
+  no mutable model/fake solver seeds or relaxed orders/clock/guards/selection,
+  complete-source/launcher arguments and missing-result supervisor refusal.
+- This is prospective source/protocol registration, NOT actual dev metrics,
+  unseen calibration gain, foreground/Existing purity/fullposterior, fair coverage/
+  latency or control winner. Execution only after test/push/fetch/exact proof.
+  Original Goal active/unachieved; fullM/joint R/C/M/lawful strongPred/dense/
+  lockedfinal and Goal A/B/C still required. Complete ALL4 outcomes before any
+  new mechanism inference; no dev-selected model/seed/threshold/bin/checkpoint.
+- Final bounded combined CVPR/v2 suite1091pass68.05s, ownedexit0/guardNONE/
+  inclusive69.839584925s/peak836812800B/zero trainingGPUhours. Actual ALL4
+  original149source closure and new full-clock configuration reverified after
+  tests. Only nine new/updated source/config/test/docs/status files published;
+  no dev/private result implied by registration. Execution follows exact proof.

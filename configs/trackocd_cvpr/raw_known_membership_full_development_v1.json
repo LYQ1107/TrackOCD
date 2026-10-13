@@ -1,0 +1,53 @@
+{
+  "status": "REGISTERED_READONLY_FULL_DEV_ALL4_FORMAL_RAW_MEMBERSHIP_ENDPOINTS_REQUIRED",
+  "base_config": "configs/trackocd_cvpr/C_GT_causal_development_v1.json",
+  "controls": [
+    "calendar_matched",
+    "full_policy"
+  ],
+  "calendar_seeds": [
+    1027,
+    1028,
+    1029
+  ],
+  "full_policy_independent_seed_runs": false,
+  "calendar_checkpoint_step": 200,
+  "order_seeds": [
+    1027,
+    1028,
+    1029
+  ],
+  "physical_tracks": 472,
+  "observations": 8753,
+  "metadata_frames": 2562,
+  "empty_frames": 116,
+  "prefix_snapshots": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 16777216,
+  "output_prefix": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1",
+  "optimizer_steps": 0,
+  "select_model_or_checkpoint": false,
+  "fixed_existing_gate": 0.55,
+  "fixed_membership_logit_gate": 0,
+  "conditional_reliability_bins": 10,
+  "all4_actual_fits_required_before_dev": true,
+  "all13_private_snapshot_fingerprints_required_before_dev": true,
+  "full3orders_and_nonvacuous_ID_reverse_future_probes_required": true,
+  "one_explicit_control_seed_per_worker": true,
+  "maximum_attempts_per_control_seed": 1,
+  "parallel_research_worker_or_auto_next_control": false,
+  "semantic_denominator": "Existing Known302/declared-pseudo119; outside2/unknown49 physically retained, not negatives. Conflicting aliases masked. Group-observation and track-prefix conditional reliability separately reported.",
+  "full_semantic_truth_Hscore_CT_or_deployment_calibration_or_Goal_claimed": false,
+  "foreground_existing_gate_or_fair_latency_coverage_matching_claimed": false,
+  "final_Val_Test_original_pixels_new_nonKnown_or_Novel_vocabulary": false,
+  "dev_selected_control_seed_threshold_bin_or_checkpoint": false
+}
