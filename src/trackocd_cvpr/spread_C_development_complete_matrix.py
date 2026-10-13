@@ -76,7 +76,14 @@ def verified_trial(root, arm, seed):
 
 
 def verified_matrix(root):
-    return {(a, s):verified_trial(root, a, s) for a in ARMS for s in SEEDS}
+    table = {(a, s):verified_trial(root, a, s) for a in ARMS for s in SEEDS}
+    reference = table[(ARMS[0], SEEDS[0])]
+    for r in table.values():
+        for order in map(str, SEEDS):
+            if (r['orders'][order]['private_video_ordinal_order_sha256'] !=
+                    reference['orders'][order]['private_video_ordinal_order_sha256']):
+                raise ValueError('Same actual frozen video ordinal permutation per order across ALL6')
+    return table
 
 
 def aggregate_matrix(table):

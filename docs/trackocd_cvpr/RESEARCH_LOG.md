@@ -6070,3 +6070,57 @@ no private GT/cache/weights opened for this check):
   59.416989206s inclusive/peak837472256B/zero GPU-hours. Public original
   triplet/startup/tests/docs only are staged; private assets/stdout excluded.
   Source publication and exact remote proof precede final fixed repair1029.
+
+### Actual ALL6 full causal paired-C matrix: finite rejection window negative
+
+- Final repair1029 normal exit0/guardNONE/complete at9f216f7a... after
+  monitoring the SAME boot/startticks/command-bound worker. No timer reset,
+  retry, omitted probe or bound increase.585.604940574s/peak964194304B/
+  one CPU+OS thread/zero helper/CUDA/optimizer/GPU-hours. Every3order full
+  72video/472physical/8753observation/2562frame/116empty clock, full IDrename/
+  reverse and39actual future mutations/nonempty prior-event equality pass.
+- Final resultacf9acceab60caaae74d475bb760e6f0afcb0c51ab3bc8aea8c25c511ddf2635;
+  launchb99a2c17ff32fa626f60c77f4f7e4cc8d75860375abe8500bfb0befdc22dea27;
+  terminal7c65a728e29677064bf63c599758b2bdf3c14c2ab94427ab78aa6fb104d20ab2.
+  Repair1029 is NOT Known-only:perorder3180/3188/3186Existing,305/307/305NEW,
+  5268/5258/5262Known. Allavailable Known220/302/macro0.8376551724137932,
+  pseudo absorption75/anonymous queries44/coverage1.0, yet certified crossvideo
+  reuse micro+macro lower bounds0 and12unscorable reuse queries retained.
+- Strict route-history audits show100certified-pseudo histories eachorder,
+  167/168/167verifiednonpseudo-or-mixed and38/39/38semantic-unscorable among
+  305/307/305allocated tokens. These are scoped conservative histories, not
+  full semantic purity, independent evidence or proven fragmentation causes.
+  More anonymous actions/lower absorption alone is NOT persistent discovery.
+- PUBLIC-only all6normal full-trial/source/endpoint checks pass, with added
+  identical actual ordinal-permutation hashes perorder acrossmodels. Existing
+  numerical/evaluation sources unchanged; new posthoc checker grants no asset
+  access. Derived18-original-hash-bound all6matrix SHA
+  f78a108a3a2d00dcf02c1b87b3af7f171e1a549e1fb7f0ae12c808b63719e5ad,
+  28975B; no new optimizer/privateGT/weight/data read to summarize.
+- Three training-seed/order means: baselineKnownmicro0.9337748344370861/
+  macro0.9594329501915708; repair0.8653421633554084/0.9188403575989783.
+  DeltaKnownmicro-0.06843267108167772/macro-0.040592592592592514,
+  pseudoKnownabsorption119->104.33333333333333/anonymous0->14.666666666666666,
+  fullphysicalcommitcoverage1.0both/certifiedcrossvideo micro+macro0both.
+  Orders are not independent training seeds/samples; no bestseed/prefix/arm
+  selection or controlled latency claim. All6owned walls2015.744469735s,
+  maxRSS965472256B, one compute worker sequentially, zero new trainingGPUh.
+- Fixed0.25/fresh200/3seed spread-calendar rejection window is SCIENTIFIC
+  NEGATIVE for persistent discovery in this GT-control setting: objective
+  exercised105/103/109gradient steps, but no primary reuse gain and worse
+  meanKnown recognition. Not a universal loss impossibility proof or trained-M
+  efficacy failure. No coefficient/seed/step expansion after dev observation.
+  Fair calibrated Raw/Knownness and coverage/latency controls still absent;
+  fullM/joint/lawful strongPred/dense/locked independent final and Goal A/B/C
+  OPEN/active. Next freeze a bounded calibration-control protocol before new
+  private loads; keep unknown masked and use ONLY existing fit/policy labels,
+  never dev/final/Val/Test model selection or new Novel GT/vocabulary.
+- Twenty-eight targeted actual/source/order/complete-matrix tests pass3.59s;
+  incomplete subsets still refuse. All6completion is a research stage, NOT
+  total Goal acceptance. No owned research process remains live at completion.
+- Final bounded combined CVPR/v2 suite1034pass58.75s, ownedwait0/guardNONE/
+  60.362221028s inclusive/peak837533696B/zero GPU-hours. All6matrix/input
+  fingerprint/metric/order tests pass; all subset refusals preserved. Only
+  original public triplet/startup/matrix/source/tests/docs staged; private
+  stdout/weights/GT/features/traces excluded. Current stage published before
+  any new calibration private loads; no live job to blindly restart.

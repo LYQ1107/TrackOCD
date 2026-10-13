@@ -35,6 +35,22 @@ def test_missing_full_matrix_or_trial_refuses_without_dev_or_weight_reads(tmp_pa
         verified_matrix(tmp_path)
 
 
+@pytest.mark.parametrize('altered', [False,True])
+def test_full_matrix_requires_same_actual_order_hash_across_models_without_private_data(tmp_path,monkeypatch,altered):
+    import src.trackocd_cvpr.spread_C_development_complete_matrix as module
+    def trial(root,arm,seed):
+        orders = {str(o):{'private_video_ordinal_order_sha256':f'fixture-{o}'} for o in (1027,1028,1029)}
+        if altered and arm == 'Known_set_rejection' and seed == 1029:
+            orders['1028']['private_video_ordinal_order_sha256'] = 'different-permutation'
+        return {'orders':orders}
+    monkeypatch.setattr(module,'verified_trial',trial)
+    if altered:
+        with pytest.raises(ValueError,match='Same actual frozen'):
+            verified_matrix(tmp_path)
+    else:
+        assert len(verified_matrix(tmp_path)) == 6
+
+
 @pytest.mark.parametrize('seed,hashes', [
     (1027, ('c6a2cd83ddbc5bcec3f0ba73c5d06fda4eb10d67570ba7b7c3038ebf1d2d84db',
             'd987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef',

@@ -1507,3 +1507,61 @@ matrix conclusions; no model/seed/parameter selection. Goal A/B/C unachieved,
 calibrated controls/fullM/joint/lawful strong Pred/dense/lockedfinal still open.
 Final bounded combined CVPR/v2 suite1030pass57.79s, ownedexit0/guardNONE,
 inclusive59.4170s/peak837472256B/zero GPU-hours. No private assets published.
+
+## Actual complete paired-C matrix: rejection exercised, no persistent reuse gain
+
+All6fresh Fixed200 endpoints have now completed NORMAL full causal development,
+each three72video/472physical/8753observation/2562frame/116empty orders plus
+complete IDrename/reverse and nonempty39-observation future-prefix probes.
+Actual ordinal permutation hashes match across every model. No shorter stream,
+selected order/seed/checkpoint, timer reset or raised3GiB/3000s guard.
+All6owned wall total2015.7445s/maxRSS965472256B/one CPU worker sequentially/
+zero CUDA, evaluation optimization or new training GPU-hours.
+
+Final repair1029 is NOT Known-only:3180/3188/3186Existing and305/307/305NEW
+actions perorder. Allavailable Known micro220/302=72.8477% (baseline93.3775%),
+pseudo absorption75/119 (baseline119/119), anonymous pseudo queries44, but
+certified crossvideo reuse micro+macro lower bounds still0. Allphysical commit
+coverage100%;12unscorable reuse queries remain. The100certified-pseudo token
+histories perorder do not imply independent crossvideo query reuse, global
+semantic purity or proof of a fragmentation cause. No trained-M win/failure
+inference follows from this Raw-bank C control.
+
+Complete three-training-seed/order means (not independent order samples):
+
+| Fullavailable metric | Matched baseline | Known-set rejection |
+| --- | ---: | ---: |
+| Known micro accuracy | 93.3775% | 86.5342% |
+| Known macro accuracy | 95.9433% | 91.8840% |
+| Declared pseudo absorbed asKnown /119 | 119 | 104.3333 |
+| Anonymous pseudo commit queries /119 | 0 | 14.6667 |
+| Certified crossvideo reuse micro/macro lower bound | 0 / 0 | 0 / 0 |
+| Fullphysical commit track coverage | 100% | 100% |
+
+The bounded0.25/fresh200/three-seed correction has actual extra gradients
+105/103/109steps and changed endpoints, yet meanKnown recognition drops
+6.8433percentage points without primary persistent-reuse improvement. This is
+a scientific NEGATIVE in this fixed GT-control window, not a universal loss
+impossibility claim. More anonymous output is not discovery success. No best
+seed/arm/prefix, dev grid, coefficient increase or pilot warmstart is selected.
+
+All6matrix binds18original public artifacts, SHA256:
+`f78a108a3a2d00dcf02c1b87b3af7f171e1a549e1fb7f0ae12c808b63719e5ad`.
+Final normal terminal:
+`7c65a728e29677064bf63c599758b2bdf3c14c2ab94427ab78aa6fb104d20ab2`.
+Twenty-eight targeted source/actual/full-matrix/order tests pass3.59s. Public
+aggregation reads no private weights/GT/features and does not confer new asset
+authority. WholeGTcontrol annotated clock is not dense predicted tracking or
+official fullsemantic-CT/Hscore. Equal coverage does not prove calibrated
+confidence or isolated latency fairness; fixed Raw control remains uncalibrated.
+
+Next is a separately frozen bounded calibration CONTROL using existing approved
+fit/policy labels only, unknowns masked, with actual pilot before expansion.
+NamedKnown-set probability calibration must not be called detector foreground/
+full posterior/purity calibration. Fair coverage/latency controls, fullM runtime/
+probes, joint R/C/M, lawful strongPred/dense transfer and locked independent
+final remain REQUIRED. Original Goal A/B/C active and unachieved; this finite
+negative research window is completed, not the total Goal.
+Final bounded combined CVPR/v2 suite1034pass58.75s, ownedexit0/guardNONE,
+inclusive60.3622s/peak837533696B/zero GPU-hours. Private assets remain local;
+new calibration still requires explicit frozen source/live gates and actual pilot.
