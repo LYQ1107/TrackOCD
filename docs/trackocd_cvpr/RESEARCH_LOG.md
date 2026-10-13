@@ -5678,3 +5678,30 @@ no private GT/cache/weights opened for this check):
   conclusion yet. Three targeted tests pass2.10s; full951pass51.79s, ownwait0/
   no guard/53.2462s/peak808402944B/25%reserve+3GiB planning. Actual audit awaits
   source push/fetch/exact registration; full Goal and science gates remainOPEN.
+
+### Actual read-only opportunity result; narrow counter completion source
+
+- Actual original audit at independently verified83c97a5... generated COMPLETE
+  result and childexit0. Original supervisor remains successfulFALSE with
+  owned_memory_counter_unavailable, not normal:19.3882s/maxRSS951398400B/
+  oneOSthread/zero helper/optimizer/GPUh. No restart or original receipt rewrite.
+  Exact resultb5c868c4eb5396616292a9cc762607a607a65086d3531972904e7eb5929a46b4;
+  launch1f366ad67bb660f3d30e37e92623b56510905a87ff4fbbf3c1436a1ee245127b;
+  terminaled36aede312c0f4f46a7e21df41d9d2b91ef64a8eb4deb958ad7fe3bbbadc5af.
+- Complete374frames/1empty/1268observations:333Known-eligible frames,
+  189pseudo-eligible,174cooccurring; Known791/pseudo206/masked271group counts.
+  ALL Known anchors contain176pseudo opportunities, original selected first50
+  contain175Known/0pseudo. Exact original calendar8a3ee08e... matches real
+  pilot. Ordinal0 contributes40selected Known-only frames; ordinal1 contributes
+  next10before its pseudo appearances. Thus available later Known-anchor
+  opportunities exist, not structural absence of cooccurrence. Counts are
+  not independent samples/gradients, no new calendar selected by this audit.
+- Register a ONE CASE public-only counter-completion qualifier: immutable
+  result/launch/terminal fingerprints, actual source and completeclock/calendar,
+  exit0+within3GiB/3000s resource proof, no training/forbidden read. Original
+  successfulFALSE preserved; exception framing explicit, missing sample cause
+  not proven. Not a generic completion exemption or partial metric salvage.
+  Actual qualification still awaits its source registration/execution.
+- Five targeted qualification/opportunity tests pass2.11s; full953pass52.53s,
+  ownwait0/no guard/54.0571s/peak808329216B. No private weight/dataset/history
+  reads in the public qualification, no extra optimizer or chosen threshold.
