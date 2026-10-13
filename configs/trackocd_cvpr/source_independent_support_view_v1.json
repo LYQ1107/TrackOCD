@@ -1,0 +1,13 @@
+{
+  "status": "SOURCE_AND_SYNTHETIC_EXCLUSION_PREREQUISITE_NOT_ACTUAL_SELF_EXCLUDED_DEVELOPMENT",
+  "implementation": "src/trackocd_cvpr/independent_support_view.py",
+  "pinned_bank_dependency": "src/trackocd_cvpr/prefix_member_bank.py",
+  "pinned_bank_sha256": "a454f7192bacd5d4762d468b46a08afd6b2f94d27ea755e5b1ccd56b81a03e71",
+  "modes": ["exclude_query_alias_scope", "exclude_current_video"],
+  "scope_rule": "Only latest already committed past Raw; exclude whole (video epoch,frame,payload) alias groups of query, or all current-video support. All token tombstones remain explicit; no real bank/history deletion.",
+  "routing_and_epoch_usage": "External support selection only; never numeric features, semantic labels, query ID scores or tie breaking",
+  "known_limitations": "Reads pinned frozen internal provenance because public snapshot omits it. Caller must separately prove pre-frame timing, complete numeric re-encoding, own prediction histories and matched full-clock/coverage/latency. Different videos/groups are NOT semantic independence or purity certificates.",
+  "GT_label_role_vocabulary_or_checkpoint_input": false,
+  "actual_training_full_self_excluded_evaluation_or_purity_gain": false,
+  "automatic_private_input_or_experiment_launch": false
+}

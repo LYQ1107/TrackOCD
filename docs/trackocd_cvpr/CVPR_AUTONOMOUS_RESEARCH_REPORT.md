@@ -736,3 +736,22 @@ public `6cfe2311...`: three orders all8753 KNOWN actions, Known282/302, ALL119
 pseudo queries absorbed as Known, zero anonymous commits/certified reuse.
 Actual ID/future checks pass. Closed-set failure repeats across two fitted
 Top1 seeds; full C matrix still pending (4/9), not a discovery win.
+
+M's exact namespace transport replacement now actually succeeds: second seed
+triplet complete (6/9fits), public `30f99382...`, fixed200/fullpolicy/normal
+owned terminal, original registration failure retained. Private weights and
+histories stay local. Third seed and all M development still pending.
+
+C Top8 second seed completes (5/9evaluated), public `080011a3...`: all8753
+actions Known in each order, all119 pseudo absorbed, zero certified reuse.
+Actual training includes both policy-pseudo classes and nonzero pseudo loss;
+absence of pseudo training does not explain this result. Public full-rollout
+NEW loss-plan counts exist in all nine fits, but include frozen tails: they
+do not prove actual optimizer action-target counts, absent NEW gradients or
+the causal reason for collapse. Preserve this diagnostic evidence gap.
+
+Independent-support exclusion source/tests now remove full prior alias scope
+or current-video support without editing real memory/dirty histories. Pinned
+internal bank dependency is explicit. This does not yet establish actual
+self-excluded evaluation, independent semantic support, matched purity/coverage
+or strong legal Pred. Full Goal remains unachieved and active.

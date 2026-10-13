@@ -3643,3 +3643,69 @@ new research scope; nothing has been deleted, no storage pressure is present.
   C-second-Top1 receipt check separately passed (1 test, 0.15 s). Transport
   recovery still requires fresh registration and actual successful fit; source
   tests/connection recovery do not count as M6 completion.
+
+### M transport replacement actually completes; C Top-8 second seed collapses
+
+- Previous stage `30784330ca174a5aec4e105f2e338445bce27ecf` was pushed,
+  fetched and full-ref verified. The new M recovery worker passed fresh remote
+  registration, ran from step 0 and has now completed normally: pooled/1028,
+  fixed 200, four full policy episodes, 161 parameters. Public result SHA256
+  `30f993828d051cdfff8c9d228786bf4304951f84cb5d789cc0343b238c47d908`,
+  endpoint `18391631ab6679c7ec7da0b21bac6e9a560ec54fd5fc2acf99c35ab775eb8158`.
+  Matched seed initial parameters, different endpoint from both controls;
+  actual optimizer Known/pseudo groups 474/136, both pseudo classes, target
+  one/zero 338/272. All episodes retain1268 anonymous commits; zero quarantine,
+  latest bad Known histories30/31/31/28. Similar action/lineage counts to the
+  no-quarantine control do not imply exact trace/weight equality or gain.
+  Worker331.40 s, total340.95 s, RSS948318208 B, CPU/zero training GPU-hours.
+  Original failed terminal `31185616...` remains unchanged. M6/9 complete;
+  third independent training seed and actual M development remain pending.
+- C Top8_conditioned/1028 has normal owned completion, public SHA256
+  `080011a3d8edb127cb7c4615645bcd5b6be6abc2e264bb19356583b69e1c13a2`.
+  Full three orders,472/8753/2562/116, actual ID/reverse and39future checks.
+  Every order emits8753 KNOWN actions; Known282/302, all119 pseudo absorbed
+  Known, zero anonymous commits/certified cross-video reuse, commit coverage
+  100%. Actual training DID include381 Known/97 pseudo optimizer groups and
+  BOTH policy-pseudo classes. Do not explain this failure as absent pseudo
+  training. Worker442.16 s, total452.92 s, RSS963248128 B, oneOSthread, noCUDA.
+  C5/9 evaluated, otherfour endpoints still required; no selected seeds.
+- Added pinned-bank past-support exclusion adapter and six synthetic tests.
+  Query exclusion removes its entire previous exact-alias scope, preventing
+  duplicate handles from preserving its old self-support; current-video
+  exclusion removes ALL current-video supports. Other-video scopes retained,
+  all token tombstones explicit, original bank/commits untouched, routing IDs
+  never numeric features. Payloads must match actual last commit fingerprints.
+  The adapter deliberately reads frozen internal provenance because the
+  public Raw snapshot omits it; dependency hash and limitation are declared.
+  This is source-only, NOT actual full self-excluded evaluation, semantic
+  independence, calibrated purity, matched coverage/latency or Pred evidence.
+
+Public-only C training exposure check (all nine normal fixed-200 receipts,
+no private GT/cache/weights opened for this check):
+
+| Variant | Seed | Actual optimizer Known/pseudo groups | Pseudo classes | Full-rollout NEW loss plans | Full-rollout uncertain/absent loss masks |
+|---|---:|---:|---:|---:|---:|
+| Top1 conditioned |1027|359/110|2|824|996|
+| Top1 conditioned |1028|274/100|2|651|1098|
+| Top1 conditioned |1029|210/185|2|595|1099|
+| Top8 conditioned |1027|538/106|1|655|4|
+| Top8 conditioned |1028|381/97|2|426|206|
+| Top8 conditioned |1029|266/178|2|297|360|
+| Top8 pooled |1027|538/107|1|656|105|
+| Top8 pooled |1028|381/97|2|426|206|
+| Top8 pooled |1029|266/183|2|403|146|
+
+- The last two columns include frozen tails after50updates/episode, so they
+  are NOT actual optimizer NEW/Existing target counts. The uncertain/absent
+  reason combines uncertain pseudo and absent Known: no family decomposition
+  or causal attribution is justified. All nine have nonzero pseudo optimizer
+  contributions; seven expose both pseudo classes. Full-rollout NEW plans
+  exist in all nine, so missing NEW supervision is NOT established either.
+  The existing public curves omit optimizer target-action/reason histograms;
+  that is an evidence gap, not permission to invent counts or rewrite results.
+  Finish full C/M matrices and inspect legal causal loss/exposure evidence
+  before freezing any bounded mechanism repair; no posthoc checkpoint choice.
+- Full 643 tests passed in70.82 s, including immutable M6/C5 normal receipts,
+  preserved original transport failure, alias-scope/video exclusion invariance,
+  explicit empty tombstones and fabricated-payload refusal. No private assets
+  or protected split labels opened by the new source-only exclusion tests.
