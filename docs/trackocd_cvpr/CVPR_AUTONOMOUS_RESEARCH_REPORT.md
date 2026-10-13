@@ -912,3 +912,15 @@ of a particular performance cause. Keep both old/new failures immutable; require
 qualified equivalent performance work before new full M replay, not repeated
 blind launches, partial metric reuse, raised limits or dropped probes. The
 original Goal stays active and unachieved.
+
+Actual full-policy CPU profile now completes normally (49.49s/RSS947335168B,
+zero optimizer/GPUh), with entire private Mean trace identical to the prior
+qualified ALL11 shadow. Instrumented stream29.09s/refresh cumulative13.66s
+prioritizes refresh work, NOT full-development bottleneck or isolated SHA cause.
+
+New exact immutable-byte-segment SHA memo and32MiB frozen Raw cache share the
+old64MiB combined logical ceiling. All actual refresh/history/version operations
+remain; no token/GT key, digest-only equality assumption, EMA prototype memo or
+old wrong-history cleanup. Full717tests pass. NEW actual ALL11 old/new full-policy
+shadow is registered with unchanged scopes/models/clock/guards; real parity,
+full-development completion and scientific gains still require measurement.

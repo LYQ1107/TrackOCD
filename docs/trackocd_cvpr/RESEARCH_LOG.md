@@ -4202,3 +4202,44 @@ no private GT/cache/weights opened for this check):
   endpoint byte hashing versus checkpoint deserialization, no executable logic
   changed. Actual profiling has NOT run at this record; push/fetch exact ref
   before launch. Whole Goal stays active/unachieved.
+
+### Actual Mean policy profile completed; exact fingerprint memo shadow registered
+
+- Actual full-policy profile frombd2977ea621b8c775bf914dd4ece3f9bab5f3ec9
+  completes normally, resultSHA
+  `05bc1c47a49df515ab7639e68b2258d477eb9406cb811787e6f7ca27c162931c`.
+  Complete10 policy/54 physical/1268 observations/374 frames/1 empty. Entire
+  private event/score/route/chosen-version/numeric-ledger traceSHA7461015c...
+  exactly matches prior actual ALL11 Mean shadow. Actualownedwait0/no guard,
+  total49.4865s/RSS947335168B/zero optimizer or GPUtrainingh/noCUDA.
+- Instrumented stream29.0864s; refresh748 calls cumulative13.6646s, ingest
+  cumulative20.1366s, candidates4.4367s, cachedinputs2.8885s. Cumulative times
+  overlap. This prioritizes refresh work in this POLICY stream, not a proven
+  full72-development bottleneck, isolated speedup or an isolated SHA-cost proof.
+  No raw profile/private rows/GT/checkpoint metadata is exported.
+- NEW source-only exact immutable byte-segment SHA memo overlay: complete
+  ordered byte tuples are compared exactly, not digest-only equality or IDs/
+  labels. Cache miss performs original SHA256, eviction/oversize recomputes.
+  Only own-process FrameAtomicStateEMA incremental support-hash alias changes;
+  numeric/latent initialized hashes, global hashlib and weighted-M hashes remain
+  original. Every state refresh/version/parent/member/clock operation still runs.
+  No cached learned/EMA prototype, historical reset or pruning.
+- Frozen Raw statistics32MiB +fingerprint32MiB retain the original combined
+  logical64MiB ceiling; actual RSS/whole-support/history guards unchanged.
+  Explicit context rejects unknown/nested overlays and restores even on errors.
+  Synthetic Mean/EMA/all3M family full events/versions/history equality passes,
+  plus exact SHA miss/hit/framing/copy/eviction/oversize and real transfer/
+  tombstone/revival cases. Source tests do NOT establish real stream parity.
+- Registered NEW whole ALL11 OLD/new policy shadow, original all9 fixed trained
+  endpoints/two zero-fit baselines/full10 policy clock/order1027/fit prior/
+  thresholds/CPU1/3GiB/3000s/3MiB/25%RAM/storage limits and comparisons unchanged.
+  Separate execution-profile receipt must bind all11 cache counters and result
+  hash. Fresh remote/source/authority/cohort/profile gates before private inputs.
+  Any event/score/route/chosen-version/entire numeric ledger/outcome difference
+  fails the whole qualification; no selected passing case or speedup claim.
+- Full717tests pass in46.34s. Actual profile receipts are preserved, but the NEW
+  fingerprint ALL11 shadow and full development have NOT run at this record.
+  No failed namespace restarted, resource guard raised, original controller
+  source changed, new weights/data extracted, protected labels read or external
+  process touched. Whole Goal remains active/unachieved; qualify shadow before
+  another new full M replay, then scientific controls/strong Pred/joint/final.

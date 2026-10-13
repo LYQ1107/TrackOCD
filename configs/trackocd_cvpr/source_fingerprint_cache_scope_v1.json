@@ -1,0 +1,15 @@
+{
+  "status": "SOURCE_AND_SYNTHETIC_EXACT_SHA_MEMO_NOT_ACTUAL_CONTROLLER_SHADOW_OR_FULL_DEVELOPMENT",
+  "implementation": "src/trackocd_cvpr/qualified_fingerprint_cache_scope.py",
+  "evidence": "outputs/trackocd_cvpr/cvpr4/Mean_policy_cpu_profile_v1/result.json",
+  "evidence_sha256": "05bc1c47a49df515ab7639e68b2258d477eb9406cb811787e6f7ca27c162931c",
+  "motivation_not_cause_proof": "Actual instrumented policy stream shows refresh13.66s of29.09s. It does not isolate SHA cost or prove full-dev bottleneck. Memoization is a hypothesis to qualify, not an accepted speedup.",
+  "fingerprint_key": "Complete ordered immutable byte segments, exact tuple equality, never digest-only collision assumption, ID/token/GT/role or cached learned prototype",
+  "derived_raw_statistics_bytes": 33554432,
+  "derived_SHA_bytes": 33554432,
+  "combined_derived_logical_bytes_ceiling": 67108864,
+  "bounds_rule": "Cache eviction only recomputes original exact SHA/numeric results. No state/version/parent/member pruning. Existing whole-support and actual RSS guards remain required.",
+  "process_rule": "Only own-process FrameAtomicStateEMA hashlib alias and original input function aliases; global hashlib/reliability numeric hashes untouched; reject nesting/unknown aliases and restore on exceptions",
+  "actual_full_policy_shadow_or_full_dev_speedup_or_scientific_gain_accepted": false,
+  "automatic_private_input_or_experiment_launch": false
+}

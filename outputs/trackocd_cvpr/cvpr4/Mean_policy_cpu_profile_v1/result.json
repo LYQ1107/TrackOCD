@@ -1,0 +1,521 @@
+{
+  "actual_complete_trace_exact_previous_shadow": true,
+  "empty_frames": 1,
+  "full_dev_bottleneck_isolated_speedup_or_scientific_Goal_accepted": false,
+  "instrumented_replay_wall_seconds": 29.086434879980516,
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "bd2977ea621b8c775bf914dd4ece3f9bab5f3ec9"
+  },
+  "metadata_frames": 374,
+  "observations": 1268,
+  "offline_fit_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "optimizer_steps": 0,
+  "physical_tracks": 54,
+  "policy_scope": {
+    "GT_localization_oracle_control_not_qualified_Pred": true,
+    "development_final_or_other_video_payload_bodies_opened": false,
+    "development_final_or_other_video_semantic_values_decoded": false,
+    "empty_GT_frames": 1,
+    "existing_Known_target_counts": {
+      "Known": 34,
+      "policy_pseudo": 10
+    },
+    "external_loss_only_not_observation_or_model_features": true,
+    "masked_loss_tracks": 10,
+    "masked_tracks_dropped_or_declared_background": false,
+    "metadata_frames": 374,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 1268,
+    "physical_label_strata": {
+      "Known": 34,
+      "no_retained_semantic_truth": 10,
+      "policy_pseudo": 10
+    },
+    "physical_tracks": 54,
+    "videos": 10
+  },
+  "private_trace_sha256": "7461015c0f64bf89c294630f08fac2cc8c8083a664b541c221d49bd5121f5ed5",
+  "profile": {
+    "all_profiled_calls": 5193844,
+    "all_profiled_functions_self_seconds": 28.86653790600001,
+    "cumulative_times_overlap_not_additive_wall_time": true,
+    "instrumented_policy_timing_not_full_dev_bottleneck_proof_or_isolated_speedup": true,
+    "raw_profiler_callers_arguments_locals_or_private_strings_exported": false,
+    "registered_function_rows_before_display_bound": 50,
+    "top_registered_functions_by_overlapping_cumulative_time": [
+      {
+        "cumulative_seconds": 29.084516109000003,
+        "function": "readonly_M_stream",
+        "line": 27,
+        "primitive_calls": 1,
+        "self_seconds": 0.033959396,
+        "source": "src/trackocd_cvpr/M_development_rollout.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 20.136564881,
+        "function": "ingest",
+        "line": 111,
+        "primitive_calls": 374,
+        "self_seconds": 0.100590222,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 13.664601741,
+        "function": "refresh",
+        "line": 39,
+        "primitive_calls": 748,
+        "self_seconds": 1.1589106070000001,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 748
+      },
+      {
+        "cumulative_seconds": 4.436671367000001,
+        "function": "build_candidates",
+        "line": 44,
+        "primitive_calls": 1268,
+        "self_seconds": 0.48245680500000004,
+        "source": "src/trackocd_cvpr/candidate_score_contract.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 2.8884795010000004,
+        "function": "inputs",
+        "line": 20,
+        "primitive_calls": 16475,
+        "self_seconds": 0.168326145,
+        "source": "src/trackocd_cvpr/qualified_raw_cache_scope.py",
+        "total_calls": 16475
+      },
+      {
+        "cumulative_seconds": 2.4042823540000002,
+        "function": "inputs",
+        "line": 59,
+        "primitive_calls": 16475,
+        "self_seconds": 0.294164103,
+        "source": "src/trackocd_cvpr/frozen_raw_statistics_cache.py",
+        "total_calls": 16475
+      },
+      {
+        "cumulative_seconds": 2.249991498,
+        "function": "add",
+        "line": 61,
+        "primitive_calls": 35838,
+        "self_seconds": 0.555304515,
+        "source": "src/trackocd_cvpr/candidate_score_contract.py",
+        "total_calls": 35838
+      },
+      {
+        "cumulative_seconds": 1.080367013,
+        "function": "unit",
+        "line": 34,
+        "primitive_calls": 37111,
+        "self_seconds": 0.391022631,
+        "source": "src/trackocd_cvpr/candidate_score_contract.py",
+        "total_calls": 37111
+      },
+      {
+        "cumulative_seconds": 1.006123791,
+        "function": "state_evidence",
+        "line": 134,
+        "primitive_calls": 748,
+        "self_seconds": 0.342709584,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 748
+      },
+      {
+        "cumulative_seconds": 0.929479691,
+        "function": "get",
+        "line": 30,
+        "primitive_calls": 18868,
+        "self_seconds": 0.42384743,
+        "source": "src/trackocd_cvpr/frozen_raw_statistics_cache.py",
+        "total_calls": 18868
+      },
+      {
+        "cumulative_seconds": 0.883138662,
+        "function": "apply_frame",
+        "line": 155,
+        "primitive_calls": 374,
+        "self_seconds": 0.085584191,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.687388544,
+        "function": "ingest",
+        "line": 53,
+        "primitive_calls": 374,
+        "self_seconds": 0.122584178,
+        "source": "src/trackocd_cvpr/causal_observation_router.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.631914219,
+        "function": "prototype",
+        "line": 56,
+        "primitive_calls": 29498,
+        "self_seconds": 0.20196582500000002,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 29498
+      },
+      {
+        "cumulative_seconds": 0.12429177400000001,
+        "function": "score",
+        "line": 45,
+        "primitive_calls": 1268,
+        "self_seconds": 0.007381230000000001,
+        "source": "src/trackocd_cvpr/M_development_rollout.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 0.11940315600000001,
+        "function": "_decode",
+        "line": 15,
+        "primitive_calls": 1268,
+        "self_seconds": 0.038378742,
+        "source": "src/trackocd_cvpr/committed_support_bridge.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 0.11902193000000001,
+        "function": "visible_bytes",
+        "line": 31,
+        "primitive_calls": 2536,
+        "self_seconds": 0.026868569000000002,
+        "source": "src/trackocd_cvpr/causal_observation_router.py",
+        "total_calls": 2536
+      },
+      {
+        "cumulative_seconds": 0.116910544,
+        "function": "raw_fixed_scores",
+        "line": 32,
+        "primitive_calls": 1268,
+        "self_seconds": 0.051388376000000006,
+        "source": "src/trackocd_cvpr/C_development_rollout.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 0.11687014700000001,
+        "function": "audit_frame",
+        "line": 87,
+        "primitive_calls": 374,
+        "self_seconds": 0.0012911840000000001,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.115578963,
+        "function": "_audit_frame",
+        "line": 95,
+        "primitive_calls": 374,
+        "self_seconds": 0.017436543000000002,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.11002452800000001,
+        "function": "raw_support_snapshot",
+        "line": 120,
+        "primitive_calls": 748,
+        "self_seconds": 0.02777446,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 748
+      },
+      {
+        "cumulative_seconds": 0.08576639700000001,
+        "function": "policy_current_frames",
+        "line": 173,
+        "primitive_calls": 384,
+        "self_seconds": 0.0320888,
+        "source": "src/trackocd_cvpr/policy_training_data.py",
+        "total_calls": 384
+      },
+      {
+        "cumulative_seconds": 0.054446916000000005,
+        "function": "audit_frame",
+        "line": 81,
+        "primitive_calls": 374,
+        "self_seconds": 0.023157175000000002,
+        "source": "src/trackocd_cvpr/causal_category_audit.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.04238622,
+        "function": "resolve_scores",
+        "line": 99,
+        "primitive_calls": 1268,
+        "self_seconds": 0.017918144,
+        "source": "src/trackocd_cvpr/candidate_score_contract.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 0.039672280000000004,
+        "function": "_consume",
+        "line": 43,
+        "primitive_calls": 374,
+        "self_seconds": 0.033715622,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.036767378,
+        "function": "_extends",
+        "line": 62,
+        "primitive_calls": 1214,
+        "self_seconds": 0.035290624,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 1214
+      },
+      {
+        "cumulative_seconds": 0.025255011,
+        "function": "token_truth",
+        "line": 70,
+        "primitive_calls": 1268,
+        "self_seconds": 0.013957246000000001,
+        "source": "src/trackocd_cvpr/causal_category_audit.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 0.018535541000000003,
+        "function": "state_snapshot",
+        "line": 62,
+        "primitive_calls": 374,
+        "self_seconds": 0.0017737060000000001,
+        "source": "src/trackocd_cvpr/atomic_member_control.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.010660742,
+        "function": "numeric_inputs",
+        "line": 29,
+        "primitive_calls": 1268,
+        "self_seconds": 0.0036704370000000004,
+        "source": "src/trackocd_cvpr/candidate_score_contract.py",
+        "total_calls": 1268
+      },
+      {
+        "cumulative_seconds": 0.010560433000000001,
+        "function": "__deepcopy__",
+        "line": 94,
+        "primitive_calls": 757,
+        "self_seconds": 0.009346392,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 757
+      },
+      {
+        "cumulative_seconds": 0.006157032000000001,
+        "function": "bindings",
+        "line": 37,
+        "primitive_calls": 374,
+        "self_seconds": 0.00184522,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.003810083,
+        "function": "finish",
+        "line": 137,
+        "primitive_calls": 1,
+        "self_seconds": 3.6009e-05,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 0.003674393,
+        "function": "__deepcopy__",
+        "line": 28,
+        "primitive_calls": 374,
+        "self_seconds": 0.003320987,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.0012930860000000001,
+        "function": "finish",
+        "line": 152,
+        "primitive_calls": 1,
+        "self_seconds": 9.4264e-05,
+        "source": "src/trackocd_cvpr/causal_category_audit.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 0.0011640300000000001,
+        "function": "_report_rows",
+        "line": 131,
+        "primitive_calls": 12,
+        "self_seconds": 0.000547315,
+        "source": "src/trackocd_cvpr/causal_category_audit.py",
+        "total_calls": 12
+      },
+      {
+        "cumulative_seconds": 0.001110798,
+        "function": "memory_versions",
+        "line": 107,
+        "primitive_calls": 374,
+        "self_seconds": 0.0008537600000000001,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.000952102,
+        "function": "_status",
+        "line": 130,
+        "primitive_calls": 1262,
+        "self_seconds": 0.000560746,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 1262
+      },
+      {
+        "cumulative_seconds": 0.0006905790000000001,
+        "function": "commit_history",
+        "line": 117,
+        "primitive_calls": 1122,
+        "self_seconds": 0.0006905790000000001,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 1122
+      },
+      {
+        "cumulative_seconds": 0.0006503510000000001,
+        "function": "__init__",
+        "line": 15,
+        "primitive_calls": 1,
+        "self_seconds": 0.00025475300000000003,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 0.000595097,
+        "function": "__init__",
+        "line": 102,
+        "primitive_calls": 1,
+        "self_seconds": 4.5312e-05,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 0.0005327330000000001,
+        "function": "__init__",
+        "line": 40,
+        "primitive_calls": 1,
+        "self_seconds": 0.00011586900000000001,
+        "source": "src/trackocd_cvpr/atomic_member_control.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 0.000511929,
+        "function": "start_next_video",
+        "line": 56,
+        "primitive_calls": 9,
+        "self_seconds": 0.000246543,
+        "source": "src/trackocd_cvpr/atomic_member_control.py",
+        "total_calls": 9
+      },
+      {
+        "cumulative_seconds": 0.000362134,
+        "function": "chosen_version_bindings",
+        "line": 109,
+        "primitive_calls": 748,
+        "self_seconds": 0.000362134,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 748
+      },
+      {
+        "cumulative_seconds": 0.00030358500000000004,
+        "function": "__init__",
+        "line": 45,
+        "primitive_calls": 1,
+        "self_seconds": 0.000243653,
+        "source": "src/trackocd_cvpr/causal_category_audit.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 0.000257038,
+        "function": "versions",
+        "line": 35,
+        "primitive_calls": 374,
+        "self_seconds": 0.000257038,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 374
+      },
+      {
+        "cumulative_seconds": 0.00023373500000000002,
+        "function": "certified_for",
+        "line": 24,
+        "primitive_calls": 199,
+        "self_seconds": 0.00023373500000000002,
+        "source": "src/trackocd_cvpr/causal_category_audit.py",
+        "total_calls": 199
+      },
+      {
+        "cumulative_seconds": 7.881500000000001e-05,
+        "function": "__init__",
+        "line": 47,
+        "primitive_calls": 10,
+        "self_seconds": 6.2134e-05,
+        "source": "src/trackocd_cvpr/causal_observation_router.py",
+        "total_calls": 10
+      },
+      {
+        "cumulative_seconds": 7.4075e-05,
+        "function": "start_video",
+        "line": 37,
+        "primitive_calls": 10,
+        "self_seconds": 6.5574e-05,
+        "source": "src/trackocd_cvpr/versioned_causal_outcome_audit.py",
+        "total_calls": 10
+      },
+      {
+        "cumulative_seconds": 5.3726e-05,
+        "function": "__init__",
+        "line": 85,
+        "primitive_calls": 1,
+        "self_seconds": 4.6297e-05,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 1.7052000000000002e-05,
+        "function": "__init__",
+        "line": 20,
+        "primitive_calls": 1,
+        "self_seconds": 1.7052000000000002e-05,
+        "source": "src/trackocd_cvpr/frame_atomic_state_ema.py",
+        "total_calls": 1
+      },
+      {
+        "cumulative_seconds": 1.6525000000000002e-05,
+        "function": "start_next_video",
+        "line": 111,
+        "primitive_calls": 9,
+        "self_seconds": 1.6525000000000002e-05,
+        "source": "src/trackocd_cvpr/prefix_member_bank.py",
+        "total_calls": 9
+      }
+    ]
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 947335168,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_registration": 42.405884364037775
+  },
+  "retained_derived_cache_bytes": 64987556,
+  "status": "ACTUAL_FULL_POLICY_CACHED_MEAN_CPU_PROFILE_NOT_FULL_DEV_OR_METHOD_GAIN"
+}
