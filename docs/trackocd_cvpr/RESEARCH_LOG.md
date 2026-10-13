@@ -6267,3 +6267,44 @@ no private GT/cache/weights opened for this check):
   67.730809171s inclusive/peak837980160B/zero GPU-hours. Public original
   launch/result/normalterminal and exact qualifier/tests/docs only staged;
   original result29745B unchanged, private snapshots/calendar/scalars excluded.
+
+### Registered fresh formal Raw-membership controls after actual dual pilot
+
+- Actual pilot source/results pushed/fetched/exactverified3958bdba..., a real
+  complete finite-gradient/solver/reopen prerequisite, not heldout calibration.
+  Fresh entry clean, no live owned research job. RAM102668963840B/free
+  94656479232B, no cleanup/install/GPU/foreign process interference.
+- NEW formal config/protocol/CLI only; all142actual pilot dependencies and
+  original numerical paths unchanged. PUBLIC exact pilot qualification before
+  private loads; parent/worker fresh remote/source/realhuman407scope and normal
+  input-qualification gates,149registered source/public paths. Fixed fresh
+  calendar1027/28/29 each4FULLpolicy episodes/200actual updates/snapshots20/
+  50/100/200; ONE fullpolicy no-seed L-BFGS-B<=200iterations/1000functioncalls.
+  Fullpolicy is deterministic, cannot masquerade as3trained seeds. Calendar
+  head initialization itself deterministic; its seeds vary offlinevideo plan,
+  not new random network initialization or independent data populations.
+- No old/pilot checkpoint load or warmstart. All257fit/1158Known priors and
+  complete10policy/54track/1268obs/374frame/1empty inputs/masks reused; only
+  existing fit5/policy2labels in losses, no role expansion. Actual calendarhash
+  must match each original paired C Fixed200 real result, not a declaration.
+  Unknown/conflicting physical groups remain; no BG/Novel/anonymous GT target.
+- Each own explicit control/seed invocation refuses existing namespace/live
+  research worker; original3GiB/3000s/output16MiB/25%RAM+plannedRSS/storage
+  and one compute worker/nativehelper bounds unchanged. Network disabled after
+  source registration, only own fresh formal snapshots may be opened. Separate
+  calendar model/AdamW/RNG versus solver model+termination-record exact reopen,
+  no internal solver resume state. No next-fit/dev automatic launch or winner.
+- Resubstitution remains on same training997lawful groups, not transfer
+  calibration. Fullpolicy early solver stop/status reported honestly, no extra
+  iterations or fake convergence. Both controls retained; no threshold/seed/
+  coefficient/search or dev-selected checkpoint. Goal A/B/C and scientific
+  coverage/latency/fullM/joint/Pred/dense/final scope remain OPEN/active.
+- Twenty-seven targeted source/actualpilot/formal tests pass8.18s, including
+  actual synthetic200steps/fourfull clocks/allfixedsnapshots, no fullpolicy fake
+  seed, scope/budget/warmstart/selection refusal and explicit supervisor args.
+  Actual formal fits not started at registration; execution after source push/
+  fetch/exact verification. This config/source does not grant private authority.
+- Final bounded combined CVPR/v2 suite1061pass67.42s, ownedwait0/guardNONE/
+  69.435375687s inclusive/peak838201344B/zero GPU-hours. Source/input closure
+ 149paths present; no actual formal input/fit at registration. Publish before
+  any new formal invocation; pilot/code/private histories remain unchanged.

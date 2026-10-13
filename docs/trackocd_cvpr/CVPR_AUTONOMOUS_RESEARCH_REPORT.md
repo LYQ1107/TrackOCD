@@ -1674,3 +1674,31 @@ fair coverage/latency/fullM/joint/lawful strongPred/dense/lockedfinal unfinished
 Final bounded combined CVPR/v2 suite1052pass66.07s, ownedexit0/guardNONE,
 inclusive67.7308s/peak837980160B/zero GPU-hours. Only public results/source
 qualifications are published, no private model/calendar/GT/scalar table.
+
+## Prospective four fresh formal membership controls
+
+Actual dual pilot qualifies source-preserved bounded expansion only, not model
+quality. A NEW explicit formal executor requires that immutable public pilot,
+all149source/input prerequisites, fresh exact registration and real fit/policy
+authority BEFORE data. Three calendar controls1027/28/29 each4full policy
+episodes/200updates/all20/50/100/200snapshots; ONE deterministic fullpolicy
+solver<=200iterations/1000functioncalls with no seed. Actual common calendar
+hashes must match the corresponding original paired C fits. Calendar seeds
+vary video scheduling, not this deterministic two-parameter initialization.
+
+All existing fit5/policy2 data/prototypes/masks and tested numerical kernels
+stay unchanged. No pilot/oldweights, dev/final/Val/Test/newNovel semantics or
+pixel access. One fresh own CPU worker at a time, same3GiB/3000s/16MiB/
+25%RAM+plannedRSS/storage bounds. Both parent/worker source checks, then no
+network and only own newly created snapshots. Calendar model/AdamW/RNG exact
+reopen is distinct from solver model+termination record, not solver resume state.
+Fullpolicy is not three independent trained seeds; repeated episodes/orders
+are not independent observations. Resubstitution diagnostic reductions do not
+choose a winner or certify unseen/calibrated probabilities. No automatic dev/
+next-fit or selected model/threshold/seed/step budget. Twenty-seven targeted
+tests pass8.18s, including real synthetic200step/fullclock/snapshot plumbing.
+Actual formal endpoints remain pending at registration; Goal active, full
+calibration/coverage/latency/fullM/joint/strongPred/dense/lockedfinal unachieved.
+Final bounded combined CVPR/v2 suite1061pass67.42s, ownedexit0/guardNONE,
+inclusive69.4354s/peak838201344B/zero GPU-hours.149source paths present;
+real formal fitting follows publication/exact remote proof, not source-only claims.
