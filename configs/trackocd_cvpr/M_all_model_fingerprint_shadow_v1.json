@@ -1,0 +1,22 @@
+{
+  "status": "REGISTERED_FULL_POLICY_CONTROLLER_RAW_CACHE_SHADOW_ALL9_ENDPOINTS_REQUIRED",
+  "data_config": "configs/trackocd_cvpr/memory_optimizer_pilot_v1.json",
+  "numeric_qualification": "outputs/trackocd_cvpr/cvpr4/qualified_frozen_raw_statistics_v1/result.json",
+  "numeric_qualification_sha256": "35743611e5eb395bd4091fac50b9e815515a6404c2f95ad5328c594580144f57",
+  "models": ["Mean_latest", "StateEMA_latest", "relative_quarantine", "relative_weighted", "pooled_weighted"],
+  "training_seeds": [1027, 1028, 1029],
+  "order_seed": 1027,
+  "scope": "Entire10policy videos/54physical/1268observations/374metadataframes/1empty, no frame/subset pruning. Twozero-fit baselines andall9fixedtrainedMendpoints, OLD andcache fullfreshreplays. No newoptimizer/checkpoint/seed selection.",
+  "required_equality": "All outcome counters/prefixes plus EVERYactual event/score/candidatefeature/chosenversion/numericversionhistory ledger and routed predictions. IDs/GTneverinputs tocache. Separate private trace digest only, no raw row upload.",
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 3145728,
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/M_all_model_fingerprint_shadow_v1",
+  "old_full_development_failure": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_v1_Mean_latest_supervisor_attempt_1.json",
+  "old_failure_overwritten_or_guards_relaxed": false,
+  "full72development_parity_speedup_purity_or_Goal_acceptance": false,
+  "cache_execution_profile": "EXACT_RAW_SUPPORT_SHA_ALL11_32MiB_AND_FROZEN_RAW_32MiB_TOTAL_64MiB",
+  "profile_evidence_sha256": "bb821f9120bd45b64ed2e52cc4b415edf10445b07dcefa9f187f0c59e868cada"
+}

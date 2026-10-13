@@ -4671,3 +4671,29 @@ no private GT/cache/weights opened for this check):
   complete policy event/score/version/ledger/outcome parity before full replay.
 - External effective Mean audit remains live/one completed control at this
   observation, not a final result. Whole Goal remains active/unachieved.
+
+### Register exact Raw support fingerprint scope for ALL11, not learned memo
+
+- NEW own-process wrapper adds weighted-memory omitted-argument sha256() support
+  builders to the SAME32MiB exact byte-segment LRU already used by EMA. All
+  initialized weighted-memory numeric hashes, including explicit empty bytes,
+  remain original hashlib; global module unchanged. Raw32MiB+SHA32MiB combined
+  ceiling unchanged. Keys complete immutable ordered bytes/exact equality;
+  every miss/eviction/oversize recomputes actual original SHA. No logits/features/
+  prototype/graph/model/GT/role/ID memo, state/version/history pruning or timers.
+- Source profiled frozen M actual bb821f91... binds normal receipt; prior ALL11
+  fingerprint qualification, source/authority/all9 fixed endpoints mandatory
+  before GT. NEW ALL11 full OLD/cache paired policy streams compare EVERY outcome/
+  event/score/version/ledger AND private digests against prior whole profile.
+  All11 hashing scopes must actually exercise hits; CPU1/3GiB/3000s/3MiB/
+  25%RAM/storage/full54/1268/374/1/10videos/fit5/K8/thresholds/history unchanged.
+- Synthetic tests cover all5families/nonzero M outputs, dirty transfer/empty
+  tombstone/revival/parents, explicit numeric hashes, exceptions/nesting/global
+  restoration; Raw hash hit after model parameter change produces NEW logits/
+  numeric version, disproving learned-output caching. Actual ALL11 pending;
+  no full-dev use/isolated speedup or scientific gain accepted from source tests.
+- All changes NEW files only, ongoing effective audit dependencies unchanged.
+  23 targeted tests and full795tests pass (41.22s). Corrected a new synthetic
+  fixture's canonical route/token mapping after it failed BEFORE the overlay;
+  no production source, expected whole-history equality or real outcome changed.
+  Whole Goal remains active/unachieved; fullM/Pred/freshbaselines/joint/final open.
