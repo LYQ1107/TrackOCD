@@ -5349,3 +5349,21 @@ no private GT/cache/weights opened for this check):
   32 passed in 2.18s. Only small public launch/result/terminal staged;
   private checkpoints/data/cache stay local, qualified training sources unchanged.
 - Completed-stage registration: A1_GEOMETRY_5/s1029; independent full15 dev remains pending.
+
+
+### Actual fresh Fixed200 A2_EVIDENCE / seed 1029
+
+- Registered b03e57156c2a7884b42431f57b095bc3eb5834dc; complete200 with actual normal exit0/no
+  guard, 25.9640s, peak635179008B, oneCPU compute plus <=one
+  identified native helper, zeroGPUh/CUDA not initialized. Full1401/1158Known/
+  243masked census; actually sampled498canonical groups/223videos, not all1158.
+  All20/50/100/200 private model+AdamW checkpoints reopened exactly, no warmstart
+  or dev/final selection. Public actual resultSHA256
+  e3baaeffe8ebc9994f3934a44cecd40d8fc0d355f298ddb323ee04a8f24bd1e2.
+- Actual init a8d8707bd1ec700be7b37c52cc33ecb30f9eeaff3677d3ac658769d94857f9cf
+  and calendar 7462483b945aebd2b3306c2916fd08d275e4ba1e7e6e88aa4d20489735280e6d
+  are checked against each available same-seed family by actual public tests;
+  no claim of generalization or scientific acceptance from optimizer completion.
+  32 passed in 2.39s. Only small public launch/result/terminal staged;
+  private checkpoints/data/cache stay local, qualified training sources unchanged.
+- Completed-stage registration: A2_EVIDENCE/s1029; independent full15 dev remains pending.
