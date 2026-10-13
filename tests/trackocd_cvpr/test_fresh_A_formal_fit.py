@@ -42,8 +42,9 @@ def test_live_kernel_cmdline_not_old_receipt_prevents_parallel_fit(tmp_path):
     assert active_research_workers(ROOT,proc_root=tmp_path,own_pid=10)==(11,)
 
 
-def test_supervisor_busy_guard_before_network_or_private_spawn(monkeypatch):
+def test_supervisor_busy_guard_before_network_or_private_spawn(monkeypatch,tmp_path):
     cfg=configuration(ROOT,'A2_EVIDENCE',1027)
+    monkeypatch.setattr(driver,'ROOT',tmp_path)
     monkeypatch.setattr(driver,'active_research_workers',lambda root:(123,))
     def forbidden(*a,**k):raise AssertionError('No network, new child or private input while active M')
     monkeypatch.setattr(driver,'source_gate',forbidden);monkeypatch.setattr(driver.subprocess,'Popen',forbidden)
