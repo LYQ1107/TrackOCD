@@ -3545,3 +3545,55 @@ new research scope; nothing has been deleted, no storage pressure is present.
 - Full 619 tests passed in 72.31 s, including exact new public result hashes,
   normal terminals, negative-outcome boundaries, and source-only prerequisites.
   Commit/push/fetch/ref verification is required before subsequent workers.
+
+### M second-seed pair diverges; first C development seed matrix complete
+
+- Previous stage `9a85b081ec0d22872804ea93d8dbf0d928699790` was pushed and
+  fetched with HEAD/FETCH_HEAD/origin equal. Two actual workers ran from that
+  fresh remote registration. Both now have normal exit-0 guarded terminals.
+- M relative_weighted/1028 completes fixed 200 updates, full four policy
+  episodes, 161 parameters; public result SHA256
+  `38de22b4ac2ee236408e799383598cbad05e4a2acb71056eef9f43cc58fea705`,
+  endpoint `c4c04d2dc7945ae4e597c80e872377ec989879113c1dfd029218ea163a9b5ab0`.
+  Same seed initialization as the quarantine partner, different final
+  parameters and actual private trace. Known/policy-pseudo optimizer groups
+  474/136, both policy-pseudo classes, one/zero targets 338/272. All episodes
+  retain 1268 anonymous commits; no quarantined records. Latest bad Known
+  histories 30/31/31/28. Partner's intermediate quarantine produced different
+  actions, exposure masks and lineage counts: nominally matched parameters,
+  seed and full episode clocks are NOT identical learning opportunities or
+  a matched development-purity comparison. No selection or gain claimed.
+  Worker 379.98 s, total 388.69 s, RSS 948150272 B, zero training GPU-hours.
+  M now 5/9; both remaining seeds are still required before M development.
+- C Top8_pool_context/1027 completes all three development orders and actual
+  full ID/reversed-delivery and 39-observation future invariance checks.
+  Public SHA256 `596611d0a17c563621bf118b72a294cbfe03fd884a5387fbed611ec92273ca9c`.
+  At all-available, orders 1027/1028/1029 respectively: Known correct
+  280/282/282 of 302; pseudo absorbed Known 114/116/117 of 119; pseudo
+  anonymous commits 5/3/2 of 119. Certified cross-video reuse zero in all
+  orders. Full physical commit coverage 100% does not overcome the closed-set
+  failure. Worker 546.62 s, total 553.50 s, RSS 961970176 B, one OS thread,
+  no CUDA/optimizer. First training seed's C triplet evaluated (3/9 total),
+  two independently trained seeds' development matrices still pending.
+- Implemented the M read-only execution driver, with its own detached owned
+  supervisor, source/authority registration, all-nine endpoint/terminal gate,
+  qualified cache/own-checkpoint-only audit barrier, full three-order streams,
+  fixed Raw Known prior, Mean/state-EMA zero-fit controls and no model choice.
+  No common source used by live M/C workers was modified. Missing cohort
+  stops BEFORE network/private endpoints/dev input. Driver has NOT executed
+  real private M development; readiness is not scientific acceptance.
+- Added incremental immutable numeric-version ledger fingerprints to PRIVATE
+  ephemeral M frame traces. Actual future probes compare earlier predictions,
+  chosen prior versions AND complete earlier numeric ledger; full ID/reverse
+  replay also compares these. No future/no actual numeric mutation is a
+  failure/unavailable probe, not a vacuous pass. Probe scope is first-video
+  suffix only, not an exhaustive all-video causal certificate. Tiny synthetic
+  Mean/state-EMA/three-M-family probes pass; no raw trace/GT/weight upload.
+- Preserve all bad histories, exposure differences, original failed C terminal
+  exception and protected split boundaries. Continue remaining fixed fits,
+  full C evaluation and then qualified M evaluation. Matched coverage and
+  latency, active purity, independent/self-excluded support, calibrated/fresh
+  baselines, strong legal Pred, joint training and locked final remain open.
+- Full 631 tests passed in 65.81 s, including immutable M5/C3 public receipts,
+  nonvacuous M future probes, absent-cohort refusal and fixed guard/baseline
+  semantics. Source readiness is not an executed development result.

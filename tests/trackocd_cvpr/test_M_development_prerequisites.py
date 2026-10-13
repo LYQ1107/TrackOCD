@@ -41,7 +41,8 @@ def test_actual_small_causal_M_or_baseline_with_full_denominator_versions_and_ID
     renamed, new_private = readonly_M_stream(videos, labels, {0: vector}, {0: 10}, cfg, name, 1027, lambda: None,
                                             model=model, rename_and_reverse=True)
     assert result == renamed
-    assert [r.events for _, r, _ in private] == [r.events for _, r, _ in new_private]
+    from src.trackocd_cvpr.M_development_probes import numeric_trace
+    assert numeric_trace(private) == numeric_trace(new_private)
     assert result['observations'] == 6 and result['full_physical_bitset_scope'] == 3
     assert result['optimizer_steps'] == 0 and result['model_state_unchanged']
     assert not result['current_active_purity_official_CT_full_semantic_truth_Pred_or_self_exclusion_claim']
@@ -49,7 +50,7 @@ def test_actual_small_causal_M_or_baseline_with_full_denominator_versions_and_ID
 
 def test_metrics_manifest_is_not_Mdev_execution_or_full_CT_acceptance():
     c = json.loads((ROOT / 'configs/trackocd_cvpr/M_GT_causal_development_v1.json').read_text())
-    assert c['status'].endswith('EXECUTION_DRIVER_PENDING')
+    assert c['status'] == 'REGISTERED_READONLY_CAUSAL_M_DEV_ALL9_FIXED_FITS_REQUIRED'
     assert c['order_seeds'] == c['training_seeds'] == [1027, 1028, 1029]
     assert c['physical_tracks'] == 472 and c['observations'] == 8753 and c['optimizer_steps'] == 0
     assert not c['select_model_or_checkpoint'] and not c['execution_or_Model_Goal_acceptance_from_this_manifest']

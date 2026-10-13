@@ -4,6 +4,7 @@ No asset loading, fitting, GT feedback or checkpoint choice. Caller must gate
 all9 actual M fits/source/authority/cache BEFORE private label/input loaders.
 """
 from collections import Counter
+from dataclasses import dataclass
 import hashlib
 import numpy as np
 import torch
@@ -12,6 +13,15 @@ from .frame_atomic_state_ema import StateEMAMemberControl
 from .versioned_causal_outcome_audit import VersionedCausalOutcomeAudit
 from .policy_training_data import policy_current_frames
 from .C_development_rollout import raw_fixed_scores
+
+
+@dataclass(frozen=True)
+class MFrameTrace:
+    # PRIVATE ephemeral observed history, never a public row export.
+    video: int
+    result: object
+    chosen_versions: tuple
+    version_history_sha256: str
 
 
 def readonly_M_stream(videos, labels, known, known_bindings, cfg, model_name, order_seed,
@@ -44,6 +54,7 @@ def readonly_M_stream(videos, labels, known, known_bindings, cfg, model_name, or
     audit = VersionedCausalOutcomeAudit(labels, known_bindings, prefixes=tuple(cfg['prefix_snapshots']),
         max_versions=cfg['max_versions'], max_commits=cfg['observations'])
     frames = empty = observed = 0; actions = Counter(); private = []
+    ledger = hashlib.sha256(); consumed_versions = 0
     with torch.inference_mode():
         for position, ordinal in enumerate(order):
             video, arrays = videos[ordinal]
@@ -53,10 +64,18 @@ def readonly_M_stream(videos, labels, known, known_bindings, cfg, model_name, or
                 if rename_and_reverse: rows = tuple(reversed(rows))
                 guard(); result = control.ingest(frame, rows)
                 bank, _ = control.state_snapshot()
-                audit.audit_frame(video, result, control.chosen_version_bindings(), control.memory_versions(), bank.commit_history())
+                versions = control.memory_versions()
+                audit.audit_frame(video, result, control.chosen_version_bindings(), versions, bank.commit_history())
+                for version in versions[consumed_versions:]:
+                    # The audit already validates typed append-only records.
+                    # Incremental hashing avoids copying the entire past ledger
+                    # into each frame and includes actual numeric prototypes.
+                    payload = repr(version).encode('utf-8')
+                    ledger.update(len(payload).to_bytes(8, 'little')); ledger.update(payload)
+                consumed_versions = len(versions)
                 frames += 1; empty += int(not rows); observed += len(rows)
                 for aliases, event in zip(result.routing_groups, result.events): actions[event.action] += len(aliases)
-                private.append((video, result, control.chosen_version_bindings()))
+                private.append(MFrameTrace(video, result, control.chosen_version_bindings(), ledger.hexdigest()))
     if (frames, empty, observed) != (cfg['metadata_frames'], cfg['empty_frames'], cfg['observations']):
         raise ValueError('Complete fixed physical clock, no short/unknown/empty drop')
     if model is not None and digest(model) != before: raise ValueError('Frozen M model changed')

@@ -703,3 +703,22 @@ synthetic tests. The metrics manifest explicitly keeps execution-driver
 status pending: no actual M development evaluation, strong Pred, matched
 self-excluded purity/coverage, joint method, or final/Goal acceptance follows
 from these source tests. Continue the frozen matrix and open research work.
+
+M now 5/9 complete: seed-1028 no-quarantine fit differs from its matched
+initialization partner, unlike seed 1027's exact equality. Actual endogenous
+actions/loss exposures differ, so this is not yet a matched development gain.
+Public `38de22b4...`, normal owned exit 0, fixed 200, private assets local.
+
+C first-seed triplet is fully evaluated (3/9). Pooled Top-8 still absorbs
+114/116/117 of 119 declared pseudo queries as Known in the three orders;
+certified cross-video reuse is zero throughout. Public `596611d0...`, normal
+exit 0, actual ID/future invariance pass. Counts/100% commit coverage cannot
+replace discovery evidence. No selected order, seed, endpoint or new gate.
+
+M evaluator driver is now implemented but NOT run on real development data:
+all-nine normal endpoint/source gates remain mandatory. Its actual synthetic
+future probes check earlier predictions, chosen versions and incremental
+numeric version-history fingerprints, rejecting absent/no-op future probes.
+Mean/state-EMA are zero-fit controls, not independently trained seeds. These
+source tests do not certify all-video causality, active purity, self-excluded
+independent reuse, matched coverage/latency superiority, Pred or full Goal.
