@@ -1,0 +1,15 @@
+{
+  "status": "SOURCE_AND_SYNTHETIC_QUERY_SPECIFIC_MEAN_CONTROL_NOT_ACTUAL_DEVELOPMENT",
+  "implementation": "src/trackocd_cvpr/self_excluded_mean_control.py",
+  "selection_adapter": "src/trackocd_cvpr/independent_support_view.py",
+  "pinned_bank_dependency": "src/trackocd_cvpr/prefix_member_bank.py",
+  "pinned_bank_sha256": "a454f7192bacd5d4762d468b46a08afd6b2f94d27ea755e5b1ccd56b81a03e71",
+  "modes": ["exclude_query_alias_scope", "exclude_current_video"],
+  "numeric_rule": "Recompute Mean from complete selected latest pre-frame Raw; alias-deduplicated support groups, per-group normalized vectors in float64, same zero-resultant refusal as Mean. Retained routing count is separate; quality aggregation preserves original arithmetic. Empty tombstones unavailable.",
+  "atomic_rule": "All current groups score against one frozen original bank with independent query-specific views; one real post-frame commit after every score succeeds; whole frame rolls back on error.",
+  "history_rule": "Original prediction-owned bank, dirty versions, transfer parents and tombstones remain. Chosen original version is conservative history-only; it does NOT bind the filtered numeric prototype. Extra query-aligned Raw/numeric digests must enter any registered evaluator probe/receipt.",
+  "EMA_or_trained_M_self_exclusion": false,
+  "semantic_independence_purity_or_full_physical_semantic_truth_accepted": false,
+  "automatic_private_data_read_training_or_experiment_launch": false,
+  "known_limitations": "No real full-policy/full-development shadow or metrics yet. No selection on dev/final. Different video/route is not semantic independence. Registration still requires complete frozen clocks/denominators, all view bindings and actual ID/future probes, fair controls, coverage and latency. A later M control must recompute its weights from selected Raw, not reuse polluted latent weights."
+}

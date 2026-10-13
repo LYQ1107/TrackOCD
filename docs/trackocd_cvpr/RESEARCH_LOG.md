@@ -4093,3 +4093,47 @@ no private GT/cache/weights opened for this check):
   addedlocalreports/tests fromzero recoveredupstreambytes/modelcode mutation,
   targetedasset-scope testpasses (.04s). Allnewfacts scopedtoactualread-only
   evidence, no newprimary/runtime/metric acceptance.
+
+### Query-specific self-excluded Mean source control; actual full M replay remains pending
+
+- The qualified cached Mean replay now reports all three order passes
+  (1027/1028/1029). At this record its persistent supervisor is still live,
+  with exact PID/start-ticks/command-hash identity checked. The command hash
+  follows the launch framing (NUL-separated argv without the trailing NUL),
+  not the raw /proc trailing separator. No result/profile/normal terminal has
+  yet been accepted: actual full ID/reverse and future-mutation probes remain
+  necessary. Do not promote three-order progress into a completed evaluation.
+- Added NEW self_excluded_mean_control.py and an explicit source-only config;
+  original in-flight controller/driver/cache/data/model/resource sources were
+  not changed. Both query-alias-scope and current-video exclusion recompute
+  candidate Mean prototypes from the entire selected pre-frame latest Raw.
+  Duplicate old alias groups are removed together, not one routing handle;
+  cross-video identical Raw remains separate support. No old EMA latent or
+  learned weight is reused, and no GT/role/vocabulary input is accepted.
+- Every current group sees the same original frozen pre-frame bank with its
+  own derived support view. One post-frame real commit occurs only after all
+  scores validate. Whole-frame failures preserve router/births/bank/history
+  and query receipts. Unknown queries can leave support unchanged; this does
+  not certify independent semantic evidence. Empty filtered tombstones cannot
+  become candidates. Prefix replacement is not an additional cumulative vote.
+- Original dirty Mean versions, commit records, transfer parents and token
+  tombstones remain unchanged. Chosen original version references are explicitly
+  conservative full-history references, NOT filtered-prototype provenance.
+  Separate query-aligned selected-Raw and numeric-state hashes bind the actual
+  derived view; any future evaluator must include these in its full probes.
+  No filtered-history cleanliness/current-active purity claim is made.
+- Numeric recomputation preserves original Mean normalization and per-group
+  quality arithmetic, separates routing count from deduplicated support count,
+  and refuses invalid timing/whole-scope failures. Synthetic tests cover exact
+  no-exclusion Mean equality, duplicate aliases, cross-video reuse, ID bijection/
+  reverse delivery, empty frames, future suffix mutation, bad scorer and bounded
+  transactional rollback. Momentum injection is refused: this is Mean only,
+  NOT self-excluded state-EMA or trained M.
+- Full698tests passed in74.54s. These are source/synthetic prerequisites only:
+  no actual self-excluded policy/development metric, supervision, model fitting,
+  encoder/cache extraction or performance gain. A later registered real control
+  still needs full frozen clocks/physical denominators, numeric view bindings,
+  coverage/latency and fair baseline comparisons. No private assets uploaded,
+  final/Val/Test/protected labels read, foreign process changes or cleanup.
+  Original Goal remains active and unachieved; full M matrix/strong Pred/fresh
+  baselines/joint training/independent final remain open.

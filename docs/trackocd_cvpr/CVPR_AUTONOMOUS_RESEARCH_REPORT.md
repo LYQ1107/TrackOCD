@@ -890,3 +890,16 @@ forbiddencategory metadata presence/scopeviolation NOTproved, no values
 decodedhere. Resolve safeselective loading/genericmetadata beforeprimary use.
 HistoricalVal andcapped57Train assetsremainreferences, notmodelselection or
 completednewfullGoal. No assetdownloads/environmentmutation/dependencyreinstall.
+
+The live qualified Mean replay has now passed all three order streams, but its
+full ID/reverse and future probes plus result/profile/normal-terminal receipts
+are still pending. Three-order progress alone is not a completed metric result.
+
+New source-only query-specific Mean controls implement whole query-alias-scope
+or current-video support exclusion. Every prototype is recomputed from selected
+pre-frame Raw; no polluted state-EMA latent is silently reused. Original real
+prediction-owned dirty histories/versions/parents/tombstones remain, and chosen
+original versions are conservative history-only references. Separate query view
+Raw/numeric hashes bind the derived prototypes. This is not self-excluded EMA/M,
+semantic independence, active purity or a measured gain. Full698tests pass;
+actual registered full-data controls and full Goal acceptance remain open.
