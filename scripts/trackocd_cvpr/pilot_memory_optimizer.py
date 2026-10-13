@@ -103,6 +103,9 @@ def worker(args, cfg, safety):
         if subprocess.check_output(['git', 'show', args.preregistration_commit + ':' + path], cwd=ROOT) != (ROOT / path).read_bytes():
             raise ValueError('Actual M pilot source/cache/authority registration required')
     validate_configuration(cfg, json.loads((ROOT / cfg['approval']).read_text()))
+    if getattr(args, 'recovery_attempt', None) == 'terminal_replica1':
+        from src.trackocd_cvpr.M_terminal_replica_recovery import verify_original
+        verify_original(ROOT, check_private=True)
     scientific = cfg.get('scientific_M_trial', False)
     if scientific:
         pilot = ROOT / 'outputs/trackocd_cvpr/cvpr4/memory_optimizer_pilot_v1'
@@ -204,6 +207,9 @@ def worker(args, cfg, safety):
                 'three_seed_M_strict_CT_Pred_or_Goal_accepted': False,
                 'resources': {'peak_guarded_RSS_bytes': peak, 'wall_seconds_excluding_network': time.monotonic() - started,
                               'training_GPU_hours': 0, 'CUDA_initialized': False}}
+            if getattr(args, 'recovery_attempt', None) == 'terminal_replica1':
+                from src.trackocd_cvpr.M_terminal_replica_recovery import verify_replica_result
+                result['execution_transport_replica'] = verify_replica_result(ROOT, result)
             atomic_json(out / 'result.json', result)
             print(json.dumps({k: v for k, v in result.items() if k != 'summary'}), flush=True); return
         model, optimizer, summary, sealed, history, versions, commits = fit_memory_pilot(videos, targets, known, cfg, guard,
@@ -255,7 +261,7 @@ def main():
     parser.add_argument('--config', choices=(CONFIG, SCIENTIFIC_CONFIG), default=CONFIG)
     parser.add_argument('--variant', choices=('relative_quarantine', 'relative_weighted', 'pooled_weighted'))
     parser.add_argument('--seed', type=int, choices=(1027, 1028, 1029))
-    parser.add_argument('--recovery-attempt', choices=('transport_retry1',))
+    parser.add_argument('--recovery-attempt', choices=('transport_retry1', 'terminal_replica1'))
     args = parser.parse_args(); cfg = json.loads((ROOT / args.config).read_text())
     if args.config == SCIENTIFIC_CONFIG:
         if args.variant is None or args.seed is None: raise ValueError('Explicit fixed M variant and independent seed')

@@ -768,3 +768,22 @@ C remains5/9evaluated. Strong Pred remains unqualified: existing image-only
 MASA source options do not themselves establish legal supervision, dense input
 coverage or new407-video physical performance. Remaining matrices, fair
 baselines, self-excluded measurements/joint training and locked final are open.
+
+C second-seed triplet is now fully measured (6/9): recovered pooled public
+`7dff3f61...`, normal owned exit0, original failed terminal preserved. All three
+second-seed controls emit allKnown in allorders; Known282/302 but all119pseudo
+absorbed, zero certifiedreuse. No sciencegain or selected control.
+
+M8 has complete fixed200 numerical artifacts (`45bcbebc...`) exactly matching
+its quarantine partner's fullsummary/history, but tool exited143 and own
+normal supervisor terminal is absent. M remains7/9normal fits; no assumed
+worker exit0. Strict namespace-only completion replica must match ENTIRE
+original model/optimizer/RNG endpoint and histories before normal owned
+completion can qualify effectivecohort. Original result is never overwritten.
+
+Complementary Known-rejection is a source-only bounded repair hypothesis,
+not actually trained/calibrated/selected. Legal policy-pseudo family can reject
+fit Known as a SET when state truth is uncertain, without inventing individual
+Existing/NEW targets or using unlabeled objects asbackground. This may still
+favor polluted states; full originalCmatrix and separately preregistered
+training/controls required. Full Goal/Pred/joint/final remainunachieved.

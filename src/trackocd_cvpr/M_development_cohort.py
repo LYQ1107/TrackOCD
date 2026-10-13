@@ -41,6 +41,10 @@ def verified_cohort(root):
         for seed in SEEDS:
             out = root / cohort_directory(variant, seed)
             r = json.loads((out / 'result.json').read_text())
+            if (variant, seed) == ('relative_weighted', 1029):
+                from .M_terminal_replica_recovery import verify_replica_result
+                if r.get('execution_transport_replica') != verify_replica_result(root, r):
+                    raise ValueError('Exact terminal completion replica, not a second scientific seed or selected result')
             t = json.loads(out.with_name(out.name + '_supervisor_attempt_1.json').read_text())
             if (r['variant'] != variant or r['seed'] != seed or r['summary']['optimizer_steps'] != 200
                     or r['summary']['trainable_parameters'] != 161

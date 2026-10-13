@@ -1,0 +1,13 @@
+{
+  "status": "EXACT_NUMERIC_COMPLETION_REPLICA_NOT_METRIC_SELECTION_OR_SCIENTIFIC_REPAIR",
+  "allowed_variant": "relative_weighted",
+  "allowed_seed": 1029,
+  "original_attempt": "outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_relative_weighted_s1029",
+  "observation": "outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_relative_weighted_s1029_terminal_observation.json",
+  "original_window_sha256": "626699f36bdf26e9cf464339a45a7a2a320b27fbe9fef597dd4f9f90eb779e3d",
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_relative_weighted_s1029_terminal_replica1",
+  "required_equality": "Entire fixed200 summary/loss curve/model digest, policy/fit scopes, complete private history fingerprint AND entire private model/optimizer/RNG endpoint bytes/SHA256. Public registration/resources may differ. Any numeric difference fails whole recovery; no choosing better metrics.",
+  "original_normal_exit_claim": false,
+  "overwrite_original_or_resume_partial_training": false,
+  "change_seed_orders_labels_weights_steps_losses_or_guards": false
+}

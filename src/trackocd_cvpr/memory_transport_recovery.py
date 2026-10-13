@@ -43,6 +43,9 @@ def verify_original_preinput_failure(root):
 
 def recovery_configuration(root, cfg, attempt):
     if attempt is None: return cfg, ()
+    if attempt == 'terminal_replica1':
+        from .M_terminal_replica_recovery import recovery_configuration as terminal_replica
+        return terminal_replica(root, cfg, attempt)
     r = verify_original_preinput_failure(root)
     if (attempt != 'transport_retry1' or not cfg.get('scientific_M_trial')
             or (cfg['variant'], cfg['seed']) != (r['allowed_variant'], r['allowed_seed'])
@@ -54,4 +57,6 @@ def recovery_configuration(root, cfg, attempt):
 
 def cohort_directory(variant, seed):
     if (variant, seed) == ('pooled_weighted', 1028): return RETRY
+    if (variant, seed) == ('relative_weighted', 1029):
+        return f'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_{variant}_s{seed}_terminal_replica1'
     return f'outputs/trackocd_cvpr/cvpr4/M_GT_window_v1_{variant}_s{seed}'

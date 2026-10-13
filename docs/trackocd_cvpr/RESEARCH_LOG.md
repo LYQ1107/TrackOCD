@@ -3753,3 +3753,50 @@ no private GT/cache/weights opened for this check):
 - Full646tests passed in59.45s, including actual third-M-seed dirty-history
   receipt, namespace-only C recovery and unchanged old Raw recovery rules.
   Register/push/fetch/ref verify before any new recovery/private-input worker.
+
+### C second-seed triplet completes; M8 complete artifacts lack owned-terminal proof
+
+- C pooled/1028 namespace recovery actually completed normally from registered
+  `91f9ba8ca1966cf7380c9e9ee5812c71bd6b737e`, public result SHA256
+  `7dff3f6168077f2078fe99353835e840cef26a4406cd6b8bbe883bc10c60e2d7`.
+  All3orders/full472/8753/2562/116, actual ID/reverse and39future gates pass.
+  Every8753action Known, Known282/302, all119pseudo absorbedKnown, zero anonymous
+  commits/certifiedreuse. Worker376.48s/owned385.24s/RSS961056768B/ONEOSthread/
+  noCUDA/nooptimizer. Original failed e6315ce9... terminal remainsunchanged.
+  C6/9evaluated: secondseed's entiretriplet repeats closed-set collapse.
+- M relative_weighted/1029 worker wrote a full200-step result, publicSHA
+  `45bcbebcb47c3a66707c6da12851c0bd3afb0ea7ed6c196a52e20b53a472ada1`;
+  12515B model/optimizer/RNG endpointSHA
+  `d3ead779d3d1d6df86f22dde6242b5daa0cd972438324eb82b04b8928f9759b6`.
+  Fullsummary/losscurve/modeldigest/privatehistorySHA exactly equal its
+  quarantine partner. However tool session22089 returned143 and the supervisor
+  terminal is ABSENT. Actual owned-worker wait exit0 is NOT observed. Preserve
+  a separate observation note; do not manufacture normal success or transfer
+  the other trial's terminal. M remains7/9 normally qualified fits.
+- Registered one strict full fixed-seed completion replica in a NEW namespace.
+  It must equal the original ENTIREsummary/curve, scopes, privatehistoryhash
+  AND binary model/optimizer/RNG endpoint fingerprint; any difference fails,
+  not choose better metrics. No old warmstart/resume/newseed/guard/step change.
+  Original artifacts/143observation remainunqualified andimmutable; effective
+  cohort requires the exactreplica plus new actual normal owned terminal.
+  Existing pre-input M6 transport recovery is a distinct unchanged exception.
+- New M launcher detaches ONLY its freshly-owned guarded supervisor, verifies
+  fresh registration/source, rejects any live M fit and preserves PID/startticks/
+  command digest for actual observation. No foreign processes or global service
+  changes, private assets in launcher, cache repetition or encoder execution.
+  This addresses terminal-observation transport, not model numerics or proof
+  that the external143 cause is known. Worker guard/loss/kernel remain intact.
+- Added source-only complementary Known-rejection loss hypothesis. For lawful
+  Known-derived policy-pseudo queries with uncertain pure-state/NEW target,
+  use limited Known-vs-notKnown set likelihood (.25fixed), retaining old pure
+  history CE when valid. Unknown/unlabeled queries remainmasked; no individual
+  Existing/NEW/WAIT state receives a fabricated GT-positive/negative. Binding
+  IDs are not loss values; row-permutation/gradient/scope tests pass. This can
+  increase mass on polluted uncertified states, is NOT calibrated posterior or
+  a discovery gain. Eligible updatecalendar changes must be reported.
+  No real training/selection from this source: full original C9development and
+  a separately registered bounded objective/control window are stillrequired.
+- Full655tests passed in66.83s. Exact originalM8 fingerprints/absence of normal
+  terminal, strict replica inequality refusal, legal complementary family
+  gradients/permutation, unchanged old recovery and actualC6 normal receipts
+  included. No replica or newloss fit acceptance follows from these tests.

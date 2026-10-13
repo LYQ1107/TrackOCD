@@ -25,11 +25,12 @@ from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from scripts.trackocd_cvpr.qualify_policy_training_input import settled_after_counter_error
 from src.trackocd_cvpr.memory_transport_recovery import RECOVERY_SOURCES
+from src.trackocd_cvpr.M_terminal_replica_recovery import SOURCES as TERMINAL_REPLICA_SOURCES
 
 CONFIG = 'configs/trackocd_cvpr/M_GT_causal_development_v1.json'
 SCRIPT = 'scripts/trackocd_cvpr/evaluate_M_development.py'
 MODELS = ('Mean_latest', 'StateEMA_latest', *VARIANTS)
-SOURCES = tuple(dict.fromkeys((*BASE_SOURCES, *PILOT_SOURCES, *RECOVERY_SOURCES, CONFIG, SCRIPT,
+SOURCES = tuple(dict.fromkeys((*BASE_SOURCES, *PILOT_SOURCES, *RECOVERY_SOURCES, *TERMINAL_REPLICA_SOURCES, CONFIG, SCRIPT,
     'configs/trackocd_cvpr/autonomous_research.json',
     'configs/trackocd_cvpr/M_GT_scientific_window_v1.json',
     'src/trackocd_cvpr/M_development_cohort.py', 'src/trackocd_cvpr/M_development_rollout.py',
