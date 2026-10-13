@@ -6007,3 +6007,38 @@ no private GT/cache/weights opened for this check):
   57.678748540s inclusive/peak837435392B/zero GPU-hours. Only original public
   result/launch/normal terminal/startup plus tests/docs staged; no private log,
   data, weights or histories. Source publication precedes explicit repair1028.
+
+### Actual seed1028 pair complete: another aggregate-zero rejection effect
+
+- Revalidated original repair1028 supervisor with current boot/startticks/
+  command and live owned child; no restart from second-order progress or
+  elapsed waiting. Actual normal exit0/guardNONE/complete at registered
+  43ec370ef8dc9e9da1b4468d5488182a8ed58961, unchanged ALL6 protocol.
+- Whole72videos/472tracks/8753observations/2562frames/116empty per3orders,
+  full IDrename/reversed delivery equality and39actual changed future
+  observations with nonempty earlier-event equality. Wall315.704916122s/
+  peak964165632B/one CPU+OS thread/zero helper/CUDA/optimizer/GPU-hours.
+  All6 own endpoint fingerprints preceded scoped dev input; no old/pilot model.
+- Every PUBLIC aggregate row/prefix/action count equals baseline1028:
+  8753KNOWN/order, Known micro282/302/macro0.9594329501915708/coverage1.0,
+ 119pseudo absorbed asKnown/anonymous query count0/certified crossvideo
+  reuse lower bounds0. Repair training had103actual extra-gradient steps and
+  different parameters, but NO observed aggregate dev discovery gain in this
+  second seed. No logits/private trace equivalence or global third-seed claim.
+- Exact repair result0119f5bf46e077b5aadbd9c4db225af1ab13a37bec4283bdeae335b0abd852e3;
+  launchee3e59c48f4f8263577bce41b691ed3e7fe76702d33c70a252c3a1636e7f2b2c;
+  normal terminala56b5d6df269f5a6043ee1f51e8dca81fc9db5731b4b376a61459f53428e8e4c.
+  New small PUBLIC-only pair1028 summary binds immutable originals and zero
+  deltas. Pair scope2trials, total protocol4completed of6 at publication;
+  earlier pair1027 summary remains its original historical snapshot. ALL6
+  aggregation REFUSES4/6; timing difference not controlled latency evidence.
+- Twenty-three targeted real/source/summary/partial-refusal tests pass3.16s.
+  No coefficient/seed/step/role changes or new training/private read in posthoc
+  analysis. Proc inspection no live owned research job after normal terminal.
+  Next is fixed baseline1029 then repair1029; no inferred matrix winner or
+  scientific success. Calibrated controls/fullM/joint/Pred/dense/lockedfinal
+  and original Goal A/B/C remain OPEN/active.
+- Final bounded combined CVPR/v2 suite1029pass57.80s, ownedwait0/guardNONE/
+  59.393120916s inclusive/peak862937088B/zero GPU-hours. All four original
+  complete trial validators pass; partial4/6aggregation independently refuses.
+  Public triplet/startup/pair summary/tests/docs only, private assets excluded.

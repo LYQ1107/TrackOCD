@@ -1453,3 +1453,32 @@ targeted checks pass2.56s. No winner or parameter/seed search; next is the
 matching repair1028 under the frozen protocol. Goal A/B/C remain unachieved.
 Final bounded combined CVPR/v2 suite1027pass56.18s, ownedexit0/guardNONE,
 inclusive57.6787s/peak837435392B/zero GPU-hours. Private assets are not published.
+
+## Actual seed1028 pair: no aggregate gain in the second measured seed
+
+Repair1028 completes normally at315.7049s/peak964165632B, one CPU/OS thread,
+zero helper/CUDA/optimizer/GPU-hours. Every3order72video/472physical/
+8753observation/2562frame/116empty scope and full IDrename/reverse/future
+39-observation nonempty-prefix checks pass. The original task was monitored,
+not relaunched or rescued by removed probes/expanded bounds.
+
+All public aggregate rows/prefix/action counts exactly match its baseline:
+8753KNOWN/order, Known micro93.3775%/macro95.9433%/coverage100%, pseudo
+absorption119/119, anonymous queries0/certified crossvideo reuse lower bounds0.
+The repair truly had103extra-gradient training steps/different endpoint
+parameters, but this second seed also has NO aggregate discovery gain.
+Equal rows do not prove logits/private trace parity or third-seed outcomes.
+
+Result SHA256:
+`0119f5bf46e077b5aadbd9c4db225af1ab13a37bec4283bdeae335b0abd852e3`.
+Normal terminal:
+`a56b5d6df269f5a6043ee1f51e8dca81fc9db5731b4b376a61459f53428e8e4c`.
+Public pair1028 summary binds original hashes/zero deltas and distinguishes
+its2-trial pair from4/6protocol completion. Incomplete ALL6 aggregation still
+refused; sequential shared-host timing is not a latency improvement claim.
+Twenty-three targeted tests pass3.16s. Finish fixed baseline+repair1029 before
+full-matrix interpretation; no posthoc coefficient/seed search. Goal active,
+calibration/fullM/joint/strong Pred/dense/locked independent-final still open.
+Final bounded combined CVPR/v2 suite1029pass57.80s, ownedexit0/guardNONE,
+inclusive59.3931s/peak862937088B/zero GPU-hours. All4complete trial validators
+pass; partial4/6aggregation refuses. No private assets are published.

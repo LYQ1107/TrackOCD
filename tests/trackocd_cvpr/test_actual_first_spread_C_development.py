@@ -35,24 +35,36 @@ def test_missing_full_matrix_or_trial_refuses_without_dev_or_weight_reads(tmp_pa
         verified_matrix(tmp_path)
 
 
-def test_actual_seed1027_repair_full_normal_result_has_no_aggregate_discovery_gain():
-    paths = trial_sources('Known_set_rejection',1027)
-    hashes = ('c6a2cd83ddbc5bcec3f0ba73c5d06fda4eb10d67570ba7b7c3038ebf1d2d84db',
-              'd987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef',
-              '23d4aaf1ec267fc184585967f4c446f704316da5c1199bfc69dd2085527bb1ea')
+@pytest.mark.parametrize('seed,hashes', [
+    (1027, ('c6a2cd83ddbc5bcec3f0ba73c5d06fda4eb10d67570ba7b7c3038ebf1d2d84db',
+            'd987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef',
+            '23d4aaf1ec267fc184585967f4c446f704316da5c1199bfc69dd2085527bb1ea')),
+    (1028, ('ee3e59c48f4f8263577bce41b691ed3e7fe76702d33c70a252c3a1636e7f2b2c',
+            '0119f5bf46e077b5aadbd9c4db225af1ab13a37bec4283bdeae335b0abd852e3',
+            'a56b5d6df269f5a6043ee1f51e8dca81fc9db5731b4b376a61459f53428e8e4c')),
+])
+def test_actual_repairs_full_normal_results_have_no_aggregate_discovery_gain(seed, hashes):
+    paths = trial_sources('Known_set_rejection',seed)
     assert all(sha256_file(ROOT/p) == h for p,h in zip(paths,hashes))
-    base = verified_trial(ROOT,'baseline',1027)
-    repair = verified_trial(ROOT,'Known_set_rejection',1027)
+    base = verified_trial(ROOT,'baseline',seed)
+    repair = verified_trial(ROOT,'Known_set_rejection',seed)
     assert repair['orders'] == base['orders']
     assert repair['evaluated_model_parameter_sha256'] != base['evaluated_model_parameter_sha256']
     with pytest.raises(ValueError,match='ALL6'):
-        aggregate_matrix({('baseline',1027):base,('Known_set_rejection',1027):repair})
+        aggregate_matrix({('baseline',seed):base,('Known_set_rejection',seed):repair})
 
 
-def test_public_pair_summary_is_exact_original_aggregate_not_trace_parity_or_full6_acceptance():
-    p = ROOT/'outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_dev_pair_s1027_public_summary_v1.json'
+@pytest.mark.parametrize('seed', [1027,1028])
+def test_public_pair_summary_is_exact_original_aggregate_not_trace_parity_or_full6_acceptance(seed):
+    p = ROOT/f'outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_dev_pair_s{seed}_public_summary_v1.json'
     r = json.loads(p.read_text())
-    assert r['completed_arm_seed_trials'] == 2 and r['planned_arm_seed_trials'] == 6
+    field = 'completed_arm_seed_trials' if seed == 1027 else 'completed_arm_seed_trials_in_this_pair'
+    assert r[field] == 2 and r['planned_arm_seed_trials'] == 6
+    if seed == 1028:
+        assert r['completed_protocol_trials_at_publication'] == 4
+        partial = {(a,s):verified_trial(ROOT,a,s) for s in (1027,1028) for a in ('baseline','Known_set_rejection')}
+        with pytest.raises(ValueError,match='ALL6'):
+            aggregate_matrix(partial)
     assert r['incomplete_full6_aggregation_refused'] and r['all_three_order_public_aggregate_rows_equal']
     assert not r['numeric_scores_parameters_or_full_private_prediction_traces_equal_claimed']
     assert not r['new_private_weights_GT_or_data_loaded']
@@ -60,7 +72,7 @@ def test_public_pair_summary_is_exact_original_aggregate_not_trace_parity_or_ful
     for path,h in r['input_sha256'].items():
         assert sha256_file(ROOT/path) == h
     for arm,field in (('baseline','all_available_baseline'),('Known_set_rejection','all_available_repair')):
-        actual = verified_trial(ROOT,arm,1027)
+        actual = verified_trial(ROOT,arm,seed)
         for order,row in actual['orders'].items():
             assert r['orders'][order][field] == row['prefix_snapshots']['all_available']
             assert all(v == 0 for v in r['orders'][order]['all_available_repair_minus_baseline'].values())
