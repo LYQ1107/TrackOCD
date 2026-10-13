@@ -958,3 +958,17 @@ Known correct12/6/4 of302; certified cross-video pseudo13/8/13 of119, ordermeans
 parity or a method win. Unknown histories retained; no active-purity/selfexcluded/
 fulltruth/officialCT/Pred/Goal claim. Full740tests pass; remaining EMA/all9M,
 fair independent support/fresh/calibrated baselines/strong Pred/joint/final open.
+
+StateEMA now also fully completes, publica17babc2.../profile01d9b3a2...,
+normal1797.25s/RSS962265088B/one thread/no optimizer/GPUh, original guards.
+All3 full72/472/8753/2562/116 streams/all6 prefixes/full ID-reverse and real39
+future-mutation prior-event/version/ledger probe pass. Zero-fit state-estimate
+EMA(momentum.9), not trained M or repeated observation-prefix voting.
+
+Known correct22/20/15 of302; certified cross-video pseudo2/6/14 of119,
+ordermeans.062914/.061625 versus Mean.024283/.095238. Higher Known but worse
+reuse mean, not balanced category-discovery improvement or a selected-order
+win. Unknown/dirty histories retained; no activepurity/selfexcluded/officialCT/
+fulltruth/Pred/Goal claim. Full749tests pass. Whole3-control support-exclusion
+policy experiment is still in flight, two controls complete only. Next actual
+full M case retains original fixed cohort/scope/probes/limits; main Goal open.

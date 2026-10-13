@@ -4471,3 +4471,46 @@ no private GT/cache/weights opened for this check):
   has NOT run at this record; register/push/fetch before launch. Whole Goal
   active/unachieved; completed baseline is not research success, remaining
   EMA/all9M/fresh calibrated baselines/strong Pred/joint/final still required.
+
+### Complete StateEMA development: Known/reuse tradeoff, not balanced gain
+
+- Actual zero-fit StateEMA from807ccd5e37d5e59a305ae8a4ec5d186b1aa311f0
+  completes normally. ResultSHA
+  `a17babc248ec10472e3ed5d2eac61ca6beedc70f1c864b488352bece5eb76a1b`,
+  execution-profile SHA
+  `01d9b3a200196bd40002100eab1a9424c1c47b0d9c2e0d8e7d7f0f55762d5924`.
+  Actualownedwait0/guardNone/fullresult+profile, total1797.25s/worker1778.99s/
+  peak962265088B/one OS thread/noCUDA/zero optimizer or trainingGPUh. Original
+ 3000s/3GiB/25%RAM/64MiB combined derived limits preserved; not a timer rescue.
+- All3 order streams full72 dev/472 physical/8753 observations/2562 frames/
+  116 empty/all6 prefixes. Actual full ID/reverse equality and39-observation
+  first-video future suffix probe preserve prior events/chosen versions/numeric
+  ledger; nonvacuous, not exhaustive all-video causal proof. State estimate EMA
+  momentum.9 of complete latest-member Raw means, not repeated prefix vote EMA.
+- All-available conservative chosen-history outcomes:
+
+| video order | correct Known /302 | certified cross-video pseudo reuse /119 | latest states with Known history |
+| --- | ---: | ---: | ---: |
+| 1027 | 22 | 2 | 176 |
+| 1028 | 20 | 6 | 175 |
+| 1029 | 15 | 14 | 167 |
+
+- Order means Knownmicro.0629139072848 /certifiedcrossvideomicro lowerbound
+  .0616246498599, versus Mean.0242825607064/.0952380952381. Known improves but
+  reuse mean worsens; all Known accuracies remain low. Do not select order1029
+  (14/119 versus Mean13/119) as an independent trained-seed win. Both controls
+  have zero fits/training_seedNULL and three video orders, not three model seeds.
+  Unknown-history queries189/212/171 retained. Commit coverage1.0 is not correct
+  semantic discovery; Known-history pollution/fragmentation remains.
+- Raw33488200B +fingerprint33423088B <=64MiB, hits3404357/misses35873. Runtime
+  differences are shared-host observations, not an isolated speedup/latency-
+  matched purity win. No current active-purity/selfexcluded/full-semantic truth/
+  officialCT/Pred or Goal acceptance. Full749tests pass in43.23s, including
+  actual EMA receipts/allorders/probes/denominators and measured counts.
+- Concurrent support-exclusion pilot actually has two complete controls, not
+  allthree/normalterminal at this record. Its in-flight dependencies unchanged;
+  no partial metrics published or selected. Next full M case is the registered
+  relative_quarantine fixed200 seed1027, then remaining fixed cohort, with
+  unchanged scope/probes/3000s guards and no execution-time guarantee. Goal
+  stays active/unachieved; remaining independent-support/strong Pred/fresh
+  calibrated baselines/joint/final are not bypassed by completed baselines.
