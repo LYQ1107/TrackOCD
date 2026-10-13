@@ -4137,3 +4137,39 @@ no private GT/cache/weights opened for this check):
   final/Val/Test/protected labels read, foreign process changes or cleanup.
   Original Goal remains active and unachieved; full M matrix/strong Pred/fresh
   baselines/joint training/independent final remain open.
+
+### Qualified cached Mean replay also reaches the unchanged wall guard
+
+- The actual qualified replay from63aebf6b743694c84fd4a19a33025ad3c260ca5d
+  now has a terminal receipt, SHA
+  `04d07895d893c67b3fd6ef7a2b50ec0263f72156d3ab2f4cc88a9839819ab5e9`.
+  Owned worker exit-9 / guard owned_job_wall / successful execution FALSE,
+  total3000.2902s, peak963633152B, one worker OS thread, zero trainingGPUh.
+  Only the supervisor's actual owned Popen child was stopped. No foreign
+  process was touched; no manual process termination or guard relaxation.
+- All three order streams report complete progress through1029, but result.json
+  and execution_profile.json are absent. The driver runs full ID/reverse and
+  actual future-mutation probes after those streams; the coarse progress record
+  does NOT identify which probe was unfinished. No probe completion, final
+  metric, baseline superiority or precise bottleneck is inferred from progress.
+- Original uncached failure and this separate cached failure remain intact.
+  Do not reuse partial order metrics, overwrite/relaunch either namespace, raise
+  the3000s limit, trim members/versions/unknown tracks or drop complete probes.
+  Numeric/controller cache equivalence remains a qualified prerequisite, not
+  proof that full development meets its execution guard.
+- Next M replay requires evidence-based equivalent performance work and actual
+  qualification before a fresh registered namespace. Do not launch the remaining
+  full M matrix blindly after this repeated wall failure. The new self-excluded
+  Mean source control is a different unmeasured scientific control, NOT a rescue
+  for the failed baseline or a substitute for the original complete evaluation.
+  Public launch/progress/terminal receipts and a regression are preserved;
+  no private trace, GT, weights, cache payload or raw runtime log is uploaded.
+  Goal remains active/unachieved, with meaningful optimization and scientific
+  controls still available; this individual execution failure is not a blocker
+  or permission to complete/pause the Goal.
+- After adding the exact cached-failure regression, 18 targeted tests pass
+  in4.70s (failure receipts, new exclusion controller, cached-profile boundaries).
+  The preceding full698-test run passed before this one extra receipt test.
+  Supervisor PID is now absent, so no continuing Mean job is claimed. Latest
+  disk free177525125120B/RAM available65588031488B exceeds reserved limits;
+  no cleanup or asset mutation was needed.

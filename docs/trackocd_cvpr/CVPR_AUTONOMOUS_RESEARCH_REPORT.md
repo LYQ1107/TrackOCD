@@ -903,3 +903,12 @@ original versions are conservative history-only references. Separate query view
 Raw/numeric hashes bind the derived prototypes. This is not self-excluded EMA/M,
 semantic independence, active purity or a measured gain. Full698tests pass;
 actual registered full-data controls and full Goal acceptance remain open.
+
+The cached Mean full replay subsequently hit its unchanged3000s wall guard
+(actual3000.29s/exit-9/RSS963633152B/one thread/zero trainingGPUh). All three
+order passes are recorded, but no full result/profile or completed probe receipt
+exists. This is a preserved execution failure, not a scientific metric or proof
+of a particular performance cause. Keep both old/new failures immutable; require
+qualified equivalent performance work before new full M replay, not repeated
+blind launches, partial metric reuse, raised limits or dropped probes. The
+original Goal stays active and unachieved.
