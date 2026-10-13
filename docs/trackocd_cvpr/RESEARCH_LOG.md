@@ -4277,3 +4277,39 @@ no private GT/cache/weights opened for this check):
   job dependencies untouched; no new eval/pixels/optimizer/GT or asset extraction.
   Whole Goal active/unachieved. Fill proofs only after actual full normal result,
   then register/push/fetch before a fresh full Mean replay.
+
+### Actual ALL11 fingerprint shadow passes; full fresh Mean replay qualified
+
+- New shadow frome35fca60ef3e8eb94bbf5f994da95ed0d634feac completes ALL11
+  normally. Actual resultSHA
+  `d2626ad2d872c03e88e6ddbb40806aeb4bc3f0e0c312ed2f31f0a30cea09c552`,
+  independent execution-profile SHA
+  `54547695ba2668e93dd7cc1c09f3ff2fb8f0a83ff1d5020fe17ef747fb8267ab`.
+  Every case OLD/new full10 policy/54 physical/1268 observations/374 frames/
+  1 empty, order1027, entire events/scores/candidatefeatures/routing/chosen
+  versions/numeric ledger/outcomes EXACT; all private trace hashes also match
+  the previous complete ALL11 shadow. No successful subset or floating tolerance.
+- Actual ownedwait0/guardNone/fullresult and profile present, total1055.35s,
+  worker1044.09s/peak950362112B/noCUDA/zero optimizer or trainingGPUh. Original
+  CPU/RAM/storage/3000s guards intact. Both previous Mean failures remain intact;
+  no old PID/session/namespace restart or foreign process intervention.
+- Mean fingerprint hits15259/misses1216, EMA15972/1172; each derived component
+  <=32MiB and combined<=64MiB. All9 weighted M cases have ZERO fingerprint bytes/
+  hits/misses because their hash alias was intentionally not changed; their
+  qualified new scope uses32MiB Raw statistics only. Do not claim weighted-M
+  SHA acceleration. Cache evictions affect recomputation, not memory/history.
+- Shared-host sequential Mean OLD/new38.92s/33.38s, EMA44.58s/25.50s. Earlier
+  different-run Raw64MiB Mean was28.49s. These are not isolated comparisons or
+  monotonic improvement proof; no full-dev speedup or3000s completion guarantee
+  follows. The exact byte-segment memo is numerically qualified, not a method gain.
+- Filled only the two actual fingerprints in NEW full-replay profile; original
+  e35fca6 shadow sources remain unchanged. Real public gate now passes all11
+  trace/profile/source/normal-terminal/bounds checks plus original8753 numeric
+  proof/old ALL11 proof/both old failures. Full724tests pass in51.29s, including
+  actual full shadow and weighted-M no-fingerprint-use regression.
+- Full72-development still NOT executed with this new profile at this record.
+  Register/push/fetch exact ref before launching one fresh complete Mean
+  namespace with the original all3orders/full ID+future probes/3000s guard;
+  no original partial metric reuse, input pruning or final/Val/Test access.
+  Whole Goal remains active/unachieved; scientific M matrix, self-excluded
+  controls, fresh/calibrated baselines, strong legal Pred/joint/final remain open.

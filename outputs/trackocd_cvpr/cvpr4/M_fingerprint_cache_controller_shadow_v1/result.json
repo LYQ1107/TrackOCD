@@ -1,0 +1,145 @@
+{
+  "cases": {
+    "Mean_latest": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 33.37671544699697,
+      "old_seconds": 38.91627268801676,
+      "private_trace_sha256": "7461015c0f64bf89c294630f08fac2cc8c8083a664b541c221d49bd5121f5ed5",
+      "retained_derived_cache_bytes": 67042216,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "StateEMA_latest": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 25.504848877026234,
+      "old_seconds": 44.57686019799439,
+      "private_trace_sha256": "d2e28ea428601c166aae2ce36bad0842a0a2cd75f85b58d0ec7303b68c363353",
+      "retained_derived_cache_bytes": 67054520,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "pooled_weighted_s1027": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 50.619544810964726,
+      "old_seconds": 49.01995232299669,
+      "private_trace_sha256": "126f6b8b8af50b7dcee8e1182562e373d06b1d77c8151191a8d1a6cc53e042df",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "pooled_weighted_s1028": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 53.58778927102685,
+      "old_seconds": 56.3288767709746,
+      "private_trace_sha256": "24ce0f3586dd7ea03eb37ce5213343b5d82927fd813b1a541aa9311419c0b4fa",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "pooled_weighted_s1029": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 43.91587246803101,
+      "old_seconds": 59.64369848999195,
+      "private_trace_sha256": "3aa295abdd7ff5ee9e17b6dc9e54e1a84e20ec9b8410956db96847b3ca20c228",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "relative_quarantine_s1027": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 49.26803844899405,
+      "old_seconds": 68.66861913399771,
+      "private_trace_sha256": "c98657973810452d4c4c00c8ad7bee98fa290c393a9e3de01f51a318c7a0ce68",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "relative_quarantine_s1028": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 42.31540711398702,
+      "old_seconds": 64.06617718999041,
+      "private_trace_sha256": "37cc863ba747757eba1b58b8292507f43d77dae6d135022d4e0b3a2f3c621c13",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "relative_quarantine_s1029": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 42.38838353200117,
+      "old_seconds": 53.85623359796591,
+      "private_trace_sha256": "63c6721d7918bdfc1aee0efd08a26b9c407cb4224903533e8d1c01858600a323",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "relative_weighted_s1027": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 40.74760348297423,
+      "old_seconds": 50.459083485009614,
+      "private_trace_sha256": "c98657973810452d4c4c00c8ad7bee98fa290c393a9e3de01f51a318c7a0ce68",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "relative_weighted_s1028": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 38.00699386600172,
+      "old_seconds": 44.50290339696221,
+      "private_trace_sha256": "ae8ea196edd2ee3d5a7205d69e5baa3160e0f380f68e6914bc2821e185e72365",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    },
+    "relative_weighted_s1029": {
+      "actual_full_policy_event_score_routing_chosen_version_numeric_ledger_and_outcome_exact": true,
+      "cache_seconds": 39.36296547803795,
+      "old_seconds": 45.2482785040047,
+      "private_trace_sha256": "63c6721d7918bdfc1aee0efd08a26b9c407cb4224903533e8d1c01858600a323",
+      "retained_derived_cache_bytes": 33549000,
+      "timing_is_shared_host_sequential_pair_not_isolated_speedup_claim": true
+    }
+  },
+  "full72development_or_Pred_purity_or_Goal_accepted": false,
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "e35fca60ef3e8eb94bbf5f994da95ed0d634feac"
+  },
+  "observations_per_replay": 1268,
+  "offline_fit_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "optimizer_steps": 0,
+  "physical_tracks_per_case": 54,
+  "policy_scope": {
+    "GT_localization_oracle_control_not_qualified_Pred": true,
+    "development_final_or_other_video_payload_bodies_opened": false,
+    "development_final_or_other_video_semantic_values_decoded": false,
+    "empty_GT_frames": 1,
+    "existing_Known_target_counts": {
+      "Known": 34,
+      "policy_pseudo": 10
+    },
+    "external_loss_only_not_observation_or_model_features": true,
+    "masked_loss_tracks": 10,
+    "masked_tracks_dropped_or_declared_background": false,
+    "metadata_frames": 374,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 1268,
+    "physical_label_strata": {
+      "Known": 34,
+      "no_retained_semantic_truth": 10,
+      "policy_pseudo": 10
+    },
+    "physical_tracks": 54,
+    "videos": 10
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 950362112,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_registration": 1044.0933748619864
+  },
+  "status": "ACTUAL_ALL11_FULL_POLICY_RAW_CACHE_CONTROLLER_SHADOW_NOT_FULL_DEV_OR_METHOD_GAIN"
+}

@@ -924,3 +924,17 @@ remain; no token/GT key, digest-only equality assumption, EMA prototype memo or
 old wrong-history cleanup. Full717tests pass. NEW actual ALL11 old/new full-policy
 shadow is registered with unchanged scopes/models/clock/guards; real parity,
 full-development completion and scientific gains still require measurement.
+
+Actual ALL11 fingerprint-cache policy shadow now completes normally, public
+resultd2626ad2.../profile54547695..., total1055.35s/RSS950362112B/zero optimizer/
+trainingGPUh. Every old/new event/score/routing/chosen-version/numeric-ledger/
+outcome and previous private trace digest matches exactly for all54physical/
+1268observations. Both old fullMean failures remain immutable.
+
+Mean/EMA actually exercise exact SHA memo (15259/15972 hits), combined64MiB
+logical bound preserved. All9 weighted-M cases use Raw32MiB only, with zero
+fingerprint activity; no SHA acceleration inferred for them. Shared-host Mean
+38.92/33.38s versus an earlier different-run Raw64MiB28.49s is not an isolated
+or monotonic speedup proof. Full724tests pass. Qualified NEW full Mean replay
+retains all original data/models/orders/ID+future probes/3000s limits; actual
+full72 completion and scientific M matrix/independence/Pred/final remain open.
