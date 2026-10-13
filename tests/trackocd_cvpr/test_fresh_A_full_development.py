@@ -11,8 +11,9 @@ from src.trackocd_cvpr.fresh_A_development_probes import numeric_probes
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def test_all15_absent_refuses_before_remote_or_private_checkpoint(monkeypatch):
+def test_all15_absent_refuses_before_remote_or_private_checkpoint(monkeypatch,tmp_path):
     cfg=driver.configuration(ROOT)
+    monkeypatch.setattr(driver,'ROOT',tmp_path)
     def forbidden(*a,**k):raise AssertionError('No network or private reads on incomplete15 cohort')
     monkeypatch.setattr(driver,'verify_registration',forbidden)
     with pytest.raises(ValueError,match='All15'):

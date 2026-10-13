@@ -11,14 +11,14 @@ from src.trackocd_cvpr.fresh_A_formal_fit import (
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def test_actual_five_family_pilot_qualified_without_private_weights_read():
+def test_actual_five_family_pilot_qualified_without_private_weights_read(tmp_path):
     cfg=configuration(ROOT,'A1_ADAPTER',1027);proof=verify_pilot(ROOT,cfg)
     assert proof['all_five_actual_qualified'] and not proof['pilot_weights_read']
     assert cfg['output_directory']==PREFIX+'_A1_ADAPTER_s1027'
     assert cfg['optimizer_steps']==200 and not cfg['pilot_or_historical_checkpoint_warmstart']
     assert len(cohort_sources())==45 and len(set(cohort_sources()))==45
-    # Actual formal inputs are still absent, never infer matrix from pilot.
-    with pytest.raises(ValueError,match='All15'):verified_cohort(ROOT)
+    # Missing cohort must fail independently of later legitimate actual fits.
+    with pytest.raises(ValueError,match='All15'):verified_cohort(tmp_path)
 
 
 @pytest.mark.parametrize('field,value',[('optimizer_steps',10),('training_seeds',[1027]),

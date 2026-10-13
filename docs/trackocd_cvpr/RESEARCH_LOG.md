@@ -5133,3 +5133,21 @@ no private GT/cache/weights opened for this check):
   explicit source/tests and small public launch/result/terminal uploaded.
   All15 development, full9M/probes, calibrated/joint/Pred/lockedfinal and
   paper-level scientific acceptance remain OPEN; Goal remains unachieved.
+
+
+### Actual fresh Fixed200 A1_GEOMETRY_1 / seed 1027
+
+- Registered f71a3f53930de092403398b5188491df59849823; complete200 with actual normal exit0/no
+  guard, 24.3947s, peak623882240B, oneCPU compute plus <=one
+  identified native helper, zeroGPUh/CUDA not initialized. Full1401/1158Known/
+  243masked census; actually sampled498canonical groups/226videos, not all1158.
+  All20/50/100/200 private model+AdamW checkpoints reopened exactly, no warmstart
+  or dev/final selection. Public actual resultSHA256
+  f1099d1b2675df756eaea4512792ba695083c91248c471c2c9f22fba598f3b4a.
+- Actual init d0a97dcdaa3cef7fc4dcf83101c682c7719f7dab9505872cc0686f7aeff65ff6
+  and calendar 84ee8dcf6c4b42237af910ffa6993ad141105e16e95933d8eefe256a2dde4f73
+  are checked against each available same-seed family by actual public tests;
+  no claim of generalization or scientific acceptance from optimizer completion.
+  32 passed in 2.26s. Only small public launch/result/terminal staged;
+  private checkpoints/data/cache stay local, qualified training sources unchanged.
+- Completed-stage registration: A1_GEOMETRY_1/s1027; independent full15 dev remains pending.
