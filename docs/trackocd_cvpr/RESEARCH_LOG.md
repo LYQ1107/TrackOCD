@@ -5723,3 +5723,33 @@ no private GT/cache/weights opened for this check):
   55.13s, ownwait0/no guard/56.4314s/peak833835008B/25%reserve+3GiB margin.
   Zero new optimizer/model-inference/GT-role expansion in this audit/qualification
   stage. Original Goal active/unachieved; all remaining science gates retained.
+
+### Registered single fixed spread-calendar exposure correction
+
+- Prior stage produced real qualified evidence176later Known-anchor pseudo
+  opportunities/0first50, not a model-effect claim. Fresh branch50e5071 clean,
+  no live owned M/paired/freshfit. Same authorized fit/policy data/prototypes,
+  source fixed0.25 objective/1027 seed/one full episode/50updates perarm remain.
+- NEW module/namespace only; original pair/driver/config/artifacts untouched.
+  Freeze offline Known-eligible administrative frame plan BEFORE any optimizer;
+  choose ranks floor((2*i+1)*N/(2*50)), i0..49, refuse N<50. No pseudo opportunity,
+  dynamic anonymous history, dev metric or seed/coefficient search selects ranks.
+  Full observed clocks/unknown masks/prediction-owned wrong history retained.
+  Private selected coordinates stay local600, public only plan hash/counts.
+- This is OFFLINE training scheduling using complete Known availability, not
+  deployed label-free online training. Numeric model inputs remain current
+  prefixes only; future perturbation test reuses frozen plan instead of
+  recalculating an earlier schedule from changed future data. No broad claim
+  of invariant training after reselecting/retraining an offline calendar.
+- Reuse numerical scorer/loss/optimizer/history kernels in a new explicit
+  trainer copy; selecting ALL Known anchors with zerointervention exactly
+  matches original model/loss/fullhistory on matched synthetic fixture. Pair
+  frame/candidate opportunity checks/fixed budget/no substitute-frame rule and
+  actual plan hash enforced. Audit exception/prior uninformed pilot hashes bind
+  new source gate; still fresh Git/source/authority/cache before private input.
+- One corrected pilot attempt only, no old warmstart, automaticformal/dev,
+  extra steps, missing-frame padding, alpha/seed sweep or science acceptance.
+  Actual new gradient/exposure still unmeasured at this prospective stage.
+  Six targeted pass3.34s; full960pass57.29s, ownwait0/no guard/58.8566s/
+  peak808267776B/25%reserve+3GiB margin. Execution follows exact remote
+  publication; original Goal/science scope unchanged and unachieved.

@@ -1,0 +1,19 @@
+{
+  "status": "REGISTERED_ONE_FIXED_EXPOSURE_CORRECTION_PILOT_NO_FORMAL_AUTO_START",
+  "old_pilot_result_sha256": "9a67853e3070dec7d86f7b7b0b7638e9f68b48d374950bcd490692f6a58a8239",
+  "opportunity_qualification_sha256": "932d3dbd1d3d6b5cdc1f58aec0cb08e5fc6ba56a0939665237a94c7defa41db2",
+  "rule": "MIDPOINT_UNIFORM_KNOWN_ELIGIBLE_RANKS_NO_PSEUDO_OR_PREDICTION_HISTORY_SELECTOR",
+  "rank_formula": "floor((2*i+1)*N/(2*50)) for i=0..49; refuse N<50",
+  "seed": 1027,
+  "episodes": 1,
+  "optimizer_steps_each": 50,
+  "repair_coefficient": 0.25,
+  "models_loss_Raw_data_order_prototypes_optimizer_or_history_rules_changed": false,
+  "calendar_semantics": "Offline administrative Known eligibility plan frozen before updates; not numeric model input or deployed online-training claim. Selected frames may depend on offline availability; numeric prefix invariance tests reuse EXACT same plan rather than recomputing after a future mutation.",
+  "data_scope": "Same approved policy10/54/1268/374/1 + immutable offlinefit5 prototypes; complete clocks/unknown masks retained",
+  "pseudo_or_dev_metric_based_frame_ranking_or_search": false,
+  "coefficient_seed_steps_search_or_pilot_warmstart": false,
+  "maximum_exposure_correction_pilot_attempts": 1,
+  "require_actual_nonzero_rejection_gradient_for_later_registration": true,
+  "formal_auto_start_or_Goal_acceptance": false
+}
