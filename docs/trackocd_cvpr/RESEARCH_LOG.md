@@ -6606,3 +6606,85 @@ no private GT/cache/weights opened for this check):
   small report, actual third receipt test, docs/status. Original third result
  51753B unchanged; no private model/GT/scalar-label tables/calendars/progress/
   stdout. Remaining ONE fullpolicy starts only after push/fetch/exact proof.
+
+### ALL4 complete scalar-control dev matrix and exact Raw/ALL6 C comparison
+
+- Previous turn made real progress: third complete result/synthetic-only probe
+  published/fetched/triple-SHAd4256d93192cae15a7d8760bfd766da75d25928f;
+  ONE fullpolicy launched only after no live researcher and fresh exact source.
+  This turn confirmed same boot/start/command supervisor573484/worker573724
+  throughout live observation, now both terminal (historical PIDs, not retries).
+  Normal exit0/guardNONE/result present,736.640016210s inclusive/963358720B
+  peak/oneCPU+oneOSthread/no native helper/noCUDA/zero trainingGPUhours.
+  Entry availableRAM104127315968B of134792282112B/free disk72854298624B;
+  no cleanup, downloads, external process changes or protected role access.
+- ALL13 private byte fingerprints before dev; actual unchanged ONE converged
+  formal fullpolicy endpoint0ef76565..., not3artificial solver seeds. Each3
+  orders complete72videos/472tracks/8753obs/2562frames/116empty; full ID/reverse
+  event/outcome parity and39future-observation full-stream prefix parity. No
+  additional optimizer/sweep/checkpoint/bin/threshold/order/control selection.
+- Fullpolicy GROUP microNLL0.714641857255->0.693554074874/Brier
+ 0.260557177963->0.250701224281/ECE0.186443183680->0.160233612913 improve,
+  classmacroNLL0.633307795708->0.818065098077/Brier0.220388133969->
+ 0.299332948243/ECE0.182533139556->0.338324555758 worsen. TRACK allavailable
+  microNLL0.702945608085->0.581064365639/Brier0.254788661725->
+ 0.201506159923/ECE0.247378173126->0.104337091599 improve, classmacroNLL
+ 0.636911872000->0.868264953167/Brier0.222151422613->0.318562420062/
+  ECE0.188705539840->0.375535315323 worsen. Same7551eligible group/421track
+  conditional tasks over11classes, unknown51/masked1202groups retained. Different
+  role/class/observation priors, NOT global posterior/foreground calibration.
+- Fullpolicy per-order Knownmicro0.281456953642/0.357615894040/0.251655629139,
+  Knownmacro0.418022988506/0.566022988506/0.498712643678; certified pseudo
+  crossvideo reuse microLB0.058823529412 ALL3, macroLB0.043283045977/
+ 0.043898809524/0.061602011494. Coverage1.0 all3. Pseudo Known-absorbed
+ 20/17/12, anonymous99/102/107, unscorable-reuse174/168/211; tokens137/136/136
+  retain mixed/unknown histories. No GT purity laundering or full M CT claim.
+- Original fullpolicy result52379B SHA b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d;
+  launcha3449249be486ca700e9e2f345fc575fa26018555c8f06a21967ed5ccb3a8d50;
+  terminal07af57d2323842fa0a4a052764238a170d9382e3db57fa67ff9d7e395b37e84a.
+- Actual ALL4 public matrix verifies same168registered source/public paths,
+  exact fixed endpoints, same actual initial Raw conditional statistic corpus
+  and video ordinal schedules, all normal complete clocks/probes. Exact historical
+  Raw worker/kernel/source proof and ALL6 original C trials pass common actual
+  offline fit-prior/dev/ordinal scope checks. No new GT/weight or prediction row
+  reads/export by comparator; original result bytes remain unchanged.
+- Descriptive all-available means (Knownmicro / certified crossvideo pseudo
+  microLB): zero-fitRaw0.024282560706/0.095238095238; three calendar schedules
+ 0.129874908021/0.095238095238; ONE fullpolicy0.296909492274/0.058823529412;
+  original three-seed Cbaseline0.933774834437/0 and finite pairedC repair
+ 0.865342163355/0. All observed full physical coverage1.0, NOT deliberately
+  equalized coverage/latency/information/capacity/optimization exposure. Calendar
+  improves Known but has EXACT same mean pseudo microLB as Raw; fullpolicy
+  improves Known more but loses pseudo reuse and absorbs more pseudo into Known.
+  Calendar weakly improves these two mean outcomes versus Raw at observed
+  coverage1, but pseudo Known absorption/classmacro reliability worsen; no
+  across-all-metrics domination, dev-selected winner, Novel R or joint success.
+- Calendar Knownmacro0.347616858238/reuse macroLB0.082332717570 vs Raw
+ 0.019555555556/0.074892241379; fullpolicy0.494252873563/0.049594622332.
+  All56conditional diagnostics/all6prefixes/3orders/4endpoints and original ALL6
+  C means retained. Orders/prefixes/observations not independent replications,
+  calendar seeds vary scheduling not head initialization, fullpolicy not matched
+  C frame budget/optimizer. Same-training NLL reduction alone did not establish
+  these independent classmacro improvements or deployed probability calibration.
+- ALL4 normal owned evaluation wall2876.519408483s total/964513792B max RSS/
+  zero trainingGPUhours. Derived public report199391B SHA256
+  dbda23e50e41ee9d0d2fb0a5cc49bd3af0d42fab5bd106d75e79057ea3f8a072,
+  exactly reduces all original qualified trials. First pretty-printed tool
+  transport truncated before JSON parsing (no file written); compact export then
+  complete, no data/protocol change or false acceptance.34targeted actual matrix/
+  reference/normal/synthetic regressions pass9.78s, including cross-trial source,
+  corpus, clock, ordinal mismatch refusal and exact public-report parity.
+- This finite control window COMPLETE, Original Goal A/B/C UNACHIEVED/active.
+  Next separately freeze/qualify matched empirical attribution of Existing
+  arbitration and retained/self-containing support using lawful fit/policy/dev
+  only; synthetic counterexample is not real-data attribution or a solution.
+  Develop joint R/C/M and qualify full trained-M probes; strong lawful Pred/
+  dense/fair calibrated coverage-latency and locked independent final still
+  required. No partial win, threshold/seed/coefficient fishing or GT history edit.
+- Final bounded combined CVPR/v2 suite1125pass92.88s, ownedexit0/guardNONE/
+  inclusive95.950380323s/peak839094272B/zero trainingGPUhours. Actual full
+  report and original149fit source reverified after documentation changes.
+  Eight explicitly public files only: last normal triplet, exact all4 report,
+  all4 actual/mutation/parity tests, docs/status. Last original result52379B
+  unchanged. No private weights/GT/score-target tables/calendars/progress/stdout.
+  Publish/fetch/triple-SHA before any NEW separate mechanism protocol/experiment.

@@ -1860,3 +1860,58 @@ full coverage/latency/fullM/joint/strongPred/dense/lockedfinal unfinished.
 Final bounded combined CVPR/v2 suite1117pass74.12s, ownedexit0/guardNONE,
 76.2846s inclusive/838844416B peak/zero GPUhours. Ten public files only,
 third original result51753B unchanged, no private weights/GT/scalar tables.
+
+## Complete ALL4 independent scalar-control window — scientific tradeoffs
+
+All four actual frozen formal endpoints now normally complete, each full3orders/
+72videos/472tracks/8753obs/2562frames/116empty plus full ID/reverse and39future
+observation probes. Last ONE fullpolicy736.6400s/963358720B/oneCPU+oneOSthread,
+all4total2876.5194s/max964513792B/noCUDA/zero trainingGPUhours. ALL13 actual
+private fingerprints before dev; fullpolicy is not three training seeds.
+Same original168source/public dependencies, actual initial Raw diagnostic corpus
+and video schedules. Historical Raw exact source/kernel/numerical-worker proof
+and all6C original trials share actual prior/dev/schedules, not a latency match.
+
+Descriptive all-available means; all observed physical coverage1.0:
+
+| Fixed control | Known micro | Certified cross-video pseudo reuse micro LB |
+| --- | ---: | ---: |
+| Zero-fit Raw | 0.024283 | 0.095238 |
+| Calendar-matched, 3 scheduling seeds | 0.129875 | 0.095238 |
+| ONE full-policy fit | 0.296909 | 0.058824 |
+| Original C baseline, 3 training seeds | 0.933775 | 0 |
+| Original paired C repair, 3 training seeds | 0.865342 | 0 |
+
+Calendar Known recognition improves, but mean pseudo micro reuse is EXACTLY
+unchanged from Raw; fullpolicy recognizes more Known yet reduces reuse and
+absorbs more pseudo (16.333mean versus Raw0.333; calendar6). No universal winner,
+Novel-generalizable R improvement, calibrated deployment or joint science win.
+Heads/capacity/target information and gradient exposure differ; calendar equals
+the actual C frame-update schedule only. Fullpolicy optimizer/exposure unmatched.
+Observed same coverage is not a deliberately calibrated coverage/latency match.
+Orders/prefixes/observations are correlated, not independent replications.
+
+Fullpolicy GROUP microNLL0.714642->0.693554/Brier0.260557->0.250701/ECE
+0.186443->0.160234 improve; classmacroNLL0.633308->0.818065/Brier0.220388->
+0.299333/ECE0.182533->0.338325 worsen. TRACK microNLL0.702946->0.581064
+improves while classmacroNLL0.636912->0.868265/ECE0.188706->0.375535 worsen.
+All calendar classmacro diagnostics also worsen although micro improves.
+Different conditional role/class/sampling priors, not full semantic deployment
+posteriors/foreground/Existing purity. Unknown51 and1202masked group observations
+retained, not inferred negative/BG/Novel. All fixed prefix/order statistics kept.
+
+Fullpolicy result SHA256`b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d`;
+normal terminal`07af57d2323842fa0a4a052764238a170d9382e3db57fa67ff9d7e395b37e84a`.
+Derived full comparison199391B SHA256
+`dbda23e50e41ee9d0d2fb0a5cc49bd3af0d42fab5bd106d75e79057ea3f8a072`;
+34targeted tests pass9.78s, including actual all4/source/corpus/order/probe
+checks and exact aggregate parity, without new private weights/GT/rows.
+This finite baseline window is complete, not Goal A/B/C. Next separately
+freeze matched real-data arbitration/self-support/retention attribution; source
+synthetic behavior alone is insufficient. Joint R/C/M, fullM runtime/probes,
+fair calibration/coverage/latency, lawful strongPred/dense and locked final
+remain unfinished. Original Goal active, no selected threshold/model/seed.
+Final bounded CVPR/v2 suite1125pass92.88s, ownedexit0/guardNONE,
+95.9504s inclusive/839094272B peak/zero GPUhours. Exact report/original149fit
+source reverified; eight public files only, original last result52379B unchanged.
+No private weights/GT/scalar-target rows/calendars/progress/stdout export.

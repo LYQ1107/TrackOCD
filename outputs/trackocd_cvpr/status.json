@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.status.v1",
-  "status": "ACTIVE_ALL15_BASELINES_AND_ALL6_PAIRED_C_DEV_MEASURED_NO_DISCOVERY_WIN_JOINT_PRED_FINAL_OPEN",
+  "status": "ACTIVE_ALL15_R_ALL6_PAIRED_C_ALL4_RAW_CONTROLS_MEASURED_JOINT_PRED_FINAL_OPEN",
   "phase": "CVPR-2/3/4 evidence-supported mechanism iteration",
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
@@ -46,9 +46,9 @@
   "raw_named_membership_formal_complete_controls": 4,
   "raw_named_membership_formal_fit_receipt": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_all4_formal_fit_receipt_v1.json",
   "raw_named_membership_formal_fit_receipt_sha256": "1a7033eb70b199ca96d5c52ba1cb3ebe1475e7da01012a6380e3a894e986e7b7",
-  "raw_named_membership_formal_actual_dev_complete_controls": 3,
+  "raw_named_membership_formal_actual_dev_complete_controls": 4,
   "raw_named_membership_full_development_protocol": "configs/trackocd_cvpr/raw_known_membership_full_development_v1.json",
-  "raw_named_membership_full_development_execution": "ACTUAL_NORMAL_3_OF4_FULL_DEV:all3calendar endpoints each full3orders/fullID-reverse/future probes and conditional reliability complete. Dev classmacroNLL/Brier/ECE worsen while micro improves vs initial conditional Raw score; low Known recognition and partial certified reuse, no global calibration/foreground/purity/control winner. ONE fullpolicy still required, no dev selection",
+  "raw_named_membership_full_development_execution": "ALL4_ACTUAL_NORMAL_COMPLETE_FULL_DEV_AND_PUBLIC_RAW_ALL6_C_COMPARISON:all3calendar endpoints plus ONE fullpolicy each full3orders/fullID-reverse/future probes complete. Calendar improves Known but exactly unchanged mean pseudo microReuseLB vs Raw; fullpolicy trades more Known for lower reuse. All classmacro conditional reliability worsens while micro improves, different role/class priors. No global calibration/foreground/purity/Novel-R/joint/control-winner or Goal claim",
   "raw_named_membership_first_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_calendar_matched_s1027/result.json",
   "raw_named_membership_first_full_dev_result_sha256": "8ddaeb2718f37ab06ac406cedaa12ea2a29abd5ca7513e1e5a0526ad783bdece",
   "raw_named_membership_second_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_calendar_matched_s1028/result.json",
@@ -58,6 +58,10 @@
   "raw_named_membership_third_full_dev_result_sha256": "1af219e92fba0ca36344c276ff4eda472e5d7d1f3a133538b28943286fe417cc",
   "Existing_gate_structural_synthetic_diagnostic": "outputs/trackocd_cvpr/cvpr3/existing_gate_structural_synthetic_probe_v1.json",
   "Existing_gate_real_dev_attribution_or_production_fix_claimed": false,
+  "raw_named_membership_fullpolicy_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_full_policy/result.json",
+  "raw_named_membership_fullpolicy_full_dev_result_sha256": "b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d",
+  "raw_named_membership_all4_full_dev_comparison": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_all4_full_dev_comparison_v1.json",
+  "raw_named_membership_all4_full_dev_comparison_sha256": "dbda23e50e41ee9d0d2fb0a5cc49bd3af0d42fab5bd106d75e79057ea3f8a072",
   "paired_C_spread_full_dev_baseline1029_result": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1029/result.json",
   "paired_C_spread_full_dev_baseline1029_result_sha256": "51263a725782c87c0e34b7c0e36fb4497fd9dc0f906e9bef71477706840bfdcf",
   "paired_C_spread_full_dev_seed1028_pair_summary": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_dev_pair_s1028_public_summary_v1.json",
@@ -77,5 +81,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Complete remaining ONE fullpolicy registered full Train-dev endpoint with full clock/conditional diagnostics/all3orders/fullID-reverse-future probes; only3of4 complete. Then public ALL4 comparison to exact historical Raw and ALL6 C, no partial winner. Synthetic Existing self-support/Known retention rule counterexample is not real-data cause; any real attribution requires separate matched frozen audit, no GT history cleanup or threshold search. Both controls retained, no dev-selected model/seed/threshold or detector/fullposterior claim. Qualify full trained-M runtime/probes; develop joint R/C/M. Preserve all old results; lawful strongPred/dense and locked independent-final still required. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "ALL4 finite Raw control window complete. Separately freeze/qualify matched real-data Existing arbitration/self-containing and retained-support attribution using lawful fit/policy/dev only; synthetic counterexample is not empirical cause or a solution. No GT history cleanup or threshold/seed/coefficient fishing, both controls retained. Qualify full trained-M runtime/probes; develop joint Novel-generalizable R/candidate-aware C/self-correcting persistent M. Fair calibrated coverage/latency, lawful strongPred/dense and locked independent-final still required. Original Goal A/B/C unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
