@@ -4576,3 +4576,37 @@ no private GT/cache/weights opened for this check):
   no full result at this record. Original model/source/data/3000s guards unchanged;
   no partial metrics promoted. Whole Goal active/unachieved, full9M/strong Pred/
   fresh calibrated baselines/joint/independent final remain required.
+
+### First trained M wall failure; register complete external effective Mean audit
+
+- Actual relative_quarantine/1027 from5b487b663059a6d5d2a3869aa175f1df8c6b8825
+  now terminal: SHA3c4592996c88992fac9cd02c28fe2df38d962b667b735492901d5a45d9ad643e.
+  Owned-9/owned_job_wall/successFALSE/fullresultFALSE, total3000.277s/
+  peak964136960B/one OS thread/zero trainingGPUh. Only its actual owned child
+  was stopped by the registered supervisor; no foreign process intervention.
+  Progress through1028 only; no result/profile. Preserve namespace/partial
+  progress/receipt without partial metrics, guard relaxation or blind remaining
+  M launches. All9 fits complete, full M development matrix still incomplete.
+- New external observer runs AFTER original atomic prediction seals. Capture
+  actual pre-frame Raw bank/query receipts/chosen versions; no labels or audit
+  status returned to policy or scorer. Full Mean baseline validates chosen version
+  Raw/prototype BYTES before GT lookup; excluded Mean validates full actual
+  filtered receipt and complete contributors. Unknown remains unscorable.
+  No EMA latent or trained-M shortcut and no retroactive dirty-history repair.
+- Registered complete original3 controls/all3 orders/full10 policy/54physical/
+  1268observations/374frames/1empty/all6prefixes/original18 old-cache/ID/future
+  streams, CPU1/3GiB/3000s/3MiB/25%RAM/storage guards unchanged. Every actor order
+  outcome and fullorder1027 trace must match prior actual9987e002... before
+  accepting supplemental metrics. Original dirty-history output remains separate.
+  Effective audit also requires full old/cache/ID/reverse/prior-future equality
+  and physical/query/clock denominators. Separate effective_support_result.json
+  binds actor resultSHA/all3 models; actual normal terminal AND both files required.
+- Own-process constructor/stream hooks reject unknown/nested bindings and always
+  restore. Private truth/provenance/trace not uploaded; summaries/digests only.
+  No checkpoint deserialization/new labels/pixels/encoder/optimizer. No fulltruth/
+  statistical independence/officialCT/Pred/joint/final/Goal acceptance.
+- Full768tests passed in50.49s before one exact failure regression was added;
+  8 targeted tests then pass in2.26s. Actual effective audit NOT launched at this
+  record; register/push/fetch first. M needs actual runtime profiling/equivalent
+  qualification before new full replay. Individual failure does not end, pause
+  or block main Goal. Whole M/fresh baselines/strong Pred/joint/final remain open.

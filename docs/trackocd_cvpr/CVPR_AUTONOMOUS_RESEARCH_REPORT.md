@@ -988,3 +988,18 @@ mixed classes retained. Synthetic transfer counterexample: other-video ancestry
 can exist while all actual current contributors are same-video. No relabeling
 old metrics as active purity, old history repair, EMA/M shortcut or fulltruth
 claim. Full761tests pass. Trained M full replay still live/pending; Goal open.
+
+First frozen trained-M full dev (relative_quarantine/1027) now hits unchanged
+3000s wall guard: actualowned-9/fullresultFALSE/peak964136960B/one thread/zero
+trainingGPUh, SHA3c459299... . Two orders only; no accepted metric/profile,
+namespace overwrite or relaxed guard. All9 fits complete, full M matrix still
+incomplete; qualify equivalent performance before further full-M launches.
+
+New complete external effective Mean policy audit is registered, original3
+controls/3orders/18 full streams/clock/probes/limits. Observer runs after sealed
+decisions; every actor outcome/full trace must match prior measured pilot.
+Effective support audit must also match old/cache/ID/future results and full
+denominators. Supplemental report separate from dirty history; full Mean requires
+actual chosen version Raw/prototype-byte binding, excluded Mean query receipt.
+No EMA/M shortcut, ignored unknowns, fulltruth/independence/Pred/Goal claim.
+Full768tests plus8 post-failure targeted tests pass; actual audit still pending.

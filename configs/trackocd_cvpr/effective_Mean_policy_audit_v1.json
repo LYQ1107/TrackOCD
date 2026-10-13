@@ -1,0 +1,14 @@
+{
+  "status": "REGISTERED_EXTERNAL_EFFECTIVE_MEAN_FULL_POLICY_AUDIT_NOT_M_EMA_PRED_OR_GOAL",
+  "base_config": "configs/trackocd_cvpr/self_excluded_Mean_policy_pilot_v1.json",
+  "prior_result_sha256": "9987e002ece8e906fe4ad85750c8f08f622dee8253011587b78dfe996b9df914",
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 3145728,
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/effective_Mean_policy_audit_v1",
+  "scope": "All original3 Mean controls/all3 full policy orders/full clock/prefixes plus original OLD/cache/ID/future probes. External after-sealed observer only; original actor trace and every order outcome must match prior registered full pilot. Separate effective-support and original dirty-history results. No logits/weights or GT feedback to policy.",
+  "M_EMA_full_development_semantic_truth_statistical_independence_or_Goal_acceptance": false,
+  "new_training_encoder_pixels_protected_labels_or_private_trace_upload": false
+}
