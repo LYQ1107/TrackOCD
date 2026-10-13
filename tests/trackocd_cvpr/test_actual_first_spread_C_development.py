@@ -66,6 +66,23 @@ def test_public_pair_summary_is_exact_original_aggregate_not_trace_parity_or_ful
             assert all(v == 0 for v in r['orders'][order]['all_available_repair_minus_baseline'].values())
 
 
+def test_actual_baseline1028_full_normal_same_public_Known_only_outcomes_not_complete_matrix():
+    paths = trial_sources('baseline',1028)
+    hashes = ('d92a785856b3c4877f269854cfc88745609ab55abab6869253a7e75fdbfd67f6',
+              '8b574f7887b66394d1dc4286e5a65d72380b66f7a1757af043e116a09d199fc9',
+              '39a9adba6b9d0150bc24197b449dfd2ecaf3c3a5b438376ee697d061cd5f787a')
+    assert all(sha256_file(ROOT/p) == h for p,h in zip(paths,hashes))
+    r = verified_trial(ROOT,'baseline',1028)
+    previous = verified_trial(ROOT,'baseline',1027)
+    assert r['evaluated_model_parameter_sha256'] != previous['evaluated_model_parameter_sha256']
+    assert r['orders'] == previous['orders']
+    assert r['actual_future_probe'] == {'future_observations_mutated':39,'verified_same_prior_events':True}
+    table = {('baseline',1027):previous, ('baseline',1028):r,
+             ('Known_set_rejection',1027):verified_trial(ROOT,'Known_set_rejection',1027)}
+    with pytest.raises(ValueError,match='ALL6'):
+        aggregate_matrix(table)
+
+
 @pytest.mark.parametrize('change',['no_probe','vacuous_future','failed_terminal','selected_model'])
 def test_public_partial_or_relaxed_completion_refused_before_private_inputs(tmp_path,monkeypatch,change):
     import src.trackocd_cvpr.spread_C_development_complete_matrix as module

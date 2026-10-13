@@ -1428,3 +1428,28 @@ calibrated controls/fullM/joint/strong lawful Pred/dense/independent final.
 This is scientific negative evidence, not a reason to finish or pause Goal A/B/C.
 Final bounded combined CVPR/v2 suite1026pass56.22s, ownedexit0/guardNONE,
 inclusive57.7803s/peak861908992B/zero GPU-hours. Next fixed trial is baseline1028.
+
+## Actual full baseline1028: further observed Known-only bias
+
+The second fresh baseline endpoint completes normally:260.5214s,
+peak964759552B, one CPU/OS thread, zero helper/CUDA/optimizer/GPU-hours.
+All72videos/472tracks/8753observations/2562frames/116empty per3orders and full
+IDrename/reverse+39-observation future mutation probes pass. Current original
+process was monitored, never restarted from a progress file or polling delay.
+
+The three public aggregate rows exactly match baseline1027 despite different
+model hashes:all8753observations/order KNOWN; Known micro93.3775%/macro95.9433%,
+coverage100%,119pseudo absorbed asKnown, anonymous queries0 and certified
+crossvideo reuse lower bounds0. This supports observed baseline bias in two
+seeds, not private trace equivalence, fullNovel semantic truth or controlled
+latency. It does not substitute the still-unmeasured repair1028/1029pair.
+
+Result SHA256:
+`8b574f7887b66394d1dc4286e5a65d72380b66f7a1757af043e116a09d199fc9`.
+Normal terminal:
+`39a9adba6b9d0150bc24197b449dfd2ecaf3c3a5b438376ee697d061cd5f787a`.
+Three of6trials complete; partial full-matrix summary refused. Twenty-one
+targeted checks pass2.56s. No winner or parameter/seed search; next is the
+matching repair1028 under the frozen protocol. Goal A/B/C remain unachieved.
+Final bounded combined CVPR/v2 suite1027pass56.18s, ownedexit0/guardNONE,
+inclusive57.6787s/peak837435392B/zero GPU-hours. Private assets are not published.

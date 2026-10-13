@@ -5975,3 +5975,35 @@ no private GT/cache/weights opened for this check):
   57.780282021s inclusive/peak861908992B/zero GPU-hours. Publication includes
   only public original triplet/startup/summary/tests/logs, never private stdout,
   weights, GT or raw histories. Next fixed explicit trial is baseline1028.
+
+### Actual full baseline1028: second fresh baseline remains Known-only
+
+- Revalidated current boot/startticks/command-bound supervisor and actual
+  running owned child; previous all3main-order progress was NOT treated as
+  completion. Original task now normal exit0/guardNONE/complete result at
+  preregistrationa1292a6f7ceaca7cef1752a0db744dd5a23b61a9. No restart,
+  source/guard/denominator change or additional optimizer work.
+- Whole72dev videos/472tracks/8753observations/2562frames/116empty in EACH
+  of3fixed orders; complete first-order IDrename/reverse replay equal,
+ 39actual future observations changed and nonempty prior events equal.
+  Wall260.521360144s/peak964759552B/one CPU+OS thread/zero helper/CUDA/
+  optimizer/GPU-hours. All6private endpoint gates preceded scoped dev inputs.
+- All three PUBLIC aggregate rows match baseline1027 despite different trained
+  parameter hashes:8753KNOWN observations/order, Known micro282/302/macro
+  0.9594329501915708, coverage1.0,119declaredpseudo absorbed asKnown,
+  anonymous query count0/certified crossvideo reuse lower bounds0. No logits/
+  fullprivate trace equality claim, pooled independent samples or latency win.
+- Exact result8b574f7887b66394d1dc4286e5a65d72380b66f7a1757af043e116a09d199fc9;
+  launchd92a785856b3c4877f269854cfc88745609ab55abab6869253a7e75fdbfd67f6;
+  normal terminal39a9adba6b9d0150bc24197b449dfd2ecaf3c3a5b438376ee697d061cd5f787a.
+  Original startup retained as non-completion evidence; stdout/private GT/
+  weights/prediction histories remain local. Three of6full-dev endpoint trials
+  complete; full-matrix aggregation still REFUSED. Repair1028/remaining1029
+  pair not inferred, no new coefficient/seed/role selection. Twenty-one targeted
+  actual/protocol tests pass2.56s. No owned research worker remains live after
+  normal terminal; next fixed explicit trial is repair1028. Goal active/open;
+  calibrated controls/fullM/joint/strong Pred/dense/lockedfinal still required.
+- Final bounded combined CVPR/v2 suite1027pass56.18s, ownedwait0/guardNONE/
+  57.678748540s inclusive/peak837435392B/zero GPU-hours. Only original public
+  result/launch/normal terminal/startup plus tests/docs staged; no private log,
+  data, weights or histories. Source publication precedes explicit repair1028.

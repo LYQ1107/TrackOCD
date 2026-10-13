@@ -30,9 +30,11 @@
   "paired_C_spread_formal_actual_complete_seed_pairs": 3,
   "paired_C_spread_formal_actual_complete_models": 6,
   "paired_C_spread_formal_fit_receipt": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_all6_fit_receipt_v1.json",
-  "paired_C_spread_formal_development": "PARTIAL2_OF6_MATRIX_ONLY: baseline+repair1027 both normal full clock/all3orders/ID-reverse-future probes; EVERY public aggregate row equal, ALL observations KNOWN,119pseudo queries absorbed,certified reuse0. Intervention trained but no aggregate gain in this seed; remaining4trials required, no full6 or calibration/Goal acceptance",
+  "paired_C_spread_formal_development": "PARTIAL3_OF6_MATRIX_ONLY: baseline1027+repair1027+baseline1028 normal full clock/all3orders/ID-reverse-future probes; same public aggregate rows, ALL observations KNOWN,119pseudo queries absorbed,certified reuse0. Repair1028+remaining1029pair required; no full6 or calibration/Goal acceptance",
   "paired_C_spread_formal_development_protocol": "configs/trackocd_cvpr/C_spread_known_full_development_v1.json",
-  "paired_C_spread_full_dev_completed_arm_seed_trials": 2,
+  "paired_C_spread_full_dev_completed_arm_seed_trials": 3,
+  "paired_C_spread_full_dev_baseline1028_result": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1028/result.json",
+  "paired_C_spread_full_dev_baseline1028_result_sha256": "8b574f7887b66394d1dc4286e5a65d72380b66f7a1757af043e116a09d199fc9",
   "paired_C_spread_full_dev_seed1027_pair_summary": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_dev_pair_s1027_public_summary_v1.json",
   "paired_C_spread_full_dev_first_result": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1027/result.json",
   "paired_C_spread_full_dev_first_result_sha256": "e8e0782ea78c4bb4e124932cf58719f279862e7cb8efeb13fbe9dfad51450314",
@@ -47,5 +49,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Register and run full causal Train-development for all6 new fixed200 paired C endpoints with all three orders/full ID-reverse-future probes and no model selection. Qualify full trained-M runtime/probes without silent guard relaxation; develop fair calibrated Raw/C and evidence-supported joint R/C/M. Preserve all baselines and failed attempts; lawful strong anonymous Pred/dense fullphysical transfer and locked independent-final remain required. No Val/Test selection, fabricated Novel supervision or arbitrary geometry-weight sweep."
+  "next": "Continue frozen full causal Train-development for repair1028 and baseline+repair1029, retaining all3orders/full ID-reverse-future probes and no model selection. Qualify full trained-M runtime/probes without silent guard relaxation; develop fair calibrated Raw/C and evidence-supported joint R/C/M. Preserve all baselines and failed attempts; lawful strong anonymous Pred/dense fullphysical transfer and locked independent-final remain required. No Val/Test selection, fabricated Novel supervision or arbitrary geometry-weight sweep."
 }
