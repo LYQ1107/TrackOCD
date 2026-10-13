@@ -5862,3 +5862,44 @@ no private GT/cache/weights opened for this check):
   57.335140461s inclusive/peak860536832B/zero GPU-hours; no live owned fit
   is inferred from stale progress. Public results/launch/terminals and derived
   all6 receipt only are staged; all24weights/private calendars stay local.
+
+### Registered full causal Train-dev for every paired C Fixed200 endpoint
+
+- Previous real formal6fit stage was pushed/fetched/exactverified53ccc120...
+  and is genuine completed work. Six fixed endpoints ready; original Goal
+  remains unachieved. Fresh proc scan found no live owned fit/M/evaluator;
+  free151385886720B, no cleanup/install/foreign process intervention.
+- New source/config/launcher only; all original qualified training/core rollout
+  and external causal audit bytes unchanged. ALL6fit receipts/source closure
+  validated PUBLIC-only before source/live/authority gates. AFTER those gates,
+  all6local step200 endpoint hashes required BEFORE any dev projection/cache;
+  deserialize exactly one matching arm/seed200model, strict frozen/no optimizer.
+- Full72dev videos/472physical tracks/8753observations/2562metadata frames/
+  116empty,302Known/119declaredpseudo/2outside/49truth-unavailable preserved.
+  Same Top8 numerical interface, complete independent257fit-only/1158Known
+  support priors; no selected R/C weights, unknown BG/Novel inference or role
+  expansion. ALL3orders1027/28/29 and fixed1/2/4/8/16/allavailable sealed
+  prefixes, then FULL first-order IDrename/reversed delivery replay and FULL
+  in-memory future visual mutation replay. Actual changed observations and
+  nonempty earlier events required; unavailable probes do NOT pass.
+- Reuse exact C_development_rollout/causal_category_audit kernels, no score/
+  label/trace/history repair, future inputs to model, shortened clock or
+  removed probes. Same3GiB/3000s/output16MiB/25%RAM+plannedRSS/free10GiB/
+  incremental15GiB storage guards, one CPU compute worker plus at most one
+  identified bounded native driver helper, hidden GPUs. Parent and worker
+  verify fresh exact live Git/source; network denied after registration.
+- One explicit arm/seed per persistent owned supervisor, bootID+startticks+
+  commandSHA identity and private stdout log. No auto next trial/retry, PID
+  reuse or process-wide control. Startup receipt is NOT normal completion.
+  Public counts only; no private trace/labels/features/weights upload. Fixed
+  uncalibrated Raw comparison is not a calibrated control or fair latency proof.
+  Final/Val/Test/newnonKnown labels/Pixels/encoder and pilot/old checkpoints
+  prohibited; development is not final acceptance, selection or fullCT/Pred.
+- Twenty-three targeted regressions pass2.48s: all6 source qualification,
+  refused subset/order/step/checkpoint/selection/probe relaxation, actual frozen
+  synthetic three-order/ID/future parity, correct explicit supervisor forwarding
+  and refusal to mark missing result complete. Real dev metrics unmeasured at
+  this prospective stage; execution follows source publication/exact verification.
+- Final combined bounded CVPR/v2 suite1018pass53.62s, ownedwait0/guardNONE/
+  55.252085677s inclusive/peak862539776B/zero GPU-hours. All115 prerequisite
+  paths exist; no actual dev input/weights were read during source registration.

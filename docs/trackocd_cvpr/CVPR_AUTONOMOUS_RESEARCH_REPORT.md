@@ -1339,3 +1339,30 @@ dense transfer and locked independent final remain unfinished. Goal active;
 no final scientific winner or Goal A/B/C accepted from these training outputs.
 Final bounded combined CVPR/v2 suite1006tests pass55.78s, ownedexit0/guardNONE,
 inclusive57.3351s/peak860536832B/zero GPU-hours.
+
+## Prospective full development for all six paired Fixed200 C endpoints
+
+A new explicit read-only protocol requires the whole actual six-fit cohort,
+live exact registration/authority/source checks and all6local endpoint byte
+fingerprints BEFORE any dev input. One matching arm/seed200 frozen model runs
+ALL72dev videos/472physical tracks/8753observations/2562frames/116empty, the
+three fixed orders1027/28/29, all observed-prefix metrics, a complete first-order
+IDrename+reverse replay and a complete future-mutated replay. Earlier nonempty
+events must match under actual changed future observations; absent probes fail.
+Existing causal rollout/external audit/training source bytes are not changed.
+No training, dev-selected checkpoint, new nonKnown semantic label, shortened
+clock, wrong-history deletion, forbidden role or final/Val/Test input is allowed.
+
+Same original3GiB/3000s/output16MiB/25%RAM/storage guards and one CPU compute
+worker, at most one identified bounded native driver helper. The persistent
+launcher only starts its own supervisor, records boot/startticks/command identity
+and private stdout, and never treats startup as completion or auto-runs another
+trial. Public aggregate/source receipts only, private GT/weights/traces remain
+local. Uncalibrated fixed Raw and its historical results are not calibration
+or hardware/coverage/latency matching. Twenty-three targeted tests pass2.48s;
+actual full-dev outcomes remain unmeasured until source publication/execution.
+Goal A/B/C, fullM, calibrated controls, joint R/C/M, lawful strong Pred/dense
+transfer and locked independent-final remain OPEN.
+Final bounded combined CVPR/v2 suite1018pass53.62s, ownedexit0/no guard,
+inclusive55.2521s/peak862539776B/zero GPU-hours. Source closure has115paths;
+this regression evidence is not a real dev outcome or permission bypass.
