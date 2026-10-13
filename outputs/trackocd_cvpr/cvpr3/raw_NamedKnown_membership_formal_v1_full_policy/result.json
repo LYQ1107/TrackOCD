@@ -1,0 +1,230 @@
+{
+  "all4formal_fits_dev_or_Goal_accepted": false,
+  "calendar_seed": null,
+  "control": "full_policy",
+  "dev_final_Val_Test_or_new_nonKnown_inputs_used": false,
+  "full_policy_collection": {
+    "Known_groups": 791,
+    "canonical_groups": 1268,
+    "class_macro_conditional_task_not_deployment_prior": true,
+    "empty_frames": 1,
+    "masked_groups": 271,
+    "metadata_frames": 374,
+    "physical_observations": 1268,
+    "policy_pseudo_groups": 206,
+    "private_scalar_target_weight_table_sha256": "707402e8666c74b0c57737296ea297124d7f0fbab73d72b68208aeed6a05d739",
+    "supervised_classes": 5,
+    "unknown_as_negative_BG_Novel_or_individual_anonymous_target": false
+  },
+  "initialization_sha256": "3ca6d4d867ba1958e6c100b771d1d5bbd432feda40c5085d761818e0ac86582e",
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "7f047c0d16dadd2ab1e22088840923dad942d13a"
+  },
+  "model_parameter_sha256": "0ef765650ef33c4efd77f8506c2575a9550760b52cf213c197e41a9679c1fcd3",
+  "offline_fit_prior_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "old_or_pilot_weight_warmstart": false,
+  "policy_scope": {
+    "GT_localization_oracle_control_not_qualified_Pred": true,
+    "development_final_or_other_video_payload_bodies_opened": false,
+    "development_final_or_other_video_semantic_values_decoded": false,
+    "empty_GT_frames": 1,
+    "existing_Known_target_counts": {
+      "Known": 34,
+      "policy_pseudo": 10
+    },
+    "external_loss_only_not_observation_or_model_features": true,
+    "masked_loss_tracks": 10,
+    "masked_tracks_dropped_or_declared_background": false,
+    "metadata_frames": 374,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 1268,
+    "physical_label_strata": {
+      "Known": 34,
+      "no_retained_semantic_truth": 10,
+      "policy_pseudo": 10
+    },
+    "physical_tracks": 54,
+    "videos": 10
+  },
+  "private_checkpoints": [
+    {
+      "AdamW_and_RNG_reopened": false,
+      "bytes": 7256,
+      "control": "full_policy",
+      "reopen_exact": true,
+      "sha256": "4dd7e5dae6a1e56bea5311fc4e71ae55869bce8418f100fdf3c71dd730e4584f",
+      "solver_internal_resume_state_claimed": false,
+      "step": 12
+    }
+  ],
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 952639488,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 12.917770060994371
+  },
+  "resubstitution_diagnostics_on_same_training_samples": {
+    "fixed_formal_endpoint": {
+      "Known_groups": 791,
+      "bins": [
+        {
+          "bin_index": 0,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 1,
+          "class_macro_mass": 0.09994937161236525,
+          "lawful_group_count": 54
+        },
+        {
+          "bin_index": 2,
+          "class_macro_mass": 0.08125856215379117,
+          "lawful_group_count": 105
+        },
+        {
+          "bin_index": 3,
+          "class_macro_mass": 0.07554351063196141,
+          "lawful_group_count": 145
+        },
+        {
+          "bin_index": 4,
+          "class_macro_mass": 0.0917002799452022,
+          "lawful_group_count": 127
+        },
+        {
+          "bin_index": 5,
+          "class_macro_mass": 0.054083030555721015,
+          "lawful_group_count": 139
+        },
+        {
+          "bin_index": 6,
+          "class_macro_mass": 0.0631728398945002,
+          "lawful_group_count": 89
+        },
+        {
+          "bin_index": 7,
+          "class_macro_mass": 0.2834105530574126,
+          "lawful_group_count": 192
+        },
+        {
+          "bin_index": 8,
+          "class_macro_mass": 0.25088185214904624,
+          "lawful_group_count": 146
+        },
+        {
+          "bin_index": 9,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        }
+      ],
+      "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+      "class_macro_Brier": 0.18225857262628137,
+      "class_macro_NLL": 0.5483225408629959,
+      "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+      "fixed_10_bin_class_macro_ECE": 0.07828224503589289,
+      "fixed_10_bin_micro_ECE": 0.27047557638733194,
+      "lawful_groups": 997,
+      "micro_Brier": 0.23580444765391587,
+      "micro_NLL": 0.6645914172522844,
+      "policy_pseudo_groups": 206
+    },
+    "initial": {
+      "Known_groups": 791,
+      "bins": [
+        {
+          "bin_index": 0,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 1,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 2,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 3,
+          "class_macro_mass": 0.2065608434093752,
+          "lawful_group_count": 215
+        },
+        {
+          "bin_index": 4,
+          "class_macro_mass": 0.7005442795945178,
+          "lawful_group_count": 734
+        },
+        {
+          "bin_index": 5,
+          "class_macro_mass": 0.092894876996107,
+          "lawful_group_count": 48
+        },
+        {
+          "bin_index": 6,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 7,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 8,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        },
+        {
+          "bin_index": 9,
+          "class_macro_mass": 0.0,
+          "lawful_group_count": 0
+        }
+      ],
+      "calibration_quality_proved_or_model_selected_from_diagnostics": false,
+      "class_macro_Brier": 0.24142050138385335,
+      "class_macro_NLL": 0.6753925356483739,
+      "declared_role_conditioning_and_class_weighting_not_full_deployment_prior": true,
+      "fixed_10_bin_class_macro_ECE": 0.22431512208383195,
+      "fixed_10_bin_micro_ECE": 0.3540728123848559,
+      "lawful_groups": 997,
+      "micro_Brier": 0.2839773286316763,
+      "micro_NLL": 0.7617176362846163,
+      "policy_pseudo_groups": 206
+    }
+  },
+  "solver_converged": true,
+  "solver_resume_state_transfer_calibration_or_control_winner_claimed": false,
+  "status": "COMPLETED_FRESH_FORMAL_RAW_MEMBERSHIP_CONTROL_NOT_DEV_CALIBRATION_OR_GOAL",
+  "summary": {
+    "calibration_deployment_posterior_foreground_or_Goal_accepted": false,
+    "final_regularized_class_macro_NLL": 0.5494494793015353,
+    "function_evaluations": 13,
+    "initial_gradient_norm": 0.182367772120624,
+    "iterations": 12,
+    "optimizer": "L-BFGS-B",
+    "parameter_sha256": "0ef765650ef33c4efd77f8506c2575a9550760b52cf213c197e41a9679c1fcd3",
+    "projected_gradient_infinity_norm": 1.2194726297016546e-10,
+    "solver_status": 0,
+    "solver_success": true,
+    "trainable_parameters": 2,
+    "training_seeds_or_calendar_matched_to_C": false
+  }
+}

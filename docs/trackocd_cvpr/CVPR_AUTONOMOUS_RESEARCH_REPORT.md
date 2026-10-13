@@ -1702,3 +1702,35 @@ calibration/coverage/latency/fullM/joint/strongPred/dense/lockedfinal unachieved
 Final bounded combined CVPR/v2 suite1061pass67.42s, ownedexit0/guardNONE,
 inclusive69.4354s/peak838201344B/zero GPU-hours.149source paths present;
 real formal fitting follows publication/exact remote proof, not source-only claims.
+
+## ALL4 actual fresh formal membership fits — not dev calibration
+
+Registered7f047c0d... source was actually verified before four fresh fits.
+Three calendar controls1027/28/29 completed200updates/four full policy clocks,
+matching each original paired C actual update calendar. ONE fullpolicy solver
+normally converged12iterations/13calls, status0. Its deterministic endpoint
+matches the independent pilot without reading/warmstarting pilot weights.
+All four normal owned exits,378.6944s total/952639488B peak/zero trainingGPUh.
+All13 private snapshots reopened exactly,101864B, not uploaded. All997 lawful
+groups and271masked groups/1268observations/374frames/1empty retained.
+
+Calendar classmacro resubstitution NLL is0.643461/0.642979/0.643664 and
+weightedECE0.179771/0.181567/0.179968; fullpolicy NLL0.548323/ECE0.078282.
+These are training-only conditional diagnostics, not independent reliability,
+foreground/Existing probabilities or a control winner. No dev/final/Val/Test
+or new semantic targets used. Aggregate SHA256
+`1a7033eb70b199ca96d5c52ba1cb3ebe1475e7da01012a6380e3a894e986e7b7`.
+Public-only qualification verifies all four original receipts/source/actual
+calendars before optional private file checks; it does not grant new authority.
+
+Existing17899 Git transport is live and remote source7f047c0d... confirmed;
+no external process/proxy restart or shared configuration changes. Next freeze
+and register complete Train-dev diagnostics/causal rollout/probes for ALL4,
+retain both controls without model/seed/threshold selection. Original Goal
+active/unachieved; calibration transfer, coverage/latency, fullM/joint, lawful
+strongPred/dense and locked final still required.
+Final fresh bounded CVPR/v2 suite1066pass62.62s, ownedexit0/guardNONE,
+inclusive64.2752s/peak837754880B/zero trainingGPUhours. Initial mutation-test
+fixture missing a public calendar prerequisite was corrected without changing
+any numerical source or actual fit; its original1065pass/1FAIL is recorded.
+Explicit18 public files only, no private checkpoints/calendars/scalar tables.

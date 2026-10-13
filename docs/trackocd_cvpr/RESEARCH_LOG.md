@@ -6307,4 +6307,60 @@ no private GT/cache/weights opened for this check):
 - Final bounded combined CVPR/v2 suite1061pass67.42s, ownedwait0/guardNONE/
   69.435375687s inclusive/peak838201344B/zero GPU-hours. Source/input closure
  149paths present; no actual formal input/fit at registration. Publish before
-  any new formal invocation; pilot/code/private histories remain unchanged.
+ any new formal invocation; pilot/code/private histories remain unchanged.
+
+### Actual ALL4 fresh formal Raw-membership fits (2026-10-14)
+
+- Actual source registration7f047c0d16dadd2ab1e22088840923dad942d13a was
+  pushed/fetched/exact-verified before all four independent explicit fits.
+  All149 numerical/source/input paths match; no qualified pilot bytes changed.
+  Three calendar seeds1027/1028/1029 each completed200 finite-gradient updates
+  over four FULL policy clocks, with actual frame calendar hashes matching the
+  corresponding original paired C fits. ONE fullpolicy deterministic fresh
+  solver completed12iterations/13functioncalls, status0/successTRUE. It is not
+  three training seeds. Matching pilot parameters reflect the same objective,
+  data and fresh initialization; no pilot checkpoint was read or warmstarted.
+- All four own workers normal exit0, no guard stop, one CPU compute worker,
+  at most one identified native helper, no CUDA. Inclusive total owned wall
+  378.6944145259986s, max sampled RSS952639488B, trainingGPUhours0. All13
+  private checkpoints reopened exactly,101864B total. Calendar snapshots retain
+  model/AdamW/RNG; fullpolicy retains model/termination record, not resumable
+  internal L-BFGS history. All private weights/calendars/scalars remain local.
+- Every fit uses the same lawful policy collection:791Known/206policy-pseudo
+  groups,271masked,1268physical observations,374metadata frames/1empty,5
+  observed supervised classes. Unknown/conflicting groups are not background,
+  Novel negatives or individual anonymous targets. No dev/final/Val/Test,
+  protected original pixels or new semantic vocabulary used by fitting.
+- SAME-training-sample classmacro NLL/Brier/ECE at calendar1027:
+  0.6434605942587532/0.22532740477135527/0.17977116471163193;
+  calendar1028:0.6429793562288857/0.22508772979303193/0.18156683082923938;
+  calendar1029:0.6436642109804316/0.22542783178842632/0.17996757738239846;
+  fullpolicy:0.5483225408629959/0.18225857262628137/0.07828224503589289.
+  These are resubstitution diagnostics, NOT independent calibration quality,
+  deployment prior, foreground/Existing probability or a selected winner.
+- New public-only ALL4 qualifier checks complete original launch/result/normal
+  terminal, source closure, real matched calendars, convergence and snapshots.
+  Two-pass rejection completes ALL public/source gates before any optional
+  private snapshot stat/hash. Public aggregate12054B SHA256
+  1a7033eb70b199ca96d5c52ba1cb3ebe1475e7da01012a6380e3a894e986e7b7.
+  Only public triplets/aggregate/source/tests/docs are eligible for publication.
+- Fresh Git ls-remote through existing loopback17899 succeeds and confirms
+  registration7f047c0d... . No shared proxy restart, global Git configuration,
+  credentials exposure, foreign process interference, cleanup or role expansion.
+  Original Goal is active/unachieved. Next separately register ALL4 complete
+  independent Train-dev conditional reliability and full causal/probe evaluation;
+  no control/seed/threshold/checkpoint selection. Fair coverage/latency/fullM/
+  joint R/C/M/lawful strongPred/dense/locked-final and Goal A/B/C remain OPEN.
+- First fresh full suite:1065pass/1FAIL62.43s, ownedexit1/guardNONE,
+  inclusive63.888845204s/peak863793152B. New late-solver mutation fixture
+  omitted earlier public paired-C calendar receipts, failing with missing file
+  before its intended rejection assertion. Added only those public prerequisites
+  to the fixture, explicit expected rejection messages and a private .pt stat
+  tripwire. No numerical training source/output/private checkpoint changed.
+  All16 actual/formal/pilot targeted regressions then pass5.82s. Preserve this
+  test failure honestly; it is neither a failed actual fit nor scientific gain.
+- Final fresh bounded combined CVPR/v2 suite1066pass62.62s, ownedexit0/
+  guardNONE/inclusive64.275196248s/peak837754880B/zero trainingGPUhours.
+  Explicit18-file public staging audit excludes .pt/private calendar/scalars/
+  original GT/pixels/semantic lists and model/optimizer/RNG state. Derived
+  aggregate exactly matches public cohort verifier after documentation changes.
