@@ -972,3 +972,19 @@ win. Unknown/dirty histories retained; no activepurity/selfexcluded/officialCT/
 fulltruth/Pred/Goal claim. Full749tests pass. Whole3-control support-exclusion
 policy experiment is still in flight, two controls complete only. Next actual
 full M case retains original fixed cohort/scope/probes/limits; main Goal open.
+
+Actual complete policy support-exclusion experiment now finishes normally,
+public9987e002..., total1735.22s/RSS950919168B/zero optimizer/GPUh. All3 zero-fit
+controls/all3 orders/full54/1268/374/1/all6 prefixes, full OLD/cache comparisons,
+actual ID/reverse and141-observation future prior-event/version/ledger/view
+invariance pass. Known counts0→2 or3 of34; conservative pseudo history reuse
+0 except1/10 for current-video exclusion in order1028. Coverage1.0 but no stable
+novel discovery/full-dev/active-purity or latency-matched improvement claim.
+
+New external source-only selected-contributor Mean audit explicitly separates
+filtered numerical support from FULL dirty ancestry. Actual whole Raw/numeric
+receipt must match before GT lookup; unknown unscorable/Known contamination/
+mixed classes retained. Synthetic transfer counterexample: other-video ancestry
+can exist while all actual current contributors are same-video. No relabeling
+old metrics as active purity, old history repair, EMA/M shortcut or fulltruth
+claim. Full761tests pass. Trained M full replay still live/pending; Goal open.

@@ -4514,3 +4514,65 @@ no private GT/cache/weights opened for this check):
   unchanged scope/probes/3000s guards and no execution-time guarantee. Goal
   stays active/unachieved; remaining independent-support/strong Pred/fresh
   calibrated baselines/joint/final are not bypassed by completed baselines.
+
+### Actual full-policy support-exclusion controls complete; limited effect only
+
+- Actual experiment from50132e64e208119962383c7b0744f4443b8dff09 completes
+  normally, resultSHA
+  `9987e002ece8e906fe4ad85750c8f08f622dee8253011587b78dfe996b9df914`.
+  All3 zero-fit controls/all3 orders/full10 policy/54 physical/1268 observations/
+  374 frames/1 empty/all6 prefixes. Actual complete OLD/cache event/score/route/
+  chosen-version/full numeric-ledger/query-view/outcome equality per control;
+  Mean standard trace matches original7461015c... . Full actual ID/reverse and
+ 141-observation first-video future mutation preserve earlier events/versions/
+  ledger/filtered views. Nonvacuous, NOT exhaustive all-video causal proof.
+- Actualownedwait0/guardNone/total1735.22s/worker1727.52s/peak950919168B/noCUDA/
+  zero optimizer or trainingGPUh, original guards. Both old Mean failures and
+  all wrong history/parent/tombstone records remain. No private rows/GT/weights
+  upload, new encoder/pixels/protected labels or foreign process intervention.
+- All-available outcomes; order vectors are1027/1028/1029, not training seeds:
+
+| control | correct Known /34 | conservative cross-video pseudo history reuse /10 | unscorable reuse queries |
+| --- | --- | --- | --- |
+| Mean | 0 / 0 / 0 | 0 / 0 / 0 | 11 / 11 / 11 |
+| exclude query alias scope | 2 / 2 / 2 | 0 / 0 / 0 | 19 / 20 / 27 |
+| exclude current video | 3 / 3 / 3 | 0 / 1 / 0 | 3 / 5 / 5 |
+
+- All physical commit coverage1.0. Query exclusion preserves all10 pseudo
+  anonymous outputs; video exclusion absorbs1 pseudo asKnown in every order.
+  Query mode removes support in1214/1268 query views, zero retained groups4
+  per order. Video mode excludes1231 views, zero retained145/123/144. Counts
+  are repeated prefix opportunities, NOT independent examples or semantic
+  purity. Known small-sample changes and one-order history reuse are not stable
+  novel discovery, full-development, active-purity or latency-matched gain.
+
+### Separate selected effective Mean truth from dirty historical ancestry
+
+- The above real experiment's conservative chosen versions refer to FULL dirty
+  parent history, NOT filtered numerical prototypes. They cannot certify current
+  effective-support purity or semantic independence. Added NEW external source-
+  only audit prerequisite, not retroactively new metrics for that experiment.
+- Actual pre-frame bank, query aliases and actual filtered Raw/numeric receipt
+  must match completely before any semantic lookup. Chosen prototype nonempty/
+  numerically valid; exact contributors reconstructed with whole-group exclusion
+  and complete past epoch correspondence. Unknown/missing correspondence never
+  ignored asBG. Known contributor verifies bad anonymous support; multiple
+  declared classes verify mixing; any remaining unknown prevents certification.
+  Labels/keys are PRIVATE external correspondence, no scorer or memory API.
+- Tests show prospective effective support can exclude a Known voter while its
+  full history remains dirty; no past event/ancestor repair. Also a concrete
+  transfer example has an OTHER-VIDEO ancestor and positive strict-history reuse
+  but current selected prototype contributors ONLY from the query's own video.
+  The new selected-contributor cross-video bound correctly staysFALSE. Thus
+  history-based cross-video status must not be renamed actual current support.
+- Supported only excluded Mean, NOT state-EMA latent or trained M quarantine/
+  weights. Source/synthetic checks do not establish measured active purity,
+  semantic/statistical independence, full semantic truth, officialCT or a method
+  gain. Future integration must cover complete clock/physical/query denominators,
+  every actual receipt/probe and report original dirty history separately.
+- Full761tests pass in44.12s, including actual full pilot and new numeric-before-
+  GT/unknown/Known/mixing/epoch/time/ID/provenance/ancestor-counterexample tests.
+  Registered trained M evaluation remains actually live, firstorder1027 done,
+  no full result at this record. Original model/source/data/3000s guards unchanged;
+  no partial metrics promoted. Whole Goal active/unachieved, full9M/strong Pred/
+  fresh calibrated baselines/joint/independent final remain required.
