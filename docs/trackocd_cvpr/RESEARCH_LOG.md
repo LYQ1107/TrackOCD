@@ -4353,3 +4353,79 @@ no private GT/cache/weights opened for this check):
   birth/clock/missing-frame faults and AST/source/scope boundary tests. Synthetic
   fixtures are not real ALL9 evidence. Register/push/fetch before actual audit;
   new training/repair, collapse cause and whole Goal remain unaccepted.
+
+### Actual ALL9 C historical audit matches; NEW supervision was present
+
+- Actual audit fromf35c77926e55dc79698808e7c1a870047d23a55b completes normally:
+  resultSHA `53522917edfe26ec097a511bd88ab28d65db751d034be2b0f9726a9c2ca6b9a3`,
+  actualownedwait0/guardNone/total413.63s/worker404.76s/peak948690944B/noCUDA/
+  zero NEW optimizer or trainingGPUh. All9 original histories/all4 complete
+  policy episodes/every200-step exposure calendar/retained anonymous histories
+  match, not a selected good trial or a refit. No private row/weights/GT upload.
+- Positive plans on ACTUAL matched update frames (canonical groups, not
+  gradient magnitudes, independent samples or frozen-tail counts):
+
+| C variant/seed | Known:KNOWN | policy-pseudo:NEW | policy-pseudo:EXISTING |
+| --- | ---: | ---: | ---: |
+| Top1/1027 | 359 | 110 | 0 |
+| Top1/1028 | 274 | 88 | 12 |
+| Top1/1029 | 210 | 163 | 22 |
+| Top8/1027 | 538 | 82 | 24 |
+| Top8/1028 | 381 | 56 | 41 |
+| Top8/1029 | 266 | 111 | 67 |
+| pooled/1027 | 538 | 83 | 24 |
+| pooled/1028 | 381 | 56 | 41 |
+| pooled/1029 | 266 | 103 | 80 |
+
+- Every trial had56–163 positive NEW plans on its actual update frames. The
+  hypothesis "NEW was never supervised" is contradicted, not a basis for a
+  repair claim. Positive WAIT plans were zero at matched updates; this is not
+  proof that WAIT was never predicted or that absence caused collapse. Existing
+  positives may include self continuation; no independent-reuse gain follows.
+- Original logs omit logits/numeric candidates. Reconstruction matches all
+  recorded opportunity/calendar/history checks with original Raw mechanisms,
+  not recovered per-group gradients or an exact original numeric-row trace.
+  Relative Known/pseudo exposures and endogenous calendars differ across controls;
+  raw group counts are not loss weights (original per-class macro averaging).
+  Known-only/all-anonymous dev failures remain genuine; next repair must address
+  calibration/generalization/abstention or independent support by actual tests,
+  not invent an absent NEW-supervision defect or choose a winning seed.
+
+### First complete full Mean development passes every required probe
+
+- Actual full Mean frome278fae5c11747e5b1e4914e7007d30be036a139 completes:
+  resultSHA `56a83c9126e674a4f73ff7851fbdd28dec238f5327f2ca07719309904aac48c1`,
+  profileSHA `30987d6b3306773c2bbdad7ad5d1d19a2456db90ecfb43905887175cd0f34fc1`.
+  Actualownedwait0/guardNone/full result+profile, total2057.56s/worker2043.26s/
+  peak962101248B/one OS thread/noCUDA/zero optimizer or trainingGPUh. Both old
+  wall failures remain immutable. This is the first actually complete Mean
+  evaluation, not old partial metrics reused or a raised3000s guard.
+- Each3 order stream full72 dev/472 physical/8753 observations/2562 frames/
+  116 empty/all6 prefixes. Actual full ID bijection/reverse delivery exactly
+  preserves events/chosen versions/numeric ledger/audit. Actual39-observation
+  first-video future suffix mutation leaves earlier events/chosen versions/
+  ledger identical. This is nonvacuous but NOT exhaustive all-video causality.
+- All-available chosen PRE-FRAME version outcomes:
+
+| video order | correct Known /302 | certified cross-video pseudo reuse /119 | latest states with Known history |
+| --- | ---: | ---: | ---: |
+| 1027 | 12 | 13 | 158 |
+| 1028 | 6 | 8 | 152 |
+| 1029 | 4 | 13 | 146 |
+
+- Order means Knownmicro.0242825607064 /certified crossvideomicro lowerbound
+  .0952380952381; same primary coarse values as earlier Raw controls, NOT proof
+  of entire numeric/trace equality or a method improvement. Zero fit parameters/
+  training_seedNULL; three video orders are not independent training seeds.
+  All physical commit coverage1.0 does NOT mean correct category discovery.
+  Unknown-history queries201/151/194 remain unscorable, not BG or pruned.
+- Frame/commit/version/tombstone histories stay complete; derived Raw33494408B
+  +fingerprint33525324B <=64MiB, hits3155096/misses37394. Normal completion within
+  the guard is real execution progress, not an isolated speedup over failed runs.
+  Strict ancestor-history reuse is NOT current-active purity/self-excluded
+  support/full-semantic truth/officialCT/Pred or Goal acceptance.
+- Full740tests pass in77.56s, including both new actual receipts. Goal stays
+  active/unachieved. Next fixed baseline is StateEMA, then all9 frozen M endpoints
+  under complete registered scopes; weighted-M fingerprint memo is still absent,
+  so no unmeasured execution-time guarantee. Independent support/strong Pred/
+  calibrated fresh baselines/joint training/locked final remain necessary.

@@ -1,0 +1,770 @@
+{
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "f35c77926e55dc79698808e7c1a870047d23a55b"
+  },
+  "new_inference_collapse_cause_development_Pred_or_Goal_accepted": false,
+  "new_optimizer_steps": 0,
+  "offline_fit_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "policy_scope": {
+    "GT_localization_oracle_control_not_qualified_Pred": true,
+    "development_final_or_other_video_payload_bodies_opened": false,
+    "development_final_or_other_video_semantic_values_decoded": false,
+    "empty_GT_frames": 1,
+    "existing_Known_target_counts": {
+      "Known": 34,
+      "policy_pseudo": 10
+    },
+    "external_loss_only_not_observation_or_model_features": true,
+    "masked_loss_tracks": 10,
+    "masked_tracks_dropped_or_declared_background": false,
+    "metadata_frames": 374,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 1268,
+    "physical_label_strata": {
+      "Known": 34,
+      "no_retained_semantic_truth": 10,
+      "policy_pseudo": 10
+    },
+    "physical_tracks": 54,
+    "videos": 10
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 948690944,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_registration": 404.75643177801976
+  },
+  "status": "ACTUAL_ALL9_C_HISTORY_LOSS_PLAN_RECONSTRUCTION_NOT_LOGITS_GRADIENTS_CAUSE_OR_GOAL",
+  "trials": {
+    "Top1_conditioned_s1027": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 115,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 1
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 115,
+            "policy_pseudo:NEW": 1
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 95,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 32
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 95,
+            "policy_pseudo:NEW": 32
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 82,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 13
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 82,
+            "policy_pseudo:NEW": 13
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 67,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 64
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 67,
+            "policy_pseudo:NEW": 64
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 359,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 110
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 359,
+        "policy_pseudo:NEW": 110
+      }
+    },
+    "Top1_conditioned_s1028": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 78,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 12,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 1
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 78,
+            "policy_pseudo:EXISTING": 12,
+            "policy_pseudo:NEW": 1
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 97,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 24
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 97,
+            "policy_pseudo:NEW": 24
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 50,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 18
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 50,
+            "policy_pseudo:NEW": 18
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 49,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 45
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 49,
+            "policy_pseudo:NEW": 45
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 274,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 12,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 88
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 274,
+        "policy_pseudo:EXISTING": 12,
+        "policy_pseudo:NEW": 88
+      }
+    },
+    "Top1_conditioned_s1029": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 95,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 20
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 95,
+            "policy_pseudo:NEW": 20
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 35,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 65
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 35,
+            "policy_pseudo:NEW": 65
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 40,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 22,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 18
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 40,
+            "policy_pseudo:EXISTING": 22,
+            "policy_pseudo:NEW": 18
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 40,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 60
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 40,
+            "policy_pseudo:NEW": 60
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 210,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 22,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 163
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 210,
+        "policy_pseudo:EXISTING": 22,
+        "policy_pseudo:NEW": 163
+      }
+    },
+    "Top8_conditioned_s1027": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 175
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 175
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 164,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 32
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 164,
+            "policy_pseudo:NEW": 32
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 100,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 13
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 100,
+            "policy_pseudo:NEW": 13
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 99,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 24,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 37
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 99,
+            "policy_pseudo:EXISTING": 24,
+            "policy_pseudo:NEW": 37
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 538,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 24,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 82
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 538,
+        "policy_pseudo:EXISTING": 24,
+        "policy_pseudo:NEW": 82
+      }
+    },
+    "Top8_conditioned_s1028": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 81,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 12,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 1
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 81,
+            "policy_pseudo:EXISTING": 12,
+            "policy_pseudo:NEW": 1
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 131,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 24
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 131,
+            "policy_pseudo:NEW": 24
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 67,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 18
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 67,
+            "policy_pseudo:NEW": 18
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 102,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 29,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 13
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 102,
+            "policy_pseudo:EXISTING": 29,
+            "policy_pseudo:NEW": 13
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 381,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 41,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 56
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 381,
+        "policy_pseudo:EXISTING": 41,
+        "policy_pseudo:NEW": 56
+      }
+    },
+    "Top8_conditioned_s1029": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 144,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 20
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 144,
+            "policy_pseudo:NEW": 20
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 35,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 34,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 31
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 35,
+            "policy_pseudo:EXISTING": 34,
+            "policy_pseudo:NEW": 31
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 47,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 7,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 26
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 47,
+            "policy_pseudo:EXISTING": 7,
+            "policy_pseudo:NEW": 26
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 40,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 26,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 34
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 40,
+            "policy_pseudo:EXISTING": 26,
+            "policy_pseudo:NEW": 34
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 266,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 67,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 111
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 266,
+        "policy_pseudo:EXISTING": 67,
+        "policy_pseudo:NEW": 111
+      }
+    },
+    "Top8_pool_context_s1027": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 175
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 175
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 164,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 32
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 164,
+            "policy_pseudo:NEW": 32
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 100,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 13
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 100,
+            "policy_pseudo:NEW": 13
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 99,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 24,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 38
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 99,
+            "policy_pseudo:EXISTING": 24,
+            "policy_pseudo:NEW": 38
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 538,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 24,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 83
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 538,
+        "policy_pseudo:EXISTING": 24,
+        "policy_pseudo:NEW": 83
+      }
+    },
+    "Top8_pool_context_s1028": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 81,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 12,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 1
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 81,
+            "policy_pseudo:EXISTING": 12,
+            "policy_pseudo:NEW": 1
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 131,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 24
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 131,
+            "policy_pseudo:NEW": 24
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 67,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 18
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 67,
+            "policy_pseudo:NEW": 18
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 102,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 29,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 13
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 102,
+            "policy_pseudo:EXISTING": 29,
+            "policy_pseudo:NEW": 13
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 381,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 41,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 56
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 381,
+        "policy_pseudo:EXISTING": 41,
+        "policy_pseudo:NEW": 56
+      }
+    },
+    "Top8_pool_context_s1029": {
+      "actual_model_inference_or_GT_memory_repair": false,
+      "all_original_episode_summaries_update_calendars_and_retained_histories_match": true,
+      "collapse_cause_new_training_development_or_Goal_accepted": false,
+      "episodes": [
+        {
+          "episode": 0,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 144,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 20
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 144,
+            "policy_pseudo:NEW": 20
+          }
+        },
+        {
+          "episode": 1,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 35,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 34,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 31
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 35,
+            "policy_pseudo:EXISTING": 34,
+            "policy_pseudo:NEW": 31
+          }
+        },
+        {
+          "episode": 2,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 47,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 12,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 26
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 47,
+            "policy_pseudo:EXISTING": 12,
+            "policy_pseudo:NEW": 26
+          }
+        },
+        {
+          "episode": 3,
+          "metadata_frames_matched": 374,
+          "optimizer_frames_matched": 50,
+          "physical_observations_matched": 1268,
+          "update_plan_groups_by_family_and_reason": {
+            "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 40,
+            "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 34,
+            "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 26
+          },
+          "update_positive_plan_groups_by_family_and_kind": {
+            "Known:KNOWN": 40,
+            "policy_pseudo:EXISTING": 34,
+            "policy_pseudo:NEW": 26
+          }
+        }
+      ],
+      "historical_logits_gradients_or_rowwise_numeric_trace_recovered": false,
+      "historical_optimizer_frames_matched": 200,
+      "new_optimizer_steps": 0,
+      "positive_groups_are_loss_plan_opportunities_not_independent_samples_or_gradient_magnitudes": true,
+      "update_plan_groups_by_family_and_reason": {
+        "Known:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 266,
+        "policy_pseudo:EXPOSED_RESOLVABLE_CORRECT_CANDIDATE": 80,
+        "policy_pseudo:NEW_NO_VERIFIED_PURE_CANDIDATE": 103
+      },
+      "update_positive_plan_groups_by_family_and_kind": {
+        "Known:KNOWN": 266,
+        "policy_pseudo:EXISTING": 80,
+        "policy_pseudo:NEW": 103
+      }
+    }
+  }
+}

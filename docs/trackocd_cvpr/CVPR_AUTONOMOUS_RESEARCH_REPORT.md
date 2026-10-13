@@ -938,3 +938,23 @@ fingerprint activity; no SHA acceleration inferred for them. Shared-host Mean
 or monotonic speedup proof. Full724tests pass. Qualified NEW full Mean replay
 retains all original data/models/orders/ID+future probes/3000s limits; actual
 full72 completion and scientific M matrix/independence/Pred/final remain open.
+
+Actual ALL9 historical C audit now matches every original full episode/history
+and200-update calendar, public53522917..., normal413.63s/RSS948690944B/no new
+optimizer/GPUh. Every trial had56–163 positive NEW plans on actual update frames;
+"never supervised NEW" is contradicted. WAIT positive plans were zero, but
+WAIT predictions/gradient magnitudes/collapse cause are not recovered or proved.
+Group opportunity counts differ from class-macro loss weights and independent
+samples. Diagnose calibration/generalization/endogenous calendars rather than
+asserting missing NEW targets; no repair/scientific gain accepted.
+
+First COMPLETE Mean full dev now passes, public56a83c91.../profile30987d6b...,
+normal2057.56s/RSS962101248B/one thread/no optimizer/GPUh/unchanged3000s guard.
+All3 full72/472/8753/2562/116 order streams/all6 prefixes plus actual full ID/
+reverse equality and39-observation future mutation prior-event/version/ledger
+invariance. Old failures remain immutable; no partial-order metrics reused.
+Known correct12/6/4 of302; certified cross-video pseudo13/8/13 of119, ordermeans
+.024283/.095238. These match earlier Raw PRIMARY coarse values, not whole trace
+parity or a method win. Unknown histories retained; no active-purity/selfexcluded/
+fulltruth/officialCT/Pred/Goal claim. Full740tests pass; remaining EMA/all9M,
+fair independent support/fresh/calibrated baselines/strong Pred/joint/final open.
