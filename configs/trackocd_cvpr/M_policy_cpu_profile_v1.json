@@ -1,0 +1,23 @@
+{
+  "status": "REGISTERED_FIXED_M_FULL_POLICY_CPROFILE_NOT_TRAINING_OR_METHOD_SELECTION",
+  "data_config": "configs/trackocd_cvpr/memory_optimizer_pilot_v1.json",
+  "qualified_profile": "configs/trackocd_cvpr/M_GT_causal_development_fingerprint_cache_v1.json",
+  "failed_terminal": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_fingerprint_cache_v1_relative_quarantine_s1027_supervisor_attempt_1.json",
+  "failed_terminal_sha256": "3c4592996c88992fac9cd02c28fe2df38d962b667b735492901d5a45d9ad643e",
+  "model": "relative_quarantine",
+  "training_seed": 1027,
+  "order_seed": 1027,
+  "endpoint": "Fixed200",
+  "expected_private_full_trace_sha256": "c98657973810452d4c4c00c8ad7bee98fa290c393a9e3de01f51a318c7a0ce68",
+  "scope": [10, 54, 1268, 374, 1],
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 3145728,
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/M_policy_cpu_profile_v1",
+  "optimizer_steps": 0,
+  "new_labels_pixels_dev_final_Val_Test_payloads": false,
+  "raw_profile_trace_callers_or_arguments_export": false,
+  "performance_gain_full_dev_bottleneck_or_Goal_acceptance": false
+}

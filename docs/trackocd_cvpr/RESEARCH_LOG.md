@@ -4626,3 +4626,27 @@ no private GT/cache/weights opened for this check):
   proxy/global Git/foreign process edits. Original attempt never relaunched.
 - 9 targeted tests pass after recovery configuration/scope refusal addition.
   Actual recovery pending register/push/fetch; Goal remains active/unachieved.
+
+### Register actual frozen trained-M complete policy CPU profile
+
+- Effective Mean recovery from b53a25b is now genuinely running: fresh worker
+  source gate passed, exact supervisor PID/start/argv identity verified, first
+  control complete. No complete actor/supplemental/normal-terminal acceptance yet.
+- First trained-M full dev still failed at unchanged3000s (3c459299...). New
+  profile preserves and binds that terminal; no partial order metrics reused,
+  no blind remaining full-M launches or timer increase. Same relative_quarantine/
+  training1027 Fixed200 endpoint, order1027, full10policy/54physical/1268obs/
+  374frames/1empty/all6 prefixes/fit5 Raw priors/K8/.65/.55/full history.
+- Exact actual ALL11 fingerprint shadow and all9 endpoint/source/authority gates
+  before labels. Deserializes only original fixed endpoint; CPU1/3GiB/3000s/
+  3MiB/25%RAM/storage guards. Original Raw32MiB+SHA32MiB profile unchanged;
+  weighted-M SHA cache MUST remain unused, no learned-logit/prototype memo.
+- cProfile wraps actual whole readonly_M_stream, with private full trace required
+  EXACT c98657973810452d4c4c00c8ad7bee98fa290c393a9e3de01f51a318c7a0ce68.
+  Export only bounded registered function timings/aggregate counters, no raw
+  profiler/callers/arguments/GT/trace. Overlapping cumulative timing is not
+  additive; policy timing alone not isolated speedup or full-dev bottleneck proof.
+- 23 targeted tests and full783tests pass (42.77s). New files only, no edits to
+  running audit dependencies. Pending registration,
+  actual profiling and normal receipt; no new training/scientific acceptance.
+  Whole Goal active/unachieved, fullM/strongPred/freshbaselines/joint/final open.
