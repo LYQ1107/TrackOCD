@@ -4650,3 +4650,24 @@ no private GT/cache/weights opened for this check):
   running audit dependencies. Pending registration,
   actual profiling and normal receipt; no new training/scientific acceptance.
   Whole Goal active/unachieved, fullM/strongPred/freshbaselines/joint/final open.
+
+### Actual frozen trained-M full policy CPU profile completes
+
+- Preregistered b40a446f608dd48e0d1c6634262ed285d628290a. Result SHA
+  bb821f9120bd45b64ed2e52cc4b415edf10445b07dcefa9f187f0c59e868cada,
+  actual owned wait0/no guard/complete result, total49.23s/peak952627200B/
+  no CUDA/new optimizer/GPUh. Entire10policy/54physical/1268obs/374frames/1empty
+  trace EXACT prior c9865797..., model endpoint unchanged. Same Raw32MiB retained
+  33549000B; weighted-M fingerprint bytes/hits/misses allZERO as registered.
+- Instrumented actual full policy33.61s. Overlapping cumulative refresh23.23s
+  (748calls), weighted_support8.93s (16475calls), member_features5.23s,
+  modelforward2.01s; Raw inputs1.66s. Do not sum overlapping times or call this
+  isolated speedup/full72-dev bottleneck proof. No raw profiler/GT/trace export.
+- Source shows weighted-M still recomputes complete Raw support SHA every
+  refresh; unlike EMA its module alias is not overlaid. This is a candidate
+  equivalent optimization, NOT a measured isolated SHA cause or accepted repair.
+  Any new scope must cache only exact immutable Raw byte-segment fingerprints,
+  retain original numeric hashes/models/history/guards, and pass actual ALL11
+  complete policy event/score/version/ledger/outcome parity before full replay.
+- External effective Mean audit remains live/one completed control at this
+  observation, not a final result. Whole Goal remains active/unachieved.

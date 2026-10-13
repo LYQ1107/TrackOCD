@@ -1003,3 +1003,15 @@ denominators. Supplemental report separate from dirty history; full Mean require
 actual chosen version Raw/prototype-byte binding, excluded Mean query receipt.
 No EMA/M shortcut, ignored unknowns, fulltruth/independence/Pred/Goal claim.
 Full768tests plus8 post-failure targeted tests pass; actual audit still pending.
+
+Effective Mean registration-only recovery (b53a25b) passes fresh source gates
+and is genuinely running, not yet accepted. Frozen relative_quarantine/1027
+policy CPU profile from b40a446 now completes normally: publicbb821f91...,
+49.23s/RSS952627200B/zero new optimizer/GPUh, complete54/1268/374/1 and whole
+private trace exact prior ALL11 shadow. Weighted-M Raw32MiB is active but
+fingerprint counters remainZERO. Instrumented stream33.61s; overlapping
+refresh23.23s/weighted_support8.93s/member_features5.23s/forward2.01s, not
+additive/isolated SHA cost/full-dev cause or scientific gain. Source supports
+testing exact Raw fingerprint memoization for M; actual ALL11 parity and
+unchanged numeric model/history/resource bounds required first. Full trained-M
+dev matrix/freshbaselines/strongPred/effectiveM/joint/independent final open.
