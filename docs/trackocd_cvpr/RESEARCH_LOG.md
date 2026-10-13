@@ -4173,3 +4173,32 @@ no private GT/cache/weights opened for this check):
   Supervisor PID is now absent, so no continuing Mean job is claimed. Latest
   disk free177525125120B/RAM available65588031488B exceeds reserved limits;
   no cleanup or asset mutation was needed.
+
+### Register bounded actual full-policy cached Mean CPU profiling
+
+- Previous8386a7f delivery made real source/receipt progress; both Mean full
+  replay failures are terminal and preserved. No historical PID/session was
+  restarted. A new separate profiling namespace is registered to obtain actual
+  performance evidence before another full development attempt.
+- profile_Mean_policy.py composes the existing persistent owned supervisor in
+  its own process, retaining CPU1/3GiB/3000s/3MiB output/25% system RAM/storage
+  guards and fresh remote/source/authority/actual all9 endpoint qualification
+  before private fit/policy inputs. Existing endpoints are byte-hashed by the
+  cohort gate, but no checkpoint is deserialized. No original controller/cache/
+  driver or foreign process is changed.
+- Exactly one qualified cached Mean full10 policy/54 physical/1268 observations/
+  374 frames/1 empty replay, order1027, same fit5 prior/K8/.65/.55 and complete
+  dirty history. Existing Known-derived labels are external postprediction
+  audit only. No optimizer/encoder/pixels/new semantic labels or dev/final/Val/
+  Test payload read. Entire PRIVATE trace must match the actual prior full-policy
+  Mean shadow SHA7461015c..., not just aggregate outcome counts.
+- cProfile instruments only the actual stream. Export is bounded to counters
+  for preregistered project source functions; no raw profiler dump/callers/locals/
+  arguments or private trace rows. Cumulative times overlap and must not be
+  summed as wall time. Policy timing includes instrumentation/shared-host effects
+  and is NOT full72 bottleneck proof, isolated speedup or scientific gain.
+- Full703tests pass in62.70s, including profile-summary export boundaries and
+  actual prerequisite/source/runtime contracts. After clarifying inherited
+  endpoint byte hashing versus checkpoint deserialization, no executable logic
+  changed. Actual profiling has NOT run at this record; push/fetch exact ref
+  before launch. Whole Goal stays active/unachieved.

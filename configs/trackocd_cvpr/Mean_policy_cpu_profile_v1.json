@@ -1,0 +1,21 @@
+{
+  "status": "REGISTERED_FULL_POLICY_CACHED_MEAN_CPROFILE_NOT_SCIENTIFIC_REPLAY_OR_SELECTION",
+  "data_config": "configs/trackocd_cvpr/memory_optimizer_pilot_v1.json",
+  "qualified_profile": "configs/trackocd_cvpr/M_GT_causal_development_raw_cache_v1.json",
+  "cached_failed_terminal": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_raw_cache_v1_Mean_latest_supervisor_attempt_1.json",
+  "cached_failed_terminal_sha256": "04d07895d893c67b3fd6ef7a2b50ec0263f72156d3ab2f4cc88a9839819ab5e9",
+  "model": "Mean_latest",
+  "order_seed": 1027,
+  "expected_private_full_trace_sha256": "7461015c0f64bf89c294630f08fac2cc8c8083a664b541c221d49bd5121f5ed5",
+  "scope": "One complete qualified cached Mean full10 policy/54 physical/1268 observations/374 metadata frames/1 empty replay. Full immutable prediction-owned history and external existing Known-derived audit. Actual trace must exactly match previous completed all11 shadow; no private trace export.",
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "rss_bytes_ceiling": 3221225472,
+  "wall_seconds_ceiling": 3000,
+  "output_bytes_ceiling": 3145728,
+  "output_directory": "outputs/trackocd_cvpr/cvpr4/Mean_policy_cpu_profile_v1",
+  "optimizer_steps": 0,
+  "new_labels_pixels_checkpoints_or_dev_final_Val_Test_payloads": false,
+  "raw_profile_trace_callers_or_arguments_export": false,
+  "performance_gain_full_dev_bottleneck_or_Goal_acceptance": false
+}
