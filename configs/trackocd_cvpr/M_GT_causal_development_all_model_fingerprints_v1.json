@@ -1,0 +1,14 @@
+{
+  "status": "REGISTERED_FULL_TRAINED_M_DEV_ACTUAL_ALL11_SUPPORT_SHA_PARITY_REQUIRED",
+  "original_config": "configs/trackocd_cvpr/M_GT_causal_development_v1.json",
+  "output_prefix": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_all_model_fingerprints_v1",
+  "shadow_directory": "outputs/trackocd_cvpr/cvpr4/M_all_model_fingerprint_shadow_v1",
+  "shadow_result_sha256": null,
+  "shadow_execution_profile_sha256": null,
+  "shadow_preregistration_commit": "e3671f1e10112d77c10922fa9b69e4a8904f243b",
+  "failed_trained_M_terminal_sha256": "3c4592996c88992fac9cd02c28fe2df38d962b667b735492901d5a45d9ad643e",
+  "cache_profile": "EXACT_RAW_SUPPORT_SHA_ALL11_32MiB_AND_FROZEN_RAW_32MiB_TOTAL_64MiB",
+  "change_data_models_orders_prefixes_thresholds_or_resource_guards": false,
+  "partial_metric_reuse_model_selection_or_full_Goal_acceptance": false,
+  "qualification_is_policy_parity_not_full_development_parity_or_speedup_guarantee": true
+}

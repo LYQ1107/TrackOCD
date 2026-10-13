@@ -4697,3 +4697,26 @@ no private GT/cache/weights opened for this check):
   fixture's canonical route/token mapping after it failed BEFORE the overlay;
   no production source, expected whole-history equality or real outcome changed.
   Whole Goal remains active/unachieved; fullM/Pred/freshbaselines/joint/final open.
+
+### Full M development entry stays closed pending actual ALL11 support-SHA proof
+
+- Actual ALL11 frome3671f1e10112d77c10922fa9b69e4a8904f243b genuinely launched:
+  fresh worker source gate and own supervisor PID/start/argv identity passed;
+  six complete paired cases observed, not full qualification or metrics.
+  Effective Mean external audit still live/two controls complete, not accepted.
+- NEW full trained-M wrapper retains ORIGINAL complete72dev/472physical/
+  8753obs/2562frames/116empty/all3orders/all6prefixes/fullID/reverse/actualfuture
+  probes/all9 fixed endpoints/CPU1/3GiB/3000s/data/thresholds/history. Original
+  Mean/EMA full results remain valid, no unnecessary baseline reruns.
+- Actual ALL11 result/profile fingerprints currentlyNULL: refuse closed before
+  any dev inputs; missing files/partialcases/non-normal terminal/no weighted-M
+  hits/bad trace/NaN counters/excess derived cache all refuse. Exact prior
+  qualification and preserved trained-M failure3c459299... mandatory. Complete
+  proof/profile-result/registered producer+numeric kernels/source hashes bind
+  genuine fixed e3671f1 attempt. NO partial1027/1028 dev metrics promoted.
+- Pure/synthetic tests only for new gate, not fabricated actual qualification;
+  17 targeted tests and full801tests pass (43.41s).
+  full trained-M evaluation NOT launched. Entire worker/supervisor composed,
+  no encoder/optimizer/model selection/protected labels or changed limits.
+  Whole Goal stays active/unachieved; numerical policy parity not full dev
+  parity, isolated speedup, active purity, Pred, joint or final acceptance.
