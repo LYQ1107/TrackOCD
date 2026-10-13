@@ -4966,3 +4966,44 @@ no private GT/cache/weights opened for this check):
   five checkpoints, curves and private data remain local. Next safe work is
   full frozen M RAM-recovery evaluation (no optimization), plus formal fresh
   baseline source registration; do not count either as already complete.
+
+### Live full M recovery plus registered fresh baseline Fixed200 source
+
+- Actual M RAM_retry1 launch from12114836cd8ede90899e99245f3a41f4a227fa85
+  follows completed push/fetch/exact refs. Initial fresh SSH/API launcher read
+  fails before namespace/worker/private inputs; bounded HTTPS per-command
+  retry succeeds, actual launcher AND worker repeat exact live registration.
+  Existing credentials only, no global edits or source-gate receipt bypass.
+- Rechecked current boot+actual supervisor startticks614400 match; its newly
+  owned child stateR/startticks614607/oneOSthread and increasingCPU counters.
+  These are current evidence, never reuse old historical PIDs/sessionhandles.
+  Latest progress records full472physical order1027 complete, no optimizer.
+  No result/profile/terminal yet: remainingorders/probes/fullcompletion still
+  OPEN. Do not accept or aggregate the partial order, no restart live worker.
+- Added explicit one-family/one-seed fresh Fixed200 executable/manifest, all
+  originalfivefamilies xthree seeds planned. Public qualifiedpilot hashes and
+  every actual pilot dependency must match, new live remote/source/authority/
+  fullfitcache before privateinput. Fresh same-seed adapter init, no pilot or
+  historical weights, Knownfit5 loss only, all1401physical census/243masked;
+  no dev/final/Val/Test selection, no encoder/originalpixel/GT reads.
+- Exact original200steps/20,50,100,200 checkpoints and same qualified numerical
+  trainer, optimizer/weights/temperature/geometry controls. Private model AND
+  AdamW state reopen exact. Same3GiB/3000s/32MiB/25%systemRAM/free/storage
+  protections; same identified <=100ms native-driver helper classification,
+  hidden-GPU own CPUworker/intra+interop1/no initializedCUDA. New namespaces
+  only, preserve terminalfailures. Estimated fourprivate snapshots pertrial
+  ~25--26MB, all15~390MB, no data/weight migration or public weight upload.
+- Kernel+cmdline guard refuses a new formalfit while this owned M evaluation
+  or another freshfit is live. Does not use receipt alone or touch/terminate
+  foreign processes; no automatic all15/dev launch. Source-only preparation
+  and bounded tests continue while current read-only M job is live.
+- BEFORE full-dev input, cohort verifier requires all45 public artifacts for
+  all15actual fits, all200steps/four snapshots/normalwait0/fullscope and exact
+  shared training-source hashes. Actual adapter/calendar match perseed, three
+  truly different seeded init/calendars; endpoint byte checks after fresh
+  registration only. No missingseed/partialcheckpoint or pilot-as-formal claim.
+- 17targeted tests pass1.85s; complete861tests pass49.78s, actual ownedwait0/
+  no guard/51.19s total, with fresh3GiB RAMmargin+25% reserve. Synthetic15receipt
+  fixtures test rejection/structure only, NOT actual15fits or dev evidence.
+  Source pending genuine publication/registration at this observation; all
+  formalfit namespaces remain uncreated. Full scientificGoal unachieved.
