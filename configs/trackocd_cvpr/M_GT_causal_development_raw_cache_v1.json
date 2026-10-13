@@ -1,0 +1,15 @@
+{
+  "status": "REGISTERED_EQUIVALENT_RAW_CACHE_FULL_M_DEV_ACTUAL_SHADOW_REQUIRED",
+  "original_config": "configs/trackocd_cvpr/M_GT_causal_development_v1.json",
+  "output_prefix": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_raw_cache_v1",
+  "shadow_directory": "outputs/trackocd_cvpr/cvpr4/M_raw_cache_controller_shadow_v1",
+  "shadow_result_sha256": "3cff459de63e60b6b9a7797c73af427c08f34879dbaab6244f10b77410bf8156",
+  "numeric_qualification": "outputs/trackocd_cvpr/cvpr4/qualified_frozen_raw_statistics_v1/result.json",
+  "numeric_qualification_sha256": "35743611e5eb395bd4091fac50b9e815515a6404c2f95ad5328c594580144f57",
+  "original_failed_terminal": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_v1_Mean_latest_supervisor_attempt_1.json",
+  "original_failed_terminal_sha256": "3fd41182dca48bc873cfcba7ff61e46849402bd4cd27458a2a86a6a8819315d1",
+  "change_labels_orders_seeds_weights_thresholds_prefixes_guards_or_coverage": false,
+  "reuse_partial_original_Mean_metrics_or_model_selection": false,
+  "cache_scope": "Explicit own-process CPU immutable Rawstatistics only, allmember/commit/version history retained. Fresh full3orders plus originalID/future checks. No cachedlearnedembedding/GT/ID/role feature.",
+  "full_development_result_or_Goal_acceptance_from_config": false
+}

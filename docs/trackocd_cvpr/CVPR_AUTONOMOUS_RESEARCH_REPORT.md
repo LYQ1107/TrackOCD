@@ -865,3 +865,15 @@ Known-derived outcome auditonly, zerooptimizer. Exacteveryevent/score/chosen
 version/numericledger/outcome equalityrequired. Original3000sMeanfailure,
 allinput/CPU/RAM/storage bounds anddirtyhistory remainpreserved. Realshadow,
 fullMdev/strongPred/self-exclusion/joint/baselines/final stillopen.
+
+Actual ALL11 fullpolicy OLD/cache shadows now pass, public `3cff459d...`,
+normalownedwait0/no guardreason/1032s/949MB. Everyevent/score/candidatefeature/
+route/chosenversion/numericledger/outcome exact acrossall54physical/1268obs
+andall9frozenMendpoints/twozerofit baselines. No optimizer/GTmemoryrepair.
+Policyparity is NOT full72development parity, isolatedspeedup ormethodgain.
+
+Registered qualified fullM cached wrapper/newnamespace withsameexactoriginal
+data/model/seed/order/prefix/threshold/3000s/RAM/physicalcoverage andactual
+ID/future checks. RequiresactualALL11 resultfingerprint/normalterminal and
+8753prefixnumericproof, oldfailedMeanreceipt immutable. Actualfullreplay
+stillpending, no two-order partialmetric reuse orscientificacceptance.

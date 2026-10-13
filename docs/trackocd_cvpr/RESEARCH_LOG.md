@@ -4022,3 +4022,37 @@ no private GT/cache/weights opened for this check):
 - Full680tests passed in67.39s, including inputoverlay restoration/fullsynthetic
   controller equality andrealshadow missing-cohort/source-boundary tests.
   Noactual shadowacceptance fromthese tests; register/push/fetch beforelaunch.
+
+### Actual ALL11 full-policy controller shadow passes; qualified full replay registered
+
+- Real guardedshadow from24e940174f42783e7ae2085c102d5d1a69526cf6 now completes
+  ALL11 cases normally: public resultSHA
+  `3cff459de63e60b6b9a7797c73af427c08f34879dbaab6244f10b77410bf8156`.
+  Twozero-fit baselines+all9fixedMendpoints, everyOLD/cache replay full10policy/
+  54physical/1268observations/374frames/1empty, order1027. ENTIREevents/scores/
+  candidatefeatures/routing/chosenversion/numericledger andoutcomes EXACTequal;
+  no floatingtolerance orselectedpassingcases. Private traces stayephemeral,
+  onlydigest/counters/timings uploaded. Source/authority/all9endpoints/actual
+  8753prefixnumericproof beforeprivateinputs; GTonlyexternalpostprediction
+  fit/policyexistingKnown-derived audit, no memoryrepair/optimizer/encoder.
+- Actualownedwait0/no guardreason/fullresult; worker1024.43s/total1032.23s,
+  peak949563392B, noCUDA/zeroGPUtrainingh, original3000s/3GiB/25%RAM guards.
+  Sharedhost sequentialOLD/cache pairs observedtimingdifferences, e.g Mean
+  42.83s/28.49s andpooled1027 47.73s/46.69s. Notanisolatedspeedup claim,
+  performanceguarantee, full72parity/purity orscientificgain.
+- Prepared cachedfullM wrapper inNEW outputprefix. Exactoriginal M config
+  hash2943bdd9... preserved, onlyoutputnamespace/explicitownprocessCPU frozen
+  Rawreduction profile differ. Originalworker/controller/data/model/threshold/
+  seed/order/prefix/actualID+future probes/resource limits unchanged. Newpublic
+  gate requires actualshadowresultfingerprint+normalwait0/all11equality and
+  actualnumericproof, plusunchangedoldMeanfailure. Null/missing/partialproof
+  refuseslaunch beforeprivateinputs; no oldtwo-order metric reuse.
+- Context/cache isonlyownworker modulebindings andalwaysrestored; no existing
+  sourcefile/foreignprocess/globalservice edited. Supervisor/worker command
+  routes throughregisteredwrapper, retains originalfrozenwholecohort/source/
+  data/clock/invariance guards. Separateexecution-profile receipt tiesactual
+  resultSHA toqualification; no oldfailedartifact overwritten. Cachedfull72
+  dev execution NOTyetstarted atthisrecord. WholeGoal stillunachieved.
+- Full684tests pass in57.02s, including actualALL11shadow receipt/gate and
+  original-vs-cached config equality/pendingfingerprint refusal. Registeractual
+  proof+wrapper before fullreplay, not acceptsourcechecks as result.
