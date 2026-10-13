@@ -5007,3 +5007,40 @@ no private GT/cache/weights opened for this check):
   fixtures test rejection/structure only, NOT actual15fits or dev evidence.
   Source pending genuine publication/registration at this observation; all
   formalfit namespaces remain uncreated. Full scientificGoal unachieved.
+
+### Full M RAM recovery terminal wall failure; native baseline metric prerequisite
+
+- Actual current M worker progresses1027 ->1028 ->1029, all three main orders
+  on full472physical complete, then original3000s guard kills ONLY owned child.
+  Actual terminalSHA97b6ee70217340a4a4dd2a094469343ef6a74f03d25995f81bf09c9abf3193da:
+  -9/owned_job_wall/noresult/no executionprofile/3000.2686s, peak964972544B/
+  oneOSthread/0GPUh. Output contains only launch+progress; finalprogressSHA
+  8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9.
+  Current process inventory confirms no live M/freshfit worker; not an oldPID
+  assertion or observation timeout. Preserve attempt/no partial-metric salvage.
+- FULL M protocol requires three main streams PLUS full ID/reverse replay and
+  a whole suffix-mutated future replay, not just main order1029. Source shows
+  five whole streams; incomplete probes/no full result means evaluation STILL
+  unqualified. This is resource/runtime failure, not model/numerical/Novel
+  failure; no unchanged-bound restart or arbitrary probe/data reduction.
+  All9fullM and downstreamscientificacceptance remainOPEN. Three-main progress
+  is engineering evidence only, cannot publish invented aggregate metrics.
+- Added NEW native256D baseline certified retrieval/evaluation prerequisite,
+  original768D R/Mean/M modules untouched. Same allphysical gallery/wholevideo
+  exclusion/exactuniformtie expectation/unknown-unlabeled lowerbound semantics;
+  short/singleton queries retain FULL gallery and unsupportedqueries count0.
+  Known/rank compare native dimensions; Raw256cross-space pointwise cosine
+  undefined, use full paired Gram. No input mutation or padding workaround.
+- Four syntheticnumeric tests pass1.93s, matching original768D tie/reference
+  semantics using isometric padding ONLY in a test oracle, never actualbaseline
+  inference; no asset/model/GT reads by this metric module. Full865tests pass
+  49.09s, actual ownedwait0/no guard/50.59s total/25%reserve. Full15baseline
+  development loader/cohort/endpoint gates and real observations stillrequired.
+- Formalfreshsourceaa55113c15d006a9f0016d659743cde07872f25f push acknowledges,
+  subsequent SSH/HTTP fetches intermittently fail. Next registeredsource/live
+  gate still mandatory before privateformalfit input. No GT scope expansion,
+  learned winner, devselection, kernel/threshold change or finalGoal acceptance.
+- Public actual-wall terminal+native metric tests5pass1.84s; full866tests pass
+  49.75s, guarded ownwait0/no guard/51.19s total,25%reserve maintained. M no
+  longerlive; fresh formal execution can begin only after latest real source
+  publication/fetch/live exact gate, never use expired process observations.
