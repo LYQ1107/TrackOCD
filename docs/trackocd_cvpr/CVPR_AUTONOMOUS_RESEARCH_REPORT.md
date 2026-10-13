@@ -1305,3 +1305,37 @@ pass3.76s; combined CVPR/v2 bounded suite1001pass52.98s/ownedexit0/guardNONE/
 54.5036s inclusive/peak837386240B/zero GPU-hours. This registration does not
 claim calibrated control parity, learned joint R/C/M, strong Pred/dense transfer,
 or independent-final performance. Goal A/B/C remain open.
+
+## Actual paired C formal fits completed; development not yet measured
+
+All three preregistered seed pairs completed normally at0acbe083ce9d9ca01b16e4ad527a5b027666053a,
+with fresh matched708parameter initialization/calendar perpair and three
+distinct actual seeds. Six models each took200updates over four FULL policy
+episodes, preserving every predicted history. Owned walls114.6893/121.1088/
+134.8966s(total370.6947), peak952741888B, one CPU compute worker plus bounded
+native helper, zero CUDA/training GPU-hours. All24 fixed model/AdamW/RNG
+snapshots reopened exactly,581544B private/local. No pilot warmstart, retry,
+extra labels, lost frames or dev/final/Val/Test input.
+
+The repair genuinely has105/103/109nonzero extra-gradient steps versus0 in
+baseline; all three paired endpoints differ. This is exposure and training
+completion, not scientific success. Some complete training episodes remain
+ALL KNOWN, and last-episode action shifts are mixed across seeds. More NEW,
+less KNOWN or a changed parameter hash is not semantic discovery or calibrated
+coverage. Four episodes are repeated visits to the SAME10policy videos, not
+independent evaluation or extra data. Neither arm nor seed is selected.
+
+Public-only full-cohort/source/normal-terminal/calendar/snapshot verification
+has run; the new small all6 receipt binds originals and makes no private asset
+permission claim. Perseed result SHA256:
+`622b9c1ab1345d983195ae6900b8153daf4a1cc7d4af91cdc7c3e078942da09e`,
+`d9080cac390f88af5ee87fb3ba572a43c2c406e488680a9e41f81378083f6799`,
+`973e7852aa9815f0ac9bffdeffe99f3a3d5263ad094abc2d287abbdeca0c133a`.
+Seventeen targeted regressions pass3.77s. All6 trained endpoints still need
+complete causal Train-development on the full472tracks/8753observations/
+2562frame clock, three orders and nonvacuous ID/reverse/future probes. Fair
+calibrated Raw/coverage/latency controls, full M, joint/strong lawful Pred/
+dense transfer and locked independent final remain unfinished. Goal active;
+no final scientific winner or Goal A/B/C accepted from these training outputs.
+Final bounded combined CVPR/v2 suite1006tests pass55.78s, ownedexit0/guardNONE,
+inclusive57.3351s/peak860536832B/zero GPU-hours.

@@ -5821,3 +5821,44 @@ no private GT/cache/weights opened for this check):
   54.503564458s inclusive/peak837386240B/zero GPU-hours. All real formal fits
   remain pending source push/fetch/exact verification; no new private input
   read or optimizer run occurred during this registration stage.
+
+### Actual formal paired C fixed200: all three normal complete seed pairs
+
+- Preregistration0acbe083ce9d9ca01b16e4ad527a5b027666053a pushed/fetched/
+  exactverified before execution; all100 registered source/public prerequisites
+  byte-match, same actual source hashes in all three launches. Sequential owned
+  trials1027/28/29 all exit0/guardNONE/complete. Walls114.689326687/
+  121.108838851/134.896562531s, total370.694728069s, maxRSS952741888B;
+  one CPU compute worker plus one bounded native driver helper, CUDAFALSE/
+  zero training GPU-hours. No retries, warmstarts or parallel research worker.
+- Six NEW708parameter models actually completed200updates each, four complete
+  10policy-video/54track/1268observation/374frame/1empty rollouts perarm.
+  These are repeated training visits, NOT new videos or independent samples.
+  All24 fixed20/50/100/200model+AdamW+NumPy/Torch RNG snapshots reopened
+  exactly,581544B total, private/local only. Plans/weights/histories not exported.
+- Actual within-pair initializations/calendars equal; three seed hashes distinct.
+  Final four-episode calendars812e52cb.../49271cc5.../5d107ee3... . Both arms'
+  endpoints differ from initialization and each other in all three real pairs.
+  Extra objective has105/103/109positive parameter-gradient steps; baselines0.
+  Known base contributions473/470/479 perarm; policy-pseudo base contributions
+  baseline94/87/111 versus repair94/88/108. Endogenous loss states differ even
+  with matched frames; do not claim identical supervision or causal accuracy.
+- Some complete training episodes still ALL KNOWN: baseline episode1(all
+  seeds), repair episode1(seeds1027/28). Last episode KNOWN/NEW baseline
+  1211/57,813/455,1060/142 (+66EXISTING for1029); repair1111/157,
+  735/496 (+37EXISTING for1028),1229/7 (+32EXISTING for1029). Mixed action
+  changes are NOT semantic correctness, calibrated coverage or discovery gains.
+  No coefficient/seed selection or extra repair follows from training actions.
+- Immutable perseed resultSHA622b9c1a.../d9080cac.../973e7852...; normal
+  terminal45e99055.../2f1f7b68.../e6633b0b... . Public-only all6 cohort checks
+  full step/episode/clock/source/initialization/calendar and snapshot receipts,
+  no private checkpoint reread or dev GT load. Derived small all6 public report
+  binds these originals, never rewrites a terminal or claims new live authority.
+  Seventeen targeted regressions pass3.77s. Full causal dev6×3orders and real
+  ID/reverse/future probes are still pending; formal training is not evaluation.
+  Calibrated Raw/coverage/latency, full M, learned joint, lawful strong Pred/
+  dense transfer, locked independent final and Goal A/B/C remain OPEN/active.
+- Final bounded combined CVPR/v2 suite1006pass55.78s, ownedwait0/guardNONE/
+  57.335140461s inclusive/peak860536832B/zero GPU-hours; no live owned fit
+  is inferred from stale progress. Public results/launch/terminals and derived
+  all6 receipt only are staged; all24weights/private calendars stay local.

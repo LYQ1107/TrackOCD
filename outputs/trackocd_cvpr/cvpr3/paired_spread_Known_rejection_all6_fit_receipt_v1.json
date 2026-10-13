@@ -1,0 +1,226 @@
+{
+  "all6_actual_fresh_fixed200_fits": true,
+  "same_seed_initialization_and_calendar_verified": true,
+  "three_distinct_actual_seeds_verified": true,
+  "trials": [
+    {
+      "seed": 1027,
+      "arm": "baseline",
+      "result_sha256": "622b9c1ab1345d983195ae6900b8153daf4a1cc7d4af91cdc7c3e078942da09e",
+      "launch_sha256": "1cf4def813f96a61884949fb73989ba36cf7398d2c0ba9012768f8058b139253",
+      "terminal_sha256": "45e99055f901d750b93962aeda8a9523df3deba6536cea96e53ad5ce526224f4",
+      "endpoint": {
+        "arm": "baseline",
+        "bytes": 24231,
+        "reopen_exact": true,
+        "sha256": "8537e1eade9ca8ff0adbf1a3197c39936b1c36b2257904fe378d0e03d60ee7aa",
+        "step": 200
+      },
+      "endpoint_parameter_sha256": "3dfda979c89d586202cee5b2dcd81308c366afe493917ec8fb23838063e0afef",
+      "actual_extra_gradient_steps": 0,
+      "full_episode_actions": [
+        {
+          "KNOWN": 1094,
+          "NEW": 174
+        },
+        {
+          "KNOWN": 1268
+        },
+        {
+          "KNOWN": 1080,
+          "NEW": 188
+        },
+        {
+          "KNOWN": 1211,
+          "NEW": 57
+        }
+      ]
+    },
+    {
+      "seed": 1027,
+      "arm": "Known_set_rejection",
+      "result_sha256": "622b9c1ab1345d983195ae6900b8153daf4a1cc7d4af91cdc7c3e078942da09e",
+      "launch_sha256": "1cf4def813f96a61884949fb73989ba36cf7398d2c0ba9012768f8058b139253",
+      "terminal_sha256": "45e99055f901d750b93962aeda8a9523df3deba6536cea96e53ad5ce526224f4",
+      "endpoint": {
+        "arm": "Known_set_rejection",
+        "bytes": 24231,
+        "reopen_exact": true,
+        "sha256": "2a101af8f422cda636f3ad7ca44e27db724797312da304f86c2d765a5273c5d3",
+        "step": 200
+      },
+      "endpoint_parameter_sha256": "7d6d5b856286b0efaa315462d230d2faf76979c3f8476610b63d501f64a57f2d",
+      "actual_extra_gradient_steps": 105,
+      "full_episode_actions": [
+        {
+          "KNOWN": 1094,
+          "NEW": 174
+        },
+        {
+          "KNOWN": 1268
+        },
+        {
+          "KNOWN": 1132,
+          "NEW": 136
+        },
+        {
+          "KNOWN": 1111,
+          "NEW": 157
+        }
+      ]
+    },
+    {
+      "seed": 1028,
+      "arm": "baseline",
+      "result_sha256": "d9080cac390f88af5ee87fb3ba572a43c2c406e488680a9e41f81378083f6799",
+      "launch_sha256": "1cf4def813f96a61884949fb73989ba36cf7398d2c0ba9012768f8058b139253",
+      "terminal_sha256": "2f1f7b68f9fe0db7e47907496a1c16b3c2904551ef04f4c0b12ded50e4e15d6b",
+      "endpoint": {
+        "arm": "baseline",
+        "bytes": 24231,
+        "reopen_exact": true,
+        "sha256": "3b46b4565d92a93bd389c521f9424201e4b361833fd2df2ef767e0eefe204426",
+        "step": 200
+      },
+      "endpoint_parameter_sha256": "7ec0e460b957fade05544eba0486929726fa59aacdf004e7c7867b7b6dae0636",
+      "actual_extra_gradient_steps": 0,
+      "full_episode_actions": [
+        {
+          "KNOWN": 1234,
+          "NEW": 34
+        },
+        {
+          "KNOWN": 1268
+        },
+        {
+          "KNOWN": 1266,
+          "NEW": 2
+        },
+        {
+          "KNOWN": 813,
+          "NEW": 455
+        }
+      ]
+    },
+    {
+      "seed": 1028,
+      "arm": "Known_set_rejection",
+      "result_sha256": "d9080cac390f88af5ee87fb3ba572a43c2c406e488680a9e41f81378083f6799",
+      "launch_sha256": "1cf4def813f96a61884949fb73989ba36cf7398d2c0ba9012768f8058b139253",
+      "terminal_sha256": "2f1f7b68f9fe0db7e47907496a1c16b3c2904551ef04f4c0b12ded50e4e15d6b",
+      "endpoint": {
+        "arm": "Known_set_rejection",
+        "bytes": 24231,
+        "reopen_exact": true,
+        "sha256": "65748afdf7768fb52c15e57301c738df462d526ff4c144d8219f05aa586161e6",
+        "step": 200
+      },
+      "endpoint_parameter_sha256": "af26a83d4328eff6facc63d7582aef50122a9dbfb01cfcee4c1b2234207508db",
+      "actual_extra_gradient_steps": 103,
+      "full_episode_actions": [
+        {
+          "KNOWN": 1234,
+          "NEW": 34
+        },
+        {
+          "KNOWN": 1268
+        },
+        {
+          "EXISTING": 2,
+          "KNOWN": 1115,
+          "NEW": 151
+        },
+        {
+          "EXISTING": 37,
+          "KNOWN": 735,
+          "NEW": 496
+        }
+      ]
+    },
+    {
+      "seed": 1029,
+      "arm": "baseline",
+      "result_sha256": "973e7852aa9815f0ac9bffdeffe99f3a3d5263ad094abc2d287abbdeca0c133a",
+      "launch_sha256": "1cf4def813f96a61884949fb73989ba36cf7398d2c0ba9012768f8058b139253",
+      "terminal_sha256": "e6633b0bd776b32ea8c9f95b964032fe681ca9bf2bad9c257e76f8be9e7c48f1",
+      "endpoint": {
+        "arm": "baseline",
+        "bytes": 24231,
+        "reopen_exact": true,
+        "sha256": "f346dc3b9c1610d393881d2d4dac68a993e69cadf64405a6591bd88013462a9a",
+        "step": 200
+      },
+      "endpoint_parameter_sha256": "65113a0052bc6bcaec779eaf4e31d470836074c269cf87d4ca950a097dac0704",
+      "actual_extra_gradient_steps": 0,
+      "full_episode_actions": [
+        {
+          "EXISTING": 47,
+          "KNOWN": 492,
+          "NEW": 100,
+          "WAIT": 629
+        },
+        {
+          "KNOWN": 1268
+        },
+        {
+          "KNOWN": 1192,
+          "NEW": 76
+        },
+        {
+          "EXISTING": 66,
+          "KNOWN": 1060,
+          "NEW": 142
+        }
+      ]
+    },
+    {
+      "seed": 1029,
+      "arm": "Known_set_rejection",
+      "result_sha256": "973e7852aa9815f0ac9bffdeffe99f3a3d5263ad094abc2d287abbdeca0c133a",
+      "launch_sha256": "1cf4def813f96a61884949fb73989ba36cf7398d2c0ba9012768f8058b139253",
+      "terminal_sha256": "e6633b0bd776b32ea8c9f95b964032fe681ca9bf2bad9c257e76f8be9e7c48f1",
+      "endpoint": {
+        "arm": "Known_set_rejection",
+        "bytes": 24231,
+        "reopen_exact": true,
+        "sha256": "2c61cc083ffc7253ed981090ccc704234cf4cb74229abc9b2340fa1c85113da8",
+        "step": 200
+      },
+      "endpoint_parameter_sha256": "6d8f4f4dc096936ef0c8c1a577487f28b47c464ba20b8037ab19fbd7bcc7340a",
+      "actual_extra_gradient_steps": 109,
+      "full_episode_actions": [
+        {
+          "EXISTING": 146,
+          "KNOWN": 304,
+          "NEW": 235,
+          "WAIT": 583
+        },
+        {
+          "KNOWN": 1220,
+          "NEW": 48
+        },
+        {
+          "KNOWN": 982,
+          "NEW": 286
+        },
+        {
+          "EXISTING": 32,
+          "KNOWN": 1229,
+          "NEW": 7
+        }
+      ]
+    }
+  ],
+  "private_endpoint_hashes_checked": false,
+  "development_calibration_Pred_joint_or_Goal_accepted": false,
+  "schema_version": "trackocd.cvpr.spread-C-all6-fit-public-receipt.v1",
+  "scope": "Derived public-only original training receipt qualification, not a new experiment or live asset gate",
+  "formal_training_preregistration_commit": "0acbe083ce9d9ca01b16e4ad527a5b027666053a",
+  "resources": {
+    "owned_total_wall_seconds": 370.6947280690001,
+    "max_sampled_owned_RSS_bytes": 952741888,
+    "training_GPU_hours": 0,
+    "private_checkpoints_reopened": 24,
+    "private_checkpoint_bytes": 581544
+  }
+}
