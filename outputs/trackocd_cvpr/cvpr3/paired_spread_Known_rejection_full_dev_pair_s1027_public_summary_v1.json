@@ -1,0 +1,147 @@
+{
+  "status": "PUBLIC_POSTHOC_ONE_COMPLETE_PAIR_NOT_FULL6_SELECTION_CALIBRATION_OR_GOAL",
+  "training_seed": 1027,
+  "completed_arm_seed_trials": 2,
+  "planned_arm_seed_trials": 6,
+  "input_sha256": {
+    "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1027/launch.json": "46dd78f69dffa7e773c0ab914793f8c9ddfa32987ef459f0a3b597d0f1d34e73",
+    "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1027/result.json": "e8e0782ea78c4bb4e124932cf58719f279862e7cb8efeb13fbe9dfad51450314",
+    "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_baseline_s1027_supervisor_attempt_1.json": "9e8cc0807e2cde5c791ab29ceeda6a38ff00a4bd1c7385534ca346d9ad4e0bc0",
+    "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_Known_set_rejection_s1027/launch.json": "c6a2cd83ddbc5bcec3f0ba73c5d06fda4eb10d67570ba7b7c3038ebf1d2d84db",
+    "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_Known_set_rejection_s1027/result.json": "d987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef",
+    "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_causal_dev_v1_Known_set_rejection_s1027_supervisor_attempt_1.json": "23d4aaf1ec267fc184585967f4c446f704316da5c1199bfc69dd2085527bb1ea"
+  },
+  "all_three_order_public_aggregate_rows_equal": true,
+  "numeric_scores_parameters_or_full_private_prediction_traces_equal_claimed": false,
+  "orders": {
+    "1027": {
+      "all_available_baseline": {
+        "Known_classes_observed": 3,
+        "Known_macro_accuracy": 0.9594329501915708,
+        "Known_micro_accuracy": 0.9337748344370861,
+        "Known_queries": 302,
+        "all_physical_commit_track_coverage": 1,
+        "certified_cross_video_reuse_macro_lower_bound": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 119,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "declared_pseudo_classes": 8,
+        "declared_pseudo_queries": 119,
+        "physical_tracks": 472,
+        "unscorable_reuse_queries_retained": 0
+      },
+      "all_available_repair": {
+        "Known_classes_observed": 3,
+        "Known_macro_accuracy": 0.9594329501915708,
+        "Known_micro_accuracy": 0.9337748344370861,
+        "Known_queries": 302,
+        "all_physical_commit_track_coverage": 1,
+        "certified_cross_video_reuse_macro_lower_bound": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 119,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "declared_pseudo_classes": 8,
+        "declared_pseudo_queries": 119,
+        "physical_tracks": 472,
+        "unscorable_reuse_queries_retained": 0
+      },
+      "all_available_repair_minus_baseline": {
+        "Known_micro_accuracy": 0,
+        "Known_macro_accuracy": 0,
+        "all_physical_commit_track_coverage": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 0,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "certified_cross_video_reuse_macro_lower_bound": 0
+      }
+    },
+    "1028": {
+      "all_available_baseline": {
+        "Known_classes_observed": 3,
+        "Known_macro_accuracy": 0.9594329501915708,
+        "Known_micro_accuracy": 0.9337748344370861,
+        "Known_queries": 302,
+        "all_physical_commit_track_coverage": 1,
+        "certified_cross_video_reuse_macro_lower_bound": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 119,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "declared_pseudo_classes": 8,
+        "declared_pseudo_queries": 119,
+        "physical_tracks": 472,
+        "unscorable_reuse_queries_retained": 0
+      },
+      "all_available_repair": {
+        "Known_classes_observed": 3,
+        "Known_macro_accuracy": 0.9594329501915708,
+        "Known_micro_accuracy": 0.9337748344370861,
+        "Known_queries": 302,
+        "all_physical_commit_track_coverage": 1,
+        "certified_cross_video_reuse_macro_lower_bound": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 119,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "declared_pseudo_classes": 8,
+        "declared_pseudo_queries": 119,
+        "physical_tracks": 472,
+        "unscorable_reuse_queries_retained": 0
+      },
+      "all_available_repair_minus_baseline": {
+        "Known_micro_accuracy": 0,
+        "Known_macro_accuracy": 0,
+        "all_physical_commit_track_coverage": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 0,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "certified_cross_video_reuse_macro_lower_bound": 0
+      }
+    },
+    "1029": {
+      "all_available_baseline": {
+        "Known_classes_observed": 3,
+        "Known_macro_accuracy": 0.9594329501915708,
+        "Known_micro_accuracy": 0.9337748344370861,
+        "Known_queries": 302,
+        "all_physical_commit_track_coverage": 1,
+        "certified_cross_video_reuse_macro_lower_bound": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 119,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "declared_pseudo_classes": 8,
+        "declared_pseudo_queries": 119,
+        "physical_tracks": 472,
+        "unscorable_reuse_queries_retained": 0
+      },
+      "all_available_repair": {
+        "Known_classes_observed": 3,
+        "Known_macro_accuracy": 0.9594329501915708,
+        "Known_micro_accuracy": 0.9337748344370861,
+        "Known_queries": 302,
+        "all_physical_commit_track_coverage": 1,
+        "certified_cross_video_reuse_macro_lower_bound": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 119,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "declared_pseudo_classes": 8,
+        "declared_pseudo_queries": 119,
+        "physical_tracks": 472,
+        "unscorable_reuse_queries_retained": 0
+      },
+      "all_available_repair_minus_baseline": {
+        "Known_micro_accuracy": 0,
+        "Known_macro_accuracy": 0,
+        "all_physical_commit_track_coverage": 0,
+        "declared_pseudo_absorbed_as_Known_queries": 0,
+        "declared_pseudo_anonymous_commit_queries": 0,
+        "certified_cross_video_reuse_micro_lower_bound": 0,
+        "certified_cross_video_reuse_macro_lower_bound": 0
+      }
+    }
+  },
+  "new_optimizer_steps": 0,
+  "new_private_weights_GT_or_data_loaded": false,
+  "selected_seed_arm_order_coefficient_or_checkpoint": false,
+  "timing_difference_is_controlled_latency_gain": false,
+  "full6matrix_Goal_or_calibration_accepted": false,
+  "incomplete_full6_aggregation_refused": true
+}

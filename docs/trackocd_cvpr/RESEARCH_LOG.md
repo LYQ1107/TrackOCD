@@ -5938,3 +5938,40 @@ no private GT/cache/weights opened for this check):
   54.514020026s inclusive/peak835760128B/zero GPU-hours. No owned fit/M/dev
   worker remained live after authoritative normal terminal; next explicit
   trial is same-seed repair1027, not a restart of baseline or changed protocol.
+
+### Actual complete seed1027 pair: rejection exercised, no aggregate dev gain
+
+- Revalidated the previous newly-owned repair supervisor using actual
+  boot/startticks/command and live current child; never restarted it from an
+  observation delay or stale progress. Registered76d0d4af... source/authority/
+  ALL6endpoint gates preceded dev input, original full protocol unchanged.
+- Repair1027 now normal exit0/guardNONE/complete:241.322088713s,
+  peak965472256B, one OS+CPU thread/zero helper/CUDA/optimizer/GPU-hours.
+  Complete72videos/472physical/8753observations/2562frames/116empty in every
+  three-order replay; whole IDrename/reversed delivery equal,39actual future
+  observations mutated with nonempty earlier events equal. No partial salvage.
+- ALL three order PUBLIC aggregate rows (every fixed prefix, fullavailable,
+  physical actions/audit counts) equal baseline1027. Both predict8753KNOWN,
+  allavailable Known micro282/302/macro0.9594329501915708/coverage1.0,
+  pseudo absorption119/anonymous queries0/certified crossvideo reuse micro
+  and macro lower bounds0. Training intervention had105nonzero extra-gradient
+  steps and different endpoint parameters, but this seed has NO aggregate
+  measured discovery gain. This is not equality of logits/private traces or
+  evidence that the mechanism is globally ineffective across unmeasured seeds.
+- Repair resultSHAd987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef;
+  launchc6a2cd83ddbc5bcec3f0ba73c5d06fda4eb10d67570ba7b7c3038ebf1d2d84db;
+  normal terminal23d4aaf1ec267fc184585967f4c446f704316da5c1199bfc69dd2085527bb1ea.
+  Small public posthoc pair report binds both original triplets/deltas, zero
+  new private reads or optimizer steps. Partial2/6 full-matrix aggregation
+  still REFUSED; no winner, coefficient/seed/model/prefix selection. Sequential
+  shared-host walls are NOT a controlled latency comparison or speedup claim.
+- Twenty targeted public actual/protocol regressions pass2.45s, including
+  distinct parameter hashes, identical aggregate rows, exact summary bindings
+  and incomplete-matrix refusal. Fresh proc scan no owned research worker;
+  RAMavailable100394881024B/free151342276608B, no cleanup/foreign intervention.
+  Remaining fixed endpoints baseline+repair1028/1029 still required. Calibrated
+  controls/fullM/joint/Pred/dense/lockedfinal and Goal A/B/C remain OPEN/active.
+- Final bounded CVPR/v2 suite1026pass56.22s, ownedwait0/guardNONE/
+  57.780282021s inclusive/peak861908992B/zero GPU-hours. Publication includes
+  only public original triplet/startup/summary/tests/logs, never private stdout,
+  weights, GT or raw histories. Next fixed explicit trial is baseline1028.

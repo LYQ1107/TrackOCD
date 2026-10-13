@@ -35,6 +35,37 @@ def test_missing_full_matrix_or_trial_refuses_without_dev_or_weight_reads(tmp_pa
         verified_matrix(tmp_path)
 
 
+def test_actual_seed1027_repair_full_normal_result_has_no_aggregate_discovery_gain():
+    paths = trial_sources('Known_set_rejection',1027)
+    hashes = ('c6a2cd83ddbc5bcec3f0ba73c5d06fda4eb10d67570ba7b7c3038ebf1d2d84db',
+              'd987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef',
+              '23d4aaf1ec267fc184585967f4c446f704316da5c1199bfc69dd2085527bb1ea')
+    assert all(sha256_file(ROOT/p) == h for p,h in zip(paths,hashes))
+    base = verified_trial(ROOT,'baseline',1027)
+    repair = verified_trial(ROOT,'Known_set_rejection',1027)
+    assert repair['orders'] == base['orders']
+    assert repair['evaluated_model_parameter_sha256'] != base['evaluated_model_parameter_sha256']
+    with pytest.raises(ValueError,match='ALL6'):
+        aggregate_matrix({('baseline',1027):base,('Known_set_rejection',1027):repair})
+
+
+def test_public_pair_summary_is_exact_original_aggregate_not_trace_parity_or_full6_acceptance():
+    p = ROOT/'outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_full_dev_pair_s1027_public_summary_v1.json'
+    r = json.loads(p.read_text())
+    assert r['completed_arm_seed_trials'] == 2 and r['planned_arm_seed_trials'] == 6
+    assert r['incomplete_full6_aggregation_refused'] and r['all_three_order_public_aggregate_rows_equal']
+    assert not r['numeric_scores_parameters_or_full_private_prediction_traces_equal_claimed']
+    assert not r['new_private_weights_GT_or_data_loaded']
+    assert not r['full6matrix_Goal_or_calibration_accepted']
+    for path,h in r['input_sha256'].items():
+        assert sha256_file(ROOT/path) == h
+    for arm,field in (('baseline','all_available_baseline'),('Known_set_rejection','all_available_repair')):
+        actual = verified_trial(ROOT,arm,1027)
+        for order,row in actual['orders'].items():
+            assert r['orders'][order][field] == row['prefix_snapshots']['all_available']
+            assert all(v == 0 for v in r['orders'][order]['all_available_repair_minus_baseline'].values())
+
+
 @pytest.mark.parametrize('change',['no_probe','vacuous_future','failed_terminal','selected_model'])
 def test_public_partial_or_relaxed_completion_refused_before_private_inputs(tmp_path,monkeypatch,change):
     import src.trackocd_cvpr.spread_C_development_complete_matrix as module

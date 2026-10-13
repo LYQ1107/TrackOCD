@@ -1397,3 +1397,34 @@ active; calibrated controls/fullM/joint/Pred/dense/locked-final remain open.
 Final bounded combined CVPR/v2 suite1024pass53.05s, ownedexit0/guardNONE,
 inclusive54.5140s/peak835760128B/zero GPU-hours. Next is the unmeasured matching
 repair1027 endpoint, preserving the fixed ALL6 protocol and all earlier trials.
+
+## Actual matched seed1027 pair: no aggregate development gain
+
+Repair1027 completed normally under the same full protocol:241.3221s,
+peak965472256B, one OS/CPU thread, zero helper/CUDA/optimizer/GPU-hours.
+All72videos/472physical tracks/8753observations/2562frames/116empty perorder
+retained; complete IDrename/reverse equality and39actual changed future
+observations with nonempty prior-event equality. Registered source and all6
+private endpoint fingerprints preceded dev input. No restart or guard change.
+
+EVERY public three-order aggregate row matches baseline1027, including all
+prefixes/allavailable and physical action counts. Both predict8753KNOWN per
+order, Known micro93.3775%/macro95.9433%/physical commit coverage100%, and
+absorb119/119declaredpseudo queries intoKnown with anonymous query count0 and
+certified crossvideo reuse lower bounds0. The repair was genuinely trained
+(105extra-gradient steps, different endpoint parameters), but this seed shows
+NO aggregate discovery gain. Equal public counts do not prove equal logits or
+full private traces, nor prove behavior for the other two unmeasured seeds.
+
+Result SHA256:
+`d987a86db32d2e933f9eb91250592839829569457d4104b4f7bb11c08373acef`.
+Normal terminal:
+`23d4aaf1ec267fc184585967f4c446f704316da5c1199bfc69dd2085527bb1ea`.
+The public posthoc pair summary binds original hashes and zero metric deltas;
+ALL6 aggregation still rejects2/6coverage. Shared-host wall differences are not
+controlled latency gains. Twenty targeted tests pass2.45s. No winner or
+coefficient/seed sweep; baseline+repair1028/1029 remain required, alongside fair
+calibrated controls/fullM/joint/strong lawful Pred/dense/independent final.
+This is scientific negative evidence, not a reason to finish or pause Goal A/B/C.
+Final bounded combined CVPR/v2 suite1026pass56.22s, ownedexit0/guardNONE,
+inclusive57.7803s/peak861908992B/zero GPU-hours. Next fixed trial is baseline1028.
