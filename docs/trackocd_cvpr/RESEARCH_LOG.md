@@ -5621,3 +5621,38 @@ no private GT/cache/weights opened for this check):
 - Actual17 targeted pass3.72s; full947pass52.18s, ownwait0/no guard/53.6631s/
   peak807931904B and25%reserve+3GiB planning margin. No numeric/source changes
   to frozen pair objective/calendar or original completed experiments.
+
+### Actual paired50 C pilot: normal completion, rejection intervention unexercised
+
+- Real fresh pair ran at independently live/source/authority/cache-verified
+  1a5f81bc075d2e2cfca2257f83534242a8bf4559, no old checkpoint warmstart. Own
+  normalexit0/no guard/fullresult,37.3596s total/peak951001088B, oneCPU compute
+  plus one bounded identified native helper/twoOSthreads/noCUDA/zeroGPUh.
+  BOTH arms actually50optimizer updates and complete10/54/1268/374/1clock.
+  CPU optimizer work is real training, not zero work just because GPUh=0.
+- Real shared initialmodel SHAa4b4ab7e... and framecalendar8a3ee08e... match.
+  Both updated endpoints equal8791ea72... and differ from initialization;
+  private model+AdamW+NumPy/Torch RNG checkpoints exactreopen,24167/24231B
+  remain local. Binary hashes differ because arm metadata differs, not evidence
+  of different model weights. No dev/final/Val/Test or rawGT/history upload.
+- Intended extra objective receives NO optimizer exposure: ALL50update rows
+  had no rejection macro loss/gradient,175Known group contributions and0
+  policy-pseudo base contributions. Full clock has206rejection-eligible groups
+  perarm, but0on actual update frames. Both full trajectories1242Known/26NEW/
+  26retained anonymous commits.206is group opportunity, not independent samples
+  or training exposure; frozen tail cannot qualify the intervention.
+- Result9a67853e3070dec7d86f7b7b0b7638e9f68b48d374950bcd490692f6a58a8239;
+  terminal1c746d836d3c9b5d7192c057d607142747736ff4876745efb1b2354114dbdc13;
+  launch94ce0efb56b31140191b2d12853fbe5b405dcfab3d6b1413903334348e506b71.
+  Informative/expansion flagFALSE. Normal pipeline completion is NOT a tested
+  failed objective, calibrated model, useful method or qualifying formal pilot.
+  No automatic expansion, longer run, different seed, objective coefficient
+  search or pilot weight reuse. Preserve first complete attempt unchanged.
+- Actual18 targeted tests pass3.89s; full948pass55.12s, ownedwait0/no guard/
+  56.4690s/peak833671168B/25%reserve+3GiBplanning. Public receipt regression
+  binds source/full scope/checkpoint summaries/exposure gap, reads no weights.
+  Next bounded exposure remedy needs a NEW explicit registered protocol and
+  same-source numeric/causal qualification before private fitting; neither
+  posthoc schedule change nor skipped Known/pseudo physical frames permitted.
+  FullM/runtime, calibrated Raw, actual C mechanism/joint/Pred/dense/lockedfinal
+  stay OPEN. Original Goal active/unachieved; no science gain claimed.

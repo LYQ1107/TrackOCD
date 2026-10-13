@@ -1193,3 +1193,32 @@ not demonstrated learned-M accuracy failure or a proven isolated bottleneck.
 No same-bound unchanged restart, enlarged bound, timer reset or removed probes.
 Current943 tests include actual terminal/absence checks; full9M metrics,
 real paired-C pilot, calibrated controls, joint/Pred/dense/final remain OPEN.
+
+## Actual paired C pilot: normal training, zero intervention exposure
+
+The first registered paired50/seed1027 pilot finished normally:37.3596s,
+peak951001088B, one CPU compute worker plus one identified native driver helper,
+zero CUDA/GPU-hours. Both arms took50 real AdamW updates and retained the full
+10policy videos/54physical tracks/1268observations/374frames/1empty clock. Their
+actual initializations, update calendars and trained model hashes are identical;
+both endpoints differ from initialization. Two private model/AdamW/RNG snapshots
+reopened exactly, remain local and are not formal warmstarts.
+
+The intended intervention was NOT optimized:175Known group contributions and
+zero policy-pseudo/rejection contributions at update frames. All50 extra-gradient
+measurements are zero, despite206legal rejection opportunities in the full
+frozen-tail-inclusive rollout. Counts are opportunities, not independent samples
+or evidence of training exposure. Both trajectories emitted1242Known/26NEW and
+retained26anonymous commits. This is failed exposure qualification, not evidence
+that the rejection objective was tested and ineffective or a calibration gain.
+
+Result SHA256:
+`9a67853e3070dec7d86f7b7b0b7638e9f68b48d374950bcd490692f6a58a8239`.
+Normal terminal:
+`1c746d836d3c9b5d7192c057d607142747736ff4876745efb1b2354114dbdc13`.
+The real informative/expansion flag is FALSE; formal fits do not start, no
+coefficient/seed search, tail-count substitution or posthoc calendar rewrite.
+All948 tests pass including the exact exposure/source/receipt regression.
+A separately preregistered bounded exposure remedy and genuinely informative
+pilot are still needed, along with fair calibrated controls, complete M,
+joint/predicted/dense/locked-final evidence. Goal A/B/C remain unachieved.
