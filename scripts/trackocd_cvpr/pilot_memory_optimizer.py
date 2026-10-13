@@ -18,6 +18,7 @@ from scripts.trackocd_cvpr.audit_joint_known_protocol import resources_ok, kerne
 from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memory
 from scripts.trackocd_cvpr.pilot_candidate_optimizer import SOURCES as C_SOURCES
 from src.trackocd_cvpr.memory_transport_recovery import recovery_configuration
+from scripts.trackocd_cvpr.qualify_policy_training_input import settled_after_counter_error
 
 CONFIG = 'configs/trackocd_cvpr/memory_optimizer_pilot_v1.json'
 SCIENTIFIC_CONFIG = 'configs/trackocd_cvpr/M_GT_scientific_window_v1.json'
@@ -73,6 +74,7 @@ def supervise(args, cfg, safety):
                 except (FileNotFoundError, ProcessLookupError): terminal = False
                 if terminal: child.wait(timeout=1); break
                 if child.poll() is not None: break
+                if settled_after_counter_error(child): break
                 if time.monotonic() - started > 2: reason = 'owned_memory_counter_unavailable'; child.kill(); break
                 time.sleep(.2); continue
             reason = resources_ok(cfg, safety, ROOT, started, peak)

@@ -787,3 +787,18 @@ fit Known as a SET when state truth is uncertain, without inventing individual
 Existing/NEW targets or using unlabeled objects asbackground. This may still
 favor polluted states; full originalCmatrix and separately preregistered
 training/controls required. Full Goal/Pred/joint/final remainunachieved.
+
+M completion replica now actually matches every original numerical artifact,
+including private model/optimizer/RNG binary and full history fingerprints,
+and has NEW normal ownedwait0. Effective8/9fits, public `ab7d8a29...`; original
+143/unobserved exit never rewritten as0 or counted as another trainingseed.
+
+C third-seed Top1 is normally measured (7/9), public `f8890293...`: Known281/302,
+117/119pseudo absorbedKnown,2/119anonymous andzero certifiedreuse inall3orders.
+Not allKnown, but not discovery gain. Allremainingcontrols required.
+
+Public all9C matrix aggregation source now preserves completeprefix/seed/order
+scope and exact old completion exceptions; no private inputs or modelchoice.
+Ordermeans are not independent training replicates. Actualall9 aggregate and
+newloss training remainpending. StrongPred/self-excludedpurity/coverage/joint/
+fairbaselines/final and wholeGoal stillopen.

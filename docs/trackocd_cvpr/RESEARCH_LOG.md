@@ -3800,3 +3800,41 @@ no private GT/cache/weights opened for this check):
   terminal, strict replica inequality refusal, legal complementary family
   gradients/permutation, unchanged old recovery and actualC6 normal receipts
   included. No replica or newloss fit acceptance follows from these tests.
+
+### M exact completion replica qualifies effective fit8; C first third-seed endpoint completes
+
+- Previous `b307845dcf5126f1068d6e9858a7a2b4698f3fbb` was pushed/fetched/ref
+  verified before actual M persistent launch and C thirdseed evaluation.
+  M relative_weighted/1029 completion replica now normally finishes200steps:
+  publicSHA `ab7d8a292ac15be45ccb427e1f5afba69123e0dbb1a100dd95df1e04f8cc5a4f`.
+  ENTIRE summary/curve, policy/fit scopes, private8389091B historySHA51d96c16...,
+  AND12515B model/optimizer/Torch+NumPy RNG endpoint SHAd3ead779... exactly equal
+  original artifacts. New actual ownedwait0/no guard reason/steps200;
+  worker308.30s/total316.35s/RSS949538816B/11OSthreads/CPU/zero trainingGPUh.
+  No higher/lower metric chosen, no new independent seed. Original143
+  observation and absent oldsupervisor receipt remainunchanged/unqualified.
+  Effective M8/9 complete; last pooled/1029 stillrequired before Mdev.
+- C Top1_conditioned/1029 normal completion, publicSHA
+  `f8890293a7d37436c8c06a0cee05c190f1fef759adbf46d24261b5229b088645`:
+  all3orders/full472/8753/2562/116, actualID/reverse+39future checks pass.
+  Eachorder actionsKNOWN/EXISTING/NEW8593/147/13; Known281/302, pseudoKnown
+  absorption117/119, anonymous2/119, certifiedcrossvideoreuse0. Thirdseed
+  has a little anonymous coverage unlike allKnown firsttwoTop1 seeds, but no
+  discovery gain. Worker437.33s/owned444.53s/RSSpeak965251072B/ONEOSthread/
+  noCUDA/nooptimizer. C7/9evaluated, other two1029controls stillrequired.
+- Added PUBLIC-only original C all9 matrix gate/aggregate prerequisite.
+  All27launch/result/terminal records before aggregation; identical actual
+  numeric protocol/kernel/loss hashes and full clocks/denominators/invariance.
+  One exact first-C public counter-observation qualification and exact pooled
+  secondseed pre-input namespace recovery remainexplicit. Other trials require
+  normal ownedcompletion; no blanket guard rescue. Everyprefix/seed/order
+  reported, ordermean within each trainingseed then three-seed mean. Three
+  orderreplays are NOT nine independent trainings. This aggregate is NOT yet
+  executed on a completedall9matrix and does not start newloss training.
+- Future M supervisor uses the already-tested narrow .1s actualPopen reap
+  after counter disappearance; still-live/unobservable child stillfails under
+  originalguards. No numericalkernel/loss/clock change or claim that143's
+  cause was proved. Old failed/unobserved outcomes remainimmutable.
+- Full659tests passed in72.88s. A subsequent strict no-fullTruth/no-unknown-BG
+  public-matrix boundary check also passed all4targeted receipt/gate tests in
+  .11s. No actual full9aggregate execution or newloss training yet.
