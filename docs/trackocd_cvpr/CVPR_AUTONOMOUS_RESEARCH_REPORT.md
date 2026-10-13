@@ -1116,3 +1116,34 @@ controls and evidence-supported joint R/C/M mechanisms, retaining legal
 strong-Pred/dense physical denominators and locked-final gates. This baseline
 failure is not overall Goal completion and does not authorize Val tuning,
 Novel supervision, arbitrary hyperparameter search or resource relaxation.
+
+## 2026-10-14 — Input-only M runtime qualification, not method improvement
+
+An actual new ALL11 full-policy shadow at registered7a3d9ec completed normally:
+624.7836s, peak954171392B, zero optimizer/GPU-hours. Same10videos/54physical/
+1268observations/374frames/1empty, twozero-fit controls and all9 actual frozen
+M endpoints. Complete OLD/NEW events, scores, candidate features, selected
+versions, numeric ledgers and outcomes are exact, including all previous real
+private trace fingerprints. No raw traces or checkpoints are uploaded.
+
+The new memo stores only complete ordered Raw/quality/observed-count input
+bytes and their original eight-feature/norm-vector FP32 computations, never
+model logits/prototypes or predictions. It returns fresh tensors, preserves
+gradient/noncontiguous fallback and recomputes uncachable full calls without
+pruning. Snapshot lookup only borrows the current immutable bank tuple inside
+refresh and releases it afterwards. All original refresh, lifecycle, history,
+support, model and decision logic stays active. Raw32MiB/SHA15.5MiB/member16MiB/
+temporary index0.5MiB retain the original64MiB logical derived budget, with
+separate realRSS and25%RAM guards; Python allocator equality is not claimed.
+Every trained-M memo hit15258-15260 times and all snapshot indexes were exercised.
+
+Quarantine/1027 shared-host sequential OLD/NEW policy timings33.7938/21.3529s
+are not an isolated performance claim or a full-dev guarantee. Result SHA256
+`cc9f3c704a860f62f56bbfe927c830b7e1c3bdd2967b405174549e40bdd33e33`;
+profile `bbc0881e1672414ff9919fc6a837e7e53504e3431b0c935b7e961d16cef5ab22`;
+normal terminal `c849fac4c3671b3913d0eb616d9bd396f18a1d416dd3062e0e259323f7046de5`.
+Actual qualification and full-protocol source gates pass929 tests. A new
+full-M namespace retains all472tracks, three orders, full ID/reverse/future
+replays, original3000s/3GiB and frozen endpoints/thresholds. It must pass fresh
+remote/source/authority gates before dev input and complete normally before
+metrics acceptance; qualification alone is not full9M completion or Goal A/B/C.

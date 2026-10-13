@@ -5473,3 +5473,42 @@ no private GT/cache/weights opened for this check):
   all11 normal receipts required before any separate full-development proposal.
   No full M launch, guard relaxation, model selection, speedup guarantee or
   scientific Goal acceptance from this prospective source stage.
+
+### Actual ALL11 member-input memo parity and prospective full-M gate
+
+- Registered7a3d9ec7a29840ff5bf425413a004d54f1c35e38 actual launcher+worker
+  independently passed exact live/source/authority/ALL9 endpoint gates. New
+  persistent supervisor PID308811/startticks1688195 was actually matched live;
+  now terminal normal0/no guard/result+profile present,624.7836s total,
+  peak954171392B/zero optimizer/GPUh. Never reuse these historical PIDs.
+- ALL11 full OLD/NEW policy streams finished:10videos/54physical/1268obs/
+  374frames/1empty, twozero-fit controls and all9 fixed M endpoints. EVERY
+  event/score/candidatefeature/chosen-version/numeric-ledger/outcome matches,
+  and all11 private trace digests also match the previous qualified profile.
+  Resultcc9f3c704a860f62f56bbfe927c830b7e1c3bdd2967b405174549e40bdd33e33;
+  profilebbc0881e1672414ff9919fc6a837e7e53504e3431b0c935b7e961d16cef5ab22;
+  terminalc849fac4c3671b3913d0eb616d9bd396f18a1d416dd3062e0e259323f7046de5;
+  launch7727b08675e12e39c0e8e9df2ef18050e7199e394bd61c892d3530fc0d9645c6.
+- Each trained M member-input memo really hit15258-15260 times,1215-1217misses,
+  retained9256640-9269536B. Temporary index hit15589-15728/747validated snapshots,
+  peak4922-5222 bookkeeping bytes, zero fallbacks and released after refresh.
+  Raw<=33554432/SHA<=16252928/member<=16777216/index<=524288, shared64MiB logical
+  ceiling and actualRSS guard retained. No learned output/prototype cache,
+  controller refresh skip, history/support eviction, GT repair or model change.
+- Shared-host sequential quarantine/1027 OLD33.7938s/NEW21.3529s; previous
+  SHA-only NEW25.514s was another observation, not paired isolated speedup.
+  Current policy parity does not guarantee full-dev timing or prove a scientific
+  gain. Full9M still unqualified until actual full orders+original full probes
+  finish normally with result/profile; no reuse of old three-order progress.
+- Register same original full72/472/8753/2562/116 model/clock/threshold/prefix/
+  probes/data/resource protocol, only qualified input memo + NEW immutable
+  namespace. Three main orders plus full ID/reverse and full future replays
+  remain intact; wall3000s/RSS3GiB/25%reserve unchanged. Public ALL11 fingerprints
+  refuse when missing/partial, require normal terminal/source hashes/cache
+  exercise and exact prior traces; then still require fresh remote/cohort/source
+  authority proof before private endpoints/dev. No model/checkpoint selection.
+- Actual33 targeted tests pass2.72s; full929pass51.37s, guarded ownwait0/no
+  guard/52.8311s/peak764121088B. New full-M source is prospective, not execution.
+  Only source/tests/small public results and profiles staged; private data,
+  weights, shards, traces and runtime logs remain local. Original Goal active,
+  calibrated/joint R/C/M/strongPred/dense/locked-final scientific gates OPEN.
