@@ -5101,3 +5101,35 @@ no private GT/cache/weights opened for this check):
   review and full tests; they are NOT published or actual experiment results.
   Source-only preparation, M wall failure and all remaining scientific gates
   retain their previous interpretation. Original Goal remains active/unachieved.
+
+### First actual fresh Fixed200 fit and full-development source registration
+
+- A1_ADAPTER seed1027 genuinely ran from fresh initialization at registered
+  2a51b62feb5273bd7541773d0afcd8e04e00ff79; worker independently verified live
+  remote/source/authority/pilot/cache gates before private fit input. Completed
+  all200 optimizer steps with normal owned exit0/no guard, 24.4831s total,
+  peak655749120B, one CPU compute worker plus one identified native CUDA-driver
+  helper (two OS threads), CUDA uninitialized, zero training GPU-hours.
+- All1401 physical tracks accounted:1158 canonical Known fit5 groups eligible,
+  243 other/unknown masked rather than background or fabricated Novel. Actual
+  sampled groups498/videos226, NOT all1158 visited. Positive finite adapter
+  loss gradients and different model hashes; no pilot/historical warmstart.
+  All20/50/100/200 private model+AdamW snapshots reopen exactly; private output
+  25354975B remains local. Public result SHA256
+  089dbeb6cdb0360de9959c22a484e1347d818c5705485e6fe40f296404106845;
+  terminal633bd965a9adedb119350ba83982d12e7c95cc1c4d127bf216dab0070dc4baf9;
+  launch2e52f3434d08a91efa3ac76c34f41ae9b4638a1a0447a5e3a07cb8e7f81a7bfc.
+- Register full all15 native development SOURCE: requires all45 public normal
+  receipts, exact current source/authority and fresh live remote proof before
+  private endpoint hashes or dev input. All472 physical tracks/8753observations,
+  six full prefixes/native256 certified all-gallery metrics, original zero-fit
+  Raw path, complete canonical fit5 prototypes, no padding/subset/optimizer/
+  dev-selected endpoint/final inputs. Numeric one-track future/ID probes are
+  not full-controller or temporal-benefit evidence. No development run yet;
+  remaining14 actual formal fits are still required before the dev gate opens.
+- Targeted31 tests pass2.28s. Full885 tests pass52.45s; actual guarded owned
+  test wait0/no guard/53.8515s total/peak807026688B, 25%RAM reserve retained.
+  Actual public receipt regression does NOT reopen private weights. Only
+  explicit source/tests and small public launch/result/terminal uploaded.
+  All15 development, full9M/probes, calibrated/joint/Pred/lockedfinal and
+  paper-level scientific acceptance remain OPEN; Goal remains unachieved.
