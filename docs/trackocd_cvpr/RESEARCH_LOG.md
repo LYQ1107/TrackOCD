@@ -4313,3 +4313,43 @@ no private GT/cache/weights opened for this check):
   no original partial metric reuse, input pruning or final/Val/Test access.
   Whole Goal remains active/unachieved; scientific M matrix, self-excluded
   controls, fresh/calibrated baselines, strong legal Pred/joint/final remain open.
+
+### Register ALL9 read-only historical C update loss-plan reconstruction
+
+- Current qualified fingerprint Mean job is actually live with matching PID/
+  start ticks/argv hash; all3 orders now report complete through1029. Full ID/
+  reverse/future probes/result/profile/normal terminal are still pending. No
+  in-flight source/data/weights/guards changed and no partial result promoted.
+- To diagnose C's Known-only/all-anonymous imbalance before new repair training,
+  inspected the actual original writer. Private histories save full frame/alias/
+  output action/token and append-only anonymous labels, NOT logits/candidate
+  tensors. Therefore no direct exact optimizer-target histogram or gradient
+  recovery from those records alone. Full-rollout NEW plan counts include frozen
+  tails and must not be mistaken for actual optimizer contributions.
+- NEW bounded audit reconstructs Raw candidate exposure from qualified fit/
+  policy caches and applies ONLY hash-qualified recorded model actions. External
+  fit/policy existing Known-derived targets reconstruct the original pure-history
+  loss plans. All original full episode summaries, retained anonymous label
+  histories and every actual200-step family/class/mask/other-instance/video
+  exposure calendar must match exactly. Any mismatch fails whole audit; no
+  scored new policy, oracle placement, invented logits, gradient magnitude or
+  historical numeric-row trace claim. Positive plan groups are opportunities,
+  NOT independent samples or proof of collapse cause.
+- All9 public trained C cohorts/normal terminals/endpoint byte fingerprints and
+  full original kernel/protocol gates precede private history decode. Each9
+  history size1.19–1.82MB is bounded<=2MiB and hashed against original receipt;
+  one history decoded at a time, never exported. No checkpoint deserialization,
+  optimizer/encoder/pixels/newlabels or dev/final/Val/Test payload. Only authorized
+  fit/policy cache and existing targets, unknown never BG or fabricated Novel.
+- Actual public source check found ONLY the documented bank __deepcopy__ change:
+  oldbankSHAf2d40b40... vscurrenta454f719..., exact AST equality excluding that
+  method, with olde9c894e Git object bound. Reconstruction does not call deepcopy;
+  numeric/provenance methods are unchanged. All9 original core/prior/router
+  hashes otherwise match; no arbitrary source replacement or blanket exception.
+- New persistent owned audit composes existing supervision, CPU1/3GiB/3000s/
+  3MiB/25%RAM/storage guards. Controls only its own Popen child, not in-flight
+  Mean or foreign processes. Full738tests pass in57.54s, including genuine tiny
+  synthetic fits reconstructed without score-model calls, history/calendar/
+  birth/clock/missing-frame faults and AST/source/scope boundary tests. Synthetic
+  fixtures are not real ALL9 evidence. Register/push/fetch before actual audit;
+  new training/repair, collapse cause and whole Goal remain unaccepted.
