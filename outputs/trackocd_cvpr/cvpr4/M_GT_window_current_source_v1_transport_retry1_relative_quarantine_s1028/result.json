@@ -1,0 +1,3683 @@
+{
+  "checkpoint_selection": "Fixed200 endpoint",
+  "dev_final_Val_Test_or_new_nonKnown_labels_used": false,
+  "endpoint": {
+    "bytes": 12515,
+    "reopen_exact": true,
+    "sha256": "316db258f372e4ebcfe802200efb69c7854ebe7e1477cd46f702b74a9b532744"
+  },
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "e6108d254e64a43801333e248c8ce8f02e303965"
+  },
+  "offline_fit_prior_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "old_R_C_M_or_pilot_warmstart": false,
+  "policy_scope": {
+    "GT_localization_oracle_control_not_qualified_Pred": true,
+    "development_final_or_other_video_payload_bodies_opened": false,
+    "development_final_or_other_video_semantic_values_decoded": false,
+    "empty_GT_frames": 1,
+    "existing_Known_target_counts": {
+      "Known": 34,
+      "policy_pseudo": 10
+    },
+    "external_loss_only_not_observation_or_model_features": true,
+    "masked_loss_tracks": 10,
+    "masked_tracks_dropped_or_declared_background": false,
+    "metadata_frames": 374,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 1268,
+    "physical_label_strata": {
+      "Known": 34,
+      "no_retained_semantic_truth": 10,
+      "policy_pseudo": 10
+    },
+    "physical_tracks": 54,
+    "videos": 10
+  },
+  "private_prediction_history": {
+    "bytes": 8978893,
+    "sha256": "42da6ea0c91bf99a4b58ee8477daa9542aa956ef38f1dd978a2b8dd96dde5d5f"
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 939610112,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 244.56545163600822
+  },
+  "seed": 1028,
+  "status": "COMPLETED_FIXED_M_TRIAL_NOT_DEV_PRED_JOINT_OR_GOAL_ACCEPTANCE",
+  "summary": {
+    "GT_driven_memory_repair_or_deleted_wrong_history": false,
+    "Novel_gain_official_CT_current_active_purity_self_exclusion_Pred_or_Goal_accepted": false,
+    "actual_optimizer_family_groups": {
+      "Known": 491,
+      "policy_pseudo": 122
+    },
+    "actual_optimizer_policy_pseudo_classes": 2,
+    "actual_optimizer_semantic_classes": 5,
+    "actual_optimizer_target_bins": {
+      "fractional": 6,
+      "one": 358,
+      "zero": 249
+    },
+    "episodes": [
+      {
+        "actual_anonymous_commits_retained": 1268,
+        "actual_bank_commits_retained": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 1754,
+          "policy_pseudo": 333
+        },
+        "eligible_target_bins_all_frames_including_frozen_tail": {
+          "one": 1421,
+          "zero": 666
+        },
+        "empty_frames": 1,
+        "episode": 0,
+        "external_strict_version_lineage": {
+          "GT_feedback_or_current_active_version_purity_or_official_CT_or_Pred_claim": false,
+          "actual_commits": 1268,
+          "all_parent_history_and_empty_tombstones_retained": true,
+          "final_tokens_including_tombstones": 46,
+          "full_semantic_GT_truth_or_self_excluded_reuse_certificate": false,
+          "strict_all_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 289,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 414,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 1727
+          },
+          "strict_latest_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 7,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 9,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 30
+          },
+          "version_records": 2430
+        },
+        "loss_plan_counts_all_frames": {
+          "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 1029,
+          "MASKED_SINGLETON_NO_OTHER_SUPPORT": 9528,
+          "MASKED_UNKNOWN_OR_CONFLICTING_SUPPORT": 196
+        },
+        "memory_versions_retained": 2430,
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "EXISTING": 1222,
+          "NEW": 46
+        },
+        "physical_observations": 1268,
+        "version_lifecycle_records": {
+          "Tentative": 2430
+        },
+        "videos": 10,
+        "zero_gradient_eligible_frames_without_update": 0
+      },
+      {
+        "actual_anonymous_commits_retained": 1263,
+        "actual_bank_commits_retained": 1263,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 945,
+          "policy_pseudo": 675
+        },
+        "eligible_target_bins_all_frames_including_frozen_tail": {
+          "fractional": 12,
+          "one": 865,
+          "zero": 743
+        },
+        "empty_frames": 1,
+        "episode": 1,
+        "external_strict_version_lineage": {
+          "GT_feedback_or_current_active_version_purity_or_official_CT_or_Pred_claim": false,
+          "actual_commits": 1263,
+          "all_parent_history_and_empty_tombstones_retained": true,
+          "final_tokens_including_tombstones": 114,
+          "full_semantic_GT_truth_or_self_excluded_reuse_certificate": false,
+          "strict_all_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 186,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 374,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 1041
+          },
+          "strict_latest_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 17,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 16,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 81
+          },
+          "version_records": 1601
+        },
+        "loss_plan_counts_all_frames": {
+          "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 696,
+          "MASKED_SINGLETON_NO_OTHER_SUPPORT": 7513,
+          "MASKED_UNKNOWN_OR_CONFLICTING_SUPPORT": 416
+        },
+        "memory_versions_retained": 1601,
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "EXISTING": 1149,
+          "KNOWN": 5,
+          "NEW": 114
+        },
+        "physical_observations": 1268,
+        "version_lifecycle_records": {
+          "Quarantined": 184,
+          "Tentative": 1417
+        },
+        "videos": 10,
+        "zero_gradient_eligible_frames_without_update": 0
+      },
+      {
+        "actual_anonymous_commits_retained": 1268,
+        "actual_bank_commits_retained": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 1305,
+          "policy_pseudo": 362
+        },
+        "eligible_target_bins_all_frames_including_frozen_tail": {
+          "fractional": 6,
+          "one": 932,
+          "zero": 729
+        },
+        "empty_frames": 1,
+        "episode": 2,
+        "external_strict_version_lineage": {
+          "GT_feedback_or_current_active_version_purity_or_official_CT_or_Pred_claim": false,
+          "actual_commits": 1268,
+          "all_parent_history_and_empty_tombstones_retained": true,
+          "final_tokens_including_tombstones": 247,
+          "full_semantic_GT_truth_or_self_excluded_reuse_certificate": false,
+          "strict_all_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 249,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 536,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 1763
+          },
+          "strict_latest_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 4,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 40,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 203
+          },
+          "version_records": 2548
+        },
+        "loss_plan_counts_all_frames": {
+          "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 740,
+          "MASKED_SINGLETON_NO_OTHER_SUPPORT": 7607,
+          "MASKED_UNKNOWN_OR_CONFLICTING_SUPPORT": 422
+        },
+        "memory_versions_retained": 2548,
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "EXISTING": 1021,
+          "NEW": 247
+        },
+        "physical_observations": 1268,
+        "version_lifecycle_records": {
+          "Quarantined": 824,
+          "Tentative": 1724
+        },
+        "videos": 10,
+        "zero_gradient_eligible_frames_without_update": 0
+      },
+      {
+        "actual_anonymous_commits_retained": 1268,
+        "actual_bank_commits_retained": 1268,
+        "eligible_family_groups_all_frames_including_frozen_tail": {
+          "Known": 1512
+        },
+        "eligible_target_bins_all_frames_including_frozen_tail": {
+          "fractional": 20,
+          "one": 1058,
+          "zero": 434
+        },
+        "empty_frames": 1,
+        "episode": 3,
+        "external_strict_version_lineage": {
+          "GT_feedback_or_current_active_version_purity_or_official_CT_or_Pred_claim": false,
+          "actual_commits": 1268,
+          "all_parent_history_and_empty_tombstones_retained": true,
+          "final_tokens_including_tombstones": 44,
+          "full_semantic_GT_truth_or_self_excluded_reuse_certificate": false,
+          "strict_all_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 327,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 549,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 1948
+          },
+          "strict_latest_version_status_counts": {
+            "CERTIFIED_ONE_DECLARED_PSEUDO_CLASS_LOWER_BOUND": 7,
+            "UNSCORABLE_EMPTY_OR_UNKNOWN_HISTORY": 9,
+            "VERIFIED_BAD_ANONYMOUS_KNOWN_HISTORY": 28
+          },
+          "version_records": 2824
+        },
+        "loss_plan_counts_all_frames": {
+          "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 751,
+          "MASKED_SINGLETON_NO_OTHER_SUPPORT": 8638,
+          "MASKED_UNKNOWN_OR_CONFLICTING_SUPPORT": 655
+        },
+        "memory_versions_retained": 2824,
+        "metadata_frames": 374,
+        "optimizer_steps": 50,
+        "physical_actions": {
+          "EXISTING": 1224,
+          "NEW": 44
+        },
+        "physical_observations": 1268,
+        "version_lifecycle_records": {
+          "Tentative": 2824
+        },
+        "videos": 10,
+        "zero_gradient_eligible_frames_without_update": 0
+      }
+    ],
+    "loss_curve": [
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 0,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 1.0133912563323975,
+        "loss": 0.6931471824645996,
+        "masked_support_groups_this_frame": 16,
+        "step": 1,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 0,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 1.061135172843933,
+        "loss": 0.6895180940628052,
+        "masked_support_groups_this_frame": 16,
+        "step": 2,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 0,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 1.0871412754058838,
+        "loss": 0.6857451796531677,
+        "masked_support_groups_this_frame": 16,
+        "step": 3,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 0,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 1.0876418352127075,
+        "loss": 0.6819528937339783,
+        "masked_support_groups_this_frame": 20,
+        "step": 4,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 0,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 1.0883020162582397,
+        "loss": 0.6781119108200073,
+        "masked_support_groups_this_frame": 20,
+        "step": 5,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 0.3731951117515564,
+        "loss": 0.6993751525878906,
+        "masked_support_groups_this_frame": 20,
+        "step": 6,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 0.37522992491722107,
+        "loss": 0.7001241445541382,
+        "masked_support_groups_this_frame": 20,
+        "step": 7,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 0.37807971239089966,
+        "loss": 0.7008565664291382,
+        "masked_support_groups_this_frame": 20,
+        "step": 8,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 0.3798138499259949,
+        "loss": 0.7013709545135498,
+        "masked_support_groups_this_frame": 20,
+        "step": 9,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 0.3806246221065521,
+        "loss": 0.7016998529434204,
+        "masked_support_groups_this_frame": 20,
+        "step": 10,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 0.38066932559013367,
+        "loss": 0.7018698453903198,
+        "masked_support_groups_this_frame": 20,
+        "step": 11,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 0.3800770342350006,
+        "loss": 0.7019034028053284,
+        "masked_support_groups_this_frame": 20,
+        "step": 12,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 0.3789539933204651,
+        "loss": 0.7018190622329712,
+        "masked_support_groups_this_frame": 20,
+        "step": 13,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 0.37738874554634094,
+        "loss": 0.7016329765319824,
+        "masked_support_groups_this_frame": 20,
+        "step": 14,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 0.3754543960094452,
+        "loss": 0.7013586759567261,
+        "masked_support_groups_this_frame": 20,
+        "step": 15,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 0.3732118010520935,
+        "loss": 0.7010080814361572,
+        "masked_support_groups_this_frame": 20,
+        "step": 16,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 0.37071236968040466,
+        "loss": 0.7005913257598877,
+        "masked_support_groups_this_frame": 20,
+        "step": 17,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 0.3680005669593811,
+        "loss": 0.7001173496246338,
+        "masked_support_groups_this_frame": 20,
+        "step": 18,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 0.36511537432670593,
+        "loss": 0.699594259262085,
+        "masked_support_groups_this_frame": 20,
+        "step": 19,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 0.3620912432670593,
+        "loss": 0.6990288496017456,
+        "masked_support_groups_this_frame": 20,
+        "step": 20,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 0.3589593172073364,
+        "loss": 0.6984270811080933,
+        "masked_support_groups_this_frame": 20,
+        "step": 21,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 0.35574737191200256,
+        "loss": 0.6977943181991577,
+        "masked_support_groups_this_frame": 20,
+        "step": 22,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 0.3524807393550873,
+        "loss": 0.6971349716186523,
+        "masked_support_groups_this_frame": 20,
+        "step": 23,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 0.34918224811553955,
+        "loss": 0.6964529752731323,
+        "masked_support_groups_this_frame": 20,
+        "step": 24,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 0.345872700214386,
+        "loss": 0.6957515478134155,
+        "masked_support_groups_this_frame": 20,
+        "step": 25,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 0.3425711691379547,
+        "loss": 0.6950335502624512,
+        "masked_support_groups_this_frame": 20,
+        "step": 26,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 0.3392948806285858,
+        "loss": 0.6943012475967407,
+        "masked_support_groups_this_frame": 20,
+        "step": 27,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 0.3360593914985657,
+        "loss": 0.6935564279556274,
+        "masked_support_groups_this_frame": 20,
+        "step": 28,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 0.33287885785102844,
+        "loss": 0.6928006410598755,
+        "masked_support_groups_this_frame": 20,
+        "step": 29,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 0.32976585626602173,
+        "loss": 0.6920350193977356,
+        "masked_support_groups_this_frame": 20,
+        "step": 30,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 0,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 0.3267309367656708,
+        "loss": 0.6912602186203003,
+        "masked_support_groups_this_frame": 20,
+        "step": 31,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 0.2761205732822418,
+        "loss": 0.6885671019554138,
+        "masked_support_groups_this_frame": 20,
+        "step": 32,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 0.2615583539009094,
+        "loss": 0.6880985498428345,
+        "masked_support_groups_this_frame": 22,
+        "step": 33,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 0.2511807084083557,
+        "loss": 0.6876715421676636,
+        "masked_support_groups_this_frame": 22,
+        "step": 34,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.24289755523204803,
+        "loss": 0.6872323751449585,
+        "masked_support_groups_this_frame": 22,
+        "step": 35,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.23589515686035156,
+        "loss": 0.6867760419845581,
+        "masked_support_groups_this_frame": 22,
+        "step": 36,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.22979462146759033,
+        "loss": 0.686321496963501,
+        "masked_support_groups_this_frame": 22,
+        "step": 37,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.2243243157863617,
+        "loss": 0.6858611106872559,
+        "masked_support_groups_this_frame": 22,
+        "step": 38,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.21929322183132172,
+        "loss": 0.6853811144828796,
+        "masked_support_groups_this_frame": 22,
+        "step": 39,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.21466779708862305,
+        "loss": 0.6849138736724854,
+        "masked_support_groups_this_frame": 22,
+        "step": 40,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.21034769713878632,
+        "loss": 0.6844499707221985,
+        "masked_support_groups_this_frame": 22,
+        "step": 41,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.20629040896892548,
+        "loss": 0.684002161026001,
+        "masked_support_groups_this_frame": 22,
+        "step": 42,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.20241834223270416,
+        "loss": 0.683546245098114,
+        "masked_support_groups_this_frame": 22,
+        "step": 43,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.2005893588066101,
+        "loss": 0.682960033416748,
+        "masked_support_groups_this_frame": 27,
+        "step": 44,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.19877499341964722,
+        "loss": 0.6823760271072388,
+        "masked_support_groups_this_frame": 27,
+        "step": 45,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.19696778059005737,
+        "loss": 0.6817940473556519,
+        "masked_support_groups_this_frame": 27,
+        "step": 46,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.19516047835350037,
+        "loss": 0.6812138557434082,
+        "masked_support_groups_this_frame": 27,
+        "step": 47,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.19334638118743896,
+        "loss": 0.680635392665863,
+        "masked_support_groups_this_frame": 27,
+        "step": 48,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.19151930510997772,
+        "loss": 0.6800585985183716,
+        "masked_support_groups_this_frame": 27,
+        "step": 49,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 4,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 6,
+        "episode": 0,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.18967334926128387,
+        "loss": 0.6794835925102234,
+        "masked_support_groups_this_frame": 27,
+        "step": 50,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 0.8922358155250549,
+        "loss": 0.6583584547042847,
+        "masked_support_groups_this_frame": 3,
+        "step": 51,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 0.9251981377601624,
+        "loss": 0.6487265825271606,
+        "masked_support_groups_this_frame": 3,
+        "step": 52,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 0.9476091861724854,
+        "loss": 0.63980633020401,
+        "masked_support_groups_this_frame": 3,
+        "step": 53,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 0.9705726504325867,
+        "loss": 0.6315075159072876,
+        "masked_support_groups_this_frame": 3,
+        "step": 54,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 0.9917341470718384,
+        "loss": 0.6233792901039124,
+        "masked_support_groups_this_frame": 3,
+        "step": 55,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 1.0113991498947144,
+        "loss": 0.615262508392334,
+        "masked_support_groups_this_frame": 3,
+        "step": 56,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 1.0325862169265747,
+        "loss": 0.607180655002594,
+        "masked_support_groups_this_frame": 3,
+        "step": 57,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 1.0484834909439087,
+        "loss": 0.5987920761108398,
+        "masked_support_groups_this_frame": 3,
+        "step": 58,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 1.061314344406128,
+        "loss": 0.5902084112167358,
+        "masked_support_groups_this_frame": 3,
+        "step": 59,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 1.071529746055603,
+        "loss": 0.5814703702926636,
+        "masked_support_groups_this_frame": 3,
+        "step": 60,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 1.0798200368881226,
+        "loss": 0.5726213455200195,
+        "masked_support_groups_this_frame": 3,
+        "step": 61,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 1.0878444910049438,
+        "loss": 0.5636806488037109,
+        "masked_support_groups_this_frame": 3,
+        "step": 62,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 1.0944297313690186,
+        "loss": 0.5546459555625916,
+        "masked_support_groups_this_frame": 3,
+        "step": 63,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 1.0994528532028198,
+        "loss": 0.5455408096313477,
+        "masked_support_groups_this_frame": 3,
+        "step": 64,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 1.1034600734710693,
+        "loss": 0.5363720059394836,
+        "masked_support_groups_this_frame": 3,
+        "step": 65,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 1.1083877086639404,
+        "loss": 0.5270584225654602,
+        "masked_support_groups_this_frame": 3,
+        "step": 66,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 1.1067456007003784,
+        "loss": 0.5187469720840454,
+        "masked_support_groups_this_frame": 3,
+        "step": 67,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 1.104390025138855,
+        "loss": 0.510395884513855,
+        "masked_support_groups_this_frame": 3,
+        "step": 68,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 1.1013972759246826,
+        "loss": 0.5020190477371216,
+        "masked_support_groups_this_frame": 3,
+        "step": 69,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 1.0976409912109375,
+        "loss": 0.49364519119262695,
+        "masked_support_groups_this_frame": 3,
+        "step": 70,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 1.0936609506607056,
+        "loss": 0.485239177942276,
+        "masked_support_groups_this_frame": 3,
+        "step": 71,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 1.0888915061950684,
+        "loss": 0.4768691658973694,
+        "masked_support_groups_this_frame": 3,
+        "step": 72,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 1.0829027891159058,
+        "loss": 0.46889668703079224,
+        "masked_support_groups_this_frame": 3,
+        "step": 73,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 1.077391505241394,
+        "loss": 0.46054062247276306,
+        "masked_support_groups_this_frame": 3,
+        "step": 74,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 1.0741214752197266,
+        "loss": 0.4510970413684845,
+        "masked_support_groups_this_frame": 3,
+        "step": 75,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 1.069008231163025,
+        "loss": 0.4419178366661072,
+        "masked_support_groups_this_frame": 3,
+        "step": 76,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 1.063593864440918,
+        "loss": 0.4327727258205414,
+        "masked_support_groups_this_frame": 3,
+        "step": 77,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 1.0574601888656616,
+        "loss": 0.4237399399280548,
+        "masked_support_groups_this_frame": 4,
+        "step": 78,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 1.0508249998092651,
+        "loss": 0.414785236120224,
+        "masked_support_groups_this_frame": 4,
+        "step": 79,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 1.0416414737701416,
+        "loss": 0.4071086049079895,
+        "masked_support_groups_this_frame": 8,
+        "step": 80,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 1.0321846008300781,
+        "loss": 0.3995102047920227,
+        "masked_support_groups_this_frame": 8,
+        "step": 81,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 1.0224722623825073,
+        "loss": 0.39199399948120117,
+        "masked_support_groups_this_frame": 8,
+        "step": 82,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 1.0125223398208618,
+        "loss": 0.3845636546611786,
+        "masked_support_groups_this_frame": 8,
+        "step": 83,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 1.0023516416549683,
+        "loss": 0.3772225081920624,
+        "masked_support_groups_this_frame": 8,
+        "step": 84,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.9919772148132324,
+        "loss": 0.3699732720851898,
+        "masked_support_groups_this_frame": 8,
+        "step": 85,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.9814218282699585,
+        "loss": 0.3628228008747101,
+        "masked_support_groups_this_frame": 8,
+        "step": 86,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.9707099795341492,
+        "loss": 0.35577818751335144,
+        "masked_support_groups_this_frame": 8,
+        "step": 87,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.9598648548126221,
+        "loss": 0.34884533286094666,
+        "masked_support_groups_this_frame": 8,
+        "step": 88,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.9489092826843262,
+        "loss": 0.3420293629169464,
+        "masked_support_groups_this_frame": 8,
+        "step": 89,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.9378648996353149,
+        "loss": 0.33533450961112976,
+        "masked_support_groups_this_frame": 8,
+        "step": 90,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.926751971244812,
+        "loss": 0.32876402139663696,
+        "masked_support_groups_this_frame": 8,
+        "step": 91,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.9155906438827515,
+        "loss": 0.32232072949409485,
+        "masked_support_groups_this_frame": 8,
+        "step": 92,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.9043989777565002,
+        "loss": 0.31600654125213623,
+        "masked_support_groups_this_frame": 8,
+        "step": 93,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.8931945562362671,
+        "loss": 0.30982309579849243,
+        "masked_support_groups_this_frame": 8,
+        "step": 94,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.8819941282272339,
+        "loss": 0.3037711977958679,
+        "masked_support_groups_this_frame": 8,
+        "step": 95,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.8708126544952393,
+        "loss": 0.2978512644767761,
+        "masked_support_groups_this_frame": 8,
+        "step": 96,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.8596646189689636,
+        "loss": 0.2920634150505066,
+        "masked_support_groups_this_frame": 8,
+        "step": 97,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.8485631942749023,
+        "loss": 0.2864072322845459,
+        "masked_support_groups_this_frame": 9,
+        "step": 98,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.837520956993103,
+        "loss": 0.2808821201324463,
+        "masked_support_groups_this_frame": 9,
+        "step": 99,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 1,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.82654869556427,
+        "loss": 0.2754870057106018,
+        "masked_support_groups_this_frame": 9,
+        "step": 100,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 0.8197184801101685,
+        "loss": 0.27206170558929443,
+        "masked_support_groups_this_frame": 6,
+        "step": 101,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 0.8084884881973267,
+        "loss": 0.26611220836639404,
+        "masked_support_groups_this_frame": 6,
+        "step": 102,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 0.7972272038459778,
+        "loss": 0.26050132513046265,
+        "masked_support_groups_this_frame": 6,
+        "step": 103,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 0.7860956192016602,
+        "loss": 0.2550176978111267,
+        "masked_support_groups_this_frame": 6,
+        "step": 104,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 0.7849713563919067,
+        "loss": 0.259701669216156,
+        "masked_support_groups_this_frame": 13,
+        "step": 105,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 0.7746034264564514,
+        "loss": 0.2547985911369324,
+        "masked_support_groups_this_frame": 13,
+        "step": 106,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 1,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 0.7643148303031921,
+        "loss": 0.2499973177909851,
+        "masked_support_groups_this_frame": 13,
+        "step": 107,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "policy_pseudo": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 2.561523914337158,
+        "loss": 1.472298264503479,
+        "masked_support_groups_this_frame": 16,
+        "step": 108,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 2.51320743560791,
+        "loss": 1.4615442752838135,
+        "masked_support_groups_this_frame": 20,
+        "step": 109,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "fractional": 2,
+          "zero": 1
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 0.09405039995908737,
+        "loss": 0.5620850324630737,
+        "masked_support_groups_this_frame": 19,
+        "step": 110,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4
+        },
+        "actual_optimizer_target_bins": {
+          "fractional": 4
+        },
+        "eligible_support_groups_this_frame": 4,
+        "episode": 2,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 0.41135939955711365,
+        "loss": 0.6744070649147034,
+        "masked_support_groups_this_frame": 19,
+        "step": 111,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 2.4477946758270264,
+        "loss": 1.456637978553772,
+        "masked_support_groups_this_frame": 21,
+        "step": 112,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 2.546457529067993,
+        "loss": 1.4943568706512451,
+        "masked_support_groups_this_frame": 21,
+        "step": 113,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 2,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 2.6142165660858154,
+        "loss": 1.5199973583221436,
+        "masked_support_groups_this_frame": 21,
+        "step": 114,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 2.5757651329040527,
+        "loss": 1.502937912940979,
+        "masked_support_groups_this_frame": 21,
+        "step": 115,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 2.6366794109344482,
+        "loss": 1.523176670074463,
+        "masked_support_groups_this_frame": 21,
+        "step": 116,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 2.6297245025634766,
+        "loss": 1.5184932947158813,
+        "masked_support_groups_this_frame": 25,
+        "step": 117,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 2.6207940578460693,
+        "loss": 1.512292504310608,
+        "masked_support_groups_this_frame": 25,
+        "step": 118,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 2.610102415084839,
+        "loss": 1.5047588348388672,
+        "masked_support_groups_this_frame": 25,
+        "step": 119,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 2.597834825515747,
+        "loss": 1.4960565567016602,
+        "masked_support_groups_this_frame": 25,
+        "step": 120,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 2.584153652191162,
+        "loss": 1.4863338470458984,
+        "masked_support_groups_this_frame": 25,
+        "step": 121,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 2.569202423095703,
+        "loss": 1.4757232666015625,
+        "masked_support_groups_this_frame": 25,
+        "step": 122,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 2.553107261657715,
+        "loss": 1.4643431901931763,
+        "masked_support_groups_this_frame": 25,
+        "step": 123,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 2.535980224609375,
+        "loss": 1.4523000717163086,
+        "masked_support_groups_this_frame": 25,
+        "step": 124,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 2.517921209335327,
+        "loss": 1.4396886825561523,
+        "masked_support_groups_this_frame": 25,
+        "step": 125,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 2.499020576477051,
+        "loss": 1.4265938997268677,
+        "masked_support_groups_this_frame": 25,
+        "step": 126,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 3
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3
+        },
+        "eligible_support_groups_this_frame": 3,
+        "episode": 2,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 2.479358196258545,
+        "loss": 1.413091778755188,
+        "masked_support_groups_this_frame": 25,
+        "step": 127,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 0.46950066089630127,
+        "loss": 0.7699381113052368,
+        "masked_support_groups_this_frame": 24,
+        "step": 128,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 5
+        },
+        "actual_optimizer_target_bins": {
+          "one": 5
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 2.4577975273132324,
+        "loss": 1.3926267623901367,
+        "masked_support_groups_this_frame": 24,
+        "step": 129,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 0.41453781723976135,
+        "loss": 0.734703540802002,
+        "masked_support_groups_this_frame": 24,
+        "step": 130,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 0.3992239236831665,
+        "loss": 0.7243514060974121,
+        "masked_support_groups_this_frame": 24,
+        "step": 131,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 0.38622358441352844,
+        "loss": 0.7160084843635559,
+        "masked_support_groups_this_frame": 24,
+        "step": 132,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 0.37434807419776917,
+        "loss": 0.708935558795929,
+        "masked_support_groups_this_frame": 24,
+        "step": 133,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 0.36186519265174866,
+        "loss": 0.7022908926010132,
+        "masked_support_groups_this_frame": 24,
+        "step": 134,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 0.35152536630630493,
+        "loss": 0.6969651579856873,
+        "masked_support_groups_this_frame": 24,
+        "step": 135,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 0.3422478437423706,
+        "loss": 0.6924125552177429,
+        "masked_support_groups_this_frame": 24,
+        "step": 136,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 0.3338298201560974,
+        "loss": 0.6884539127349854,
+        "masked_support_groups_this_frame": 24,
+        "step": 137,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 0.3259906470775604,
+        "loss": 0.6849162578582764,
+        "masked_support_groups_this_frame": 24,
+        "step": 138,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 0.31793883442878723,
+        "loss": 0.6815147399902344,
+        "masked_support_groups_this_frame": 24,
+        "step": 139,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 0.31020742654800415,
+        "loss": 0.6783806681632996,
+        "masked_support_groups_this_frame": 24,
+        "step": 140,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 0.3028741776943207,
+        "loss": 0.6755009889602661,
+        "masked_support_groups_this_frame": 24,
+        "step": 141,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 0.29567575454711914,
+        "loss": 0.6727813482284546,
+        "masked_support_groups_this_frame": 24,
+        "step": 142,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 0.2875780463218689,
+        "loss": 0.6699676513671875,
+        "masked_support_groups_this_frame": 24,
+        "step": 143,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 0.2806200087070465,
+        "loss": 0.6687423586845398,
+        "masked_support_groups_this_frame": 24,
+        "step": 144,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 0.2739163935184479,
+        "loss": 0.6675752401351929,
+        "masked_support_groups_this_frame": 24,
+        "step": 145,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.2674309015274048,
+        "loss": 0.6664559841156006,
+        "masked_support_groups_this_frame": 24,
+        "step": 146,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.2612513601779938,
+        "loss": 0.665398359298706,
+        "masked_support_groups_this_frame": 24,
+        "step": 147,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.25504040718078613,
+        "loss": 0.6643392443656921,
+        "masked_support_groups_this_frame": 24,
+        "step": 148,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.24916967749595642,
+        "loss": 0.6633443832397461,
+        "masked_support_groups_this_frame": 24,
+        "step": 149,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 4,
+          "policy_pseudo": 1
+        },
+        "actual_optimizer_target_bins": {
+          "one": 3,
+          "zero": 2
+        },
+        "eligible_support_groups_this_frame": 5,
+        "episode": 2,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.24332647025585175,
+        "loss": 0.6624726057052612,
+        "masked_support_groups_this_frame": 24,
+        "step": 150,
+        "supervised_classes_this_update": 2
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 1,
+        "gradient_norm_before_clip": 1.3910479545593262,
+        "loss": 0.962866485118866,
+        "masked_support_groups_this_frame": 27,
+        "step": 151,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 2,
+        "gradient_norm_before_clip": 1.480715036392212,
+        "loss": 0.9911278486251831,
+        "masked_support_groups_this_frame": 29,
+        "step": 152,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 3,
+        "gradient_norm_before_clip": 1.5275049209594727,
+        "loss": 1.0062309503555298,
+        "masked_support_groups_this_frame": 29,
+        "step": 153,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 4,
+        "gradient_norm_before_clip": 1.5565983057022095,
+        "loss": 1.0147430896759033,
+        "masked_support_groups_this_frame": 29,
+        "step": 154,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 5,
+        "gradient_norm_before_clip": 1.5761200189590454,
+        "loss": 1.0192087888717651,
+        "masked_support_groups_this_frame": 29,
+        "step": 155,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 6,
+        "gradient_norm_before_clip": 1.5872653722763062,
+        "loss": 1.020668387413025,
+        "masked_support_groups_this_frame": 29,
+        "step": 156,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 7,
+        "gradient_norm_before_clip": 1.5936614274978638,
+        "loss": 1.0200673341751099,
+        "masked_support_groups_this_frame": 29,
+        "step": 157,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 8,
+        "gradient_norm_before_clip": 1.5987000465393066,
+        "loss": 1.0180832147598267,
+        "masked_support_groups_this_frame": 29,
+        "step": 158,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 9,
+        "gradient_norm_before_clip": 1.5989576578140259,
+        "loss": 1.0146722793579102,
+        "masked_support_groups_this_frame": 29,
+        "step": 159,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 10,
+        "gradient_norm_before_clip": 1.596518635749817,
+        "loss": 1.0102314949035645,
+        "masked_support_groups_this_frame": 29,
+        "step": 160,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 11,
+        "gradient_norm_before_clip": 1.590401530265808,
+        "loss": 1.0048754215240479,
+        "masked_support_groups_this_frame": 29,
+        "step": 161,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 12,
+        "gradient_norm_before_clip": 1.5840476751327515,
+        "loss": 0.9989537000656128,
+        "masked_support_groups_this_frame": 29,
+        "step": 162,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 13,
+        "gradient_norm_before_clip": 1.5632107257843018,
+        "loss": 0.9886378049850464,
+        "masked_support_groups_this_frame": 33,
+        "step": 163,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 14,
+        "gradient_norm_before_clip": 1.5422438383102417,
+        "loss": 0.9782992601394653,
+        "masked_support_groups_this_frame": 33,
+        "step": 164,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 15,
+        "gradient_norm_before_clip": 1.5212005376815796,
+        "loss": 0.967966616153717,
+        "masked_support_groups_this_frame": 33,
+        "step": 165,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 16,
+        "gradient_norm_before_clip": 1.5001295804977417,
+        "loss": 0.9576655030250549,
+        "masked_support_groups_this_frame": 33,
+        "step": 166,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 17,
+        "gradient_norm_before_clip": 1.4790756702423096,
+        "loss": 0.9474179744720459,
+        "masked_support_groups_this_frame": 33,
+        "step": 167,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 18,
+        "gradient_norm_before_clip": 1.4580798149108887,
+        "loss": 0.9372435808181763,
+        "masked_support_groups_this_frame": 33,
+        "step": 168,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 19,
+        "gradient_norm_before_clip": 1.4371800422668457,
+        "loss": 0.9271588921546936,
+        "masked_support_groups_this_frame": 33,
+        "step": 169,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 20,
+        "gradient_norm_before_clip": 1.41641104221344,
+        "loss": 0.917178750038147,
+        "masked_support_groups_this_frame": 33,
+        "step": 170,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 21,
+        "gradient_norm_before_clip": 1.3958046436309814,
+        "loss": 0.9073153734207153,
+        "masked_support_groups_this_frame": 33,
+        "step": 171,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 22,
+        "gradient_norm_before_clip": 1.3753904104232788,
+        "loss": 0.897579550743103,
+        "masked_support_groups_this_frame": 33,
+        "step": 172,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 23,
+        "gradient_norm_before_clip": 1.355196237564087,
+        "loss": 0.8879802227020264,
+        "masked_support_groups_this_frame": 33,
+        "step": 173,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 24,
+        "gradient_norm_before_clip": 1.3352469205856323,
+        "loss": 0.878524899482727,
+        "masked_support_groups_this_frame": 33,
+        "step": 174,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 25,
+        "gradient_norm_before_clip": 1.315566062927246,
+        "loss": 0.8692196607589722,
+        "masked_support_groups_this_frame": 33,
+        "step": 175,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 26,
+        "gradient_norm_before_clip": 1.2961757183074951,
+        "loss": 0.8600695729255676,
+        "masked_support_groups_this_frame": 33,
+        "step": 176,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 27,
+        "gradient_norm_before_clip": 1.2770962715148926,
+        "loss": 0.8510785102844238,
+        "masked_support_groups_this_frame": 34,
+        "step": 177,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 28,
+        "gradient_norm_before_clip": 1.2583467960357666,
+        "loss": 0.8422493934631348,
+        "masked_support_groups_this_frame": 36,
+        "step": 178,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 29,
+        "gradient_norm_before_clip": 1.2399452924728394,
+        "loss": 0.8335840702056885,
+        "masked_support_groups_this_frame": 36,
+        "step": 179,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 30,
+        "gradient_norm_before_clip": 1.2219079732894897,
+        "loss": 0.8250839114189148,
+        "masked_support_groups_this_frame": 36,
+        "step": 180,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 31,
+        "gradient_norm_before_clip": 1.204250693321228,
+        "loss": 0.8167493343353271,
+        "masked_support_groups_this_frame": 36,
+        "step": 181,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 32,
+        "gradient_norm_before_clip": 1.186988115310669,
+        "loss": 0.808580219745636,
+        "masked_support_groups_this_frame": 36,
+        "step": 182,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 33,
+        "gradient_norm_before_clip": 1.1701339483261108,
+        "loss": 0.8005757331848145,
+        "masked_support_groups_this_frame": 36,
+        "step": 183,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 34,
+        "gradient_norm_before_clip": 1.1537013053894043,
+        "loss": 0.7927346229553223,
+        "masked_support_groups_this_frame": 36,
+        "step": 184,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 35,
+        "gradient_norm_before_clip": 1.1377018690109253,
+        "loss": 0.7850549221038818,
+        "masked_support_groups_this_frame": 36,
+        "step": 185,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 36,
+        "gradient_norm_before_clip": 1.1221472024917603,
+        "loss": 0.7775344848632812,
+        "masked_support_groups_this_frame": 36,
+        "step": 186,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 37,
+        "gradient_norm_before_clip": 1.1070475578308105,
+        "loss": 0.7701705694198608,
+        "masked_support_groups_this_frame": 36,
+        "step": 187,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 38,
+        "gradient_norm_before_clip": 1.0924125909805298,
+        "loss": 0.7629600763320923,
+        "masked_support_groups_this_frame": 36,
+        "step": 188,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 39,
+        "gradient_norm_before_clip": 1.0782513618469238,
+        "loss": 0.7558994293212891,
+        "masked_support_groups_this_frame": 36,
+        "step": 189,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 40,
+        "gradient_norm_before_clip": 1.0645716190338135,
+        "loss": 0.7489849328994751,
+        "masked_support_groups_this_frame": 36,
+        "step": 190,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 41,
+        "gradient_norm_before_clip": 1.05138099193573,
+        "loss": 0.7422124147415161,
+        "masked_support_groups_this_frame": 36,
+        "step": 191,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 42,
+        "gradient_norm_before_clip": 1.0386854410171509,
+        "loss": 0.7355775833129883,
+        "masked_support_groups_this_frame": 36,
+        "step": 192,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 43,
+        "gradient_norm_before_clip": 1.026490330696106,
+        "loss": 0.7290756702423096,
+        "masked_support_groups_this_frame": 36,
+        "step": 193,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 44,
+        "gradient_norm_before_clip": 1.0147998332977295,
+        "loss": 0.722701907157898,
+        "masked_support_groups_this_frame": 36,
+        "step": 194,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 45,
+        "gradient_norm_before_clip": 1.003617286682129,
+        "loss": 0.7164512276649475,
+        "masked_support_groups_this_frame": 36,
+        "step": 195,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 46,
+        "gradient_norm_before_clip": 0.9929444193840027,
+        "loss": 0.7103183269500732,
+        "masked_support_groups_this_frame": 36,
+        "step": 196,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 47,
+        "gradient_norm_before_clip": 0.9827871918678284,
+        "loss": 0.7043014764785767,
+        "masked_support_groups_this_frame": 36,
+        "step": 197,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 48,
+        "gradient_norm_before_clip": 0.9731499552726746,
+        "loss": 0.6984000205993652,
+        "masked_support_groups_this_frame": 36,
+        "step": 198,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 49,
+        "gradient_norm_before_clip": 0.9640340209007263,
+        "loss": 0.6926116943359375,
+        "masked_support_groups_this_frame": 36,
+        "step": 199,
+        "supervised_classes_this_update": 1
+      },
+      {
+        "actual_optimizer_family_groups": {
+          "Known": 2
+        },
+        "actual_optimizer_target_bins": {
+          "one": 2
+        },
+        "eligible_support_groups_this_frame": 2,
+        "episode": 3,
+        "episode_optimizer_step": 50,
+        "gradient_norm_before_clip": 0.9554373025894165,
+        "loss": 0.6869338750839233,
+        "masked_support_groups_this_frame": 36,
+        "step": 200,
+        "supervised_classes_this_update": 1
+      }
+    ],
+    "model_parameter_sha256_after": "13ea181ff88f5666d8930206cae5fe1b3483c63cf031e46ab685c548f92f5120",
+    "model_parameter_sha256_before": "31c059f3faec8e8b60e084b9527ba03d2ff1df5215dd05f40c9c726a3cb29203",
+    "optimizer_steps": 200,
+    "trainable_parameters": 161,
+    "training_episode_resets_not_evaluator_GT_reset": true
+  },
+  "three_seed_M_strict_CT_Pred_or_Goal_accepted": false,
+  "variant": "relative_quarantine"
+}
