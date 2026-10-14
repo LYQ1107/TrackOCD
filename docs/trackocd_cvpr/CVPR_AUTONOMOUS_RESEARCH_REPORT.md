@@ -2030,3 +2030,29 @@ Pred/dense/fair controls/lockedfinal scientific requirements unachieved.
 Final bounded CVPR/v2 suite1198pass63.93s, ownedexit0/guardNONE,
 65.6092s inclusive/837939200B peak/zero GPUhours. Eight public files only,
 original result13001B unchanged; no private models/GT/prediction traces/rows.
+
+## Second independent dev observer complete: calendar1027 (2/5)
+
+Normal1952.8784s/965283840B/oneCPU+oneOSthread/noGPU; fixed original formal
+endpoint, no optimizer. All3full72video/472track/8753observation/2562frame/
+116empty orders, EACH exact normal event/commit/state reference, full ID/reverse
+and39future-observation prefix checks complete. Original202source unchanged,
+ALL13 snapshot bytes verified before inputs; no guard relaxation or retry.
+
+Per-order Known Existing4322/4291/4176, own-only1911/2050/2019; positive Known
+gate2623all3, bypass2238/2211/2093. Same-history shadows Known141/111/151,
+correctKnown126/104/147. Declared-pseudo shadowsKnown105/73/66 vs initialRaw
+20/33/49; potential adverse absorption contribution must be retained. Masked
+shadowsKnown65/62/94 have unknown correctness. These conditional one-decision
+observations do not establish a full intervention gain or complete error cause;
+no GT/shadow cleanup of committed history and no selected model/threshold.
+
+Result SHA256`3bc0560c0436e9862322034a3dac8d2e829aceffaf57989f49ce0a8e98e0cc49`;
+normal terminal`2bb4415fe30a24f132f5dfe618486ceb6aa7ba8332e20c30c04b3e8194ca8e7b`.
+Public complete-source/role/clock/probe/count verifier passes without private
+models/GT/rows. Remaining3fixed heads required; neither this observer window
+nor the overall joint/fullM/lawfulPred/dense/fair/lockedfinal Goal is complete.
+51targeted regressions pass3.32s; final bounded CVPR/v2 suite1199pass60.54s,
+ownedexit0/guardNONE/62.0240s inclusive/835702784B peak/zero trainingGPUhours.
+Only second original public triplet/test/docs/status published; no private
+model/GT/prediction trace/row export. Original202source rechecked unchanged.

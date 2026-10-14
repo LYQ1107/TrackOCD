@@ -6903,3 +6903,42 @@ no private GT/cache/weights opened for this check):
   Eight public files only: first complete triplet/public verifier/mutation tests/
   docs/status. Original result13001B unchanged; no private GT/models/traces/
   row tables/progress/stdout. Remaining calendar1027 after push/fetch/exact proof.
+
+### Actual second complete independent dev attribution: calendar1027 (2/5)
+
+- Same boot/start/command supervisor649713/worker649919 verified live until
+  normal terminal; these are now historical PIDs, not restart instructions.
+  Published/fetched/triple-SHA preregistration d8454e63eb1d76a0117fd43c6dddad29e2d05058.
+  Normal exit0/guardNONE,1952.878445224s inclusive/965283840B peak/oneCPU/
+  oneOSthread/no native helper/noCUDA/zero trainingGPUhours. No repeat attempt,
+  relaxed wall/RSS or omitted probes. Owned researcher busy check false afterward.
+- Original202source closure and actual formal calendar1027 endpoint unchanged;
+  ALL13 snapshot fingerprints before dev. EACH3orders complete72videos/472tracks/
+  8753observations/2562frames/116empty plus EACH independent normal full event/
+  commit/state reference. Full ID/reverse equality and39actual future mutations
+  preserving nonempty prior events. Frozen model, zero optimizer updates.
+- Each order4808Known/2743declared-pseudo/1202masked observations retained.
+  Known Existing4322/4291/4176; only-own1911/2050/2019; positive Known gate2623
+  in all3, bypass2238/2211/2093. Same-history remove-own shadows Known141/111/
+  151, correctKnown126/104/147, changed-action506/550/552. These are conditional
+  scoring counts under original committed histories, not full-rollout gains,
+  all-error causation, selected controls or independent Novel-R improvement.
+- Declared-pseudo Existing2509/2582/2592; only-own1200/1070/1162; shadowKnown
+  105/73/66 and changed-action272/259/250. More adverse shadow Known outputs
+  than initialRaw20/33/49 in these paired orders; this is conditional absorption
+  risk, not a measured intervened trajectory effect. Masked shadowKnown65/62/94
+  has no correctness truth claim. No label/shadow to scorer or memory writes.
+- Original result13025B SHA3bc0560c0436e9862322034a3dac8d2e829aceffaf57989f49ce0a8e98e0cc49;
+  launchcd7b3b78875007ac866a914cf396fe02230abbcc21939e46d76bfec34a6501dd;
+  terminal2bb4415fe30a24f132f5dfe618486ceb6aa7ba8332e20c30c04b3e8194ca8e7b.
+  Public receipt/source/count/scope qualification passes without private GT/
+  weights/rows. ALL5 window remains incomplete; retain calendar1028/1029 and
+  ONEfullpolicy, no dev-selected head/seed/threshold or automatic training.
+  Original Goal active; joint R/C/M/fullM/lawfulPred/dense/fair/lockedfinal open.
+- Actual first/second complete public receipt regressions plus adapter/policy
+  qualification51pass3.32s without private weights stat. Final bounded combined
+  CVPR/v2 suite1199pass60.54s, ownedexit0/guardNONE/62.023977876s inclusive/
+  835702784B peak/zero trainingGPUhours. Seven public files only: second normal
+  triplet, public test, docs/status. No private GT/models/traces/rows/progress/
+  stdout or history edits. Reverify actual202closure after docs; publish/fetch/
+  triple-SHA before separately launching calendar1028.

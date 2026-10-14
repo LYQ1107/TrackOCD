@@ -15,8 +15,10 @@ def forbid_private_stat(monkeypatch):
     monkeypatch.setattr(Path,'stat',guard)
 
 
-def test_actual_first_complete_dev_observer_all3_references_and_full_probes_not_full5_or_intervention_win(monkeypatch):
-    forbid_private_stat(monkeypatch); p = receipts.verified_trial(ROOT,'initial_Raw')
+@pytest.mark.parametrize('model',['initial_Raw','calendar1027'])
+def test_actual_complete_dev_observer_all3_references_and_full_probes_not_full5_or_intervention_win(monkeypatch,model):
+    forbid_private_stat(monkeypatch); p = receipts.verified_trial(ROOT,model)
+    assert p['model'] == model
     assert p['all3_full_orders_each_original_reference_and_full_probes_checked']
     assert not p['private_models_GT_or_row_tables_read']
     assert not p['full_intervention_causal_gain_or_Goal_accepted']
