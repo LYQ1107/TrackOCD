@@ -7509,3 +7509,7 @@ no private GT/cache/weights opened for this check):
 - The public result has the same measured-development-only status as Mean: `optimizer_steps=0`, `CUDA_initialized=false`, `training_GPU_hours=0`, no model/checkpoint selection, no Val/Test/new-nonKnown semantics, and no Pred/final/Goal acceptance. It is not a selected StateEMA model.
 - The supervisor terminal is normal: worker exit `0`, guard stop `null`, complete result present, successful execution `true`, wall `4540.119617111006` seconds including imports/network, and peak sampled worker RSS `952856576` bytes. Private histories/checkpoints remain local and were not uploaded.
 - Public StateEMA hashes are launch `b957a95bcc54d5021aa73c88e142bfa893cffdf311ca02e94a2e53ad99de4532`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `571912571b4940d63678678b8160e9e0e2de8de22f68ff5db73af1fd3e8c138f`, and terminal `47ea510b2d0309ee3b16bc76614b9707733b30411609296a1eae17d317403dfd`. The launch's live source proof is the exact commit `021ac3fbe07340b7a5f2c1cf48fa2967a7f1f737`.
+
+## Current-source full-M variant matrix continuation registered (2026-10-15)
+
+- The next fresh case is `relative_quarantine/s1027`, followed sequentially by the remaining registered variant/seed cases `relative_quarantine/{1028,1029}`, `relative_weighted/{1027,1028,1029}`, and `pooled_weighted/{1027,1028,1029}`. Each will use a new recovery namespace and the same read-only causal protocol; no result is selected automatically.
