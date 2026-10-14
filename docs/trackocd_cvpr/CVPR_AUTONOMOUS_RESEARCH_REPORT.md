@@ -1977,3 +1977,29 @@ Pred/dense/fair controls/lockedfinal and original Goal A/B/C remain open/active.
 Final bounded CVPR/v2 suite1161pass72.98s, ownedexit0/guardNONE,74.8746s
 inclusive/838930432B peak/zero GPUhours. Nine public files only, original
 result20663B unchanged; no private models/GT/prediction rows/traces exported.
+
+## Prospective independent full Train-dev arbitration attribution
+
+After actual policy pilot, NEW202source/public-path protocol retains all5fixed
+heads, one explicit model/worker, original192qualified policy dependencies
+unchanged. All13 snapshot bytes plus actual all5pilot normal/source/permission
+gates before dev data. Each3orders complete72videos/472tracks/8753obs/2562
+frames/116empty, each independent normal-reference full event/history/state
+parity, then complete ID/reverse and nonvacuous full future-prefix checks.
+Original3GiB/3000s/25%RAM/storage/oneCPU/noCUDA bounds unchanged; no retry/
+reset/selected model/threshold/checkpoint or automatically started training.
+
+External302Known category IDs map to existing fit output slots;119declared
+development pseudo labels retain existing semantic values in legacy observer
+bucket 'policy_pseudo' spelling ONLY.51unscorable tracks masked/physical, not
+negatives. No new GT values, training target or label to scorer/exclusion/
+support witness. Qualified numerical observer and actual writes untouched;
+same-history one-step shadow not a counterfactual stream or category solution.
+44targeted tests pass3.62s, exact adapter/reference events/history/state,
+scope/guard/selection/probe/source refusals. Source registration is not measured
+dev attribution or scientific success. Real execution follows publication/exact
+proof; original Goal active, joint/fullM/Pred/dense/fair controls/final unfinished.
+Final bounded CVPR/v2 suite1184pass76.72s, ownedexit0/guardNONE,78.6023s
+inclusive/839168000B peak/zero GPUhours. Qualified192pilot dependencies
+reverified unchanged; nine public source/config/tests/docs/status only. No
+actual new dev run or metric implied by registration; publish before execution.

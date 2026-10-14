@@ -6807,3 +6807,50 @@ no private GT/cache/weights opened for this check):
   mutation tests and docs/status. Result20663B unchanged; no .pt/private GT/
   row tables/traces/progress/stdout. Source publication/fetch/triple-SHA before
   any NEW independent-dev protocol; no automatic expansion or acceptance.
+
+### Prospective ALL5 complete independent Train-dev attribution window
+
+- Previous turn progressed: real all5 policy pilot published/fetched/triple-SHA
+ 494d93804c2472b9cea45178fcd2801b0ccd279a. Entry clean/no live researcher,
+  availableRAM108169191424B of134792282112B/free disk61154770944B. Research
+  outputs772MiB, loopback17899 live; no cleanup/download/install/GPU/external
+  process changes. Original scientific Goal active, policy shadows not a win.
+- NEW dev protocol/EXTERNAL binding adapter/driver/boot-bound launcher only,
+  all192actual qualified policy dependencies unchanged;202source/public paths.
+  Exact original all5 normal pilot triplet+public qualifier before any private
+  input, fresh parent/worker remote/source/human407scope, ALL13snapshot bytes
+  before dev. Fixed initialRaw/all3calendar200/ONE fullpolicy all retained,
+  one explicit model per worker; no selected head/seed/threshold/checkpoint.
+- Complete72dev videos/472tracks/8753obs/2562frames/116empty in EACH3orders,
+  AND independent unchanged normal-reference event/commit/finalstate equality
+  for EACH order. Full first-order ID/reverse event/outcome/state equality and
+  nonvacuous complete future-visual prefix check. No shortened probes or subset
+  success. Original3GiB/3000s/16MiB/25%RAM+plannedRSS/storage/oneCPU/noCUDA
+  guards preserved, at most one native helper, one actual attempt/model. No
+  unchanged retry, auto next model/fit, wall reset or relaxation for this work.
+- Existing302Known external category IDs map to legitimate offlinefit5 output
+  slots in an isolated evaluator dictionary, applied only AFTER predictions;
+ 119declared-pseudo retain their original existing
+  semantic binding values in the unchanged observer's legacy 'policy_pseudo'
+  bucket spelling. This is external EVALUATION only, not policy/train targets,
+  new Novel GT/vocabulary, model feature or GT repair.51outside/unknown remain
+  masked/physical, no negatives. Actual dev binding dictionary never to head,
+  support witness or exclusions. No policy private label/body for dev execution.
+- Qualified observer unchanged: actual bank/candidate/context/score witnesses,
+  single same-history remove-own score only; no shadow write or intervention
+  trajectory gain. Preserve original public outcomes, append-only prediction
+  history and all physical/unknown observations. Original fit Raw prior reused,
+  no trained R selection/pilot warmstart/optimizer/GT-history cleanup.
+- Forty-four targeted new-dev adapter/protocol/actual-pilot/witness tests pass
+ 3.62s: real qualified policy proof/source closure, exact synthetic observer/
+  normal events/history/state under dev bucket spelling/ID reversals, no new
+  or missing semantic bindings/invented negatives, subset/order/clock/guard/
+  shadow-write/selection refusal, explicit owned supervisor/model forwarding.
+  This is PROSPECTIVE registration, NOT actual dev attribution, unseen mechanism
+  generalization, a solution or Goal A/B/C. Execution only after publication/
+  fetch/exact proof. Joint R/C/M/fullM/lawfulPred/dense/fair controls/final open.
+- Final bounded combined CVPR/v2 suite1184pass76.72s, ownedexit0/guardNONE/
+ 78.602287868s inclusive/839168000B peak/zero trainingGPUhours. Original
+  qualified192pilot dependencies reverified after docs. Nine public source/
+  config/test/docs/status files only; no new actual dev result at registration.
+  Source publication/fetch/triple-SHA before private model/dev input or launch.
