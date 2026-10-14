@@ -2174,3 +2174,35 @@ self-correcting M innovation. All original Goal A/B/C requirements remain open.
 Final bounded CVPR/v2 suite1219pass65.39s, ownedexit0/guardNONE/67.0646s
 inclusive/845664256B peak/zero GPUhours. Original202source/all5proof preserved;
 six public source/config/test/docs/status files only, no actual new data run.
+
+## Prospective whole-policy intervention pilot with origin-aware outcomes
+
+New registered executor keeps five fixed heads and four arms, one explicit head
+per worker. Each arm runs all3orders/full10policy videos/54tracks/1268observations/
+374frames/1empty, independent prediction-owned closed-loop writes. Fit-only Raw
+prior, all13snapshot fingerprints and exact selected formal head before inputs;
+229source/public paths/live registration/actual human407gates. OneCPU/3GiB/
+3000s/16MiB/25percentRAM/storage, one attempt/head; no optimizer or automaticnext.
+
+Primary scored-reuse report excludes routing-only continuation, retaining all
+unknown/physical denominators and original conservative identity/dirty-history
+audit separately. Synthetic legacy-history counterexample produces.5identity
+reuse vs0primary scored reuse, commitment1, preventing false semantic credit.
+Latency uses observed updates with unresolved/censored denominators, not dense
+frames or walltime. No full-semantic CT/H-score, Pred or independent support claim.
+
+Each fullRaw order must match original complete events/commits/state/allocator.
+Each arm repeats full physical-ID/reverse, Known output-binding permutation,
+nonvacuous future-prefix and external-label-swap numerical history/origin/state
+probes. Targets never reach scorer/writes; private prediction/origin traces only
+ephemeral RAM, no exports. Targeted54tests pass9.57s; prerequisites/229path human
+gate/source controls tested without private files (registration mocked in unit
+test only). Real live proof still required before execution.
+
+Registration is not actual Train evidence or M innovation. Publish/fetch/triple
+SHA first, then actual initialRaw pilot; all other heads retained without
+dev-based selection. Original joint/fullM/Pred/dense/fair/lockedfinal Goal open.
+Final bounded CVPR/v2 suite1258pass71.17s, ownedexit0/guardNONE/72.7984s
+inclusive/844070912B peak/zero GPUhours. Original202/all5evidence retained;
+eleven public source/config/tests/docs/status files only, no private exports or
+actual new policy result at registration. Publish before explicit initialRaw.

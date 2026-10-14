@@ -7111,3 +7111,50 @@ no private GT/cache/weights opened for this check):
   tests/docs/status files only; no private data/GT/weights/prediction rows read
   or uploaded, no actual policy/dev pilot or selected head. Publish/fetch/triple
   SHA, then implement separate registered origin-aware full policy executor.
+
+### Prospective registered origin-aware complete policy intervention pilot
+
+- Implement separate actual closed-loop stream and external ContinuityOriginAudit,
+  never modify original202numerical sources or replay altered decisions into the
+  old read-only attribution observer. All real writes originate from each arm's
+  own current/past prediction; Raw/commit/token/parent history retained.
+- Primary prefix reuse masks ROUTE_CONTINUATION_NOT_CATEGORY_MATCH, while
+  separate original CausalCategoryAudit identity/dirty-history report remains.
+  Otherwise a previously certified foreign-video token could cause a current
+  routing-only fallback to appear as a newly scored semantic match. New synthetic
+  counterexample proves legacy final cross-video lower-bound.5 versus primary0
+  at full commitment1; this is audit semantics, not measured policy performance.
+- Complete physical/unknown denominators and all1/2/4/8/16/allAvailable prefixes;
+  first commitment, scored Existing claim and certified scored cross-video
+  latency use observed-update units, event-conditioned p50/p95 and full censored
+  counts. Not dense-frame latency, full-semantic GT H-score/CT or Pred metrics.
+- Exact config retains all5heads/all4factorial arms/each3orders. One explicit
+  head/oneCPU worker, maximum1attempt/head, original3GiB/3000s/16MiB/25percentRAM/
+  storage limits. No selected head/threshold/schedule, optimizer or automaticnext.
+  All13private snapshot bytes before policy input; selected frozen formal endpoint
+  before data. Only existing lawful fit prior and full10policy/54tracks/1268obs/
+  374frames/1empty. Known34/pseudo10/masked10, no new semantic values or pixels.
+- Every fullRaw baseline order independently matches original complete numeric
+  events/commits/finalstate/allocator, not just metrics. Every arm additionally
+  repeats full ID/reverse, cyclic Known output-binding shuffle, actual nonempty
+  future perturbation and nonvacuous external label swap. Private ephemeral
+  traces include numeric history/state and origin receipts, never exported.
+- 229unique source/public dependencies pinned before private reads and live
+  remote registration/human407gate in launcher/parent/worker; no network after
+  worker authority, allowed own formal snapshots only, original annotation/pixel
+  root blocked. Detached launcher records boot/start/command identity, refuses
+  occupied namespaces/live researchers, only new owned Popen managed by guards.
+- Targeted54tests pass9.57s: actual all5public prerequisites without private stat,
+  all229public-path source/human gate (registration mocked only for that unit
+  test), scope/model/arm/order/guard/truth mutations refuse; full-clock synthetic
+  streams/Raw parity/origin masking/ID+Known-binding/future/label invariance,
+  unknown and latency denominators retained. This is PROSPECTIVE registration,
+  not actual Train pilot, calibrated causal gain/M innovation/dev/Goal acceptance.
+  Real execution only after tests/publication/fetch/tripleSHA, fixed initialRaw
+  first; remaining4heads preserved. Joint Novel-R/C/M/fullM/Pred/dense/fair/final open.
+- Final bounded CVPR/v2 suite1258pass71.17s, ownedexit0/guardNONE/
+  72.798408411s inclusive/844070912B peak/zero GPUhours. Original202/all5public
+  evidence and229new source paths rechecked after docs. Eleven public files
+  only: new config/protocol/closed-loop/origin-audit/worker/launcher/two tests/
+  docs/status. No private data/GT/weights/rows read at registration or uploaded.
+  Push/fetch/tripleSHA before explicitly launching the initialRaw complete pilot.
