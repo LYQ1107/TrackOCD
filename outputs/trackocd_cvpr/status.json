@@ -83,7 +83,7 @@
   "current_source_endpoint_cohort_audit_preregistration_commit": "c8844e44d5d0108a358b48fa2a67a8a8831d1a9b",
   "current_source_endpoint_cohort_audit_case_count": 9,
   "current_source_endpoint_cohort_audit_scope": "Read exactly nine public launch/progress/result/terminal receipts; verify current-source hashes, fixed200 CPU protocol, normal terminals, public semantic boundaries and no private receipt upload; no private history/checkpoint read, no model selection, no formal M development, no Val/Test",
-  "current_source_M_development": "FIRST_ATTEMPT_WALL_GUARDED_BEFORE_RESULT_RECOVERY1_REGISTERED",
+  "current_source_M_development": "RECOVERY1_MEAN_LATEST_S1027_COMPLETED_DEVELOPMENT_ONLY_NO_SELECTION_OR_GOAL_ACCEPTANCE",
   "current_source_M_development_manifest": "configs/trackocd_cvpr/M_GT_causal_development_current_source_v1.json",
   "current_source_M_development_output_prefix": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_v1",
   "current_source_M_development_scope": "Reuse frozen read-only causal M development/Mean/StateEMA rollout and probes only after public 9/9 current-source endpoint audit plus private fixed200 endpoint fingerprint gate; 15 cases, no optimizer steps, no model/checkpoint selection, no Val/Test/new nonKnown semantics, no Goal acceptance",
