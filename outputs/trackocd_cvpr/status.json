@@ -95,6 +95,15 @@
   "continuity_reuse_all5_public_comparison": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_all5_public_comparison_v1.json",
   "continuity_reuse_all5_public_comparison_sha256": "0bf5269ac8f9cff2282d47ba4f4c82765069e95d2297d84404960937a29c5545",
   "continuity_reuse_policy_pilot_protocol": "configs/trackocd_cvpr/continuity_reuse_policy_pilot_v1.json",
+  "joint_rc_memory_policy_pilot": "ACTUAL_FIXED_TWO_POLICY_ORDER_VIDEOS: one CPU episode/two optimizer updates on 14-feature tensor-graph joint R/C with prediction-owned anonymous memory; 79 frames/215 observations/215 canonical groups fully consumed, Known and policy-pseudo external loss families exposed, both R and C gradients nonzero. This is an integration pilot only, not full policy/development, M innovation, Pred, final or Goal acceptance",
+  "joint_rc_memory_policy_pilot_protocol": "configs/trackocd_cvpr/joint_rc_policy_pilot_v1.json",
+  "joint_rc_memory_policy_pilot_code_commit": "1219fb55342074e52bc6fa700025fde0a7f985ec",
+  "joint_rc_memory_policy_pilot_result": "outputs/trackocd_cvpr/cvpr5/joint_rc_policy_pilot_v1/result.json",
+  "joint_rc_memory_policy_pilot_result_sha256": "f91624904e6a80fba05bdbf57313f568531c8091e64599fb83ec552c08e972f9",
+  "joint_rc_memory_pilot_launch_sha256": "ddb83178b04d46ca4e16f7ea99b0e23f4dc987545a5c8ead498b85f6c92977be",
+  "joint_rc_memory_pilot_terminal_sha256": "e09fde76dba55a76541e58ba5c380d90a991fb2ed9422b1bff0ad5132aec7a7f",
+  "joint_rc_memory_pilot_private_checkpoint_sha256": "93267e22af63e754af0d684b048f97999b3396cc300fe734016de1f4df51bba8",
+  "joint_rc_memory_pilot_resources": "Peak guarded RSS 1945698304 bytes, 260.10334488 seconds including network, CPU only, zero GPU hours; private checkpoint retained locally and not uploaded",
   "continuity_reuse_policy_pilot_execution": "ACTUAL_NORMAL_ALL5_INITIAL_RAW_CALENDAR1027_CALENDAR1028_CALENDAR1029_ONE_FULLPOLICY:all4arms/EACH3full policy orders plus original baseline and full ID/Known-binding/future/label probes. ONE_fullpolicy fullRaw births27/27/27 with Known micro .2058823529/.2941176471/.2352941176, exclusion births320/287/321, exclusion+continuity births27/27/27 with routing-only continuation8/7/8 physical and2/1/2 declared-pseudo; exclusion arms certified scored cross-video reuse0/10 and claim coverage .7/.7/.7, fullRaw claim coverage .9/.8/.9. All five heads have no Goal gain or M innovation; original229source frozen; public macro qualifier uses1ULP for prior heads and exactly2ULP only for ONE_fullpolicy prefix insertion-order aggregate; all other events/counts/probes remain exact",
   "raw_named_membership_fullpolicy_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_full_policy/result.json",
   "raw_named_membership_fullpolicy_full_dev_result_sha256": "b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d",
@@ -119,5 +128,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "All5 continuity/reuse policy heads and the public aggregate comparison are complete under the frozen four-arm/all3-order/probe protocol (comparison SHA256 0bf5269ac8f9cff2282d47ba4f4c82765069e95d2297d84404960937a29c5545); no head/arm/threshold selection, certified scored cross-video reuse, Novel-R/M innovation, or Goal gain was demonstrated. Continue the actual joint Novel-generalizable R/C/self-correcting M work, lawful strongPred/dense frontend validation, fair calibrated controls, and locked independent final. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "The bounded joint R/C + prediction-owned-memory integration pilot is complete and publicly receipted; it demonstrates tensor-gradient plumbing on two fixed policy-order Train videos only, not a scientific winner. Do not expand from this pilot by selection. Next freeze the complete joint causal protocol and add the separately trained/self-correcting M controls, then run full policy/development only after lawful strong Pred/dense frontend and fair controls are registered. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
