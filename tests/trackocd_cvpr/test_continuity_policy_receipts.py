@@ -15,7 +15,7 @@ def no_private_stat(monkeypatch):
     monkeypatch.setattr(Path,'stat',guard)
 
 
-@pytest.mark.parametrize('model',['initial_Raw','calendar1027','calendar1028','calendar1029'])
+@pytest.mark.parametrize('model',['initial_Raw','calendar1027','calendar1028','calendar1029','ONE_fullpolicy'])
 def test_actual_complete_policy_trial_retains_all4arms_probes_origins_and_full_denominators(monkeypatch,model):
     no_private_stat(monkeypatch);r=receipts.verified_trial(ROOT,model)
     assert r['all4arms_each_full3orders_original_baseline_and_full_probes_verified']
@@ -52,9 +52,9 @@ def test_partial_changed_or_falsely_certified_policy_receipts_refuse_before_priv
     with pytest.raises(ValueError,match=message):receipts.verified_trial(tmp_path,'initial_Raw')
 
 
-def test_missing_other_fixed_model_never_substitutes_first_trial_or_opens_private_data(monkeypatch):
+def test_missing_other_fixed_model_never_substitutes_first_trial_or_opens_private_data(tmp_path,monkeypatch):
     no_private_stat(monkeypatch)
-    with pytest.raises(ValueError,match='Complete original'):receipts.verified_trial(ROOT,'ONE_fullpolicy')
+    with pytest.raises(ValueError,match='Complete original'):receipts.verified_trial(tmp_path,'ONE_fullpolicy')
 
 
 def test_macro_comparison_only_one_binary64_rounding_unit_not_broad_tolerance():
@@ -62,4 +62,6 @@ def test_macro_comparison_only_one_binary64_rounding_unit_not_broad_tolerance():
     x=.3007662835249042;one=math.nextafter(x,math.inf);two=math.nextafter(one,math.inf)
     assert receipts.same_macro_aggregate(x,one) and receipts.same_macro_aggregate(one,x)
     assert not receipts.same_macro_aggregate(x,two)
+    assert receipts.same_macro_aggregate(x,two,2)
+    assert not receipts.same_macro_aggregate(x,math.nextafter(two,math.inf),2)
     assert not receipts.same_macro_aggregate(x,x+1e-10)

@@ -80,8 +80,8 @@
   "Existing_gate_all5_full_dev_comparison_sha256": "45fdb286b5cf94a857fa3f1beb7d15ae4174f8698dba6e125113debb6c003c8d",
   "continuity_reuse_factorization": "SOURCE_ONLY_FOUR_ARMS:whole-query Raw support exclusion vs routing-only continuation after scoredNEW with one current-video prior token; Known/WAIT/history unchanged, original Raw baseline synthetic parity. Not category reuse credit, empirical Train result or M innovation. Actual pilot executor unregistered, no private data/weight access/training",
   "continuity_reuse_source_protocol": "configs/trackocd_cvpr/source_continuity_reuse_factorization_v1.json",
-  "continuity_reuse_actual_policy_pilot_completed": false,
-  "continuity_reuse_actual_complete_policy_heads": 4,
+  "continuity_reuse_actual_policy_pilot_completed": true,
+  "continuity_reuse_actual_complete_policy_heads": 5,
   "continuity_reuse_initialRaw_result": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_pilot_v1_initial_Raw/result.json",
   "continuity_reuse_initialRaw_result_sha256": "c244c16d00b676b02b841100ad499171bc18ea151552d637d1fe0faa8471be4c",
   "continuity_reuse_calendar1027_result": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_pilot_v1_calendar1027/result.json",
@@ -90,8 +90,10 @@
   "continuity_reuse_calendar1028_result_sha256": "d0cb0b327bd24a9b9137ede1f31b4e8f60bd773f3245c465b5da338f8d2f6d95",
   "continuity_reuse_calendar1029_result": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_pilot_v1_calendar1029/result.json",
   "continuity_reuse_calendar1029_result_sha256": "4caea76aa69e820164999bc91d0b2721bc3c75d327e66c143e39a0c8702cbce6",
+  "continuity_reuse_ONE_fullpolicy_result": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_pilot_v1_ONE_fullpolicy/result.json",
+  "continuity_reuse_ONE_fullpolicy_result_sha256": "a6e65e79e8ed192ad49082c9ffdd9269fb50a88435a7c99d3e006a468b59e56e",
   "continuity_reuse_policy_pilot_protocol": "configs/trackocd_cvpr/continuity_reuse_policy_pilot_v1.json",
-  "continuity_reuse_policy_pilot_execution": "ACTUAL_NORMAL_4_OF5_INITIAL_RAW_CALENDAR1027_CALENDAR1028_CALENDAR1029:all4arms/EACH3full policy orders plus original baseline and full ID/Known-binding/future/label probes. Calendar1029 fullRaw births36/36/34, exclusion births373/343/374, exclusion+continuity births36/36/36 with routing-only continuation10/9/10 physical and2/1/2 declared-pseudo; both exclusion arms Known micro .2058823529, scored claim coverage .7/.8/.7, certified scored cross-video reuse0/10. FullRaw Known micro .0588235294/.0882352941/.1176470588 and coverage1; no Goal gain or M innovation. No unseen dev/M innovation/Goal gain;remaining1head preserved, original229source frozen;public Knownmacro comparison1ULP-only without changing actual results/probes",
+  "continuity_reuse_policy_pilot_execution": "ACTUAL_NORMAL_ALL5_INITIAL_RAW_CALENDAR1027_CALENDAR1028_CALENDAR1029_ONE_FULLPOLICY:all4arms/EACH3full policy orders plus original baseline and full ID/Known-binding/future/label probes. ONE_fullpolicy fullRaw births27/27/27 with Known micro .2058823529/.2941176471/.2352941176, exclusion births320/287/321, exclusion+continuity births27/27/27 with routing-only continuation8/7/8 physical and2/1/2 declared-pseudo; exclusion arms certified scored cross-video reuse0/10 and claim coverage .7/.7/.7, fullRaw claim coverage .9/.8/.9. All five heads have no Goal gain or M innovation; original229source frozen; public macro qualifier uses1ULP for prior heads and exactly2ULP only for ONE_fullpolicy prefix insertion-order aggregate; all other events/counts/probes remain exact",
   "raw_named_membership_fullpolicy_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_full_policy/result.json",
   "raw_named_membership_fullpolicy_full_dev_result_sha256": "b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d",
   "raw_named_membership_all4_full_dev_comparison": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_all4_full_dev_comparison_v1.json",
@@ -115,5 +117,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Actual complete initialRaw, calendar1027, calendar1028 and calendar1029 policy pilots qualified (4/5heads); calendar1029 again shows birth reduction with exclusion+continuity but zero certified scored cross-video reuse, pseudo absorption and unmatched coverage/censored latency retained. Publish/fetch/live proof then separately run ONE_fullpolicy; retain the final head/all4arms/full3orders/probes/guards without selection/retry. No independent dev expansion from incomplete policy window. Qualify full trained-M runtime/probes; develop joint Novel-generalizable R/C/self-correcting persistent M. Fair calibrated coverage/latency, lawful strongPred/dense and locked independent-final still required. Original Goal A/B/C unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "All5 continuity/reuse policy heads are complete and publicly qualified under the frozen four-arm/all3-order/probe protocol; no head/arm/threshold selection, certified scored cross-video reuse, Novel-R/M innovation, or Goal gain was demonstrated. Reconcile the all5 public comparison, then continue the actual joint Novel-generalizable R/C/self-correcting M work, lawful strongPred/dense frontend validation, fair calibrated controls, and locked independent final. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }

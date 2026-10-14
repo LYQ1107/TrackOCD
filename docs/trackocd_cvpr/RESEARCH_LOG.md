@@ -7314,3 +7314,40 @@ no private GT/cache/weights opened for this check):
   head remains; the result is policy-domain evidence, not Novel-R/M innovation
   or Goal completion. Publish/fetch/tripleSHA before separately running
   ONE_fullpolicy.
+
+### Actual fifth complete continuity/reuse policy pilot: ONE_fullpolicy (5/5heads)
+
+- The first registered launch failed at the live remote-registration gate before
+  any worker or policy namespace existed. Its receipt/log were preserved. A
+  single reserved pre-data transport recovery followed a fresh exact remote-ref
+  proof and ran the same registered supervisor; no computational or guard
+  failure was retried. Normal exit0/guardNONE/414.294207152s inclusive/
+  956645376B peak/oneCPU/oneOSthread/no native helper/noCUDA/zero GPUhours.
+- All four arms and all3 orders completed on the fixed10-video/54-track/
+  1268-observation/374-frame/1-empty cohort with original baseline parity,
+  full ID/Known-binding/future/label probes, ALL13 snapshots, and original229
+  source closure. FullRaw and fullRaw+continuity births were27/27/27;
+  fullRaw Known micro .2058823529/.2941176471/.2352941176, Known macro
+  .3352490421/.3697318008/.3467432950, pseudo absorption1/2/1, claim coverage
+  .9/.8/.9. Exclusion births320/287/321; exclusion+continuity births27/27/27
+  with routing-only continuation8/7/8 physical and2/1/2 declared-pseudo;
+  both exclusion arms retained Known micro .2941176471/.3529411765/.2941176471,
+  pseudo absorption1/2/1, claim coverage .7/.7/.7, and certified scored
+  cross-video reuse0/10. FullRaw first scored-Existing latency was
+  2.1111/2.25/2.2222 observed updates (9/8/9 events); exclusion arms were
+  4.0/4.142857/4.0 (8/7/8 events, unresolved tracks retained).
+- The public verifier initially exposed only a representation-order diagnostic:
+  six ONE prefix macro aggregates differed by exactly2 binary64 ulps between
+  primary and legacy insertion orders; all event, score, origin, commit,
+  physical-count, coverage, absorption and probe fields remained exact. The
+  non-worker qualifier now permits exactly2 ulps only for ONE_fullpolicy and
+  keeps the prior1-ulp rule for other heads; larger mutations remain rejected.
+  No worker result or frozen229 source changed.
+- Result182557B SHA256`a6e65e79e8ed192ad49082c9ffdd9269fb50a88435a7c99d3e006a468b59e56e`;
+  launch`157384d55a44e8dbba828e5cfff97e529319e6b017eb81be86a22dc072bb4384`;
+  normal terminal`90bd730ebcd938c80d2fc890e241529a08137278d09710da76668b36f600b15a`.
+  Public verifier and the20-case receipt regression pass without private
+  GT/weights/prediction rows; the bounded CVPR/v2 suite also passes1278 tests
+  in71.42s. All five heads are now policy-qualified, but this is not a Novel-R/M
+  innovation, strong-Pred/dense validation, independent-final, or Goal A/B/C
+  result. Reconcile the all5 comparison before the next scientific phase.
