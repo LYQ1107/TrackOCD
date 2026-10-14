@@ -1915,3 +1915,33 @@ Final bounded CVPR/v2 suite1125pass92.88s, ownedexit0/guardNONE,
 95.9504s inclusive/839094272B peak/zero GPUhours. Exact report/original149fit
 source reverified; eight public files only, original last result52379B unchanged.
 No private weights/GT/scalar-target rows/calendars/progress/stdout export.
+
+## Prospective same-history arbitration/support observer pilot
+
+After complete ALL4 comparison, NEW fixed read-only policy pilot uses initial
+Raw/all3calendar heads/ONE fullpolicy, all10policy/54tracks/1268obs/374frames/
+1empty, all masked10retained; same full fit5 Raw prior, no other private role,
+new semantic vocabulary/GT/pixels or optimizer.192source/public paths and
+ALL13 actual snapshot fingerprints gate BEFORE private policy inputs. Reuse
+only data lineage, not inherited optimizer/model/schedule descriptions.
+
+Prediction-owned support witness equals actual bank numeric state pre/post
+frame, every candidate/context/binding/score byte, and normal reference events/
+commits/finalstate. Known constructor/candidate repeated normalization exactly
+mirrored; non-axis near-unit regression protects against last-bit false shadows.
+GT applied AFTER predictions, never observer/support-exclusion/scorer input.
+Bookkeeping partitions own-only/mixed-own/other support, counts positive Known
+gate bypass and same-history remove-own decisions. Shadow scores NEVER execute
+a memory/policy write. No trajectory intervention gain/empirical cause/unseen
+development claim from such conditional counts. Private traces stay in RAM.
+Full5model policy reference, ID-reverse and nonvacuous future-prefix checks,
+original3GiB/3000s/25%RAM/storage/oneCPU/noCUDA bounds, one actual attempt;
+no automatic training/dev expansion, thresholds/model selection or GT cleanup.
+
+31targeted tests pass5.98s. Initial regex expected the wrong rejection gate,
+corrected to test earlier history guard and final clock separately; no relaxed
+production checks. Final bounded CVPR/v2 suite1148pass70.92s, ownedexit0/
+guardNONE,72.8234s/864546816B/zeroGPUhours. All149originalfit dependencies
+unchanged. This is SOURCE registration, not actual policy/dev attribution.
+Real pilot follows publication/exact proof; original scientific Goal remains
+active/unachieved, fullM/joint/lawfulPred/dense/fair controls/lockedfinal open.

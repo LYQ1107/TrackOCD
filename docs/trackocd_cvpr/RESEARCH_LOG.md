@@ -6688,3 +6688,57 @@ no private GT/cache/weights opened for this check):
   all4 actual/mutation/parity tests, docs/status. Last original result52379B
   unchanged. No private weights/GT/score-target tables/calendars/progress/stdout.
   Publish/fetch/triple-SHA before any NEW separate mechanism protocol/experiment.
+
+### Prospective read-only arbitration/support attribution pilot
+
+- Prior turn made actual progress: ALL4 complete public comparison pushed/
+  fetched/triple-SHAb13ed1eaca6f9d95e74cdd3ba4ab4277bef29832. Fresh clean
+  entry, no live owned research job; availableRAM113833558016B of134792282112B,
+  free disk67849105408B. No cleanup/install/GPU job/foreign process changes.
+- NEW source/protocol/driver/persistent boot-bound launcher,192source/public
+  dependencies. Exact ALL4 full-dev reportdbda23e5... and all original normal
+  evidence prerequisite; fresh parent/worker remote/source/human407gates BEFORE
+  private inputs, ALL13 fixed formal snapshot byte fingerprints before policy.
+  InitialRaw plus all3calendar200 heads and ONE fullpolicy, no selected subset.
+  Reuse DATA lineage only from prior policy config, not its optimizer/model/
+  schedule text. Existing fit257/1158Known Raw prior, full10policy/54tracks/
+ 1268obs/374frames/1empty,34Known/10policy-pseudo/10masked. No dev/final/Val/
+  Test/newnonKnown label/body/pixels/vocabulary access or fitting.
+- Separate prediction-owned observer reconstructs latest actual anonymous
+  supports from ACTUAL committed outputs; no GT/role/route IDs in numeric
+  callback. Epoch/route bookkeeping only locates current member support. Pre/
+  post-frame state-evidence bytes and commit counts must equal original bank.
+  Every actual candidate feature/context/binding and score byte also checked;
+  construction mirrors exact Known-prototype constructor normalization before
+  the candidate kernel's second normalization, not a last-bit changed baseline.
+- After predictions, external eligible role labels count positive NamedKnown
+  gate bypass, selected Existing own-only/own-and-other/other-only partition,
+  other-video support, same-history remove-own change and correctKnown shadow.
+  All canonical/physical/unknown groups retained; no GT label provided to support
+  observer, exclusion or scorer, no GT repair/pollution washing or shadow write.
+  Same-history ONE-decision shadow is NOT an intervened trajectory, causal
+  end-to-end gain, category discovery solution or unseen-dev attribution.
+- EACH5head complete pilot stream plus independent unchanged normal-reference
+  full event/score/commit/finalstate equality; full ID-bijection/reverse-delivery
+  events/outcomes/state equality and nonvacuous actual future visual perturbation
+  preserving nonempty earlier events. Actual trace witnesses remain RAM-private,
+  public aggregate only. Original3GiB/3000s/16MiB/25%RAM+plannedRSS/storage,
+  one CPU compute worker/bounded native helper/noCUDA, one new actual attempt.
+  No automatic next experiment, private expansion, training or guard relaxation.
+- Initial synthetic rejection test1FAIL/4pass2.45s, later1FAIL/5pass2.62s:
+  expected final-clock error but actual too-small commit budget correctly failed
+  earlier bank bound. Corrected assertions to separately verify BOTH earliest
+  history bound and final metadata denominator; no production guard weakened.
+  Pre-normalization-review fullsuite1147pass76.10s/ownedexit0/guardNONE/
+ 78.179279570s/839155712B. Review identified float32 repeated-normalization
+  mismatch risk in new shadow only; added exact constructor/candidate/score
+  witness and non-axis near-unit regression BEFORE any real pilot/data reads.
+- Final31targeted observer/protocol/actual-matrix tests pass5.98s: no label
+  feedback, raw reference event/history/state parity, unknown/empty/short scopes,
+  exact alias dedup/own-exclusion without mutation, ID/future checks, guards/
+  permissions/subset/model-selection refusal and boot-launch command plumbing.
+  Final bounded full CVPR/v2 suite1148pass70.92s, ownedexit0/guardNONE/
+ 72.823400427s/864546816B/zero trainingGPUhours. Original149fit numerical
+  dependencies unchanged,192paths present. NO ACTUAL PILOT yet at registration;
+  execution only after publish/fetch/exact proof. Goal A/B/C still unachieved,
+  joint R/C/M/fullM probes/lawful strongPred/dense/fair controls/final pending.
