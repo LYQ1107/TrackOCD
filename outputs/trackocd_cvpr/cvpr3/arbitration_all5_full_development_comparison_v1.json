@@ -1,0 +1,1222 @@
+{
+  "status": "ALL5_ACTUAL_COMPLETE_PUBLIC_TRAIN_DEV_OBSERVER_COMPARISON_NOT_INTERVENED_STREAM_OR_GOAL",
+  "qualification": {
+    "all5_actual_complete_Train_dev_attribution_verified": true,
+    "trials": [
+      {
+        "model": "initial_Raw",
+        "launch_sha256": "9d49c9f5c57b8b56b8bd3e0e4dc7870467cb297084618eefb4df86ece7a31f85",
+        "result_sha256": "1837b94e2e836cc662204f247fed95f0784036a337ad80a3f96f8d8854aee051",
+        "terminal_sha256": "f29e4af2f4e697a9926dffbde410cdef2b3d68901e25d7d3a0a198fec7eed1ad",
+        "all3_full_orders_each_original_reference_and_full_probes_checked": true,
+        "private_models_GT_or_row_tables_read": false,
+        "full_intervention_causal_gain_or_Goal_accepted": false
+      },
+      {
+        "model": "calendar1027",
+        "launch_sha256": "cd7b3b78875007ac866a914cf396fe02230abbcc21939e46d76bfec34a6501dd",
+        "result_sha256": "3bc0560c0436e9862322034a3dac8d2e829aceffaf57989f49ce0a8e98e0cc49",
+        "terminal_sha256": "2bb4415fe30a24f132f5dfe618486ceb6aa7ba8332e20c30c04b3e8194ca8e7b",
+        "all3_full_orders_each_original_reference_and_full_probes_checked": true,
+        "private_models_GT_or_row_tables_read": false,
+        "full_intervention_causal_gain_or_Goal_accepted": false
+      },
+      {
+        "model": "calendar1028",
+        "launch_sha256": "63f9503977bf14bbed7e3fa64fe79d398c2d4a4b9b47cb472158037cd2eb699d",
+        "result_sha256": "c012e9e1f689aae8052bc43d98441860d0908a084bb2b8aef32d81bef02f72b3",
+        "terminal_sha256": "69bcb27bef6d97a42c49faedaa48f9493fa9e186dfe443b4a9475c210a5acc0e",
+        "all3_full_orders_each_original_reference_and_full_probes_checked": true,
+        "private_models_GT_or_row_tables_read": false,
+        "full_intervention_causal_gain_or_Goal_accepted": false
+      },
+      {
+        "model": "calendar1029",
+        "launch_sha256": "69526c02a39b0f643df7c794c852fd44b94ab9eb09cf176141852104fc5e8d9f",
+        "result_sha256": "6c6c9664dcb89a964382533599bc213d779efc79457ec2a100102c8d3d650f42",
+        "terminal_sha256": "51acc62be0e53f6b26c35aff1190ee80ed272964b5314190f6195e3461323ad0",
+        "all3_full_orders_each_original_reference_and_full_probes_checked": true,
+        "private_models_GT_or_row_tables_read": false,
+        "full_intervention_causal_gain_or_Goal_accepted": false
+      },
+      {
+        "model": "ONE_fullpolicy",
+        "launch_sha256": "30213a2db266f998209d72d542d1819d7bce4ad99984dc481e15b2c68634d96e",
+        "result_sha256": "d463b8a37153434acdf706fe09e2aa565deba23b47b3f132240cfe7de1fbbc9e",
+        "terminal_sha256": "1a26925f887d8c204121f3166adc241be88f9cd6d0037548aff65d3b31083203",
+        "all3_full_orders_each_original_reference_and_full_probes_checked": true,
+        "private_models_GT_or_row_tables_read": false,
+        "full_intervention_causal_gain_or_Goal_accepted": false
+      }
+    ],
+    "one_step_shadows_are_full_intervention_stream_or_Goal_gain": false,
+    "private_GT_model_data_loaded": false
+  },
+  "models": {
+    "initial_Raw": {
+      "original_public_triplet": [
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_initial_Raw/launch.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_initial_Raw/result.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_initial_Raw_supervisor_attempt_1.json"
+      ],
+      "full_orders": {
+        "1027": {
+          "full_clock": {
+            "EXISTING": 8445,
+            "KNOWN": 75,
+            "NEW": 233,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4592,
+              "Existing_contains_own_groups": 4401,
+              "Existing_has_other_same_video_groups": 1524,
+              "Existing_has_other_video_groups": 1285,
+              "Existing_only_own_groups": 2472,
+              "Existing_provenance_partition_only_own_groups": 2472,
+              "Existing_provenance_partition_other_only_groups": 191,
+              "Existing_provenance_partition_own_and_other_groups": 1929,
+              "KNOWN": 73,
+              "NEW": 143,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 1152,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 1079,
+              "same_history_remove_own_KNOWN_groups": 109,
+              "same_history_remove_own_changes_action_groups": 602,
+              "same_history_remove_own_correct_Known_groups": 107
+            },
+            "masked": {
+              "EXISTING": 1172,
+              "Existing_contains_own_groups": 1144,
+              "Existing_has_other_same_video_groups": 341,
+              "Existing_has_other_video_groups": 276,
+              "Existing_only_own_groups": 683,
+              "Existing_provenance_partition_only_own_groups": 683,
+              "Existing_provenance_partition_other_only_groups": 28,
+              "Existing_provenance_partition_own_and_other_groups": 461,
+              "KNOWN": 1,
+              "NEW": 29,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 179,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 178,
+              "same_history_remove_own_KNOWN_groups": 30,
+              "same_history_remove_own_changes_action_groups": 199,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2681,
+              "Existing_contains_own_groups": 2605,
+              "Existing_has_other_same_video_groups": 738,
+              "Existing_has_other_video_groups": 877,
+              "Existing_only_own_groups": 1449,
+              "Existing_provenance_partition_only_own_groups": 1449,
+              "Existing_provenance_partition_other_only_groups": 76,
+              "Existing_provenance_partition_own_and_other_groups": 1156,
+              "KNOWN": 1,
+              "NEW": 61,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 191,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 190,
+              "same_history_remove_own_KNOWN_groups": 20,
+              "same_history_remove_own_changes_action_groups": 248,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1028": {
+          "full_clock": {
+            "EXISTING": 8464,
+            "KNOWN": 65,
+            "NEW": 224,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4612,
+              "Existing_contains_own_groups": 4408,
+              "Existing_has_other_same_video_groups": 1409,
+              "Existing_has_other_video_groups": 1397,
+              "Existing_only_own_groups": 2559,
+              "Existing_provenance_partition_only_own_groups": 2559,
+              "Existing_provenance_partition_other_only_groups": 204,
+              "Existing_provenance_partition_own_and_other_groups": 1849,
+              "KNOWN": 58,
+              "NEW": 138,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 1152,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 1094,
+              "same_history_remove_own_KNOWN_groups": 126,
+              "same_history_remove_own_changes_action_groups": 709,
+              "same_history_remove_own_correct_Known_groups": 124
+            },
+            "masked": {
+              "EXISTING": 1167,
+              "Existing_contains_own_groups": 1141,
+              "Existing_has_other_same_video_groups": 263,
+              "Existing_has_other_video_groups": 290,
+              "Existing_only_own_groups": 763,
+              "Existing_provenance_partition_only_own_groups": 763,
+              "Existing_provenance_partition_other_only_groups": 26,
+              "Existing_provenance_partition_own_and_other_groups": 378,
+              "KNOWN": 6,
+              "NEW": 29,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 179,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 173,
+              "same_history_remove_own_KNOWN_groups": 17,
+              "same_history_remove_own_changes_action_groups": 187,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2685,
+              "Existing_contains_own_groups": 2608,
+              "Existing_has_other_same_video_groups": 845,
+              "Existing_has_other_video_groups": 1055,
+              "Existing_only_own_groups": 1309,
+              "Existing_provenance_partition_only_own_groups": 1309,
+              "Existing_provenance_partition_other_only_groups": 77,
+              "Existing_provenance_partition_own_and_other_groups": 1299,
+              "KNOWN": 1,
+              "NEW": 57,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 191,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 190,
+              "same_history_remove_own_KNOWN_groups": 33,
+              "same_history_remove_own_changes_action_groups": 264,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1029": {
+          "full_clock": {
+            "EXISTING": 8465,
+            "KNOWN": 66,
+            "NEW": 222,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4618,
+              "Existing_contains_own_groups": 4400,
+              "Existing_has_other_same_video_groups": 1489,
+              "Existing_has_other_video_groups": 1397,
+              "Existing_only_own_groups": 2541,
+              "Existing_provenance_partition_only_own_groups": 2541,
+              "Existing_provenance_partition_other_only_groups": 218,
+              "Existing_provenance_partition_own_and_other_groups": 1859,
+              "KNOWN": 58,
+              "NEW": 132,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 1152,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 1094,
+              "same_history_remove_own_KNOWN_groups": 119,
+              "same_history_remove_own_changes_action_groups": 652,
+              "same_history_remove_own_correct_Known_groups": 117
+            },
+            "masked": {
+              "EXISTING": 1172,
+              "Existing_contains_own_groups": 1142,
+              "Existing_has_other_same_video_groups": 193,
+              "Existing_has_other_video_groups": 345,
+              "Existing_only_own_groups": 783,
+              "Existing_provenance_partition_only_own_groups": 783,
+              "Existing_provenance_partition_other_only_groups": 30,
+              "Existing_provenance_partition_own_and_other_groups": 359,
+              "KNOWN": 1,
+              "NEW": 29,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 179,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 178,
+              "same_history_remove_own_KNOWN_groups": 10,
+              "same_history_remove_own_changes_action_groups": 190,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2675,
+              "Existing_contains_own_groups": 2597,
+              "Existing_has_other_same_video_groups": 776,
+              "Existing_has_other_video_groups": 983,
+              "Existing_only_own_groups": 1394,
+              "Existing_provenance_partition_only_own_groups": 1394,
+              "Existing_provenance_partition_other_only_groups": 78,
+              "Existing_provenance_partition_own_and_other_groups": 1203,
+              "KNOWN": 7,
+              "NEW": 61,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 191,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 184,
+              "same_history_remove_own_KNOWN_groups": 49,
+              "same_history_remove_own_changes_action_groups": 287,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        }
+      },
+      "mean_counts_over3orders_not_independent_trials": {
+        "Known_Existing_count": 4607.333333333333,
+        "Known_only_own_support_count": 2524,
+        "Known_positive_gate_bypassed_count": 1089,
+        "Known_correct_one_step_shadow_count": 116,
+        "declared_pseudo_Known_one_step_shadow_count": 34,
+        "masked_Known_one_step_shadow_count_no_correctness_truth": 19
+      },
+      "normal_wall_seconds": 2343.355178525999,
+      "normal_peak_RSS_bytes": 964272128
+    },
+    "calendar1027": {
+      "original_public_triplet": [
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1027/launch.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1027/result.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1027_supervisor_attempt_1.json"
+      ],
+      "full_orders": {
+        "1027": {
+          "full_clock": {
+            "EXISTING": 7928,
+            "KNOWN": 643,
+            "NEW": 182,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4322,
+              "Existing_contains_own_groups": 4112,
+              "Existing_has_other_same_video_groups": 1884,
+              "Existing_has_other_video_groups": 1470,
+              "Existing_only_own_groups": 1911,
+              "Existing_provenance_partition_only_own_groups": 1911,
+              "Existing_provenance_partition_other_only_groups": 210,
+              "Existing_provenance_partition_own_and_other_groups": 2201,
+              "KNOWN": 385,
+              "NEW": 101,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2623,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2238,
+              "same_history_remove_own_KNOWN_groups": 141,
+              "same_history_remove_own_changes_action_groups": 506,
+              "same_history_remove_own_correct_Known_groups": 126
+            },
+            "masked": {
+              "EXISTING": 1097,
+              "Existing_contains_own_groups": 1070,
+              "Existing_has_other_same_video_groups": 316,
+              "Existing_has_other_video_groups": 254,
+              "Existing_only_own_groups": 630,
+              "Existing_provenance_partition_only_own_groups": 630,
+              "Existing_provenance_partition_other_only_groups": 27,
+              "Existing_provenance_partition_own_and_other_groups": 440,
+              "KNOWN": 78,
+              "NEW": 27,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 661,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 583,
+              "same_history_remove_own_KNOWN_groups": 65,
+              "same_history_remove_own_changes_action_groups": 168,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2509,
+              "Existing_contains_own_groups": 2439,
+              "Existing_has_other_same_video_groups": 913,
+              "Existing_has_other_video_groups": 822,
+              "Existing_only_own_groups": 1200,
+              "Existing_provenance_partition_only_own_groups": 1200,
+              "Existing_provenance_partition_other_only_groups": 70,
+              "Existing_provenance_partition_own_and_other_groups": 1239,
+              "KNOWN": 180,
+              "NEW": 54,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1278,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1098,
+              "same_history_remove_own_KNOWN_groups": 105,
+              "same_history_remove_own_changes_action_groups": 272,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1028": {
+          "full_clock": {
+            "EXISTING": 7993,
+            "KNOWN": 581,
+            "NEW": 179,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4291,
+              "Existing_contains_own_groups": 4087,
+              "Existing_has_other_same_video_groups": 1759,
+              "Existing_has_other_video_groups": 1386,
+              "Existing_only_own_groups": 2050,
+              "Existing_provenance_partition_only_own_groups": 2050,
+              "Existing_provenance_partition_other_only_groups": 204,
+              "Existing_provenance_partition_own_and_other_groups": 2037,
+              "KNOWN": 412,
+              "NEW": 105,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2623,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2211,
+              "same_history_remove_own_KNOWN_groups": 111,
+              "same_history_remove_own_changes_action_groups": 550,
+              "same_history_remove_own_correct_Known_groups": 104
+            },
+            "masked": {
+              "EXISTING": 1120,
+              "Existing_contains_own_groups": 1093,
+              "Existing_has_other_same_video_groups": 363,
+              "Existing_has_other_video_groups": 310,
+              "Existing_only_own_groups": 642,
+              "Existing_provenance_partition_only_own_groups": 642,
+              "Existing_provenance_partition_other_only_groups": 27,
+              "Existing_provenance_partition_own_and_other_groups": 451,
+              "KNOWN": 57,
+              "NEW": 25,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 661,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 604,
+              "same_history_remove_own_KNOWN_groups": 62,
+              "same_history_remove_own_changes_action_groups": 162,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2582,
+              "Existing_contains_own_groups": 2504,
+              "Existing_has_other_same_video_groups": 1018,
+              "Existing_has_other_video_groups": 1132,
+              "Existing_only_own_groups": 1070,
+              "Existing_provenance_partition_only_own_groups": 1070,
+              "Existing_provenance_partition_other_only_groups": 78,
+              "Existing_provenance_partition_own_and_other_groups": 1434,
+              "KNOWN": 112,
+              "NEW": 49,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1278,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1166,
+              "same_history_remove_own_KNOWN_groups": 73,
+              "same_history_remove_own_changes_action_groups": 259,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1029": {
+          "full_clock": {
+            "EXISTING": 7899,
+            "KNOWN": 673,
+            "NEW": 181,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4176,
+              "Existing_contains_own_groups": 3976,
+              "Existing_has_other_same_video_groups": 1681,
+              "Existing_has_other_video_groups": 1346,
+              "Existing_only_own_groups": 2019,
+              "Existing_provenance_partition_only_own_groups": 2019,
+              "Existing_provenance_partition_other_only_groups": 200,
+              "Existing_provenance_partition_own_and_other_groups": 1957,
+              "KNOWN": 530,
+              "NEW": 102,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2623,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2093,
+              "same_history_remove_own_KNOWN_groups": 151,
+              "same_history_remove_own_changes_action_groups": 552,
+              "same_history_remove_own_correct_Known_groups": 147
+            },
+            "masked": {
+              "EXISTING": 1131,
+              "Existing_contains_own_groups": 1103,
+              "Existing_has_other_same_video_groups": 308,
+              "Existing_has_other_video_groups": 307,
+              "Existing_only_own_groups": 616,
+              "Existing_provenance_partition_only_own_groups": 616,
+              "Existing_provenance_partition_other_only_groups": 28,
+              "Existing_provenance_partition_own_and_other_groups": 487,
+              "KNOWN": 44,
+              "NEW": 27,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 661,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 617,
+              "same_history_remove_own_KNOWN_groups": 94,
+              "same_history_remove_own_changes_action_groups": 197,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2592,
+              "Existing_contains_own_groups": 2513,
+              "Existing_has_other_same_video_groups": 896,
+              "Existing_has_other_video_groups": 1006,
+              "Existing_only_own_groups": 1162,
+              "Existing_provenance_partition_only_own_groups": 1162,
+              "Existing_provenance_partition_other_only_groups": 79,
+              "Existing_provenance_partition_own_and_other_groups": 1351,
+              "KNOWN": 99,
+              "NEW": 52,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1278,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1179,
+              "same_history_remove_own_KNOWN_groups": 66,
+              "same_history_remove_own_changes_action_groups": 250,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        }
+      },
+      "mean_counts_over3orders_not_independent_trials": {
+        "Known_Existing_count": 4263,
+        "Known_only_own_support_count": 1993.3333333333333,
+        "Known_positive_gate_bypassed_count": 2180.6666666666665,
+        "Known_correct_one_step_shadow_count": 125.66666666666667,
+        "declared_pseudo_Known_one_step_shadow_count": 81.33333333333333,
+        "masked_Known_one_step_shadow_count_no_correctness_truth": 73.66666666666667
+      },
+      "normal_wall_seconds": 1952.8784452239997,
+      "normal_peak_RSS_bytes": 965283840
+    },
+    "calendar1028": {
+      "original_public_triplet": [
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1028/launch.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1028/result.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1028_supervisor_attempt_1.json"
+      ],
+      "full_orders": {
+        "1027": {
+          "full_clock": {
+            "EXISTING": 7905,
+            "KNOWN": 669,
+            "NEW": 179,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4303,
+              "Existing_contains_own_groups": 4090,
+              "Existing_has_other_same_video_groups": 1877,
+              "Existing_has_other_video_groups": 1454,
+              "Existing_only_own_groups": 1916,
+              "Existing_provenance_partition_only_own_groups": 1916,
+              "Existing_provenance_partition_other_only_groups": 213,
+              "Existing_provenance_partition_own_and_other_groups": 2174,
+              "KNOWN": 405,
+              "NEW": 100,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2640,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2235,
+              "same_history_remove_own_KNOWN_groups": 124,
+              "same_history_remove_own_changes_action_groups": 488,
+              "same_history_remove_own_correct_Known_groups": 109
+            },
+            "masked": {
+              "EXISTING": 1096,
+              "Existing_contains_own_groups": 1066,
+              "Existing_has_other_same_video_groups": 322,
+              "Existing_has_other_video_groups": 281,
+              "Existing_only_own_groups": 627,
+              "Existing_provenance_partition_only_own_groups": 627,
+              "Existing_provenance_partition_other_only_groups": 30,
+              "Existing_provenance_partition_own_and_other_groups": 439,
+              "KNOWN": 81,
+              "NEW": 25,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 667,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 586,
+              "same_history_remove_own_KNOWN_groups": 67,
+              "same_history_remove_own_changes_action_groups": 169,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2506,
+              "Existing_contains_own_groups": 2437,
+              "Existing_has_other_same_video_groups": 1007,
+              "Existing_has_other_video_groups": 836,
+              "Existing_only_own_groups": 1200,
+              "Existing_provenance_partition_only_own_groups": 1200,
+              "Existing_provenance_partition_other_only_groups": 69,
+              "Existing_provenance_partition_own_and_other_groups": 1237,
+              "KNOWN": 183,
+              "NEW": 54,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1298,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1115,
+              "same_history_remove_own_KNOWN_groups": 113,
+              "same_history_remove_own_changes_action_groups": 278,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1028": {
+          "full_clock": {
+            "EXISTING": 7992,
+            "KNOWN": 582,
+            "NEW": 179,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4290,
+              "Existing_contains_own_groups": 4087,
+              "Existing_has_other_same_video_groups": 1758,
+              "Existing_has_other_video_groups": 1386,
+              "Existing_only_own_groups": 2050,
+              "Existing_provenance_partition_only_own_groups": 2050,
+              "Existing_provenance_partition_other_only_groups": 203,
+              "Existing_provenance_partition_own_and_other_groups": 2037,
+              "KNOWN": 413,
+              "NEW": 105,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2640,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2227,
+              "same_history_remove_own_KNOWN_groups": 112,
+              "same_history_remove_own_changes_action_groups": 550,
+              "same_history_remove_own_correct_Known_groups": 105
+            },
+            "masked": {
+              "EXISTING": 1120,
+              "Existing_contains_own_groups": 1093,
+              "Existing_has_other_same_video_groups": 363,
+              "Existing_has_other_video_groups": 310,
+              "Existing_only_own_groups": 642,
+              "Existing_provenance_partition_only_own_groups": 642,
+              "Existing_provenance_partition_other_only_groups": 27,
+              "Existing_provenance_partition_own_and_other_groups": 451,
+              "KNOWN": 57,
+              "NEW": 25,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 667,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 610,
+              "same_history_remove_own_KNOWN_groups": 63,
+              "same_history_remove_own_changes_action_groups": 162,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2582,
+              "Existing_contains_own_groups": 2504,
+              "Existing_has_other_same_video_groups": 1018,
+              "Existing_has_other_video_groups": 1132,
+              "Existing_only_own_groups": 1070,
+              "Existing_provenance_partition_only_own_groups": 1070,
+              "Existing_provenance_partition_other_only_groups": 78,
+              "Existing_provenance_partition_own_and_other_groups": 1434,
+              "KNOWN": 112,
+              "NEW": 49,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1298,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1186,
+              "same_history_remove_own_KNOWN_groups": 74,
+              "same_history_remove_own_changes_action_groups": 259,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1029": {
+          "full_clock": {
+            "EXISTING": 7898,
+            "KNOWN": 675,
+            "NEW": 180,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4175,
+              "Existing_contains_own_groups": 3975,
+              "Existing_has_other_same_video_groups": 1681,
+              "Existing_has_other_video_groups": 1346,
+              "Existing_only_own_groups": 2018,
+              "Existing_provenance_partition_only_own_groups": 2018,
+              "Existing_provenance_partition_other_only_groups": 200,
+              "Existing_provenance_partition_own_and_other_groups": 1957,
+              "KNOWN": 532,
+              "NEW": 101,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2640,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2108,
+              "same_history_remove_own_KNOWN_groups": 151,
+              "same_history_remove_own_changes_action_groups": 551,
+              "same_history_remove_own_correct_Known_groups": 147
+            },
+            "masked": {
+              "EXISTING": 1131,
+              "Existing_contains_own_groups": 1103,
+              "Existing_has_other_same_video_groups": 308,
+              "Existing_has_other_video_groups": 307,
+              "Existing_only_own_groups": 616,
+              "Existing_provenance_partition_only_own_groups": 616,
+              "Existing_provenance_partition_other_only_groups": 28,
+              "Existing_provenance_partition_own_and_other_groups": 487,
+              "KNOWN": 44,
+              "NEW": 27,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 667,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 623,
+              "same_history_remove_own_KNOWN_groups": 95,
+              "same_history_remove_own_changes_action_groups": 197,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2592,
+              "Existing_contains_own_groups": 2513,
+              "Existing_has_other_same_video_groups": 896,
+              "Existing_has_other_video_groups": 1006,
+              "Existing_only_own_groups": 1162,
+              "Existing_provenance_partition_only_own_groups": 1162,
+              "Existing_provenance_partition_other_only_groups": 79,
+              "Existing_provenance_partition_own_and_other_groups": 1351,
+              "KNOWN": 99,
+              "NEW": 52,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1298,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1199,
+              "same_history_remove_own_KNOWN_groups": 68,
+              "same_history_remove_own_changes_action_groups": 250,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        }
+      },
+      "mean_counts_over3orders_not_independent_trials": {
+        "Known_Existing_count": 4256,
+        "Known_only_own_support_count": 1994.6666666666667,
+        "Known_positive_gate_bypassed_count": 2190,
+        "Known_correct_one_step_shadow_count": 120.33333333333333,
+        "declared_pseudo_Known_one_step_shadow_count": 85,
+        "masked_Known_one_step_shadow_count_no_correctness_truth": 75
+      },
+      "normal_wall_seconds": 1843.1208635030052,
+      "normal_peak_RSS_bytes": 965521408
+    },
+    "calendar1029": {
+      "original_public_triplet": [
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1029/launch.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1029/result.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_calendar1029_supervisor_attempt_1.json"
+      ],
+      "full_orders": {
+        "1027": {
+          "full_clock": {
+            "EXISTING": 8000,
+            "KNOWN": 570,
+            "NEW": 183,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4386,
+              "Existing_contains_own_groups": 4178,
+              "Existing_has_other_same_video_groups": 1963,
+              "Existing_has_other_video_groups": 1486,
+              "Existing_only_own_groups": 1911,
+              "Existing_provenance_partition_only_own_groups": 1911,
+              "Existing_provenance_partition_other_only_groups": 208,
+              "Existing_provenance_partition_own_and_other_groups": 2267,
+              "KNOWN": 321,
+              "NEW": 101,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2616,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2295,
+              "same_history_remove_own_KNOWN_groups": 157,
+              "same_history_remove_own_changes_action_groups": 525,
+              "same_history_remove_own_correct_Known_groups": 142
+            },
+            "masked": {
+              "EXISTING": 1096,
+              "Existing_contains_own_groups": 1070,
+              "Existing_has_other_same_video_groups": 332,
+              "Existing_has_other_video_groups": 252,
+              "Existing_only_own_groups": 630,
+              "Existing_provenance_partition_only_own_groups": 630,
+              "Existing_provenance_partition_other_only_groups": 26,
+              "Existing_provenance_partition_own_and_other_groups": 440,
+              "KNOWN": 79,
+              "NEW": 27,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 661,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 582,
+              "same_history_remove_own_KNOWN_groups": 59,
+              "same_history_remove_own_changes_action_groups": 162,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2518,
+              "Existing_contains_own_groups": 2447,
+              "Existing_has_other_same_video_groups": 956,
+              "Existing_has_other_video_groups": 818,
+              "Existing_only_own_groups": 1194,
+              "Existing_provenance_partition_only_own_groups": 1194,
+              "Existing_provenance_partition_other_only_groups": 71,
+              "Existing_provenance_partition_own_and_other_groups": 1253,
+              "KNOWN": 170,
+              "NEW": 55,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1273,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1103,
+              "same_history_remove_own_KNOWN_groups": 97,
+              "same_history_remove_own_changes_action_groups": 261,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1028": {
+          "full_clock": {
+            "EXISTING": 7993,
+            "KNOWN": 581,
+            "NEW": 179,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4291,
+              "Existing_contains_own_groups": 4087,
+              "Existing_has_other_same_video_groups": 1759,
+              "Existing_has_other_video_groups": 1386,
+              "Existing_only_own_groups": 2050,
+              "Existing_provenance_partition_only_own_groups": 2050,
+              "Existing_provenance_partition_other_only_groups": 204,
+              "Existing_provenance_partition_own_and_other_groups": 2037,
+              "KNOWN": 412,
+              "NEW": 105,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2616,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2204,
+              "same_history_remove_own_KNOWN_groups": 111,
+              "same_history_remove_own_changes_action_groups": 550,
+              "same_history_remove_own_correct_Known_groups": 104
+            },
+            "masked": {
+              "EXISTING": 1120,
+              "Existing_contains_own_groups": 1093,
+              "Existing_has_other_same_video_groups": 363,
+              "Existing_has_other_video_groups": 310,
+              "Existing_only_own_groups": 642,
+              "Existing_provenance_partition_only_own_groups": 642,
+              "Existing_provenance_partition_other_only_groups": 27,
+              "Existing_provenance_partition_own_and_other_groups": 451,
+              "KNOWN": 57,
+              "NEW": 25,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 661,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 604,
+              "same_history_remove_own_KNOWN_groups": 62,
+              "same_history_remove_own_changes_action_groups": 162,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2582,
+              "Existing_contains_own_groups": 2504,
+              "Existing_has_other_same_video_groups": 1018,
+              "Existing_has_other_video_groups": 1132,
+              "Existing_only_own_groups": 1070,
+              "Existing_provenance_partition_only_own_groups": 1070,
+              "Existing_provenance_partition_other_only_groups": 78,
+              "Existing_provenance_partition_own_and_other_groups": 1434,
+              "KNOWN": 112,
+              "NEW": 49,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1273,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1161,
+              "same_history_remove_own_KNOWN_groups": 73,
+              "same_history_remove_own_changes_action_groups": 259,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1029": {
+          "full_clock": {
+            "EXISTING": 7899,
+            "KNOWN": 673,
+            "NEW": 181,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 4176,
+              "Existing_contains_own_groups": 3976,
+              "Existing_has_other_same_video_groups": 1681,
+              "Existing_has_other_video_groups": 1346,
+              "Existing_only_own_groups": 2019,
+              "Existing_provenance_partition_only_own_groups": 2019,
+              "Existing_provenance_partition_other_only_groups": 200,
+              "Existing_provenance_partition_own_and_other_groups": 1957,
+              "KNOWN": 530,
+              "NEW": 102,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2616,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2086,
+              "same_history_remove_own_KNOWN_groups": 151,
+              "same_history_remove_own_changes_action_groups": 552,
+              "same_history_remove_own_correct_Known_groups": 147
+            },
+            "masked": {
+              "EXISTING": 1131,
+              "Existing_contains_own_groups": 1103,
+              "Existing_has_other_same_video_groups": 308,
+              "Existing_has_other_video_groups": 307,
+              "Existing_only_own_groups": 616,
+              "Existing_provenance_partition_only_own_groups": 616,
+              "Existing_provenance_partition_other_only_groups": 28,
+              "Existing_provenance_partition_own_and_other_groups": 487,
+              "KNOWN": 44,
+              "NEW": 27,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 661,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 617,
+              "same_history_remove_own_KNOWN_groups": 94,
+              "same_history_remove_own_changes_action_groups": 197,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2592,
+              "Existing_contains_own_groups": 2513,
+              "Existing_has_other_same_video_groups": 896,
+              "Existing_has_other_video_groups": 1006,
+              "Existing_only_own_groups": 1162,
+              "Existing_provenance_partition_only_own_groups": 1162,
+              "Existing_provenance_partition_other_only_groups": 79,
+              "Existing_provenance_partition_own_and_other_groups": 1351,
+              "KNOWN": 99,
+              "NEW": 52,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1273,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1174,
+              "same_history_remove_own_KNOWN_groups": 66,
+              "same_history_remove_own_changes_action_groups": 250,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        }
+      },
+      "mean_counts_over3orders_not_independent_trials": {
+        "Known_Existing_count": 4284.333333333333,
+        "Known_only_own_support_count": 1993.3333333333333,
+        "Known_positive_gate_bypassed_count": 2195,
+        "Known_correct_one_step_shadow_count": 131,
+        "declared_pseudo_Known_one_step_shadow_count": 78.66666666666667,
+        "masked_Known_one_step_shadow_count_no_correctness_truth": 71.66666666666667
+      },
+      "normal_wall_seconds": 1829.9070321499967,
+      "normal_peak_RSS_bytes": 964919296
+    },
+    "ONE_fullpolicy": {
+      "original_public_triplet": [
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_ONE_fullpolicy/launch.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_ONE_fullpolicy/result.json",
+        "outputs/trackocd_cvpr/cvpr3/arbitration_full_development_v1_ONE_fullpolicy_supervisor_attempt_1.json"
+      ],
+      "full_orders": {
+        "1027": {
+          "full_clock": {
+            "EXISTING": 7049,
+            "KNOWN": 1567,
+            "NEW": 137,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 3773,
+              "Existing_contains_own_groups": 3589,
+              "Existing_has_other_same_video_groups": 1952,
+              "Existing_has_other_video_groups": 1556,
+              "Existing_only_own_groups": 1496,
+              "Existing_provenance_partition_only_own_groups": 1496,
+              "Existing_provenance_partition_other_only_groups": 184,
+              "Existing_provenance_partition_own_and_other_groups": 2093,
+              "KNOWN": 961,
+              "NEW": 74,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2997,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2036,
+              "same_history_remove_own_KNOWN_groups": 167,
+              "same_history_remove_own_changes_action_groups": 458,
+              "same_history_remove_own_correct_Known_groups": 164
+            },
+            "masked": {
+              "EXISTING": 1022,
+              "Existing_contains_own_groups": 992,
+              "Existing_has_other_same_video_groups": 365,
+              "Existing_has_other_video_groups": 296,
+              "Existing_only_own_groups": 500,
+              "Existing_provenance_partition_only_own_groups": 500,
+              "Existing_provenance_partition_other_only_groups": 30,
+              "Existing_provenance_partition_own_and_other_groups": 492,
+              "KNOWN": 159,
+              "NEW": 21,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 740,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 581,
+              "same_history_remove_own_KNOWN_groups": 88,
+              "same_history_remove_own_changes_action_groups": 153,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2254,
+              "Existing_contains_own_groups": 2179,
+              "Existing_has_other_same_video_groups": 973,
+              "Existing_has_other_video_groups": 939,
+              "Existing_only_own_groups": 958,
+              "Existing_provenance_partition_only_own_groups": 958,
+              "Existing_provenance_partition_other_only_groups": 75,
+              "Existing_provenance_partition_own_and_other_groups": 1221,
+              "KNOWN": 447,
+              "NEW": 42,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1573,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1126,
+              "same_history_remove_own_KNOWN_groups": 64,
+              "same_history_remove_own_changes_action_groups": 202,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1028": {
+          "full_clock": {
+            "EXISTING": 6849,
+            "KNOWN": 1768,
+            "NEW": 136,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 3450,
+              "Existing_contains_own_groups": 3307,
+              "Existing_has_other_same_video_groups": 1679,
+              "Existing_has_other_video_groups": 1197,
+              "Existing_only_own_groups": 1512,
+              "Existing_provenance_partition_only_own_groups": 1512,
+              "Existing_provenance_partition_other_only_groups": 143,
+              "Existing_provenance_partition_own_and_other_groups": 1795,
+              "KNOWN": 1283,
+              "NEW": 75,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2997,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 1714,
+              "same_history_remove_own_KNOWN_groups": 134,
+              "same_history_remove_own_changes_action_groups": 479,
+              "same_history_remove_own_correct_Known_groups": 128
+            },
+            "masked": {
+              "EXISTING": 975,
+              "Existing_contains_own_groups": 947,
+              "Existing_has_other_same_video_groups": 347,
+              "Existing_has_other_video_groups": 254,
+              "Existing_only_own_groups": 497,
+              "Existing_provenance_partition_only_own_groups": 497,
+              "Existing_provenance_partition_other_only_groups": 28,
+              "Existing_provenance_partition_own_and_other_groups": 450,
+              "KNOWN": 207,
+              "NEW": 20,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 740,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 533,
+              "same_history_remove_own_KNOWN_groups": 90,
+              "same_history_remove_own_changes_action_groups": 157,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2424,
+              "Existing_contains_own_groups": 2351,
+              "Existing_has_other_same_video_groups": 1081,
+              "Existing_has_other_video_groups": 1165,
+              "Existing_only_own_groups": 936,
+              "Existing_provenance_partition_only_own_groups": 936,
+              "Existing_provenance_partition_other_only_groups": 73,
+              "Existing_provenance_partition_own_and_other_groups": 1415,
+              "KNOWN": 278,
+              "NEW": 41,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1573,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1295,
+              "same_history_remove_own_KNOWN_groups": 78,
+              "same_history_remove_own_changes_action_groups": 220,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        },
+        "1029": {
+          "full_clock": {
+            "EXISTING": 7384,
+            "KNOWN": 1233,
+            "NEW": 136,
+            "canonical_groups": 8753,
+            "empty_frames": 116,
+            "metadata_frames": 2562,
+            "physical_observations": 8753
+          },
+          "external_strata": {
+            "Known": {
+              "EXISTING": 3804,
+              "Existing_contains_own_groups": 3613,
+              "Existing_has_other_same_video_groups": 1933,
+              "Existing_has_other_video_groups": 1582,
+              "Existing_only_own_groups": 1573,
+              "Existing_provenance_partition_only_own_groups": 1573,
+              "Existing_provenance_partition_other_only_groups": 191,
+              "Existing_provenance_partition_own_and_other_groups": 2040,
+              "KNOWN": 930,
+              "NEW": 74,
+              "canonical_groups": 4808,
+              "named_gate_positive_groups": 2997,
+              "physical_observations": 4808,
+              "positive_named_gate_bypassed_groups": 2067,
+              "same_history_remove_own_KNOWN_groups": 203,
+              "same_history_remove_own_changes_action_groups": 512,
+              "same_history_remove_own_correct_Known_groups": 197
+            },
+            "masked": {
+              "EXISTING": 1104,
+              "Existing_contains_own_groups": 1074,
+              "Existing_has_other_same_video_groups": 410,
+              "Existing_has_other_video_groups": 435,
+              "Existing_only_own_groups": 511,
+              "Existing_provenance_partition_only_own_groups": 511,
+              "Existing_provenance_partition_other_only_groups": 30,
+              "Existing_provenance_partition_own_and_other_groups": 563,
+              "KNOWN": 77,
+              "NEW": 21,
+              "canonical_groups": 1202,
+              "named_gate_positive_groups": 740,
+              "physical_observations": 1202,
+              "positive_named_gate_bypassed_groups": 663,
+              "same_history_remove_own_KNOWN_groups": 103,
+              "same_history_remove_own_changes_action_groups": 170,
+              "same_history_remove_own_correct_Known_groups": 0
+            },
+            "policy_pseudo": {
+              "EXISTING": 2476,
+              "Existing_contains_own_groups": 2390,
+              "Existing_has_other_same_video_groups": 1151,
+              "Existing_has_other_video_groups": 1130,
+              "Existing_only_own_groups": 862,
+              "Existing_provenance_partition_only_own_groups": 862,
+              "Existing_provenance_partition_other_only_groups": 86,
+              "Existing_provenance_partition_own_and_other_groups": 1528,
+              "KNOWN": 226,
+              "NEW": 41,
+              "canonical_groups": 2743,
+              "named_gate_positive_groups": 1573,
+              "physical_observations": 2743,
+              "positive_named_gate_bypassed_groups": 1347,
+              "same_history_remove_own_KNOWN_groups": 96,
+              "same_history_remove_own_changes_action_groups": 243,
+              "same_history_remove_own_correct_Known_groups": 0
+            }
+          }
+        }
+      },
+      "mean_counts_over3orders_not_independent_trials": {
+        "Known_Existing_count": 3675.6666666666665,
+        "Known_only_own_support_count": 1527,
+        "Known_positive_gate_bypassed_count": 1939,
+        "Known_correct_one_step_shadow_count": 163,
+        "declared_pseudo_Known_one_step_shadow_count": 79.33333333333333,
+        "masked_Known_one_step_shadow_count_no_correctness_truth": 93.66666666666667
+      },
+      "normal_wall_seconds": 1582.9288940100014,
+      "normal_peak_RSS_bytes": 964964352
+    }
+  },
+  "three_calendar_seed_mean_over_all3orders": {
+    "Known_Existing_count": 4267.777777777777,
+    "Known_only_own_support_count": 1993.7777777777776,
+    "Known_positive_gate_bypassed_count": 2188.555555555555,
+    "Known_correct_one_step_shadow_count": 125.66666666666667,
+    "declared_pseudo_Known_one_step_shadow_count": 81.66666666666667,
+    "masked_Known_one_step_shadow_count_no_correctness_truth": 73.44444444444444
+  },
+  "per_order_observation_denominators": {
+    "Known": 4808,
+    "declared_pseudoNovel": 2743,
+    "masked": 1202
+  },
+  "normal_total_wall_seconds": 9552.190413413002,
+  "training_GPU_hours": 0,
+  "private_GT_weights_rows_loaded": false,
+  "conditional_shadow_is_full_intervention_gain": false,
+  "observations_orders_or_solver_replicated_as_independent_seeds": false,
+  "model_seed_threshold_or_coefficient_selected": false,
+  "joint_Novel_R_C_M_Pred_dense_calibrated_controls_final_or_Goal_accepted": false
+}

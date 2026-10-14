@@ -2105,3 +2105,44 @@ required; full matrix and joint/fullM/lawfulPred/dense/fair/lockedfinal Goal ope
 ownedexit0/guardNONE/69.7045s inclusive/839258112B peak/zero GPUhours.
 Original202source reverified; only fourth original public normal triplet/test/
 docs/status, no private GT/models/traces/rows or numerical source changes.
+
+## Complete all5 independent dev support-attribution window
+
+ONEfullpolicy normal1582.9289s/964964352B/oneCPU+oneOSthread/noGPU, frozen
+original solver head/no optimizer. Each3full72video/472track/8753observation/
+2562frame/116empty orders, EACH independent normal event/commit/state parity,
+full ID/reverse and39future-prefix checks. Original202source and ALL13snapshots
+verified; no guard relaxation/partial result/repeat attempt/GT or shadow writes.
+ONEfullpolicy correctKnown shadows164/128/197; declared-pseudo Known shadows
+64/78/96; masked88/90/103 has no correctness truth. Conditional decisions only.
+
+ALL5 complete public qualifier binds identical actual source/fit prior/dev/
+ordinal schedules and full references/probes/denominators. Comparison retains
+every original order/stratum aggregate and source triplet hashes, refuses partial
+window before input reads, no private GT/models/rows. Total9552.1904s inclusive,
+peak965521408B/zero GPUhours. Mean counts under unchanged committed histories:
+
+| Fixed control | Correct Known one-step shadows | Declared-pseudo shadows to Known |
+| --- | ---: | ---: |
+| Initial Raw, all3orders | 116 | 34 |
+| Three calendar seeds, each all3orders | 125.6667 | 81.6667 |
+| ONE fullpolicy solver, all3orders | 163 | 79.3333 |
+
+All models use4808Known/2743declared-pseudo/1202masked observations per order.
+These counts are NOT accuracy or intervention gains; correlated observations/
+orders are not independent samples, solver not three seeds. Correct Known
+opportunities coexist with adverse pseudo absorption; no control selected.
+
+Final result`d463b8a37153434acdf706fe09e2aa565deba23b47b3f132240cfe7de1fbbc9e`;
+normal terminal`1a26925f887d8c204121f3166adc241be88f9cd6d0037548aff65d3b31083203`.
+Complete comparison55747B SHA256`45fdb286b5cf94a857fa3f1beb7d15ae4174f8698dba6e125113debb6c003c8d`.
+Next qualification must test actual matched interventions and retained-support
+mechanisms on lawful fit/policy before independent dev, not claim shadow removal
+solves persistence. No GT-history cleanup/threshold or seed fishing. Joint
+Novel-generalizable R/C/M, fullM/lawfulPred/dense/fair controls/lockedfinal and
+original Goal A/B/C remain unachieved. No automatic new training or dev sweep.
+Final56targeted tests pass3.96s, actual all5/source/probe/clock proof, exact saved
+report regeneration, retained adverse counts and early partial-matrix refusal.
+Bounded CVPR/v2 suite1204pass72.57s, ownedexit0/guardNONE/74.2353s inclusive/
+845856768B peak/zero GPUhours. Ten public files only, no private exports;
+original202source and complete comparison reverified before publication.

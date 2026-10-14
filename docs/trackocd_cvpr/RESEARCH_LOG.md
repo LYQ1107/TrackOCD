@@ -7013,3 +7013,51 @@ no private GT/cache/weights opened for this check):
   rechecked after docs. Seven public files only: fourth normal triplet/public
   test/docs/status; no private GT/models/traces/rows/progress/stdout exports.
   Publish/fetch/triple-SHA before separately launching ONEfullpolicy.
+
+### Actual fifth complete dev attribution and complete all5 window
+
+- Same boot/start/command supervisor698879/worker699086 verified through
+  normal terminal; historical identities not restart instructions. Published/
+  fetched/triple-SHA preregistrationec5567e17f8cca74213afcfd981d5311fcbc2958.
+  ONEfullpolicy normal exit0/guardNONE/1582.928894010s inclusive/964964352B peak/
+  oneCPU+oneOSthread/no native helper/noCUDA/zero GPUhours. Busy false afterward.
+  Fixed original formal solver head, no warmstart/optimizer/retry/relaxed guards.
+- Each3orders full72videos/472tracks/8753observations/2562frames/116empty;
+  EACH exact independent normal events/commits/state, full ID/reverse and39actual
+  future mutations preserving nonempty prior events. ALL13snapshot bytes before
+  dev. Original202source closure unchanged. All external Known/pseudo/masked
+  denominators retained, no label/shadow memory writes or new semantic values.
+- ONEfullpolicy Known Existing3773/3450/3804; own-only1496/1512/1573;
+  positive Known gate2997all3, bypass2036/1714/2067. Same-history shadows
+  Known167/134/203, correctKnown164/128/197. Declared-pseudo shadowsKnown64/
+  78/96; masked88/90/103 has unknown correctness. Conditional scoring counts
+  only, never a full altered-stream gain/all-error explanation/selected model.
+- Result13023B SHAd463b8a37153434acdf706fe09e2aa565deba23b47b3f132240cfe7de1fbbc9e;
+  launch30213a2db266f998209d72d542d1819d7bce4ad99984dc481e15b2c68634d96e;
+  terminal1a26925f887d8c204121f3166adc241be88f9cd6d0037548aff65d3b31083203.
+- ALL5 public verifier confirms same actual202source/fit prior/dev universe/
+  per-order ordinal schedules and each normal/probe/clock/physical count proof.
+  New complete comparison refuses partial matrix before comparison reads;
+  preserves every original order/stratum aggregate plus all5original hashes.
+  Total9552.190413413s inclusive/peak965521408B/zero GPUhours; no private
+  GT/models/prediction rows/history read by comparison or uploaded.
+- Three-calendar-seed/all3order mean correctKnown shadow125.6667 vs initialRaw
+  116, but declared-pseudo shadowKnown81.6667 vs34; ONEsolver163/79.3333.
+  Both sides retained. Correlated observations/orders are not independent
+  experiments, solver not replicated as3seeds; no accuracy/Novel-R/full-causal
+  intervention or calibrated-coverage/latency superiority claim.
+- Public comparison55747B SHA45fdb286b5cf94a857fa3f1beb7d15ae4174f8698dba6e125113debb6c003c8d.
+  Next freeze/qualify actual matched intervention and retained-support mechanisms
+  on fit/policy before lawful independent dev; no GT-history cleanups or dev
+  threshold/seed/head selection. Joint Novel-generalizable R/candidate-aware C/
+  persistent M, fullM/lawfulPred/dense/fair controls/lockedfinal remain open.
+  Complete observer window is NOT original Goal A/B/C completion.
+- Final targeted56pass3.96s includes all5actual proofs, saved-report equality,
+  every retained order/stratum, adverse counts and missing-matrix early refusal
+  without private model stat. Bounded combined CVPR/v2 suite1204pass72.57s,
+  ownedexit0/guardNONE/74.235346213s inclusive/845856768B peak/zero GPUhours.
+  Original202closure/all5normal proof and saved comparison rechecked after docs.
+  Ten public files only: final triplet/new public comparison+builder/test/
+  actual-receipt test/docs/status. No private data/GT/models/traces/rows/progress/
+  stdout. Publish/fetch/triple-SHA; original Goal remains active, no automatic
+  new experiment/training or dev-selected intervention.
