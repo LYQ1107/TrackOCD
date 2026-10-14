@@ -22,6 +22,12 @@
   "latest_M_shadow_requalification": "BLOCKED_BEFORE_PRIVATE_INPUT_ENDPOINT_SOURCE_PROVENANCE_MISMATCH",
   "latest_M_shadow_requalification_terminal": "outputs/trackocd_cvpr/cvpr4/M_member_feature_cache_shadow_support_requalification_v1_supervisor_attempt_1.json",
   "latest_M_shadow_requalification_terminal_sha256": "52785e20a6fe8053a24df3042f0aebe6a9290a8824b49bf4b014e7dedbd990b2",
+  "latest_M_source_compatibility_shadow": "COMPLETE_ALL11_CURRENT_SOURCE_DEPLOYMENT_TRACE_COMPATIBILITY_ONLY_NOT_CURRENT_TRAINING_PROVENANCE_OR_M_QUALIFICATION",
+  "latest_M_source_compatibility_shadow_result": "outputs/trackocd_cvpr/cvpr4/M_member_feature_cache_shadow_source_compatibility_v1/result.json",
+  "latest_M_source_compatibility_shadow_result_sha256": "6ebd0b76633629c03a7ed661a6a2569e1ccfdb5c7600f92fe5f264a147a478f3",
+  "latest_M_source_compatibility_shadow_profile_sha256": "e20f3e2bc0c454e84719321128f2085584356af5332fff8595977556f0ebada2",
+  "latest_M_source_compatibility_shadow_terminal_sha256": "754fa13e185fd83d0edb7457f08c5f3a5358c8de5c69483e52dab8da14f46b50",
+  "latest_M_source_compatibility_shadow_scope": "ALL11 fixed policy cases, 54 tracks/1268 observations/374 frames/1 empty, current-source deployment replay exactly matched old shadow traces; endpoint training receipts remain historical and current-source training provenance is false",
   "paired_C_Known_rejection": "ACTUAL_NORMAL_CORRECTED_SPREAD_PAIRED50_PILOT_INFORMATIVE_FOR_EXPOSURE_ONLY: fixed uniform Known-rank plan, each50steps/full10policy clock;26extra-gradient steps, different endpoints, identical aggregate1094KNOWN/174NEW actions. No discovery/calibration gain or formal/dev/Goal acceptance; original uninformative pilot preserved.",
   "paired_C_pilot_result": "outputs/trackocd_cvpr/cvpr3/paired_Known_set_rejection_pilot50_v1/result.json",
   "paired_C_pilot_result_sha256": "9a67853e3070dec7d86f7b7b0b7638e9f68b48d374950bcd490692f6a58a8239",
@@ -140,5 +146,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "The bounded joint R/C/M + prediction-owned-memory repair2 pilot is complete and publicly receipted; it demonstrates tensor-gradient and append-only lineage plumbing on two fixed policy-order Train videos only, with M agreement loss masked by singleton support. Do not expand from this pilot by selection or call it M science. Next freeze the complete joint causal protocol, add separately trained/self-correcting M controls and lawful strong Pred/dense frontend inputs, then run full policy/development only after fair controls are registered. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "The bounded joint R/C/M + prediction-owned-memory repair2 pilot is complete and publicly receipted; the new ALL11 source-compatibility shadow also completed exact current-source deployment trace parity, but it is not current-source training provenance or M qualification. Do not select from either pilot. Next freeze the complete joint causal protocol, add separately trained/self-correcting M controls and lawful strong Pred/dense frontend inputs, then run formal policy/development only after fair current-source endpoints/provenance are registered. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
