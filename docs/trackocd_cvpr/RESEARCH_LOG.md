@@ -7206,3 +7206,49 @@ no private GT/cache/weights opened for this check):
   public files only: actual initialRaw triplet/public qualifier/test/docs/status;
   no private GT/models/prediction/origin rows/progress/stdout uploaded. Original
   result179632B unchanged. Publish/fetch/tripleSHA before explicit calendar1027.
+
+### Actual complete calendar1027 four-arm policy pilot (2/5heads)
+
+- Same boot/start/command supervisor760539/worker760932 verified through normal
+  terminal; historical identities, not restart instructions. Actual published/
+  fetched/tripleSHA preregistrationbafdd505708237ebe049be2a534e37d880e73b91.
+  Normal exit0/guardNONE/484.159728918s inclusive/955289600B peak/oneCPU/
+  oneOSthread/no native helper/noCUDA/zero GPUhours; no retries/relaxed guards.
+  Exact original calendar1027 head, ALL13snapshot bytes before policy data.
+- ALL4arms/EACH3full10policy/54tracks/1268obs/374frames/1empty orders. Each
+  baseline original event/commit/state/allocator parity, each arm full ID/
+  Known-binding/future141mutation/nonempty prior/label-swap invariance. Unknown10/
+  all physical/dirty-parent/censored latency retained; no GT repair/new semantics/
+  optimizer/dev/final/Val/Test/original pixels or model selection.
+- First public qualification rejected eight Knownmacro summaries differing
+  ONLY one binary64 rounding unit (5.551115123125783e-17), from different external
+  class insertion summation order. Inspected all mismatches: no other physical
+  outcome mismatch or reuse-coverage violation. Never modified original229source
+  or result/replayed data. Public qualifier now allows EXACTLY1ULP for this one
+  macro aggregate; physical counts/micro/coverage/GT absorption and all actual
+  source/event/score/commit/state probes remain exact. TwoULP and1e-10 changes
+  refused by regression, actual both complete heads verified.
+- FullRaw and fullRaw+continuity aggregate identical per order: births36/36/34,
+  final Known2/34,3/34,4/34; pseudo Known absorption0/10; scored certified cross-
+  video reuse0/10, commitment1 and scored claim coverage1. No route fallbacks.
+- Exclusion alone births373/343/374 versus36/36/36with continuation; routing
+  fallback observations320/289/320. BOTH exclusion arms finalKnown7/34all3,
+  Knownmacro.3352490421, pseudo Known absorption1/10 and certified scored cross-
+  video reuse0/10. Commitment1 but scored claim coverage.7/.8/.7, not matched
+  baseline's1. Same first scored Existing claim8events/10queries eachorder,
+  observed-update means2.125/2.25/2.125, censored2 retained. FullRaw10/10 and
+  1.7/1.9/1.7. Birth reduction and better Known trade off pseudo absorption;
+  no persistent category discovery, calibration or M innovation demonstrated.
+- Original result182451B SHAb4aaec18f0746dcb7d42992cc3c0226f28c894f9d1969cebef043196390b2be7;
+  launchb85021774827555232964a38706f012400c7a1f4b3468297497a86be3b1acbbb;
+  terminal6863c72cfb2070b1ba1d2ddd928531611566516301d30e417f6ae7304c659905.
+  Public complete229/source/resource/endpoint/clock/probe/origin/denominator/
+  latency qualifier passes without private GT/model/rows; remaining3heads still
+  required. Targeted71pass10.55s including exact1ULP aggregate-only guard and
+  deliberately corrupted macro refusal. No scientific winner/dev expansion.
+  Publish/fetch/tripleSHA before explicit calendar1028, same original protocol.
+- Final bounded CVPR/v2 suite1275pass76.58s, ownedexit0/guardNONE/
+  78.234059947s inclusive/844595200B peak/zero GPUhours. Both original229source/
+  normal complete policy triplets reverified after docs. Eight public files only:
+  second actual triplet/public qualifier+tests/docs/status; original182451B result
+  unchanged, no private GT/models/prediction/origin rows/progress/stdout exported.

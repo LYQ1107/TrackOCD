@@ -81,11 +81,13 @@
   "continuity_reuse_factorization": "SOURCE_ONLY_FOUR_ARMS:whole-query Raw support exclusion vs routing-only continuation after scoredNEW with one current-video prior token; Known/WAIT/history unchanged, original Raw baseline synthetic parity. Not category reuse credit, empirical Train result or M innovation. Actual pilot executor unregistered, no private data/weight access/training",
   "continuity_reuse_source_protocol": "configs/trackocd_cvpr/source_continuity_reuse_factorization_v1.json",
   "continuity_reuse_actual_policy_pilot_completed": false,
-  "continuity_reuse_actual_complete_policy_heads": 1,
+  "continuity_reuse_actual_complete_policy_heads": 2,
   "continuity_reuse_initialRaw_result": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_pilot_v1_initial_Raw/result.json",
   "continuity_reuse_initialRaw_result_sha256": "c244c16d00b676b02b841100ad499171bc18ea151552d637d1fe0faa8471be4c",
+  "continuity_reuse_calendar1027_result": "outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_pilot_v1_calendar1027/result.json",
+  "continuity_reuse_calendar1027_result_sha256": "b4aaec18f0746dcb7d42992cc3c0226f28c894f9d1969cebef043196390b2be7",
   "continuity_reuse_policy_pilot_protocol": "configs/trackocd_cvpr/continuity_reuse_policy_pilot_v1.json",
-  "continuity_reuse_policy_pilot_execution": "ACTUAL_NORMAL_INITIAL_RAW_1_OF5:all4arms/EACH3full policy orders plus each original baseline and fullID/Known-binding/future/label probes. Exclusion births476/438/474 vs47/47/45with continuity, bothKnown2/34all3 vs0/34baseline; certified scored cross-video reuse0/10ALL arms/orders. Commitment1 but scored reuse claim coverage.7/.8/.7vs1, censored latency retained. Policy-domain negative for discovery, not unseen dev/M innovation/Goal gain;remaining4heads preserved, original229source frozen",
+  "continuity_reuse_policy_pilot_execution": "ACTUAL_NORMAL_2_OF5_INITIAL_RAW_CALENDAR1027:all4arms/EACH3full policy orders plus original baseline and fullID/Known-binding/future/label probes. Calendar1027 exclusion births373/343/374vs36eachwith continuity,bothKnown7/34all3 vsbaseline2/3/4correct; pseudoKnown absorption1/10vs0,certified scored cross-video reuse0/10ALL arms/orders. Commitment1 but claim coverage.7/.8/.7vs1,censored latency retained. No unseen dev/M innovation/Goal gain;remaining3heads preserved, original229source frozen;public Knownmacro comparison1ULP-only without changing actual results/probes",
   "raw_named_membership_fullpolicy_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_full_policy/result.json",
   "raw_named_membership_fullpolicy_full_dev_result_sha256": "b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d",
   "raw_named_membership_all4_full_dev_comparison": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_all4_full_dev_comparison_v1.json",
@@ -109,5 +111,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Actual complete initialRaw four-arm policy pilot qualified (1/5fixed heads), birth reduction but no certified scored cross-video reuse, unmatched claim coverage/censored latency retained. Publish/fetch/live exact proof then separately run calendar1027; retain all remaining4heads/all4arms/full3orders/probes/guards without selection or unchanged retry. No independent dev expansion from one policy-domain trial. Qualify full trained-M runtime/probes; develop joint Novel-generalizable R/C/self-correcting persistent M. Fair calibrated coverage/latency, lawful strongPred/dense and locked independent-final still required. Original Goal A/B/C unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "Actual complete initialRaw and calendar1027 policy pilots qualified (2/5heads), birth reduction but no certified scored cross-video reuse, Known/pseudo absorption tradeoff and unmatched coverage/censored latency retained. Publish/fetch/live proof then separately run calendar1028; retain remaining3heads/all4arms/full3orders/probes/guards without selection/retry. No independent dev expansion from incomplete policy window. Qualify full trained-M runtime/probes; develop joint Novel-generalizable R/C/self-correcting persistent M. Fair calibrated coverage/latency, lawful strongPred/dense and locked independent-final still required. Original Goal A/B/C unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }

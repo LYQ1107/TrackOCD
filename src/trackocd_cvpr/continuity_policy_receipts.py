@@ -12,6 +12,13 @@ def trial_sources(model):
     return (out+'/launch.json',out+'/result.json',out+'_supervisor_attempt_1.json')
 
 
+def same_macro_aggregate(a,b):
+    # External class insertion order can reorder three rounded class means.
+    # Permit ONE binary64 rounding unit only for this public macro aggregate.
+    # Model events/scores/history/state/source and physical counts stay exact.
+    return math.isfinite(a) and math.isfinite(b) and abs(a-b)<=math.ulp(max(abs(a),abs(b)))
+
+
 def verified_trial(root,model):
     from scripts.trackocd_cvpr.pilot_continuity_reuse_policy import SOURCES
     paths=tuple(root/p for p in trial_sources(model))
@@ -90,7 +97,8 @@ def verified_trial(root,model):
                             'scored_Existing_claim_track_coverage_over_all_declared_pseudo'):
                     if not math.isfinite(p[key]) or not 0<=p[key]<=1:raise ValueError('Finite scoped rates, no forged coverage')
                 if (p['certified_cross_video_reuse_micro_lower_bound']>p['scored_Existing_claim_track_coverage_over_all_declared_pseudo']+1e-12
-                        or any(p[k]!=old[k] for k in ('Known_micro_accuracy','Known_macro_accuracy','all_physical_commit_track_coverage',
+                        or not same_macro_aggregate(p['Known_macro_accuracy'],old['Known_macro_accuracy'])
+                        or any(p[k]!=old[k] for k in ('Known_micro_accuracy','all_physical_commit_track_coverage',
                             'declared_pseudo_absorbed_as_Known_queries','declared_pseudo_anonymous_commit_queries'))):
                     raise ValueError('Scored reuse cannot count continuation; other physical outcomes retained')
             for key,n in (('first_commit_latency',54),('first_scored_Existing_claim_latency_declared_pseudo',10),

@@ -2241,3 +2241,33 @@ Final bounded CVPR/v2 suite1272pass78.04s, ownedexit0/guardNONE/79.8026s
 inclusive/846053376B peak/zero GPUhours. Original229source/full actual proof
 reverified; eight public triplet/qualifier/test/docs/status files only, original
 result179632B unchanged, no private models/GT/prediction/origin rows exported.
+
+## Actual second complete policy pilot: calendar1027 (2/5heads)
+
+Normal484.1597s/955289600B/oneCPU+oneOSthread/noGPU; original frozen head and
+229source unchanged. All4arms/EACH3full policy orders, each original baseline
+and full ID/Known-binding/future141mutation/label probes pass. All13snapshot
+fingerprints before inputs; no retry/guard relaxation/GT repair/optimizer.
+
+FullRaw and fullRaw+continuity aggregates match eachorder: births36/36/34,
+Known2/34,3/34,4/34, pseudo Known absorption0/10. Exclusion alone births373/343/
+374 vs36/36/36with routing continuity; both finalKnown7/34all3 but pseudoKnown
+absorption1/10. ALL arms/orders scored certified cross-video reuse0/10. Commitment
+1 but scored claim coverage.7/.8/.7exclusion vs1fullRaw; same exclusion-arm first
+claim latency2.125/2.25/2.125observed updates,8events/10queries/censored2 each.
+No matched coverage/latency or persistent discovery/M innovation claim.
+
+Public qualifier initially rejected eight macro means differing by5.55e-17from
+external class summation order; now allows ONLY1binary64ULP for Knownmacro,
+rejecting2ULP/1e-10 changes. Source/event/score/state/commit/physical-count/
+micro/coverage/absorption equality remains exact. No numerical worker or old
+result changed/replayed. Both complete heads and71targeted tests pass10.55s.
+
+Result182451B SHA256`b4aaec18f0746dcb7d42992cc3c0226f28c894f9d1969cebef043196390b2be7`;
+normal terminal`6863c72cfb2070b1ba1d2ddd928531611566516301d30e417f6ae7304c659905`.
+Three other fixed heads required; no selected arm/model or independent dev
+expansion. Original joint/fullM/Pred/dense/fair/lockedfinal Goal still unachieved.
+Final bounded CVPR/v2 suite1275pass76.58s, ownedexit0/guardNONE/78.2341s
+inclusive/844595200B peak/zero GPUhours. Both actual229source/probe/resource
+proofs reverified; eight public triplet/qualifier/tests/docs/status files only,
+original182451B result unchanged, no private data/model/GT/row exports.
