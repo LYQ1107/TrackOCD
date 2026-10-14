@@ -1,0 +1,306 @@
+{
+  "actual_future_probe": {
+    "future_observations_mutated": 39,
+    "nonempty_prior_events_equal": true
+  },
+  "all13_snapshot_fingerprints_before_dev": true,
+  "dev_head_seed_order_threshold_selected": false,
+  "development_scope": {
+    "counts": {
+      "Known": 302,
+      "declared_pseudoNovel": 119,
+      "outside_eligible_Known": 2
+    },
+    "external_evaluator_only_not_model_or_loss_input": true,
+    "fit_policy_final_or_other_video_target_values_decoded": false,
+    "metadata_frames": 2562,
+    "new_nonKnown_semantic_values_or_vocabulary_decoded": false,
+    "observations": 8753,
+    "physical_label_strata": {
+      "Known": 302,
+      "declared_pseudoNovel": 119,
+      "no_retained_semantic_truth": 49,
+      "outside_eligible_Known": 2
+    },
+    "physical_tracks": 472
+  },
+  "evaluated_parameter_sha256": "3ca6d4d867ba1958e6c100b771d1d5bbd432feda40c5085d761818e0ac86582e",
+  "external_bucket_policy_pseudo_is_declared_dev_pseudo_not_training": true,
+  "final_Val_Test_original_pixels_or_new_nonKnown_semantics_read": false,
+  "full_ID_reverse_events_outcomes_state_equal": true,
+  "live_remote_registration_proof": {
+    "method": "fresh_git_ls_remote",
+    "ref": "refs/heads/research/cvpr-trackocd-autonomous-v2",
+    "sha": "a72e623e11913f0f4af95ae07307743e2e0ea9aa"
+  },
+  "model": "initial_Raw",
+  "offline_fit_prior_scope": {
+    "classes_for_loss": 5,
+    "eligible_supervised_observations": 22279,
+    "eligible_supervised_observations_joined": 22279,
+    "eligible_supervised_tracks": 1158,
+    "fit_other_retained_Known_tracks_without_loss_target": 20,
+    "masked_no_fit5_target_tracks": 243,
+    "not_cache_or_training_execution": true,
+    "other_role_semantic_values_decoded": false,
+    "physical_tracks_kept": 1401,
+    "raw_category_bindings_private": true,
+    "targets_external_to_numeric_forward": true,
+    "unlabeled_or_other_Known_assigned_background_or_Novel": false
+  },
+  "one_decision_shadows_are_full_intervention_gain_or_Goal_acceptance": false,
+  "optimizer_steps": 0,
+  "orders": {
+    "1027": {
+      "actual_full_normal_event_commit_state_equal": true,
+      "measured": {
+        "GT_or_shadow_decisions_used_for_any_policy_or_memory_write": false,
+        "actual_commits": 8678,
+        "allocated_tokens": 233,
+        "exact_numeric_support_witness_checked": true,
+        "external_strata": {
+          "Known": {
+            "EXISTING": 4592,
+            "Existing_contains_own_groups": 4401,
+            "Existing_has_other_same_video_groups": 1524,
+            "Existing_has_other_video_groups": 1285,
+            "Existing_only_own_groups": 2472,
+            "Existing_provenance_partition_only_own_groups": 2472,
+            "Existing_provenance_partition_other_only_groups": 191,
+            "Existing_provenance_partition_own_and_other_groups": 1929,
+            "KNOWN": 73,
+            "NEW": 143,
+            "canonical_groups": 4808,
+            "named_gate_positive_groups": 1152,
+            "physical_observations": 4808,
+            "positive_named_gate_bypassed_groups": 1079,
+            "same_history_remove_own_KNOWN_groups": 109,
+            "same_history_remove_own_changes_action_groups": 602,
+            "same_history_remove_own_correct_Known_groups": 107
+          },
+          "masked": {
+            "EXISTING": 1172,
+            "Existing_contains_own_groups": 1144,
+            "Existing_has_other_same_video_groups": 341,
+            "Existing_has_other_video_groups": 276,
+            "Existing_only_own_groups": 683,
+            "Existing_provenance_partition_only_own_groups": 683,
+            "Existing_provenance_partition_other_only_groups": 28,
+            "Existing_provenance_partition_own_and_other_groups": 461,
+            "KNOWN": 1,
+            "NEW": 29,
+            "canonical_groups": 1202,
+            "named_gate_positive_groups": 179,
+            "physical_observations": 1202,
+            "positive_named_gate_bypassed_groups": 178,
+            "same_history_remove_own_KNOWN_groups": 30,
+            "same_history_remove_own_changes_action_groups": 199,
+            "same_history_remove_own_correct_Known_groups": 0
+          },
+          "policy_pseudo": {
+            "EXISTING": 2681,
+            "Existing_contains_own_groups": 2605,
+            "Existing_has_other_same_video_groups": 738,
+            "Existing_has_other_video_groups": 877,
+            "Existing_only_own_groups": 1449,
+            "Existing_provenance_partition_only_own_groups": 1449,
+            "Existing_provenance_partition_other_only_groups": 76,
+            "Existing_provenance_partition_own_and_other_groups": 1156,
+            "KNOWN": 1,
+            "NEW": 61,
+            "canonical_groups": 2743,
+            "named_gate_positive_groups": 191,
+            "physical_observations": 2743,
+            "positive_named_gate_bypassed_groups": 190,
+            "same_history_remove_own_KNOWN_groups": 20,
+            "same_history_remove_own_changes_action_groups": 248,
+            "same_history_remove_own_correct_Known_groups": 0
+          }
+        },
+        "full_clock": {
+          "EXISTING": 8445,
+          "KNOWN": 75,
+          "NEW": 233,
+          "canonical_groups": 8753,
+          "empty_frames": 116,
+          "metadata_frames": 2562,
+          "physical_observations": 8753
+        },
+        "model_state_unchanged": true,
+        "order_seed": 1027,
+        "same_history_one_decision_shadow_not_counterfactual_rollout_gain": true,
+        "video_ordinal_schedule_sha256": "b01d5db92b7f44a386cd08f9054d070ebcf53a9b8ba10668aabe0d12063a1007"
+      }
+    },
+    "1028": {
+      "actual_full_normal_event_commit_state_equal": true,
+      "measured": {
+        "GT_or_shadow_decisions_used_for_any_policy_or_memory_write": false,
+        "actual_commits": 8688,
+        "allocated_tokens": 224,
+        "exact_numeric_support_witness_checked": true,
+        "external_strata": {
+          "Known": {
+            "EXISTING": 4612,
+            "Existing_contains_own_groups": 4408,
+            "Existing_has_other_same_video_groups": 1409,
+            "Existing_has_other_video_groups": 1397,
+            "Existing_only_own_groups": 2559,
+            "Existing_provenance_partition_only_own_groups": 2559,
+            "Existing_provenance_partition_other_only_groups": 204,
+            "Existing_provenance_partition_own_and_other_groups": 1849,
+            "KNOWN": 58,
+            "NEW": 138,
+            "canonical_groups": 4808,
+            "named_gate_positive_groups": 1152,
+            "physical_observations": 4808,
+            "positive_named_gate_bypassed_groups": 1094,
+            "same_history_remove_own_KNOWN_groups": 126,
+            "same_history_remove_own_changes_action_groups": 709,
+            "same_history_remove_own_correct_Known_groups": 124
+          },
+          "masked": {
+            "EXISTING": 1167,
+            "Existing_contains_own_groups": 1141,
+            "Existing_has_other_same_video_groups": 263,
+            "Existing_has_other_video_groups": 290,
+            "Existing_only_own_groups": 763,
+            "Existing_provenance_partition_only_own_groups": 763,
+            "Existing_provenance_partition_other_only_groups": 26,
+            "Existing_provenance_partition_own_and_other_groups": 378,
+            "KNOWN": 6,
+            "NEW": 29,
+            "canonical_groups": 1202,
+            "named_gate_positive_groups": 179,
+            "physical_observations": 1202,
+            "positive_named_gate_bypassed_groups": 173,
+            "same_history_remove_own_KNOWN_groups": 17,
+            "same_history_remove_own_changes_action_groups": 187,
+            "same_history_remove_own_correct_Known_groups": 0
+          },
+          "policy_pseudo": {
+            "EXISTING": 2685,
+            "Existing_contains_own_groups": 2608,
+            "Existing_has_other_same_video_groups": 845,
+            "Existing_has_other_video_groups": 1055,
+            "Existing_only_own_groups": 1309,
+            "Existing_provenance_partition_only_own_groups": 1309,
+            "Existing_provenance_partition_other_only_groups": 77,
+            "Existing_provenance_partition_own_and_other_groups": 1299,
+            "KNOWN": 1,
+            "NEW": 57,
+            "canonical_groups": 2743,
+            "named_gate_positive_groups": 191,
+            "physical_observations": 2743,
+            "positive_named_gate_bypassed_groups": 190,
+            "same_history_remove_own_KNOWN_groups": 33,
+            "same_history_remove_own_changes_action_groups": 264,
+            "same_history_remove_own_correct_Known_groups": 0
+          }
+        },
+        "full_clock": {
+          "EXISTING": 8464,
+          "KNOWN": 65,
+          "NEW": 224,
+          "canonical_groups": 8753,
+          "empty_frames": 116,
+          "metadata_frames": 2562,
+          "physical_observations": 8753
+        },
+        "model_state_unchanged": true,
+        "order_seed": 1028,
+        "same_history_one_decision_shadow_not_counterfactual_rollout_gain": true,
+        "video_ordinal_schedule_sha256": "381505f29a0589524cb3565bdace0150a0759de202eb40ffe1fd08cd6b60f389"
+      }
+    },
+    "1029": {
+      "actual_full_normal_event_commit_state_equal": true,
+      "measured": {
+        "GT_or_shadow_decisions_used_for_any_policy_or_memory_write": false,
+        "actual_commits": 8687,
+        "allocated_tokens": 222,
+        "exact_numeric_support_witness_checked": true,
+        "external_strata": {
+          "Known": {
+            "EXISTING": 4618,
+            "Existing_contains_own_groups": 4400,
+            "Existing_has_other_same_video_groups": 1489,
+            "Existing_has_other_video_groups": 1397,
+            "Existing_only_own_groups": 2541,
+            "Existing_provenance_partition_only_own_groups": 2541,
+            "Existing_provenance_partition_other_only_groups": 218,
+            "Existing_provenance_partition_own_and_other_groups": 1859,
+            "KNOWN": 58,
+            "NEW": 132,
+            "canonical_groups": 4808,
+            "named_gate_positive_groups": 1152,
+            "physical_observations": 4808,
+            "positive_named_gate_bypassed_groups": 1094,
+            "same_history_remove_own_KNOWN_groups": 119,
+            "same_history_remove_own_changes_action_groups": 652,
+            "same_history_remove_own_correct_Known_groups": 117
+          },
+          "masked": {
+            "EXISTING": 1172,
+            "Existing_contains_own_groups": 1142,
+            "Existing_has_other_same_video_groups": 193,
+            "Existing_has_other_video_groups": 345,
+            "Existing_only_own_groups": 783,
+            "Existing_provenance_partition_only_own_groups": 783,
+            "Existing_provenance_partition_other_only_groups": 30,
+            "Existing_provenance_partition_own_and_other_groups": 359,
+            "KNOWN": 1,
+            "NEW": 29,
+            "canonical_groups": 1202,
+            "named_gate_positive_groups": 179,
+            "physical_observations": 1202,
+            "positive_named_gate_bypassed_groups": 178,
+            "same_history_remove_own_KNOWN_groups": 10,
+            "same_history_remove_own_changes_action_groups": 190,
+            "same_history_remove_own_correct_Known_groups": 0
+          },
+          "policy_pseudo": {
+            "EXISTING": 2675,
+            "Existing_contains_own_groups": 2597,
+            "Existing_has_other_same_video_groups": 776,
+            "Existing_has_other_video_groups": 983,
+            "Existing_only_own_groups": 1394,
+            "Existing_provenance_partition_only_own_groups": 1394,
+            "Existing_provenance_partition_other_only_groups": 78,
+            "Existing_provenance_partition_own_and_other_groups": 1203,
+            "KNOWN": 7,
+            "NEW": 61,
+            "canonical_groups": 2743,
+            "named_gate_positive_groups": 191,
+            "physical_observations": 2743,
+            "positive_named_gate_bypassed_groups": 184,
+            "same_history_remove_own_KNOWN_groups": 49,
+            "same_history_remove_own_changes_action_groups": 287,
+            "same_history_remove_own_correct_Known_groups": 0
+          }
+        },
+        "full_clock": {
+          "EXISTING": 8465,
+          "KNOWN": 66,
+          "NEW": 222,
+          "canonical_groups": 8753,
+          "empty_frames": 116,
+          "metadata_frames": 2562,
+          "physical_observations": 8753
+        },
+        "model_state_unchanged": true,
+        "order_seed": 1029,
+        "same_history_one_decision_shadow_not_counterfactual_rollout_gain": true,
+        "video_ordinal_schedule_sha256": "5c05e14ed09a701909ff9b0e229c592b00cc27bb3994c119442267ba2f04d893"
+      }
+    }
+  },
+  "resources": {
+    "CUDA_initialized": false,
+    "peak_guarded_RSS_bytes": 964272128,
+    "training_GPU_hours": 0,
+    "wall_seconds_excluding_network": 2336.0426912609983
+  },
+  "shadow_or_GT_used_for_policy_memory_write": false,
+  "status": "MEASURED_COMPLETE_TRAIN_DEV_ARBITRATION_OBSERVER_NOT_INTERVENED_STREAM_JOINT_PRED_FINAL_OR_GOAL"
+}

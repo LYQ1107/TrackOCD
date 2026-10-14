@@ -2003,3 +2003,30 @@ Final bounded CVPR/v2 suite1184pass76.72s, ownedexit0/guardNONE,78.6023s
 inclusive/839168000B peak/zero GPUhours. Qualified192pilot dependencies
 reverified unchanged; nine public source/config/tests/docs/status only. No
 actual new dev run or metric implied by registration; publish before execution.
+
+## First independent dev observer complete: initial Raw (1/5)
+
+Normal2343.3552s/964272128B/oneCPU+oneOSthread/noGPU, unchanged original
+initial head. Full3orders72videos/472tracks/8753obs/2562frames/116empty plus
+EACH complete normal-reference events/commits/state, full ID/reverse and39future
+observation checks. ALL13 snapshot fingerprints before inputs; no optimizer,
+GT/shadow write, repeated attempt or raised/skipped wall/probe bound.
+
+Each order4808Known/2743declared-pseudo/1202masked observations; all302Known/
+119pseudo/51unscorable tracks kept. On Known observations, Existing counts
+4592/4612/4618; own-only2472/2559/2541; positive Known gate bypass1079/
+1094/1094. Same-history remove-own shadows correctKnown107/124/117 from
+109/126/119Known shadow outputs. On declared pseudo, shadowsKnown20/33/49
+indicate potential adverse absorption; masked shadows have unknown correctness.
+These are conditional one-decision checks, not causal full-trajectory gains or
+all-error explanations. Labels not to scorer/exclusion/support, histories intact.
+
+Result SHA256`1837b94e2e836cc662204f247fed95f0784036a337ad80a3f96f8d8854aee051`;
+normal terminal`f29e4af2f4e697a9926dffbde410cdef2b3d68901e25d7d3a0a198fec7eed1ad`.
+Public normal/source/role/count/probe verifier and50targeted regressions pass
+3.31s without private weights/GT/rows. Only1/5models complete; all4remaining
+retained, no selected head/threshold. Original Goal active, joint/fullM/lawful
+Pred/dense/fair controls/lockedfinal scientific requirements unachieved.
+Final bounded CVPR/v2 suite1198pass63.93s, ownedexit0/guardNONE,
+65.6092s inclusive/837939200B peak/zero GPUhours. Eight public files only,
+original result13001B unchanged; no private models/GT/prediction traces/rows.

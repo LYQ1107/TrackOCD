@@ -6854,3 +6854,52 @@ no private GT/cache/weights opened for this check):
   qualified192pilot dependencies reverified after docs. Nine public source/
   config/test/docs/status files only; no new actual dev result at registration.
   Source publication/fetch/triple-SHA before private model/dev input or launch.
+
+### Actual first complete independent dev attribution: initialRaw (1/5)
+
+- Prior turns verified SAME boot/start/command supervisor627351/worker627567
+  live, including all3full orders and each normal-reference parity. They are
+  now terminal; historical PIDs not restart instructions. Actual preregistration
+  a72e623e11913f0f4af95ae07307743e2e0ea9aa was pushed/fetched/triple-SHA
+  before parent/worker source+human407gates. Normal exit0/guardNONE/result present,
+ 2343.355178526s inclusive/964272128B peak/oneCPU+oneOSthread/no native helper/
+  noCUDA/zero trainingGPUhours. No raised wall/reset/skipped probes or retries.
+- ALL13 private formal snapshots matched BEFORE dev inputs; initial head is
+  original3ca6d4d8... . Complete72videos/472tracks/8753obs/2562frames/116empty
+  in EACH3orders AND EACH independent normal full event/score/history/state
+  reference. Actual full ID/reverse event/outcome/state equality and full future
+ 39observation perturbation preserving nonempty sealed prior events. No
+  optimizer, new private cache, GT/shadow writes or selected threshold/model.
+- All8753canonical observations:4808Known/2743declared-pseudo/1202masked in
+  each order. Existing legacy bucket 'policy_pseudo' is EXTERNAL dev remapping
+  only;302Known/119pseudo/51masked physical tracks retained, no inventedNovel/
+  background/negative truth or GT/vocabulary to observer/scorer/exclusion.
+- Known-stratum Existing4592/4612/4618, only-own supports2472/2559/2541,
+  positive NamedKnown gate1152all3, bypassed1079/1094/1094. Same-history
+  remove-own shadows Known109/126/119, of which correctKnown107/124/117;
+  changed-action602/709/652. This is a conditional scoring contribution under
+  actual committed histories, not complete error explanation or a full
+  intervened trajectory improvement. Observations/orders are correlated.
+- Declared-pseudo-stratum Existing2681/2685/2675, only-own1449/1309/1394,
+  shadowKnown20/33/49 (potential absorption risk), changed-action248/264/287.
+  Masked-stratum shadowKnown30/17/10 has NO correctness claim. All source
+  history/support states retained; no GT-cleaning, shadow commits or model
+  selection. One completed model never substitutes ALL5 attribution window.
+- Original result13001B SHA1837b94e2e836cc662204f247fed95f0784036a337ad80a3f96f8d8854aee051;
+  launch9d49c9f5c57b8b56b8bd3e0e4dc7870467cb297084618eefb4df86ece7a31f85;
+  terminalf29e4af2f4e697a9926dffbde410cdef2b3d68901e25d7d3a0a198fec7eed1ad.
+  New PUBLIC full-dev receipt verifier binds complete original202source/clock/
+  references/probes/role scopes/fixed parameters/partition+count conservation;
+  ALL5 verifier refuses partial matrix. No private GT/model/row reads by it.
+- Fifty targeted actual-first/adapter/qualified-policy/refusal regressions pass
+ 3.31s, including false guard/order/probe/write/selection/model/scope/reference/
+  masks/partition/shadow and missing-matrix failures without private file stat.
+  Original Goal active/unachieved. Remaining4models separately executed only
+  after publication/exact proof; no auto training, selected head or novelty win.
+  Joint R/C/M/fullM/lawful strongPred/dense/fair controls/lockedfinal still open.
+- Final bounded CVPR/v2 suite1198pass63.93s, ownedexit0/guardNONE/
+ 65.609187102s inclusive/837939200B peak/zero trainingGPUhours. Actual
+  first complete original202source/normal/observer proof reverified after docs.
+  Eight public files only: first complete triplet/public verifier/mutation tests/
+  docs/status. Original result13001B unchanged; no private GT/models/traces/
+  row tables/progress/stdout. Remaining calendar1027 after push/fetch/exact proof.
