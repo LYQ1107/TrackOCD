@@ -1,0 +1,19 @@
+{
+  "status": "REGISTERED_CURRENT_SOURCE_READONLY_CAUSAL_M_DEV_ALL9_AUDITED_ENDPOINTS_REQUIRED",
+  "base_protocol": "configs/trackocd_cvpr/M_GT_causal_development_v1.json",
+  "base_protocol_sha256": "2943bdd9c48646bfff277b89b4cc04cbb1f791d9ce5bb057d896a31d69a53f88",
+  "endpoint_cohort_manifest": "configs/trackocd_cvpr/M_current_source_endpoint_cohort_audit_v1.json",
+  "endpoint_cohort_manifest_sha256": "4b4e5c4146e6b900685ec929fc4e22a308d558d7a4db5c39f6f2b3b1c882309b",
+  "endpoint_cohort_audit_result": "outputs/trackocd_cvpr/cvpr4/M_current_source_endpoint_cohort_audit_v1/result.json",
+  "endpoint_cohort_audit_result_sha256": "af7a752d70b3a884c6d9fdcef81d01eefe01d66f4ba258d9f9e4edcfd532e7bf",
+  "output_prefix": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_v1",
+  "execution_device": "CPU",
+  "CPU_compute_workers": 1,
+  "optimizer_steps": 0,
+  "select_model_or_checkpoint": false,
+  "model_selection_or_dev_final_selection": false,
+  "final_Val_Test_encoder_externalweights_newNonKnown_truth_or_vocabulary": false,
+  "no_private_data_weights_or_prediction_history_upload": true,
+  "formal_M_development_is_registered_but_not_Goal_acceptance": true,
+  "all_nine_current_source_endpoints_required_before_private_GT": true
+}
