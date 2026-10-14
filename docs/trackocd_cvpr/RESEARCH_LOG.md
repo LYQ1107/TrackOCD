@@ -6978,3 +6978,38 @@ no private GT/cache/weights opened for this check):
   original202source after docs. Seven public files only: third normal triplet/
   public test/docs/status; no private GT/models/traces/rows/progress/stdout.
   Publish/fetch/triple-SHA before separately launching calendar1029.
+
+### Actual fourth complete independent dev attribution: calendar1029 (4/5)
+
+- Same boot/start/command supervisor683768/worker683983 verified through normal
+  terminal; now historical identities, never restart instructions. Actual
+  published/fetched/triple-SHA preregistration180886b84f5c164127327bea2ea00072115970b7.
+  Normal exit0/guardNONE/1829.907032150s inclusive/964919296B peak/oneCPU/
+  oneOSthread/no native helper/noCUDA/zero GPUhours. Busy false afterward;
+  no retry/reset/guard relaxation/skipped probe or selected endpoint.
+- Fixed original formal head and original202source unchanged; ALL13snapshot
+  fingerprints before dev. ALL3 full72video/472track/8753observation/2562frame/
+  116empty orders plus EACH independent normal event/commit/state reference;
+  full ID/reverse equality and39future mutations preserving nonempty earlier
+  events. Zero optimizer steps, no GT/shadow writes or private history cleanup.
+- Each order4808Known/2743declared-pseudo/1202masked observations retained.
+  Known Existing4386/4291/4176, own-only1911/2050/2019, positive Known gate2616
+  all3 and bypass2295/2204/2086. Same-history remove-own shadows Known157/111/
+  151, correctKnown142/104/147, changed-action525/550/552. Conditional scoring
+  counts only, not full-rollout gain or complete error causation.
+- Declared-pseudo Existing2518/2582/2592, own-only1194/1070/1162,
+  shadowKnown97/73/66 vs initialRaw20/33/49; adverse conditional absorption risk
+  retained. Masked shadowKnown59/62/94 has unknown correctness. No selected
+  head/seed/threshold or label to scorer/exclusion/memory write.
+- Original result13024B SHA6c6c9664dcb89a964382533599bc213d779efc79457ec2a100102c8d3d650f42;
+  launch69526c02a39b0f643df7c794c852fd44b94ab9eb09cf176141852104fc5e8d9f;
+  terminal51acc62be0e53f6b26c35aff1190ee80ed272964b5314190f6195e3461323ad0.
+  Public complete-source/scope/clock/probe/count qualifier passes without private
+  GT/models/rows. ONEfullpolicy still required; never accept4/5as full matrix.
+  Goal active; joint R/C/M/fullM/lawfulPred/dense/fair/lockedfinal unachieved.
+- Actual-four/public-receipt/adapter/policy targeted regressions53pass3.40s.
+  Final bounded combined CVPR/v2 suite1201pass68.16s, ownedexit0/guardNONE/
+  69.704450105s inclusive/839258112B peak/zero GPUhours. Original202source
+  rechecked after docs. Seven public files only: fourth normal triplet/public
+  test/docs/status; no private GT/models/traces/rows/progress/stdout exports.
+  Publish/fetch/triple-SHA before separately launching ONEfullpolicy.

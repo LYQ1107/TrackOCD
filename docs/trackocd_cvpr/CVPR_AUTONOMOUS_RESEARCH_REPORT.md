@@ -2081,3 +2081,27 @@ and joint/fullM/lawfulPred/dense/fair/lockedfinal Goal still unachieved.
 guardNONE/62.5211s inclusive/864235520B peak/zero trainingGPUhours. Original
 202source rechecked; only third public normal triplet/test/docs/status, no
 private data/models/GT/trace/row exports or numerical source changes.
+
+## Fourth independent dev observer complete: calendar1029 (4/5)
+
+Normal1829.9070s/964919296B/oneCPU+oneOSthread/noGPU, unchanged original formal
+endpoint/202source; ALL13snapshot bytes before inputs. All3complete full dev
+orders72videos/472tracks/8753observations/2562frames/116empty, EACH exact normal
+event/commit/state reference, full ID/reverse and39future prefix checks complete.
+Zero optimizer steps, no repeat attempt/relaxed guard/GT or shadow writes.
+
+Known Existing4386/4291/4176, own-only1911/2050/2019; positive Known gate2616
+all3, bypass2295/2204/2086. Same-history shadows Known157/111/151, correctKnown
+142/104/147. Declared-pseudo shadowsKnown97/73/66 vs initialRaw20/33/49;
+masked shadowsKnown59/62/94 have unknown correctness. These conditional scoring
+contributions do not prove full-trajectory improvement or explain all errors;
+adverse absorption possibilities retained, no selected head/seed/threshold.
+
+Original result SHA256`6c6c9664dcb89a964382533599bc213d779efc79457ec2a100102c8d3d650f42`;
+terminal`51acc62be0e53f6b26c35aff1190ee80ed272964b5314190f6195e3461323ad0`.
+Public verifier passes without private GT/weights/rows. ONEfullpolicy still
+required; full matrix and joint/fullM/lawfulPred/dense/fair/lockedfinal Goal open.
+53targeted tests pass3.40s; bounded combined CVPR/v2 suite1201pass68.16s,
+ownedexit0/guardNONE/69.7045s inclusive/839258112B peak/zero GPUhours.
+Original202source reverified; only fourth original public normal triplet/test/
+docs/status, no private GT/models/traces/rows or numerical source changes.

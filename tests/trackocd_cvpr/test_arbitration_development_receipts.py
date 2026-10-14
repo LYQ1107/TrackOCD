@@ -15,7 +15,7 @@ def forbid_private_stat(monkeypatch):
     monkeypatch.setattr(Path,'stat',guard)
 
 
-@pytest.mark.parametrize('model',['initial_Raw','calendar1027','calendar1028'])
+@pytest.mark.parametrize('model',['initial_Raw','calendar1027','calendar1028','calendar1029'])
 def test_actual_complete_dev_observer_all3_references_and_full_probes_not_full5_or_intervention_win(monkeypatch,model):
     forbid_private_stat(monkeypatch); p = receipts.verified_trial(ROOT,model)
     assert p['model'] == model
