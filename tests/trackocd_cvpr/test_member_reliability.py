@@ -61,6 +61,17 @@ def test_gradient_synthetic_only_no_fit_and_snapshot_input_mutation_safe():
     assert all(torch.equal(v, model.state_dict()[k]) for k, v in initial.items())
 
 
+def test_complete_large_offline_support_group_is_not_pruned():
+    generator = torch.Generator().manual_seed(1027)
+    raw = torch.randn(867, 768, generator=generator)
+    quality = torch.ones(867)
+    counts = torch.full((867,), 22., dtype=torch.float32)
+    features, vectors = member_features(raw, quality, counts)
+    assert features.shape == (867, 8)
+    assert vectors.shape == (867, 768)
+    assert MemberReliabilityMLP()(features).shape == (867,)
+
+
 def test_permutation_equivariance_and_zero_resultant_not_fabricated():
     model = MemberReliabilityMLP(); raw, q, n = inputs(); order = torch.tensor([2, 0, 1])
     with torch.no_grad(): model.rows[-1].weight.fill_(.1)
@@ -96,7 +107,7 @@ def test_invalid_numeric_input_refuses_whole_call(case):
     if case == 'nan': raw[0, 0] = float('nan')
     if case == 'quality': q[0] = 1.1
     if case == 'count': n[0] = 1.5
-    if case == 'bound': n[0] = 16384
+    if case == 'bound': n[0] = 65537
     with pytest.raises(ValueError): weighted_support(MemberReliabilityMLP(), raw, q, n)
 
 

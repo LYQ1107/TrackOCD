@@ -11,13 +11,21 @@ import torch
 from torch import nn
 
 
+# The standalone live-memory bridge has a narrower per-token contract, but
+# joint R/C/M candidate formation must also accept the complete offline Known
+# support group.  These bounds match the registered tensor bridge and refuse
+# the whole group rather than silently pruning it.
+MAX_SUPPORT_MEMBERS = 4096
+MAX_SUPPORT_OBSERVATIONS = 65536
+
+
 def member_features(raw, quality, observed_counts):
     """Eight numeric features, with explicit absent/cancelled peer evidence.
 
 Bounds refuse the WHOLE call rather than prune inconvenient members. Raw
 vectors are immutable snapshots cloned here; no adapted embedding is cached.
 """
-    if (raw.ndim != 2 or raw.shape[1] != 768 or not 1 <= len(raw) <= 512
+    if (raw.ndim != 2 or raw.shape[1] != 768 or not 1 <= len(raw) <= MAX_SUPPORT_MEMBERS
             or quality.shape != (len(raw),) or observed_counts.shape != (len(raw),)
             or any(a.dtype != torch.float32 for a in (raw, quality, observed_counts))
             or any(a.device != raw.device for a in (quality, observed_counts))
@@ -25,7 +33,7 @@ vectors are immutable snapshots cloned here; no adapted embedding is cached.
             or torch.any((quality < 0) | (quality > 1))
             or torch.any(observed_counts < 1)
             or torch.any(observed_counts != observed_counts.floor())
-            or observed_counts.sum() > 16384):
+            or observed_counts.sum() > MAX_SUPPORT_OBSERVATIONS):
         raise ValueError('Bounded numeric visible support groups required; no pruning')
     raw, quality, observed_counts = raw.clone(), quality.clone(), observed_counts.clone()
     norms = raw.norm(dim=1)
@@ -69,7 +77,7 @@ the first update through the nonzero final-layer gradient.
         nn.init.zeros_(self.rows[-1].bias)
 
     def forward(self, features):
-        if (features.ndim != 2 or features.shape[1] != 8 or not 1 <= len(features) <= 512
+        if (features.ndim != 2 or features.shape[1] != 8 or not 1 <= len(features) <= MAX_SUPPORT_MEMBERS
                 or features.dtype != torch.float32 or not torch.isfinite(features).all()):
             raise ValueError('Finite bounded numeric member features only')
         value = features.clone()
