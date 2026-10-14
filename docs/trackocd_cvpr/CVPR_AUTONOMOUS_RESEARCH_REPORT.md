@@ -2206,3 +2206,38 @@ Final bounded CVPR/v2 suite1258pass71.17s, ownedexit0/guardNONE/72.7984s
 inclusive/844070912B peak/zero GPUhours. Original202/all5evidence retained;
 eleven public source/config/tests/docs/status files only, no private exports or
 actual new policy result at registration. Publish before explicit initialRaw.
+
+## Actual first complete continuity/reuse policy pilot: initialRaw (1/5heads)
+
+Normal530.7731s/955146240B/oneCPU+oneOSthread/noGPU; original head unchanged.
+All4arms/EACH3full10policy/54track/1268observation/374frame/1empty orders,
+each original fullRaw event/commit/state/allocator reference, each arm complete
+ID/Known-binding/future/label probes (141future mutations/nonempty prior equality).
+All13snapshots before input; original229source unchanged, no optimizer/GT repairs.
+
+| Four-arm initialRaw control | Births, orders1027/28/29 | Final Known, each order | Certified scored cross-video reuse, each order |
+| --- | --- | --- | --- |
+| Full Raw | 45 / 46 / 42 | 0 / 34 | 0 / 10 |
+| Full Raw + continuity | 45 / 46 / 42 | 0 / 34 | 0 / 10 |
+| Query-excluded Raw | 476 / 438 / 474 | 2 / 34 | 0 / 10 |
+| Query-excluded Raw + continuity | 47 / 47 / 45 | 2 / 34 | 0 / 10 |
+
+All54physical tracks commitment1; exclusion arms' scored Existing claim coverage
+.7/.8/.7 vs full-support1, so not matched semantic-reuse coverage. Own-continuity
+decisions408/370/407 are NOT scored category matches. Two fewer Known errors
+and fewer births do not establish certified cross-video discovery or M innovation.
+Unknown10 and dirty-parent history retained. First scored Existing claim means
+1.7/1.9/1.7fullRaw (10events/10queries),1.875each exclusion (8/10),2.125/2.125/
+1.875exclusion+continuity (8/10); two censored queries retained. Observed updates,
+not dense/frame latency or walltime. Certified scored cross-video first events0/10.
+
+Original result179632B SHA256`c244c16d00b676b02b841100ad499171bc18ea151552d637d1fe0faa8471be4c`;
+normal terminal`01c442b6bed886d37af6dfbbcc2f559a54b856a82fa781786f790c4283096af5`.
+Public complete source/resource/endpoint/scope/clock/probe/origin/latency qualifier
+passes without private files.68targeted tests pass10.31s with incomplete/corrupt
+receipt refusals. Training-domain policy pilot, not unseen dev/Predictedsystem/
+independent final or Goal gain; four fixed heads remain, no selected arm/threshold.
+Final bounded CVPR/v2 suite1272pass78.04s, ownedexit0/guardNONE/79.8026s
+inclusive/846053376B peak/zero GPUhours. Original229source/full actual proof
+reverified; eight public triplet/qualifier/test/docs/status files only, original
+result179632B unchanged, no private models/GT/prediction/origin rows exported.

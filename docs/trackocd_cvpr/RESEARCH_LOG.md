@@ -7158,3 +7158,51 @@ no private GT/cache/weights opened for this check):
   only: new config/protocol/closed-loop/origin-audit/worker/launcher/two tests/
   docs/status. No private data/GT/weights/rows read at registration or uploaded.
   Push/fetch/tripleSHA before explicitly launching the initialRaw complete pilot.
+
+### Actual complete initialRaw four-arm policy intervention pilot (1/5heads)
+
+- Same boot/start/command supervisor746957/worker747355 verified live through
+  normal terminal; now historical identities, never restart instructions.
+  Published/fetched/tripleSHA preregistrationdfadb3edfeb946b9a77da1c64c311ebd61f8b6d9.
+  Normal exit0/guardNONE/530.773119454s inclusive/955146240B peak/oneCPU/
+  oneOSthread/no native helper/noCUDA/zero GPUhours; no retries or relaxed bounds.
+- ALL4arms/EACH3complete10policy/54track/1268observation/374frame/1empty orders.
+  All13snapshot fingerprints before policy, original initial head3ca6d4d8...
+  unchanged; each fullRaw baseline exact original event/commit/state/allocator.
+  Each arm complete ID/reverse/Known-binding shuffle/label swap and141future
+  mutations with nonempty prior event/origin/history/state equality. No dev/
+  final/Val/Test/pixels/new semantic values/optimizer/GT history repair.
+- Actual fullRaw and fullRaw+continuity aggregates identical in each order:
+  births45/46/42, final Known0/34, certified scored cross-video reuse0/10,
+  all physical commitment1 and final scored Existing claim coverage1. No routing
+  fallbacks in either full-support arm; aggregate identity not a new superiority.
+- Query exclusion alone births476/438/474, final Known2/34all3, Knownmacro
+  .1781609195, certified scored cross-video reuse0/10, commitment1; scored
+  Existing claim coverage.7/.8/.7. Exclusion+continuity births47/47/45 with
+  408/370/407routing-only observation decisions, SAME final Known2/34 and scored
+  reuse0/10, commitment1 and scored claim coverage.7/.8/.7. Reduced proliferation
+  does NOT establish persistent category discovery or full error recovery.
+- First scored Existing claim on eligible pseudo: fullRaw/all3 event10/10,
+  observed-update mean1.7/1.9/1.7; exclusion8/10all3 and1.875each; exclusion+
+  continuity8/10all3 and2.125/2.125/1.875. Censored2/10 retained, not zero latency
+  or matched coverage. All certified scored cross-video first-event counts0/10.
+  Unknown10 physical tracks and conservative dirty route-parent history retained.
+- Result179632B SHAc244c16d00b676b02b841100ad499171bc18ea151552d637d1fe0faa8471be4c;
+  launch73363e08d300fd07563533915292992d52825d8b55272808770c2ae078984605;
+  terminal01c442b6bed886d37af6dfbbcc2f559a54b856a82fa781786f790c4283096af5.
+  New public bounded/source229/endpoint/scope/probe/clock/commit/birth/origin/
+  prefixes/physical-mask/legacy-equality/censored-latency qualifier verifies this
+  actual triplet without private data/model/prediction rows. Original229immutable.
+- Targeted68tests pass10.31s, including actual complete trial and twelve guard/
+  subset/probe/endpoint/scope/baseline/commit/origin/mask/latency corruptions,
+  missing remaining-head refusal without private stat. This is policy training-
+  domain reuse, not unseen dev/final/Novel-R/M innovation or Goal acceptance.
+  Preserve remaining4fixed heads; no head/arm/threshold selection or automatic
+  training. Publish complete initialRaw, then explicitly run calendar1027 under
+  same frozen four-arm/full3order/probe bounds. Goal A/B/C remains active/open.
+- Final bounded combined CVPR/v2 suite1272pass78.04s, ownedexit0/guardNONE/
+  79.802648758s inclusive/846053376B peak/zero GPUhours. Actual source229/
+  scope/normal/full probes/origins/denominators reverified after docs. Eight
+  public files only: actual initialRaw triplet/public qualifier/test/docs/status;
+  no private GT/models/prediction/origin rows/progress/stdout uploaded. Original
+  result179632B unchanged. Publish/fetch/tripleSHA before explicit calendar1027.
