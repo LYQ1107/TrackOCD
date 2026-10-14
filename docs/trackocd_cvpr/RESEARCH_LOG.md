@@ -7502,3 +7502,10 @@ no private GT/cache/weights opened for this check):
 
 - After the normal Mean recovery, a fresh `StateEMA_latest/s1027` wall-recovery case was launched in the new namespace `M_GT_causal_dev_current_source_wall_recovery1_StateEMA_latest`, bound to the live remote commit `021ac3fbe07340b7a5f2c1cf48fa2967a7f1f737` through the surviving local 7890 HTTPS proxy.
 - Persistent launch receipt SHA256 is `1b74f8b3f4750b09b2a12e62d888f6640e99508c768a475e1d1e481a82d32e54`; it is the only current owned M worker. The case remains read-only causal development, CPU-only, no optimizer, no model selection, and no Pred/final/Goal acceptance. Mean's completed namespace and private inputs are not reused.
+
+## Current-source full-M StateEMA case completed (2026-10-15)
+
+- The fresh `StateEMA_latest/s1027` case completed normally in `M_GT_causal_dev_current_source_wall_recovery1_StateEMA_latest`: orders `1027/1028/1029` reached `physical_tracks=472`, the ID rename/reverse stream matched, and the future-suffix mutation changed `39` observations while preserving prior events, chosen versions, and the numeric ledger.
+- The public result has the same measured-development-only status as Mean: `optimizer_steps=0`, `CUDA_initialized=false`, `training_GPU_hours=0`, no model/checkpoint selection, no Val/Test/new-nonKnown semantics, and no Pred/final/Goal acceptance. It is not a selected StateEMA model.
+- The supervisor terminal is normal: worker exit `0`, guard stop `null`, complete result present, successful execution `true`, wall `4540.119617111006` seconds including imports/network, and peak sampled worker RSS `952856576` bytes. Private histories/checkpoints remain local and were not uploaded.
+- Public StateEMA hashes are launch `b957a95bcc54d5021aa73c88e142bfa893cffdf311ca02e94a2e53ad99de4532`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `571912571b4940d63678678b8160e9e0e2de8de22f68ff5db73af1fd3e8c138f`, and terminal `47ea510b2d0309ee3b16bc76614b9707733b30411609296a1eae17d317403dfd`. The launch's live source proof is the exact commit `021ac3fbe07340b7a5f2c1cf48fa2967a7f1f737`.
