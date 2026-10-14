@@ -1,0 +1,20 @@
+{
+  "status": "REGISTERED_CURRENT_SOURCE_CAUSAL_M_DEV_WALL_RECOVERY2",
+  "base_manifest": "configs/trackocd_cvpr/M_GT_causal_development_current_source_wall_recovery1.json",
+  "base_manifest_sha256": "d7140a895b49825ad70bf5d16bfd4aface10e6513f7ec45d457ad6fe2bd86772",
+  "failed_case": {"model": "relative_quarantine", "seed": 1027},
+  "failed_namespace": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery1_relative_quarantine_s1027",
+  "failed_launch": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery1_relative_quarantine_s1027/launch.json",
+  "failed_progress": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery1_relative_quarantine_s1027/progress.json",
+  "failed_terminal": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery1_relative_quarantine_s1027_supervisor_attempt_1.json",
+  "failed_launch_sha256": "f1fd7e7aabd742bc68fca9c323b25c13c350c5d00593fe940fcb8ca253c598c7",
+  "failed_progress_sha256": "8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9",
+  "failed_terminal_sha256": "a23fb79998ca6faabdf4fba6963e044bf2ebf4434dcd88129c106fd4da8e6080",
+  "recovery_output_prefix": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery2",
+  "wall_seconds_ceiling": 12000,
+  "fresh_worker_no_partial_metric_or_checkpoint_reuse": true,
+  "same_current_source_causal_protocol_except_wall_ceiling": true,
+  "no_private_data_weights_or_prediction_history_upload": true,
+  "formal_M_development_or_model_selection": true,
+  "model_selection_or_dev_final_selection": false
+}
