@@ -7532,3 +7532,4 @@ no private GT/cache/weights opened for this check):
 ## Current-source M matrix next case launched plan (2026-10-15)
 
 - The next fresh recovery2 case is `relative_quarantine/s1028`; its namespace will be `M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1028`. It uses the same 12000-second read-only causal protocol, with no reuse of s1027 private history/checkpoints and no automatic model selection.
+- Recovery2 `relative_quarantine/s1028` is now launched in the fresh namespace `M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1028`, bound to live source commit `4c6ba16762c5b9d9d59b0af200b94efa1e40e7fc`; persistent launch receipt SHA256 is `8f788f079d19afef39174316e1c9a09493a99f4bcf20b1697be66f3be9786955`. It is the only owned worker and has not uploaded private inputs.
