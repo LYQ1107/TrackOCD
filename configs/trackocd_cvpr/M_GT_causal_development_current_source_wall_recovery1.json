@@ -1,0 +1,20 @@
+{
+  "status": "REGISTERED_CURRENT_SOURCE_CAUSAL_M_DEV_WALL_RECOVERY1",
+  "base_manifest": "configs/trackocd_cvpr/M_GT_causal_development_current_source_v1.json",
+  "base_manifest_sha256": "1fa0e8668393ba59b348f96dfb4f8fb34e7d53712267ca1172f9fbe97b8c96f9",
+  "failed_case": {"model": "Mean_latest", "seed": 1027},
+  "failed_namespace": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_v1_Mean_latest",
+  "failed_launch": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_v1_Mean_latest/launch.json",
+  "failed_progress": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_v1_Mean_latest/progress.json",
+  "failed_terminal": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_v1_Mean_latest_supervisor_attempt_1.json",
+  "failed_launch_sha256": "2d1e3b360ba25ae8f4639c107723629d95039c7dab4fd8d18cebb435d2a68b2e",
+  "failed_progress_sha256": "8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9",
+  "failed_terminal_sha256": "9ceb4905fe76abf97f5461faa7af4da48cd4336c1f8ea44b479672ef03f0a2a9",
+  "recovery_output_prefix": "outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery1",
+  "wall_seconds_ceiling": 6000,
+  "fresh_worker_no_partial_metric_or_checkpoint_reuse": true,
+  "same_current_source_causal_protocol_except_wall_ceiling": true,
+  "no_private_data_weights_or_prediction_history_upload": true,
+  "formal_M_development_or_model_selection": true,
+  "model_selection_or_dev_final_selection": false
+}
