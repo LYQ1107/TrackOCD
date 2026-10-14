@@ -121,3 +121,63 @@ def verified_trial(root,model):
         'terminal_sha256':sha256_file(paths[2]),'all4arms_each_full3orders_original_baseline_and_full_probes_verified':True,
         'origin_masked_scored_reuse_all_physical_unknown_latency_denominators_verified':True,
         'private_GT_weights_or_prediction_rows_read':False,'unseen_dev_joint_Pred_final_or_Goal_accepted':False}
+
+
+def complete_policy_comparison(root):
+    """Build a public all-five aggregate after every head independently qualifies."""
+    models=tuple(EXPECTED['models'])
+    proof={model:verified_trial(root,model) for model in models}
+    clock_keys=('canonical_groups','physical_observations','metadata_frames','empty_frames',
+                'KNOWN','NEW','EXISTING')
+    metric_keys=('new_births','Known_micro_accuracy','Known_macro_accuracy',
+                 'declared_pseudo_absorbed_as_Known_queries',
+                 'scored_Existing_claim_track_coverage_over_all_declared_pseudo',
+                 'certified_cross_video_reuse_micro_lower_bound',
+                 'routing_only_continuation_all_physical_tracks',
+                 'routing_only_continuation_declared_pseudo_tracks',
+                 'first_scored_Existing_events','first_scored_Existing_mean_latency',
+                 'first_scored_Existing_unresolved_tracks')
+    rows={}
+    for model in models:
+        launch,result,terminal=(json.loads((root/p).read_text()) for p in trial_sources(model))
+        arms={}
+        for mode,arm in result['arms'].items():
+            orders={}
+            for order,trial in arm['orders'].items():
+                measured=trial['measured'];clock=measured['full_clock']
+                snapshot=measured['origin_aware_audit']['primary_scored_reuse_prefix_snapshots']['all_available']
+                latency=measured['origin_aware_audit']['first_scored_Existing_claim_latency_declared_pseudo']
+                orders[order]={
+                    'full_clock':{key:clock.get(key,0) for key in clock_keys},
+                    'new_births':clock['NEW'],
+                    'Known_micro_accuracy':snapshot['Known_micro_accuracy'],
+                    'Known_macro_accuracy':snapshot['Known_macro_accuracy'],
+                    'declared_pseudo_absorbed_as_Known_queries':snapshot['declared_pseudo_absorbed_as_Known_queries'],
+                    'scored_Existing_claim_track_coverage_over_all_declared_pseudo':snapshot['scored_Existing_claim_track_coverage_over_all_declared_pseudo'],
+                    'certified_cross_video_reuse_micro_lower_bound':snapshot['certified_cross_video_reuse_micro_lower_bound'],
+                    'routing_only_continuation_all_physical_tracks':snapshot['routing_only_continuation_all_physical_tracks'],
+                    'routing_only_continuation_declared_pseudo_tracks':snapshot['routing_only_continuation_declared_pseudo_tracks'],
+                    'first_scored_Existing_events':latency['events'],
+                    'first_scored_Existing_mean_latency':latency['mean_conditional_on_event'],
+                    'first_scored_Existing_unresolved_tracks':latency['unresolved_tracks_retained'],
+                }
+            arms[mode]={'orders':orders,'mean_over_orders':{
+                key:math.fsum(orders[order][key] for order in ('1027','1028','1029'))/3
+                for key in metric_keys}}
+        rows[model]={'triplet_sha256':{
+                'launch':proof[model]['launch_sha256'],'result':proof[model]['result_sha256'],
+                'normal_terminal':proof[model]['terminal_sha256']},
+            'normal_wall_seconds':terminal['wall_seconds_including_worker_imports_network'],
+            'normal_peak_RSS_bytes':terminal['peak_sampled_owned_worker_RSS_bytes'],'arms':arms}
+    return {
+        'status':'ALL5_ACTUAL_COMPLETE_PUBLIC_CONTINUITY_POLICY_COMPARISON_NOT_GOAL',
+        'models':rows,
+        'policy_denominators':{'videos':10,'physical_tracks':54,'observations':1268,
+            'metadata_frames':374,'empty_frames':1,'Known_tracks':34,
+            'declared_pseudoNovel_tracks':10,'masked_tracks':10,'orders':[1027,1028,1029]},
+        'all_five_heads_independently_verified':True,
+        'training_GPU_hours':0,'private_GT_weights_prediction_rows_loaded':False,
+        'head_arm_order_threshold_selected':False,'certified_scored_cross_video_reuse_demonstrated':False,
+        'joint_Novel_R_C_M_strong_Pred_dense_calibrated_controls_locked_final_or_Goal_accepted':False,
+        'macro_qualifier_note':'Prior heads permit exactly1 binary64 ulp for insertion-order aggregate; ONE_fullpolicy permits exactly2 ulps only for its legacy/primary prefix aggregate. All other public event/count/origin/coverage/probe checks remain exact.'
+    }

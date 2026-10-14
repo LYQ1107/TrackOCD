@@ -2380,5 +2380,8 @@ GT/weights/prediction-row access; the bounded CVPR/v2 suite also passed1278
 tests in71.42s. All five heads are now policy-qualified, but this is not
 Novel-R/M innovation,
 strong-Pred/dense validation, independent-final evidence, or Goal A/B/C
-completion. The all5 comparison must be reconciled before the next scientific
-phase.
+completion. The public all5 aggregate comparison is materialized at
+`outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_all5_public_comparison_v1.json`
+(79724B, SHA256`0bf5269ac8f9cff2282d47ba4f4c82765069e95d2297d84404960937a29c5545`),
+and the full bounded CVPR/v2 suite passed1280 tests in70.81s. Continue to the
+next scientific phase without selecting a head or claiming Goal completion.

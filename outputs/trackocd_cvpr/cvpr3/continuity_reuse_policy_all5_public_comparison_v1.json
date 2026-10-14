@@ -1,0 +1,1742 @@
+{
+  "status": "ALL5_ACTUAL_COMPLETE_PUBLIC_CONTINUITY_POLICY_COMPARISON_NOT_GOAL",
+  "models": {
+    "initial_Raw": {
+      "triplet_sha256": {
+        "launch": "73363e08d300fd07563533915292992d52825d8b55272808770c2ae078984605",
+        "result": "c244c16d00b676b02b841100ad499171bc18ea151552d637d1fe0faa8471be4c",
+        "normal_terminal": "01c442b6bed886d37af6dfbbcc2f559a54b856a82fa781786f790c4283096af5"
+      },
+      "normal_wall_seconds": 530.7731194540029,
+      "normal_peak_RSS_bytes": 955146240,
+      "arms": {
+        "exclude_query_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 30,
+                "NEW": 476,
+                "EXISTING": 762
+              },
+              "new_births": 476,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.17816091954022986,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 1.875,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 25,
+                "NEW": 438,
+                "EXISTING": 805
+              },
+              "new_births": 438,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.17816091954022986,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 1.875,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 25,
+                "NEW": 474,
+                "EXISTING": 769
+              },
+              "new_births": 474,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.17816091954022986,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 1.875,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 462.6666666666667,
+            "Known_micro_accuracy": 0.0588235294117647,
+            "Known_macro_accuracy": 0.17816091954022986,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 1.875,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "exclude_query_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 30,
+                "NEW": 47,
+                "EXISTING": 1191
+              },
+              "new_births": 47,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.17816091954022986,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 15,
+              "routing_only_continuation_declared_pseudo_tracks": 3,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 25,
+                "NEW": 47,
+                "EXISTING": 1196
+              },
+              "new_births": 47,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.17816091954022986,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 14,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 25,
+                "NEW": 45,
+                "EXISTING": 1198
+              },
+              "new_births": 45,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.17816091954022986,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 15,
+              "routing_only_continuation_declared_pseudo_tracks": 3,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 1.875,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 46.333333333333336,
+            "Known_micro_accuracy": 0.0588235294117647,
+            "Known_macro_accuracy": 0.17816091954022986,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 14.666666666666666,
+            "routing_only_continuation_declared_pseudo_tracks": 2.6666666666666665,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.0416666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "full_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 0,
+                "NEW": 45,
+                "EXISTING": 1223
+              },
+              "new_births": 45,
+              "Known_micro_accuracy": 0.0,
+              "Known_macro_accuracy": 0.0,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 0,
+                "NEW": 46,
+                "EXISTING": 1222
+              },
+              "new_births": 46,
+              "Known_micro_accuracy": 0.0,
+              "Known_macro_accuracy": 0.0,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 0,
+                "NEW": 42,
+                "EXISTING": 1226
+              },
+              "new_births": 42,
+              "Known_micro_accuracy": 0.0,
+              "Known_macro_accuracy": 0.0,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 44.333333333333336,
+            "Known_micro_accuracy": 0.0,
+            "Known_macro_accuracy": 0.0,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        },
+        "full_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 0,
+                "NEW": 45,
+                "EXISTING": 1223
+              },
+              "new_births": 45,
+              "Known_micro_accuracy": 0.0,
+              "Known_macro_accuracy": 0.0,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 0,
+                "NEW": 46,
+                "EXISTING": 1222
+              },
+              "new_births": 46,
+              "Known_micro_accuracy": 0.0,
+              "Known_macro_accuracy": 0.0,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 0,
+                "NEW": 42,
+                "EXISTING": 1226
+              },
+              "new_births": 42,
+              "Known_micro_accuracy": 0.0,
+              "Known_macro_accuracy": 0.0,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 44.333333333333336,
+            "Known_micro_accuracy": 0.0,
+            "Known_macro_accuracy": 0.0,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        }
+      }
+    },
+    "calendar1027": {
+      "triplet_sha256": {
+        "launch": "b85021774827555232964a38706f012400c7a1f4b3468297497a86be3b1acbbb",
+        "result": "b4aaec18f0746dcb7d42992cc3c0226f28c894f9d1969cebef043196390b2be7",
+        "normal_terminal": "6863c72cfb2070b1ba1d2ddd928531611566516301d30e417f6ae7304c659905"
+      },
+      "normal_wall_seconds": 484.159728917999,
+      "normal_peak_RSS_bytes": 955289600,
+      "arms": {
+        "exclude_query_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 228,
+                "NEW": 373,
+                "EXISTING": 667
+              },
+              "new_births": 373,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 231,
+                "NEW": 343,
+                "EXISTING": 694
+              },
+              "new_births": 343,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 225,
+                "NEW": 374,
+                "EXISTING": 669
+              },
+              "new_births": 374,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 363.3333333333333,
+            "Known_micro_accuracy": 0.2058823529411765,
+            "Known_macro_accuracy": 0.33524904214559387,
+            "declared_pseudo_absorbed_as_Known_queries": 1.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.1666666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "exclude_query_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 221,
+                "NEW": 36,
+                "EXISTING": 1011
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 10,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 225,
+                "NEW": 36,
+                "EXISTING": 1007
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 9,
+              "routing_only_continuation_declared_pseudo_tracks": 1,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 218,
+                "NEW": 36,
+                "EXISTING": 1014
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 10,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 36.0,
+            "Known_micro_accuracy": 0.2058823529411765,
+            "Known_macro_accuracy": 0.33524904214559387,
+            "declared_pseudo_absorbed_as_Known_queries": 1.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 9.666666666666666,
+            "routing_only_continuation_declared_pseudo_tracks": 1.6666666666666667,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.1666666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "full_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 136,
+                "NEW": 36,
+                "EXISTING": 1096
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.27777777777777773,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 147,
+                "NEW": 36,
+                "EXISTING": 1085
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.08823529411764706,
+              "Known_macro_accuracy": 0.289272030651341,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 140,
+                "NEW": 34,
+                "EXISTING": 1094
+              },
+              "new_births": 34,
+              "Known_micro_accuracy": 0.11764705882352941,
+              "Known_macro_accuracy": 0.3007662835249042,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 35.333333333333336,
+            "Known_micro_accuracy": 0.08823529411764706,
+            "Known_macro_accuracy": 0.289272030651341,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        },
+        "full_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 136,
+                "NEW": 36,
+                "EXISTING": 1096
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.27777777777777773,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 147,
+                "NEW": 36,
+                "EXISTING": 1085
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.08823529411764706,
+              "Known_macro_accuracy": 0.289272030651341,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 140,
+                "NEW": 34,
+                "EXISTING": 1094
+              },
+              "new_births": 34,
+              "Known_micro_accuracy": 0.11764705882352941,
+              "Known_macro_accuracy": 0.3007662835249042,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 35.333333333333336,
+            "Known_micro_accuracy": 0.08823529411764706,
+            "Known_macro_accuracy": 0.289272030651341,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        }
+      }
+    },
+    "calendar1028": {
+      "triplet_sha256": {
+        "launch": "ff5dfd314aab0dd2836f2f7dc79e147f727bc65d9be99bfbe89dd87a796b83bb",
+        "result": "d0cb0b327bd24a9b9137ede1f31b4e8f60bd773f3245c465b5da338f8d2f6d95",
+        "normal_terminal": "904749a88121040120a8df8b0ace125c40ba6fb99e82423ded46686934a39957"
+      },
+      "normal_wall_seconds": 469.37731978000375,
+      "normal_peak_RSS_bytes": 955416576,
+      "arms": {
+        "exclude_query_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 231,
+                "NEW": 370,
+                "EXISTING": 667
+              },
+              "new_births": 370,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 234,
+                "NEW": 340,
+                "EXISTING": 694
+              },
+              "new_births": 340,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 228,
+                "NEW": 371,
+                "EXISTING": 669
+              },
+              "new_births": 371,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 360.3333333333333,
+            "Known_micro_accuracy": 0.2058823529411765,
+            "Known_macro_accuracy": 0.33524904214559387,
+            "declared_pseudo_absorbed_as_Known_queries": 1.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.1666666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "exclude_query_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 224,
+                "NEW": 36,
+                "EXISTING": 1008
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 10,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 228,
+                "NEW": 36,
+                "EXISTING": 1004
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 9,
+              "routing_only_continuation_declared_pseudo_tracks": 1,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 221,
+                "NEW": 36,
+                "EXISTING": 1011
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 10,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 36.0,
+            "Known_micro_accuracy": 0.2058823529411765,
+            "Known_macro_accuracy": 0.33524904214559387,
+            "declared_pseudo_absorbed_as_Known_queries": 1.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 9.666666666666666,
+            "routing_only_continuation_declared_pseudo_tracks": 1.6666666666666667,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.1666666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "full_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 139,
+                "NEW": 36,
+                "EXISTING": 1093
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.27777777777777773,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 150,
+                "NEW": 36,
+                "EXISTING": 1082
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.08823529411764706,
+              "Known_macro_accuracy": 0.289272030651341,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 143,
+                "NEW": 34,
+                "EXISTING": 1091
+              },
+              "new_births": 34,
+              "Known_micro_accuracy": 0.11764705882352941,
+              "Known_macro_accuracy": 0.3007662835249042,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 35.333333333333336,
+            "Known_micro_accuracy": 0.08823529411764706,
+            "Known_macro_accuracy": 0.289272030651341,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        },
+        "full_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 139,
+                "NEW": 36,
+                "EXISTING": 1093
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.27777777777777773,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 150,
+                "NEW": 36,
+                "EXISTING": 1082
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.08823529411764706,
+              "Known_macro_accuracy": 0.289272030651341,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 143,
+                "NEW": 34,
+                "EXISTING": 1091
+              },
+              "new_births": 34,
+              "Known_micro_accuracy": 0.11764705882352941,
+              "Known_macro_accuracy": 0.3007662835249042,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 35.333333333333336,
+            "Known_micro_accuracy": 0.08823529411764706,
+            "Known_macro_accuracy": 0.289272030651341,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        }
+      }
+    },
+    "calendar1029": {
+      "triplet_sha256": {
+        "launch": "da324b13ce913e87eedf167ee596f013c15d99629a402a4a210de5c230bc876d",
+        "result": "4caea76aa69e820164999bc91d0b2721bc3c75d327e66c143e39a0c8702cbce6",
+        "normal_terminal": "fe38a91014ae529d29e4a5b72f883c827d0b5a95ecae549dcb1c6a090345e08d"
+      },
+      "normal_wall_seconds": 419.9957082519977,
+      "normal_peak_RSS_bytes": 955670528,
+      "arms": {
+        "exclude_query_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 228,
+                "NEW": 373,
+                "EXISTING": 667
+              },
+              "new_births": 373,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 231,
+                "NEW": 343,
+                "EXISTING": 694
+              },
+              "new_births": 343,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 225,
+                "NEW": 374,
+                "EXISTING": 669
+              },
+              "new_births": 374,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 363.3333333333333,
+            "Known_micro_accuracy": 0.2058823529411765,
+            "Known_macro_accuracy": 0.33524904214559387,
+            "declared_pseudo_absorbed_as_Known_queries": 1.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.1666666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "exclude_query_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 221,
+                "NEW": 36,
+                "EXISTING": 1011
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 10,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 225,
+                "NEW": 36,
+                "EXISTING": 1007
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 9,
+              "routing_only_continuation_declared_pseudo_tracks": 1,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 218,
+                "NEW": 36,
+                "EXISTING": 1014
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 10,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.125,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 36.0,
+            "Known_micro_accuracy": 0.2058823529411765,
+            "Known_macro_accuracy": 0.33524904214559387,
+            "declared_pseudo_absorbed_as_Known_queries": 1.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7333333333333334,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 9.666666666666666,
+            "routing_only_continuation_declared_pseudo_tracks": 1.6666666666666667,
+            "first_scored_Existing_events": 8.0,
+            "first_scored_Existing_mean_latency": 2.1666666666666665,
+            "first_scored_Existing_unresolved_tracks": 2.0
+          }
+        },
+        "full_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 136,
+                "NEW": 36,
+                "EXISTING": 1096
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.27777777777777773,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 147,
+                "NEW": 36,
+                "EXISTING": 1085
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.08823529411764706,
+              "Known_macro_accuracy": 0.289272030651341,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 140,
+                "NEW": 34,
+                "EXISTING": 1094
+              },
+              "new_births": 34,
+              "Known_micro_accuracy": 0.11764705882352941,
+              "Known_macro_accuracy": 0.3007662835249042,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 35.333333333333336,
+            "Known_micro_accuracy": 0.08823529411764706,
+            "Known_macro_accuracy": 0.289272030651341,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        },
+        "full_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 136,
+                "NEW": 36,
+                "EXISTING": 1096
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.058823529411764705,
+              "Known_macro_accuracy": 0.27777777777777773,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 147,
+                "NEW": 36,
+                "EXISTING": 1085
+              },
+              "new_births": 36,
+              "Known_micro_accuracy": 0.08823529411764706,
+              "Known_macro_accuracy": 0.289272030651341,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.9,
+              "first_scored_Existing_unresolved_tracks": 0
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 140,
+                "NEW": 34,
+                "EXISTING": 1094
+              },
+              "new_births": 34,
+              "Known_micro_accuracy": 0.11764705882352941,
+              "Known_macro_accuracy": 0.3007662835249042,
+              "declared_pseudo_absorbed_as_Known_queries": 0,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 10,
+              "first_scored_Existing_mean_latency": 1.7,
+              "first_scored_Existing_unresolved_tracks": 0
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 35.333333333333336,
+            "Known_micro_accuracy": 0.08823529411764706,
+            "Known_macro_accuracy": 0.289272030651341,
+            "declared_pseudo_absorbed_as_Known_queries": 0.0,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 1.0,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 10.0,
+            "first_scored_Existing_mean_latency": 1.7666666666666666,
+            "first_scored_Existing_unresolved_tracks": 0.0
+          }
+        }
+      }
+    },
+    "ONE_fullpolicy": {
+      "triplet_sha256": {
+        "launch": "157384d55a44e8dbba828e5cfff97e529319e6b017eb81be86a22dc072bb4384",
+        "result": "a6e65e79e8ed192ad49082c9ffdd9269fb50a88435a7c99d3e006a468b59e56e",
+        "normal_terminal": "90bd730ebcd938c80d2fc890e241529a08137278d09710da76668b36f600b15a"
+      },
+      "normal_wall_seconds": 414.2942071520083,
+      "normal_peak_RSS_bytes": 956645376,
+      "arms": {
+        "exclude_query_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 353,
+                "NEW": 320,
+                "EXISTING": 595
+              },
+              "new_births": 320,
+              "Known_micro_accuracy": 0.29411764705882354,
+              "Known_macro_accuracy": 0.36973180076628354,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 4.0,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 409,
+                "NEW": 287,
+                "EXISTING": 572
+              },
+              "new_births": 287,
+              "Known_micro_accuracy": 0.35294117647058826,
+              "Known_macro_accuracy": 0.39272030651340994,
+              "declared_pseudo_absorbed_as_Known_queries": 2,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 7,
+              "first_scored_Existing_mean_latency": 4.142857142857143,
+              "first_scored_Existing_unresolved_tracks": 3
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 347,
+                "NEW": 321,
+                "EXISTING": 600
+              },
+              "new_births": 321,
+              "Known_micro_accuracy": 0.29411764705882354,
+              "Known_macro_accuracy": 0.36973180076628354,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 4.0,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 309.3333333333333,
+            "Known_micro_accuracy": 0.3137254901960784,
+            "Known_macro_accuracy": 0.3773946360153257,
+            "declared_pseudo_absorbed_as_Known_queries": 1.3333333333333333,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.6999999999999998,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 7.666666666666667,
+            "first_scored_Existing_mean_latency": 4.0476190476190474,
+            "first_scored_Existing_unresolved_tracks": 2.3333333333333335
+          }
+        },
+        "exclude_query_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 352,
+                "NEW": 27,
+                "EXISTING": 889
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.29411764705882354,
+              "Known_macro_accuracy": 0.36973180076628354,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 8,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 4.0,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 408,
+                "NEW": 27,
+                "EXISTING": 833
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.35294117647058826,
+              "Known_macro_accuracy": 0.39272030651340994,
+              "declared_pseudo_absorbed_as_Known_queries": 2,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 7,
+              "routing_only_continuation_declared_pseudo_tracks": 1,
+              "first_scored_Existing_events": 7,
+              "first_scored_Existing_mean_latency": 4.142857142857143,
+              "first_scored_Existing_unresolved_tracks": 3
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 346,
+                "NEW": 27,
+                "EXISTING": 895
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.29411764705882354,
+              "Known_macro_accuracy": 0.36973180076628354,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.7,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 8,
+              "routing_only_continuation_declared_pseudo_tracks": 2,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 4.0,
+              "first_scored_Existing_unresolved_tracks": 2
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 27.0,
+            "Known_micro_accuracy": 0.3137254901960784,
+            "Known_macro_accuracy": 0.3773946360153257,
+            "declared_pseudo_absorbed_as_Known_queries": 1.3333333333333333,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.6999999999999998,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 7.666666666666667,
+            "routing_only_continuation_declared_pseudo_tracks": 1.6666666666666667,
+            "first_scored_Existing_events": 7.666666666666667,
+            "first_scored_Existing_mean_latency": 4.0476190476190474,
+            "first_scored_Existing_unresolved_tracks": 2.3333333333333335
+          }
+        },
+        "full_raw": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 262,
+                "NEW": 27,
+                "EXISTING": 979
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.9,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 9,
+              "first_scored_Existing_mean_latency": 2.111111111111111,
+              "first_scored_Existing_unresolved_tracks": 1
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 330,
+                "NEW": 27,
+                "EXISTING": 911
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.29411764705882354,
+              "Known_macro_accuracy": 0.36973180076628354,
+              "declared_pseudo_absorbed_as_Known_queries": 2,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 262,
+                "NEW": 27,
+                "EXISTING": 979
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.23529411764705882,
+              "Known_macro_accuracy": 0.3467432950191571,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.9,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 9,
+              "first_scored_Existing_mean_latency": 2.2222222222222223,
+              "first_scored_Existing_unresolved_tracks": 1
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 27.0,
+            "Known_micro_accuracy": 0.2450980392156863,
+            "Known_macro_accuracy": 0.3505747126436782,
+            "declared_pseudo_absorbed_as_Known_queries": 1.3333333333333333,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8666666666666667,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 8.666666666666666,
+            "first_scored_Existing_mean_latency": 2.1944444444444446,
+            "first_scored_Existing_unresolved_tracks": 1.3333333333333333
+          }
+        },
+        "full_raw_with_continuity": {
+          "orders": {
+            "1027": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 262,
+                "NEW": 27,
+                "EXISTING": 979
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.20588235294117646,
+              "Known_macro_accuracy": 0.33524904214559387,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.9,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 9,
+              "first_scored_Existing_mean_latency": 2.111111111111111,
+              "first_scored_Existing_unresolved_tracks": 1
+            },
+            "1028": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 330,
+                "NEW": 27,
+                "EXISTING": 911
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.29411764705882354,
+              "Known_macro_accuracy": 0.36973180076628354,
+              "declared_pseudo_absorbed_as_Known_queries": 2,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 8,
+              "first_scored_Existing_mean_latency": 2.25,
+              "first_scored_Existing_unresolved_tracks": 2
+            },
+            "1029": {
+              "full_clock": {
+                "canonical_groups": 1268,
+                "physical_observations": 1268,
+                "metadata_frames": 374,
+                "empty_frames": 1,
+                "KNOWN": 262,
+                "NEW": 27,
+                "EXISTING": 979
+              },
+              "new_births": 27,
+              "Known_micro_accuracy": 0.23529411764705882,
+              "Known_macro_accuracy": 0.3467432950191571,
+              "declared_pseudo_absorbed_as_Known_queries": 1,
+              "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.9,
+              "certified_cross_video_reuse_micro_lower_bound": 0.0,
+              "routing_only_continuation_all_physical_tracks": 0,
+              "routing_only_continuation_declared_pseudo_tracks": 0,
+              "first_scored_Existing_events": 9,
+              "first_scored_Existing_mean_latency": 2.2222222222222223,
+              "first_scored_Existing_unresolved_tracks": 1
+            }
+          },
+          "mean_over_orders": {
+            "new_births": 27.0,
+            "Known_micro_accuracy": 0.2450980392156863,
+            "Known_macro_accuracy": 0.3505747126436782,
+            "declared_pseudo_absorbed_as_Known_queries": 1.3333333333333333,
+            "scored_Existing_claim_track_coverage_over_all_declared_pseudo": 0.8666666666666667,
+            "certified_cross_video_reuse_micro_lower_bound": 0.0,
+            "routing_only_continuation_all_physical_tracks": 0.0,
+            "routing_only_continuation_declared_pseudo_tracks": 0.0,
+            "first_scored_Existing_events": 8.666666666666666,
+            "first_scored_Existing_mean_latency": 2.1944444444444446,
+            "first_scored_Existing_unresolved_tracks": 1.3333333333333333
+          }
+        }
+      }
+    }
+  },
+  "policy_denominators": {
+    "videos": 10,
+    "physical_tracks": 54,
+    "observations": 1268,
+    "metadata_frames": 374,
+    "empty_frames": 1,
+    "Known_tracks": 34,
+    "declared_pseudoNovel_tracks": 10,
+    "masked_tracks": 10,
+    "orders": [
+      1027,
+      1028,
+      1029
+    ]
+  },
+  "all_five_heads_independently_verified": true,
+  "training_GPU_hours": 0,
+  "private_GT_weights_prediction_rows_loaded": false,
+  "head_arm_order_threshold_selected": false,
+  "certified_scored_cross_video_reuse_demonstrated": false,
+  "joint_Novel_R_C_M_strong_Pred_dense_calibrated_controls_locked_final_or_Goal_accepted": false,
+  "macro_qualifier_note": "Prior heads permit exactly1 binary64 ulp for insertion-order aggregate; ONE_fullpolicy permits exactly2 ulps only for its legacy/primary prefix aggregate. All other public event/count/origin/coverage/probe checks remain exact."
+}

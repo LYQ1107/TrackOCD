@@ -65,3 +65,26 @@ def test_macro_comparison_only_one_binary64_rounding_unit_not_broad_tolerance():
     assert receipts.same_macro_aggregate(x,two,2)
     assert not receipts.same_macro_aggregate(x,math.nextafter(two,math.inf),2)
     assert not receipts.same_macro_aggregate(x,x+1e-10)
+
+
+def test_actual_all5_public_continuity_comparison_is_aggregate_only_and_reproducible(monkeypatch):
+    no_private_stat(monkeypatch)
+    result=receipts.complete_policy_comparison(ROOT)
+    saved=json.loads((ROOT/'outputs/trackocd_cvpr/cvpr3/continuity_reuse_policy_all5_public_comparison_v1.json').read_text())
+    assert result==saved
+    assert result['all_five_heads_independently_verified']
+    assert set(result['models'])=={'initial_Raw','calendar1027','calendar1028','calendar1029','ONE_fullpolicy'}
+    for row in result['models'].values():
+        assert set(row['arms'])=={'full_raw','full_raw_with_continuity','exclude_query_raw','exclude_query_raw_with_continuity'}
+        for arm in row['arms'].values():
+            assert set(arm['orders'])=={'1027','1028','1029'}
+    assert not result['private_GT_weights_prediction_rows_loaded']
+    assert not result['certified_scored_cross_video_reuse_demonstrated']
+    assert not result['joint_Novel_R_C_M_strong_Pred_dense_calibrated_controls_locked_final_or_Goal_accepted']
+
+
+def test_incomplete_all5_public_continuity_comparison_refuses_before_input_reads(monkeypatch,tmp_path):
+    def refuse(root,model):raise ValueError('Complete original policy triplet required')
+    monkeypatch.setattr(receipts,'verified_trial',refuse)
+    with pytest.raises(ValueError,match='Complete original policy triplet'):
+        receipts.complete_policy_comparison(tmp_path)
