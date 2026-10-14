@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/data3/liuyeqiang/TrackOCD/scripts/trackocd_cvpr/shadow_M_member_feature_cache_support_requalification.py", line 109, in <module>
+    sys.exit(main())
+  File "/data3/liuyeqiang/TrackOCD/scripts/trackocd_cvpr/shadow_M_member_feature_cache_support_requalification.py", line 88, in main
+    result = base.main()
+  File "/data3/liuyeqiang/TrackOCD/scripts/trackocd_cvpr/shadow_M_member_feature_cache.py", line 108, in main
+    return runtime.main()
+  File "/data3/liuyeqiang/TrackOCD/scripts/trackocd_cvpr/shadow_M_raw_cache.py", line 195, in main
+    if args.worker: worker(args, cfg, safety); return 0
+  File "/data3/liuyeqiang/TrackOCD/scripts/trackocd_cvpr/shadow_M_member_feature_cache.py", line 80, in worker
+    original_worker(args, cfg, safety)  # All11 complete OLD and NEW actual fresh replays.
+  File "/data3/liuyeqiang/TrackOCD/scripts/trackocd_cvpr/shadow_M_raw_cache.py", line 73, in worker
+    cohort = verified_cohort(ROOT)  # before any privateGT/policy/fit payload.
+  File "/data3/liuyeqiang/TrackOCD/src/trackocd_cvpr/M_development_cohort.py", line 64, in verified_cohort
+    if launch['source_sha256'][p] != sha256_file(root / p): raise ValueError('Same actual M window/kernel/loss/features/control')
+ValueError: Same actual M window/kernel/loss/features/control
