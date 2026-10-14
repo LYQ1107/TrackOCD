@@ -7513,3 +7513,4 @@ no private GT/cache/weights opened for this check):
 ## Current-source full-M variant matrix continuation registered (2026-10-15)
 
 - The next fresh case is `relative_quarantine/s1027`, followed sequentially by the remaining registered variant/seed cases `relative_quarantine/{1028,1029}`, `relative_weighted/{1027,1028,1029}`, and `pooled_weighted/{1027,1028,1029}`. Each will use a new recovery namespace and the same read-only causal protocol; no result is selected automatically.
+- The fresh `relative_quarantine/s1027` case is now launched in namespace `M_GT_causal_dev_current_source_wall_recovery1_relative_quarantine_s1027`, with persistent launch receipt SHA256 `296f0af07ace75be5634f2f0fbbf6db41cd31def112f91d29cd9b9cc61f59a40` and live source proof `ac4f16efac51060ceb583ad7819915e344621f22`. It is the only owned worker; no private result has been uploaded yet.
