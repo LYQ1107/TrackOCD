@@ -7061,3 +7061,53 @@ no private GT/cache/weights opened for this check):
   actual-receipt test/docs/status. No private data/GT/models/traces/rows/progress/
   stdout. Publish/fetch/triple-SHA; original Goal remains active, no automatic
   new experiment/training or dev-selected intervention.
+
+### Source-only factorial continuity/category-reuse separation
+
+- After full all5 attribution, inspect actual AtomicMemberControl/prefix bank,
+  old Mean self-exclusion and original Raw weighted_mean. Do NOT rename old
+  query-exclusion controls as a new mechanism or erase their negative history.
+  New isolated hypothesis: exclusion may turn within-route continuation into
+  repeated NEW births; separate that routing predicate from category matching.
+  This does not claim to repair Known/pseudo confusion or establish M novelty.
+- NEW source-only ContinuityReuseControl has four finite arms: fullRaw,
+  fullRaw+continuity, whole-query-excludedRaw, excludedRaw+continuity. Same frozen
+  numeric scorer/Top8/Raw geometry/pre-frame atomic writes. Continuation only
+  after scoredNEW and ONE current-video prior token; scoredKnown/WAIT never
+  become continuation. Cross-video route-name reuse is not own continuity.
+- Receipt separately binds scored action/binding and effective prediction,
+  explicitly marks ROUTE_CONTINUATION_NOT_CATEGORY_MATCH. No candidate claim
+  when finalExisting was a routing fallback. External loss/audit MUST use that
+  distinction; no semantic reuse/purity/coverage credit from routing alone.
+  Conflicting old token bindings defer, never choose IDs lexicographically.
+- Whole old (epoch,frame,payload) alias groups excluded, not one route copy;
+  preceding-video copies remain. New numeric view reuses original bank-produced
+  float32 prefix vectors and sum/quality/dispersion, never the old Mean decode
+  kernel. Original Raw, commits, transfers and token tombstones survive.
+  Known/WAIT deliberately retain anonymous support: contamination unresolved.
+- Initial tests13pass/1fail1.98s: fixture wrongly expected input magnitude .8
+  to survive committed weighted_mean. Second fixture13pass/1fail1.96s wrongly
+  expected a nonunit within-prefix mean. Read actual source: prefix_view copies
+  per-frame input, weighted_mean normalizes its aggregate, bank SUMS distinct
+  committed unit prefixes. No original code changed. Correct test uses two
+  distinct historical directions and checks exact retained float64 sum bytes
+  against original foreign-video state; original/retained group counts3/2 and
+  original history exact. Final first14source tests pass1.98s, not a data result.
+- Strengthen Known/ambiguousKnownWAIT-with-prior nonoverride and late failure
+  rollback with existing committed state/receipts. Source protocol fixes all4
+  arms/all5heads/prior all5report hash; actual executor NOT registered/launched.
+  Combined35source/actual-public-prerequisite tests pass3.25s. Synthetic fullRaw
+  events/scores/bank exact original, ID/reverse and nonempty earlier future
+  invariance. No new private data/weight/GT read, optimizer or trainingGPUhours.
+- Next implement/freeze actual fit/policy pilot gates and complete closed-loop
+  evaluator with origin-aware commitment/reuse/latency/conservative dirty-history
+  audits. ALL13snapshot bytes before data, actual baseline parity, all3orders/
+  fullID+future probes, oneCPU/3GiB/3000s/25percentRAM/storage, no partial result.
+  Publish first; no dev expansion, head/threshold fishing or automatic training.
+  Original Goal active: joint Novel-R/C/M/fullM/Pred/dense/fair/final remain open.
+- Final bounded CVPR/v2 suite1219pass65.39s, ownedexit0/guardNONE/
+  67.064607716s inclusive/845664256B peak/zero GPUhours. Original202source and
+  all5actual public comparison reverified after docs. Six public source/config/
+  tests/docs/status files only; no private data/GT/weights/prediction rows read
+  or uploaded, no actual policy/dev pilot or selected head. Publish/fetch/triple
+  SHA, then implement separate registered origin-aware full policy executor.

@@ -2146,3 +2146,31 @@ report regeneration, retained adverse counts and early partial-matrix refusal.
 Bounded CVPR/v2 suite1204pass72.57s, ownedexit0/guardNONE/74.2353s inclusive/
 845856768B peak/zero GPUhours. Ten public files only, no private exports;
 original202source and complete comparison reverified before publication.
+
+## Source-only continuity/reuse factorization, not an empirical gain
+
+Old Mean support-exclusion implementation already exists; it is not new. New
+isolated control preserves original Raw sum geometry and factors whole-query
+category-support exclusion versus a routing-continuation fallback, four arms.
+Fallback applies only after scoredNEW with ONE prior token in current video;
+Known/WAIT never override, no previous-video ID shortcut. Scored resolution
+and final routed prediction have separate receipts. A continuation Existing is
+NOT a scored semantic match or certified independent category support.
+
+History/Raw/tombstones retained; Known/WAIT still retain old anonymous support,
+so this is not memory contamination repair. Whole old alias group excluded,
+foreign-video identical payload preserved. FullRaw source fixture exactly matches
+original numeric events/state/commits; ID/reverse and future prefix checks plus
+atomic failure rollback. Final35targeted tests pass3.25s, including original all5
+public prerequisites. Two wrong normalization fixtures failed and were recorded;
+actual weighted_mean normalizes a prefix, bank sums distinct prefix members.
+Corrected exclusion test compares original retained sum bytes, not relaxed norms.
+
+Only source and proposed finite protocol: no real Train pilot/executor registered,
+no new data/GT/weights, optimizer or training. Next freeze lawful fit/policy actual
+origin-aware closed-loop pilot with full mandatory probes before dev expansion.
+Synthetic duplicate births vs continuation alone is not discovery success or
+self-correcting M innovation. All original Goal A/B/C requirements remain open.
+Final bounded CVPR/v2 suite1219pass65.39s, ownedexit0/guardNONE/67.0646s
+inclusive/845664256B peak/zero GPUhours. Original202source/all5proof preserved;
+six public source/config/test/docs/status files only, no actual new data run.
