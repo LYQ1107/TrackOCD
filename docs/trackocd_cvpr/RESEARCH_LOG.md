@@ -7288,3 +7288,29 @@ no private GT/cache/weights opened for this check):
   in74.39s. Two fixed heads remain; no head/arm/threshold selection or
   automatic training. Publish/fetch/tripleSHA before separately running
   calendar1029; the full CVPR Goal remains active and unachieved.
+
+### Actual fourth complete continuity/reuse policy pilot: calendar1029 (4/5heads)
+
+- Fresh preflight found no calendar1029 namespace/terminal and no active
+  research worker. The registered driver ran once from published commit
+  `0a7314d`; normal exit0/guardNONE/419.995708252s inclusive/955670528B
+  peak/oneCPU/oneOSthread/no native helper/noCUDA/zero GPUhours. The frozen
+  endpoint, ALL13 snapshots, original229 source closure, four arms, all3
+  orders, baseline parity and full probe suite passed; no retry, optimizer,
+  GT/history repair, forbidden role read or model selection occurred.
+- FullRaw and fullRaw+continuity matched: births36/36/34, Known micro
+  .0588235294/.0882352941/.1176470588, Known macro
+  .2777777778/.2892720307/.3007662835, claim coverage1, and certified scored
+  cross-video reuse0/10. Exclusion alone births373/343/374; exclusion+
+  continuity births36/36/36 with routing-only continuation10/9/10 physical
+  and2/1/2 declared-pseudo tracks. Both exclusion arms retained Known micro
+  .2058823529, Known macro .3352490421, pseudo absorption1/10, claim coverage
+  .7/.8/.7, and certified scored reuse0/10. FullRaw latency1.7/1.9/1.7;
+  exclusion arms2.125/2.25/2.125, each8/10 events with two censored tracks.
+- Result182450B SHA256`4caea76aa69e820164999bc91d0b2721bc3c75d327e66c143e39a0c8702cbce6`;
+  launch`da324b13ce913e87eedf167ee596f013c15d99629a402a4a210de5c230bc876d`;
+  normal terminal`fe38a91014ae529d29e4a5b72f883c827d0b5a95ecae549dcb1c6a090345e08d`.
+  Public verifier passes without private GT/weights/prediction rows. One fixed
+  head remains; the result is policy-domain evidence, not Novel-R/M innovation
+  or Goal completion. Publish/fetch/tripleSHA before separately running
+  ONE_fullpolicy.

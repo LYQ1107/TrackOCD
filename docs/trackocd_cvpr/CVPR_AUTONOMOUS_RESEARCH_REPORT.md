@@ -2309,3 +2309,32 @@ GT/weights/prediction-row access; the bounded CVPR/v2 suite also passed1276
 tests in74.39s. Calendar1029 and ONE_fullpolicy remain required; no
 head/arm/threshold selection, automatic training, or scientific Goal completion
 is claimed.
+
+## Actual fourth complete continuity/reuse policy pilot: calendar1029 (4/5heads)
+
+A fresh preflight found no prior calendar1029 namespace or terminal and no
+active research worker. The registered driver ran once from published commit
+`0a7314d`. It exited normally with guard stop `null`, 419.995708252 seconds
+inclusive, peak RSS955670528B, one CPU worker, one OS thread, no native helper,
+no CUDA initialization, and zero GPU-hours. The frozen endpoint, ALL13 snapshot
+bytes, original229-source closure, four arms, all three orders, exact baseline
+parity, and mandatory probe suite passed without retry, optimizer, GT/history
+repair, forbidden-role reads, or model selection.
+
+FullRaw and fullRaw+continuity matched: births36/36/34, Known micro
+.0588235294/.0882352941/.1176470588, Known macro
+.2777777778/.2892720307/.3007662835, claim coverage1, and certified scored
+cross-video reuse0/10. Query exclusion alone had births373/343/374; adding
+routing-only continuity had births36/36/36, with routing-only decisions on
+10/9/10 physical tracks and2/1/2 declared-pseudo tracks. Both exclusion arms
+retained Known micro .2058823529, Known macro .3352490421, pseudo Known
+absorption1/10, claim coverage .7/.8/.7, and certified scored reuse0/10.
+FullRaw first scored-Existing latency was1.7/1.9/1.7 observed updates;
+exclusion arms were2.125/2.25/2.125 with8/10 events and two censored tracks.
+
+Result182450B SHA256`4caea76aa69e820164999bc91d0b2721bc3c75d327e66c143e39a0c8702cbce6`;
+launch`da324b13ce913e87eedf167ee596f013c15d99629a402a4a210de5c230bc876d`;
+normal terminal`fe38a91014ae529d29e4a5b72f883c827d0b5a95ecae549dcb1c6a090345e08d`.
+The public verifier passed without private GT/weights/prediction-row access.
+This remains policy-domain evidence, not Novel-R/M innovation or Goal
+completion. ONE_fullpolicy is the only remaining fixed head.
