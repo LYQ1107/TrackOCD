@@ -6942,3 +6942,39 @@ no private GT/cache/weights opened for this check):
   triplet, public test, docs/status. No private GT/models/traces/rows/progress/
   stdout or history edits. Reverify actual202closure after docs; publish/fetch/
   triple-SHA before separately launching calendar1028.
+
+### Actual third complete independent dev attribution: calendar1028 (3/5)
+
+- Verified same boot/start/command supervisor666168/worker666374 through
+  normal terminal; now historical identities, not restart instructions.
+  Actual published/fetched/triple-SHA preregistration3eae301c7152de73a2777ccc39fee4a1e51c8b7c.
+  Normal exit0/guardNONE/1843.120863503s inclusive/965521408B peak/oneCPU/
+  oneOSthread/no native helper/noCUDA/zero GPUhours. Owned researcher busy false
+  after completion. No reset/repeated attempt/relaxed bound/skipped probe.
+- Fixed original formal calendar1028 endpoint; original202source closure
+  unchanged and ALL13 snapshots before dev. ALL3 complete72video/472track/
+  8753observation/2562frame/116empty orders plus EACH full normal event/commit/
+  state reference; full ID/reverse equality and39future mutations/nonempty
+  prior-event equality. Zero optimizer updates, no private history cleanup.
+- Each order4808Known/2743declared-pseudo/1202masked observations retained.
+  Known Existing4303/4290/4175; only-own1916/2050/2018; positive Known gate2640
+  all3, bypass2235/2227/2108. Same-history remove-own shadows Known124/112/151,
+  correctKnown109/105/147, changed-action488/550/551. Conditional one-decision
+  counts under actual histories, not full-intervention gain/all-error cause.
+- Declared-pseudo Existing2506/2582/2592; only-own1200/1070/1162;
+  shadowKnown113/74/68 vs initialRaw20/33/49. Retain adverse absorption risk,
+  not a measured altered-rollout effect. Masked shadowKnown67/63/95 has unknown
+  correctness. Labels/shadows never to scorer/exclusion or actual memory writes.
+- Original result13025B SHAc012e9e1f689aae8052bc43d98441860d0908a084bb2b8aef32d81bef02f72b3;
+  launch63f9503977bf14bbed7e3fa64fe79d398c2d4a4b9b47cb472158037cd2eb699d;
+  terminal69bcb27bef6d97a42c49faedaa48f9493fa9e186dfe443b4a9475c210a5acc0e.
+  Public complete-source/scope/clock/probe/count qualifier passes without private
+  GT/models/rows. Calendar1029 and ONEfullpolicy still required; no selected
+  head/seed/threshold/training. Goal active; joint R/C/M/fullM/lawfulPred/dense/
+  fair calibrated controls/lockedfinal unachieved. Publish before next model.
+- Targeted actual-three/public-receipt/adapter/policy regressions52pass3.40s.
+  Final bounded combined CVPR/v2 suite1200pass60.90s, ownedexit0/guardNONE/
+  62.521131472s inclusive/864235520B peak/zero trainingGPUhours. Reverified
+  original202source after docs. Seven public files only: third normal triplet/
+  public test/docs/status; no private GT/models/traces/rows/progress/stdout.
+  Publish/fetch/triple-SHA before separately launching calendar1029.
