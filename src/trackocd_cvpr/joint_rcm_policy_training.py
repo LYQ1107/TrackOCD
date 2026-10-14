@@ -105,6 +105,10 @@ class JointRCMAtomicMemberControl(JointAtomicMemberControl):
         self._preframe_numeric = {}
         self._chosen_versions = ()
 
+    def state_snapshot(self):
+        """Expose the immutable pre-frame bank handle to external loss code."""
+        return deepcopy(self._bank), self._next_id
+
     def ingest(self, frame_index, observations, *, track_grad=True):
         router = deepcopy(self._router)
         bank = deepcopy(self._bank)

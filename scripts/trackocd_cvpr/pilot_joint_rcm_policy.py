@@ -76,6 +76,11 @@ def source_gate(args, cfg, safety):
         raise ValueError('Exact bounded joint R/C/M Train-only pilot required')
     if sorted(cfg['pilot_policy_relative_ordinals']) != [0, 1]:
         raise ValueError('Fixed two-video pilot scope required')
+    previous = ROOT / cfg['recovery_of_previous_attempt']
+    previous_terminal = previous.with_name(previous.name + '_supervisor_attempt_1.json')
+    if (not (previous / 'failure.json').is_file() or not previous_terminal.is_file()
+            or json.loads(previous_terminal.read_text())['successful_owned_execution']):
+        raise ValueError('Recovery must bind to the preserved unsuccessful previous attempt')
     return proof
 
 
