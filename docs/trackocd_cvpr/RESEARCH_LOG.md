@@ -7528,3 +7528,7 @@ no private GT/cache/weights opened for this check):
 - The result remains measured causal GT M development only: `training_seed=1027`, `optimizer_steps=0`, `CUDA_initialized=false`, `training_GPU_hours=0`, no model/checkpoint selection, no Val/Test/new-nonKnown semantics, and no Pred/final/Goal acceptance.
 - The terminal is normal: worker exit `0`, guard stop `null`, complete result present, successful execution `true`, wall `7409.519202468` seconds including imports/network, and peak sampled worker RSS `953294848` bytes. Private histories/checkpoints remain local and were not uploaded.
 - Public recovery2 hashes are launch `738f8181541937e4cf8480ef41132308f44e63579380a23a763b55d59dcfa967`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `1107f38b302120542599526637483fe08534e647e62cc85f49ec4cc23cb4c29f`, terminal `8bf290a752a56f56794f63d28b0940d97264c610061cbbcc9cba5497300a0126`, and persistent launch `b093d1d28ab77543addd2d2dd03faa2cec22740f9dba1424318a6e610c932d32`.
+
+## Current-source M matrix next case launched plan (2026-10-15)
+
+- The next fresh recovery2 case is `relative_quarantine/s1028`; its namespace will be `M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1028`. It uses the same 12000-second read-only causal protocol, with no reuse of s1027 private history/checkpoints and no automatic model selection.
