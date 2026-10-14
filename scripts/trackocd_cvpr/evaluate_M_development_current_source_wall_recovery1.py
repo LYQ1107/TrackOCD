@@ -4,10 +4,9 @@ import json
 from pathlib import Path
 import sys
 
-from src.trackocd_v2.io import sha256_file
-
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+from src.trackocd_v2.io import sha256_file
 from scripts.trackocd_cvpr import evaluate_M_development_current_source as current
 
 SCRIPT = 'scripts/trackocd_cvpr/evaluate_M_development_current_source_wall_recovery1.py'
