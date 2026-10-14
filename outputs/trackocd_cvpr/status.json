@@ -104,6 +104,15 @@
   "joint_rc_memory_pilot_terminal_sha256": "e09fde76dba55a76541e58ba5c380d90a991fb2ed9422b1bff0ad5132aec7a7f",
   "joint_rc_memory_pilot_private_checkpoint_sha256": "93267e22af63e754af0d684b048f97999b3396cc300fe734016de1f4df51bba8",
   "joint_rc_memory_pilot_resources": "Peak guarded RSS 1945698304 bytes, 260.10334488 seconds including network, CPU only, zero GPU hours; private checkpoint retained locally and not uploaded",
+  "joint_rcm_memory_policy_pilot": "ACTUAL_FIXED_TWO_POLICY_ORDER_VIDEOS: one CPU episode/two optimizer updates on the 14-feature tensor-graph joint R/C plus 161-parameter prediction-owned M memory; full 79-frame/215-observation/215-group clock consumed, R/C/M gradients nonzero, 143 append-only versions and 75 prediction-owned commits audited. M agreement loss was legally masked for 277 singleton supports, so this is integration evidence rather than M innovation or a scientific winner",
+  "joint_rcm_memory_policy_pilot_protocol": "configs/trackocd_cvpr/joint_rcm_policy_pilot_v1.json",
+  "joint_rcm_memory_pilot_code_commit": "3583d6a85fd20053437392e57d23702c4e1d903b",
+  "joint_rcm_memory_pilot_result": "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json",
+  "joint_rcm_memory_pilot_result_sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
+  "joint_rcm_memory_pilot_launch_sha256": "ddb7a58160a957c421308382093eb50a6ed429594dc250207fbc58265da8ea1e",
+  "joint_rcm_memory_pilot_terminal_sha256": "0998901955433dccfd006572ce697bf95132eac0ee8cca4af70443ced5160665",
+  "joint_rcm_memory_pilot_recovery_chain": "Initial state_snapshot failure preserved; repair1 support-bound failure preserved; repair2 succeeded after aligning complete Known support bounds without pruning",
+  "joint_rcm_memory_pilot_private_checkpoint_uploaded": false,
   "continuity_reuse_policy_pilot_execution": "ACTUAL_NORMAL_ALL5_INITIAL_RAW_CALENDAR1027_CALENDAR1028_CALENDAR1029_ONE_FULLPOLICY:all4arms/EACH3full policy orders plus original baseline and full ID/Known-binding/future/label probes. ONE_fullpolicy fullRaw births27/27/27 with Known micro .2058823529/.2941176471/.2352941176, exclusion births320/287/321, exclusion+continuity births27/27/27 with routing-only continuation8/7/8 physical and2/1/2 declared-pseudo; exclusion arms certified scored cross-video reuse0/10 and claim coverage .7/.7/.7, fullRaw claim coverage .9/.8/.9. All five heads have no Goal gain or M innovation; original229source frozen; public macro qualifier uses1ULP for prior heads and exactly2ULP only for ONE_fullpolicy prefix insertion-order aggregate; all other events/counts/probes remain exact",
   "raw_named_membership_fullpolicy_full_dev_result": "outputs/trackocd_cvpr/cvpr3/raw_NamedKnown_membership_full_causal_dev_v1_full_policy/result.json",
   "raw_named_membership_fullpolicy_full_dev_result_sha256": "b68df8258bfbd2c2a457f00adae99c7b3cdd4ff46600013024c32bd88b63f28d",
@@ -128,5 +137,5 @@
   "historical_parent_commit": "7546527e5f9540d351785ade34c8e3292a74441d",
   "historical_results_overwritten": false,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "The bounded joint R/C + prediction-owned-memory integration pilot is complete and publicly receipted; it demonstrates tensor-gradient plumbing on two fixed policy-order Train videos only, not a scientific winner. Do not expand from this pilot by selection. Next freeze the complete joint causal protocol and add the separately trained/self-correcting M controls, then run full policy/development only after lawful strong Pred/dense frontend and fair controls are registered. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "The bounded joint R/C/M + prediction-owned-memory repair2 pilot is complete and publicly receipted; it demonstrates tensor-gradient and append-only lineage plumbing on two fixed policy-order Train videos only, with M agreement loss masked by singleton support. Do not expand from this pilot by selection or call it M science. Next freeze the complete joint causal protocol, add separately trained/self-correcting M controls and lawful strong Pred/dense frontend inputs, then run full policy/development only after fair controls are registered. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
