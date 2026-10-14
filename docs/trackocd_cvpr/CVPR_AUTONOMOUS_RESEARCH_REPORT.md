@@ -1945,3 +1945,35 @@ guardNONE,72.8234s/864546816B/zeroGPUhours. All149originalfit dependencies
 unchanged. This is SOURCE registration, not actual policy/dev attribution.
 Real pilot follows publication/exact proof; original scientific Goal remains
 active/unachieved, fullM/joint/lawfulPred/dense/fair controls/lockedfinal open.
+
+## Actual policy observer pilot — partial mechanism evidence, not a solution
+
+All5frozen heads normal341.1466s/952274944B/oneCPU+oneOSthread/noGPU;
+each complete10policy/54tracks/1268obs/374frames/1empty, all13fingerprints
+before private inputs. Exact bank/candidate/score witnesses and original
+normal-reference full events/commits/state agree, full ID/reverse and141future
+observation-prefix checks complete for every head. No GT/shadow memory write.
+
+On the791Known group observations, Existing with ONLY own support occurs
+688Raw/435cal1027/432cal1028/435cal1029/380fullpolicy times. Positive Known
+gate bypasses33/253/257/253/286times. Same-history remove-own shadow gives
+correctKnown16/44/44/44/77times. This confirms a conditional contribution
+on real policy data, NOT all-error attribution or intervened trajectory gain.
+The three calendar shadows each yield55Known but only44correct; pseudo
+queries become Known0/11/11/11/1times across the five heads. Naive exclusion
+is therefore not proved a safe remedy. Unknown271group observations remain
+masked and physical, not BG/Novel; their shadow correctness is unavailable.
+Repeated observations/training-domain policy measurements are not unseen-dev
+generalization or independent replications, and no model/threshold is selected.
+
+Original result SHA256
+`c2398581fc4b505f03781eee098cf889735b56e43d7ec6ccfd242759c7e417d4`;
+terminal`1583d0dff156bfc59266634b99b60123a069e853eac8b09103fb69a0a515590e`.
+Public full normal/source/count/probe qualifier passes;36targeted actual/source/
+refusal regressions pass4.13s without private weights or GT reads. Next NEW
+freeze a complete all5Train-dev observation window and adapter/probe qualification,
+no selected head or causal rollout gain from shadows. Joint R/C/M/fullM/lawful
+Pred/dense/fair controls/lockedfinal and original Goal A/B/C remain open/active.
+Final bounded CVPR/v2 suite1161pass72.98s, ownedexit0/guardNONE,74.8746s
+inclusive/838930432B peak/zero GPUhours. Nine public files only, original
+result20663B unchanged; no private models/GT/prediction rows/traces exported.

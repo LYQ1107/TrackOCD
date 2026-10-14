@@ -6742,3 +6742,68 @@ no private GT/cache/weights opened for this check):
   dependencies unchanged,192paths present. NO ACTUAL PILOT yet at registration;
   execution only after publish/fetch/exact proof. Goal A/B/C still unachieved,
   joint R/C/M/fullM probes/lawful strongPred/dense/fair controls/final pending.
+
+### Actual normal all5 read-only policy arbitration/support pilot
+
+- Prior turn made progress: observer source pushed/fetched/triple-SHA
+  a4db9955cf89f8618014e940a550f75c3d0745ba, then new own supervisor launched
+  after no existing researcher. This turn confirmed SAME boot/start/command
+  supervisor611141/worker611479 until normal termination; historical PIDs now,
+  never restart them. Exit0/guardNONE/result present,341.146629130s inclusive,
+ 952274944B peak/one CPU compute worker+oneOSthread/no native helper/noCUDA/
+  zero trainingGPUhours. Entry availableRAM107727450112B of134792282112B,
+  free disk63111512064B. No cleanup, new data/weights, external process changes.
+- Actual ALL13 private snapshot fingerprints before inputs; all192source/public
+  dependencies and real human407scope checked in parent/worker. All5frozen
+  heads, each full10policy/54tracks/1268obs/374frames/1empty; exact pre/post
+  support-state/candidate/context/binding/score witnesses and independent normal
+  event/commit/finalstate parity. Actual full ID/reverse delivery outcome/event/
+  state equality and141future-observation perturbation sealed-prefix equality
+  for EACH model. No optimizer, selected model/threshold, shortened probe,
+  GT/shadow write, read of dev/final/Val/Test/pixels/newnonKnown bodies.
+- SAME791Known/206policy-pseudo/271masked canonical observations (1268total),
+  all physical inputs retained. Repeated observations and models on training-
+  domain policy data are not independent samples or unseen-dev evidence.
+  Known observation counts, unchanged history ONE-decision shadows:
+
+  | Frozen head | Actual Known-stratum Existing | Only own support | Positive Known gate bypassed | Shadow Known / correctKnown |
+  | --- | ---: | ---: | ---: | ---: |
+  | initial Raw | 760 | 688 | 33 | 16 / 16 |
+  | calendar1027 | 659 | 435 | 253 | 55 / 44 |
+  | calendar1028 | 656 | 432 | 257 | 55 / 44 |
+  | calendar1029 | 659 | 435 | 253 | 55 / 44 |
+  | ONE fullpolicy | 571 | 380 | 286 | 77 / 77 |
+
+- Real policy witness supports a PARTIAL same-history mechanism: a positive
+  Known gate can be bypassed by Existing with own-containing support, and own
+  exclusion sometimes gives a correct Known score. It does NOT explain all
+  Known errors or measure end-to-end causal intervention benefit. Calendar
+  shadows55Known include11wrong Known classes; policy-pseudo shadows become
+  Known0/11/11/11/1 across initial/cal1027/cal1028/cal1029/fullpolicy. These
+  are potential adverse effects, not truth/GT repair or certified Novel gain.
+  Masked shadows18/13/13/13/2Known carry NO semantic correctness claim.
+- Original result20663B SHA c2398581fc4b505f03781eee098cf889735b56e43d7ec6ccfd242759c7e417d4;
+  launch6d7eeb296cfee5bc8bf8ec8fe173fa568d45b3603ba7a6d6903d9e3de457e786;
+  terminal1583d0dff156bfc59266634b99b60123a069e853eac8b09103fb69a0a515590e.
+  Public all5 qualifier binds complete normal/source/clock/parameters/reference/
+  probe evidence, same actual order and count/provenance/shadow conservation.
+  It does not read private weights/GT/row tables or authorize new experiments.
+- Thirty-six actual/source/protocol/normal/false-pilot regressions pass4.13s:
+  missing models, guard stop, intervention write, expanded role, wrong weights,
+  absent probe/clock/masked rows, inconsistent partition/shadow/schedule all
+  refuse without private file stat. Only complete original public triplet,
+  small qualification/source/tests/docs/status eligible for publication; no
+  private traces, labels, model checkpoints, progress or stdout.
+- Original Goal A/B/C unachieved/active. NEXT NEW separately registered complete
+  Train-dev observer window must preserve ALL5 controls and prove resource/
+  data/adapters/references/probes, not select a head or treat policy shadows as
+  unseen improvement. Any real intervened-stream repair is another prospective
+  protocol, never this same-history pilot. FullM/joint R/C/M/lawful strongPred/
+  dense/fair calibrated coverage-latency and locked final remain required.
+- Final bounded combined CVPR/v2 suite1161pass72.98s, ownedexit0/guardNONE/
+ 74.874578775s inclusive/838930432B peak/zero trainingGPUhours. Original
+  actual source/normal pilot proof reverified after docs. Nine explicitly public
+  files only: original all5normal triplet, small qualification, public qualifier/
+  mutation tests and docs/status. Result20663B unchanged; no .pt/private GT/
+  row tables/traces/progress/stdout. Source publication/fetch/triple-SHA before
+  any NEW independent-dev protocol; no automatic expansion or acceptance.
