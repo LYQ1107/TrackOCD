@@ -41,7 +41,9 @@ def configuration(args):
         'same_current_source_training_protocol_and_resource_guards',
         'no_old_endpoint_or_private_asset_upload', 'formal_M_development_or_model_selection',
     }
-    if set(manifest) != expected or manifest['status'] != 'REGISTERED_CURRENT_SOURCE_ENDPOINT_TERMINAL_RACE_RECOVERY_V1':
+    if (set(manifest) != expected or manifest['status'] not in {
+            'REGISTERED_CURRENT_SOURCE_ENDPOINT_TERMINAL_RACE_RECOVERY_V1',
+            'REGISTERED_CURRENT_SOURCE_ENDPOINT_TRANSPORT_RETRY1'}):
         raise ValueError('Exact current-source terminal recovery manifest required')
     if (manifest['base_manifest'] != NORMAL_CONFIG
             or sha256_file(ROOT / NORMAL_CONFIG) != manifest['base_manifest_sha256']
