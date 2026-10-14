@@ -2270,4 +2270,42 @@ expansion. Original joint/fullM/Pred/dense/fair/lockedfinal Goal still unachieve
 Final bounded CVPR/v2 suite1275pass76.58s, ownedexit0/guardNONE/78.2341s
 inclusive/844595200B peak/zero GPUhours. Both actual229source/probe/resource
 proofs reverified; eight public triplet/qualifier/tests/docs/status files only,
-original182451B result unchanged, no private data/model/GT/row exports.
+  original182451B result unchanged, no private data/model/GT/row exports.
+
+## Actual third complete continuity/reuse policy pilot: calendar1028 (3/5heads)
+
+The initial registered launch failed at the live remote-registration gate before
+any worker was spawned. Its receipt and failure log were preserved. A single
+pre-data transport recovery then executed the same registered supervisor after
+live registration recovered; it did not reuse a worker, result namespace, or
+normal terminal. Normal exit was0 with no guard stop, 469.377319780 seconds
+inclusive, peak RSS955416576B, one CPU worker, one OS thread, no native helper,
+no CUDA initialization, and zero GPU-hours. The original229-source closure,
+frozen calendar1028 endpoint, ALL13 snapshot bytes, and all registered human
+and scope gates remained unchanged.
+
+All four arms ran all three fixed orders on the complete10-video/54-physical-
+track/1268-observation/374-metadata-frame/1-empty-frame policy cohort. FullRaw
+and fullRaw+continuity matched exactly: births36/36/34, Known micro
+accuracy .0588235294/.0882352941/.1176470588, Known macro
+.2777777778/.2892720307/.3007662835, scored claim coverage1, and certified
+scored cross-video reuse0/10. Query exclusion alone had births370/340/371;
+adding routing-only continuity had births36/36/36, while routing-only decisions
+covered10/9/10 physical tracks and2/1/2 declared-pseudo tracks. Both exclusion
+arms had Known micro .2058823529, Known macro .3352490421, pseudo Known
+absorption1/10, claim coverage .7/.8/.7, and certified scored reuse0/10.
+
+FullRaw first scored-Existing latency was1.7/1.9/1.7 observed updates with
+10/10 events; exclusion arms were2.125/2.25/2.125 with8/10 events and two
+censored tracks retained. Thus the arm reduces births in this policy-domain
+window but does not establish persistent category discovery, calibrated
+coverage, Novel-generalizable R, M innovation, or an end-to-end Goal result.
+
+Result182510B SHA256`d0cb0b327bd24a9b9137ede1f31b4e8f60bd773f3245c465b5da338f8d2f6d95`;
+launch`ff5dfd314aab0dd2836f2f7dc79e147f727bc65d9be99bfbe89dd87a796b83bb`;
+normal terminal`904749a88121040120a8df8b0ace125c40ba6fb99e82423ded46686934a39957`.
+The public verifier and18-case receipt regression passed without private
+GT/weights/prediction-row access; the bounded CVPR/v2 suite also passed1276
+tests in74.39s. Calendar1029 and ONE_fullpolicy remain required; no
+head/arm/threshold selection, automatic training, or scientific Goal completion
+is claimed.

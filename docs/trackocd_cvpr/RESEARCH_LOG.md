@@ -7252,3 +7252,39 @@ no private GT/cache/weights opened for this check):
   normal complete policy triplets reverified after docs. Eight public files only:
   second actual triplet/public qualifier+tests/docs/status; original182451B result
   unchanged, no private GT/models/prediction/origin rows/progress/stdout exported.
+
+### Actual third complete continuity/reuse policy pilot: calendar1028 (3/5heads)
+
+- The first registered attempt reached the live remote-registration gate and
+  failed before spawning any worker; its failure log and launch receipt remain
+  preserved. One reserved pre-data transport recovery then ran the same
+  registered supervisor driver after live registration recovered. No prior
+  worker, result namespace, or normal terminal was reused, and no third
+  recovery was started.
+- Normal exit0/guardNONE/469.377319780s inclusive/955416576B peak/oneCPU/
+  oneOSthread/no native helper/noCUDA/zero GPUhours. The frozen calendar1028
+  endpoint, all13 snapshot fingerprints, original229 source closure, four
+  arms, all3 orders, original baseline parity, full ID/Known-binding/future
+  and external-label probes completed. No optimizer, GT/history repair,
+  dev/final/Val/Test/pixel/new-semantic read, or model selection occurred.
+- FullRaw and fullRaw+continuity remained identical: births36/36/34 for
+  orders1027/1028/1029, Known micro accuracy
+  .0588235294/.0882352941/.1176470588, Known macro
+  .2777777778/.2892720307/.3007662835, scored claim coverage1, and certified
+  scored cross-video reuse0/10. Query exclusion alone produced births370/340/371;
+  exclusion+continuity produced births36/36/36 with routing-only continuation
+  on10/9/10 physical tracks and2/1/2 declared-pseudo tracks. Both exclusion
+  arms retained Known micro .2058823529, Known macro .3352490421, pseudo
+  absorption1/10, coverage .7/.8/.7, and certified scored reuse0/10.
+- FullRaw first scored-Existing latency was1.7/1.9/1.7 observed updates
+  (10/10 events); both exclusion arms were2.125/2.25/2.125 (8/10 events,
+  two censored tracks retained). These are scoped policy-domain observations,
+  not unseen-development, Novel-R, M innovation, or Goal evidence.
+- Result182510B SHA256`d0cb0b327bd24a9b9137ede1f31b4e8f60bd773f3245c465b5da338f8d2f6d95`;
+  launch`ff5dfd314aab0dd2836f2f7dc79e147f727bc65d9be99bfbe89dd87a796b83bb`;
+  normal terminal`904749a88121040120a8df8b0ace125c40ba6fb99e82423ded46686934a39957`.
+  Public verifier and the18-case receipt regression pass without private
+  GT/weights/prediction rows; the bounded CVPR/v2 suite also passes1276 tests
+  in74.39s. Two fixed heads remain; no head/arm/threshold selection or
+  automatic training. Publish/fetch/tripleSHA before separately running
+  calendar1029; the full CVPR Goal remains active and unachieved.

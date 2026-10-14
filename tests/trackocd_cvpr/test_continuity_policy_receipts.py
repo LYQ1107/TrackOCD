@@ -15,7 +15,7 @@ def no_private_stat(monkeypatch):
     monkeypatch.setattr(Path,'stat',guard)
 
 
-@pytest.mark.parametrize('model',['initial_Raw','calendar1027'])
+@pytest.mark.parametrize('model',['initial_Raw','calendar1027','calendar1028'])
 def test_actual_complete_policy_trial_retains_all4arms_probes_origins_and_full_denominators(monkeypatch,model):
     no_private_stat(monkeypatch);r=receipts.verified_trial(ROOT,model)
     assert r['all4arms_each_full3orders_original_baseline_and_full_probes_verified']
@@ -54,7 +54,7 @@ def test_partial_changed_or_falsely_certified_policy_receipts_refuse_before_priv
 
 def test_missing_other_fixed_model_never_substitutes_first_trial_or_opens_private_data(monkeypatch):
     no_private_stat(monkeypatch)
-    with pytest.raises(ValueError,match='Complete original'):receipts.verified_trial(ROOT,'calendar1028')
+    with pytest.raises(ValueError,match='Complete original'):receipts.verified_trial(ROOT,'calendar1029')
 
 
 def test_macro_comparison_only_one_binary64_rounding_unit_not_broad_tolerance():
