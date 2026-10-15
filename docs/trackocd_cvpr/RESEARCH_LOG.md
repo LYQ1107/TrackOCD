@@ -7830,3 +7830,14 @@ no private GT/cache/weights opened for this check):
   `/data2/usr_for_deadline/trackocd_v2` physical stream/checkpoint/cache was
   not found locally. The files therefore remain provenance evidence only and
   are not copied into the formal v2 namespace or used to claim OCD/MOT.
+
+## Minimum asset-recovery ledger (2026-10-16)
+
+- The staged recovery inventory is now recorded in
+  `docs/trackocd_v2/ASSET_RECOVERY_LEDGER_20261016.md`. It separates the
+  present reusable environment/data, missing exact v2 protocol/stream/cache
+  inputs, historical frontend evidence, model/checkpoint candidates, and
+  recomputable caches with explicit no-copy rules.
+- Current storage is approximately `/data3` 1.7T free, `/data2` 1.8T free,
+  and `/data1` 3.3T free. The existing TAO-Amodal tree is about 358G and is
+  not duplicated. No large recovery copy or formal cache launch was made.
