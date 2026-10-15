@@ -1,0 +1,62 @@
+{
+  "schema_version": "trackocd.v2.covtrack_val_full_run.v1",
+  "generated_utc": "2026-10-15T22:30:00Z",
+  "scope": "TAO Validation frontend inference and metric readiness; no TAO Test, training, or model selection",
+  "current_a100_run": {
+    "status": "FRONTEND_INFERENCE_COMPLETE_METRICS_PENDING_VAL_GT_INDEX",
+    "split": "val",
+    "videos": 988,
+    "observations_per_route": 1133872,
+    "invalid_boxes_per_route": 0,
+    "routes": {
+      "covtrack_native": {
+        "physical_tracks": 369749,
+        "native_output_sha256": "e94938c1131b8050a31db58915c9c6e68bbb149ab5b9db99f995e75837689343"
+      },
+      "covtrack_nosem": {
+        "physical_tracks": 375396,
+        "native_output_sha256": "71db73d446587f832e9720c2b1ed83754edba947c88ea6dcc3b07c4520430ccd"
+      }
+    },
+    "checkpoint_sha256": "e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c",
+    "val_annotation_sha256": "606a9dc61fba0f42e2d1acb70f53e4b4c9a9f44eb8233ef1ef47d0d7a3e3b272",
+    "semantic_labels_consumed_by_normalizer": false,
+    "test_semantic_accessed": false
+  },
+  "current_metric_attempt": {
+    "status": "NOT_SCORED",
+    "reason": "missing evaluator-only private_tao_val_gt_track_labels.jsonl",
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/private_tao_val_gt_track_labels.jsonl",
+    "formal_v2_result_created": false
+  },
+  "historical_metrics_not_recomputed_here": {
+    "covtrack_native_tao_val_category_free": {
+      "HOTA": 0.15412,
+      "AssA": 0.44569,
+      "DetA": 0.055848,
+      "DetRe": 0.54448,
+      "LocA": 0.76654,
+      "OWTA": 0.48228,
+      "novel_observability": "191/819=0.233211",
+      "persistent_observability": "88/527=0.166983"
+    },
+    "covtrack_native_teta_reference": {
+      "combined": 32.008,
+      "known": 37.42973076923077,
+      "novel": 29.797567464114827,
+      "role": "reference_only_not_trackocd_ocd"
+    },
+    "ocd_diagnostic": {
+      "commit_ct": "3/76=0.039474",
+      "prefix16_a1_h_score": 0.089303,
+      "prefix16_a2_h_score": 0.071512,
+      "role": "diagnostic_only_scientific_negative"
+    }
+  },
+  "formal_status": {
+    "formal_pred_result": null,
+    "formal_final_result": null,
+    "scientific_success_claimed": false,
+    "tao_test_accessed": false
+  }
+}
