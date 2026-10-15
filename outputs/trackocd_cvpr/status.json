@@ -557,8 +557,17 @@
   "latest_local_masa_migration_training": false,
   "latest_asset_recovery_ledger": "docs/trackocd_v2/ASSET_RECOVERY_LEDGER_20261016.md",
   "latest_asset_recovery_storage_snapshot": "2026-10-16: /data3 1.7T free, /data2 1.8T free, /data1 3.3T free; no large recovery copy or formal cache launch",
+  "latest_train_dense_frontend_smoke_status": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE",
+  "latest_train_dense_frontend_smoke_receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json",
+  "latest_train_dense_frontend_smoke_scope": "Fixed Train video IDs 0,1; 2342 dense frames; 81471 observations; 8233 tracks; invalid boxes 0; category-free train_predicted stream; no metrics/selection/Val/Test/training",
+  "latest_joint_causal_protocol": "configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json",
+  "latest_joint_causal_protocol_sha256": "1eda36609153bdb49f53464c674f88d0857754a2b5abd205992172a80a6b62e4",
+  "latest_joint_causal_protocol_audit": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
+  "latest_joint_causal_protocol_audit_sha256": "02626434598d80891cb189a1a0f325b193b0d4ec9307c1869c59a6836b85e92d",
+  "latest_joint_causal_protocol_status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
+  "latest_full_predicted_dense_cache_status": "NOT_STARTED_REGISTERED_ONLY_FIXED_FOUR_SHARDS",
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "The bounded joint R/C/M + prediction-owned-memory repair2 pilot is complete and publicly receipted; the new ALL11 source-compatibility shadow also completed exact current-source deployment trace parity, but it is not current-source training provenance or M qualification. Do not select from either pilot. Next freeze the complete joint causal protocol, add separately trained/self-correcting M controls and lawful strong Pred/dense frontend inputs, then run formal policy/development only after fair current-source endpoints/provenance are registered. Original Goal A/B/C remain unachieved. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "Joint causal Pred+dense protocol boundaries are frozen and the two-video strong-frontend smoke is complete, but full 407-video predicted dense cache, separately trained/self-correcting M controls, formal policy/development, lawful matching, and Goal A/B/C remain open. Next execute only the four fixed registered dense shards after resource recheck; then audit provenance before any formal fit. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }

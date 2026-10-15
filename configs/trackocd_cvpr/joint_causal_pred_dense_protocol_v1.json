@@ -1,0 +1,83 @@
+{
+  "schema_version": "trackocd.cvpr.joint-causal-pred-dense-protocol.v1",
+  "status": "FROZEN_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
+  "protocol_id": "joint_causal_pred_dense_v1",
+  "freeze_scope": "Freeze data roles, causal chronology, frontend boundary, controls, metrics, resource limits, and acceptance gates before any full predicted dense cache or formal fit.",
+  "source_code_commit_for_registration": "c646dd43e36b91aa238ad52e7bfb3b09cfbbd747",
+  "data_protocol": {
+    "frozen_global": "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json",
+    "frozen_global_sha256": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+    "video_scope": 407,
+    "roles": {
+      "fit_known": {"videos": 257, "tracks": 1401, "training_label_role": true},
+      "policy_train_pseudo": {"videos": 10, "tracks": 54, "training_label_role": true},
+      "development_pseudo": {"videos": 72, "tracks": 472, "training_label_role": false},
+      "independent_final_pseudo": {"videos": 68, "tracks": 295, "training_label_role": false}
+    },
+    "allowed_training_labels": ["fit_known", "policy_train_pseudo"],
+    "unlabeled_objects": "masked; never background or inferred Novel labels",
+    "independent_final": "evaluation only; never model selection",
+    "forbidden": ["TAO Test", "old heldout 51", "DEV+", "Q1", "public-new", "sealed labels", "Novel vocabulary", "Val labels for model selection"]
+  },
+  "frontend": {
+    "route": "COVTrack-native",
+    "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+    "checkpoint_sha256": "e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c",
+    "prompt": "checkpoints/covtrack/detpro_prompt.pt",
+    "public_vocabulary_role": "frozen COVTrack parser/checkpoint input only; not TAO labels or selection vocabulary",
+    "model_facing_stream": "anonymous predicted boxes/features only; no GT join, category, text, or semantic field",
+    "trackocd_source_split": "train_predicted",
+    "strong_frontend_qualification": "pending full fixed-407 dense coverage and lawful matching audit",
+    "completed_smoke_receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json",
+    "completed_smoke_receipt_sha256": "dcbfbc866aa737575feb2d1d6725f032f90267c652b3e9f22b92debacff339a5",
+    "smoke_scope": "fixed video IDs 0,1; 2342 frames; 81471 observations; 8233 tracks; zero invalid boxes; no formal metrics"
+  },
+  "predicted_dense_cache": {
+    "status": "NOT_STARTED_REGISTERED_ONLY",
+    "selection": "all 407 approved Train video IDs, fixed before execution; no outcome pruning",
+    "raw_jpeg_count_expected": 432011,
+    "atomic_unit": "video",
+    "shards": [
+      {"shard": 0, "video_id_min": 0, "video_id_max": 101, "video_count": 102},
+      {"shard": 1, "video_id_min": 102, "video_id_max": 203, "video_count": 102},
+      {"shard": 2, "video_id_min": 204, "video_id_max": 305, "video_count": 102},
+      {"shard": 3, "video_id_min": 306, "video_id_max": 406, "video_count": 101}
+    ],
+    "outputs": "local-only native rows plus category-free train_predicted physical stream; only compact receipts may enter Git",
+    "full_cache_automatic_start": false,
+    "no_duplicate_completed_video_extraction": true
+  },
+  "causal_evaluation": {
+    "chronology": "strict source frame order; current-frame candidate bank is frozen before callbacks; no future frames or full-track length",
+    "orders": [1027, 1028, 1029],
+    "invariance_probes": ["ID rename/reverse", "future-suffix mutation", "empty-frame retention", "coverage strata", "singleton/short-track strata"],
+    "mechanism_families": ["R raw-preserving temporal representation", "C candidate-aware decision", "M versioned contradiction-aware self-correcting memory"],
+    "controls": ["Raw", "matched timeless/static", "CE-only", "Raw-teacher", "candidate-aware", "self-correcting memory"],
+    "seeds": [1027, 1028, 1029],
+    "checkpoint_selection": "fixed registered endpoints only; no dev/final/Val label selection",
+    "formal_pred_gate": "qualified dense predicted frontend, geometry-only evaluator join, and all source/provenance receipts must pass first",
+    "formal_final_gate": "independent_final only after protocol lock; no model selection"
+  },
+  "metrics": {
+    "frontend_mot": ["HOTA", "DetA", "AssA", "LocA", "IDF1", "MOTA", "IDSW", "Frag"],
+    "online_ocd": ["Commit-CT", "H-score", "Known/NEW/WAIT outcome partition", "purity and contamination diagnostics"],
+    "representation": ["R1/R5 macro/micro", "effective rank", "Raw cosine drift", "Known stability"],
+    "status": "No new formal OCD/MOT score is claimed by this freeze or the two-video smoke"
+  },
+  "resources_and_safety": {
+    "training_gpu_hours_ceiling": 600,
+    "concurrent_gpu_ceiling": 4,
+    "ram_reserve_fraction": 0.25,
+    "no_external_process_interference": true,
+    "no_raw_gt_data_weights_or_large_cache_upload": true,
+    "small_pilot_before_full_cache": true,
+    "full_training_automatic_start": false
+  },
+  "acceptance": {
+    "goal_a_b_c": "pending",
+    "single_scientific_fail_does_not_end_goal": true,
+    "minimum_distinct_mechanism_families": 3,
+    "must_report_all_seeds_orders_coverage": true,
+    "partial_stage_is_not_completion": true
+  }
+}

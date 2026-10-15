@@ -8044,3 +8044,9 @@ no private GT/cache/weights opened for this check):
 - The corrected runner reached the frozen COVTrack model but stopped at frame `0` because the recovered public tracker assumes a `val` substring in the filename. This was an input-path compatibility failure, not a metric or scientific result; no output was accepted. The minimal repair is a runtime-only `val_frame_alias` symlink whose target remains the Train frame root; no data is copied and no TAO Val files are referenced.
 
 - The fixed alias smoke completed in the new namespace `covtrack_train_dense_smoke_v1_20261016_alias1` on one A100. It processed the two fixed Train videos and all `2,342` dense JPEG frames, producing `81,471` native observations / `8,233` physical tracks with `0` invalid boxes. The normalized `train_predicted` stream has no category, text, or GT fields and passed the streaming contract audit. This is frontend/input evidence only: no training, OCD/MOT metric, model selection, Val/Test access, or frontend qualification was performed. Compact receipt: `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json`; raw native/cache files remain local.
+
+## Joint causal Pred+dense protocol freeze (2026-10-16)
+
+- Froze `configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json` before any full predicted cache or formal fit. It binds the 407 Train roles, R/C/M mechanism families, three seeds, fixed causal orders/probes, predicted-only frontend boundary, resource limits, and fail-closed acceptance gates.
+- Registered four fixed dense video shards covering exactly IDs `0..406`: `0–101`, `102–203`, `204–305`, `306–406`. The full cache remains `NOT_STARTED_REGISTERED_ONLY`; no automatic launch is implied. The protocol audit is `scripts/trackocd_cvpr/audit_joint_causal_pred_dense_protocol.py`.
+- The freeze is not a scientific result: formal OCD/MOT, strong frontend qualification, full Pred cache, separately trained/self-correcting M, and Goal A/B/C remain open.

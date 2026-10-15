@@ -1,0 +1,52 @@
+{
+  "boundaries": {
+    "formal_metrics_created": false,
+    "full_predicted_cache_started": false,
+    "model_selection_performed": false,
+    "novel_vocabulary_used": false,
+    "private_gt_arrays_read_by_audit": false,
+    "tao_val_or_test_labels_used": false,
+    "training_started": false
+  },
+  "fixed_dense_shards": [
+    {
+      "shard": 0,
+      "video_count": 102,
+      "video_id_max": 101,
+      "video_id_min": 0
+    },
+    {
+      "shard": 1,
+      "video_count": 102,
+      "video_id_max": 203,
+      "video_id_min": 102
+    },
+    {
+      "shard": 2,
+      "video_count": 102,
+      "video_id_max": 305,
+      "video_id_min": 204
+    },
+    {
+      "shard": 3,
+      "video_count": 101,
+      "video_id_max": 406,
+      "video_id_min": 306
+    }
+  ],
+  "generated_utc": "2026-10-15T22:43:22.484132+00:00",
+  "interpretation": "Protocol boundary audit only; Goal A/B/C, full predicted cache, formal OCD/MOT, and frontend qualification remain open.",
+  "protocol": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json",
+  "protocol_sha256": "1eda36609153bdb49f53464c674f88d0857754a2b5abd205992172a80a6b62e4",
+  "repository_head_at_audit": "c646dd43e36b91aa238ad52e7bfb3b09cfbbd747",
+  "schema_version": "trackocd.cvpr.joint-causal-pred-dense-protocol-audit.v1",
+  "smoke_counts": {
+    "invalid_boxes": 0,
+    "observations": 81471,
+    "tracks": 8233,
+    "videos": 2
+  },
+  "smoke_receipt": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json",
+  "smoke_receipt_sha256": "dcbfbc866aa737575feb2d1d6725f032f90267c652b3e9f22b92debacff339a5",
+  "status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING"
+}
