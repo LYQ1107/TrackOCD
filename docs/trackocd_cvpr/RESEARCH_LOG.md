@@ -7589,6 +7589,12 @@ no private GT/cache/weights opened for this check):
 - The supervisor terminal is normal: worker exit `0`, guard stop `null`, complete result present, successful execution `true`, wall `6656.9260942969995` seconds including imports/network, and peak sampled worker RSS `958996480` bytes. The private persistent launch receipt, stdout log, prediction histories, and checkpoints remain local and were not uploaded.
 - Public hashes are launch `8dd144369622bead5b47a2d37f3da2a240f9fa7dec1df9479cf2fcd36356d88c`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `0d180f7f58811ea8346e9f3ec301d38ab00d9a8bddeb6fc054e850d93b684183`, and terminal `eb90c99a1593b9146b8ff48815ecbcd6c259a7adcee96dd1ec7508e9d4d428e6`. The live source proof remains bound to preregistration commit `249097ba2da276362e4b8511a75c0b415b724296`.
 
+## Relative-weighted seed-1029 recovery2 launched (2026-10-15)
+
+- After the normal `relative_weighted/s1028` completion, the next registered matrix case `relative_weighted/s1029` was launched in the fresh namespace `M_GT_causal_dev_current_source_wall_recovery2_relative_weighted_s1029`.
+- The launch passed the exact live source gate at remote commit `7c9258a7919a304ea4dc53f6e8e26917d4c2290a`, uses the same 12000-second one-CPU-worker/zero-optimizer causal development protocol, and does not reuse any prior private history or checkpoint. Persistent launch receipt SHA256 is `0c0bd901b03402ad339753292f964d2a8af724ce50d3211ec4a770d30ddd36a6`; it remains local-only. Public launch SHA256 is `31d3def3cfdcf9899f2a9a0bf51a51bd74cf853c9b4805347af6d03617ff8858`.
+- This case remains outside model selection, Pred/final evaluation, Goal acceptance, and Val/Test/new-nonKnown semantic reads. Only the newly owned supervisor/worker is monitored or managed; external processes remain untouched.
+
 ## Relative-weighted seed-1027 recovery2 completed (2026-10-15)
 
 - The fresh `relative_weighted/s1027` namespace completed normally. All three causal orders `1027/1028/1029` reached `physical_tracks=472`; the ID rename/reverse stream matched the measured stream, and the future-suffix mutation changed `39` observations while preserving all earlier events, chosen versions, and the numeric ledger.
