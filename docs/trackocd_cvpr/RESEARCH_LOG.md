@@ -7730,3 +7730,41 @@ no private GT/cache/weights opened for this check):
   Goal A/B/C acceptance. Full independent-final cache construction remains
   unlaunched pending the next registered decision; the formal predicted
   frontend assets are still the gating dependency.
+
+## Independent pseudo-Novel full Train cache completed (2026-10-16)
+
+- After the normal v2 pilot receipt, the full independent-final pseudo-Novel
+  cache was separately registered in the new namespace
+  `outputs/trackocd_cvpr/cvpr2/independent_final_GT_video_cache_v1` and pushed
+  at commit `dbd7dc0f7b40e36229765a4b7d17ea460dace8f5`; local, origin, and
+  `FETCH_HEAD` were equal before launch. This was an explicit bounded cache
+  action, not an automatic 407-video launch.
+- The worker completed all `68` authorized Train videos with `295` physical
+  tracks, `7103` uncapped observations, and `2517` metadata frames. It decoded
+  `2433` images that had selected trajectory observations; empty clock frames
+  remained in the shard denominators. An independent reopen pass verified all
+  `68/68` shards, `7103/7103` visible prefixes, and exact payload/manifest/done
+  completion checks.
+- The normal supervisor receipt reports worker exit `0`, guard stop `null`,
+  successful execution `true`, wall `300.3105246990017` seconds excluding
+  network in the worker, peak sampled worker RSS `1341419520` bytes, and
+  `training_GPU_hours=0`. The worker used one fresh idle A100, with peak
+  reserved GPU memory `763363328` bytes and measured cache GPU time
+  `0.07925587662805507` hours. Storage remained at about `1.7T` free after
+  completion; all GPUs returned to `14 MiB/0%` idle.
+- The frozen DINO encoder and all precision gates matched the prior pilot:
+  parameter digest unchanged, GPU repeat max error `3.65e-7`, CPU/GPU first
+  crop max error `6.33e-7`, and float16-reader max error `3.01e-5`. No semantic
+  category/role values entered numeric forward, no semantic GT values were
+  decoded, no optimizer step or training started, and no Val/Test pixels were
+  read.
+- The public result hash is
+  `37f0111776b17349d9b1c2aa15c83c58a24d4fbeb916b748618d19120aea94c8`;
+  launch and normal supervisor hashes are
+  `eaa8f0999e309f33c224c0d5ed681f587309220fc5aa669cf843a476d7cbfe81` and
+  `ff8599c716fa88fc3321a4f8410f0c0fab73aeca6714e8f50473b759b46bdb07`.
+  This is a complete anonymous GT-control feature cache for the independent
+  Train role, not a predicted physical stream, not an OCD/MOT metric, not
+  model selection, and not Goal A/B/C acceptance. The next scientific gate is
+  still legal predicted-frontend admission and causal prediction/final
+  evaluation; the missing NAS v2 assets remain unresolved.
