@@ -22,6 +22,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PLAN = ROOT / "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json"
 DEFAULT_FRAME_ROOT = Path("/data3/liuyeqiang/TAO-Amodal/frames")
+DEFAULT_FRAME_ALIAS = ROOT / "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/val_frame_alias"
 DEFAULT_CLASSES = ROOT / "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt"
 DEFAULT_ANNOTATION = ROOT / "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json"
 DEFAULT_AUDIT = ROOT / "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/input_audit.json"
@@ -60,7 +61,7 @@ def _load_classes(path: Path) -> list[str]:
     return names
 
 
-def build(*, plan_path: Path, frame_root: Path, classes_path: Path, annotation_path: Path, audit_path: Path) -> dict[str, Any]:
+def build(*, plan_path: Path, frame_root: Path, frame_alias: Path, classes_path: Path, annotation_path: Path, audit_path: Path) -> dict[str, Any]:
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     if plan.get("not_model_facing") is not True:
         raise ValueError("the selected image plan is not marked not_model_facing")
@@ -77,6 +78,14 @@ def build(*, plan_path: Path, frame_root: Path, classes_path: Path, annotation_p
         raise ValueError(f"expected the approved 407-video plan, found {len(by_video)} videos")
     class_names = _load_classes(classes_path)
     categories = [{"id": index + 1, "name": name} for index, name in enumerate(class_names)]
+    frame_alias.parent.mkdir(parents=True, exist_ok=True)
+    if frame_alias.is_symlink():
+        if frame_alias.resolve() != frame_root.resolve():
+            raise ValueError(f"existing frame alias points elsewhere: {frame_alias}")
+    elif frame_alias.exists():
+        raise FileExistsError(f"refusing to replace non-symlink frame alias: {frame_alias}")
+    else:
+        frame_alias.symlink_to(frame_root, target_is_directory=True)
 
     videos: list[dict[str, Any]] = []
     images: list[dict[str, Any]] = []
@@ -189,6 +198,8 @@ def build(*, plan_path: Path, frame_root: Path, classes_path: Path, annotation_p
             "image_plan": str(plan_path.resolve()),
             "image_plan_sha256": _sha256(plan_path),
             "frame_root": str(frame_root.resolve()),
+            "frame_alias": str(frame_alias),
+            "frame_alias_target": str(frame_alias.resolve()),
             "public_frontend_vocabulary": str(classes_path.resolve()),
             "public_frontend_vocabulary_sha256": _sha256(classes_path),
             "anonymous_annotation": str(annotation_path.resolve()),
@@ -211,6 +222,7 @@ def build(*, plan_path: Path, frame_root: Path, classes_path: Path, annotation_p
             "novel_vocabulary_read": False,
             "public_frontend_vocabulary_role": "COVTrack parser/checkpoint input only; not TAO GT or model-selection labels",
             "pixels_decoded_or_hashed": False,
+            "compatibility_alias_is_symlink_only": True,
             "model_executed": False,
             "training_started": False,
             "full_407_video_input_built": False,
@@ -225,6 +237,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--plan", type=Path, default=DEFAULT_PLAN)
     parser.add_argument("--frame-root", type=Path, default=DEFAULT_FRAME_ROOT)
+    parser.add_argument("--frame-alias", type=Path, default=DEFAULT_FRAME_ALIAS)
     parser.add_argument("--classes", type=Path, default=DEFAULT_CLASSES)
     parser.add_argument("--annotation", type=Path, default=DEFAULT_ANNOTATION)
     parser.add_argument("--audit", type=Path, default=DEFAULT_AUDIT)
@@ -232,6 +245,7 @@ def main() -> int:
     result = build(
         plan_path=args.plan.resolve(),
         frame_root=args.frame_root.resolve(),
+        frame_alias=args.frame_alias,
         classes_path=args.classes.resolve(),
         annotation_path=args.annotation.resolve(),
         audit_path=args.audit.resolve(),

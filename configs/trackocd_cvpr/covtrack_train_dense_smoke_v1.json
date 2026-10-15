@@ -9,6 +9,7 @@
   "selection_rule": "The two smallest numeric video IDs in the already approved 407-video image metadata plan, fixed before any model run; no outcome-based selection.",
   "image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
   "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "frame_alias": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/val_frame_alias",
   "anonymous_annotation_output": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json",
   "public_frontend_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
   "frontend": "COVTrack-native",
@@ -23,6 +24,7 @@
     "tao_val_accessed": false,
     "tao_test_accessed": false,
     "pixels_decoded_by_input_preparer": false,
+    "compatibility_alias_is_symlink_only": true,
     "external_process_interference": false,
     "max_gpu_count": 1,
     "ram_headroom_fraction": 0.25

@@ -1,5 +1,6 @@
 {
   "boundaries": {
+    "compatibility_alias_is_symlink_only": true,
     "full_407_video_input_built": false,
     "gt_or_semantic_arrays_read": false,
     "model_executed": false,
@@ -19,7 +20,7 @@
     "tracks": 0,
     "videos": 2
   },
-  "generated_utc": "2026-10-15T22:33:43.718539+00:00",
+  "generated_utc": "2026-10-15T22:37:19.097116+00:00",
   "interpretation": "Input construction prerequisite only; no OCD/MOT metric or frontend qualification is claimed.",
   "per_video": {
     "0": {
@@ -57,6 +58,8 @@
   "sources": {
     "anonymous_annotation": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json",
     "anonymous_annotation_sha256": "4e7a2020f8495d9095051f23d1735fbe593ae0d81ee39a7c39982a932fb75222",
+    "frame_alias": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/val_frame_alias",
+    "frame_alias_target": "/data3/liuyeqiang/TAO-Amodal/frames",
     "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
     "image_plan": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
     "image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",

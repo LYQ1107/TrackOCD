@@ -42,6 +42,7 @@ TRAIN_ANNOTATION = OUTPUT_TARGET / "frontend_inputs/covtrack_train_dense_smoke_v
 CVPR_SMOKE_OUTPUT = ROOT / "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1"
 TRAIN_AUDIT = CVPR_SMOKE_OUTPUT / "input_audit.json"
 TRAIN_FRAME_ROOT = Path("/data3/liuyeqiang/TAO-Amodal/frames")
+TRAIN_FRAME_ALIAS = OUTPUT_TARGET / "frontend_inputs/covtrack_train_dense_smoke_v1/val_frame_alias"
 TRAIN_CLASSES = OUTPUT_TARGET / "frontend_inputs/covtrack_val/lvis_classes_v1.txt"
 FRONTEND_SLUG = "covtrack_native"
 FRONTEND_NAME = FRONTENDS[FRONTEND_SLUG]["name"]
@@ -83,9 +84,11 @@ def _environment() -> dict[str, str]:
 
 def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
     input_audit = _check_registration()
-    for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT, TRAIN_ANNOTATION, TRAIN_AUDIT, TRAIN_FRAME_ROOT, TRAIN_CLASSES):
+    for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT, TRAIN_ANNOTATION, TRAIN_AUDIT, TRAIN_FRAME_ROOT, TRAIN_FRAME_ALIAS, TRAIN_CLASSES):
         if not path.exists():
             raise FileNotFoundError(path)
+    if not TRAIN_FRAME_ALIAS.is_symlink() or TRAIN_FRAME_ALIAS.resolve() != TRAIN_FRAME_ROOT.resolve():
+        raise ValueError("Train frame compatibility alias is not the registered symlink to the Train frame root")
     _require_resource_gate(gpu_index)
 
     run_root = OUTPUT_TARGET / "frontend_native" / FRONTEND_SLUG / run_id
@@ -104,7 +107,7 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
 
     cfg_options = [
         "data.test.ann_file=" + str(TRAIN_ANNOTATION.resolve()),
-        "data.test.img_prefix=" + str(TRAIN_FRAME_ROOT.resolve()) + os.sep,
+        "data.test.img_prefix=" + str(TRAIN_FRAME_ALIAS) + os.sep,
         "data.test.classes=" + str(TRAIN_CLASSES.resolve()),
         "model.tracker.confused_features=true",
         "model.roi_head.prompt_path=" + str(PROMPT.resolve()),
@@ -198,6 +201,8 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
             "annotation": str(TRAIN_ANNOTATION.resolve()),
             "annotation_sha256": _sha256(TRAIN_ANNOTATION),
             "frame_root": str(TRAIN_FRAME_ROOT.resolve()),
+            "frame_alias": str(TRAIN_FRAME_ALIAS),
+            "frame_alias_target": str(TRAIN_FRAME_ALIAS.resolve()),
             "classes": str(TRAIN_CLASSES.resolve()),
             "classes_sha256": _sha256(TRAIN_CLASSES),
             "checkpoint": str(CHECKPOINT.resolve()),
