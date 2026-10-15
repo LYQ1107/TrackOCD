@@ -7876,3 +7876,16 @@ no private GT/cache/weights opened for this check):
   recheck.
 - This audit remains metadata evidence only: no current NAS file was opened in
   this turn, no Test content was read, and no shard was copied or resumed.
+
+## DINOv2 common encoder locally recovered and hash-verified (2026-10-16)
+
+- A bounded exact-name search found the common encoder checkpoint at
+  `checkpoints/dinov2_vitb14_pretrain.pth`: `346378731` bytes and SHA256
+  `0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73`, exactly
+  matching the historical NAS audit. The pinned local vendor source
+  `vendor/trackocd_core/dinov2_7764ea0` is at commit
+  `7764ea0f912e53c92e82eb78a2a1631e92725fc8` and contains `156` Python files.
+- This removes the DINO weight/source from the immediate transfer list and
+  prevents duplicate storage. It does not recover the COVTrack frontend
+  checkpoint, public physical stream, or formal shards, so no cache or
+  inference was started from this discovery.

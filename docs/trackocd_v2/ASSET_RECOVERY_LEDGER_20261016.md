@@ -33,7 +33,7 @@ benchmark result. No TAO Test asset is included.
 | COVTrack-native audit | `outputs/trackocd_core/audit/nas_m1_source/` (five small JSON files, about 250KB total) | preserved historical Val evidence; explicitly `HISTORICAL_ASSET_AUDIT_ONLY` and `same_v2_predicted_stream=false`; retain in place |
 | native checkpoint | historical receipt records a hash beginning `e4d0b657...` | actual checkpoint path/file is absent locally; recover only after exact manifest match |
 | old formal shards | later historical NAS audit records `255/723` shards, `130560/369794` tracks, `561672/1133841` observations, 35.3061% coverage and 2,087,621,953 payload bytes | incomplete historical snapshot; the earlier 65-shard count is obsolete evidence, but neither snapshot is current until NAS recheck |
-| DINOv2 source/weights | historical NAS audit records official ViT-B/14 checkpoint size 346,378,731 and SHA256 `0b8b82f85de9...` | no local copy/exact hub code; recover exact source/checkpoint and hash, otherwise recompute only after formal admission |
+| DINOv2 source/weights | local checkpoint `checkpoints/dinov2_vitb14_pretrain.pth` is 346,378,731 bytes with SHA256 `0b8b82f85de9...`; vendor source `vendor/trackocd_core/dinov2_7764ea0` is commit `7764ea0...` with 156 Python files | present and hash-verified; do not copy/download again; this does not replace the missing COVTrack frontend checkpoint |
 | PHE/H3 artifacts | expected PHE checkpoint and Phase90 H3 namespace absent | recover exact files; never replace H3 with a Phase89/90 diagnostic |
 | independent pseudo-Novel Train cache | `outputs/trackocd_cvpr/cvpr2/independent_GT_video_cache_v1` result, 68 videos/295 tracks/7,103 observations | present as anonymous GT-control preparation only; not predicted stream, not formal OCD/MOT, not a model-selection input |
 
@@ -66,3 +66,8 @@ and verifying future recovery, but its limitations explicitly include no
 per-file checksum/Parquet-row/numerical validation, no proof that NAS source
 equals the current Git commit, and no A100 restoration. The current server
 must re-open the actual files before any shard reuse.
+
+The DINO common encoder is a separate positive recovery result: its local
+checkpoint and pinned vendor source match the historical hashes. It is safe to
+reuse for a future registered cache smoke, but it does not make the missing
+COVTrack-native frontend or predicted physical stream available.

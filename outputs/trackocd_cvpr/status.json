@@ -448,9 +448,14 @@
   "latest_v2_asset_admission_tests": "tests/trackocd_v2/test_recovery_asset_admission.py",
   "latest_v2_asset_admission_formal_ready": false,
   "latest_v2_asset_admission_scope": "Read-only current-server admission after explicit Train/Val-only symlink mapping: no network/process control/write during admission, no Test semantic access, no annotation/predicted-stream/feature-array content read; predicted physical stream, frontend provenance and formal Val cache remain missing",
-  "latest_v2_asset_admission_missing": [
+  "latest_v2_asset_admission_initial_missing_before_mapping": [
     "data/raw/tao/annotations/{train,validation}.json",
     "data/tao_ow_ocd_v1/splits/{known_ids,unknown_ids_val,distractor_ids}.json",
+    "data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+    "outputs/trackocd_v2/audit/{frontend_selection,representation_decision,autonomous_state,frontend_covtrack_native}.json",
+    "outputs/trackocd_v2/features/formal/<selected_frontend>/cache_manifest.json"
+  ],
+  "latest_v2_asset_admission_missing": [
     "data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
     "outputs/trackocd_v2/audit/{frontend_selection,representation_decision,autonomous_state,frontend_covtrack_native}.json",
     "outputs/trackocd_v2/features/formal/<selected_frontend>/cache_manifest.json"
@@ -479,6 +484,13 @@
   "latest_historical_nas_formal_cache_missing_shards": 468,
   "latest_historical_nas_formal_cache_payload_bytes": 2087621953,
   "latest_historical_nas_formal_cache_reuse_authorized": false,
+  "latest_local_dino_checkpoint": "checkpoints/dinov2_vitb14_pretrain.pth",
+  "latest_local_dino_checkpoint_bytes": 346378731,
+  "latest_local_dino_checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "latest_local_dino_source": "vendor/trackocd_core/dinov2_7764ea0",
+  "latest_local_dino_source_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "latest_local_dino_source_python_files": 156,
+  "latest_local_dino_asset_verified": true,
   "latest_v2_asset_admission_missing_after_mapping": [
     "data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
     "outputs/trackocd_v2/audit/{frontend_selection,representation_decision,autonomous_state,frontend_covtrack_native}.json",
