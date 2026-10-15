@@ -73,6 +73,7 @@ def test_independent_final_pseudo_pilot_is_small_and_not_a_model_facing_scope():
     root = Path(__file__).resolve().parents[2]
     cfg = json.loads((root / 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v1.json').read_text())
     cfg_v2 = json.loads((root / 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v2.json').read_text())
+    full = json.loads((root / 'configs/trackocd_cvpr/independent_final_GT_video_cache_v1.json').read_text())
     assert cfg['role'] == 'independent_final_pseudo'
     assert cfg['independent_final_pseudo_cache_only']
     assert (cfg['pilot_videos'], cfg['expected_tracks'], cfg['expected_observations'],
@@ -83,6 +84,10 @@ def test_independent_final_pseudo_pilot_is_small_and_not_a_model_facing_scope():
     assert cfg['output_bytes_ceiling'] == 20 * 1024**2
     assert cfg_v2['output_directory'].endswith('independent_final_GT_video_cache_pilot_v2')
     assert cfg_v2['expected_observations'] == cfg['expected_observations']
+    assert (full['pilot_videos'], full['expected_tracks'], full['expected_observations'],
+            full['expected_metadata_frames']) == (68, 295, 7103, 2517)
+    assert full['output_bytes_ceiling'] == 100 * 1024**2
+    assert not full['full_cache_or_optimizer_automatic_start']
 
 
 def test_independent_pilot_projects_only_opaque_role_video_ids(tmp_path):

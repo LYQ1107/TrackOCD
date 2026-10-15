@@ -23,6 +23,7 @@ from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import digest, verified
 
 CONFIG = 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v1.json'
 CONFIG_V2 = 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v2.json'
+CONFIG_V3 = 'configs/trackocd_cvpr/independent_final_GT_video_cache_v1.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/independent_final_GT_video_cache.py',
            'src/trackocd_cvpr/GT_video_cache.py', 'scripts/trackocd_cvpr/audit_joint_known_protocol.py',
            'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py',
@@ -104,7 +105,7 @@ def worker(args, cfg, safety):
             or approval['new_nonKnown_semantic_GT_or_Novel_vocabulary_authorized'] is not False
             or cfg['role'] != 'independent_final_pseudo'
             or cfg.get('independent_final_pseudo_cache_only') is not True
-            or cfg['pilot_videos'] != 2
+            or cfg['pilot_videos'] not in (2, 68)
             or cfg['maximum_observations_per_track'] is not None
             or cfg['full_cache_or_optimizer_automatic_start'] is not False):
         raise ValueError('Exact independent-final-pseudo bounded cache pilot required')
@@ -284,7 +285,9 @@ def worker(args, cfg, safety):
             raise ValueError('Frozen model parameters changed')
         guard(); atomic_json(out / 'private_pixel_receipts.json', pixel_receipts)
         result = {
-            'status': 'VERIFIED_INDEPENDENT_FINAL_PSEUDO_GT_CONTROL_CACHE_PILOT_NOT_PRED_OR_TRAINED',
+            'status': ('VERIFIED_INDEPENDENT_FINAL_PSEUDO_GT_CONTROL_CACHE_FULL_NOT_PRED_OR_TRAINED'
+                       if len(tasks) == 68 else
+                       'VERIFIED_INDEPENDENT_FINAL_PSEUDO_GT_CONTROL_CACHE_PILOT_NOT_PRED_OR_TRAINED'),
             'live_remote_registration_proof': proof, 'shards': shards,
             'pilot_videos': len(tasks), 'tracks': sum(record['tracks'] for record in shards),
             'videos': len(tasks), 'observations': sum(record['observations'] for record in shards),
@@ -379,7 +382,7 @@ def main():
     global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
-    parser.add_argument('--config', choices=(CONFIG, CONFIG_V2), default=CONFIG)
+    parser.add_argument('--config', choices=(CONFIG, CONFIG_V2, CONFIG_V3), default=CONFIG)
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1,), default=1)
     args = parser.parse_args()
     SOURCES = (args.config, *SOURCES[1:])
