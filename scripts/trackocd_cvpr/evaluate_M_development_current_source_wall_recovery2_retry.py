@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fresh namespace retry after a pre-private-input remote transport failure."""
 from pathlib import Path
+import os
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -9,7 +10,9 @@ from scripts.trackocd_cvpr import evaluate_M_development_current_source as curre
 from scripts.trackocd_cvpr import evaluate_M_development_current_source_wall_recovery2 as recovery2
 
 SCRIPT = 'scripts/trackocd_cvpr/evaluate_M_development_current_source_wall_recovery2_retry.py'
-RETRY_SUFFIX = '_retry1'
+RETRY_SUFFIX = os.environ.get('TRACKOCD_M_RECOVERY_RETRY_SUFFIX', '_retry1')
+if RETRY_SUFFIX not in ('_retry1', '_retry2'):
+    raise ValueError('Only registered retry1/retry2 namespaces are allowed')
 
 
 def configuration(root, args):
