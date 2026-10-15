@@ -7545,3 +7545,8 @@ no private GT/cache/weights opened for this check):
 
 - After the normal `relative_quarantine/s1028` recovery2 result, the next fresh case is registered as `relative_quarantine/s1029` in namespace `M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1029`.
 - It uses the same 12000-second read-only current-source causal protocol, fresh namespace with no private history/checkpoint reuse, one CPU worker, zero optimizer steps, no automatic model/checkpoint selection, no Val/Test/new-nonKnown semantics, and no Pred/final/Goal acceptance. The prior s1027/s1028 public receipts remain immutable.
+
+## Relative-quarantine seed-1029 pre-private-input transport failure and retry1 (2026-10-15)
+
+- The first s1029 launch created only its private persistent-launch receipt and its supervisor terminal; the worker failed in `verify_registration` before the public `launch.json`, before private GT/weights/history access, and before creating the fresh result namespace. Terminal: exit `1`, `guard_stop_reason=null`, `complete_result_present=false`, peak RSS `80687104` bytes, wall `17.212654843984637` seconds. The failure was `Both bounded live remote-ref transports failed` during the intermittent post-reboot HTTPS path, not a scientific worker result.
+- The failed s1029 terminal is preserved at `outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1029_supervisor_attempt_1.json` and is never overwritten. A fresh `retry1` namespace is registered as `M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1029_retry1`; it uses the identical recovery2 protocol and only adds a retry-wrapper source plus a namespace suffix to prevent relaunching the failed attempt.
