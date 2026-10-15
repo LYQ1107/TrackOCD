@@ -7686,3 +7686,47 @@ no private GT/cache/weights opened for this check):
   scientific action after asset recovery is the legal frontend admission
   preflight, followed by frozen predicted-stream construction and formal OCD
   plus MOT evaluation. `Goal_A/B/C` remain `PENDING`.
+
+## Independent pseudo-Novel Train cache pilot and supervisor repair (2026-10-16)
+
+- A new source-isolated pilot was registered and pushed at commit
+  `b0a1edf60971a60a92c28c779ba73e9f2747a4a6`, then remotely fetched and verified.
+  It projected only the opaque video IDs of the frozen
+  `independent_final_pseudo` Train role and selected the first two in ascending
+  administrative order. The pilot was bounded to `2` videos, `8` physical
+  tracks, `223` uncapped observations, and `80` metadata frames. It did not
+  read semantic category values, Novel vocabulary, Val/Test data, or use the
+  role for training/model selection.
+- The first worker completed its payload with exit code `0`, but its new
+  supervisor misclassified a short `/proc` zombie/reap race as
+  `owned_memory_counter_unavailable`. This receipt is preserved as a failed
+  terminal and its output is not reused as a qualified execution; no file was
+  deleted or overwritten.
+- The supervisor terminal check was repaired in a new source namespace and
+  pushed at `1a4462573bc160a02a84a391e0dfbc3dbb33d593`; local, origin, and
+  `FETCH_HEAD` were equal before launch. The fresh v2 pilot completed normally:
+  `owned_worker_exit_code=0`, `guard_stop_reason=null`,
+  `successful_owned_execution=true`, wall `35.809139306998986` seconds, peak
+  sampled worker RSS `1319243776` bytes, and four worker threads. Only the new
+  owned worker was supervised; no external process was changed.
+- Both video-atomic shards reopened exactly and every visible prefix passed:
+  `151/151` prefixes for the first shard and `72/72` for the second, including
+  future-tail mutation checks. The shard payload hashes are preserved locally
+  as `cb25d737414134bff80dcaab84e0448b04b88e0398549a0806a18ae3929fdc72` and
+  `9460feb32b70fb7c0700978966d6b651110404ad24a391b769b8df0d8a82ad03`.
+  The two attempts produced identical payload hashes, so the repaired run did
+  not alter the feature content.
+- The frozen DINO source audit covered `156/157` Python tree entries (only the
+  declared sparse `setup.py` was absent), `15` imported modules, and an
+  unchanged parameter digest. GPU repeat and CPU/GPU first-crop max absolute
+  errors were `3.65e-7` and `6.33e-7`; float16-reader error was `3.01e-5`, all
+  within the registered gates. The chosen GPU was observed idle at `14 MiB`
+  and `0%` utilization before allocation; peak reserved GPU memory was
+  `763363328` bytes and measured cache GPU time was about `0.00462` hours.
+- The public result is explicitly
+  `VERIFIED_INDEPENDENT_FINAL_PSEUDO_GT_CONTROL_CACHE_PILOT_NOT_PRED_OR_TRAINED`.
+  It is a cache/lineage/causality preparation result, not an OCD or MOT score,
+  not a predicted physical stream, not formal Pred/final evaluation, and not
+  Goal A/B/C acceptance. Full independent-final cache construction remains
+  unlaunched pending the next registered decision; the formal predicted
+  frontend assets are still the gating dependency.
