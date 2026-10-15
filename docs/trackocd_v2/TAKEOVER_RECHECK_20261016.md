@@ -7,7 +7,7 @@ takeover snapshot and does not rewrite its older evidence.
 
 - Working tree: `/data3/liuyeqiang/TrackOCD`
 - Branch: `research/cvpr-trackocd-autonomous-v2`
-- HEAD at recheck: `6e91dc6` (`record pooled weighted s1029 M launch`)
+- HEAD at recheck: `aa16a7c` (`separate recovered historical MOT and OCD metrics`)
 - `source /data3/liuyeqiang/trackocd_a100_env.sh && PYTHONPATH=. python -m pytest -q tests/trackocd_v2`: **35 passed** in 3.72 seconds.
 - The current-source CVPR M endpoint is a separate CPU-only owned run; this
   recheck did not start, stop, or inspect its private inputs.
@@ -86,3 +86,21 @@ separately scoped and must not be relabeled as that missing formal result.
   `Old ACC=0.050816`, `New ACC=0.123423`, `H-score=0.071512`,
   `Commit-CT=0`. These are existing core development results with a
   scientific-negative conclusion, not formal v2 or TAO Test results.
+
+## Current NAS re-probe — 2026-10-16T03:59:24+08:00
+
+- The local proxy listeners `127.0.0.1:7890` and `127.0.0.1:17899` are
+  present, but direct TCP probes to `192.168.31.57` ports `22`, `445`,
+  `5000`, `5001`, and `8080` all timed out.
+- HTTP CONNECT through either local proxy returned `502`; SSH through either
+  proxy did not complete the SSH banner exchange. The `nas57` SSH alias still
+  resolves locally to the literal, unavailable hostname `nas57`, not to the
+  user-provided `192.168.31.57` configuration.
+- This was a bounded read-only probe using the local NAS read-only key. No
+  NAS file, SSH configuration, external process, or historical PID/session
+  was changed or reused. No formal v2 asset was copied or inferred.
+- The formal evaluator remains closed: the predicted physical stream,
+  selected frontend provenance, and complete predicted feature cache are
+  still absent. The next valid transition is to recover and hash those exact
+  assets, then run the registered v2 preflight; local PANDAS/Core/history
+  metrics remain separate evidence.

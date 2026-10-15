@@ -7666,3 +7666,23 @@ no private GT/cache/weights opened for this check):
 - The supervisor terminal is normal: worker exit `0`, guard `null`, complete result present, successful execution `true`, wall `6718.992862421001` seconds including imports/network, and peak sampled worker RSS `959184896` bytes. The private persistent launch receipt, stdout, prediction histories, and checkpoints remain local and were not uploaded.
 - Public hashes are launch `4c66a6af672ca1cb0b60179dffdd0c709041d6e74d180ea6ada53706a885e0a7`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `4ee65bfdae612d66474e809c042fba7b4f5361d212e600b20b0e60760fc06eb6`, and terminal `39ef30852327dd97b27584e983f95285c7b5a68d52ea1ff48658119edc23829`. The live source proof remains bound to preregistration commit `2587922d3db47ed7c9c23eab09b8c900b4d43a54`.
 - This completes the current-source M-development matrix endpoint, but does not produce formal OCD/MOT scores. The next permitted stage is the frozen prediction/final tracking evaluator; formal results remain open until that evaluator has a legal frozen protocol, provenance, and verified outputs.
+
+## Formal v2 admission recheck after M endpoint (2026-10-16)
+
+- The current-source M matrix is complete, but it produced no formal OCD/MOT
+  score: all nine recovery2 cases were CPU-only, zero-optimizer development
+  measurements with no Val/Test/new-nonKnown semantic reads, model selection,
+  Pred/final result, or Goal acceptance.
+- A fresh bounded NAS probe at `192.168.31.57` timed out on SSH, SMB, and the
+  observed NAS HTTP ports. Existing local proxies `7890` and `17899` returned
+  `502` for HTTP CONNECT and could not complete an SSH banner. The probe used
+  only the local read-only key and changed no file or external process.
+- The exact v2 predicted stream, selected frontend provenance/checkpoints,
+  and complete predicted feature cache remain absent on this host. The formal
+  frozen prediction/final evaluator therefore remains fail-closed; no
+  historical PANDAS/COVTrack/MASA metric is relabeled as a v2 result.
+- Local work remains active and resumable from the frozen Train control/cache
+  inputs and the registered R/C/M development evidence. The next permitted
+  scientific action after asset recovery is the legal frontend admission
+  preflight, followed by frozen predicted-stream construction and formal OCD
+  plus MOT evaluation. `Goal_A/B/C` remain `PENDING`.
