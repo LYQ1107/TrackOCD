@@ -7652,3 +7652,8 @@ no private GT/cache/weights opened for this check):
 - The final fresh current-source M-development matrix endpoint is registered as `pooled_weighted/s1029` in namespace `outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery2_pooled_weighted_s1029`.
 - It is bound to the verified remote source commit `0148ea3306623b02ed97f1abebff162c59a6fbc9` and the unchanged 12000-second, one-CPU-worker, zero-optimizer-step recovery2 protocol. It will not reuse private history/checkpoints, select a model, read Val/Test or new-nonKnown semantics, or accept Pred/final/Goal results.
 - This registration is not an OCD/MOT result. After this endpoint completes normally, the next stage is the frozen prediction/final tracking evaluator that will produce the formal OCD and MOT evidence.
+
+## Pooled-weighted seed-1029 recovery2 launched (2026-10-16)
+
+- The fresh `pooled_weighted/s1029` supervisor/worker was launched after the live remote branch was verified at commit `2587922d3db47ed7c9c23eab09b8c900b4d43a54`; public `launch.json` SHA256 is `4c66a6af672ca1cb0b60179dffdd0c709041d6e74d180ea6ada53706a885e0a7`.
+- The private persistent launch receipt remains local-only at `outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery2_pooled_weighted_s1029_persistent_launch.json`; its SHA256 is `353b8dce9ab227c103473e38daa0e25f6df3e7339f7f889bbe97e9a6c20581a7`. Only this newly owned supervisor/worker is monitored.
