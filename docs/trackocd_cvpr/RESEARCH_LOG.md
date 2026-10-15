@@ -7904,3 +7904,25 @@ no private GT/cache/weights opened for this check):
   frame-online runtime replay was not verified. Therefore the checkpoint is a
   recovery candidate only; it cannot authorize formal v2 cache reuse or a
   COVTrack result claim.
+
+## New-server runtime output repair and frontend preflight (2026-10-16)
+
+- The recovered v2 I/O layer still hard-coded the old server namespace
+  `/data2/usr_for_deadline/trackocd_v2/project_outputs`. That path is absent or
+  not writable on this server, so even a read-only preflight could not start.
+  `src/trackocd_v2/io.py` now accepts `TRACKOCD_V2_OUTPUT_ROOT`; its default is
+  the project-local `outputs/trackocd_v2_runtime`, exposed through the
+  reversible symlink `outputs/trackocd_v2`. No old output path was changed and
+  no data/cache bytes were copied.
+- The migration regression suite now passes `42` tests. A read-only
+  `frontend_execution_preflight.py` run wrote only the local preflight record
+  (SHA256
+  `75a608f9facf765d4404dbffa071703cf02cfe7dea16f0cb557f3e1c4ba8b266`) and
+  returned `WAITING_FRONTEND_ASSETS`: no comparable v2 frontend exists, so the
+  formal common-feature cache remains unauthorized.
+- The same preflight observed `10` idle A100 GPUs and a passing 25% RAM floor,
+  with zero compute applications. It opened no images, started no native
+  inference, accessed no Test semantics, and touched no external process. The
+  current A100 environment has `torch` but not the legacy native-route
+  modules `mmcv`, `mmdet`, `clip`, `diffusers`, or `tao`; no legacy environment
+  installation or frontend launch was inferred from this observation.

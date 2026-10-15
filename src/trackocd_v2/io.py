@@ -10,7 +10,13 @@ from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-OUTPUT_TARGET = Path("/data2/usr_for_deadline/trackocd_v2/project_outputs")
+_DEFAULT_OUTPUT_TARGET = PROJECT_ROOT / "outputs/trackocd_v2_runtime"
+_configured_output = Path(
+    os.environ.get("TRACKOCD_V2_OUTPUT_ROOT", str(_DEFAULT_OUTPUT_TARGET))
+).expanduser()
+if not _configured_output.is_absolute():
+    _configured_output = PROJECT_ROOT / _configured_output
+OUTPUT_TARGET = _configured_output.resolve(strict=False)
 OUTPUT_LINK = PROJECT_ROOT / "outputs/trackocd_v2"
 
 
