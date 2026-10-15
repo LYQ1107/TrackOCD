@@ -7540,3 +7540,8 @@ no private GT/cache/weights opened for this check):
 - Result status is measured causal GT M development only, with `training_seed=1028`, `optimizer_steps=0`, `CUDA_initialized=false`, `training_GPU_hours=0`, no model/checkpoint selection, no Val/Test/new-nonKnown semantics, and no Pred/final/Goal acceptance.
 - Terminal is normal: worker exit `0`, guard stop `null`, complete result present, successful execution `true`, wall `7490.653753893013` seconds including imports/network, and peak sampled worker RSS `950812672` bytes. Private histories/checkpoints remain local and were not uploaded.
 - Public s1028 hashes are launch `ec03b82010c1b61502c3fcb232710fb6006dd35ce18deb13f791cdebbfaf0b4e`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `48c9b19ce950cb9f012bc88275d4cfa23b0b30ff2ac7ca7c8595651f83bd0c90`, terminal `3e9081447592d9bb15b3d996d7cd0674775ade67be47daa1ef509e58d689033a`, and persistent launch `8f788f079d19afef39174316e1c9a09493a99f4bcf20b1697be66f3be9786955`.
+
+## Relative-quarantine seed-1029 recovery2 registered (2026-10-15)
+
+- After the normal `relative_quarantine/s1028` recovery2 result, the next fresh case is registered as `relative_quarantine/s1029` in namespace `M_GT_causal_dev_current_source_wall_recovery2_relative_quarantine_s1029`.
+- It uses the same 12000-second read-only current-source causal protocol, fresh namespace with no private history/checkpoint reuse, one CPU worker, zero optimizer steps, no automatic model/checkpoint selection, no Val/Test/new-nonKnown semantics, and no Pred/final/Goal acceptance. The prior s1027/s1028 public receipts remain immutable.
