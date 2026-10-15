@@ -7995,3 +7995,24 @@ no private GT/cache/weights opened for this check):
 - The stream remains quarantined and does not replace the selected
   COVTrack-native route, does not authorize common-feature caching, and does
   not alter the formal v2 status. Goal A/B/C and formal v2 OCD/MOT remain open.
+
+## Current-source M recovery-2 matrix audit (2026-10-16)
+
+- The new read-only `scripts/trackocd_cvpr/audit_current_source_M_recovery2.py`
+  checked the nine explicitly registered recovery-2 M receipts: three current
+  source controls (`relative_quarantine`, `relative_weighted`, and
+  `pooled_weighted`) across seeds `1027/1028/1029`, with three order probes per
+  receipt. The machine result is
+  `outputs/trackocd_cvpr/cvpr4/M_current_source_recovery2_matrix_audit_v1/result.json`
+  and returned `PASS_CURRENT_SOURCE_M_RECOVERY2_MATRIX_AUDIT` with zero
+  violations.
+- All receipts pass the physical-ID reverse-stream and 39-observation future
+  suffix probes, and explicitly remain GT-oracle controls with zero optimizer
+  steps. They report no Val/Test/new-nonKnown semantic reads, model selection,
+  active purity/self-exclusion/Pred acceptance, or Goal acceptance.
+- Across all 27 order probes, prefix-16 Known macro accuracy is mean `0.019556`
+  (range `0.010667–0.032000`), while certified cross-video reuse macro lower
+  bound is mean `0.074562` (range `0.066220–0.082435`); physical commit-track
+  coverage is `1.0`. This is a negative development boundary result, not an
+  M winner or formal v2 metric. The detailed report is
+  `docs/trackocd_cvpr/M_CURRENT_SOURCE_M_RECOVERY2_AUDIT_20261016.md`.
