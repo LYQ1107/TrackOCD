@@ -1,4 +1,7 @@
 {
+  "approved_image_plan": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+  "approved_image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+  "approved_video_id_order_sha256": "d0ceeb81eb0b6d67ee050e8eb15cda909e602cb83f57204d13fcbde276898ea8",
   "boundaries": {
     "formal_metrics_created": false,
     "full_predicted_cache_started": false,
@@ -10,35 +13,47 @@
   },
   "fixed_dense_shards": [
     {
+      "ordinal_max": 101,
+      "ordinal_min": 0,
       "shard": 0,
       "video_count": 102,
-      "video_id_max": 101,
-      "video_id_min": 0
+      "video_id_first": 0,
+      "video_id_last": 632,
+      "video_id_order_sha256": "833dde57eea777d93354a1d035e70a90940fdce80fa87b14eb28eada08dc75b3"
     },
     {
+      "ordinal_max": 203,
+      "ordinal_min": 102,
       "shard": 1,
       "video_count": 102,
-      "video_id_max": 203,
-      "video_id_min": 102
+      "video_id_first": 633,
+      "video_id_last": 1447,
+      "video_id_order_sha256": "4128800a2e9575d958f7fff927d95ce9afd764ecacacc76418781425f32ada85"
     },
     {
+      "ordinal_max": 305,
+      "ordinal_min": 204,
       "shard": 2,
       "video_count": 102,
-      "video_id_max": 305,
-      "video_id_min": 204
+      "video_id_first": 1453,
+      "video_id_last": 2190,
+      "video_id_order_sha256": "9782d32941b9ce047b8cd675f9b4f7dfc4bb39b7b1eab9dbbbe9a2fd5aa49ee9"
     },
     {
+      "ordinal_max": 406,
+      "ordinal_min": 306,
       "shard": 3,
       "video_count": 101,
-      "video_id_max": 406,
-      "video_id_min": 306
+      "video_id_first": 2194,
+      "video_id_last": 2987,
+      "video_id_order_sha256": "ca36220139121cb1308268db041e5ef5854477e36507ed3581c278ca9985e450"
     }
   ],
-  "generated_utc": "2026-10-15T22:43:22.484132+00:00",
+  "generated_utc": "2026-10-15T22:48:20.935829+00:00",
   "interpretation": "Protocol boundary audit only; Goal A/B/C, full predicted cache, formal OCD/MOT, and frontend qualification remain open.",
   "protocol": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json",
-  "protocol_sha256": "1eda36609153bdb49f53464c674f88d0857754a2b5abd205992172a80a6b62e4",
-  "repository_head_at_audit": "c646dd43e36b91aa238ad52e7bfb3b09cfbbd747",
+  "protocol_sha256": "3b2c5ac9692c6a9d4e9f670dcf2e709bc9e77b81bd07b3d2173994d39f895652",
+  "repository_head_at_audit": "c9d38160d874b1e4058c3fd36b8d0fb12ae24398",
   "schema_version": "trackocd.cvpr.joint-causal-pred-dense-protocol-audit.v1",
   "smoke_counts": {
     "invalid_boxes": 0,

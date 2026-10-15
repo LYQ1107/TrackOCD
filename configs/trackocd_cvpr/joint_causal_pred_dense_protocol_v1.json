@@ -7,6 +7,9 @@
   "data_protocol": {
     "frozen_global": "configs/trackocd_cvpr/frozen_global_data_GT_control_v1.json",
     "frozen_global_sha256": "93846af5c69de4309141b8cbe5bdb25eb0ef222c156475740013123a720df23d",
+    "approved_image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+    "approved_image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+    "approved_video_id_order_sha256": "d0ceeb81eb0b6d67ee050e8eb15cda909e602cb83f57204d13fcbde276898ea8",
     "video_scope": 407,
     "roles": {
       "fit_known": {"videos": 257, "tracks": 1401, "training_label_role": true},
@@ -33,15 +36,15 @@
     "smoke_scope": "fixed video IDs 0,1; 2342 frames; 81471 observations; 8233 tracks; zero invalid boxes; no formal metrics"
   },
   "predicted_dense_cache": {
-    "status": "NOT_STARTED_REGISTERED_ONLY",
+    "status": "NOT_STARTED_REGISTERED_FIXED_ORDINAL_SHARDS",
     "selection": "all 407 approved Train video IDs, fixed before execution; no outcome pruning",
     "raw_jpeg_count_expected": 432011,
     "atomic_unit": "video",
     "shards": [
-      {"shard": 0, "video_id_min": 0, "video_id_max": 101, "video_count": 102},
-      {"shard": 1, "video_id_min": 102, "video_id_max": 203, "video_count": 102},
-      {"shard": 2, "video_id_min": 204, "video_id_max": 305, "video_count": 102},
-      {"shard": 3, "video_id_min": 306, "video_id_max": 406, "video_count": 101}
+      {"shard": 0, "ordinal_min": 0, "ordinal_max": 101, "video_id_first": 0, "video_id_last": 632, "video_count": 102, "video_id_order_sha256": "833dde57eea777d93354a1d035e70a90940fdce80fa87b14eb28eada08dc75b3"},
+      {"shard": 1, "ordinal_min": 102, "ordinal_max": 203, "video_id_first": 633, "video_id_last": 1447, "video_count": 102, "video_id_order_sha256": "4128800a2e9575d958f7fff927d95ce9afd764ecacacc76418781425f32ada85"},
+      {"shard": 2, "ordinal_min": 204, "ordinal_max": 305, "video_id_first": 1453, "video_id_last": 2190, "video_count": 102, "video_id_order_sha256": "9782d32941b9ce047b8cd675f9b4f7dfc4bb39b7b1eab9dbbbe9a2fd5aa49ee9"},
+      {"shard": 3, "ordinal_min": 306, "ordinal_max": 406, "video_id_first": 2194, "video_id_last": 2987, "video_count": 101, "video_id_order_sha256": "ca36220139121cb1308268db041e5ef5854477e36507ed3581c278ca9985e450"}
     ],
     "outputs": "local-only native rows plus category-free train_predicted physical stream; only compact receipts may enter Git",
     "full_cache_automatic_start": false,

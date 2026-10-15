@@ -14,6 +14,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = ROOT / "configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json"
 DEFAULT_SMOKE = ROOT / "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json"
+DEFAULT_IMAGE_PLAN = ROOT / "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json"
 DEFAULT_OUTPUT = ROOT / "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json"
 
 
@@ -25,9 +26,10 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def audit(config_path: Path, smoke_path: Path, output_path: Path) -> dict[str, Any]:
+def audit(config_path: Path, smoke_path: Path, image_plan_path: Path, output_path: Path) -> dict[str, Any]:
     config = json.loads(config_path.read_text(encoding="utf-8"))
     smoke = json.loads(smoke_path.read_text(encoding="utf-8"))
+    image_plan = json.loads(image_plan_path.read_text(encoding="utf-8"))
     if config.get("status") != "FROZEN_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING":
         raise ValueError("unexpected protocol status")
     if config.get("data_protocol", {}).get("video_scope") != 407:
@@ -35,18 +37,33 @@ def audit(config_path: Path, smoke_path: Path, output_path: Path) -> dict[str, A
     shards = config.get("predicted_dense_cache", {}).get("shards", [])
     if len(shards) != 4:
         raise ValueError("expected exactly four fixed dense shards")
+    plan_ids = sorted({int(row["video_id"]) for row in image_plan.get("image_metadata", [])})
+    if len(plan_ids) != 407:
+        raise ValueError(f"approved image plan has {len(plan_ids)} video IDs, expected 407")
+    plan_id_order_sha256 = hashlib.sha256(json.dumps(plan_ids, separators=(",", ":")).encode()).hexdigest()
+    data_protocol = config.get("data_protocol", {})
+    if data_protocol.get("approved_image_plan_sha256") != _sha256(image_plan_path):
+        raise ValueError("approved image plan hash does not match the frozen protocol")
+    if data_protocol.get("approved_video_id_order_sha256") != plan_id_order_sha256:
+        raise ValueError("approved video-ID order hash does not match the frozen protocol")
     expected_start = 0
     for shard in shards:
-        if int(shard["video_id_min"]) != expected_start:
-            raise ValueError("dense shard ranges are not contiguous")
-        if int(shard["video_id_max"]) < int(shard["video_id_min"]):
-            raise ValueError("invalid dense shard range")
-        count = int(shard["video_id_max"]) - int(shard["video_id_min"]) + 1
+        ordinal_min = int(shard["ordinal_min"])
+        ordinal_max = int(shard["ordinal_max"])
+        if ordinal_min != expected_start or ordinal_max < ordinal_min:
+            raise ValueError("dense shard ordinal ranges are not contiguous")
+        count = ordinal_max - ordinal_min + 1
         if int(shard["video_count"]) != count:
             raise ValueError("dense shard count mismatch")
-        expected_start = int(shard["video_id_max"]) + 1
-    if expected_start != 407:
-        raise ValueError("dense shard ranges do not cover exactly 0..406")
+        actual_ids = plan_ids[ordinal_min : ordinal_max + 1]
+        if actual_ids[0] != int(shard["video_id_first"]) or actual_ids[-1] != int(shard["video_id_last"]):
+            raise ValueError("dense shard endpoint does not match approved video-ID order")
+        actual_hash = hashlib.sha256(json.dumps(actual_ids, separators=(",", ":")).encode()).hexdigest()
+        if actual_hash != shard["video_id_order_sha256"]:
+            raise ValueError("dense shard video-ID hash does not match approved order")
+        expected_start = ordinal_max + 1
+    if expected_start != len(plan_ids):
+        raise ValueError("dense shard ordinals do not cover exactly the approved 407 IDs")
     if config.get("predicted_dense_cache", {}).get("full_cache_automatic_start") is not False:
         raise ValueError("full predicted cache is not fail-closed")
     if smoke.get("status") != "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE":
@@ -66,6 +83,9 @@ def audit(config_path: Path, smoke_path: Path, output_path: Path) -> dict[str, A
         "protocol_sha256": _sha256(config_path),
         "smoke_receipt": str(smoke_path.resolve()),
         "smoke_receipt_sha256": _sha256(smoke_path),
+        "approved_image_plan": str(image_plan_path.resolve()),
+        "approved_image_plan_sha256": _sha256(image_plan_path),
+        "approved_video_id_order_sha256": plan_id_order_sha256,
         "repository_head_at_audit": head,
         "fixed_dense_shards": shards,
         "smoke_counts": smoke.get("counts", {}),
@@ -89,9 +109,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--smoke", type=Path, default=DEFAULT_SMOKE)
+    parser.add_argument("--image-plan", type=Path, default=DEFAULT_IMAGE_PLAN)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
-    print(json.dumps(audit(args.config.resolve(), args.smoke.resolve(), args.output.resolve()), indent=2, sort_keys=True))
+    print(json.dumps(audit(args.config.resolve(), args.smoke.resolve(), args.image_plan.resolve(), args.output.resolve()), indent=2, sort_keys=True))
     return 0
 
 

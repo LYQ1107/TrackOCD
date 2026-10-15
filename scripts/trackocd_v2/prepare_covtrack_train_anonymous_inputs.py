@@ -27,6 +27,7 @@ DEFAULT_CLASSES = ROOT / "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_v
 DEFAULT_ANNOTATION = ROOT / "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json"
 DEFAULT_AUDIT = ROOT / "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/input_audit.json"
 VIDEO_IDS = (0, 1)
+FULL_SHARD_SIZES = (102, 102, 102, 101)
 
 
 def _sha256(path: Path) -> str:
@@ -61,7 +62,7 @@ def _load_classes(path: Path) -> list[str]:
     return names
 
 
-def build(*, plan_path: Path, frame_root: Path, frame_alias: Path, classes_path: Path, annotation_path: Path, audit_path: Path) -> dict[str, Any]:
+def build(*, plan_path: Path, frame_root: Path, frame_alias: Path, classes_path: Path, annotation_path: Path, audit_path: Path, video_ids: tuple[int, ...] = VIDEO_IDS, shard_index: int | None = None) -> dict[str, Any]:
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     if plan.get("not_model_facing") is not True:
         raise ValueError("the selected image plan is not marked not_model_facing")
@@ -76,6 +77,15 @@ def build(*, plan_path: Path, frame_root: Path, frame_alias: Path, classes_path:
         by_video.setdefault(video_id, []).append(row)
     if len(by_video) != 407:
         raise ValueError(f"expected the approved 407-video plan, found {len(by_video)} videos")
+    approved_video_ids = sorted(by_video)
+    approved_video_id_order_sha256 = hashlib.sha256(json.dumps(approved_video_ids, separators=(",", ":")).encode()).hexdigest()
+    if shard_index is not None:
+        if not 0 <= shard_index < len(FULL_SHARD_SIZES):
+            raise ValueError("approved shard index must be in 0..3")
+        start = sum(FULL_SHARD_SIZES[:shard_index])
+        video_ids = tuple(approved_video_ids[start : start + FULL_SHARD_SIZES[shard_index]])
+    if not video_ids or len(set(video_ids)) != len(video_ids) or any(video_id not in by_video for video_id in video_ids):
+        raise ValueError("video_ids must be a non-empty unique subset of the approved 407 IDs")
     class_names = _load_classes(classes_path)
     categories = [{"id": index + 1, "name": name} for index, name in enumerate(class_names)]
     frame_alias.parent.mkdir(parents=True, exist_ok=True)
@@ -91,7 +101,7 @@ def build(*, plan_path: Path, frame_root: Path, frame_alias: Path, classes_path:
     images: list[dict[str, Any]] = []
     per_video: dict[str, dict[str, Any]] = {}
     next_image_id = 1_000_000
-    for video_id in VIDEO_IDS:
+    for video_id in video_ids:
         selected_rows = by_video.get(video_id)
         if not selected_rows:
             raise ValueError(f"fixed video {video_id} is absent from the approved plan")
@@ -190,9 +200,15 @@ def build(*, plan_path: Path, frame_root: Path, frame_alias: Path, classes_path:
         "status": "PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT",
         "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "selection": {
-            "video_ids": list(VIDEO_IDS),
-            "rule": "two smallest numeric IDs in the approved 407-video image plan",
+            "video_ids": list(video_ids),
+            "rule": (
+                f"sorted approved video-ID order shard {shard_index}/4 with fixed sizes {list(FULL_SHARD_SIZES)}"
+                if shard_index is not None
+                else "fixed predeclared video IDs from the approved 407-video image plan"
+            ),
             "outcome_selection": False,
+            "approved_video_id_order_sha256": approved_video_id_order_sha256,
+            "shard_index": shard_index,
         },
         "sources": {
             "image_plan": str(plan_path.resolve()),
@@ -241,7 +257,20 @@ def main() -> int:
     parser.add_argument("--classes", type=Path, default=DEFAULT_CLASSES)
     parser.add_argument("--annotation", type=Path, default=DEFAULT_ANNOTATION)
     parser.add_argument("--audit", type=Path, default=DEFAULT_AUDIT)
+    parser.add_argument("--video-ids", type=int, nargs="+", default=list(VIDEO_IDS))
+    parser.add_argument("--video-id-min", type=int, default=None)
+    parser.add_argument("--video-id-max", type=int, default=None)
+    parser.add_argument("--approved-shard-index", type=int, choices=range(4), default=None)
     args = parser.parse_args()
+    if args.approved_shard_index is not None and (args.video_id_min is not None or args.video_id_max is not None or args.video_ids != list(VIDEO_IDS)):
+        parser.error("--approved-shard-index cannot be combined with explicit video selection")
+    if (args.video_id_min is None) != (args.video_id_max is None):
+        parser.error("--video-id-min and --video-id-max must be supplied together")
+    selected_video_ids = (
+        tuple(range(args.video_id_min, args.video_id_max + 1))
+        if args.video_id_min is not None
+        else tuple(args.video_ids)
+    )
     result = build(
         plan_path=args.plan.resolve(),
         frame_root=args.frame_root.resolve(),
@@ -249,6 +278,8 @@ def main() -> int:
         classes_path=args.classes.resolve(),
         annotation_path=args.annotation.resolve(),
         audit_path=args.audit.resolve(),
+        video_ids=selected_video_ids,
+        shard_index=args.approved_shard_index,
     )
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0

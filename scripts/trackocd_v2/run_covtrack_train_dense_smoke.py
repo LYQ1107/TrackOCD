@@ -52,14 +52,14 @@ def _marker_path(run_id: str) -> Path:
     return OUTPUT_TARGET / "audit" / f"covtrack_train_dense_smoke_{run_id}.launched.json"
 
 
-def _check_registration() -> dict[str, Any]:
-    if not TRAIN_AUDIT.is_file() or not TRAIN_ANNOTATION.is_file():
+def _check_registration(train_audit: Path, train_annotation: Path, expected_video_ids: list[int]) -> dict[str, Any]:
+    if not train_audit.is_file() or not train_annotation.is_file():
         raise FileNotFoundError("the preregistered anonymous Train input has not been built")
-    audit = json.loads(TRAIN_AUDIT.read_text(encoding="utf-8"))
+    audit = json.loads(train_audit.read_text(encoding="utf-8"))
     if audit.get("status") != "PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT":
         raise ValueError(f"unexpected input audit status: {audit.get('status')}")
-    if audit.get("selection", {}).get("video_ids") != [0, 1]:
-        raise ValueError("the smoke selection is not the preregistered fixed pair [0, 1]")
+    if audit.get("selection", {}).get("video_ids") != expected_video_ids:
+        raise ValueError("the input selection does not match the predeclared video IDs")
     if audit.get("boundaries", {}).get("tao_train_annotation_opened") is not False:
         raise ValueError("Train GT boundary is not closed")
     if audit.get("boundaries", {}).get("tao_val_accessed") is not False:
@@ -82,12 +82,13 @@ def _environment() -> dict[str, str]:
     return environment
 
 
-def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
-    input_audit = _check_registration()
-    for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT, TRAIN_ANNOTATION, TRAIN_AUDIT, TRAIN_FRAME_ROOT, TRAIN_FRAME_ALIAS, TRAIN_CLASSES):
+def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE") -> dict[str, Any]:
+    expected_video_ids = list(range(0, 2)) if expected_video_ids is None else list(expected_video_ids)
+    input_audit = _check_registration(train_audit, train_annotation, expected_video_ids)
+    for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT, train_annotation, train_audit, TRAIN_FRAME_ROOT, frame_alias, train_classes):
         if not path.exists():
             raise FileNotFoundError(path)
-    if not TRAIN_FRAME_ALIAS.is_symlink() or TRAIN_FRAME_ALIAS.resolve() != TRAIN_FRAME_ROOT.resolve():
+    if not frame_alias.is_symlink() or frame_alias.resolve() != TRAIN_FRAME_ROOT.resolve():
         raise ValueError("Train frame compatibility alias is not the registered symlink to the Train frame root")
     _require_resource_gate(gpu_index)
 
@@ -98,17 +99,17 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
     formatted.mkdir(parents=True, exist_ok=False)
     log_path = run_root / "native_train.log"
     normalized_log = run_root / "normalization.log"
-    normalization_dir = OUTPUT_TARGET / "manifests/frontend_streams" / FRONTEND_SLUG / "train_dense_smoke_v1"
-    normalization_audit = OUTPUT_TARGET / "audit" / "covtrack_train_dense_smoke_v1_normalization.json"
+    normalization_dir = OUTPUT_TARGET / "manifests/frontend_streams" / FRONTEND_SLUG / output_scope
+    normalization_audit = receipt_root / "normalization.json"
     physical_output = normalization_dir / "physical_tracks.jsonl"
     native_evaluator_output = normalization_dir / "native_evaluator_rows.jsonl"
-    run_audit = CVPR_SMOKE_OUTPUT / "run.json"
-    done_marker = CVPR_SMOKE_OUTPUT / "done.json"
+    run_audit = receipt_root / "run.json"
+    done_marker = receipt_root / "done.json"
 
     cfg_options = [
-        "data.test.ann_file=" + str(TRAIN_ANNOTATION.resolve()),
-        "data.test.img_prefix=" + str(TRAIN_FRAME_ALIAS) + os.sep,
-        "data.test.classes=" + str(TRAIN_CLASSES.resolve()),
+        "data.test.ann_file=" + str(train_annotation.resolve()),
+        "data.test.img_prefix=" + str(frame_alias) + os.sep,
+        "data.test.classes=" + str(train_classes.resolve()),
         "model.tracker.confused_features=true",
         "model.roi_head.prompt_path=" + str(PROMPT.resolve()),
         "data.samples_per_gpu=1",
@@ -138,7 +139,7 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
         "gpu_index": gpu_index,
         "run_root": str(run_root.resolve()),
         "command": command,
-        "input_audit": str(TRAIN_AUDIT.resolve()),
+        "input_audit": str(train_audit.resolve()),
     })
 
     environment = _environment()
@@ -164,7 +165,7 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
             "--input-format",
             "tao_json",
             "--annotation",
-            str(TRAIN_ANNOTATION.resolve()),
+            str(train_annotation.resolve()),
             "--output-dir",
             str(normalization_dir.resolve()),
             "--audit-output",
@@ -187,7 +188,7 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
             raise ValueError("GT join boundary failed")
         result = {
             "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_run.v1",
-            "status": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE",
+            "status": result_status,
             "generated_utc": _now(),
             "frontend": FRONTEND_NAME,
             "frontend_slug": FRONTEND_SLUG,
@@ -196,15 +197,15 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
             "gpu_index": gpu_index,
             "command": command,
             "normalization_command": normalize_command,
-            "input_audit": str(TRAIN_AUDIT.resolve()),
-            "input_audit_sha256": _sha256(TRAIN_AUDIT),
-            "annotation": str(TRAIN_ANNOTATION.resolve()),
-            "annotation_sha256": _sha256(TRAIN_ANNOTATION),
+            "input_audit": str(train_audit.resolve()),
+            "input_audit_sha256": _sha256(train_audit),
+            "annotation": str(train_annotation.resolve()),
+            "annotation_sha256": _sha256(train_annotation),
             "frame_root": str(TRAIN_FRAME_ROOT.resolve()),
-            "frame_alias": str(TRAIN_FRAME_ALIAS),
-            "frame_alias_target": str(TRAIN_FRAME_ALIAS.resolve()),
-            "classes": str(TRAIN_CLASSES.resolve()),
-            "classes_sha256": _sha256(TRAIN_CLASSES),
+            "frame_alias": str(frame_alias),
+            "frame_alias_target": str(frame_alias.resolve()),
+            "classes": str(train_classes.resolve()),
+            "classes_sha256": _sha256(train_classes),
             "checkpoint": str(CHECKPOINT.resolve()),
             "checkpoint_sha256": _sha256(CHECKPOINT),
             "prompt": str(PROMPT.resolve()),
@@ -224,7 +225,7 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
             "tao_val_accessed": False,
             "tao_test_accessed": False,
             "formal_metrics": False,
-            "interpretation": "Frontend/input smoke only; no OCD/MOT metrics or frontend qualification claimed.",
+            "interpretation": "Frontend/input inference only; no OCD/MOT metrics or frontend qualification claimed.",
         }
         _atomic_json(run_audit, result)
         _atomic_json(done_marker, {
@@ -238,7 +239,7 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
     except Exception as exc:
         _atomic_json(run_audit, {
             "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_run.v1",
-            "status": "FAILED_COVTRACK_TRAIN_DENSE_SMOKE",
+            "status": "FAILED_COVTRACK_TRAIN_DENSE_RUN",
             "generated_utc": _now(),
             "frontend": FRONTEND_NAME,
             "split": "train_predicted",
@@ -256,9 +257,30 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu-index", type=int, required=True)
     parser.add_argument("--run-id", required=True)
+    parser.add_argument("--annotation", type=Path, default=TRAIN_ANNOTATION)
+    parser.add_argument("--input-audit", type=Path, default=TRAIN_AUDIT)
+    parser.add_argument("--frame-alias", type=Path, default=TRAIN_FRAME_ALIAS)
+    parser.add_argument("--classes", type=Path, default=TRAIN_CLASSES)
+    parser.add_argument("--receipt-root", type=Path, default=CVPR_SMOKE_OUTPUT)
+    parser.add_argument("--output-scope", default="train_dense_smoke_v1")
+    parser.add_argument("--video-id-min", type=int, default=0)
+    parser.add_argument("--video-id-max", type=int, default=1)
+    parser.add_argument("--result-status", default="COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE")
     args = parser.parse_args()
+    expected_video_ids = list(range(args.video_id_min, args.video_id_max + 1))
     try:
-        result = run(gpu_index=args.gpu_index, run_id=args.run_id)
+        result = run(
+            gpu_index=args.gpu_index,
+            run_id=args.run_id,
+            train_annotation=args.annotation.resolve(),
+            train_audit=args.input_audit.resolve(),
+            frame_alias=args.frame_alias,
+            train_classes=args.classes.resolve(),
+            receipt_root=args.receipt_root.resolve(),
+            output_scope=args.output_scope,
+            expected_video_ids=expected_video_ids,
+            result_status=args.result_status,
+        )
     except ResourceWait as exc:
         payload = {
             "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_run.v1",
@@ -269,11 +291,11 @@ def main() -> int:
             "tao_val_accessed": False,
             "tao_test_accessed": False,
         }
-        _atomic_json(CVPR_SMOKE_OUTPUT / "run.json", payload)
+        _atomic_json(args.receipt_root.resolve() / "run.json", payload)
         print(json.dumps(payload, indent=2, sort_keys=True))
         return 2
     except Exception as exc:
-        print(json.dumps({"status": "FAILED_COVTRACK_TRAIN_DENSE_SMOKE", "error": f"{type(exc).__name__}: {exc}"}, indent=2, sort_keys=True))
+        print(json.dumps({"status": "FAILED_COVTRACK_TRAIN_DENSE_RUN", "error": f"{type(exc).__name__}: {exc}"}, indent=2, sort_keys=True))
         return 1
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
