@@ -22,6 +22,7 @@ from scripts.trackocd_cvpr.audit_train_metadata_containment import process_memor
 from scripts.trackocd_cvpr.smoke_selected_frozen_encoder import digest, verified_encoder_sources
 
 CONFIG = 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v1.json'
+CONFIG_V2 = 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v2.json'
 SOURCES = (CONFIG, 'scripts/trackocd_cvpr/independent_final_GT_video_cache.py',
            'src/trackocd_cvpr/GT_video_cache.py', 'scripts/trackocd_cvpr/audit_joint_known_protocol.py',
            'scripts/trackocd_cvpr/smoke_selected_frozen_encoder.py',
@@ -336,6 +337,18 @@ def supervise(args, cfg, safety):
             except (FileNotFoundError, ProcessLookupError, RuntimeError):
                 if child.poll() is not None:
                     break
+                try:
+                    state = next((line.split(':', 1)[1].split()[0]
+                                  for line in status_path.read_text().splitlines()
+                                  if line.startswith('State:')), '')
+                except (FileNotFoundError, ProcessLookupError):
+                    state = ''
+                if state in ('Z', 'X', 'x'):
+                    # The owned child is kernel-terminal; wait and preserve a
+                    # normal exit code instead of turning the reap race into a
+                    # false resource failure.
+                    child.wait(timeout=10)
+                    break
                 if time.monotonic() - started > 2:
                     reason = 'owned_memory_counter_unavailable'; child.kill(); break
                 time.sleep(cfg['supervisor_poll_seconds']); continue
@@ -363,11 +376,13 @@ def supervise(args, cfg, safety):
 
 
 def main():
+    global SOURCES
     parser = argparse.ArgumentParser()
     parser.add_argument('--preregistration-commit', required=True); parser.add_argument('--git-proxy', default='')
-    parser.add_argument('--config', choices=(CONFIG,), default=CONFIG)
+    parser.add_argument('--config', choices=(CONFIG, CONFIG_V2), default=CONFIG)
     parser.add_argument('--worker', action='store_true'); parser.add_argument('--attempt', type=int, choices=(1,), default=1)
     args = parser.parse_args()
+    SOURCES = (args.config, *SOURCES[1:])
     cfg = json.loads((ROOT / args.config).read_text())
     safety = json.loads((ROOT / 'configs/trackocd_cvpr/autonomous_research.json').read_text())
     if args.worker:
