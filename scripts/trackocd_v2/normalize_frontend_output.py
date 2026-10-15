@@ -275,7 +275,7 @@ def normalize_file(
 ) -> dict[str, Any]:
     if frontend not in FRONTENDS:
         raise ValueError(f"unknown frontend: {frontend}")
-    if source_split not in {"val_predicted", "test_predicted"}:
+    if source_split not in {"train_predicted", "val_predicted", "test_predicted"}:
         raise ValueError(f"unsupported source split: {source_split}")
     route = route_specs(ROOT)[frontend]
     frontend_slug = str(route["slug"])
@@ -464,7 +464,7 @@ def main() -> int:
     parser.add_argument("--native-output", type=Path, default=None)
     parser.add_argument("--audit-output", type=Path, default=None)
     parser.add_argument("--allow-invalid-boxes", action="store_true", help="retain and audit invalid/degenerate boxes instead of failing; never drops them")
-    parser.add_argument("--source-split", choices=("val_predicted", "test_predicted"), default="val_predicted")
+    parser.add_argument("--source-split", choices=("train_predicted", "val_predicted", "test_predicted"), default="val_predicted")
     args = parser.parse_args()
     out = ensure_output_layout()
     slug = route_specs()[args.frontend]["slug"]

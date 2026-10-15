@@ -8033,3 +8033,8 @@ no private GT/cache/weights opened for this check):
   execution, training, or cache extraction were performed. Dense anonymous
   frontend qualification and OCD/MOT metrics remain open; details are in
   `docs/trackocd_cvpr/TRAIN_DENSE_FRAME_INVENTORY_20261016.md`.
+## Registered COVTrack Train dense-frame smoke (2026-10-16)
+
+- Registered `configs/trackocd_cvpr/covtrack_train_dense_smoke_v1.json` and the fixed input builder `scripts/trackocd_v2/prepare_covtrack_train_anonymous_inputs.py`.
+- The administrative selection is video IDs `0` and `1`, the two smallest IDs in the approved 407-video structural image plan, fixed before model execution. The builder expands each selected raw Train directory to all JPEG frames without opening `train.json`, semantic labels, GT arrays, Val/Test, or pixels.
+- The COVTrack-only public LVIS vocabulary is included solely so the frozen parser/checkpoint can construct its dataset; the normalized TrackOCD stream is registered as `train_predicted` and must remain category-free. This is a bounded frontend prerequisite, not training, model selection, OCD/MOT evaluation, or frontend qualification.

@@ -1,0 +1,37 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_registration.v1",
+  "status": "REGISTERED_FIXED_ANONYMOUS_TRAIN_DENSE_SMOKE",
+  "scope": "A bounded anonymous COVTrack frontend smoke on two fixed approved Train videos; no training, GT, Val, Test, or model selection.",
+  "selected_video_ids": [
+    0,
+    1
+  ],
+  "selection_rule": "The two smallest numeric video IDs in the already approved 407-video image metadata plan, fixed before any model run; no outcome-based selection.",
+  "image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+  "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "anonymous_annotation_output": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json",
+  "public_frontend_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
+  "frontend": "COVTrack-native",
+  "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+  "prompt": "checkpoints/covtrack/detpro_prompt.pt",
+  "constraints": {
+    "full_407_video_inference": false,
+    "training": false,
+    "cache_scope": "two fixed Train videos only",
+    "gt_or_tao_category_arrays_read": false,
+    "novel_vocabulary_or_val_labels_read": false,
+    "tao_val_accessed": false,
+    "tao_test_accessed": false,
+    "pixels_decoded_by_input_preparer": false,
+    "external_process_interference": false,
+    "max_gpu_count": 1,
+    "ram_headroom_fraction": 0.25
+  },
+  "normalization": {
+    "source_split": "train_predicted",
+    "physical_stream_must_be_category_free": true,
+    "native_category_rows_are_evaluator_separate": true,
+    "gt_join_used_for_normalization": false
+  },
+  "interpretation": "This is a frontend input/decodability smoke prerequisite only. It cannot produce OCD/MOT metrics or qualify a final frontend by itself."
+}
