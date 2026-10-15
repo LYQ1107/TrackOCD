@@ -42,3 +42,27 @@ this host until the exact v2 role files, predicted physical stream, selected
 frontend provenance, and complete feature cache are recovered and verified.
 Historical PANDAS/MASA metrics and the current CVPR M diagnostics remain
 separately scoped and must not be relabeled as that missing formal result.
+
+## Post-recheck migration repair — 2026-10-16
+
+- The configured `nas57` alias is not installed in this server's SSH config;
+  the available read-only key was tried directly against `192.168.31.57:22`
+  and the connection timed out. No NAS file or external process was changed.
+- The local core evidence contains byte-recovered role files with a passing
+  historical machine audit: `known=78`, `unknown_val=209`, `distractor=45`.
+  Their recorded hashes are preserved at
+  `outputs/trackocd_core/audit/role_recovery.json`; they are candidate
+  Train/Val protocol inputs, not a substitute for the missing v2 public
+  predicted stream or frontend cache.
+- The existing `/data3/liuyeqiang/TAO-Amodal` Train and Validation annotation
+  files match the recorded hashes (`train=7eb551...921d0`,
+  `validation=041488...76ee`). This establishes a reversible candidate
+  mapping for future GT-only audits, but no mapping, cache, training, or
+  formal evaluator was started in this recheck.
+- The recovered `src/trackocd_v2/io.py` remains byte-identical to the NAS
+  source and still names `/data2/usr_for_deadline/trackocd_v2/project_outputs`.
+  Direct v2 writers therefore remain unrun on this host; any future local
+  output relocation must be implemented in an external, explicitly recorded
+  wrapper or after a separately registered source patch. It does not authorize
+  predicted features, frontend selection, TAO Test access, or formal
+  evaluation.
