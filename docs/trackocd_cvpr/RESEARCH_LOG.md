@@ -7889,3 +7889,18 @@ no private GT/cache/weights opened for this check):
   prevents duplicate storage. It does not recover the COVTrack frontend
   checkpoint, public physical stream, or formal shards, so no cache or
   inference was started from this discovery.
+
+## COVTrack-native checkpoint remains an unqualified recovery candidate (2026-10-16)
+
+- The local historical native-run receipt identifies the missing checkpoint as
+  `ctao_public.pth`, `368829353` bytes, SHA256
+  `e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c`.
+  The associated historical config SHA is
+  `282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a`, and
+  the recorded native output SHA is
+  `fa6017a9fc74840df972b0607703a5f2e8fdbf5cbea1b8f0942583c1f10bdde7`.
+- The same provenance audit says the exact historical config bytes were not
+  fully verified, training Novel-label exclusion was not verified, and a
+  frame-online runtime replay was not verified. Therefore the checkpoint is a
+  recovery candidate only; it cannot authorize formal v2 cache reuse or a
+  COVTrack result claim.

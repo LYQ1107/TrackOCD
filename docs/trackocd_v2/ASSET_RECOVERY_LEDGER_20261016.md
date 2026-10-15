@@ -31,7 +31,7 @@ benchmark result. No TAO Test asset is included.
 | class | evidence | status/space policy |
 |---|---|---|
 | COVTrack-native audit | `outputs/trackocd_core/audit/nas_m1_source/` (five small JSON files, about 250KB total) | preserved historical Val evidence; explicitly `HISTORICAL_ASSET_AUDIT_ONLY` and `same_v2_predicted_stream=false`; retain in place |
-| native checkpoint | historical receipt records a hash beginning `e4d0b657...` | actual checkpoint path/file is absent locally; recover only after exact manifest match |
+| native checkpoint | historical NAS audit records `ctao_public.pth`, 368,829,353 bytes, SHA256 `e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c` | actual file absent locally; recover only with matching config/output hashes and a fresh legality audit |
 | old formal shards | later historical NAS audit records `255/723` shards, `130560/369794` tracks, `561672/1133841` observations, 35.3061% coverage and 2,087,621,953 payload bytes | incomplete historical snapshot; the earlier 65-shard count is obsolete evidence, but neither snapshot is current until NAS recheck |
 | DINOv2 source/weights | local checkpoint `checkpoints/dinov2_vitb14_pretrain.pth` is 346,378,731 bytes with SHA256 `0b8b82f85de9...`; vendor source `vendor/trackocd_core/dinov2_7764ea0` is commit `7764ea0...` with 156 Python files | present and hash-verified; do not copy/download again; this does not replace the missing COVTrack frontend checkpoint |
 | PHE/H3 artifacts | expected PHE checkpoint and Phase90 H3 namespace absent | recover exact files; never replace H3 with a Phase89/90 diagnostic |
