@@ -7785,3 +7785,29 @@ no private GT/cache/weights opened for this check):
   and complete predicted feature cache remain unavailable. Formal OCD/MOT
   evaluation stays fail-closed; historical PANDAS/COVTrack/MASA metrics remain
   separately scoped and are not promoted to v2.
+
+## Read-only v2 recovery asset admission (2026-10-16)
+
+- Added `scripts/trackocd_v2/recovery_asset_admission.py` with a separate
+  regression file `tests/trackocd_v2/test_recovery_asset_admission.py`. The
+  checker is stdout-only by default and performs no network access, process
+  control, output-layout creation, image/annotation decoding, TAO Test access,
+  predicted JSONL reading, or feature-array loading. It hashes/parses only
+  bounded control JSON and shard `.done` markers; annotations, the public
+  predicted stream, and `.npy`/Parquet feature payloads are stat-only.
+- The full `tests/trackocd_v2` suite passed (`38 passed`). A real read-only run
+  on this server returned
+  `BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS` and
+  `formal_ready=false`. It found no v2 `train/validation` paths, role splits,
+  public predicted stream, frontend selection, representation decision,
+  autonomous state, COVTrack-native stage artifact, or formal cache manifest.
+- The same run recorded `test_semantic_accessed=false`,
+  `test_paths_opened=[]`, `network_used=false`, and `write_performed=false`.
+  This is a stronger machine-checkable confirmation of the existing migration
+  evidence; it does not infer the historical 65-shard count and does not
+  authorize formal prediction, MOT, OCD, training, or cache construction.
+- The formal v2 evaluator remains fail-closed. After exact assets are
+  recovered, rerun this admission check against the explicit data/output roots;
+  only an admissible Val cache with matching provenance may proceed to frozen
+  prediction/final evaluation. Historical PANDAS/COVTrack/MASA metrics remain
+  outside this v2 result namespace.
