@@ -7768,3 +7768,20 @@ no private GT/cache/weights opened for this check):
   model selection, and not Goal A/B/C acceptance. The next scientific gate is
   still legal predicted-frontend admission and causal prediction/final
   evaluation; the missing NAS v2 assets remain unresolved.
+
+## Post-cache v2 asset/NAS recheck (2026-10-16)
+
+- After the independent-final cache completed, a fresh read-only local asset
+  check still found no `outputs/trackocd_v2`, `data/raw/tao`,
+  `data/tao_ow_ocd_v1`, `data/caches`, or `/data2/usr_for_deadline/trackocd_v2`.
+- Direct bounded TCP probes to NAS `192.168.31.57` ports `22`, `445`, `5000`,
+  `5001`, and `8080` all timed out. A direct SSH probe using the available
+  read-only key and strict known-host file also timed out with exit `255`.
+  Local listeners `127.0.0.1:7890` and `127.0.0.1:17899` remain present, but
+  their presence does not establish NAS reachability. No NAS file or external
+  process was changed.
+- Therefore the full anonymous Train control cache is now locally verified,
+  but the formal v2 predicted physical stream, selected frontend provenance,
+  and complete predicted feature cache remain unavailable. Formal OCD/MOT
+  evaluation stays fail-closed; historical PANDAS/COVTrack/MASA metrics remain
+  separately scoped and are not promoted to v2.
