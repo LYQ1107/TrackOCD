@@ -36,6 +36,7 @@ benchmark result. No TAO Test asset is included.
 | DINOv2 source/weights | local checkpoint `checkpoints/dinov2_vitb14_pretrain.pth` is 346,378,731 bytes with SHA256 `0b8b82f85de9...`; vendor source `vendor/trackocd_core/dinov2_7764ea0` is commit `7764ea0...` with 156 Python files | present and hash-verified; do not copy/download again; this does not replace the missing COVTrack frontend checkpoint |
 | PHE/H3 artifacts | expected PHE checkpoint and Phase90 H3 namespace absent | recover exact files; never replace H3 with a Phase89/90 diagnostic |
 | independent pseudo-Novel Train cache | `outputs/trackocd_cvpr/cvpr2/independent_GT_video_cache_v1` result, 68 videos/295 tracks/7,103 observations | present as anonymous GT-control preparation only; not predicted stream, not formal OCD/MOT, not a model-selection input |
+| local historical MASA physical stream | `outputs/trackocd_core/physical/masa_full_val_annotated/` | 988 Val video shards, 36,375 annotated images, 1,811,677 detection rows and 1,540,022 prediction rows pass a new read-only integrity audit; annotated-cadence and provenance-gapped, so quarantined as physical evidence and not admitted to v2 |
 
 ## Safe recovery order
 
@@ -71,3 +72,31 @@ The DINO common encoder is a separate positive recovery result: its local
 checkpoint and pinned vendor source match the historical hashes. It is safe to
 reuse for a future registered cache smoke, but it does not make the missing
 COVTrack-native frontend or predicted physical stream available.
+
+## Local MASA migration eligibility audit — 2026-10-16
+
+The existing local MASA output was checked without opening annotations, GT or
+role files, images, Test assets, or model weights. The audit script is
+`scripts/trackocd_v2/audit_masa_frontend_migration.py`, and its small report is
+`outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json`.
+
+- All `988/988` NPZ shards and `988/988` completion receipts were present and
+  mutually consistent. The one-shard-at-a-time checks passed finite box/score,
+  shape, offset, receipt byte-count and SHA256 validation.
+- The sealed manifest reports `36,375` annotated images, `1,811,677`
+  detections and `1,540,022` physical prediction rows. The payload exposes
+  image/frame indices, track IDs, boxes and scores, with no category/text/GT
+  field observed.
+- The manifest explicitly records `test_access=false`,
+  `gt_or_role_model_input=false`, and `training=false`. No source stream was
+  copied or modified by the audit.
+- Admission remains **false**. The historical scope is annotated-cadence
+  projection rather than a proven dense frame-online v2 stream;
+  `primary_freeze_permitted=false`; exact private SAM release/training-stage
+  binding is not verified; and no v2 frontend-stage receipt or shared v2 Val
+  metric contract is attached.
+
+This is a stronger completeness result for the local MASA candidate, not a
+new OCD/MOT result and not permission to replace the selected COVTrack-native
+route. Keep it quarantined until a separately registered v2 normalization and
+legal frontend decision exist.

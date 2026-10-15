@@ -7970,3 +7970,28 @@ no private GT/cache/weights opened for this check):
   gate only; the index still says scientific stage completion is false, and it
   does not establish mechanism performance, frontend legality, causal online
   evaluation, or Goal A/B/C acceptance.
+
+## Local MASA physical candidate migration audit (2026-10-16)
+
+- A new read-only checker, `scripts/trackocd_v2/audit_masa_frontend_migration.py`,
+  inspected the already-present local MASA Val physical output one NPZ shard at
+  a time. It did not open TAO annotations, GT/role files, images, Test assets or
+  weights, and it did not launch or modify an external process.
+- The sealed source contains `988/988` NPZ shards and completion receipts. All
+  passed SHA256/byte-count, array-shape, frame/detection offset, finite
+  box/score and receipt consistency checks: `36,375` annotated images,
+  `1,811,677` detection rows and `1,540,022` prediction rows.
+- The payload is category-free at the observed schema level (`image_id`,
+  `frame_index`, `track_id`, boxes and scores); the manifest explicitly binds
+  `test_access=false`, `gt_or_role_model_input=false`, and `training=false`.
+  This establishes a complete local physical candidate, not a v2 stream.
+- The machine report is
+  `outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json` with
+  status `HISTORICAL_MASA_PHYSICAL_CANDIDATE_NOT_V2_ADMISSIBLE`. Admission is
+  denied because the source scope is annotated-cadence rather than proven
+  dense frame-online v2, `primary_freeze_permitted=false`, exact private SAM
+  training-stage binding is unverified, and no v2 frontend-stage/shared-metric
+  receipt exists. No historical MASA metric was imported into admission.
+- The stream remains quarantined and does not replace the selected
+  COVTrack-native route, does not authorize common-feature caching, and does
+  not alter the formal v2 status. Goal A/B/C and formal v2 OCD/MOT remain open.

@@ -1,0 +1,105 @@
+{
+  "admissible_for_formal_v2": false,
+  "admission_reasons": [
+    "historical stream is complete and integrity-checked, but its receipt scope is annotated-cadence rather than a proven dense frame-online v2 stream",
+    "primary_freeze_permitted is false in the sealed physical audit",
+    "exact private SAM release/training-stage binding is not verified",
+    "no v2 frontend stage receipt or shared v2 Val metric contract is attached"
+  ],
+  "candidate_role": "HISTORICAL_PHYSICAL_FRONTEND_CANDIDATE_ONLY",
+  "coverage": {
+    "audited_detection_rows": 1811677,
+    "audited_images": 36375,
+    "audited_prediction_rows": 1540022,
+    "manifest_detection_rows": 1811677,
+    "manifest_images": 36375,
+    "manifest_prediction_rows": 1540022,
+    "manifest_videos": 988,
+    "shards_passed": 988,
+    "shards_total": 988
+  },
+  "errors": [],
+  "formal_common_feature_cache_authorized": false,
+  "generated_utc": "2026-10-15T20:56:11.448753+00:00",
+  "integrity": {
+    "problems": [],
+    "shard_result_digest": "35f525625e03de1cd04821de51bfb7d0763392bb8be4a4a02533425dfb66f0eb",
+    "shard_results_omitted": true,
+    "status": "PASS"
+  },
+  "manifest_flags": {
+    "gt_or_role_model_input": false,
+    "primary_freeze_permitted": false,
+    "schema_version": "trackocd.core.masa_full_val_prediction.v1",
+    "status": "SEALED_COMPLETE_FULL_VAL_PHYSICAL_STREAM",
+    "test_access": false,
+    "training": false
+  },
+  "next_allowed_action": "Keep the MASA stream quarantined as physical evidence; only after an explicit v2 route receipt, exact provenance decision, and shared Val metric contract may a separate normalized candidate be registered.",
+  "primary_frontend_qualification": false,
+  "read_only_audit": true,
+  "route_and_provenance": {
+    "exact_private_sam_release_training_stage_binding_verified": false,
+    "forbidden_supervision_proven": false,
+    "physical_result_primary_freeze_permitted": false,
+    "physical_result_status": "FULL_VAL_PHYSICAL_AUDIT_COMPLETE_NOT_AUTOMATIC_PRIMARY_PASS",
+    "training_route_exact_stage_binding": false,
+    "training_route_primary_freeze_permitted": false,
+    "training_route_status": "PUBLISHED_GENERIC_ROUTE_VERIFIED_EXACT_SAM_RELEASE_STAGE_BINDING_MISSING"
+  },
+  "schema_version": "trackocd.v2.masa_frontend_migration_eligibility.v1",
+  "source": {
+    "completion_receipt_count": 988,
+    "manifest": {
+      "bytes": 842571,
+      "exists": true,
+      "is_symlink": false,
+      "mtime_ns": 1791586829006462801,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/physical/masa_full_val_annotated/prediction_manifest.json",
+      "sha256": "8564226a67298040af4a51c66ca6c9e1a72d169fa454329fa5eb09e496c1f592"
+    },
+    "npz_total_bytes": 63222355,
+    "resolved_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/physical/masa_full_val_annotated",
+    "root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/physical/masa_full_val_annotated",
+    "shard_count": 988
+  },
+  "source_boundary": {
+    "external_processes_touched": false,
+    "gt_or_role_model_input": false,
+    "historical_metrics_imported_for_admission": false,
+    "images_decoded": false,
+    "model_weights_loaded": false,
+    "network_used": false,
+    "source_stream_modified": false,
+    "tao_test_accessed": false,
+    "training_performed": false
+  },
+  "status": "HISTORICAL_MASA_PHYSICAL_CANDIDATE_NOT_V2_ADMISSIBLE",
+  "stream_contract": {
+    "appearance_embedding_payload_present": false,
+    "category_free_payload_fields_observed": [
+      "boxes",
+      "det_boxes",
+      "det_offsets",
+      "det_score",
+      "frame_index",
+      "frame_offsets",
+      "image_id",
+      "score",
+      "track_id"
+    ],
+    "conversion_or_copy_performed": false,
+    "dense_frame_online_proven": false,
+    "historical_scope": "M1 full-Val frozen physical candidate audit on annotated cadence",
+    "native_row_fields_representable": [
+      "bbox_xyxy",
+      "frame_index",
+      "image_id",
+      "physical_track_id",
+      "score",
+      "video_id"
+    ],
+    "same_v2_evaluator_contract_proven": false,
+    "same_v2_predicted_stream_proven": false
+  }
+}
