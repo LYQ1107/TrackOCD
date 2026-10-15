@@ -7841,3 +7841,19 @@ no private GT/cache/weights opened for this check):
 - Current storage is approximately `/data3` 1.7T free, `/data2` 1.8T free,
   and `/data1` 3.3T free. The existing TAO-Amodal tree is about 358G and is
   not duplicated. No large recovery copy or formal cache launch was made.
+
+## Reversible local Train/Val mapping applied (2026-10-16)
+
+- After a dry-run verified all six sources and refused any pre-existing target,
+  `scripts/trackocd_v2/prepare_reversible_local_mapping.py --apply` created
+  only symlinks for the two hash-verified Train/Val annotations, the shared
+  Train/Val frames directory, and the three byte-recovered role files. The
+  manifest is `outputs/trackocd_cvpr/v2_local_reversible_mapping_20261016.json`.
+- No bytes were copied; no Test path was mapped or opened; predicted stream,
+  checkpoint, and formal cache were untouched. The source SHA256 values are
+  Train `7eb551...921d0`, Val `041488...76ee`, Known
+  `0a8684...7cedc`, unknown-Val `a05c75...a016f`, and distractor
+  `9dc538...09fc`.
+- The corrected read-only v2 admission now passes the local role/Train/Val
+  presence checks and reports only the missing predicted stream, frontend
+  provenance, and formal cache. Full `tests/trackocd_v2` passes (`40 passed`).

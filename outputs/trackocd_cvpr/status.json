@@ -447,7 +447,7 @@
   "latest_v2_asset_admission_script": "scripts/trackocd_v2/recovery_asset_admission.py",
   "latest_v2_asset_admission_tests": "tests/trackocd_v2/test_recovery_asset_admission.py",
   "latest_v2_asset_admission_formal_ready": false,
-  "latest_v2_asset_admission_scope": "Read-only current-server admission: no network/process control/write, no Test semantic access, no annotation/predicted-stream/feature-array content read; missing exact v2 role files, predicted physical stream, frontend provenance and formal Val cache",
+  "latest_v2_asset_admission_scope": "Read-only current-server admission after explicit Train/Val-only symlink mapping: no network/process control/write during admission, no Test semantic access, no annotation/predicted-stream/feature-array content read; predicted physical stream, frontend provenance and formal Val cache remain missing",
   "latest_v2_asset_admission_missing": [
     "data/raw/tao/annotations/{train,validation}.json",
     "data/tao_ow_ocd_v1/splits/{known_ids,unknown_ids_val,distractor_ids}.json",
@@ -459,6 +459,15 @@
   "latest_v2_asset_admission_test_paths_opened": [],
   "latest_v2_asset_admission_network_used": false,
   "latest_v2_asset_admission_write_performed": false,
+  "latest_local_reversible_mapping": "outputs/trackocd_cvpr/v2_local_reversible_mapping_20261016.json",
+  "latest_local_reversible_mapping_status": "APPLIED_REVERSIBLE_SYMLINK_MAPPING_TRAIN_VAL_AND_ROLES_ONLY",
+  "latest_local_reversible_mapping_copy_performed": false,
+  "latest_local_reversible_mapping_test_paths_mapped": [],
+  "latest_v2_asset_admission_missing_after_mapping": [
+    "data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+    "outputs/trackocd_v2/audit/{frontend_selection,representation_decision,autonomous_state,frontend_covtrack_native}.json",
+    "outputs/trackocd_v2/features/formal/<selected_frontend>/cache_manifest.json"
+  ],
   "latest_local_historical_frontend_evidence": "outputs/trackocd_core/audit/nas_m1_source/{frontend_selection,representation_decision,frontend_covtrack_native,frontend_covtrack_native_native_run,frontend_covtrack_native_metrics}.json",
   "latest_local_historical_frontend_evidence_scope": "Historical COVTrack-native Val audit only: asset_status=HISTORICAL_ASSET_AUDIT_ONLY and same_v2_predicted_stream=false; referenced physical stream/checkpoint/formal cache absent locally; not formal v2 input or OCD/MOT result",
   "latest_asset_recovery_ledger": "docs/trackocd_v2/ASSET_RECOVERY_LEDGER_20261016.md",

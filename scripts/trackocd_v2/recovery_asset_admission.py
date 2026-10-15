@@ -400,7 +400,7 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: Iterable[str] | None = None) -> int:
     args = _parser().parse_args(list(argv) if argv is not None else None)
     project_root = args.project_root.resolve(strict=False)
-    data_root = (args.data_root or project_root).resolve(strict=False)
+    data_root = (args.data_root or project_root / "data").resolve(strict=False)
     output_root = (args.output_root or project_root / "outputs/trackocd_v2").resolve(strict=False)
     payload = build_report(project_root, data_root, output_root)
     if args.output is not None:

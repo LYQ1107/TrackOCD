@@ -12,14 +12,14 @@ benchmark result. No TAO Test asset is included.
 | Python/CUDA environment | `/data3/liuyeqiang/.venvs/trackocd-a100`, entered through `trackocd_a100_env.sh` | present and reusable; add dependencies only after an import gap |
 | repository footprint | about 5.0G including local outputs; tracked source itself is about 17MB in the takeover record | do not duplicate the repository or historical outputs |
 | free space | `/data3` 1.7T, `/data2` 1.8T, `/data1` 3.3T | enough for a staged recovery, but no blind cache/data copy |
-| TAO candidate data | `/data3/liuyeqiang/TAO-Amodal`, about 358G | candidate only; not silently wired to v2 and never copied again |
+| TAO Train/Val data | `/data3/liuyeqiang/TAO-Amodal`, about 358G; exact Train/Val annotation hashes verified | now exposed through reversible symlinks only; never copied or Test-mapped |
 
 ## Required formal-v2 inputs
 
 | class | exact expected asset | current status | recovery rule |
 |---|---|---|---|
-| protocol roles | `data/tao_ow_ocd_v1/splits/{known_ids,unknown_ids_val,distractor_ids}.json` | missing from the v2 root | recover exact files and hashes; do not recreate from metrics |
-| Val annotations | `data/raw/tao/annotations/{train,validation}.json` | missing from the v2 root; TAO-Amodal is not an automatic substitute | recover/record exact lineage; admission checks only metadata before use |
+| protocol roles | `data/tao_ow_ocd_v1/splits/{known_ids,unknown_ids_val,distractor_ids}.json` | present as symlinks to byte-recovered files; hashes/counts `78/209/45` verified | keep the mapping manifest; do not recreate from metrics |
+| Val annotations | `data/raw/tao/annotations/{train,validation}.json` | present as symlinks to the hash-verified TAO-Amodal files | use only Train/Val paths; admission never parses these large files |
 | public physical stream | `data/tao_ow_ocd_v1/public/pred_track_stream.jsonl` | missing | recover exact file plus declared SHA256/row contract; do not synthesize from old counts |
 | frontend selection | `outputs/trackocd_v2/audit/frontend_selection.json` | missing in the formal namespace | recover with provenance; historical core copy is evidence only |
 | representation decision | `outputs/trackocd_v2/audit/representation_decision.json` | missing in the formal namespace | recover and verify final status/authorization |
@@ -52,6 +52,8 @@ benchmark result. No TAO Test asset is included.
    reports. No training, Test read, or full cache launch is authorized merely
    by finding a historical metric or the old 65-shard count.
 
-The current admission result is therefore **blocked on exact asset recovery**,
-while the research Goal remains active and the historical evidence remains
-preserved.
+The current admission result is therefore **blocked on exact predicted-stream,
+frontend-provenance and formal-cache recovery**, while the research Goal
+remains active and the historical evidence remains preserved. The applied
+Train/Val-only symlink mapping is recorded at
+`outputs/trackocd_cvpr/v2_local_reversible_mapping_20261016.json`.
