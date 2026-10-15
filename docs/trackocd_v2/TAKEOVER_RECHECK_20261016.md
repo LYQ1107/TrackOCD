@@ -66,3 +66,23 @@ separately scoped and must not be relabeled as that missing formal result.
   wrapper or after a separately registered source patch. It does not authorize
   predicted features, frontend selection, TAO Test access, or formal
   evaluation.
+
+## Existing metrics, kept in their original scope
+
+- The preserved historical COVTrack-native Val reference reports category-free
+  tracking `HOTA=0.15412`, `AssA=0.44569`, `DetA=0.055848`,
+  `DetRe=0.54448`, `LocA=0.76654`, and `OWTA=0.48228`; its derived novel and
+  persistent observability are `191/819=0.233211` and `88/527=0.166983`.
+  The same audit records `legal_gate=FAIL_NO_NOVEL_VOCABULARY`,
+  `recomputed_on_a100=false`, and `not_new_ocd_or_commit_ct_result=true`.
+- The preserved full-Val class-agnostic RPN/ByteTrack quality audit reports
+  `HOTA=0.145054`, `AssA=0.440879`, `DetA=0.048489`, and `DetRe=0.631809`,
+  with reliable physical coverage `1400/4413` Known and `189/819` Novel.
+  Its status explicitly says quality audit only, not semantic OCD/M9 or
+  automatic primary qualification.
+- The limited Train-first annotated-cadence OCD development table reports at
+  prefix 16: A1-Selected `Old ACC=0.078103`, `New ACC=0.113350`,
+  `H-score=0.089303`, `Commit-CT=0`, and A2-Evidence
+  `Old ACC=0.050816`, `New ACC=0.123423`, `H-score=0.071512`,
+  `Commit-CT=0`. These are existing core development results with a
+  scientific-negative conclusion, not formal v2 or TAO Test results.
