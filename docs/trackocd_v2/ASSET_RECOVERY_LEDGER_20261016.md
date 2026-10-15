@@ -20,7 +20,7 @@ benchmark result. No TAO Test asset is included.
 |---|---|---|---|
 | protocol roles | `data/tao_ow_ocd_v1/splits/{known_ids,unknown_ids_val,distractor_ids}.json` | present as symlinks to byte-recovered files; hashes/counts `78/209/45` verified | keep the mapping manifest; do not recreate from metrics |
 | Val annotations | `data/raw/tao/annotations/{train,validation}.json` | present as symlinks to the hash-verified TAO-Amodal files | use only Train/Val paths; admission never parses these large files |
-| public physical stream | `data/tao_ow_ocd_v1/public/pred_track_stream.jsonl` | missing | recover exact file plus declared SHA256/row contract; do not synthesize from old counts |
+| public physical stream | `data/tao_ow_ocd_v1/public/pred_track_stream.jsonl` | missing locally; later historical NAS audit records 258,036,479 bytes, SHA256 `63945d2ae19f...`, 369,794 tracks and 1,133,841 observations | recover exact file and verify the declared hash/row contract; do not synthesize from counts |
 | frontend selection | `outputs/trackocd_v2/audit/frontend_selection.json` | missing in the formal namespace | recover with provenance; historical core copy is evidence only |
 | representation decision | `outputs/trackocd_v2/audit/representation_decision.json` | missing in the formal namespace | recover and verify final status/authorization |
 | COVTrack-native stage | `outputs/trackocd_v2/audit/frontend_covtrack_native.json` | missing in the formal namespace | require same-v2 physical/evaluator contract and `test_semantic_accessed=false` |
@@ -32,8 +32,8 @@ benchmark result. No TAO Test asset is included.
 |---|---|---|
 | COVTrack-native audit | `outputs/trackocd_core/audit/nas_m1_source/` (five small JSON files, about 250KB total) | preserved historical Val evidence; explicitly `HISTORICAL_ASSET_AUDIT_ONLY` and `same_v2_predicted_stream=false`; retain in place |
 | native checkpoint | historical receipt records a hash beginning `e4d0b657...` | actual checkpoint path/file is absent locally; recover only after exact manifest match |
-| old formal shards | old conversation reported 65 shards/247,756 observations | historical count only; do not assume complete/current and do not copy until manifest/markers are audited |
-| DINOv2 source/weights | no suitable v2 source/weight bundle found locally | recover exact source/checkpoint and hash; otherwise recompute only after formal admission |
+| old formal shards | later historical NAS audit records `255/723` shards, `130560/369794` tracks, `561672/1133841` observations, 35.3061% coverage and 2,087,621,953 payload bytes | incomplete historical snapshot; the earlier 65-shard count is obsolete evidence, but neither snapshot is current until NAS recheck |
+| DINOv2 source/weights | historical NAS audit records official ViT-B/14 checkpoint size 346,378,731 and SHA256 `0b8b82f85de9...` | no local copy/exact hub code; recover exact source/checkpoint and hash, otherwise recompute only after formal admission |
 | PHE/H3 artifacts | expected PHE checkpoint and Phase90 H3 namespace absent | recover exact files; never replace H3 with a Phase89/90 diagnostic |
 | independent pseudo-Novel Train cache | `outputs/trackocd_cvpr/cvpr2/independent_GT_video_cache_v1` result, 68 videos/295 tracks/7,103 observations | present as anonymous GT-control preparation only; not predicted stream, not formal OCD/MOT, not a model-selection input |
 
@@ -57,3 +57,12 @@ frontend-provenance and formal-cache recovery**, while the research Goal
 remains active and the historical evidence remains preserved. The applied
 Train/Val-only symlink mapping is recorded at
 `outputs/trackocd_cvpr/v2_local_reversible_mapping_20261016.json`.
+
+## Historical NAS snapshot boundary
+
+`outputs/trackocd_core/audit/nas_source_audit.json` is a local record of a
+previous read-only NAS inventory, not a live mount. It is useful for locating
+and verifying future recovery, but its limitations explicitly include no
+per-file checksum/Parquet-row/numerical validation, no proof that NAS source
+equals the current Git commit, and no A100 restoration. The current server
+must re-open the actual files before any shard reuse.

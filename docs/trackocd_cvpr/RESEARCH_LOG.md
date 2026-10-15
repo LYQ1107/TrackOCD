@@ -7857,3 +7857,22 @@ no private GT/cache/weights opened for this check):
 - The corrected read-only v2 admission now passes the local role/Train/Val
   presence checks and reports only the missing predicted stream, frontend
   provenance, and formal cache. Full `tests/trackocd_v2` passes (`40 passed`).
+
+## Historical NAS cache snapshot disambiguation (2026-10-16)
+
+- A local, previously recorded NAS audit at
+  `outputs/trackocd_core/audit/nas_source_audit.json` contains a later and more
+  precise snapshot than the old chat note of 65 shards. It recorded the
+  COVTrack-native Val physical stream as `258036479` bytes with SHA256
+  `63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1`,
+  `369794` tracks, `1133841` observations, no duplicate sample keys, and
+  source split `val_predicted`.
+- The same historical audit recorded the formal cache as `RUNNING`, with
+  `255/723` shards and done markers, `130560/369794` stored tracks,
+  `561672/1133841` observations, `35.3061%` track coverage, `468` missing
+  shards, and `2087621953` stored payload bytes. The 65-shard/247756 figure is
+  therefore not a valid stopping point, but the 255-shard snapshot is also not
+  current or complete and cannot be reused without a live NAS manifest/hash
+  recheck.
+- This audit remains metadata evidence only: no current NAS file was opened in
+  this turn, no Test content was read, and no shard was copied or resumed.
