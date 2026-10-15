@@ -25,14 +25,38 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from src.trackocd_v2.io import OUTPUT_TARGET  # noqa: E402
 
-COVTRACK_ROOT = ROOT / "third_party/research_refs_phase4n/COVTrack"
-_DEFAULT_COVTRACK_PYTHON = Path("/home/lwr/anaconda3/envs/ovtrack_mmdet2/bin/python")
+_LEGACY_COVTRACK_ROOT = ROOT / "third_party/research_refs_phase4n/COVTrack"
+_RECOVERED_COVTRACK_ROOT = ROOT / "vendor/trackocd_external/covtrack_public"
+COVTRACK_ROOT = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_ROOT",
+        str(_RECOVERED_COVTRACK_ROOT if _RECOVERED_COVTRACK_ROOT.is_dir() else _LEGACY_COVTRACK_ROOT),
+    )
+)
+_DEFAULT_COVTRACK_PYTHON = Path("/data3/liuyeqiang/.venvs/covtrack-public/bin/python")
+if not _DEFAULT_COVTRACK_PYTHON.is_file():
+    _DEFAULT_COVTRACK_PYTHON = Path("/home/lwr/anaconda3/envs/ovtrack_mmdet2/bin/python")
 if not _DEFAULT_COVTRACK_PYTHON.is_file():
     _DEFAULT_COVTRACK_PYTHON = Path("/home/lwr/anaconda3/envs/ovtrack/bin/python")
 COVTRACK_PYTHON = Path(os.environ.get("TRACKOCD_COVTRACK_PYTHON", str(_DEFAULT_COVTRACK_PYTHON)))
 COVTRACK_LAUNCHER = ROOT / "scripts/trackocd_v2/run_covtrack_legacy_test.py"
-CHECKPOINT = ROOT / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"
+_LEGACY_CHECKPOINT = ROOT / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"
+_RECOVERED_CHECKPOINT = ROOT / "checkpoints/covtrack/ctao_public.pth"
+CHECKPOINT = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_CHECKPOINT",
+        str(_RECOVERED_CHECKPOINT if _RECOVERED_CHECKPOINT.is_file() else _LEGACY_CHECKPOINT),
+    )
+)
 CONFIG = COVTRACK_ROOT / "configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py"
+_RECOVERED_PROMPT = ROOT / "checkpoints/covtrack/detpro_prompt.pt"
+_SOURCE_PROMPT = COVTRACK_ROOT / "saved_models/pretrained_models/detpro_prompt.pt"
+PROMPT = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_PROMPT",
+        str(_RECOVERED_PROMPT if _RECOVERED_PROMPT.is_file() else _SOURCE_PROMPT),
+    )
+)
 FRONTENDS = {
     "covtrack_native": {"name": "COVTrack-native", "confused_features": True},
     "covtrack_nosem": {"name": "COVTrack-NoSemantic", "confused_features": False},
@@ -150,7 +174,7 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
             OUTPUT_TARGET / "audit/FINAL_FREEZE.json",
             "run frozen COVTrack TAO Test frontend",
         )
-    for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT):
+    for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT):
         if not path.is_file():
             raise FileNotFoundError(path)
     if split == "test" and not TEST_ANNOTATION.is_file():
@@ -164,6 +188,7 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
     confused = str(FRONTENDS[slug]["confused_features"]).lower()
     cfg_options = [
         "model.tracker.confused_features=" + confused,
+        "model.roi_head.prompt_path=" + str(PROMPT.resolve()),
         "data.samples_per_gpu=1",
         "data.workers_per_gpu=1",
         "data.persistent_workers=False",
@@ -255,6 +280,8 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
             "normalization_command": normalize_command,
             "checkpoint": str(CHECKPOINT.resolve()),
             "checkpoint_sha256": _sha256(CHECKPOINT),
+            "prompt": str(PROMPT.resolve()),
+            "prompt_sha256": _sha256(PROMPT),
             "config": str(CONFIG.resolve()),
             "confused_features": FRONTENDS[slug]["confused_features"],
             "native_output": str(output.resolve()),

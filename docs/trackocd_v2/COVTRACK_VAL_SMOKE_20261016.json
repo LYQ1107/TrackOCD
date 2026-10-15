@@ -1,0 +1,87 @@
+{
+  "schema_version": "trackocd.v2.covtrack_val_smoke.v1",
+  "generated_at_utc": "2026-10-15T21:14:45+00:00",
+  "status": "COMPLETE_ONE_VIDEO_VAL_INFERENCE_SMOKE_NOT_FORMAL_METRIC",
+  "scope": {
+    "split": "tao_val",
+    "video_ids": [4],
+    "video_count": 1,
+    "frames_processed": 40,
+    "ground_truth_annotations_used_for_evaluation": false,
+    "trackeval_or_mot_evaluator_run": false,
+    "ocd_metric_run": false,
+    "model_selection": false,
+    "training_started": false,
+    "tao_test_read": false,
+    "novel_vocabulary_used_for_selection": false,
+    "external_processes_touched": false
+  },
+  "frontend": {
+    "name": "COVTrack-NoSemantic",
+    "confused_features": false,
+    "semantic_fields_exposed_to_trackocd_backend": false,
+    "normalizer": {
+      "status": "COMPLETE",
+      "input_rows": 1616,
+      "physical_tracks": 453,
+      "invalid_boxes": 0,
+      "semantic_labels_consumed": false,
+      "gt_join_used_for_normalization": false,
+      "test_semantic_accessed": false
+    }
+  },
+  "source": {
+    "repository": "https://github.com/zekunqian/COVTrack",
+    "commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b",
+    "working_tree_clean_after_cache_cleanup": true,
+    "config": "vendor/trackocd_external/covtrack_public/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+    "config_sha256": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a"
+  },
+  "runtime": {
+    "python": "/data3/liuyeqiang/.venvs/covtrack-public/bin/python",
+    "torch": "2.0.0+cu118",
+    "mmcv": "1.7.2",
+    "mmdet": "2.28.2",
+    "clip": "importable",
+    "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+    "checkpoint_bytes": 368829353,
+    "checkpoint_sha256": "e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c",
+    "prompt": "checkpoints/covtrack/detpro_prompt.pt",
+    "prompt_bytes": 2464491,
+    "prompt_sha256": "00ba2f0bfb9abdb577b2fcf2afae12655d6190a18f11051aabdc97f8e4c24579",
+    "gpu_selected_after_live_idle_check": 0
+  },
+  "input": {
+    "structural_annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+    "structural_annotation_sha256": "0414885ee2702c2d3176cf6184e7811a7bd1c1347a157fef57a91020976776ee",
+    "temporary_one_video_annotation": "/data3/liuyeqiang/.covtrack_val_smoke.8XHlYJ/validation_one_video.json",
+    "temporary_class_source": "official COVTrack LVIS_CLASSES tuple",
+    "temporary_class_count": 1203
+  },
+  "outputs": {
+    "root": "/data3/liuyeqiang/.covtrack_val_smoke.8XHlYJ",
+    "native_track_json": {
+      "path": "/data3/liuyeqiang/.covtrack_val_smoke.8XHlYJ/results/tao_track.json",
+      "bytes": 303481,
+      "sha256": "92b5a3750416a85aac00547ae78c6a32656da500985f082a9d586f5a3cfa03fd"
+    },
+    "native_evaluator_rows_jsonl": {
+      "path": "/data3/liuyeqiang/.covtrack_val_smoke.8XHlYJ/normalized/native_evaluator_rows.jsonl",
+      "bytes": 335662,
+      "rows": 1616,
+      "sha256": "a48440d72aa55732aaf007831a617c6a8a53dc59d94bffb0b1ab7b5201334c8a"
+    },
+    "physical_tracks_jsonl": {
+      "path": "/data3/liuyeqiang/.covtrack_val_smoke.8XHlYJ/normalized/physical_tracks.jsonl",
+      "bytes": 354538,
+      "tracks": 453,
+      "sha256": "fa31e3dae82a604f0a618384e9a4115805300a7387545072fad85aeec81a337f"
+    }
+  },
+  "interpretation": {
+    "formal_v2_admissible": false,
+    "metrics_available": false,
+    "reason": "This is a bounded inference and normalization smoke only. It proves the recovered public frontend, fixed assets, and TrackOCD physical-stream boundary execute on one TAO Val video; it does not provide OCD, MOT, HOTA, MOTA, IDF1, or model-selection evidence.",
+    "next_valid_step": "Register the Val-only full-run input contract, run both fixed COVTrack frontend routes without selection, then perform the separately registered evaluator and protocol audit before any formal v2 claim."
+  }
+}

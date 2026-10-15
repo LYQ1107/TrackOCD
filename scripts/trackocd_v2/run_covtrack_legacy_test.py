@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import importlib.util
 from importlib.machinery import ModuleSpec
+import os
 import runpy
 import sys
 import types
@@ -20,9 +21,22 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-COVTRACK_TEST = ROOT / "third_party/research_refs_phase4n/COVTrack/tools/test.py"
+_LEGACY_COVTRACK_ROOT = ROOT / "third_party/research_refs_phase4n/COVTrack"
+_RECOVERED_COVTRACK_ROOT = ROOT / "vendor/trackocd_external/covtrack_public"
+COVTRACK_ROOT = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_ROOT",
+        str(_RECOVERED_COVTRACK_ROOT if _RECOVERED_COVTRACK_ROOT.is_dir() else _LEGACY_COVTRACK_ROOT),
+    )
+)
+COVTRACK_TEST = COVTRACK_ROOT / "tools/test.py"
+if str(COVTRACK_ROOT) not in sys.path:
+    sys.path.insert(0, str(COVTRACK_ROOT))
 CLIP_PACKAGE = Path(
-    "/home/lwr/anaconda3/envs/ovtrack/lib/python3.11/site-packages/clip"
+    os.environ.get(
+        "TRACKOCD_COVTRACK_CLIP_PACKAGE",
+        "/home/lwr/anaconda3/envs/ovtrack/lib/python3.11/site-packages/clip",
+    )
 )
 
 
@@ -71,7 +85,7 @@ def _install_bdd_import_shim() -> None:
 def _install_clip_import_shim() -> None:
     """Load existing CLIP without exposing its whole donor environment."""
 
-    if "clip" in sys.modules:
+    if "clip" in sys.modules or importlib.util.find_spec("clip") is not None:
         return
     init_file = CLIP_PACKAGE / "__init__.py"
     if not init_file.is_file():

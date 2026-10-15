@@ -1,0 +1,88 @@
+{
+  "config_contract": {
+    "exists": true,
+    "interpretation": {
+      "formal_run_uses_frozen_checkpoint": true,
+      "is_training_config": true,
+      "prompt_is_runtime_frontend_asset": true,
+      "prompt_used_for_model_selection": false,
+      "training_started_by_this_audit": false
+    },
+    "path": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_external/covtrack_public/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+    "sha256": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a",
+    "tokens": {
+      "ctao_base_training_annotation": true,
+      "lvis_class_count": true,
+      "native_semantic_cue_default": true,
+      "public_prompt_path": true,
+      "special_image_prompt": true,
+      "special_text_prompt": true,
+      "validation_category_route": true
+    }
+  },
+  "generated_utc": "2026-10-15T21:16:26.991912+00:00",
+  "next_gate": "Register a Val-only full-run input contract and run both fixed COVTrack-native and COVTrack-NoSemantic frontend routes without model selection, then perform the separately registered evaluator and protocol audit.",
+  "public_assets": {
+    "checkpoint": {
+      "bytes": 368829353,
+      "exists": true,
+      "expected_bytes": 368829353,
+      "expected_sha256": "e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c",
+      "integrity": "PASS",
+      "path": "/data3/liuyeqiang/TrackOCD/checkpoints/covtrack/ctao_public.pth",
+      "sha256": "e4d0b65798844280ea13943e580ce6233ae5d331c4aa1d38eb226c3208dd567c"
+    },
+    "downloaded_ctao_annotations": false,
+    "downloaded_feature_cache": false,
+    "downloaded_tao_test": false,
+    "model_repository": "https://huggingface.co/clarkqian/COVTrack",
+    "prompt_embedding": {
+      "bytes": 2464491,
+      "exists": true,
+      "expected_bytes": 2464491,
+      "expected_sha256": "00ba2f0bfb9abdb577b2fcf2afae12655d6190a18f11051aabdc97f8e4c24579",
+      "integrity": "PASS",
+      "path": "/data3/liuyeqiang/TrackOCD/checkpoints/covtrack/detpro_prompt.pt",
+      "sha256": "00ba2f0bfb9abdb577b2fcf2afae12655d6190a18f11051aabdc97f8e4c24579"
+    }
+  },
+  "runtime": {
+    "legacy_runtime_ready": true,
+    "missing_required_modules": [],
+    "modules": {
+      "addict": true,
+      "clip": true,
+      "lvis": true,
+      "mmcv": true,
+      "mmdet": true,
+      "motmetrics": true,
+      "pycocotools": true,
+      "torch": true
+    },
+    "probe_status": "PASS",
+    "python": "/data3/liuyeqiang/.venvs/covtrack-public/bin/python"
+  },
+  "schema_version": "trackocd.v2.public_covtrack_recovery.v1",
+  "source": {
+    "clean_tracked_state": true,
+    "commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b",
+    "expected_commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b",
+    "integrity": "PASS",
+    "repository": "https://github.com/zekunqian/COVTrack",
+    "root": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_external/covtrack_public"
+  },
+  "status": "PUBLIC_ASSETS_RECOVERED_RUNTIME_READY_NOT_RUN",
+  "trackocd_boundary": {
+    "backend_category_free": true,
+    "formal_v2_admissible": false,
+    "frontend_only": true,
+    "native_frontend_run_started": false,
+    "novel_vocabulary_used_for_selection": false,
+    "prompt_is_fixed_runtime_asset": true,
+    "prompt_used_for_model_selection": false,
+    "reason": "Assets are hash-verified and the compatibility runtime passes import smoke, but no v2 frontend run receipt exists.",
+    "tao_test_read": false,
+    "tao_val_read": false,
+    "training_started": false
+  }
+}
