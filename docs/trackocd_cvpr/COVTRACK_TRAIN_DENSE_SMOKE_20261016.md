@@ -10,7 +10,7 @@ The only category records in that runtime JSON are the public COVTrack LVIS voca
 
 The smoke is limited to one currently idle GPU, two Train videos, and no optimizer steps. It is a frontend/input prerequisite, not a formal OCD/MOT evaluation or frontend qualification. No full 407-video inference is registered by this stage.
 
-The execution receipt and normalization audit will be added after the bounded run; raw native output and predicted cache remain local and are not committed.
+The bounded run completed in namespace `covtrack_train_dense_smoke_v1_20261016_alias1` on GPU 0. It processed both fixed Train videos (2,342 frames), produced 81,471 native observations and 8,233 normalized physical tracks, and had zero invalid boxes. The physical stream passed the category/text/GT boundary audit with `source_split=train_predicted`; no OCD/MOT metric was run or claimed. The compact receipt is `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json`; raw native JSON and predicted cache remain local and are not committed.
 
 The first launch attempt failed closed before child-process creation because the runner looked for the committed input receipt under the runtime output root instead of the registered CVPR receipt root. GPU 0 remained idle and no image/model/GT/Test input was touched. The path binding was corrected in `c4ab254`.
 
