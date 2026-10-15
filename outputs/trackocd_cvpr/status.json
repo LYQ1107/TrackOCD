@@ -486,6 +486,18 @@
     "diffusers": false,
     "tao": false
   },
+  "latest_v2_frontend_asset_audit_status": "AUDIT_COMPLETE_HISTORICAL_ONLY",
+  "latest_v2_frontend_asset_audit_result_sha256": "49f910a10dd657739259d01c01f31dac944b3891fe59faefea26897635d77ac3",
+  "latest_v2_frontend_asset_audit_predicted_stream_present": false,
+  "latest_v2_frontend_asset_audit_native_repositories_present": [],
+  "latest_v2_frontend_asset_audit_checkpoints_present": [],
+  "latest_v2_frontend_asset_audit_historical_teta_reference": {
+    "COVTrack_native_combined": 37.13,
+    "COVTrack_native_novel": 32.5,
+    "OVTR_native_combined": 35.34,
+    "OVTR_native_novel": 30.47,
+    "formal_v2_metric_claim": false
+  },
   "latest_local_reversible_mapping": "outputs/trackocd_cvpr/v2_local_reversible_mapping_20261016.json",
   "latest_local_reversible_mapping_status": "APPLIED_REVERSIBLE_SYMLINK_MAPPING_TRAIN_VAL_AND_ROLES_ONLY",
   "latest_local_reversible_mapping_copy_performed": false,

@@ -7926,3 +7926,22 @@ no private GT/cache/weights opened for this check):
   current A100 environment has `torch` but not the legacy native-route
   modules `mmcv`, `mmdet`, `clip`, `diffusers`, or `tao`; no legacy environment
   installation or frontend launch was inferred from this observation.
+
+## Local frontend asset audit after runtime repair (2026-10-16)
+
+- The read-only `audit_frontend_assets.py` completed under the new local output
+  target. Its result is
+  `outputs/trackocd_v2_runtime/audit/frontend_asset_audit.json` (SHA256
+  `49f910a10dd657739259d01c01f31dac944b3891fe59faefea26897635d77ac3`). The
+  v2 predicted stream, all three native frontend repositories, and all three
+  local native checkpoints are absent; no frontend is comparable under the
+  shared v2 evaluator contract.
+- It preserves historical references without promotion: COVTrack-native TETA
+  combined/Novel `37.13/32.50` and OVTR-native `35.34/30.47` are incompatible
+  historical scales and have no v2 Novel/Persistent Observability or Commit-CT
+  result. COVTrack-NoSemantic remains `NOT_YET_RUN`. These numbers do not
+  authorize a formal cache, OCD, MOT, or frontend selection.
+- The audit only inspected local metadata/small historical records; it did not
+  run native inference, open images, access Test semantics, or touch external
+  processes. The formal v2 stage therefore remains asset-waiting, not
+  metric-complete.
