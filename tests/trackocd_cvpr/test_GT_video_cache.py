@@ -69,6 +69,30 @@ def test_no_cache_or_training_expansion_and_fixed_precision_resource_gates():
     assert cfg['precision_min_cosine'] == 0.99999
 
 
+def test_independent_final_pseudo_pilot_is_small_and_not_a_model_facing_scope():
+    root = Path(__file__).resolve().parents[2]
+    cfg = json.loads((root / 'configs/trackocd_cvpr/independent_final_GT_video_cache_pilot_v1.json').read_text())
+    assert cfg['role'] == 'independent_final_pseudo'
+    assert cfg['independent_final_pseudo_cache_only']
+    assert (cfg['pilot_videos'], cfg['expected_tracks'], cfg['expected_observations'],
+            cfg['expected_metadata_frames']) == (2, 8, 223, 80)
+    assert cfg['maximum_observations_per_track'] is None
+    assert not cfg['full_cache_or_optimizer_automatic_start']
+    assert cfg['GPU_uuid'] == 'FIRST_FRESH_IDLE_UUID'
+    assert cfg['output_bytes_ceiling'] == 20 * 1024**2
+
+
+def test_independent_pilot_projects_only_opaque_role_video_ids(tmp_path):
+    from scripts.trackocd_cvpr.independent_final_GT_video_cache import assigned_video_ids
+    path = tmp_path / 'assignment.json'
+    path.write_text(json.dumps({'assignment': {'video_ids': {
+        'independent_final_pseudo': [16, 1], 'other': [7]}},
+        'role_class_support': {'independent_final_pseudo': {'opaque': True}}}))
+    assert assigned_video_ids(path, 'independent_final_pseudo', expected_count=2) == (16, 1)
+    with pytest.raises(ValueError): assigned_video_ids(path, 'independent_final_pseudo', expected_count=1)
+    with pytest.raises(ValueError): assigned_video_ids(path, 'missing', expected_count=1)
+
+
 def test_current_GPU_idle_guard_refuses_foreign_work_and_unknown_utilization(monkeypatch):
     from scripts.trackocd_cvpr import pilot_GT_video_cache as pilot
     cfg = {'GPU_uuid': 'GPU-fixture', 'GPU_idle_max_used_MiB': 64, 'GPU_idle_max_utilization_percent': 0}
