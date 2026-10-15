@@ -65,4 +65,3 @@ final results remain null. The next valid stage is to freeze the complete joint
 causal protocol, then add separately trained/self-correcting M controls and a
 lawful strong Pred/dense frontend endpoint before any formal development or
 final evaluation. No model is selected from this matrix.
-
