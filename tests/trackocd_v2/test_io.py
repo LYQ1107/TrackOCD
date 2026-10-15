@@ -21,3 +21,10 @@ def test_default_output_target_is_not_the_old_server_namespace():
 
     assert "/data2/usr_for_deadline/trackocd_v2" not in str(io._DEFAULT_OUTPUT_TARGET)
     assert io._DEFAULT_OUTPUT_TARGET == (io.PROJECT_ROOT / "outputs/trackocd_v2_runtime")
+
+
+def test_val_covtrack_wrapper_uses_shared_output_target():
+    from src.trackocd_v2 import io
+    from scripts.trackocd_v2 import run_covtrack_native
+
+    assert run_covtrack_native.OUTPUT_TARGET == io.OUTPUT_TARGET

@@ -7945,3 +7945,14 @@ no private GT/cache/weights opened for this check):
   run native inference, open images, access Test semantics, or touch external
   processes. The formal v2 stage therefore remains asset-waiting, not
   metric-complete.
+
+## Val wrapper path consistency repair (2026-10-16)
+
+- The Val-capable `run_covtrack_native.py` wrapper had one remaining direct
+  reference to the old `/data2` output namespace. It now imports the shared
+  configurable `OUTPUT_TARGET`, so a later authorized Val bake-off will write
+  to the same new-server runtime target and preserve the existing resource and
+  provenance guards. The Test-only SimOWT/OVTR wrappers were not executed or
+  broadened; no Test access was authorized.
+- The v2 suite passes `43` tests, including an explicit assertion that the
+  COVTrack Val wrapper and common I/O layer resolve to the same output target.

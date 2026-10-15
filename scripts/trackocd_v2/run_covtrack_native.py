@@ -23,6 +23,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+from src.trackocd_v2.io import OUTPUT_TARGET  # noqa: E402
+
 COVTRACK_ROOT = ROOT / "third_party/research_refs_phase4n/COVTrack"
 _DEFAULT_COVTRACK_PYTHON = Path("/home/lwr/anaconda3/envs/ovtrack_mmdet2/bin/python")
 if not _DEFAULT_COVTRACK_PYTHON.is_file():
@@ -31,7 +33,6 @@ COVTRACK_PYTHON = Path(os.environ.get("TRACKOCD_COVTRACK_PYTHON", str(_DEFAULT_C
 COVTRACK_LAUNCHER = ROOT / "scripts/trackocd_v2/run_covtrack_legacy_test.py"
 CHECKPOINT = ROOT / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"
 CONFIG = COVTRACK_ROOT / "configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py"
-OUTPUT_TARGET = Path("/data2/usr_for_deadline/trackocd_v2/project_outputs")
 FRONTENDS = {
     "covtrack_native": {"name": "COVTrack-native", "confused_features": True},
     "covtrack_nosem": {"name": "COVTrack-NoSemantic", "confused_features": False},
