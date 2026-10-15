@@ -8052,3 +8052,19 @@ no private GT/cache/weights opened for this check):
 - Correction: the approved plan's 407 video IDs are sparse, not numeric `0..406`. No shard was launched from the invalid ranges. The protocol is being corrected to four ordinal slices of the sorted actual ID list (`102/102/102/101`) with order and per-shard hashes checked against the non-model-facing image plan.
 - The corrected four anonymous manifests now pass set equality and boundary checks: `407` videos, `432,011` raw JPEG frames, shard image counts `112,186/120,066/108,606/91,153`, empty annotations/tracks, no Train GT/Val/Test/pixels/model access. This is input preparation only; the four GPU inference shards remain unstarted.
 - The freeze is not a scientific result: formal OCD/MOT, strong frontend qualification, full Pred cache, separately trained/self-correcting M, and Goal A/B/C remain open.
+
+## Resource-protected pause of one dense frontend shard (2026-10-15 UTC)
+
+- The four fixed anonymous COVTrack Train shards were launched as owned
+  inference-only workers. During the run, exact `MemAvailable` fell below the
+  frozen 25% RAM reserve (`32,079,416 kB` available versus a
+  `32,908,271 kB` floor); swap was also effectively full.
+- Shard 3 was therefore gracefully interrupted with SIGINT. This touched only
+  the agent-owned shard process; no external process was stopped, no raw
+  output/cache was deleted, and no training, Val/Test label access, or formal
+  metric was performed. The compact evidence is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3/resource_pause_20261015.json`.
+- Shards 0, 1, and 2 continue under their original run IDs. Shard 3 must be
+  registered in a fresh namespace only after the RAM guard clears; the
+  interrupted namespace is not treated as complete and no partial native
+  output is promoted.
