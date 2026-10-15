@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Fresh namespace retry after a pre-private-input remote transport failure."""
+from pathlib import Path
 import sys
 
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 from scripts.trackocd_cvpr import evaluate_M_development_current_source as current
 from scripts.trackocd_cvpr import evaluate_M_development_current_source_wall_recovery2 as recovery2
 
