@@ -11,8 +11,8 @@ from scripts.trackocd_cvpr import evaluate_M_development_current_source_wall_rec
 
 SCRIPT = 'scripts/trackocd_cvpr/evaluate_M_development_current_source_wall_recovery2_retry.py'
 RETRY_SUFFIX = os.environ.get('TRACKOCD_M_RECOVERY_RETRY_SUFFIX', '_retry1')
-if RETRY_SUFFIX not in ('_retry1', '_retry2'):
-    raise ValueError('Only registered retry1/retry2 namespaces are allowed')
+if RETRY_SUFFIX not in ('_retry1', '_retry2', '_retry3'):
+    raise ValueError('Only registered retry1/retry2/retry3 namespaces are allowed')
 
 
 def configuration(root, args):

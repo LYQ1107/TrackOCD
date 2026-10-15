@@ -37,6 +37,7 @@ def test_transport_failure_gets_only_exact_https_public_ref_without_credentials(
         if command[0] == 'git':
             return SimpleNamespace(returncode=128, stdout=b'')
         assert command[0] == 'curl' and '--insecure' not in command
+        assert '--http1.1' in command and '--tlsv1.2' in command
         assert command[-1] == 'https://api.github.com/repos/LYQ1107/TrackOCD/git/ref/heads/' + BRANCH
         assert not any('Authorization' in arg for arg in command)
         return SimpleNamespace(returncode=0, stdout=json.dumps(ref()).encode())
@@ -60,7 +61,7 @@ def test_both_transports_fail_bounded_and_gate_stays_closed(tmp_path):
         return SimpleNamespace(returncode=35, stdout=b'')
     with pytest.raises(RuntimeError, match='gate remains closed'):
         verify_registration(tmp_path, BRANCH, SHA, run=run, allow_public_api=True)
-    assert len(calls) == 3
+    assert len(calls) == 9
     calls.clear()
     with pytest.raises(RuntimeError, match='not registered'):
         verify_registration(tmp_path, BRANCH, SHA, run=run)

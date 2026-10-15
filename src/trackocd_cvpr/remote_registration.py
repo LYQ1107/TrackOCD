@@ -6,6 +6,7 @@ import subprocess
 
 BRANCH = 'research/cvpr-trackocd-autonomous-v2'
 REPO = 'LYQ1107/TrackOCD'
+PUBLIC_API_ATTEMPTS = 8
 
 
 def validate_ref_response(value, expected):
@@ -36,14 +37,15 @@ def verify_registration(root, branch, expected, proxy='', *, allow_public_api=Fa
     if not allow_public_api:
         raise RuntimeError('Git registration transport failed; API fallback not registered for this config')
     url = 'https://api.github.com/repos/' + REPO + '/git/ref/heads/' + branch
-    command = ['curl', '--fail', '--silent', '--show-error', '--proto', '=https',
+    command = ['curl', '--fail', '--silent', '--show-error', '--http1.1', '--tlsv1.2',
+               '--proto', '=https',
                '--connect-timeout', '6', '--max-time', '12', '--max-filesize', '65536',
                '--header', 'Accept: application/vnd.github+json', '--header', 'Cache-Control: no-cache',
                '--header', 'X-GitHub-Api-Version: 2022-11-28']
     if proxy:
         command += ['--proxy', proxy]
     command.append(url)
-    for attempt in range(1, 3):
+    for attempt in range(1, PUBLIC_API_ATTEMPTS + 1):
         try:
             response = run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15)
         except subprocess.TimeoutExpired:
@@ -58,4 +60,4 @@ def verify_registration(root, branch, expected, proxy='', *, allow_public_api=Fa
                 'canonical_API_url': url, 'API_attempt': attempt,
                 'primary_git_transport_error': error_kind, 'primary_git_exit_code': error_code,
                 'credentials_or_local_receipts_used_for_API_proof': False}
-    raise RuntimeError('Both bounded live remote-ref transports failed; private input gate remains closed')
+    raise RuntimeError('All bounded live remote-ref transports failed; private input gate remains closed')
