@@ -8016,3 +8016,20 @@ no private GT/cache/weights opened for this check):
   coverage is `1.0`. This is a negative development boundary result, not an
   M winner or formal v2 metric. The detailed report is
   `docs/trackocd_cvpr/M_CURRENT_SOURCE_M_RECOVERY2_AUDIT_20261016.md`.
+
+## Train dense-frame metadata inventory (2026-10-16)
+
+- A new read-only `scripts/trackocd_cvpr/audit_train_dense_frame_inventory.py`
+  checked the approved non-model-facing image plan against the Train frame
+  root. All `407/407` approved videos and all `14,798` approved image-plan
+  rows are present; the directories contain `432,011` JPG frame files.
+- Every video passed exact approved filename presence, frame-order offset, and
+  frame-span count checks; numeric filename sequences have no internal gaps.
+  The machine receipt is
+  `outputs/trackocd_cvpr/cvpr2/train_dense_frame_inventory_v1/result.json`
+  with status `PASS_TRAIN_DENSE_FRAME_METADATA_407` and zero violations.
+- This is only a metadata prerequisite. No annotation/category arrays,
+  nonKnown labels, Novel vocabulary, pixels, weights, Val/Test data, model
+  execution, training, or cache extraction were performed. Dense anonymous
+  frontend qualification and OCD/MOT metrics remain open; details are in
+  `docs/trackocd_cvpr/TRAIN_DENSE_FRAME_INVENTORY_20261016.md`.

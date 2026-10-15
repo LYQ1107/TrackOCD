@@ -1,0 +1,24 @@
+{
+  "schema_version": "trackocd.cvpr.train-dense-frame-inventory.v1",
+  "status": "REGISTERED_METADATA_ONLY_407_TRAIN_DENSE_FRAME_PRECHECK",
+  "approval": "configs/trackocd_cvpr/formal_research_scope_approval_v1.json",
+  "image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+  "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "scope": "All 407 approved Train-role video IDs from the frozen image plan; no Val/Test/other video IDs",
+  "checks": [
+    "exact approved image-plan file names exist",
+    "one direct frame directory per video",
+    "lexicographic filename order agrees with approved frame_index offsets",
+    "no missing numeric filename within the observed dense span",
+    "all directory entries are counted without decoding image bytes"
+  ],
+  "semantic_access": {
+    "annotation_categories_or_video_GT_arrays_read": false,
+    "nonKnown_category_values_or_Novel_vocabulary_read": false,
+    "pixels_decoded_or_hashed": false,
+    "Val_or_Test_accessed": false,
+    "model_executed": false,
+    "training_or_cache_started": false
+  },
+  "interpretation": "Metadata-level dense frame availability prerequisite only; it does not qualify a frontend, prove image decodability, or establish a scientific metric."
+}
