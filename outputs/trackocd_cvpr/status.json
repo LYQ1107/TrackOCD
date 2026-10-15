@@ -459,6 +459,8 @@
   "latest_v2_asset_admission_test_paths_opened": [],
   "latest_v2_asset_admission_network_used": false,
   "latest_v2_asset_admission_write_performed": false,
+  "latest_local_historical_frontend_evidence": "outputs/trackocd_core/audit/nas_m1_source/{frontend_selection,representation_decision,frontend_covtrack_native,frontend_covtrack_native_native_run,frontend_covtrack_native_metrics}.json",
+  "latest_local_historical_frontend_evidence_scope": "Historical COVTrack-native Val audit only: asset_status=HISTORICAL_ASSET_AUDIT_ONLY and same_v2_predicted_stream=false; referenced physical stream/checkpoint/formal cache absent locally; not formal v2 input or OCD/MOT result",
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",

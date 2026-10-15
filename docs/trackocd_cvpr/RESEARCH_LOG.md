@@ -7811,3 +7811,22 @@ no private GT/cache/weights opened for this check):
   only an admissible Val cache with matching provenance may proceed to frozen
   prediction/final evaluation. Historical PANDAS/COVTrack/MASA metrics remain
   outside this v2 result namespace.
+
+## Local historical frontend evidence found by bounded filename scan (2026-10-16)
+
+- A read-only exact-name scan found five small COVTrack-native records under
+  `outputs/trackocd_core/audit/nas_m1_source/`: the historical frontend
+  selection, representation decision, stage audit, native-run receipt, and
+  metrics audit. Their recorded SHA256 values are respectively
+  `6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e`,
+  `4cbf0cf43084e5994d217d2598fc412f341494b3c68a916ddd763b6af9c92244`,
+  `524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526`,
+  `4350d5270f1608d7e30b0a3f51d7865adfcfba22cc72e812a18c76ad758ceca2`,
+  and `e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2`.
+- These files preserve useful historical Val bake-off evidence and select
+  `COVTrack-native`, but the stage record explicitly says
+  `asset_status=HISTORICAL_ASSET_AUDIT_ONLY` and
+  `same_v2_predicted_stream=false`. The referenced
+  `/data2/usr_for_deadline/trackocd_v2` physical stream/checkpoint/cache was
+  not found locally. The files therefore remain provenance evidence only and
+  are not copied into the formal v2 namespace or used to claim OCD/MOT.
