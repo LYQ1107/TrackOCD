@@ -7646,3 +7646,9 @@ no private GT/cache/weights opened for this check):
 - The supervisor terminal is normal: worker exit `0`, guard `null`, complete result present, successful execution `true`, wall `6478.703573266001` seconds including imports/network, and peak sampled worker RSS `959336448` bytes. The private persistent launch receipt, stdout, prediction histories, and checkpoints remain local and were not uploaded.
 - Public hashes are launch `8dfeaf891cfe1aaf9199841ca9673f1e6332dcba59624aacff84f576ea5f42a1`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `236375cd6b79f3c77986a587de78276d08ca5d6d27708d5db424932376e5bdd6`, and terminal `8d1a063dac0e4262d0081f8ddb845bb3af816532d83ccc1d57d7b4b3f71bff2c`. The live source proof remains bound to preregistration commit `bb6b45a03384e5ccc102263e822dcbd42a607318`.
 - The next permitted matrix case is a fresh `pooled_weighted/s1029` recovery2 run; no automatic winner or Goal acceptance is allowed. Formal OCD/MOT evaluation remains a later stage.
+
+## Pooled-weighted seed-1029 recovery2 registered (2026-10-16)
+
+- The final fresh current-source M-development matrix endpoint is registered as `pooled_weighted/s1029` in namespace `outputs/trackocd_cvpr/cvpr4/M_GT_causal_dev_current_source_wall_recovery2_pooled_weighted_s1029`.
+- It is bound to the verified remote source commit `0148ea3306623b02ed97f1abebff162c59a6fbc9` and the unchanged 12000-second, one-CPU-worker, zero-optimizer-step recovery2 protocol. It will not reuse private history/checkpoints, select a model, read Val/Test or new-nonKnown semantics, or accept Pred/final/Goal results.
+- This registration is not an OCD/MOT result. After this endpoint completes normally, the next stage is the frozen prediction/final tracking evaluator that will produce the formal OCD and MOT evidence.
