@@ -532,6 +532,12 @@
   "latest_historical_covtrack_config_sha256": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a",
   "latest_historical_covtrack_native_output_sha256": "fa6017a9fc74840df972b0607703a5f2e8fdbf5cbea1b8f0942583c1f10bdde7",
   "latest_historical_covtrack_provenance_qualified": false,
+  "latest_cvpr1_review_coverage_verification": "outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json",
+  "latest_cvpr1_review_coverage_verification_sha256": "f5653edb762e299e7b07f7ab69244107ea538d0609ad7f9204cbe695718e5f9",
+  "latest_cvpr1_review_coverage_verification_status": "PASS_MINIMUM_SCOPED_SOURCE_REVIEW_COVERAGE_VERIFIED",
+  "latest_cvpr1_counted_actual_core_reviews": 12,
+  "latest_cvpr1_licensed_extra_reviews": 3,
+  "latest_cvpr1_scientific_stage_complete": false,
   "latest_v2_asset_admission_missing_after_mapping": [
     "data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
     "outputs/trackocd_v2/audit/{frontend_selection,representation_decision,autonomous_state,frontend_covtrack_native}.json",

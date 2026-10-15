@@ -7956,3 +7956,17 @@ no private GT/cache/weights opened for this check):
   broadened; no Test access was authorized.
 - The v2 suite passes `43` tests, including an explicit assertion that the
   COVTrack Val wrapper and common I/O layer resolve to the same output target.
+
+## CVPR-1 review-coverage verification (2026-10-16)
+
+- `scripts/trackocd_cvpr/verify_review_coverage.py` rechecked the existing
+  `review_coverage_index.json` and all 16 referenced audit JSONs using only
+  local metadata and recorded source hashes. The verification result is
+  `outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json` with SHA256
+  `f5653edb762e299e7b07f7ab69244107ea538d0609ad7f9204cbe695718e5f9`.
+- The minimum scoped source-review requirement is now machine-verified:
+  `12/12` actual active model/loss/train/eval path reviews and `3/2` licensed
+  extra inspections, with zero consistency violations. This is a coverage
+  gate only; the index still says scientific stage completion is false, and it
+  does not establish mechanism performance, frontend legality, causal online
+  evaluation, or Goal A/B/C acceptance.
