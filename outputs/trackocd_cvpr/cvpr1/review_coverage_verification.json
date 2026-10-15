@@ -1,0 +1,119 @@
+{
+  "audit_json_sha256": {
+    "outputs/trackocd_cvpr/cvpr1/age_source_audit.json": "083c635c21394d9a6b9eb56811b4b5bb3fac0386bf65b77ff2aa655ba03c0ffa",
+    "outputs/trackocd_cvpr/cvpr1/assignment_hash_source_audit.json": "d34c61fd45d0175a74b65d71ee7a5df14d8ac05d876d6d62e7517e03f6838d18",
+    "outputs/trackocd_cvpr/cvpr1/covtrack_source_audit.json": "76e9bf8dc70948e89b44c834e25e4353506b048ff06b6bdfb32a0dedc343e569",
+    "outputs/trackocd_cvpr/cvpr1/debgcd_source_audit.json": "bbdc9290d8e0ea2d4d453653b0b5800916e0a332ae9952b8ad5badb531099fc0",
+    "outputs/trackocd_cvpr/cvpr1/dydm_paper_source_availability_audit.json": "ef366bfad6c5ee514a43fee57c3f5604ba1346877063dc9252c63362d5102c38",
+    "outputs/trackocd_cvpr/cvpr1/eagc_source_audit.json": "72552cb63ea4a41ec6392fe071bed9063ef51363e41e332f036d4009987d355d",
+    "outputs/trackocd_cvpr/cvpr1/grounded_correspondence_source_audit.json": "f449df9b948f3b2444ff2b2a4c6bf6bb2b834c5494649854397b8442e8a8f969",
+    "outputs/trackocd_cvpr/cvpr1/hypcd_source_audit.json": "07c54b6780cc3b65aa56927a64a5488afe9ef94f4af94e43b073c37dc4637c95",
+    "outputs/trackocd_cvpr/cvpr1/ltc_source_audit.json": "568edddd97a4a3d9d8e895c9789c79737f9b3c3eaeed383418249722b541bd68",
+    "outputs/trackocd_cvpr/cvpr1/masa_source_audit.json": "b713175acbbb4e26d602a886f9d7927ece660fa529d4156caab8bf50806e2aa2",
+    "outputs/trackocd_cvpr/cvpr1/ovtr_source_audit.json": "3bc182824f75a37694331b2b219667cacd5c483cf1fe27143545c918cb08dfb4",
+    "outputs/trackocd_cvpr/cvpr1/slotcontrast_source_audit.json": "2285fd4db252aa08a193395f3a32b3560fbedda177ea783b6a7e7db16ec16287",
+    "outputs/trackocd_cvpr/cvpr1/talon_source_audit.json": "e05e55185e2c877f8df8e933a34c66c302c17b69098879de0e783016d4521886",
+    "outputs/trackocd_cvpr/cvpr1/tract_source_availability_audit.json": "e6ebb90ded2b9998157bc748a82c9783e7565d8d695e7c7dab406e68c5119a27",
+    "outputs/trackocd_cvpr/cvpr1/vb_cgcd_source_audit.json": "5dcf6900aabe75f621ec5c705eb7506b3df8aa12a98370974c74e61ce862199e",
+    "outputs/trackocd_cvpr/cvpr1/vc_cgcd_source_audit.json": "0d745b6dc9e8c1d3e0e86f57ec441d4842dee1315d51f9214e439de14c8b4a9b"
+  },
+  "counted_actual_core_reviews": 12,
+  "counted_reviews": [
+    {
+      "actual_path_scopes_read": 11,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/age_source_audit.json",
+      "licensed_extra_for_inspection_substep": true,
+      "paper_title": "Adaptive Gaussian Expansion for On-the-fly Category Discovery",
+      "repository_commit": "d54c3147e61caf82a0de808333cebdc552fcf049"
+    },
+    {
+      "actual_path_scopes_read": 19,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/covtrack_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "COVTrack: Continuous Open-Vocabulary Tracking via Adaptive Multi-Cue Fusion",
+      "repository_commit": "9b0ced5779ee36f5dd73dbe39b5ae5d57abb4b3b"
+    },
+    {
+      "actual_path_scopes_read": 13,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/debgcd_source_audit.json",
+      "licensed_extra_for_inspection_substep": true,
+      "paper_title": "DebGCD: Debiased Learning with Distribution Guidance for Generalized Category Discovery",
+      "repository_commit": "9ec30fe3d54dfccd9934a862cf5cb9ff05de6f05"
+    },
+    {
+      "actual_path_scopes_read": 11,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/eagc_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery",
+      "repository_commit": "87af6ff66be58a0fef929c343639443d596d533d"
+    },
+    {
+      "actual_path_scopes_read": 12,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/grounded_correspondence_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence",
+      "repository_commit": "5d345268797425558b449337519af3ab24aeb6f1"
+    },
+    {
+      "actual_path_scopes_read": 14,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/hypcd_source_audit.json",
+      "licensed_extra_for_inspection_substep": true,
+      "paper_title": "Hyperbolic Category Discovery",
+      "repository_commit": "ffc895b7ff38be8502bb7e3bd851f1d2a55dff73"
+    },
+    {
+      "actual_path_scopes_read": 7,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/ltc_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery",
+      "repository_commit": "44584bfddae5e6b82bbc182f68588a05e45365bb"
+    },
+    {
+      "actual_path_scopes_read": 17,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/masa_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "Matching Anything by Segmenting Anything",
+      "repository_commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66"
+    },
+    {
+      "actual_path_scopes_read": 16,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/ovtr_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "OVTR: End-to-End Open-Vocabulary Multiple Object Tracking with Transformer",
+      "repository_commit": "500e72c19bf5f7f8717546911a5639fdc26bfee5"
+    },
+    {
+      "actual_path_scopes_read": 13,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/slotcontrast_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "Temporally Consistent Object-Centric Learning by Contrasting Slots",
+      "repository_commit": "55ec66dc02eeade630805789ef4a6c5df06f21ff"
+    },
+    {
+      "actual_path_scopes_read": 9,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/talon_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery",
+      "repository_commit": "4091c2df89100974d316ce05659bc25654fcff1e"
+    },
+    {
+      "actual_path_scopes_read": 9,
+      "audit_file": "outputs/trackocd_cvpr/cvpr1/vb_cgcd_source_audit.json",
+      "licensed_extra_for_inspection_substep": false,
+      "paper_title": "Continual Generalized Category Discovery: Learning and Forgetting from a Bayesian Perspective",
+      "repository_commit": "7fe9501b425b5775588d0a06d60c817ee1f04663"
+    }
+  ],
+  "index": "outputs/trackocd_cvpr/cvpr1/review_coverage_index.json",
+  "index_sha256": "fdb36e34686e4165b10bbec447af1ba5bcbe81aa400a445f3ce998863b45b44d",
+  "interpretation": "The scoped literature/source-review count is verified; this is not CVPR-1 stage acceptance, mechanism evidence, frontend qualification, or Goal A/B/C acceptance.",
+  "licensed_extra_reviews": 3,
+  "minimum_required_actual_core_reviews": 12,
+  "minimum_required_licensed_extras": 2,
+  "schema_version": "trackocd.cvpr1.review-coverage-verification.v1",
+  "scientific_goal_complete_in_index": false,
+  "source_execution_or_new_training": false,
+  "status": "PASS_MINIMUM_SCOPED_SOURCE_REVIEW_COVERAGE_VERIFIED",
+  "total_index_entries": 16,
+  "violations": []
+}
