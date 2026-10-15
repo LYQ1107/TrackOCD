@@ -7630,3 +7630,9 @@ no private GT/cache/weights opened for this check):
 - The supervisor terminal is normal: worker exit `0`, guard stop `null`, complete result present, successful execution `true`, wall `7037.374352805004` seconds including imports/network, and peak sampled worker RSS `959193088` bytes. The private persistent launch receipt, stdout, prediction histories, and checkpoints remain local and were not uploaded.
 - Public hashes are launch `4449dce02130fe5b5870452ed2296291d4f680da53435f8ebc5afcab90cef1da`, progress `8374eb69acac2d25ba02027bd3de12cd556a12ab32d71af8448229d41c295ed9`, result `4a2f604497604a3fec30e9d59a78cf15a619b8272fdb79c84343aa8b9c5c1e1b`, and terminal `39f5a9443b3298c00df8d8a8faf8367d315ec150aacf5384c9e3f64598af6734`. The live source proof remains bound to preregistration commit `64dfb152673650341efc190c4ed74631eedbc967`.
 - The next permitted matrix case is the fresh `pooled_weighted/s1028` recovery2 run; no automatic winner or Goal acceptance is allowed.
+
+## Pooled-weighted seed-1028 recovery2 launch registered (2026-10-15)
+
+- After the normal `pooled_weighted/s1027` recovery2 result was recorded, pushed, fetched, and hash-verified, the next fresh matrix case is `pooled_weighted/s1028` in namespace `M_GT_causal_dev_current_source_wall_recovery2_pooled_weighted_s1028`.
+- It is bound to live source commit `3f42ca5869df92dbffe7050d1947037a2e3cb3f2` and the same 12000-second, one-CPU-worker, zero-optimizer causal M-development protocol. It will not reuse private history/checkpoints, select a model, read Val/Test or new-nonKnown semantics, or accept Pred/final/Goal results.
+- The case is registered for launch after this public registration commit is pushed and remotely verified; the next permitted case after it remains `pooled_weighted/s1029`. Formal OCD/MOT evaluation remains a later stage.
