@@ -565,8 +565,8 @@
   "latest_joint_causal_protocol_audit": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
   "latest_joint_causal_protocol_audit_sha256": "548fc6f186b0fc0c725c120a25207effdd685742f998435a282addb7cbba98c2",
   "latest_joint_causal_protocol_status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
-  "latest_full_predicted_dense_cache_status": "NOT_STARTED_REGISTERED_ONLY_FIXED_FOUR_SHARDS",
-  "latest_full_predicted_dense_input_status": "PASS_FOUR_FIXED_SHARD_INPUTS_NOT_EXECUTED",
+  "latest_full_predicted_dense_cache_status": "RUNNING_FOUR_FIXED_SHARDS_GPU_0_1_2_3",
+  "latest_full_predicted_dense_input_status": "PASS_FOUR_FIXED_SHARD_INPUTS_RUNNING",
   "latest_full_predicted_dense_input_scope": "407 approved Train videos / 432011 raw JPEG frames; ordinal shards 102/102/102/101; actual sparse video-ID order hash audited; annotations empty; no model/GT/pixels",
   "latest_full_predicted_dense_input_audits": [
     "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_0/input_audit.json",
@@ -574,8 +574,22 @@
     "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_2/input_audit.json",
     "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3/input_audit.json"
   ],
+  "latest_full_predicted_dense_launch": {
+    "run_ids": [
+      "covtrack_train_dense_shards_v1_shard_0_20261016",
+      "covtrack_train_dense_shards_v1_shard_1_20261016",
+      "covtrack_train_dense_shards_v1_shard_2_20261016",
+      "covtrack_train_dense_shards_v1_shard_3_20261016"
+    ],
+    "gpu_indices": [0, 1, 2, 3],
+    "video_counts": [102, 102, 102, 101],
+    "raw_jpeg_count_expected": 432011,
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false
+  },
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Joint causal Pred+dense protocol boundaries are frozen and the two-video strong-frontend smoke is complete, but full 407-video predicted dense cache, separately trained/self-correcting M controls, formal policy/development, lawful matching, and Goal A/B/C remain open. Next execute only the four fixed registered dense shards after resource recheck; then audit provenance before any formal fit. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "Four fixed registered dense shards are running on GPUs 0-3; after completion verify every receipt, exact 407-video coverage, category-free physical streams, and provenance before any formal fit. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
