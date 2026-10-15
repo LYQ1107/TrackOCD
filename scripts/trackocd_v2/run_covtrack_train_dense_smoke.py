@@ -39,7 +39,8 @@ from src.trackocd_v2.io import OUTPUT_TARGET  # noqa: E402
 
 
 TRAIN_ANNOTATION = OUTPUT_TARGET / "frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json"
-TRAIN_AUDIT = OUTPUT_TARGET / "audit/covtrack_train_dense_smoke_v1_input.json"
+CVPR_SMOKE_OUTPUT = ROOT / "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1"
+TRAIN_AUDIT = CVPR_SMOKE_OUTPUT / "input_audit.json"
 TRAIN_FRAME_ROOT = Path("/data3/liuyeqiang/TAO-Amodal/frames")
 TRAIN_CLASSES = OUTPUT_TARGET / "frontend_inputs/covtrack_val/lvis_classes_v1.txt"
 FRONTEND_SLUG = "covtrack_native"
@@ -98,8 +99,8 @@ def run(*, gpu_index: int, run_id: str) -> dict[str, Any]:
     normalization_audit = OUTPUT_TARGET / "audit" / "covtrack_train_dense_smoke_v1_normalization.json"
     physical_output = normalization_dir / "physical_tracks.jsonl"
     native_evaluator_output = normalization_dir / "native_evaluator_rows.jsonl"
-    run_audit = OUTPUT_TARGET / "audit" / "covtrack_train_dense_smoke_v1_run.json"
-    done_marker = OUTPUT_TARGET / "audit" / "covtrack_train_dense_smoke_v1.done.json"
+    run_audit = CVPR_SMOKE_OUTPUT / "run.json"
+    done_marker = CVPR_SMOKE_OUTPUT / "done.json"
 
     cfg_options = [
         "data.test.ann_file=" + str(TRAIN_ANNOTATION.resolve()),
@@ -263,7 +264,7 @@ def main() -> int:
             "tao_val_accessed": False,
             "tao_test_accessed": False,
         }
-        _atomic_json(OUTPUT_TARGET / "audit/covtrack_train_dense_smoke_v1_run.json", payload)
+        _atomic_json(CVPR_SMOKE_OUTPUT / "run.json", payload)
         print(json.dumps(payload, indent=2, sort_keys=True))
         return 2
     except Exception as exc:
