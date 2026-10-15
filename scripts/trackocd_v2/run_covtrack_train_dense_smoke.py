@@ -265,9 +265,14 @@ def main() -> int:
     parser.add_argument("--output-scope", default="train_dense_smoke_v1")
     parser.add_argument("--video-id-min", type=int, default=0)
     parser.add_argument("--video-id-max", type=int, default=1)
+    parser.add_argument("--use-audit-video-ids", action="store_true", help="use the committed input-audit video-ID list instead of an ordinal range")
     parser.add_argument("--result-status", default="COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE")
     args = parser.parse_args()
-    expected_video_ids = list(range(args.video_id_min, args.video_id_max + 1))
+    if args.use_audit_video_ids:
+        audit_payload = json.loads(args.input_audit.resolve().read_text(encoding="utf-8"))
+        expected_video_ids = [int(value) for value in audit_payload.get("selection", {}).get("video_ids", [])]
+    else:
+        expected_video_ids = list(range(args.video_id_min, args.video_id_max + 1))
     try:
         result = run(
             gpu_index=args.gpu_index,
