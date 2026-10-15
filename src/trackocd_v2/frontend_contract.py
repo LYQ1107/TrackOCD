@@ -47,6 +47,13 @@ def _asset(path: Path) -> dict[str, str]:
 def route_specs(root: Path = ROOT) -> dict[str, dict[str, Any]]:
     """Return immutable route metadata, without probing or launching a job."""
 
+    covtrack_source = root / "vendor/trackocd_external/covtrack_public"
+    covtrack_legacy_source = root / "third_party/research_refs_phase4n/COVTrack"
+    covtrack_root = covtrack_source if covtrack_source.is_dir() else covtrack_legacy_source
+    covtrack_checkpoint = root / "checkpoints/covtrack/ctao_public.pth"
+    if not covtrack_checkpoint.is_file():
+        covtrack_checkpoint = root / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"
+
     return {
         "SimOWT/Q0": {
             "slug": "simowt",
@@ -89,9 +96,9 @@ def route_specs(root: Path = ROOT) -> dict[str, dict[str, Any]]:
             "semantic_association_mode": "native_semantic_association",
             "trackocd_backend_category_free": True,
             "novel_ontology_leakage": False,
-            "execution_entrypoint": _asset(root / "third_party/research_refs_phase4n/COVTrack/tools/test.py"),
+            "execution_entrypoint": _asset(covtrack_root / "tools/test.py"),
             "test_execution_entrypoint": _asset(root / "scripts/trackocd_v2/run_covtrack_native.py"),
-            "checkpoint": _asset(root / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"),
+            "checkpoint": _asset(covtrack_checkpoint),
             "fixed_overrides": {"model.tracker.confused_features": True},
             "native_teta_role": "reference_only",
             "notes": "Native COVTrack association is retained for the reference route; no category or text field enters the TrackOCD backend.",
@@ -105,9 +112,9 @@ def route_specs(root: Path = ROOT) -> dict[str, dict[str, Any]]:
             "semantic_association_mode": "disabled",
             "trackocd_backend_category_free": True,
             "novel_ontology_leakage": False,
-            "execution_entrypoint": _asset(root / "third_party/research_refs_phase4n/COVTrack/tools/test.py"),
+            "execution_entrypoint": _asset(covtrack_root / "tools/test.py"),
             "test_execution_entrypoint": _asset(root / "scripts/trackocd_v2/run_covtrack_native.py"),
-            "checkpoint": _asset(root / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"),
+            "checkpoint": _asset(covtrack_checkpoint),
             "fixed_overrides": {"model.tracker.confused_features": False},
             "native_teta_role": "reference_only",
             "notes": "Same frozen COVTrack checkpoint and detector as the native route; only the semantic association fusion cue is disabled while appearance and motion remain active.",

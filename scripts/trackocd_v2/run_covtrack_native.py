@@ -49,6 +49,25 @@ CHECKPOINT = Path(
     )
 )
 CONFIG = COVTRACK_ROOT / "configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py"
+_DEFAULT_VAL_INPUT_ROOT = OUTPUT_TARGET / "frontend_inputs/covtrack_val"
+VAL_ANNOTATION = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_VAL_ANNOTATION",
+        str(_DEFAULT_VAL_INPUT_ROOT / "validation_ours_v1.json"),
+    )
+)
+VAL_IMAGE_PREFIX = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_VAL_IMAGE_PREFIX",
+        str(ROOT / "data/raw/tao/frames"),
+    )
+)
+VAL_CLASSES = Path(
+    os.environ.get(
+        "TRACKOCD_COVTRACK_VAL_CLASSES",
+        str(_DEFAULT_VAL_INPUT_ROOT / "lvis_classes_v1.txt"),
+    )
+)
 _RECOVERED_PROMPT = ROOT / "checkpoints/covtrack/detpro_prompt.pt"
 _SOURCE_PROMPT = COVTRACK_ROOT / "saved_models/pretrained_models/detpro_prompt.pt"
 PROMPT = Path(
@@ -177,6 +196,10 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
     for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT):
         if not path.is_file():
             raise FileNotFoundError(path)
+    if split == "val":
+        for path in (VAL_ANNOTATION, VAL_IMAGE_PREFIX, VAL_CLASSES):
+            if not path.exists():
+                raise FileNotFoundError(path)
     if split == "test" and not TEST_ANNOTATION.is_file():
         raise FileNotFoundError(TEST_ANNOTATION)
     _require_resource_gate(gpu_index)
@@ -193,6 +216,12 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
         "data.workers_per_gpu=1",
         "data.persistent_workers=False",
     ]
+    if split == "val":
+        cfg_options[1:1] = [
+            "data.test.ann_file=" + str(VAL_ANNOTATION.resolve()),
+            "data.test.img_prefix=" + str(VAL_IMAGE_PREFIX.resolve()) + os.sep,
+            "data.test.classes=" + str(VAL_CLASSES.resolve()),
+        ]
     if split == "test":
         cfg_options[1:1] = [
             "model.roi_head.only_validation_categories=False",
@@ -284,6 +313,11 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
             "prompt_sha256": _sha256(PROMPT),
             "config": str(CONFIG.resolve()),
             "confused_features": FRONTENDS[slug]["confused_features"],
+            "val_annotation": str(VAL_ANNOTATION.resolve()) if split == "val" else None,
+            "val_annotation_sha256": _sha256(VAL_ANNOTATION) if split == "val" else None,
+            "val_image_prefix": str(VAL_IMAGE_PREFIX.resolve()) if split == "val" else None,
+            "val_classes": str(VAL_CLASSES.resolve()) if split == "val" else None,
+            "val_classes_sha256": _sha256(VAL_CLASSES) if split == "val" else None,
             "native_output": str(output.resolve()),
             "native_output_sha256": _sha256(output),
             "normalization_audit": str(
