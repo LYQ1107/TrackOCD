@@ -8068,3 +8068,15 @@ no private GT/cache/weights opened for this check):
   registered in a fresh namespace only after the RAM guard clears; the
   interrupted namespace is not treated as complete and no partial native
   output is promoted.
+
+## Second resource-protected pause of dense frontend shards (2026-10-16 UTC)
+
+- With shard 3 already paused, exact `MemAvailable` again fell below the
+  frozen 25% reserve while shards 0, 1, and 2 were active. Shard 2 was
+  gracefully interrupted with SIGINT at the last observed progress of
+  `50520/108606`; its compact receipt is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_2/resource_pause_20261016.json`.
+- Only the agent-owned shard-2 process was interrupted. No external process,
+  raw output, cache, GT/Test input, or historical artifact was touched. Shards
+  0 and 1 continue; paused shards 2 and 3 require fresh namespaces after the
+  RAM guard clears. No completion or formal metric is claimed.
