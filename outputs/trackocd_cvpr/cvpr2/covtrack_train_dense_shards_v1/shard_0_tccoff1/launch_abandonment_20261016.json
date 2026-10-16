@@ -1,0 +1,19 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack_train_dense_launch_abandonment.v1",
+  "status": "ABANDONED_BACKGROUND_SESSION_NO_NATIVE_START",
+  "run_id": "covtrack_train_dense_shards_v1_shard_0_tccoff1_20261016",
+  "shard": 0,
+  "gpu_index": 0,
+  "parent_pid": 1143476,
+  "launch_marker": "outputs/trackocd_v2_runtime/audit/covtrack_train_dense_smoke_covtrack_train_dense_shards_v1_shard_0_tccoff1_20261016.launched.json",
+  "launcher_log": "/tmp/trackocd_covtrack_train_dense_shards_v1_shard_0_tccoff1_20261016.launcher.log",
+  "native_log_path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_0_tccoff1_20261016/native_train.log",
+  "launcher_log_size_bytes": 0,
+  "native_log_size_bytes": 0,
+  "native_process_started": false,
+  "run_receipt_present": false,
+  "formal_metrics_created": false,
+  "tao_val_or_test_labels_used": false,
+  "external_processes_touched": false,
+  "reason": "The detached background session disappeared before native output or an exception receipt was written; a persistent TTY session is used for the fresh retry."
+}
