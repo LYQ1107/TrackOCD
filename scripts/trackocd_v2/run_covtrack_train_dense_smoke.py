@@ -82,7 +82,7 @@ def _environment() -> dict[str, str]:
     return environment
 
 
-def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE") -> dict[str, Any]:
+def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE", track_category_consensus: bool = True) -> dict[str, Any]:
     expected_video_ids = list(range(0, 2)) if expected_video_ids is None else list(expected_video_ids)
     input_audit = _check_registration(train_audit, train_annotation, expected_video_ids)
     for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT, train_annotation, train_audit, TRAIN_FRAME_ROOT, frame_alias, train_classes):
@@ -128,6 +128,7 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
         *cfg_options,
         "--eval-options",
         "resfile_path=" + str(formatted.resolve()),
+        "tcc=" + ("True" if track_category_consensus else "False"),
     ]
     marker = _marker_path(run_id)
     _atomic_json(marker, {
@@ -225,7 +226,13 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
             "tao_val_accessed": False,
             "tao_test_accessed": False,
             "formal_metrics": False,
-            "interpretation": "Frontend/input inference only; no OCD/MOT metrics or frontend qualification claimed.",
+            "native_track_category_consensus": bool(track_category_consensus),
+            "interpretation": (
+                "Frontend/input inference only; native COVTrack track-category consensus is disabled because "
+                "the train_predicted physical stream is category-free; no OCD/MOT metrics or frontend qualification claimed."
+                if not track_category_consensus
+                else "Frontend/input inference only; no OCD/MOT metrics or frontend qualification claimed."
+            ),
         }
         _atomic_json(run_audit, result)
         _atomic_json(done_marker, {
@@ -266,6 +273,7 @@ def main() -> int:
     parser.add_argument("--video-id-min", type=int, default=0)
     parser.add_argument("--video-id-max", type=int, default=1)
     parser.add_argument("--use-audit-video-ids", action="store_true", help="use the committed input-audit video-ID list instead of an ordinal range")
+    parser.add_argument("--disable-tcc", action="store_true", help="disable upstream track-category consensus for the anonymous category-free Train stream to reduce post-processing RAM")
     parser.add_argument("--result-status", default="COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE")
     args = parser.parse_args()
     if args.use_audit_video_ids:
@@ -285,6 +293,7 @@ def main() -> int:
             output_scope=args.output_scope,
             expected_video_ids=expected_video_ids,
             result_status=args.result_status,
+            track_category_consensus=not args.disable_tcc,
         )
     except ResourceWait as exc:
         payload = {
