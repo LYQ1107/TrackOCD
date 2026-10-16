@@ -565,7 +565,7 @@
   "latest_joint_causal_protocol_audit": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
   "latest_joint_causal_protocol_audit_sha256": "548fc6f186b0fc0c725c120a25207effdd685742f998435a282addb7cbba98c2",
   "latest_joint_causal_protocol_status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
-  "latest_full_predicted_dense_cache_status": "PAUSED_ALL_FIXED_SHARDS_RESOURCE_RESERVE",
+  "latest_full_predicted_dense_cache_status": "RUNNING_SHARD_0_TCC_OFF_SHARDS_1_2_3_PAUSED_RESOURCE_RESERVE",
   "latest_full_predicted_dense_input_status": "PASS_TWO_FIXED_SHARD_INPUTS_RUNNING_TWO_OWNED_SHARDS_PAUSED",
   "latest_full_predicted_dense_input_scope": "407 approved Train videos / 432011 raw JPEG frames; ordinal shards 102/102/102/101; actual sparse video-ID order hash audited; annotations empty; no model/GT/pixels",
   "latest_full_predicted_dense_input_audits": [
@@ -623,8 +623,20 @@
     "tao_val_or_test_labels_used": false,
     "partial_output_promoted": false
   },
+  "latest_full_predicted_dense_running_retry": {
+    "status": "RUNNING_OWNED_SHARD_TCC_OFF",
+    "run_id": "covtrack_train_dense_shards_v1_shard_0_tccoff2_20261016",
+    "launch_marker": "outputs/trackocd_v2_runtime/audit/covtrack_train_dense_smoke_covtrack_train_dense_shards_v1_shard_0_tccoff2_20261016.launched.json",
+    "receipt_root": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_0_tccoff2",
+    "shard": 0,
+    "gpu_index": 0,
+    "track_category_consensus": false,
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false
+  },
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "All fixed dense shards are paused at the RAM reserve boundary; after the guard clears, register fresh namespaces for incomplete shards only, independently validate any partial native outputs, and never promote this retry without a complete run receipt. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "Shard 0 is running in a fresh category-free TCC-off namespace to reduce post-processing RAM; shards 1-3 remain paused. Validate its complete receipt before any promotion, then register fresh namespaces for incomplete shards only. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
