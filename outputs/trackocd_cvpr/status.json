@@ -565,7 +565,7 @@
   "latest_joint_causal_protocol_audit": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
   "latest_joint_causal_protocol_audit_sha256": "548fc6f186b0fc0c725c120a25207effdd685742f998435a282addb7cbba98c2",
   "latest_joint_causal_protocol_status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
-  "latest_full_predicted_dense_cache_status": "RUNNING_TWO_FIXED_SHARDS_GPU_0_1_SHARDS_2_3_PAUSED_RESOURCE_RESERVE",
+  "latest_full_predicted_dense_cache_status": "PAUSED_ALL_FIXED_SHARDS_RESOURCE_RESERVE",
   "latest_full_predicted_dense_input_status": "PASS_TWO_FIXED_SHARD_INPUTS_RUNNING_TWO_OWNED_SHARDS_PAUSED",
   "latest_full_predicted_dense_input_scope": "407 approved Train videos / 432011 raw JPEG frames; ordinal shards 102/102/102/101; actual sparse video-ID order hash audited; annotations empty; no model/GT/pixels",
   "latest_full_predicted_dense_input_audits": [
@@ -610,8 +610,21 @@
     "formal_metrics_created": false,
     "tao_val_or_test_labels_used": false
   },
+  "latest_full_predicted_dense_resource_pause_3": {
+    "status": "PAUSED_OWNED_RETRY_SHARD_FOR_RAM_RESERVE",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_0_retry1/resource_pause_20261016.json",
+    "shard": 0,
+    "retry_namespace": "retry1",
+    "gpu_index": 0,
+    "last_observed_progress": "150109/344028",
+    "ram_guard": "MemAvailable fell below the frozen 25-percent reserve during post-processing; only the task-owned retry was stopped",
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false,
+    "partial_output_promoted": false
+  },
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Two fixed registered dense shards continue on GPUs 0-1; after their receipts verify coverage/provenance, then register fresh namespaces for paused shards 2 and 3 only after the RAM guard clears. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "All fixed dense shards are paused at the RAM reserve boundary; after the guard clears, register fresh namespaces for incomplete shards only, independently validate any partial native outputs, and never promote this retry without a complete run receipt. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
