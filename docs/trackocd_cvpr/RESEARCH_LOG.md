@@ -8124,3 +8124,24 @@ no private GT/cache/weights opened for this check):
   run receipt and remain incomplete; no partial observations are promoted.
   This is provenance/coverage evidence only and creates no OCD/MOT metric,
   model-selection result, or Goal A/B/C acceptance.
+
+## Storage-safe compression of an unpromoted retry partial (2026-10-21 UTC)
+
+- Storage fell to the high-risk range while the shard frontend remained
+  paused. The only selected cleanup target was the exact `tao_bbox.json`
+  named by the shard-0 retry pause receipt as a `partial_output_path`; that
+  receipt also records `run_receipt_present=false` and
+  `partial_native_output_promoted=false`.
+- Before removal, the expanded file was `857951643` bytes with SHA256
+  `4c0ce2ae09708d25fa9498034a009f0701b1d073ed93d5210b9e63ee5f4a4583` and
+  was not open by any process. It was compressed to
+  `outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_0_retry1_20261016/formatted/tao_bbox.json.partial.json.gz`,
+  `269724843` bytes, SHA256
+  `f70dea2de029350ea48a58a89cbda96d8dcca9be4d3263a6fad0d840c3e93b30`.
+  `gzip -t` and a streamed decompression SHA256 round trip passed before the
+  expanded copy was removed.
+- The machine receipt is
+  `outputs/trackocd_cvpr/safety/partial_output_compression_20261022.json`.
+  The compressed artifact remains recoverable for any future independent
+  audit; no data, weights, GT, Test asset, formal cache, or scientific result
+  was deleted or promoted, and no OCD/MOT metric or Goal acceptance is claimed.
