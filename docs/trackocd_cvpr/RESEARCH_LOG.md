@@ -8104,3 +8104,23 @@ no private GT/cache/weights opened for this check):
   A/B/C acceptance is claimed. Resume requires a fresh namespace only after the
   25% RAM guard is genuinely satisfied; shard 0's previously completed receipt
   remains the only completed full-cache shard.
+
+## CPU-only dense shard coverage and physical-stream audit (2026-10-21)
+
+- Ran `scripts/trackocd_cvpr/audit_covtrack_train_dense_shards.py` with the
+  registered `tccoff2` receipt namespace for shard 0. The audit reads only
+  fixed input audits, compact run receipts, and physical category-free JSONL
+  streams line by line; it does not open native evaluator rows, TAO GT arrays,
+  vocabulary files, pixels, or Test assets.
+- The machine result is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/aggregate_audit_tccoff2.json`
+  with SHA256
+  `815db0b06cc56049e10f1f3b9fe992c8dd77e620a9d92a3e4698919cf30e88b6` and
+  status `WAITING_FOR_FOUR_SHARD_RECEIPTS`. All `407/407` approved input
+  videos and the audited sparse-ID order are present; the boundary error list
+  is empty.
+- Shard 0's completed stream passes with `3,584,029` observations,
+  `344,028` physical tracks, and `0` invalid boxes. Shards 1–3 have no valid
+  run receipt and remain incomplete; no partial observations are promoted.
+  This is provenance/coverage evidence only and creates no OCD/MOT metric,
+  model-selection result, or Goal A/B/C acceptance.
