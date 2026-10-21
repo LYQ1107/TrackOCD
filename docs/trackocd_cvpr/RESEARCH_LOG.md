@@ -8080,3 +8080,28 @@ no private GT/cache/weights opened for this check):
   raw output, cache, GT/Test input, or historical artifact was touched. Shards
   0 and 1 continue; paused shards 2 and 3 require fresh namespaces after the
   RAM guard clears. No completion or formal metric is claimed.
+
+## Third resource-protected pause of fresh dense frontend namespaces (2026-10-21)
+
+- Three fresh fixed-ordinal anonymous COVTrack Train inference namespaces were
+  running with track-category consensus disabled: shard 1 on owned GPU 0,
+  shard 2 on owned GPU 1, and shard 3 on owned GPU 3. They reached respectively
+  `38583/120066`, `36420/108606`, and `37142/91153` observations before the
+  exact RAM guard tripped.
+- At the decision point, `MemTotal=131633092 kB`, the frozen reserve floor was
+  `32908273 kB`, `MemAvailable=30828388 kB`, and `SwapFree=356 kB`. Only the
+  three task-owned foreground PTYs received Ctrl-C; subsequent process and GPU
+  checks found no remaining process matching these run IDs. Other GPU processes
+  were not touched, and available RAM recovered above the reserve.
+- The compact pause receipts are the three fresh namespace files
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1_shard_1_tccoff3_20261021/resource_pause_20261021.json`,
+  `..._shard_2_tccoff3_20261021/resource_pause_20261021.json`, and
+  `..._shard_3_tccoff3_20261021/resource_pause_20261021.json`. Their native
+  logs are retained with recorded byte counts and SHA256 hashes. No `run.json`,
+  `done.json`, or `normalization.json` exists for these namespaces, so none is
+  complete and no partial native output is promoted.
+- This is a resource-safety pause, not a scientific result: no training,
+  formal OCD/MOT metric, model selection, TAO Val/Test label access, or Goal
+  A/B/C acceptance is claimed. Resume requires a fresh namespace only after the
+  25% RAM guard is genuinely satisfied; shard 0's previously completed receipt
+  remains the only completed full-cache shard.
