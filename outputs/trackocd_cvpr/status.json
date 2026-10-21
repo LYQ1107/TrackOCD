@@ -641,6 +641,22 @@
     "external_processes_touched": false,
     "partial_output_promoted": false
   },
+  "latest_full_predicted_dense_resource_pause_20261021_retry": {
+    "status": "PAUSED_OWNED_SHARD_RETRY_FOR_RAM_RESERVE",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1_shard_1_tccoff4_20261021/resource_pause_20261021.json",
+    "run_id": "covtrack_train_dense_shards_v1_shard_1_tccoff4_20261021",
+    "shard": 1,
+    "gpu_index": 0,
+    "last_observed_progress": "44615/120066",
+    "mem_available_before_stop_approx": "11 GiB",
+    "reserve_floor_kb": 32908273,
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false,
+    "external_processes_touched": false,
+    "partial_output_promoted": false,
+    "resume_policy": "fresh_namespace_only_no_offset_resume"
+  },
   "latest_full_predicted_dense_completed_retry": {
     "status": "COMPLETE_OWNED_SHARD_TCC_OFF",
     "run_id": "covtrack_train_dense_shards_v1_shard_0_tccoff2_20261016",
