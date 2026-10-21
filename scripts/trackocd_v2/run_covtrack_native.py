@@ -38,6 +38,9 @@ if not _DEFAULT_COVTRACK_PYTHON.is_file():
     _DEFAULT_COVTRACK_PYTHON = Path("/home/lwr/anaconda3/envs/ovtrack_mmdet2/bin/python")
 if not _DEFAULT_COVTRACK_PYTHON.is_file():
     _DEFAULT_COVTRACK_PYTHON = Path("/home/lwr/anaconda3/envs/ovtrack/bin/python")
+_COMPAT_COVTRACK_PYTHON = ROOT / "scripts/trackocd_v2/covtrack_python_compat.py"
+if not _DEFAULT_COVTRACK_PYTHON.is_file() and _COMPAT_COVTRACK_PYTHON.is_file():
+    _DEFAULT_COVTRACK_PYTHON = _COMPAT_COVTRACK_PYTHON
 COVTRACK_PYTHON = Path(os.environ.get("TRACKOCD_COVTRACK_PYTHON", str(_DEFAULT_COVTRACK_PYTHON)))
 COVTRACK_LAUNCHER = ROOT / "scripts/trackocd_v2/run_covtrack_legacy_test.py"
 _LEGACY_CHECKPOINT = ROOT / "data/iclr27_phase14b/checkpoints/covtrack_ctao_public.pth"

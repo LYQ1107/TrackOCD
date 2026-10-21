@@ -186,6 +186,48 @@ def _install_lap_import_shim() -> None:
     sys.modules["lap"] = lap
 
 
+def _install_motmetrics_import_shim() -> None:
+    """Keep the native ``--format-only`` route independent of optional metrics.
+
+    COVTrack imports its CLEAR-MOT evaluator while constructing the dataset,
+    even when ``tools/test.py`` is invoked with ``--format-only``.  The
+    recovered package overlay does not contain motmetrics, and downloading it
+    is not part of this frontend run.  Expose import-time symbols that fail
+    loudly if an evaluation path is accidentally selected; this shim can
+    never produce OCD/MOT numbers.
+    """
+
+    try:
+        if importlib.util.find_spec("motmetrics") is not None:
+            return
+    except (ImportError, ModuleNotFoundError, ValueError):
+        pass
+
+    def unsupported(*_args: object, **_kwargs: object) -> object:
+        raise RuntimeError(
+            "motmetrics is unavailable; the recovered COVTrack compatibility "
+            "launcher permits --format-only only and cannot evaluate OCD/MOT"
+        )
+
+    motmetrics = types.ModuleType("motmetrics")
+    motmetrics.MOTAccumulator = unsupported
+    motmetrics.metrics = types.SimpleNamespace(create=unsupported)
+    motmetrics.io = types.SimpleNamespace(render_summary=unsupported)
+    motmetrics.__path__ = []
+    motmetrics.__spec__ = ModuleSpec("motmetrics", loader=None, is_package=True)
+    lap = types.ModuleType("motmetrics.lap")
+    lap.linear_sum_assignment = unsupported
+    lap.__spec__ = ModuleSpec("motmetrics.lap", loader=None)
+    math_util = types.ModuleType("motmetrics.math_util")
+    math_util.quiet_divide = unsupported
+    math_util.__spec__ = ModuleSpec("motmetrics.math_util", loader=None)
+    sys.modules.update({
+        "motmetrics": motmetrics,
+        "motmetrics.lap": lap,
+        "motmetrics.math_util": math_util,
+    })
+
+
 def main() -> None:
     if not COVTRACK_TEST.is_file():
         raise FileNotFoundError(COVTRACK_TEST)
@@ -193,6 +235,7 @@ def main() -> None:
     _install_clip_import_shim()
     _install_sklearn_import_shim()
     _install_lap_import_shim()
+    _install_motmetrics_import_shim()
     runpy.run_path(str(COVTRACK_TEST.resolve()), run_name="__main__")
 
 
