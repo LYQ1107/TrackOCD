@@ -565,8 +565,8 @@
   "latest_joint_causal_protocol_audit": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
   "latest_joint_causal_protocol_audit_sha256": "548fc6f186b0fc0c725c120a25207effdd685742f998435a282addb7cbba98c2",
   "latest_joint_causal_protocol_status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
-  "latest_full_predicted_dense_cache_status": "SHARD_0_COMPLETE_TCC_OFF_SHARDS_1_2_3_PAUSED_RESOURCE_RESERVE",
-  "latest_full_predicted_dense_input_status": "PASS_TWO_FIXED_SHARD_INPUTS_RUNNING_TWO_OWNED_SHARDS_PAUSED",
+  "latest_full_predicted_dense_cache_status": "SHARD_0_COMPLETE_TCC_OFF_SHARDS_1_2_3_PAUSED_RESOURCE_RESERVE_20261021",
+  "latest_full_predicted_dense_input_status": "PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT_SHARDS_1_2_3_PAUSED_RAM_RESERVE",
   "latest_full_predicted_dense_input_scope": "407 approved Train videos / 432011 raw JPEG frames; ordinal shards 102/102/102/101; actual sparse video-ID order hash audited; annotations empty; no model/GT/pixels",
   "latest_full_predicted_dense_input_audits": [
     "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_0/input_audit.json",
@@ -623,6 +623,40 @@
     "tao_val_or_test_labels_used": false,
     "partial_output_promoted": false
   },
+  "latest_full_predicted_dense_resource_pause_20261021": {
+    "status": "PAUSED_OWNED_SHARDS_FOR_RAM_RESERVE",
+    "receipts": [
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1_shard_1_tccoff3_20261021/resource_pause_20261021.json",
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1_shard_2_tccoff3_20261021/resource_pause_20261021.json",
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1_shard_3_tccoff3_20261021/resource_pause_20261021.json"
+    ],
+    "last_observed_progress": ["38583/120066", "36420/108606", "37142/91153"],
+    "gpu_indices": [0, 1, 3],
+    "mem_available_before_pause_kb": 30828388,
+    "reserve_floor_kb": 32908273,
+    "swap_free_before_pause_kb": 356,
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false,
+    "external_processes_touched": false,
+    "partial_output_promoted": false
+  },
+  "latest_full_predicted_dense_resource_pause_20261021_retry": {
+    "status": "PAUSED_OWNED_SHARD_RETRY_FOR_RAM_RESERVE",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1_shard_1_tccoff4_20261021/resource_pause_20261021.json",
+    "run_id": "covtrack_train_dense_shards_v1_shard_1_tccoff4_20261021",
+    "shard": 1,
+    "gpu_index": 0,
+    "last_observed_progress": "44615/120066",
+    "mem_available_before_stop_approx": "11 GiB",
+    "reserve_floor_kb": 32908273,
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false,
+    "external_processes_touched": false,
+    "partial_output_promoted": false,
+    "resume_policy": "fresh_namespace_only_no_offset_resume"
+  },
   "latest_full_predicted_dense_completed_retry": {
     "status": "COMPLETE_OWNED_SHARD_TCC_OFF",
     "run_id": "covtrack_train_dense_shards_v1_shard_0_tccoff2_20261016",
@@ -649,5 +683,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "Shard 0 is complete as a category-free Train predicted stream; shards 1-3 remain paused at the RAM reserve boundary. After the guard clears, register fresh namespaces for incomplete shards only. This cache stage has no OCD/MOT metrics or model-selection claim. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
+  "next": "Shard 0 is complete as a category-free Train predicted stream; fresh namespaces for shards 1-3 are paused at the RAM reserve boundary. After the guard clears, register fresh namespaces for incomplete shards only. This cache stage has no OCD/MOT metrics or model-selection claim. No forbidden roles/new Novel GT/vocabulary/foreign process interference."
 }
