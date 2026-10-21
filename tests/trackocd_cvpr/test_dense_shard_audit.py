@@ -1,6 +1,7 @@
 import json
 
 from scripts.trackocd_cvpr.audit_covtrack_train_dense_shards import (
+    COMPLETE_RECEIPT_STATUSES,
     PHYSICAL_FIELDS,
     _audit_physical_stream,
 )
@@ -54,3 +55,7 @@ def test_stream_audit_rejects_duplicate_physical_track_row(tmp_path):
 
     assert result["status"] == "FAIL"
     assert any("duplicate physical track row" in error for error in result["errors"])
+
+
+def test_tcc_off_receipt_status_is_a_complete_shard_status():
+    assert "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SHARD_TCC_OFF" in COMPLETE_RECEIPT_STATUSES

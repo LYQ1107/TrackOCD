@@ -24,6 +24,10 @@ DEFAULT_CONFIG = ROOT / "configs/trackocd_cvpr/joint_causal_pred_dense_protocol_
 DEFAULT_IMAGE_PLAN = ROOT / "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json"
 DEFAULT_SHARD_ROOT = ROOT / "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1"
 DEFAULT_OUTPUT = DEFAULT_SHARD_ROOT / "aggregate_audit.json"
+COMPLETE_RECEIPT_STATUSES = {
+    "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SHARD",
+    "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SHARD_TCC_OFF",
+}
 
 PHYSICAL_FIELDS = {
     "sample_key",
@@ -155,7 +159,13 @@ def _audit_physical_stream(path: Path, expected_video_ids: set[int]) -> dict[str
     return result
 
 
-def audit(config_path: Path, image_plan_path: Path, shard_root: Path, output_path: Path) -> dict[str, Any]:
+def audit(
+    config_path: Path,
+    image_plan_path: Path,
+    shard_root: Path,
+    output_path: Path,
+    receipt_roots: list[Path] | None = None,
+) -> dict[str, Any]:
     config = _json(config_path)
     plan_ids = _plan_video_ids(image_plan_path)
     config_shards = config.get("predicted_dense_cache", {}).get("shards", [])
@@ -173,8 +183,10 @@ def audit(config_path: Path, image_plan_path: Path, shard_root: Path, output_pat
     for index, shard in enumerate(config_shards):
         shard_dir = shard_root / f"shard_{index}"
         input_path = shard_dir / "input_audit.json"
-        run_path = shard_dir / "run.json"
+        receipt_root = receipt_roots[index] if receipt_roots is not None else shard_dir
+        run_path = receipt_root / "run.json"
         shard_record: dict[str, Any] = {"shard": index, "input_audit": str(input_path.resolve())}
+        shard_record["receipt_root"] = str(receipt_root.resolve())
         if not input_path.is_file():
             errors.append(f"missing input audit for shard {index}")
             complete = False
@@ -213,7 +225,7 @@ def audit(config_path: Path, image_plan_path: Path, shard_root: Path, output_pat
         shard_record["run_receipt"] = str(run_path.resolve())
         shard_record["run_receipt_sha256"] = _sha256(run_path)
         shard_record["status"] = receipt.get("status")
-        if receipt.get("status") != "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SHARD":
+        if receipt.get("status") not in COMPLETE_RECEIPT_STATUSES:
             complete = False
             shard_results.append(shard_record)
             continue
@@ -266,10 +278,29 @@ def main() -> int:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--image-plan", type=Path, default=DEFAULT_IMAGE_PLAN)
     parser.add_argument("--shard-root", type=Path, default=DEFAULT_SHARD_ROOT)
+    parser.add_argument(
+        "--receipt-root-template",
+        help=(
+            "optional per-shard receipt directory template; use {index} for 0..3. "
+            "Without it, receipts are read from --shard-root/shard_{index}."
+        ),
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
-    result = audit(args.config.resolve(), args.image_plan.resolve(), args.shard_root.resolve(), args.output.resolve())
+    receipt_roots = None
+    if args.receipt_root_template:
+        receipt_roots = [
+            Path(args.receipt_root_template.format(index=index)).resolve()
+            for index in range(4)
+        ]
+    result = audit(
+        args.config.resolve(),
+        args.image_plan.resolve(),
+        args.shard_root.resolve(),
+        args.output.resolve(),
+        receipt_roots=receipt_roots,
+    )
     print(json.dumps(result, indent=2, sort_keys=True))
     if args.require_complete and result["status"] != "PASS_COMPLETE_FOUR_FIXED_ANONYMOUS_TRAIN_DENSE_SHARDS":
         return 2
