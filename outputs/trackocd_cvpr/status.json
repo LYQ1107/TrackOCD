@@ -580,6 +580,24 @@
   "latest_full_predicted_dense_stream_audit": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
   "latest_full_predicted_dense_stream_audit_sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
   "latest_full_predicted_dense_stream_audit_status": "PASS_407_OF_407_TRAIN_VIDEOS_ALL_SUBSHARDS_RECONCILED",
+  "latest_train_predicted_geometry_audit": "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json",
+  "latest_train_predicted_geometry_audit_sha256": "d0d55eefe57309fcbf3ee873f5e22a133028678130aecbf6fe8aef6621e4b505",
+  "latest_train_predicted_geometry_audit_status": "COMPLETE_407_VIDEO_CATEGORY_FREE_PER_FRAME_IOU_AUDIT_FORMAL_MOT_NOT_CLAIMED",
+  "latest_train_predicted_geometry_audit_summary": {
+    "predicted_tracks": 1245952,
+    "predicted_observations": 13558940,
+    "geometry_gt_tracks": 2222,
+    "geometry_gt_observations": 45450,
+    "per_image_matched_observations": 16778,
+    "observation_precision_on_annotated_images": 0.04590700397835164,
+    "observation_recall_against_annotated_gt": 0.36915291529152916,
+    "gt_tracks_with_per_image_match": 1667,
+    "reliable_temporal_iou_pairs": 0,
+    "formal_ocd_or_mot_metrics": false,
+    "training_started": false,
+    "val_or_test_accessed": false,
+    "category_or_role_fields_read": false
+  },
   "latest_full_predicted_dense_subshard_status": {
     "namespace": "covtrack_train_dense_shards_v1_shard_3_part_03_tccoff19_20261022",
     "part": "shard_3/part_03",
@@ -712,5 +730,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "All 407 fixed anonymous Train predicted streams are complete and reconciled across four top-level shards (shard 3 split into four RAM-safe parts). This cache stage has no OCD/MOT metrics or model-selection claim. Next is the lawful predicted-track audit and formal R/C/M evaluation after frontend/provenance gates; no Test access, Novel vocabulary, Val model selection, or foreign-process interference."
+  "next": "All 407 fixed anonymous Train predicted streams and the category-free per-frame geometry audit are complete. The audit shows sparse-GT/ dense-prediction mismatch and is not a formal OCD/MOT result; full-track temporal-IoU reliable pairs are zero. Next is the formal frontend/provenance gate and a storage-bounded predicted feature/R-C-M pilot, with no Test access, Novel vocabulary, Val model selection, or foreign-process interference."
 }

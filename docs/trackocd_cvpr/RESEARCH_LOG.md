@@ -8368,6 +8368,31 @@ no private GT/cache/weights opened for this check):
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
 
+## Full category-free Train predicted-geometry audit (2026-10-22 UTC)
+
+- After the fixed anonymous COVTrack-native cache reconciled all `407` Train
+  videos, a fresh CPU-only audit matched only geometry: the previously
+  authorized private physical GT index (`2,222` tracks / `45,450` annotated
+  observations) and the `13` category-free physical substreams. It did not
+  open the Train annotation, category/role labels, native evaluator sidecars,
+  Val/Test data, feature arrays, or vocabulary.
+- The audit completed `1,245,952` predicted tracks and `13,558,940`
+  observations. On the `45,450` sparse GT observations, class-free per-image
+  Hungarian matching at IoU `>=0.5` yielded `16,778` matches, observation
+  precision `0.04590700397835164`, and observation recall
+  `0.36915291529152916`; `1,667/2,222` GT physical tracks received at least
+  one per-image match. No prediction-to-GT mapping was persisted.
+- Full-track temporal-IoU reliable pairs were `0`. This is an evidence-backed
+  sparse-GT/dense-prediction boundary, not a formal MOT/OCD score or a claim
+  that the frontend is qualified. It prevents direct use of this audit as
+  HOTA/DetA/AssA/MOTA/IDF1 or OCD model-selection evidence.
+- Result:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json`
+  SHA256 `d0d55eefe57309fcbf3ee873f5e22a133028678130aecbf6fe8aef6621e4b505`.
+  The audit code is `scripts/trackocd_cvpr/audit_predicted_train_geometry.py`;
+  the final source commit is recorded separately. Boundaries were all false
+  for category/role access, Val/Test access, feature reads, and training.
+
 ## Bounded shard-3 part-01 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_3 part_01` completed on one owned A100 in namespace
