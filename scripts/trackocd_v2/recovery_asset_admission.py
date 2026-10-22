@@ -38,6 +38,12 @@ ROLE_FILES = (
     ("unknown_ids_val", "splits/unknown_ids_val.json"),
     ("distractor_ids", "splits/distractor_ids.json"),
 )
+CAUSAL_ORDER_FILES = (
+    "val_gt_track_stream.jsonl",
+    "val_gt_track_stream_seed1027.jsonl",
+    "val_gt_track_stream_seed1028.jsonl",
+    "val_gt_track_stream_seed1029.jsonl",
+)
 SUPPLEMENTAL_FRONTEND_FILES = (
     ("covtrack_native_native_run", "audit/frontend_covtrack_native_native_run.json"),
     ("covtrack_native_metrics", "audit/frontend_covtrack_native_metrics.json"),
@@ -356,6 +362,15 @@ def build_report(project_root: Path, data_root: Path, output_root: Path) -> dict
     if not predicted["exists"]:
         data_problems.append("predicted_stream:missing")
 
+    causal_order_assets: dict[str, Any] = {}
+    public_root = data_root / "tao_ow_ocd_v1/public"
+    for filename in CAUSAL_ORDER_FILES:
+        item = _asset(public_root / filename, f"causal_order_{filename}")
+        item["content_checked"] = False
+        causal_order_assets[filename] = item
+        if not item["exists"]:
+            data_problems.append(f"causal_order:{filename}:missing")
+
     problems = data_problems + frontend_problems + cache_problems
     formal_ready = not problems
     status = "READY_FORMAL_V2_PREDICTED_EVAL_INPUTS" if formal_ready else "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS"
@@ -376,7 +391,7 @@ def build_report(project_root: Path, data_root: Path, output_root: Path) -> dict
         "selected_frontend": selected,
         "selected_frontend_slug": selected_slug,
         "git": _git_info(project_root),
-        "data_assets": {**data_assets, "predicted_stream": predicted},
+        "data_assets": {**data_assets, "predicted_stream": predicted, "causal_order": causal_order_assets},
         "frontend_assets": frontend_assets,
         "formal_cache_manifests": cache_assets,
         "problems": problems,

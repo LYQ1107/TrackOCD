@@ -8872,3 +8872,15 @@ no private GT/cache/weights opened for this check):
   closed until the exact public/order assets are recovered and hashed.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/causal_order_asset_probe_20261022.json`.
+
+## Admission gate: explicit causal-order assets (2026-10-22)
+
+- The read-only admission checker now explicitly requires the four frozen Val
+  GT causal-order JSONL files in addition to the predicted stream. It checks
+  only file metadata and never parses these large JSONL files.
+- The updated tests pass (`4 passed`). The current admission run exits `2` and
+  reports all four order files plus `pred_track_stream.jsonl` as missing;
+  `test_semantic_accessed=false` and `arrays_opened=false` remain enforced.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/v2_asset_admission_recheck_20261022_order_gate.json`
+  (SHA256 `ddff14a167bda09f0b15c58eb29518b3143f3a96daf476a403123d1d18ef7ca7`).

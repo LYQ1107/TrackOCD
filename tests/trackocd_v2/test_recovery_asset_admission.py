@@ -19,6 +19,13 @@ def _make_minimal_complete_assets(root):
     predicted = data / "tao_ow_ocd_v1/public/pred_track_stream.jsonl"
     predicted.parent.mkdir(parents=True, exist_ok=True)
     predicted.write_text("large stream placeholder", encoding="utf-8")
+    for name in (
+        "val_gt_track_stream.jsonl",
+        "val_gt_track_stream_seed1027.jsonl",
+        "val_gt_track_stream_seed1028.jsonl",
+        "val_gt_track_stream_seed1029.jsonl",
+    ):
+        (predicted.parent / name).write_text("order placeholder", encoding="utf-8")
 
     stage = {
         "status": "BAKEOFF_METRICS_COMPLETE",
@@ -85,6 +92,13 @@ def test_complete_val_assets_are_admissible_without_opening_large_inputs(tmp_pat
     assert report["data_assets"]["train_annotation"]["content_checked"] is False
     assert report["data_assets"]["val_annotation"]["content_checked"] is False
     assert report["data_assets"]["predicted_stream"]["content_checked"] is False
+    assert set(report["data_assets"]["causal_order"]) == {
+        "val_gt_track_stream.jsonl",
+        "val_gt_track_stream_seed1027.jsonl",
+        "val_gt_track_stream_seed1028.jsonl",
+        "val_gt_track_stream_seed1029.jsonl",
+    }
+    assert all(not item["content_checked"] for item in report["data_assets"]["causal_order"].values())
     assert report["formal_cache_manifests"]["covtrack_native"]["integrity_evidence"]["arrays_opened"] is False
 
 

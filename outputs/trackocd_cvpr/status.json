@@ -694,6 +694,11 @@
   "latest_causal_order_asset_probe_public_root_exists": false,
   "latest_causal_order_asset_probe_reconstruction_permitted": false,
   "latest_causal_order_asset_probe_large_stream_opened": false,
+  "latest_v2_asset_admission_order_gate": "outputs/trackocd_cvpr/cvpr2/v2_asset_admission_recheck_20261022_order_gate.json",
+  "latest_v2_asset_admission_order_gate_sha256": "ddff14a167bda09f0b15c58eb29518b3143f3a96daf476a403123d1d18ef7ca7",
+  "latest_v2_asset_admission_order_gate_status": "BLOCKED_MISSING_PREDICTED_STREAM_AND_FOUR_VAL_CAUSAL_ORDER_FILES",
+  "latest_v2_asset_admission_order_gate_exit_code": 2,
+  "latest_v2_asset_admission_order_gate_large_jsonl_opened": false,
   "latest_predicted_train_rcm_interface_smoke_summary": {
     "video_id": 3,
     "tracks": 16,
