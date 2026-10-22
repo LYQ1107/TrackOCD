@@ -8770,3 +8770,19 @@ no private GT/cache/weights opened for this check):
   `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
+## Local formal-name inventory and admission classification (2026-10-22)
+
+- A bounded exact-name inventory found the five expected metadata files under
+  `outputs/trackocd_core/audit/nas_m1_source`. Their own metadata classifies
+  them as `HISTORICAL_ASSET_AUDIT_ONLY` with `same_v2_predicted_stream=false`
+  and `formal_common_feature_cache_authorized=false`; their referenced
+  physical stream/checkpoint paths are not a current-server formal v2 input.
+- The current `outputs/trackocd_v2_runtime/audit` contains only a normalized
+  COVTrack stream record and a failed metrics record. It reports
+  `same_v2_physical_metric_protocol=false`, `same_v2_predicted_stream=false`,
+  and `requested_metrics_complete=false`. These files therefore cannot be
+  promoted to formal v2 provenance or OCD/MOT evidence.
+- Receipt with exact local sizes and hashes:
+  `outputs/trackocd_cvpr/cvpr2/local_formal_asset_inventory_20261022.json`.
+  The check did not open large streams, copy data/weights, access TAO Test, or
+  touch external processes; the formal v2 admission gate remains closed.

@@ -659,6 +659,11 @@
   "latest_remote_v2_branch_asset_audit_scope": "Read-only git ls-remote/ls-tree across codex/trackocd-v2-nas-recovery, codex/trackocd-v2, and main; recovery branch has v2 source/config but no outputs or formal frontend/provenance files",
   "latest_remote_v2_branch_asset_audit_test_semantic_accessed": false,
   "latest_remote_v2_branch_asset_audit_external_processes_touched": false,
+  "latest_local_formal_asset_inventory": "outputs/trackocd_cvpr/cvpr2/local_formal_asset_inventory_20261022.json",
+  "latest_local_formal_asset_inventory_status": "HISTORICAL_METADATA_PRESENT_CURRENT_RUNTIME_INCOMPLETE",
+  "latest_local_formal_asset_inventory_formal_v2_admissible": false,
+  "latest_local_formal_asset_inventory_same_v2_predicted_stream": false,
+  "latest_local_formal_asset_inventory_scope": "Exact local formal-name inventory; nas_m1_source is historical-only, current v2 runtime is normalized-stream metadata with incomplete formal metrics",
   "latest_predicted_train_rcm_interface_smoke_summary": {
     "video_id": 3,
     "tracks": 16,
