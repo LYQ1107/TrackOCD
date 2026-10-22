@@ -8677,6 +8677,24 @@ no private GT/cache/weights opened for this check):
   qualification, or Goal A/B/C acceptance is claimed. The remaining bounded
   subshard is `part_03`; it has not been launched.
 
+## Remote v2 branch asset audit (2026-10-22)
+
+- A read-only `git ls-remote`/`git ls-tree` audit checked the GitHub refs
+  `codex/trackocd-v2-nas-recovery` (`604d7eff`), `codex/trackocd-v2`
+  (`cac66467`), and `main` (`7b1d3c09`). The recovery branch contains the
+  recovered v2 source/configuration (`49` `scripts/trackocd_v2` files and one
+  v2 config), confirming that the v2 code itself is present in GitHub.
+- None of the three checked refs tracks an `outputs/` tree or any of the
+  formal names `frontend_selection.json`, `representation_decision.json`,
+  `autonomous_state.json`, `frontend_covtrack_native*.json`,
+  `cache_manifest.json`, or `pred_track_stream.jsonl`. The branch check did
+  not read dataset/weight payloads, access TAO Test, or touch any process.
+- Therefore the correct v2 code is recovered, but formal frontend/provenance
+  assets still require a verified NAS or other non-Git source. This audit does
+  not promote historical local metadata and does not make the v2 admission
+  gate pass. Receipt:
+  `outputs/trackocd_cvpr/cvpr2/remote_v2_branch_asset_audit_20261022.json`.
+
 ## Bounded shard-2 part-03 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_2 part_03` completed on one owned A100 in namespace

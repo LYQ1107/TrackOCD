@@ -653,6 +653,12 @@
   "latest_predicted_train_rcm_interface_smoke": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_interface_smoke_v1/result.json",
   "latest_predicted_train_rcm_interface_smoke_sha256": "150172f16038550c69aabd7238d3a9ee21e1e5c222a01a82a10e36b1274cd610",
   "latest_predicted_train_rcm_interface_smoke_status": "PASS_FIXED_PREDICTED_TRAIN_RCM_INTERFACE_SMOKE_NO_TRAINING",
+  "latest_remote_v2_branch_asset_audit": "outputs/trackocd_cvpr/cvpr2/remote_v2_branch_asset_audit_20261022.json",
+  "latest_remote_v2_branch_asset_audit_status": "SOURCE_PRESENT_FORMAL_ASSETS_ABSENT_FROM_REMOTE",
+  "latest_remote_v2_branch_asset_audit_formal_ready": false,
+  "latest_remote_v2_branch_asset_audit_scope": "Read-only git ls-remote/ls-tree across codex/trackocd-v2-nas-recovery, codex/trackocd-v2, and main; recovery branch has v2 source/config but no outputs or formal frontend/provenance files",
+  "latest_remote_v2_branch_asset_audit_test_semantic_accessed": false,
+  "latest_remote_v2_branch_asset_audit_external_processes_touched": false,
   "latest_predicted_train_rcm_interface_smoke_summary": {
     "video_id": 3,
     "tracks": 16,
@@ -808,5 +814,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "All 407 fixed anonymous Train predicted streams, the category-free per-frame geometry audit, the fixed single-video DINO feature-interface pilot, and the zero-training R/C/M interface smoke are complete. These are input/plumbing evidence only, not a formal v2 cache or OCD/MOT result. Next is recovery of the formal frontend/provenance assets and gate; only after that may a storage-bounded role-aware R/C/M pilot be considered, with no Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference."
+  "next": "The remote recovery branch contains the correct v2 source/config but no formal frontend/provenance outputs. All 407 fixed anonymous Train predicted streams, the category-free per-frame geometry audit, the fixed single-video DINO feature-interface pilot, and the zero-training R/C/M interface smoke are complete. These are input/plumbing evidence only, not a formal v2 cache or OCD/MOT result. Next is recovery of the formal frontend/provenance assets from NAS or another verified non-Git source and the admission gate; only after that may a storage-bounded role-aware R/C/M pilot be considered, with no Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference."
 }

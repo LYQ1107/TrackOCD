@@ -1,0 +1,56 @@
+{
+  "schema_version": "trackocd.cvpr.remote_v2_branch_asset_audit.v1",
+  "repository": "https://github.com/LYQ1107/TrackOCD",
+  "audited_at": "2026-10-22",
+  "method": "Read-only git ls-remote and git ls-tree checks; no worktree mutation, blob payload extraction, dataset access, process control, or TAO Test access.",
+  "formal_names_checked": [
+    "frontend_selection.json",
+    "representation_decision.json",
+    "autonomous_state.json",
+    "frontend_covtrack_native.json",
+    "frontend_covtrack_native_native_run.json",
+    "frontend_covtrack_native_metrics.json",
+    "cache_manifest.json",
+    "pred_track_stream.jsonl"
+  ],
+  "refs": [
+    {
+      "ref": "origin/codex/trackocd-v2-nas-recovery",
+      "commit": "604d7eff50e2db386b597ec81690f16d0b40885e",
+      "tree": "8bb9b78f107cbe4a10100da2ce11c24d79452792",
+      "tracked_files": 1758,
+      "scripts_trackocd_v2_files": 49,
+      "configs_trackocd_v2_files": 1,
+      "outputs_files": 0,
+      "formal_named_files": 0,
+      "interpretation": "The recovered v2 source and registration code are present; formal runtime assets are not tracked in this branch."
+    },
+    {
+      "ref": "origin/codex/trackocd-v2",
+      "commit": "cac66467af7ca137fc53bdbef34896dde47030d8",
+      "tree": "b5b06e398143d8560057085734468e7f80470293",
+      "tracked_files": 1708,
+      "scripts_trackocd_v2_files": 16,
+      "configs_trackocd_v2_files": 1,
+      "outputs_files": 0,
+      "formal_named_files": 0,
+      "interpretation": "The older v2 branch also contains source/config only, not the missing formal assets."
+    },
+    {
+      "ref": "origin/main",
+      "commit": "7b1d3c09f2553450a078a7cee70518a18ef60613",
+      "tree": "c73d6278a5c3350b7cd756d6523f61a690677c4a",
+      "tracked_files": 1677,
+      "scripts_trackocd_v2_files": 0,
+      "configs_trackocd_v2_files": 0,
+      "outputs_files": 0,
+      "formal_named_files": 0,
+      "interpretation": "Main is not a v2 source or formal-asset source."
+    }
+  ],
+  "conclusion": "The correct v2 code is recoverable from the GitHub recovery branch, but the formal frontend/provenance/cache assets are absent from all checked Git refs. NAS or another non-Git asset source remains necessary; no formal v2 admission is granted by this audit.",
+  "formal_ready": false,
+  "test_semantic_accessed": false,
+  "dataset_or_weight_copied": false,
+  "external_processes_touched": false
+}
