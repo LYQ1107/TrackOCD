@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 from src.trackocd_v2.evaluation.persistent import evaluate_persistent  # noqa: E402
 from src.trackocd_v2.evaluation.standard_ocd import evaluate_standard  # noqa: E402
+from src.trackocd_v2 import io as trackocd_io  # noqa: E402
 from src.trackocd_v2.io import OUTPUT_TARGET, atomic_json, ensure_output_layout, sha256_file  # noqa: E402
 from src.trackocd_v2.methods.dpmeans import OnlineDPMeans  # noqa: E402
 from src.trackocd_v2.methods.nearest_prototype import NearestPrototype  # noqa: E402
@@ -42,6 +43,10 @@ TRAIN_FEATURE_ROOT = OUTPUT_TARGET / "features/gt_tracks/train"
 JOIN_AUDIT = OUTPUT_TARGET / "audit/predicted_evaluator_join.json"
 JOIN_PATH = OUTPUT_TARGET / "manifests/tao_val_predicted_evaluator_join.jsonl"
 SELECTION_AUDIT = OUTPUT_TARGET / "audit/frontend_selection.json"
+FRONTEND_STAGE_AUDIT_ROOT = OUTPUT_TARGET / "audit"
+REPRESENTATION_AUDIT = OUTPUT_TARGET / "audit/representation_decision.json"
+CAUSAL_STREAM_OVERRIDE: Path | None = None
+CACHE_MANIFEST_OVERRIDE: Path | None = None
 FRONTEND_STAGE_NAMES = {
     "SimOWT/Q0": "simowt",
     "OVTR-native": "ovtr",
@@ -131,32 +136,45 @@ def _resolve_causal_stream() -> tuple[Path, Any, dict[str, Any]] | None:
         slug = FRONTEND_STAGE_NAMES.get(selected)
         if slug is None:
             raise ValueError(f"unknown selected frontend: {selected}")
-        representation_path = OUTPUT_TARGET / "audit/representation_decision.json"
-        if not representation_path.is_file():
+        if not REPRESENTATION_AUDIT.is_file():
             return None
-        representation = json.loads(representation_path.read_text(encoding="utf-8"))
+        representation = json.loads(REPRESENTATION_AUDIT.read_text(encoding="utf-8"))
         if (
             representation.get("status") != "FINAL_REPRESENTATION_SELECTED"
             or representation.get("formal_common_feature_cache_authorized") is not True
             or representation.get("final_physical_frontend") != selected
         ):
             return None
-        stage_path = OUTPUT_TARGET / "audit" / f"frontend_{slug}.json"
+        stage_path = FRONTEND_STAGE_AUDIT_ROOT / f"frontend_{slug}.json"
         stage = json.loads(stage_path.read_text(encoding="utf-8")) if stage_path.exists() else {}
         normalized = stage.get("normalized_outputs") or {}
-        stream = Path(str(normalized.get("physical_stream", ""))).resolve()
-        manifest = OUTPUT_TARGET / "features/formal" / slug / "cache_manifest.json"
+        stream_source = CAUSAL_STREAM_OVERRIDE or Path(str(normalized.get("physical_stream", "")))
+        stream = stream_source.resolve()
+        manifest_source = CACHE_MANIFEST_OVERRIDE or OUTPUT_TARGET / "features/formal" / slug / "cache_manifest.json"
+        manifest = manifest_source.resolve()
         if not stream.is_file() or not manifest.is_file():
             return None
+        stream_sha256 = sha256_file(stream)
+        expected_stream_sha256 = normalized.get("physical_stream_sha256")
+        if expected_stream_sha256 and stream_sha256 != expected_stream_sha256:
+            raise ValueError(
+                f"causal stream hash mismatch: {stream} has {stream_sha256}, expected {expected_stream_sha256}"
+            )
         payload = json.loads(manifest.read_text(encoding="utf-8"))
         if payload.get("status") != "COMPLETE" or payload.get("frontend") != selected:
             return None
+        cached_stream_sha256 = (payload.get("input") or {}).get("sha256")
+        if cached_stream_sha256 != stream_sha256:
+            raise ValueError(
+                f"cache input hash mismatch: {cached_stream_sha256} != {stream_sha256}"
+            )
         store = ShardedFeatureStore(manifest)
         return stream, store, {
             "kind": "formal_sharded",
             "frontend": selected,
             "frontend_slug": slug,
             "stream": str(stream),
+            "stream_sha256": stream_sha256,
             "cache_manifest": str(manifest.resolve()),
             "decision_namespace": f"frontend_{slug}",
         }
@@ -327,6 +345,8 @@ def _ensure_evaluator_join(source: dict[str, Any]) -> tuple[dict[str, Any], Path
             "--frontend", slug,
             "--join-path", str(join_path.resolve()),
             "--audit-path", str(join_audit.resolve()),
+            "--gt-manifest", str(VAL_MANIFEST.resolve()),
+            "--gt-labels", str(VAL_LABELS.resolve()),
             "--decisions-sealed",
         ]
         result = subprocess.run(command, cwd=ROOT)
@@ -477,8 +497,56 @@ def main() -> int:
     parser.add_argument("--method", choices=("nearest", "dpmeans", "phe"), required=True)
     parser.add_argument("--radius", type=int, default=2)
     parser.add_argument("--device", default="cpu")
+    parser.add_argument("--output-root", type=Path, default=None)
+    parser.add_argument("--audit-root", type=Path, default=None)
+    parser.add_argument("--stream", type=Path, default=None)
+    parser.add_argument("--cache-manifest", type=Path, default=None)
+    parser.add_argument("--phe-checkpoint", type=Path, default=None)
     args = parser.parse_args()
-    out = ensure_output_layout()
+    global OUTPUT_TARGET, TRAIN_MANIFEST, TRAIN_LABELS, VAL_MANIFEST, VAL_LABELS
+    global TRAIN_FEATURE_ROOT, JOIN_AUDIT, JOIN_PATH, SELECTION_AUDIT
+    global FRONTEND_STAGE_AUDIT_ROOT, REPRESENTATION_AUDIT, DECISION_ROOT, TABLE_ROOT
+    global PHE_CHECKPOINT, CAUSAL_STREAM_OVERRIDE, CACHE_MANIFEST_OVERRIDE
+
+    if args.output_root is not None:
+        output_root = args.output_root.expanduser()
+        if not output_root.is_absolute():
+            output_root = ROOT / output_root
+        output_root = output_root.resolve(strict=False)
+        OUTPUT_TARGET = output_root
+        trackocd_io.OUTPUT_TARGET = output_root
+        output_root.mkdir(parents=True, exist_ok=True)
+        for name in ("audit", "manifests", "features", "diagnostics", "tables", "logs", "paper", "checkpoints"):
+            (output_root / name).mkdir(parents=True, exist_ok=True)
+    else:
+        ensure_output_layout()
+
+    if args.audit_root is not None:
+        audit_root = args.audit_root.expanduser()
+        if not audit_root.is_absolute():
+            audit_root = ROOT / audit_root
+        FRONTEND_STAGE_AUDIT_ROOT = audit_root.resolve(strict=False)
+        SELECTION_AUDIT = FRONTEND_STAGE_AUDIT_ROOT / "frontend_selection.json"
+        REPRESENTATION_AUDIT = FRONTEND_STAGE_AUDIT_ROOT / "representation_decision.json"
+    else:
+        FRONTEND_STAGE_AUDIT_ROOT = OUTPUT_TARGET / "audit"
+        SELECTION_AUDIT = OUTPUT_TARGET / "audit/frontend_selection.json"
+        REPRESENTATION_AUDIT = OUTPUT_TARGET / "audit/representation_decision.json"
+
+    TRAIN_MANIFEST = OUTPUT_TARGET / "manifests/tao_train_gt_tracks.jsonl"
+    TRAIN_LABELS = OUTPUT_TARGET / "manifests/private_tao_train_gt_track_labels.jsonl"
+    VAL_MANIFEST = OUTPUT_TARGET / "manifests/tao_val_gt_tracks.jsonl"
+    VAL_LABELS = OUTPUT_TARGET / "manifests/private_tao_val_gt_track_labels.jsonl"
+    TRAIN_FEATURE_ROOT = OUTPUT_TARGET / "features/gt_tracks/train"
+    JOIN_AUDIT = OUTPUT_TARGET / "audit/predicted_evaluator_join.json"
+    JOIN_PATH = OUTPUT_TARGET / "manifests/tao_val_predicted_evaluator_join.jsonl"
+    DECISION_ROOT = OUTPUT_TARGET / "diagnostics"
+    TABLE_ROOT = OUTPUT_TARGET / "tables"
+    CAUSAL_STREAM_OVERRIDE = args.stream.expanduser().resolve(strict=False) if args.stream else None
+    CACHE_MANIFEST_OVERRIDE = args.cache_manifest.expanduser().resolve(strict=False) if args.cache_manifest else None
+    if args.phe_checkpoint is not None:
+        PHE_CHECKPOINT = args.phe_checkpoint.expanduser().resolve(strict=False)
+
     table_path = TABLE_ROOT / f"pred_{args.method}.json"
     resolved = _resolve_causal_stream()
     if resolved is None:

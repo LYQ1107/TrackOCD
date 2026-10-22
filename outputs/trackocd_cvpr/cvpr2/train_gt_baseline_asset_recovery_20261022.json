@@ -1,0 +1,49 @@
+{
+  "schema_version": "trackocd.cvpr2.train_gt_baseline_asset_recovery.v1",
+  "status": "COMPLETE",
+  "generated_utc": "2026-10-22T15:10:00+00:00",
+  "source_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs",
+  "local_output_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime",
+  "assets": [
+    {
+      "relative_path": "manifests/tao_train_gt_tracks.jsonl",
+      "size_bytes": 5899728,
+      "sha256": "b8cd1259cfcefa9df3d081a61929eb0b6dc8ce986a126e40e6fff58296c865e5"
+    },
+    {
+      "relative_path": "manifests/private_tao_train_gt_track_labels.jsonl",
+      "size_bytes": 276342,
+      "sha256": "a65f77667911a6f812774f41525d628df15310723120a2859de16db65bbfbeb2"
+    },
+    {
+      "relative_path": "manifests/tao_val_gt_tracks.jsonl",
+      "size_bytes": 11876759,
+      "sha256": "23fbe4d7f2494508141f2d88f8741cec19ee52cae783cdee8483120bd01210e8"
+    },
+    {
+      "relative_path": "manifests/private_tao_val_gt_track_labels.jsonl",
+      "size_bytes": 564552,
+      "sha256": "a770efa4f1640318ce75d90330f0dd16364b32072f848f60c2cffe294f3b1f48"
+    },
+    {
+      "relative_path": "features/gt_tracks/train",
+      "file_count": 7666,
+      "file_bytes": 1351138083,
+      "content_verification": "all relative paths and SHA256 values match NAS"
+    }
+  ],
+  "transfer": {
+    "mode": "read_only_remote_tar_stream",
+    "source_was_modified": false,
+    "external_processes_touched": false,
+    "remote_file_hash_comparison": "INTEGRITY_MATCH"
+  },
+  "scope": {
+    "train_and_val_only": true,
+    "test_content_opened": false,
+    "test_gt_copied": false,
+    "raw_dataset_copied": false,
+    "weights_copied": false,
+    "purpose": "fixed Train known prototypes and evaluator-only Val denominator after causal decisions are sealed"
+  }
+}
