@@ -45,6 +45,26 @@ def _load_checkpoint(path: Path) -> dict[str, Any]:
     return payload
 
 
+def waiting_for_selection(selection: Path) -> dict[str, Any]:
+    """Return a structured fail-closed result when provenance is absent."""
+    return {
+        "schema_version": "trackocd.v2.current_model_contract.v1",
+        "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "model": "H3_REPRO",
+        "selection_artifact": str(selection.resolve()),
+        "selection_artifact_exists": False,
+        "status": "WAITING_MISSING_SELECTION_ARTIFACT",
+        "decision": "WAITING_MISSING_SELECTION_ARTIFACT",
+        "folds": [],
+        "shape_contract": {
+            "all_folds_match": False,
+            "expected": {"known_count": 48, "raw_dim": 768, "geometry_dim": 15},
+        },
+        "test_semantic_accessed": False,
+        "reason": "The frozen H3 selection artifact is not present; no checkpoint or metric audit was attempted.",
+    }
+
+
 def audit(selection: dict[str, Any]) -> dict[str, Any]:
     v2_known = load_ids(KNOWN_IDS)
     old_supported = load_ids(OLD_SUPPORTED_IDS)
@@ -129,6 +149,11 @@ def main() -> int:
     parser.add_argument("--selection", type=Path, default=SELECTION)
     args = parser.parse_args()
     out = ensure_output_layout()
+    if not args.selection.is_file():
+        result = waiting_for_selection(args.selection)
+        atomic_json(out / "audit/current_model_contract.json", result)
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return 2
     selection = json.loads(args.selection.read_text(encoding="utf-8"))
     result = audit(selection)
     atomic_json(out / "audit/current_model_contract.json", result)

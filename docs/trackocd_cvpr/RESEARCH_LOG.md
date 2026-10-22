@@ -8842,3 +8842,17 @@ no private GT/cache/weights opened for this check):
   no confirmed implementation. Output SHA256 is
   `690d37e9e758e1cd088d717dfcb023cfd4f9014196def5e6299ab5866987c9bb` at
   `outputs/trackocd_v2_runtime/audit/external_ocd_baseline_audit.json`.
+
+## Fail-closed current model contract audit (2026-10-22)
+
+- The default frozen H3 selection artifact
+  `/data2/usr_for_deadline/trackocd_phase90/project_outputs/audit/h3_repro_frozen_selection.json`
+  is absent on this server. The original audit path raised a raw
+  `FileNotFoundError`; it was minimally repaired to emit
+  `WAITING_MISSING_SELECTION_ARTIFACT`, return exit code `2`, and avoid any
+  checkpoint/metric read.
+- The new regression and admission tests pass (`4 passed`). The structured
+  receipt is `outputs/trackocd_v2_runtime/audit/current_model_contract.json`
+  with SHA256
+  `d28e215cd7cd686c1e8f08fb985827879178617b792ffd5b6d9b4222d6a6404a`.
+  This is an engineering/provenance repair, not a model or OCD/MOT result.

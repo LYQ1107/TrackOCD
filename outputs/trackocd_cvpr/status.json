@@ -681,6 +681,12 @@
   "latest_external_ocd_baseline_audit_status": "COMPLETE_REFERENCE_ONLY_NO_DROP_IN_PHYSICAL_TRACK_BASELINE",
   "latest_external_ocd_baseline_audit_records": 3,
   "latest_external_ocd_baseline_audit_test_semantic_accessed": false,
+  "latest_current_model_contract_audit": "outputs/trackocd_v2_runtime/audit/current_model_contract.json",
+  "latest_current_model_contract_audit_sha256": "d28e215cd7cd686c1e8f08fb985827879178617b792ffd5b6d9b4222d6a6404a",
+  "latest_current_model_contract_audit_status": "WAITING_MISSING_SELECTION_ARTIFACT",
+  "latest_current_model_contract_audit_exit_code": 2,
+  "latest_current_model_contract_audit_checkpoint_or_metric_read": false,
+  "latest_current_model_contract_audit_test_semantic_accessed": false,
   "latest_predicted_train_rcm_interface_smoke_summary": {
     "video_id": 3,
     "tracks": 16,

@@ -1,0 +1,20 @@
+{
+  "decision": "WAITING_MISSING_SELECTION_ARTIFACT",
+  "folds": [],
+  "generated_utc": "2026-10-22T13:37:11.774355+00:00",
+  "model": "H3_REPRO",
+  "reason": "The frozen H3 selection artifact is not present; no checkpoint or metric audit was attempted.",
+  "schema_version": "trackocd.v2.current_model_contract.v1",
+  "selection_artifact": "/data2/usr_for_deadline/trackocd_phase90/project_outputs/audit/h3_repro_frozen_selection.json",
+  "selection_artifact_exists": false,
+  "shape_contract": {
+    "all_folds_match": false,
+    "expected": {
+      "geometry_dim": 15,
+      "known_count": 48,
+      "raw_dim": 768
+    }
+  },
+  "status": "WAITING_MISSING_SELECTION_ARTIFACT",
+  "test_semantic_accessed": false
+}
