@@ -8167,7 +8167,7 @@ no private GT/cache/weights opened for this check):
   `part_00` = 26 videos/36,236 images, `part_01` = 26/40,742,
   `part_02` = 25/23,498, and `part_03` = 25/19,590. All four input audits
   report `PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT`; their combined input size is
-  about `26 MiB`. No inference has been launched for these parts yet.
+  about `26 MiB`. At this point no inference had been launched for these parts.
 - This is a resource/provenance event, not a scientific result: no training,
   formal OCD/MOT metric, model selection, or Goal A/B/C acceptance is claimed.
 
@@ -8204,5 +8204,38 @@ no private GT/cache/weights opened for this check):
   `gt_or_semantic_arrays_read=false`. No OCD/MOT metric, model-selection
   result, frontend qualification, or Goal A/B/C acceptance is claimed.
   After child-process cleanup, `MemAvailable` recovered to about `71 GiB` and
-  the personal filesystem retained about `13 GiB` free. `part_01` remains
-  unstarted pending a fresh resource/storage guard.
+  the personal filesystem retained about `13 GiB` free. `part_01` was then
+  launched only after a fresh guard; its completion is recorded below.
+
+## Bounded shard-1 part-01 completion and physical-stream audit (2026-10-22 UTC)
+
+- The second bounded recovery subshard, `part_01`, completed on one owned A100
+  in namespace
+  `covtrack_train_dense_shards_v1_shard_1_part_01_tccoff9_20261022`. Its
+  receipt contains matching `run.json`, `done.json`, and `normalization.json`
+  with status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed the fixed anonymous Train input for `26` videos and
+  `40,742` frame tasks, producing `1,359,659` observations and `106,223`
+  physical tracks with `0` invalid boxes. The native output hashes are:
+  `tao_track.json`
+  `b58b01cb88b313d0480edfb56ec0438ba0f1920c3f9069d30d9bc07428986ce3`, and
+  `tao_bbox.json`
+  `4233d4c9d53a813b204985c308e393a815b098105effbf6d2d10c9df9be194d4`.
+  The normalized-stream hashes are:
+  `physical_tracks.jsonl`
+  `c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d`, and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `d88308e60ea7d0b41487d61b34b622fb31b46846eb142e7831bfd352a8091a70`.
+- The sequential physical-stream audit found `106,223/106,223` rows with
+  aligned frame/box/path/quality arrays, finite non-negative quality values,
+  finite four-coordinate boxes, and `source_split=train_predicted`; all
+  forbidden category/text/GT-field, empty-track, and malformed-row counters
+  were zero. The evaluator-only sidecar has `1,359,659` valid rows and retains
+  native `category_id` for compatibility; it is not consumed as a TrackOCD
+  physical input and contains no GT array.
+- The completion and normalization receipts explicitly record
+  `training_started=false`, `tao_val_accessed=false`, `tao_test_accessed=false`,
+  and `gt_or_semantic_arrays_read=false`. No OCD/MOT metric, model-selection
+  result, frontend qualification, or Goal A/B/C acceptance is claimed. The
+  remaining bounded subshards are `part_02` and `part_03`; they have not been
+  launched.
