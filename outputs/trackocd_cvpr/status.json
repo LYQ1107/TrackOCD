@@ -2,6 +2,22 @@
   "schema_version": "trackocd.cvpr.status.v1",
   "status": "ACTIVE_ALL15_R_ALL6_PAIRED_C_ALL4_RAW_CONTROLS_MEASURED_JOINT_PRED_FINAL_OPEN",
   "phase": "CVPR-2/3/4 evidence-supported mechanism iteration",
+  "cvpr0_diagnostic_stage": {
+    "status": "COMPLETE_DIAGNOSTIC_EVIDENCE_NOT_SCIENTIFIC_ACCEPTANCE",
+    "scientific_interpretation": "MULTI_FACTOR_ROOT_SUPPORTED_NOT_UNIQUE",
+    "supported_contributors": [
+      "representation_geometry_and_raw_adaptation",
+      "candidate_rank_and_controller_action_separation",
+      "first_bad_write_and_mixed_memory_propagation",
+      "legacy_numeric_physical_id_order_dependence"
+    ],
+    "formal_ocd_or_mot_metrics": false,
+    "new_method_acceptance": false,
+    "goal_a_b_c_accepted": false,
+    "report": "docs/trackocd_cvpr/CVPR0_ROOT_CAUSE_SYNTHESIS_20261022.md",
+    "receipt": "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json",
+    "receipt_sha256": "10f951292fcd900b0a87dc9dbcb7e21813b1329cc0e1cf8033a08e3f25ead612"
+  },
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",

@@ -1,0 +1,61 @@
+{
+  "schema_version": "trackocd.cvpr0.root-cause-synthesis.v1",
+  "status": "COMPLETE_DIAGNOSTIC_EVIDENCE_NOT_SCIENTIFIC_ACCEPTANCE",
+  "created_utc": "2026-10-22",
+  "scientific_claim": "MULTI_FACTOR_ROOT_SUPPORTED_NOT_UNIQUE",
+  "supported_contributors": [
+    "representation_geometry_and_raw_adaptation",
+    "candidate_rank_and_controller_action_separation",
+    "first_bad_write_and_mixed_memory_propagation",
+    "legacy_numeric_physical_id_order_dependence"
+  ],
+  "cvpr0_scope": {
+    "historical_full_audit": true,
+    "checkpoint_replays": 930,
+    "geometry_cases": 100,
+    "gradient_cases": 18,
+    "capacity_known_count_cases": 54,
+    "learned_id_renumber_pairs": 90,
+    "matched_train_semantic_cases": 45,
+    "future_shadow_cases": 72,
+    "current_router_videos": 57,
+    "formal_ocd_or_mot_metrics": false
+  },
+  "key_observations": {
+    "raw_uncentered_effective_rank_p16": 55.55168865177801,
+    "known_top1_hits_by_seed": [199, 194, 198],
+    "known_top8_hits_by_seed": [248, 245, 248],
+    "candidate_only_oracle_H_by_seed": [0.0, 0.0, 0.0],
+    "action_only_oracle_H_upper_bound_by_seed": [0.8883928571428571, 0.830390583199572, 0.8394276629570747],
+    "first_bad_write_sequence_seed1027": 144,
+    "first_cross_category_conflict_sequence_seed1027": 146,
+    "mixed_state_cross_video_reuses_after_conflict": 106,
+    "learned_id_renumber_pairs_H_changed": 2,
+    "fixed_raw_b1_id_renumber_pairs_H_changed": 7
+  },
+  "boundaries": {
+    "tao_test_accessed": false,
+    "val_model_selection": false,
+    "new_method_acceptance": false,
+    "formal_frontend_qualified": false,
+    "goal_a_b_c_accepted": false,
+    "raw_traces_uploaded": false
+  },
+  "source_receipts": {
+    "root_cause_matrix": {
+      "path": "outputs/trackocd_cvpr/cvpr0/root_cause_matrix.json",
+      "sha256": "fee1e1452db5f3a695d2a4a7bf298d53e4e3c345ad1f585c8a23de2b18076caa"
+    },
+    "experiment_manifest": {
+      "path": "outputs/trackocd_cvpr/cvpr0/experiment_manifest.json",
+      "sha256": "775f858690f114b7a5f67204c5f917e2ba74a76203b18392b25d45972d5bc3d0"
+    },
+    "review_coverage": {
+      "path": "outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json",
+      "sha256": "f5653edb762e299e7b07f7ab69244107ea538d0609ad7f9204cbe695718e5f9a",
+      "actual_core_reviews": 12,
+      "licensed_extra_reviews": 3
+    }
+  },
+  "next_gate": "FORMAL_V2_FRONTEND_AND_FOUR_VAL_CAUSAL_ORDER_ASSET_ADMISSION"
+}

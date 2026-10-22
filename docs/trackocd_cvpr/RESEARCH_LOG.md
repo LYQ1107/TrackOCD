@@ -8897,6 +8897,23 @@ no private GT/cache/weights opened for this check):
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/remote_all_trackocd_branch_asset_audit_20261022.json`.
 
+## CVPR-0 diagnostic synthesis (2026-10-22)
+
+- The FULL=0 substage is now recorded as
+  `COMPLETE_DIAGNOSTIC_EVIDENCE_NOT_SCIENTIFIC_ACCEPTANCE`. The evidence
+  supports a coupled bundle—Raw/adapted representation geometry, candidate vs
+  controller separation, first-bad-write mixed-memory propagation, and legacy
+  physical-ID ordering dependence—but does not identify a unique causal root.
+- The Top-K and action-oracle numbers remain diagnostic upper bounds; the
+  first-error intervention remains a failed isolation, and the current router
+  remains a protocol/interface result rather than learned dense-online
+  acceptance.
+- The compact synthesis is
+  `docs/trackocd_cvpr/CVPR0_ROOT_CAUSE_SYNTHESIS_20261022.md`, with machine
+  receipt `outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json`.
+  Goal A/B/C, formal v2 frontend qualification, and OCD/MOT metrics remain
+  pending.
+
 ## Historical frontend metadata cross-check (2026-10-22)
 
 - Small JSON metadata read from the two historical TrackOCD branches explicitly
