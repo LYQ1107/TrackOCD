@@ -8689,6 +8689,9 @@ no private GT/cache/weights opened for this check):
   `autonomous_state.json`, `frontend_covtrack_native*.json`,
   `cache_manifest.json`, or `pred_track_stream.jsonl`. The branch check did
   not read dataset/weight payloads, access TAO Test, or touch any process.
+- A wider filename/tree scan also found zero `project_outputs/`, `outputs/`,
+  `frontend_streams/`, or payload-like top-level paths in both v2 refs; the
+  apparent cache/manifest matches are source scripts only.
 - Therefore the correct v2 code is recovered, but formal frontend/provenance
   assets still require a verified NAS or other non-Git source. This audit does
   not promote historical local metadata and does not make the v2 admission

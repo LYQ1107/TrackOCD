@@ -13,6 +13,20 @@
     "cache_manifest.json",
     "pred_track_stream.jsonl"
   ],
+  "broad_tree_checks": {
+    "origin/codex/trackocd-v2-nas-recovery": {
+      "project_outputs_paths": 0,
+      "outputs_paths": 0,
+      "frontend_stream_directory_paths": 0,
+      "payload_like_top_directory_paths": 0
+    },
+    "origin/codex/trackocd-v2": {
+      "project_outputs_paths": 0,
+      "outputs_paths": 0,
+      "frontend_stream_directory_paths": 0,
+      "payload_like_top_directory_paths": 0
+    }
+  },
   "refs": [
     {
       "ref": "origin/codex/trackocd-v2-nas-recovery",
