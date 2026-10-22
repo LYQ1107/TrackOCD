@@ -1,0 +1,34 @@
+{
+  "schema_version": "trackocd.cvpr.v2_source_consistency_audit.v1",
+  "audited_at": "2026-10-22",
+  "active_research_commit": "a7191e8e",
+  "recovered_source_ref": "origin/codex/trackocd-v2-nas-recovery",
+  "recovered_source_commit": "604d7eff50e2db386b597ec81690f16d0b40885e",
+  "tree_counts": {
+    "active_research": {
+      "scripts_trackocd_v2": 57,
+      "src_trackocd_v2": 16,
+      "tests_trackocd_v2": 22
+    },
+    "recovered_source": {
+      "scripts_trackocd_v2": 49,
+      "src_trackocd_v2": 16,
+      "tests_trackocd_v2": 15
+    }
+  },
+  "delta_summary": "The active branch retains the recovered v2 source and adds recovery/admission/input-preparation/compatibility audit code and tests; no recovered v2 source path is missing.",
+  "git_diff_stat_against_recovered": {
+    "paths_changed": 20,
+    "insertions": 2744,
+    "deletions": 15
+  },
+  "verification": {
+    "command": "python -m pytest -q tests/trackocd_v2 tests/trackocd_cvpr/test_joint_rcm_policy_training.py",
+    "passed": 50,
+    "failed": 0,
+    "wall_seconds": 6.83
+  },
+  "formal_asset_status": "SEPARATE_GATE_REMAINS_CLOSED",
+  "test_semantic_accessed": false,
+  "external_processes_touched": false
+}

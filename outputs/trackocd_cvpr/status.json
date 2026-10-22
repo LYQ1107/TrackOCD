@@ -664,6 +664,10 @@
   "latest_local_formal_asset_inventory_formal_v2_admissible": false,
   "latest_local_formal_asset_inventory_same_v2_predicted_stream": false,
   "latest_local_formal_asset_inventory_scope": "Exact local formal-name inventory; nas_m1_source is historical-only, current v2 runtime is normalized-stream metadata with incomplete formal metrics",
+  "latest_v2_source_consistency_audit": "outputs/trackocd_cvpr/cvpr2/v2_source_consistency_audit_20261022.json",
+  "latest_v2_source_consistency_audit_status": "PASS_ACTIVE_BRANCH_RETAINS_RECOVERED_V2_SOURCE",
+  "latest_v2_source_consistency_audit_tests": "50 passed: tests/trackocd_v2 plus tests/trackocd_cvpr/test_joint_rcm_policy_training.py",
+  "latest_v2_source_consistency_audit_formal_asset_gate": "CLOSED_SEPARATELY",
   "latest_predicted_train_rcm_interface_smoke_summary": {
     "video_id": 3,
     "tracks": 16,

@@ -8786,3 +8786,19 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/local_formal_asset_inventory_20261022.json`.
   The check did not open large streams, copy data/weights, access TAO Test, or
   touch external processes; the formal v2 admission gate remains closed.
+
+## v2 source consistency audit (2026-10-22)
+
+- The active research branch retains all v2 source paths from the recovered
+  `codex/trackocd-v2-nas-recovery` commit `604d7eff`; it has `57` v2 scripts,
+  `16` v2 source modules, and `22` v2 tests versus the recovered branch's
+  `49/16/15`. The active-only additions are recovery/admission,
+  input-preparation, compatibility, and audit/test support; no recovered v2
+  source path is missing.
+- The targeted regression command
+  `python -m pytest -q tests/trackocd_v2
+  tests/trackocd_cvpr/test_joint_rcm_policy_training.py` passed `50` tests in
+  `6.83` seconds. This verifies source/plumbing integrity only; it does not
+  open formal streams or make the formal asset gate pass.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/v2_source_consistency_audit_20261022.json`.
