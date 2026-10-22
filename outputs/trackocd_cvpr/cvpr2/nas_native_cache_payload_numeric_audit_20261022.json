@@ -1,0 +1,33 @@
+{
+  "schema_version": "trackocd.cvpr2.nas_native_cache_payload_numeric_audit.v1",
+  "status": "PASS_PARTIAL_COMPLETED_SHARDS",
+  "generated_utc": "2026-10-22T15:08:07+00:00",
+  "cache_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
+  "frontend": "COVTrack-native",
+  "split": "val_predicted",
+  "source_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+  "checked": {
+    "shards": 255,
+    "tracks": 130560,
+    "observations": 561672,
+    "unique_index_keys": 130560,
+    "finite_array_shards": 255,
+    "elapsed_seconds": 11.577
+  },
+  "checks": {
+    "done_marker_counts_and_source_hashes": true,
+    "array_shapes_and_dtypes": true,
+    "array_values_finite": true,
+    "parquet_index_ranges_and_offsets": true,
+    "sample_key_uniqueness": true,
+    "prefix_observation_contract": true,
+    "forbidden_semantic_fields_absent": true,
+    "test_paths_absent": true
+  },
+  "scope": {
+    "remaining_shards_audited": false,
+    "formal_cache_complete": false,
+    "test_content_opened": false,
+    "external_processes_touched": false
+  }
+}

@@ -9136,3 +9136,17 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/formal_cache_continuation_status_20261022.json`.
   Code and receipts were pushed through commits `95bee09d`, `954433f9`,
   `e9ae87d4`, and `ac7c2768`; the last remote-verified head is `ac7c2768`.
+
+## Existing native-cache numerical payload audit (2026-10-22 UTC)
+
+- A read-only one-worker audit opened the completed local payloads for all
+  `255` source-aligned shards. It checked the `.done` counts and source hash,
+  NumPy shapes/dtypes and finite values, Parquet index coverage/offsets,
+  unique sample keys, prefix-observation counts, forbidden semantic fields,
+  and absence of Test paths.
+- The audit passed for `130,560` tracks and `561,672` observations in `11.577`
+  seconds. This validates the reusable partial payload, but does not make the
+  cache formal: `468` shards remain missing and the full-stream manifest is
+  still incomplete.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/nas_native_cache_payload_numeric_audit_20261022.json`.
