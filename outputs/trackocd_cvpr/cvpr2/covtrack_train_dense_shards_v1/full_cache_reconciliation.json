@@ -1,0 +1,49 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack_dense_full_cache_reconciliation.v1",
+  "status": "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS",
+  "protocol": "configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json",
+  "protocol_status": "FROZEN_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
+  "approved_video_count": 407,
+  "approved_video_order_sha256": "d0ceeb81eb0b6d67ee050e8eb15cda909e602cb83f57204d13fcbde276898ea8",
+  "top_level_shard_video_counts": [102, 102, 102, 101],
+  "top_level_shard_image_counts": [112186, 120066, 108606, 91153],
+  "subshard_count": 13,
+  "subshard_input_video_count": 407,
+  "subshard_input_unique_videos": 407,
+  "subshard_input_overlap_count": 0,
+  "shard_3_parts_union_exact": true,
+  "all_subshard_input_union_exact": true,
+  "all_receipts_complete": true,
+  "all_physical_streams_present": true,
+  "all_evaluator_streams_present": true,
+  "all_stream_audit_evidence_pass": true,
+  "stream_audit_evidence": {
+    "shard_0": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/aggregate_audit_tccoff2.json",
+    "shard_1": "docs/trackocd_cvpr/RESEARCH_LOG.md bounded shard-1 subshard audit entries",
+    "shard_2": "docs/trackocd_cvpr/RESEARCH_LOG.md bounded shard-2 subshard audit entries",
+    "shard_3": [
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3_parts_v1/part_00_tccoff16_20261022/stream_audit.json",
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3_parts_v1/part_01_tccoff17_20261022/stream_audit.json",
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3_parts_v1/part_02_tccoff18_20261022/stream_audit.json",
+      "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3_parts_v1/part_03_tccoff19_20261022/stream_audit.json"
+    ]
+  },
+  "subshard_totals": {
+    "shard_0": {"videos": 102, "tracks": 344028, "observations": 3584029, "invalid_boxes": 0},
+    "shard_1": {"videos": 102, "tracks": 363785, "observations": 3960330, "invalid_boxes": 0},
+    "shard_2": {"videos": 102, "tracks": 281744, "observations": 3147631, "invalid_boxes": 0},
+    "shard_3_part_00": {"videos": 26, "tracks": 70264, "observations": 795064, "invalid_boxes": 0},
+    "shard_3_part_01": {"videos": 25, "tracks": 80849, "observations": 783964, "invalid_boxes": 0},
+    "shard_3_part_02": {"videos": 25, "tracks": 44561, "observations": 580562, "invalid_boxes": 0},
+    "shard_3_part_03": {"videos": 25, "tracks": 60721, "observations": 707360, "invalid_boxes": 0}
+  },
+  "totals": {"videos": 407, "tracks": 1245952, "observations": 13558940, "invalid_boxes": 0},
+  "boundary_summary": {
+    "training_started": false,
+    "formal_metrics_created": false,
+    "tao_val_or_test_labels_used": false,
+    "gt_or_semantic_arrays_read": false,
+    "model_selection": false
+  },
+  "interpretation": "All fixed anonymous Train frontend streams are reusable cache provenance only; no OCD/MOT metric, frontend qualification, or Goal A/B/C acceptance is claimed."
+}

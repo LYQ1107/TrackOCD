@@ -8442,6 +8442,45 @@ no private GT/cache/weights opened for this check):
   `gt_or_semantic_arrays_read=false`. The next bounded input is
   `shard_3/part_03`; Goal A/B/C remain pending.
 
+## Bounded shard-3 part-03 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_3 part_03` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_3_part_03_tccoff19_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `25` fixed anonymous Train videos and `22,315` frame
+  tasks, producing `707,360` observations and `60,721` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `ea96da68855e3475d561282769786ab5350540dc17fc5dbb05e248363eae70a5` and
+  `tao_bbox.json`
+  `b071499725dd6b07759f2b307306ba6e60f4ce024c31fd86d78f0880de883c85`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `258523180960f0bc37c963e8f0d9d0abb278491433410daea5a7510d188b443f`.
+- A fresh sequential audit is recorded at
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3_parts_v1/part_03_tccoff19_20261022/stream_audit.json`.
+  It found exact category-free physical fields, `60,721/60,721` unique
+  tracks and `707,360/707,360` observations, aligned frame/box arrays,
+  finite non-degenerate boxes, and zero bad-field, wrong-video,
+  duplicate-track, duplicate-frame, malformed-row, or invalid-box counters.
+  The evaluator-only sidecar has `707,360` rows with exact native fields,
+  finite scores in `[0,1]`, finite boxes, no duplicate track/frame rows, and
+  no null `category_id`; it retains native category IDs only for compatibility
+  and is not admitted to the TrackOCD physical pipeline.
+- The four `shard_3` input parts are disjoint and their ordered union exactly
+  matches the fixed 101-video `shard_3` input audit. Combined with the
+  already validated `shard_0`, `shard_1`, and `shard_2`, all `407/407`
+  approved Train videos now have reusable dense predicted-front-end streams:
+  `13,558,940` observations and `1,245,952` physical tracks, with zero
+  invalid boxes across the reconciled receipts. The union reconciliation is
+  recorded at `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json`.
+- This milestone is cache provenance and coverage only. No training started,
+  no OCD/MOT metric or frontend qualification was created, no model selection
+  was performed, and no TAO Val/Test labels were read. Goal A/B/C remain
+  pending; the next stage is the frozen-protocol predicted-track audit and
+  formal causal R/C/M evaluation, subject to its existing gates.
+
 ## Bounded shard-3 part-00 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_3 part_00` completed on one owned A100 in namespace
