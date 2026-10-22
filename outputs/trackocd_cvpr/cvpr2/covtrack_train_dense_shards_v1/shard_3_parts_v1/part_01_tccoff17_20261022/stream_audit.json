@@ -1,0 +1,60 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack_dense_subshard_stream_audit.v1",
+  "status": "PASS",
+  "run_namespace": "covtrack_train_dense_shards_v1_shard_3_part_01_tccoff17_20261022",
+  "input_videos": 25,
+  "input_images": 24673,
+  "expected": {
+    "videos": 25,
+    "tracks": 80849,
+    "observations": 783964
+  },
+  "physical_stream": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl",
+    "size_bytes": 142717567,
+    "sha256": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86",
+    "lines": 80849,
+    "unique_tracks": 80849,
+    "observations": 783964,
+    "videos": 25,
+    "bad_json": 0,
+    "bad_fields": 0,
+    "wrong_video": 0,
+    "duplicate_track": 0,
+    "bad_arrays": 0,
+    "duplicate_frame": 0,
+    "bad_boxes": 0,
+    "bad_quality": 0,
+    "category_free_exact_schema": true
+  },
+  "evaluator_stream": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_01_tccoff17_20261022/native_evaluator_rows.jsonl",
+    "size_bytes": 168774473,
+    "sha256": "2434000f16eae8a621f66313c61683a3522e10260606474565ee62c144585913",
+    "lines": 783964,
+    "observations": 783964,
+    "videos": 25,
+    "bad_json": 0,
+    "bad_fields": 0,
+    "wrong_video": 0,
+    "duplicate_track_frame": 0,
+    "bad_boxes": 0,
+    "bad_scores": 0,
+    "null_category": 0
+  },
+  "cross_checks": {
+    "physical_obs_equals_evaluator_obs": true,
+    "physical_video_obs_equals_evaluator_video_obs": true,
+    "physical_unique_tracks_equals_receipt": true,
+    "physical_obs_equals_receipt": true,
+    "evaluator_rows_equals_receipt": true
+  },
+  "receipt_flags": {
+    "status": "COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF",
+    "training_started": false,
+    "formal_metrics": false,
+    "tao_val_accessed": false,
+    "tao_test_accessed": false,
+    "gt_or_semantic_arrays_read": false
+  }
+}
