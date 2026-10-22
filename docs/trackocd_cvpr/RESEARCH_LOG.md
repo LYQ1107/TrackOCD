@@ -8271,3 +8271,39 @@ no private GT/cache/weights opened for this check):
   and `gt_or_semantic_arrays_read=false`. No OCD/MOT metric, model-selection
   result, frontend qualification, or Goal A/B/C acceptance is claimed. The
   remaining bounded subshard is `part_03`; it has not been launched.
+
+## Bounded shard-1 part-03 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- The fourth bounded recovery subshard, `part_03`, completed on one owned A100
+  in namespace
+  `covtrack_train_dense_shards_v1_shard_1_part_03_tccoff11_20261022`. Its
+  receipt contains matching `run.json`, `done.json`, and `normalization.json`
+  with status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed the fixed anonymous Train input for `25` videos and
+  `19,590` frame tasks, producing `631,154` observations and `66,357`
+  physical tracks with `0` invalid boxes. The native output hashes are:
+  `tao_track.json`
+  `51ade53305002ebfc84188028bb7dafd025773966c9422324944006cc7288b4c`, and
+  `tao_bbox.json`
+  `68b79d12a4fb659a25562a18db483f1cb86184b8e613d7e6bb2c4884351dd2a1`.
+  The normalized-stream hashes are:
+  `physical_tracks.jsonl`
+  `add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406`, and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `1c7737bd1da6ded587a38da372865b3022bc53363ce5d0a8cc4e17deb055b7d8`.
+- A fresh sequential audit found `66,357/66,357` physical tracks and
+  `631,154/631,154` observations with the exact category-free physical schema,
+  aligned frame/box arrays, unique frames per track, finite non-degenerate
+  boxes, and `source_split=train_predicted`; all bad-field, forbidden-field,
+  wrong-video, duplicate-track, malformed-row, and invalid-box counters were
+  zero. The evaluator-only sidecar has `631,154` rows, exact native fields,
+  finite scores in `[0,1]`, finite boxes, and no null `category_id`; it retains
+  native category IDs only for compatibility and is not consumed as a TrackOCD
+  physical input.
+- The completion receipt explicitly records `training_started=false`,
+  `formal_metrics=false`, `tao_val_accessed=false`, `tao_test_accessed=false`,
+  and `gt_or_semantic_arrays_read=false`. This completes only the four-way
+  subdivision of original `shard_1` (`part_00`--`part_03`); it does not mean
+  the full 407-video Train cache, OCD/MOT metrics, frontend qualification,
+  model selection, or Goal A/B/C acceptance is complete. No formal result is
+  claimed from this cache stage.
