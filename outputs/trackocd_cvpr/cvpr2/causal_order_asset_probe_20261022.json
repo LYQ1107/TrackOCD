@@ -1,0 +1,30 @@
+{
+  "schema_version": "trackocd.cvpr.causal_order_asset_probe.v1",
+  "audited_at": "2026-10-22",
+  "expected_public_root": "data/tao_ow_ocd_v1/public",
+  "expected_files": [
+    "pred_track_stream.jsonl",
+    "val_gt_track_stream.jsonl",
+    "val_gt_track_stream_seed1027.jsonl",
+    "val_gt_track_stream_seed1028.jsonl",
+    "val_gt_track_stream_seed1029.jsonl"
+  ],
+  "public_root_exists": false,
+  "missing_files": [
+    "pred_track_stream.jsonl",
+    "val_gt_track_stream.jsonl",
+    "val_gt_track_stream_seed1027.jsonl",
+    "val_gt_track_stream_seed1028.jsonl",
+    "val_gt_track_stream_seed1029.jsonl"
+  ],
+  "current_runtime_physical_stream": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+    "sha256": "70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9",
+    "same_v2_predicted_stream": false,
+    "accepted_as_gt_causal_order": false
+  },
+  "conclusion": "The formal predicted stream and the four frozen Val GT causal-order assets cannot be reconstructed from counts or by inventing a new order; recover the exact public/order files before formal causal evaluation.",
+  "large_stream_opened": false,
+  "test_semantic_accessed": false,
+  "external_processes_touched": false
+}

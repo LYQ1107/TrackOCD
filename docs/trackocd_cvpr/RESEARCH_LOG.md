@@ -8860,3 +8860,15 @@ no private GT/cache/weights opened for this check):
 - Full `tests/trackocd_v2` regression after the repair passes `50/50` in
   `4.57` seconds; no dataset, Test semantic label, or external process was
   involved.
+
+## Causal-order asset probe (2026-10-22)
+
+- The exact public root `data/tao_ow_ocd_v1/public` is absent. Missing are
+  `pred_track_stream.jsonl`, `val_gt_track_stream.jsonl`, and the three frozen
+  Val GT order files for seeds `1027/1028/1029`.
+- The current COVTrack normalized physical stream is not the same v2 predicted
+  stream and cannot supply a GT order. No order was reconstructed from counts,
+  sorted IDs, or current runtime output. Formal causal evaluation remains
+  closed until the exact public/order assets are recovered and hashed.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/causal_order_asset_probe_20261022.json`.

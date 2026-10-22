@@ -73,6 +73,22 @@ checkpoint and pinned vendor source match the historical hashes. It is safe to
 reuse for a future registered cache smoke, but it does not make the missing
 COVTrack-native frontend or predicted physical stream available.
 
+## Addendum — causal-order asset boundary (2026-10-22)
+
+The current server also lacks the exact public/order files that bind the v2
+causal protocol: `data/tao_ow_ocd_v1/public/pred_track_stream.jsonl`,
+`val_gt_track_stream.jsonl`, and the three seed order files for `1027/1028/1029`.
+The public directory itself is absent. The current local COVTrack normalized
+physical stream is a separate candidate (`same_v2_predicted_stream=false`) and
+must not be used to invent the GT order or to silently replace the missing
+predicted stream. Formal causal evaluation therefore remains closed until the
+exact files are recovered and hash/lineage audited.
+
+The bounded probe receipt is
+`outputs/trackocd_cvpr/cvpr2/causal_order_asset_probe_20261022.json`; it opened
+no large stream, accessed no Test semantic data, and touched no external
+process.
+
 ## Local MASA migration eligibility audit — 2026-10-16
 
 The existing local MASA output was checked without opening annotations, GT or
