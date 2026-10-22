@@ -8368,6 +8368,22 @@ no private GT/cache/weights opened for this check):
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
 
+## Shard-3 bounded anonymous input preparation (2026-10-22 UTC)
+
+- The remaining fixed `shard_3` input was subdivided into four fresh anonymous
+  namespaces before any model execution: `part_00/01/02/03` with `26/25/25/25`
+  videos and `25,866/24,673/18,299/22,315` images respectively. Their ordered
+  video-ID union exactly matches the original 101-video `shard_3` input audit,
+  with no overlap.
+- All four input audits are
+  `PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT`; each records
+  `tao_train_annotation_opened=false`, `tao_val_accessed=false`,
+  `tao_test_accessed=false`, `gt_or_semantic_arrays_read=false`,
+  `pixels_decoded_or_hashed=false`, and `training_started=false`.
+- This is input preparation only. No COVTrack inference, training, OCD/MOT
+  metric, frontend qualification, or model selection has been performed for
+  `shard_3`.
+
 ## Bounded shard-2 part-02 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_2 part_02` completed on one owned A100 in namespace
