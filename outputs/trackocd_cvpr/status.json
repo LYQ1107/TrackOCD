@@ -39,6 +39,22 @@
     "nas_mount_present": false,
     "network_recovery_required": true
   },
+  "latest_nas_formal_asset_recovery": {
+    "status": "PASS_NAS_VAL_ONLY_ASSET_RECOVERY_OLD_CACHE_MISMATCH_RETAINED",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/nas_formal_asset_recovery_20261022.json",
+    "receipt_sha256": "7f24e420c8baeb969253c2f2c14e6ddc1d9e128a1a4559ec11b97cc9069c618e",
+    "transport": "READ_ONLY_127.0.0.1:24557_NAS_RELAY",
+    "staged_scope_bytes": 443087834,
+    "val_predicted_stream_sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
+    "val_predicted_stream_summary": {"videos": 988, "tracks": 649378, "observations": 1853369},
+    "four_val_causal_order_assets_staged": true,
+    "historical_cache_source_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "current_cache_matching_stream_found": false,
+    "historical_cache_reuse_authorized": false,
+    "formal_v2_admission": false,
+    "test_content_opened": false,
+    "external_processes_touched": false
+  },
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
@@ -910,5 +926,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "The remote recovery branch contains the correct v2 source/config but no formal frontend/provenance outputs. All 407 fixed anonymous Train predicted streams, the category-free per-frame geometry audit, the fixed single-video DINO feature-interface pilot, and the zero-training R/C/M interface smoke are complete. These are input/plumbing evidence only, not a formal v2 cache or OCD/MOT result. Next is recovery of the formal frontend/provenance assets from NAS or another verified non-Git source and the admission gate; only after that may a storage-bounded role-aware R/C/M pilot be considered, with no Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference."
+  "next": "The NAS read-only relay recovered Val-only frontend/provenance metadata, the current 988-video Val predicted stream, and four causal-order GT streams into a quarantined local staging area. The old 255/723 formal cache is bound to a different physical-stream hash and remains forbidden for reuse. Next is an explicit source-mapping and bounded streaming integrity audit, followed only by a fresh current-stream cache/admission attempt; no formal OCD/MOT result, Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference is allowed."
 }

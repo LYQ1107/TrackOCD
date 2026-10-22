@@ -1,0 +1,123 @@
+{
+  "schema_version": "trackocd.cvpr.nas_formal_asset_recovery.v1",
+  "status": "PASS_NAS_VAL_ONLY_ASSET_RECOVERY_OLD_CACHE_MISMATCH_RETAINED",
+  "generated_utc": "2026-10-22T14:05:51Z",
+  "source_branch": "research/cvpr-trackocd-autonomous-v2",
+  "source_commit": "0aca3160be8d23c08e996b531322c67c172252a7",
+  "transport": {
+    "kind": "read_only_ssh_relay",
+    "local_endpoint": "127.0.0.1:24557",
+    "host_alias": "nas-readonly",
+    "remote_host_identity": "VALNas",
+    "remote_shell_root": "/home/Valadmin/A100",
+    "sftp_namespace_root": "/home/A100",
+    "direct_192_168_31_57_probe_used_for_transfer": false,
+    "write_performed": false,
+    "external_processes_touched": false
+  },
+  "remote_source_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs",
+  "staged_root": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022",
+  "staged_scope_bytes": 443087834,
+  "val_assets": {
+    "tao_val_predicted_tracks.jsonl": {
+      "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_predicted_tracks.jsonl",
+      "staged_path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_predicted_tracks.jsonl",
+      "size_bytes": 394170147,
+      "sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
+      "role": "NAS_current_val_predicted_stream",
+      "semantic_rows_parsed": false
+    },
+    "tao_val_gt_tracks.jsonl": {
+      "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_gt_tracks.jsonl",
+      "staged_path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks.jsonl",
+      "size_bytes": 11876759,
+      "sha256": "23fbe4d7f2494508141f2d88f8741cec19ee52cae783cdee8483120bd01210e8",
+      "role": "NAS_val_gt_causal_order_base",
+      "semantic_rows_parsed": false
+    },
+    "tao_val_gt_tracks_seed1027.jsonl": {
+      "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_gt_tracks_seed1027.jsonl",
+      "staged_path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks_seed1027.jsonl",
+      "size_bytes": 11876759,
+      "sha256": "ea23cdc7920741398af03eec4301ca69a582ae6899f38110505fbebf048566d3",
+      "role": "NAS_val_gt_causal_order_seed1027",
+      "semantic_rows_parsed": false
+    },
+    "tao_val_gt_tracks_seed1028.jsonl": {
+      "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_gt_tracks_seed1028.jsonl",
+      "staged_path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks_seed1028.jsonl",
+      "size_bytes": 11876759,
+      "sha256": "4e3884255868ff5b08df1a44614c76f6cc087c667ab6594f75fc769e1fc84e0c",
+      "role": "NAS_val_gt_causal_order_seed1028",
+      "semantic_rows_parsed": false
+    },
+    "tao_val_gt_tracks_seed1029.jsonl": {
+      "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_gt_tracks_seed1029.jsonl",
+      "staged_path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks_seed1029.jsonl",
+      "size_bytes": 11876759,
+      "sha256": "af032af560fd2e311d55582c760b36c2bd1ea4c27967b0479152a4915a184f5b",
+      "role": "NAS_val_gt_causal_order_seed1029",
+      "semantic_rows_parsed": false
+    }
+  },
+  "recovered_audit_metadata": {
+    "root": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit",
+    "files": {
+      "frontend_selection.json": {"size_bytes": 19891, "sha256": "6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e"},
+      "representation_decision.json": {"size_bytes": 707, "sha256": "4cbf0cf43084e5994d217d2598fc412f341494b3c68a916ddd763b6af9c92244"},
+      "autonomous_state.json": {"size_bytes": 962182, "sha256": "0527539be4388e5d4e7f227e12261233d432aa4d60575d66f9375fec06d08f78"},
+      "frontend_covtrack_native.json": {"size_bytes": 10069, "sha256": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526"},
+      "frontend_covtrack_native_native_run.json": {"size_bytes": 2578, "sha256": "4350d5270f1608d7e30b0a3f51d7865adfcfba22cc72e812a18c76ad758ceca2"},
+      "frontend_covtrack_native_metrics.json": {"size_bytes": 227457, "sha256": "e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2"},
+      "frontend_covtrack_native_normalization.json": {"size_bytes": 2226, "sha256": "1472622923c4399c559b5e03bf8271101abb82ac8d255f4c3cf865c2b310b1da"},
+      "frontend_asset_audit.json": {"size_bytes": 20417, "sha256": "641e43c7400c1460e7a6409c479eae0f88efc61237473105be9fa1184d8b7205"},
+      "frontend_bakeoff_route.json": {"size_bytes": 6150, "sha256": "f6e1f08faef8b99a2db672e47ec2bece8cdd8d7f2d4fe2072763f5ee197ae390"},
+      "common_feature_cache_manifest.json": {"size_bytes": 330, "sha256": "52ba8acac76fe23bd995838df1daa43098af167b99a543542bd2b4fa19e8a833"},
+      "common_feature_audit.json": {"size_bytes": 5817, "sha256": "4afc435588fcc3be4c90850a139c35f9370d8ede4d3dc3039e35adf02ccce83a"},
+      "predicted_track_stream.json": {"size_bytes": 861, "sha256": "1b5877609b2643062a6333fdaffe661e5cd964d12fec176b7b4ea765cf20db8d"},
+      "predicted_stream_statistics.json": {"size_bytes": 143914, "sha256": "57b7d84bb6df909165421bafd00d177916f26687ee673331d2c6347c4fc610ec"},
+      "predicted_evaluator_join.json": {"size_bytes": 1588, "sha256": "1b537771c3e43425664893dec9feafc472cf8f34b7bd343c5a4d9f5da0867cfa"},
+      "current_model_contract.json": {"size_bytes": 6464, "sha256": "dcb4317e6925db9e576c9fde23fb892a549d1530b1e9f2d91da4402972562150"}
+    }
+  },
+  "current_val_stream_summary": {
+    "videos": 988,
+    "tracks": 649378,
+    "observations": 1853369,
+    "gt_matching_used": false,
+    "source_stream_sha256": "2fbde4d4352a7831925f772b39f02c85f17ef92daee4f79ae9cd891ba2375878",
+    "current_staged_stream_sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca"
+  },
+  "historical_formal_cache_comparison": {
+    "cache_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
+    "manifest_status": "RUNNING",
+    "historical_done_shards": 255,
+    "historical_required_shards": 723,
+    "historical_missing_shards": 468,
+    "stored_tracks": 130560,
+    "required_tracks": 369794,
+    "stored_observations": 561672,
+    "required_observations": 1133841,
+    "logical_bytes": 2088891204,
+    "cache_source_physical_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "current_stream_sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
+    "same_v2_predicted_stream": false,
+    "current_cache_matching_stream_found": false,
+    "reuse_authorized": false
+  },
+  "admission_and_safety": {
+    "formal_v2_admission": false,
+    "expected_local_path_mapping_created": false,
+    "streaming_semantic_audit_completed": false,
+    "training_started": false,
+    "formal_ocd_or_mot_metrics": false,
+    "weights_copied": false,
+    "formal_cache_copied": false,
+    "raw_assets_uploaded": false,
+    "tao_test_content_opened": false,
+    "tao_test_semantic_accessed": false,
+    "tao_test_paths_read": false,
+    "novel_vocabulary_used_for_selection": false
+  },
+  "next_gate": "Keep the staged Val-only assets quarantined; perform an explicit source-mapping and bounded streaming integrity audit, then build or admit only a fresh cache whose input hash equals the current v2 predicted stream. Do not reuse the 63945 historical cache or claim formal OCD/MOT metrics yet."
+}

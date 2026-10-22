@@ -9001,3 +9001,25 @@ no private GT/cache/weights opened for this check):
   Machine receipt:
   `outputs/trackocd_cvpr/cvpr2/mechanism_evidence_reconciliation_20261022.json`,
   SHA256 `edd834b7eb5c9aaafb97d930ec94a9e894e0b98ab28196b5779ceb2de76b3080`.
+
+## NAS Val-only formal-asset recovery (2026-10-22 UTC)
+
+- The existing read-only NAS relay at `127.0.0.1:24557` was verified and used
+  without touching external processes. A quarantined local staging area now
+  contains the current NAS Val predicted stream (`988` videos, `649,378`
+  tracks, `1,853,369` observations) plus the four Val causal-order GT streams;
+  all five large files retain their source sizes and SHA256 values.
+- The requested small frontend/provenance JSON set was also recovered with
+  hashes. Its metadata selects COVTrack-native historically, but this is not
+  yet a current formal v2 admission: the expected local source mapping and
+  current-stream cache manifest are still absent.
+- The historical formal cache is explicitly quarantined. It is `255/723`
+  completed shards and is bound to physical-stream SHA256
+  `63945d2a...d8fe2f1`, whereas the recovered current Val predicted stream is
+  `8d9325cc...d87f54eca`; no shard from that cache is reused.
+- No TAO Test content was opened, no weights or cache were uploaded, and no
+  training or formal OCD/MOT metric was run. The machine receipt is
+  `outputs/trackocd_cvpr/cvpr2/nas_formal_asset_recovery_20261022.json` (SHA256
+  `7f24e420c8baeb969253c2f2c14e6ddc1d9e128a1a4559ec11b97cc9069c618e`). The
+  next gate is a bounded streaming integrity audit followed by a fresh cache
+  whose input hash matches the current stream.
