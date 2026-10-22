@@ -8368,6 +8368,37 @@ no private GT/cache/weights opened for this check):
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
 
+## Bounded shard-2 part-02 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_2 part_02` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_2_part_02_tccoff14_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `25` fixed anonymous Train videos and `27,741` frame
+  tasks, producing `855,052` observations and `75,409` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `93e91f99842d4ceca751c2d5fb0dd19de07d9901a06bad3fe89b0b00f814fad0` and
+  `tao_bbox.json`
+  `e0d8f80987889b09cddd2358bc4abde8e96ab0a9d29dd40a82fdcecd1b6f1114`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `4f74af6baa8d1fc39b70f0394ca05d76d2b58c9f5fbb145da8efc6c72eac25ec`.
+- A fresh sequential audit found exact category-free physical fields,
+  `75,409/75,409` unique tracks and `855,052/855,052` observations, aligned
+  frame/box arrays, finite non-degenerate boxes, and zero bad-field,
+  wrong-video, duplicate-track, duplicate-frame, malformed-row, or invalid-box
+  counters. The evaluator-only sidecar has `855,052` rows with exact native
+  fields, finite scores in `[0,1]`, finite boxes, and no null `category_id`;
+  it retains native category IDs only for compatibility and is not admitted to
+  the TrackOCD physical pipeline.
+- The receipt records `training_started=false`, `formal_metrics=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
+  cache subshard only; no OCD/MOT metric, model selection, frontend
+  qualification, or Goal A/B/C acceptance is claimed. The remaining bounded
+  subshard is `part_03`; it has not been launched.
+
 ## Bounded shard-2 part-01 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_2 part_01` completed on one owned A100 in namespace
