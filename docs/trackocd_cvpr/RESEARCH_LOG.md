@@ -9105,3 +9105,34 @@ no private GT/cache/weights opened for this check):
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/nas_native_cache_local_recovery_20261022.json`
   (SHA256 `72405f0839e9a819969b8d76759adb147d9c3539e82b2ed6b619daa972433cff`).
+
+## Train/Val baseline asset recovery and formal-cache continuation gate (2026-10-22 UTC)
+
+- The minimum Train/Val assets needed for fixed Known prototypes and the
+  evaluator-only Val denominator were copied from the read-only NAS relay into
+  `outputs/trackocd_v2_runtime/`: four GT manifest/label files and the Train
+  feature tree. No raw frame dataset, weight, Test GT, or Test stream was
+  copied.
+- The four manifest/label sizes and SHA256 values match the NAS source. The
+  Train feature tree matches by relative path and SHA256 for all `7,666`
+  files (`1,351,138,083` file bytes), containing `2,555` logical feature JSON
+  rows. Manifest/label/feature sample keys match exactly.
+- The Train-only prototype smoke loaded all five causal prefixes with `48`
+  Known categories and `768`-D vectors per prefix. It used no Val/Test rows
+  for prototype construction. This is an asset/preflight result, not an OCD
+  or MOT metric.
+- `run_pred_baselines.py` now accepts explicit output, audit, stream, cache
+  manifest, and checkpoint paths; it verifies the selected stream hash against
+  both the stage audit and cache manifest, passes explicit Val GT paths to the
+  evaluator join, and pins the join split to `val`. The incomplete cache
+  correctly returns `WAITING_FEATURES` without inference.
+- Current formal COVTrack-native cache state remains `255/723` completed
+  shards with `468` missing. The task-owned resource gate is live, but the
+  current snapshot has no eligible idle GPU; no builder worker, baseline
+  inference, formal OCD/MOT evaluation, or TAO Test access has occurred.
+- Machine receipts:
+  `outputs/trackocd_cvpr/cvpr2/train_gt_baseline_asset_recovery_20261022.json`
+  and
+  `outputs/trackocd_cvpr/cvpr2/formal_cache_continuation_status_20261022.json`.
+  Code and receipts were pushed through commits `95bee09d`, `954433f9`,
+  `e9ae87d4`, and `ac7c2768`; the last remote-verified head is `ac7c2768`.
