@@ -129,7 +129,10 @@ class DeterministicSmokeScorer:
             scores[1] = 10.0  # first EXISTING group after the one anchor
         else:
             scores[len(features)] = 10.0
-        return scores.detach().cpu().numpy()
+        # The production R/C/M bridge keeps the scorer graph type even when
+        # this harness disables gradients; return a Torch tensor, not a
+        # detached NumPy callback result.
+        return scores
 
 
 def new_control(anchor_visual, anchor_box, anchor_quality):
