@@ -165,6 +165,34 @@ def _stream_paths(root: Path) -> list[Path]:
     return paths
 
 
+def _stream_frame_bases(path: Path) -> dict[int, int]:
+    """Find the synthetic image-ID base for each video in one stream.
+
+    Source datasets use incompatible file-name conventions.  The normalized
+    frontend stream preserves a dense, video-local synthetic frame-ID range;
+    its zero-based offset is the only coordinate used for the geometry join.
+    """
+
+    bases: dict[int, int] = {}
+    with path.open("rb") as handle:
+        for line_number, raw in enumerate(handle, 1):
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            if not isinstance(row, dict) or set(row) != PHYSICAL_FIELDS:
+                raise ValueError(f"physical stream schema mismatch during frame-base scan at {path}:{line_number}")
+            if FORBIDDEN_FIELDS & set(row) or row.get("source_split") != "train_predicted":
+                raise ValueError(f"forbidden/non-Train field during frame-base scan at {path}:{line_number}")
+            video_id = int(row["video_id"])
+            frame_ids = row["frame_ids"]
+            if not isinstance(frame_ids, list) or not frame_ids:
+                raise ValueError(f"empty frame range during frame-base scan at {path}:{line_number}")
+            values = [int(value) for value in frame_ids]
+            minimum = min(values)
+            bases[video_id] = minimum if video_id not in bases else min(bases[video_id], minimum)
+    return bases
+
+
 def _new_stream_state() -> dict[str, Any]:
     return {
         "tracks": {},
@@ -304,6 +332,7 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
 
     for path in paths:
         state = _new_stream_state()
+        frame_bases = _stream_frame_bases(path)
         digest = hashlib.sha256()
         file_rows = file_observations = 0
         file_first_video = file_last_video = None
@@ -354,12 +383,9 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                     int(frame_id)
                     if not _finite_box(box):
                         raise ValueError(f"invalid predicted box at {path}:{line_number}")
-                    stem = Path(str(image_path)).stem
-                    if not stem.startswith("frame") or not stem[5:].isdigit():
-                        raise ValueError(f"predicted image path has no frame number at {path}:{line_number}")
-                    frame_index = int(stem[5:]) - 1
+                    frame_index = int(frame_id) - frame_bases[video_id]
                     if frame_index < 0:
-                        raise ValueError(f"predicted frame number is not one-based at {path}:{line_number}")
+                        raise ValueError(f"predicted frame ID precedes the video base at {path}:{line_number}")
                     if frame_index in gt_by_frame.get(video_id, {}):
                         state["by_frame"][(video_id, frame_index)].append((track_key, [float(value) for value in box]))
                         state["annotated_observations"] += 1
