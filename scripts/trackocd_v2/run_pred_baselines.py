@@ -347,6 +347,7 @@ def _ensure_evaluator_join(source: dict[str, Any]) -> tuple[dict[str, Any], Path
             "--audit-path", str(join_audit.resolve()),
             "--gt-manifest", str(VAL_MANIFEST.resolve()),
             "--gt-labels", str(VAL_LABELS.resolve()),
+            "--split", "val",
             "--decisions-sealed",
         ]
         result = subprocess.run(command, cwd=ROOT)
