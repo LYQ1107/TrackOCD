@@ -8856,3 +8856,7 @@ no private GT/cache/weights opened for this check):
   with SHA256
   `d28e215cd7cd686c1e8f08fb985827879178617b792ffd5b6d9b4222d6a6404a`.
   This is an engineering/provenance repair, not a model or OCD/MOT result.
+
+- Full `tests/trackocd_v2` regression after the repair passes `50/50` in
+  `4.57` seconds; no dataset, Test semantic label, or external process was
+  involved.
