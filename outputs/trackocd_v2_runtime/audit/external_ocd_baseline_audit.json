@@ -1,0 +1,72 @@
+{
+  "generated_utc": "2026-10-22T13:35:28.221360+00:00",
+  "purpose": "Register prior-art code availability and physical-track interface compatibility before baseline extension.",
+  "records": [
+    {
+      "checked_entrypoints": [
+        "README.md",
+        "main.py",
+        "project_utils/AGE.py"
+      ],
+      "checkpoint_note": "README says pretrained checkpoints will be released soon; no checkpoint is registered in the v2 namespace.",
+      "drop_in_reason": "The pinned entry point consumes image datasets/class labels and emits image-level OCD assignments; it has no TAO physical-track-prefix input, causal track-order contract, or MOT evaluator adapter.",
+      "git_remote": null,
+      "git_sha": null,
+      "license_note": "MIT (checked-in LICENSE)",
+      "local_path": "/data3/liuyeqiang/TrackOCD/third_party/research_refs_phase4f/AGE",
+      "local_path_exists": false,
+      "method_family": "image-level adaptive Gaussian online category expansion",
+      "name": "AGE",
+      "official_code_status": "LOCAL_PIN_PRESENT",
+      "official_repo": "https://github.com/Ashengl/AGE",
+      "run_status": "REFERENCE_ONLY_NOT_RUN",
+      "source_evidence": {},
+      "test_semantic_accessed": false,
+      "trackocd_v2_drop_in": false
+    },
+    {
+      "checked_entrypoints": [
+        "README.md",
+        "train.py",
+        "test.py",
+        "methods/talon/model.py",
+        "methods/talon/trainer.py"
+      ],
+      "checkpoint_note": "README documents external dataset checkpoints; none is registered as a v2 TAO checkpoint.",
+      "drop_in_reason": "The pinned entry point consumes image datasets and updates classifier/prototype state at test time; it has no TAO physical-track-prefix API and is not a category-agnostic MOT frontend.",
+      "git_remote": null,
+      "git_sha": null,
+      "license_note": "No checked-in LICENSE found in the pinned repository",
+      "local_path": "/data3/liuyeqiang/TrackOCD/third_party/research_refs_phase4f/TALON",
+      "local_path_exists": false,
+      "method_family": "image-level test-time prototype/model adaptation for OCD",
+      "name": "TALON",
+      "official_code_status": "LOCAL_PIN_PRESENT",
+      "official_repo": "https://github.com/ynanwu/TALON",
+      "run_status": "REFERENCE_ONLY_NOT_RUN",
+      "source_evidence": {},
+      "test_semantic_accessed": false,
+      "trackocd_v2_drop_in": false
+    },
+    {
+      "checked_entrypoints": [],
+      "checkpoint_note": "N/A",
+      "drop_in_reason": "No confirmed official code is present locally, so no implementation or benchmark result may be claimed.",
+      "license_note": "N/A",
+      "local_path": null,
+      "local_path_exists": false,
+      "method_family": "reported image-level proxy-task/calibration OCD method",
+      "name": "PACO",
+      "official_code_status": "NO_CONFIRMED_OFFICIAL_CODE",
+      "official_repo": "https://arxiv.org/abs/2604.11484",
+      "run_status": "NOT_RUN_NO_CONFIRMED_OFFICIAL_CODE",
+      "source_evidence": {},
+      "test_semantic_accessed": false,
+      "trackocd_v2_drop_in": false
+    }
+  ],
+  "schema_version": "trackocd.v2.external_ocd_baseline_audit.v1",
+  "selection_consequence": "AGE and TALON remain prior-art references only; neither is a drop-in v2 physical frontend. PACO remains unavailable. No Test semantic data was accessed.",
+  "status": "COMPLETE",
+  "test_semantic_accessed": false
+}

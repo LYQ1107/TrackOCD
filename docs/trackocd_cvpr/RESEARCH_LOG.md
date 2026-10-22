@@ -8829,3 +8829,16 @@ no private GT/cache/weights opened for this check):
 - No large payload was opened or copied, no TAO Test was accessed, and no
   external process was touched. Receipt:
   `outputs/trackocd_cvpr/cvpr2/local_store_asset_probe_20261022.json`.
+
+## External OCD baseline interface audit (2026-10-22)
+
+- Ran the read-only v2 prior-art audit for AGE, TALON, and PACO. The local
+  AGE/TALON paths are absent on this server, and PACO has no confirmed official
+  code entry. No model, checkpoint, dataset, GT, Val/Test label, or optimizer
+  was used.
+- The audit records all three as reference-only/unavailable rather than
+  manufacturing a benchmark: AGE/TALON's documented image-level interfaces do
+  not provide a causal TAO physical-track-prefix or MOT adapter, and PACO has
+  no confirmed implementation. Output SHA256 is
+  `690d37e9e758e1cd088d717dfcb023cfd4f9014196def5e6299ab5866987c9bb` at
+  `outputs/trackocd_v2_runtime/audit/external_ocd_baseline_audit.json`.
