@@ -8802,3 +8802,17 @@ no private GT/cache/weights opened for this check):
   open formal streams or make the formal asset gate pass.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/v2_source_consistency_audit_20261022.json`.
+
+## NAS network/session probe (2026-10-22)
+
+- The current server has only a default route via `202.205.84.1` on
+  `202.205.84.0/24`; no route to `192.168.31.0/24` is present. Direct TCP
+  probes to NAS ports `22` and `445` timed out, and the SSH probe to
+  `Valadmin@192.168.31.57` timed out before authentication.
+- The expected SSH config files are absent on this host and the advertised
+  `SSH_AUTH_SOCK` points to an unavailable agent socket. No private key was
+  read, no route/firewall was changed, and no external process was touched.
+- This separates the remaining NAS blocker from source-code recovery: the
+  v2 source is present locally/GitHub, while formal assets still need an
+  externally restored network path or connected SSH session. Probe receipt:
+  `outputs/trackocd_cvpr/cvpr2/nas_network_probe_20261022.json`.

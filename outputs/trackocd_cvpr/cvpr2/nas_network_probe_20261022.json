@@ -1,0 +1,24 @@
+{
+  "schema_version": "trackocd.cvpr.nas_network_probe.v1",
+  "audited_at": "2026-10-22",
+  "target": "Valadmin@192.168.31.57:22",
+  "route": {
+    "result": "default via 202.205.84.1 dev eno1np0 src 202.205.84.80",
+    "specific_192_168_31_route_present": false
+  },
+  "tcp_probes": {
+    "22": "timeout",
+    "445": "timeout",
+    "2049": "timeout_or_not_observed_before_probe_deadline"
+  },
+  "ssh_client": {
+    "direct_probe": "connection timed out",
+    "ssh_config_candidates": "missing",
+    "ssh_auth_sock": "set_but_agent_socket_unavailable",
+    "private_key_read": false
+  },
+  "interpretation": "The current server has no usable network path or connected SSH session to NAS; this is not an authentication failure that can be repaired without external network/session state.",
+  "external_processes_touched": false,
+  "routes_or_firewall_modified": false,
+  "test_semantic_accessed": false
+}

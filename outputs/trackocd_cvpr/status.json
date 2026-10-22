@@ -668,6 +668,10 @@
   "latest_v2_source_consistency_audit_status": "PASS_ACTIVE_BRANCH_RETAINS_RECOVERED_V2_SOURCE",
   "latest_v2_source_consistency_audit_tests": "50 passed: tests/trackocd_v2 plus tests/trackocd_cvpr/test_joint_rcm_policy_training.py",
   "latest_v2_source_consistency_audit_formal_asset_gate": "CLOSED_SEPARATELY",
+  "latest_nas_network_probe": "outputs/trackocd_cvpr/cvpr2/nas_network_probe_20261022.json",
+  "latest_nas_network_probe_status": "BLOCKED_NO_ROUTE_OR_CONNECTED_SSH_SESSION",
+  "latest_nas_network_probe_target": "192.168.31.57:22",
+  "latest_nas_network_probe_external_processes_touched": false,
   "latest_predicted_train_rcm_interface_smoke_summary": {
     "video_id": 3,
     "tracks": 16,
