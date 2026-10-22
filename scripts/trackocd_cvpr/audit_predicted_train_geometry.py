@@ -301,7 +301,6 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
     state: dict[str, Any] | None = None
     stream_records: list[dict[str, Any]] = []
     total_rows = total_observations = 0
-    last_video_global: int | None = None
     stop_all = False
 
     def finish_current() -> None:
@@ -334,11 +333,11 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                 if video_id not in gt_track_counts:
                     raise ValueError(f"stream video {video_id} is outside the approved geometry index")
                 if current_video is None:
+                    if video_id in seen_videos:
+                        raise ValueError("video appears in multiple stream positions")
                     current_video = video_id
                     state = _new_video_state()
                 elif video_id != current_video:
-                    if video_id < current_video:
-                        raise ValueError("stream video order regressed")
                     if max_videos and len(seen_videos) >= max_videos:
                         finish_current()
                         stop_all = True
@@ -351,9 +350,6 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                         raise ValueError("video appears in multiple stream positions")
                     current_video = video_id
                     state = _new_video_state()
-                if last_video_global is not None and video_id < last_video_global:
-                    raise ValueError("global stream video order regressed")
-                last_video_global = video_id
                 assert state is not None
                 track_key = (video_id, track_id)
                 if track_key in seen_tracks or track_id in state["tracks"]:
