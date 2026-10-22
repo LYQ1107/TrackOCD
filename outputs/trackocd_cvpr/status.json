@@ -543,6 +543,32 @@
     "outputs/trackocd_v2/audit/{frontend_selection,representation_decision,autonomous_state,frontend_covtrack_native}.json",
     "outputs/trackocd_v2/features/formal/<selected_frontend>/cache_manifest.json"
   ],
+  "latest_v2_asset_admission_recheck": "outputs/trackocd_cvpr/cvpr2/v2_asset_admission_recheck_20261022.json",
+  "latest_v2_asset_admission_recheck_sha256": "6163d09fedda4455ab319be9f74169011d8030d5e0a3bf35b179daabba8ba640",
+  "latest_v2_asset_admission_recheck_status": "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS",
+  "latest_v2_asset_admission_recheck_formal_ready": false,
+  "latest_v2_asset_admission_recheck_read_only": true,
+  "latest_v2_asset_admission_recheck_test_semantic_accessed": false,
+  "latest_v2_asset_admission_recheck_arrays_opened": false,
+  "latest_v2_asset_admission_recheck_problems": [
+    "predicted_stream:missing",
+    "frontend_selection:missing",
+    "representation_decision:missing",
+    "autonomous_state:missing",
+    "covtrack_native_stage:status_not_bakeoff_complete",
+    "covtrack_native_stage:same_v2_physical_metric_protocol_not_true",
+    "covtrack_native_stage:requested_metrics_complete_not_true",
+    "formal_cache:cannot_choose_manifest_without_valid_selection"
+  ],
+  "latest_nas_ssh_probe": {
+    "alias": "nas57",
+    "alias_resolution": "FAILED_LOCAL_SSH_CONFIG_NOT_PRESENT",
+    "endpoint": "192.168.31.57:22",
+    "endpoint_result": "CONNECT_TIMEOUT",
+    "remote_files_read": false,
+    "local_files_changed": false,
+    "external_processes_touched": false
+  },
   "latest_local_historical_frontend_evidence": "outputs/trackocd_core/audit/nas_m1_source/{frontend_selection,representation_decision,frontend_covtrack_native,frontend_covtrack_native_native_run,frontend_covtrack_native_metrics}.json",
   "latest_local_historical_frontend_evidence_scope": "Historical COVTrack-native Val audit only: asset_status=HISTORICAL_ASSET_AUDIT_ONLY and same_v2_predicted_stream=false; referenced physical stream/checkpoint/formal cache absent locally; not formal v2 input or OCD/MOT result",
   "latest_local_masa_migration_audit": "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json",

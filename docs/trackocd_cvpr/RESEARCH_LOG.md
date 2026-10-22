@@ -8408,6 +8408,27 @@ no private GT/cache/weights opened for this check):
   OCD/MOT score. Full 407-video feature expansion remains intentionally
   blocked pending formal frontend/provenance admission and storage review.
 
+## Formal v2 admission recheck and NAS reachability (2026-10-22 UTC)
+
+- A fresh read-only admission recheck was run after the pilot and saved at
+  `outputs/trackocd_cvpr/cvpr2/v2_asset_admission_recheck_20261022.json`,
+  SHA256 `6163d09fedda4455ab319be9f74169011d8030d5e0a3bf35b179daabba8ba640`.
+  It passed the admission unit tests (`3 passed`) and confirmed
+  `formal_ready=false`, `test_semantic_accessed=false`, and
+  `arrays_opened=false`. The current COVTrack stage is only
+  `NATIVE_STREAM_NORMALIZED`, with `same_v2_physical_metric_protocol=false`
+  and `requested_metrics_complete=false`; the canonical selection,
+  representation decision, anonymous predicted stream, and formal cache
+  manifest are absent. The local historical `nas_m1_source` metadata remains
+  explicitly `same_v2_predicted_stream=false` and is not promoted.
+- NAS connectivity was checked read-only. The current shell does not contain
+  the user's `nas57` SSH alias/config, so alias resolution failed locally;
+  an equivalent direct connection to `Valadmin@192.168.31.57:22` timed out.
+  No remote file was read, no key content was accessed, no SSH/config change
+  was made, and no external process was touched. Formal v2 evaluation remains
+  correctly gated until the missing assets can be recovered and independently
+  hashed.
+
 ## Full category-free Train predicted-geometry audit (2026-10-22 UTC)
 
 - After the fixed anonymous COVTrack-native cache reconciled all `407` Train

@@ -1,0 +1,297 @@
+{
+  "data_assets": {
+    "distractor_ids": {
+      "exists": true,
+      "is_symlink": true,
+      "item_count": 45,
+      "lexists": true,
+      "mtime_ns": 1791557849385965033,
+      "opened": true,
+      "path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/splits/distractor_ids.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/distractor_ids.json",
+      "role": "distractor_ids",
+      "sha256": "9dc538ee9ba3b1c9f2604315113baa204d566296507658d2312a497988a709fc",
+      "size_bytes": 276
+    },
+    "known_ids": {
+      "exists": true,
+      "is_symlink": true,
+      "item_count": 78,
+      "lexists": true,
+      "mtime_ns": 1791557849371534008,
+      "opened": true,
+      "path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/splits/known_ids.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/known_ids.json",
+      "role": "known_ids",
+      "sha256": "0a8684ee4df3c7315153bf7559066c7a9707fa46539aa54110e003bf7657cedc",
+      "size_bytes": 471
+    },
+    "predicted_stream": {
+      "content_checked": false,
+      "exists": false,
+      "hash_skipped": "large_stream_not_opened",
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+      "role": "predicted_stream"
+    },
+    "train_annotation": {
+      "content_checked": false,
+      "exists": true,
+      "is_symlink": true,
+      "lexists": true,
+      "mtime_ns": 1759670751136653423,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/data/raw/tao/annotations/train.json",
+      "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/train.json",
+      "role": "train_annotation",
+      "size_bytes": 21463934
+    },
+    "unknown_ids_val": {
+      "exists": true,
+      "is_symlink": true,
+      "item_count": 209,
+      "lexists": true,
+      "mtime_ns": 1791557849378992248,
+      "opened": true,
+      "path": "/data3/liuyeqiang/TrackOCD/data/tao_ow_ocd_v1/splits/unknown_ids_val.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/unknown_ids_val.json",
+      "role": "unknown_ids_val",
+      "sha256": "a05c7563ba06734b4ce755d9d574a1284e936babb7e592f381aee3862aca016f",
+      "size_bytes": 1284
+    },
+    "val_annotation": {
+      "content_checked": false,
+      "exists": true,
+      "is_symlink": true,
+      "lexists": true,
+      "mtime_ns": 1759672067358884999,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/data/raw/tao/annotations/validation.json",
+      "resolved_path": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+      "role": "val_annotation",
+      "size_bytes": 43639943
+    }
+  },
+  "data_root": "/data3/liuyeqiang/TrackOCD/data",
+  "external_processes_touched": false,
+  "formal_cache_manifests": {
+    "covtrack_native": {
+      "exists": false,
+      "integrity_evidence": {
+        "arrays_opened": false,
+        "shards_checked": 0
+      },
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native/cache_manifest.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native/cache_manifest.json",
+      "role": "cache_manifest_covtrack_native",
+      "valid_for_admission": false
+    },
+    "covtrack_nosem": {
+      "exists": false,
+      "integrity_evidence": {
+        "arrays_opened": false,
+        "shards_checked": 0
+      },
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_nosem/cache_manifest.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_nosem/cache_manifest.json",
+      "role": "cache_manifest_covtrack_nosem",
+      "valid_for_admission": false
+    },
+    "ovtr": {
+      "exists": false,
+      "integrity_evidence": {
+        "arrays_opened": false,
+        "shards_checked": 0
+      },
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/ovtr/cache_manifest.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/ovtr/cache_manifest.json",
+      "role": "cache_manifest_ovtr",
+      "valid_for_admission": false
+    },
+    "simowt": {
+      "exists": false,
+      "integrity_evidence": {
+        "arrays_opened": false,
+        "shards_checked": 0
+      },
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/simowt/cache_manifest.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/simowt/cache_manifest.json",
+      "role": "cache_manifest_simowt",
+      "valid_for_admission": false
+    }
+  },
+  "formal_ready": false,
+  "frontend_assets": {
+    "autonomous_state": {
+      "exists": false,
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/autonomous_state.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/autonomous_state.json",
+      "role": "autonomous_state"
+    },
+    "covtrack_native_metrics": {
+      "exists": false,
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/audit/frontend_covtrack_native_metrics.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/audit/frontend_covtrack_native_metrics.json",
+      "role": "covtrack_native_metrics"
+    },
+    "covtrack_native_native_run": {
+      "exists": false,
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/audit/frontend_covtrack_native_native_run.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/audit/frontend_covtrack_native_native_run.json",
+      "role": "covtrack_native_native_run"
+    },
+    "covtrack_native_stage": {
+      "exists": true,
+      "is_symlink": false,
+      "lexists": true,
+      "mtime_ns": 1792102489461081970,
+      "opened": true,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/frontend_covtrack_native.json",
+      "payload": {
+        "frontend": "COVTrack-native",
+        "generated_utc": "2026-10-15T22:14:49.460593+00:00",
+        "historical_reference_only": false,
+        "native_metrics_pending": [
+          "category-free OWTA/AssA/DetRe/LocA",
+          "native category-aware TETA reference when applicable",
+          "Novel Track Observability",
+          "Persistent Target Observability",
+          "Persistent Observability",
+          "Commit-CT",
+          "False Assignment"
+        ],
+        "native_run_complete": true,
+        "native_run_reused": true,
+        "normalization_audit": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/frontend_covtrack_native_normalization.json",
+        "normalization_audit_sha256": "333ad27f57ed4a9facf1335416c84626e56529bb2d698a73b7977ca71cd49017",
+        "normalized_counts": {
+          "invalid_boxes": 0,
+          "observations": 1133872,
+          "tracks": 369749,
+          "videos": 988
+        },
+        "normalized_outputs": {
+          "native_evaluator_rows": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/native_evaluator_rows.jsonl",
+          "native_evaluator_rows_sha256": "be5d2a0275c82aefc106f1c6ab250a6ab0122697f39d7b9bb407f4ba0e6c4597",
+          "physical_stream": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+          "physical_stream_sha256": "70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9"
+        },
+        "physical_stream_contract_complete": true,
+        "reason": "Existing native frontend output was normalized into the category-free v2 physical stream; shared metrics remain pending.",
+        "requested_metrics_complete": false,
+        "route_contract": {
+          "candidate_for_final_frontend": true,
+          "checkpoint": {
+            "path": "/data3/liuyeqiang/TrackOCD/checkpoints/covtrack/ctao_public.pth"
+          },
+          "clean_trackocd_final_frontend": true,
+          "detector_ontology": "open_vocabulary",
+          "execution_entrypoint": {
+            "path": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_external/covtrack_public/tools/test.py"
+          },
+          "fixed_overrides": {
+            "model.tracker.confused_features": true
+          },
+          "frontend_role": "CLEAN_TRACKOCD_PHYSICAL_CANDIDATE",
+          "native_teta_role": "reference_only",
+          "notes": "Native COVTrack association is retained for the reference route; no category or text field enters the TrackOCD backend.",
+          "novel_ontology_leakage": false,
+          "semantic_association_mode": "native_semantic_association",
+          "slug": "covtrack_native",
+          "test_execution_entrypoint": {
+            "path": "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_covtrack_native.py"
+          },
+          "trackocd_backend_category_free": true
+        },
+        "same_v2_evaluator_contract": true,
+        "same_v2_physical_metric_protocol": false,
+        "same_v2_predicted_stream": false,
+        "schema_version": "trackocd.v2.frontend_stage.v1",
+        "status": "NATIVE_STREAM_NORMALIZED",
+        "test_semantic_accessed": false
+      },
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/frontend_covtrack_native.json",
+      "role": "covtrack_native_stage",
+      "sha256": "f68f8b1b31f05f0e948e9c3c05b26e5fa201ca4478462e96ac551a0ff3ec190c",
+      "size_bytes": 2845,
+      "valid_for_admission": false
+    },
+    "frontend_selection": {
+      "exists": false,
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/frontend_selection.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/frontend_selection.json",
+      "role": "frontend_selection",
+      "selected_frontend": null
+    },
+    "representation_decision": {
+      "exists": false,
+      "is_symlink": false,
+      "lexists": false,
+      "opened": false,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/representation_decision.json",
+      "resolved_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/representation_decision.json",
+      "role": "representation_decision"
+    }
+  },
+  "generated_utc": "2026-10-22T13:21:02.467296+00:00",
+  "git": {
+    "branch": "research/cvpr-trackocd-autonomous-v2",
+    "head": "35eef8bbed80ad8849736077f83a13f6d6dbf63a",
+    "project_root": "/data3/liuyeqiang/TrackOCD",
+    "read_only": true,
+    "status": ""
+  },
+  "network_used": false,
+  "next_action": "recover/hash only the listed missing or invalid v2 assets; do not start formal evaluation",
+  "output_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime",
+  "problems": [
+    "predicted_stream:missing",
+    "frontend_selection:missing",
+    "representation_decision:missing",
+    "autonomous_state:missing",
+    "frontend_selection:status_not_final",
+    "frontend_selection:selected_frontend_invalid",
+    "representation_decision:status_not_final",
+    "representation_decision:formal_cache_not_authorized",
+    "covtrack_native_stage:status_not_bakeoff_complete",
+    "covtrack_native_stage:same_v2_physical_metric_protocol_not_true",
+    "covtrack_native_stage:requested_metrics_complete_not_true",
+    "formal_cache:cannot_choose_manifest_without_valid_selection"
+  ],
+  "project_root": "/data3/liuyeqiang/TrackOCD",
+  "read_only": true,
+  "schema_version": "trackocd.v2.recovery_asset_admission.v1",
+  "selected_frontend": null,
+  "selected_frontend_slug": null,
+  "status": "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS",
+  "test_paths_opened": [],
+  "test_semantic_accessed": false,
+  "write_performed": true
+}
