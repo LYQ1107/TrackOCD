@@ -55,6 +55,39 @@
       "tracks": 5232,
       "videos": 985
     },
+    "native": {
+      "blank_lines": 0,
+      "dedup_backend": "temporary_external_sort_32MiB",
+      "duplicate_frame_rows": 0,
+      "duplicate_track_rows": 0,
+      "errors": [],
+      "field_mismatch_rows": 0,
+      "invalid_box_reasons": {
+        "nonfinite_or_nonnumeric": 0,
+        "not_four_values": 0,
+        "x2_le_x1": 0,
+        "y2_le_y1": 0
+      },
+      "invalid_boxes": 0,
+      "jsonl_rows": 369794,
+      "kind": "native",
+      "max_line_bytes": 7870,
+      "negative_or_nonfinite_areas": 0,
+      "nonfinite_quality": 0,
+      "nonfinite_scores": 0,
+      "observations": 1133841,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/covtrack_native_physical_tracks.jsonl",
+      "scores_outside_0_1": 0,
+      "sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+      "size_bytes": 258036479,
+      "source_split_values": [
+        "val_predicted"
+      ],
+      "status": "PASS",
+      "stream_order_decreases": 0,
+      "tracks": 369794,
+      "videos": 988
+    },
     "predicted": {
       "blank_lines": 0,
       "dedup_backend": "temporary_external_sort_32MiB",
@@ -194,11 +227,11 @@
       "videos": 985
     }
   },
-  "generated_utc": "2026-10-22T14:15:16.804845+00:00",
+  "generated_utc": "2026-10-22T14:22:07.797556+00:00",
   "interpretation": "Val-only structural and hash audit of staged streams; not formal v2 admission, frontend qualification, OCD/MOT evaluation, or model selection.",
   "memory_plan_bytes": 268435456,
   "memory_plan_pass": true,
-  "peak_rss_bytes": 30760960,
+  "peak_rss_bytes": 30707712,
   "root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val",
   "schema_version": "trackocd.cvpr.nas-val-stream-audit.v1",
   "status": "FAIL_VAL_ONLY_STREAM_INTEGRITY"

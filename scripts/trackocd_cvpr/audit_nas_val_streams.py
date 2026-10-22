@@ -42,6 +42,10 @@ PREDICTED_FIELDS = COMMON_FIELDS | {
     "source_sample_id",
     "stream_order",
 }
+NATIVE_FIELDS = COMMON_FIELDS | {
+    "source_sample_id",
+    "stream_order",
+}
 FORBIDDEN_FIELD_PARTS = ("category", "semantic", "text", "novel", "label", "gt")
 
 
@@ -95,7 +99,7 @@ def _external_sort_duplicate_count(keys_path: Path, temp_dir: Path) -> tuple[int
 
 
 def _audit_file(path: Path, kind: str) -> tuple[dict[str, Any], set[tuple[int, str]], set[int]]:
-    expected = COMMON_FIELDS if kind == "gt_order" else PREDICTED_FIELDS
+    expected = COMMON_FIELDS if kind == "gt_order" else (NATIVE_FIELDS if kind == "native" else PREDICTED_FIELDS)
     digest = hashlib.sha256()
     errors: list[str] = []
     track_keys: set[tuple[int, str]] = set()
@@ -129,7 +133,7 @@ def _audit_file(path: Path, kind: str) -> tuple[dict[str, Any], set[tuple[int, s
     dedup_key_handle = None
     dedup_key_path: Path | None = None
     temp_dir: tempfile.TemporaryDirectory[str] | None = None
-    if kind == "predicted":
+    if kind in {"predicted", "native"}:
         temp_dir = tempfile.TemporaryDirectory(prefix="trackocd_val_audit_")
         dedup_key_path = Path(temp_dir.name) / "track_keys.txt"
         dedup_key_handle = dedup_key_path.open("wb")
@@ -201,7 +205,7 @@ def _audit_file(path: Path, kind: str) -> tuple[dict[str, Any], set[tuple[int, s
                         continue
                     if len(set(frame_ids)) != len(frame_ids):
                         duplicate_frames += 1
-                    if kind == "predicted":
+                    if kind in {"predicted", "native"}:
                         order = int(row["stream_order"])
                         if previous_stream_order is not None and order < previous_stream_order:
                             stream_order_decreases += 1
@@ -268,7 +272,7 @@ def _audit_file(path: Path, kind: str) -> tuple[dict[str, Any], set[tuple[int, s
         "negative_or_nonfinite_areas": negative_areas,
         "stream_order_decreases": stream_order_decreases,
         "max_line_bytes": max_line_bytes,
-        "dedup_backend": "temporary_external_sort_32MiB" if kind == "predicted" else "in_memory_set",
+        "dedup_backend": "temporary_external_sort_32MiB" if kind in {"predicted", "native"} else "in_memory_set",
         "errors": errors,
     }
     return result, track_keys, video_ids
@@ -279,6 +283,7 @@ def audit(root: Path, output: Path) -> dict[str, Any]:
         raise ValueError("refusing a root containing 'test'")
     files = {
         "predicted": (root / "tao_val_predicted_tracks.jsonl", "predicted"),
+        "native": (root / "covtrack_native_physical_tracks.jsonl", "native"),
         "base": (root / "tao_val_gt_tracks.jsonl", "gt_order"),
         "seed1027": (root / "tao_val_gt_tracks_seed1027.jsonl", "gt_order"),
         "seed1028": (root / "tao_val_gt_tracks_seed1028.jsonl", "gt_order"),

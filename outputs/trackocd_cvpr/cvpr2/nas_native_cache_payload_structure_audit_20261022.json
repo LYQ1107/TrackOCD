@@ -1,0 +1,42 @@
+{
+  "schema_version": "trackocd.cvpr.nas-native-cache-payload-structure-audit.v1",
+  "status": "PASS_255_SHARDS_STRUCTURALLY_COMPLETE_SOURCE_ALIGNED_NOT_FULL_CACHE",
+  "generated_utc": "2026-10-22T14:24:19Z",
+  "transport": "READ_ONLY_127.0.0.1:24557_NAS_RELAY",
+  "cache_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
+  "checked_scope": {
+    "shard_directories": 255,
+    "done_markers": 255,
+    "required_file_set": [".done", "full_features.npy", "index.parquet", "observations.npy", "prefix_features.npy"],
+    "missing_zero_or_unexpected_file_errors": 0,
+    "track_range_errors": 0,
+    "first_track_start": 0,
+    "last_track_start": 130048,
+    "contiguous_track_end": 130560,
+    "track_count_sum": 130560,
+    "observation_count_sum": 561672,
+    "prefixes": [1, 2, 4, 8, 16],
+    "source_sha256_values": ["63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1"]
+  },
+  "relation_to_native_stream": {
+    "native_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "source_hash_matches_all_markers": true,
+    "native_stream_tracks": 369794,
+    "native_stream_observations": 1133841,
+    "required_shards_at_512_tracks": 723,
+    "missing_shards": 468,
+    "full_cache": false
+  },
+  "boundaries": {
+    "array_payloads_opened": false,
+    "payload_values_hashed": false,
+    "test_content_opened": false,
+    "training_started": false,
+    "formal_ocd_or_mot_metrics": false,
+    "cache_reuse_authorized": false,
+    "formal_v2_admission": false,
+    "external_processes_touched": false
+  },
+  "interpretation": "All existing 255 units are structurally complete and source-aligned by marker/stat evidence, but this does not prove payload numerical integrity and does not close the incomplete 723-shard formal cache gate.",
+  "next_gate": "Retain these 255 units as eligible candidates for a separately authorized continuation; complete and audit the remaining 468 native-source shards before formal v2 admission or OCD/MOT evaluation."
+}

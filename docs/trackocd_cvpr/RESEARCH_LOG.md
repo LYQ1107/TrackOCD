@@ -9006,9 +9006,11 @@ no private GT/cache/weights opened for this check):
 
 - The existing read-only NAS relay at `127.0.0.1:24557` was verified and used
   without touching external processes. A quarantined local staging area now
-  contains the current NAS Val predicted stream (`988` videos, `649,378`
-  tracks, `1,853,369` observations) plus the four Val causal-order GT streams;
-  all five large files retain their source sizes and SHA256 values.
+  contains the public NAS Val predicted stream (`988` videos, `649,378`
+  tracks, `1,853,369` observations), the selected COVTrack-native physical
+  stream (`988` videos, `369,794` tracks, `1,133,841` observations), and the
+  four Val causal-order GT streams; all six large files retain their source
+  sizes and SHA256 values.
 - The requested small frontend/provenance JSON set was also recovered with
   hashes. Its metadata selects COVTrack-native historically, but this is not
   yet a current formal v2 admission: the expected local source mapping and
@@ -9020,13 +9022,13 @@ no private GT/cache/weights opened for this check):
 - No TAO Test content was opened, no weights or cache were uploaded, and no
   training or formal OCD/MOT metric was run. The machine receipt is
   `outputs/trackocd_cvpr/cvpr2/nas_formal_asset_recovery_20261022.json` (SHA256
-  `e03f05cb65e4322b80c865cebbf4dc8eeba67989df7aca1ebb2bebe9e4c45107`). The
-  next gate is a bounded streaming integrity audit followed by a fresh cache
-  whose input hash matches the current stream.
+  `8effb6d2bfba1fb63fca93ae57d2ba239c480d34beadc0c0a1bc44559ebf90cc`). The
+  public stream and native stream are retained as separate provenance
+  candidates; they are not interchangeable.
 
 ## NAS Val stream integrity audit (2026-10-22 UTC)
 
-- The five staged Val streams were audited sequentially with a temporary
+- The six staged Val streams were audited sequentially with a temporary
   external-sort duplicate index. Peak RSS was `30,760,960` bytes, below the
   `256 MiB` plan. No Test path, image, weight, semantic name, or category
   value was opened; no training or metric evaluation ran.
@@ -9034,6 +9036,10 @@ no private GT/cache/weights opened for this check):
   `107,880` observations, `985` videos, zero invalid boxes, zero duplicate
   track rows, and the four files are byte-distinct while sharing the same
   track/video sets.
+- The separately recovered COVTrack-native physical stream also passed with
+  `369,794` tracks, `1,133,841` observations, `988` videos, zero invalid boxes,
+  and zero duplicate track/frame rows. Its SHA256 exactly matches the input
+  hash recorded by the historical COVTrack-native formal cache.
 - The recovered current Val predicted stream has `649,378` tracks and
   `1,853,369` observations with no duplicate track/frame rows, but fails the
   physical-box contract: `16,290` observations are degenerate (`15,902` with
@@ -9041,7 +9047,40 @@ no private GT/cache/weights opened for this check):
   admitted, repaired by silent filtering, or used for OCD/MOT metrics.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/nas_val_stream_audit_20261022.json` (SHA256
-  `4f477400bbb15db5b5e82332032787226a51f5a018559b9cc3647997e1888479`). This
-  is a genuine admission-blocking failure, not a scientific success/failure
-  claim; the next action is provenance-equivalent recovery or regeneration of
-  a valid predicted stream.
+  `3fb8cfbcc2272952c82b48193f626f51473944c1e9e342351b0bd2d33eaa7e53`). The
+  public predicted stream remains a genuine admission-blocking failure; the
+  native stream is a valid structural candidate, but its matching formal
+  cache is still only `255/723` shards and cannot yet support a formal metric.
+
+## NAS COVTrack-native formal-cache manifest audit (2026-10-22 UTC)
+
+- The NAS formal COVTrack-native cache manifest is `RUNNING`, with `255`
+  completed source-aligned shards. Its 255 small `.done` markers are all
+  well-formed, use `npy_plus_parquet_index`, cover prefixes `1/2/4/8/16`, and
+  all bind to native stream SHA256 `63945d2a...d8fe2f1`.
+- Marker totals are `130,560` tracks and `561,672` observations, while the
+  native stream requires `369,794` tracks and therefore `723` 512-track
+  shards. The cache is missing `468` shards; no array payload was opened and
+  no cache reuse or formal admission was authorized.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/nas_native_cache_manifest_audit_20261022.json`
+  (SHA256 `8880e2df3d4dbe836c550b1ad6c536ee18e0830ffb03de5139f3a6f665d77369`).
+  Existing source-aligned shards remain candidates for later integrity-checked
+  continuation, but the incomplete historical manifest cannot produce a formal
+  OCD/MOT claim.
+
+## NAS native-cache payload/index structure audit (2026-10-22 UTC)
+
+- A second read-only pass checked all `255` completed shard directories using
+  only `.done` JSON and file stat metadata. Every unit contains the expected
+  `.done`, `full_features.npy`, `prefix_features.npy`, `observations.npy`, and
+  `index.parquet` files; there are zero missing/zero-size/unexpected-file
+  errors and zero track-range gaps or overlaps. All marker source hashes still
+  match the recovered native stream.
+- This proves structural resumability of the existing 255 units, not numerical
+  payload correctness: no `.npy` or Parquet payload was opened or hashed. The
+  cache remains incomplete at `255/723` with `468` missing shards, so it is not
+  formally admitted and cannot support an OCD/MOT result yet.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/nas_native_cache_payload_structure_audit_20261022.json`
+  (SHA256 `8a728e06b8a47ea1eea20266e6bb493b1234dd293176df0f5e4cacf178bddd10`).

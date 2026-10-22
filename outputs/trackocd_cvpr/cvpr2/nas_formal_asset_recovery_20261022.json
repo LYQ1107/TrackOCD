@@ -1,7 +1,7 @@
 {
   "schema_version": "trackocd.cvpr.nas_formal_asset_recovery.v1",
   "status": "PASS_NAS_VAL_ONLY_ASSET_RECOVERY_OLD_CACHE_MISMATCH_RETAINED",
-  "generated_utc": "2026-10-22T14:15:34Z",
+  "generated_utc": "2026-10-22T14:22:18Z",
   "source_branch": "research/cvpr-trackocd-autonomous-v2",
   "source_commit": "0aca3160be8d23c08e996b531322c67c172252a7",
   "transport": {
@@ -17,7 +17,7 @@
   },
   "remote_source_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs",
   "staged_root": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022",
-  "staged_scope_bytes": 443087834,
+  "staged_scope_bytes": 701124313,
   "val_assets": {
     "tao_val_predicted_tracks.jsonl": {
       "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/tao_val_predicted_tracks.jsonl",
@@ -25,6 +25,14 @@
       "size_bytes": 394170147,
       "sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
       "role": "NAS_current_val_predicted_stream",
+      "semantic_rows_parsed": false
+    },
+    "covtrack_native_physical_tracks.jsonl": {
+      "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+      "staged_path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/covtrack_native_physical_tracks.jsonl",
+      "size_bytes": 258036479,
+      "sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+      "role": "NAS_selected_COVTrack_native_category_free_physical_stream",
       "semantic_rows_parsed": false
     },
     "tao_val_gt_tracks.jsonl": {
@@ -86,7 +94,17 @@
     "observations": 1853369,
     "gt_matching_used": false,
     "source_stream_sha256": "2fbde4d4352a7831925f772b39f02c85f17ef92daee4f79ae9cd891ba2375878",
-    "current_staged_stream_sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca"
+    "current_staged_stream_sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
+    "current_public_stream_invalid_boxes": 16290,
+    "native_physical_stream": {
+      "sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+      "size_bytes": 258036479,
+      "videos": 988,
+      "tracks": 369794,
+      "observations": 1133841,
+      "invalid_boxes": 0,
+      "source_split": "val_predicted"
+    }
   },
   "historical_formal_cache_comparison": {
     "cache_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
@@ -103,6 +121,7 @@
     "current_stream_sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
     "same_v2_predicted_stream": false,
     "current_cache_matching_stream_found": false,
+    "native_stream_hash_matches_historical_cache_source": true,
     "reuse_authorized": false
   },
   "admission_and_safety": {
@@ -111,10 +130,12 @@
     "streaming_integrity_audit_completed": true,
     "streaming_integrity_audit_status": "FAIL_PREDICTED_STREAM_INVALID_BOXES",
     "streaming_integrity_audit_receipt": "outputs/trackocd_cvpr/cvpr2/nas_val_stream_audit_20261022.json",
-    "streaming_integrity_audit_receipt_sha256": "4f477400bbb15db5b5e82332032787226a51f5a018559b9cc3647997e1888479",
+    "streaming_integrity_audit_receipt_sha256": "3fb8cfbcc2272952c82b48193f626f51473944c1e9e342351b0bd2d33eaa7e53",
     "streaming_integrity_audit_memory_plan_pass": true,
     "predicted_invalid_boxes": 16290,
     "predicted_invalid_box_reason_counts": {"x2_le_x1": 15902, "y2_le_y1": 10615},
+    "native_physical_stream_integrity_status": "PASS_369794_TRACKS_1133841_OBSERVATIONS_ZERO_INVALID_BOXES",
+    "native_physical_stream_staged": true,
     "streaming_semantic_audit_completed": false,
     "training_started": false,
     "formal_ocd_or_mot_metrics": false,
@@ -126,5 +147,5 @@
     "tao_test_paths_read": false,
     "novel_vocabulary_used_for_selection": false
   },
-  "next_gate": "Keep the staged Val-only assets quarantined. The four causal-order GT streams pass structural checks, but the current predicted stream has 16290 degenerate boxes, so formal admission is blocked. Recover or regenerate a provenance-equivalent valid predicted stream before any fresh cache; do not silently filter boxes, reuse the 63945 historical cache, or claim formal OCD/MOT metrics."
+  "next_gate": "Keep the public predicted stream quarantined because it has 16290 degenerate boxes and is not the selected COVTrack-native stream. The staged native physical stream matches the historical cache input hash and passes geometry, but its formal cache is only 255/723 shards and remains incomplete; perform explicit provenance/admission checks before any cache reuse or formal OCD/MOT metric."
 }

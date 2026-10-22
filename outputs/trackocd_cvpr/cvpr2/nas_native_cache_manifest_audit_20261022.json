@@ -1,0 +1,59 @@
+{
+  "schema_version": "trackocd.cvpr.nas-native-cache-manifest-audit.v1",
+  "status": "PASS_NATIVE_SOURCE_ALIGNED_INCOMPLETE_HISTORICAL_CACHE_NOT_ADMITTED",
+  "generated_utc": "2026-10-22T14:22:18Z",
+  "transport": "READ_ONLY_127.0.0.1:24557_NAS_RELAY",
+  "cache_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
+  "manifest": {
+    "remote_path": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native/cache_manifest.json",
+    "size_bytes": 113500,
+    "sha256": "083b58c6049a61bd2d695f28a80f3925ae350d93258adda0846fce70371d7dba",
+    "status": "RUNNING",
+    "split": "val",
+    "frontend": "COVTrack-native",
+    "format": "sharded_numpy_with_parquet_index",
+    "manifest_shard_count": 255,
+    "manifest_total_tracks": 369794,
+    "manifest_total_observations": 561672,
+    "prefixes": [1, 2, 4, 8, 16],
+    "input_path": "/data2/usr_for_deadline/trackocd_v2/project_outputs/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+    "input_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "authorization_hashes": {
+      "selection": "6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e",
+      "representation": "4cbf0cf43084e5994d217d2598fc412f341494b3c68a916ddd763b6af9c92244",
+      "stage": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d990652"
+    }
+  },
+  "done_marker_audit": {
+    "marker_count": 255,
+    "malformed_marker_count": 0,
+    "formats": {"npy_plus_parquet_index": 255},
+    "prefixes": [1, 2, 4, 8, 16],
+    "source_sha256_values": ["63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1"],
+    "track_count_sum": 130560,
+    "observation_count_sum": 561672,
+    "logical_du_bytes": 2088891204
+  },
+  "coverage_reconciliation": {
+    "track_shard_capacity": 512,
+    "required_shards_for_manifest_total_tracks": 723,
+    "missing_shards": 468,
+    "native_stream_tracks": 369794,
+    "native_stream_observations": 1133841,
+    "native_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "source_hash_matches_native_stream": true,
+    "source_hash_matches_all_done_markers": true,
+    "complete_cache": false
+  },
+  "boundaries": {
+    "array_payloads_opened": false,
+    "test_content_opened": false,
+    "test_semantic_accessed": false,
+    "training_started": false,
+    "formal_ocd_or_mot_metrics": false,
+    "external_processes_touched": false,
+    "cache_reuse_authorized": false,
+    "formal_v2_admission": false
+  },
+  "next_gate": "Audit the payload/index completeness of the 255 source-aligned shards without promoting the incomplete cache; only a complete 723-shard manifest or a freshly completed current-source cache may close formal admission."
+}
