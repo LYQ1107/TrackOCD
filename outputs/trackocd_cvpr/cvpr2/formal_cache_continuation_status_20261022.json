@@ -1,7 +1,7 @@
 {
   "schema_version": "trackocd.cvpr2.formal_cache_continuation_status.v1",
   "status": "WAITING_RESOURCE",
-  "generated_utc": "2026-10-22T15:03:44+00:00",
+  "generated_utc": "2026-10-22T15:05:27+00:00",
   "formal_common_feature_cache_authorized": true,
   "frontend": "COVTrack-native",
   "split": "val_predicted",
@@ -21,6 +21,14 @@
     "train_feature_json_files": 2555,
     "all_train_feature_keys_match_gt_manifest": true,
     "nas_hash_verification": "INTEGRITY_MATCH"
+  },
+  "baseline_preflight": {
+    "known_train_rows": 2196,
+    "known_train_categories": 48,
+    "prototype_prefixes": [1, 2, 4, 8, 16],
+    "prototype_dimensions": 768,
+    "prototype_load_smoke": "PASS",
+    "val_or_test_used_for_prototype_construction": false
   },
   "resource_gate": {
     "eligible_gpus_at_snapshot": [],
