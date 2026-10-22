@@ -1,0 +1,31 @@
+{
+  "schema_version": "trackocd.cvpr.local_store_asset_probe.v1",
+  "audited_at": "2026-10-22",
+  "roots_checked": {
+    "/data1": {"mounted": true, "filesystem_free": "3.3T"},
+    "/data2": {"mounted": true, "filesystem_free": "1.4T"}
+  },
+  "candidate_roots_checked": [
+    "/data1/LWR/vranlee/SERVER_ONLY/avis/OCD_OVMOT",
+    "/data2/usr_for_deadline/trackocd_v2",
+    "/data2/usr_for_deadline/trackocd_phase90",
+    "/data2/usr_for_deadline/trackocd_archive",
+    "/data1/LWR/vranlee/SERVER_ONLY/avis",
+    "/data2/usr_for_deadline"
+  ],
+  "candidate_roots_present": 0,
+  "exact_formal_named_files_found": 0,
+  "formal_names_checked": [
+    "frontend_selection.json",
+    "representation_decision.json",
+    "autonomous_state.json",
+    "frontend_covtrack_native*.json",
+    "cache_manifest.json",
+    "pred_track_stream.jsonl"
+  ],
+  "conclusion": "No old v2 worktree/backup or formal metadata is present on the other local data mounts; this does not recover or authorize any formal v2 asset.",
+  "large_payload_opened": false,
+  "data_or_weights_copied": false,
+  "test_semantic_accessed": false,
+  "external_processes_touched": false
+}

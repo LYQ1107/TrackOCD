@@ -8819,3 +8819,13 @@ no private GT/cache/weights opened for this check):
   v2 source is present locally/GitHub, while formal assets still need an
   externally restored network path or connected SSH session. Probe receipt:
   `outputs/trackocd_cvpr/cvpr2/nas_network_probe_20261022.json`.
+
+## Local secondary-store asset probe (2026-10-22)
+
+- `/data1` and `/data2` are mounted, but the known old project roots
+  (`OCD_OVMOT`, `trackocd_v2`, `trackocd_phase90`, and `trackocd_archive`) are
+  absent. An exact-name scan found zero formal frontend/provenance files on
+  either mount.
+- No large payload was opened or copied, no TAO Test was accessed, and no
+  external process was touched. Receipt:
+  `outputs/trackocd_cvpr/cvpr2/local_store_asset_probe_20261022.json`.
