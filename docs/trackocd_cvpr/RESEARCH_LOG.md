@@ -9182,3 +9182,19 @@ no private GT/cache/weights opened for this check):
   watcher is now live at 60-second cadence. Its initial state is
   `nearest=false, dpmeans=false`; it will invoke the Val-only report only
   after both tables are complete and will not inspect Test artifacts.
+
+## Frozen Train causal protocol boundary re-audit (2026-10-22 UTC)
+
+- Re-ran the metadata-only audit for the frozen joint causal predicted-track
+  protocol. The four fixed ordinal shards cover exactly the approved `407`
+  Train video IDs, with matching image-plan and video-order hashes.
+- The audit passed with status
+  `PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING`; the existing
+  two-video smoke remains anonymous predicted-only input with `8,233` tracks,
+  `81,471` observations, and zero invalid boxes.
+- The receipt explicitly records no full predicted-cache launch, optimizer or
+  training, Val/Test labels, Novel vocabulary, private GT arrays, model
+  selection, or formal OCD/MOT metrics. This is a protocol-boundary result,
+  not Goal A/B/C acceptance.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json`.
