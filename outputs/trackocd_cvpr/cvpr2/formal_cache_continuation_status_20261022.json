@@ -1,0 +1,38 @@
+{
+  "schema_version": "trackocd.cvpr2.formal_cache_continuation_status.v1",
+  "status": "WAITING_RESOURCE",
+  "generated_utc": "2026-10-22T15:03:44+00:00",
+  "formal_common_feature_cache_authorized": true,
+  "frontend": "COVTrack-native",
+  "split": "val_predicted",
+  "input_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+  "cache_manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json",
+  "cache_progress": {
+    "required_shards": 723,
+    "completed_shards": 255,
+    "missing_shards": 468,
+    "shard_tracks": 512,
+    "completed_tracks": 369794,
+    "completed_observations": 561672
+  },
+  "train_assets": {
+    "gt_manifest_rows": 2555,
+    "gt_label_rows": 2555,
+    "train_feature_json_files": 2555,
+    "all_train_feature_keys_match_gt_manifest": true,
+    "nas_hash_verification": "INTEGRITY_MATCH"
+  },
+  "resource_gate": {
+    "eligible_gpus_at_snapshot": [],
+    "memory_available_kib": 67891460,
+    "memory_total_kib": 131633092,
+    "memory_floor_fraction": 0.25,
+    "task_owned_waiter_live": true,
+    "task_worker_launched": false,
+    "external_processes_touched": false
+  },
+  "next_action": "When a dynamically eligible GPU appears, run the explicit local continuation builder; then perform manifest/payload integrity audit before any Val evaluator join or baseline metric run.",
+  "test_content_opened": false,
+  "test_semantic_accessed": false,
+  "formal_admission": false
+}
