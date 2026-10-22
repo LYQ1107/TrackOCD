@@ -165,38 +165,35 @@ def _stream_paths(root: Path) -> list[Path]:
     return paths
 
 
-def _new_video_state() -> dict[str, Any]:
+def _new_stream_state() -> dict[str, Any]:
     return {
         "tracks": {},
         "by_frame": defaultdict(list),
         "rows": 0,
         "observations": 0,
         "annotated_observations": 0,
+        "videos": set(),
     }
 
 
-def _finalize_video(
-    video_id: int,
+def _finalize_stream(
     state: dict[str, Any],
     gt_by_frame: dict[int, dict[int, list[tuple[str, list[float]]]]],
     gt_track_counts: dict[int, dict[str, int]],
 ) -> dict[str, int | float]:
-    gt_counts = gt_track_counts.get(video_id, {})
-    video_gt_by_frame = gt_by_frame.get(video_id, {})
-    gt_observations = sum(gt_counts.values())
     pred_tracks = state["tracks"]
-    pred_counts = {key: int(value["total"]) for key, value in pred_tracks.items()}
+    pred_counts = {key: int(value) for key, value in pred_tracks.items()}
     pred_annotated_counts = Counter()
     matched_observations = 0
-    pair_votes: Counter[tuple[str, str]] = Counter()
-    pair_iou_sum: Counter[tuple[str, str]] = Counter()
-    pair_shared: Counter[tuple[str, str]] = Counter()
+    pair_votes: Counter[tuple[tuple[int, str], tuple[int, str]]] = Counter()
+    pair_iou_sum: Counter[tuple[tuple[int, str], tuple[int, str]]] = Counter()
+    pair_shared: Counter[tuple[tuple[int, str], tuple[int, str]]] = Counter()
 
-    for frame_index, predictions in state["by_frame"].items():
-        gt_rows = video_gt_by_frame.get(frame_index, [])
+    for (video_id, frame_index), predictions in state["by_frame"].items():
+        gt_rows = gt_by_frame.get(video_id, {}).get(frame_index, [])
         if not gt_rows or not predictions:
             continue
-        gt_keys = [key for key, _box in gt_rows]
+        gt_keys = [(video_id, key) for key, _box in gt_rows]
         gt_boxes = [box for _key, box in gt_rows]
         pred_keys = [key for key, _box in predictions]
         pred_boxes = [box for _key, box in predictions]
@@ -221,7 +218,7 @@ def _finalize_video(
     temporal_pairs: list[tuple[float, str, str]] = []
     for pair, shared in pair_shared.items():
         pred_key, gt_key = pair
-        denominator = pred_counts[pred_key] + gt_counts[gt_key] - int(shared)
+        denominator = pred_counts[pred_key] + gt_track_counts[gt_key[0]][gt_key[1]] - int(shared)
         if denominator <= 0:
             continue
         score = float(pair_iou_sum[pair] / denominator)
@@ -230,9 +227,9 @@ def _finalize_video(
 
     # A deterministic non-overlap diagnostic.  Official MOT/OCD metrics are
     # intentionally not computed here; this only summarizes geometry support.
-    temporal_pairs.sort(key=lambda item: (-item[0], item[1], item[2]))
-    used_pred: set[str] = set()
-    used_gt: set[str] = set()
+    temporal_pairs.sort(key=lambda item: (-item[0], repr(item[1]), repr(item[2])))
+    used_pred: set[tuple[int, str]] = set()
+    used_gt: set[tuple[int, str]] = set()
     reliable_pairs: list[tuple[str, str]] = []
     for score, pred_key, gt_key in temporal_pairs:
         if pred_key in used_pred or gt_key in used_gt:
@@ -246,12 +243,16 @@ def _finalize_video(
     for pred_key, gt_key in pair_votes:
         pred_to_gt[pred_key].add(gt_key)
         gt_to_pred[gt_key].add(pred_key)
+    gt_tracks = sum(len(gt_track_counts[video_id]) for video_id in state["videos"])
+    gt_observations = sum(
+        sum(gt_track_counts[video_id].values()) for video_id in state["videos"]
+    )
     return {
-        "videos": 1,
+        "videos": len(state["videos"]),
         "predicted_tracks": len(pred_counts),
         "predicted_observations": int(state["observations"]),
         "predicted_observations_on_gt_images": int(state["annotated_observations"]),
-        "gt_tracks": len(gt_counts),
+        "gt_tracks": gt_tracks,
         "gt_observations": gt_observations,
         "per_image_matched_observations": matched_observations,
         "predicted_tracks_with_per_image_match": len(pred_to_gt),
@@ -294,25 +295,15 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
         raise ValueError("full anonymous Train cache reconciliation is not PASS")
     expected_totals = reconciliation.get("totals", {})
 
-    video_results: list[dict[str, int | float]] = []
+    stream_results: list[dict[str, int | float]] = []
     seen_videos: set[int] = set()
     seen_tracks: set[tuple[int, str]] = set()
-    current_video: int | None = None
-    state: dict[str, Any] | None = None
+    selected_videos: set[int] = set()
     stream_records: list[dict[str, Any]] = []
     total_rows = total_observations = 0
-    stop_all = False
-
-    def finish_current() -> None:
-        nonlocal state, current_video
-        if current_video is None or state is None:
-            return
-        video_results.append(_finalize_video(current_video, state, gt_by_frame, gt_track_counts))
-        seen_videos.add(current_video)
-        state = None
-        current_video = None
 
     for path in paths:
+        state = _new_stream_state()
         digest = hashlib.sha256()
         file_rows = file_observations = 0
         file_first_video = file_last_video = None
@@ -332,27 +323,16 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                 track_id = str(row["physical_track_id"])
                 if video_id not in gt_track_counts:
                     raise ValueError(f"stream video {video_id} is outside the approved geometry index")
-                if current_video is None:
-                    if video_id in seen_videos:
-                        raise ValueError("video appears in multiple stream positions")
-                    current_video = video_id
-                    state = _new_video_state()
-                elif video_id != current_video:
-                    if max_videos and len(seen_videos) >= max_videos:
-                        finish_current()
-                        stop_all = True
-                        break
-                    finish_current()
-                    if max_videos and len(seen_videos) >= max_videos:
-                        stop_all = True
-                        break
-                    if video_id in seen_videos:
-                        raise ValueError("video appears in multiple stream positions")
-                    current_video = video_id
-                    state = _new_video_state()
-                assert state is not None
+                if max_videos:
+                    if video_id not in selected_videos and len(selected_videos) < max_videos:
+                        selected_videos.add(video_id)
+                    if video_id not in selected_videos:
+                        continue
+                if video_id in seen_videos:
+                    raise ValueError("video appears in multiple stream positions")
+                state["videos"].add(video_id)
                 track_key = (video_id, track_id)
-                if track_key in seen_tracks or track_id in state["tracks"]:
+                if track_key in seen_tracks or track_key in state["tracks"]:
                     raise ValueError(f"duplicate predicted physical track {track_key}")
                 seen_tracks.add(track_key)
                 frame_ids = row["frame_ids"]
@@ -369,10 +349,9 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                     raise ValueError(f"invalid stream lineage at {path}:{line_number}")
                 if len(set(frame_ids)) != len(frame_ids):
                     raise ValueError(f"duplicate predicted frame in {track_key}")
-                track_record = {"total": len(frame_ids)}
-                state["tracks"][track_id] = track_record
+                state["tracks"][track_key] = len(frame_ids)
                 for frame_id, image_path, box in zip(frame_ids, image_paths, boxes):
-                    frame_id = int(frame_id)
+                    int(frame_id)
                     if not _finite_box(box):
                         raise ValueError(f"invalid predicted box at {path}:{line_number}")
                     stem = Path(str(image_path)).stem
@@ -382,7 +361,7 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                     if frame_index < 0:
                         raise ValueError(f"predicted frame number is not one-based at {path}:{line_number}")
                     if frame_index in gt_by_frame.get(video_id, {}):
-                        state["by_frame"][frame_index].append((track_id, [float(value) for value in box]))
+                        state["by_frame"][(video_id, frame_index)].append((track_key, [float(value) for value in box]))
                         state["annotated_observations"] += 1
                 state["rows"] += 1
                 state["observations"] += len(frame_ids)
@@ -392,18 +371,22 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                 total_observations += len(frame_ids)
                 file_first_video = video_id if file_first_video is None else file_first_video
                 file_last_video = video_id
+        stream_result = _finalize_stream(state, gt_by_frame, gt_track_counts)
+        stream_results.append(stream_result)
+        seen_videos.update(state["videos"])
         stream_records.append({
             "path": str(path.resolve()),
             "bytes": path.stat().st_size,
             "sha256": digest.hexdigest(),
             "rows": file_rows,
             "observations": file_observations,
+            "videos": len(state["videos"]),
             "first_video_id": file_first_video,
             "last_video_id": file_last_video,
+            "geometry": stream_result,
         })
-        if stop_all or (max_videos and len(seen_videos) >= max_videos):
+        if max_videos and len(selected_videos) >= max_videos:
             break
-    finish_current()
 
     full = not max_videos
     result = {
@@ -412,7 +395,7 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
         "generated_utc": _now(),
         "scope": {
             "approved_videos": 407,
-            "videos_processed": len(video_results),
+            "videos_processed": len(seen_videos),
             "full_fixed_cache_reconciled": full,
             "iou_threshold": IOU_THRESHOLD,
             "matching": "per-image class-free Hungarian at IoU>=0.5; temporal-IoU pair diagnostics and deterministic non-overlap summary",
@@ -431,7 +414,7 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
             "geometry_gt_tracks": sum(len(value) for value in gt_track_counts.values()),
             "geometry_gt_observations": sum(sum(value.values()) for value in gt_track_counts.values()),
         },
-        "aggregate_geometry": _aggregate_video_results(video_results),
+        "aggregate_geometry": _aggregate_video_results(stream_results),
         "boundary": {
             "train_annotation_opened": False,
             "gt_category_fields_read": False,
