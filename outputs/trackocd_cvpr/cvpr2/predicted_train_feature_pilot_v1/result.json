@@ -1,0 +1,108 @@
+{
+  "boundaries": {
+    "formal_mot_or_ocd_metrics": false,
+    "formal_v2_cache": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "model_selection": false,
+    "native_evaluator_rows_read": false,
+    "optimization_steps": 0,
+    "raw_features_uploaded_to_github": false,
+    "test_accessed": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "config": "configs/trackocd_cvpr/predicted_train_feature_pilot_v1.json",
+  "config_sha256": "4ad66be08c4fefebbc42bf3cdae032ad5ef301b14ed667f26360887ac7484613",
+  "created_utc": "2026-10-22T13:18:22.948385+00:00",
+  "encoder": {
+    "checkpoint": "checkpoints/dinov2_vitb14_pretrain.pth",
+    "checkpoint_hash_verified": true,
+    "checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "common_config": "configs/trackocd_core/common_features.json",
+    "common_config_sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "constructor": "dinov2.hub.backbones.dinov2_vitb14(pretrained=False)",
+    "crop_context_fraction_per_side": 0.1,
+    "dimension": 768,
+    "frozen": true,
+    "inference_precision": "float32; TF32 disabled",
+    "local_repository": "vendor/trackocd_core/dinov2_7764ea0",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "output": "L2-normalized x_norm_clstoken",
+    "repository_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "repository_commit_verified": true,
+    "resize": [
+      518,
+      518
+    ],
+    "storage_precision": "float16",
+    "training_mode": false
+  },
+  "features": {
+    "arrays": [
+      "visual",
+      "geometry_normalized_xyxy",
+      "quality",
+      "frame_ids",
+      "track_offsets",
+      "prefix_features"
+    ],
+    "index_bytes": 464510,
+    "index_local_path": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_feature_pilot_v1/video_0003/track_index.jsonl",
+    "index_sha256": "38aec02502f1abfafedc111963164092a883de2582220f721e000c03b0362bfc",
+    "observations": 29670,
+    "payload_bytes": 22696340,
+    "payload_local_path": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_feature_pilot_v1/video_0003/video_0003_prefix_features.npz",
+    "payload_sha256": "d5c697719664f99d7c3a467fd25de0c63886b474deb3f01323c611d57b88ab41",
+    "payload_uploaded_to_github": false,
+    "prefixes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tracks": 1016
+  },
+  "fixed_selection": {
+    "expected_observations": 29670,
+    "expected_tracks": 1016,
+    "rule": "Use every row whose video_id equals the explicit fixed video_id; do not select by score, length, coverage, category, role, GT, or output quality.",
+    "video_id": 3
+  },
+  "interpretation": "Engineering/input-interface pilot only; no formal v2 cache, no MOT/OCD metric, no model-selection result, and no claim about Train scientific performance.",
+  "resources": {
+    "batch_size": 32,
+    "device_visible": "0",
+    "disk_free_bytes_after": 6221324288,
+    "forward_batches": 928,
+    "gpu_name": "NVIDIA A100-SXM4-40GB",
+    "peak_gpu_allocated_bytes": 1940134400,
+    "peak_gpu_reserved_bytes": 2533359616,
+    "peak_rss_bytes": 1201283072,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 893.7820896150079
+  },
+  "schema_version": "trackocd.cvpr.predicted-train-feature-pilot-result.v1",
+  "script": "scripts/trackocd_cvpr/pilot_predicted_train_dino_features.py",
+  "script_sha256": "e0f291d80c61f31f74104a19e885f929ac279776dd2fe90bed03223174af64b3",
+  "source": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+    "selected_observations": 29670,
+    "selected_tracks": 1016,
+    "sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+    "size_bytes": 694095500,
+    "source_rows": 344028,
+    "source_videos": 102
+  },
+  "status": "PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING"
+}

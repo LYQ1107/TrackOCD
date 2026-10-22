@@ -8368,6 +8368,46 @@ no private GT/cache/weights opened for this check):
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
 
+## Fixed predicted-Train DINO feature-interface pilot (2026-10-22 UTC)
+
+- A frozen, bounded pilot was registered in
+  `configs/trackocd_cvpr/predicted_train_feature_pilot_v1.json` and pushed
+  before execution. It scans only the category-free physical stream
+  `shard_0_tccoff2/physical_tracks.jsonl` (size `694095500` bytes,
+  SHA256 `8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c`)
+  and selects the explicit fixed `video_id=3`, not a score/coverage/label-
+  dependent sample. The selected universe is `1,016` physical tracks and
+  `29,670` observations; all image paths are TAO Train paths.
+- The frozen DINOv2 ViT-B/14 encoder used the pinned vendor commit
+  `7764ea0f912e53c92e82eb78a2a1631e92725fc8` and checkpoint SHA256
+  `0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73`.
+  GPU0 only, batch 32, float32 inference and float16 storage produced the
+  local payload
+  `outputs/trackocd_v2_runtime/features/cvpr_predicted_train_feature_pilot_v1/video_0003/video_0003_prefix_features.npz`
+  (22,696,340 bytes, SHA256
+  `d5c697719664f99d7c3a467fd25de0c63886b474deb3f01323c611d57b88ab41`)
+  plus a 1,016-line category-free track index (464,510 bytes, SHA256
+  `38aec02502f1abfafedc111963164092a883de2582220f721e000c03b0362bfc`).
+  The arrays have finite values, exact shapes `[29670,768]`, `[29670,4]`,
+  `[29670]`, `[1017]`, and `[1016,5,768]`; visual and all five observed-prefix
+  features are L2-normalized. The large payload remains local and was not
+  uploaded to GitHub.
+- Independent post-run validation passed all offset, shape, finite-value,
+  normalization, and payload-hash checks. The run took `893.782` seconds,
+  peak RSS was `1,201,283,072` bytes, peak GPU reserved memory was
+  `2,533,359,616` bytes, and training GPU-hours were `0`. No optimizer,
+  training, GT category fields, roles, vocabulary, Val labels, Test data,
+  native evaluator rows, formal cache builder, model selection, or formal
+  OCD/MOT metric was used. Result receipt:
+  `outputs/trackocd_cvpr/cvpr2/predicted_train_feature_pilot_v1/result.json`,
+  SHA256 `59c63d0109938d4cd49fc1aa0efc87c983d8465174dc941497eb02c58b416f7e`.
+- This is an engineering/input-interface result only. It verifies that one
+  fixed predicted Train video can be converted into compact causal-prefix
+  DINO inputs within the current storage/GPU bounds; it does not qualify the
+  COVTrack frontend, establish Train scientific performance, or produce any
+  OCD/MOT score. Full 407-video feature expansion remains intentionally
+  blocked pending formal frontend/provenance admission and storage review.
+
 ## Full category-free Train predicted-geometry audit (2026-10-22 UTC)
 
 - After the fixed anonymous COVTrack-native cache reconciled all `407` Train

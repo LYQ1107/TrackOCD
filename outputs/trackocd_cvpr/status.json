@@ -598,6 +598,32 @@
     "val_or_test_accessed": false,
     "category_or_role_fields_read": false
   },
+  "latest_predicted_train_feature_pilot": "outputs/trackocd_cvpr/cvpr2/predicted_train_feature_pilot_v1/result.json",
+  "latest_predicted_train_feature_pilot_sha256": "59c63d0109938d4cd49fc1aa0efc87c983d8465174dc941497eb02c58b416f7e",
+  "latest_predicted_train_feature_pilot_status": "PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING",
+  "latest_predicted_train_feature_pilot_summary": {
+    "video_id": 3,
+    "tracks": 1016,
+    "observations": 29670,
+    "prefixes": [1, 2, 4, 8, 16],
+    "payload_bytes": 22696340,
+    "payload_sha256": "d5c697719664f99d7c3a467fd25de0c63886b474deb3f01323c611d57b88ab41",
+    "index_bytes": 464510,
+    "index_sha256": "38aec02502f1abfafedc111963164092a883de2582220f721e000c03b0362bfc",
+    "wall_seconds": 893.7820896150079,
+    "peak_rss_bytes": 1201283072,
+    "peak_gpu_reserved_bytes": 2533359616,
+    "training_gpu_hours": 0,
+    "formal_v2_cache": false,
+    "formal_ocd_or_mot_metrics": false,
+    "training_started": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "model_selection": false,
+    "raw_features_uploaded_to_github": false
+  },
   "latest_full_predicted_dense_subshard_status": {
     "namespace": "covtrack_train_dense_shards_v1_shard_3_part_03_tccoff19_20261022",
     "part": "shard_3/part_03",
@@ -730,5 +756,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "All 407 fixed anonymous Train predicted streams and the category-free per-frame geometry audit are complete. The audit shows sparse-GT/ dense-prediction mismatch and is not a formal OCD/MOT result; full-track temporal-IoU reliable pairs are zero. Next is the formal frontend/provenance gate and a storage-bounded predicted feature/R-C-M pilot, with no Test access, Novel vocabulary, Val model selection, or foreign-process interference."
+  "next": "All 407 fixed anonymous Train predicted streams, the category-free per-frame geometry audit, and the fixed single-video DINO feature-interface pilot are complete. The pilot is input preparation only and is not a formal v2 cache or OCD/MOT result. Next is the formal frontend/provenance gate and a storage-bounded role-aware R-C-M pilot only after that gate; no Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference."
 }
