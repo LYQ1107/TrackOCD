@@ -8944,3 +8944,16 @@ no private GT/cache/weights opened for this check):
   order assets. No order or asset was reconstructed.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_reconciliation_20261022.json`.
+
+## Formal asset source closure (2026-10-22)
+
+- All reachable project refs and history contain zero exact formal v2 paths.
+  A read-only scan of all `446` unreachable Git commits also found zero
+  commits containing the formal frontend/provenance, predicted-stream, or
+  frozen Val-order filenames.
+- The visible local roots `/data1`, `/data2`, `/data3`, `/mnt`, and `/media`
+  do not contain the NAS mount `/home/Valadmin/A100`; no dangling Git object
+  was deleted. The NAS target still routes to the default gateway and the TCP
+  probe times out.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/formal_asset_source_closure_20261022.json`.

@@ -1,0 +1,48 @@
+{
+  "schema_version": "trackocd.cvpr.formal-asset-source-closure.v1",
+  "status": "NO_FORMAL_V2_ASSETS_IN_GIT_HISTORY_OR_VISIBLE_LOCAL_MOUNTS",
+  "created_utc": "2026-10-22",
+  "git_scope": {
+    "reachable_refs_checked": [
+      "main",
+      "codex/trackocd-v2",
+      "codex/trackocd-v2-nas-recovery",
+      "codex/trackocd-core-training-limited-masa",
+      "codex/trackocd-track-conditioned-persistent-discovery",
+      "research/cvpr-trackocd-autonomous-v2"
+    ],
+    "reachable_exact_formal_path_count": 0,
+    "unreachable_commit_count_scanned": 446,
+    "unreachable_commits_with_formal_path": 0,
+    "formal_name_patterns": [
+      "frontend_selection.json",
+      "representation_decision.json",
+      "autonomous_state.json",
+      "frontend_covtrack_native.json",
+      "cache_manifest.json",
+      "pred_track_stream.jsonl",
+      "val_gt_track_stream*.jsonl"
+    ]
+  },
+  "visible_mount_scope": {
+    "nas_mount": "/home/Valadmin/A100",
+    "nas_mount_present": false,
+    "checked_local_roots": ["/data1", "/data2", "/data3", "/mnt", "/media"],
+    "local_exact_formal_path_count": 0
+  },
+  "network_observation": {
+    "target": "192.168.31.57:22",
+    "route": "via 202.205.84.1 dev eno1np0 src 202.205.84.80",
+    "tcp_probe": "timeout",
+    "ssh_probe": "unreachable_or_unresolved",
+    "route_or_firewall_modified": false
+  },
+  "boundaries": {
+    "large_stream_opened": false,
+    "weights_opened": false,
+    "tao_test_accessed": false,
+    "external_process_touched": false,
+    "dangling_git_objects_deleted": false
+  },
+  "interpretation": "Formal v2 frontend/provenance and frozen Val causal-order assets cannot be reconstructed from the current Git object database or visible local mounts. A NAS/client network recovery or another verified non-Git source is required; no asset or order is invented."
+}

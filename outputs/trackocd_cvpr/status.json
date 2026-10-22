@@ -29,6 +29,16 @@
     "training_started": false,
     "remaining_gate": "FORMAL_FRONTEND_PROVENANCE_AND_FOUR_VAL_CAUSAL_ORDER_ASSETS"
   },
+  "latest_formal_asset_source_closure": {
+    "status": "NO_FORMAL_V2_ASSETS_IN_GIT_HISTORY_OR_VISIBLE_LOCAL_MOUNTS",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/formal_asset_source_closure_20261022.json",
+    "receipt_sha256": "afeca37eb8b7ea60b23368d4c8875afd2c5a603a39e575b33a542e46fc97e14e",
+    "reachable_exact_formal_path_count": 0,
+    "unreachable_commits_scanned": 446,
+    "unreachable_commits_with_formal_path": 0,
+    "nas_mount_present": false,
+    "network_recovery_required": true
+  },
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
