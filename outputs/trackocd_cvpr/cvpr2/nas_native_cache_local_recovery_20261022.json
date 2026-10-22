@@ -1,0 +1,47 @@
+{
+  "schema_version": "trackocd.cvpr.nas_native_cache_local_recovery.v1",
+  "status": "PASS_LOCAL_TRANSFER_SOURCE_HASH_MATCH_INCOMPLETE_CONTINUATION",
+  "generated_utc": "2026-10-22T14:52:01Z",
+  "transport": "READ_ONLY_NAS_SSH_RELAY_127.0.0.1:24557",
+  "source_cache_root": "/home/Valadmin/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native",
+  "local_cache_root": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
+  "frontend": "COVTrack-native",
+  "split": "val",
+  "input_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+  "shard_tracks": 512,
+  "required_shards": 723,
+  "transferred_completed_shards": 255,
+  "missing_shards": 468,
+  "transferred_files": 1275,
+  "transferred_file_bytes": 2087716840,
+  "payload_integrity": {
+    "method": "per-file SHA256 comparison between NAS source and local transfer",
+    "remote_files": 1275,
+    "local_files": 1275,
+    "missing_files": 0,
+    "extra_files": 0,
+    "mismatched_files": 0,
+    "status": "PASS"
+  },
+  "preflight_after_transfer": {
+    "status": "WAITING_RESOURCE",
+    "completed_shards_recognized": 255,
+    "total_tracks": 369794,
+    "total_observations": 561672,
+    "memory_floor_pass": true,
+    "idle_gpu_count": 0,
+    "worker_launched": false,
+    "cache_manifest_sha256": "0c4f0babdb65e16823ebcef8b8159a753bb669fc679a792f7127dd59705c8eaf"
+  },
+  "encoder": {
+    "name": "DINOv2 ViT-B/14",
+    "model_weights_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "historical_observation_single_sample_cosine": 1.0,
+    "historical_observation_single_sample_max_abs_diff": 2.864748239517212e-05,
+    "frames_root": "/data3/liuyeqiang/nas/A100/data1/LWR/vranlee/SERVER_ONLY/avis/TAO/TAO-download/TAO-Amodal/frames"
+  },
+  "formal_admission": false,
+  "test_content_opened": false,
+  "external_processes_touched": false,
+  "next": "When an actually idle GPU is available, launch the explicit COVTrack-native Val builder; it will skip the 255 source-aligned units and atomically compute only the 468 missing shards, then require a final manifest and numerical payload audit before OCD/MOT evaluation."
+}

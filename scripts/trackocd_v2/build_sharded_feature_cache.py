@@ -93,7 +93,11 @@ def _stage_path(slug: str) -> Path:
     return OUTPUT_TARGET / "audit" / STAGE_FILES[slug]
 
 
-def _authorize(slug: str, split: str = "val") -> Dict[str, Any]:
+def _authorize(
+    slug: str,
+    split: str = "val",
+    audit_root: Optional[Path] = None,
+) -> Dict[str, Any]:
     """Require the explicit final selection before formal predicted caching."""
 
     if split not in {"val", "test"}:
@@ -104,12 +108,13 @@ def _authorize(slug: str, split: str = "val") -> Dict[str, Any]:
         # before any Test-side artifact is opened.
         assert_test_semantic_access_allowed(FINAL_FREEZE, "build frozen TAO Test feature cache")
 
-    selection_path = OUTPUT_TARGET / "audit/frontend_selection.json"
-    representation_path = OUTPUT_TARGET / "audit/representation_decision.json"
+    audit_root = (audit_root or (OUTPUT_TARGET / "audit")).resolve()
+    selection_path = audit_root / "frontend_selection.json"
+    representation_path = audit_root / "representation_decision.json"
     stage_path = (
-        OUTPUT_TARGET / "audit" / f"frontend_{slug}_test.json"
+        audit_root / f"frontend_{slug}_test.json"
         if split == "test"
-        else _stage_path(slug)
+        else audit_root / STAGE_FILES[slug]
     )
     for path in (selection_path, representation_path, stage_path):
         if not path.is_file():
@@ -148,8 +153,12 @@ def _authorize(slug: str, split: str = "val") -> Dict[str, Any]:
     physical = normalized.get("physical_stream")
     if not physical:
         raise RuntimeError("selected frontend stage has no normalized physical stream")
+    physical_sha256 = normalized.get("physical_stream_sha256")
+    if not isinstance(physical_sha256, str) or len(physical_sha256) != 64:
+        raise RuntimeError("selected frontend stage has no physical stream SHA256")
     return {
         "frontend": frontend,
+        "audit_root": str(audit_root),
         "selection_path": str(selection_path.resolve()),
         "selection_sha256": sha256_file(selection_path),
         "representation_path": str(representation_path.resolve()),
@@ -157,6 +166,7 @@ def _authorize(slug: str, split: str = "val") -> Dict[str, Any]:
         "stage_path": str(stage_path.resolve()),
         "stage_sha256": sha256_file(stage_path),
         "default_input": str(Path(str(physical)).resolve()),
+        "default_input_sha256": physical_sha256,
         "split": split,
     }
 
@@ -290,6 +300,7 @@ def _extract_track(
     torch: Any,
     image_cls: Any,
     batch_size: int,
+    frames_root: Path = FRAMES_ROOT,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     image_paths, boxes, quality = _validate_track(row, -1)
     tensors: List[Any] = []
@@ -306,7 +317,7 @@ def _extract_track(
         tensors[:] = []
 
     for image_path, box in zip(image_paths, boxes):
-        path = FRAMES_ROOT / image_path
+        path = frames_root / image_path
         with image_cls.open(path) as raw:
             crop = crop_box(raw.convert("RGB"), box)
         if min(crop.size) < 4:
@@ -333,6 +344,7 @@ def _extract_tracks_batched(
     torch: Any,
     image_cls: Any,
     batch_size: int,
+    frames_root: Path = FRAMES_ROOT,
 ) -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """Extract a shard while filling batches across track boundaries.
 
@@ -365,7 +377,7 @@ def _extract_tracks_batched(
         validated.append((image_paths, boxes, quality))
         track_embeddings.append([None] * len(image_paths))
         for observation_index, (image_path, box) in enumerate(zip(image_paths, boxes)):
-            path = FRAMES_ROOT / image_path
+            path = frames_root / image_path
             with image_cls.open(path) as raw:
                 crop = crop_box(raw.convert("RGB"), box)
             if min(crop.size) < 4:
@@ -454,6 +466,10 @@ def _manifest_payload(
     completed_shards: List[Dict[str, Any]],
     selected_gpu: Optional[int],
     split: str,
+    frames_root: Path,
+    model_repo: Path,
+    model_weights: Optional[Path],
+    model_weights_sha256: Optional[str],
 ) -> Dict[str, Any]:
     completed_shards = sorted(completed_shards, key=lambda item: int(item["track_start"]))
     return {
@@ -480,6 +496,10 @@ def _manifest_payload(
             "category_id_feature": False,
             "physical_id_feature": False,
             "future_observations_used": False,
+            "model_repo": str(model_repo.resolve()),
+            "model_weights": str(model_weights.resolve()) if model_weights else None,
+            "model_weights_sha256": model_weights_sha256,
+            "frames_root": str(frames_root.resolve()),
         },
         "authorization": auth,
         "selected_gpu_index": selected_gpu,
@@ -499,15 +519,31 @@ def build(
     gpu_index: Optional[int],
     preflight_only: bool,
     split: str = "val",
+    audit_root: Optional[Path] = None,
+    frames_root: Path = FRAMES_ROOT,
+    model_weights: Optional[Path] = None,
 ) -> Dict[str, Any]:
-    auth = _authorize(slug, split=split)
+    auth = _authorize(slug, split=split, audit_root=audit_root)
     if not input_path.is_file():
         raise FileNotFoundError(input_path)
     if input_path.resolve() != Path(auth["default_input"]).resolve():
-        raise RuntimeError("formal input must be the selected frontend's normalized physical stream")
+        input_sha256 = sha256_file(input_path)
+        if input_sha256 != auth["default_input_sha256"]:
+            raise RuntimeError("formal input must match the selected frontend's normalized physical stream SHA256")
+    else:
+        input_sha256 = sha256_file(input_path)
     if not model_repo.is_dir():
         raise FileNotFoundError(model_repo)
-    input_sha256 = sha256_file(input_path)
+    frames_root = frames_root.resolve()
+    if not frames_root.is_dir():
+        raise FileNotFoundError(frames_root)
+    if model_weights is not None:
+        model_weights = model_weights.resolve()
+        if not model_weights.is_file():
+            raise FileNotFoundError(model_weights)
+        model_weights_sha256 = sha256_file(model_weights)
+    else:
+        model_weights_sha256 = None
     total_tracks = _count_tracks(input_path)
     cache_root.mkdir(parents=True, exist_ok=True)
     (cache_root / "shards").mkdir(parents=True, exist_ok=True)
@@ -535,6 +571,10 @@ def build(
             completed_shards=completed,
             selected_gpu=gpu_index,
             split=split,
+            frames_root=frames_root,
+            model_repo=model_repo,
+            model_weights=model_weights,
+            model_weights_sha256=model_weights_sha256,
         )
         atomic_json(cache_root / "cache_manifest.json", payload)
         return payload
@@ -557,6 +597,10 @@ def build(
             completed_shards=completed,
             selected_gpu=None,
             split=split,
+            frames_root=frames_root,
+            model_repo=model_repo,
+            model_weights=model_weights,
+            model_weights_sha256=model_weights_sha256,
         )
         wait["resource_snapshot"] = snapshot
         wait["reason"] = "no idle GPU with >=25% RAM floor and per-worker margin"
@@ -578,6 +622,10 @@ def build(
         completed_shards=completed,
         selected_gpu=selected_gpu,
         split=split,
+        frames_root=frames_root,
+        model_repo=model_repo,
+        model_weights=model_weights,
+        model_weights_sha256=model_weights_sha256,
     )
     preflight["resource_snapshot"] = snapshot
     preflight["worker_ram_gib_estimate"] = WORKER_RAM_GIB
@@ -595,7 +643,10 @@ def build(
     torch.set_num_threads(1)
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is unavailable in formal feature worker")
-    model = torch.hub.load(str(model_repo), "dinov2_vitb14", source="local").eval().to("cuda:0")
+    model_kwargs = {"source": "local", "pretrained": True}
+    if model_weights is not None:
+        model_kwargs["weights"] = str(model_weights)
+    model = torch.hub.load(str(model_repo), "dinov2_vitb14", **model_kwargs).eval().to("cuda:0")
     transform = transforms.Compose([
         transforms.Resize((518, 518), interpolation=Image.BILINEAR),
         transforms.ToTensor(),
@@ -606,7 +657,7 @@ def build(
         if not items:
             return
         rows = [row for _track_index, row in items]
-        extracted = _extract_tracks_batched(rows, model, transform, torch, Image, batch_size)
+        extracted = _extract_tracks_batched(rows, model, transform, torch, Image, batch_size, frames_root)
         records: List[Dict[str, Any]] = []
         observation_features: List[np.ndarray] = []
         prefix_features: List[np.ndarray] = []
@@ -658,6 +709,10 @@ def build(
             completed_shards=completed,
             selected_gpu=selected_gpu,
             split=split,
+            frames_root=frames_root,
+            model_repo=model_repo,
+            model_weights=model_weights,
+            model_weights_sha256=model_weights_sha256,
         ))
 
     current_shard = -1
@@ -685,9 +740,13 @@ def build(
         status="COMPLETE",
         total_tracks=total_tracks,
             completed_shards=completed,
-            selected_gpu=selected_gpu,
-            split=split,
-        )
+        selected_gpu=selected_gpu,
+        split=split,
+        frames_root=frames_root,
+        model_repo=model_repo,
+        model_weights=model_weights,
+        model_weights_sha256=model_weights_sha256,
+    )
     atomic_json(cache_root / "cache_manifest.json", payload)
     return payload
 
@@ -699,6 +758,9 @@ def main() -> int:
     parser.add_argument("--input", type=Path, default=None)
     parser.add_argument("--output-root", type=Path, default=None)
     parser.add_argument("--model-repo", type=Path, default=None)
+    parser.add_argument("--model-weights", type=Path, default=None)
+    parser.add_argument("--audit-root", type=Path, default=None)
+    parser.add_argument("--frames-root", type=Path, default=FRAMES_ROOT)
     parser.add_argument("--batch", type=int, default=DEFAULT_BATCH)
     parser.add_argument("--shard-tracks", type=int, default=DEFAULT_SHARD_TRACKS)
     parser.add_argument("--gpu-index", type=int, default=None)
@@ -710,7 +772,7 @@ def main() -> int:
         raise SystemExit("--shard-tracks must be positive")
     ensure_output_layout()
     try:
-        auth = _authorize(args.frontend, split=args.split)
+        auth = _authorize(args.frontend, split=args.split, audit_root=args.audit_root)
     except Exception as exc:
         print(
             json.dumps({
@@ -725,6 +787,7 @@ def main() -> int:
         return 3
     input_path = (args.input or Path(auth["default_input"])).resolve()
     model_repo = (args.model_repo or next((path for path in DEFAULT_HUBS if path.is_dir()), DEFAULT_HUBS[0])).resolve()
+    model_weights = args.model_weights.resolve() if args.model_weights else None
     default_cache_root = FORMAL_ROOT / args.frontend / ("test" if args.split == "test" else "")
     cache_root = (args.output_root or default_cache_root).resolve()
     try:
@@ -738,6 +801,9 @@ def main() -> int:
             gpu_index=args.gpu_index,
             preflight_only=args.preflight_only,
             split=args.split,
+            audit_root=args.audit_root,
+            frames_root=args.frames_root,
+            model_weights=model_weights,
         )
     except Exception as exc:
         failure = {

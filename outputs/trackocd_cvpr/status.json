@@ -90,6 +90,26 @@
     "test_content_opened": false,
     "external_processes_touched": false
   },
+  "latest_nas_native_cache_local_recovery": {
+    "status": "PASS_LOCAL_TRANSFER_SOURCE_HASH_MATCH_INCOMPLETE_CONTINUATION",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/nas_native_cache_local_recovery_20261022.json",
+    "receipt_sha256": "72405f0839e9a819969b8d76759adb147d9c3539e82b2ed6b619daa972433cff",
+    "local_cache_root": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
+    "transferred_completed_shards": 255,
+    "required_shards": 723,
+    "missing_shards": 468,
+    "transferred_files": 1275,
+    "transferred_file_bytes": 2087716840,
+    "payload_files_sha256_match": true,
+    "preflight_status": "WAITING_RESOURCE",
+    "preflight_completed_shards": 255,
+    "idle_gpu_count": 0,
+    "memory_floor_pass": true,
+    "worker_launched": false,
+    "formal_v2_admission": false,
+    "test_content_opened": false,
+    "external_processes_touched": false
+  },
   "latest_nas_val_stream_audit": {
     "status": "FAIL_VAL_ONLY_STREAM_INTEGRITY",
     "receipt": "outputs/trackocd_cvpr/cvpr2/nas_val_stream_audit_20261022.json",
@@ -1003,5 +1023,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "The public Val predicted stream remains quarantined because it has 16290 degenerate boxes and is not the selected COVTrack-native stream. The staged native physical stream matches the historical cache input hash and passes geometry; all 255 existing native-cache units are structurally complete by stat/marker evidence, but 468 of 723 required shards are missing. Continue only with an authorized completion of the remaining native-source shards and final manifest audit; do not silently filter or mix the two streams."
+  "next": "The public Val predicted stream remains quarantined because it has 16290 degenerate boxes and is not the selected COVTrack-native stream. The staged native physical stream, DINOv2 weights, and TAO Val frame root are now resolved; 255 source-aligned native-cache units were transferred and matched to NAS per-file SHA256, but 468 of 723 required shards are missing. The explicit builder preflight passed the memory floor but found no idle GPU, so no worker was launched. When a task-safe idle GPU appears, continue only with the explicit 468-shard completion and final numerical/manifest audit; do not silently filter or mix streams."
 }

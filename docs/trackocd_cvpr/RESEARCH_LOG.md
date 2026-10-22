@@ -9084,3 +9084,24 @@ no private GT/cache/weights opened for this check):
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/nas_native_cache_payload_structure_audit_20261022.json`
   (SHA256 `8a728e06b8a47ea1eea20266e6bb493b1234dd293176df0f5e4cacf178bddd10`).
+
+## COVTrack-native cache local continuation recovery (2026-10-22 UTC)
+
+- The selected COVTrack-native Val stream, recovered DINOv2 ViT-B/14 weights,
+  and the TAO Val frame root were rebound explicitly without copying the TAO
+  dataset. A CPU smoke on the first historical observation matched the NAS
+  feature at cosine `1.0` with maximum absolute difference
+  `2.864748239517212e-05`; this is a compatibility check, not a metric.
+- The 255 source-aligned historical shard directories were copied into a new
+  local continuation root. Per-file SHA256 comparison against the NAS source
+  passed for all `1,275` files (`2,087,716,840` payload bytes): zero missing,
+  extra, or mismatched files. The old NAS cache and raw source remain
+  untouched.
+- The explicit builder preflight recognizes all `255` completed units out of
+  `723` and reports `561,672` cached observations; it passes the 25% RAM floor
+  but sees zero idle GPUs, so no worker was launched. The remaining `468`
+  shards are not yet a formal cache, and no OCD/MOT metric or TAO Test content
+  was accessed.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/nas_native_cache_local_recovery_20261022.json`
+  (SHA256 `72405f0839e9a819969b8d76759adb147d9c3539e82b2ed6b619daa972433cff`).
