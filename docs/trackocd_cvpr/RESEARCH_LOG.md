@@ -8957,3 +8957,29 @@ no private GT/cache/weights opened for this check):
   probe times out.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/formal_asset_source_closure_20261022.json`.
+
+## R mechanism matrix reconciliation (2026-10-22 UTC)
+
+- Reconciled the existing four fixed R variants (`temporal_CE`,
+  `temporal_Raw_teacher`, `timeless_CE`, `timeless_Raw_teacher`) over seeds
+  `1027/1028/1029`: all `12` fixed-200-step Train fit receipts are terminal
+  and all `12` Train-development evaluations are present. This is a
+  reconciliation of existing evidence; no trial was relaunched and no
+  checkpoint was selected.
+- The frozen Train-development scope is `472` physical tracks, `8753`
+  observations, `2562` metadata frames, `302` Known queries, and `119`
+  declared pseudo-Novel queries. No Val/Test targets or pixels, new
+  non-Known semantic values, or vocabulary were used; development optimizer
+  steps are `0` and training GPU-hours are `0`.
+- At prefix `16`, R beats the frozen Raw reference on macro retrieval R1 in
+  `12/12` variant/seed comparisons and on macro R5 in `10/12`. At
+  `all_available`, the corresponding counts are `2/12` and `10/12`. The
+  prefix/objective dependence is retained rather than converted into a model
+  choice: this supports a measurable but non-uniform R effect, not causal
+  online proof, formal Pred qualification, OCD/MOT metrics, or Goal A/B/C
+  acceptance.
+- Machine receipt:
+  `outputs/trackocd_cvpr/cvpr2/R_matrix_reconciliation_20261022.json`,
+  SHA256 `bfed127f4ab4ff2f47b9f69cd49fb4148f5f49b444492412ec39ebc4c8d45302`.
+  The formal v2 frontend/provenance and four Val causal-order assets remain
+  the admission gate for any formal v2 claim.

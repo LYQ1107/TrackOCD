@@ -896,6 +896,12 @@
     "gt_join_used_for_normalization": false,
     "test_semantic_accessed": false
   },
+  "latest_R_matrix_reconciliation": "PASS_12_FIXED_R_TRAIN_TRIALS_AND_ALL12_TRAIN_DEV_RECONCILED_NO_SCIENTIFIC_ACCEPTANCE",
+  "latest_R_matrix_reconciliation_receipt": "outputs/trackocd_cvpr/cvpr2/R_matrix_reconciliation_20261022.json",
+  "latest_R_matrix_reconciliation_receipt_sha256": "bfed127f4ab4ff2f47b9f69cd49fb4148f5f49b444492412ec39ebc4c8d45302",
+  "latest_R_matrix_reconciliation_scope": "4 fixed R variants x 3 seeds x 200 fit steps, with all12 Train-development evaluations across prefixes 1/2/4/8/16/all_available; Train-only GT-control evidence, no Val/Test, no model selection, no formal Pred/OCD/MOT claim",
+  "latest_R_matrix_reconciliation_interpretation": "Prefix16 macro-R1 improves over Raw in 12/12 comparisons and macro-R5 in 10/12; at all_available macro-R1 improves in 2/12 and macro-R5 in 10/12. Prefix/objective dependence is retained; no scientific winner or Goal acceptance",
+  "latest_R_matrix_reconciliation_training_gpu_hours": 0,
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",

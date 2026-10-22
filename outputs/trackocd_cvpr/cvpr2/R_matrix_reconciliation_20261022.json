@@ -1,0 +1,187 @@
+{
+  "schema_version": "trackocd.cvpr.r_matrix_reconciliation.v1",
+  "generated_at_utc": "2026-10-22T13:54:10Z",
+  "status": "PASS_12_FIXED_R_TRAIN_TRIALS_AND_ALL12_TRAIN_DEV_RECONCILED_NO_SCIENTIFIC_ACCEPTANCE",
+  "reconciliation_basis": {
+    "branch": "research/cvpr-trackocd-autonomous-v2",
+    "source_head_at_reconciliation": "205a393292f3abbc3c6e73ca736017fe99223f7c",
+    "train_result_count": 12,
+    "train_results": [
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_CE_s1027/result.json",
+        "sha256": "389da9973dbca675352e71e96b816bc7ca946f34672a51ea018d444095295a75"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_CE_s1028/result.json",
+        "sha256": "0a751b7aec4adc19bac75c9b8354eee4c0043f8b8e5d3834516ecfe2a15ac58b"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_CE_s1029/result.json",
+        "sha256": "5f21e0f1147ede151fb3ccf19566c07660447ab1d46bea936f6c401c648ca506"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_Raw_teacher_s1027/result.json",
+        "sha256": "981fc224e844d4531a7e97a3fd9db54a9967b76550a1c93a82efd69c701dfcee"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_Raw_teacher_s1028/result.json",
+        "sha256": "e2df96a62d717cf35db4362d2ff6aa38acc11dace182ddddb1339aa94178791d"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_temporal_Raw_teacher_s1029/result.json",
+        "sha256": "88c26b6aa46e49bc8d63f7f8a9bef16372995fb4563b1704710087a13d9bf2ac"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_timeless_CE_s1027/result.json",
+        "sha256": "995fe30f1f3eba279c29f7be7e341435239b4c670f7986b22b370801fa924606"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_timeless_CE_s1028/result.json",
+        "sha256": "314b5f12811696184f6524f6ccf1466f9e4e6f94f568ba3df6f2f3e01cb3c5b5"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_timeless_CE_s1029/result.json",
+        "sha256": "5728502a03ec131ea9b7db41d6a224364eaa2573fea68790ca96dc61714c0e24"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_timeless_Raw_teacher_s1027/result.json",
+        "sha256": "878b8adc1cd81d8022a77323da28cda1e3f7d37d9cfba382fb03b5dedb1afbe9"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_timeless_Raw_teacher_s1028/result.json",
+        "sha256": "d055c0f41a4b930ae03d5f9c340e10a074908a86c46d70ff7255d20d3705770c"
+      },
+      {
+        "path": "outputs/trackocd_cvpr/cvpr2/R_GT_window_v1_timeless_Raw_teacher_s1029/result.json",
+        "sha256": "1e823b0ac3a2ca344eabdf8ba233ded5a0d7f4cad1bbf1860eef740928dba966"
+      }
+    ],
+    "development_result": {
+      "path": "outputs/trackocd_cvpr/cvpr2/R_development_all12_v1/result.json",
+      "sha256": "704d0e20b59e85d78a46835dd54fe53099717361f8b789e2559a5c3a95531e70"
+    }
+  },
+  "frozen_scope": {
+    "variants": [
+      "temporal_CE",
+      "temporal_Raw_teacher",
+      "timeless_CE",
+      "timeless_Raw_teacher"
+    ],
+    "seeds": [1027, 1028, 1029],
+    "fit_optimizer_steps": 200,
+    "development_prefixes": [1, 2, 4, 8, 16, "all_available"],
+    "development_physical_tracks": 472,
+    "development_observations": 8753,
+    "development_metadata_frames": 2562,
+    "development_known_queries": 302,
+    "development_declared_pseudo_novel_queries": 119,
+    "development_outside_eligible_known": 2,
+    "development_no_retained_semantic_truth": 49,
+    "model_selection": false,
+    "val_or_test_targets_or_pixels_used": false,
+    "new_nonknown_semantic_values_or_vocabulary_decoded": false
+  },
+  "aggregate_diagnostics_not_model_selection": {
+    "prefix_16_mean_by_variant": {
+      "temporal_CE": {
+        "R_macro_R1": 0.637165917,
+        "Raw_macro_R1": 0.598163905,
+        "R_macro_R5": 0.809239719,
+        "Raw_macro_R5": 0.780830628,
+        "R_known_macro_accuracy": 0.95660281,
+        "Raw_known_macro_accuracy": 0.842574713,
+        "R_effective_rank": 82.23650268,
+        "Raw_effective_rank": 55.552632275
+      },
+      "temporal_Raw_teacher": {
+        "R_macro_R1": 0.626904902,
+        "Raw_macro_R1": 0.598163905,
+        "R_macro_R5": 0.788502793,
+        "Raw_macro_R5": 0.780830628,
+        "R_known_macro_accuracy": 0.892245211,
+        "Raw_known_macro_accuracy": 0.842574713,
+        "R_effective_rank": 69.443839591,
+        "Raw_effective_rank": 55.552632275
+      },
+      "timeless_CE": {
+        "R_macro_R1": 0.644110362,
+        "Raw_macro_R1": 0.598163905,
+        "R_macro_R5": 0.80545184,
+        "Raw_macro_R5": 0.780830628,
+        "R_known_macro_accuracy": 0.919315453,
+        "Raw_known_macro_accuracy": 0.842574713,
+        "R_effective_rank": 81.717613128,
+        "Raw_effective_rank": 55.552632275
+      },
+      "timeless_Raw_teacher": {
+        "R_macro_R1": 0.62546812,
+        "Raw_macro_R1": 0.598163905,
+        "R_macro_R5": 0.788502793,
+        "Raw_macro_R5": 0.780830628,
+        "R_known_macro_accuracy": 0.89288378,
+        "Raw_known_macro_accuracy": 0.842574713,
+        "R_effective_rank": 68.513571515,
+        "Raw_effective_rank": 55.552632275
+      }
+    },
+    "prefix_16_direction_counts": {
+      "macro_R1_R_better_than_Raw": 12,
+      "macro_R1_comparisons": 12,
+      "macro_R5_R_better_than_Raw": 10,
+      "macro_R5_comparisons": 12
+    },
+    "all_available_mean_by_variant": {
+      "temporal_CE": {
+        "R_macro_R1": 0.673764508,
+        "Raw_macro_R1": 0.669205059,
+        "R_macro_R5": 0.819893128,
+        "Raw_macro_R5": 0.792160444,
+        "R_known_macro_accuracy": 0.957241379,
+        "Raw_known_macro_accuracy": 0.95943295
+      },
+      "temporal_Raw_teacher": {
+        "R_macro_R1": 0.657349278,
+        "Raw_macro_R1": 0.669205059,
+        "R_macro_R5": 0.809656836,
+        "Raw_macro_R5": 0.792160444,
+        "R_known_macro_accuracy": 0.966957854,
+        "Raw_known_macro_accuracy": 0.95943295
+      },
+      "timeless_CE": {
+        "R_macro_R1": 0.673764508,
+        "Raw_macro_R1": 0.669205059,
+        "R_macro_R5": 0.819893128,
+        "Raw_macro_R5": 0.792160444,
+        "R_known_macro_accuracy": 0.95635249,
+        "Raw_known_macro_accuracy": 0.95943295
+      },
+      "timeless_Raw_teacher": {
+        "R_macro_R1": 0.657349278,
+        "Raw_macro_R1": 0.669205059,
+        "R_macro_R5": 0.808220055,
+        "Raw_macro_R5": 0.792160444,
+        "R_known_macro_accuracy": 0.966957854,
+        "Raw_known_macro_accuracy": 0.95943295
+      }
+    },
+    "all_available_direction_counts": {
+      "macro_R1_R_better_than_Raw": 2,
+      "macro_R1_comparisons": 12,
+      "macro_R5_R_better_than_Raw": 10,
+      "macro_R5_comparisons": 12
+    }
+  },
+  "guard_evidence": {
+    "all_twelve_fit_statuses": "COMPLETED_FIXED_R_FIT_TRIAL_NOT_DEV_VALIDATED_OR_GOAL_ACCEPTED",
+    "development_status": "MEASURED_ALL12_FIXED_R_GT_DEV_NOT_PRED_JOINT_OR_GOAL_ACCEPTANCE",
+    "optimizer_steps_in_development": 0,
+    "training_gpu_hours": 0,
+    "cuda_initialized": false,
+    "formal_ocd_or_mot_metrics": false,
+    "predicted_frontend_qualification": false,
+    "goal_a_b_c_accepted": false
+  },
+  "interpretation": "The fixed Train-controlled R matrix is now reconciled. At prefix 16, R beats the frozen Raw reference on macro retrieval R1 in all 12 variant/seed comparisons and on R5 in 10/12; at all_available, R1 improves in only 2/12 while R5 improves in 10/12. This is evidence that the representation mechanism has measurable but prefix- and objective-dependent effects, not a selected winner, causal online proof, formal Pred qualification, OCD/MOT metric, or Goal A/B/C acceptance.",
+  "next_gate": "Recover and admit the exact formal v2 frontend/provenance and four Val causal-order assets before any formal v2 claim; preserve this Train-only matrix as historical diagnostic evidence and do not choose a checkpoint from these aggregates."
+}
