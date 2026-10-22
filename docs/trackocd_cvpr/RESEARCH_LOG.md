@@ -9154,3 +9154,16 @@ no private GT/cache/weights opened for this check):
   `scripts/trackocd_v2/audit_sharded_cache_payload.py`; a scripted replay on
   the same 255 shards returned `PASS_PARTIAL_COMPLETED_SHARDS` with zero
   errors, while correctly keeping `formal_cache_complete=false`.
+
+## Val baseline continuation supervisor (2026-10-22 UTC)
+
+- A task-owned continuation supervisor is now live from
+  `scripts/trackocd_v2/run_formal_baselines_after_cache.py`. It checks the
+  cache at a 60-second interval and remains idle at `WAITING_RESOURCE:255/723`.
+- After the cache reaches complete coverage, it must first obtain
+  `PASS_COMPLETE` from `audit_sharded_cache_payload.py`, then run only the
+  explicit Val-only CPU baselines `nearest` and `dpmeans` sequentially. It
+  resumes sealed prefix outputs and never invokes PHE, Test, or an external
+  GPU process.
+- At registration time no baseline inference had started; the supervisor
+  itself is task-owned and the external-process boundary remains untouched.
