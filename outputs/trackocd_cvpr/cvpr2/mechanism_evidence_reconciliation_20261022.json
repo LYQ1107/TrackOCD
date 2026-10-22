@@ -1,0 +1,67 @@
+{
+  "schema_version": "trackocd.cvpr.mechanism_evidence_reconciliation.v1",
+  "generated_at_utc": "2026-10-22T14:02:00Z",
+  "status": "PASS_R_C_M_EVIDENCE_RECONCILED_NO_GOAL_ACCEPTANCE",
+  "source_head_at_reconciliation": "fff9117c548cbd34b6bd65a71105f24b71df8b65",
+  "mechanisms": {
+    "R_representation": {
+      "receipt": "outputs/trackocd_cvpr/cvpr2/R_matrix_reconciliation_20261022.json",
+      "receipt_sha256": "bfed127f4ab4ff2f47b9f69cd49fb4148f5f49b444492412ec39ebc4c8d45302",
+      "scope": "4 fixed variants x 3 seeds, 200 fit steps, all12 Train-development evaluations",
+      "prefix16_macro_R1_R_better_than_Raw": "12/12",
+      "prefix16_macro_R5_R_better_than_Raw": "10/12",
+      "all_available_macro_R1_R_better_than_Raw": "2/12",
+      "all_available_macro_R5_R_better_than_Raw": "10/12",
+      "interpretation": "Measurable but prefix/objective-dependent Train-only representation effect; no checkpoint selection or formal Pred/OCD/MOT claim"
+    },
+    "C_candidate_decision": {
+      "receipt": "outputs/trackocd_cvpr/cvpr3/paired_spread_Known_rejection_all6_full_dev_matrix_v1.json",
+      "receipt_sha256": "f78a108a3a2d00dcf02c1b87b3af7f171e1a549e1fb7f0ae12c808b63719e5ad",
+      "status": "ACTUAL_ALL6_FULL_CAUSAL_PAIRED_C_DEV_KNOWN_REJECTION_NOT_CALIBRATION_OR_GOAL_SUCCESS",
+      "scope": "6 endpoint trials, training seeds 1027/1028/1029, causal orders 1027/1028/1029, 472 tracks/8753 observations/2562 frames",
+      "prefix16_three_seed_mean_delta_repair_minus_baseline": {
+        "Known_macro_accuracy": -0.03676117496807152,
+        "Known_micro_accuracy": -0.061810154525386296,
+        "certified_cross_video_reuse_macro_lower_bound": 0.0,
+        "certified_cross_video_reuse_micro_lower_bound": 0.0,
+        "declared_pseudo_anonymous_commit_queries": 14.333333333333334
+      },
+      "interpretation": "The corrected candidate-aware rejection arm is a complete negative development result for persistent discovery under this protocol; it is not a calibrated winner and does not establish Pred/final success"
+    },
+    "M_persistent_memory": {
+      "receipt": "outputs/trackocd_cvpr/cvpr4/M_current_source_recovery2_matrix_audit_v1/result.json",
+      "receipt_sha256": "d0cc632a3175e11f298eb5422e1e19c4b3ca29b2e17324a64789d4f4c0263e72",
+      "status": "PASS_CURRENT_SOURCE_M_RECOVERY2_MATRIX_AUDIT",
+      "verified_cases": 9,
+      "orders_per_case": [1027, 1028, 1029],
+      "prefix16_summary": {
+        "rows": 27,
+        "physical_track_coverage_mean": 1.0,
+        "known_macro_accuracy_mean": 0.019555555555555555,
+        "known_micro_accuracy_mean": 0.024282560706401765,
+        "reuse_macro_lower_bound_mean": 0.07456155354862251,
+        "reuse_micro_lower_bound_mean": 0.09461562402738874
+      },
+      "violations": [],
+      "interpretation": "Causal-boundary, ID-rename, and future-suffix probes pass, but the low development values do not support an M winner; active purity, self-exclusion, Pred-owned joint evaluation, and Goal acceptance remain unproven"
+    }
+  },
+  "joint_interface": {
+    "receipt": "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json",
+    "receipt_sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
+    "scope": "2 fixed policy-order Train videos, 79 frames, 215 observations/groups, 2 optimizer updates",
+    "interpretation": "Tensor/lifecycle integration only; the M agreement loss was masked for singleton supports and no scientific winner was accepted"
+  },
+  "global_guards": {
+    "formal_pred_frontend_qualification": false,
+    "formal_ocd_or_mot_metrics": false,
+    "tao_val_or_test_used": false,
+    "model_or_checkpoint_selection": false,
+    "goal_a": "PENDING",
+    "goal_b": "PENDING",
+    "goal_c": "PENDING",
+    "scientific_success_claimed": false,
+    "training_gpu_hours": 0
+  },
+  "next_action": "Recover and admit the exact formal v2 frontend/provenance and four Val causal-order assets; then preregister a storage-bounded prediction-owned R/C/M trial with fixed seeds/orders/coverage and no model selection from these development diagnostics."
+}

@@ -8983,3 +8983,21 @@ no private GT/cache/weights opened for this check):
   SHA256 `bfed127f4ab4ff2f47b9f69cd49fb4148f5f49b444492412ec39ebc4c8d45302`.
   The formal v2 frontend/provenance and four Val causal-order assets remain
   the admission gate for any formal v2 claim.
+
+## Cross-mechanism evidence reconciliation (2026-10-22 UTC)
+
+- Consolidated the current R/C/M evidence without selecting a checkpoint or
+  converting development diagnostics into a final method. R retains a mixed,
+  prefix-dependent Train-only effect; the corrected six-trial C matrix is
+  negative for persistent discovery with zero certified cross-video reuse;
+  current-source M recovery-2 has nine cases × three order probes passing its
+  causal-boundary checks but very low prefix-16 Known accuracy/reuse values.
+- The joint R/C/M pilot remains tensor/lifecycle integration only: its M
+  agreement loss was masked for singleton supports, so it is not a trained M
+  winner. No formal Pred frontend, OCD/MOT metric, Val/Test result, or Goal
+  A/B/C acceptance is claimed.
+- Report:
+  `docs/trackocd_cvpr/CVPR2_3_4_MECHANISM_EVIDENCE_RECONCILIATION_20261022.md`.
+  Machine receipt:
+  `outputs/trackocd_cvpr/cvpr2/mechanism_evidence_reconciliation_20261022.json`,
+  SHA256 `edd834b7eb5c9aaafb97d930ec94a9e894e0b98ab28196b5779ceb2de76b3080`.
