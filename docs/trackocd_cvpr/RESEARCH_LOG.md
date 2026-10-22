@@ -9178,3 +9178,7 @@ no private GT/cache/weights opened for this check):
 - The existing sealed-Test `build_final_tables.py` is intentionally not used
   for this stage. The Val-only report remains unexecuted until the cache and
   both baselines are complete.
+- A task-owned `scripts/trackocd_v2/run_val_report_after_baselines.py`
+  watcher is now live at 60-second cadence. Its initial state is
+  `nearest=false, dpmeans=false`; it will invoke the Val-only report only
+  after both tables are complete and will not inspect Test artifacts.
