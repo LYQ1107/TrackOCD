@@ -1,0 +1,79 @@
+{
+  "schema_version": "trackocd.cvpr.predicted-train-rcm-interface-smoke.v1",
+  "status": "FROZEN_ANONYMOUS_RCM_INTERFACE_SMOKE_NO_TRAINING",
+  "purpose": "Exercise the causal R/C/M tensor and memory interface on the completed category-free predicted-Train feature pilot; no learned scorer, labels, metrics, or scientific acceptance.",
+  "input_payload": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_feature_pilot_v1/video_0003/video_0003_prefix_features.npz",
+  "input_payload_sha256": "d5c697719664f99d7c3a467fd25de0c63886b474deb3f01323c611d57b88ab41",
+  "input_index": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_feature_pilot_v1/video_0003/track_index.jsonl",
+  "input_index_sha256": "38aec02502f1abfafedc111963164092a883de2582220f721e000c03b0362bfc",
+  "fixed_selection": {
+    "video_id": 3,
+    "selection_rule": "First 16 stream-order tracks whose category-free frame list contains the first eight fixed video frames; no score, label, role, or metric selection.",
+    "track_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "frame_ids": [
+      1002342,
+      1002343,
+      1002344,
+      1002345,
+      1002346,
+      1002347,
+      1002348,
+      1002349
+    ],
+    "tracks": 16,
+    "frames": 8,
+    "observations": 128,
+    "events": 128,
+    "anonymous_numeric_anchor": "first selected track's first observed descriptor; not a Known label or semantic prototype"
+  },
+  "interface": {
+    "R": "RawPreservingEvidence",
+    "C": "CandidateScoreMLP tensor bridge contract, driven by a non-learned smoke scorer",
+    "M": "VersionedReliabilityMemory through JointRCMAtomicMemberControl",
+    "K_per_family": 8,
+    "max_members": 64,
+    "max_tokens": 128,
+    "max_commits": 1024,
+    "max_payload_bytes": 1048576,
+    "optimizer_steps": 0,
+    "future_features_sent_to_model": false,
+    "full_payload_materialized_for_input_smoke": true,
+    "physical_or_semantic_id_sent_to_model": false
+  },
+  "resources": {
+    "device": "CPU",
+    "workers": 1,
+    "rss_bytes_ceiling": 2147483648,
+    "output_bytes_ceiling": 1048576
+  },
+  "result_path": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_interface_smoke_v1/result.json",
+  "boundaries": {
+    "training_started": false,
+    "optimizer_steps": 0,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "formal_mot_or_ocd_metrics": false,
+    "model_selection": false,
+    "raw_features_uploaded_to_github": false,
+    "scientific_acceptance": false
+  }
+}
