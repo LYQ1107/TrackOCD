@@ -8405,6 +8405,43 @@ no private GT/cache/weights opened for this check):
   `gt_or_semantic_arrays_read=false`. The next bounded input is
   `shard_3/part_02`; Goal A/B/C remain pending.
 
+## Bounded shard-3 part-02 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_3 part_02` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_3_part_02_tccoff18_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `25` fixed anonymous Train videos and `18,299` frame
+  tasks, producing `580,562` observations and `44,561` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `9a837ddaf46060ed26d20d27b82d89848be3f917f689c5d5cb055a82e41952cf` and
+  `tao_bbox.json`
+  `b41c0b66f62e41381eedbf79b9e6c1c8b0ecc7c16a8fd7940d8ffab35996e769`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `36f0bd86f51dca427603e5754c270919592406c92e54fdeac7c2deedda06e81d`.
+- A fresh sequential audit is recorded at
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_3_parts_v1/part_02_tccoff18_20261022/stream_audit.json`.
+  It found exact category-free physical fields, `44,561/44,561` unique
+  tracks and `580,562/580,562` observations, aligned frame/box arrays,
+  finite non-degenerate boxes, and zero bad-field, wrong-video,
+  duplicate-track, duplicate-frame, malformed-row, or invalid-box counters.
+  The evaluator-only sidecar has `580,562` rows with exact native fields,
+  finite scores in `[0,1]`, finite boxes, no duplicate track/frame rows, and
+  no null `category_id`; it retains native category IDs only for compatibility
+  and is not admitted to the TrackOCD physical pipeline.
+- With `shard_0`, `shard_1`, `shard_2`, and `shard_3/part_00/part_01/part_02`,
+  validated reusable dense predicted-front-end coverage is now `382/407`
+  approved Train videos, `12,851,580` observations, and `1,185,231` physical
+  tracks. This is cache provenance and coverage only: no training started,
+  no OCD/MOT metric or frontend qualification was created, no model selection
+  was performed, and no TAO Val/Test labels were read.
+- The receipt records `training_started=false`, `formal_metrics=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. The next bounded input is
+  `shard_3/part_03`; Goal A/B/C remain pending.
+
 ## Bounded shard-3 part-00 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_3 part_00` completed on one owned A100 in namespace

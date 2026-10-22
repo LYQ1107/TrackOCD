@@ -1,0 +1,56 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack_dense_subshard_stream_audit.v1",
+  "status": "PASS",
+  "run_namespace": "covtrack_train_dense_shards_v1_shard_3_part_02_tccoff18_20261022",
+  "input_videos": 25,
+  "input_images": 18299,
+  "expected": {"videos": 25, "tracks": 44561, "observations": 580562},
+  "physical_stream": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl",
+    "size_bytes": 105335057,
+    "sha256": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f",
+    "lines": 44561,
+    "unique_tracks": 44561,
+    "observations": 580562,
+    "videos": 25,
+    "bad_json": 0,
+    "bad_fields": 0,
+    "wrong_video": 0,
+    "duplicate_track": 0,
+    "bad_arrays": 0,
+    "duplicate_frame": 0,
+    "bad_boxes": 0,
+    "bad_quality": 0,
+    "category_free_exact_schema": true
+  },
+  "evaluator_stream": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_02_tccoff18_20261022/native_evaluator_rows.jsonl",
+    "size_bytes": 124312864,
+    "sha256": "36f0bd86f51dca427603e5754c270919592406c92e54fdeac7c2deedda06e81d",
+    "lines": 580562,
+    "observations": 580562,
+    "videos": 25,
+    "bad_json": 0,
+    "bad_fields": 0,
+    "wrong_video": 0,
+    "duplicate_track_frame": 0,
+    "bad_boxes": 0,
+    "bad_scores": 0,
+    "null_category": 0
+  },
+  "cross_checks": {
+    "physical_obs_equals_evaluator_obs": true,
+    "physical_video_obs_equals_evaluator_video_obs": true,
+    "physical_unique_tracks_equals_receipt": true,
+    "physical_obs_equals_receipt": true,
+    "evaluator_rows_equals_receipt": true
+  },
+  "receipt_flags": {
+    "status": "COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF",
+    "training_started": false,
+    "formal_metrics": false,
+    "tao_val_accessed": false,
+    "tao_test_accessed": false,
+    "gt_or_semantic_arrays_read": false
+  }
+}
