@@ -8367,3 +8367,32 @@ no private GT/cache/weights opened for this check):
   `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
+
+## Bounded shard-2 part-01 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_2 part_01` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_2_part_01_tccoff13_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `26` fixed anonymous Train videos and `30,266` frame
+  tasks, producing `807,354` observations and `87,816` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `47b4c6566359cf3838b2113e73e810b446ca6176ea611d7c733639cd5b299769` and
+  `tao_bbox.json`
+  `3dc00edb7a5f80a29a7304fdc4fc4bd980ef107ba4ac91ec57b7afb7560d8230`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `2701f65d68ecd9fba78d08d46059af773a81732a9bfe052b885418be2dfe8a34`.
+- A fresh sequential audit found exact category-free physical fields,
+  `87,816/87,816` unique tracks and `807,354/807,354` observations, aligned
+  frame/box arrays, finite non-degenerate boxes, and zero bad-field,
+  wrong-video, duplicate-track, duplicate-frame, malformed-row, or invalid-box
+  counters. The evaluator-only sidecar has `807,354` rows with exact native
+  fields, finite scores in `[0,1]`, finite boxes, and no null `category_id`;
+  it is not admitted to the TrackOCD physical pipeline.
+- The receipt records `training_started=false`, `formal_metrics=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
+  cache subshard only; no OCD/MOT metric, model selection, frontend
+  qualification, or Goal A/B/C acceptance is claimed.
