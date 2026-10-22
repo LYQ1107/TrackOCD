@@ -8324,3 +8324,17 @@ no private GT/cache/weights opened for this check):
   while no complete receipt is currently present for `shard_2` or `shard_3`.
   Therefore the validated dense cache coverage is `204/407` videos, not the
   full Train cache, and no OCD/MOT metric or Goal A/B/C acceptance is claimed.
+
+## Shard-2 bounded input preparation (2026-10-22 UTC)
+
+- To continue from the validated boundary without repeating the RAM-risky
+  monolithic run, the fixed 102-video `shard_2` input was subdivided into four
+  new anonymous namespaces: `part_00/01/02/03` with `26/26/25/25` videos and
+  `26,814/30,266/27,741/23,785` images respectively. The ID union is the
+  original `shard_2` selection with no overlap.
+- Each input audit is
+  `PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT`; all four record
+  `tao_train_annotation_opened=false`, `tao_val_accessed=false`,
+  `tao_test_accessed=false`, `gt_or_semantic_arrays_read=false`, and
+  `training_started=false`. This is input preparation only; no model has yet
+  run on `shard_2`, and no OCD/MOT metric or formal result is claimed.
