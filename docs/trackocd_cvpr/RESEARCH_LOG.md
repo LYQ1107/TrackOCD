@@ -8368,6 +8368,37 @@ no private GT/cache/weights opened for this check):
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
 
+## Bounded shard-3 part-00 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_3 part_00` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_3_part_00_tccoff16_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `26` fixed anonymous Train videos and `25,866` frame
+  tasks, producing `795,064` observations and `70,264` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `dcee675e5260f1f676f39d7d44b15341ab78fdf6cb0c7093e1340f8ece1bb315` and
+  `tao_bbox.json`
+  `a7502ca2287230c74e3bf2be12bcc4ec44b638937e2fbcc55f9bd506579da229`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `b57222da7cb57ed1240d9c311336d838d96d964f9a4d4472c40842e958307994`.
+- A fresh sequential audit found exact category-free physical fields,
+  `70,264/70,264` unique tracks and `795,064/795,064` observations, aligned
+  frame/box arrays, finite non-degenerate boxes, and zero bad-field,
+  wrong-video, duplicate-track, duplicate-frame, malformed-row, or invalid-box
+  counters. The evaluator-only sidecar has `795,064` rows with exact native
+  fields, finite scores in `[0,1]`, finite boxes, and no null `category_id`;
+  it retains native category IDs only for compatibility and is not admitted to
+  the TrackOCD physical pipeline.
+- The receipt records `training_started=false`, `formal_metrics=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
+  cache subshard only; no OCD/MOT metric, model selection, frontend
+  qualification, or Goal A/B/C acceptance is claimed. The remaining bounded
+  `shard_3` subshards are `part_01/02/03`.
+
 ## Shard-3 bounded anonymous input preparation (2026-10-22 UTC)
 
 - The remaining fixed `shard_3` input was subdivided into four fresh anonymous
