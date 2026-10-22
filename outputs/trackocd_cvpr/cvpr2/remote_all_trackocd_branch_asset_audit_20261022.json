@@ -1,0 +1,43 @@
+{
+  "schema_version": "trackocd.cvpr.remote_all_trackocd_branch_asset_audit.v1",
+  "audited_at": "2026-10-22",
+  "method": "Read-only fetch of two additional TrackOCD source branches followed by git ls-tree filename checks; no blob payloads, datasets, weights, TAO Test labels, or worktree files were opened.",
+  "formal_names_checked": [
+    "frontend_selection.json",
+    "representation_decision.json",
+    "autonomous_state.json",
+    "frontend_covtrack_native.json",
+    "frontend_covtrack_native_native_run.json",
+    "frontend_covtrack_native_metrics.json",
+    "cache_manifest.json",
+    "pred_track_stream.jsonl",
+    "val_gt_track_stream.jsonl",
+    "val_gt_track_stream_seed1027.jsonl",
+    "val_gt_track_stream_seed1028.jsonl",
+    "val_gt_track_stream_seed1029.jsonl"
+  ],
+  "refs": [
+    {
+      "ref": "origin/codex/trackocd-core-training-limited-masa",
+      "commit": "7546527e5f9540d351785ade34c8e3292a74441d",
+      "tracked_files": 2100,
+      "outputs_paths": 107,
+      "project_outputs_paths": 0,
+      "formal_named_files": 0,
+      "interpretation": "Historical core/limited-MASA outputs are tracked, but no v2 formal frontend/provenance/order assets are present."
+    },
+    {
+      "ref": "origin/codex/trackocd-track-conditioned-persistent-discovery",
+      "commit": "1e105278d63ef9e670814cc69c5aa816f55a11c5",
+      "tracked_files": 1976,
+      "outputs_paths": 62,
+      "project_outputs_paths": 0,
+      "formal_named_files": 0,
+      "interpretation": "Historical persistent-discovery outputs are tracked, but no v2 formal frontend/provenance/order assets are present."
+    }
+  ],
+  "conclusion": "Searching all fetched TrackOCD branches does not recover the missing v2 formal assets. Historical outputs remain quarantined and cannot authorize formal v2 admission.",
+  "formal_ready": false,
+  "test_semantic_accessed": false,
+  "external_processes_touched": false
+}

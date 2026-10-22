@@ -8884,3 +8884,15 @@ no private GT/cache/weights opened for this check):
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/v2_asset_admission_recheck_20261022_order_gate.json`
   (SHA256 `ddff14a167bda09f0b15c58eb29518b3143f3a96daf476a403123d1d18ef7ca7`).
+
+## All remote TrackOCD branch asset audit (2026-10-22)
+
+- In addition to the v2/recovery/main refs, fetched and checked
+  `codex/trackocd-core-training-limited-masa` (`7546527e`) and
+  `codex/trackocd-track-conditioned-persistent-discovery` (`1e105278`).
+- These branches contain historical `outputs/trackocd_core` trees (`107` and
+  `62` output paths respectively), but zero `project_outputs/` paths and zero
+  formal v2 frontend/provenance/order filenames. Their historical results are
+  therefore preserved as evidence only and cannot close formal v2 admission.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/remote_all_trackocd_branch_asset_audit_20261022.json`.
