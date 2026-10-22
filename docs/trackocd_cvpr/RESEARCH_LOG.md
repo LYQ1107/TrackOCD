@@ -8170,3 +8170,39 @@ no private GT/cache/weights opened for this check):
   about `26 MiB`. No inference has been launched for these parts yet.
 - This is a resource/provenance event, not a scientific result: no training,
   formal OCD/MOT metric, model selection, or Goal A/B/C acceptance is claimed.
+
+## Bounded shard-1 part-00 completion and physical-stream audit (2026-10-22 UTC)
+
+- The first bounded recovery subshard, `part_00`, completed on one owned A100
+  in namespace
+  `covtrack_train_dense_shards_v1_shard_1_part_00_tccoff8_20261022`.
+  Its receipt is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_1_parts_v1/part_00_tccoff8_20261022/run.json`
+  with matching `done.json` and `normalization.json` and status
+  `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed the fixed anonymous Train input for `26` videos and
+  `36,236` frame tasks, producing `1,217,013` observations and `93,996`
+  physical tracks with `0` invalid boxes. The output hashes are: native
+  `tao_track.json`
+  `987880de3d8ef5198d3332334ec49646d08e9bf06121f39077b442b7b7a8cd18`, native
+  `tao_bbox.json`
+  `cfffefc85df9f4273e84c6b71f65a93c2e6f8af9087553bd9001a0a81137c6b1`,
+  category-free `physical_tracks.jsonl`
+  `798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b`, and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `3cc804526ef0ff5a2c7693c9f65d2f1138be317a501135027845abd0313cc867`.
+- A sequential audit found `93,996/93,996` physical rows with aligned
+  frame/box/path/quality arrays, finite non-negative quality values, finite
+  four-coordinate boxes, and `source_split=train_predicted`; it found no
+  forbidden category/text/GT fields, empty tracks, or malformed rows. The
+  evaluator-only sidecar retains the frozen model's native `category_id` field
+  for compatibility, but it is not consumed as a TrackOCD physical input and
+  contains no GT array. The normalized physical stream is the only stream
+  admitted to the downstream causal pipeline.
+- The completion receipt explicitly records `training_started=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. No OCD/MOT metric, model-selection
+  result, frontend qualification, or Goal A/B/C acceptance is claimed.
+  After child-process cleanup, `MemAvailable` recovered to about `71 GiB` and
+  the personal filesystem retained about `13 GiB` free. `part_01` remains
+  unstarted pending a fresh resource/storage guard.
