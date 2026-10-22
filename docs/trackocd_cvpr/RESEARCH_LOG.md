@@ -8896,3 +8896,18 @@ no private GT/cache/weights opened for this check):
   therefore preserved as evidence only and cannot close formal v2 admission.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/remote_all_trackocd_branch_asset_audit_20261022.json`.
+
+## Historical frontend metadata cross-check (2026-10-22)
+
+- Small JSON metadata read from the two historical TrackOCD branches explicitly
+  reports `FROZEN_LIMITED_FRONTEND_NOT_STRONG_M1_PASS` /
+  `M1_DIAGNOSTICS_COMPLETE_FRONTEND_QUALIFICATION_BLOCKED`; the old cache
+  snapshot is only `255/723` shards (`468` missing).
+- The same metadata labels the historical COVTrack route as an incomparable
+  vocabulary-assisted reference. It is locator/provenance evidence only and
+  cannot be promoted to current v2 OCD/MOT evidence.
+- The tracked NAS source-only recovery request is
+  `docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md`; it requires an actual
+  NAS-side session and explicitly excludes data/weights/cache transfer.
+  Receipt:
+  `outputs/trackocd_cvpr/cvpr2/historical_frontend_metadata_audit_20261022.json`.

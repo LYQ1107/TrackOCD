@@ -1,0 +1,28 @@
+{
+  "schema_version": "trackocd.cvpr.historical_frontend_metadata_audit.v1",
+  "audited_at": "2026-10-22",
+  "source_refs": [
+    {
+      "ref": "origin/codex/trackocd-core-training-limited-masa",
+      "commit": "7546527e5f9540d351785ade34c8e3292a74441d",
+      "frozen_frontend_status": "FROZEN_LIMITED_FRONTEND_NOT_STRONG_M1_PASS",
+      "strong_frontend_qualified": false,
+      "frontend_audit_status": "M1_DIAGNOSTICS_COMPLETE_FRONTEND_QUALIFICATION_BLOCKED",
+      "formal_cache_snapshot": {"present_shards": 255, "required_shards": 723, "missing_shards": 468},
+      "historical_m1_covtrack_status": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE",
+      "nas_recovery_request": "docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md"
+    },
+    {
+      "ref": "origin/codex/trackocd-track-conditioned-persistent-discovery",
+      "commit": "1e105278d63ef9e670814cc69c5aa816f55a11c5",
+      "frontend_audit_status": "M1_DIAGNOSTICS_COMPLETE_FRONTEND_QUALIFICATION_BLOCKED",
+      "formal_cache_snapshot": {"present_shards": 255, "required_shards": 723, "missing_shards": 468},
+      "historical_m1_covtrack_status": "INCOMPARABLE_VOCABULARY_ASSISTED_REFERENCE",
+      "nas_recovery_request": "docs/trackocd_core/NAS_MINIMAL_RECOVERY_REQUEST.md"
+    }
+  ],
+  "interpretation": "Historical frontend metadata itself rejects strong qualification and describes the cache as incomplete. It is locator/provenance evidence only, not formal v2 input or a current OCD/MOT result.",
+  "large_payload_opened": false,
+  "test_semantic_accessed": false,
+  "external_processes_touched": false
+}
