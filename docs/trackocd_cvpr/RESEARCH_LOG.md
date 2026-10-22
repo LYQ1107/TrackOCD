@@ -8239,3 +8239,35 @@ no private GT/cache/weights opened for this check):
   result, frontend qualification, or Goal A/B/C acceptance is claimed. The
   remaining bounded subshards are `part_02` and `part_03`; they have not been
   launched.
+
+## Bounded shard-1 part-02 completion and physical-stream audit (2026-10-22 UTC)
+
+- The third bounded recovery subshard, `part_02`, completed on one owned A100
+  in namespace
+  `covtrack_train_dense_shards_v1_shard_1_part_02_tccoff10_20261022`. Its
+  receipt contains matching `run.json`, `done.json`, and `normalization.json`
+  with status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed the fixed anonymous Train input for `25` videos and
+  `23,498` frame tasks, producing `752,504` observations and `97,209`
+  physical tracks with `0` invalid boxes. The native output hashes are:
+  `tao_track.json`
+  `1b53b3e8680f87863eb1f1c78556c273d3252f7d97af0ea91dc736b5e9d7815e`, and
+  `tao_bbox.json`
+  `7beac409b761e06c837df120efb45bd80cb843897b252d5b190030b45348f346`.
+  The normalized-stream hashes are:
+  `physical_tracks.jsonl`
+  `f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000`, and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `cef2930e02e6ae2bc5c7a4b9895069f9a65710304ecb461b4f314e0207d1b366`.
+- The sequential physical-stream audit found `97,209/97,209` rows with
+  aligned frame/box/path/quality arrays, finite non-negative quality values,
+  finite four-coordinate boxes, and `source_split=train_predicted`; all
+  forbidden category/text/GT-field, empty-track, and malformed-row counters
+  were zero. The evaluator-only sidecar has `752,504` valid rows and retains
+  native `category_id` for compatibility; it is not consumed as a TrackOCD
+  physical input and contains no GT array.
+- The completion and normalization receipts explicitly record
+  `training_started=false`, `tao_val_accessed=false`, `tao_test_accessed=false`,
+  and `gt_or_semantic_arrays_read=false`. No OCD/MOT metric, model-selection
+  result, frontend qualification, or Goal A/B/C acceptance is claimed. The
+  remaining bounded subshard is `part_03`; it has not been launched.
