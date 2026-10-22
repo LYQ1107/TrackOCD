@@ -8399,6 +8399,53 @@ no private GT/cache/weights opened for this check):
   qualification, or Goal A/B/C acceptance is claimed. The remaining bounded
   subshard is `part_03`; it has not been launched.
 
+## Bounded shard-2 part-03 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_2 part_03` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_2_part_03_tccoff15_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `25` fixed anonymous Train videos and `23,785` frame
+  tasks, producing `700,934` observations and `46,527` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `6936b7063be940874ddbf76695a20c8527de05002d0e71874d38d60c8ec07897` and
+  `tao_bbox.json`
+  `419552dc0ac5b9aa9296a9cf33b9643106c61b03e95a1166b92548bc0c169962`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `f7c58485053da546a74f02dd01c6aad06a64cf955207a748fc2b7377e97cffa7`.
+- A fresh sequential audit found exact category-free physical fields,
+  `46,527/46,527` unique tracks and `700,934/700,934` observations, aligned
+  frame/box arrays, finite non-degenerate boxes, and zero bad-field,
+  wrong-video, duplicate-track, duplicate-frame, malformed-row, or invalid-box
+  counters. The evaluator-only sidecar has `700,934` rows with exact native
+  fields, finite scores in `[0,1]`, finite boxes, and no null `category_id`;
+  it retains native category IDs only for compatibility and is not admitted to
+  the TrackOCD physical pipeline.
+- The receipt records `training_started=false`, `formal_metrics=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
+  cache subshard only; no OCD/MOT metric, model selection, frontend
+  qualification, or Goal A/B/C acceptance is claimed.
+
+## Shard-2 subdivision coverage reconciliation (2026-10-22 UTC)
+
+- The four fixed `shard_2` subshard input audits have no overlap and their
+  ordered union exactly matches the original `shard_2` input audit: `26 + 26 +
+  25 + 25 = 102` videos. All four receipts and normalized physical/evaluator
+  streams are present and passed their individual audits.
+- The reconciled `shard_2` totals are `3,147,631` observations,
+  `281,744` physical tracks, and `0` invalid boxes. Combined with the already
+  validated `shard_0` and `shard_1`, reusable dense predicted-front-end
+  coverage is now `306/407` approved Train videos, with `10,691,990`
+  observations and `989,557` physical tracks. `shard_3` remains the only
+  uncomputed 101-video shard.
+- This reconciliation establishes cache provenance and coverage only. It does
+  not create OCD/MOT metrics, frontend qualification, model selection, or
+  Goal A/B/C acceptance; no training was started and no TAO Val/Test labels
+  were read.
+
 ## Bounded shard-2 part-01 completion and physical/evaluator-stream audit (2026-10-22 UTC)
 
 - `shard_2 part_01` completed on one owned A100 in namespace
