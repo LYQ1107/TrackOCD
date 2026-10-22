@@ -9020,6 +9020,28 @@ no private GT/cache/weights opened for this check):
 - No TAO Test content was opened, no weights or cache were uploaded, and no
   training or formal OCD/MOT metric was run. The machine receipt is
   `outputs/trackocd_cvpr/cvpr2/nas_formal_asset_recovery_20261022.json` (SHA256
-  `7f24e420c8baeb969253c2f2c14e6ddc1d9e128a1a4559ec11b97cc9069c618e`). The
+  `e03f05cb65e4322b80c865cebbf4dc8eeba67989df7aca1ebb2bebe9e4c45107`). The
   next gate is a bounded streaming integrity audit followed by a fresh cache
   whose input hash matches the current stream.
+
+## NAS Val stream integrity audit (2026-10-22 UTC)
+
+- The five staged Val streams were audited sequentially with a temporary
+  external-sort duplicate index. Peak RSS was `30,760,960` bytes, below the
+  `256 MiB` plan. No Test path, image, weight, semantic name, or category
+  value was opened; no training or metric evaluation ran.
+- All four causal-order GT streams passed: each has `5,232` tracks,
+  `107,880` observations, `985` videos, zero invalid boxes, zero duplicate
+  track rows, and the four files are byte-distinct while sharing the same
+  track/video sets.
+- The recovered current Val predicted stream has `649,378` tracks and
+  `1,853,369` observations with no duplicate track/frame rows, but fails the
+  physical-box contract: `16,290` observations are degenerate (`15,902` with
+  `x2 <= x1`, `10,615` with `y2 <= y1`; the categories overlap). It is not
+  admitted, repaired by silent filtering, or used for OCD/MOT metrics.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/nas_val_stream_audit_20261022.json` (SHA256
+  `4f477400bbb15db5b5e82332032787226a51f5a018559b9cc3647997e1888479`). This
+  is a genuine admission-blocking failure, not a scientific success/failure
+  claim; the next action is provenance-equivalent recovery or regeneration of
+  a valid predicted stream.

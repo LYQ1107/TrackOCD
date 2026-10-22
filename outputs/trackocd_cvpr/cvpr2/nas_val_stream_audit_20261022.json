@@ -1,0 +1,205 @@
+{
+  "aggregate_errors": [
+    "one or more stream audits failed"
+  ],
+  "boundaries": {
+    "category_values_decoded": false,
+    "external_processes_touched": false,
+    "formal_metrics_created": false,
+    "images_opened": false,
+    "semantic_names_decoded": false,
+    "test_content_opened": false,
+    "test_paths_read": false,
+    "training_started": false,
+    "weights_opened": false
+  },
+  "causal_order": {
+    "byte_distinct": true,
+    "file_count": 4,
+    "same_track_key_set": true,
+    "same_video_set": true
+  },
+  "files": {
+    "base": {
+      "blank_lines": 0,
+      "dedup_backend": "in_memory_set",
+      "duplicate_frame_rows": 0,
+      "duplicate_track_rows": 0,
+      "errors": [],
+      "field_mismatch_rows": 0,
+      "invalid_box_reasons": {
+        "nonfinite_or_nonnumeric": 0,
+        "not_four_values": 0,
+        "x2_le_x1": 0,
+        "y2_le_y1": 0
+      },
+      "invalid_boxes": 0,
+      "jsonl_rows": 5232,
+      "kind": "gt_order",
+      "max_line_bytes": 5753,
+      "negative_or_nonfinite_areas": 0,
+      "nonfinite_quality": 0,
+      "nonfinite_scores": 0,
+      "observations": 107880,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks.jsonl",
+      "same_track_key_set_as_base": true,
+      "same_video_set_as_base": true,
+      "scores_outside_0_1": 0,
+      "sha256": "23fbe4d7f2494508141f2d88f8741cec19ee52cae783cdee8483120bd01210e8",
+      "size_bytes": 11876759,
+      "source_split_values": [
+        "val"
+      ],
+      "status": "PASS",
+      "stream_order_decreases": 0,
+      "tracks": 5232,
+      "videos": 985
+    },
+    "predicted": {
+      "blank_lines": 0,
+      "dedup_backend": "temporary_external_sort_32MiB",
+      "duplicate_frame_rows": 0,
+      "duplicate_track_rows": 0,
+      "errors": [],
+      "field_mismatch_rows": 0,
+      "invalid_box_reasons": {
+        "nonfinite_or_nonnumeric": 0,
+        "not_four_values": 0,
+        "x2_le_x1": 15902,
+        "y2_le_y1": 10615
+      },
+      "invalid_boxes": 16290,
+      "jsonl_rows": 649378,
+      "kind": "predicted",
+      "max_line_bytes": 6971,
+      "negative_or_nonfinite_areas": 0,
+      "nonfinite_quality": 0,
+      "nonfinite_scores": 0,
+      "observations": 1853369,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_predicted_tracks.jsonl",
+      "scores_outside_0_1": 0,
+      "sha256": "8d9325cc8043eeb40ace06c8d7b388f90a3aed120ede69989c9d300d87f54eca",
+      "size_bytes": 394170147,
+      "source_split_values": [
+        "val_predicted"
+      ],
+      "status": "FAIL",
+      "stream_order_decreases": 0,
+      "tracks": 649378,
+      "videos": 988
+    },
+    "seed1027": {
+      "blank_lines": 0,
+      "dedup_backend": "in_memory_set",
+      "duplicate_frame_rows": 0,
+      "duplicate_track_rows": 0,
+      "errors": [],
+      "field_mismatch_rows": 0,
+      "invalid_box_reasons": {
+        "nonfinite_or_nonnumeric": 0,
+        "not_four_values": 0,
+        "x2_le_x1": 0,
+        "y2_le_y1": 0
+      },
+      "invalid_boxes": 0,
+      "jsonl_rows": 5232,
+      "kind": "gt_order",
+      "max_line_bytes": 5753,
+      "negative_or_nonfinite_areas": 0,
+      "nonfinite_quality": 0,
+      "nonfinite_scores": 0,
+      "observations": 107880,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks_seed1027.jsonl",
+      "same_track_key_set_as_base": true,
+      "same_video_set_as_base": true,
+      "scores_outside_0_1": 0,
+      "sha256": "ea23cdc7920741398af03eec4301ca69a582ae6899f38110505fbebf048566d3",
+      "size_bytes": 11876759,
+      "source_split_values": [
+        "val"
+      ],
+      "status": "PASS",
+      "stream_order_decreases": 0,
+      "tracks": 5232,
+      "videos": 985
+    },
+    "seed1028": {
+      "blank_lines": 0,
+      "dedup_backend": "in_memory_set",
+      "duplicate_frame_rows": 0,
+      "duplicate_track_rows": 0,
+      "errors": [],
+      "field_mismatch_rows": 0,
+      "invalid_box_reasons": {
+        "nonfinite_or_nonnumeric": 0,
+        "not_four_values": 0,
+        "x2_le_x1": 0,
+        "y2_le_y1": 0
+      },
+      "invalid_boxes": 0,
+      "jsonl_rows": 5232,
+      "kind": "gt_order",
+      "max_line_bytes": 5753,
+      "negative_or_nonfinite_areas": 0,
+      "nonfinite_quality": 0,
+      "nonfinite_scores": 0,
+      "observations": 107880,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks_seed1028.jsonl",
+      "same_track_key_set_as_base": true,
+      "same_video_set_as_base": true,
+      "scores_outside_0_1": 0,
+      "sha256": "4e3884255868ff5b08df1a44614c76f6cc087c667ab6594f75fc769e1fc84e0c",
+      "size_bytes": 11876759,
+      "source_split_values": [
+        "val"
+      ],
+      "status": "PASS",
+      "stream_order_decreases": 0,
+      "tracks": 5232,
+      "videos": 985
+    },
+    "seed1029": {
+      "blank_lines": 0,
+      "dedup_backend": "in_memory_set",
+      "duplicate_frame_rows": 0,
+      "duplicate_track_rows": 0,
+      "errors": [],
+      "field_mismatch_rows": 0,
+      "invalid_box_reasons": {
+        "nonfinite_or_nonnumeric": 0,
+        "not_four_values": 0,
+        "x2_le_x1": 0,
+        "y2_le_y1": 0
+      },
+      "invalid_boxes": 0,
+      "jsonl_rows": 5232,
+      "kind": "gt_order",
+      "max_line_bytes": 5753,
+      "negative_or_nonfinite_areas": 0,
+      "nonfinite_quality": 0,
+      "nonfinite_scores": 0,
+      "observations": 107880,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/tao_val_gt_tracks_seed1029.jsonl",
+      "same_track_key_set_as_base": true,
+      "same_video_set_as_base": true,
+      "scores_outside_0_1": 0,
+      "sha256": "af032af560fd2e311d55582c760b36c2bd1ea4c27967b0479152a4915a184f5b",
+      "size_bytes": 11876759,
+      "source_split_values": [
+        "val"
+      ],
+      "status": "PASS",
+      "stream_order_decreases": 0,
+      "tracks": 5232,
+      "videos": 985
+    }
+  },
+  "generated_utc": "2026-10-22T14:15:16.804845+00:00",
+  "interpretation": "Val-only structural and hash audit of staged streams; not formal v2 admission, frontend qualification, OCD/MOT evaluation, or model selection.",
+  "memory_plan_bytes": 268435456,
+  "memory_plan_pass": true,
+  "peak_rss_bytes": 30760960,
+  "root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val",
+  "schema_version": "trackocd.cvpr.nas-val-stream-audit.v1",
+  "status": "FAIL_VAL_ONLY_STREAM_INTEGRITY"
+}

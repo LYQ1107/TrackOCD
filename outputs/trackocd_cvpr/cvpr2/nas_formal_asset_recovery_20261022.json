@@ -1,7 +1,7 @@
 {
   "schema_version": "trackocd.cvpr.nas_formal_asset_recovery.v1",
   "status": "PASS_NAS_VAL_ONLY_ASSET_RECOVERY_OLD_CACHE_MISMATCH_RETAINED",
-  "generated_utc": "2026-10-22T14:05:51Z",
+  "generated_utc": "2026-10-22T14:15:34Z",
   "source_branch": "research/cvpr-trackocd-autonomous-v2",
   "source_commit": "0aca3160be8d23c08e996b531322c67c172252a7",
   "transport": {
@@ -108,6 +108,13 @@
   "admission_and_safety": {
     "formal_v2_admission": false,
     "expected_local_path_mapping_created": false,
+    "streaming_integrity_audit_completed": true,
+    "streaming_integrity_audit_status": "FAIL_PREDICTED_STREAM_INVALID_BOXES",
+    "streaming_integrity_audit_receipt": "outputs/trackocd_cvpr/cvpr2/nas_val_stream_audit_20261022.json",
+    "streaming_integrity_audit_receipt_sha256": "4f477400bbb15db5b5e82332032787226a51f5a018559b9cc3647997e1888479",
+    "streaming_integrity_audit_memory_plan_pass": true,
+    "predicted_invalid_boxes": 16290,
+    "predicted_invalid_box_reason_counts": {"x2_le_x1": 15902, "y2_le_y1": 10615},
     "streaming_semantic_audit_completed": false,
     "training_started": false,
     "formal_ocd_or_mot_metrics": false,
@@ -119,5 +126,5 @@
     "tao_test_paths_read": false,
     "novel_vocabulary_used_for_selection": false
   },
-  "next_gate": "Keep the staged Val-only assets quarantined; perform an explicit source-mapping and bounded streaming integrity audit, then build or admit only a fresh cache whose input hash equals the current v2 predicted stream. Do not reuse the 63945 historical cache or claim formal OCD/MOT metrics yet."
+  "next_gate": "Keep the staged Val-only assets quarantined. The four causal-order GT streams pass structural checks, but the current predicted stream has 16290 degenerate boxes, so formal admission is blocked. Recover or regenerate a provenance-equivalent valid predicted stream before any fresh cache; do not silently filter boxes, reuse the 63945 historical cache, or claim formal OCD/MOT metrics."
 }
