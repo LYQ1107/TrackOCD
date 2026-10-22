@@ -8928,3 +8928,19 @@ no private GT/cache/weights opened for this check):
   NAS-side session and explicitly excludes data/weights/cache transfer.
   Receipt:
   `outputs/trackocd_cvpr/cvpr2/historical_frontend_metadata_audit_20261022.json`.
+
+## Predicted Train protocol reconciliation (2026-10-22)
+
+- The frozen causal protocol was audited before full-cache execution and still
+  correctly remains immutable. A post-execution reconciliation now records
+  the actual completed anonymous Train cache: `407` videos, `1,245,952`
+  predicted tracks, `13,558,940` observations, zero invalid boxes, exact
+  subshard union, and complete physical/evaluator streams.
+- The category-free geometry audit and no-training R/C/M interface smoke are
+  linked as input/plumbing evidence. Neither is a formal MOT/OCD score or a
+  frontend qualification.
+- The formal v2 gate remains closed for the missing frontend provenance,
+  selected-cache manifest, public predicted stream, and four frozen Val causal
+  order assets. No order or asset was reconstructed.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_reconciliation_20261022.json`.

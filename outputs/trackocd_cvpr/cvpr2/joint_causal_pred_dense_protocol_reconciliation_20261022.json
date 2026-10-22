@@ -1,0 +1,64 @@
+{
+  "schema_version": "trackocd.cvpr.joint-causal-pred-dense-protocol-reconciliation.v1",
+  "status": "PASS_407_FIXED_ANONYMOUS_TRAIN_PREDICTED_CACHE_RECONCILED_FORMAL_V2_GATE_STILL_CLOSED",
+  "created_utc": "2026-10-22",
+  "frozen_protocol": {
+    "path": "configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json",
+    "sha256": "3b2c5ac9692c6a9d4e9f670dcf2e709bc9e77b81bd07b3d2173994d39f895652",
+    "original_audit": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
+    "original_audit_sha256": "548fc6f186b0fc0c725c120a25207effdd685742f998435a282addb7cbba98c2"
+  },
+  "completed_predicted_train_cache": {
+    "reconciliation": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+    "reconciliation_sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+    "status": "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS",
+    "videos": 407,
+    "tracks": 1245952,
+    "observations": 13558940,
+    "invalid_boxes": 0,
+    "all_subshard_input_union_exact": true,
+    "all_receipts_complete": true,
+    "all_physical_streams_present": true,
+    "all_evaluator_streams_present": true
+  },
+  "category_free_geometry_audit": {
+    "path": "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json",
+    "sha256": "d0d55eefe57309fcbf3ee873f5e22a133028678130aecbf6fe8aef6621e4b505",
+    "status": "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_AUDIT",
+    "formal_mot": false,
+    "reliable_temporal_pairs": 0
+  },
+  "causal_rcm_interface": {
+    "path": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_interface_smoke_v1/result.json",
+    "sha256": "150172f16038550c69aabd7238d3a9ee21e1e5c222a01a82a10e36b1274cd610",
+    "status": "PASS_FIXED_PREDICTED_TRAIN_RCM_INTERFACE_SMOKE_NO_TRAINING",
+    "optimizer_steps": 0,
+    "formal_metrics": false
+  },
+  "boundaries": {
+    "training_started": false,
+    "tao_val_or_test_labels_used": false,
+    "novel_vocabulary_used": false,
+    "model_selection": false,
+    "formal_ocd_or_mot_metrics": false,
+    "goal_a_b_c_accepted": false
+  },
+  "formal_v2_gate": {
+    "status": "BLOCKED_MISSING_FORMAL_FRONTEND_PROVENANCE_AND_VAL_CAUSAL_ORDER_ASSETS",
+    "remaining_assets": [
+      "data/tao_ow_ocd_v1/public/pred_track_stream.jsonl",
+      "outputs/trackocd_v2/audit/frontend_selection.json",
+      "outputs/trackocd_v2/audit/representation_decision.json",
+      "outputs/trackocd_v2/audit/autonomous_state.json",
+      "outputs/trackocd_v2/audit/frontend_covtrack_native.json",
+      "outputs/trackocd_v2/features/formal/<selected_frontend>/cache_manifest.json",
+      "val_gt_track_stream.jsonl",
+      "val_gt_track_stream_seed1027.jsonl",
+      "val_gt_track_stream_seed1028.jsonl",
+      "val_gt_track_stream_seed1029.jsonl"
+    ],
+    "nas_network_recovery_required": true,
+    "no_asset_reconstruction_or_order_invention": true
+  },
+  "interpretation": "The legal anonymous Train predicted cache is now reconciled and reusable. This does not promote it to a formal v2 frontend, does not create OCD/MOT metrics, and does not authorize full R/C/M training before the frozen provenance and causal-order admission gate passes."
+}

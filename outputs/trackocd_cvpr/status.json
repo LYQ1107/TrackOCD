@@ -18,6 +18,17 @@
     "receipt": "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json",
     "receipt_sha256": "10f951292fcd900b0a87dc9dbcb7e21813b1329cc0e1cf8033a08e3f25ead612"
   },
+  "latest_predicted_train_protocol_reconciliation": {
+    "status": "PASS_407_FIXED_ANONYMOUS_TRAIN_PREDICTED_CACHE_RECONCILED_FORMAL_V2_GATE_STILL_CLOSED",
+    "receipt": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_reconciliation_20261022.json",
+    "receipt_sha256": "3af09565d1bbb6ef797baf235875a65e4856b057098be6b2b80bfb3c0f165738",
+    "videos": 407,
+    "tracks": 1245952,
+    "observations": 13558940,
+    "formal_ocd_or_mot_metrics": false,
+    "training_started": false,
+    "remaining_gate": "FORMAL_FRONTEND_PROVENANCE_AND_FOUR_VAL_CAUSAL_ORDER_ASSETS"
+  },
   "Goal_A": "PENDING",
   "Goal_B": "PENDING",
   "Goal_C": "PENDING",
