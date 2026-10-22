@@ -8307,3 +8307,20 @@ no private GT/cache/weights opened for this check):
   the full 407-video Train cache, OCD/MOT metrics, frontend qualification,
   model selection, or Goal A/B/C acceptance is complete. No formal result is
   claimed from this cache stage.
+
+## Shard-1 subdivision coverage reconciliation (2026-10-22 UTC)
+
+- The four fixed subshard input audits have no overlap and their union exactly
+  matches the original `shard_1` input audit: `26 + 26 + 25 + 25 = 102`
+  videos. All four receipts are complete and all four physical streams are
+  present; their already-recorded individual audits passed. The reconciled
+  `shard_1` totals are `3,960,330` observations, `363,785` physical tracks,
+  and `0` invalid boxes.
+- This reconciliation repairs the interrupted original `shard_1` checkpoint
+  into a valid reusable cache namespace without promoting the old interrupted
+  output. It does not infer coverage for other shards. The fixed protocol has
+  `shard_0=102`, `shard_1=102`, `shard_2=102`, and `shard_3=101` videos;
+  `shard_0` is complete (`3,584,029` observations and `344,028` tracks),
+  while no complete receipt is currently present for `shard_2` or `shard_3`.
+  Therefore the validated dense cache coverage is `204/407` videos, not the
+  full Train cache, and no OCD/MOT metric or Goal A/B/C acceptance is claimed.
