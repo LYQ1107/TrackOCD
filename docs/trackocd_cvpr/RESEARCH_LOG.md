@@ -9167,3 +9167,14 @@ no private GT/cache/weights opened for this check):
   GPU process.
 - At registration time no baseline inference had started; the supervisor
   itself is task-owned and the external-process boundary remains untouched.
+
+## Val-only baseline report boundary (2026-10-22 UTC)
+
+- Added `scripts/trackocd_v2/build_val_pred_baseline_report.py` as a separate
+  reporting path for the future `nearest`/`dpmeans` predicted-track results.
+  It requires both tables to be `COMPLETE`, checks the formal sharded source
+  and causal/evaluator contracts, and explicitly records that no method
+  selection, Test access, or Goal A/B/C acceptance occurred.
+- The existing sealed-Test `build_final_tables.py` is intentionally not used
+  for this stage. The Val-only report remains unexecuted until the cache and
+  both baselines are complete.
