@@ -108,7 +108,11 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
 
     cfg_options = [
         "data.test.ann_file=" + str(train_annotation.resolve()),
-        "data.test.img_prefix=" + str(frame_alias) + os.sep,
+        # COVTrack changes its working directory to the external vendor tree.
+        # A relative alias therefore resolves against the wrong root and can
+        # fail only after the model has started.  Resolve it at registration
+        # time while retaining the symlink target contract checked above.
+        "data.test.img_prefix=" + str(frame_alias.resolve()) + os.sep,
         "data.test.classes=" + str(train_classes.resolve()),
         "model.tracker.confused_features=true",
         "model.roi_head.prompt_path=" + str(PROMPT.resolve()),
