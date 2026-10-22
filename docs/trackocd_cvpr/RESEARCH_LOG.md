@@ -8338,3 +8338,32 @@ no private GT/cache/weights opened for this check):
   `tao_test_accessed=false`, `gt_or_semantic_arrays_read=false`, and
   `training_started=false`. This is input preparation only; no model has yet
   run on `shard_2`, and no OCD/MOT metric or formal result is claimed.
+
+## Bounded shard-2 part-00 completion and physical/evaluator-stream audit (2026-10-22 UTC)
+
+- `shard_2 part_00` completed on one owned A100 in namespace
+  `covtrack_train_dense_shards_v1_shard_2_part_00_tccoff12_20261022`. Its
+  receipt contains `run.json`, `done.json`, and `normalization.json` with
+  status `COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF`.
+- The run processed `26` fixed anonymous Train videos and `26,814` frame
+  tasks, producing `784,291` observations and `71,992` physical tracks with
+  `0` invalid boxes. Native hashes are `tao_track.json`
+  `9f5524060b16774066f7aa9ee3fcc6d039e23b12bca53bba5ec8858cc7cd8f25` and
+  `tao_bbox.json`
+  `e91b22427051e4ee8a91d81469bd387753da8d8ed13fd57ec5adc25933564d0f`.
+  Normalized-stream hashes are `physical_tracks.jsonl`
+  `4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6` and
+  evaluator-only `native_evaluator_rows.jsonl`
+  `81aba7703beff7582a6aa80f74503b7c349685506cdf6b8000b9cce90be75296`.
+- A fresh sequential audit found exact category-free physical fields,
+  `71,992/71,992` unique tracks and `784,291/784,291` observations, aligned
+  frame/box arrays, finite non-degenerate boxes, and zero bad-field,
+  wrong-video, duplicate-track, duplicate-frame, malformed-row, or invalid-box
+  counters. The evaluator-only sidecar has `784,291` rows with exact native
+  fields, finite scores in `[0,1]`, finite boxes, and no null `category_id`;
+  it is not admitted to the TrackOCD physical pipeline.
+- The receipt records `training_started=false`, `formal_metrics=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and
+  `gt_or_semantic_arrays_read=false`. This is a validated reusable frontend
+  cache subshard only; no OCD/MOT metric, model selection, frontend
+  qualification, or Goal A/B/C acceptance is claimed.
