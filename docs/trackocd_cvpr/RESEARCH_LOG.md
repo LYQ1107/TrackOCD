@@ -9150,3 +9150,7 @@ no private GT/cache/weights opened for this check):
   still incomplete.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/nas_native_cache_payload_numeric_audit_20261022.json`.
+  The reusable checker is
+  `scripts/trackocd_v2/audit_sharded_cache_payload.py`; a scripted replay on
+  the same 255 shards returned `PASS_PARTIAL_COMPLETED_SHARDS` with zero
+  errors, while correctly keeping `formal_cache_complete=false`.

@@ -2,6 +2,8 @@
   "schema_version": "trackocd.cvpr2.nas_native_cache_payload_numeric_audit.v1",
   "status": "PASS_PARTIAL_COMPLETED_SHARDS",
   "generated_utc": "2026-10-22T15:08:07+00:00",
+  "audit_script": "scripts/trackocd_v2/audit_sharded_cache_payload.py",
+  "scripted_replay": "PASS_PARTIAL_COMPLETED_SHARDS",
   "cache_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
   "frontend": "COVTrack-native",
   "split": "val_predicted",
