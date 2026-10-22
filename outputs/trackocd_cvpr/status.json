@@ -650,6 +650,32 @@
     "model_selection": false,
     "raw_features_uploaded_to_github": false
   },
+  "latest_predicted_train_rcm_interface_smoke": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_interface_smoke_v1/result.json",
+  "latest_predicted_train_rcm_interface_smoke_sha256": "150172f16038550c69aabd7238d3a9ee21e1e5c222a01a82a10e36b1274cd610",
+  "latest_predicted_train_rcm_interface_smoke_status": "PASS_FIXED_PREDICTED_TRAIN_RCM_INTERFACE_SMOKE_NO_TRAINING",
+  "latest_predicted_train_rcm_interface_smoke_summary": {
+    "video_id": 3,
+    "tracks": 16,
+    "frames": 8,
+    "observations": 128,
+    "events": 128,
+    "actions": {"NEW": 16, "EXISTING": 112},
+    "memory_versions": 128,
+    "opaque_route_rename_invariant": true,
+    "future_suffix_prefix_invariant": true,
+    "synthetic_numeric_anchor_not_semantic_label": true,
+    "optimizer_steps": 0,
+    "peak_rss_bytes": 441122816,
+    "wall_seconds": 8.300719340972137,
+    "formal_ocd_or_mot_metrics": false,
+    "training_started": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "model_selection": false,
+    "raw_features_uploaded_to_github": false
+  },
   "latest_full_predicted_dense_subshard_status": {
     "namespace": "covtrack_train_dense_shards_v1_shard_3_part_03_tccoff19_20261022",
     "part": "shard_3/part_03",
@@ -782,5 +808,5 @@
   "formal_pred_result": null,
   "formal_final_result": null,
   "old_physical_ID_invariance": "FAIL_REAL_METRIC_CHANGES",
-  "next": "All 407 fixed anonymous Train predicted streams, the category-free per-frame geometry audit, and the fixed single-video DINO feature-interface pilot are complete. The pilot is input preparation only and is not a formal v2 cache or OCD/MOT result. Next is the formal frontend/provenance gate and a storage-bounded role-aware R-C-M pilot only after that gate; no Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference."
+  "next": "All 407 fixed anonymous Train predicted streams, the category-free per-frame geometry audit, the fixed single-video DINO feature-interface pilot, and the zero-training R/C/M interface smoke are complete. These are input/plumbing evidence only, not a formal v2 cache or OCD/MOT result. Next is recovery of the formal frontend/provenance assets and gate; only after that may a storage-bounded role-aware R/C/M pilot be considered, with no Test access, Novel vocabulary, Val model selection, full feature expansion, or foreign-process interference."
 }

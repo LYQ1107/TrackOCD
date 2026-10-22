@@ -8368,6 +8368,38 @@ no private GT/cache/weights opened for this check):
   cache subshard only; no OCD/MOT metric, model selection, frontend
   qualification, or Goal A/B/C acceptance is claimed.
 
+## Predicted-Train R/C/M interface smoke (2026-10-22 UTC)
+
+- The existing joint R/C/M implementation was connected to the new
+  category-free predicted-Train DINO payload through a separately frozen,
+  zero-training harness:
+  `configs/trackocd_cvpr/predicted_train_rcm_interface_smoke_v1.json`.
+  It uses the first 16 fixed stream-order tracks that contain the first eight
+  frames of `video_id=3`, giving 128 observations and 128 causal events.
+  The first selected descriptor is only an anonymous numeric anchor for the
+  harness; it is not a Known label, semantic prototype, or model-selection
+  input.
+- The first invocation failed before writing a result because the harness
+  returned NumPy scores while the production C bridge requires a Torch tensor.
+  No result, checkpoint, feature, or external process was created or changed.
+  The minimal return-type repair was pushed as commit `80b47854`, and the same
+  frozen input was rerun.
+- The repaired smoke passed with result
+  `outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_interface_smoke_v1/result.json`,
+  SHA256 `150172f16038550c69aabd7238d3a9ee21e1e5c222a01a82a10e36b1274cd610`.
+  The real `RawPreservingEvidence` R path, candidate tensor bridge, and
+  versioned M lifecycle executed under a deterministic non-learned scorer:
+  actions were `NEW=16`, `EXISTING=112`, and `128` memory versions were
+  retained. Opaque route-ID renaming and future-suffix prefix invariance both
+  passed. CPU peak RSS was `441,122,816` bytes, wall time `8.301` seconds,
+  optimizer steps `0`, and training GPU-hours `0`.
+- This is plumbing evidence only. It did not train a scorer, use GT/roles/
+  vocabulary/Val/Test, select a model, qualify the frontend, or produce an
+  OCD/MOT/discovery metric. Full payload materialization was explicitly
+  disclosed as a property of this interface smoke; future features were not
+  passed to the model during the tested prefix sequence. Formal v2 admission
+  remains blocked on the missing canonical frontend/provenance assets.
+
 ## Fixed predicted-Train DINO feature-interface pilot (2026-10-22 UTC)
 
 - A frozen, bounded pilot was registered in
