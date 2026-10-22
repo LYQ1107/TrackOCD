@@ -8145,3 +8145,28 @@ no private GT/cache/weights opened for this check):
   The compressed artifact remains recoverable for any future independent
   audit; no data, weights, GT, Test asset, formal cache, or scientific result
   was deleted or promoted, and no OCD/MOT metric or Goal acceptance is claimed.
+
+## RAM-protected interruption and bounded shard-1 subdivision (2026-10-22 UTC)
+
+- The fresh owned `shard_1` COVTrack-native inference namespace
+  `covtrack_train_dense_shards_v1_shard_1_tccoff7_20261022` reached
+  `99009/120066` anonymous frame tasks at approximately `10.5` tasks/s. Exact
+  `MemAvailable` fell to about `31 GiB`, below the frozen 25% reserve for the
+  `125 GiB` host (about `31.25 GiB`); the agent-owned supervisor and its child
+  were stopped with SIGINT. No external process was touched.
+- The namespace has only its native log and launch receipt: no formatted
+  `tao_track.json`/`tao_bbox.json`, `run.json`, `done.json`, or normalized
+  `physical_tracks.jsonl` exists. The compact
+  `..._tccoff7_20261022/interrupt.json` records the interruption and explicitly
+  sets `partial_output_reusable=false`; the 99,009 observations are not a
+  valid cache and are not promoted. The launcher has no resume option.
+- Storage was rechecked before recovery planning: the personal filesystem had
+  about `14 GiB` free. The approved shard-1 video list was therefore rebuilt
+  into four smaller anonymous input namespaces using the existing
+  model-independent input builder, with no TAO GT/Val/Test annotation opened:
+  `part_00` = 26 videos/36,236 images, `part_01` = 26/40,742,
+  `part_02` = 25/23,498, and `part_03` = 25/19,590. All four input audits
+  report `PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT`; their combined input size is
+  about `26 MiB`. No inference has been launched for these parts yet.
+- This is a resource/provenance event, not a scientific result: no training,
+  formal OCD/MOT metric, model selection, or Goal A/B/C acceptance is claimed.
