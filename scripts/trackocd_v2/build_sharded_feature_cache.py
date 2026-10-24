@@ -219,11 +219,22 @@ def _pid_alive(pid: int) -> bool:
     return True
 
 
-def _recover_or_reject_markers(cache_root: Path) -> None:
+def _recover_or_reject_markers(
+    cache_root: Path,
+    shard_indices: Optional[Set[int]] = None,
+) -> None:
     shards = cache_root / "shards"
     if not shards.exists():
         return
     for shard_dir in sorted(shards.glob("shard-*")):
+        try:
+            shard_index = int(shard_dir.name.rsplit("-", 1)[1])
+        except (IndexError, ValueError):
+            if shard_indices is not None:
+                continue
+            shard_index = None
+        if shard_indices is not None and shard_index not in shard_indices:
+            continue
         launched = _marker(shard_dir, ".launched")
         done = _marker(shard_dir, ".done")
         if done.exists():
@@ -243,6 +254,52 @@ def _recover_or_reject_markers(cache_root: Path) -> None:
         if _pid_alive(pid):
             raise RuntimeError("shard is already owned by live PID %d: %s" % (pid, shard_dir))
         launched.unlink()
+
+
+def _normalize_shard_range(
+    shard_count: int,
+    shard_start: Optional[int],
+    shard_end: Optional[int],
+) -> Tuple[int, int, bool]:
+    """Return an exclusive shard range and whether this is a worker range."""
+
+    if shard_count < 1:
+        raise ValueError("shard_count must be positive")
+    if (shard_start is None) != (shard_end is None):
+        raise ValueError("--shard-start and --shard-end must be supplied together")
+    if shard_start is None:
+        return 0, shard_count, False
+    if not (0 <= shard_start < shard_end <= shard_count):
+        raise ValueError(
+            "shard range must satisfy 0 <= start < end <= shard_count (%d)" % shard_count
+        )
+    return shard_start, shard_end, True
+
+
+def _worker_manifest_path(cache_root: Path, shard_start: int, shard_end: int) -> Path:
+    return cache_root / (
+        "cache_manifest.worker-%06d-%06d.json" % (shard_start, shard_end)
+    )
+
+
+def _worker_failure_path(cache_root: Path, shard_start: Optional[int], shard_end: Optional[int]) -> Path:
+    if shard_start is None or shard_end is None:
+        return cache_root / "cache_failure.json"
+    return cache_root / ("cache_failure.worker-%06d-%06d.json" % (shard_start, shard_end))
+
+
+def _first_readable_model_repo(explicit: Optional[Path]) -> Path:
+    if explicit is not None:
+        return explicit.resolve()
+    for path in DEFAULT_HUBS:
+        try:
+            if path.is_dir():
+                return path.resolve()
+        except OSError:
+            # A default hub can be owned by another account.  An inaccessible
+            # candidate must not abort enumeration of later local candidates.
+            continue
+    return DEFAULT_HUBS[0].resolve()
 
 
 def _done_payload(shard_dir: Path, source_sha256: str) -> Optional[Dict[str, Any]]:
@@ -470,9 +527,10 @@ def _manifest_payload(
     model_repo: Path,
     model_weights: Optional[Path],
     model_weights_sha256: Optional[str],
+    shard_range: Optional[Tuple[int, int]] = None,
 ) -> Dict[str, Any]:
     completed_shards = sorted(completed_shards, key=lambda item: int(item["track_start"]))
-    return {
+    payload = {
         "schema_version": "trackocd.v2.formal_feature_cache.v1",
         "status": status,
         "generated_utc": utc_now(),
@@ -506,6 +564,14 @@ def _manifest_payload(
         "test_semantic_accessed": False,
         "test_evaluation_unlocked": split == "test",
     }
+    if shard_range is not None:
+        payload["shard_range"] = {
+            "start": int(shard_range[0]),
+            "end": int(shard_range[1]),
+            "end_is_exclusive": True,
+        }
+        payload["worker_pid"] = os.getpid()
+    return payload
 
 
 def build(
@@ -522,6 +588,8 @@ def build(
     audit_root: Optional[Path] = None,
     frames_root: Path = FRAMES_ROOT,
     model_weights: Optional[Path] = None,
+    shard_start: Optional[int] = None,
+    shard_end: Optional[int] = None,
 ) -> Dict[str, Any]:
     auth = _authorize(slug, split=split, audit_root=audit_root)
     if not input_path.is_file():
@@ -547,10 +615,18 @@ def build(
     total_tracks = _count_tracks(input_path)
     cache_root.mkdir(parents=True, exist_ok=True)
     (cache_root / "shards").mkdir(parents=True, exist_ok=True)
-    _recover_or_reject_markers(cache_root)
     completed: List[Dict[str, Any]] = []
     completed_starts: Set[int] = set()
     shard_count = (total_tracks + shard_tracks - 1) // shard_tracks
+    range_start, range_end, ranged_worker = _normalize_shard_range(
+        shard_count, shard_start, shard_end
+    )
+    assigned_shards = set(range(range_start, range_end))
+    _recover_or_reject_markers(
+        cache_root,
+        assigned_shards if ranged_worker else None,
+    )
+    completed_indices: Set[int] = set()
     for shard_index in range(shard_count):
         done = _done_payload(_shard_dir(cache_root, shard_index), input_sha256)
         expected_start = shard_index * shard_tracks
@@ -558,8 +634,16 @@ def build(
         if done is not None and int(done.get("track_start", -1)) == expected_start and int(done.get("track_count", -1)) == expected_count:
             completed.append(done)
             completed_starts.add(int(done["track_start"]))
+            completed_indices.add(shard_index)
 
-    if len(completed) == shard_count:
+    shard_range = (range_start, range_end) if ranged_worker else None
+    progress_path = (
+        _worker_manifest_path(cache_root, range_start, range_end)
+        if ranged_worker
+        else cache_root / "cache_manifest.json"
+    )
+
+    if len(completed) == shard_count and not ranged_worker:
         payload = _manifest_payload(
             cache_root=cache_root,
             auth=auth,
@@ -577,6 +661,27 @@ def build(
             model_weights_sha256=model_weights_sha256,
         )
         atomic_json(cache_root / "cache_manifest.json", payload)
+        return payload
+
+    if ranged_worker and all(index in completed_indices for index in assigned_shards):
+        payload = _manifest_payload(
+            cache_root=cache_root,
+            auth=auth,
+            input_path=input_path,
+            input_sha256=input_sha256,
+            shard_tracks=shard_tracks,
+            status="RANGE_COMPLETE",
+            total_tracks=total_tracks,
+            completed_shards=completed,
+            selected_gpu=gpu_index,
+            split=split,
+            frames_root=frames_root,
+            model_repo=model_repo,
+            model_weights=model_weights,
+            model_weights_sha256=model_weights_sha256,
+            shard_range=shard_range,
+        )
+        atomic_json(progress_path, payload)
         return payload
 
     snapshot = resource_snapshot()
@@ -601,10 +706,11 @@ def build(
             model_repo=model_repo,
             model_weights=model_weights,
             model_weights_sha256=model_weights_sha256,
+            shard_range=shard_range,
         )
         wait["resource_snapshot"] = snapshot
         wait["reason"] = "no idle GPU with >=25% RAM floor and per-worker margin"
-        atomic_json(cache_root / "cache_manifest.json", wait)
+        atomic_json(progress_path, wait)
         if preflight_only:
             return wait
         raise RuntimeError("FORMAL_CACHE_WAITING_RESOURCE: no eligible GPU")
@@ -626,10 +732,11 @@ def build(
         model_repo=model_repo,
         model_weights=model_weights,
         model_weights_sha256=model_weights_sha256,
+        shard_range=shard_range,
     )
     preflight["resource_snapshot"] = snapshot
     preflight["worker_ram_gib_estimate"] = WORKER_RAM_GIB
-    atomic_json(cache_root / "cache_manifest.json", preflight)
+    atomic_json(progress_path, preflight)
     if preflight_only:
         return preflight
 
@@ -698,7 +805,7 @@ def build(
             full_features,
         )
         completed.append(done)
-        atomic_json(cache_root / "cache_manifest.json", _manifest_payload(
+        progress = _manifest_payload(
             cache_root=cache_root,
             auth=auth,
             input_path=input_path,
@@ -713,13 +820,19 @@ def build(
             model_repo=model_repo,
             model_weights=model_weights,
             model_weights_sha256=model_weights_sha256,
-        ))
+            shard_range=shard_range,
+        )
+        if ranged_worker:
+            progress["status"] = "RANGE_RUNNING"
+        atomic_json(progress_path, progress)
 
     current_shard = -1
     current_items: List[Tuple[int, Dict[str, Any]]] = []
     for track_index, row in enumerate(_jsonl(input_path)):
         shard_index = track_index // shard_tracks
         track_start = shard_index * shard_tracks
+        if shard_index < range_start or shard_index >= range_end:
+            continue
         if track_start in completed_starts:
             continue
         if current_shard < 0:
@@ -737,17 +850,18 @@ def build(
         input_path=input_path,
         input_sha256=input_sha256,
         shard_tracks=shard_tracks,
-        status="COMPLETE",
+        status="RANGE_COMPLETE" if ranged_worker else "COMPLETE",
         total_tracks=total_tracks,
-            completed_shards=completed,
+        completed_shards=completed,
         selected_gpu=selected_gpu,
         split=split,
         frames_root=frames_root,
         model_repo=model_repo,
         model_weights=model_weights,
         model_weights_sha256=model_weights_sha256,
+        shard_range=shard_range,
     )
-    atomic_json(cache_root / "cache_manifest.json", payload)
+    atomic_json(progress_path, payload)
     return payload
 
 
@@ -764,12 +878,28 @@ def main() -> int:
     parser.add_argument("--batch", type=int, default=DEFAULT_BATCH)
     parser.add_argument("--shard-tracks", type=int, default=DEFAULT_SHARD_TRACKS)
     parser.add_argument("--gpu-index", type=int, default=None)
+    parser.add_argument(
+        "--shard-start",
+        type=int,
+        default=None,
+        help="inclusive shard index for a bounded worker range",
+    )
+    parser.add_argument(
+        "--shard-end",
+        type=int,
+        default=None,
+        help="exclusive shard index for a bounded worker range",
+    )
     parser.add_argument("--preflight-only", action="store_true")
     args = parser.parse_args()
     if args.batch < 1 or args.batch > 64:
         raise SystemExit("--batch must be between 1 and 64")
     if args.shard_tracks < 1:
         raise SystemExit("--shard-tracks must be positive")
+    if (args.shard_start is None) != (args.shard_end is None):
+        raise SystemExit("--shard-start and --shard-end must be supplied together")
+    if args.preflight_only and args.shard_start is not None:
+        raise SystemExit("--preflight-only cannot be combined with a bounded worker range")
     ensure_output_layout()
     try:
         auth = _authorize(args.frontend, split=args.split, audit_root=args.audit_root)
@@ -786,7 +916,7 @@ def main() -> int:
         )
         return 3
     input_path = (args.input or Path(auth["default_input"])).resolve()
-    model_repo = (args.model_repo or next((path for path in DEFAULT_HUBS if path.is_dir()), DEFAULT_HUBS[0])).resolve()
+    model_repo = _first_readable_model_repo(args.model_repo)
     model_weights = args.model_weights.resolve() if args.model_weights else None
     default_cache_root = FORMAL_ROOT / args.frontend / ("test" if args.split == "test" else "")
     cache_root = (args.output_root or default_cache_root).resolve()
@@ -804,6 +934,8 @@ def main() -> int:
             audit_root=args.audit_root,
             frames_root=args.frames_root,
             model_weights=model_weights,
+            shard_start=args.shard_start,
+            shard_end=args.shard_end,
         )
     except Exception as exc:
         failure = {
@@ -816,7 +948,13 @@ def main() -> int:
             "error": "%s: %s" % (type(exc).__name__, exc),
             "test_semantic_accessed": False,
         }
-        atomic_json(cache_root / "cache_failure.json", failure)
+        if args.shard_start is not None:
+            failure["shard_range"] = {
+                "start": args.shard_start,
+                "end": args.shard_end,
+                "end_is_exclusive": True,
+            }
+        atomic_json(_worker_failure_path(cache_root, args.shard_start, args.shard_end), failure)
         print(json.dumps(failure, indent=2, sort_keys=True))
         return 2 if "WAITING_RESOURCE" in str(exc) else 1
     print(json.dumps(result, indent=2, sort_keys=True))

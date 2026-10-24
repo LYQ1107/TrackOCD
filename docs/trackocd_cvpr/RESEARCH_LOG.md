@@ -9198,3 +9198,22 @@ no private GT/cache/weights opened for this check):
   not Goal A/B/C acceptance.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json`.
+
+## Formal Val cache bounded-worker continuation repair (2026-10-24 UTC)
+
+- The task-owned DINOv2 feature worker was stopped at a completed shard
+  boundary after reaching `394/723` shards (`196,608` tracks and `739,486`
+  observations). No incomplete shard was admitted, no TAO Test content was
+  opened, and no external process was touched; the NAS continuation root and
+  the original local/NAS roots remain preserved.
+- The single-worker throughput was too low for a safe timely continuation, so
+  `build_sharded_feature_cache.py` now supports explicit non-overlapping
+  inclusive/exclusive shard ranges. Range workers inspect only their own
+  active markers and write range-scoped progress/failure manifests; a later
+  unbounded preflight remains the sole writer of the formal global manifest.
+  The default model-hub selection also skips inaccessible account-owned
+  candidates instead of failing during directory enumeration.
+- Targeted tests passed (`8 passed`), and the complete v2 test suite passed
+  (`55 passed`). This is a scheduling/recovery result only: the formal cache
+  is still incomplete and no OCD/MOT metric or Goal A/B/C acceptance is
+  claimed.
