@@ -10013,3 +10013,40 @@ no private GT/cache/weights opened for this check):
   audit as the authoritative frontend diagnosis and keeps formal training
   closed until a qualified dense frontend or a stronger lawful alternative
   is established.
+
+## Policy-subset foreground-mass frontend transfer smoke (2026-10-26 UTC)
+
+- The frozen candidate configuration
+  `configs/trackocd_cvpr/policy_predicted_frontend_fg_mass_smoke_v1.json`
+  selected the predeclared ten `policy_train_pseudo` video IDs and the
+  registered image plan. It used the shadow COVTrack bbox-head source with
+  SHA256 `21a4a72c66a556fd1f9c394e2ff54ee3fcd701ae59fbecf29cb48a96e5b5de70`,
+  foreground-mass scoring, one fresh GPU, and TCC disabled. The generated
+  input audit passed for `10,421` anonymous Train frames; it opened no Train
+  annotation, category field, role/vocabulary field, Val/Test label, or GT
+  array.
+- The read-only COVTrack-native frontend smoke completed on GPU2 using the
+  frozen public checkpoint and the compatible recovered runtime. It produced
+  `41,493` physical tracks and `517,039` observations with finite,
+  non-degenerate boxes. The run and normalization receipts record
+  `training_started=false`, `tao_val_accessed=false`, and
+  `tao_test_accessed=false`; no optimizer or formal metric was run.
+- A paired category-free IoU-0.5 geometry audit streamed all 13 existing
+  baseline physical substreams and the new candidate, retaining only the same
+  ten fixed videos and never persisting a prediction-to-GT mapping. Baseline
+  had `25,258` tracks/`319,521` observations, `473/1268` matched observations,
+  precision `0.0491582`, recall `0.3730284`, and score mean `0.00364675`.
+  Foreground-mass had `41,493` tracks/`517,039` observations, `712/1268`
+  matched observations, precision `0.0460335`, recall `0.5615142`, and score
+  mean `0.9966339`. Thus recall increased by `0.1884858` while precision
+  decreased by `0.0031247`; all candidate scores were above `0.5`.
+- The candidate remains a mechanism result, not a qualified frontend:
+  reliable temporal pairs stayed at `0` for both baseline and candidate.
+  The increased geometry recall is useful evidence that the score-contract
+  repair changes retained evidence, but it does not justify predicted-track
+  training, model selection, an OCD/MOT claim, or Goal A/B/C acceptance.
+- Durable receipt and comparator:
+  `outputs/trackocd_cvpr/cvpr2/policy_predicted_frontend_fg_mass_smoke_v1/geometry_comparison.json`
+  and `scripts/trackocd_cvpr/audit_score_contract_geometry_subset.py`. Large
+  native and normalized payloads remain local-only; no raw data, weights, or
+  evaluator sidecar was uploaded.

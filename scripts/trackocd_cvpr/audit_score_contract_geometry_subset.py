@@ -77,6 +77,8 @@ def _read_stream(
     expected_videos: set[int],
     gt_by_frame: dict[int, dict[int, list[Any]]],
     gt_track_counts: dict[int, dict[str, int]],
+    *,
+    require_complete: bool = True,
 ) -> dict[str, Any]:
     bases = _stream_frame_bases(path)
     state = _new_stream_state()
@@ -135,7 +137,7 @@ def _read_stream(
             selected_rows += 1
             selected_observations += len(frame_ids)
 
-    if state["videos"] != expected_videos:
+    if require_complete and state["videos"] != expected_videos:
         raise ValueError(
             f"selected stream videos {sorted(state['videos'])} != expected {sorted(expected_videos)}"
         )
@@ -157,7 +159,7 @@ def _read_stream(
             "path": str(path.resolve()),
             "bytes": path.stat().st_size,
             "sha256": _sha256(path),
-            "selected_videos": sorted(expected_videos),
+            "selected_videos": sorted(state["videos"]),
         },
         "selected_rows": selected_rows,
         "selected_observations": selected_observations,
@@ -166,11 +168,82 @@ def _read_stream(
     }
 
 
+def _aggregate_geometry(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    totals: dict[str, int] = {}
+    for row in rows:
+        for key, value in row.items():
+            if isinstance(value, int):
+                totals[key] = totals.get(key, 0) + value
+    matched = totals.get("per_image_matched_observations", 0)
+    predicted_on_gt = totals.get("predicted_observations_on_gt_images", 0)
+    gt_observations = totals.get("gt_observations", 0)
+    gt_tracks = totals.get("gt_tracks", 0)
+    totals["observation_precision_on_annotated_images"] = matched / max(predicted_on_gt, 1)
+    totals["observation_recall_against_gt"] = matched / max(gt_observations, 1)
+    totals["reliable_gt_track_recall"] = totals.get("reliable_gt_tracks", 0) / max(gt_tracks, 1)
+    return totals
+
+
+def _aggregate_score(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    count = sum(int(row["count"]) for row in rows)
+    finite = sum(int(row["finite"]) for row in rows)
+    return {
+        "count": count,
+        "finite": finite,
+        "nonfinite": count - finite,
+        "min": min((row["min"] for row in rows if row["min"] is not None), default=None),
+        "mean": (
+            sum(float(row["mean"]) * int(row["finite"]) for row in rows if row["mean"] is not None)
+            / finite
+            if finite
+            else None
+        ),
+        "max": max((row["max"] for row in rows if row["max"] is not None), default=None),
+        "under_0.05": sum(int(row["under_0.05"]) for row in rows),
+        "over_0.5": sum(int(row["over_0.5"]) for row in rows),
+    }
+
+
+def _read_streams(
+    paths: list[Path],
+    expected_videos: set[int],
+    gt_by_frame: dict[int, dict[int, list[Any]]],
+    gt_track_counts: dict[int, dict[str, int]],
+) -> dict[str, Any]:
+    if not paths:
+        raise ValueError("at least one physical stream is required")
+    parts = [
+        _read_stream(path, expected_videos, gt_by_frame, gt_track_counts, require_complete=False)
+        for path in paths
+    ]
+    observed: set[int] = set()
+    for part in parts:
+        part_videos = set(part["stream"]["selected_videos"])
+        overlap = observed & part_videos
+        if overlap:
+            raise ValueError(f"video IDs appear in multiple input streams: {sorted(overlap)}")
+        observed.update(part_videos)
+    if observed != expected_videos:
+        raise ValueError(
+            f"selected stream videos {sorted(observed)} != expected {sorted(expected_videos)}"
+        )
+    return {
+        "stream": {
+            "paths": [part["stream"] for part in parts],
+            "selected_videos": sorted(observed),
+        },
+        "selected_rows": sum(int(part["selected_rows"]) for part in parts),
+        "selected_observations": sum(int(part["selected_observations"]) for part in parts),
+        "score": _aggregate_score([part["score"] for part in parts]),
+        "geometry": _aggregate_geometry([part["geometry"] for part in parts]),
+    }
+
+
 def audit(
     *,
     geometry_gt: Path,
-    baseline_stream: Path,
-    candidate_stream: Path,
+    baseline_streams: list[Path],
+    candidate_streams: list[Path],
     baseline_receipt: Path,
     candidate_receipt: Path,
     video_ids: list[int],
@@ -181,8 +254,8 @@ def audit(
     if not expected_videos or len(expected_videos) != len(video_ids):
         raise ValueError("video IDs must be a non-empty unique set")
     gt_by_frame, gt_track_counts = _load_geometry_gt(geometry_gt)
-    baseline = _read_stream(baseline_stream, expected_videos, gt_by_frame, gt_track_counts)
-    candidate = _read_stream(candidate_stream, expected_videos, gt_by_frame, gt_track_counts)
+    baseline = _read_streams(baseline_streams, expected_videos, gt_by_frame, gt_track_counts)
+    candidate = _read_streams(candidate_streams, expected_videos, gt_by_frame, gt_track_counts)
     baseline_receipt_data = json.loads(baseline_receipt.read_text(encoding="utf-8"))
     candidate_receipt_data = json.loads(candidate_receipt.read_text(encoding="utf-8"))
     result = {
@@ -199,6 +272,8 @@ def audit(
         "inputs": {
             "geometry_only_gt_index": str(geometry_gt.resolve()),
             "geometry_only_gt_index_sha256": _sha256(geometry_gt),
+            "baseline_streams": [str(path.resolve()) for path in baseline_streams],
+            "candidate_streams": [str(path.resolve()) for path in candidate_streams],
             "baseline_receipt": str(baseline_receipt.resolve()),
             "candidate_receipt": str(candidate_receipt.resolve()),
         },
@@ -247,8 +322,8 @@ def audit(
             "prediction_to_gt_mapping_persisted": False,
         },
         "interpretation": (
-            "Paired category-free geometry evidence on the same five anonymous Train videos. "
-            "The baseline is streamed from the complete shard-0 file and filtered in memory; "
+            "Paired category-free geometry evidence on the same fixed anonymous Train videos. "
+            "All input streams are read sequentially and filtered in memory; "
             "no filtered prediction file or GT mapping is persisted. This is mechanism evidence, "
             "not an official OCD/MOT score, frontend qualification, or Goal A/B/C acceptance."
         ),
@@ -261,8 +336,8 @@ def audit(
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--geometry-gt", type=Path, default=DEFAULT_GT)
-    parser.add_argument("--baseline-stream", type=Path, required=True)
-    parser.add_argument("--candidate-stream", type=Path, required=True)
+    parser.add_argument("--baseline-stream", type=Path, action="append", required=True)
+    parser.add_argument("--candidate-stream", type=Path, action="append", required=True)
     parser.add_argument("--baseline-receipt", type=Path, required=True)
     parser.add_argument("--candidate-receipt", type=Path, required=True)
     parser.add_argument("--video-id", type=int, action="append", required=True)
@@ -271,8 +346,8 @@ def main() -> int:
     args = parser.parse_args()
     result = audit(
         geometry_gt=args.geometry_gt.resolve(),
-        baseline_stream=args.baseline_stream.resolve(),
-        candidate_stream=args.candidate_stream.resolve(),
+        baseline_streams=[path.resolve() for path in args.baseline_stream],
+        candidate_streams=[path.resolve() for path in args.candidate_stream],
         baseline_receipt=args.baseline_receipt.resolve(),
         candidate_receipt=args.candidate_receipt.resolve(),
         video_ids=args.video_id,
