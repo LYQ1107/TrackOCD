@@ -138,6 +138,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
     dense_masa_path, dense_masa = load_json(
         repo, "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json"
     )
+    hybrid_path, hybrid = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
+    )
     mechanism_path, mechanism = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json"
     )
@@ -173,6 +177,12 @@ def build_audit(repo: Path) -> dict[str, Any]:
     covtrack_recheck_persistent = covtrack_recheck_metrics.get(
         "persistent_observability", {}
     )
+    hybrid_metrics = {
+        str(item.get("name")): item
+        for item in hybrid.get("metrics", [])
+        if isinstance(item, dict) and item.get("name")
+    }
+    hybrid_union = hybrid_metrics.get("covtrack_first_union_dedup", {})
 
     requirements: list[dict[str, Any]] = [
         {
@@ -296,6 +306,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json", reported_status=runtime.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json", reported_status=release.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json", reported_status=admission.get("status")),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
+                    reported_status=hybrid.get("status"),
+                ),
             ],
             "facts": {
                 "covtrack_reliable_temporal_pairs": geometry_totals.get("reliable_temporal_pairs"),
@@ -334,6 +349,13 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "historical_complete_cache_reachable": nested(
                     local_cache, "binding_checks", "historical_cache_reachable"
                 ),
+                "hybrid_geometry_smoke_status": hybrid.get("status"),
+                "hybrid_geometry_smoke_precision": hybrid_union.get("observation_precision"),
+                "hybrid_geometry_smoke_recall": hybrid_union.get("observation_recall"),
+                "hybrid_geometry_smoke_conditional_switch_rate": nested(
+                    hybrid_union, "temporal", "conditional_switch_rate"
+                ),
+                "hybrid_geometry_smoke_is_frontend_qualification": False,
             },
             "open_gate": "The adjacent-frame MASA smoke confirms a frozen current-image causal path, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
         },
@@ -575,6 +597,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
                 reported_status=dense_masa.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
+                reported_status=hybrid.get("status"),
             ),
         ],
     }

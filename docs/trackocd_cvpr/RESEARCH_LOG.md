@@ -10745,3 +10745,26 @@ no private GT/cache/weights opened for this check):
 - No frames, annotations, weights, formal caches, TrackOCD outputs, or external
   processes were touched. The two file hashes and recovery location are in
   `outputs/trackocd_cvpr/cvpr5/storage_reclaim_example_output_20261026.json`.
+
+## Fixed MASA/COVTrack hybrid geometry smoke (2026-10-26 UTC)
+
+- A category-free, in-memory union diagnostic was run on the already sealed
+  same-image Train smoke: 32 fixed images from 8 videos. It reused the sealed
+  MASA prediction and the existing anonymous COVTrack-native stream; it did not
+  perform new inference, training, score search, model selection, or write a
+  prediction-to-GT mapping.
+- The registered rule was `covtrack_first_union_dedup`: retain every COVTrack
+  observation, then append a MASA observation only when its frame IoU with all
+  retained observations is below `0.5`. The geometry-only evaluator saw 91 GT
+  observations. The compact receipt is
+  `outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json`.
+- The fixed comparison was: COVTrack-native `966` predicted observations,
+  precision `0.050725`, recall `0.538462`, conditional switch rate `0.090909`;
+  MASA-native `1310`, precision `0.050382`, recall `0.725275`, switch rate
+  `0.157895`; hybrid `1845`, precision `0.039566`, recall `0.802198`, switch
+  rate `0.292683`.
+- The hybrid therefore raises geometric coverage but worsens precision and
+  temporal identity continuity. It is a negative coverage-purity-persistence
+  trade-off, not a lawful strong frontend, not formal OCD/MOT evidence, and
+  not a reason to start predicted-track training. The CVPR acceptance gate
+  remains open.

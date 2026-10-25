@@ -50,6 +50,13 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
         == "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS"
     )
     assert rows["lawful_strong_frontend"]["facts"]["formal_v2_missing_or_invalid_asset_count"] > 0
+    assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_status"] == (
+        "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION"
+    )
+    assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_precision"] == 0.03956639566395664
+    assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_recall"] == 0.8021978021978022
+    assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_conditional_switch_rate"] == 0.2926829268292683
+    assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_is_frontend_qualification"] is False
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["predicted_category_free_feature_pilot_videos"] == 2
     assert rows["predicted_track_training"]["facts"]["predicted_feature_video0275_status"] == (

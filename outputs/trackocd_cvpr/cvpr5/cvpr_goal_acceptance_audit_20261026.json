@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T23:50:06.768796+00:00",
+  "generated_utc": "2026-10-25T23:53:34.433189+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "e835b6461af1bc4a1715c0dcdb5aa8260a3d987f",
-    "clean_before_audit": true
+    "head": "87d57dabeb6c58efbca61d2be7aead404c5e62e0",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -228,6 +228,13 @@
           "bytes": 14729,
           "sha256": "a175ed193ca6a3e202d47b7cfb6d2e0a98b6707b6ad0eb6ec7901f66a6df0255",
           "reported_status": "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 4308,
+          "sha256": "cd5f55e818da2a7b7869d0b3706a110e891b47071d23314089e79ddfce866cdd",
+          "reported_status": "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION"
         }
       ],
       "facts": {
@@ -250,7 +257,12 @@
         "local_cache_completed_shards": 384,
         "local_cache_missing_shards": 339,
         "local_cache_formal_complete": false,
-        "historical_complete_cache_reachable": false
+        "historical_complete_cache_reachable": false,
+        "hybrid_geometry_smoke_status": "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION",
+        "hybrid_geometry_smoke_precision": 0.03956639566395664,
+        "hybrid_geometry_smoke_recall": 0.8021978021978022,
+        "hybrid_geometry_smoke_conditional_switch_rate": 0.2926829268292683,
+        "hybrid_geometry_smoke_is_frontend_qualification": false
       },
       "open_gate": "The adjacent-frame MASA smoke confirms a frozen current-image causal path, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable."
     },
@@ -580,6 +592,13 @@
       "bytes": 16637,
       "sha256": "04bad971a9fc5ddb5790f29edbe0bb3179701214ef89db7461855735e875bf0f",
       "reported_status": "PASS_BOUNDED_MASA_DENSE_FRAME_ONLINE_TRAIN_SMOKE_NO_GT"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
+      "exists": true,
+      "bytes": 4308,
+      "sha256": "cd5f55e818da2a7b7869d0b3706a110e891b47071d23314089e79ddfce866cdd",
+      "reported_status": "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION"
     }
   ]
 }

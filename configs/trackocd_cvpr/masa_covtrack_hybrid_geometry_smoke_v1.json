@@ -1,0 +1,36 @@
+{
+  "schema_version": "trackocd.cvpr.masa-covtrack-hybrid-geometry-smoke.v1",
+  "status": "FROZEN_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION",
+  "purpose": "Fixed COVTrack-first/MASA-union diagnostic on the already sealed same-image Train smoke; no new inference or training.",
+  "base_comparison_config": "configs/trackocd_cvpr/masa_covtrack_multi_train_geometry_smoke_v1.json",
+  "base_comparison_config_sha256": "524fcd7738a8c01f420e93d8de40e3715929a0cf00ad1d727f60cc2b38e35153",
+  "sealed_masa_prediction": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_multi_train_geometry_smoke_v1/run/sealed_prediction.npz",
+  "sealed_masa_prediction_sha256": "4f500e6bfca312ce414b9017b468249c1ffbe0a35e9344de7dfd8f2a6c9e1a9b",
+  "covtrack_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+  "covtrack_stream_sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+  "fusion_rule": {
+    "name": "covtrack_first_union_dedup",
+    "iou_threshold": 0.5,
+    "algorithm": "Keep every COVTrack physical observation; append a MASA track observation only when its frame IoU with every retained observation is below 0.5.",
+    "source_preference": "COVTrack is retained first only to make the rule deterministic; no GT, score, category, or outcome is used.",
+    "score_threshold_search": false,
+    "model_selection": false
+  },
+  "inputs": {
+    "same_fixed_32_train_images": true,
+    "geometry_only_gt_index": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899"
+  },
+  "boundaries": {
+    "new_inference": false,
+    "training_started": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "official_metrics": false,
+    "frontend_qualification": false
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json"
+}
