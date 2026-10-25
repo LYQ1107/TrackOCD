@@ -10292,3 +10292,36 @@ no private GT/cache/weights opened for this check):
   model run. The compact receipt is
   `outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/capacity_audit.json`;
   it reads only anonymous physical streams and no GT/semantic/Val/Test fields.
+
+## Independent full-public-vocabulary Train-development transfer (2026-10-26 UTC)
+
+- Before execution, the same full-public-vocabulary intervention was frozen
+  for the independent eight-video `development_pseudo` prefix in
+  `configs/trackocd_cvpr/covtrack_public_vocab_development_transfer_v1.json`.
+  The fixed IDs were `0,3,11,38,146,220,221,239`; the only frontend change
+  was `model.roi_head.only_validation_categories=False`, expanding the public
+  COVTrack prompt scope from the registered 296-class validation subset to the
+  public 1203-class bank. The checkpoint, prompt, detector/tracker settings,
+  score threshold, frame plan, TCC-off anonymous output contract, and source
+  images were unchanged. No TAO label field, Novel vocabulary, Val/Test data,
+  or outcome-based selection was used.
+- The inference-only run completed on GPU 2 for all `8,668` anonymous Train
+  frames, producing `30,821` physical tracks and `313,252` observations with
+  zero invalid boxes. Its receipts record `training_started=false`,
+  `tao_val_accessed=false`, `tao_test_accessed=false`, and no formal metrics.
+- The paired category-free IoU-0.5 geometry audit on the same fixed eight
+  videos found baseline `357/893` matched observations, precision
+  `0.0421090`, and recall `0.3997760`; full public vocabulary found `323/893`,
+  precision `0.0346902`, and recall `0.3617021`. The candidate emitted `23,041`
+  more observations and `2,272` more tracks, but precision fell by
+  `0.0074188` and recall by `0.0380739`; reliable temporal pairs remained `0`
+  for both streams. Candidate score mean was `0.000958078` versus baseline
+  `0.00399756`, with no score above `0.5` in either stream.
+- This independent transfer rejects the public-vocabulary expansion as a
+  coverage repair under the frozen protocol. It is negative mechanism
+  evidence only: no full-cache rerun, predicted-track training, OCD/MOT
+  reporting, model selection, frontend promotion, or Goal A/B/C acceptance is
+  authorized. The compact receipts are
+  `outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_development_transfer_v1/run.json`,
+  `normalization.json`, and `comparison.json`; the approximately 122 MB
+  normalized stream and native payload remain local-only.
