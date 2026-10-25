@@ -29,12 +29,13 @@ from src.trackocd_v2.io import atomic_json, sha256_file  # noqa: E402
 from scripts.trackocd_v2.build_common_features import crop_box  # noqa: E402
 
 
-CONFIG = Path(
-    os.environ.get(
-        "TRACKOCD_FEATURE_PILOT_CONFIG",
-        str(ROOT / "configs/trackocd_cvpr/predicted_train_feature_pilot_v1.json"),
-    )
+_CONFIG_ENV = os.environ.get(
+    "TRACKOCD_FEATURE_PILOT_CONFIG",
+    str(ROOT / "configs/trackocd_cvpr/predicted_train_feature_pilot_v1.json"),
 )
+CONFIG = Path(_CONFIG_ENV)
+if not CONFIG.is_absolute():
+    CONFIG = ROOT / CONFIG
 PREFIXES = (1, 2, 4, 8, 16)
 FORBIDDEN_TOP_LEVEL_FIELDS = {
     "category_id",
