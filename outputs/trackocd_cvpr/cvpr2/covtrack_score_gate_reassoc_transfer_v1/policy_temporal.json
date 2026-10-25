@@ -1,0 +1,458 @@
+{
+  "baseline": {
+    "aggregate": {
+      "adjacent_pair_match_rate": 0.26112026359143325,
+      "observation_precision_on_annotated_images": 0.04915817917272916,
+      "observation_recall_against_annotated_gt": 0.37302839116719244,
+      "pred_id_switch_rate_given_adjacent_pair_matches": 0.138801261829653,
+      "same_pred_id_rate_given_adjacent_pair_matches": 0.861198738170347
+    },
+    "continuity": {
+      "adjacent_pair_outcomes_by_source_gap_top20": [
+        {
+          "both_matched": 241,
+          "gap": 30,
+          "missing_match": 582,
+          "pred_id_switch": 30,
+          "same_pred_id": 211,
+          "total": 823
+        },
+        {
+          "both_matched": 34,
+          "gap": 25,
+          "missing_match": 153,
+          "pred_id_switch": 10,
+          "same_pred_id": 24,
+          "total": 187
+        },
+        {
+          "both_matched": 39,
+          "gap": 26,
+          "missing_match": 116,
+          "pred_id_switch": 2,
+          "same_pred_id": 37,
+          "total": 155
+        },
+        {
+          "gap": 90,
+          "missing_match": 14,
+          "total": 14
+        },
+        {
+          "both_matched": 1,
+          "gap": 60,
+          "missing_match": 9,
+          "pred_id_switch": 1,
+          "total": 10
+        },
+        {
+          "both_matched": 1,
+          "gap": 50,
+          "missing_match": 4,
+          "same_pred_id": 1,
+          "total": 5
+        },
+        {
+          "both_matched": 1,
+          "gap": 210,
+          "missing_match": 3,
+          "pred_id_switch": 1,
+          "total": 4
+        },
+        {
+          "gap": 150,
+          "missing_match": 4,
+          "total": 4
+        },
+        {
+          "gap": 120,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "gap": 270,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 180,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 240,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 100,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 175,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 75,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 125,
+          "missing_match": 1,
+          "total": 1
+        }
+      ],
+      "adjacent_pred_id_switch_pairs": 44,
+      "adjacent_same_pred_id_pairs": 273,
+      "gt_adjacent_annotation_pairs": 1214,
+      "gt_adjacent_pairs_with_both_stream_matches": 317,
+      "gt_adjacent_pairs_with_source_gap_gt_one": 1214,
+      "gt_adjacent_pairs_with_source_gap_one": 0,
+      "gt_annotation_source_frame_gap_histogram_top20": [
+        {
+          "count": 823,
+          "gap": 30
+        },
+        {
+          "count": 187,
+          "gap": 25
+        },
+        {
+          "count": 155,
+          "gap": 26
+        },
+        {
+          "count": 14,
+          "gap": 90
+        },
+        {
+          "count": 10,
+          "gap": 60
+        },
+        {
+          "count": 5,
+          "gap": 50
+        },
+        {
+          "count": 4,
+          "gap": 210
+        },
+        {
+          "count": 4,
+          "gap": 150
+        },
+        {
+          "count": 3,
+          "gap": 120
+        },
+        {
+          "count": 2,
+          "gap": 270
+        },
+        {
+          "count": 2,
+          "gap": 180
+        },
+        {
+          "count": 1,
+          "gap": 240
+        },
+        {
+          "count": 1,
+          "gap": 100
+        },
+        {
+          "count": 1,
+          "gap": 175
+        },
+        {
+          "count": 1,
+          "gap": 75
+        },
+        {
+          "count": 1,
+          "gap": 125
+        }
+      ],
+      "gt_tracks_with_adjacent_match": 31,
+      "gt_tracks_with_adjacent_pred_id_switch": 17,
+      "gt_tracks_with_adjacent_same_pred_id": 28
+    },
+    "gt_observations": 1268,
+    "gt_tracks": 54,
+    "matched_observations": 473,
+    "predicted_observations_on_gt_images": 9622,
+    "stream_observations": 319521,
+    "stream_rows": 25258,
+    "streams": [
+      {
+        "bytes": 55796416,
+        "min_native_age": 1,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/policy_native_subset.jsonl",
+        "selected_videos": [
+          72,
+          275,
+          349,
+          371,
+          1524,
+          1831,
+          2330,
+          2686,
+          2977,
+          2987
+        ],
+        "sha256": "2d46dc9f538595227fbe08ea4a666d809fccd6679a7940a95781f13d427d8583"
+      }
+    ]
+  },
+  "boundary": {
+    "feature_arrays_read": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "candidate": {
+    "aggregate": {
+      "adjacent_pair_match_rate": 0.06177924217462932,
+      "observation_precision_on_annotated_images": 0.2148936170212766,
+      "observation_recall_against_annotated_gt": 0.07965299684542587,
+      "pred_id_switch_rate_given_adjacent_pair_matches": 0.04,
+      "same_pred_id_rate_given_adjacent_pair_matches": 0.96
+    },
+    "continuity": {
+      "adjacent_pair_outcomes_by_source_gap_top20": [
+        {
+          "both_matched": 71,
+          "gap": 30,
+          "missing_match": 752,
+          "pred_id_switch": 2,
+          "same_pred_id": 69,
+          "total": 823
+        },
+        {
+          "both_matched": 4,
+          "gap": 25,
+          "missing_match": 183,
+          "pred_id_switch": 1,
+          "same_pred_id": 3,
+          "total": 187
+        },
+        {
+          "gap": 26,
+          "missing_match": 155,
+          "total": 155
+        },
+        {
+          "gap": 90,
+          "missing_match": 14,
+          "total": 14
+        },
+        {
+          "gap": 60,
+          "missing_match": 10,
+          "total": 10
+        },
+        {
+          "gap": 50,
+          "missing_match": 5,
+          "total": 5
+        },
+        {
+          "gap": 210,
+          "missing_match": 4,
+          "total": 4
+        },
+        {
+          "gap": 150,
+          "missing_match": 4,
+          "total": 4
+        },
+        {
+          "gap": 120,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "gap": 270,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 180,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 240,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 100,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 175,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 75,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 125,
+          "missing_match": 1,
+          "total": 1
+        }
+      ],
+      "adjacent_pred_id_switch_pairs": 3,
+      "adjacent_same_pred_id_pairs": 72,
+      "gt_adjacent_annotation_pairs": 1214,
+      "gt_adjacent_pairs_with_both_stream_matches": 75,
+      "gt_adjacent_pairs_with_source_gap_gt_one": 1214,
+      "gt_adjacent_pairs_with_source_gap_one": 0,
+      "gt_annotation_source_frame_gap_histogram_top20": [
+        {
+          "count": 823,
+          "gap": 30
+        },
+        {
+          "count": 187,
+          "gap": 25
+        },
+        {
+          "count": 155,
+          "gap": 26
+        },
+        {
+          "count": 14,
+          "gap": 90
+        },
+        {
+          "count": 10,
+          "gap": 60
+        },
+        {
+          "count": 5,
+          "gap": 50
+        },
+        {
+          "count": 4,
+          "gap": 210
+        },
+        {
+          "count": 4,
+          "gap": 150
+        },
+        {
+          "count": 3,
+          "gap": 120
+        },
+        {
+          "count": 2,
+          "gap": 270
+        },
+        {
+          "count": 2,
+          "gap": 180
+        },
+        {
+          "count": 1,
+          "gap": 240
+        },
+        {
+          "count": 1,
+          "gap": 100
+        },
+        {
+          "count": 1,
+          "gap": 175
+        },
+        {
+          "count": 1,
+          "gap": 75
+        },
+        {
+          "count": 1,
+          "gap": 125
+        }
+      ],
+      "gt_tracks_with_adjacent_match": 9,
+      "gt_tracks_with_adjacent_pred_id_switch": 2,
+      "gt_tracks_with_adjacent_same_pred_id": 9
+    },
+    "gt_observations": 1268,
+    "gt_tracks": 54,
+    "matched_observations": 101,
+    "predicted_observations_on_gt_images": 470,
+    "stream_observations": 13997,
+    "stream_rows": 223,
+    "streams": [
+      {
+        "bytes": 2260678,
+        "min_native_age": 1,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/policy_score005_reassoc.jsonl",
+        "selected_videos": [
+          72,
+          275,
+          349,
+          371,
+          1524,
+          1831,
+          2330,
+          2686,
+          2977,
+          2987
+        ],
+        "sha256": "17d84d33700272a1d3dec273e771474b3155c436220c628d6a2df55d4b5f6edd"
+      }
+    ]
+  },
+  "deltas_candidate_minus_baseline": {
+    "adjacent_pair_match_rate": -0.19934102141680393,
+    "matched_observations": -372,
+    "observation_recall": -0.29337539432176657,
+    "same_id_rate_given_matches": 0.09880126182965299,
+    "switch_rate_given_matches": -0.09880126182965299
+  },
+  "generated_utc": "2026-10-25T22:33:45.437952+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899"
+  },
+  "interpretation": "This paired category-free continuity diagnostic tests whether a score-contract candidate preserves identities across adjacent sealed GT observations. It is not an official MOT/OCD metric or frontend qualification.",
+  "schema_version": "trackocd.cvpr.policy-frontend-temporal-continuity.v1",
+  "scope": {
+    "baseline_min_native_age": 1,
+    "candidate_min_native_age": 1,
+    "frontend_qualification": false,
+    "iou_threshold": 0.5,
+    "mapping_persisted": false,
+    "model_selection": false,
+    "official_trackeval_or_ocd_metrics": false,
+    "pair_definition": "adjacent observations in each sealed GT track annotation order",
+    "videos": [
+      72,
+      275,
+      349,
+      371,
+      1524,
+      1831,
+      2330,
+      2686,
+      2977,
+      2987
+    ]
+  },
+  "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+}

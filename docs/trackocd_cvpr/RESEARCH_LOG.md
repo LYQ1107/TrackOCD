@@ -10394,3 +10394,39 @@ no private GT/cache/weights opened for this check):
   evidence and local partial-cache audit remain valid recovery evidence, but no
   new formal dpmeans, OCD/MOT metric, or final report is claimed until the
   authorized complete NAS manifest is visible again.
+
+## Fixed score-gate plus causal reassociation transfer (2026-10-26 UTC)
+
+- A finite category-free composition was frozen in
+  `configs/trackocd_cvpr/covtrack_score_gate_reassoc_transfer_v1.json` and
+  implemented in
+  `scripts/trackocd_cvpr/run_score_gate_reassoc_transfer.py`. It reused the
+  registered native-quality cut `quality >= 0.005`, then applied the existing
+  one-frame, IoU-0.5, one-to-one causal physical reassociation. The source was
+  the completed anonymous 407-video cache; only the already frozen eight
+  `development_pseudo` and ten `policy_train_pseudo` video IDs were read.
+- The run receipt is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/run.json`
+  (SHA256 `73c5a0d7be53be943d83949ac4ec8bfec46f78e9b701f9592e5d0e31d480af76`).
+  It used one CPU process for `50.10` seconds with peak RSS `446,382,080`
+  bytes. No pixels, features, semantic fields, Val/Test labels, or training
+  input were opened.
+- On the independent eight-video development prefix, native baseline was
+  `357/893` matched observations, precision `0.0421090`, recall `0.3997760`;
+  the fixed composition was `96/893`, precision `0.1006289`, recall
+  `0.1075030`. Adjacent-pair match rate fell from `0.2831541` to `0.0800478`,
+  while same-ID rate rose from `0.7805907` to `0.8955224` and switch rate fell
+  from `0.2194093` to `0.1044776`. Reliable temporal pairs stayed `0`.
+- On the fixed ten-video policy subset, native baseline was `473/1268`,
+  precision `0.0491582`, recall `0.3730284`; the composition was `101/1268`,
+  precision `0.2148936`, recall `0.0796530`. Adjacent-pair match rate fell
+  from `0.2611203` to `0.0617792`, while same-ID rate rose from `0.8611987`
+  to `0.9600000` and switch rate fell from `0.1388013` to `0.0400000`.
+  Reliable temporal pairs again stayed `0`.
+- This is a clear precision/persistence versus coverage tradeoff, not a
+  frontend repair: it is rejected for qualification and not used for
+  predicted-track training, model selection, formal OCD/MOT reporting, or
+  Goal A/B/C acceptance. Compact receipts are the run, paired geometry, and
+  paired continuity JSON files under
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/`;
+  the subset streams remain local-only.
