@@ -9424,3 +9424,14 @@ no private GT/cache/weights opened for this check):
   `CACHE_STATE=MISSING`; therefore no final Val baseline report or formal
   OCD/MOT metric exists yet. No new cache, training, Val/Test access, or
   external-process intervention was started during this continuation check.
+
+## NAS SOCKS5 route probe after reboot (2026-10-26 UTC)
+
+- The available `127.0.0.1:17890` relay is SOCKS5 rather than HTTP. A correct
+  SOCKS5 connection request to `192.168.31.57:22` was accepted, but the NAS
+  endpoint emitted no SSH banner within a 30-second read-only probe. The same
+  target also failed the direct route and the `7890` HTTP-proxy SSH probe.
+- The probe used the pinned `nas-readwrite` host key and existing read/write
+  key only for handshake verification; no remote command completed, no NAS
+  files were read, and no external service/process was restarted or changed.
+  The local supervisor therefore remains correctly idle at `worker_pid=null`.
