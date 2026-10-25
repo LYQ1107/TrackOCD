@@ -1,0 +1,29 @@
+{
+  "schema_version": "trackocd.cvpr.rcm-pilot-coverage.v1",
+  "generated_utc": "2026-10-25T23:17:46.479724+00:00",
+  "status": "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO",
+  "source": {
+    "path": "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json",
+    "bytes": 5416,
+    "sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
+    "pilot_status": "COMPLETED_JOINT_RCM_MEMORY_PILOT_NOT_DEV_PRED_OR_GOAL_ACCEPTANCE"
+  },
+  "coverage": {
+    "optimizer_steps": 2,
+    "loss_curve_rows": 2,
+    "m_loss_steps": 0,
+    "positive_other_video_groups": 0,
+    "m_loss_plan_reasons": {
+      "MASKED_SINGLETON_NO_OTHER_SUPPORT": 277
+    },
+    "joint_graph_reached_r_c_m": true
+  },
+  "boundary": {
+    "m_branch_scientifically_exercised": false,
+    "pilot_is_development_or_goal_acceptance": false,
+    "new_nonKnown_semantics_read": false,
+    "model_selection_performed": false,
+    "goal_a_b_c_accepted": false
+  },
+  "interpretation": "The pilot exercised R/C numeric gradients and the M module's dependency path, but had no M support-agreement loss or cross-video positive support. It is therefore an engineering integration result, not evidence for self-correcting persistent memory. A legal cross-video Known-support fold must be frozen before any M mechanism claim or selection."
+}

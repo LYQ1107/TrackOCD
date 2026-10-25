@@ -10665,3 +10665,25 @@ no private GT/cache/weights opened for this check):
   acceptance.
 - Compact receipt:
   `outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json`.
+
+## R/C/M pilot support-coverage audit (2026-10-26 UTC)
+
+- The bounded `joint_rcm_policy_pilot_v1_repair2` receipt was audited at the
+  loss-curve level rather than inferred from module reachability.  It consumed
+  two optimizer steps and reached the joint R/C/M dependency graph, with finite
+  R and C gradients, but both recorded `M_loss` values were `null` and the
+  cross-video positive-support count was `0` at every step.
+- The per-episode reason count was
+  `MASKED_SINGLETON_NO_OTHER_SUPPORT: 277`.  Therefore this pilot did not
+  exercise the M support-agreement supervision needed to support a
+  self-correcting persistent-memory claim.  It remains an engineering
+  integration/pipeline result, not a trained generalizable memory result,
+  model-selection result, or Goal A/B/C evidence.
+- A legal cross-video Known-support fold must be frozen and audited before a
+  subsequent M experiment.  The receipt-only audit is
+  `scripts/trackocd_cvpr/audit_rcm_pilot_coverage.py`, with output
+  `outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json` and
+  status `FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO`.
+- The total acceptance audit now carries this negative coverage boundary and
+  still reports `INCOMPLETE_OPEN_REQUIREMENTS`; no full training, TAO Test
+  access, model selection, or external-process intervention was performed.

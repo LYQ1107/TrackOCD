@@ -51,6 +51,17 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     )
     assert rows["lawful_strong_frontend"]["facts"]["formal_v2_missing_or_invalid_asset_count"] > 0
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
+    assert rows["predicted_track_training"]["facts"]["rcm_m_support_coverage_status"] == (
+        "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO"
+    )
+    assert rows["predicted_track_training"]["facts"]["rcm_m_loss_steps"] == 0
+    assert rows["predicted_track_training"]["facts"]["rcm_positive_other_video_groups"] == 0
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "rcm_m_branch_scientifically_exercised"
+    ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "rcm_pilot_is_goal_acceptance"
+    ] is False
     assert rows["formal_causal_online_metrics"]["facts"][
         "covtrack_native_val_recheck_status"
     ] == "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE"

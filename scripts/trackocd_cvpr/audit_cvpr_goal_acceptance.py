@@ -108,6 +108,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
     rcm_path, rcm = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json"
     )
+    rcm_coverage_path, rcm_coverage = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -312,6 +316,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "predicted_cache_boundary": pred_boundaries,
                 "policy_input_optimizer_steps": policy_input.get("optimizer_steps"),
                 "rcm_pilot_optimizer_steps": nested(rcm, "summary", "optimizer_steps"),
+                "rcm_m_support_coverage_status": rcm_coverage.get("status"),
+                "rcm_m_loss_steps": nested(rcm_coverage, "coverage", "m_loss_steps"),
+                "rcm_positive_other_video_groups": nested(
+                    rcm_coverage, "coverage", "positive_other_video_groups"
+                ),
             },
             "open_gate": "The protocol and engineering pilot exist, but no qualified predicted-track training or formal metric result exists.",
         },
@@ -335,14 +344,30 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "requirement": "Demonstrate self-correcting persistent category memory on actual causal predicted histories.",
             "evidence": [
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json", reported_status=rcm.get("status")),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
+                    reported_status=rcm_coverage.get("status"),
+                ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
             "facts": {
                 "pilot_scope": rcm.get("pilot_scope"),
                 "prediction_owned_memory_only": nested(rcm, "summary", "prediction_owned_memory_only"),
                 "pilot_is_goal_acceptance": nested(rcm, "summary", "development_or_goal_acceptance"),
+                "rcm_m_support_coverage_status": rcm_coverage.get("status"),
+                "rcm_m_loss_steps": nested(rcm_coverage, "coverage", "m_loss_steps"),
+                "rcm_positive_other_video_groups": nested(
+                    rcm_coverage, "coverage", "positive_other_video_groups"
+                ),
+                "rcm_m_branch_scientifically_exercised": nested(
+                    rcm_coverage, "boundary", "m_branch_scientifically_exercised"
+                ),
+                "rcm_pilot_is_goal_acceptance": nested(
+                    rcm_coverage, "boundary", "goal_a_b_c_accepted"
+                ),
             },
-            "open_gate": "The bounded R/C/M pilot is not a trained, generalizable, or Goal-accepted memory result.",
+            "open_gate": "The bounded R/C/M pilot has zero M support coverage; freeze a legal cross-video Known-support fold before claiming or selecting self-correcting memory.",
         },
         {
             "id": "formal_causal_online_metrics",
@@ -479,6 +504,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json",
                 reported_status=nearest.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
+                reported_status=rcm_coverage.get("status"),
             ),
         ],
     }
