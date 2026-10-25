@@ -10325,3 +10325,35 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_development_transfer_v1/run.json`,
   `normalization.json`, and `comparison.json`; the approximately 122 MB
   normalized stream and native payload remain local-only.
+
+## Independent COVTrack-NoSemantic Train-development transfer (2026-10-26 UTC)
+
+- Before execution, the association-only alternative was frozen in
+  `configs/trackocd_cvpr/covtrack_nosem_development_transfer_v1.json` for the
+  same predeclared eight-video `development_pseudo` prefix
+  (`0,3,11,38,146,220,221,239`). It changed only
+  `model.tracker.confused_features` from `true` to `false`; the detector,
+  296-class public validation subset, checkpoint, prompt, score path, frame
+  plan, TCC-off anonymous stream contract, and GPU/resource bounds were held
+  fixed. No TAO labels, Novel vocabulary, Val/Test data, or outcome-based
+  selection was used.
+- The inference-only run completed for all `8,668` anonymous Train frames,
+  producing `29,289` physical tracks and `290,222` observations with zero
+  invalid boxes. The run and normalization receipts record no training, Val or
+  Test access, and no formal metric.
+- The paired category-free geometry audit found native baseline `357/893`
+  matched observations, precision `0.0421090`, recall `0.3997760`; NoSemantic
+  also found `357/893`, precision `0.0420991`, and recall `0.3997760`. It added
+  only `11` observations and `740` track rows relative to the baseline subset;
+  reliable temporal pairs remained `0` for both.
+- The independent sampled-order continuity audit was exactly unchanged:
+  adjacent-pair match rate `0.2831541`, same predicted-ID rate `0.7805907`,
+  and switch rate `0.2194093` for both routes. Thus association-only removal
+  does not repair either geometry/coverage or the observed persistence
+  failure on this development transfer.
+- This candidate is rejected as a frontend repair and is not used for model
+  selection, predicted-track training, formal OCD/MOT reporting, or Goal A/B/C
+  acceptance. Compact receipts are
+  `outputs/trackocd_cvpr/cvpr2/covtrack_nosem_development_transfer_v1/run.json`,
+  `normalization.json`, `geometry_comparison.json`, and
+  `temporal_comparison.json`; native and normalized payloads remain local-only.

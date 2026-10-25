@@ -1,0 +1,523 @@
+{
+  "baseline": {
+    "aggregate": {
+      "adjacent_pair_match_rate": 0.2831541218637993,
+      "observation_precision_on_annotated_images": 0.04210898796886058,
+      "observation_recall_against_annotated_gt": 0.3997760358342665,
+      "pred_id_switch_rate_given_adjacent_pair_matches": 0.21940928270042195,
+      "same_pred_id_rate_given_adjacent_pair_matches": 0.7805907172995781
+    },
+    "continuity": {
+      "adjacent_pair_outcomes_by_source_gap_top20": [
+        {
+          "both_matched": 154,
+          "gap": 30,
+          "missing_match": 435,
+          "pred_id_switch": 30,
+          "same_pred_id": 124,
+          "total": 589
+        },
+        {
+          "both_matched": 70,
+          "gap": 25,
+          "missing_match": 106,
+          "pred_id_switch": 10,
+          "same_pred_id": 60,
+          "total": 176
+        },
+        {
+          "both_matched": 5,
+          "gap": 60,
+          "missing_match": 17,
+          "pred_id_switch": 4,
+          "same_pred_id": 1,
+          "total": 22
+        },
+        {
+          "gap": 120,
+          "missing_match": 8,
+          "total": 8
+        },
+        {
+          "both_matched": 2,
+          "gap": 180,
+          "missing_match": 5,
+          "pred_id_switch": 2,
+          "total": 7
+        },
+        {
+          "gap": 90,
+          "missing_match": 6,
+          "total": 6
+        },
+        {
+          "both_matched": 1,
+          "gap": 50,
+          "missing_match": 4,
+          "pred_id_switch": 1,
+          "total": 5
+        },
+        {
+          "gap": 150,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "both_matched": 1,
+          "gap": 300,
+          "missing_match": 2,
+          "pred_id_switch": 1,
+          "total": 3
+        },
+        {
+          "gap": 240,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "both_matched": 1,
+          "gap": 270,
+          "missing_match": 1,
+          "pred_id_switch": 1,
+          "total": 2
+        },
+        {
+          "gap": 390,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 1020,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "both_matched": 2,
+          "gap": 1050,
+          "pred_id_switch": 2,
+          "total": 2
+        },
+        {
+          "gap": 210,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 690,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 420,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "both_matched": 1,
+          "gap": 540,
+          "pred_id_switch": 1,
+          "total": 1
+        },
+        {
+          "gap": 480,
+          "missing_match": 1,
+          "total": 1
+        }
+      ],
+      "adjacent_pred_id_switch_pairs": 52,
+      "adjacent_same_pred_id_pairs": 185,
+      "gt_adjacent_annotation_pairs": 837,
+      "gt_adjacent_pairs_with_both_stream_matches": 237,
+      "gt_adjacent_pairs_with_source_gap_gt_one": 837,
+      "gt_adjacent_pairs_with_source_gap_one": 0,
+      "gt_annotation_source_frame_gap_histogram_top20": [
+        {
+          "count": 589,
+          "gap": 30
+        },
+        {
+          "count": 176,
+          "gap": 25
+        },
+        {
+          "count": 22,
+          "gap": 60
+        },
+        {
+          "count": 8,
+          "gap": 120
+        },
+        {
+          "count": 7,
+          "gap": 180
+        },
+        {
+          "count": 6,
+          "gap": 90
+        },
+        {
+          "count": 5,
+          "gap": 50
+        },
+        {
+          "count": 3,
+          "gap": 150
+        },
+        {
+          "count": 3,
+          "gap": 300
+        },
+        {
+          "count": 3,
+          "gap": 240
+        },
+        {
+          "count": 2,
+          "gap": 270
+        },
+        {
+          "count": 2,
+          "gap": 390
+        },
+        {
+          "count": 2,
+          "gap": 1020
+        },
+        {
+          "count": 2,
+          "gap": 1050
+        },
+        {
+          "count": 2,
+          "gap": 210
+        },
+        {
+          "count": 2,
+          "gap": 690
+        },
+        {
+          "count": 1,
+          "gap": 420
+        },
+        {
+          "count": 1,
+          "gap": 540
+        },
+        {
+          "count": 1,
+          "gap": 480
+        }
+      ],
+      "gt_tracks_with_adjacent_match": 30,
+      "gt_tracks_with_adjacent_pred_id_switch": 22,
+      "gt_tracks_with_adjacent_same_pred_id": 25
+    },
+    "gt_observations": 893,
+    "gt_tracks": 56,
+    "matched_observations": 357,
+    "predicted_observations_on_gt_images": 8478,
+    "stream_observations": 290211,
+    "stream_rows": 28549,
+    "streams": [
+      {
+        "bytes": 694095500,
+        "min_native_age": 1,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+        "selected_videos": [
+          0,
+          3,
+          11,
+          38,
+          146,
+          220,
+          221,
+          239
+        ],
+        "sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c"
+      }
+    ]
+  },
+  "boundary": {
+    "feature_arrays_read": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "candidate": {
+    "aggregate": {
+      "adjacent_pair_match_rate": 0.2831541218637993,
+      "observation_precision_on_annotated_images": 0.04209905660377358,
+      "observation_recall_against_annotated_gt": 0.3997760358342665,
+      "pred_id_switch_rate_given_adjacent_pair_matches": 0.21940928270042195,
+      "same_pred_id_rate_given_adjacent_pair_matches": 0.7805907172995781
+    },
+    "continuity": {
+      "adjacent_pair_outcomes_by_source_gap_top20": [
+        {
+          "both_matched": 154,
+          "gap": 30,
+          "missing_match": 435,
+          "pred_id_switch": 30,
+          "same_pred_id": 124,
+          "total": 589
+        },
+        {
+          "both_matched": 70,
+          "gap": 25,
+          "missing_match": 106,
+          "pred_id_switch": 10,
+          "same_pred_id": 60,
+          "total": 176
+        },
+        {
+          "both_matched": 5,
+          "gap": 60,
+          "missing_match": 17,
+          "pred_id_switch": 4,
+          "same_pred_id": 1,
+          "total": 22
+        },
+        {
+          "gap": 120,
+          "missing_match": 8,
+          "total": 8
+        },
+        {
+          "both_matched": 2,
+          "gap": 180,
+          "missing_match": 5,
+          "pred_id_switch": 2,
+          "total": 7
+        },
+        {
+          "gap": 90,
+          "missing_match": 6,
+          "total": 6
+        },
+        {
+          "both_matched": 1,
+          "gap": 50,
+          "missing_match": 4,
+          "pred_id_switch": 1,
+          "total": 5
+        },
+        {
+          "gap": 150,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "both_matched": 1,
+          "gap": 300,
+          "missing_match": 2,
+          "pred_id_switch": 1,
+          "total": 3
+        },
+        {
+          "gap": 240,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "both_matched": 1,
+          "gap": 270,
+          "missing_match": 1,
+          "pred_id_switch": 1,
+          "total": 2
+        },
+        {
+          "gap": 390,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 1020,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "both_matched": 2,
+          "gap": 1050,
+          "pred_id_switch": 2,
+          "total": 2
+        },
+        {
+          "gap": 210,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 690,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 420,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "both_matched": 1,
+          "gap": 540,
+          "pred_id_switch": 1,
+          "total": 1
+        },
+        {
+          "gap": 480,
+          "missing_match": 1,
+          "total": 1
+        }
+      ],
+      "adjacent_pred_id_switch_pairs": 52,
+      "adjacent_same_pred_id_pairs": 185,
+      "gt_adjacent_annotation_pairs": 837,
+      "gt_adjacent_pairs_with_both_stream_matches": 237,
+      "gt_adjacent_pairs_with_source_gap_gt_one": 837,
+      "gt_adjacent_pairs_with_source_gap_one": 0,
+      "gt_annotation_source_frame_gap_histogram_top20": [
+        {
+          "count": 589,
+          "gap": 30
+        },
+        {
+          "count": 176,
+          "gap": 25
+        },
+        {
+          "count": 22,
+          "gap": 60
+        },
+        {
+          "count": 8,
+          "gap": 120
+        },
+        {
+          "count": 7,
+          "gap": 180
+        },
+        {
+          "count": 6,
+          "gap": 90
+        },
+        {
+          "count": 5,
+          "gap": 50
+        },
+        {
+          "count": 3,
+          "gap": 150
+        },
+        {
+          "count": 3,
+          "gap": 300
+        },
+        {
+          "count": 3,
+          "gap": 240
+        },
+        {
+          "count": 2,
+          "gap": 270
+        },
+        {
+          "count": 2,
+          "gap": 390
+        },
+        {
+          "count": 2,
+          "gap": 1020
+        },
+        {
+          "count": 2,
+          "gap": 1050
+        },
+        {
+          "count": 2,
+          "gap": 210
+        },
+        {
+          "count": 2,
+          "gap": 690
+        },
+        {
+          "count": 1,
+          "gap": 420
+        },
+        {
+          "count": 1,
+          "gap": 540
+        },
+        {
+          "count": 1,
+          "gap": 480
+        }
+      ],
+      "gt_tracks_with_adjacent_match": 30,
+      "gt_tracks_with_adjacent_pred_id_switch": 22,
+      "gt_tracks_with_adjacent_same_pred_id": 25
+    },
+    "gt_observations": 893,
+    "gt_tracks": 56,
+    "matched_observations": 357,
+    "predicted_observations_on_gt_images": 8480,
+    "stream_observations": 290222,
+    "stream_rows": 29289,
+    "streams": [
+      {
+        "bytes": 55329911,
+        "min_native_age": 1,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_nosem/covtrack_nosem_development_transfer_v1/physical_tracks.jsonl",
+        "selected_videos": [
+          0,
+          3,
+          11,
+          38,
+          146,
+          220,
+          221,
+          239
+        ],
+        "sha256": "b6c77a895ac2492e15328723eec28c4395f4bf417b3fe1ac94fbefc196e8bf07"
+      }
+    ]
+  },
+  "deltas_candidate_minus_baseline": {
+    "adjacent_pair_match_rate": 0.0,
+    "matched_observations": 0,
+    "observation_recall": 0.0,
+    "same_id_rate_given_matches": 0.0,
+    "switch_rate_given_matches": 0.0
+  },
+  "generated_utc": "2026-10-25T22:23:13.425822+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899"
+  },
+  "interpretation": "This paired category-free continuity diagnostic tests whether a score-contract candidate preserves identities across adjacent sealed GT observations. It is not an official MOT/OCD metric or frontend qualification.",
+  "schema_version": "trackocd.cvpr.policy-frontend-temporal-continuity.v1",
+  "scope": {
+    "baseline_min_native_age": 1,
+    "candidate_min_native_age": 1,
+    "frontend_qualification": false,
+    "iou_threshold": 0.5,
+    "mapping_persisted": false,
+    "model_selection": false,
+    "official_trackeval_or_ocd_metrics": false,
+    "pair_definition": "adjacent observations in each sealed GT track annotation order",
+    "videos": [
+      0,
+      3,
+      11,
+      38,
+      146,
+      220,
+      221,
+      239
+    ]
+  },
+  "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+}
