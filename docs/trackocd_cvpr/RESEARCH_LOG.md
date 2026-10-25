@@ -9677,3 +9677,21 @@ no private GT/cache/weights opened for this check):
 - This probe was read-only: no NAS data, weights, shards, Test labels, or
   external processes were accessed or modified. Formal Val evaluation remains
   gated until the actual NAS mount/manifest becomes reachable.
+
+## Fresh full-Train geometry/continuity re-audit (2026-10-26 UTC)
+
+- The two current canonical audits were rerun from the existing 13 anonymous
+  COVTrack-native substreams and the sealed geometry-only Train index. Their
+  aggregate counters matched the stored receipts exactly: `1,245,952`
+  predicted tracks, `13,558,940` observations, `16,778` per-image matches,
+  observation precision `0.0459070`, and observation recall `0.3691529`.
+- The corrected sampled-order continuity audit again found `11,768` adjacent
+  GT pairs with both stream matches, with `1,509` predicted-ID switches and a
+  conditional switch rate of `0.1282291`; all `43,228` adjacent annotation
+  pairs have source-frame gaps greater than one. This supports the ordering
+  of the next intervention: repair/qualify frontend geometry and coverage
+  before treating memory or ID stitching as the primary fix.
+- The compact durable receipt is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_continuity_reaudit_20261026.json`.
+  This remains a category-free Train diagnostic, not an OCD/MOT metric,
+  frontend qualification, model-selection result, or Goal A/B/C acceptance.

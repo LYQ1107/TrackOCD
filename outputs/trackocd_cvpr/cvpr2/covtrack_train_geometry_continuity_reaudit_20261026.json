@@ -1,0 +1,50 @@
+{
+  "schema_version": "trackocd.cvpr.train_geometry_continuity_reaudit.v1",
+  "status": "COMPLETE_CATEGORY_FREE_REAUDIT",
+  "generated_utc": "2026-10-25T19:04:45Z",
+  "scope": {
+    "videos": 407,
+    "substreams": 13,
+    "iou_threshold": 0.5,
+    "official_ocd_or_trackeval_metrics": false,
+    "qualification_or_model_selection": false,
+    "prediction_to_gt_mapping_persisted": false
+  },
+  "geometry": {
+    "predicted_tracks": 1245952,
+    "predicted_observations": 13558940,
+    "gt_tracks": 2222,
+    "gt_observations": 45450,
+    "matched_observations": 16778,
+    "observation_precision_on_annotated_images": 0.04590700397835164,
+    "observation_recall_against_annotated_gt": 0.36915291529152916,
+    "reliable_temporal_pairs_at_iou_0_5": 0,
+    "reliable_gt_track_recall": 0.0
+  },
+  "continuity": {
+    "gt_adjacent_annotation_pairs": 43228,
+    "pairs_with_both_stream_matches": 11768,
+    "same_pred_id_pairs": 10259,
+    "pred_id_switch_pairs": 1509,
+    "same_pred_id_rate_given_both_matches": 0.8717709041468389,
+    "pred_id_switch_rate_given_both_matches": 0.1282290958531611,
+    "adjacent_pair_match_rate": 0.2722309614138984,
+    "source_frame_gap_one_pairs": 0,
+    "dominant_source_gaps": {"30": 32321, "25": 5125, "24": 2035}
+  },
+  "interpretation": "The current anonymous Train frontend has a dominant geometry/coverage failure; conditional ID switching is a secondary measurable failure among the small set of adjacent sampled GT pairs with both matches. This is not a formal OCD/MOT score or frontend qualification.",
+  "boundary": {
+    "category_fields_read": false,
+    "role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "feature_arrays_read": false,
+    "training_started": false
+  },
+  "source_receipts": {
+    "geometry": "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json",
+    "geometry_sha256": "a3a47398349e3843f3a39e1fa36b427eb7495b2c6290bffbe94fc986fff9b1a0",
+    "continuity": "outputs/trackocd_cvpr/cvpr2/covtrack_train_temporal_continuity_audit_v2/result.json",
+    "continuity_sha256": "4416137edfaf64015036ef6b1a30631111a451f9748884f81fc37dbb72833083"
+  }
+}
