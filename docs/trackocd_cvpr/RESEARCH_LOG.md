@@ -10206,3 +10206,24 @@ no private GT/cache/weights opened for this check):
   `development.json`, `policy_geometry.json`, `development_geometry.json`,
   `policy_temporal.json`, and `development_temporal.json`; large derived
   streams remain local-only.
+
+## Local storage safety cleanup and NAS retry state (2026-10-26 UTC)
+
+- The NAS mount was rechecked after the server restart and remains absent:
+  `/data3/liuyeqiang/nas/A100` is a local empty directory. The read-only
+  direct SSH probe to `192.168.31.57:22` timed out, and the existing NAS
+  supervisor's SSHFS target `127.0.0.1:24557` has no listener. The supervisor
+  itself remains alive; no external process was restarted or modified.
+- The supervisor log also recorded `No space left on device`. To restore a
+  safe local reserve without deleting research outputs, the old generated
+  cache `outputs/trackocd_v2_runtime/features/gt_tracks` (1,351,138,083 bytes,
+  7,666 files) was moved intact to the separate-filesystem temporary path
+  `/tmp/trackocd_legacy_gt_tracks_20261026`. It was not Git-tracked and no
+  current watcher references it; the formal cache, dense predicted streams,
+  code, weights, data, and compact receipts were not targeted. The cleanup
+  receipt is
+  `outputs/trackocd_cvpr/cvpr5/legacy_gt_feature_cache_cleanup_20261026.json`.
+- `/data3` free space increased from approximately `1.4 GB` to `2.6 GB`.
+  This resolves the local write-reserve failure but does not by itself
+  restore the missing SSH forwarding; formal Val baseline watchers therefore
+  remain waiting and no formal metric is claimed.

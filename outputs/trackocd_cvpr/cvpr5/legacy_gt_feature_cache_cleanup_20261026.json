@@ -1,0 +1,21 @@
+{
+  "schema_version": "trackocd.cvpr.local-cache-cleanup.v1",
+  "status": "MOVED_TO_RECOVERABLE_TEMP_STORAGE",
+  "created_utc": "2026-10-26",
+  "target": "outputs/trackocd_v2_runtime/features/gt_tracks",
+  "reason": "Free local space for the NAS supervisor and preserve the current formal/CVPR asset roots.",
+  "pre_deletion": {
+    "bytes": 1351138083,
+    "files": 7666,
+    "json_bytes": 1350657893,
+    "launched_marker_bytes": 219730,
+    "done_marker_bytes": 260316,
+    "git_tracked": false,
+    "active_task_reference_checked": true,
+    "current_formal_cache_not_under_target": true,
+    "current_cvpr2_caches_not_under_target": true,
+    "raw_data_weights_val_test_not_deleted": true
+  },
+  "scope": "Only this old generated TrackOCD feature cache; no other project, source code, formal cache, dense predicted stream, weight, or dataset is targeted.",
+  "recoverability": "The generated feature payload was moved intact to /tmp/trackocd_legacy_gt_tracks_20261026 on a separate filesystem; it is recoverable for this server session and can be removed later after explicit verification."
+}
