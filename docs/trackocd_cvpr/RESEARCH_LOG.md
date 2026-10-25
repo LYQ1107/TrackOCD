@@ -9357,3 +9357,24 @@ no private GT/cache/weights opened for this check):
   track mapping; `training_started=false` remains explicit. Receipt:
   `outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json`
   (SHA256 `a3a47398349e3843f3a39e1fa36b427eb7495b2c6290bffbe94fc986fff9b1a0`).
+
+## Frontend selection versus Train qualification reconciliation (2026-10-25 UTC)
+
+- The historical Val-only physical bakeoff selected `COVTrack-native` under the
+  preregistered persistent-observability rule: it had `88/527` reliably observed
+  persistent targets, versus `85/527` for `COVTrack-NoSemantic` and `83/527`
+  for `SimOWT/Q0`. This selection used the shared category-free Val gate and
+  remains provenance evidence, not a semantic model-selection result.
+- The current local asset inventory contains the complete `407`-video Train
+  dense physical streams only for `COVTrack-native` (the `13` reconciled
+  substreams). `COVTrack-NoSemantic` has a Val-side physical stream only, and no
+  complete SimOWT/Q0 Train physical stream is present. Consequently no
+  alternative frontend can be admitted or trained by reusing existing Train
+  assets; doing so would require a new frontend inference/cache operation with
+  separately checked storage and resource bounds.
+- This reconciles the apparent conflict: the historical Val ranking does not
+  override the new Train geometry qualification failure (`0` reliable temporal
+  pairs). Formal TrackOCD training remains closed until either the selected
+  frontend is requalified under the Train geometry gate or a legally produced
+  alternative Train stream passes the same gate. No new inference, training,
+  Val/Test access, or external-process intervention occurred in this check.
