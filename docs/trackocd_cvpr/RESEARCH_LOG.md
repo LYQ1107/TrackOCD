@@ -9290,3 +9290,16 @@ no private GT/cache/weights opened for this check):
 - This is reusable partial-cache evidence only: `formal_cache_complete=false`,
   `339` shards remain absent, and no baseline, OCD/MOT metric, Test access, or
   model-selection decision was produced.
+
+## CVPR-1 source-review coverage re-verification (2026-10-26 UTC)
+
+- The metadata-only verifier rechecked the frozen literature/source index
+  without fetching repositories, executing reviewed code, opening datasets, or
+  changing scientific acceptance flags. Receipt:
+  `outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json`
+  (`SHA256=f5653edb762e299e7b07f7ab69244107ea538d0609ad7f9204cbe695718e5f9a`).
+- It verified `12` countable actual core reviews against the required `12`,
+  plus `3` licensed extra reviews against the required `2`, with no violations.
+  The receipt explicitly keeps `scientific_goal_complete_in_index=false` and
+  `source_execution_or_new_training=false`; this confirms review coverage only,
+  not mechanism, frontend, OCD/MOT, or Goal A/B/C acceptance.
