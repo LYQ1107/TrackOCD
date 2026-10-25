@@ -9718,3 +9718,36 @@ no private GT/cache/weights opened for this check):
   and `scripts/trackocd_cvpr/audit_score_contract_geometry_smokes.py`.
   The audit read no category/role/vocabulary/Val/Test fields, pixels, feature
   arrays, or native evaluator rows, and persisted no prediction-to-GT mapping.
+
+## MASA Train geometry smoke and same-clip COVTrack control (2026-10-26 UTC)
+
+- A fresh bounded MASA-SAM-B native run used one already registered Train
+  video (`LaSOT/lion-12`) and four chronological images with 30-frame source
+  spacing. The predictor received only current image pixels and image IDs; it
+  did not open GT, roles, vocabulary, Val, Test, or future frames. Four image
+  forwards completed in `15.62 s`; peak host RSS was `1.62 GB` and peak GPU
+  reserved memory was `3.44 GB`. The frozen state/configuration and source
+  manifest were verified by the existing MASA wrapper.
+- After the prediction payload was sealed, a category-free IoU-0.5 evaluator
+  found `19/20` matched track observations (`precision=0.117284`,
+  `recall=0.950000`) and `13/14` same-ID adjacent pairs among pairs with both
+  matches (`conditional switch=0.071429`). This is an engineering smoke from
+  a long Known-GT pilot selection, not a coverage estimate or an OCD/MOT
+  metric.
+- To test whether the apparent MASA coverage was a frontend improvement, the
+  same four image paths and the same geometry-only GT index were applied to
+  the existing anonymous COVTrack-native Train stream. COVTrack obtained
+  `20/20` matched track observations (`precision=0.133333`,
+  `recall=1.000000`) and `14/15` same-ID adjacent pairs (`conditional
+  switch=0.066667`). Thus MASA was not superior on this paired clip; neither
+  frontend is promoted or qualified from this result. The comparison also
+  shows why the earlier MASA-only smoke cannot be used to select a primary
+  frontend.
+- Receipt and implementation:
+  `outputs/trackocd_core/audit/masa_train_geometry_smoke_20261026.json` and
+  `scripts/trackocd_core/audit_masa_train_geometry_smoke.py`. The paired
+  comparator used only the physical stream schema and persisted no
+  prediction-to-GT mapping. This result leaves the full COVTrack geometry
+  audit as the authoritative frontend diagnosis and keeps formal training
+  closed until a qualified dense frontend or a stronger lawful alternative
+  is established.
