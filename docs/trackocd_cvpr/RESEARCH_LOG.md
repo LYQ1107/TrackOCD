@@ -10712,3 +10712,15 @@ no private GT/cache/weights opened for this check):
   cure the separate RCM pilot result with zero M support supervision, and it
   does not qualify the COVTrack frontend or authorize formal predicted-track
   training.
+
+## Recoverable storage cleanup (2026-10-26 UTC)
+
+- To restore working-space headroom, the unused
+  `/data3/liuyeqiang/TAO-Amodal/example_output` directory was moved—not
+  deleted—to `/tmp/trackocd_reclaim_20261026/example_output`. It contained
+  only `prediction.json` and `modal_prediction.json` (3,302,497,322 bytes in
+  total); a repository-reference search and open-descriptor check found no
+  TrackOCD use before the move.
+- No frames, annotations, weights, formal caches, TrackOCD outputs, or external
+  processes were touched. The two file hashes and recovery location are in
+  `outputs/trackocd_cvpr/cvpr5/storage_reclaim_example_output_20261026.json`.

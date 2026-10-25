@@ -1,0 +1,27 @@
+{
+  "schema_version": "trackocd.cvpr.storage-reclaim.v1",
+  "status": "MOVED_UNUSED_EXAMPLE_OUTPUT_TO_RECOVERABLE_TEMP_STORAGE",
+  "generated_utc": "2026-10-25T23:42:26+00:00",
+  "source_root": "/data3/liuyeqiang/TAO-Amodal/example_output",
+  "recovery_root": "/tmp/trackocd_reclaim_20261026/example_output",
+  "reason": "Storage safety: two old example prediction files were not referenced by TrackOCD and had no open descriptors.",
+  "files": [
+    {
+      "name": "prediction.json",
+      "bytes": 1654621356,
+      "sha256": "18c30c03e2e6e09de0a0909114763bc3f97584b0a76c324f4c2b9eae043d5415"
+    },
+    {
+      "name": "modal_prediction.json",
+      "bytes": 1647875966,
+      "sha256": "6bfa90ccc3bd553cad4f8925d36bf19f64b23ec9e40c243041dcd2363fb2b2c5"
+    }
+  ],
+  "total_bytes": 3302497322,
+  "recovery_available": true,
+  "original_path_absent_after_move": true,
+  "trackocd_reference_count_before_move": 0,
+  "open_descriptor_count_before_move": 0,
+  "datasets_annotations_weights_and_trackocd_caches_touched": false,
+  "external_processes_touched": false
+}
