@@ -120,6 +120,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     release_path, release = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json"
     )
+    admission_path, admission = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json"
+    )
     val_path, val = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json"
     )
@@ -191,6 +194,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json", reported_status=asset.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json", reported_status=runtime.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json", reported_status=release.get("status")),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json", reported_status=admission.get("status")),
             ],
             "facts": {
                 "covtrack_reliable_temporal_pairs": geometry_totals.get("reliable_temporal_pairs"),
@@ -200,6 +204,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "exact_release_stage_training_binding_verified": nested(runtime, "qualification_boundary", "exact_release_stage_training_binding_verified"),
                 "official_release_route_reproduced": nested(release, "qualification_boundary", "official_release_route_reproduced"),
                 "current_candidate_is_official_tao_route": nested(release, "qualification_boundary", "current_image_only_candidate_is_official_tao_route"),
+                "formal_v2_admission_status": admission.get("status"),
+                "formal_v2_ready": admission.get("formal_ready"),
+                "formal_v2_missing_or_invalid_asset_count": len(admission.get("problems", [])),
             },
             "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation.",
         },

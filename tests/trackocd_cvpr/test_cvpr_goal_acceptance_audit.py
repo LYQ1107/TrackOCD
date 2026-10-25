@@ -29,5 +29,11 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["lawful_strong_frontend"]["facts"]["exact_release_stage_training_binding_verified"] is False
     assert rows["lawful_strong_frontend"]["facts"]["official_release_route_reproduced"] is False
     assert rows["lawful_strong_frontend"]["facts"]["current_candidate_is_official_tao_route"] is False
+    assert rows["lawful_strong_frontend"]["facts"]["formal_v2_ready"] is False
+    assert (
+        rows["lawful_strong_frontend"]["facts"]["formal_v2_admission_status"]
+        == "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS"
+    )
+    assert rows["lawful_strong_frontend"]["facts"]["formal_v2_missing_or_invalid_asset_count"] > 0
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
     assert rows["independent_final_and_goals"]["status"] == "OPEN_GOAL_A_B_C_PENDING"

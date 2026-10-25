@@ -10542,3 +10542,25 @@ no private GT/cache/weights opened for this check):
   candidate is not silently labeled as official TAO release reproduction.
   A formal frontend still requires either the exact public-detection route
   under a frozen v2 contract or a separately justified image-only admission.
+
+## Formal v2 asset admission boundary (2026-10-26 UTC)
+
+- The existing read-only `scripts/trackocd_v2/recovery_asset_admission.py`
+  was run against the current local tree and produced
+  `outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json`.
+  It reports `BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS` with
+  `formal_ready=false`; this is an admission check, not a formal experiment.
+- The exact missing inputs are the predicted stream
+  `pred_track_stream.jsonl`, the four frozen causal-order files
+  (`val_gt_track_stream.jsonl` and seeds `1027`, `1028`, `1029`), final
+  `frontend_selection.json`, final `representation_decision.json`, and
+  `autonomous_state.json`. The four formal cache manifests for
+  `covtrack_native`, `covtrack_nosem`, `ovtr`, and `simowt` are also absent.
+  The existing COVTrack stage is only `NATIVE_STREAM_NORMALIZED`: its
+  `same_v2_physical_metric_protocol`, `same_v2_predicted_stream`, and
+  `requested_metrics_complete` flags are false, so it cannot be promoted.
+- The admission tool only opened small split metadata and performed path,
+  size, hash, and status checks; it did not open annotation contents or large
+  streams, read TAO Test, start training/inference, or touch external
+  processes. The formal next action is to recover and hash only the listed
+  missing assets before any formal evaluation is considered.

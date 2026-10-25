@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T22:47:29.934625+00:00",
+  "generated_utc": "2026-10-25T22:51:17.254649+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "28ac9a9ad47fbe770beadb641215008b018fd692",
+    "head": "c50711cf792bf51c9f3ed39c03df3380e6144654",
     "clean_before_audit": false
   },
   "scope": {
@@ -171,6 +171,13 @@
           "bytes": 3664,
           "sha256": "d2107b8aa266186bbf68cc4f1a3c42c586ed735d88107839ec74cee1814b6a55",
           "reported_status": "PASS_SOURCE_CLOSURE_RELEASE_ROUTE_MISMATCH_QUALIFICATION_OPEN"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json",
+          "exists": true,
+          "bytes": 14729,
+          "sha256": "a175ed193ca6a3e202d47b7cfb6d2e0a98b6707b6ad0eb6ec7901f66a6df0255",
+          "reported_status": "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS"
         }
       ],
       "facts": {
@@ -180,7 +187,10 @@
         "runtime_checkpoint_binding_reconciled": true,
         "exact_release_stage_training_binding_verified": false,
         "official_release_route_reproduced": false,
-        "current_candidate_is_official_tao_route": false
+        "current_candidate_is_official_tao_route": false,
+        "formal_v2_admission_status": "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS",
+        "formal_v2_ready": false,
+        "formal_v2_missing_or_invalid_asset_count": 16
       },
       "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation."
     },
