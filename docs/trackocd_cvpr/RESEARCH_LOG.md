@@ -178,9 +178,37 @@ strict JSON test, register a separately named bounded retry; no training or
 new inference is involved.
 
 User authorized cleaning unused project data if storage becomes insufficient.
-No deletion is necessary now. Inventory and exact references must precede any
-cleanup; preserve unique assets, active jobs, valid shards, historical results
-and other projects. Ambiguous assets require user confirmation.
+
+## 2026-10-26 — precise storage cleanup before bounded continuation
+
+Because the project filesystem had entered the low-free-space range, a
+read-only dependency, checksum, open-file, and process audit was performed
+before cleanup.  The user-authorized cleanup removed exactly two non-admitted
+artifacts and did not touch other projects, active processes, source code,
+datasets, canonical weights, valid shards, or manifests:
+
+- duplicate DINOv2 copy
+  `/data3/liuyeqiang/TrackOCD/checkpoints/torch/hub/checkpoints/`
+  `dinov2_vitb14_pretrain.pth`, `346,378,731` bytes, SHA256
+  `0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73`.
+  The canonical copy remains at
+  `checkpoints/dinov2_vitb14_pretrain.pth` with the same size and hash.
+- compressed residue of the interrupted, explicitly non-reusable COVTrack
+  shard-0 retry
+  `/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_native/`
+  `covtrack_native/covtrack_train_dense_shards_v1_shard_0_retry1_20261016/`
+  `formatted/tao_bbox.json.partial.json.gz`, `269,724,843` bytes, SHA256
+  `f70dea2de029350ea48a58a89cbda96d8dcca9be4d3263a6fad0d840c3e93b30`.
+  Its launch/interrupt receipt records that no valid run receipt existed and
+  that the partial native output was not promoted or reusable.
+
+After deletion, `df -B1 /data3/liuyeqiang` reported `2,343,931,904` free
+bytes.  The complete reconciled anonymous Train physical streams and their
+receipts were preserved.  This is storage maintenance only; it creates no
+training, frontend, OCD/MOT, or model-selection result.
+At the earlier registration point no deletion was necessary.  That statement
+does not override the later, separately recorded user-authorized cleanup
+above; the same inventory-first rule remains in force for any future cleanup.
 
 Corrected registration `c3a1bbe` pushed/fetched/remotely verified. CPU audit
 completed all60cases in75.66s, peak RSS847216640B. Historical evaluator count
