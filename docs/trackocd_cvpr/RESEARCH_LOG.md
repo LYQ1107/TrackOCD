@@ -46,6 +46,37 @@ of GT observations.  The lower switch rate is therefore a coverage-selection
 effect, not evidence of a better persistent tracker; no score gate is promoted
 to the causal online method.
 
+## 2026-10-26 — eight-video MASA/COVTrack Train frontend-transfer smoke
+
+To strengthen the earlier single-clip frontend check without opening the
+formal Val cache, a new frozen comparison used eight fixed Train video IDs
+(`0,1,3,9,11,13,16,38`) and the first four category-free image-metadata
+timestamps for each video.  The selection was fixed structurally before
+prediction and retained empty GT frames in the denominator.  The worker saw
+only the current Train pixels and image IDs; geometry was read only after the
+MASA payload was sealed.  Config/script:
+`configs/trackocd_cvpr/masa_covtrack_multi_train_geometry_smoke_v1.json` and
+`scripts/trackocd_cvpr/audit_masa_covtrack_multi_train_geometry_smoke.py`.
+Receipt:
+`outputs/trackocd_cvpr/cvpr2/masa_covtrack_multi_train_geometry_smoke_v1/result.json`.
+
+Across the fixed 32 images and `91` category-free GT observations, frozen
+MASA produced `1,310` track observations with `66` matches (precision
+`0.0503817`, recall `0.725275`); COVTrack-native produced `966` track
+observations with `49` matches (precision `0.0507246`, recall `0.538462`).
+Among sampled adjacent GT pairs with both predictions, MASA had `38` pairs and
+`6` ID switches (conditional switch rate `0.157895`), while COVTrack had `22`
+pairs and `2` switches (`0.0909091`).  The unequal pair denominators are
+important: this is not a matched-coverage winner, and neither frontend is
+qualified or selected.  The smoke is not an OCD/MOT metric and does not
+establish general Train performance.
+
+This result keeps the current COVTrack-native choice provisional: MASA does
+not provide a demonstrated persistence advantage on this fixed sample, while
+both frontends retain very low precision.  No training, feature-cache build,
+Val/Test access, semantic role/vocabulary read, model selection, or Goal A/B/C
+acceptance occurred.
+
 ## 2026-10-26 — five-video foreground-mass score-contract recheck
 
 The predeclared bounded follow-up completed on anonymous Train videos

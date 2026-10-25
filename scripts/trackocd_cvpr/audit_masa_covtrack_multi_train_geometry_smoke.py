@@ -36,7 +36,6 @@ from scripts.trackocd_core.audit_masa_train_geometry_smoke import (  # noqa: E40
     FRAMES,
     MASA_ENV,
     _deny_network_and_annotations,
-    _load_geometry,
     _max_cardinality_pairs,
     _snapshot,
 )
@@ -125,6 +124,34 @@ def _build_fixed_input(cfg: dict[str, Any]) -> dict[str, Any]:
         "images": selected,
         "image_plan_sha256": _sha256(image_plan_path),
     }
+
+
+def _load_geometry(geometry_path: Path, image_ids: set[int]) -> dict[int, list[tuple[str, list[float]]]]:
+    """Load only the sealed category-free geometry for an arbitrary image set."""
+
+    payload = json.loads(geometry_path.read_text(encoding="utf-8"))
+    if payload.get("semantic_category_labels_retained") is not False or payload.get("not_model_facing") is not True:
+        raise ValueError("geometry index is not the sealed category-free evaluator input")
+    # A registered image may legitimately contain no retained physical GT
+    # observation; keep an empty list so the fixed clock remains in the
+    # denominator instead of silently dropping that frame.
+    result: dict[int, list[tuple[str, list[float]]]] = {image_id: [] for image_id in image_ids}
+    for track in payload.get("tracks", []):
+        if set(track) != {"video_id", "opaque_track_id", "observations"}:
+            raise ValueError("geometry index contains non-geometry fields")
+        track_id = str(track["opaque_track_id"])
+        for observation in track["observations"]:
+            if not isinstance(observation, list) or len(observation) != 6:
+                raise ValueError("geometry observation is not [image,frame,xywh]")
+            image_id = int(observation[0])
+            if image_id not in image_ids:
+                continue
+            x, y, width, height = map(float, observation[2:6])
+            box = [x, y, x + width, y + height]
+            if not np.isfinite(box).all() or box[2] <= box[0] or box[3] <= box[1]:
+                raise ValueError("invalid category-free GT geometry")
+            result.setdefault(image_id, []).append((track_id, box))
+    return result
 
 
 def _deny_child_and_network() -> None:
@@ -419,6 +446,7 @@ def _select_gpu() -> tuple[str, str]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--worker", type=Path)
+    parser.add_argument("--evaluate-existing", action="store_true")
     args = parser.parse_args()
     cfg = _load_config()
     output = OUTPUT
@@ -427,6 +455,34 @@ def main() -> int:
     stream_root = ROOT / cfg["inputs"]["covtrack_stream_root"]
     if args.worker is not None:
         return _worker(args.worker, cfg)
+    if args.evaluate_existing:
+        if not run.exists() or output.exists():
+            raise RuntimeError("existing evaluation requires the preserved run and no result overwrite")
+        input_data = json.loads((run / "worker_input.json").read_text(encoding="utf-8"))
+        worker_status = json.loads((run / "worker_status.json").read_text(encoding="utf-8"))
+        if worker_status.get("status") != "SEALED_CATEGORY_FREE_MULTI_TRAIN_PREDICTIONS":
+            raise RuntimeError("preserved run does not contain a sealed prediction")
+        result = {
+            "schema_version": "trackocd.cvpr.masa-covtrack-multi-train-geometry-smoke-result.v1",
+            "generated_utc": _now(),
+            "status": "COMPLETE_CATEGORY_FREE_MULTI_FRONTEND_TRAIN_GEOMETRY_SMOKE_NOT_QUALIFICATION",
+            "config": {"path": str(CONFIG.resolve()), "sha256": _sha256(CONFIG)},
+            "selection": input_data,
+            "worker_returncode": 0,
+            "worker_guard_error": None,
+            "worker": worker_status,
+            "masa": _evaluate_masa(run, input_data, geometry_path),
+            "covtrack_native": _evaluate_covtrack(input_data, stream_root, geometry_path),
+            "boundary": cfg["boundaries"],
+            "interpretation": (
+                "Fixed same-image Train geometry/continuity smoke only. It does not qualify a frontend, "
+                "select a model, create an OCD/MOT metric, or accept Goal A/B/C."
+            ),
+        }
+        atomic_json(output, result)
+        print(json.dumps({"status": result["status"], "masa": result["masa"],
+                          "covtrack_native": result["covtrack_native"]}, sort_keys=True))
+        return 0
     if output.exists() or run.exists():
         raise RuntimeError("preserve existing multi-clip smoke; refusing overwrite")
     input_data = _build_fixed_input(cfg)
