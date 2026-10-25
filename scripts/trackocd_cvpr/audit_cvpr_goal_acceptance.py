@@ -114,6 +114,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     asset_path, asset = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json"
     )
+    runtime_path, runtime = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json"
+    )
     val_path, val = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json"
     )
@@ -183,11 +186,14 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json", reported_status=geometry.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json", reported_status=masa.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json", reported_status=asset.get("status")),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json", reported_status=runtime.get("status")),
             ],
             "facts": {
                 "covtrack_reliable_temporal_pairs": geometry_totals.get("reliable_temporal_pairs"),
                 "masa_admissible_for_formal_v2": masa.get("admissible_for_formal_v2"),
                 "strong_legal_primary_accepted": asset.get("strong_legal_primary_Pred_or_scientific_Goal_accepted"),
+                "runtime_checkpoint_binding_reconciled": nested(runtime, "qualification_boundary", "runtime_checkpoint_compatibility_reconciled"),
+                "exact_release_stage_training_binding_verified": nested(runtime, "qualification_boundary", "exact_release_stage_training_binding_verified"),
             },
             "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation.",
         },

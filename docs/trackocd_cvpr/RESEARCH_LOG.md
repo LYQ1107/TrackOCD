@@ -10498,3 +10498,26 @@ no private GT/cache/weights opened for this check):
   `Goal_C= PENDING`, `scientific_success_claimed=false`, and the sealed Val
   layers as interim evidence only.  This is an accounting/provenance advance,
   not a scientific completion claim or authorization to start full training.
+
+## MASA checkpoint/runtime reconciliation (2026-10-26 UTC)
+
+- The existing safe checkpoint inspection was run once using the registered
+  `weights_only=true`, CPU-mmap path.  The 558,882,875-byte checkpoint matched
+  its pinned SHA256
+  `441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c`; all
+  required backbone, adapter, RPN, ROI, and track prefixes were present across
+  `419` tensors.  No model was constructed and no inference/training/data/Test
+  access occurred in this inspection.
+- A receipt-only reconciliation then joined that metadata with the already
+  sealed MASA physical prediction and native smoke receipts.  It confirms
+  strict runtime loading (`419` keys, no missing/unexpected/shape-mismatch
+  keys), frozen parameters, no second pretrain weight, and the bounded
+  changed-future prefix invariant.  Receipt:
+  `outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json`
+  with status
+  `PASS_RUNTIME_CHECKPOINT_BINDING_RECONCILED_PROVENANCE_STAGE_OPEN`.
+- This closes the narrow runtime/checkpoint compatibility subcheck only.  The
+  exact release-stage training binding is still false; the existing MASA
+  physical stream remains annotated-cadence rather than a qualified dense v2
+  frontend, so formal cache admission, model selection, predicted training,
+  and Goal A/B/C remain closed.

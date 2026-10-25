@@ -1,0 +1,76 @@
+{
+  "schema_version": "trackocd.cvpr.masa-runtime-checkpoint-reconciliation.v1",
+  "generated_utc": "2026-10-25T22:45:39.614622+00:00",
+  "repository_head_at_audit": "b87639c265c2a92b6af2d5b35d11e8a837869068",
+  "status": "PASS_RUNTIME_CHECKPOINT_BINDING_RECONCILED_PROVENANCE_STAGE_OPEN",
+  "checks": {
+    "checkpoint_recovery_hash_matches_plan": true,
+    "checkpoint_required_prefixes_present": true,
+    "historical_physical_strict_runtime_load": true,
+    "historical_native_smoke_contract": true,
+    "pinned_source_lineage_matches_route": true,
+    "release_stage_binding_remains_open": true
+  },
+  "runtime_evidence": {
+    "checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+    "strict_state_tensor_keys": 419,
+    "real_image_forwards_in_sealed_physical_receipt": 64,
+    "native_smoke_real_image_forwards": 8,
+    "native_smoke_prefix_scope": "Two native sequential replays only, not a formal full-Val causality certificate"
+  },
+  "qualification_boundary": {
+    "runtime_checkpoint_compatibility_reconciled": true,
+    "exact_release_stage_training_binding_verified": false,
+    "dense_full_train_or_val_frontend_qualified": false,
+    "formal_v2_cache_admitted": false,
+    "formal_ocd_or_mot_metrics_created": false,
+    "model_selection_performed": false
+  },
+  "boundary": {
+    "new_model_constructed_or_run": false,
+    "new_inference_or_training": false,
+    "new_data_or_annotation_read": false,
+    "tao_test_read": false,
+    "external_processes_touched": false,
+    "weights_downloaded": false
+  },
+  "next_valid_gate": "Recover or establish exact release-stage/source provenance and a dense causal v2 input contract; then register a separate qualification run before any formal cache or Goal evaluation.",
+  "source_receipts": [
+    {
+      "path": "outputs/trackocd_core/audit/masa_checkpoint_recovery.json",
+      "exists": true,
+      "bytes": 3774,
+      "sha256": "2ae32253810422db1c429f54eb3603592aa226ad892088a3e3930318ec2760e6"
+    },
+    {
+      "path": "outputs/trackocd_core/audit/masa_physical_prediction_summary.json",
+      "exists": true,
+      "bytes": 26110,
+      "sha256": "5d9cd690debada6c91a731007634b110c96bc48a28c0849d4632e70538e5d27b"
+    },
+    {
+      "path": "outputs/trackocd_core/audit/masa_native_smoke.json",
+      "exists": true,
+      "bytes": 29508,
+      "sha256": "8e671405bc0d3adad1df50e320e96443f7fb8a36475df3ac77c16e8d5454415e"
+    },
+    {
+      "path": "outputs/trackocd_core/audit/masa_training_route.json",
+      "exists": true,
+      "bytes": 3321,
+      "sha256": "5c4a952b29ad697dcc9f6759fb7ba80758847772c96da02cf8cbeaa6d5788f7e"
+    },
+    {
+      "path": "configs/trackocd_core/masa_native_source_manifest.json",
+      "exists": true,
+      "bytes": 2588,
+      "sha256": "b1fe049eb8615b138a17d1ded354570219e82036158ee476448e5211c1e99ca8"
+    },
+    {
+      "path": "configs/trackocd_core/masa_sam_candidate_smoke.json",
+      "exists": true,
+      "bytes": 5385,
+      "sha256": "0da078afcdf1e3f285d20e9f40e42f355aeff77ff59c996ce5cfe3964b9e4966"
+    }
+  ]
+}
