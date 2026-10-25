@@ -98,6 +98,8 @@ def main() -> int:
     parser.add_argument("--candidate-stream", type=Path, required=True)
     parser.add_argument("--baseline-receipt", type=Path, required=True)
     parser.add_argument("--candidate-receipt", type=Path, required=True)
+    parser.add_argument("--baseline-mechanism", default="tracked_double_softmax_max_class")
+    parser.add_argument("--candidate-mechanism", required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -120,10 +122,28 @@ def main() -> int:
         },
         "baseline": {"stream": baseline, "receipt": _metadata(args.baseline_receipt)},
         "candidate": {"stream": candidate, "receipt": _metadata(args.candidate_receipt)},
+        "mechanisms": {
+            "baseline": args.baseline_mechanism,
+            "candidate": args.candidate_mechanism,
+        },
         "receipt_status": {
             "baseline": baseline_receipt.get("status"),
             "candidate": candidate_receipt.get("status"),
             "candidate_config": candidate_receipt.get("config"),
+        },
+        "native_output_identity": {
+            "baseline_bbox_sha256": baseline_receipt.get("native_bbox_output_sha256"),
+            "candidate_bbox_sha256": candidate_receipt.get("native_bbox_output_sha256"),
+            "bbox_byte_identical": (
+                baseline_receipt.get("native_bbox_output_sha256")
+                == candidate_receipt.get("native_bbox_output_sha256")
+            ),
+            "baseline_track_sha256": baseline_receipt.get("native_track_output_sha256"),
+            "candidate_track_sha256": candidate_receipt.get("native_track_output_sha256"),
+            "track_byte_identical": (
+                baseline_receipt.get("native_track_output_sha256")
+                == candidate_receipt.get("native_track_output_sha256")
+            ),
         },
         "deltas_candidate_minus_baseline": {
             "tracks": candidate["tracks"] - baseline["tracks"],
@@ -132,7 +152,7 @@ def main() -> int:
             "track_length_median": candidate["track_length_median"] - baseline["track_length_median"],
         },
         "interpretation": (
-            "The candidate is a bounded foreground-mass score-contract probe.  The paired run uses the "
+            f"The candidate is a bounded {args.candidate_mechanism} score-contract probe.  The paired run uses the "
             "same anonymous Train input, checkpoint, and frozen frontend; the changed score distribution "
             "and track counts prove that the selected shadow source path affects the actual exported route. "
             "This is mechanism evidence only and produces no OCD/MOT or Val qualification."

@@ -68,8 +68,20 @@
     "track_length_median": 0.0,
     "tracks": 5029
   },
-  "generated_utc": "2026-10-25T18:40:09.187289+00:00",
-  "interpretation": "The candidate is a bounded foreground-mass score-contract probe.  The paired run uses the same anonymous Train input, checkpoint, and frozen frontend; the changed score distribution and track counts prove that the selected shadow source path affects the actual exported route. This is mechanism evidence only and produces no OCD/MOT or Val qualification.",
+  "generated_utc": "2026-10-25T18:51:23.026797+00:00",
+  "interpretation": "The candidate is a bounded foreground_mass score-contract probe.  The paired run uses the same anonymous Train input, checkpoint, and frozen frontend; the changed score distribution and track counts prove that the selected shadow source path affects the actual exported route. This is mechanism evidence only and produces no OCD/MOT or Val qualification.",
+  "mechanisms": {
+    "baseline": "tracked_double_softmax_max_class",
+    "candidate": "foreground_mass"
+  },
+  "native_output_identity": {
+    "baseline_bbox_sha256": "6ade5dadeed6f05e7485fe9de44f2a779339d6b9e8acac40e724de502a07f196",
+    "baseline_track_sha256": "d28fce45c8a2c0d1695b1fefad93ac9d9b839865ad1bc4bfda676c2dafce1eaa",
+    "bbox_byte_identical": false,
+    "candidate_bbox_sha256": "ed2859596b528a44088114c052880139f7d1f5d93413f97e4897ba7248753d5c",
+    "candidate_track_sha256": "2485779b6ad26562da000cbb8e8a901c3b32d9a29e555c10e1f050d796194f2d",
+    "track_byte_identical": false
+  },
   "receipt_status": {
     "baseline": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE",
     "candidate": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE",

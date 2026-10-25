@@ -1,0 +1,92 @@
+{
+  "baseline": {
+    "receipt": {
+      "bytes": 5855,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_baseline_smoke_v1/run.json",
+      "sha256": "8e44102895f55e5912493f3f20b66e3da8541725febd1ce7ed3b08dba8ccde13"
+    },
+    "stream": {
+      "invalid_scores": 0,
+      "observations": 81480,
+      "score_count": 81480,
+      "score_max": 0.0075831059366464615,
+      "score_mean": 0.003559153429980065,
+      "score_min": 0.0033703711815178394,
+      "score_over_0.5": 0,
+      "score_under_0.05": 81480,
+      "singleton_tracks": 2931,
+      "stream": {
+        "bytes": 15548812,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_score_contract_baseline_smoke_v1/physical_tracks.jsonl",
+        "sha256": "593ea7fa43d77d464a15103fbc4fc50ffa35cd8fa187fe9d28765aa7a45a36b1"
+      },
+      "track_length_median": 2,
+      "tracks": 8241,
+      "tracks_over_16_observations": 859,
+      "videos": 2
+    }
+  },
+  "candidate": {
+    "receipt": {
+      "bytes": 5847,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_tracker_gate_v1/run.json",
+      "sha256": "cf00073a65737f338ba2384918064fb900b1584c39d910bbaf95c780018b8078"
+    },
+    "stream": {
+      "invalid_scores": 0,
+      "observations": 115708,
+      "score_count": 115708,
+      "score_max": 0.0075831059366464615,
+      "score_mean": 0.0035167561621169447,
+      "score_min": 0.0033703711815178394,
+      "score_over_0.5": 0,
+      "score_under_0.05": 115708,
+      "singleton_tracks": 4556,
+      "stream": {
+        "bytes": 22439905,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_score_contract_tracker_gate_v1/physical_tracks.jsonl",
+        "sha256": "a11b14e9503b9f7bd431a95305c50273464512d5c59afa95d7e2fd233341e5a8"
+      },
+      "track_length_median": 2.0,
+      "tracks": 13270,
+      "tracks_over_16_observations": 1370,
+      "videos": 2
+    }
+  },
+  "contract": {
+    "formal_metrics": false,
+    "gt_read_by_audit": false,
+    "images_opened_by_audit": false,
+    "semantic_categories_consumed_by_audit": false,
+    "tao_test_accessed": false,
+    "tao_val_accessed": false,
+    "training_started": false
+  },
+  "deltas_candidate_minus_baseline": {
+    "observations": 34228,
+    "score_mean": -4.239726786312015e-05,
+    "track_length_median": 0.0,
+    "tracks": 5029
+  },
+  "generated_utc": "2026-10-25T18:51:22.693715+00:00",
+  "interpretation": "The candidate is a bounded tracker_only_distractor_gate score-contract probe.  The paired run uses the same anonymous Train input, checkpoint, and frozen frontend; the changed score distribution and track counts prove that the selected shadow source path affects the actual exported route. This is mechanism evidence only and produces no OCD/MOT or Val qualification.",
+  "mechanisms": {
+    "baseline": "tracked_double_softmax_max_class",
+    "candidate": "tracker_only_distractor_gate"
+  },
+  "native_output_identity": {
+    "baseline_bbox_sha256": "6ade5dadeed6f05e7485fe9de44f2a779339d6b9e8acac40e724de502a07f196",
+    "baseline_track_sha256": "d28fce45c8a2c0d1695b1fefad93ac9d9b839865ad1bc4bfda676c2dafce1eaa",
+    "bbox_byte_identical": true,
+    "candidate_bbox_sha256": "6ade5dadeed6f05e7485fe9de44f2a779339d6b9e8acac40e724de502a07f196",
+    "candidate_track_sha256": "e0c39b3f4d30b5869ac55e65e8b03812593fab4377aa65f147af112daa8db0a6",
+    "track_byte_identical": false
+  },
+  "receipt_status": {
+    "baseline": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE",
+    "candidate": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE",
+    "candidate_config": "/data3/liuyeqiang/.trackocd_score_contract_tracker.LPxQ0U/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py"
+  },
+  "schema_version": "trackocd.cvpr.score_contract_smoke_comparison.v1",
+  "status": "COMPLETE_BOUNDED_ANONYMOUS_TRAIN_COMPARISON"
+}

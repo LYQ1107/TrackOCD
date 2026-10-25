@@ -9630,3 +9630,30 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_fixed2_v1/comparison.json`.
   The focused source-contract test still passed `1/1`; the new launcher files
   passed Python compilation.
+
+## Three bounded score/tracker mechanisms on the same anonymous Train smoke (2026-10-26 UTC)
+
+- The independent single-softmax shadow replaces the bbox-head's second
+  softmax with the already-normalized ROI-head class probabilities. It yielded
+  `6,733` tracks / `71,480` observations, score mean `0.05768854`, range
+  `[0.00337043, 0.81614697]`, and `700` observations above `0.5`. This is
+  distinct from foreground-mass: it changes NMS/class-score behavior without
+  forcing every retained observation to a foreground score near one.
+- The tracker-only shadow left the detector and exported bbox score column
+  untouched, but changed `OVTrackerUncertainty.remove_distractor`'s internal
+  low-score gate from `0.5` to `0.0`. Its native bbox output is byte-identical
+  to baseline (`6ade5dadeed6...`), while the track output changes; the
+  normalized result has `13,270` tracks / `115,708` observations, all scores
+  below `0.05`. This isolates a tracker lifecycle effect from detector/NMS
+  score rewriting.
+- Together with the foreground-mass run above, the three bounded mechanisms
+  produce different output signatures: foreground-mass raises all exported
+  scores above `0.5`, single-softmax produces a mixed distribution and fewer
+  observations, and tracker-only gating preserves detector scores while
+  increasing retained track observations. These are causal mechanism probes,
+  not accuracy evidence; no OCD/MOT metric, Val qualification, model
+  selection, training, GT, or Test access is claimed.
+- Receipts:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_single_softmax_v1/comparison.json`
+  and
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_tracker_gate_v1/comparison.json`.
