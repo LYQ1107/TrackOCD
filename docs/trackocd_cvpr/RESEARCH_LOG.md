@@ -9477,3 +9477,29 @@ no private GT/cache/weights opened for this check):
   `e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2`).
   It must not be conflated with the current 407-Train geometry/continuity
   audit or advertised as the pending formal Val report.
+
+## Corrected Train frame-lineage and coverage audit (2026-10-26 UTC)
+
+- The first exploratory regex-only frame-name check was discarded before
+  publication because ArgoVerse paths use timestamp-like filenames rather than
+  `frameNNNN.jpg`; it did not provide scientific evidence. The corrected audit
+  treats every image path as an opaque key and first computes a global per-video
+  synthetic frame base across all `13` substreams (the streams are video-disjoint).
+- Over the complete `407`-video anonymous Train stream (`1,245,952` rows,
+  `13,558,940` observations), the corrected audit found zero
+  `image_path_frame_conflicts`, zero `frame_image_path_conflicts`, zero strict
+  frame-order violations, and zero video-set mismatches. Thus the stream's
+  internal path/frame lineage is consistent; dataset-specific filename syntax
+  was not the source of the earlier apparent mismatch.
+- Coverage remains incomplete: the geometry-only GT index contains `14,017`
+  distinct annotated frames, of which `11,647` (`0.8309196`) have at least one
+  anonymous stream path; `387/407` videos have any annotated-frame path and
+  only `271/407` cover all their annotated frames. This supports a real
+  per-frame frontend coverage deficiency, while not by itself proving the
+  external GT image-index join or creating an OCD/MOT metric.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_frame_lineage_audit_v1/result.json`
+  (SHA256 `dae967a2d5f09f40d5a00af8fa082c6a011334e7e1e2cd764b9e0d3cbbd03f98`).
+  The scoped v2/joint-RCM regression after the corrected implementation passed
+  `58/58` in `6.46s`; no semantic/Test data, pixels, training, or external
+  process was accessed.

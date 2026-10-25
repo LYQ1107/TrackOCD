@@ -1,0 +1,64 @@
+{
+  "boundary": {
+    "feature_arrays_read": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "counts": {
+    "annotated_frame_path_coverage": 0.8309195976314475,
+    "frame_image_path_conflicts": 0,
+    "geometry_gt_annotated_frames": 14017,
+    "geometry_gt_annotated_frames_with_stream_path": 11647,
+    "image_path_frame_conflicts": 0,
+    "image_paths_checked": 13558940,
+    "missing_geometry_gt_video_rows": 0,
+    "predicted_stream_observations": 13558940,
+    "predicted_stream_rows": 1245952,
+    "strict_frame_order_violations": 0,
+    "unique_video_image_paths": 432003,
+    "video_set_mismatches": 0,
+    "videos_with_all_annotated_frame_paths": 271,
+    "videos_with_any_annotated_frame_path": 387
+  },
+  "generated_utc": "2026-10-25T17:50:30.351368+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+    "stream_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+    "stream_sha256_by_path": {
+      "shard_0_tccoff2/physical_tracks.jsonl": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+      "shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl": "798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b",
+      "shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl": "c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d",
+      "shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl": "f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000",
+      "shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl": "add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406",
+      "shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl": "4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6",
+      "shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl": "24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898",
+      "shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl": "fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3",
+      "shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl": "f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e",
+      "shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl": "c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2",
+      "shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86",
+      "shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f",
+      "shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl": "ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18"
+    }
+  },
+  "interpretation": "Zero image_path_frame_conflicts and zero frame_image_path_conflicts support the anonymous video-local frame lineage used by the geometry audits; dataset-specific filenames are intentionally opaque. This does not by itself prove the external GT image-index join beyond the sealed geometry contract. It is not frontend qualification, OCD/MOT, model selection, or Goal A/B/C acceptance.",
+  "ranges": {
+    "geometry_gt_frame_max": 5490,
+    "geometry_gt_frame_min": 0,
+    "stream_local_frame_max": 2340,
+    "stream_local_frame_min": 0
+  },
+  "schema_version": "trackocd.cvpr.frontend-frame-lineage-audit.v2",
+  "scope": {
+    "official_trackeval_or_ocd_metrics": false,
+    "pixels_read": false,
+    "semantic_fields_read": false,
+    "stream_substreams": 13,
+    "videos_in_geometry_gt": 407
+  },
+  "status": "COMPLETE_CATEGORY_FREE_FRONTEND_FRAME_LINEAGE_AUDIT"
+}
