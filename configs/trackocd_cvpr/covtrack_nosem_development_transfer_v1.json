@@ -1,0 +1,71 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack-nosem-development-transfer.v1",
+  "status": "FROZEN_COVTRACK_NOSEM_DEVELOPMENT_TRANSFER_NO_TRAINING",
+  "purpose": "Independent Train-development transfer check of the association-only COVTrack-NoSemantic route on the predeclared eight-video development prefix; no model selection, semantic labels, or formal metrics.",
+  "hypothesis": "The native confused-feature fusion may be amplifying unstable association; disabling only that fusion should improve causal identity persistence without changing detector geometry.",
+  "selection_rule": "The eight video IDs were predeclared by the frozen development_pseudo assignment before this candidate run; they were not selected by score, coverage, GT, or output quality.",
+  "video_ids": [
+    0,
+    3,
+    11,
+    38,
+    146,
+    220,
+    221,
+    239
+  ],
+  "role": "development_pseudo",
+  "role_assignment": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+  "role_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+  "baseline_contract": {
+    "frontend": "COVTrack-native",
+    "confused_features": true,
+    "only_validation_categories": true,
+    "public_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
+    "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+    "prompt": "checkpoints/covtrack/detpro_prompt.pt",
+    "track_category_consensus": false
+  },
+  "candidate_contract": {
+    "frontend": "COVTrack-NoSemantic",
+    "confused_features": false,
+    "only_validation_categories": true,
+    "public_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
+    "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+    "prompt": "checkpoints/covtrack/detpro_prompt.pt",
+    "track_category_consensus": false,
+    "mechanism": "disable only OVTrackerUncertainty confused-feature fusion; retain detector, prompt, score, frame, and anonymous category-free output settings"
+  },
+  "input": {
+    "image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+    "image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+    "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "anonymous_annotation": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_development_fg_mass_v1/anonymous_train.json",
+    "input_audit": "outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/input_audit.json",
+    "frame_alias": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_development_fg_mass_v1/val_frame_alias",
+    "public_frontend_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt"
+  },
+  "execution": {
+    "runner": "scripts/trackocd_v2/run_covtrack_train_dense_smoke.py",
+    "frontend_flag": "--frontend covtrack_nosem",
+    "run_id": "covtrack_nosem_development_transfer_v1",
+    "output_scope": "covtrack_nosem_development_transfer_v1",
+    "receipt_root": "outputs/trackocd_cvpr/cvpr2/covtrack_nosem_development_transfer_v1",
+    "fresh_single_gpu": true,
+    "max_concurrent_gpus": 1,
+    "ram_reserve_fraction": 0.25
+  },
+  "boundaries": {
+    "train_annotation_opened": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "tao_val_accessed": false,
+    "tao_test_accessed": false,
+    "training_started": false,
+    "formal_mot_or_ocd_metrics": false,
+    "model_selection": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "raw_native_payload_uploaded": false
+  },
+  "interpretation": "Bounded independent development-prefix frontend transfer smoke only. The paired geometry/continuity audit is diagnostic evidence and cannot select a model, establish OCD/MOT performance, or accept Goal A/B/C."
+}
