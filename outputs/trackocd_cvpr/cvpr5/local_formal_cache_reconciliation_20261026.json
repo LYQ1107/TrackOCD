@@ -1,0 +1,85 @@
+{
+  "schema_version": "trackocd.cvpr.local-formal-cache-reconciliation.v1",
+  "generated_utc": "2026-10-25T23:00:55.656459+00:00",
+  "status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY",
+  "scope": {
+    "small_metadata_receipts_only": true,
+    "feature_arrays_opened": false,
+    "large_streams_opened": false,
+    "data_or_weights_read": false,
+    "tao_test_read": false,
+    "external_processes_touched": false,
+    "model_selection_performed": false
+  },
+  "local_cache": {
+    "manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json",
+    "manifest_status": "RUNNING",
+    "frontend": "COVTrack-native",
+    "split": "val",
+    "shard_tracks": 512,
+    "total_tracks": 369794,
+    "required_shards": 723,
+    "completed_shards": 384,
+    "completed_shard_ranges": [
+      [
+        0,
+        383
+      ]
+    ],
+    "missing_shards": 339,
+    "missing_shard_ranges": [
+      [
+        384,
+        722
+      ]
+    ],
+    "checked_tracks": 196608,
+    "checked_observations": 739486,
+    "invalid_box_count": 0,
+    "formal_cache_complete": false,
+    "cache_root_reachable": true
+  },
+  "historical_cache": {
+    "audit": "outputs/trackocd_v2_runtime/audit/formal_cache_payload_audit_20261022.json",
+    "reported_status": "PASS_COMPLETE",
+    "reported_required_shards": 723,
+    "reported_completed_shards": 723,
+    "manifest_path": "/data3/liuyeqiang/nas/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native_continuation_20261022/cache_manifest.json",
+    "cache_root": "/data3/liuyeqiang/nas/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native_continuation_20261022",
+    "manifest_reachable_now": false,
+    "cache_root_reachable_now": false,
+    "historical_pass_is_current_asset": false
+  },
+  "binding_checks": {
+    "partial_manifest_matches_local_manifest": true,
+    "partial_audit_cache_root_matches_manifest": true,
+    "manifest_count_matches_partial_audit": true,
+    "checked_track_count_matches_manifest_entries": true,
+    "local_formal_cache_complete": false,
+    "historical_cache_reachable": false
+  },
+  "evidence": [
+    {
+      "path": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json",
+      "exists": true,
+      "bytes": 170697,
+      "sha256": "7e2d4db63e554c0b1471ca37d1e96800700d842c53d682c2dc94b0a36a5dc631",
+      "reported_status": "RUNNING"
+    },
+    {
+      "path": "outputs/trackocd_v2_runtime/audit/local_partial_cache_payload_audit_20261026.json",
+      "exists": true,
+      "bytes": 62575,
+      "sha256": "0be83ce7d44ca747c9a5c9555e9b972dedae61e6424360dc1a2c37fc5c025279",
+      "reported_status": "PASS_PARTIAL_COMPLETED_SHARDS"
+    },
+    {
+      "path": "outputs/trackocd_v2_runtime/audit/formal_cache_payload_audit_20261022.json",
+      "exists": true,
+      "bytes": 117073,
+      "sha256": "ef37456ff07046085b15be5fe8c15f7ff1473ad218cc634b8099d19250a7318f",
+      "reported_status": "PASS_COMPLETE"
+    }
+  ],
+  "scientific_boundary": "This reconciles the current cache checkpoint only; it does not select a frontend, authorize formal predicted evaluation, or claim OCD/MOT or Goal A/B/C success."
+}

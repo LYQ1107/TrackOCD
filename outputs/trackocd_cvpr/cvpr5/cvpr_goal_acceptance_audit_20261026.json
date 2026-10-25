@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T22:58:41.908537+00:00",
+  "generated_utc": "2026-10-25T23:01:06.676902+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "4eb51bf39204e1874488a3b4da3095b8e21477b5",
+    "head": "99733b7770865f239c02ad1833a82d7bdf9bce3c",
     "clean_before_audit": false
   },
   "scope": {
@@ -233,9 +233,15 @@
         "current_candidate_is_official_tao_route": false,
         "formal_v2_admission_status": "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS",
         "formal_v2_ready": false,
-        "formal_v2_missing_or_invalid_asset_count": 16
+        "formal_v2_missing_or_invalid_asset_count": 16,
+        "local_cache_reconciliation_status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY",
+        "local_cache_required_shards": 723,
+        "local_cache_completed_shards": 384,
+        "local_cache_missing_shards": 339,
+        "local_cache_formal_complete": false,
+        "historical_complete_cache_reachable": false
       },
-      "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation."
+      "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation; the reachable local cache is only 384/723 shards and the historical 723/723 path is currently unreachable."
     },
     {
       "id": "predicted_track_training",
@@ -434,6 +440,13 @@
       "bytes": 2830,
       "sha256": "af8a9fe1504a1ffc9e637cd0b5502cd2eccbfa35ac42a53fb95c167f6f01c6f9",
       "reported_status": "PASS_LEGACY_RESEARCH_PRESERVATION_VERIFIED"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json",
+      "exists": true,
+      "bytes": 3278,
+      "sha256": "02d0915a6ad078601ee7ca7165ebf1d647041439b2c65b9a35c6355805f79c90",
+      "reported_status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json",

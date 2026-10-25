@@ -129,6 +129,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     preservation_path, preservation = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json"
     )
+    local_cache_path, local_cache = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json"
+    )
     val_path, val = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json"
     )
@@ -269,8 +272,16 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "formal_v2_admission_status": admission.get("status"),
                 "formal_v2_ready": admission.get("formal_ready"),
                 "formal_v2_missing_or_invalid_asset_count": len(admission.get("problems", [])),
+                "local_cache_reconciliation_status": local_cache.get("status"),
+                "local_cache_required_shards": nested(local_cache, "local_cache", "required_shards"),
+                "local_cache_completed_shards": nested(local_cache, "local_cache", "completed_shards"),
+                "local_cache_missing_shards": nested(local_cache, "local_cache", "missing_shards"),
+                "local_cache_formal_complete": nested(local_cache, "local_cache", "formal_cache_complete"),
+                "historical_complete_cache_reachable": nested(
+                    local_cache, "binding_checks", "historical_cache_reachable"
+                ),
             },
-            "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation.",
+            "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation; the reachable local cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
         },
         {
             "id": "predicted_track_training",
@@ -399,6 +410,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
             evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json", reported_status=cache.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json", reported_status=mechanism.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json", reported_status=preservation.get("status")),
+            evidence(repo, "outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json", reported_status=local_cache.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json", reported_status=val.get("status")),
         ],
     }

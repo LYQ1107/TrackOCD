@@ -10585,6 +10585,24 @@ no private GT/cache/weights opened for this check):
   processes. The formal next action is to recover and hash only the listed
   missing assets before any formal evaluation is considered.
 
+## Reachable formal-cache checkpoint reconciliation (2026-10-26 UTC)
+
+- The local COVTrack-native Val cache was reconciled from its small manifest
+  and the existing payload-audit receipt, without reopening feature arrays or
+  streams.  The reachable local checkpoint has `384/723` completed shards and
+  `196,608/369,794` tracks (`739,486` observations); the partial audit reports
+  zero errors and zero invalid boxes, but the cache is not complete.
+- The older NAS-bound receipt reports a complete `723/723` cache, but its
+  manifest and cache root are currently unreachable through the local
+  `/data3/liuyeqiang/nas/A100` path.  It is retained as historical evidence,
+  not promoted to a current asset.  The missing local shard range is
+  `384–722` (339 shards).
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json`.
+  No frontend selection, formal predicted evaluation, training, TAO Test
+  access, or external-process intervention occurred; the formal v2 admission
+  and Goal A/B/C gates remain closed.
+
 ## Legacy research preservation audit (2026-10-26 UTC)
 
 - Added the metadata-only audit
