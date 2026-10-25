@@ -9537,3 +9537,23 @@ no private GT/cache/weights opened for this check):
   The scoped v2/joint-RCM regression after the corrected implementation passed
   `58/58` in `6.46s`; no semantic/Test data, pixels, training, or external
   process was accessed.
+
+## Train frontend IoU-threshold sensitivity diagnostic (2026-10-26 UTC)
+
+- Ran a category-free threshold sweep over the same complete `407`-video,
+  `13`-substream anonymous Train frontend stream. At IoU thresholds `0.1`,
+  `0.3`, `0.5`, `0.7`, and `0.9`, observation recall was respectively
+  `0.7135`, `0.5658`, `0.3692`, `0.2273`, and `0.0725`; the corresponding
+  observation precision on annotated images was only `0.0887`, `0.0704`,
+  `0.0459`, `0.0283`, and `0.0090`.
+- Lowering the threshold increases geometry recall and GT-track coverage
+  (`2,008/2,222` GT tracks matched at `0.1` versus `1,667/2,222` at `0.5`),
+  but precision remains below `0.09` even at `0.1`. This rules out a simple
+  `IoU=0.5` threshold artifact as the sole explanation; broad false-positive
+  load and/or localization/coordinate quality remain material frontend
+  failures. This is still not a formal detection metric or qualification.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_iou_sensitivity_audit_v1/result.json`
+  (SHA256 `f1a9a01fcbc2325219838bbd9421a6058cf848793801edcddaa019c773899d1b`).
+  No semantic fields, pixels, features, Val/Test data, training, or
+  prediction-to-GT mapping were persisted.
