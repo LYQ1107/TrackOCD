@@ -10157,3 +10157,17 @@ no private GT/cache/weights opened for this check):
   and
   `outputs/trackocd_cvpr/cvpr2/policy_predicted_frontend_fg_mass_smoke_v1/temporal_continuity_age2.json`;
   no raw payload was uploaded and no external process was touched.
+
+## Predicted dense-cache state reconciliation (2026-10-26 UTC)
+
+- The frozen joint protocol state was reconciled with the post-execution cache
+  receipt. The four top-level ordinal shards and their bounded recovery parts
+  cover all `407` approved Train videos: `13` subshards, `1,245,952` physical
+  tracks, `13,558,940` observations, and zero invalid boxes. The receipt
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json`
+  has SHA256
+  `532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8`.
+- The protocol and its audit now record this cache as complete while keeping
+  strong frontend qualification, predicted-track R/C/M training, formal
+  OCD/MOT evaluation, model selection, and Goal A/B/C acceptance pending. The
+  state correction changes bookkeeping only; no cache was rerun or deleted.

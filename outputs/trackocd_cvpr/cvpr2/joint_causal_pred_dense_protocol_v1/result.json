@@ -4,7 +4,8 @@
   "approved_video_id_order_sha256": "d0ceeb81eb0b6d67ee050e8eb15cda909e602cb83f57204d13fcbde276898ea8",
   "boundaries": {
     "formal_metrics_created": false,
-    "full_predicted_cache_started": false,
+    "full_predicted_cache_complete": true,
+    "full_predicted_cache_started": true,
     "model_selection_performed": false,
     "novel_vocabulary_used": false,
     "private_gt_arrays_read_by_audit": false,
@@ -49,11 +50,23 @@
       "video_id_order_sha256": "ca36220139121cb1308268db041e5ef5854477e36507ed3581c278ca9985e450"
     }
   ],
-  "generated_utc": "2026-10-25T17:03:30.711637+00:00",
-  "interpretation": "Protocol boundary audit only; Goal A/B/C, full predicted cache, formal OCD/MOT, and frontend qualification remain open.",
+  "full_cache_reconciliation": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+    "sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+    "status": "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS",
+    "totals": {
+      "invalid_boxes": 0,
+      "observations": 13558940,
+      "tracks": 1245952,
+      "videos": 407
+    }
+  },
+  "generated_utc": "2026-10-25T21:22:00.415169+00:00",
+  "interpretation": "Protocol and reconciled-cache boundary audit only; formal OCD/MOT, frontend qualification, and Goal A/B/C remain open.",
   "protocol": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/joint_causal_pred_dense_protocol_v1.json",
-  "protocol_sha256": "3b2c5ac9692c6a9d4e9f670dcf2e709bc9e77b81bd07b3d2173994d39f895652",
-  "repository_head_at_audit": "49dd999a4f1821402eb0c854edbd76359ea5f321",
+  "protocol_sha256": "51d86aa8043deec85983f855d1442f7a6c733994fb4b0a2035ed37bf4b249199",
+  "protocol_state": "FROZEN_CAUSAL_BOUNDARIES_FULL_PRED_CACHE_COMPLETE_FRONTEND_QUALIFICATION_PENDING",
+  "repository_head_at_audit": "0dbc9d2a8b1b8e274fdd0e34b2151942e6aaa6da",
   "schema_version": "trackocd.cvpr.joint-causal-pred-dense-protocol-audit.v1",
   "smoke_counts": {
     "invalid_boxes": 0,
@@ -63,5 +76,5 @@
   },
   "smoke_receipt": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/run.json",
   "smoke_receipt_sha256": "dcbfbc866aa737575feb2d1d6725f032f90267c652b3e9f22b92debacff339a5",
-  "status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING"
+  "status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_FULL_PRED_CACHE_COMPLETE"
 }

@@ -28,6 +28,10 @@ COMPLETE_RECEIPT_STATUSES = {
     "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SHARD",
     "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SHARD_TCC_OFF",
 }
+PROTOCOL_STATUSES = {
+    "FROZEN_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
+    "FROZEN_CAUSAL_BOUNDARIES_FULL_PRED_CACHE_COMPLETE_FRONTEND_QUALIFICATION_PENDING",
+}
 
 PHYSICAL_FIELDS = {
     "sample_key",
@@ -175,7 +179,7 @@ def audit(
     seen_input_ids: set[int] = set()
     complete = True
 
-    if config.get("status") != "FROZEN_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING":
+    if config.get("status") not in PROTOCOL_STATUSES:
         errors.append("unexpected protocol status")
     if len(plan_ids) != 407 or len(config_shards) != 4:
         errors.append(f"expected 407 approved IDs and 4 config shards, got {len(plan_ids)} and {len(config_shards)}")

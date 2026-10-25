@@ -6,4 +6,21 @@ The legal model-facing frontend is an anonymous COVTrack-native `train_predicted
 
 The full predicted dense cache is registered as four fixed contiguous shards of the sorted actual approved video-ID list (ordinal sizes `102/102/102/101`; endpoint IDs `0–632`, `633–1447`, `1453–2190`, `2194–2987`). The ID-order hash and each shard hash are audited against the approved metadata plan; numeric video IDs are not assumed contiguous. This registration does not auto-start the long cache. Each video is atomic, completed videos must not be re-extracted, raw native/cache artifacts remain local, and only compact receipts are pushed.
 
-Formal policy/development and Goal A/B/C acceptance remain closed until the full predicted input, source/provenance receipts, separately trained/self-correcting M controls, fair multi-seed/order/coverage evaluation, and lawful evaluator-side matching are complete.
+At the time of this protocol freeze, formal policy/development and Goal A/B/C
+acceptance remained closed until the full predicted input, source/provenance
+receipts, separately trained/self-correcting M controls, fair
+multi-seed/order/coverage evaluation, and lawful evaluator-side matching were
+complete.
+
+## State reconciliation — 2026-10-26
+
+The four fixed anonymous dense shards have since completed and were reconciled:
+`407` videos, `13` bounded subshards, `1,245,952` physical tracks,
+`13,558,940` observations, and zero invalid boxes. The authoritative receipt is
+`outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json`
+with SHA256
+`532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8`.
+This closes cache coverage/provenance only. The foreground-mass transfer and
+causal birth-confirmation diagnostics still do not qualify the frontend, so
+formal predicted-track R/C/M training, OCD/MOT evaluation, and Goal A/B/C
+acceptance remain closed.

@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.joint-causal-pred-dense-protocol.v1",
-  "status": "FROZEN_CAUSAL_BOUNDARIES_PRED_CACHE_PENDING",
+  "status": "FROZEN_CAUSAL_BOUNDARIES_FULL_PRED_CACHE_COMPLETE_FRONTEND_QUALIFICATION_PENDING",
   "protocol_id": "joint_causal_pred_dense_v1",
   "freeze_scope": "Freeze data roles, causal chronology, frontend boundary, controls, metrics, resource limits, and acceptance gates before any full predicted dense cache or formal fit.",
   "source_code_commit_for_registration": "c646dd43e36b91aa238ad52e7bfb3b09cfbbd747",
@@ -36,7 +36,7 @@
     "smoke_scope": "fixed video IDs 0,1; 2342 frames; 81471 observations; 8233 tracks; zero invalid boxes; no formal metrics"
   },
   "predicted_dense_cache": {
-    "status": "NOT_STARTED_REGISTERED_FIXED_ORDINAL_SHARDS",
+    "status": "COMPLETE_407_FIXED_ANONYMOUS_TRAIN_DENSE_CACHE_RECONCILED",
     "selection": "all 407 approved Train video IDs, fixed before execution; no outcome pruning",
     "raw_jpeg_count_expected": 432011,
     "atomic_unit": "video",
@@ -47,6 +47,13 @@
       {"shard": 3, "ordinal_min": 306, "ordinal_max": 406, "video_id_first": 2194, "video_id_last": 2987, "video_count": 101, "video_id_order_sha256": "ca36220139121cb1308268db041e5ef5854477e36507ed3581c278ca9985e450"}
     ],
     "outputs": "local-only native rows plus category-free train_predicted physical stream; only compact receipts may enter Git",
+    "reconciliation_receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+    "reconciliation_receipt_sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+    "completed_video_count": 407,
+    "completed_subshard_count": 13,
+    "completed_physical_tracks": 1245952,
+    "completed_physical_observations": 13558940,
+    "invalid_box_count": 0,
     "full_cache_automatic_start": false,
     "no_duplicate_completed_video_extraction": true
   },
