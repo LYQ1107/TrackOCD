@@ -9275,3 +9275,18 @@ no private GT/cache/weights opened for this check):
 - With the repository root exported in `PYTHONPATH`, the complete v2 plus
   joint-RCM regression suite passed (`57 passed`); the initial collection
   failure without that environment detail was invocation-only.
+
+## Local partial-cache numerical audit after reboot (2026-10-26 UTC)
+
+- While the NAS relay remained unavailable, the already present local
+  continuation cache was audited without opening any new source data. The
+  receipt is
+  `outputs/trackocd_v2_runtime/audit/local_partial_cache_payload_audit_20261026.json`
+  (`SHA256=0be83ce7d44ca747c9a5c9555e9b972dedae61e6424360dc1a2c37fc5c025279`).
+- The audit passed for `384/723` shards, `196,608` unique tracks and
+  `739,486` observations, with zero index/lineage errors and zero invalid
+  boxes. The input stream hash remains
+  `63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1`.
+- This is reusable partial-cache evidence only: `formal_cache_complete=false`,
+  `339` shards remain absent, and no baseline, OCD/MOT metric, Test access, or
+  model-selection decision was produced.
