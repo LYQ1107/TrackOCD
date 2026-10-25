@@ -1,0 +1,41 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack_score_gate_full_train.v1",
+  "status": "FROZEN_OFFLINE_SCORE_GATE_COUNTERFACTUAL",
+  "purpose": "Full-407-video category-free counterfactual audit of the exported COVTrack score gate.",
+  "threshold_semantics": "retain an observation when its normalized physical-stream quality is finite, in [0,1], and >= threshold",
+  "thresholds": [
+    0.0001,
+    0.003367003367003367,
+    0.005,
+    0.01,
+    0.5
+  ],
+  "threshold_rationale": {
+    "0.0001": "registered COVTrack show_score_thr",
+    "0.003367003367003367": "one_over_297_exported_score_contract reference",
+    "0.005": "fixed near-contract diagnostic cut",
+    "0.01": "fixed above-observed-contract diagnostic cut",
+    "0.5": "registered tracker low-object distractor cut"
+  },
+  "geometry_matching": "per-image class-free Hungarian matching at IoU >= 0.5 against the sealed physical geometry-only Train index",
+  "inputs": {
+    "split": "train_predicted",
+    "frontend": "COVTrack-native",
+    "stream_root": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+    "geometry_gt_index": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "reconciliation": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json"
+  },
+  "boundaries": {
+    "category_free": true,
+    "train_annotation_opened": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "native_evaluator_rows_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "feature_arrays_read": false,
+    "training_started": false,
+    "prediction_to_gt_track_mapping_persisted": false,
+    "model_selection": false
+  }
+}

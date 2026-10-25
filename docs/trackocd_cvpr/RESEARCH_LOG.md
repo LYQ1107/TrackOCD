@@ -6,6 +6,37 @@ nested video GT arrays. Original chronology/receipts are preserved below;
 consult `TRAIN_METADATA_ACCESS_INCIDENT.md` and its immutable incident receipt
 for corrected scope. No new scientific-access clearance is implied.
 
+## 2026-10-26 — full-Train COVTrack score-gate counterfactual
+
+The frozen score-gate protocol was applied offline to the complete reconciled
+anonymous COVTrack-native Train stream: `407` videos, `1,245,952` physical
+tracks, and `13,558,940` observations.  The evaluator opened only the sealed
+category-free physical GT index (`2,222` opaque tracks and `45,450` geometry
+observations) and the normalized physical streams; it did not rerun the
+frontend or retain a prediction-to-GT mapping.  Protocol and implementation
+are `configs/trackocd_cvpr/covtrack_score_gate_full_train_v1.json` and
+`scripts/trackocd_cvpr/audit_covtrack_score_gate_full_train.py`; the compact
+receipt is
+`outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_full_train_v1/result.json`.
+
+All `13,558,940` exported quality values were finite and in `[0,1]`, with
+minimum `0.0033703709`, mean `0.0036412845`, and maximum `0.0090982812`.
+Keeping the registered `0.0001` gate or the `1/297` score-contract reference
+retained every observation and reproduced the full-stream geometry result:
+`16,778` matched observations, precision `0.0459070`, recall `0.3691529`, and
+`1,667/2,222` GT tracks with a per-image match.  The fixed `0.005` cut retained
+`459,668` observations and only `14,518` tracks; precision rose to `0.1985317`
+but recall fell to `0.0559296` (`532/2,222` GT tracks).  No observation survived
+the fixed `0.01` or `0.5` cuts.
+
+This whole-Train counterfactual strengthens the score-contract diagnosis: the
+exported score has a narrow, non-objectness scale and a high-score cut trades
+coverage for precision rather than repairing the frontend.  It does not prove
+that score semantics are the sole geometry/coverage cause, and it is not a
+fresh native run, formal OCD/MOT metric, model-selection result, frontend
+qualification, or Goal A/B/C acceptance.  Boundaries remained closed for
+training, features, Val/Test labels, semantic roles, and Novel vocabulary.
+
 ## 2026-10-26 — five-video foreground-mass score-contract recheck
 
 The predeclared bounded follow-up completed on anonymous Train videos
