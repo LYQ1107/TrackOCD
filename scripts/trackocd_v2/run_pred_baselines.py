@@ -168,7 +168,10 @@ def _resolve_causal_stream() -> tuple[Path, Any, dict[str, Any]] | None:
             raise ValueError(
                 f"cache input hash mismatch: {cached_stream_sha256} != {stream_sha256}"
             )
-        store = ShardedFeatureStore(manifest)
+        # The formal cache is on an SSHFS mount on this server.  Reading the
+        # current shard as ordinary arrays avoids long-lived remote mmap page
+        # faults (which previously terminated a Val replay with SIGBUS).
+        store = ShardedFeatureStore(manifest, mmap_mode=None)
         return stream, store, {
             "kind": "formal_sharded",
             "frontend": selected,
@@ -176,6 +179,7 @@ def _resolve_causal_stream() -> tuple[Path, Any, dict[str, Any]] | None:
             "stream": str(stream),
             "stream_sha256": stream_sha256,
             "cache_manifest": str(manifest.resolve()),
+            "cache_read_mode": "copy_current_shard",
             "decision_namespace": f"frontend_{slug}",
         }
     return None
@@ -623,6 +627,7 @@ def main() -> int:
             "source_kind": source["kind"],
             "frontend": source.get("frontend"),
             "feature_source": source.get("cache_manifest", source.get("feature_audit")),
+            "feature_read_mode": source.get("cache_read_mode", "default"),
         },
         "evaluator_subset": {
             "join_audit": str(join_audit_path.resolve()),

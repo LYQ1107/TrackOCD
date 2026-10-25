@@ -66,3 +66,9 @@ def test_sharded_feature_store_round_trip(tmp_path):
     assert value["prefix_features"]["4"].shape == (768,)
     assert value["prefix_observations_used"]["16"] == 2
     assert np.all(value["full_feature"] == 11.0)
+
+    copy_store = ShardedFeatureStore(manifest, mmap_mode=None)
+    copy_store.get("k1")
+    assert not isinstance(copy_store._current_observations, np.memmap)
+    assert not isinstance(copy_store._current_prefixes, np.memmap)
+    assert not isinstance(copy_store._current_full, np.memmap)

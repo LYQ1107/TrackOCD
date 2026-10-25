@@ -9217,3 +9217,32 @@ no private GT/cache/weights opened for this check):
   (`55 passed`). This is a scheduling/recovery result only: the formal cache
   is still incomplete and no OCD/MOT metric or Goal A/B/C acceptance is
   claimed.
+
+## Formal Val dpmeans replay: SSHFS mmap failure and bounded recovery (2026-10-25 UTC)
+
+- The Val-only `nearest` baseline completed and produced a sealed table. The
+  task-owned `dpmeans` child (`PID 1001899`) then exited with return code `-7`
+  (`SIGBUS`) at `2026-10-25T10:17:05.042364+00:00`. Its unsealed `p1`
+  temporary JSONL contains `331,191` decisions through `stream_order=331190`;
+  it has no `.done` marker and is not a metric result. No `pred_dpmeans.json`
+  or Val report was produced.
+- The failing boundary is `covtrack_native_2421_312286`, row `439` of
+  `shard-000646`. The shard marker, Parquet index, and the three NumPy files
+  are structurally present; an isolated read of the boundary arrays succeeded,
+  so payload corruption is not established. The formal reader had been using
+  `mmap_mode="r"` against the SSHFS-mounted NAS cache. At the failure snapshot
+  the host had only about `2.1 GiB` available RAM and an almost-full `8 GiB`
+  swap; the local filesystem had about `2.6 GB` free. Other users' processes
+  were observed but not terminated or changed.
+- Recovery repair: `ShardedFeatureStore` now accepts an explicit mmap mode;
+  the formal Val baseline uses `mmap_mode=None` (`copy_current_shard`) so only
+  the current roughly-7-MB shard is copied to ordinary RAM arrays instead of
+  retaining remote SSHFS-backed mappings. The result contract records this
+  read mode. The default local mmap behavior and all causal order, feature,
+  threshold, and evaluator contracts remain unchanged.
+- Verification: the targeted cache/contract tests passed (`5 passed`), the
+  complete v2 suite passed (`55 passed in 137.44s`), and a Val-only copy-mode
+  smoke read `26` rows spanning the failure boundary successfully with
+  `test_semantic_accessed=false`. No Test content was read. A formal dpmeans
+  retry is deliberately not launched while the 25%-RAM reserve is violated;
+  the partial JSONL and dead launch marker remain recovery evidence.

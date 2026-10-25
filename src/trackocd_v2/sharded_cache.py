@@ -19,10 +19,20 @@ PREFIXES = (1, 2, 4, 8, 16)
 
 
 class ShardedFeatureStore:
-    """Open a completed ``cache_manifest.json`` without copying feature data."""
+    """Open a completed ``cache_manifest.json``.
 
-    def __init__(self, manifest_path: Path):
+    ``mmap_mode='r'`` is efficient for a local filesystem.  A caller reading
+    through a remote FUSE/SSHFS mount can pass ``mmap_mode=None`` so the
+    current shard is copied into ordinary NumPy arrays instead of retaining
+    remote file-backed mappings.  Only one shard is resident at a time in
+    either mode.
+    """
+
+    def __init__(self, manifest_path: Path, *, mmap_mode: str | None = "r"):
         self.manifest_path = Path(manifest_path).resolve()
+        if mmap_mode not in {None, "r", "r+", "w+", "c"}:
+            raise ValueError(f"unsupported mmap_mode: {mmap_mode}")
+        self.mmap_mode = mmap_mode
         if not self.manifest_path.is_file():
             raise FileNotFoundError(self.manifest_path)
         self.manifest: Dict[str, Any] = json.loads(self.manifest_path.read_text(encoding="utf-8"))
@@ -73,9 +83,15 @@ class ShardedFeatureStore:
         if self._current_index == shard_index:
             return
         shard_dir = self._shards[shard_index]
-        self._current_observations = np.load(shard_dir / "observations.npy", mmap_mode="r", allow_pickle=False)
-        self._current_prefixes = np.load(shard_dir / "prefix_features.npy", mmap_mode="r", allow_pickle=False)
-        self._current_full = np.load(shard_dir / "full_features.npy", mmap_mode="r", allow_pickle=False)
+        self._current_observations = np.load(
+            shard_dir / "observations.npy", mmap_mode=self.mmap_mode, allow_pickle=False
+        )
+        self._current_prefixes = np.load(
+            shard_dir / "prefix_features.npy", mmap_mode=self.mmap_mode, allow_pickle=False
+        )
+        self._current_full = np.load(
+            shard_dir / "full_features.npy", mmap_mode=self.mmap_mode, allow_pickle=False
+        )
         if self._current_observations.ndim != 2 or self._current_observations.shape[1] != 768:
             raise ValueError("invalid observation array shape in %s" % shard_dir)
         if self._current_prefixes.ndim != 3 or self._current_prefixes.shape[1:] != (len(PREFIXES), 768):
