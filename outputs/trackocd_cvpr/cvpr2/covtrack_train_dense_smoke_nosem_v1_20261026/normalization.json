@@ -1,0 +1,63 @@
+{
+  "annotation": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json",
+    "semantic_labels_consumed": false,
+    "sha256": "4e7a2020f8495d9095051f23d1735fbe593ae0d81ee39a7c39982a932fb75222",
+    "used_for": "structural image/video/frame_index/file_name lookup only"
+  },
+  "contracts": {
+    "gt_join_used_for_normalization": false,
+    "native_evaluator_row_fields": [
+      "video_id",
+      "image_id",
+      "frame_index",
+      "physical_track_id",
+      "bbox_xyxy",
+      "score",
+      "category_id"
+    ],
+    "physical_stream_contains_category_or_text": false,
+    "physical_stream_fields": [
+      "sample_key",
+      "source_sample_id",
+      "video_id",
+      "physical_track_id",
+      "frame_ids",
+      "boxes_xyxy",
+      "image_paths",
+      "quality",
+      "stream_order",
+      "source_split"
+    ],
+    "test_semantic_accessed": false
+  },
+  "counts": {
+    "invalid_boxes": 0,
+    "observations": 81480,
+    "tracks": 8480,
+    "videos": 2
+  },
+  "frontend": "COVTrack-NoSemantic",
+  "frontend_slug": "covtrack_nosem",
+  "generated_utc": "2026-10-25T17:23:08.010092+00:00",
+  "input": {
+    "format": "tao_json",
+    "input_rows": 81480,
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_native/covtrack_nosem/covtrack_train_dense_smoke_nosem_v1_20261026/formatted/tao_track.json",
+    "sha256": "74ee8fe69f02690070ed775911e34d63c72d77bb9c4607ebae2eaa25aa93e1b5"
+  },
+  "invalid_box_policy": {
+    "all_observations_retained": true,
+    "allow_invalid_boxes": false,
+    "invalid_examples": []
+  },
+  "outputs": {
+    "native_evaluator_rows": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_nosem/train_dense_smoke_nosem_v1_20261026/native_evaluator_rows.jsonl",
+    "native_evaluator_rows_sha256": "9cf283f17b483a4ea216f8801376c9fba316887c2dfb4012aa2e6dd18306ad04",
+    "physical_stream": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_nosem/train_dense_smoke_nosem_v1_20261026/physical_tracks.jsonl",
+    "physical_stream_sha256": "5c6517d973178933498c9e9b563b478404e0ec700d89f6fbedd02e7fe7da8f28"
+  },
+  "schema_version": "trackocd.v2.frontend_normalization.v1",
+  "source_split": "train_predicted",
+  "status": "COMPLETE"
+}

@@ -48,8 +48,8 @@ FRONTEND_SLUG = "covtrack_native"
 FRONTEND_NAME = FRONTENDS[FRONTEND_SLUG]["name"]
 
 
-def _marker_path(run_id: str) -> Path:
-    return OUTPUT_TARGET / "audit" / f"covtrack_train_dense_smoke_{run_id}.launched.json"
+def _marker_path(run_id: str, frontend_slug: str = FRONTEND_SLUG) -> Path:
+    return OUTPUT_TARGET / "audit" / f"covtrack_train_dense_smoke_{frontend_slug}_{run_id}.launched.json"
 
 
 def _check_registration(train_audit: Path, train_annotation: Path, expected_video_ids: list[int]) -> dict[str, Any]:
@@ -82,7 +82,10 @@ def _environment() -> dict[str, str]:
     return environment
 
 
-def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE", track_category_consensus: bool = True) -> dict[str, Any]:
+def run(*, gpu_index: int, run_id: str, frontend_slug: str = FRONTEND_SLUG, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE", track_category_consensus: bool = True) -> dict[str, Any]:
+    if frontend_slug not in FRONTENDS:
+        raise ValueError(f"unsupported COVTrack frontend: {frontend_slug}")
+    frontend_name = FRONTENDS[frontend_slug]["name"]
     expected_video_ids = list(range(0, 2)) if expected_video_ids is None else list(expected_video_ids)
     input_audit = _check_registration(train_audit, train_annotation, expected_video_ids)
     for path in (COVTRACK_PYTHON, CONFIG, CHECKPOINT, PROMPT, train_annotation, train_audit, TRAIN_FRAME_ROOT, frame_alias, train_classes):
@@ -92,14 +95,14 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
         raise ValueError("Train frame compatibility alias is not the registered symlink to the Train frame root")
     _require_resource_gate(gpu_index)
 
-    run_root = OUTPUT_TARGET / "frontend_native" / FRONTEND_SLUG / run_id
+    run_root = OUTPUT_TARGET / "frontend_native" / frontend_slug / run_id
     if run_root.exists():
         raise FileExistsError(f"refusing to reuse existing smoke run root: {run_root}")
     formatted = run_root / "formatted"
     formatted.mkdir(parents=True, exist_ok=False)
     log_path = run_root / "native_train.log"
     normalized_log = run_root / "normalization.log"
-    normalization_dir = OUTPUT_TARGET / "manifests/frontend_streams" / FRONTEND_SLUG / output_scope
+    normalization_dir = OUTPUT_TARGET / "manifests/frontend_streams" / frontend_slug / output_scope
     normalization_audit = receipt_root / "normalization.json"
     physical_output = normalization_dir / "physical_tracks.jsonl"
     native_evaluator_output = normalization_dir / "native_evaluator_rows.jsonl"
@@ -115,7 +118,7 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
         # expects the model-facing filename to contain the ``val`` marker.
         "data.test.img_prefix=" + str(frame_alias.absolute()) + os.sep,
         "data.test.classes=" + str(train_classes.resolve()),
-        "model.tracker.confused_features=true",
+        "model.tracker.confused_features=" + str(FRONTENDS[frontend_slug]["confused_features"]).lower(),
         "model.roi_head.prompt_path=" + str(PROMPT.resolve()),
         "data.samples_per_gpu=1",
         "data.workers_per_gpu=1",
@@ -135,12 +138,12 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
         "resfile_path=" + str(formatted.resolve()),
         "tcc=" + ("True" if track_category_consensus else "False"),
     ]
-    marker = _marker_path(run_id)
+    marker = _marker_path(run_id, frontend_slug)
     _atomic_json(marker, {
         "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_launch.v1",
         "status": "RUNNING",
         "started_utc": _now(),
-        "frontend": FRONTEND_NAME,
+        "frontend": frontend_name,
         "split": "train_predicted",
         "gpu_index": gpu_index,
         "run_root": str(run_root.resolve()),
@@ -165,7 +168,7 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
             sys.executable,
             str((ROOT / "scripts/trackocd_v2/normalize_frontend_output.py").resolve()),
             "--frontend",
-            FRONTEND_NAME,
+            frontend_name,
             "--input",
             str(native_track.resolve()),
             "--input-format",
@@ -196,8 +199,8 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
             "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_run.v1",
             "status": result_status,
             "generated_utc": _now(),
-            "frontend": FRONTEND_NAME,
-            "frontend_slug": FRONTEND_SLUG,
+            "frontend": frontend_name,
+            "frontend_slug": frontend_slug,
             "split": "train_predicted",
             "run_root": str(run_root.resolve()),
             "gpu_index": gpu_index,
@@ -253,7 +256,8 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
             "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_run.v1",
             "status": "FAILED_COVTRACK_TRAIN_DENSE_RUN",
             "generated_utc": _now(),
-            "frontend": FRONTEND_NAME,
+            "frontend": frontend_name,
+            "frontend_slug": frontend_slug,
             "split": "train_predicted",
             "gpu_index": gpu_index,
             "run_root": str(run_root.resolve()),
@@ -267,6 +271,7 @@ def run(*, gpu_index: int, run_id: str, train_annotation: Path = TRAIN_ANNOTATIO
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--frontend", choices=tuple(FRONTENDS), default=FRONTEND_SLUG)
     parser.add_argument("--gpu-index", type=int, required=True)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--annotation", type=Path, default=TRAIN_ANNOTATION)
@@ -290,6 +295,7 @@ def main() -> int:
         result = run(
             gpu_index=args.gpu_index,
             run_id=args.run_id,
+            frontend_slug=args.frontend,
             train_annotation=args.annotation.resolve(),
             train_audit=args.input_audit.resolve(),
             frame_alias=args.frame_alias,
@@ -305,6 +311,8 @@ def main() -> int:
             "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_run.v1",
             "status": "WAITING_RESOURCE",
             "generated_utc": _now(),
+            "frontend": FRONTENDS[args.frontend]["name"],
+            "frontend_slug": args.frontend,
             "error": str(exc),
             "training_started": False,
             "tao_val_accessed": False,

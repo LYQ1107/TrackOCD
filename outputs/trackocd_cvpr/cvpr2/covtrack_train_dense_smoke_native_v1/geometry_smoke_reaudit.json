@@ -1,0 +1,73 @@
+{
+  "aggregate_geometry": {
+    "gt_observations": 296,
+    "gt_tracks": 13,
+    "gt_tracks_with_multiple_pred_votes": 1,
+    "gt_tracks_with_per_image_match": 5,
+    "observation_precision_on_annotated_images": 0.006060606060606061,
+    "observation_recall_against_annotated_gt": 0.04391891891891892,
+    "per_image_matched_observations": 13,
+    "predicted_observations": 81471,
+    "predicted_observations_on_gt_images": 2145,
+    "predicted_tracks": 8233,
+    "predicted_tracks_with_any_annotated_observation": 1155,
+    "predicted_tracks_with_multiple_gt_votes": 0,
+    "predicted_tracks_with_per_image_match": 8,
+    "reliable_gt_track_recall": 0.0,
+    "reliable_gt_tracks": 0,
+    "reliable_predicted_track_fraction_all": 0.0,
+    "reliable_predicted_tracks": 0,
+    "reliable_temporal_pairs": 0,
+    "temporal_candidate_pairs": 0,
+    "videos": 2
+  },
+  "boundary": {
+    "feature_arrays_read": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "native_evaluator_rows_read": false,
+    "prediction_to_gt_track_mapping_persisted": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "counts": {
+    "gt_observations": 296,
+    "gt_tracks": 13,
+    "gt_tracks_with_multiple_pred_votes": 1,
+    "gt_tracks_with_per_image_match": 5,
+    "per_image_matched_observations": 13,
+    "predicted_observations": 81471,
+    "predicted_observations_on_gt_images": 2145,
+    "predicted_tracks": 8233,
+    "predicted_tracks_with_any_annotated_observation": 1155,
+    "predicted_tracks_with_multiple_gt_votes": 0,
+    "predicted_tracks_with_per_image_match": 8,
+    "reliable_gt_tracks": 0,
+    "reliable_predicted_tracks": 0,
+    "reliable_temporal_pairs": 0,
+    "temporal_candidate_pairs": 0,
+    "videos": 2
+  },
+  "generated_utc": "2026-10-25T17:23:47.661849+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+    "physical_stream": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/train_dense_smoke_v1/physical_tracks.jsonl",
+    "physical_stream_sha256": "27e9b2aadb5dc25f224a085afd01de91d0101b4a669ad9b7f73631feaacd07c0"
+  },
+  "interpretation": "Bounded category-free Train frontend smoke only; not frontend qualification, OCD/MOT, model selection, or Goal A/B/C acceptance.",
+  "schema_version": "trackocd.cvpr.frontend-geometry-smoke-audit.v1",
+  "scope": {
+    "iou_threshold": 0.5,
+    "official_trackeval_or_ocd_metrics": false,
+    "predeclared_video_ids": [
+      0,
+      1
+    ],
+    "qualification_or_model_selection": false,
+    "videos_processed": 2
+  },
+  "status": "COMPLETE_CATEGORY_FREE_FRONTEND_GEOMETRY_SMOKE"
+}

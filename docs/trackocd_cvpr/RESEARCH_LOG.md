@@ -9378,3 +9378,31 @@ no private GT/cache/weights opened for this check):
   frontend is requalified under the Train geometry gate or a legally produced
   alternative Train stream passes the same gate. No new inference, training,
   Val/Test access, or external-process intervention occurred in this check.
+
+## Bounded COVTrack-NoSemantic Train alternative smoke (2026-10-25 UTC)
+
+- Parameterized the existing bounded anonymous Train smoke runner so the
+  registered `COVTrack-native` default is unchanged and `COVTrack-NoSemantic`
+  can be executed in a separate namespace. The runner still requires the fixed
+  two-video Train input audit, uses `train_predicted`, closes Val/Test/GT
+  semantic boundaries, and refuses output-root reuse.
+- On the predeclared videos `0/1`, the NoSemantic route completed on owned GPU 2
+  with `8,480` physical tracks, `81,480` observations, and zero invalid boxes.
+  The category-free geometry smoke yielded precision `0.00605778`, recall
+  `0.0439189`, and `0` reliable temporal pairs. The identical audit on the
+  retained native two-video smoke yielded precision `0.00606061`, recall
+  `0.0439189`, and also `0` reliable temporal pairs. No meaningful geometry
+  improvement was observed; neither smoke is a frontend qualification or an
+  OCD/MOT metric.
+- This bounded result does not justify launching a full NoSemantic Train
+  inference/cache. No training, feature extraction, model selection, Val/Test
+  access, or external-process intervention occurred. Receipts:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_nosem_v1_20261026/run.json`
+  (SHA256 `e4a93c3b4cd7436edba8cd61f85e4a9e0a73780d0d14eb90b4cfad69880ff04e`),
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_nosem_v1_20261026/geometry_smoke.json`
+  (SHA256 `f4a0c73b211405cfd35e516604e7a5fc8b0220d9379fa6ac42ff357569374765`),
+  and native re-audit
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_native_v1/geometry_smoke_reaudit.json`
+  (SHA256 `bc038c692ee05a7b032e3a983d9426901d232db8b7d790c1d348d1d6ed6dd327`).
+- The scoped regression after the parameterization passed `58/58`; the full
+  root test discovery remains intentionally out of scope.
