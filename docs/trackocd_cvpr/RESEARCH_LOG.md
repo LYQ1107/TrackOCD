@@ -112,6 +112,30 @@ the raw feature payload.  This is a legal predicted-input interface pilot,
 not a formal cache, frontend qualification, OCD/MOT metric, model-selection
 result, or Goal A/B/C acceptance.
 
+## 2026-10-26 — policy predicted R/C/M interface smoke
+
+The newly completed anonymous policy-video feature payload was connected to
+the real causal `RawPreservingEvidence` / candidate bridge /
+`JointRCMAtomicMemberControl` path through a separately frozen CPU smoke.
+The fixed structural selection used video `72`, the first eight source frame
+IDs, and the first nine stream-order tracks containing all eight frames:
+`72` observations/events across `9` tracks.  No image, GT, role target,
+vocabulary, Val/Test asset, or weight was read by this smoke.
+
+The smoke exercised `9` deterministic `NEW` actions and `63` `EXISTING`
+actions, retained `72` versioned memory states, and passed both invariants:
+opaque routing-ID rename was unchanged and appending the future four frames
+did not alter the first four frame records.  The learned scorer was not
+optimized; the deterministic callback exists only to exercise the tensor
+contract.  Config/script:
+`configs/trackocd_cvpr/predicted_train_policy_rcm_interface_smoke_v1.json`
+and `scripts/trackocd_cvpr/predicted_train_rcm_interface_smoke.py`.  Receipt:
+`outputs/trackocd_cvpr/cvpr2/predicted_train_policy_rcm_interface_smoke_v1/result.json`
+(SHA256 `d2aea34bf3e3d8e73d910a45d787b5fc87e68254494c6a62c36ba03ce26c3883`).
+This is causal interface/plumbing evidence only: zero optimizer steps,
+zero GPU-hours, no OCD/MOT or discovery metric, no frontend qualification,
+and no Goal A/B/C acceptance.
+
 ## 2026-10-26 — five-video foreground-mass score-contract recheck
 
 The predeclared bounded follow-up completed on anonymous Train videos

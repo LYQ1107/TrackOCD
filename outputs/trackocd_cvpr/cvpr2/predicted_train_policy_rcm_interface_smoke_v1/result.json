@@ -1,0 +1,57 @@
+{
+  "boundaries": {
+    "formal_mot_or_ocd_metrics": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "model_selection": false,
+    "optimizer_steps": 0,
+    "raw_features_uploaded_to_github": false,
+    "scientific_acceptance": false,
+    "test_accessed": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "config": "configs/trackocd_cvpr/predicted_train_policy_rcm_interface_smoke_v1.json",
+  "config_sha256": "1e8bec586f9c36af6c377135eb094302f7b6a61d844ebef32d07e9067017820e",
+  "created_utc": "2026-10-25T20:22:05.913253+00:00",
+  "input": {
+    "events": 72,
+    "frames": 8,
+    "index": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/track_index.jsonl",
+    "index_sha256": "15243e01df8cc134d1717fab0532c9d347eb91d4f532fe7efb9088ff2b029403",
+    "observations": 72,
+    "payload": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/video_0072_prefix_features.npz",
+    "payload_sha256": "e92f5a5aec007ce6dc867702ee2d58ae22d5ff327567d4b3f353625ec01d1d42",
+    "tracks": 9,
+    "video_id": 72
+  },
+  "interface": {
+    "C": "CandidateScoreMLP tensor shape and candidate bridge; deterministic harness callback",
+    "M": "JointRCMAtomicMemberControl versioned reliability memory",
+    "R": "RawPreservingEvidence",
+    "actions": {
+      "EXISTING": 63,
+      "NEW": 9
+    },
+    "first_frame_records": 9,
+    "future_suffix_prefix_invariant": true,
+    "last_frame_records": 9,
+    "learned_scorer_optimized": false,
+    "memory_versions": 72,
+    "opaque_route_rename_invariant": true,
+    "synthetic_numeric_anchor_not_semantic_label": true
+  },
+  "interpretation": "Interface smoke only; it validates causal R/C/M tensor and append-only-memory plumbing on category-free predicted features. It is not trained, not a qualified frontend, and reports no OCD/MOT or discovery metric.",
+  "resources": {
+    "device": "CPU",
+    "optimizer_steps": 0,
+    "peak_rss_bytes": 451665920,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 4.805812734999563,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.predicted-train-rcm-interface-smoke-result.v1",
+  "script": "scripts/trackocd_cvpr/predicted_train_rcm_interface_smoke.py",
+  "script_sha256": "0f98fa34a4b1dba57c45d1d52451ca13080f917d89b197d9d9db963113c19ff2",
+  "status": "PASS_FIXED_PREDICTED_TRAIN_RCM_INTERFACE_SMOKE_NO_TRAINING"
+}
