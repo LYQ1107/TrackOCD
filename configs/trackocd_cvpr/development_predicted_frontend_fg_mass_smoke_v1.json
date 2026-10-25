@@ -1,0 +1,48 @@
+{
+  "schema_version": "trackocd.cvpr.development-predicted-foreground-mass-frontend-smoke.v1",
+  "status": "FROZEN_DEVELOPMENT_PREFIX_FRONTEND_TRANSFER_SMOKE_NO_TRAINING",
+  "purpose": "Independent Train-development transfer check for the already frozen foreground-mass score-contract candidate; no dev model selection, semantic labels, or formal metrics.",
+  "role": "development_pseudo",
+  "video_ids": [0, 3, 11, 38, 146, 220, 221, 239],
+  "selection_rule": "First eight video IDs in the frozen development_pseudo role order from the registered assignment; fixed before candidate execution and not selected by score, coverage, GT, or output quality.",
+  "role_assignment": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+  "role_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+  "frontend_candidate": {
+    "route": "COVTrack-native foreground-mass bbox-head shadow",
+    "shadow_root": "/data3/liuyeqiang/.trackocd_score_contract_shadow.McpA1H",
+    "bbox_head_sha256": "21a4a72c66a556fd1f9c394e2ff54ee3fcd701ae59fbecf29cb48a96e5b5de70",
+    "selection_basis": "Previously frozen mechanism; this run is an independent development transfer check.",
+    "track_category_consensus": false
+  },
+  "input": {
+    "image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+    "image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+    "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "annotation_output": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_development_fg_mass_v1/anonymous_train.json",
+    "input_audit": "outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/input_audit.json",
+    "frame_alias": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_development_fg_mass_v1/val_frame_alias"
+  },
+  "execution": {
+    "runner": "scripts/trackocd_v2/run_covtrack_train_dense_smoke.py",
+    "run_id": "covtrack_development_fg_mass_v1",
+    "output_scope": "covtrack_development_fg_mass_v1",
+    "receipt_root": "outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1",
+    "fresh_single_gpu": true,
+    "max_concurrent_gpus": 1,
+    "ram_reserve_fraction": 0.25
+  },
+  "boundaries": {
+    "train_annotation_opened": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "feature_arrays_read": false,
+    "training_started": false,
+    "formal_mot_or_ocd_metrics": false,
+    "model_selection": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "raw_native_payload_uploaded": false
+  },
+  "interpretation": "Bounded independent development-prefix frontend transfer smoke only. It may inform frontend qualification diagnostics, but cannot select a model, establish OCD/MOT performance, or accept Goal A/B/C."
+}
