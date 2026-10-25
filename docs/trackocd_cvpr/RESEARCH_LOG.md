@@ -10108,3 +10108,52 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/geometry_comparison.json`
   and `temporal_continuity.json`. Large native/normalized payloads remain
   local-only; no dev semantic labels or Val/Test data were read.
+
+## Causal native-track birth confirmation diagnostic (2026-10-26 UTC)
+
+- The foreground-mass candidate was additionally evaluated with a causal
+  native-track age gate. The first native observation has age `1`; age is
+  incremented only when the next observation is on the immediately consecutive
+  source frame, and an observation is retained only after age `2`. The rule
+  does not inspect final track length or later observations when deciding the
+  current observation. The exact postrun reproducibility record is
+  `configs/trackocd_cvpr/causal_native_tracklet_birth_gate_age2_v1.json`; it is
+  explicitly not a preregistration or model-selection protocol because the
+  receipts existed before this record was committed.
+- The physical lifecycle audit found that the policy candidate had `41,493`
+  native tracks and `517,039` observations before filtering; mean/median track
+  length was `12.4609/3`, `11,840` tracks were singletons, and `25,174`
+  tracks (`60.67%`) contained a consecutive-frame run of at least two. The
+  development candidate had `46,477` tracks and `422,694` observations;
+  mean/median length was `9.0947/3`, `15,185` tracks were singletons, and
+  `26,227` tracks (`56.43%`) contained such a run. These are physical stream
+  lifecycle counts, not semantic or official tracking metrics.
+- On the independent eight-video development prefix, the age-2 candidate
+  retained `300,229` observations and yielded `507/893` geometry matches,
+  precision `0.0582692`, recall `0.5677492`, adjacent-pair match rate
+  `0.4707288`, same-ID rate `0.6319797`, and switch rate `0.3680203`.
+  Relative to the age-1 baseline (`357/893`, precision `0.0421090`, recall
+  `0.3997760`, same-ID `0.7805907`, switch `0.2194093`), this is a gain of
+  `150` matched observations, `+0.0161602` precision, and `+0.1679731`
+  recall, but same-ID persistence is lower by `0.1486110`. Relative to the
+  unfiltered foreground-mass candidate, the gate raises precision and lowers
+  both coverage and switch rate; it does not restore baseline identity
+  persistence.
+- On the fixed ten-video policy subset, the age-2 candidate retained `371,364`
+  observations and yielded `614/1268` geometry matches, precision `0.0571429`,
+  recall `0.4842271`, adjacent-pair match rate `0.3822076`, same-ID rate
+  `0.6271552`, and switch rate `0.3728448`. Relative to the age-1 baseline
+  (`473/1268`, precision `0.0491582`, recall `0.3730284`, same-ID `0.8611987`,
+  switch `0.1388013`), this is `+141` matched observations, `+0.0079847`
+  precision, and `+0.1111987` recall, but same-ID persistence is lower by
+  `0.2340436` and switching remains substantially higher.
+- The result supports a limited mechanism conclusion: causal birth
+  confirmation improves precision and reduces the foreground-mass candidate's
+  unfiltered instability, but it does not make the candidate a persistent
+  frontend. No predicted-track training, official OCD/MOT metric, model
+  selection, frontend qualification, or Goal A/B/C acceptance is claimed.
+  Durable receipts are
+  `outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/temporal_continuity_age2.json`
+  and
+  `outputs/trackocd_cvpr/cvpr2/policy_predicted_frontend_fg_mass_smoke_v1/temporal_continuity_age2.json`;
+  no raw payload was uploaded and no external process was touched.

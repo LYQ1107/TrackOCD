@@ -1,0 +1,47 @@
+{
+  "schema_version": "trackocd.cvpr.causal-native-tracklet-birth-gate-diagnostic.v1",
+  "status": "RECORDED_POSTRUN_CAUSAL_BIRTH_CONFIRMATION_DIAGNOSTIC",
+  "purpose": "Record the exact causal native-track age gate used to test whether foreground-mass coverage gains can be made less unstable before any predicted-track training.",
+  "postrun_note": "The two receipts were generated before this config was committed. This file is a postrun reproducibility record, not a preregistration, model-selection protocol, or qualification claim.",
+  "mechanism": {
+    "baseline_min_native_age": 1,
+    "candidate_min_native_age": 2,
+    "age_definition": "A native track starts at age 1; age increments only when the next observation has the immediately consecutive source-frame index; otherwise age resets to 1.",
+    "retention_rule": "Keep an observation only when the causal age at that observation is at least the configured minimum.",
+    "uses_future_track_length": false,
+    "uses_future_observations_for_current_decision": false,
+    "candidate": "Previously frozen COVTrack-native foreground-mass bbox-head score-contract repair.",
+    "candidate_score_or_gt_tuning": false
+  },
+  "fixed_comparison": {
+    "policy_train_pseudo_video_ids": [72, 275, 349, 371, 1524, 1831, 2330, 2686, 2977, 2987],
+    "development_pseudo_video_ids": [0, 3, 11, 38, 146, 220, 221, 239],
+    "selection_rule": "Existing fixed policy subset and independent first-eight development-prefix subset; no outcome, score, or GT selection.",
+    "baseline_stream": "Existing anonymous COVTrack-native dense physical stream with age 1.",
+    "candidate_stream": "Existing anonymous COVTrack-native foreground-mass physical stream, filtered causally to age 2."
+  },
+  "evaluation": {
+    "geometry_only_gt_index": "Existing sealed category-free physical GT index; semantic/category fields are not used.",
+    "iou_threshold": 0.5,
+    "pair_definition": "Adjacent observations in each sealed GT track annotation order.",
+    "prediction_to_gt_mapping_persisted": false,
+    "official_trackeval_or_ocd_metrics": false
+  },
+  "receipts": {
+    "development": "outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/temporal_continuity_age2.json",
+    "policy": "outputs/trackocd_cvpr/cvpr2/policy_predicted_frontend_fg_mass_smoke_v1/temporal_continuity_age2.json",
+    "implementation": "scripts/trackocd_cvpr/audit_policy_frontend_temporal_continuity.py"
+  },
+  "boundaries": {
+    "training_started": false,
+    "predicted_track_training": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "semantic_labels_read": false,
+    "novel_vocabulary_read": false,
+    "model_selection": false,
+    "frontend_qualification": false,
+    "raw_payload_uploaded": false
+  },
+  "interpretation": "This is a category-free causal lifecycle diagnostic. It may identify a useful birth-confirmation mechanism, but it cannot establish OCD/MOT performance, frontend qualification, or Goal A/B/C acceptance."
+}

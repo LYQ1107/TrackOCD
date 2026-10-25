@@ -38,9 +38,13 @@ def _read_streams(
     paths: list[Path],
     video_ids: set[int],
     gt_by_frame: dict[int, dict[int, list[tuple[str, list[float]]]]],
+    *,
+    min_native_age: int = 1,
 ) -> dict[str, Any]:
     if not paths:
         raise ValueError("at least one stream is required")
+    if min_native_age < 1:
+        raise ValueError("min_native_age must be at least one")
     by_frame: dict[tuple[int, int], list[tuple[tuple[int, str], list[float]]]] = defaultdict(list)
     seen_tracks: set[tuple[int, str]] = set()
     stream_rows = 0
@@ -87,16 +91,28 @@ def _read_streams(
                 seen_tracks.add(track_key)
                 selected_in_path.add(video_id)
                 base = bases[video_id]
+                previous_frame: int | None = None
+                native_age = 0
+                kept_observations = 0
                 for frame_id, box in zip(frame_ids, boxes):
                     if not _finite_box(box):
                         raise ValueError(f"invalid box at {path}:{line_number}")
                     frame_index = int(frame_id) - base
+                    if previous_frame is not None and frame_index == previous_frame + 1:
+                        native_age += 1
+                    else:
+                        native_age = 1
+                    previous_frame = frame_index
+                    if native_age < min_native_age:
+                        continue
+                    kept_observations += 1
                     if frame_index in gt_by_frame[video_id]:
                         by_frame[(video_id, frame_index)].append(
                             (track_key, [float(value) for value in box])
                         )
-                stream_rows += 1
-                stream_observations += len(frame_ids)
+                if kept_observations:
+                    stream_rows += 1
+                    stream_observations += kept_observations
         overlap = observed_videos & selected_in_path
         if overlap:
             raise ValueError(f"video IDs appear in multiple streams: {sorted(overlap)}")
@@ -106,6 +122,7 @@ def _read_streams(
             "bytes": path.stat().st_size,
             "sha256": _sha256(path),
             "selected_videos": sorted(selected_in_path),
+            "min_native_age": min_native_age,
         })
 
     if observed_videos != video_ids:
@@ -171,14 +188,26 @@ def audit(
     candidate_streams: list[Path],
     video_ids: list[int],
     output: Path,
+    baseline_min_native_age: int = 1,
+    candidate_min_native_age: int = 1,
 ) -> dict[str, Any]:
     selected = set(video_ids)
     if not selected or len(selected) != len(video_ids):
         raise ValueError("video IDs must be unique and non-empty")
     all_gt_by_frame, _gt_counts = _load_geometry_gt(geometry_gt)
     gt_by_frame = {video_id: all_gt_by_frame[video_id] for video_id in selected}
-    baseline = _read_streams(baseline_streams, selected, gt_by_frame)
-    candidate = _read_streams(candidate_streams, selected, gt_by_frame)
+    baseline = _read_streams(
+        baseline_streams,
+        selected,
+        gt_by_frame,
+        min_native_age=baseline_min_native_age,
+    )
+    candidate = _read_streams(
+        candidate_streams,
+        selected,
+        gt_by_frame,
+        min_native_age=candidate_min_native_age,
+    )
     result = {
         "schema_version": "trackocd.cvpr.policy-frontend-temporal-continuity.v1",
         "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY",
@@ -191,6 +220,8 @@ def audit(
             "frontend_qualification": False,
             "model_selection": False,
             "mapping_persisted": False,
+            "baseline_min_native_age": baseline_min_native_age,
+            "candidate_min_native_age": candidate_min_native_age,
         },
         "inputs": {
             "geometry_only_gt_index": str(geometry_gt.resolve()),
@@ -245,6 +276,8 @@ def main() -> int:
     parser.add_argument("--candidate-stream", type=Path, action="append", required=True)
     parser.add_argument("--video-id", type=int, action="append", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--baseline-min-native-age", type=int, default=1)
+    parser.add_argument("--candidate-min-native-age", type=int, default=1)
     args = parser.parse_args()
     result = audit(
         geometry_gt=args.geometry_gt.resolve(),
@@ -252,6 +285,8 @@ def main() -> int:
         candidate_streams=[path.resolve() for path in args.candidate_stream],
         video_ids=args.video_id,
         output=args.output.resolve(),
+        baseline_min_native_age=args.baseline_min_native_age,
+        candidate_min_native_age=args.candidate_min_native_age,
     )
     print(json.dumps({
         "status": result["status"],
