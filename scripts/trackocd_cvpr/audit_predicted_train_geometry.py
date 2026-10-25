@@ -315,7 +315,18 @@ def _aggregate_video_results(rows: Iterable[dict[str, int | float]]) -> dict[str
     return dict(totals)
 
 
-def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_path: Path, max_videos: int = 0) -> dict[str, Any]:
+def audit(
+    gt_path: Path,
+    stream_root: Path,
+    reconciliation_path: Path,
+    output_path: Path,
+    max_videos: int = 0,
+    video_ids: set[int] | None = None,
+) -> dict[str, Any]:
+    if max_videos and video_ids is not None:
+        raise ValueError("Use either max_videos or a fixed video allowlist, not both")
+    if video_ids is not None and (not video_ids or any(type(video) is not int or video < 0 for video in video_ids)):
+        raise ValueError("Fixed video allowlist must contain positive integer IDs")
     gt_by_frame, gt_track_counts = _load_geometry_gt(gt_path)
     paths = _stream_paths(stream_root)
     reconciliation = json.loads(reconciliation_path.read_text(encoding="utf-8"))
@@ -352,6 +363,8 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
                 track_id = str(row["physical_track_id"])
                 if video_id not in gt_track_counts:
                     raise ValueError(f"stream video {video_id} is outside the approved geometry index")
+                if video_ids is not None and video_id not in video_ids:
+                    continue
                 if max_videos:
                     if video_id not in selected_videos and len(selected_videos) < max_videos:
                         selected_videos.add(video_id)
@@ -414,7 +427,7 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
         if max_videos and len(selected_videos) >= max_videos:
             break
 
-    full = not max_videos
+    full = not max_videos and video_ids is None
     result = {
         "schema_version": "trackocd.cvpr.category-free-train-predicted-geometry-audit.v1",
         "status": "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_AUDIT" if full else "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_SMOKE",
@@ -422,6 +435,7 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
         "scope": {
             "approved_videos": 407,
             "videos_processed": len(seen_videos),
+            "fixed_video_ids": None if video_ids is None else sorted(video_ids),
             "full_fixed_cache_reconciled": full,
             "iou_threshold": IOU_THRESHOLD,
             "matching": "per-image class-free Hungarian at IoU>=0.5; temporal-IoU pair diagnostics and deterministic non-overlap summary",
@@ -459,6 +473,8 @@ def audit(gt_path: Path, stream_root: Path, reconciliation_path: Path, output_pa
             raise ValueError("stream totals disagree with the reconciled full cache")
         if len(seen_videos) != 407 or seen_videos != set(gt_track_counts):
             raise ValueError("full stream video coverage does not equal the approved geometry index")
+    elif video_ids is not None and seen_videos != video_ids:
+        raise ValueError("fixed video allowlist is not fully covered by the predicted streams")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     return result
@@ -471,10 +487,14 @@ def main() -> int:
     parser.add_argument("--reconciliation", type=Path, default=DEFAULT_RECONCILIATION)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--max-videos", type=int, default=0, help="bounded smoke limit; zero means all 407 videos")
+    parser.add_argument("--video-id", type=int, action="append", default=None, help="fixed video allowlist; repeat for a policy subset")
     args = parser.parse_args()
     if args.max_videos < 0:
         raise SystemExit("--max-videos must be non-negative")
-    result = audit(args.geometry_gt.resolve(), args.stream_root.resolve(), args.reconciliation.resolve(), args.output.resolve(), args.max_videos)
+    if args.video_id and args.max_videos:
+        raise SystemExit("--video-id and --max-videos are mutually exclusive")
+    selected_ids = None if not args.video_id else set(args.video_id)
+    result = audit(args.geometry_gt.resolve(), args.stream_root.resolve(), args.reconciliation.resolve(), args.output.resolve(), args.max_videos, selected_ids)
     print(json.dumps({
         "status": result["status"],
         "videos_processed": result["scope"]["videos_processed"],

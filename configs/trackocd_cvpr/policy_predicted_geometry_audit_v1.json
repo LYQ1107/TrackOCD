@@ -1,0 +1,37 @@
+{
+  "schema_version": "trackocd.cvpr.policy-predicted-geometry-audit.v1",
+  "status": "FROZEN_POLICY_SUBSET_CATEGORY_FREE_GEOMETRY_AUDIT",
+  "purpose": "Measure fixed policy_train_pseudo predicted-front-end geometry support before any external-loss pilot; no semantic target values are decoded or persisted.",
+  "role": "policy_train_pseudo",
+  "video_ids": [
+    72,
+    275,
+    349,
+    371,
+    1524,
+    1831,
+    2330,
+    2686,
+    2977,
+    2987
+  ],
+  "role_assignment": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+  "role_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+  "geometry_gt": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+  "geometry_gt_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+  "stream_root": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+  "reconciliation": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+  "iou_threshold": 0.5,
+  "matching": "per-image class-free Hungarian; fixed no-persistence threshold is at least two matched observations with a strict unique GT vote",
+  "output": "outputs/trackocd_cvpr/cvpr2/policy_predicted_geometry_audit_v1/result.json",
+  "boundaries": {
+    "category_fields_decoded": false,
+    "role_target_values_decoded": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "feature_arrays_read": false,
+    "training_started": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "formal_mot_or_ocd_metrics": false
+  }
+}
