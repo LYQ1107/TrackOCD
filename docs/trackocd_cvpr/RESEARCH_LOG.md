@@ -42,6 +42,30 @@ the actual exported route.  This broadens the earlier two-video evidence but
 does not by itself establish a general frontend improvement or authorize a
 full 407-video rerun.
 
+## 2026-10-26 — five-video single-softmax score-contract control
+
+To avoid selecting the foreground-mass route from one candidate, the second
+predeclared score-contract mechanism was run on the same anonymous Train input
+`[0, 1, 3, 9, 11]` with the same frozen checkpoint and one idle GPU2.  The
+single-softmax receipt is
+`outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_single_softmax_5video_v1/run.json`;
+it produced `13,337` tracks, `169,432` observations, and zero invalid boxes.
+The exported quality distribution was finite, with mean `0.1450254`, range
+`[0.0033704, 0.9998294]`, `16,301` observations above `0.5`, and `100,416`
+below `0.05`.  Its temporary bbox-head source hash was
+`d7c614520980e5e105691e4aa9d468e87bb665df59a51fd8e5a643e50b41dc07`.
+
+The same five-video category-free geometry audit found precision `0.0227230`
+versus baseline `0.0209132` (delta `+0.0018098`) but recall unchanged at
+`0.1659751`; reliable GT-track recall and reliable temporal pairs remained
+zero.  The paired receipt is
+`outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_single_softmax_5video_v1/paired_geometry_comparison.json`.
+Together with the five-video foreground-mass result, this supports a bounded
+mechanism conclusion: score semantics alter output volume and calibration,
+but neither candidate repairs the dominant coverage/temporal failure.  No
+candidate is promoted, no formal OCD/MOT metric is claimed, and no full-cache
+rerun is authorized by these smokes.
+
 ## 2026-10-12 — CVPR-0 preregistration
 
 Read the full new taskbook and prior core reports/source. Created the new
