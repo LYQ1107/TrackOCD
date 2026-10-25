@@ -1,0 +1,65 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack-public-vocabulary-geometry-comparison.v1",
+  "status": "COMPLETE_NEGATIVE_PUBLIC_VOCABULARY_GEOMETRY_COMPARISON",
+  "generated_utc": "2026-10-25T21:49:48.709313+00:00",
+  "protocol": "configs/trackocd_cvpr/covtrack_public_vocab_geometry_smoke_v1.json",
+  "protocol_sha256": "b1925a29b279d61806f60f6be2dffe947c2657a7f56236520aeace05d7fd9bb9",
+  "scope": {
+    "video_ids": [
+      0,
+      1
+    ],
+    "iou_threshold": 0.5,
+    "official_ocd_or_trackeval_metrics": false,
+    "frontend_qualification": false,
+    "model_selection": false
+  },
+  "source_contract": {
+    "baseline_only_validation_categories": true,
+    "baseline_validation_category_count": 296,
+    "candidate_only_validation_categories": false,
+    "candidate_public_lvis_class_count": 1203,
+    "class_name_source": "vendor/trackocd_external/covtrack_public/ovtrack/models/roi_heads/class_name.py",
+    "class_name_source_sha256": "6f50d7b3f16eef96e15b6cfbf97a53b195e26dbc34df51e7679645c99e6937d9",
+    "candidate_change": "only_validation_categories=False; checkpoint, prompt, frame plan, tracker settings, score settings, and TCC setting unchanged"
+  },
+  "baseline": {
+    "stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/train_dense_smoke_v1/physical_tracks.jsonl",
+    "geometry_receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/baseline_geometry.json",
+    "geometry_receipt_sha256": "643d9086aba7505f9d3e6b34d27f67327fc2a95726e9dd4c3e648c90296ba163",
+    "tracks": 8233,
+    "observations": 81471,
+    "observations_on_gt_images": 2145,
+    "matched_observations": 13,
+    "precision": 0.006060606060606061,
+    "recall": 0.04391891891891892,
+    "reliable_temporal_pairs": 0
+  },
+  "candidate": {
+    "stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_public_vocab_geometry_smoke_v1/physical_tracks.jsonl",
+    "run_receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/run.json",
+    "run_receipt_sha256": "f134259341c6412db820eae08fb8c2b55dedba413c9d7d3eb941c2da48d907b0",
+    "geometry_receipt": "outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/candidate_geometry.json",
+    "geometry_receipt_sha256": "dd7b660f092993e326da70a8866a8d6b4ce1c4bfacc4a7b3d652132da89a2af1",
+    "tracks": 8853,
+    "observations": 86082,
+    "observations_on_gt_images": 2284,
+    "matched_observations": 10,
+    "precision": 0.0043782837127845885,
+    "recall": 0.033783783783783786,
+    "reliable_temporal_pairs": 0,
+    "invalid_boxes": 0,
+    "training_started": false,
+    "tao_val_accessed": false,
+    "tao_test_accessed": false
+  },
+  "deltas_candidate_minus_baseline": {
+    "tracks": 620,
+    "observations": 4611,
+    "matched_observations": -3,
+    "precision": -0.0016823223478214725,
+    "recall": -0.010135135135135133,
+    "reliable_temporal_pairs": 0
+  },
+  "interpretation": "The full public LVIS prompt scope increases retained output but worsens paired geometry on this fixed smoke. It is rejected as a frontend promotion candidate; no full-cache rerun, training, formal OCD/MOT evaluation, or Goal A/B/C acceptance is authorized by this result."
+}

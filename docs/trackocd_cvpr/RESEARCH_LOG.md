@@ -10250,3 +10250,31 @@ no private GT/cache/weights opened for this check):
   This resolves the local write-reserve failure but does not by itself
   restore the missing SSH forwarding; formal Val baseline watchers therefore
   remain waiting and no formal metric is claimed.
+
+## Full public-vocabulary Train coverage mechanism smoke (2026-10-26 UTC)
+
+- A source audit established that the registered COVTrack-native route sets
+  `only_validation_categories=True`, slicing the public 1203-class prompt bank
+  to `296` COVTrack validation classes. To test this as a coverage root cause,
+  a separate protocol was frozen before execution:
+  `configs/trackocd_cvpr/covtrack_public_vocab_geometry_smoke_v1.json`. It
+  changed only `model.roi_head.only_validation_categories=False`; checkpoint,
+  prompt, frame plan, tracker settings, score path, TCC setting, and the two
+  fixed anonymous Train videos were unchanged. The source class list is public
+  COVTrack vocabulary, not TAO labels or a Novel vocabulary.
+- The candidate completed on the fixed videos `0/1` with `8,853` tracks,
+  `86,082` observations, and zero invalid boxes. The paired category-free
+  geometry audit found `10/2,284` matches (precision `0.0043783`, recall
+  `0.0337838`) versus the registered validation-subset baseline's `13/2,145`
+  (precision `0.0060606`, recall `0.0439189`). Thus output volume rose by
+  `4,611` observations (`+5.7%`), but matches fell by `3`, precision fell by
+  `0.0016823`, recall fell by `0.0101351`, and reliable temporal pairs stayed
+  at `0` for both streams.
+- This is negative mechanism evidence: expanding the public prompt scope does
+  not repair the observed Train geometry/coverage failure on this fixed smoke.
+  The candidate is rejected for promotion; no full-cache rerun, predicted
+  training, formal OCD/MOT evaluation, model selection, or Goal A/B/C claim is
+  made. The compact receipt is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/comparison.json`
+  (SHA256 `d833800df4483c8ab937b35723bc3fd6a8ea45fcabd7a71ba66abbb6a05e1909`),
+  and the 34 MB native/normalized candidate payload remains local-only.
