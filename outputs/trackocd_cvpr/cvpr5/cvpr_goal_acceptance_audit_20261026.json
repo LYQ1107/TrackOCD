@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T23:56:16.171187+00:00",
+  "generated_utc": "2026-10-25T23:57:22.743332+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "55d888f775effa5b99600bed0708ffa6350f0302",
-    "clean_before_audit": true
+    "head": "062c351a0125fb95228c05622e60b6cbb90ab6ef",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -365,11 +365,24 @@
           "bytes": 5416,
           "sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
           "reported_status": "COMPLETED_JOINT_RCM_MEMORY_PILOT_NOT_DEV_PRED_OR_GOAL_ACCEPTANCE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json",
+          "exists": true,
+          "bytes": 219418,
+          "sha256": "45911586efe6112045c4233aa47a685764b2e166f286122398b29baaf9ba0e3d",
+          "reported_status": "ACTUAL_PUBLIC_ALL9_C_DEVELOPMENT_MATRIX_NOT_NEWLOSS_PRED_CT_OR_GOAL_ACCEPTANCE"
         }
       ],
       "facts": {
         "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
-        "pilot_goal_acceptance": false
+        "pilot_goal_acceptance": false,
+        "gt_controlled_matrix_status": "ACTUAL_PUBLIC_ALL9_C_DEVELOPMENT_MATRIX_NOT_NEWLOSS_PRED_CT_OR_GOAL_ACCEPTANCE",
+        "gt_controlled_matrix_variant_count": 3,
+        "gt_controlled_matrix_trial_count": 9,
+        "gt_controlled_matrix_orders_per_trial": 3,
+        "gt_controlled_matrix_selected_model_or_seed": false,
+        "gt_controlled_matrix_pred_or_goal_accepted": false
       },
       "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation."
     },
@@ -608,6 +621,13 @@
       "bytes": 4308,
       "sha256": "cd5f55e818da2a7b7869d0b3706a110e891b47071d23314089e79ddfce866cdd",
       "reported_status": "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json",
+      "exists": true,
+      "bytes": 219418,
+      "sha256": "45911586efe6112045c4233aa47a685764b2e166f286122398b29baaf9ba0e3d",
+      "reported_status": "ACTUAL_PUBLIC_ALL9_C_DEVELOPMENT_MATRIX_NOT_NEWLOSS_PRED_CT_OR_GOAL_ACCEPTANCE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",

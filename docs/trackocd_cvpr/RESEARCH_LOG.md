@@ -10785,3 +10785,18 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json`. The next
   recovery step is external tunnel/service restoration, followed by a fresh
   small-file hash check; formal cache recovery and training remain paused.
+
+## Candidate-aware GT-control matrix carried into the CVPR audit (2026-10-26 UTC)
+
+- The existing receipt
+  `outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json` was
+  re-registered in the main acceptance audit. It contains three fixed
+  candidate-aware decision variants and nine original trials, with three
+  order/seed replays per trial, under the frozen Train GT-control protocol.
+- The matrix preserves the failed receipts and reports no selected model,
+  seed, order, or prefix; it also explicitly records that no full semantic
+  truth, predicted-track, or Goal result was accepted. This is useful causal
+  development evidence, not a deployed candidate-aware policy.
+- The missing next step remains a legal predicted-trajectory version with the
+  same fairness controls. No new training or label access was performed in
+  this registration-only update.

@@ -162,6 +162,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json",
     )
+    candidate_matrix_path, candidate_matrix = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json",
+    )
     nas_probe_path, nas_probe = load_json(
         repo,
         "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
@@ -187,6 +191,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
         if isinstance(item, dict) and item.get("name")
     }
     hybrid_union = hybrid_metrics.get("covtrack_first_union_dedup", {})
+    candidate_aggregate = candidate_matrix.get("aggregate", {})
+    candidate_models = candidate_aggregate.get("models", {})
+    candidate_trials = candidate_matrix.get("all_original_trials", {})
 
     requirements: list[dict[str, Any]] = [
         {
@@ -412,10 +419,28 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "evidence": [
                 evidence(repo, "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json", reported_status=root.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json", reported_status=rcm.get("status")),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json",
+                    reported_status=candidate_matrix.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
                 "pilot_goal_acceptance": nested(rcm, "model_selection_or_goal_acceptance"),
+                "gt_controlled_matrix_status": candidate_matrix.get("status"),
+                "gt_controlled_matrix_variant_count": len(candidate_models),
+                "gt_controlled_matrix_trial_count": len(candidate_trials),
+                "gt_controlled_matrix_orders_per_trial": min(
+                    (len(value) for value in candidate_trials.values()),
+                    default=0,
+                ),
+                "gt_controlled_matrix_selected_model_or_seed": candidate_aggregate.get(
+                    "selected_model_seed_order_or_prefix"
+                ),
+                "gt_controlled_matrix_pred_or_goal_accepted": candidate_aggregate.get(
+                    "official_CT_full_semantic_truth_Pred_or_Goal_accepted"
+                ),
             },
             "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation.",
         },
@@ -615,6 +640,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
                 reported_status=hybrid.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json",
+                reported_status=candidate_matrix.get("status"),
             ),
             evidence(
                 repo,
