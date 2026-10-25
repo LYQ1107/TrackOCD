@@ -10820,3 +10820,23 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json`.
   The mismatch keeps formal frontend promotion and predicted-track training
   closed; no new stream, label, weight, or external process was touched.
+
+## Predicted-track training readiness audit (2026-10-26 UTC)
+
+- The complete anonymous Train provenance stream covers `407` videos,
+  `1,245,952` predicted tracks and `13,558,940` observations, but the frozen
+  category-free geometry audit gives observation precision `0.045907` and
+  recall `0.369153`, with `0` reliable predicted tracks, `0` reliable GT
+  tracks, and `0` reliable temporal pairs.
+- The continuity re-audit finds `11,768` adjacent GT pairs with both stream
+  matches, conditional ID-switch rate `0.128229`, but zero source-frame-gap-1
+  pairs; dominant source gaps are `30:32,321`, `25:5,125`, and `24:2,035`.
+  The fixed 10-video policy subset has the same qualitative failure and zero
+  reliable predicted tracks.
+- The two DINO feature pilots and the policy-input qualification remain
+  interface-only with `0` optimizer steps. Receipt:
+  `outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json`.
+  This closes the bookkeeping question about why Pred training has not started:
+  the current stream is complete provenance, but neither dense causal cadence
+  nor a reliable non-leaking supervision join is present. No optimizer or new
+  label access was performed.

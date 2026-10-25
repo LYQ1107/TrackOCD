@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T23:58:50.672180+00:00",
+  "generated_utc": "2026-10-25T23:59:49.886428+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "e3af8e51ce2369bf1ba8f5f63d3a4726ad7cfb3a",
-    "clean_before_audit": true
+    "head": "1458398aae86df17b632071bcd0f82bf1e23015f",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -330,6 +330,13 @@
           "bytes": 1923,
           "sha256": "8ec4cc90becb4985523f9b68c6aaa5efcde8b492430a78e033e4e4a458941d96",
           "reported_status": "PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json",
+          "exists": true,
+          "bytes": 4126,
+          "sha256": "7885dbc20ede304b3979d035f8db8f9e95c1a7c308759aecaba343ccf4dae047",
+          "reported_status": "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
         }
       ],
       "facts": {
@@ -352,7 +359,18 @@
         "predicted_cross_video_lifecycle_optimizer_steps": 0,
         "rcm_m_support_coverage_status": "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO",
         "rcm_m_loss_steps": 0,
-        "rcm_positive_other_video_groups": 0
+        "rcm_positive_other_video_groups": 0,
+        "predicted_training_readiness_status": "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED",
+        "predicted_training_full_observation_precision": 0.04590700397835164,
+        "predicted_training_full_observation_recall": 0.36915291529152916,
+        "predicted_training_reliable_predicted_tracks": 0,
+        "predicted_training_reliable_temporal_pairs": 0,
+        "predicted_training_source_frame_gap_one_pairs": 0,
+        "predicted_training_dominant_source_gaps": {
+          "30": 32321,
+          "25": 5125,
+          "24": 2035
+        }
       },
       "open_gate": "The protocol and engineering pilot exist, but no qualified predicted-track training or formal metric result exists."
     },
@@ -476,6 +494,13 @@
           "bytes": 3816,
           "sha256": "68f9ee22a62c0f334f4de62c8fb9b186997291629db7f43aba86e01262460c2b",
           "reported_status": "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json",
+          "exists": true,
+          "bytes": 4126,
+          "sha256": "7885dbc20ede304b3979d035f8db8f9e95c1a7c308759aecaba343ccf4dae047",
+          "reported_status": "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
         }
       ],
       "facts": {

@@ -69,6 +69,12 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["candidate_aware_decision"]["facts"]["gt_controlled_matrix_trial_count"] == 9
     assert rows["candidate_aware_decision"]["facts"]["gt_controlled_matrix_orders_per_trial"] == 3
     assert rows["candidate_aware_decision"]["facts"]["gt_controlled_matrix_pred_or_goal_accepted"] is False
+    assert rows["predicted_track_training"]["facts"]["predicted_training_readiness_status"] == (
+        "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
+    )
+    assert rows["predicted_track_training"]["facts"]["predicted_training_reliable_predicted_tracks"] == 0
+    assert rows["predicted_track_training"]["facts"]["predicted_training_reliable_temporal_pairs"] == 0
+    assert rows["predicted_track_training"]["facts"]["predicted_training_source_frame_gap_one_pairs"] == 0
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["predicted_category_free_feature_pilot_videos"] == 2
     assert rows["predicted_track_training"]["facts"]["predicted_feature_video0275_status"] == (

@@ -174,6 +174,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
     )
+    predicted_readiness_path, predicted_readiness = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json",
+    )
 
     core_reviews = review.get("scoped_actual_core_reviews", [])
     extra_reviews = review.get("licensed_extra_inspection_reviews", [])
@@ -407,6 +411,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_v1/result.json", reported_status="PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING"),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json", reported_status=predicted_feature_video0275.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json", reported_status=cross_video_smoke.get("status")),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json",
+                    reported_status=predicted_readiness.get("status"),
+                ),
             ],
             "facts": {
                 "predicted_cache_boundary": pred_boundaries,
@@ -425,6 +434,25 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "rcm_m_loss_steps": nested(rcm_coverage, "coverage", "m_loss_steps"),
                 "rcm_positive_other_video_groups": nested(
                     rcm_coverage, "coverage", "positive_other_video_groups"
+                ),
+                "predicted_training_readiness_status": predicted_readiness.get("status"),
+                "predicted_training_full_observation_precision": nested(
+                    predicted_readiness, "full_train_geometry", "observation_precision"
+                ),
+                "predicted_training_full_observation_recall": nested(
+                    predicted_readiness, "full_train_geometry", "observation_recall"
+                ),
+                "predicted_training_reliable_predicted_tracks": nested(
+                    predicted_readiness, "full_train_geometry", "reliable_predicted_tracks"
+                ),
+                "predicted_training_reliable_temporal_pairs": nested(
+                    predicted_readiness, "full_train_geometry", "reliable_temporal_pairs"
+                ),
+                "predicted_training_source_frame_gap_one_pairs": nested(
+                    predicted_readiness, "full_train_continuity", "source_frame_gap_one_pairs"
+                ),
+                "predicted_training_dominant_source_gaps": nested(
+                    predicted_readiness, "full_train_continuity", "dominant_source_gaps"
                 ),
             },
             "open_gate": "The protocol and engineering pilot exist, but no qualified predicted-track training or formal metric result exists.",
@@ -513,11 +541,16 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
                     reported_status=covtrack_recheck.get("status"),
                 ),
-                evidence(
-                    repo,
-                    "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
-                    reported_status=frontend_reconciliation.get("status"),
-                ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
+                reported_status=frontend_reconciliation.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json",
+                reported_status=predicted_readiness.get("status"),
+            ),
             ],
             "facts": {
                 "sealed_layers": {

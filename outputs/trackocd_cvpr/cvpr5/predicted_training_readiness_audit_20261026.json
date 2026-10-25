@@ -1,0 +1,88 @@
+{
+  "schema_version": "trackocd.cvpr.predicted-training-readiness-audit.v1",
+  "generated_utc": "2026-10-25T23:59:36.763328+00:00",
+  "status": "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED",
+  "full_train_geometry": {
+    "videos": 407,
+    "predicted_tracks": 1245952,
+    "predicted_observations": 13558940,
+    "observation_precision": 0.04590700397835164,
+    "observation_recall": 0.36915291529152916,
+    "reliable_predicted_tracks": 0,
+    "reliable_gt_tracks": 0,
+    "reliable_temporal_pairs": 0
+  },
+  "full_train_continuity": {
+    "gt_adjacent_annotation_pairs": 43228,
+    "pairs_with_both_stream_matches": 11768,
+    "same_pred_id_rate_given_both_matches": 0.8717709041468389,
+    "pred_id_switch_rate_given_both_matches": 0.1282290958531611,
+    "source_frame_gap_one_pairs": 0,
+    "dominant_source_gaps": {
+      "30": 32321,
+      "25": 5125,
+      "24": 2035
+    }
+  },
+  "policy_train_geometry": {
+    "videos": 10,
+    "predicted_tracks": 25258,
+    "predicted_observations": 319521,
+    "observation_precision": 0.04915817917272916,
+    "observation_recall": 0.37302839116719244,
+    "reliable_predicted_tracks": 0,
+    "reliable_temporal_pairs": 0
+  },
+  "interface_and_optimizer_state": {
+    "policy_input_status": "VERIFIED_COMPLETE_POLICY_INPUT_NOT_TRAINED_C_M_OR_PRED_OR_GOAL_ACCEPTANCE",
+    "policy_input_optimizer_steps": 0,
+    "feature_pilot_video_count": 2,
+    "feature_pilot_statuses": [
+      "PASS_FIXED_POLICY_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING_RECOVERED_RECEIPT",
+      "PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING"
+    ],
+    "feature_pilots_are_training": false
+  },
+  "source_receipts": [
+    {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json",
+      "sha256": "a3a47398349e3843f3a39e1fa36b427eb7495b2c6290bffbe94fc986fff9b1a0",
+      "status": "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_AUDIT"
+    },
+    {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_continuity_reaudit_20261026.json",
+      "sha256": "83600264184aeaf5213d285829dddbf517ee9bc3659f28a3c60801780437be45",
+      "status": "COMPLETE_CATEGORY_FREE_REAUDIT"
+    },
+    {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/policy_predicted_geometry_audit_v1/result.json",
+      "sha256": "8710a80883532e260a1e41dc8808c6662bd6a80cf8f18ae71e2a564c20999d22",
+      "status": "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_SMOKE"
+    },
+    {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/policy_training_input_qualification_v1/result.json",
+      "sha256": "bdc762881ad0656115ac118e8f9c6d538d749803147ee7e181ce2d5fb5719993",
+      "status": "VERIFIED_COMPLETE_POLICY_INPUT_NOT_TRAINED_C_M_OR_PRED_OR_GOAL_ACCEPTANCE"
+    },
+    {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_v1/result.json",
+      "sha256": "ee84f0ff85f316912a5ef6c8aca2535a31e80f4dde3f8c87be448f8397ba2089",
+      "status": "PASS_FIXED_POLICY_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING_RECOVERED_RECEIPT"
+    },
+    {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json",
+      "sha256": "cc19e1c41c742bc4db626ea1cd8bcbe9d6f01aea34914f5ed2884cdc309c247b",
+      "status": "PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING"
+    }
+  ],
+  "boundary": {
+    "category_free_receipts_only": true,
+    "prediction_to_gt_mapping_persisted": false,
+    "feature_arrays_read": false,
+    "training_started": false,
+    "optimizer_steps": 0,
+    "tao_test_read": false,
+    "external_processes_touched": false
+  },
+  "interpretation": "The 407-video anonymous stream is complete as provenance but fails the current predicted-training readiness gate: reliable tracks and reliable temporal pairs are zero, and the source cadence is not dense frame-online. The two feature pilots validate only tensor/interface plumbing. A lawful dense frontend and a non-leaking Train-development join are required before any Pred optimizer run."
+}
