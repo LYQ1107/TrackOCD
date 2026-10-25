@@ -9456,3 +9456,24 @@ no private GT/cache/weights opened for this check):
   No semantic fields, Val/Test labels, feature arrays, training, or prediction-
   to-GT mapping were read or persisted. The scoped v2/joint-RCM regression
   after this addition passed `58/58` in `5.97s`.
+
+## Historical Val MOT/OCD metric reconciliation (2026-10-26 UTC)
+
+- The preserved NAS-source audit contains a completed historical TAO Val
+  category-free TrackEval record for `COVTrack-native` (988 videos; no TAO Test
+  access). Its reported values are `HOTA=15.412`, `DetA=5.5848`,
+  `DetPr=5.7751`, `DetRe=54.448`, `AssA=44.569`, `AssPr=73.638`,
+  `AssRe=48.908`, `LocA=76.654`, and `OWTA=48.228` (percent units where shown).
+  The same historical record contains TETA reference values `combined=32.008`,
+  `known=37.4297`, and `novel=29.7976`; these are reference metadata and were
+  not used for current model selection.
+- This is a real historical Val metric, but it is not a current-server formal
+  v2 result: the source is marked `HISTORICAL_ASSET_AUDIT_ONLY`, its old paths
+  and cache are not visible/admitted here, and the current formal cache gate is
+  still missing. Receipts are
+  `outputs/trackocd_core/audit/nas_m1_source/frontend_covtrack_native.json`
+  (SHA256 `524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526`)
+  and `frontend_covtrack_native_metrics.json` (SHA256
+  `e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2`).
+  It must not be conflated with the current 407-Train geometry/continuity
+  audit or advertised as the pending formal Val report.
