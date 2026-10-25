@@ -10357,3 +10357,22 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_nosem_development_transfer_v1/run.json`,
   `normalization.json`, `geometry_comparison.json`, and
   `temporal_comparison.json`; native and normalized payloads remain local-only.
+
+## Re-audit of the frozen predicted-Train cache boundary (2026-10-25 UTC)
+
+- The current-head rerun of
+  `scripts/trackocd_cvpr/audit_joint_causal_pred_dense_protocol.py` passed at
+  commit `2389fbad1ab6178befe6391647cece04e3f2ff6d`. The receipt is
+  `outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_reaudit_20261026_turn.json`
+  (SHA256
+  `c9bc6d0f724ffbf568eca8c43e3f5c3a7ce3308baad90bc0720ab62426a75da6`).
+- The audit confirms the four fixed top-level ordinal shards and their thirteen
+  bounded recovery subshards cover exactly `407/407` approved Train videos,
+  with `1,245,952` physical tracks, `13,558,940` observations, and zero
+  invalid boxes. This is cache provenance only; it does not expose semantic
+  fields or private GT arrays.
+- The same audit keeps `training_started=false`,
+  `formal_metrics_created=false`, `tao_val_or_test_labels_used=false`,
+  `novel_vocabulary_used=false`, and `model_selection_performed=false`.
+  Strong frontend qualification, predicted-track R/C/M training, formal
+  OCD/MOT evaluation, and Goal A/B/C acceptance therefore remain open.
