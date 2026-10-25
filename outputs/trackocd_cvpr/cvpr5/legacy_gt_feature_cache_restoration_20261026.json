@@ -1,0 +1,25 @@
+{
+  "schema_version": "trackocd.cvpr.legacy-gt-feature-cache-restoration.v1",
+  "status": "RESTORED_AFTER_HISTORICAL_SOURCE_GATE",
+  "restored_utc": "2026-10-25T23:15:45Z",
+  "source_temp_path": "/tmp/trackocd_legacy_gt_tracks_20261026",
+  "target_path": "outputs/trackocd_v2_runtime/features/gt_tracks",
+  "pre_move_receipt": "outputs/trackocd_cvpr/cvpr5/legacy_gt_feature_cache_cleanup_20261026.json",
+  "restored_bytes_from_pre_move_receipt": 1351138083,
+  "restored_file_count": 7666,
+  "validation": {
+    "target_present": true,
+    "temporary_source_absent": true,
+    "code_modified": false,
+    "formal_cache_modified": false,
+    "data_weights_or_test_assets_modified": false,
+    "external_processes_touched": false
+  },
+  "mechanism_test_observation": {
+    "passed": 101,
+    "failed": 27,
+    "failure_boundary": "Historical formal-control receipt checks reject the current later source bytes for remote_registration.py and src/trackocd_v2/io.py; this is a preserved-lineage hash-gate mismatch, not a new R/C/M implementation failure.",
+    "scientific_acceptance_claimed": false
+  },
+  "reason": "A read-only mechanism test exposed that moving this generated cache broke historical source-gate validation. It was restored intact before any deletion or formal experiment."
+}
