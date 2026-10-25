@@ -10376,3 +10376,21 @@ no private GT/cache/weights opened for this check):
   `novel_vocabulary_used=false`, and `model_selection_performed=false`.
   Strong frontend qualification, predicted-track R/C/M training, formal
   OCD/MOT evaluation, and Goal A/B/C acceptance therefore remain open.
+
+## Post-reboot NAS tunnel boundary recheck (2026-10-26 UTC)
+
+- The read-only recovery check found `/data3/liuyeqiang/nas/A100` to be an
+  ordinary empty local directory, not a mount. Loopback `24557` has no
+  listener. The task-owned supervisor PID `1658` is still alive, but its state
+  has `worker_pid=null` and `mounted=false`.
+- The existing local mount recipe still points to
+  `Valadmin@127.0.0.1:/home/A100` through port `24557` with the dedicated
+  `id_ed25519_nas_readwrite` key. The configured user tunnel unit is absent
+  after reboot (`nas-reverse-tunnels.service` not found); read-only direct and
+  proxied SSH probes therefore failed before remote content was read. No
+  supervisor, tunnel, mount, remote file, or external process was modified.
+- The formal Val baseline watcher remains at `CACHE_STATE=MISSING`, while the
+  report watcher has `nearest=true, dpmeans=false`. The already sealed nearest
+  evidence and local partial-cache audit remain valid recovery evidence, but no
+  new formal dpmeans, OCD/MOT metric, or final report is claimed until the
+  authorized complete NAS manifest is visible again.
