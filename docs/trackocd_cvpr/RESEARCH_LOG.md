@@ -9435,3 +9435,24 @@ no private GT/cache/weights opened for this check):
   key only for handshake verification; no remote command completed, no NAS
   files were read, and no external service/process was restarted or changed.
   The local supervisor therefore remains correctly idle at `worker_pid=null`.
+
+## Full Train temporal-continuity root-cause audit (2026-10-26 UTC)
+
+- Added and ran a category-free continuity diagnostic over all `13` reconciled
+  COVTrack-native substreams, covering all `407` approved Train videos,
+  `1,245,952` predicted tracks and `13,558,940` observations. It performed
+  per-image anonymous Hungarian matching at IoU `0.5` against the sealed
+  geometry-only physical GT index and retained aggregate counts only.
+- The audit found `16,778` matched observations and the same geometry rates as
+  the prior audit (`precision=0.0459070`, `recall=0.3691529`), but exactly
+  `0` consecutive GT-match pairs across `2,222` GT tracks. Consequently there
+  were `0` consecutive predicted-ID switches and `0` same-ID temporal pairs.
+  The result does not support track fragmentation as the primary explanation
+  for the temporal-gate failure; localization/coverage or coordinate alignment
+  must be addressed before a stitching repair is scientifically justified.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_temporal_continuity_audit_v1/result.json`
+  (SHA256 `fc1a6a423f830862fd00fb6254ae2a39b50258c90c5d6126b0d4fc30de6a1a25`).
+  No semantic fields, Val/Test labels, feature arrays, training, or prediction-
+  to-GT mapping were read or persisted. The scoped v2/joint-RCM regression
+  after this addition passed `58/58` in `5.97s`.
