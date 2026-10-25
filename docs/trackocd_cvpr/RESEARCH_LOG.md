@@ -9669,23 +9669,46 @@ no private GT/cache/weights opened for this check):
 - The scoped regression after the parameterization passed `58/58`; the full
   root test discovery remains intentionally out of scope.
 
-## Continuation gate and existing OCD-style metric status (2026-10-26 UTC)
+## Continuation gate and retained Val nearest OCD baseline (2026-10-26 UTC)
 
 - A fresh read-only recovery check found the NAS SSHFS mount absent again:
   local port `24557` is not listening, the task-owned supervisor remains alive
   with `worker_pid=null`, and the direct `192.168.31.57:22` probe timed out.
   The current server also has no local `nas57` SSH config entry. No NAS file
   was read and no external process was restarted, terminated, or modified.
-- The already sealed Val-only `nearest` table remains `COMPLETE`. At prefix 16
-  its TrackOCD evaluator reports `all_acc=0.0967125382`,
-  `h_score=0.1073558599`, `new_acc=0.1330891331`, `old_acc=0.0899614775`,
-  `commit_ct=0.0512333966`, and `false_assignment_rate=0.1669829222`.
-  These are OCD-style baseline metrics from the causal physical-stream/DINOv2
-  contract, not canonical MOTA, IDF1, HOTA, or TrackEval scores.
-- `dpmeans` remains `WAITING_FEATURES` and the formal cache gate remains
-  `CACHE_STATE=MISSING`; therefore no final Val baseline report or formal
-  OCD/MOT metric exists yet. No new cache, training, Val/Test access, or
-  external-process intervention was started during this continuation check.
+- A retained, sealed Val-only `nearest` table is genuinely `COMPLETE`; it is
+  an existing OCD-style baseline result, not a new run from this recovery
+  turn. The five fixed prefix results are:
+
+  | prefix | all_acc | new_acc | old_acc | H-score | Commit-CT | false-assignment |
+  |---:|---:|---:|---:|---:|---:|---:|
+  | 1 | 0.0745413 | 0.1196581 | 0.0661681 | 0.0852146 | 0.0284630 | 0.1897533 |
+  | 2 | 0.0802752 | 0.1269841 | 0.0716066 | 0.0915743 | 0.0379507 | 0.1802657 |
+  | 4 | 0.0797018 | 0.1233211 | 0.0716066 | 0.0906039 | 0.0493359 | 0.1688805 |
+  | 8 | 0.0902141 | 0.1306471 | 0.0827102 | 0.1012934 | 0.0550285 | 0.1631879 |
+  | 16 | 0.0967125 | 0.1330891 | 0.0899615 | 0.1073559 | 0.0512334 | 0.1669829 |
+
+- Provenance is fixed in
+  `outputs/trackocd_v2_runtime/tables/pred_nearest.json` (generated
+  `2026-10-25T05:31:02.495243+00:00`, SHA256
+  `cde48385d94ce517df15e92d659c7e4c9e47cfb748ed3c405caa51bdf45c2634`).
+  The evaluator used the causal physical-stream/DINOv2 input contract only:
+  no GT category, split, temporal-IoU match, text logit, or category logit was
+  an inference input. The fixed Val denominator has `5,232` rows; the
+  post-decision evaluator join has `1,206` matched rows and counts `4,026`
+  unmatched targets as defer. The join receipt is
+  `outputs/trackocd_v2_runtime/audit/frontend_covtrack_native_evaluator_join.json`
+  (SHA256 `d5b126e4f2c1935e85b349f2023df20d33c1f7a99ee9635a2537e14a5d8582ee`),
+  and the completed feature-cache audit is `723/723` with zero errors and
+  zero invalid boxes (receipt SHA256
+  `ef37456ff07046085b15be5fe8c15f7ff1473ad218cc634b8099d19250a7318f`).
+- These are OCD-style baseline metrics under the project evaluator, not
+  canonical MOT/TrackEval outputs: no HOTA, DetA, AssA, IDF1, or MOTA result
+  has been produced. `dpmeans` remains `WAITING_FEATURES`, the combined
+  Val-only report has not been generated, and the current NAS-backed cache
+  gate is `CACHE_STATE=MISSING` after reboot. No Val label was used for model
+  selection, no TAO Test content was accessed, and no new cache, training, or
+  external-process intervention occurred during this continuation check.
 
 ## NAS SOCKS5 route probe after reboot (2026-10-26 UTC)
 
