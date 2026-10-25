@@ -47,10 +47,10 @@ def _write_rows(path: Path, rows: list[dict[str, Any]]) -> dict[str, Any]:
     if temporary.exists() or path.exists():
         raise RuntimeError(f"refusing to overwrite existing output: {path}")
     digest = hashlib.sha256()
-    with temporary.open("xb", encoding="utf-8") as handle:
+    with temporary.open("xb") as handle:
         for row in rows:
             encoded = (json.dumps(row, separators=(",", ":"), allow_nan=False) + "\n").encode()
-            handle.write(encoded.decode())
+            handle.write(encoded)
             digest.update(encoded)
         handle.flush()
     temporary.replace(path)
