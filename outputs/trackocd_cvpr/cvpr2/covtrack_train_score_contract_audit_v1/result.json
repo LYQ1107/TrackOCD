@@ -1,0 +1,123 @@
+{
+  "boundary": {
+    "novel_vocabulary_used_for_selection": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "semantic_data_labels_read": false,
+    "source_validation_index_counted_without_category_names": true
+  },
+  "generated_utc": "2026-10-25T18:11:54.150369+00:00",
+  "inputs": {
+    "source_sha256_by_name": {
+      "bbox_head": "b970888266213a43ebd9a482466e1f9727847541fbe2078a023166a5b670edb6",
+      "class_contract": "6f50d7b3f16eef96e15b6cfbf97a53b195e26dbc34df51e7679645c99e6937d9",
+      "config": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a",
+      "frontend_launcher": "34f36655da8a66733b81e1c457d6e7a3c9a7cb8233e80f4d1fd95d6872325c0c",
+      "normalizer": "837c72dd4f5ff57347df4877ecae3f0920c70d4c7255c0f4c53863e7192d00b2",
+      "roi_head": "a35cf3ff2a5470955eb2638d3b80891dc44f8e26aff98938a74544ded2b32708",
+      "tao_formatter": "2b02dba325182ea011792ea1b71bf0ad7e9af93332fe0edbb9589f99be849576"
+    },
+    "stream_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1"
+  },
+  "interpretation": "The native score contract is a max non-background class probability after an upstream class softmax and a final bbox-head softmax; it is not a foreground/objectness probability. The normalizer preserves that value (apart from a 1e-6 floor). The observed Train quality distribution is therefore consistent with a near-uniform 297-way class score, but this receipt does not quantify the effect of a future contract repair on geometry, tracking, OCD, or MOT metrics.",
+  "schema_version": "trackocd.cvpr.frontend-score-contract-audit.v1",
+  "scope": {
+    "feature_arrays_opened": false,
+    "frontend_rerun": false,
+    "gt_or_annotation_labels_opened": false,
+    "model_selection_or_qualification": false,
+    "native_tao_rows_opened": false,
+    "pixels_opened": false,
+    "stream_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+    "test_accessed": false,
+    "training_started": false,
+    "val_labels_opened": false
+  },
+  "source_contract": {
+    "background_class_appended": true,
+    "background_column_excluded_before_nms": true,
+    "configured_full_model_classes": 1203,
+    "final_bbox_head_softmax_on_already_normalized_score": true,
+    "final_non_background_score_is_class_probability": true,
+    "foreground_objectness_score_exported": false,
+    "formatter_exports_nms_last_column_as_score": true,
+    "native_confused_features": true,
+    "native_show_score_threshold": 0.0001,
+    "normalizer_applies_only_lower_floor": true,
+    "score_dimension_after_validation_slice": 297,
+    "uniform_score_reference": 0.003367003367003367,
+    "upstream_image_softmax_under_ensemble": true,
+    "upstream_text_softmax": true,
+    "validation_category_index_count": 296,
+    "validation_index_length": 297,
+    "verified_source_line_numbers": {
+      "background_append": [
+        1047,
+        2586,
+        3159,
+        4542,
+        5165
+      ],
+      "bbox_final_softmax": [
+        298
+      ],
+      "ensemble_route": [
+        90
+      ],
+      "formatter_exports_last_column": [
+        165,
+        197
+      ],
+      "native_score_threshold": [
+        241
+      ],
+      "normalizer_preserves_native_score": [
+        377
+      ],
+      "roi_upstream_softmax": [
+        1055,
+        2591,
+        3167,
+        4547,
+        5173
+      ],
+      "validation_only_route": [
+        46
+      ]
+    }
+  },
+  "status": "COMPLETE_CATEGORY_FREE_SOURCE_AND_STREAM_CONTRACT_AUDIT",
+  "stream_quality": {
+    "finite": 13558940,
+    "fixed_bins": {
+      "[0,0.05)": 13558940,
+      "[0.05,0.10)": 0,
+      "[0.10,0.20)": 0,
+      "[0.20,0.50)": 0,
+      "[0.50,1.00]": 0,
+      "other": 0
+    },
+    "max": 0.009098281152546406,
+    "mean": 0.0036412845056285627,
+    "min": 0.0033703709486871958,
+    "nonfinite": 0,
+    "observations": 13558940,
+    "out_of_unit_interval": 0,
+    "stream_rows_tracks": 1245952,
+    "stream_sha256_by_path": {
+      "shard_0_tccoff2/physical_tracks.jsonl": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+      "shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl": "798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b",
+      "shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl": "c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d",
+      "shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl": "f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000",
+      "shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl": "add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406",
+      "shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl": "4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6",
+      "shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl": "24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898",
+      "shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl": "fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3",
+      "shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl": "f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e",
+      "shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl": "c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2",
+      "shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86",
+      "shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f",
+      "shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl": "ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18"
+    },
+    "stream_substreams": 13
+  }
+}

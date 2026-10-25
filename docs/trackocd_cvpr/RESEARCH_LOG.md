@@ -9557,3 +9557,36 @@ no private GT/cache/weights opened for this check):
   (SHA256 `f1a9a01fcbc2325219838bbd9421a6058cf848793801edcddaa019c773899d1b`).
   No semantic fields, pixels, features, Val/Test data, training, or
   prediction-to-GT mapping were persisted.
+
+## COVTrack-native foreground-score contract audit (2026-10-26 UTC)
+
+- A read-only source audit resolved the origin of the unusually narrow native
+  quality distribution. The COVTrack ROI head first applies a class softmax to
+  the text/image similarity scores; with the registered Val-only route, the
+  1203-class prompt bank is sliced to `296` configured validation indices and
+  one background embedding is appended, giving `297` score dimensions. The
+  bbox head then applies `F.softmax(cls_score, dim=-1)` again to that already
+  normalized score matrix before NMS. NMS removes the background column, and
+  the TAO formatter exports the resulting last column directly as `score`.
+  Thus this field is a maximum non-background class probability, not a
+  foreground/objectness probability.
+- The TrackOCD normalizer does not apply a sigmoid or rescale this value; it
+  only applies `max(float(score), 1e-6)`. The native launcher also keeps the
+  registered `show_score_thr=0.0001` and `confused_features=True` settings.
+- Streaming the existing anonymous Train physical streams confirmed the
+  contract-level signature over all `13` substreams: `1,245,952` tracks and
+  `13,558,940` observations, all finite and all in `[0,0.05)`, with
+  `min=0.0033703709`, `mean=0.0036412845`, and `max=0.0090982812`. The
+  near-uniform reference `1/297=0.0033670034` is therefore consistent with
+  the source path and the observed output. This establishes a score-contract
+  incompatibility for physical foreground use; it does not by itself quantify
+  the improvement from a repair, prove that it is the sole geometry/tracking
+  root cause, or constitute an OCD/MOT metric or frontend qualification.
+- The audit read only source files and the already normalized anonymous
+  physical streams. It did not open native TAO rows, pixels, feature arrays,
+  annotation labels, Val/Test labels, or Test data; it did not rerun the
+  frontend, train, select a model, or persist a prediction-to-GT mapping.
+  Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_score_contract_audit_v1/result.json`
+  (SHA256 `49d5e2b669d630b6d09ec909ec6b2e4aff027dafd457f0502e8b3e1acfdfae8a`).
+  The focused source-contract regression passed `1/1`.
