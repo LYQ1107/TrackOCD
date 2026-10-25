@@ -1,0 +1,74 @@
+{
+  "boundaries": {
+    "category_or_vocabulary_read": false,
+    "formal_metrics": false,
+    "future_suffix_used": false,
+    "labels_or_GT_read": false,
+    "model_selection": false,
+    "scientific_acceptance": false,
+    "training_started": false,
+    "val_or_test_accessed": false
+  },
+  "config": "configs/trackocd_cvpr/predicted_train_rcm_cross_video_smoke_v1.json",
+  "config_sha256": "1ff3454e49c7e5370097e39d58c15cc6c13dbae71cb6ded6ecb57d5b28d4d066",
+  "created_utc": "2026-10-25T23:41:03.320281+00:00",
+  "interpretation": "This proves only that the anonymous append-only R/C/M lifecycle can retain a support token across video epochs when a non-learned harness forces reuse. It does not provide M supervision, lawful predicted-track training, OCD/MOT metrics, or model-selection evidence.",
+  "lifecycle": {
+    "append_only_commit_history": true,
+    "cross_video_token_count": 3,
+    "cross_video_tokens": [
+      "S:1",
+      "S:2",
+      "S:3"
+    ],
+    "events": 16,
+    "frames": 4,
+    "harness_forced_cross_video_reuse": true,
+    "memory_versions": 14,
+    "optimizer_steps": 0,
+    "support_payload_counts": {
+      "S:0": 1,
+      "S:1": 2,
+      "S:2": 3,
+      "S:3": 2
+    },
+    "videos": 2
+  },
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 532021248,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 2.7785661289999553,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.predicted-train-rcm-cross-video-smoke-result.v1",
+  "selection": [
+    {
+      "frame_ids": [
+        1016316,
+        1016317
+      ],
+      "track_indices": [
+        0,
+        1,
+        6,
+        9
+      ],
+      "video_id": 72
+    },
+    {
+      "frame_ids": [
+        1047840,
+        1047841
+      ],
+      "track_indices": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "video_id": 275
+    }
+  ],
+  "status": "PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING"
+}

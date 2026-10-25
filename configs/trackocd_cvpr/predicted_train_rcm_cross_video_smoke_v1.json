@@ -1,0 +1,38 @@
+{
+  "schema_version": "trackocd.cvpr.predicted-train-rcm-cross-video-smoke.v1",
+  "status": "FROZEN_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING",
+  "purpose": "Exercise append-only anonymous R/C/M memory across two fixed predicted-Train videos; no labels, optimizer, metric, or scientific acceptance.",
+  "videos": [
+    {
+      "video_id": 72,
+      "payload": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/video_0072_prefix_features.npz",
+      "payload_sha256": "e92f5a5aec007ce6dc867702ee2d58ae22d5ff327567d4b3f353625ec01d1d42",
+      "index": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/track_index.jsonl",
+      "index_sha256": "15243e01df8cc134d1717fab0532c9d347eb91d4f532fe7efb9088ff2b029403"
+    },
+    {
+      "video_id": 275,
+      "payload": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0275/video_0275_prefix_features.npz",
+      "payload_sha256": "31bb54e56037824051eae81259c994602f5948da754f2bf9f7518abf685e8bac",
+      "index": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0275/track_index.jsonl",
+      "index_sha256": "436aa3cbfa0dd9425e922e8e935efb6b3d3c0603bcb7f7b0e4472ead013af2e3"
+    }
+  ],
+  "selection": {
+    "rule": "For each fixed video, choose the first two distinct frame IDs in the category-free index and the first four stream-order tracks containing both frames; no score, label, coverage, or output-quality selection.",
+    "tracks_per_video": 4,
+    "frames_per_video": 2,
+    "cross_video_reuse": "The second video's first frame uses an explicit anonymous lifecycle harness to reuse an existing token; this is a plumbing probe, not a learned decision."
+  },
+  "limits": {
+    "optimizer_steps": 0,
+    "training_gpu_hours": 0,
+    "device": "CPU",
+    "workers": 1,
+    "future_suffix_used": false,
+    "gt_or_semantic_fields_read": false,
+    "val_or_test_accessed": false,
+    "model_selection": false
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json"
+}

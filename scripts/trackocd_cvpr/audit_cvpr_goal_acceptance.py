@@ -112,6 +112,14 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
     )
+    predicted_feature_video0275_path, predicted_feature_video0275 = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json",
+    )
+    cross_video_smoke_path, cross_video_smoke = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -311,11 +319,23 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json", reported_status=pred_protocol.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/policy_training_input_qualification_v1/result.json", reported_status=policy_input.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json", reported_status=rcm.get("status")),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_v1/result.json", reported_status="PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING"),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json", reported_status=predicted_feature_video0275.get("status")),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json", reported_status=cross_video_smoke.get("status")),
             ],
             "facts": {
                 "predicted_cache_boundary": pred_boundaries,
                 "policy_input_optimizer_steps": policy_input.get("optimizer_steps"),
                 "rcm_pilot_optimizer_steps": nested(rcm, "summary", "optimizer_steps"),
+                "predicted_category_free_feature_pilot_videos": 2,
+                "predicted_feature_video0275_status": predicted_feature_video0275.get("status"),
+                "predicted_cross_video_lifecycle_smoke_status": cross_video_smoke.get("status"),
+                "predicted_cross_video_lifecycle_token_count": nested(
+                    cross_video_smoke, "lifecycle", "cross_video_token_count"
+                ),
+                "predicted_cross_video_lifecycle_optimizer_steps": nested(
+                    cross_video_smoke, "lifecycle", "optimizer_steps"
+                ),
                 "rcm_m_support_coverage_status": rcm_coverage.get("status"),
                 "rcm_m_loss_steps": nested(rcm_coverage, "coverage", "m_loss_steps"),
                 "rcm_positive_other_video_groups": nested(
@@ -349,6 +369,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
                     reported_status=rcm_coverage.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
+                    reported_status=cross_video_smoke.get("status"),
+                ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
             "facts": {
@@ -366,6 +391,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "rcm_pilot_is_goal_acceptance": nested(
                     rcm_coverage, "boundary", "goal_a_b_c_accepted"
                 ),
+                "predicted_cross_video_lifecycle_smoke_status": cross_video_smoke.get("status"),
+                "predicted_cross_video_lifecycle_token_count": nested(
+                    cross_video_smoke, "lifecycle", "cross_video_token_count"
+                ),
+                "predicted_cross_video_lifecycle_is_supervision": False,
             },
             "open_gate": "The bounded R/C/M pilot has zero M support coverage; freeze a legal cross-video Known-support fold before claiming or selecting self-correcting memory.",
         },
@@ -509,6 +539,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
                 reported_status=rcm_coverage.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
+                reported_status=cross_video_smoke.get("status"),
             ),
         ],
     }

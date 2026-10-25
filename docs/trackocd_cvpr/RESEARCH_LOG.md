@@ -10687,3 +10687,28 @@ no private GT/cache/weights opened for this check):
 - The total acceptance audit now carries this negative coverage boundary and
   still reports `INCOMPLETE_OPEN_REQUIREMENTS`; no full training, TAO Test
   access, model selection, or external-process intervention was performed.
+
+## Category-free predicted Train input and cross-video lifecycle smoke (2026-10-26 UTC)
+
+- A second fixed `policy_train_pseudo` video was prepared from the reconciled
+  COVTrack-native `train_predicted` stream using the frozen DINO encoder.  The
+  selection was structural (the second approved policy video in ascending
+  order), not score-, coverage-, category-, or outcome-selected.  The result
+  contains `2,624` anonymous tracks and `35,514` observations, with finite
+  visual/geometry/quality/prefix arrays and no category or semantic fields.
+  Receipt:
+  `outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json`.
+- Together with the earlier fixed video-72 input pilot, these provide two
+  category-free predicted-input payloads.  A bounded CPU smoke then replayed
+  the first two structural frames and first four stream-order tracks from each
+  video through the real R/C/M controller.  A non-learned harness forced
+  anonymous reuse at the second video boundary; the append-only history
+  retained `3` tokens across video epochs in `0` optimizer steps.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json`,
+  status `PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING`.
+  This is positive lifecycle/interface evidence only: it uses no labels, GT,
+  Val/Test data, optimizer, OCD/MOT metric, or model selection.  It does not
+  cure the separate RCM pilot result with zero M support supervision, and it
+  does not qualify the COVTrack frontend or authorize formal predicted-track
+  training.

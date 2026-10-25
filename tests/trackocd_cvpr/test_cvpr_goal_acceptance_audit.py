@@ -51,6 +51,12 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     )
     assert rows["lawful_strong_frontend"]["facts"]["formal_v2_missing_or_invalid_asset_count"] > 0
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
+    assert rows["predicted_track_training"]["facts"]["predicted_category_free_feature_pilot_videos"] == 2
+    assert rows["predicted_track_training"]["facts"]["predicted_feature_video0275_status"] == (
+        "PASS_FIXED_SINGLE_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING"
+    )
+    assert rows["predicted_track_training"]["facts"]["predicted_cross_video_lifecycle_token_count"] == 3
+    assert rows["predicted_track_training"]["facts"]["predicted_cross_video_lifecycle_optimizer_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["rcm_m_support_coverage_status"] == (
         "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO"
     )
@@ -61,6 +67,9 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][
         "rcm_pilot_is_goal_acceptance"
+    ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "predicted_cross_video_lifecycle_is_supervision"
     ] is False
     assert rows["formal_causal_online_metrics"]["facts"][
         "covtrack_native_val_recheck_status"

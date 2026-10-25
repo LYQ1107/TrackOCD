@@ -1,0 +1,67 @@
+{
+  "schema_version": "trackocd.cvpr.predicted-train-policy-feature-pilot.v1",
+  "status": "FROZEN_FIXED_SECOND_POLICY_VIDEO_INPUT_PILOT_NO_TRAINING",
+  "purpose": "Bounded category-free DINO input pilot for the second fixed policy_train_pseudo video; not the formal v2 cache, not training, and not a scientific result.",
+  "source_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+  "source_size_bytes": 694095500,
+  "source_sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+  "fixed_selection": {
+    "rule": "Use the second frozen policy_train_pseudo video in ascending approved role order; do not select by score, length, coverage, category, GT, or output quality.",
+    "role": "policy_train_pseudo",
+    "video_id": 275,
+    "expected_tracks": 2624,
+    "expected_observations": 35514,
+    "role_assignment_source": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+    "role_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a"
+  },
+  "encoder": {
+    "constructor": "dinov2.hub.backbones.dinov2_vitb14(pretrained=False)",
+    "local_repository": "vendor/trackocd_core/dinov2_7764ea0",
+    "repository_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "checkpoint": "checkpoints/dinov2_vitb14_pretrain.pth",
+    "checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "common_config": "configs/trackocd_core/common_features.json",
+    "common_config_sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "dimension": 768,
+    "crop_context_fraction_per_side": 0.1,
+    "resize": [518, 518],
+    "normalization_mean": [0.485, 0.456, 0.406],
+    "normalization_std": [0.229, 0.224, 0.225],
+    "output": "L2-normalized x_norm_clstoken",
+    "inference_precision": "float32; TF32 disabled",
+    "storage_precision": "float16"
+  },
+  "causal_interface": {
+    "prefixes": [1, 2, 4, 8, 16],
+    "prefix_aggregation": "quality-weighted mean over the observed prefix followed by float32 L2 normalization",
+    "future_observations_used": false,
+    "full_track_feature_saved": false,
+    "category_id_feature": false,
+    "physical_id_feature": false
+  },
+  "resources": {
+    "requested_physical_gpu": "fresh-idle-at-launch",
+    "batch_size": 32,
+    "gpu_peak_bytes_ceiling": 12884901888,
+    "gpu_free_reserve_bytes": 8589934592,
+    "rss_bytes_ceiling": 4294967296,
+    "output_bytes_ceiling": 100000000,
+    "disk_free_reserve_bytes": 2147483648,
+    "system_ram_reserve_fraction": 0.25
+  },
+  "output_directory": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0275",
+  "result_path": "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json",
+  "boundaries": {
+    "training_started": false,
+    "optimization_steps": 0,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "native_evaluator_rows_read": false,
+    "formal_v2_cache": false,
+    "formal_mot_or_ocd_metrics": false,
+    "model_selection": false,
+    "raw_features_uploaded_to_github": false
+  }
+}
