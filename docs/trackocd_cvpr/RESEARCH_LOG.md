@@ -66,6 +66,22 @@ but neither candidate repairs the dominant coverage/temporal failure.  No
 candidate is promoted, no formal OCD/MOT metric is claimed, and no full-cache
 rerun is authorized by these smokes.
 
+## 2026-10-26 — current-HEAD causal dense protocol re-audit
+
+After the two five-video score-contract controls, the frozen predicted-Train
+protocol was re-audited at repository head `a3df42895ee81bcf60b2c3d55726d0ac2790e9ea`.
+It still binds exactly four fixed ordinal shards covering `407` approved Train
+videos (`102/102/102/101`), preserves the predicted-only `train_predicted`
+boundary, and keeps full-cache automatic start disabled.  The audit explicitly
+found `full_predicted_cache_started=false`, `training_started=false`, no
+TAO Val/Test labels, no Novel vocabulary, and no model selection.
+
+Receipt:
+`outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_reaudit_20261026.json`.
+This is a boundary/provenance recheck, not evidence that the missing 407-video
+predicted feature cache or formal OCD/MOT evaluation has completed; Goal A/B/C
+and frontend qualification remain open.
+
 ## 2026-10-12 — CVPR-0 preregistration
 
 Read the full new taskbook and prior core reports/source. Created the new
