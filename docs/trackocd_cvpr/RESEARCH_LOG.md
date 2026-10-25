@@ -9303,3 +9303,27 @@ no private GT/cache/weights opened for this check):
   The receipt explicitly keeps `scientific_goal_complete_in_index=false` and
   `source_execution_or_new_training=false`; this confirms review coverage only,
   not mechanism, frontend, OCD/MOT, or Goal A/B/C acceptance.
+
+## Frozen Train protocol and current-source M recovery-2 re-audit (2026-10-25 UTC)
+
+- Re-ran the metadata-only frozen joint predicted-Train protocol audit at the
+  current repository head. It passed with four contiguous ordinal shards covering
+  exactly the approved `407` Train videos: `102/102/102/101` videos for
+  `shard_0/1/2/3`, respectively. The audit confirms the full predicted cache
+  has not been started, no training or formal metric was created, and no Val/Test
+  label, Novel vocabulary, or private GT array was read by the audit.
+- The two-video anonymous smoke remains only a plumbing check (`2` videos,
+  `8,233` tracks, `81,471` observations, zero invalid boxes). Receipt:
+  `outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json`
+  (SHA256 `e70bb65068f8109e9c485e006db78e54af0291a75fe13410be74d464a8a12a77`).
+- Re-ran the current-source M recovery-2 receipt audit. All `9` registered
+  cases and all `3` causal orders (`1027/1028/1029`) passed the boundary and
+  provenance checks with zero violations and zero optimizer steps. Across the
+  `27` endpoint rows, prefix-16 Known macro accuracy has mean `0.0195556`
+  (range `0.0106667`--`0.032`), while the certified reuse macro lower bound
+  has mean `0.0745616` (range `0.0662202`--`0.0824353`). These remain causal-GT
+  development evidence only; they do not qualify active purity, self-exclusion,
+  Pred-owned joint performance, formal Val/Test metrics, model selection, or
+  Goal A/B/C acceptance. Receipt:
+  `outputs/trackocd_cvpr/cvpr4/M_current_source_recovery2_matrix_audit_v1/result.json`
+  (SHA256 `236fc7b605d0bfbaef6872a4daa0a66f18ad46853c9505ca38fe06a8fc390e6e`).
