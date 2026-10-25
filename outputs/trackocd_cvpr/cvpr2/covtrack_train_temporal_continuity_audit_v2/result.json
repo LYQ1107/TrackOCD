@@ -1,0 +1,151 @@
+{
+  "aggregate_geometry": {
+    "adjacent_pair_match_rate": 0.2722309614138984,
+    "observation_precision_on_annotated_images": 0.04590700397835164,
+    "observation_recall_against_annotated_gt": 0.36915291529152916,
+    "pred_id_switch_rate_given_adjacent_pair_matches": 0.1282290958531611,
+    "same_pred_id_rate_given_adjacent_pair_matches": 0.8717709041468389
+  },
+  "boundary": {
+    "feature_arrays_read": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "counts": {
+    "adjacent_pred_id_switch_pairs": 1509,
+    "adjacent_same_pred_id_pairs": 10259,
+    "gt_adjacent_annotation_pairs": 43228,
+    "gt_adjacent_pairs_with_both_stream_matches": 11768,
+    "gt_adjacent_pairs_with_source_gap_gt_one": 43228,
+    "gt_adjacent_pairs_with_source_gap_one": 0,
+    "gt_annotation_source_frame_gap_histogram_top20": [
+      {
+        "count": 32321,
+        "gap": 30
+      },
+      {
+        "count": 5125,
+        "gap": 25
+      },
+      {
+        "count": 2035,
+        "gap": 24
+      },
+      {
+        "count": 1596,
+        "gap": 60
+      },
+      {
+        "count": 432,
+        "gap": 15
+      },
+      {
+        "count": 403,
+        "gap": 28
+      },
+      {
+        "count": 195,
+        "gap": 90
+      },
+      {
+        "count": 156,
+        "gap": 29
+      },
+      {
+        "count": 155,
+        "gap": 26
+      },
+      {
+        "count": 145,
+        "gap": 120
+      },
+      {
+        "count": 106,
+        "gap": 8
+      },
+      {
+        "count": 79,
+        "gap": 150
+      },
+      {
+        "count": 58,
+        "gap": 50
+      },
+      {
+        "count": 44,
+        "gap": 240
+      },
+      {
+        "count": 36,
+        "gap": 180
+      },
+      {
+        "count": 35,
+        "gap": 300
+      },
+      {
+        "count": 33,
+        "gap": 210
+      },
+      {
+        "count": 32,
+        "gap": 48
+      },
+      {
+        "count": 28,
+        "gap": 270
+      },
+      {
+        "count": 19,
+        "gap": 330
+      }
+    ],
+    "gt_observations": 45450,
+    "gt_tracks": 2222,
+    "gt_tracks_with_adjacent_match": 1250,
+    "gt_tracks_with_adjacent_pred_id_switch": 703,
+    "gt_tracks_with_adjacent_same_pred_id": 1140,
+    "matched_observations": 16778,
+    "predicted_observations_on_gt_images": 365478,
+    "predicted_stream_observations": 13558940,
+    "predicted_stream_rows": 1245952
+  },
+  "generated_utc": "2026-10-25T17:56:50.068988+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",
+    "stream_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+    "stream_sha256_by_path": {
+      "shard_0_tccoff2/physical_tracks.jsonl": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+      "shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl": "798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b",
+      "shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl": "c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d",
+      "shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl": "f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000",
+      "shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl": "add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406",
+      "shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl": "4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6",
+      "shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl": "24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898",
+      "shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl": "fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3",
+      "shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl": "f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e",
+      "shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl": "c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2",
+      "shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86",
+      "shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f",
+      "shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl": "ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18"
+    }
+  },
+  "interpretation": "This revision uses adjacent sampled GT observations rather than a source-frame gap of exactly one. The prior v1 zero-pair result is therefore not evidence about fragmentation. The v2 counts are still category-free frontend diagnostics, not frontend qualification, OCD/MOT, model selection, or Goal A/B/C acceptance.",
+  "schema_version": "trackocd.cvpr.frontend-temporal-continuity-audit.v2",
+  "scope": {
+    "iou_threshold": 0.5,
+    "mapping_persisted": false,
+    "official_trackeval_or_ocd_metrics": false,
+    "pair_definition": "adjacent observations in each sealed GT track annotation order",
+    "qualification_or_model_selection": false,
+    "stream_substreams": 13,
+    "videos": 407
+  },
+  "status": "COMPLETE_CATEGORY_FREE_FRONTEND_TEMPORAL_CONTINUITY_DIAGNOSTIC_V2"
+}

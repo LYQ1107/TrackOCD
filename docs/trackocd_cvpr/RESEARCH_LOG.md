@@ -9436,7 +9436,7 @@ no private GT/cache/weights opened for this check):
   files were read, and no external service/process was restarted or changed.
   The local supervisor therefore remains correctly idle at `worker_pid=null`.
 
-## Full Train temporal-continuity root-cause audit (2026-10-26 UTC)
+## Full Train temporal-continuity root-cause audit (2026-10-26 UTC; v1 exact-step diagnostic)
 
 - Added and ran a category-free continuity diagnostic over all `13` reconciled
   COVTrack-native substreams, covering all `407` approved Train videos,
@@ -9444,18 +9444,45 @@ no private GT/cache/weights opened for this check):
   per-image anonymous Hungarian matching at IoU `0.5` against the sealed
   geometry-only physical GT index and retained aggregate counts only.
 - The audit found `16,778` matched observations and the same geometry rates as
-  the prior audit (`precision=0.0459070`, `recall=0.3691529`), but exactly
-  `0` consecutive GT-match pairs across `2,222` GT tracks. Consequently there
-  were `0` consecutive predicted-ID switches and `0` same-ID temporal pairs.
-  The result does not support track fragmentation as the primary explanation
-  for the temporal-gate failure; localization/coverage or coordinate alignment
-  must be addressed before a stitching repair is scientifically justified.
+  the prior audit (`precision=0.0459070`, `recall=0.3691529`), but its
+  `frame_index + 1` definition produced `0` pairs across `2,222` GT tracks.
+  This zero is a limitation of the v1 diagnostic, not evidence that prediction
+  IDs never fragment: the sealed GT annotations are temporally sampled and do
+  not generally contain adjacent source-frame indices. The v1 receipt is kept
+  as historical evidence and is not used for the root-cause conclusion.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr2/covtrack_train_temporal_continuity_audit_v1/result.json`
   (SHA256 `fc1a6a423f830862fd00fb6254ae2a39b50258c90c5d6126b0d4fc30de6a1a25`).
   No semantic fields, Val/Test labels, feature arrays, training, or prediction-
   to-GT mapping were read or persisted. The scoped v2/joint-RCM regression
   after this addition passed `58/58` in `5.97s`.
+
+## Corrected Train temporal-continuity diagnostic on sampled GT order (2026-10-26 UTC)
+
+- The v1 exact-source-step test was corrected without overwriting its receipt.
+  The v2 audit defines a pair as two adjacent observations in the sealed
+  geometry-only GT track annotation order and reports the source-frame gap
+  separately. This is required because all `43,228` adjacent GT annotation
+  pairs have a source-frame gap greater than one; the most common gaps are
+  `30` (`32,321` pairs), `25` (`5,125`), and `24` (`2,035`).
+- Over the same anonymous `407`-video, `13`-substream Train input, the v2
+  audit retained the geometry totals (`16,778` matched observations,
+  precision `0.0459070`, recall `0.3691529`) and found `11,768` adjacent GT
+  pairs with matches on both observations. Of those, `10,259` kept the same
+  predicted physical ID and `1,509` switched IDs, giving a switch rate of
+  `0.1282291` conditional on an adjacent pair being matched. `1,250` GT tracks
+  had at least one adjacent matched pair; `703` had a switch and `1,140` had a
+  same-ID pair (these track counts can overlap).
+- This corrects the prior interpretation: ID fragmentation is present among
+  matched sampled observations, but the low overall geometry precision/recall
+  and incomplete frame coverage remain co-occurring failure modes. The result
+  does not by itself justify a stitching repair, frontend qualification,
+  OCD/MOT score, model selection, or Goal A/B/C acceptance.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_temporal_continuity_audit_v2/result.json`.
+  The audit remained category-free, read no pixels/features/Val/Test/semantic
+  fields, and did not persist a prediction-to-GT mapping. A focused regression
+  for the sampled-order definition passed `1/1`.
 
 ## Historical Val MOT/OCD metric reconciliation (2026-10-26 UTC)
 
