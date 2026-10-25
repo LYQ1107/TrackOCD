@@ -10050,3 +10050,29 @@ no private GT/cache/weights opened for this check):
   and `scripts/trackocd_cvpr/audit_score_contract_geometry_subset.py`. Large
   native and normalized payloads remain local-only; no raw data, weights, or
   evaluator sidecar was uploaded.
+
+## Policy foreground-mass temporal continuity diagnosis (2026-10-26 UTC)
+
+- A second frozen, category-free diagnostic compared the same baseline and
+  foreground-mass streams on the same ten policy videos using adjacent
+  observations in each sealed GT track's annotation order. The GT sampling
+  gaps are not source-frame-one gaps: the dominant gaps are `30` (`823`
+  pairs), `25` (`187`), and `26` (`155`), with all `1,214` adjacent pairs
+  having source gap greater than one.
+- Foreground-mass increased matched adjacent GT pairs from `317/1214`
+  (`0.2611203`) to `564/1214` (`0.4645799`), consistent with its higher
+  observation recall. However, conditional same-predicted-ID rate fell from
+  `0.8611987` to `0.5780142`, while conditional switch rate rose from
+  `0.1388013` (`44` switches) to `0.4219858` (`238` switches). The number of
+  GT tracks with an adjacent switch rose from `17` to `32`.
+- This isolates the current failure mode more sharply than score statistics:
+  the foreground-mass repair recovers more spatially matched detections but
+  also admits unstable candidates that fragment or swap identities across
+  sampled time. It therefore cannot be promoted to a persistent frontend or
+  used to justify predicted-track training; the candidate's reliable temporal
+  pair count remains zero.
+- Durable receipt and implementation:
+  `outputs/trackocd_cvpr/cvpr2/policy_predicted_frontend_fg_mass_smoke_v1/temporal_continuity.json`
+  and `scripts/trackocd_cvpr/audit_policy_frontend_temporal_continuity.py`.
+  The in-memory matching map was discarded after aggregation, and the audit
+  read no semantic labels, Val/Test data, feature arrays, or Train annotation.

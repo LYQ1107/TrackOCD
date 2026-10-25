@@ -1,0 +1,544 @@
+{
+  "baseline": {
+    "aggregate": {
+      "adjacent_pair_match_rate": 0.26112026359143325,
+      "observation_precision_on_annotated_images": 0.04915817917272916,
+      "observation_recall_against_annotated_gt": 0.37302839116719244,
+      "pred_id_switch_rate_given_adjacent_pair_matches": 0.138801261829653,
+      "same_pred_id_rate_given_adjacent_pair_matches": 0.861198738170347
+    },
+    "continuity": {
+      "adjacent_pair_outcomes_by_source_gap_top20": [
+        {
+          "both_matched": 241,
+          "gap": 30,
+          "missing_match": 582,
+          "pred_id_switch": 30,
+          "same_pred_id": 211,
+          "total": 823
+        },
+        {
+          "both_matched": 34,
+          "gap": 25,
+          "missing_match": 153,
+          "pred_id_switch": 10,
+          "same_pred_id": 24,
+          "total": 187
+        },
+        {
+          "both_matched": 39,
+          "gap": 26,
+          "missing_match": 116,
+          "pred_id_switch": 2,
+          "same_pred_id": 37,
+          "total": 155
+        },
+        {
+          "gap": 90,
+          "missing_match": 14,
+          "total": 14
+        },
+        {
+          "both_matched": 1,
+          "gap": 60,
+          "missing_match": 9,
+          "pred_id_switch": 1,
+          "total": 10
+        },
+        {
+          "both_matched": 1,
+          "gap": 50,
+          "missing_match": 4,
+          "same_pred_id": 1,
+          "total": 5
+        },
+        {
+          "both_matched": 1,
+          "gap": 210,
+          "missing_match": 3,
+          "pred_id_switch": 1,
+          "total": 4
+        },
+        {
+          "gap": 150,
+          "missing_match": 4,
+          "total": 4
+        },
+        {
+          "gap": 120,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "gap": 270,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 180,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "gap": 240,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 100,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 175,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 75,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 125,
+          "missing_match": 1,
+          "total": 1
+        }
+      ],
+      "adjacent_pred_id_switch_pairs": 44,
+      "adjacent_same_pred_id_pairs": 273,
+      "gt_adjacent_annotation_pairs": 1214,
+      "gt_adjacent_pairs_with_both_stream_matches": 317,
+      "gt_adjacent_pairs_with_source_gap_gt_one": 1214,
+      "gt_adjacent_pairs_with_source_gap_one": 0,
+      "gt_annotation_source_frame_gap_histogram_top20": [
+        {
+          "count": 823,
+          "gap": 30
+        },
+        {
+          "count": 187,
+          "gap": 25
+        },
+        {
+          "count": 155,
+          "gap": 26
+        },
+        {
+          "count": 14,
+          "gap": 90
+        },
+        {
+          "count": 10,
+          "gap": 60
+        },
+        {
+          "count": 5,
+          "gap": 50
+        },
+        {
+          "count": 4,
+          "gap": 210
+        },
+        {
+          "count": 4,
+          "gap": 150
+        },
+        {
+          "count": 3,
+          "gap": 120
+        },
+        {
+          "count": 2,
+          "gap": 270
+        },
+        {
+          "count": 2,
+          "gap": 180
+        },
+        {
+          "count": 1,
+          "gap": 240
+        },
+        {
+          "count": 1,
+          "gap": 100
+        },
+        {
+          "count": 1,
+          "gap": 175
+        },
+        {
+          "count": 1,
+          "gap": 75
+        },
+        {
+          "count": 1,
+          "gap": 125
+        }
+      ],
+      "gt_tracks_with_adjacent_match": 31,
+      "gt_tracks_with_adjacent_pred_id_switch": 17,
+      "gt_tracks_with_adjacent_same_pred_id": 28
+    },
+    "gt_observations": 1268,
+    "gt_tracks": 54,
+    "matched_observations": 473,
+    "predicted_observations_on_gt_images": 9622,
+    "stream_observations": 319521,
+    "stream_rows": 25258,
+    "streams": [
+      {
+        "bytes": 694095500,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+        "selected_videos": [
+          72,
+          275,
+          349,
+          371
+        ],
+        "sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c"
+      },
+      {
+        "bytes": 205809321,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b"
+      },
+      {
+        "bytes": 223694674,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d"
+      },
+      {
+        "bytes": 150585180,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000"
+      },
+      {
+        "bytes": 127813179,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406"
+      },
+      {
+        "bytes": 136983444,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          1524
+        ],
+        "sha256": "4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6"
+      },
+      {
+        "bytes": 131906941,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          1831
+        ],
+        "sha256": "24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898"
+      },
+      {
+        "bytes": 146128220,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3"
+      },
+      {
+        "bytes": 114105064,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e"
+      },
+      {
+        "bytes": 130253797,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          2330
+        ],
+        "sha256": "c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2"
+      },
+      {
+        "bytes": 142717567,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86"
+      },
+      {
+        "bytes": 105335057,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          2686
+        ],
+        "sha256": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f"
+      },
+      {
+        "bytes": 111718699,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          2977,
+          2987
+        ],
+        "sha256": "ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18"
+      }
+    ]
+  },
+  "boundary": {
+    "feature_arrays_read": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "candidate": {
+    "aggregate": {
+      "adjacent_pair_match_rate": 0.4645799011532125,
+      "observation_precision_on_annotated_images": 0.04603349065752893,
+      "observation_recall_against_annotated_gt": 0.5615141955835962,
+      "pred_id_switch_rate_given_adjacent_pair_matches": 0.4219858156028369,
+      "same_pred_id_rate_given_adjacent_pair_matches": 0.5780141843971631
+    },
+    "continuity": {
+      "adjacent_pair_outcomes_by_source_gap_top20": [
+        {
+          "both_matched": 390,
+          "gap": 30,
+          "missing_match": 433,
+          "pred_id_switch": 144,
+          "same_pred_id": 246,
+          "total": 823
+        },
+        {
+          "both_matched": 86,
+          "gap": 25,
+          "missing_match": 101,
+          "pred_id_switch": 65,
+          "same_pred_id": 21,
+          "total": 187
+        },
+        {
+          "both_matched": 82,
+          "gap": 26,
+          "missing_match": 73,
+          "pred_id_switch": 25,
+          "same_pred_id": 57,
+          "total": 155
+        },
+        {
+          "gap": 90,
+          "missing_match": 14,
+          "total": 14
+        },
+        {
+          "both_matched": 2,
+          "gap": 60,
+          "missing_match": 8,
+          "pred_id_switch": 1,
+          "same_pred_id": 1,
+          "total": 10
+        },
+        {
+          "both_matched": 2,
+          "gap": 50,
+          "missing_match": 3,
+          "pred_id_switch": 1,
+          "same_pred_id": 1,
+          "total": 5
+        },
+        {
+          "both_matched": 1,
+          "gap": 210,
+          "missing_match": 3,
+          "pred_id_switch": 1,
+          "total": 4
+        },
+        {
+          "gap": 150,
+          "missing_match": 4,
+          "total": 4
+        },
+        {
+          "gap": 120,
+          "missing_match": 3,
+          "total": 3
+        },
+        {
+          "gap": 270,
+          "missing_match": 2,
+          "total": 2
+        },
+        {
+          "both_matched": 1,
+          "gap": 180,
+          "missing_match": 1,
+          "pred_id_switch": 1,
+          "total": 2
+        },
+        {
+          "gap": 240,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 100,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 175,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 75,
+          "missing_match": 1,
+          "total": 1
+        },
+        {
+          "gap": 125,
+          "missing_match": 1,
+          "total": 1
+        }
+      ],
+      "adjacent_pred_id_switch_pairs": 238,
+      "adjacent_same_pred_id_pairs": 326,
+      "gt_adjacent_annotation_pairs": 1214,
+      "gt_adjacent_pairs_with_both_stream_matches": 564,
+      "gt_adjacent_pairs_with_source_gap_gt_one": 1214,
+      "gt_adjacent_pairs_with_source_gap_one": 0,
+      "gt_annotation_source_frame_gap_histogram_top20": [
+        {
+          "count": 823,
+          "gap": 30
+        },
+        {
+          "count": 187,
+          "gap": 25
+        },
+        {
+          "count": 155,
+          "gap": 26
+        },
+        {
+          "count": 14,
+          "gap": 90
+        },
+        {
+          "count": 10,
+          "gap": 60
+        },
+        {
+          "count": 5,
+          "gap": 50
+        },
+        {
+          "count": 4,
+          "gap": 210
+        },
+        {
+          "count": 4,
+          "gap": 150
+        },
+        {
+          "count": 3,
+          "gap": 120
+        },
+        {
+          "count": 2,
+          "gap": 270
+        },
+        {
+          "count": 2,
+          "gap": 180
+        },
+        {
+          "count": 1,
+          "gap": 240
+        },
+        {
+          "count": 1,
+          "gap": 100
+        },
+        {
+          "count": 1,
+          "gap": 175
+        },
+        {
+          "count": 1,
+          "gap": 75
+        },
+        {
+          "count": 1,
+          "gap": 125
+        }
+      ],
+      "gt_tracks_with_adjacent_match": 40,
+      "gt_tracks_with_adjacent_pred_id_switch": 32,
+      "gt_tracks_with_adjacent_same_pred_id": 38
+    },
+    "gt_observations": 1268,
+    "gt_tracks": 54,
+    "matched_observations": 712,
+    "predicted_observations_on_gt_images": 15467,
+    "stream_observations": 517039,
+    "stream_rows": 41493,
+    "streams": [
+      {
+        "bytes": 89318462,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_policy_fg_mass_v1/physical_tracks.jsonl",
+        "selected_videos": [
+          72,
+          275,
+          349,
+          371,
+          1524,
+          1831,
+          2330,
+          2686,
+          2977,
+          2987
+        ],
+        "sha256": "f7fab98163ba8e849d234afc3a159aef5baaf1ab4a379c24e9b9693ff535fefb"
+      }
+    ]
+  },
+  "deltas_candidate_minus_baseline": {
+    "adjacent_pair_match_rate": 0.20345963756177926,
+    "matched_observations": 239,
+    "observation_recall": 0.18848580441640372,
+    "same_id_rate_given_matches": -0.28318455377318386,
+    "switch_rate_given_matches": 0.28318455377318386
+  },
+  "generated_utc": "2026-10-25T20:55:02.401451+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899"
+  },
+  "interpretation": "This paired category-free continuity diagnostic tests whether a score-contract candidate preserves identities across adjacent sealed GT observations. It is not an official MOT/OCD metric or frontend qualification.",
+  "schema_version": "trackocd.cvpr.policy-frontend-temporal-continuity.v1",
+  "scope": {
+    "frontend_qualification": false,
+    "iou_threshold": 0.5,
+    "mapping_persisted": false,
+    "model_selection": false,
+    "official_trackeval_or_ocd_metrics": false,
+    "pair_definition": "adjacent observations in each sealed GT track annotation order",
+    "videos": [
+      72,
+      275,
+      349,
+      371,
+      1524,
+      1831,
+      2330,
+      2686,
+      2977,
+      2987
+    ]
+  },
+  "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+}
