@@ -1,0 +1,45 @@
+{
+  "schema_version": "trackocd.cvpr.nas-recovery-probe.v1",
+  "generated_utc": "2026-10-25T23:55:31Z",
+  "status": "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE",
+  "scope": {
+    "read_only": true,
+    "small_metadata_only": true,
+    "data_read": false,
+    "weights_read": false,
+    "shards_read": false,
+    "tao_test_read": false,
+    "external_processes_touched": false
+  },
+  "direct_probe": {
+    "requested_target": "192.168.31.57:22",
+    "requested_user": "Valadmin",
+    "keys_tried": [
+      "id_ed25519_nas_readonly",
+      "id_ed25519_nas_readwrite"
+    ],
+    "result": "TCP_CONNECT_TIMEOUT"
+  },
+  "local_effective_ssh_config": {
+    "alias": "nas57",
+    "resolved_hostname": "nas57",
+    "resolved_user": "liuyeqiang",
+    "local_config_file_present": false,
+    "result": "HOSTNAME_RESOLUTION_FAILED"
+  },
+  "managed_mount": {
+    "mount": "/data3/liuyeqiang/nas/A100",
+    "supervisor_pid": 1658,
+    "supervisor_alive_at_probe": true,
+    "worker_pid": null,
+    "mounted": false,
+    "reverse_endpoint": "127.0.0.1:24557",
+    "reverse_endpoint_listening_at_probe": false,
+    "configured_remote_root": "/home/A100"
+  },
+  "other_local_ports": {
+    "127.0.0.1:7890": "LISTENING",
+    "127.0.0.1:17890": "LISTENING"
+  },
+  "next_action": "Restore the NAS-originated reverse tunnel/service or provide a reachable route, then rerun this small metadata probe before any asset recovery. Do not restart the existing supervisor from this workflow."
+}

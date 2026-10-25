@@ -10768,3 +10768,20 @@ no private GT/cache/weights opened for this check):
   trade-off, not a lawful strong frontend, not formal OCD/MOT evidence, and
   not a reason to start predicted-track training. The CVPR acceptance gate
   remains open.
+
+## NAS recovery connectivity probe (2026-10-26 UTC)
+
+- A read-only metadata probe was run before attempting any asset recovery. The
+  local `nas57` alias is not configured on this server (it resolves to the
+  literal hostname `nas57` with user `liuyeqiang`), and direct probes to
+  `Valadmin@192.168.31.57:22` timed out with both existing NAS key files.
+- The managed mount state is `mounted=false`, with supervisor PID `1658` still
+  alive but no worker. Its configured NAS route is the NAS-originated reverse
+  tunnel `127.0.0.1:24557` to `/home/A100`; that endpoint was not listening at
+  the probe. The unrelated local proxy ports `7890` and `17890` were listening,
+  but they do not establish NAS reachability.
+- No process was restarted or terminated, and no data, weight, shard, TAO Test
+  label, or cache payload was opened. The compact receipt is
+  `outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json`. The next
+  recovery step is external tunnel/service restoration, followed by a fresh
+  small-file hash check; formal cache recovery and training remain paused.

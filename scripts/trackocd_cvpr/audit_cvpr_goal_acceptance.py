@@ -162,6 +162,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json",
     )
+    nas_probe_path, nas_probe = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
+    )
 
     core_reviews = review.get("scoped_actual_core_reviews", [])
     extra_reviews = review.get("licensed_extra_inspection_reviews", [])
@@ -311,6 +315,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
                     reported_status=hybrid.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
+                    reported_status=nas_probe.get("status"),
+                ),
             ],
             "facts": {
                 "covtrack_reliable_temporal_pairs": geometry_totals.get("reliable_temporal_pairs"),
@@ -356,6 +365,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     hybrid_union, "temporal", "conditional_switch_rate"
                 ),
                 "hybrid_geometry_smoke_is_frontend_qualification": False,
+                "nas_recovery_probe_status": nas_probe.get("status"),
+                "nas_reverse_tunnel_listening": nested(
+                    nas_probe, "managed_mount", "reverse_endpoint_listening_at_probe"
+                ),
             },
             "open_gate": "The adjacent-frame MASA smoke confirms a frozen current-image causal path, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
         },
@@ -602,6 +615,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
                 reported_status=hybrid.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
+                reported_status=nas_probe.get("status"),
             ),
         ],
     }

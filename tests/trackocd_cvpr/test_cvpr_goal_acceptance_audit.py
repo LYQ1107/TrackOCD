@@ -57,6 +57,10 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_recall"] == 0.8021978021978022
     assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_conditional_switch_rate"] == 0.2926829268292683
     assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_is_frontend_qualification"] is False
+    assert rows["lawful_strong_frontend"]["facts"]["nas_recovery_probe_status"] == (
+        "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE"
+    )
+    assert rows["lawful_strong_frontend"]["facts"]["nas_reverse_tunnel_listening"] is False
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["predicted_category_free_feature_pilot_videos"] == 2
     assert rows["predicted_track_training"]["facts"]["predicted_feature_video0275_status"] == (
