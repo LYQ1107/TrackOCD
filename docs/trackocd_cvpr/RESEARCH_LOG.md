@@ -10171,3 +10171,38 @@ no private GT/cache/weights opened for this check):
   strong frontend qualification, predicted-track R/C/M training, formal
   OCD/MOT evaluation, model selection, and Goal A/B/C acceptance pending. The
   state correction changes bookkeeping only; no cache was rerun or deleted.
+
+## Candidate-aware causal physical re-association diagnostic (2026-10-26 UTC)
+
+- A new fixed, category-free mechanism was frozen in
+  `configs/trackocd_cvpr/causal_physical_reassociation_smoke_v1.json` and
+  implemented by `scripts/trackocd_cvpr/causal_physical_reassociate.py`.
+  At each source frame it permits a new native track ID to inherit only one
+  prior-frame persistent state with box IoU `>=0.5`; the one-frame horizon,
+  one-to-one Hungarian assignment, same-frame birth exclusion, and no-future
+  rule were fixed before execution. Native-to-derived mappings were transient;
+  no mapping or GT join was persisted.
+- On the fixed policy subset, `1,904` births were joined and the stream changed
+  from `41,493` to `40,393` tracks while retaining all `517,039` observations.
+  On the independent development prefix, `1,377` births were joined and the
+  stream changed from `46,477` to `45,480` tracks while retaining all
+  `422,694` observations. No category, feature, Val/Test, or training input was
+  opened.
+- As expected for an identity-only postprocessor, geometry was byte/observation
+  invariant: policy remained precision `0.0460335` and recall `0.5615142`,
+  while development remained precision `0.0455408` and recall `0.6450168`.
+  The derived streams therefore cannot repair the frontend's spatial coverage.
+- The policy continuity receipt found same-ID rate `0.5851064` and switch rate
+  `0.4148936`, versus the unfiltered foreground-mass candidate's
+  `0.5780142/0.4219858`; development found `0.5966030/0.4033970` versus
+  `0.5923567/0.4076433`. These are small directionally favorable changes, but
+  both remain below their age-1 baselines (`0.8611987/0.1388013` and
+  `0.7805907/0.2194093`), and reliable temporal pairs remain `0`.
+- This is weak positive mechanism evidence, not a qualified tracker or a
+  scientific winner. It does not authorize predicted-track training, formal
+  OCD/MOT reporting, model selection, or Goal A/B/C acceptance. Compact
+  receipts are
+  `outputs/trackocd_cvpr/cvpr2/causal_reassoc_smoke_v1/policy.json`,
+  `development.json`, `policy_geometry.json`, `development_geometry.json`,
+  `policy_temporal.json`, and `development_temporal.json`; large derived
+  streams remain local-only.

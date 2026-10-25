@@ -1,0 +1,68 @@
+{
+  "algorithm": {
+    "future_observations_used": false,
+    "iou_threshold": 0.5,
+    "max_gap_frames": 1,
+    "native_to_derived_mapping_persisted": false,
+    "semantic_or_feature_input": false
+  },
+  "boundaries": {
+    "feature_arrays_read": false,
+    "formal_mot_or_ocd_metrics": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "model_selection": false,
+    "raw_payload_uploaded": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "config": "configs/trackocd_cvpr/causal_physical_reassociation_smoke_v1.json",
+  "config_sha256": "310f9883b5e26ee790d65277cfc220e220ba744a5549560ce5d2183f26404612",
+  "counts": {
+    "collision_splits": 0,
+    "input_native_tracks": 46477,
+    "input_observations": 422694,
+    "matched_births": 1377,
+    "new_births": 45480,
+    "output_observations": 422694,
+    "output_persistent_tracks": 45480
+  },
+  "derived_stream": {
+    "bytes": 81648332,
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/causal_reassoc/covtrack_development_fg_mass_v1/physical_tracks.jsonl",
+    "sha256": "89c01cab819f86155fd6a976dc925232abdee0a5ffa2e20528ffe3cb079187e3"
+  },
+  "generated_utc": "2026-10-25T21:26:12.644415+00:00",
+  "interpretation": "Mechanism evidence only; no official OCD/MOT metric, frontend qualification, model selection, or Goal A/B/C acceptance.",
+  "mode": "development_pseudo",
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 450101248,
+    "wall_seconds": 28.637603256000148
+  },
+  "schema_version": "trackocd.cvpr.causal-physical-reassociation-result.v1",
+  "source_binding": {
+    "algorithm": "one-frame prior-state Hungarian IoU bridge",
+    "config_sha256": "310f9883b5e26ee790d65277cfc220e220ba744a5549560ce5d2183f26404612",
+    "input_stream_sha256": "9d1c6a87a1ca509d98ead34eab559b6c638855afa1d02b1e15bc664d43cb8304",
+    "kind": "derived_category_free_causal_physical_reassociation"
+  },
+  "source_stream": {
+    "bytes": 80492936,
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_development_fg_mass_v1/physical_tracks.jsonl",
+    "sha256": "9d1c6a87a1ca509d98ead34eab559b6c638855afa1d02b1e15bc664d43cb8304"
+  },
+  "status": "COMPLETE_CATEGORY_FREE_CAUSAL_REASSOCIATION_DIAGNOSTIC",
+  "video_ids": [
+    0,
+    3,
+    11,
+    38,
+    146,
+    220,
+    221,
+    239
+  ]
+}
