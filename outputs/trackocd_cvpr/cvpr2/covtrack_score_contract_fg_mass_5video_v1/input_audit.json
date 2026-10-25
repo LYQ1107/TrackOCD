@@ -1,0 +1,108 @@
+{
+  "boundaries": {
+    "compatibility_alias_is_symlink_only": true,
+    "full_407_video_input_built": false,
+    "gt_or_semantic_arrays_read": false,
+    "model_executed": false,
+    "novel_vocabulary_read": false,
+    "pixels_decoded_or_hashed": false,
+    "public_frontend_vocabulary_role": "COVTrack parser/checkpoint input only; not TAO GT or model-selection labels",
+    "tao_category_values_read": false,
+    "tao_test_accessed": false,
+    "tao_train_annotation_opened": false,
+    "tao_val_accessed": false,
+    "training_started": false
+  },
+  "counts": {
+    "annotations": 0,
+    "images": 5425,
+    "public_vocabulary_categories": 1203,
+    "tracks": 0,
+    "videos": 5
+  },
+  "generated_utc": "2026-10-25T19:16:08.971155+00:00",
+  "interpretation": "Input construction prerequisite only; no OCD/MOT metric or frontend qualification is claimed.",
+  "per_video": {
+    "0": {
+      "all_files_present": true,
+      "first_frame_name": "frame0391.jpg",
+      "frame_directory": "/data3/liuyeqiang/TAO-Amodal/frames/train/YFCC100M/v_f69ebe5b731d3e87c1a3992ee39c3b7e",
+      "frames": 1171,
+      "height": 480,
+      "last_frame_name": "frame1561.jpg",
+      "numeric_sequence": true,
+      "source_filename_minus_plan_frame_index": 1,
+      "width": 640
+    },
+    "1": {
+      "all_files_present": true,
+      "first_frame_name": "frame0151.jpg",
+      "frame_directory": "/data3/liuyeqiang/TAO-Amodal/frames/train/YFCC100M/v_8b6283255797fc7e94f3a93947a2803",
+      "frames": 1171,
+      "height": 480,
+      "last_frame_name": "frame1321.jpg",
+      "numeric_sequence": true,
+      "source_filename_minus_plan_frame_index": 1,
+      "width": 640
+    },
+    "11": {
+      "all_files_present": true,
+      "first_frame_name": "frame0001.jpg",
+      "frame_directory": "/data3/liuyeqiang/TAO-Amodal/frames/train/YFCC100M/v_82e9bb97b1a1fdde489511e69126644",
+      "frames": 951,
+      "height": 480,
+      "last_frame_name": "frame0951.jpg",
+      "numeric_sequence": true,
+      "source_filename_minus_plan_frame_index": 1,
+      "width": 640
+    },
+    "3": {
+      "all_files_present": true,
+      "first_frame_name": "frame0001.jpg",
+      "frame_directory": "/data3/liuyeqiang/TAO-Amodal/frames/train/YFCC100M/v_9018a07931e02026b3bd6e82489d4624",
+      "frames": 961,
+      "height": 480,
+      "last_frame_name": "frame0961.jpg",
+      "numeric_sequence": true,
+      "source_filename_minus_plan_frame_index": 1,
+      "width": 640
+    },
+    "9": {
+      "all_files_present": true,
+      "first_frame_name": "frame0121.jpg",
+      "frame_directory": "/data3/liuyeqiang/TAO-Amodal/frames/train/YFCC100M/v_6f90a13c795ef37404d95983341df",
+      "frames": 1171,
+      "height": 480,
+      "last_frame_name": "frame1291.jpg",
+      "numeric_sequence": true,
+      "source_filename_minus_plan_frame_index": 1,
+      "width": 640
+    }
+  },
+  "schema_version": "trackocd.cvpr.covtrack_train_dense_smoke_input_audit.v1",
+  "selection": {
+    "approved_video_id_order_sha256": "d0ceeb81eb0b6d67ee050e8eb15cda909e602cb83f57204d13fcbde276898ea8",
+    "outcome_selection": false,
+    "rule": "fixed predeclared video IDs from the approved 407-video image plan",
+    "shard_index": null,
+    "video_ids": [
+      0,
+      1,
+      3,
+      9,
+      11
+    ]
+  },
+  "sources": {
+    "anonymous_annotation": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_inputs/covtrack_score_contract_fg_mass_5video_v1/anonymous_train.json",
+    "anonymous_annotation_sha256": "1defd92b767409cac9dcc6c12012bfcbdf822d14ac20841a5ee03031aae903a6",
+    "frame_alias": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/val_frame_alias",
+    "frame_alias_target": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "image_plan": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+    "image_plan_sha256": "0146b13eb637769c3f5da9244ee0be35f739022511ac75aadc12933acd977fba",
+    "public_frontend_vocabulary": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
+    "public_frontend_vocabulary_sha256": "a52624410a7f6758221486940dd4e6f3d6c8974336afbc3fe3ce1624a741dd77"
+  },
+  "status": "PASS_FIXED_ANONYMOUS_TRAIN_DENSE_INPUT"
+}

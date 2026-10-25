@@ -6,6 +6,42 @@ nested video GT arrays. Original chronology/receipts are preserved below;
 consult `TRAIN_METADATA_ACCESS_INCIDENT.md` and its immutable incident receipt
 for corrected scope. No new scientific-access clearance is implied.
 
+## 2026-10-26 — five-video foreground-mass score-contract recheck
+
+The predeclared bounded follow-up completed on anonymous Train videos
+`[0, 1, 3, 9, 11]`.  The input audit is
+`outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_5video_v1/input_audit.json`:
+5 videos, 5,425 raw frames, empty annotations/tracks, and closed Train/Val/Test
+boundaries.  The frozen COVTrack checkpoint was run once on idle GPU2 with one
+worker and TCC disabled; no optimizer step or TAO annotation was opened.  Its
+receipt is
+`outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_5video_v1/run.json`.
+
+The candidate used the temporary score-contract shadow source
+`/data3/liuyeqiang/.trackocd_score_contract_shadow.McpA1H`, whose bbox-head
+SHA256 is `21a4a72c66a556fd1f9c394e2ff54ee3fcd701ae59fbecf29cb48a96e5b5de70`;
+the tracked vendor bbox head is
+`b970888266213a43ebd9a482466e1f9727847541fbe2078a023166a5b670edb6` and does
+not contain the foreground-mass fragment.  The candidate produced 25,572
+tracks, 269,726 observations, and zero invalid boxes.  Its exported quality
+values are finite but concentrated at `0.9966328`--`0.9966526` (mean
+`0.9966347`), consistent with foreground mass rather than the baseline
+max-class score.
+
+The paired category-free comparison streamed the complete 694,095,500-byte
+`shard_0_tccoff2` stream and retained only the same five video IDs; no filtered
+prediction file or prediction-to-GT mapping was written.  Receipt:
+`outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_5video_v1/paired_geometry_comparison.json`.
+Against the baseline subset (185,790 observations, precision `0.0209132`,
+recall `0.1659751`), the candidate had precision `0.0218969` and recall
+`0.2544952` (deltas `+0.0009837` and `+0.0885201`).  Both streams still have
+zero reliable GT-track recall and zero reliable temporal pairs; these are
+bounded geometry diagnostics, not OCD/MOT metrics or frontend qualification.
+The native bbox and track output hashes differ, so the shadow source affected
+the actual exported route.  This broadens the earlier two-video evidence but
+does not by itself establish a general frontend improvement or authorize a
+full 407-video rerun.
+
 ## 2026-10-12 — CVPR-0 preregistration
 
 Read the full new taskbook and prior core reports/source. Created the new
