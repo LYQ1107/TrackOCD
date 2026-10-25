@@ -1,0 +1,143 @@
+{
+  "schema_version": "trackocd.cvpr.val_metric_truth_reaudit.v1",
+  "status": "COMPLETE_RECONCILIATION_WITH_PENDING_FORMAL_STAGES",
+  "generated_utc": "2026-10-25T22:37:44Z",
+  "split": "val",
+  "new_evaluation_started": false,
+  "test_semantic_accessed": false,
+  "source_receipts": [
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit/frontend_covtrack_native_metrics.json",
+      "sha256": "e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2",
+      "role": "sealed_existing_category_free_val_mot_receipt"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit/frontend_covtrack_native.json",
+      "sha256": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526",
+      "role": "frontend_stage_and_observability_receipt"
+    },
+    {
+      "path": "outputs/trackocd_v2_runtime/tables/pred_nearest.json",
+      "sha256": "cde48385d94ce517df15e92d659c7e4c9e47cfb748ed3c405caa51bdf45c2634",
+      "role": "sealed_existing_val_ocd_nearest_receipt"
+    },
+    {
+      "path": "outputs/trackocd_v2_runtime/tables/pred_dpmeans.json",
+      "sha256": "9ed9ea2a28daefca73974c2b9ef7fc720f69b0ed3e00df2503d31767524b6310",
+      "role": "pending_val_ocd_dpmeans_receipt"
+    }
+  ],
+  "category_free_mot": {
+    "status": "SEALED_EXISTING_VAL_EVIDENCE",
+    "frontend": "COVTrack-native",
+    "generated_utc": "2026-09-17T08:13:09.674946+00:00",
+    "source_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "gt_stream_sha256": "23fbe4d7f2494508141f2d88f8741cec19ee52cae783cdee8483120bd01210e8",
+    "normalized_counts": {
+      "videos": 988,
+      "tracks": 369794,
+      "observations": 1133841,
+      "invalid_boxes": 0
+    },
+    "metrics": {
+      "HOTA": 0.15412,
+      "DetA": 0.055848,
+      "DetPr": 0.057751,
+      "DetRe": 0.54448,
+      "AssA": 0.44569,
+      "AssPr": 0.73638,
+      "AssRe": 0.48908,
+      "LocA": 0.76654,
+      "OWTA": 0.48228
+    },
+    "metrics_percent": {
+      "HOTA": 15.412,
+      "DetA": 5.5848,
+      "DetPr": 5.7751,
+      "DetRe": 54.448,
+      "AssA": 44.569,
+      "AssPr": 73.638,
+      "AssRe": 48.908,
+      "LocA": 76.654,
+      "OWTA": 48.228
+    },
+    "observability": {
+      "novel_tracks_reliably_observed": 191,
+      "novel_tracks_total": 819,
+      "novel_track_observability": 0.23321123321123322,
+      "persistent_reliably_observed": 88,
+      "persistent_total": 527,
+      "persistent_observability": 0.16698292220113853,
+      "persistent_target_reliably_observed": 115,
+      "persistent_target_observability": 0.21821631878557876
+    },
+    "interpretation": "Positive category-free Val tracking evidence; not a new run and not a completed OCD/Goal-A/B/C result."
+  },
+  "ocd_nearest": {
+    "status": "SEALED_EXISTING_VAL_BASELINE",
+    "generated_utc": "2026-10-25T05:31:02.495243+00:00",
+    "frontend": "COVTrack-native",
+    "source_kind": "formal_sharded",
+    "test_semantic_accessed": false,
+    "method_selection_performed": false,
+    "fixed_gt_denominator": 5232,
+    "post_decision_join_rows": 1206,
+    "unmatched_gt_deferred": 4026,
+    "model_input_contract": {
+      "gt_category_id": false,
+      "gt_split": false,
+      "temporal_iou_match": false,
+      "text_or_category_logits": false
+    },
+    "prefix_metrics": {
+      "p1": {
+        "all_acc": 0.07454128440366972,
+        "old_acc": 0.06616813958758215,
+        "new_acc": 0.11965811965811966,
+        "h_score": 0.08521459987909867,
+        "commit_ct": 0.028462998102466792,
+        "false_assignment_rate": 0.18975332068311196
+      },
+      "p2": {
+        "all_acc": 0.08027522935779817,
+        "old_acc": 0.07160661681395876,
+        "new_acc": 0.12698412698412698,
+        "h_score": 0.09157429544301965,
+        "commit_ct": 0.03795066413662239,
+        "false_assignment_rate": 0.18026565464895636
+      },
+      "p4": {
+        "all_acc": 0.07970183486238532,
+        "old_acc": 0.07160661681395876,
+        "new_acc": 0.12332112332112333,
+        "h_score": 0.090603917293692,
+        "commit_ct": 0.04933586337760911,
+        "false_assignment_rate": 0.16888045540796964
+      },
+      "p8": {
+        "all_acc": 0.09021406727828746,
+        "old_acc": 0.08271017448447768,
+        "new_acc": 0.13064713064713065,
+        "h_score": 0.1012934332391853,
+        "commit_ct": 0.05502846299810247,
+        "false_assignment_rate": 0.16318785578747627
+      },
+      "p16": {
+        "all_acc": 0.09671253822629969,
+        "old_acc": 0.08996147745297983,
+        "new_acc": 0.1330891330891331,
+        "h_score": 0.10735585987893223,
+        "commit_ct": 0.051233396584440226,
+        "false_assignment_rate": 0.16698292220113853
+      }
+    },
+    "interpretation": "Positive sealed Val OCD baseline evidence, but not a newly rerun result; no final method selection or Goal-A/B/C acceptance."
+  },
+  "ocd_dpmeans": {
+    "status": "WAITING_FEATURES",
+    "generated_utc": "2026-10-25T16:50:59.221967+00:00",
+    "test_semantic_accessed": false,
+    "reason": "The formal predicted feature manifest is currently unavailable after the NAS mount loss; the retained pre-selection cache is not accepted for formal baselines."
+  },
+  "next_valid_step": "Restore the authorized NAS formal cache manifest or re-admit a qualified lawful frontend/cache, then run the remaining Val-only baselines and report; do not infer completion from this receipt."
+}

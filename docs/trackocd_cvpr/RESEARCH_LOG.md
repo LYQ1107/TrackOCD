@@ -10449,3 +10449,32 @@ no private GT/cache/weights opened for this check):
   or external-process intervention was performed. Formal predicted training
   therefore remains closed pending a qualified lawful frontend and the NAS
   formal-Val recovery.
+
+## Val metric truth reconciliation (2026-10-25 UTC)
+
+- A read-only reconciliation of the existing compact receipts confirms that
+  the project does have positive, sealed TAO Validation evidence, but it is
+  split across two different layers and must not be described as a new
+  end-to-end rerun. The receipt is
+  `outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json`.
+- The existing COVTrack-native category-free MOT/TrackEval result is
+  `HOTA=15.412`, `DetA=5.5848`, `DetPr=5.7751`, `DetRe=54.448`,
+  `AssA=44.569`, `AssPr=73.638`, `AssRe=48.908`, `LocA=76.654`, and
+  `OWTA=48.228` percent. Its sealed stream contains `988` Val videos,
+  `369,794` tracks, `1,133,841` observations, and zero invalid boxes. This
+  is category-free tracking evidence, not the final OCD research result.
+- The existing causal Nearest-prototype Val baseline is also sealed. Its
+  H-score is `0.085215/0.091574/0.090604/0.101293/0.107356` for prefixes
+  `p1/p2/p4/p8/p16`; New accuracy is
+  `0.119658/0.126984/0.123321/0.130647/0.133089`; Commit-CT is
+  `0.028463/0.037951/0.049336/0.055028/0.051233`; and false-assignment
+  rate is `0.189753/0.180266/0.168880/0.163188/0.166983`. The fixed GT
+  denominator is `5,232`, with `1,206` post-decision evaluator joins and
+  `4,026` unmatched GT targets counted as defer. The model-input contract
+  excludes GT categories/splits, temporal IoU matching, and text/category
+  logits; method selection was not performed.
+- DP-means remains `WAITING_FEATURES`; the formal cache manifest is missing
+  after NAS mount loss. No training, new inference, TAO Test access, or
+  external-process intervention occurred in this reconciliation. Therefore
+  these are valid interim Val indicators, not completion of the full
+  CVPR/Goal-A/B/C acceptance.
