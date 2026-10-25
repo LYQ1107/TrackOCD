@@ -9597,3 +9597,36 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_train_score_contract_audit_v1/result.json`
   (SHA256 `30252ba257c7aa652cbc1fc8496cc9bb04a126f6e89be2a5f957c337d39f6c69`).
   The focused source-contract regression passed `1/1`.
+
+## Foreground-mass route repair and paired anonymous-Train smoke (2026-10-26 UTC)
+
+- The first temporary shadow run did not change its output, so it was not
+  treated as a repair result. The launch audit found that the compatibility
+  wrapper and dense-smoke environment could prepend the tracked vendor source
+  even when `TRACKOCD_COVTRACK_ROOT` selected a temporary source tree. The
+  launchers now honor the explicitly selected root; the Val normalizer also
+  receives the selected Val annotation explicitly. These are execution-path
+  fixes, not model claims.
+- A source-only model probe loaded the shadow
+  `Shared4Conv1FCCliPBBoxHead` and verified the foreground-mass code path. A
+  synthetic one-ROI call returned `0.99663299` versus the baseline's
+  class-probability scale. A paired one-frame native run then produced 36
+  baseline rows with mean score `0.00359695` and 50 candidate rows with mean
+  score `0.99663397`, confirming that the selected shadow source affected the
+  actual exported route.
+- The registered two-video anonymous Train smoke used the same checkpoint,
+  frozen frontend, input manifest, frame alias, and GPU budget. Baseline:
+  `8,241` tracks / `81,480` observations, score mean `0.00355915`, all
+  observations below `0.05`. Foreground-mass candidate: `13,270` tracks /
+  `115,708` observations, score mean `0.99663370`, all observations above
+  `0.5`; invalid scores were zero in both streams. The changed track count is
+  mechanism evidence that score semantics affect tracker filtering and
+  lifecycle, not evidence of improved detection or tracking quality.
+- This stage remains a bounded anonymous-Train frontend comparison: no images
+  were opened by the audit, no GT or semantic labels were used, no training or
+  Val/Test metric was run, and no OCD/MOT result is claimed. The candidate is
+  not promoted to the formal frontend or used for model selection.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_fixed2_v1/comparison.json`.
+  The focused source-contract test still passed `1/1`; the new launcher files
+  passed Python compilation.

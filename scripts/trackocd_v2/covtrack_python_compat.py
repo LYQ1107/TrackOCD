@@ -50,8 +50,17 @@ def main() -> None:
         )),
     ]
     package_paths = [str(path) for path in site_packages if path.is_dir()]
+    # Keep the source overlay selected by TRACKOCD_COVTRACK_ROOT ahead of the
+    # recovered default package.  This matters for bounded source-contract
+    # probes: a temporary, explicitly selected shadow tree must not silently
+    # import the tracked vendor tree just because the compatibility launcher
+    # prepended its default path.
+    covtrack_root = Path(os.environ.get(
+        "TRACKOCD_COVTRACK_ROOT",
+        str(ROOT / "vendor/trackocd_external/covtrack_public"),
+    ))
     package_paths.extend([
-        str((ROOT / "vendor/trackocd_external/covtrack_public").resolve()),
+        str(covtrack_root.resolve()),
         str(ROOT.resolve()),
     ])
     inherited_pythonpath = os.environ.get("PYTHONPATH", "")

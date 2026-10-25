@@ -281,7 +281,9 @@ def run(slug: str, *, gpu_index: int, run_id: str, split: str = "val") -> dict[s
                 "--frontend", FRONTENDS[slug]["name"],
                 "--input", str(output.resolve()),
                 "--input-format", "tao_json",
+                "--annotation", str(VAL_ANNOTATION.resolve()),
                 "--output-dir", str((OUTPUT_TARGET / "manifests/frontend_streams" / slug).resolve()),
+                "--source-split", "val_predicted",
             ]
         normalized_log = run_root / "normalization.log"
         with normalized_log.open("w", encoding="utf-8") as log_handle:

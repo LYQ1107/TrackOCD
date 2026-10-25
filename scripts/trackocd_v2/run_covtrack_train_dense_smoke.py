@@ -26,6 +26,7 @@ from scripts.trackocd_v2.run_covtrack_native import (  # noqa: E402
     CHECKPOINT,
     CONFIG,
     COVTRACK_LAUNCHER,
+    COVTRACK_ROOT,
     COVTRACK_PYTHON,
     FRONTENDS,
     PROMPT,
@@ -72,7 +73,7 @@ def _check_registration(train_audit: Path, train_annotation: Path, expected_vide
 def _environment() -> dict[str, str]:
     environment = dict(os.environ)
     environment["PYTHONPATH"] = os.pathsep.join(
-        [str((ROOT / "vendor/trackocd_external/covtrack_public").resolve()), str(ROOT.resolve()), environment.get("PYTHONPATH", "")]
+        [str(COVTRACK_ROOT.resolve()), str(ROOT.resolve()), environment.get("PYTHONPATH", "")]
     )
     covtrack_lib = COVTRACK_PYTHON.resolve().parent.parent / "lib"
     clip_runtime_lib = Path("/home/lwr/anaconda3/envs/ovtrack/lib")
