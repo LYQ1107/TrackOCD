@@ -10278,3 +10278,17 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/comparison.json`
   (SHA256 `d833800df4483c8ab937b35723bc3fd6a8ea45fcabd7a71ba66abbb6a05e1909`),
   and the 34 MB native/normalized candidate payload remains local-only.
+
+## Train frontend output-capacity audit (2026-10-26 UTC)
+
+- The registered COVTrack test configuration has `test_cfg.rcnn.max_per_img=50`
+  and RPN `max_per_img=1000`. A streaming audit of the paired anonymous
+  `0/1` outputs found `2,342` frames in both streams, with no frame reaching
+  even `50` retained observations: baseline maximum `46` (mean `34.7869`),
+  full-public-vocabulary candidate maximum `46` (mean `36.7558`).
+- Therefore the RCNN output cap is not binding on this comparison and is not
+  a justified next repair from current evidence. This rules out one simple
+  capacity explanation for the low geometry recall without launching another
+  model run. The compact receipt is
+  `outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1/capacity_audit.json`;
+  it reads only anonymous physical streams and no GT/semantic/Val/Test fields.

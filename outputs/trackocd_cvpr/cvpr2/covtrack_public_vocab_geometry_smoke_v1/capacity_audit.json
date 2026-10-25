@@ -1,0 +1,29 @@
+{
+  "schema_version": "trackocd.cvpr.frontend-output-capacity-audit.v1",
+  "status": "COMPLETE_CATEGORY_FREE_OUTPUT_CAPACITY_NOT_BINDING",
+  "scope": {
+    "video_ids": [
+      0,
+      1
+    ],
+    "frames": 2342,
+    "config_rcnn_max_per_img": 50,
+    "config_rpn_max_per_img": 1000,
+    "semantic_fields_read": false,
+    "gt_fields_read": false,
+    "val_test_accessed": false
+  },
+  "baseline": {
+    "observations": 81471,
+    "mean_observations_per_frame": 34.786934244235695,
+    "max_observations_per_frame": 46,
+    "frames_at_or_above_rcnn_cap": 0
+  },
+  "candidate": {
+    "observations": 86082,
+    "mean_observations_per_frame": 36.75576430401367,
+    "max_observations_per_frame": 46,
+    "frames_at_or_above_rcnn_cap": 0
+  },
+  "interpretation": "The registered RCNN max_per_img=50 output cap is not binding on either paired stream; increasing it is not a justified next mechanism from this evidence. This audit is not a detection/tracking metric or frontend qualification."
+}
