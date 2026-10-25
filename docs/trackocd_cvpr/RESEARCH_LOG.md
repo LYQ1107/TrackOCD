@@ -9657,3 +9657,23 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_single_softmax_v1/comparison.json`
   and
   `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_tracker_gate_v1/comparison.json`.
+
+## NAS formal-cache availability probe after server restart (2026-10-26 UTC+8)
+
+- The local path `/data3/liuyeqiang/nas/A100` is a plain directory, not a
+  mounted filesystem. The existing read-only state file reports the NAS
+  supervisor PID `1658` alive but `worker_pid=null` and `mounted=false`; no
+  supervisor or worker process was restarted or terminated.
+- Direct TCP access from this server to `192.168.31.57:22` timed out, and the
+  existing HTTP proxy on `127.0.0.1:17890` can reach GitHub but returns a
+  gateway failure when asked to reach the NAS private address. An SSH banner
+  did not arrive through that proxy either. This distinguishes an unavailable
+  network path from a missing remote v2 path or an authentication failure.
+- The formal gate process remains alive and its log still records
+  `CACHE_STATE=MISSING` for
+  `/data3/liuyeqiang/nas/A100/usr_for_deadline/trackocd_v2/project_outputs/features/formal/covtrack_native_continuation_20261022/cache_manifest.json`.
+  The local partial audit remains only `384/723` shards (`196608/369794`
+  tracks), so it is not promoted to a complete formal cache.
+- This probe was read-only: no NAS data, weights, shards, Test labels, or
+  external processes were accessed or modified. Formal Val evaluation remains
+  gated until the actual NAS mount/manifest becomes reachable.
