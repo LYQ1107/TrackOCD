@@ -1,0 +1,79 @@
+{
+  "schema_version": "trackocd.cvpr.legacy-preservation-audit.v1",
+  "generated_utc": "2026-10-25T22:58:38.864543+00:00",
+  "status": "PASS_LEGACY_RESEARCH_PRESERVATION_VERIFIED",
+  "scope": {
+    "git_metadata_only": true,
+    "large_streams_opened": false,
+    "data_or_weights_read": false,
+    "tao_test_read": false,
+    "external_processes_touched": false,
+    "refs_moved": false,
+    "model_selection_performed": false
+  },
+  "repository": {
+    "branch": "research/cvpr-trackocd-autonomous-v2",
+    "head": "4eb51bf39204e1874488a3b4da3095b8e21477b5",
+    "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
+    "historical_parent_exists": true,
+    "current_head_is_descendant_of_historical_parent": true
+  },
+  "protected_refs": {
+    "refs/heads/main": {
+      "expected": "7b1d3c09f2553450a078a7cee70518a18ef60613",
+      "actual": "7b1d3c09f2553450a078a7cee70518a18ef60613",
+      "exists": true,
+      "matches_expected": true
+    },
+    "refs/heads/codex/trackocd-v2": {
+      "expected": "cac66467af7ca137fc53bdbef34896dde47030d8",
+      "actual": "cac66467af7ca137fc53bdbef34896dde47030d8",
+      "exists": true,
+      "matches_expected": true
+    },
+    "refs/heads/codex/trackocd-core-training-limited-masa": {
+      "expected": "7546527e5f9540d351785ade34c8e3292a74441d",
+      "actual": "7546527e5f9540d351785ade34c8e3292a74441d",
+      "exists": true,
+      "matches_expected": true
+    }
+  },
+  "manifest_binding": {
+    "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
+    "matches_historical_parent": true,
+    "manifest_generator_source_sha256_matches": true,
+    "no_unique_causal_root_or_new_method_success_claim": true,
+    "preserved_failed_attempt_count": 4,
+    "all_preserved_failed_attempts_marked_not_deleted": true
+  },
+  "preservation_evidence": [
+    {
+      "path": "outputs/trackocd_cvpr/cvpr0/experiment_manifest.json",
+      "exists": true,
+      "bytes": 38203,
+      "sha256": "775f858690f114b7a5f67204c5f917e2ba74a76203b18392b25d45972d5bc3d0"
+    },
+    {
+      "path": "scripts/trackocd_cvpr/write_cvpr0_experiment_manifest.py",
+      "exists": true,
+      "bytes": 7809,
+      "sha256": "0c077ee9628b4acf9ebf9d76670512a581fa4ab19250b3d719d25b69fe186e8e"
+    },
+    {
+      "path": "docs/trackocd_cvpr/RESEARCH_LOG.md",
+      "exists": true,
+      "bytes": 774646,
+      "sha256": "d4bcbbda60895a0371db3bb15b5f562f75643fdffd3da9539e4607ecb4bffa33"
+    },
+    {
+      "path": "docs/trackocd_cvpr/CVPR0_ROOT_CAUSE_REPORT.md",
+      "exists": true,
+      "bytes": 25176,
+      "sha256": "017e30281d21cb2afe954f0cc313d56407daddd758ca5bf2773504ac4c3e5dfc"
+    }
+  ],
+  "boundary": {
+    "parent_namespace_was_not_assumed": true,
+    "interpretation": "Lineage and preservation metadata are verified; this does not accept any scientific goal or metric."
+  }
+}

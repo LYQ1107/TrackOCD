@@ -126,6 +126,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     mechanism_path, mechanism = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json"
     )
+    preservation_path, preservation = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json"
+    )
     val_path, val = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json"
     )
@@ -211,6 +214,37 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "scientific_acceptance_claimed": False,
             },
             "open_gate": "Mechanism coverage is recorded, but only a qualified predicted frontend and locked causal evaluation can accept a method.",
+        },
+        {
+            "id": "legacy_research_preservation",
+            "status": (
+                "COMPLETE_LEGACY_RESEARCH_PRESERVATION_VERIFIED"
+                if preservation.get("status", "").startswith("PASS_")
+                else "OPEN_LEGACY_RESEARCH_PRESERVATION_UNVERIFIED"
+            ),
+            "requirement": "Preserve the verified 7546527 lineage and later legal research history without overwriting old branches or failed evidence.",
+            "evidence": [
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json",
+                    reported_status=preservation.get("status"),
+                ),
+            ],
+            "facts": {
+                "historical_parent": nested(preservation, "repository", "historical_parent"),
+                "current_head_is_descendant": nested(
+                    preservation, "repository", "current_head_is_descendant_of_historical_parent"
+                ),
+                "protected_refs_match": all(
+                    item.get("matches_expected") is True
+                    for item in preservation.get("protected_refs", {}).values()
+                ),
+                "preserved_failed_attempt_count": nested(
+                    preservation, "manifest_binding", "preserved_failed_attempt_count"
+                ),
+                "refs_moved": nested(preservation, "scope", "refs_moved"),
+            },
+            "open_gate": "Lineage preservation is verified; this is provenance evidence and does not accept scientific goals or metrics.",
         },
         {
             "id": "lawful_strong_frontend",
@@ -364,6 +398,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
             evidence(repo, "outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json", reported_status=review_verify.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json", reported_status=cache.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json", reported_status=mechanism.get("status")),
+            evidence(repo, "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json", reported_status=preservation.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json", reported_status=val.get("status")),
         ],
     }

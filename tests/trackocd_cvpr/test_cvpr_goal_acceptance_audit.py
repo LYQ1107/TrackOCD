@@ -29,6 +29,11 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     )
     assert rows["root_cause_supported_mechanisms"]["facts"]["mechanism_family_count"] == 3
     assert rows["root_cause_supported_mechanisms"]["facts"]["all_boundaries_safe"] is True
+    assert rows["legacy_research_preservation"]["status"] == (
+        "COMPLETE_LEGACY_RESEARCH_PRESERVATION_VERIFIED"
+    )
+    assert rows["legacy_research_preservation"]["facts"]["current_head_is_descendant"] is True
+    assert rows["legacy_research_preservation"]["facts"]["protected_refs_match"] is True
     assert rows["lawful_strong_frontend"]["status"] == "OPEN_FRONTEND_NOT_QUALIFIED"
     assert rows["lawful_strong_frontend"]["facts"]["runtime_checkpoint_binding_reconciled"] is True
     assert rows["lawful_strong_frontend"]["facts"]["exact_release_stage_training_binding_verified"] is False

@@ -10584,3 +10584,21 @@ no private GT/cache/weights opened for this check):
   streams, read TAO Test, start training/inference, or touch external
   processes. The formal next action is to recover and hash only the listed
   missing assets before any formal evaluation is considered.
+
+## Legacy research preservation audit (2026-10-26 UTC)
+
+- Added the metadata-only audit
+  `scripts/trackocd_cvpr/audit_legacy_preservation.py` with receipt
+  `outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json`.
+- It verifies that the current CVPR research branch is a descendant of the
+  exact historical parent `7546527e5f9540d351785ade34c8e3292a74441d`, while
+  the protected `main`, `codex/trackocd-v2`, and historical core-training refs
+  still resolve to their recorded commits.  The CVPR-0 manifest's historical
+  parent and generator hash also match, and its preserved failed attempts are
+  still explicitly marked `not_deleted`.
+- The audit deliberately does not assume that the historical parent already
+  contained the later CVPR output namespace; that namespace was created by
+  later legal commits.  No Git ref was moved, no old output was rewritten, and
+  no data, weight, stream, label, TAO Test asset, or external process was
+  touched.  This closes lineage preservation only; all scientific acceptance
+  gates and Goal A/B/C remain open.

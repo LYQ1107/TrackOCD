@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T22:56:41.976339+00:00",
+  "generated_utc": "2026-10-25T22:58:41.908537+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "aeaa45c95577adcbc793cb31c9b1210b5bf7f835",
-    "clean_before_audit": true
+    "head": "4eb51bf39204e1874488a3b4da3095b8e21477b5",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -152,6 +152,28 @@
         "scientific_acceptance_claimed": false
       },
       "open_gate": "Mechanism coverage is recorded, but only a qualified predicted frontend and locked causal evaluation can accept a method."
+    },
+    {
+      "id": "legacy_research_preservation",
+      "status": "COMPLETE_LEGACY_RESEARCH_PRESERVATION_VERIFIED",
+      "requirement": "Preserve the verified 7546527 lineage and later legal research history without overwriting old branches or failed evidence.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json",
+          "exists": true,
+          "bytes": 2830,
+          "sha256": "af8a9fe1504a1ffc9e637cd0b5502cd2eccbfa35ac42a53fb95c167f6f01c6f9",
+          "reported_status": "PASS_LEGACY_RESEARCH_PRESERVATION_VERIFIED"
+        }
+      ],
+      "facts": {
+        "historical_parent": "7546527e5f9540d351785ade34c8e3292a74441d",
+        "current_head_is_descendant": true,
+        "protected_refs_match": true,
+        "preserved_failed_attempt_count": 4,
+        "refs_moved": false
+      },
+      "open_gate": "Lineage preservation is verified; this is provenance evidence and does not accept scientific goals or metrics."
     },
     {
       "id": "lawful_strong_frontend",
@@ -405,6 +427,13 @@
       "bytes": 8475,
       "sha256": "28b36574b7853fd951cf03a676526ca872bb088b510952d4196e4229855d772f",
       "reported_status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json",
+      "exists": true,
+      "bytes": 2830,
+      "sha256": "af8a9fe1504a1ffc9e637cd0b5502cd2eccbfa35ac42a53fb95c167f6f01c6f9",
+      "reported_status": "PASS_LEGACY_RESEARCH_PRESERVATION_VERIFIED"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json",
