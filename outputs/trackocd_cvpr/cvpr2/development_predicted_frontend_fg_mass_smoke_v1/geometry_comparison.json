@@ -1,0 +1,294 @@
+{
+  "baseline": {
+    "geometry": {
+      "gt_observations": 893,
+      "gt_tracks": 56,
+      "gt_tracks_with_multiple_pred_votes": 32,
+      "gt_tracks_with_per_image_match": 45,
+      "observation_precision_on_annotated_images": 0.04210898796886058,
+      "observation_recall_against_gt": 0.3997760358342665,
+      "per_image_matched_observations": 357,
+      "predicted_observations": 290211,
+      "predicted_observations_on_gt_images": 8478,
+      "predicted_tracks": 28549,
+      "predicted_tracks_with_any_annotated_observation": 4817,
+      "predicted_tracks_with_multiple_gt_votes": 4,
+      "predicted_tracks_with_per_image_match": 153,
+      "reliable_gt_track_recall": 0.0,
+      "reliable_gt_tracks": 0,
+      "reliable_predicted_tracks": 0,
+      "reliable_temporal_pairs": 0,
+      "temporal_candidate_pairs": 0,
+      "videos": 8
+    },
+    "score": {
+      "count": 290211,
+      "finite": 290211,
+      "max": 0.009098281152546406,
+      "mean": 0.003997558915167288,
+      "min": 0.0033703709486871958,
+      "nonfinite": 0,
+      "over_0.5": 0,
+      "under_0.05": 290211
+    },
+    "selected_observations": 290211,
+    "selected_rows": 28549,
+    "stream": {
+      "paths": [
+        {
+          "bytes": 694095500,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+          "selected_videos": [
+            0,
+            3,
+            11,
+            38,
+            146,
+            220,
+            221,
+            239
+          ],
+          "sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c"
+        },
+        {
+          "bytes": 205809321,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b"
+        },
+        {
+          "bytes": 223694674,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d"
+        },
+        {
+          "bytes": 150585180,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000"
+        },
+        {
+          "bytes": 127813179,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406"
+        },
+        {
+          "bytes": 136983444,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6"
+        },
+        {
+          "bytes": 131906941,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898"
+        },
+        {
+          "bytes": 146128220,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3"
+        },
+        {
+          "bytes": 114105064,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e"
+        },
+        {
+          "bytes": 130253797,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2"
+        },
+        {
+          "bytes": 142717567,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86"
+        },
+        {
+          "bytes": 105335057,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f"
+        },
+        {
+          "bytes": 111718699,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl",
+          "selected_videos": [],
+          "sha256": "ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18"
+        }
+      ],
+      "selected_videos": [
+        0,
+        3,
+        11,
+        38,
+        146,
+        220,
+        221,
+        239
+      ]
+    }
+  },
+  "boundary": {
+    "category_fields_read": false,
+    "feature_arrays_read": false,
+    "native_evaluator_rows_read": false,
+    "pixels_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "role_or_vocabulary_read": false,
+    "test_accessed": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "candidate": {
+    "geometry": {
+      "gt_observations": 893,
+      "gt_tracks": 56,
+      "gt_tracks_with_multiple_pred_votes": 40,
+      "gt_tracks_with_per_image_match": 50,
+      "observation_precision_on_annotated_images": 0.04554079696394687,
+      "observation_recall_against_gt": 0.64501679731243,
+      "per_image_matched_observations": 576,
+      "predicted_observations": 422694,
+      "predicted_observations_on_gt_images": 12648,
+      "predicted_tracks": 46477,
+      "predicted_tracks_with_any_annotated_observation": 8050,
+      "predicted_tracks_with_multiple_gt_votes": 2,
+      "predicted_tracks_with_per_image_match": 271,
+      "reliable_gt_track_recall": 0.0,
+      "reliable_gt_tracks": 0,
+      "reliable_predicted_tracks": 0,
+      "reliable_temporal_pairs": 0,
+      "temporal_candidate_pairs": 0,
+      "videos": 8
+    },
+    "score": {
+      "count": 422694,
+      "finite": 422694,
+      "max": 0.9966526031494141,
+      "mean": 0.9966348550445476,
+      "min": 0.9966327548027039,
+      "nonfinite": 0,
+      "over_0.5": 422694,
+      "under_0.05": 0
+    },
+    "selected_observations": 422694,
+    "selected_rows": 46477,
+    "stream": {
+      "paths": [
+        {
+          "bytes": 80492936,
+          "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_development_fg_mass_v1/physical_tracks.jsonl",
+          "selected_videos": [
+            0,
+            3,
+            11,
+            38,
+            146,
+            220,
+            221,
+            239
+          ],
+          "sha256": "9d1c6a87a1ca509d98ead34eab559b6c638855afa1d02b1e15bc664d43cb8304"
+        }
+      ],
+      "selected_videos": [
+        0,
+        3,
+        11,
+        38,
+        146,
+        220,
+        221,
+        239
+      ]
+    }
+  },
+  "deltas_candidate_minus_baseline": {
+    "geometry_precision": 0.0034318089950862857,
+    "geometry_recall": 0.24524076147816348,
+    "score_mean": 0.9926372961293803,
+    "selected_observations": 132483,
+    "selected_rows": 17928
+  },
+  "generated_utc": "2026-10-25T21:12:10.000491+00:00",
+  "inputs": {
+    "baseline_receipt": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/shard_0_tccoff2/run.json",
+    "baseline_streams": [
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl",
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl"
+    ],
+    "candidate_receipt": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/run.json",
+    "candidate_streams": [
+      "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_development_fg_mass_v1/physical_tracks.jsonl"
+    ],
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899"
+  },
+  "interpretation": "Paired category-free geometry evidence on the same fixed anonymous Train videos. All input streams are read sequentially and filtered in memory; no filtered prediction file or GT mapping is persisted. This is mechanism evidence, not an official OCD/MOT score, frontend qualification, or Goal A/B/C acceptance.",
+  "mechanisms": {
+    "baseline": "tracked_double_softmax_max_class",
+    "candidate": "covtrack_native_foreground_mass_bbox_head_shadow_development_transfer"
+  },
+  "native_output_identity": {
+    "baseline_bbox_sha256": "4c0ce2ae09708d25fa9498034a009f0701b1d073ed93d5210b9e63ee5f4a4583",
+    "baseline_track_sha256": "9c39a66d2573064a97099727455c1002460c0841baaa0e7aa40d7aee340a632e",
+    "bbox_byte_identical": false,
+    "candidate_bbox_sha256": "7464c1f7310160255bcdcf9d11864fc9b09e88803d2e65af1ac2f38af9dd4bd0",
+    "candidate_track_sha256": "b03b8d5d05b83c35c5f189d7b982566193eadc30612f6b7505ae498eee5fe9a9",
+    "track_byte_identical": false
+  },
+  "schema_version": "trackocd.cvpr.score-contract-geometry-subset-audit.v1",
+  "scope": {
+    "frontend_qualification": false,
+    "iou_threshold": 0.5,
+    "model_selection": false,
+    "official_ocd_or_trackeval_metrics": false,
+    "videos": [
+      0,
+      3,
+      11,
+      38,
+      146,
+      220,
+      221,
+      239
+    ]
+  },
+  "source_binding": {
+    "baseline": {
+      "bbox_head": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_external/covtrack_public/ovtrack/models/roi_heads/bbox_heads/convfc_bbox_head.py",
+      "bbox_head_sha256": "b970888266213a43ebd9a482466e1f9727847541fbe2078a023166a5b670edb6",
+      "config": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_external/covtrack_public/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+      "config_sha256": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a",
+      "foreground_mass_candidate_fragment_present": false,
+      "source_root": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_external/covtrack_public"
+    },
+    "candidate": {
+      "bbox_head": "/data3/liuyeqiang/.trackocd_score_contract_shadow.McpA1H/ovtrack/models/roi_heads/bbox_heads/convfc_bbox_head.py",
+      "bbox_head_sha256": "21a4a72c66a556fd1f9c394e2ff54ee3fcd701ae59fbecf29cb48a96e5b5de70",
+      "config": "/data3/liuyeqiang/.trackocd_score_contract_shadow.McpA1H/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+      "config_sha256": "282468d93c21b153b755047398b2fe8e95a8d67c003175309e337f9ed5bb600a",
+      "foreground_mass_candidate_fragment_present": true,
+      "source_root": "/data3/liuyeqiang/.trackocd_score_contract_shadow.McpA1H"
+    }
+  },
+  "status": "COMPLETE_CATEGORY_FREE_SCORE_CONTRACT_GEOMETRY_SUBSET"
+}

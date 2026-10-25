@@ -10076,3 +10076,35 @@ no private GT/cache/weights opened for this check):
   and `scripts/trackocd_cvpr/audit_policy_frontend_temporal_continuity.py`.
   The in-memory matching map was discarded after aggregation, and the audit
   read no semantic labels, Val/Test data, feature arrays, or Train annotation.
+
+## Independent Train-development foreground-mass transfer check (2026-10-26 UTC)
+
+- Before execution, the first eight IDs in the frozen
+  `development_pseudo` role order (`0,3,11,38,146,220,221,239`) were
+  registered in `configs/trackocd_cvpr/development_predicted_frontend_fg_mass_smoke_v1.json`
+  and pushed. This was a structural prefix rule, not outcome or GT selection;
+  the run was an independent transfer check, not dev model selection.
+- The anonymous input audit passed for `8,668` frames and zero annotations or
+  tracks. The same already-frozen foreground-mass COVTrack-native frontend
+  then completed on one fresh GPU, producing `46,477` physical tracks and
+  `422,694` observations with zero invalid boxes. The run receipt records no
+  training, Val/Test access, semantic/GT-array read, or formal metric.
+- On the same eight videos and geometry-only GT, baseline produced
+  `28,549` tracks/`290,211` observations, `357/893` matched observations,
+  precision `0.0421090`, and recall `0.3997760`. Foreground-mass produced
+  `46,477` tracks/`422,694` observations, `576/893` matches, precision
+  `0.0455408`, and recall `0.6450168`; the paired deltas were precision
+  `+0.0034318` and recall `+0.2452408`. All candidate scores remained near
+  `0.996635`, and the result is still geometry evidence rather than an
+  official MOT/OCD score.
+- The independent adjacent-observation continuity audit found baseline
+  adjacent-pair match rate `0.2831541`, same-ID rate `0.7805907`, and switch
+  rate `0.2194093`; foreground-mass found `0.5627240`, `0.5923567`, and
+  `0.4076433`, respectively. Thus the recall/coverage gain transfers beyond
+  the policy subset, but identity persistence still degrades and reliable
+  temporal-pair qualification remains zero. Predicted-track training stays
+  closed.
+- Durable receipts are
+  `outputs/trackocd_cvpr/cvpr2/development_predicted_frontend_fg_mass_smoke_v1/geometry_comparison.json`
+  and `temporal_continuity.json`. Large native/normalized payloads remain
+  local-only; no dev semantic labels or Val/Test data were read.
