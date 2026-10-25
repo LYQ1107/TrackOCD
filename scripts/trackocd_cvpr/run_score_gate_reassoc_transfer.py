@@ -14,10 +14,14 @@ import datetime as dt
 import hashlib
 import json
 import resource
+import sys
 import time
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 
 from scripts.trackocd_cvpr.causal_physical_reassociate import (
     FORBIDDEN_FIELDS,
@@ -26,7 +30,6 @@ from scripts.trackocd_cvpr.causal_physical_reassociate import (
 )
 
 
-ROOT = Path(__file__).resolve().parents[2]
 CONFIG = ROOT / "configs/trackocd_cvpr/covtrack_score_gate_reassoc_transfer_v1.json"
 
 
