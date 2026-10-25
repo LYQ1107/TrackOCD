@@ -136,6 +136,34 @@ This is causal interface/plumbing evidence only: zero optimizer steps,
 zero GPU-hours, no OCD/MOT or discovery metric, no frontend qualification,
 and no Goal A/B/C acceptance.
 
+## 2026-10-26 — policy-subset predicted geometry gate remains failed
+
+Before attempting a real predicted-trajectory optimizer pilot, the same fixed
+category-free geometry audit was run on all ten frozen `policy_train_pseudo`
+videos (`72,275,349,371,1524,1831,2330,2686,2977,2987`).  It read only the
+anonymous COVTrack-native physical streams and the previously authorized
+geometry-only physical GT index; it did not open feature arrays, category or
+role target values, pixels, Val/Test labels, or native evaluator rows, and no
+prediction-to-GT mapping was persisted.
+
+The subset contains `25,258` predicted tracks and `319,521` observations,
+against `54` geometry-only GT tracks and `1,268` GT observations.  At the
+registered per-image class-free Hungarian `IoU >= 0.5` rule, there were `473`
+matched observations (`9,622` predicted observations on GT-referenced
+frames), annotated-frame precision `0.0491582`, and recall `0.3730284`.
+Only `151/25,258` predicted tracks had any per-image match; the fixed
+temporal-IoU/non-overlap diagnostic produced `0` reliable predicted tracks,
+`0` reliable GT tracks, and `0` reliable temporal pairs.
+
+Receipt:
+`outputs/trackocd_cvpr/cvpr2/policy_predicted_geometry_audit_v1/result.json`
+(SHA256 `8710a80883532e260a1e41dc8808c6662bd6a80cf8f18ae71e2a564c20999d22`).
+This is a real negative frontend-support result, not an OCD/MOT score and not
+a reason to fabricate external training labels.  The predicted policy
+optimizer pilot is therefore held behind the existing strong-frontend gate;
+the next lawful route is a separately qualified frontend/cache continuation,
+not threshold selection or GT repair.  Goal A/B/C remain open.
+
 ## 2026-10-26 — five-video foreground-mass score-contract recheck
 
 The predeclared bounded follow-up completed on anonymous Train videos
