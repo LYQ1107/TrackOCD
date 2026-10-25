@@ -1,0 +1,84 @@
+{
+  "schema_version": "trackocd.cvpr.masa-release-source-closure.v1",
+  "generated_utc": "2026-10-25T22:47:22.133666+00:00",
+  "repository_head_at_audit": "28ac9a9ad47fbe770beadb641215008b018fd692",
+  "status": "PASS_SOURCE_CLOSURE_RELEASE_ROUTE_MISMATCH_QUALIFICATION_OPEN",
+  "reference_repository": {
+    "path": "/data3/liuyeqiang/research_references/N72R20/MASA",
+    "head": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+    "source_commit": "c5472b9c7615f35abdf1188cb1a0c5408fe50d66",
+    "tag_count": 0
+  },
+  "checks": {
+    "reference_tree_is_clean": true,
+    "reference_head_matches_pinned_source": true,
+    "model_zoo_links_pinned_checkpoint": true,
+    "training_docs_describe_generic_sa1b_route": true,
+    "official_tao_release_config_exists": true,
+    "official_tao_release_uses_public_detections": true,
+    "official_tao_release_uses_pretrained_sam_b_init": true,
+    "current_candidate_is_image_only": true,
+    "exact_checkpoint_stage_binding_still_open": true
+  },
+  "release_route": {
+    "checkpoint_url": "https://huggingface.co/dereksiyuanli/masa/resolve/main/sam_vitb_masa.pth",
+    "checkpoint_sha256": "441c05bf9519632fead1afd5200bb6a4f13b4a41c58f4428024490b4c2bd777c",
+    "official_tao_config": "configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py",
+    "official_load_public_dets": true,
+    "official_public_det_path_required": true,
+    "current_trackocd_candidate_load_public_dets": false,
+    "current_trackocd_candidate_public_det_path": null,
+    "current_trackocd_candidate_given_dets": false
+  },
+  "source_evidence": [
+    {
+      "path": "README.md",
+      "bytes": 14437,
+      "sha256": "0d45828a16b19f90ef4550c338be04ee9b549e5e149acbb1908034f016dc3798",
+      "git_blob_sha1": "8d11dfe8e7b88e9993c22d7968e37c5b04b30e29"
+    },
+    {
+      "path": "docs/model_zoo.md",
+      "bytes": 3192,
+      "sha256": "8cbae57a4a990f9c8890b96bc7ded04926dfeba4f302734c4e2208fcbf1af4d3",
+      "git_blob_sha1": "bf8fbdc7f9e5eca061792dd45fe3c23d1f2f3184"
+    },
+    {
+      "path": "docs/train.md",
+      "bytes": 4540,
+      "sha256": "8c463eeb0d79b9b78c729fb7bcbf98ffbc55c6c043d72538bea9acb32d685871",
+      "git_blob_sha1": "38f4fe12749850e4ce1e9a63a57d3d571a4f49fa"
+    },
+    {
+      "path": "configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py",
+      "bytes": 7466,
+      "sha256": "07a8442664f07b96f87c681558c65d8db98444b6de5b1990829c5b2926b95634",
+      "git_blob_sha1": "f9abc1c7454ccf87c676860e41063ba5cdc86260"
+    },
+    {
+      "path": "configs/masa-sam/sam-vitb.py",
+      "bytes": 807,
+      "sha256": "aa9fac397403de1812647b3964e961e0a206058d5b67d8055a633e94ca8a1ee7",
+      "git_blob_sha1": "4f318ba026466cc65bafecccf12980937bd6b861"
+    }
+  ],
+  "qualification_boundary": {
+    "official_release_route_reproduced": false,
+    "current_image_only_candidate_is_official_tao_route": false,
+    "runtime_checkpoint_compatibility_reconciled": true,
+    "exact_release_stage_training_binding_verified": false,
+    "dense_full_train_or_val_frontend_qualified": false,
+    "formal_v2_cache_admitted": false,
+    "formal_ocd_or_mot_metrics_created": false,
+    "model_selection_performed": false
+  },
+  "boundary": {
+    "model_constructed_or_run": false,
+    "new_inference_or_training": false,
+    "data_or_annotations_read": false,
+    "tao_test_read": false,
+    "weights_downloaded": false,
+    "external_processes_touched": false
+  },
+  "next_valid_gate": "Either recover the exact public-detection input and official release route under a frozen v2 contract, or register a separately justified image-only route; neither may be silently promoted to the other."
+}

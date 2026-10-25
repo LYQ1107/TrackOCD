@@ -10521,3 +10521,24 @@ no private GT/cache/weights opened for this check):
   physical stream remains annotated-cadence rather than a qualified dense v2
   frontend, so formal cache admission, model selection, predicted training,
   and Goal A/B/C remain closed.
+
+## MASA release-route source closure (2026-10-26 UTC)
+
+- A read-only audit of the local pinned MASA reference tree at commit
+  `c5472b9c7615f35abdf1188cb1a0c5408fe50d66` found the official
+  `sam_vitb_masa.pth` model-zoo link and the generic SA-1B/segment-training
+  instructions, but no checkpoint-specific training-stage ledger.
+- The official TAO release config
+  `configs/masa-sam/open_vocabulary_mot_test/masa_sam_vitb_open_vocabulary_test.py`
+  enables `load_public_dets=True`, requires `public_det_path`, and declares a
+  pretrained SAM-B initialization.  The current TrackOCD image-only candidate
+  explicitly uses `load_public_dets=False`, `public_det_path=None`, and
+  `given_dets=False`.  These are different routes, even though the checkpoint
+  tensor/runtime compatibility is positive.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json`,
+  status `PASS_SOURCE_CLOSURE_RELEASE_ROUTE_MISMATCH_QUALIFICATION_OPEN`.
+  This closes the ambiguity as a negative provenance result: the current
+  candidate is not silently labeled as official TAO release reproduction.
+  A formal frontend still requires either the exact public-detection route
+  under a frozen v2 contract or a separately justified image-only admission.
