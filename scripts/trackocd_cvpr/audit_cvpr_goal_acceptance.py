@@ -123,6 +123,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     admission_path, admission = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json"
     )
+    mechanism_path, mechanism = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json"
+    )
     val_path, val = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json"
     )
@@ -183,6 +186,31 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 },
             },
             "open_gate": "The cache is reusable provenance, but its current geometry/continuity does not qualify a strong frontend.",
+        },
+        {
+            "id": "root_cause_supported_mechanisms",
+            "status": (
+                "COMPLETE_MECHANISM_COVERAGE_NOT_SCIENTIFIC_ACCEPTANCE"
+                if mechanism.get("status", "").startswith("PASS_")
+                else "OPEN_MECHANISM_COVERAGE_INCOMPLETE"
+            ),
+            "requirement": "Explore at least three distinct root-cause-supported mechanisms with finite paired evidence.",
+            "evidence": [
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json",
+                    reported_status=mechanism.get("status"),
+                ),
+            ],
+            "facts": {
+                "mechanism_family_count": mechanism.get("mechanism_family_count"),
+                "mechanism_variant_count": mechanism.get("mechanism_variant_count"),
+                "all_boundaries_safe": all(
+                    item.get("boundary_safe") is True for item in mechanism.get("mechanisms", [])
+                ),
+                "scientific_acceptance_claimed": False,
+            },
+            "open_gate": "Mechanism coverage is recorded, but only a qualified predicted frontend and locked causal evaluation can accept a method.",
         },
         {
             "id": "lawful_strong_frontend",
@@ -335,6 +363,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
             evidence(repo, "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json", reported_status=root.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json", reported_status=review_verify.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json", reported_status=cache.get("status")),
+            evidence(repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json", reported_status=mechanism.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json", reported_status=val.get("status")),
         ],
     }

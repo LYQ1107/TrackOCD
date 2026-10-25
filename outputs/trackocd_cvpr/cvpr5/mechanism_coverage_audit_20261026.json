@@ -1,0 +1,184 @@
+{
+  "schema_version": "trackocd.cvpr.mechanism-coverage-audit.v1",
+  "generated_utc": "2026-10-25T22:56:08.975590+00:00",
+  "status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE",
+  "scope": {
+    "receipt_only": true,
+    "large_streams_opened": false,
+    "data_or_weights_read": false,
+    "tao_test_read": false,
+    "external_processes_touched": false,
+    "model_selection_performed": false,
+    "formal_metrics_created": false,
+    "goal_acceptance_claimed": false
+  },
+  "mechanism_family_count": 3,
+  "mechanism_variant_count": 4,
+  "mechanisms": [
+    {
+      "id": "semantic_association_ablation",
+      "root_cause_family": "semantic_association_or_feature_fusion",
+      "candidate": "covtrack_nosem_confused_feature_fusion_off",
+      "baseline": "tracked_double_softmax_max_class",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_nosem_development_transfer_v1/geometry_comparison.json",
+          "exists": true,
+          "bytes": 7964,
+          "sha256": "8b4a225b3150d47572e450f2963f599856d39c735ad613dc3ee449c97dee2b9e",
+          "status": "COMPLETE_CATEGORY_FREE_SCORE_CONTRACT_GEOMETRY_SUBSET"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_nosem_development_transfer_v1/temporal_comparison.json",
+          "exists": true,
+          "bytes": 12271,
+          "sha256": "6001f2c6a69ce245c97153c16ae146cfef3680060077e13b5cc9c707a8b0283d",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_nosem_development_transfer_v1/run.json",
+          "exists": true,
+          "bytes": 6011,
+          "sha256": "38e75de779aaa74c0a3041bd2e3f6f26565654956cb7893d19ba60be6fd2a3bd",
+          "status": "COMPLETE_COVTRACK_NOSEM_ANONYMOUS_DEVELOPMENT_TRANSFER"
+        }
+      ],
+      "observed": {
+        "baseline_precision": 0.04210898796886058,
+        "candidate_precision": 0.04209905660377358,
+        "baseline_recall": 0.3997760358342665,
+        "candidate_recall": 0.3997760358342665,
+        "baseline_adjacent_match_rate": 0.2831541218637993,
+        "candidate_adjacent_match_rate": 0.2831541218637993,
+        "baseline_switch_rate": 0.21940928270042195,
+        "candidate_switch_rate": 0.21940928270042195
+      },
+      "disposition": "REJECTED_NO_GEOMETRY_OR_PERSISTENCE_REPAIR",
+      "boundary_safe": true
+    },
+    {
+      "id": "single_softmax_score_contract",
+      "root_cause_family": "score_contract_and_normalization",
+      "candidate": "single_softmax",
+      "baseline": "tracked_double_softmax_max_class",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_single_softmax_v1/comparison.json",
+          "exists": true,
+          "bytes": 3948,
+          "sha256": "40a0015177edcca396ad7d1a2dd049b3a54cd9d2294a546efe1cdfca72629de1",
+          "status": "COMPLETE_BOUNDED_ANONYMOUS_TRAIN_COMPARISON"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_single_softmax_v1/run.json",
+          "exists": true,
+          "bytes": 5863,
+          "sha256": "60e63e58701b5d291afa18bdf495d3099ac169d0fafc1642d6932cd559b7cdd9",
+          "status": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE"
+        }
+      ],
+      "observed": {
+        "baseline_score_mean": 0.003559153429980065,
+        "candidate_score_mean": 0.05768854024633518,
+        "baseline_score_over_0_5": 0,
+        "candidate_score_over_0_5": 700,
+        "baseline_tracks": 8241,
+        "candidate_tracks": 6733
+      },
+      "disposition": "EFFECT_CONFIRMED_SCORE_ROUTE_CHANGED_NOT_QUALIFIED",
+      "boundary_safe": true
+    },
+    {
+      "id": "foreground_mass_score_contract",
+      "root_cause_family": "score_contract_and_normalization",
+      "candidate": "foreground_mass",
+      "baseline": "tracked_double_softmax_max_class",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_fixed2_v1/comparison.json",
+          "exists": true,
+          "bytes": 3950,
+          "sha256": "4df39ad4c64f79eb46b91ccde041bf3824032b599c3832b9ce73819a7328d2ae",
+          "status": "COMPLETE_BOUNDED_ANONYMOUS_TRAIN_COMPARISON"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_fg_mass_fixed2_v1/run.json",
+          "exists": true,
+          "bytes": 5865,
+          "sha256": "0be005411a73c3cd04aca000635d953d6f04f0a3a9c95e792f5285204837acf8",
+          "status": "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE"
+        }
+      ],
+      "observed": {
+        "baseline_score_mean": 0.003559153429980065,
+        "candidate_score_mean": 0.9966337006676518,
+        "baseline_score_over_0_5": 0,
+        "candidate_score_over_0_5": 115708,
+        "baseline_tracks": 8241,
+        "candidate_tracks": 13270
+      },
+      "disposition": "EFFECT_CONFIRMED_FOREGROUND_SCORE_SATURATION_NOT_QUALIFIED",
+      "boundary_safe": true
+    },
+    {
+      "id": "causal_physical_reassociation",
+      "root_cause_family": "physical_temporal_association",
+      "candidate": {
+        "candidate_order": "causal score gate first, then one-frame physical reassociation",
+        "reassociation_iou_threshold": 0.5,
+        "reassociation_max_gap_frames": 1,
+        "reassociation_rule": "At each source frame, one-to-one Hungarian IoU bridge from a current birth to at most one prior persistent state; no future observations.",
+        "score_field": "quality",
+        "score_threshold": 0.005,
+        "score_threshold_rationale": "The already registered full-407 counterfactual cut in covtrack_score_gate_full_train_v1; no new threshold sweep.",
+        "semantic_or_feature_input": false
+      },
+      "baseline": "native_category_free_physical_stream",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/run.json",
+          "exists": true,
+          "bytes": 14167,
+          "sha256": "73c5a0d7be53be943d83949ac4ec8bfec46f78e9b701f9592e5d0e31d480af76",
+          "status": "COMPLETE_CATEGORY_FREE_SCORE_GATE_REASSOCIATION_TRANSFER"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/development_temporal.json",
+          "exists": true,
+          "bytes": 11930,
+          "sha256": "c217c62160b9567e9d8e27d4d0aaf1a01048da14588f9ba7a22c5d4214dfe51f",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/policy_temporal.json",
+          "exists": true,
+          "bytes": 10881,
+          "sha256": "1d9fbe1a2c4b7ef487ed9ca0e9b5eb085ca9217afa33617bf6fa3592742b5b29",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        }
+      ],
+      "observed": {
+        "development": {
+          "precision_delta": 0.058519942848749486,
+          "recall_delta": -0.29227323628219487,
+          "adjacent_match_delta": -0.2031063321385902,
+          "switch_rate_delta": -0.11493167076012345
+        },
+        "policy": {
+          "precision_delta": 0.16573543784854744,
+          "recall_delta": -0.29337539432176657,
+          "adjacent_match_delta": -0.19934102141680393,
+          "switch_rate_delta": -0.09880126182965299
+        }
+      },
+      "disposition": "REJECTED_PRECISION_PERSISTENCE_GAIN_COSTS_COVERAGE",
+      "boundary_safe": true
+    }
+  ],
+  "inference": {
+    "semantic_association": "NoSemantic changed the exported stream but left geometry and continuity unchanged on the fixed development prefix; semantic association is not sufficient to explain the dominant failure.",
+    "score_contract": "Single-softmax and foreground-mass probes changed score mass and track population materially; score construction is causally active, but these probes do not establish a qualified frontend.",
+    "physical_association": "Causal reassociation reduced switches only while sharply reducing adjacent coverage/recall; persistence alone cannot be optimized without the geometry/coverage gate."
+  },
+  "scientific_boundary": "This satisfies the bookkeeping requirement to preserve at least three distinct root-cause mechanism families with real paired evidence. It does not qualify a frontend, train a predicted-track policy, create formal OCD/MOT metrics, or accept Goal A/B/C."
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T22:51:17.254649+00:00",
+  "generated_utc": "2026-10-25T22:56:09.059588+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "c50711cf792bf51c9f3ed39c03df3380e6144654",
+    "head": "cb76684d4de8120a0aaf84240171c1db2bc6c78b",
     "clean_before_audit": false
   },
   "scope": {
@@ -131,6 +131,27 @@
         }
       },
       "open_gate": "The cache is reusable provenance, but its current geometry/continuity does not qualify a strong frontend."
+    },
+    {
+      "id": "root_cause_supported_mechanisms",
+      "status": "COMPLETE_MECHANISM_COVERAGE_NOT_SCIENTIFIC_ACCEPTANCE",
+      "requirement": "Explore at least three distinct root-cause-supported mechanisms with finite paired evidence.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json",
+          "exists": true,
+          "bytes": 8475,
+          "sha256": "28b36574b7853fd951cf03a676526ca872bb088b510952d4196e4229855d772f",
+          "reported_status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE"
+        }
+      ],
+      "facts": {
+        "mechanism_family_count": 3,
+        "mechanism_variant_count": 4,
+        "all_boundaries_safe": true,
+        "scientific_acceptance_claimed": false
+      },
+      "open_gate": "Mechanism coverage is recorded, but only a qualified predicted frontend and locked causal evaluation can accept a method."
     },
     {
       "id": "lawful_strong_frontend",
@@ -377,6 +398,13 @@
       "bytes": 2984,
       "sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
       "reported_status": "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json",
+      "exists": true,
+      "bytes": 8475,
+      "sha256": "28b36574b7853fd951cf03a676526ca872bb088b510952d4196e4229855d772f",
+      "reported_status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json",

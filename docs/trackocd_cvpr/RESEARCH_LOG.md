@@ -10543,6 +10543,26 @@ no private GT/cache/weights opened for this check):
   A formal frontend still requires either the exact public-detection route
   under a frozen v2 contract or a separately justified image-only admission.
 
+## Root-cause mechanism coverage audit (2026-10-26 UTC)
+
+- A receipt-only synthesis was added at
+  `scripts/trackocd_cvpr/audit_mechanism_coverage.py` with receipt
+  `outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json`.
+  It records four finite variants across three distinct root-cause families:
+  semantic association/feature fusion, score contract/normalization, and
+  physical-temporal association.
+- The NoSemantic paired transfer changed the exported stream but left the
+  fixed development-prefix geometry and continuity unchanged, so it is
+  rejected as a repair. Single-softmax and foreground-mass probes materially
+  changed score mass and track population, proving the score path is causal,
+  but neither is a qualified frontend. The causal score-gate plus physical
+  reassociation probe reduced switches only with a sharp coverage/recall
+  loss, so it is also rejected for frontend qualification.
+- The audit verifies the paired receipts' safety boundaries and explicitly
+  does not claim OCD/MOT acceptance, predicted-track training, model
+  selection, or Goal A/B/C success. It read compact receipts only; no large
+  stream, data, weight, TAO Test label, or external process was touched.
+
 ## Formal v2 asset admission boundary (2026-10-26 UTC)
 
 - The existing read-only `scripts/trackocd_v2/recovery_asset_admission.py`
