@@ -9406,3 +9406,21 @@ no private GT/cache/weights opened for this check):
   (SHA256 `bc038c692ee05a7b032e3a983d9426901d232db8b7d790c1d348d1d6ed6dd327`).
 - The scoped regression after the parameterization passed `58/58`; the full
   root test discovery remains intentionally out of scope.
+
+## Continuation gate and existing OCD-style metric status (2026-10-26 UTC)
+
+- A fresh read-only recovery check found the NAS SSHFS mount absent again:
+  local port `24557` is not listening, the task-owned supervisor remains alive
+  with `worker_pid=null`, and the direct `192.168.31.57:22` probe timed out.
+  The current server also has no local `nas57` SSH config entry. No NAS file
+  was read and no external process was restarted, terminated, or modified.
+- The already sealed Val-only `nearest` table remains `COMPLETE`. At prefix 16
+  its TrackOCD evaluator reports `all_acc=0.0967125382`,
+  `h_score=0.1073558599`, `new_acc=0.1330891331`, `old_acc=0.0899614775`,
+  `commit_ct=0.0512333966`, and `false_assignment_rate=0.1669829222`.
+  These are OCD-style baseline metrics from the causal physical-stream/DINOv2
+  contract, not canonical MOTA, IDF1, HOTA, or TrackEval scores.
+- `dpmeans` remains `WAITING_FEATURES` and the formal cache gate remains
+  `CACHE_STATE=MISSING`; therefore no final Val baseline report or formal
+  OCD/MOT metric exists yet. No new cache, training, Val/Test access, or
+  external-process intervention was started during this continuation check.
