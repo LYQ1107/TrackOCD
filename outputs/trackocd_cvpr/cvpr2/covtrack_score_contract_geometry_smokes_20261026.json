@@ -1,0 +1,162 @@
+{
+  "boundary": {
+    "category_fields_read": false,
+    "feature_arrays_read": false,
+    "native_evaluator_rows_read": false,
+    "pixels_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "role_or_vocabulary_read": false,
+    "test_accessed": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "generated_utc": "2026-10-25T19:06:45.237526+00:00",
+  "inputs": {
+    "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899"
+  },
+  "interpretation": "This is a paired geometry diagnostic for three score/tracker mechanisms on the same two anonymous Train videos. It is not an official OCD/MOT score, a frontend qualification, or Goal A/B/C acceptance.",
+  "mechanisms": {
+    "baseline": {
+      "bytes": 15548812,
+      "geometry": {
+        "gt_observations": 296,
+        "gt_tracks": 13,
+        "gt_tracks_with_multiple_pred_votes": 1,
+        "gt_tracks_with_per_image_match": 5,
+        "observation_precision_on_annotated_images": 0.0060577819198508855,
+        "observation_recall_against_gt": 0.04391891891891892,
+        "per_image_matched_observations": 13,
+        "predicted_observations": 81480,
+        "predicted_observations_on_gt_images": 2146,
+        "predicted_tracks": 8241,
+        "predicted_tracks_with_any_annotated_observation": 1156,
+        "predicted_tracks_with_multiple_gt_votes": 0,
+        "predicted_tracks_with_per_image_match": 8,
+        "reliable_gt_track_recall": 0.0,
+        "reliable_gt_tracks": 0,
+        "reliable_predicted_tracks": 0,
+        "reliable_temporal_pairs": 0,
+        "temporal_candidate_pairs": 0,
+        "videos": 2
+      },
+      "observations": 81480,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_score_contract_baseline_smoke_v1/physical_tracks.jsonl",
+      "rows": 8241,
+      "sha256": "593ea7fa43d77d464a15103fbc4fc50ffa35cd8fa187fe9d28765aa7a45a36b1",
+      "videos": [
+        0,
+        1
+      ]
+    },
+    "foreground_mass": {
+      "bytes": 22144135,
+      "geometry": {
+        "gt_observations": 296,
+        "gt_tracks": 13,
+        "gt_tracks_with_multiple_pred_votes": 4,
+        "gt_tracks_with_per_image_match": 6,
+        "observation_precision_on_annotated_images": 0.010617120106171201,
+        "observation_recall_against_gt": 0.10810810810810811,
+        "per_image_matched_observations": 32,
+        "predicted_observations": 115708,
+        "predicted_observations_on_gt_images": 3014,
+        "predicted_tracks": 13270,
+        "predicted_tracks_with_any_annotated_observation": 1915,
+        "predicted_tracks_with_multiple_gt_votes": 0,
+        "predicted_tracks_with_per_image_match": 18,
+        "reliable_gt_track_recall": 0.0,
+        "reliable_gt_tracks": 0,
+        "reliable_predicted_tracks": 0,
+        "reliable_temporal_pairs": 0,
+        "temporal_candidate_pairs": 0,
+        "videos": 2
+      },
+      "observations": 115708,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_score_contract_fg_mass_fixed2_v1/physical_tracks.jsonl",
+      "rows": 13270,
+      "sha256": "57f8b7e8f11f8a986011daa7683015c440051f572186e1e9869334fded01a73c",
+      "videos": [
+        0,
+        1
+      ]
+    },
+    "single_softmax": {
+      "bytes": 13464151,
+      "geometry": {
+        "gt_observations": 296,
+        "gt_tracks": 13,
+        "gt_tracks_with_multiple_pred_votes": 1,
+        "gt_tracks_with_per_image_match": 5,
+        "observation_precision_on_annotated_images": 0.00688924218335983,
+        "observation_recall_against_gt": 0.04391891891891892,
+        "per_image_matched_observations": 13,
+        "predicted_observations": 71480,
+        "predicted_observations_on_gt_images": 1887,
+        "predicted_tracks": 6733,
+        "predicted_tracks_with_any_annotated_observation": 984,
+        "predicted_tracks_with_multiple_gt_votes": 0,
+        "predicted_tracks_with_per_image_match": 8,
+        "reliable_gt_track_recall": 0.0,
+        "reliable_gt_tracks": 0,
+        "reliable_predicted_tracks": 0,
+        "reliable_temporal_pairs": 0,
+        "temporal_candidate_pairs": 0,
+        "videos": 2
+      },
+      "observations": 71480,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_score_contract_single_softmax_v1/physical_tracks.jsonl",
+      "rows": 6733,
+      "sha256": "1bfba602b30fe6d537200a875183dab360ee6ddab50c58a5f03c3655a71e6efc",
+      "videos": [
+        0,
+        1
+      ]
+    },
+    "tracker_gate": {
+      "bytes": 22439905,
+      "geometry": {
+        "gt_observations": 296,
+        "gt_tracks": 13,
+        "gt_tracks_with_multiple_pred_votes": 4,
+        "gt_tracks_with_per_image_match": 6,
+        "observation_precision_on_annotated_images": 0.010617120106171201,
+        "observation_recall_against_gt": 0.10810810810810811,
+        "per_image_matched_observations": 32,
+        "predicted_observations": 115708,
+        "predicted_observations_on_gt_images": 3014,
+        "predicted_tracks": 13270,
+        "predicted_tracks_with_any_annotated_observation": 1915,
+        "predicted_tracks_with_multiple_gt_votes": 0,
+        "predicted_tracks_with_per_image_match": 18,
+        "reliable_gt_track_recall": 0.0,
+        "reliable_gt_tracks": 0,
+        "reliable_predicted_tracks": 0,
+        "reliable_temporal_pairs": 0,
+        "temporal_candidate_pairs": 0,
+        "videos": 2
+      },
+      "observations": 115708,
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_score_contract_tracker_gate_v1/physical_tracks.jsonl",
+      "rows": 13270,
+      "sha256": "a11b14e9503b9f7bd431a95305c50273464512d5c59afa95d7e2fd233341e5a8",
+      "videos": [
+        0,
+        1
+      ]
+    }
+  },
+  "schema_version": "trackocd.cvpr.score-contract-geometry-smoke-audit.v1",
+  "scope": {
+    "frontend_qualification": false,
+    "iou_threshold": 0.5,
+    "mapping_persisted": false,
+    "model_selection": false,
+    "official_ocd_or_trackeval_metrics": false,
+    "videos": [
+      0,
+      1
+    ]
+  },
+  "status": "COMPLETE_CATEGORY_FREE_SCORE_CONTRACT_GEOMETRY_SMOKES"
+}

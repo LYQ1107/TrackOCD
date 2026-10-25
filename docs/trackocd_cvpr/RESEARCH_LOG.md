@@ -9695,3 +9695,26 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_continuity_reaudit_20261026.json`.
   This remains a category-free Train diagnostic, not an OCD/MOT metric,
   frontend qualification, model-selection result, or Goal A/B/C acceptance.
+
+## Paired score-contract mechanisms versus Train geometry (2026-10-26 UTC)
+
+- A new read-only audit compared the frozen baseline, foreground-mass,
+  single-softmax, and tracker-only-gate streams on the same two anonymous Train
+  videos (`0/1`) and the same geometry-only physical GT index. All four streams
+  passed the category-free schema and had no invalid boxes.
+- Baseline produced `81,480` observations with geometry precision `0.0060578`
+  and recall `0.0439189`. Foreground-mass produced `115,708` observations,
+  precision `0.0106171` and recall `0.1081081`; tracker-only-gate produced the
+  identical geometry counts and rates, while preserving the detector bbox
+  bytes. Single-softmax produced `71,480` observations, precision `0.0068892`
+  and recall `0.0439189`.
+- None of the four streams produced a reliable temporal pair at IoU `0.5`.
+  The paired result therefore separates the score/lifecycle effect from the
+  dominant geometry/coverage failure: increasing retained observations is not
+  evidence of better frontend localization or persistent tracking. No route is
+  promoted, selected, or used for formal training.
+- Receipt and implementation:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_contract_geometry_smokes_20261026.json`
+  and `scripts/trackocd_cvpr/audit_score_contract_geometry_smokes.py`.
+  The audit read no category/role/vocabulary/Val/Test fields, pixels, feature
+  arrays, or native evaluator rows, and persisted no prediction-to-GT mapping.
