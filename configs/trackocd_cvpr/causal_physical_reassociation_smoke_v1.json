@@ -1,0 +1,47 @@
+{
+  "schema_version": "trackocd.cvpr.causal-physical-reassociation-smoke.v1",
+  "status": "FROZEN_CATEGORY_FREE_CAUSAL_REASSOCIATION_DIAGNOSTIC",
+  "purpose": "Test a fixed candidate-aware physical re-association rule on the already executed foreground-mass anonymous streams before any predicted-track training.",
+  "selection": "Use the existing fixed policy_train_pseudo ten-video subset and independent development_pseudo first-eight prefix; no score, GT, output, or metric selection.",
+  "algorithm": {
+    "input": "COVTrack-native foreground-mass category-free physical stream",
+    "event_order": "source-frame ascending; native track ID ascending within a frame",
+    "birth_rule": "At a native-track birth, match only against persistent states whose last observation is in an earlier source frame and within the fixed gap horizon.",
+    "association": "One-to-one Hungarian maximization of box IoU; accept only IoU >= 0.5.",
+    "max_gap_frames": 1,
+    "causal": true,
+    "uses_future_observations": false,
+    "uses_track_final_length": false,
+    "uses_semantic_or_feature_input": false,
+    "same_frame_peer_birth_reuse": false,
+    "mapping_persisted": false,
+    "parameter_selection": "Fixed before this diagnostic from the existing COVTrack IoU convention and one-frame causal bridge; no GT tuning or sweep."
+  },
+  "fixed_subsets": {
+    "policy_train_pseudo": {
+      "video_ids": [72, 275, 349, 371, 1524, 1831, 2330, 2686, 2977, 2987],
+      "source_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_policy_fg_mass_v1/physical_tracks.jsonl",
+      "derived_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/causal_reassoc/covtrack_policy_fg_mass_v1/physical_tracks.jsonl",
+      "receipt": "outputs/trackocd_cvpr/cvpr2/causal_reassoc_smoke_v1/policy.json"
+    },
+    "development_pseudo": {
+      "video_ids": [0, 3, 11, 38, 146, 220, 221, 239],
+      "source_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_development_fg_mass_v1/physical_tracks.jsonl",
+      "derived_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/causal_reassoc/covtrack_development_fg_mass_v1/physical_tracks.jsonl",
+      "receipt": "outputs/trackocd_cvpr/cvpr2/causal_reassoc_smoke_v1/development.json"
+    }
+  },
+  "boundaries": {
+    "train_annotation_opened": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "feature_arrays_read": false,
+    "training_started": false,
+    "formal_mot_or_ocd_metrics": false,
+    "model_selection": false,
+    "raw_payload_uploaded": false
+  },
+  "interpretation": "This is a category-free causal physical-stream mechanism diagnostic. It cannot establish OCD/MOT performance, frontend qualification, predicted-track training readiness, or Goal A/B/C acceptance."
+}

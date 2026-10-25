@@ -54,6 +54,9 @@ def _score_stats(values: list[float]) -> dict[str, Any]:
 
 
 def _source_binding(receipt: dict[str, Any]) -> dict[str, Any]:
+    declared = receipt.get("source_binding")
+    if isinstance(declared, dict):
+        return declared
     config = Path(str(receipt.get("config", ""))).resolve()
     if not config.is_file() or len(config.parents) < 3:
         raise FileNotFoundError(f"receipt config is not a file: {config}")
