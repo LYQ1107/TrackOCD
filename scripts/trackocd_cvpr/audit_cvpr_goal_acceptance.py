@@ -135,6 +135,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     admission_path, admission = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/v2_recovery_asset_admission_20261026.json"
     )
+    dense_masa_path, dense_masa = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json"
+    )
     mechanism_path, mechanism = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json"
     )
@@ -284,6 +287,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "evidence": [
                 evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json", reported_status=geometry.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json", reported_status=masa.get("status")),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
+                    reported_status=dense_masa.get("status"),
+                ),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json", reported_status=asset.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json", reported_status=runtime.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json", reported_status=release.get("status")),
@@ -292,6 +300,24 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "facts": {
                 "covtrack_reliable_temporal_pairs": geometry_totals.get("reliable_temporal_pairs"),
                 "masa_admissible_for_formal_v2": masa.get("admissible_for_formal_v2"),
+                "masa_adjacent_dense_smoke_status": dense_masa.get("status"),
+                "masa_adjacent_dense_smoke_frames": count_or_length(
+                    nested(dense_masa, "worker", "frames", default=[])
+                ),
+                "masa_adjacent_dense_smoke_train_images_only": nested(
+                    dense_masa, "boundaries", "train_images_only"
+                ),
+                "masa_adjacent_dense_smoke_max_retained_ids": (
+                    max(
+                        (
+                            int(row.get("retained_track_ids_from_previous_frame", 0))
+                            for row in nested(dense_masa, "worker", "frames", default=[])
+                        ),
+                        default=None,
+                    )
+                    if isinstance(nested(dense_masa, "worker", "frames", default=[]), list)
+                    else None
+                ),
                 "strong_legal_primary_accepted": asset.get("strong_legal_primary_Pred_or_scientific_Goal_accepted"),
                 "runtime_checkpoint_binding_reconciled": nested(runtime, "qualification_boundary", "runtime_checkpoint_compatibility_reconciled"),
                 "exact_release_stage_training_binding_verified": nested(runtime, "qualification_boundary", "exact_release_stage_training_binding_verified"),
@@ -309,7 +335,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     local_cache, "binding_checks", "historical_cache_reachable"
                 ),
             },
-            "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation; the reachable local cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
+            "open_gate": "The adjacent-frame MASA smoke confirms a frozen current-image causal path, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
         },
         {
             "id": "predicted_track_training",
@@ -544,6 +570,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
                 reported_status=cross_video_smoke.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
+                reported_status=dense_masa.get("status"),
             ),
         ],
     }

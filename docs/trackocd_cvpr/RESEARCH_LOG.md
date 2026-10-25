@@ -1,5 +1,26 @@
 # CVPR research log
 
+## 2026-10-26 — adjacent-frame frozen MASA Train online smoke
+
+- Added a bounded, isolated smoke for the image-only MASA route using eight
+  consecutive Train frames from one registered video.  The worker received
+  only the current RGB image and a video-local ordinal; an audit hook rejected
+  network, annotations, split metadata, and Val/Test paths.
+- The frozen checkpoint completed all `8/8` forwards with `50` detections per
+  frame, finite boxes, foreground-only labels, and no persisted raw prediction
+  payload.  The native tracker retained `38–44` IDs between each adjacent
+  pair.  Peak host RSS was `1.63 GB` and peak reserved GPU memory was `3.44
+  GB`; GPU0 was selected after a fresh availability check while GPU6 was left
+  untouched.
+- This strengthens the temporal boundary evidence beyond the earlier
+  30-frame-spaced four-image smoke, but it is still only an engineering
+  lifecycle check.  It creates no MOT/OCD metric, reads no GT/Val/Test label,
+  does not qualify the frontend, and does not authorize predicted-track
+  training.  Receipt:
+  `outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json`;
+  configuration and implementation are under the matching `configs/` and
+  `scripts/` paths.
+
 Safety erratum (2026-10-12): historical blanket "no labels decoded" claims
 for image/video metadata access are too broad. The former reader decoded
 nested video GT arrays. Original chronology/receipts are preserved below;

@@ -1,0 +1,38 @@
+{
+  "schema_version": "trackocd.cvpr.masa-dense-train-online-smoke.v1",
+  "run_id": "masa_dense_train_online_smoke_v1",
+  "purpose": "Bounded frozen image-only MASA adjacent-frame lifecycle smoke; not frontend qualification, training, or formal MOT/OCD evaluation.",
+  "source_split": "train_image_only",
+  "image_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+  "image_paths": [
+    "train/LaSOT/lion-12/00001141.jpg",
+    "train/LaSOT/lion-12/00001142.jpg",
+    "train/LaSOT/lion-12/00001143.jpg",
+    "train/LaSOT/lion-12/00001144.jpg",
+    "train/LaSOT/lion-12/00001145.jpg",
+    "train/LaSOT/lion-12/00001146.jpg",
+    "train/LaSOT/lion-12/00001147.jpg",
+    "train/LaSOT/lion-12/00001148.jpg"
+  ],
+  "causal_contract": {
+    "worker_inputs": ["current_image", "video_local_frame_ordinal"],
+    "future_observations_used": false,
+    "gt_or_category_fields_read": false,
+    "val_or_test_access": false,
+    "training": false,
+    "offline_filtering": false,
+    "public_vocabulary_used": false,
+    "formal_metrics": false
+  },
+  "resource_limits": {
+    "max_frames": 8,
+    "max_wall_seconds": 600,
+    "max_host_rss_bytes": 4294967296,
+    "max_gpu_reserved_bytes": 8589934592,
+    "ram_reserve_fraction": 0.25,
+    "gpu_workers": 1,
+    "max_output_bytes": 10485760
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
+  "interpretation": "Adjacent-frame execution and anonymous tracker lifecycle only. Any retained-ID counts are engineering diagnostics, not MOT metrics or frontend acceptance."
+}
