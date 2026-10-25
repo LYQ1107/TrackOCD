@@ -26,7 +26,13 @@ sys.path.insert(0, str(ROOT))
 from src.trackocd_v2.io import atomic_json, sha256_file  # noqa: E402
 
 
-CONFIG = ROOT / "configs/trackocd_cvpr/predicted_train_rcm_interface_smoke_v1.json"
+_CONFIG_ENV = os.environ.get(
+    "TRACKOCD_RCM_INTERFACE_CONFIG",
+    str(ROOT / "configs/trackocd_cvpr/predicted_train_rcm_interface_smoke_v1.json"),
+)
+CONFIG = Path(_CONFIG_ENV)
+if not CONFIG.is_absolute():
+    CONFIG = ROOT / CONFIG
 
 
 def peak_rss_bytes() -> int:
@@ -63,15 +69,18 @@ def load_jsonl(path: Path) -> List[Dict[str, Any]]:
 def selected_rows(cfg: Dict[str, Any], arrays: Dict[str, np.ndarray], rows: List[Dict[str, Any]]) -> Tuple[List[int], List[int]]:
     selected = [int(value) for value in cfg["fixed_selection"]["track_indices"]]
     frame_ids = [int(value) for value in cfg["fixed_selection"]["frame_ids"]]
-    if selected != [0, 1, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17]:
-        raise ValueError("Fixed R/C/M smoke selection changed")
-    if len(rows) != 1016 or arrays["track_offsets"].shape != (1017,):
+    expected_input_tracks = int(cfg["fixed_selection"].get("input_track_count", 1016))
+    expected_input_observations = int(cfg["fixed_selection"].get("input_observation_count", 29670))
+    video_id = int(cfg["fixed_selection"]["video_id"])
+    if len(rows) != expected_input_tracks or arrays["track_offsets"].shape != (expected_input_tracks + 1,):
         raise ValueError("Pilot input index universe changed")
-    if arrays["visual"].shape != (29670, 768):
+    if arrays["visual"].shape != (expected_input_observations, 768):
         raise ValueError("Pilot feature universe changed")
     for index in selected:
+        if index < 0 or index >= len(rows):
+            raise ValueError("Fixed R/C/M smoke index is out of range")
         row = rows[index]
-        if int(row["video_id"]) != 3 or row["source_split"] != "train_predicted":
+        if int(row["video_id"]) != video_id or row["source_split"] != "train_predicted":
             raise ValueError("Non-Train or wrong fixed video row")
         if not set(frame_ids).issubset(set(int(value) for value in row["frame_ids"])):
             raise ValueError("Fixed track lacks the eight registered frames")
@@ -252,7 +261,7 @@ def main() -> int:
             "payload_sha256": cfg["input_payload_sha256"],
             "index": str(index_path.relative_to(ROOT)),
             "index_sha256": cfg["input_index_sha256"],
-            "video_id": 3,
+            "video_id": int(cfg["fixed_selection"]["video_id"]),
             "tracks": len(selected),
             "frames": len(frame_ids),
             "observations": sum(len(item) for item in by_frame),
