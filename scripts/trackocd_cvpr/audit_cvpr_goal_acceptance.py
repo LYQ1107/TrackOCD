@@ -170,6 +170,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
     )
+    frontend_reconciliation_path, frontend_reconciliation = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
+    )
 
     core_reviews = review.get("scoped_actual_core_reviews", [])
     extra_reviews = review.get("licensed_extra_inspection_reviews", [])
@@ -327,6 +331,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
                     reported_status=nas_probe.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
+                    reported_status=frontend_reconciliation.get("status"),
+                ),
             ],
             "facts": {
                 "covtrack_reliable_temporal_pairs": geometry_totals.get("reliable_temporal_pairs"),
@@ -375,6 +384,14 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "nas_recovery_probe_status": nas_probe.get("status"),
                 "nas_reverse_tunnel_listening": nested(
                     nas_probe, "managed_mount", "reverse_endpoint_listening_at_probe"
+                ),
+                "historical_current_frontend_stream_identity_status": frontend_reconciliation.get(
+                    "status"
+                ),
+                "historical_current_same_input_stream_proven": nested(
+                    frontend_reconciliation,
+                    "identity_comparison",
+                    "same_input_stream_proven",
                 ),
             },
             "open_gate": "The adjacent-frame MASA smoke confirms a frozen current-image causal path, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
@@ -495,6 +512,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
                     reported_status=covtrack_recheck.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
+                    reported_status=frontend_reconciliation.get("status"),
                 ),
             ],
             "facts": {

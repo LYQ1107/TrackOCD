@@ -1,0 +1,91 @@
+{
+  "schema_version": "trackocd.cvpr.frontend-selection-reconciliation.v1",
+  "generated_utc": "2026-10-25T23:58:22.533006+00:00",
+  "status": "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH",
+  "historical_selection": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit/frontend_selection.json",
+    "sha256": "6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e",
+    "status": "FINAL_PHYSICAL_FRONTEND_SELECTED",
+    "selected_frontend": "COVTrack-native",
+    "formal_common_feature_cache_authorized": false
+  },
+  "historical_stream": {
+    "metrics_receipt": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit/frontend_covtrack_native_metrics.json",
+    "metrics_receipt_sha256": "e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2",
+    "stage_receipt": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit/frontend_covtrack_native.json",
+    "stage_receipt_sha256": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526",
+    "physical_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "native_evaluator_rows_sha256": "0f9ef28177ded2c0bc85fb87a76fb0b8a03c95c6847dd08844077b4b57bd794e",
+    "category_free_tracking": {
+      "AssA": 0.44569000000000003,
+      "AssPr": 0.73638,
+      "AssRe": 0.48908,
+      "DetA": 0.055848,
+      "DetPr": 0.057751000000000004,
+      "DetRe": 0.54448,
+      "HOTA": 0.15412,
+      "LocA": 0.76654,
+      "OWTA": 0.48228000000000004
+    },
+    "novel_track_observability": {
+      "denominator": 819,
+      "numerator": 191,
+      "value": 0.23321123321123322
+    },
+    "persistent_observability": {
+      "denominator": 527,
+      "numerator": 88,
+      "value": 0.16698292220113853
+    }
+  },
+  "current_recheck": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
+    "receipt_sha256": "ef5a758f93eef7ae77b04583cbc10982858f7595a43e364cadf6bb5b79df926e",
+    "status": "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE",
+    "physical_stream_sha256": "70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9",
+    "native_evaluator_rows_sha256": "be5d2a0275c82aefc106f1c6ab250a6ab0122697f39d7b9bb407f4ba0e6c4597",
+    "conversion_counts": {
+      "rows": 1133872,
+      "physical_tracks": 369749,
+      "videos": 988
+    },
+    "tracking_values_percent": {
+      "HOTA": 15.402,
+      "AssA": 44.535,
+      "DetA": 5.5815,
+      "DetPr": 5.7719,
+      "DetRe": 54.418,
+      "AssPr": 73.595,
+      "AssRe": 48.878,
+      "LocA": 76.647,
+      "OWTA": 48.199
+    },
+    "novel_track_observability": {
+      "denominator": 819,
+      "numerator": 189,
+      "value": 0.23076923076923078
+    },
+    "persistent_observability": {
+      "denominator": 527,
+      "numerator": 84,
+      "value": 0.15939278937381404
+    }
+  },
+  "identity_comparison": {
+    "physical_stream_sha256_match": false,
+    "native_evaluator_rows_sha256_match": false,
+    "same_input_stream_proven": false
+  },
+  "boundary": {
+    "receipt_only": true,
+    "large_prediction_stream_opened": false,
+    "annotations_opened": false,
+    "data_or_weights_read": false,
+    "tao_test_read": false,
+    "model_selection_performed": false,
+    "frontend_repromoted": false,
+    "training_started": false,
+    "external_processes_touched": false
+  },
+  "interpretation": "The historical COVTrack-native selection and the current local Val recheck refer to different physical/evaluator streams.  The current category-free metrics remain valid for their own sealed recheck, but cannot be silently substituted for the historical bakeoff or used to authorize formal predicted-track training."
+}

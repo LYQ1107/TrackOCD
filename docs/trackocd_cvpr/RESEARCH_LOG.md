@@ -10800,3 +10800,23 @@ no private GT/cache/weights opened for this check):
 - The missing next step remains a legal predicted-trajectory version with the
   same fairness controls. No new training or label access was performed in
   this registration-only update.
+
+## Historical frontend versus current Val stream reconciliation (2026-10-26 UTC)
+
+- A receipt-only comparison joined the historical final-selection metadata to
+  the current local COVTrack-native Val recheck. The historical selected stream
+  has physical/evaluator-row hashes
+  `63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1` /
+  `0f9ef28177ded2c0bc85fb87a76fb0b8a03c95c6847dd08844077b4b57bd794e`.
+  The current recheck has
+  `70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9` /
+  `be5d2a0275c82aefc106f1c6ab250a6ab0122697f39d7b9bb407f4ba0e6c4597`.
+- Therefore the current real category-free Val values (HOTA `15.402`, DetRe
+  `54.418`, novel observability `189/819`, persistent observability `84/527`)
+  are valid only for the current recheck stream. They are not silently
+  substituted for the historical bakeoff selection (which recorded HOTA
+  `15.412`, novel `191/819`, persistent `88/527`).
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json`.
+  The mismatch keeps formal frontend promotion and predicted-track training
+  closed; no new stream, label, weight, or external process was touched.

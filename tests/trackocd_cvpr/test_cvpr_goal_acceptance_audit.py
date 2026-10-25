@@ -61,6 +61,10 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
         "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE"
     )
     assert rows["lawful_strong_frontend"]["facts"]["nas_reverse_tunnel_listening"] is False
+    assert rows["lawful_strong_frontend"]["facts"]["historical_current_frontend_stream_identity_status"] == (
+        "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH"
+    )
+    assert rows["lawful_strong_frontend"]["facts"]["historical_current_same_input_stream_proven"] is False
     assert rows["candidate_aware_decision"]["facts"]["gt_controlled_matrix_variant_count"] == 3
     assert rows["candidate_aware_decision"]["facts"]["gt_controlled_matrix_trial_count"] == 9
     assert rows["candidate_aware_decision"]["facts"]["gt_controlled_matrix_orders_per_trial"] == 3
