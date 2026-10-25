@@ -10478,3 +10478,23 @@ no private GT/cache/weights opened for this check):
   external-process intervention occurred in this reconciliation. Therefore
   these are valid interim Val indicators, not completion of the full
   CVPR/Goal-A/B/C acceptance.
+
+## Receipt-only CVPR goal acceptance audit (2026-10-26 UTC)
+
+- Added `scripts/trackocd_cvpr/audit_cvpr_goal_acceptance.py` and its focused
+  regression test.  The audit reads only compact JSON receipts and the public
+  status file; it does not open large streams, data, weights, GT/Test labels,
+  or external processes.  It records the source-receipt hashes and maps every
+  requested end-state requirement to an explicit status and remaining gate.
+- The generated receipt is
+  `outputs/trackocd_cvpr/cvpr5/cvpr_goal_acceptance_audit_20261026.json`.
+  It reports `INCOMPLETE_OPEN_REQUIREMENTS` with no missing evidence.  CVPR-0
+  diagnostics, the minimum 12 actual source reviews, and the 407-video
+  anonymous cache reconciliation are complete at their own scopes; strong
+  frontend qualification, qualified predicted-track training,
+  candidate-aware deployment, self-correcting memory, full causal online
+  metrics, and independent Goal A/B/C acceptance remain open.
+- The audit explicitly records `Goal_A= PENDING`, `Goal_B= PENDING`,
+  `Goal_C= PENDING`, `scientific_success_claimed=false`, and the sealed Val
+  layers as interim evidence only.  This is an accounting/provenance advance,
+  not a scientific completion claim or authorization to start full training.

@@ -1,0 +1,361 @@
+{
+  "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
+  "generated_utc": "2026-10-25T22:42:16.480001+00:00",
+  "repository": {
+    "branch": "research/cvpr-trackocd-autonomous-v2",
+    "head": "8ad386142510ce8cbdd9027caf74e3b27d70b037",
+    "clean_before_audit": false
+  },
+  "scope": {
+    "receipt_only": true,
+    "large_streams_opened": false,
+    "data_or_weights_read": false,
+    "tao_test_read": false,
+    "external_processes_touched": false,
+    "model_selection_performed": false
+  },
+  "goal_status": {
+    "audit_result": "INCOMPLETE_OPEN_REQUIREMENTS",
+    "missing_evidence": [],
+    "open_requirements": [
+      "lawful_strong_frontend",
+      "predicted_track_training",
+      "candidate_aware_decision",
+      "self_correcting_persistent_memory",
+      "formal_causal_online_metrics",
+      "independent_final_and_goals"
+    ],
+    "goal_a": "PENDING",
+    "goal_b": "PENDING",
+    "goal_c": "PENDING",
+    "scientific_success_claimed": false
+  },
+  "requirements": [
+    {
+      "id": "cvpr0_root_cause_diagnostics",
+      "status": "COMPLETE_DIAGNOSTIC_NOT_SCIENTIFIC_ACCEPTANCE",
+      "requirement": "Complete FULL=0, Top-K/action upper-bound, first-error propagation, and representation-geometry diagnostics.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json",
+          "exists": true,
+          "bytes": 2417,
+          "sha256": "10f951292fcd900b0a87dc9dbcb7e21813b1329cc0e1cf8033a08e3f25ead612",
+          "reported_status": "COMPLETE_DIAGNOSTIC_EVIDENCE_NOT_SCIENTIFIC_ACCEPTANCE"
+        },
+        {
+          "path": "docs/trackocd_cvpr/CVPR0_ROOT_CAUSE_SYNTHESIS_20261022.md",
+          "exists": true,
+          "bytes": 5974,
+          "sha256": "f1c0dc2f019874914693ef95e79ec5c6a9b16b7e82b820403c291e4305a460ed"
+        }
+      ],
+      "facts": {
+        "root_boundaries": {
+          "tao_test_accessed": false,
+          "val_model_selection": false,
+          "new_method_acceptance": false,
+          "formal_frontend_qualified": false,
+          "goal_a_b_c_accepted": false,
+          "raw_traces_uploaded": false
+        },
+        "interpretation": "diagnostic evidence only; no new-method acceptance"
+      },
+      "open_gate": "No additional CVPR-0 claim is promoted to end-to-end scientific success."
+    },
+    {
+      "id": "literature_and_source_review",
+      "status": "MINIMUM_REVIEW_COUNT_MET_STAGE_ACCEPTANCE_OPEN",
+      "requirement": "Audit at least 12 real papers and actual model/loss/train/eval source.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr1/review_coverage_index.json",
+          "exists": true,
+          "bytes": 12537,
+          "sha256": "fdb36e34686e4165b10bbec447af1ba5bcbe81aa400a445f3ce998863b45b44d",
+          "reported_status": "MINIMUM_SCOPED_SOURCE_REVIEW_COVERAGE_MET_NOT_CVPR1_OR_GOAL_ACCEPTANCE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json",
+          "exists": true,
+          "bytes": 7124,
+          "sha256": "f5653edb762e299e7b07f7ab69244107ea538d0609ad7f9204cbe695718e5f9a",
+          "reported_status": "PASS_MINIMUM_SCOPED_SOURCE_REVIEW_COVERAGE_VERIFIED"
+        },
+        {
+          "path": "docs/trackocd_cvpr/CVPR1_LITERATURE_AND_GAP_ANALYSIS.md",
+          "exists": true,
+          "bytes": 37255,
+          "sha256": "5b911794fb6e752d338b733dbee0e4c13ea3aab89158b817ca9099780dd52574"
+        }
+      ],
+      "facts": {
+        "actual_core_reviews": 12,
+        "licensed_extra_reviews": 3,
+        "minimum_required_actual_core_reviews": 12,
+        "scientific_goal_complete": false
+      },
+      "open_gate": "Source lineage, fresh causal folds, and mechanism/Goal acceptance remain separate gates."
+    },
+    {
+      "id": "anonymous_train_dense_cache",
+      "status": "COMPLETE_CACHE_PROVENANCE_NOT_FRONTEND_QUALIFICATION",
+      "requirement": "Preserve and reconcile the lawful anonymous Train physical cache for later predicted-track work.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+          "exists": true,
+          "bytes": 2984,
+          "sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+          "reported_status": "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json",
+          "exists": true,
+          "bytes": 18594,
+          "sha256": "a3a47398349e3843f3a39e1fa36b427eb7495b2c6290bffbe94fc986fff9b1a0",
+          "reported_status": "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_AUDIT"
+        }
+      ],
+      "facts": {
+        "totals": {
+          "videos": 407,
+          "tracks": 1245952,
+          "observations": 13558940,
+          "invalid_boxes": 0
+        },
+        "geometry": {
+          "observation_precision": 0.04590700397835164,
+          "observation_recall": 0.36915291529152916,
+          "reliable_temporal_pairs": 0
+        }
+      },
+      "open_gate": "The cache is reusable provenance, but its current geometry/continuity does not qualify a strong frontend."
+    },
+    {
+      "id": "lawful_strong_frontend",
+      "status": "OPEN_FRONTEND_NOT_QUALIFIED",
+      "requirement": "Qualify a lawful, dense, causally valid frontend before formal predicted-track training and evaluation.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json",
+          "exists": true,
+          "bytes": 18594,
+          "sha256": "a3a47398349e3843f3a39e1fa36b427eb7495b2c6290bffbe94fc986fff9b1a0",
+          "reported_status": "COMPLETE_CATEGORY_FREE_TRAIN_PREDICTED_GEOMETRY_MATCH_AUDIT"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json",
+          "exists": true,
+          "bytes": 4115,
+          "sha256": "e2566032ac77254e828d0b165e747dd3c98be8dbc33b4aaec97e2a3b152aed34",
+          "reported_status": "HISTORICAL_MASA_PHYSICAL_CANDIDATE_NOT_V2_ADMISSIBLE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json",
+          "exists": true,
+          "bytes": 3225,
+          "sha256": "7f432c0774d1a2b6364e05805b6d63369747b278e93b5281856eebde0bfd6faa",
+          "reported_status": "READONLY_ASSET_AND_SOURCE_RECHECK_NOT_PRIMARY_FRONTEND_OR_RUNTIME_QUALIFICATION"
+        }
+      ],
+      "facts": {
+        "covtrack_reliable_temporal_pairs": 0,
+        "masa_admissible_for_formal_v2": false,
+        "strong_legal_primary_accepted": false
+      },
+      "open_gate": "Need an admitted frontend/cache with exact provenance, dense causal contract, and shared metric validation."
+    },
+    {
+      "id": "predicted_track_training",
+      "status": "OPEN_NOT_STARTED_AS_QUALIFIED_TRAINING",
+      "requirement": "Train and evaluate the policy on frozen predicted trajectories under the causal Train-development protocol.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/joint_causal_pred_dense_protocol_v1/result.json",
+          "exists": true,
+          "bytes": 3286,
+          "sha256": "80d537a668da6fe6c3b012b6910df627d9dd015fb51d58fc3632b3c59be34e43",
+          "reported_status": "PASS_FROZEN_JOINT_CAUSAL_BOUNDARIES_FULL_PRED_CACHE_COMPLETE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/policy_training_input_qualification_v1/result.json",
+          "exists": true,
+          "bytes": 1614,
+          "sha256": "bdc762881ad0656115ac118e8f9c6d538d749803147ee7e181ce2d5fb5719993",
+          "reported_status": "VERIFIED_COMPLETE_POLICY_INPUT_NOT_TRAINED_C_M_OR_PRED_OR_GOAL_ACCEPTANCE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json",
+          "exists": true,
+          "bytes": 5416,
+          "sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
+          "reported_status": "COMPLETED_JOINT_RCM_MEMORY_PILOT_NOT_DEV_PRED_OR_GOAL_ACCEPTANCE"
+        }
+      ],
+      "facts": {
+        "predicted_cache_boundary": {
+          "formal_metrics_created": false,
+          "full_predicted_cache_complete": true,
+          "full_predicted_cache_started": true,
+          "model_selection_performed": false,
+          "novel_vocabulary_used": false,
+          "private_gt_arrays_read_by_audit": false,
+          "tao_val_or_test_labels_used": false,
+          "training_started": false
+        },
+        "policy_input_optimizer_steps": 0,
+        "rcm_pilot_optimizer_steps": 2
+      },
+      "open_gate": "The protocol and engineering pilot exist, but no qualified predicted-track training or formal metric result exists."
+    },
+    {
+      "id": "candidate_aware_decision",
+      "status": "OPEN_PILOT_AND_DIAGNOSTIC_ONLY",
+      "requirement": "Deliver a candidate-aware decision mechanism with fair causal comparison and no outcome leakage.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json",
+          "exists": true,
+          "bytes": 2417,
+          "sha256": "10f951292fcd900b0a87dc9dbcb7e21813b1329cc0e1cf8033a08e3f25ead612",
+          "reported_status": "COMPLETE_DIAGNOSTIC_EVIDENCE_NOT_SCIENTIFIC_ACCEPTANCE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json",
+          "exists": true,
+          "bytes": 5416,
+          "sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
+          "reported_status": "COMPLETED_JOINT_RCM_MEMORY_PILOT_NOT_DEV_PRED_OR_GOAL_ACCEPTANCE"
+        }
+      ],
+      "facts": {
+        "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
+        "pilot_goal_acceptance": false
+      },
+      "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation."
+    },
+    {
+      "id": "self_correcting_persistent_memory",
+      "status": "OPEN_PILOT_ONLY",
+      "requirement": "Demonstrate self-correcting persistent category memory on actual causal predicted histories.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/joint_rcm_policy_pilot_v1_repair2/result.json",
+          "exists": true,
+          "bytes": 5416,
+          "sha256": "fdd151ef4e1e10f28e653b5bc6beea3a58897eab80b44e5caa2ed926a06b71c8",
+          "reported_status": "COMPLETED_JOINT_RCM_MEMORY_PILOT_NOT_DEV_PRED_OR_GOAL_ACCEPTANCE"
+        },
+        {
+          "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
+          "exists": true,
+          "bytes": 15049,
+          "sha256": "a5d3cfa399419965a9a8270e2823ec42014fb0a05ea83a4ee5854ea1a1c0757e"
+        }
+      ],
+      "facts": {
+        "pilot_scope": {
+          "not_development_or_final": true,
+          "policy_relative_ordinals": [
+            0,
+            1
+          ],
+          "selection_frozen_before_payload_read": true,
+          "videos": 2
+        },
+        "prediction_owned_memory_only": true,
+        "pilot_is_goal_acceptance": false
+      },
+      "open_gate": "The bounded R/C/M pilot is not a trained, generalizable, or Goal-accepted memory result."
+    },
+    {
+      "id": "formal_causal_online_metrics",
+      "status": "PARTIAL_SEALED_VAL_EVIDENCE_FULL_ACCEPTANCE_OPEN",
+      "requirement": "Produce paper-grade causal online OCD/MOT metrics under the frozen protocol.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json",
+          "exists": true,
+          "bytes": 5410,
+          "sha256": "bd9e9668959c555c9b9908f1bb189cba0acdd07f903313470269f14bed7f8e1f",
+          "reported_status": "COMPLETE_RECONCILIATION_WITH_PENDING_FORMAL_STAGES"
+        }
+      ],
+      "facts": {
+        "sealed_layers": {
+          "category_free_mot": "SEALED_EXISTING_VAL_EVIDENCE",
+          "nearest": "SEALED_EXISTING_VAL_BASELINE",
+          "dpmeans": "WAITING_FEATURES"
+        },
+        "formal_v2_status": "not complete; DP-means and full causal Goal evaluation remain open"
+      },
+      "open_gate": "Existing Val numbers are sealed interim evidence, not end-to-end CVPR/Goal acceptance."
+    },
+    {
+      "id": "independent_final_and_goals",
+      "status": "OPEN_GOAL_A_B_C_PENDING",
+      "requirement": "Complete fair independent final evaluation and satisfy Goal A, Goal B, and Goal C.",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/status.json",
+          "exists": true,
+          "bytes": 105860,
+          "sha256": "a18f3650b828f7a5a9dcac9a078dc87f99b4c98d9cf979acb395e3fc1e673a7c",
+          "reported_status": "ACTIVE_ALL15_R_ALL6_PAIRED_C_ALL4_RAW_CONTROLS_MEASURED_JOINT_PRED_FINAL_OPEN"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/independent_final_GT_video_cache_v1/result.json",
+          "exists": true,
+          "bytes": 39685,
+          "sha256": "37f0111776b17349d9b1c2aa15c83c58a24d4fbeb916b748618d19120aea94c8"
+        }
+      ],
+      "facts": {
+        "goal_a": "PENDING",
+        "goal_b": "PENDING",
+        "goal_c": "PENDING",
+        "scientific_success_claimed": false,
+        "independent_final_cache_is_only_control": true
+      },
+      "open_gate": "No Goal A/B/C item is accepted; the final evaluation must follow the qualified predicted frontend and locked protocol."
+    }
+  ],
+  "source_receipts": [
+    {
+      "path": "outputs/trackocd_cvpr/status.json",
+      "exists": true,
+      "bytes": 105860,
+      "sha256": "a18f3650b828f7a5a9dcac9a078dc87f99b4c98d9cf979acb395e3fc1e673a7c",
+      "reported_status": "ACTIVE_ALL15_R_ALL6_PAIRED_C_ALL4_RAW_CONTROLS_MEASURED_JOINT_PRED_FINAL_OPEN"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr0/root_cause_synthesis_20261022.json",
+      "exists": true,
+      "bytes": 2417,
+      "sha256": "10f951292fcd900b0a87dc9dbcb7e21813b1329cc0e1cf8033a08e3f25ead612",
+      "reported_status": "COMPLETE_DIAGNOSTIC_EVIDENCE_NOT_SCIENTIFIC_ACCEPTANCE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr1/review_coverage_verification.json",
+      "exists": true,
+      "bytes": 7124,
+      "sha256": "f5653edb762e299e7b07f7ab69244107ea538d0609ad7f9204cbe695718e5f9a",
+      "reported_status": "PASS_MINIMUM_SCOPED_SOURCE_REVIEW_COVERAGE_VERIFIED"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+      "exists": true,
+      "bytes": 2984,
+      "sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+      "reported_status": "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json",
+      "exists": true,
+      "bytes": 5410,
+      "sha256": "bd9e9668959c555c9b9908f1bb189cba0acdd07f903313470269f14bed7f8e1f",
+      "reported_status": "COMPLETE_RECONCILIATION_WITH_PENDING_FORMAL_STAGES"
+    }
+  ]
+}
