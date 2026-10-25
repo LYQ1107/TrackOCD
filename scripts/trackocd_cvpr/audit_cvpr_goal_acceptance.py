@@ -139,6 +139,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
     )
+    nearest_path, nearest = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json",
+    )
 
     core_reviews = review.get("scoped_actual_core_reviews", [])
     extra_reviews = review.get("licensed_extra_inspection_reviews", [])
@@ -378,6 +382,23 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "covtrack_native_recheck_is_frontend_acceptance": covtrack_recheck.get(
                     "qualification_boundary", {}
                 ).get("frontend_registered_as_bakeoff_complete"),
+                "val_nearest_baseline_status": nearest.get("status"),
+                "val_nearest_p1_h_score": nested(
+                    nearest, "prefix_metrics_fraction", "p1", "h_score"
+                ),
+                "val_nearest_p16_h_score": nested(
+                    nearest, "prefix_metrics_fraction", "p16", "h_score"
+                ),
+                "val_nearest_fixed_gt_denominator": nested(
+                    nearest, "protocol", "fixed_gt_denominator"
+                ),
+                "val_nearest_model_input_gt_free": (
+                    nested(nearest, "protocol", "model_input_contract", "gt_category_id") is False
+                    and nested(nearest, "protocol", "model_input_contract", "gt_split") is False
+                ),
+                "val_nearest_is_new_rerun": nested(
+                    nearest, "qualification_boundary", "is_new_rerun"
+                ),
                 "formal_v2_status": "not complete; DP-means and full causal Goal evaluation remain open",
             },
             "open_gate": "The COVTrack-native Val category-free MOT/observability recheck is real sealed evidence, but TETA reference evaluation is pending and no frontend, OCD, predicted-track, or Goal acceptance is promoted.",
@@ -453,6 +474,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
                 reported_status=covtrack_recheck.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json",
+                reported_status=nearest.get("status"),
             ),
         ],
     }

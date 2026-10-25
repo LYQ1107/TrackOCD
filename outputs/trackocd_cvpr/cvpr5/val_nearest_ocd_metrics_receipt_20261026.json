@@ -1,0 +1,104 @@
+{
+  "schema_version": "trackocd.cvpr.val-nearest-ocd-baseline.v1",
+  "generated_utc": "2026-10-25T23:10:57.546320+00:00",
+  "status": "PASS_SEALED_VAL_NEAREST_OCD_BASELINE",
+  "scope": {
+    "val_only": true,
+    "sealed_existing_result": true,
+    "new_inference_started": false,
+    "training_started": false,
+    "tao_test_read": false,
+    "model_selection_performed": false,
+    "external_processes_touched": false
+  },
+  "source": {
+    "table_path": "outputs/trackocd_v2_runtime/tables/pred_nearest.json",
+    "table_bytes": 32469,
+    "table_sha256": "cde48385d94ce517df15e92d659c7e4c9e47cfb748ed3c405caa51bdf45c2634",
+    "truth_audit_path": "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json",
+    "truth_audit_bytes": 5410,
+    "truth_audit_sha256": "bd9e9668959c555c9b9908f1bb189cba0acdd07f903313470269f14bed7f8e1f",
+    "frontend": "COVTrack-native",
+    "source_kind": "formal_sharded"
+  },
+  "protocol": {
+    "method": "nearest",
+    "prefixes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "fixed_gt_denominator": 5232,
+    "post_decision_join_rows": 1206,
+    "unmatched_gt_deferred": 4026,
+    "evaluator_subset": {
+      "fixed_gt_denominator_rows": 5232,
+      "public_decisions_filtered_only_after_causal_pass": true
+    },
+    "fixed_method_parameters": {
+      "tau_existing": 0.55,
+      "tau_known": 0.35
+    },
+    "model_input_contract": {
+      "gt_category_id": false,
+      "gt_split": false,
+      "input_fields": [
+        "DINOv2 prefix feature",
+        "causal physical-stream order"
+      ],
+      "temporal_iou_match": false,
+      "text_or_category_logits": false
+    }
+  },
+  "prefix_metrics_fraction": {
+    "p1": {
+      "all_acc": 0.07454128440366972,
+      "old_acc": 0.06616813958758215,
+      "new_acc": 0.11965811965811966,
+      "h_score": 0.08521459987909867,
+      "commit_ct": 0.028462998102466792,
+      "false_assignment_rate": 0.18975332068311196
+    },
+    "p2": {
+      "all_acc": 0.08027522935779817,
+      "old_acc": 0.07160661681395876,
+      "new_acc": 0.12698412698412698,
+      "h_score": 0.09157429544301965,
+      "commit_ct": 0.03795066413662239,
+      "false_assignment_rate": 0.18026565464895636
+    },
+    "p4": {
+      "all_acc": 0.07970183486238532,
+      "old_acc": 0.07160661681395876,
+      "new_acc": 0.12332112332112333,
+      "h_score": 0.090603917293692,
+      "commit_ct": 0.04933586337760911,
+      "false_assignment_rate": 0.16888045540796964
+    },
+    "p8": {
+      "all_acc": 0.09021406727828746,
+      "old_acc": 0.08271017448447768,
+      "new_acc": 0.13064713064713065,
+      "h_score": 0.1012934332391853,
+      "commit_ct": 0.05502846299810247,
+      "false_assignment_rate": 0.16318785578747627
+    },
+    "p16": {
+      "all_acc": 0.09671253822629969,
+      "old_acc": 0.08996147745297983,
+      "new_acc": 0.1330891330891331,
+      "h_score": 0.10735585987893223,
+      "commit_ct": 0.051233396584440226,
+      "false_assignment_rate": 0.16698292220113853
+    }
+  },
+  "interpretation": "Positive sealed Val OCD baseline evidence, but not a newly rerun result; no final method selection or Goal-A/B/C acceptance.",
+  "qualification_boundary": {
+    "is_formal_frontend_selection": false,
+    "is_predicted_track_training": false,
+    "is_goal_a_b_c_acceptance": false,
+    "is_new_rerun": false
+  }
+}

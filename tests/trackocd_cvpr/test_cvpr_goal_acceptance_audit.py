@@ -75,4 +75,22 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["formal_causal_online_metrics"]["facts"][
         "covtrack_native_recheck_is_frontend_acceptance"
     ] is False
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "val_nearest_baseline_status"
+    ] == "PASS_SEALED_VAL_NEAREST_OCD_BASELINE"
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "val_nearest_p1_h_score"
+    ] == 0.08521459987909867
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "val_nearest_p16_h_score"
+    ] == 0.10735585987893223
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "val_nearest_fixed_gt_denominator"
+    ] == 5232
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "val_nearest_model_input_gt_free"
+    ] is True
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "val_nearest_is_new_rerun"
+    ] is False
     assert rows["independent_final_and_goals"]["status"] == "OPEN_GOAL_A_B_C_PENDING"

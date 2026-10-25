@@ -10640,3 +10640,28 @@ no private GT/cache/weights opened for this check):
   or claim OCD/Goal A/B/C success.
 - Compact receipt:
   `outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json`.
+
+## Sealed nearest OCD Val baseline receipt (2026-10-26 UTC)
+
+- The existing nearest baseline was independently reduced to a compact receipt
+  without exposing its per-category Hungarian mapping. It is a sealed existing
+  Val result, not a new rerun: the evaluator denominator is 5,232 GT tracks,
+  1,206 post-decision joins are scored, and 4,026 unmatched targets are
+  counted as defer.
+- The causal prefix results (fractions) are:
+
+  | prefix | all accuracy | old accuracy | new accuracy | H-score | commit rate | false assignment rate |
+  | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+  | p1 | 0.074541 | 0.066168 | 0.119658 | 0.085215 | 0.028463 | 0.189753 |
+  | p2 | 0.080275 | 0.071607 | 0.126984 | 0.091574 | 0.037951 | 0.180266 |
+  | p4 | 0.079702 | 0.071607 | 0.123321 | 0.090604 | 0.049336 | 0.168880 |
+  | p8 | 0.090214 | 0.082710 | 0.130647 | 0.101294 | 0.055028 | 0.163188 |
+  | p16 | 0.096713 | 0.089961 | 0.133089 | 0.107356 | 0.051233 | 0.166983 |
+
+- The inference input contract excludes GT category/split, temporal-IoU
+  matching, and text/category logits; GT is used only by the frozen evaluator.
+  This is useful positive OCD baseline evidence, but it is not frontend
+  selection, predicted-track training, a newly rerun result, or Goal A/B/C
+  acceptance.
+- Compact receipt:
+  `outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json`.

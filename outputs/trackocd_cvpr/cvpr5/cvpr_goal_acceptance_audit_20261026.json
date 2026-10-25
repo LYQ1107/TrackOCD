@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T23:09:22.375930+00:00",
+  "generated_utc": "2026-10-25T23:11:16.918906+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "6ae73b948e6f3f1cbb9b095f6ce5825ff5a41857",
+    "head": "27ae0dd0ac3542dbb2da1a8174c7145c5277dc6e",
     "clean_before_audit": false
   },
   "scope": {
@@ -388,6 +388,12 @@
         },
         "covtrack_native_teta_reference_status": "NATIVE_TETA_REFERENCE_EVAL_FAILED",
         "covtrack_native_recheck_is_frontend_acceptance": false,
+        "val_nearest_baseline_status": "PASS_SEALED_VAL_NEAREST_OCD_BASELINE",
+        "val_nearest_p1_h_score": 0.08521459987909867,
+        "val_nearest_p16_h_score": 0.10735585987893223,
+        "val_nearest_fixed_gt_denominator": 5232,
+        "val_nearest_model_input_gt_free": true,
+        "val_nearest_is_new_rerun": false,
         "formal_v2_status": "not complete; DP-means and full causal Goal evaluation remain open"
       },
       "open_gate": "The COVTrack-native Val category-free MOT/observability recheck is real sealed evidence, but TETA reference evaluation is pending and no frontend, OCD, predicted-track, or Goal acceptance is promoted."
@@ -484,6 +490,13 @@
       "bytes": 3246,
       "sha256": "ef5a758f93eef7ae77b04583cbc10982858f7595a43e364cadf6bb5b79df926e",
       "reported_status": "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/val_nearest_ocd_metrics_receipt_20261026.json",
+      "exists": true,
+      "bytes": 3322,
+      "sha256": "c919a2bc4e955d4ed67fa079893645913b3eb5c8e9e8e6e5848b6a429786f051",
+      "reported_status": "PASS_SEALED_VAL_NEAREST_OCD_BASELINE"
     }
   ]
 }
