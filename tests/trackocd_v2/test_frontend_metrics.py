@@ -4,6 +4,7 @@ from pathlib import Path
 import pytest
 
 from scripts.trackocd_v2 import run_frontend_metrics as metrics
+from scripts.trackocd_v2.build_val_trackeval_gt import class_agnostic
 from scripts.trackocd_v2.run_frontend_metrics import (
     _atomic_native_teta_json,
     _build_tracker_json,
@@ -73,6 +74,23 @@ def test_native_teta_conversion_retains_categories_without_physical_fields(tmp_p
     assert rows[0]["bbox"] == [2.0, 3.0, 10.0, 10.0]
     assert [row["category_id"] for row in rows] == [793, 794]
     assert "physical_track_id" not in rows[0]
+
+
+def test_val_trackeval_adapter_is_single_class_and_not_test_access():
+    converted = class_agnostic({
+        "info": {"year": 2026},
+        "licenses": [],
+        "videos": [{"id": 1, "neg_category_ids": [7], "not_exhaustive_category_ids": [8]}],
+        "images": [{"id": 11, "video_id": 1}],
+        "annotations": [{"id": 1, "category_id": 7, "track_id": 3, "video_id": 1, "image_id": 11}],
+        "tracks": [{"id": 3, "category_id": 7, "video_id": 1}],
+        "categories": [{"id": 7, "name": "source"}],
+    })
+    assert converted["categories"] == [{"id": 1, "name": "object"}]
+    assert converted["annotations"][0]["category_id"] == 1
+    assert converted["tracks"][0]["category_id"] == 1
+    assert converted["videos"][0]["neg_category_ids"] == []
+    assert converted["videos"][0]["not_exhaustive_category_ids"] == []
 
 
 def test_test_metrics_guard_precedes_stage_and_annotation_access(monkeypatch, tmp_path):

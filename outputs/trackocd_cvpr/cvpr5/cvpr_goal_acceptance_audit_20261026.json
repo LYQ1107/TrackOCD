@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-25T23:01:06.676902+00:00",
+  "generated_utc": "2026-10-25T23:09:22.375930+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "99733b7770865f239c02ad1833a82d7bdf9bce3c",
+    "head": "6ae73b948e6f3f1cbb9b095f6ce5825ff5a41857",
     "clean_before_audit": false
   },
   "scope": {
@@ -357,6 +357,13 @@
           "bytes": 5410,
           "sha256": "bd9e9668959c555c9b9908f1bb189cba0acdd07f903313470269f14bed7f8e1f",
           "reported_status": "COMPLETE_RECONCILIATION_WITH_PENDING_FORMAL_STAGES"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
+          "exists": true,
+          "bytes": 3246,
+          "sha256": "ef5a758f93eef7ae77b04583cbc10982858f7595a43e364cadf6bb5b79df926e",
+          "reported_status": "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE"
         }
       ],
       "facts": {
@@ -365,9 +372,25 @@
           "nearest": "SEALED_EXISTING_VAL_BASELINE",
           "dpmeans": "WAITING_FEATURES"
         },
+        "covtrack_native_val_recheck_status": "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE",
+        "covtrack_native_hota_percent": 15.402,
+        "covtrack_native_assa_percent": 44.535,
+        "covtrack_native_detre_percent": 54.418,
+        "covtrack_native_novel_observability": {
+          "numerator": 189,
+          "denominator": 819,
+          "value": 0.23076923076923078
+        },
+        "covtrack_native_persistent_observability": {
+          "numerator": 84,
+          "denominator": 527,
+          "value": 0.15939278937381404
+        },
+        "covtrack_native_teta_reference_status": "NATIVE_TETA_REFERENCE_EVAL_FAILED",
+        "covtrack_native_recheck_is_frontend_acceptance": false,
         "formal_v2_status": "not complete; DP-means and full causal Goal evaluation remain open"
       },
-      "open_gate": "Existing Val numbers are sealed interim evidence, not end-to-end CVPR/Goal acceptance."
+      "open_gate": "The COVTrack-native Val category-free MOT/observability recheck is real sealed evidence, but TETA reference evaluation is pending and no frontend, OCD, predicted-track, or Goal acceptance is promoted."
     },
     {
       "id": "independent_final_and_goals",
@@ -454,6 +477,13 @@
       "bytes": 5410,
       "sha256": "bd9e9668959c555c9b9908f1bb189cba0acdd07f903313470269f14bed7f8e1f",
       "reported_status": "COMPLETE_RECONCILIATION_WITH_PENDING_FORMAL_STAGES"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
+      "exists": true,
+      "bytes": 3246,
+      "sha256": "ef5a758f93eef7ae77b04583cbc10982858f7595a43e364cadf6bb5b79df926e",
+      "reported_status": "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE"
     }
   ]
 }

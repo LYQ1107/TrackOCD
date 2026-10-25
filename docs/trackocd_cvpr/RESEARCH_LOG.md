@@ -10620,3 +10620,23 @@ no private GT/cache/weights opened for this check):
   no data, weight, stream, label, TAO Test asset, or external process was
   touched.  This closes lineage preservation only; all scientific acceptance
   gates and Goal A/B/C remain open.
+
+## COVTrack-native TAO Val category-free metrics recheck (2026-10-26 UTC)
+
+- Rebuilt the TrackEval-compatible Val-only GT adapter from the canonical
+  `validation.json`, mapping every scored object to the class-agnostic category
+  `1`. The adapter covers 988 videos, 36,375 images, 113,112 annotations, and
+  5,485 tracks; it does not read TAO Test or use GT in the prediction stream.
+- Rechecked the sealed COVTrack-native Val stream with one CPU process under
+  the shared TrackEval TAO-OW contract. The real category-free values are:
+  HOTA `15.402`, AssA `44.535`, DetA `5.582`, DetPr `5.772`, DetRe `54.418`,
+  AssPr `73.595`, AssRe `48.878`, LocA `76.647`, and OWTA `48.199` percent.
+  Novel-track observability is `189/819 = 0.230769`; persistent observability
+  is `84/527 = 0.159393`.
+- The native TETA reference could not run because the historical
+  `/home/lwr/anaconda3/envs/ovtrack/bin/python` interpreter is absent. The
+  receipt therefore preserves the physical MOT metrics but explicitly does
+  not qualify the frontend, perform selection, start predicted-track training,
+  or claim OCD/Goal A/B/C success.
+- Compact receipt:
+  `outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json`.

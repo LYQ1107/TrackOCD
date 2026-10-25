@@ -135,6 +135,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
     val_path, val = load_json(
         repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json"
     )
+    covtrack_recheck_path, covtrack_recheck = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
+    )
 
     core_reviews = review.get("scoped_actual_core_reviews", [])
     extra_reviews = review.get("licensed_extra_inspection_reviews", [])
@@ -142,6 +146,14 @@ def build_audit(repo: Path) -> dict[str, Any]:
     geometry_totals = geometry.get("aggregate_geometry", {})
     pred_boundaries = pred_protocol.get("boundaries", {})
     root_boundaries = root.get("boundaries", {})
+    covtrack_recheck_metrics = covtrack_recheck.get("metric_audit", {})
+    covtrack_recheck_values = covtrack_recheck_metrics.get("tracking_values_percent", {})
+    covtrack_recheck_observability = covtrack_recheck_metrics.get(
+        "novel_track_observability", {}
+    )
+    covtrack_recheck_persistent = covtrack_recheck_metrics.get(
+        "persistent_observability", {}
+    )
 
     requirements: list[dict[str, Any]] = [
         {
@@ -334,6 +346,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "requirement": "Produce paper-grade causal online OCD/MOT metrics under the frozen protocol.",
             "evidence": [
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json", reported_status=val.get("status")),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
+                    reported_status=covtrack_recheck.get("status"),
+                ),
             ],
             "facts": {
                 "sealed_layers": {
@@ -341,9 +358,29 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "nearest": nested(val, "ocd_nearest", "status"),
                     "dpmeans": nested(val, "ocd_dpmeans", "status"),
                 },
+                "covtrack_native_val_recheck_status": covtrack_recheck.get("status"),
+                "covtrack_native_hota_percent": covtrack_recheck_values.get("HOTA"),
+                "covtrack_native_assa_percent": covtrack_recheck_values.get("AssA"),
+                "covtrack_native_detre_percent": covtrack_recheck_values.get("DetRe"),
+                "covtrack_native_novel_observability": {
+                    "numerator": covtrack_recheck_observability.get("numerator"),
+                    "denominator": covtrack_recheck_observability.get("denominator"),
+                    "value": covtrack_recheck_observability.get("value"),
+                },
+                "covtrack_native_persistent_observability": {
+                    "numerator": covtrack_recheck_persistent.get("numerator"),
+                    "denominator": covtrack_recheck_persistent.get("denominator"),
+                    "value": covtrack_recheck_persistent.get("value"),
+                },
+                "covtrack_native_teta_reference_status": covtrack_recheck_metrics.get(
+                    "teta_reference_status"
+                ),
+                "covtrack_native_recheck_is_frontend_acceptance": covtrack_recheck.get(
+                    "qualification_boundary", {}
+                ).get("frontend_registered_as_bakeoff_complete"),
                 "formal_v2_status": "not complete; DP-means and full causal Goal evaluation remain open",
             },
-            "open_gate": "Existing Val numbers are sealed interim evidence, not end-to-end CVPR/Goal acceptance.",
+            "open_gate": "The COVTrack-native Val category-free MOT/observability recheck is real sealed evidence, but TETA reference evaluation is pending and no frontend, OCD, predicted-track, or Goal acceptance is promoted.",
         },
         {
             "id": "independent_final_and_goals",
@@ -412,6 +449,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/legacy_preservation_audit_20261026.json", reported_status=preservation.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json", reported_status=local_cache.get("status")),
             evidence(repo, "outputs/trackocd_cvpr/cvpr5/val_metric_truth_reaudit_20261025.json", reported_status=val.get("status")),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
+                reported_status=covtrack_recheck.get("status"),
+            ),
         ],
     }
     return audit

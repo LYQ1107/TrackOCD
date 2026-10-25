@@ -51,4 +51,28 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     )
     assert rows["lawful_strong_frontend"]["facts"]["formal_v2_missing_or_invalid_asset_count"] > 0
     assert rows["predicted_track_training"]["facts"]["policy_input_optimizer_steps"] == 0
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_val_recheck_status"
+    ] == "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE"
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_hota_percent"
+    ] == 15.402
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_assa_percent"
+    ] == 44.535
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_detre_percent"
+    ] == 54.418
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_novel_observability"
+    ] == {"numerator": 189, "denominator": 819, "value": 0.23076923076923078}
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_persistent_observability"
+    ] == {"numerator": 84, "denominator": 527, "value": 0.15939278937381404}
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_teta_reference_status"
+    ] == "NATIVE_TETA_REFERENCE_EVAL_FAILED"
+    assert rows["formal_causal_online_metrics"]["facts"][
+        "covtrack_native_recheck_is_frontend_acceptance"
+    ] is False
     assert rows["independent_final_and_goals"]["status"] == "OPEN_GOAL_A_B_C_PENDING"

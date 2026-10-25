@@ -1,0 +1,78 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack-native-val-metrics-recheck.v1",
+  "generated_utc": "2026-10-25T23:09:19.646851+00:00",
+  "status": "PASS_VAL_CATEGORY_FREE_METRICS_RECHECK_TETA_PENDING_NOT_FRONTEND_ACCEPTANCE",
+  "scope": {
+    "val_only": true,
+    "large_prediction_stream_reopened": false,
+    "data_or_weights_read": false,
+    "tao_test_read": false,
+    "model_selection_performed": false,
+    "training_started": false,
+    "external_processes_touched": false
+  },
+  "metric_audit": {
+    "path": "outputs/trackocd_v2_runtime/audit/frontend_covtrack_native_metrics_20261026_recheck.json",
+    "bytes": 225783,
+    "sha256": "75d85199a09c2f4e4927a0af1c596426733bb305a9d96f01787ef0b50213f7c8",
+    "run_id": "covtrack_native_val_recheck_20261026",
+    "native_stream": {
+      "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/native_evaluator_rows.jsonl",
+      "sha256": "be5d2a0275c82aefc106f1c6ab250a6ab0122697f39d7b9bb407f4ba0e6c4597",
+      "physical_stream_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+      "physical_stream_sha256": "70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9",
+      "conversion_counts": {
+        "rows": 1133872,
+        "physical_tracks": 369749,
+        "videos": 988
+      }
+    },
+    "tracking_status": "COMPLETE",
+    "tracking_values_percent": {
+      "HOTA": 15.402,
+      "AssA": 44.535,
+      "DetA": 5.5815,
+      "DetPr": 5.7719,
+      "DetRe": 54.418,
+      "AssPr": 73.595,
+      "AssRe": 48.878,
+      "LocA": 76.647,
+      "OWTA": 48.199
+    },
+    "novel_track_observability": {
+      "denominator": 819,
+      "numerator": 189,
+      "value": 0.23076923076923078
+    },
+    "persistent_observability": {
+      "denominator": 527,
+      "numerator": 84,
+      "value": 0.15939278937381404
+    },
+    "teta_reference_status": "NATIVE_TETA_REFERENCE_EVAL_FAILED",
+    "teta_failure_reason": "FileNotFoundError: /home/lwr/anaconda3/envs/ovtrack/bin/python",
+    "physical_metrics_preserved": true
+  },
+  "val_trackeval_gt": {
+    "audit_path": "outputs/trackocd_v2_runtime/audit/val_trackeval_gt.json",
+    "bytes": 924,
+    "sha256": "7cf2a748b4749197e49a442f650151445bd0cc5c9425ece57a6144218636793e",
+    "output": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/tao_val_trackeval/validation.json",
+    "output_sha256": "a65323a31b20286111b1136f9c6a2e479eebd488f4971b128cd6eee432d3bf03",
+    "counts": {
+      "annotations": 113112,
+      "images": 36375,
+      "tracks": 5485,
+      "videos": 988
+    }
+  },
+  "qualification_boundary": {
+    "category_free_metrics_are_real": true,
+    "teta_reference_complete": false,
+    "frontend_registered_as_bakeoff_complete": false,
+    "frontend_selection_performed": false,
+    "formal_predicted_cache_authorized": false,
+    "goal_a_b_c_accepted": false
+  },
+  "scientific_boundary": "This is a Val category-free MOT/observability recheck on the sealed COVTrack-native stream. TETA is reference-only and unavailable in the current environment; the result is not frontend selection, predicted-track training, formal OCD acceptance, or Goal A/B/C success."
+}

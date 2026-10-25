@@ -40,7 +40,7 @@ from src.trackocd_v2.protocol import assert_test_semantic_access_allowed  # noqa
 MANIFEST_ROOT = OUTPUT_TARGET / "manifests"
 GT_MANIFEST = MANIFEST_ROOT / "tao_val_gt_tracks.jsonl"
 GT_LABELS = MANIFEST_ROOT / "private_tao_val_gt_track_labels.jsonl"
-TRACK_EVAL_GT = ROOT / "third_party/TrackEval/data/gt/tao/tao_validation/validation.json"
+TRACK_EVAL_GT = OUTPUT_TARGET / "manifests/tao_val_trackeval/validation.json"
 TETA_ANNOTATION = ROOT / "data/raw/tao/annotations/validation.json"
 TEST_MANIFEST = MANIFEST_ROOT / "tao_test_gt_tracks.jsonl"
 TEST_LABELS = MANIFEST_ROOT / "private_tao_test_gt_track_labels.jsonl"
@@ -107,8 +107,11 @@ def _record_ovtr_teta_failure(
     run_root: Path,
     native_path: Path,
     split: str,
+    frontend: str = "OVTR-native",
+    frontend_role: str = OVTR_REFERENCE_ROLE,
+    status: str = OVTR_TETA_FAILURE_STATUS,
 ) -> dict[str, Any]:
-    """Turn a native TETA error into a non-blocking OVTR reference record."""
+    """Turn a native TETA error into a transparent reference-only record."""
 
     teta_root = run_root / "teta"
     output_json = teta_root / "teta_reference.json"
@@ -122,9 +125,9 @@ def _record_ovtr_teta_failure(
             raw_failure = None
     record = {
         "schema_version": "trackocd.v2.ovtr_teta_reference_failure.v1",
-        "status": OVTR_TETA_FAILURE_STATUS,
-        "frontend": "OVTR-native",
-        "frontend_role": OVTR_REFERENCE_ROLE,
+        "status": status,
+        "frontend": frontend,
+        "frontend_role": frontend_role,
         "reference_only": True,
         "error": f"{type(exc).__name__}: {exc}",
         "runtime": _teta_runtime_snapshot(),
@@ -678,6 +681,8 @@ def run(
     run_id: str | None = None,
     skip_trackeval: bool = False,
     split: str = "val",
+    audit_suffix: str = "",
+    allow_teta_reference_failure: bool = False,
 ) -> dict[str, Any]:
     if frontend_slug not in STAGE_NAMES:
         raise ValueError(f"unknown frontend slug: {frontend_slug}")
@@ -781,13 +786,20 @@ def run(
                 novel_ids=NOVEL_IDS,
             )
         except Exception as exc:
-            if frontend_slug != "ovtr":
+            if frontend_slug != "ovtr" and not allow_teta_reference_failure:
                 raise
             teta = _record_ovtr_teta_failure(
                 exc=exc,
                 run_root=run_root,
                 native_path=native_path,
                 split=split,
+                frontend=frontend,
+                frontend_role=route["frontend_role"],
+                status=(
+                    OVTR_TETA_FAILURE_STATUS
+                    if frontend_slug == "ovtr"
+                    else "NATIVE_TETA_REFERENCE_EVAL_FAILED"
+                ),
             )
     result = {
         "schema_version": "trackocd.v2.frontend_metrics.v1",
@@ -823,11 +835,12 @@ def run(
         "run_root": str(run_root.resolve()),
         "run_id": run_id,
         "skip_trackeval": bool(skip_trackeval),
+        "allow_teta_reference_failure": bool(allow_teta_reference_failure),
         "test_semantic_accessed": split == "test",
         "test_selection_or_tuning": False,
     }
-    audit_suffix = "" if split == "val" else "_test"
-    audit_path = out / "audit" / f"frontend_{frontend_slug}_metrics{audit_suffix}.json"
+    split_suffix = "" if split == "val" else "_test"
+    audit_path = out / "audit" / f"frontend_{frontend_slug}_metrics{split_suffix}{audit_suffix}.json"
     atomic_json(audit_path, result)
     return result
 
@@ -838,9 +851,22 @@ def main() -> int:
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--split", choices=("val", "test"), default="val")
     parser.add_argument("--skip-trackeval", action="store_true", help="only for bounded smoke/debug runs; does not produce complete metrics")
+    parser.add_argument("--audit-suffix", default="", help="version suffix for the metrics receipt, e.g. _20261026_recheck")
+    parser.add_argument(
+        "--allow-teta-reference-failure",
+        action="store_true",
+        help="retain category-free metrics with an explicit TETA reference failure; never promotes frontend qualification",
+    )
     args = parser.parse_args()
     try:
-        result = run(args.frontend, run_id=args.run_id, skip_trackeval=args.skip_trackeval, split=args.split)
+        result = run(
+            args.frontend,
+            run_id=args.run_id,
+            skip_trackeval=args.skip_trackeval,
+            split=args.split,
+            audit_suffix=args.audit_suffix,
+            allow_teta_reference_failure=args.allow_teta_reference_failure,
+        )
     except Exception as exc:
         out = ensure_output_layout()
         failure = {
@@ -852,8 +878,8 @@ def main() -> int:
             "error": f"{type(exc).__name__}: {exc}",
             "test_semantic_accessed": args.split == "test",
         }
-        audit_suffix = "" if args.split == "val" else "_test"
-        atomic_json(out / "audit" / f"frontend_{args.frontend}_metrics{audit_suffix}.json", failure)
+        split_suffix = "" if args.split == "val" else "_test"
+        atomic_json(out / "audit" / f"frontend_{args.frontend}_metrics{split_suffix}{args.audit_suffix}.json", failure)
         print(json.dumps(failure, indent=2, sort_keys=True))
         return 2
     print(json.dumps(result, indent=2, sort_keys=True))
