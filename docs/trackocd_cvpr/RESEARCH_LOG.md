@@ -9327,3 +9327,14 @@ no private GT/cache/weights opened for this check):
   Goal A/B/C acceptance. Receipt:
   `outputs/trackocd_cvpr/cvpr4/M_current_source_recovery2_matrix_audit_v1/result.json`
   (SHA256 `236fc7b605d0bfbaef6872a4daa0a66f18ad46853c9505ca38fe06a8fc390e6e`).
+
+## Targeted v2 and joint-RCM regression after evidence re-audit (2026-10-25 UTC)
+
+- The current scoped regression completed with `58 passed in 7.29 seconds`:
+  all `56` tests under `tests/trackocd_v2` plus the two registered joint-RCM
+  receipt/training contract tests. The repository-root pytest discovery was
+  intentionally not used as a result because it includes roughly `2,158`
+  historical nodes outside this recovery scope.
+- This test run used the existing A100 environment with `PYTHONPATH=.` only;
+  it did not access TAO Test, launch training, alter the NAS mount, or touch
+  external processes.
