@@ -10430,3 +10430,22 @@ no private GT/cache/weights opened for this check):
   paired continuity JSON files under
   `outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/`;
   the subset streams remain local-only.
+
+## Current lawful frontend asset recheck (2026-10-26 UTC)
+
+- A read-only inventory found the migrated COVTrack and MASA checkpoints, but
+  no local SimOWT or OVTR checkpoint under the current user tree. The
+  `trackocd-a100` environment exposes `torch`/`timm` but not `mmcv`,
+  `mmengine`, `mmdet`, `segment_anything`, or `transformers`; the isolated
+  `trackocd-masa-smoke` environment exposes `torch`, `mmcv`, `mmengine`, and
+  `mmdet`, but not `segment_anything` or `transformers`.
+- The existing bounded MASA Train smoke remains valid engineering evidence,
+  but its preregistration explicitly does not qualify a full frontend. A new
+  OVTR/SimOWT or full MASA transfer would require a separately verified source,
+  weights, runtime, storage budget, and frozen input protocol; none was
+  silently downloaded or started in this check.
+- The personal loop filesystem currently has only about `2.0 GB` free. No new
+  environment, checkpoint, full frontend cache, training run, Val/Test read,
+  or external-process intervention was performed. Formal predicted training
+  therefore remains closed pending a qualified lawful frontend and the NAS
+  formal-Val recovery.
