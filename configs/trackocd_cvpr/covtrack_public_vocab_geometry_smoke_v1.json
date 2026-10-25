@@ -1,0 +1,57 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack-public-vocabulary-geometry-smoke.v1",
+  "status": "FROZEN_PUBLIC_VOCABULARY_GEOMETRY_SMOKE_NO_TRAINING",
+  "purpose": "Test whether the fixed COVTrack validation-category subset is the coverage bottleneck on the same anonymous Train images; only the public COVTrack LVIS vocabulary scope changes.",
+  "hypothesis": "The existing dense Train frontend route sets only_validation_categories=true and therefore evaluates a 296-class validation subset; allowing the full public 1203-class LVIS prompt bank may improve category-agnostic spatial coverage without using TAO labels.",
+  "selection_rule": "The two smallest numeric video IDs in the already approved 407-video image plan, fixed before execution; no outcome-based selection.",
+  "video_ids": [
+    0,
+    1
+  ],
+  "baseline_contract": {
+    "config": "vendor/trackocd_external/covtrack_public/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+    "only_validation_categories": true,
+    "public_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
+    "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+    "prompt": "checkpoints/covtrack/detpro_prompt.pt"
+  },
+  "candidate_contract": {
+    "config": "vendor/trackocd_external/covtrack_public/configs/uncertainty-ovtrack-teta/ovtrack_r50_ctao_train.py",
+    "only_validation_categories": false,
+    "public_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt",
+    "checkpoint": "checkpoints/covtrack/ctao_public.pth",
+    "prompt": "checkpoints/covtrack/detpro_prompt.pt",
+    "mechanism": "remove only the validation-category slice; retain all other detector, tracker, score, frame, and checkpoint settings"
+  },
+  "input": {
+    "image_plan": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v12_images/private_exact_joint_proof_or_assignment.json",
+    "frame_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "anonymous_annotation": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/anonymous_train.json",
+    "input_audit": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_smoke_v1/input_audit.json",
+    "frame_alias": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_smoke_v1/val_frame_alias",
+    "public_frontend_vocabulary": "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_val/lvis_classes_v1.txt"
+  },
+  "execution": {
+    "runner": "scripts/trackocd_v2/run_covtrack_train_dense_smoke.py",
+    "candidate_flag": "--all-public-categories",
+    "run_id": "covtrack_public_vocab_geometry_smoke_v1",
+    "output_scope": "covtrack_public_vocab_geometry_smoke_v1",
+    "receipt_root": "outputs/trackocd_cvpr/cvpr2/covtrack_public_vocab_geometry_smoke_v1",
+    "fresh_single_gpu": true,
+    "max_concurrent_gpus": 1,
+    "ram_reserve_fraction": 0.25
+  },
+  "boundaries": {
+    "train_annotation_opened": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "tao_val_accessed": false,
+    "tao_test_accessed": false,
+    "training_started": false,
+    "formal_mot_or_ocd_metrics": false,
+    "model_selection": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "raw_native_payload_uploaded": false
+  },
+  "interpretation": "A paired anonymous Train frontend mechanism smoke only. Any geometry comparison is diagnostic; it cannot qualify a frontend, authorize predicted-track training, produce formal OCD/MOT metrics, or accept Goal A/B/C."
+}

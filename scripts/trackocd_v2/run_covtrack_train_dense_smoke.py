@@ -83,7 +83,7 @@ def _environment() -> dict[str, str]:
     return environment
 
 
-def run(*, gpu_index: int, run_id: str, frontend_slug: str = FRONTEND_SLUG, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE", track_category_consensus: bool = True) -> dict[str, Any]:
+def run(*, gpu_index: int, run_id: str, frontend_slug: str = FRONTEND_SLUG, train_annotation: Path = TRAIN_ANNOTATION, train_audit: Path = TRAIN_AUDIT, frame_alias: Path = TRAIN_FRAME_ALIAS, train_classes: Path = TRAIN_CLASSES, receipt_root: Path = CVPR_SMOKE_OUTPUT, output_scope: str = "train_dense_smoke_v1", expected_video_ids: list[int] | None = None, result_status: str = "COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE", track_category_consensus: bool = True, only_validation_categories: bool = True) -> dict[str, Any]:
     if frontend_slug not in FRONTENDS:
         raise ValueError(f"unsupported COVTrack frontend: {frontend_slug}")
     frontend_name = FRONTENDS[frontend_slug]["name"]
@@ -121,6 +121,7 @@ def run(*, gpu_index: int, run_id: str, frontend_slug: str = FRONTEND_SLUG, trai
         "data.test.classes=" + str(train_classes.resolve()),
         "model.tracker.confused_features=" + str(FRONTENDS[frontend_slug]["confused_features"]).lower(),
         "model.roi_head.prompt_path=" + str(PROMPT.resolve()),
+        "model.roi_head.only_validation_categories=" + ("True" if only_validation_categories else "False"),
         "data.samples_per_gpu=1",
         "data.workers_per_gpu=1",
         "data.persistent_workers=False",
@@ -236,6 +237,8 @@ def run(*, gpu_index: int, run_id: str, frontend_slug: str = FRONTEND_SLUG, trai
             "tao_test_accessed": False,
             "formal_metrics": False,
             "native_track_category_consensus": bool(track_category_consensus),
+            "only_validation_categories": bool(only_validation_categories),
+            "public_vocabulary_scope": "COVTrack public LVIS classes; no TAO label fields",
             "interpretation": (
                 "Frontend/input inference only; native COVTrack track-category consensus is disabled because "
                 "the train_predicted physical stream is category-free; no OCD/MOT metrics or frontend qualification claimed."
@@ -285,6 +288,7 @@ def main() -> int:
     parser.add_argument("--video-id-max", type=int, default=1)
     parser.add_argument("--use-audit-video-ids", action="store_true", help="use the committed input-audit video-ID list instead of an ordinal range")
     parser.add_argument("--disable-tcc", action="store_true", help="disable upstream track-category consensus for the anonymous category-free Train stream to reduce post-processing RAM")
+    parser.add_argument("--all-public-categories", action="store_true", help="use all COVTrack public LVIS classes instead of its fixed validation-category subset")
     parser.add_argument("--result-status", default="COMPLETE_ANONYMOUS_TRAIN_DENSE_FRONTEND_SMOKE")
     args = parser.parse_args()
     if args.use_audit_video_ids:
@@ -306,6 +310,7 @@ def main() -> int:
             expected_video_ids=expected_video_ids,
             result_status=args.result_status,
             track_category_consensus=not args.disable_tcc,
+            only_validation_categories=not args.all_public_categories,
         )
     except ResourceWait as exc:
         payload = {
