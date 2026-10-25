@@ -9473,13 +9473,20 @@ no private GT/cache/weights opened for this check):
   `0.1282291` conditional on an adjacent pair being matched. `1,250` GT tracks
   had at least one adjacent matched pair; `703` had a switch and `1,140` had a
   same-ID pair (these track counts can overlap).
+- The gap buckets do not make the switch signal disappear: at the dominant
+  source gaps, switches were `979/8,562` at gap `30`, `145/1,224` at gap `25`,
+  `80/531` at gap `24`, and `128/883` at gap `60`. At the same time, the
+  dominant gap-30 bucket had `23,759/32,321` pairs missing one or both matches,
+  so coverage/localization remains the larger limitation on the available
+  temporal evidence.
 - This corrects the prior interpretation: ID fragmentation is present among
   matched sampled observations, but the low overall geometry precision/recall
   and incomplete frame coverage remain co-occurring failure modes. The result
   does not by itself justify a stitching repair, frontend qualification,
   OCD/MOT score, model selection, or Goal A/B/C acceptance.
 - Receipt:
-  `outputs/trackocd_cvpr/cvpr2/covtrack_train_temporal_continuity_audit_v2/result.json`.
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_temporal_continuity_audit_v2/result.json`
+  (SHA256 `4416137edfaf64015036ef6b1a30631111a451f9748884f81fc37dbb72833083`).
   The audit remained category-free, read no pixels/features/Val/Test/semantic
   fields, and did not persist a prediction-to-GT mapping. A focused regression
   for the sampled-order definition passed `1/1`.

@@ -17,6 +17,159 @@
     "val_labels_read": false
   },
   "counts": {
+    "adjacent_pair_outcomes_by_source_gap_top20": [
+      {
+        "both_matched": 8562,
+        "gap": 30,
+        "missing_match": 23759,
+        "pred_id_switch": 979,
+        "same_pred_id": 7583,
+        "total": 32321
+      },
+      {
+        "both_matched": 1224,
+        "gap": 25,
+        "missing_match": 3901,
+        "pred_id_switch": 145,
+        "same_pred_id": 1079,
+        "total": 5125
+      },
+      {
+        "both_matched": 531,
+        "gap": 24,
+        "missing_match": 1504,
+        "pred_id_switch": 80,
+        "same_pred_id": 451,
+        "total": 2035
+      },
+      {
+        "both_matched": 883,
+        "gap": 60,
+        "missing_match": 713,
+        "pred_id_switch": 128,
+        "same_pred_id": 755,
+        "total": 1596
+      },
+      {
+        "both_matched": 231,
+        "gap": 15,
+        "missing_match": 201,
+        "pred_id_switch": 18,
+        "same_pred_id": 213,
+        "total": 432
+      },
+      {
+        "both_matched": 87,
+        "gap": 28,
+        "missing_match": 316,
+        "pred_id_switch": 16,
+        "same_pred_id": 71,
+        "total": 403
+      },
+      {
+        "both_matched": 35,
+        "gap": 90,
+        "missing_match": 160,
+        "pred_id_switch": 35,
+        "total": 195
+      },
+      {
+        "both_matched": 70,
+        "gap": 29,
+        "missing_match": 86,
+        "pred_id_switch": 9,
+        "same_pred_id": 61,
+        "total": 156
+      },
+      {
+        "both_matched": 39,
+        "gap": 26,
+        "missing_match": 116,
+        "pred_id_switch": 2,
+        "same_pred_id": 37,
+        "total": 155
+      },
+      {
+        "both_matched": 22,
+        "gap": 120,
+        "missing_match": 123,
+        "pred_id_switch": 22,
+        "total": 145
+      },
+      {
+        "both_matched": 9,
+        "gap": 8,
+        "missing_match": 97,
+        "pred_id_switch": 2,
+        "same_pred_id": 7,
+        "total": 106
+      },
+      {
+        "both_matched": 10,
+        "gap": 150,
+        "missing_match": 69,
+        "pred_id_switch": 10,
+        "total": 79
+      },
+      {
+        "both_matched": 4,
+        "gap": 50,
+        "missing_match": 54,
+        "pred_id_switch": 3,
+        "same_pred_id": 1,
+        "total": 58
+      },
+      {
+        "both_matched": 8,
+        "gap": 240,
+        "missing_match": 36,
+        "pred_id_switch": 8,
+        "total": 44
+      },
+      {
+        "both_matched": 5,
+        "gap": 180,
+        "missing_match": 31,
+        "pred_id_switch": 5,
+        "total": 36
+      },
+      {
+        "both_matched": 4,
+        "gap": 300,
+        "missing_match": 31,
+        "pred_id_switch": 4,
+        "total": 35
+      },
+      {
+        "both_matched": 8,
+        "gap": 210,
+        "missing_match": 25,
+        "pred_id_switch": 8,
+        "total": 33
+      },
+      {
+        "both_matched": 4,
+        "gap": 48,
+        "missing_match": 28,
+        "pred_id_switch": 3,
+        "same_pred_id": 1,
+        "total": 32
+      },
+      {
+        "both_matched": 2,
+        "gap": 270,
+        "missing_match": 26,
+        "pred_id_switch": 2,
+        "total": 28
+      },
+      {
+        "both_matched": 1,
+        "gap": 330,
+        "missing_match": 18,
+        "pred_id_switch": 1,
+        "total": 19
+      }
+    ],
     "adjacent_pred_id_switch_pairs": 1509,
     "adjacent_same_pred_id_pairs": 10259,
     "gt_adjacent_annotation_pairs": 43228,
@@ -115,7 +268,7 @@
     "predicted_stream_observations": 13558940,
     "predicted_stream_rows": 1245952
   },
-  "generated_utc": "2026-10-25T17:56:50.068988+00:00",
+  "generated_utc": "2026-10-25T18:00:15.471207+00:00",
   "inputs": {
     "geometry_only_gt_index": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
     "geometry_only_gt_index_sha256": "7448fa95ab32082cde60a3da13b5c06b24da4155e6d4c7e70c5f795c1199e899",

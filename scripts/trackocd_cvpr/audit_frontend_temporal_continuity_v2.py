@@ -53,6 +53,7 @@ def _adjacent_continuity_summary(
     tracks_with_same_id_pair = 0
     tracks_with_switch_pair = 0
     frame_gap_histogram: Counter[int] = Counter()
+    gap_outcomes: dict[int, Counter[str]] = defaultdict(Counter)
 
     for gt_key, raw_frames in gt_frames_by_track.items():
         frames = sorted(raw_frames)
@@ -64,15 +65,20 @@ def _adjacent_continuity_summary(
             total_pairs += 1
             gap = right - left
             frame_gap_histogram[gap] += 1
+            gap_outcomes[gap]["total"] += 1
             if left not in matched or right not in matched:
+                gap_outcomes[gap]["missing_match"] += 1
                 continue
             pairs_with_both_matches += 1
+            gap_outcomes[gap]["both_matched"] += 1
             track_total += 1
             if matched[left] == matched[right]:
                 same_id_pairs += 1
+                gap_outcomes[gap]["same_pred_id"] += 1
                 track_same += 1
             else:
                 switch_pairs += 1
+                gap_outcomes[gap]["pred_id_switch"] += 1
                 track_switch += 1
         if track_total:
             tracks_with_any_adjacent_match += 1
@@ -96,6 +102,13 @@ def _adjacent_continuity_summary(
         "gt_annotation_source_frame_gap_histogram_top20": [
             {"gap": int(gap), "count": int(count)}
             for gap, count in frame_gap_histogram.most_common(20)
+        ],
+        "adjacent_pair_outcomes_by_source_gap_top20": [
+            {
+                "gap": int(gap),
+                **{name: int(count) for name, count in gap_outcomes[gap].items()},
+            }
+            for gap, _count in frame_gap_histogram.most_common(20)
         ],
     }
 
