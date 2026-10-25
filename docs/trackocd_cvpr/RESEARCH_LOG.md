@@ -9338,3 +9338,22 @@ no private GT/cache/weights opened for this check):
 - This test run used the existing A100 environment with `PYTHONPATH=.` only;
   it did not access TAO Test, launch training, alter the NAS mount, or touch
   external processes.
+
+## Full anonymous Train geometry re-audit (2026-10-25 UTC)
+
+- Re-ran the category-free geometry-only audit over the reconciled `13`
+  anonymous substreams covering all `407` approved Train videos. It passed with
+  `1,245,952` predicted physical tracks and `13,558,940` observations.
+- On the sealed geometry-only physical GT index and per-image class-free IoU
+  matching at `IoU >= 0.5`, observation precision was `0.0459070` and recall
+  was `0.3691529`. There were `1,667` GT tracks with a per-image match, but
+  `0` reliable temporal pairs and `0` reliable GT-track recalls under the
+  registered temporal diagnostic. This is evidence that the current anonymous
+  COVTrack frontend is not yet a qualified persistent-discovery frontend; it is
+  not an OCD/MOT metric or a Goal A/B/C result.
+- The audit read only the authorized geometry-only Train index and anonymous
+  physical streams. It did not read category/role/vocabulary fields, feature
+  arrays, native evaluator rows, Val/Test labels, or persist a prediction-to-GT
+  track mapping; `training_started=false` remains explicit. Receipt:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_train_geometry_audit_v1/result.json`
+  (SHA256 `a3a47398349e3843f3a39e1fa36b427eb7495b2c6290bffbe94fc986fff9b1a0`).
