@@ -1,0 +1,117 @@
+{
+  "boundaries": {
+    "formal_mot_or_ocd_metrics": false,
+    "formal_v2_cache": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "model_selection": false,
+    "native_evaluator_rows_read": false,
+    "optimization_steps": 0,
+    "raw_features_uploaded_to_github": false,
+    "test_accessed": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "config": "configs/trackocd_cvpr/predicted_train_policy_feature_pilot_v1.json",
+  "config_sha256": "46cd1835c81d3700226730e6ed6f1ec114c7762fa94245b1511f776e47e0f425",
+  "encoder": {
+    "checkpoint": "checkpoints/dinov2_vitb14_pretrain.pth",
+    "checkpoint_hash_verified": true,
+    "checkpoint_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "common_config": "configs/trackocd_core/common_features.json",
+    "common_config_sha256": "35dfcb3a2b9b34d38926c24ccb73853c8ec7aba03e005aa8a11cb3fed04134d5",
+    "constructor": "dinov2.hub.backbones.dinov2_vitb14(pretrained=False)",
+    "crop_context_fraction_per_side": 0.1,
+    "dimension": 768,
+    "frozen": true,
+    "inference_precision": "float32; TF32 disabled",
+    "local_repository": "vendor/trackocd_core/dinov2_7764ea0",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "output": "L2-normalized x_norm_clstoken",
+    "repository_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "repository_commit_verified": true,
+    "resize": [
+      518,
+      518
+    ],
+    "storage_precision": "float16",
+    "training_mode": false
+  },
+  "features": {
+    "arrays": [
+      "visual",
+      "geometry_normalized_xyxy",
+      "quality",
+      "frame_ids",
+      "track_offsets",
+      "prefix_features"
+    ],
+    "index_bytes": 813213,
+    "index_local_path": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/track_index.jsonl",
+    "index_sha256": "15243e01df8cc134d1717fab0532c9d347eb91d4f532fe7efb9088ff2b029403",
+    "observations": 25372,
+    "payload_bytes": 46510541,
+    "payload_local_path": "outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/video_0072_prefix_features.npz",
+    "payload_sha256": "e92f5a5aec007ce6dc867702ee2d58ae22d5ff327567d4b3f353625ec01d1d42",
+    "payload_uploaded_to_github": false,
+    "prefixes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tracks": 2926
+  },
+  "fixed_selection": {
+    "expected_observations": 25372,
+    "expected_tracks": 2926,
+    "role": "policy_train_pseudo",
+    "role_assignment_sha256": "b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a",
+    "role_assignment_source": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json",
+    "rule": "Use the first frozen policy_train_pseudo video in ascending approved role order; do not select by score, length, coverage, category, GT, or output quality.",
+    "video_id": 72
+  },
+  "interpretation": "Bounded policy-input interface pilot only; no formal v2 cache, no MOT/OCD metric, no model-selection result, and no scientific claim.",
+  "recovery": {
+    "payload_forward_completed": true,
+    "reran_encoder": false,
+    "revalidated_source_and_payload": true,
+    "terminal_failure": "relative_config_path_in_receipt_serialization"
+  },
+  "recovery_script": "scripts/trackocd_cvpr/recover_policy_feature_pilot_receipt.py",
+  "recovery_script_sha256": "cddea8a87c8702e1fe49f01587c61dca29633e9a5c22077d8c58b17b21160172",
+  "resources": {
+    "batch_size": 32,
+    "device_visible": "2",
+    "disk_free_bytes_after": 2294145024,
+    "forward_batches": 793,
+    "peak_gpu_allocated_bytes": null,
+    "peak_gpu_reserved_bytes": null,
+    "peak_rss_bytes": null,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 852.7221396659988
+  },
+  "schema_version": "trackocd.cvpr.predicted-train-policy-feature-pilot-result.v1",
+  "script": "scripts/trackocd_cvpr/pilot_predicted_train_dino_features.py",
+  "script_sha256": "8a70242d46c17cb507f44d3e29758f597e91a1be6b834d93d5c2da284f60f7a9",
+  "source": {
+    "path": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+    "selected_observations": 25372,
+    "selected_tracks": 2926,
+    "sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c",
+    "size_bytes": 694095500,
+    "source_rows": 344028,
+    "source_videos": 102
+  },
+  "status": "PASS_FIXED_POLICY_VIDEO_DINO_FEATURE_PILOT_NO_TRAINING_RECOVERED_RECEIPT"
+}

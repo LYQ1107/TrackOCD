@@ -77,6 +77,41 @@ both frontends retain very low precision.  No training, feature-cache build,
 Val/Test access, semantic role/vocabulary read, model selection, or Goal A/B/C
 acceptance occurred.
 
+## 2026-10-26 — fixed policy predicted-feature interface pilot
+
+Before any predicted-track training expansion, a bounded input-only pilot was
+frozen for the first `policy_train_pseudo` video in the approved ascending
+role order: opaque video ID `72`.  The role binding was checked against
+`joint_known_protocol_v8_coverage_schema/private_exact_joint_proof_or_assignment.json`
+(SHA256 `b3c867f0b0166297ed0f816b4b052e6f611d0631cbe42146dd6c5386cfc5731a`)
+without exposing semantic targets to the model.  The anonymous COVTrack-native
+stream contributed all `2,926` physical tracks and `25,372` observations;
+selection was not based on score, length, coverage, GT, or output quality.
+
+The frozen DINOv2 ViT-B/14 encoder used the canonical local checkpoint and
+repository hashes, emitted 768-D L2-normalized descriptors, and constructed
+quality-weighted causal prefixes `1/2/4/8/16`.  The local payload is
+`outputs/trackocd_v2_runtime/features/cvpr_predicted_train_policy_feature_pilot_v1/video_0072/`
+(`video_0072_prefix_features.npz`: `46,510,541` bytes, SHA256
+`e92f5a5aec007ce6dc867702ee2d58ae22d5ff327567d4b3f353625ec01d1d42`; index:
+`813,213` bytes, SHA256
+`15243e01df8cc134d1717fab0532c9d347eb91d4f532fe7efb9088ff2b029403`).
+An independent all-track prefix recomputation passed with maximum absolute
+error `1.2186e-4` against the stored prefixes.
+
+The first worker completed all `793` forward batches and wrote the payload,
+but hit an engineering-only relative-config-path exception while serializing
+its receipt.  The path handling was repaired and a separate recovery script
+revalidated the source stream, payload arrays, track offsets, index lineage,
+finite values, and normalization without rerunning the encoder.  Receipt:
+`outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_v1/result.json`
+(SHA256 `ee84f0ff85f316912a5ef6c8aca2535a31e80f4dde3f8c87be448f8397ba2089`).
+The receipt records zero optimizer steps, zero training GPU-hours, no GT/role
+target or vocabulary read by the model, no Val/Test access, and no upload of
+the raw feature payload.  This is a legal predicted-input interface pilot,
+not a formal cache, frontend qualification, OCD/MOT metric, model-selection
+result, or Goal A/B/C acceptance.
+
 ## 2026-10-26 — five-video foreground-mass score-contract recheck
 
 The predeclared bounded follow-up completed on anonymous Train videos
