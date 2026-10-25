@@ -5,7 +5,7 @@
     "semantic_data_labels_read": false,
     "source_validation_index_counted_without_category_names": true
   },
-  "generated_utc": "2026-10-25T18:11:54.150369+00:00",
+  "generated_utc": "2026-10-25T18:14:08.038673+00:00",
   "inputs": {
     "source_sha256_by_name": {
       "bbox_head": "b970888266213a43ebd9a482466e1f9727847541fbe2078a023166a5b670edb6",
@@ -14,7 +14,8 @@
       "frontend_launcher": "34f36655da8a66733b81e1c457d6e7a3c9a7cb8233e80f4d1fd95d6872325c0c",
       "normalizer": "837c72dd4f5ff57347df4877ecae3f0920c70d4c7255c0f4c53863e7192d00b2",
       "roi_head": "a35cf3ff2a5470955eb2638d3b80891dc44f8e26aff98938a74544ded2b32708",
-      "tao_formatter": "2b02dba325182ea011792ea1b71bf0ad7e9af93332fe0edbb9589f99be849576"
+      "tao_formatter": "2b02dba325182ea011792ea1b71bf0ad7e9af93332fe0edbb9589f99be849576",
+      "tracker": "4f58f82cb7906b3e28c61b3ea9fe1ff217146d4eae5872a2507ec6e4d579e113"
     },
     "stream_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1"
   },
@@ -44,6 +45,9 @@
     "native_show_score_threshold": 0.0001,
     "normalizer_applies_only_lower_floor": true,
     "score_dimension_after_validation_slice": 297,
+    "tracker_default_distractor_cut": 0.5,
+    "tracker_init_score_gate": true,
+    "tracker_obj_score_gate": true,
     "uniform_score_reference": 0.003367003367003367,
     "upstream_image_softmax_under_ensemble": true,
     "upstream_text_softmax": true,
@@ -79,6 +83,28 @@
         3167,
         4547,
         5173
+      ],
+      "tracker_default_distractor_cut": [
+        305,
+        770,
+        1235,
+        1632
+      ],
+      "tracker_init_score_gate": [
+        135,
+        473,
+        938,
+        1422
+      ],
+      "tracker_obj_score_gate": [
+        222,
+        277,
+        677,
+        732,
+        1142,
+        1197,
+        1549,
+        1604
       ],
       "validation_only_route": [
         46

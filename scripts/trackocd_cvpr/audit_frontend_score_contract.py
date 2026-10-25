@@ -56,6 +56,7 @@ FORBIDDEN_FIELDS = {
 SOURCE_FILES = {
     "roi_head": ROOT / "vendor/trackocd_external/covtrack_public/ovtrack/models/roi_heads/ovtrack_roi_head.py",
     "bbox_head": ROOT / "vendor/trackocd_external/covtrack_public/ovtrack/models/roi_heads/bbox_heads/convfc_bbox_head.py",
+    "tracker": ROOT / "vendor/trackocd_external/covtrack_public/ovtrack/models/trackers/ovtracker.py",
     "tao_formatter": ROOT / "vendor/trackocd_external/covtrack_public/ovtrack/datasets/tao_dataset.py",
     "frontend_launcher": ROOT / "scripts/trackocd_v2/run_covtrack_native.py",
     "normalizer": ROOT / "scripts/trackocd_v2/normalize_frontend_output.py",
@@ -196,6 +197,7 @@ def audit(stream_root: Path, output_path: Path) -> dict[str, Any]:
     launcher_text = source_text["frontend_launcher"]
     normalizer_text = source_text["normalizer"]
     config_text = source_text["config"]
+    tracker_text = source_text["tracker"]
 
     fragments = {
         "roi_upstream_softmax": _require_fragment(
@@ -217,6 +219,19 @@ def audit(stream_root: Path, output_path: Path) -> dict[str, Any]:
             config_text, "only_validation_categories=True", "validation_only_route"
         ),
         "ensemble_route": _require_fragment(config_text, "ensemble=True", "ensemble_route"),
+        "tracker_obj_score_gate": _require_fragment(
+            tracker_text, "if bboxes[i, -1] < self.obj_score_thr:", "tracker_obj_score_gate"
+        ),
+        "tracker_init_score_gate": _require_fragment(
+            tracker_text,
+            "new_objs = (ids == -1) & (obj_scores > self.init_score_thr).cpu()",
+            "tracker_init_score_gate",
+        ),
+        "tracker_default_distractor_cut": _require_fragment(
+            tracker_text,
+            "object_score_thr=0.5",
+            "tracker_default_distractor_cut",
+        ),
         "background_append": _require_fragment(
             roi_text, "text_features = torch.cat(", "background_append"
         ),
@@ -271,6 +286,9 @@ def audit(stream_root: Path, output_path: Path) -> dict[str, Any]:
             "normalizer_applies_only_lower_floor": True,
             "native_show_score_threshold": 0.0001,
             "native_confused_features": True,
+            "tracker_obj_score_gate": True,
+            "tracker_init_score_gate": True,
+            "tracker_default_distractor_cut": 0.5,
             "verified_source_line_numbers": fragments,
         },
         "stream_quality": quality,

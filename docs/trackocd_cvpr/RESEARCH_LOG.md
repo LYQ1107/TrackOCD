@@ -9573,6 +9573,13 @@ no private GT/cache/weights opened for this check):
 - The TrackOCD normalizer does not apply a sigmoid or rescale this value; it
   only applies `max(float(score), 1e-6)`. The native launcher also keeps the
   registered `show_score_thr=0.0001` and `confused_features=True` settings.
+- The same exported column is then consumed by `OVTrackerUncertainty` as
+  `bboxes[:, -1]`: it gates matching and new-track initialization at
+  `0.0001`, while the tracker's default low-object distractor path uses
+  `object_score_thr=0.5`. This is direct source evidence that the class
+  probability is being used as an object/foreground score in the tracking
+  control path; it is a separate contract failure from the feature geometry
+  deficiencies measured on Train.
 - Streaming the existing anonymous Train physical streams confirmed the
   contract-level signature over all `13` substreams: `1,245,952` tracks and
   `13,558,940` observations, all finite and all in `[0,0.05)`, with
@@ -9588,5 +9595,5 @@ no private GT/cache/weights opened for this check):
   frontend, train, select a model, or persist a prediction-to-GT mapping.
   Receipt:
   `outputs/trackocd_cvpr/cvpr2/covtrack_train_score_contract_audit_v1/result.json`
-  (SHA256 `49d5e2b669d630b6d09ec909ec6b2e4aff027dafd457f0502e8b3e1acfdfae8a`).
+  (SHA256 `30252ba257c7aa652cbc1fc8496cc9bb04a126f6e89be2a5f957c337d39f6c69`).
   The focused source-contract regression passed `1/1`.

@@ -31,5 +31,8 @@ def test_source_contract_detects_upstream_and_final_score_normalization(tmp_path
     assert contract["final_bbox_head_softmax_on_already_normalized_score"] is True
     assert contract["final_non_background_score_is_class_probability"] is True
     assert contract["foreground_objectness_score_exported"] is False
+    assert contract["tracker_obj_score_gate"] is True
+    assert contract["tracker_init_score_gate"] is True
+    assert contract["tracker_default_distractor_cut"] == 0.5
     assert contract["score_dimension_after_validation_slice"] == 297
     assert result["stream_quality"]["observations"] == 2
