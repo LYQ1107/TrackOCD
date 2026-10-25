@@ -1,0 +1,69 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack-score-gate-reassociation-transfer.v1",
+  "status": "FROZEN_CATEGORY_FREE_SCORE_GATE_REASSOCIATION_TRANSFER_NO_TRAINING",
+  "purpose": "Bounded transfer audit of one fixed high-precision COVTrack score gate followed by the already fixed causal one-frame physical reassociation; not formal frontend qualification or training.",
+  "source": {
+    "split": "train_predicted",
+    "frontend": "COVTrack-native",
+    "stream_root": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+    "reconciliation": "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+    "reconciliation_sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+    "source_selection": "Read only the already completed anonymous physical streams; no frontend inference or duplicate full cache.",
+    "native_subset_outputs": {
+      "development_pseudo": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/development_native_subset.jsonl",
+      "policy_train_pseudo": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/policy_native_subset.jsonl"
+    },
+    "candidate_outputs": {
+      "development_pseudo": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/development_score005_reassoc.jsonl",
+      "policy_train_pseudo": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/policy_score005_reassoc.jsonl"
+    }
+  },
+  "fixed_roles": {
+    "development_pseudo": {
+      "video_ids": [0, 3, 11, 38, 146, 220, 221, 239],
+      "selection_rule": "Reuse the previously frozen first eight development_pseudo role IDs; no outcome or GT selection."
+    },
+    "policy_train_pseudo": {
+      "video_ids": [72, 275, 349, 371, 1524, 1831, 2330, 2686, 2977, 2987],
+      "selection_rule": "Reuse the previously frozen ten policy_train_pseudo role IDs; no outcome or GT selection."
+    }
+  },
+  "fixed_mechanism": {
+    "score_field": "quality",
+    "score_threshold": 0.005,
+    "score_threshold_rationale": "The already registered full-407 counterfactual cut in covtrack_score_gate_full_train_v1; no new threshold sweep.",
+    "reassociation_iou_threshold": 0.5,
+    "reassociation_max_gap_frames": 1,
+    "reassociation_rule": "At each source frame, one-to-one Hungarian IoU bridge from a current birth to at most one prior persistent state; no future observations.",
+    "candidate_order": "causal score gate first, then one-frame physical reassociation",
+    "semantic_or_feature_input": false
+  },
+  "evaluation": {
+    "geometry_only_gt": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "geometry_matching": "category-free per-image Hungarian at IoU >= 0.5",
+    "continuity": "adjacent sealed geometry-only GT observations with same candidate IDs",
+    "official_mot_or_ocd_metrics": false,
+    "frontend_qualification": false,
+    "model_selection": false,
+    "goal_a_b_c_acceptance": false
+  },
+  "boundaries": {
+    "train_annotation_opened": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "feature_arrays_read": false,
+    "training_started": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "raw_payload_uploaded": false,
+    "full_cache_automatic_start": false
+  },
+  "resources": {
+    "device": "CPU",
+    "max_concurrent_workers": 1,
+    "output_bytes_bound": 268435456,
+    "disk_free_reserve_bytes": 1073741824,
+    "ram_reserve_fraction": 0.25
+  }
+}
