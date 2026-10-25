@@ -29,7 +29,12 @@ from src.trackocd_v2.io import atomic_json, sha256_file  # noqa: E402
 from scripts.trackocd_v2.build_common_features import crop_box  # noqa: E402
 
 
-CONFIG = ROOT / "configs/trackocd_cvpr/predicted_train_feature_pilot_v1.json"
+CONFIG = Path(
+    os.environ.get(
+        "TRACKOCD_FEATURE_PILOT_CONFIG",
+        str(ROOT / "configs/trackocd_cvpr/predicted_train_feature_pilot_v1.json"),
+    )
+)
 PREFIXES = (1, 2, 4, 8, 16)
 FORBIDDEN_TOP_LEVEL_FIELDS = {
     "category_id",
@@ -253,8 +258,9 @@ def main() -> int:
     result_path = ROOT / cfg["result_path"]
     if output.exists() or result_path.exists():
         raise RuntimeError("pilot output/result already exists; refusing overwrite")
-    if os.environ.get("CUDA_VISIBLE_DEVICES") != "0":
-        raise RuntimeError("launch this pilot with CUDA_VISIBLE_DEVICES=0 only")
+    visible_devices = os.environ.get("CUDA_VISIBLE_DEVICES", "")
+    if not visible_devices or "," in visible_devices:
+        raise RuntimeError("launch this pilot with exactly one freshly selected CUDA_VISIBLE_DEVICES value")
     if shutil.disk_usage(ROOT).free < int(cfg["resources"]["disk_free_reserve_bytes"]) + int(cfg["resources"]["output_bytes_ceiling"]):
         raise RuntimeError("insufficient disk reserve for bounded pilot")
 
@@ -371,7 +377,8 @@ def main() -> int:
                 visual[begin:prefix_end], quality[begin:prefix_end]
             )
 
-    payload = output / "video_0003_prefix_features.npz"
+    video_id = int(cfg["fixed_selection"]["video_id"])
+    payload = output / f"video_{video_id:04d}_prefix_features.npz"
     temporary_payload = payload.with_name(f".{payload.name}.tmp.{os.getpid()}")
     with temporary_payload.open("wb") as handle:
         np.savez_compressed(
