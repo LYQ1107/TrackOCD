@@ -9252,3 +9252,26 @@ no private GT/cache/weights opened for this check):
   after manifest generation. Otherwise it performs the full audit as before;
   this prevents repeated SSHFS scans after a baseline-only crash without
   weakening cache admission.
+
+## Post-reboot formal Val recovery gate (2026-10-26 UTC)
+
+- The server rebooted at `2026-10-26 00:45` and removed the NAS SSHFS mount;
+  `/data3/liuyeqiang/nas/A100` is currently an ordinary empty local directory,
+  loopback `24557` is not listening, and the existing task-owned NAS
+  supervisor remains alive with no worker. A read-only probe through the
+  available proxy reaches `192.168.31.57:22` at TCP level but the NAS resets
+  the SSH connection during banner exchange, so no remote content was read or
+  modified.
+- The formal Val gate was reattached as a live task-owned watcher. It is
+  currently `CACHE_STATE=MISSING`; once the already-authorized `723/723`
+  formal manifest becomes visible it will reuse the sealed nearest result and
+  replay only the unsealed `dpmeans p1` prefix, preserving prior temporary
+  files as evidence. The Val report watcher is also live with
+  `nearest=true, dpmeans=false`.
+- The local continuation directory is explicitly not admitted: its manifest
+  is `RUNNING` at `384/723`, so it cannot substitute for the complete NAS
+  cache. No formal `dpmeans` metric, Val report, OCD/MOT metric, Test access,
+  or external-process intervention occurred in this recovery turn.
+- With the repository root exported in `PYTHONPATH`, the complete v2 plus
+  joint-RCM regression suite passed (`57 passed`); the initial collection
+  failure without that environment detail was invocation-only.
