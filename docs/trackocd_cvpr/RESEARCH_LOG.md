@@ -9241,8 +9241,14 @@ no private GT/cache/weights opened for this check):
   read mode. The default local mmap behavior and all causal order, feature,
   threshold, and evaluator contracts remain unchanged.
 - Verification: the targeted cache/contract tests passed (`5 passed`), the
-  complete v2 suite passed (`55 passed in 137.44s`), and a Val-only copy-mode
+  complete v2 suite passed (`56 passed` after the recovery-gate guard), and a Val-only copy-mode
   smoke read `26` rows spanning the failure boundary successfully with
   `test_semantic_accessed=false`. No Test content was read. A formal dpmeans
   retry is deliberately not launched while the 25%-RAM reserve is violated;
   the partial JSONL and dead launch marker remain recovery evidence.
+- The recovery supervisor now reuses an earlier `PASS_COMPLETE` payload audit
+  only when it exactly matches the current COMPLETE manifest path/cache root,
+  source hash, `723/723` coverage, Val split, zero errors, and receipt time
+  after manifest generation. Otherwise it performs the full audit as before;
+  this prevents repeated SSHFS scans after a baseline-only crash without
+  weakening cache admission.

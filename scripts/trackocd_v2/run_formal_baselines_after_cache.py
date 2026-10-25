@@ -68,8 +68,49 @@ def _event(handle, event: str, **fields: Any) -> None:
     print(json.dumps(payload, sort_keys=True), flush=True)
 
 
+def _reusable_audit(manifest: Path, audit_output: Path) -> dict[str, Any] | None:
+    """Return a prior PASS receipt only when it is bound to this cache."""
+
+    try:
+        receipt = json.loads(audit_output.read_text(encoding="utf-8"))
+        current = json.loads(manifest.read_text(encoding="utf-8"))
+        total_tracks = int(current.get("total_tracks", 0))
+        shard_tracks = int(current.get("shard_tracks", 0))
+        required = (total_tracks + shard_tracks - 1) // shard_tracks if shard_tracks else 0
+        completed = len(current.get("completed_shards") or [])
+        if (
+            receipt.get("status") != "PASS_COMPLETE"
+            or receipt.get("formal_cache_complete") is not True
+            or receipt.get("manifest") != str(manifest.resolve())
+            or receipt.get("cache_root") != str(Path(str(current.get("cache_root", ""))).resolve())
+            or receipt.get("frontend") != "COVTrack-native"
+            or receipt.get("split") != "val"
+            or receipt.get("input_stream_sha256") != SOURCE_SHA256
+            or int(receipt.get("completed_shards", -1)) != required
+            or int(receipt.get("required_shards", -1)) != required
+            or completed != required
+            or current.get("status") != "COMPLETE"
+            or (current.get("input") or {}).get("sha256") != SOURCE_SHA256
+            or int(receipt.get("error_count", -1)) != 0
+            or int(receipt.get("invalid_box_count", -1)) != 0
+            or receipt.get("test_content_opened") is not False
+        ):
+            return None
+        receipt_time = dt.datetime.fromisoformat(str(receipt["generated_utc"]).replace("Z", "+00:00"))
+        manifest_time = dt.datetime.fromisoformat(str(current["generated_utc"]).replace("Z", "+00:00"))
+        if receipt_time < manifest_time:
+            return None
+    except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
+        return None
+    return receipt
+
+
 def _run_audit(manifest: Path, output: Path, log_handle) -> dict[str, Any]:
     audit_output = output / "audit/formal_cache_payload_audit_20261022.json"
+    reusable = _reusable_audit(manifest, audit_output)
+    if reusable is not None:
+        _event(log_handle, "PAYLOAD_AUDIT_REUSED", audit=str(audit_output.resolve()), test_semantic_accessed=False)
+        return reusable
     command = [
         sys.executable,
         str((ROOT / "scripts/trackocd_v2/audit_sharded_cache_payload.py").resolve()),
