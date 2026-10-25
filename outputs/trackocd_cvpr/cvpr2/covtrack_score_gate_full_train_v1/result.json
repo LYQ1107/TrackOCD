@@ -30,7 +30,7 @@
     "predicted_stream_rows": 1245952,
     "videos": 407
   },
-  "generated_utc": "2026-10-25T19:48:53.890892+00:00",
+  "generated_utc": "2026-10-25T19:53:08.477506+00:00",
   "inputs": {
     "full_cache_reconciliation": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
     "full_cache_reconciliation_sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
@@ -186,6 +186,9 @@
       "gt_track_recall_with_per_image_match": 0.7502250225022502,
       "gt_tracks": 2222,
       "gt_tracks_with_per_image_match": 1667,
+      "gt_tracks_with_temporal_pair": 1250,
+      "gt_tracks_with_temporal_same_id": 1140,
+      "gt_tracks_with_temporal_switch": 703,
       "observation_precision_on_retained_annotated_images": 0.04590700397835164,
       "observation_recall_against_annotated_gt": 0.36915291529152916,
       "per_image_matched_observations": 16778,
@@ -195,6 +198,10 @@
       "retained_observations_0.0001": 13558940,
       "stream_observations": 13558940,
       "stream_rows": 1245952,
+      "temporal_pairs_both_matched": 11768,
+      "temporal_same_id_pairs": 10259,
+      "temporal_switch_pairs": 1509,
+      "temporal_switch_rate_conditional": 0.1282290958531611,
       "videos": 407
     },
     "0.003367003367003367": {
@@ -202,6 +209,9 @@
       "gt_track_recall_with_per_image_match": 0.7502250225022502,
       "gt_tracks": 2222,
       "gt_tracks_with_per_image_match": 1667,
+      "gt_tracks_with_temporal_pair": 1250,
+      "gt_tracks_with_temporal_same_id": 1140,
+      "gt_tracks_with_temporal_switch": 703,
       "observation_precision_on_retained_annotated_images": 0.04590700397835164,
       "observation_recall_against_annotated_gt": 0.36915291529152916,
       "per_image_matched_observations": 16778,
@@ -211,6 +221,10 @@
       "retained_observations_0.003367003367003367": 13558940,
       "stream_observations": 13558940,
       "stream_rows": 1245952,
+      "temporal_pairs_both_matched": 11768,
+      "temporal_same_id_pairs": 10259,
+      "temporal_switch_pairs": 1509,
+      "temporal_switch_rate_conditional": 0.1282290958531611,
       "videos": 407
     },
     "0.005": {
@@ -218,6 +232,9 @@
       "gt_track_recall_with_per_image_match": 0.23942394239423942,
       "gt_tracks": 2222,
       "gt_tracks_with_per_image_match": 532,
+      "gt_tracks_with_temporal_pair": 268,
+      "gt_tracks_with_temporal_same_id": 263,
+      "gt_tracks_with_temporal_switch": 29,
       "observation_precision_on_retained_annotated_images": 0.1985317088409872,
       "observation_recall_against_annotated_gt": 0.05592959295929593,
       "per_image_matched_observations": 2542,
@@ -227,6 +244,10 @@
       "retained_observations_0.005": 459668,
       "stream_observations": 13558940,
       "stream_rows": 1245952,
+      "temporal_pairs_both_matched": 1410,
+      "temporal_same_id_pairs": 1367,
+      "temporal_switch_pairs": 43,
+      "temporal_switch_rate_conditional": 0.03049645390070922,
       "videos": 407
     },
     "0.01": {
@@ -234,6 +255,9 @@
       "gt_track_recall_with_per_image_match": 0.0,
       "gt_tracks": 2222,
       "gt_tracks_with_per_image_match": 0,
+      "gt_tracks_with_temporal_pair": 0,
+      "gt_tracks_with_temporal_same_id": 0,
+      "gt_tracks_with_temporal_switch": 0,
       "observation_precision_on_retained_annotated_images": 0.0,
       "observation_recall_against_annotated_gt": 0.0,
       "predicted_tracks": 0,
@@ -242,6 +266,10 @@
       "retained_observations_0.01": 0,
       "stream_observations": 13558940,
       "stream_rows": 1245952,
+      "temporal_pairs_both_matched": 0,
+      "temporal_same_id_pairs": 0,
+      "temporal_switch_pairs": 0,
+      "temporal_switch_rate_conditional": 0.0,
       "videos": 407
     },
     "0.5": {
@@ -249,6 +277,9 @@
       "gt_track_recall_with_per_image_match": 0.0,
       "gt_tracks": 2222,
       "gt_tracks_with_per_image_match": 0,
+      "gt_tracks_with_temporal_pair": 0,
+      "gt_tracks_with_temporal_same_id": 0,
+      "gt_tracks_with_temporal_switch": 0,
       "observation_precision_on_retained_annotated_images": 0.0,
       "observation_recall_against_annotated_gt": 0.0,
       "predicted_tracks": 0,
@@ -257,6 +288,10 @@
       "retained_observations_0.5": 0,
       "stream_observations": 13558940,
       "stream_rows": 1245952,
+      "temporal_pairs_both_matched": 0,
+      "temporal_same_id_pairs": 0,
+      "temporal_switch_pairs": 0,
+      "temporal_switch_rate_conditional": 0.0,
       "videos": 407
     }
   }

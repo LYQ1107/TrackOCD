@@ -37,6 +37,15 @@ fresh native run, formal OCD/MOT metric, model-selection result, frontend
 qualification, or Goal A/B/C acceptance.  Boundaries remained closed for
 training, features, Val/Test labels, semantic roles, and Novel vocabulary.
 
+The same temporary matching pass also counted sampled-order persistence.  At
+the `0.0001`/`1/297` gates it reproduced `11,768` adjacent GT pairs with both
+matches, of which `1,509` switched predicted IDs (conditional switch rate
+`0.1282291`).  The `0.005` cut reduced this to `1,410` pairs and `43` switches
+(rate `0.0304965`), but it retained only `532/2,222` GT tracks and `5.59%`
+of GT observations.  The lower switch rate is therefore a coverage-selection
+effect, not evidence of a better persistent tracker; no score gate is promoted
+to the causal online method.
+
 ## 2026-10-26 — five-video foreground-mass score-contract recheck
 
 The predeclared bounded follow-up completed on anonymous Train videos

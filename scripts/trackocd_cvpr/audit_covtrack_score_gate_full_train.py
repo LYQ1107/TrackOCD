@@ -211,12 +211,14 @@ def _evaluate_threshold(
     states: list[dict[str, Any]],
     gt_by_frame: dict[int, dict[int, list[tuple[str, list[float]]]]],
     gt_track_counts: dict[int, dict[str, int]],
+    gt_track_frames: dict[tuple[int, str], list[int]],
     threshold: float,
 ) -> dict[str, int | float]:
     totals: Counter[str] = Counter()
     retained_track_keys: set[tuple[int, str]] = set()
     matched_pred: set[tuple[int, str]] = set()
     matched_gt: set[tuple[int, str]] = set()
+    matched_by_gt: dict[tuple[int, str], list[tuple[int, tuple[int, str]]]] = defaultdict(list)
     for state in states:
         for track_key, max_score in state["tracks"].items():
             if max_score >= threshold:
@@ -250,8 +252,11 @@ def _evaluate_threshold(
                 if weights[gt_index, pred_index] <= 0:
                     continue
                 totals["per_image_matched_observations"] += 1
-                matched_pred.add(pred_keys[int(pred_index)])
-                matched_gt.add(gt_keys[int(gt_index)])
+                pred_key = pred_keys[int(pred_index)]
+                gt_key = gt_keys[int(gt_index)]
+                matched_pred.add(pred_key)
+                matched_gt.add(gt_key)
+                matched_by_gt[gt_key].append((frame_index, pred_key))
     totals["videos"] = sum(len(state["videos"]) for state in states)
     totals["predicted_tracks"] = len(retained_track_keys)
     totals["gt_tracks"] = sum(len(gt_track_counts[video_id]) for state in states for video_id in state["videos"])
@@ -260,6 +265,32 @@ def _evaluate_threshold(
     )
     totals["predicted_tracks_with_per_image_match"] = len(matched_pred)
     totals["gt_tracks_with_per_image_match"] = len(matched_gt)
+    temporal_pairs = temporal_same_id = temporal_switches = 0
+    temporal_gt_tracks = set()
+    temporal_switch_gt_tracks = set()
+    temporal_same_gt_tracks = set()
+    for gt_key, frame_indices in gt_track_frames.items():
+        matched_at_frame = {frame_index: pred_key for frame_index, pred_key in matched_by_gt.get(gt_key, [])}
+        for previous_frame, current_frame in zip(frame_indices, frame_indices[1:]):
+            previous_pred = matched_at_frame.get(previous_frame)
+            current_pred = matched_at_frame.get(current_frame)
+            if previous_pred is None or current_pred is None:
+                continue
+            temporal_pairs += 1
+            temporal_gt_tracks.add(gt_key)
+            if previous_pred == current_pred:
+                temporal_same_id += 1
+                temporal_same_gt_tracks.add(gt_key)
+            else:
+                temporal_switches += 1
+                temporal_switch_gt_tracks.add(gt_key)
+    totals["temporal_pairs_both_matched"] = temporal_pairs
+    totals["temporal_same_id_pairs"] = temporal_same_id
+    totals["temporal_switch_pairs"] = temporal_switches
+    totals["temporal_switch_rate_conditional"] = temporal_switches / max(temporal_pairs, 1)
+    totals["gt_tracks_with_temporal_pair"] = len(temporal_gt_tracks)
+    totals["gt_tracks_with_temporal_switch"] = len(temporal_switch_gt_tracks)
+    totals["gt_tracks_with_temporal_same_id"] = len(temporal_same_gt_tracks)
     totals["observation_precision_on_retained_annotated_images"] = totals["per_image_matched_observations"] / max(totals["retained_annotated_observations"], 1)
     totals["observation_recall_against_annotated_gt"] = totals["per_image_matched_observations"] / max(totals["gt_observations"], 1)
     totals["gt_track_recall_with_per_image_match"] = totals["gt_tracks_with_per_image_match"] / max(totals["gt_tracks"], 1)
@@ -273,6 +304,12 @@ def audit(config_path: Path, output_path: Path) -> dict[str, Any]:
     stream_root = ROOT / config["inputs"]["stream_root"]
     reconciliation_path = ROOT / config["inputs"]["reconciliation"]
     gt_by_frame, gt_track_counts = _load_geometry_gt(gt_path)
+    gt_track_frames: dict[tuple[int, str], list[int]] = defaultdict(list)
+    for video_id, frames in gt_by_frame.items():
+        for frame_index, rows in frames.items():
+            for track_id, _box in rows:
+                gt_track_frames[(video_id, track_id)].append(frame_index)
+    gt_track_frames = {key: sorted(values) for key, values in gt_track_frames.items()}
     paths = _stream_paths(stream_root)
     reconciliation = json.loads(reconciliation_path.read_text(encoding="utf-8"))
     if reconciliation.get("status") != "PASS_ALL_407_FIXED_ANONYMOUS_TRAIN_DENSE_SUBSHARDS":
@@ -308,7 +345,9 @@ def audit(config_path: Path, output_path: Path) -> dict[str, Any]:
 
     threshold_results = {}
     for threshold in thresholds:
-        threshold_results[_threshold_key(threshold)] = _evaluate_threshold(states, gt_by_frame, gt_track_counts, threshold)
+        threshold_results[_threshold_key(threshold)] = _evaluate_threshold(
+            states, gt_by_frame, gt_track_counts, gt_track_frames, threshold
+        )
 
     result = {
         "schema_version": "trackocd.cvpr.category-free-covtrack-score-gate-full-train.v1",
