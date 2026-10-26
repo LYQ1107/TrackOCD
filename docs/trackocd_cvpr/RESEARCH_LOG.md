@@ -11235,3 +11235,18 @@ no private GT/cache/weights opened for this check):
   `configs/trackocd_cvpr/covtrack_native_teta_recovery_v1.json`,
   `scripts/trackocd_cvpr/run_covtrack_native_teta_recovery.py`, and
   `tests/trackocd_cvpr/test_covtrack_native_teta_recovery.py`.
+
+## Current acceptance re-audit and regression (2026-10-26 UTC)
+
+- Re-ran the receipt-only CVPR acceptance audit after the TETA recovery and
+  safe intermediate cleanup.  The audit is anchored to the current branch
+  head `294c99f42dc75503393b67bbee3aa4dadd993e2d` and remains
+  `INCOMPLETE_OPEN_REQUIREMENTS`; no partial result was promoted to Goal
+  acceptance.  The six open gates are lawful strong frontend, qualified
+  predicted-track training, candidate-aware decision, self-correcting
+  persistent memory, formal causal online metrics, and independent final /
+  Goal A/B/C evaluation.
+- The targeted regression set passed **11 tests** covering mechanism coverage,
+  family-peak R/C/M controls, score-gate gap-aware reassociation, TETA
+  recovery, and the acceptance-audit mapping.  This is verification of the
+  recorded evidence, not a new scientific metric or model-selection event.
