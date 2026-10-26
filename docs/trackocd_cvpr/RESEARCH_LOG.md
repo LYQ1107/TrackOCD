@@ -11678,3 +11678,21 @@ no private GT/cache/weights opened for this check):
   provenance.  They are intentionally not collapsed into one formal number;
   reconciliation remains open.  No Test asset or external process was
   touched while inventorying these compact receipts.
+
+## Val metric identity and contract recheck (2026-10-26 UTC)
+
+- Rechecked the two positive category-free Val MOT receipts and their
+  identity fields.  The historical receipt (`HOTA 15.412`, `OWTA 48.228`)
+  and the current local recheck (`HOTA 15.402`, `OWTA 48.199`) have different
+  physical-stream and evaluator-row SHA256 values; therefore they are
+  different sealed streams, not rounding variants.  Neither value was
+  silently substituted for the other or promoted as a unified benchmark.
+- The current local stream also has a completed reference-only TETA recovery:
+  combined/known/novel TETA50 `31.967/37.391942/29.752611`.  Its receipt
+  explicitly records Val-only scope, no training, no model selection, no
+  TAO Test access, and no frontend or Goal-A/B/C acceptance.
+- The corresponding CPU fail-closed boundary suite passed **10/10**:
+  frontend identity reconciliation, CVPR acceptance boundaries, versioned
+  reliability-memory invariants, and candidate-aware lifecycle smoke.  This
+  confirms that positive Val evidence is retained while the six open
+  scientific gates remain open; it is not a new OCD/MOT rerun.
