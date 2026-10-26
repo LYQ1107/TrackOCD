@@ -123,6 +123,17 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["candidate_aware_decision"]["facts"]["family_peak_m_full_clock_positive_other_video_groups"] == 28
     assert rows["candidate_aware_decision"]["facts"]["family_peak_m_full_clock_parameters_changed"] is True
     assert rows["candidate_aware_decision"]["facts"]["family_peak_m_full_clock_predicted_track_training"] is False
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_status"] == (
+        "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
+    )
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_changed_frame_count"] == 38
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_policy_effect_observed"] is True
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_online_optimizer_steps"] == 2
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_frozen_memory_versions"] == 296
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_online_memory_versions"] == 311
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_action_counts_equal"] is True
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_arm_selected"] is False
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_m_effect_predicted_track_training"] is False
     assert rows["predicted_track_training"]["facts"]["predicted_training_readiness_status"] == (
         "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
     )
@@ -233,6 +244,33 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     ] is True
     assert rows["self_correcting_persistent_memory"]["facts"][
         "family_peak_m_full_clock_predicted_track_training"
+    ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_status"
+    ] == "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_changed_frame_count"
+    ] == 38
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_policy_effect_observed"
+    ] is True
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_online_optimizer_steps"
+    ] == 2
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_frozen_memory_versions"
+    ] == 296
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_online_memory_versions"
+    ] == 311
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_action_counts_equal"
+    ] is True
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_arm_selected"
+    ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_m_effect_predicted_track_training"
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][
         "joint_rcm_complete_clock_consumed"

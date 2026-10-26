@@ -1,0 +1,39 @@
+{
+  "schema_version": "trackocd.cvpr.candidate-family-peak-m-online-effect-control.v1",
+  "status": "FROZEN_POLICY_TRAIN_FAMILY_PEAK_M_ONLINE_EFFECT_CONTROL_NO_PRED_OR_GOAL_ACCEPTANCE",
+  "purpose": "Pair a frozen-M arm with a fixed two-step online-M arm over the complete registered metadata clocks to measure causal policy and version-history effects of M updates.",
+  "joint_rcm_config": "configs/trackocd_cvpr/joint_rcm_policy_pilot_v1.json",
+  "joint_rcm_config_sha256": "8e5d2db56af95a8ed3e1eeae122c21423e8a50255f897cc4ca0b448103274abe",
+  "mechanism": "family_peak_standardization",
+  "pilot_policy_relative_ordinals": [0, 1],
+  "frames_per_video": null,
+  "seed": 1027,
+  "online_optimizer_steps": 2,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "paired_arms": ["frozen_m", "online_m"],
+  "selection_rule": "Run both arms over the same two frozen policy-order videos and every metadata clock frame; initialize both arms with the same seed and update only the online arm at the first two eligible fixed-scope M opportunities, without selecting an arm or stopping on an outcome.",
+  "limits": {
+    "frozen_optimizer_steps": 0,
+    "online_optimizer_steps": 2,
+    "training_gpu_hours": 0,
+    "device": "CPU",
+    "workers": 1
+  },
+  "boundaries": {
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "category_or_vocabulary_in_numeric_forward": false,
+    "val_or_test_accessed": false,
+    "predicted_track_training": false,
+    "model_selection": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "weights_uploaded": false,
+    "external_processes_touched": false
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
+  "interpretation": "This is a fixed paired intervention diagnostic for whether online M updates alter a causal anonymous policy and its append-only version history on policy Train cache. It is not a self-correcting-memory acceptance, predicted-track training, an OCD/MOT metric, or Goal A/B/C acceptance."
+}

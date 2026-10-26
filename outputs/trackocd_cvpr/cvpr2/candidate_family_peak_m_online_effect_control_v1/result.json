@@ -1,0 +1,125 @@
+{
+  "arms": {
+    "frozen_m": {
+      "actions": {
+        "EXISTING": 125,
+        "NEW": 90
+      },
+      "events": 215,
+      "frames": 79,
+      "gradient_norms": [],
+      "losses": [],
+      "memory_lifecycle_counts": {
+        "Quarantined": 82,
+        "Tentative": 214
+      },
+      "memory_versions": 296,
+      "optimizer_steps": 0,
+      "parameter_digest_after": "30a93bd30f3ada4fb08b9c0abc080833fd546fef1d0059fffa4766ab7929c97c",
+      "parameter_digest_before": "30a93bd30f3ada4fb08b9c0abc080833fd546fef1d0059fffa4766ab7929c97c",
+      "parameters_changed": false,
+      "plan_reasons": {
+        "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 28,
+        "MASKED_SINGLETON_NO_OTHER_SUPPORT": 383
+      },
+      "positive_other_video_groups": 28,
+      "support_plans": 411,
+      "update_frames": []
+    },
+    "online_m": {
+      "actions": {
+        "EXISTING": 125,
+        "NEW": 90
+      },
+      "events": 215,
+      "frames": 79,
+      "gradient_norms": [
+        0.7985471487045288,
+        0.7702613472938538
+      ],
+      "losses": [
+        0.6931471824645996,
+        0.6908127665519714
+      ],
+      "memory_lifecycle_counts": {
+        "Quarantined": 82,
+        "Tentative": 229
+      },
+      "memory_versions": 311,
+      "optimizer_steps": 2,
+      "parameter_digest_after": "f38cf8dee7ce09984644842c1eb6be5c84c77f8defc1067e3e7ee8189c9d60b1",
+      "parameter_digest_before": "30a93bd30f3ada4fb08b9c0abc080833fd546fef1d0059fffa4766ab7929c97c",
+      "parameters_changed": true,
+      "plan_reasons": {
+        "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 28,
+        "MASKED_SINGLETON_NO_OTHER_SUPPORT": 383
+      },
+      "positive_other_video_groups": 28,
+      "support_plans": 411,
+      "update_frames": [
+        {
+          "epoch": 1,
+          "frame": 30
+        },
+        {
+          "epoch": 1,
+          "frame": 450
+        }
+      ]
+    }
+  },
+  "boundaries": {
+    "category_or_vocabulary_in_numeric_forward": false,
+    "external_processes_touched": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "model_selection": false,
+    "predicted_track_training": false,
+    "val_or_test_accessed": false,
+    "weights_uploaded": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_family_peak_m_online_effect_control_v1.json",
+    "sha256": "a582a01f49760f19cf89fae1a795e389c13333453139434ee0de6b14fddd8c53"
+  },
+  "generated_utc": "2026-10-26T01:37:21.150847+00:00",
+  "interpretation": "This is a fixed paired intervention diagnostic for whether online M updates alter a causal anonymous policy and its append-only version history on policy Train cache. It is not a self-correcting-memory acceptance, predicted-track training, an OCD/MOT metric, or Goal A/B/C acceptance.",
+  "paired_effect": {
+    "arm_selected": false,
+    "changed_frame_count": 38,
+    "event_digest_frozen": "368a0d10b03dd4b42288494b48c0c52f4e82ed1f133e33daa23d5f6e00c5b229",
+    "event_digest_online": "28a9d3513f822a79b4ac766c0f8d4a1e0e7ca6d9d4376bb07ae9022b2a82d2ce",
+    "frame_event_digest_equal": false,
+    "online_update_frames": [
+      {
+        "epoch": 1,
+        "frame": 30
+      },
+      {
+        "epoch": 1,
+        "frame": 450
+      }
+    ],
+    "policy_effect_observed": true,
+    "same_initial_seed_and_scope": true
+  },
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 952410112,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 1321.5468169089982,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-family-peak-m-online-effect-control-result.v1",
+  "scope": {
+    "complete_fixed_clock": true,
+    "frozen_events": 215,
+    "frozen_frames": 79,
+    "online_events": 215,
+    "online_frames": 79,
+    "videos": 2
+  },
+  "status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
+}

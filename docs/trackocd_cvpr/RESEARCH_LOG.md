@@ -11065,3 +11065,28 @@ no private GT/cache/weights opened for this check):
   supplies positive M support/optimizer interface evidence, but the two
   receipts must remain separate rather than being combined into a scientific
   claim.
+
+## Paired family-peak online-M effect control (2026-10-26 UTC)
+
+- A fixed paired intervention replayed the same first two policy-order Train
+  videos and complete `79`-frame/`215`-event metadata clock in two arms:
+  frozen M and online M. Both arms used the same seed and scope; neither arm
+  was selected after observing outcomes.
+- The online arm performed exactly two M-only AdamW updates at epoch 1,
+  frames `30` and `450`, with losses `0.6931471825` and `0.6908127666` and
+  gradient norms `0.7985471487` and `0.7702613473`. Its parameters changed;
+  frozen M performed zero updates. Both arms saw the same `411` support plans
+  and `28` positive other-video groups.
+- Online M changed the compact event digest on `38` frames and increased
+  retained memory versions from `296` to `311`, while the final action counts
+  remained identical (`125` EXISTING and `90` NEW in both arms). This is a
+  causal numerical/version-history effect, not evidence that category
+  decisions were corrected.
+- The receipt explicitly records no Val/Test access, no vocabulary in the
+  numeric forward, no predicted-track training, no formal metrics, and no
+  arm/model selection. Peak RSS was `952,410,112` bytes and wall time was
+  `1,321.547` seconds.
+- Receipt/config/regression test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json`,
+  `configs/trackocd_cvpr/candidate_family_peak_m_online_effect_control_v1.json`,
+  and `tests/trackocd_cvpr/test_candidate_family_peak_m_online_effect_control.py`.

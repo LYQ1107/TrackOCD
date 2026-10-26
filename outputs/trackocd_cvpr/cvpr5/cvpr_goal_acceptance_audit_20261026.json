@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T01:13:17.832923+00:00",
+  "generated_utc": "2026-10-26T01:38:43.279030+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "1d7d3df3fcb80e5d06a9a151574d88b1619044fe",
+    "head": "cad95767c12db66c5bc48c3ab32425c575122fe1",
     "clean_before_audit": false
   },
   "scope": {
@@ -495,6 +495,13 @@
           "bytes": 1998,
           "sha256": "496ae074ba72c2c8b82f353a9cb3ff0cf067a1a69b1e0873e99df118d8dcba18",
           "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
+          "exists": true,
+          "bytes": 3896,
+          "sha256": "3301d13a9383dbab5c8872c55789eeb15bad9b24971709742de68c1d445e404a",
+          "reported_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
         }
       ],
       "facts": {
@@ -556,7 +563,16 @@
         "family_peak_m_full_clock_optimizer_steps": 2,
         "family_peak_m_full_clock_positive_other_video_groups": 28,
         "family_peak_m_full_clock_parameters_changed": true,
-        "family_peak_m_full_clock_predicted_track_training": false
+        "family_peak_m_full_clock_predicted_track_training": false,
+        "family_peak_m_effect_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL",
+        "family_peak_m_effect_changed_frame_count": 38,
+        "family_peak_m_effect_policy_effect_observed": true,
+        "family_peak_m_effect_online_optimizer_steps": 2,
+        "family_peak_m_effect_frozen_memory_versions": 296,
+        "family_peak_m_effect_online_memory_versions": 311,
+        "family_peak_m_effect_action_counts_equal": true,
+        "family_peak_m_effect_arm_selected": false,
+        "family_peak_m_effect_predicted_track_training": false
       },
       "open_gate": "The fixed family-relative rule and bounded short/full-clock M-only optimizer smokes have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
     },
@@ -643,6 +659,13 @@
           "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
+          "exists": true,
+          "bytes": 3896,
+          "sha256": "3301d13a9383dbab5c8872c55789eeb15bad9b24971709742de68c1d445e404a",
+          "reported_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -709,6 +732,15 @@
         "family_peak_m_full_clock_positive_other_video_groups": 28,
         "family_peak_m_full_clock_parameters_changed": true,
         "family_peak_m_full_clock_predicted_track_training": false,
+        "family_peak_m_effect_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL",
+        "family_peak_m_effect_changed_frame_count": 38,
+        "family_peak_m_effect_policy_effect_observed": true,
+        "family_peak_m_effect_online_optimizer_steps": 2,
+        "family_peak_m_effect_frozen_memory_versions": 296,
+        "family_peak_m_effect_online_memory_versions": 311,
+        "family_peak_m_effect_action_counts_equal": true,
+        "family_peak_m_effect_arm_selected": false,
+        "family_peak_m_effect_predicted_track_training": false,
         "joint_rcm_complete_clock_consumed": true,
         "joint_rcm_version_records": 143,
         "joint_rcm_append_only_memory_history_retained": true,
@@ -717,7 +749,7 @@
         "predicted_cross_video_lifecycle_is_supervision": false,
         "family_peak_support_is_scientific_acceptance": false
       },
-      "open_gate": "The family-relative route now has bounded M-only optimizer evidence over a fixed two-video full clock, but it is not self-correcting persistent memory or an independent scientific evaluation; lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required."
+      "open_gate": "The paired full-clock intervention shows online M changes numeric event summaries and append-only version counts, while action counts remain equal; this is not self-correcting persistent memory or an independent scientific evaluation. Lawful folds, actual predicted-track training, multi-seed/order controls, semantic correction tests, and locked final metrics remain required."
     },
     {
       "id": "formal_causal_online_metrics",
@@ -954,6 +986,13 @@
       "bytes": 1998,
       "sha256": "496ae074ba72c2c8b82f353a9cb3ff0cf067a1a69b1e0873e99df118d8dcba18",
       "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
+      "exists": true,
+      "bytes": 3896,
+      "sha256": "3301d13a9383dbab5c8872c55789eeb15bad9b24971709742de68c1d445e404a",
+      "reported_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
