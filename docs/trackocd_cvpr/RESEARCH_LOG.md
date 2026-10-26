@@ -11469,3 +11469,18 @@ no private GT/cache/weights opened for this check):
   compatibility boundary in the descendant worktree, not evidence that the
   historical lineage was lost.  No receipt, protected ref, data, weight, or
   Test asset was changed by the audit.
+
+## Predicted-training readiness fail-closed recheck (2026-10-26 UTC)
+
+- Re-invoked `scripts/trackocd_cvpr/audit_predicted_training_readiness.py`.
+  The script correctly refused to overwrite its existing receipt, preserving
+  the original registration rather than fabricating a refreshed result.
+- The authoritative receipt remains
+  `BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED`: reliable predicted tracks
+  and reliable temporal pairs are both zero, the source cadence is not dense
+  frame-online, and qualified optimizer steps remain zero.  Its boundary also
+  records category-free receipts only, no feature arrays read, no TAO Test
+  access, and no external process changes.
+- This keeps predicted-track training and downstream scientific acceptance
+  open until a lawful dense frontend and non-leaking Train-development join
+  are actually available; no training was started by this check.
