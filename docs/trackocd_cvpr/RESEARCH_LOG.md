@@ -11398,3 +11398,18 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_resume_supervisor_dynamic_20261026.json`;
   it is waiting at 0/324 new-range shards (399/723 overall).  No external
   process was touched and no new payload has been written yet.
+
+## Val cache-to-baseline postprocess gate (2026-10-26 UTC)
+
+- The existing baseline watcher was read-only checked and found to require the
+  non-range `cache_manifest.json`; it does not itself merge a completed range
+  worker manifest.  Added
+  `scripts/trackocd_v2/finalize_formal_cache_and_baselines.py` to wait for all
+  723 atomic `.done` markers and zero `.launched` markers, regenerate the
+  non-range formal manifest without starting a GPU worker, then invoke the
+  independent payload audit and the existing Val-only CPU nearest/DP-means
+  gate.  It never opens Test or terminates a process.
+- Syntax, help, current-marker, and diff checks passed.  Commit `aa9d29cf`
+  was pushed and verified on
+  `research/cvpr-trackocd-autonomous-v2`.  The task-owned postprocess session
+  is waiting at 399/723; no baseline or metric result is claimed yet.
