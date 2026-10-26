@@ -1,0 +1,35 @@
+{
+  "schema_version": "trackocd.cvpr.masa-score-gate-counterfactual.v1",
+  "status": "FROZEN_OFFLINE_MASA_SCORE_GATE_COUNTERFACTUAL",
+  "purpose": "Bounded offline score-gate diagnostic over an already sealed anonymous MASA Train prediction; no rerun, selection, or formal metric.",
+  "thresholds": [0.25, 0.5, 0.75, 0.9],
+  "threshold_rationale": {
+    "0.25": "fixed lower confidence diagnostic cut",
+    "0.5": "fixed midpoint confidence diagnostic cut",
+    "0.75": "fixed high confidence diagnostic cut",
+    "0.9": "fixed very-high confidence diagnostic cut"
+  },
+  "geometry_matching": "per-image class-free maximum-cardinality matching at IoU >= 0.5 against the sealed physical geometry-only Train index",
+  "inputs": {
+    "base_result": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_multi_train_geometry_smoke_v1/result.json",
+    "worker_input": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_multi_train_geometry_smoke_v1/run/worker_input.json",
+    "sealed_prediction": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_multi_train_geometry_smoke_v1/run/sealed_prediction.npz",
+    "geometry_gt_index": "outputs/trackocd_cvpr/cvpr2/joint_known_protocol_v10_physical_GT/private_exact_joint_proof_or_assignment.json",
+    "expected_base_result_sha256": "14bbce99d557bd41fd394f09f7eb7616bdc4bd4a719352120ba409bc7e345542",
+    "expected_worker_input_sha256": "fbee3c083f64866f0e67ea072e854ba9c0656793e4ca38c312d7b3804be23802",
+    "expected_sealed_prediction_sha256": "4f500e6bfca312ce414b9017b468249c1ffbe0a35e9344de7dfd8f2a6c9e1a9b"
+  },
+  "boundaries": {
+    "existing_sealed_prediction_only": true,
+    "new_inference": false,
+    "training_started": false,
+    "model_selection": false,
+    "prediction_to_gt_track_mapping_persisted": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "formal_ocd_or_mot_metrics": false
+  },
+  "interpretation": "A threshold can expose a coverage-purity trade-off, but no threshold is selected or promoted to the causal online method."
+}

@@ -142,6 +142,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json",
     )
+    masa_score_gate_path, masa_score_gate = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/masa_score_gate_counterfactual_v1/result.json",
+    )
     hybrid_path, hybrid = load_json(
         repo,
         "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
@@ -330,6 +334,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json",
                     reported_status=dense_masa_pilot.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/masa_score_gate_counterfactual_v1/result.json",
+                    reported_status=masa_score_gate.get("status"),
+                ),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json", reported_status=asset.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json", reported_status=runtime.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json", reported_status=release.get("status")),
@@ -397,6 +406,18 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     if isinstance(nested(dense_masa_pilot, "worker", "frames", default=[]), list)
                     else None
                 ),
+                "masa_score_gate_status": masa_score_gate.get("status"),
+                "masa_score_gate_fixed_thresholds": [
+                    {
+                        "threshold": row.get("threshold"),
+                        "precision": row.get("observation_precision"),
+                        "recall": row.get("observation_recall"),
+                        "conditional_switch_rate": row.get("conditional_switch_rate"),
+                    }
+                    for row in masa_score_gate.get("thresholds", [])
+                    if isinstance(row, dict)
+                ],
+                "masa_score_gate_selected_threshold": None,
                 "strong_legal_primary_accepted": asset.get("strong_legal_primary_Pred_or_scientific_Goal_accepted"),
                 "runtime_checkpoint_binding_reconciled": nested(runtime, "qualification_boundary", "runtime_checkpoint_compatibility_reconciled"),
                 "exact_release_stage_training_binding_verified": nested(runtime, "qualification_boundary", "exact_release_stage_training_binding_verified"),
@@ -433,7 +454,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "same_input_stream_proven",
                 ),
             },
-            "open_gate": "The bounded MASA dense pilot strengthens the frozen current-image causal-path evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
+            "open_gate": "The bounded MASA dense pilot and fixed score-gate counterfactual strengthen engineering evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
         },
         {
             "id": "predicted_track_training",
@@ -730,6 +751,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json",
                 reported_status=dense_masa_pilot.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/masa_score_gate_counterfactual_v1/result.json",
+                reported_status=masa_score_gate.get("status"),
             ),
             evidence(
                 repo,

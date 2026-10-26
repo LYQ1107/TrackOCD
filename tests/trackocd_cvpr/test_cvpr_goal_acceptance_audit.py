@@ -57,6 +57,11 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_train_images_only"] is True
     assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_all_finite"] is True
     assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_max_retained_ids"] == 50
+    assert rows["lawful_strong_frontend"]["facts"]["masa_score_gate_status"] == (
+        "PASS_MASA_SCORE_GATE_COUNTERFACTUAL_DIAGNOSTIC_NOT_SELECTION"
+    )
+    assert len(rows["lawful_strong_frontend"]["facts"]["masa_score_gate_fixed_thresholds"]) == 4
+    assert rows["lawful_strong_frontend"]["facts"]["masa_score_gate_selected_threshold"] is None
     assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_status"] == (
         "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION"
     )

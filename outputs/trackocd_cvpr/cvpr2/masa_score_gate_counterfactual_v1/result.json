@@ -1,0 +1,83 @@
+{
+  "schema_version": "trackocd.cvpr.masa-score-gate-counterfactual-result.v1",
+  "status": "PASS_MASA_SCORE_GATE_COUNTERFACTUAL_DIAGNOSTIC_NOT_SELECTION",
+  "generated_utc": "2026-10-26T00:05:33.446149+00:00",
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/masa_score_gate_counterfactual_v1.json",
+    "sha256": "6be39688b6dfed8468ef01ec705a73c2872d8dac76ee917021bfc9afd0b63c57"
+  },
+  "inputs": {
+    "base_result_sha256": "14bbce99d557bd41fd394f09f7eb7616bdc4bd4a719352120ba409bc7e345542",
+    "worker_input_sha256": "fbee3c083f64866f0e67ea072e854ba9c0656793e4ca38c312d7b3804be23802",
+    "sealed_prediction_sha256": "4f500e6bfca312ce414b9017b468249c1ffbe0a35e9344de7dfd8f2a6c9e1a9b",
+    "fixed_videos": 8,
+    "fixed_images": 32
+  },
+  "thresholds": [
+    {
+      "threshold": 0.25,
+      "predicted_track_observations": 1175,
+      "matched_track_observations": 66,
+      "gt_observations": 91,
+      "observation_precision": 0.05617021276595745,
+      "observation_recall": 0.7252747252747253,
+      "annotated_adjacent_gt_pairs": 58,
+      "pairs_with_both_track_matches": 38,
+      "same_id_pairs": 32,
+      "switched_id_pairs": 6,
+      "conditional_switch_rate": 0.15789473684210525
+    },
+    {
+      "threshold": 0.5,
+      "predicted_track_observations": 868,
+      "matched_track_observations": 63,
+      "gt_observations": 91,
+      "observation_precision": 0.07258064516129033,
+      "observation_recall": 0.6923076923076923,
+      "annotated_adjacent_gt_pairs": 58,
+      "pairs_with_both_track_matches": 37,
+      "same_id_pairs": 31,
+      "switched_id_pairs": 6,
+      "conditional_switch_rate": 0.16216216216216217
+    },
+    {
+      "threshold": 0.75,
+      "predicted_track_observations": 514,
+      "matched_track_observations": 49,
+      "gt_observations": 91,
+      "observation_precision": 0.09533073929961089,
+      "observation_recall": 0.5384615384615384,
+      "annotated_adjacent_gt_pairs": 58,
+      "pairs_with_both_track_matches": 27,
+      "same_id_pairs": 25,
+      "switched_id_pairs": 2,
+      "conditional_switch_rate": 0.07407407407407407
+    },
+    {
+      "threshold": 0.9,
+      "predicted_track_observations": 275,
+      "matched_track_observations": 40,
+      "gt_observations": 91,
+      "observation_precision": 0.14545454545454545,
+      "observation_recall": 0.43956043956043955,
+      "annotated_adjacent_gt_pairs": 58,
+      "pairs_with_both_track_matches": 23,
+      "same_id_pairs": 20,
+      "switched_id_pairs": 3,
+      "conditional_switch_rate": 0.13043478260869565
+    }
+  ],
+  "boundaries": {
+    "existing_sealed_prediction_only": true,
+    "new_inference": false,
+    "training_started": false,
+    "model_selection": false,
+    "prediction_to_gt_track_mapping_persisted": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "formal_ocd_or_mot_metrics": false
+  },
+  "interpretation": "The fixed cuts expose a coverage-purity trade-off over sealed MASA tracks. No threshold is selected, no raw prediction or prediction-to-GT mapping is written, and no formal OCD/MOT result is created."
+}

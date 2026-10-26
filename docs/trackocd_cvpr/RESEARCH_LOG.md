@@ -98,6 +98,27 @@ both frontends retain very low precision.  No training, feature-cache build,
 Val/Test access, semantic role/vocabulary read, model selection, or Goal A/B/C
 acceptance occurred.
 
+## 2026-10-26 — bounded MASA score-gate counterfactual
+
+The sealed 32-image MASA payload from the eight-video Train geometry smoke was
+re-evaluated with four pre-registered observation-score cuts (`0.25`, `0.5`,
+`0.75`, `0.9`).  This is an offline diagnostic of the fixed Top-50 lifecycle;
+it does not rerun the frontend, change tracker state, select a threshold, or
+write prediction-to-GT matches.  Config/script and receipt:
+`configs/trackocd_cvpr/masa_score_gate_counterfactual_v1.json`,
+`scripts/trackocd_cvpr/audit_masa_score_gate_counterfactual.py`, and
+`outputs/trackocd_cvpr/cvpr2/masa_score_gate_counterfactual_v1/result.json`.
+
+The fixed cuts produced precision/recall/switch-rate triples of
+`(0.056170, 0.725275, 0.157895)`, `(0.072581, 0.692308, 0.162162)`,
+`(0.095331, 0.538462, 0.074074)`, and `(0.145455, 0.439560, 0.130435)` in
+threshold order.  Thus score gating exposes the expected coverage--purity
+trade-off but does not repair the low-precision frontend or establish a
+persistent tracker.  No cut is promoted; the result remains a negative
+diagnostic rather than model selection, formal OCD/MOT evidence, or predicted
+training authorization.  The run used only the existing sealed Train
+prediction, category-free Train geometry, and no Val/Test or semantic fields.
+
 ## 2026-10-26 — fixed policy predicted-feature interface pilot
 
 Before any predicted-track training expansion, a bounded input-only pilot was
