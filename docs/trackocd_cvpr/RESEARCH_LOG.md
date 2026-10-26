@@ -11439,3 +11439,20 @@ no private GT/cache/weights opened for this check):
 - Commit `3e7f8916` was pushed and the exact remote branch SHA was verified;
   the task-owned cache and postprocess supervisors remain alive and waiting
   at the same safe boundary.
+
+## CVPR legacy/receipt regression boundary audit (2026-10-26 UTC)
+
+- Ran the complete `tests/trackocd_cvpr` suite as a read-only regression:
+  **1212 passed, 120 failed**, in 772.63 seconds.  The current worktree stayed
+  clean and no new training or research worker was launched by this command.
+- The failures are concentrated in fail-closed historical source/endpoint
+  bindings: preserved receipts require the exact source bytes from their
+  original registered commits, while the current descendant worktree contains
+  later lawful research changes.  Representative errors reject a changed
+  `source_sha256` or current endpoint source, rather than reporting a new
+  scientific metric failure.
+- Historical receipts and source hashes were not rewritten.  The focused
+  current-boundary checks for CVPR acceptance, legacy preservation, and frontend
+  reconciliation passed **3/3**; the separate current v2 regression remains
+  **59/59**.  This result keeps historical compatibility and current-v2
+  verification as distinct gates and does not promote either to Goal A/B/C.
