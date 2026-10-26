@@ -11742,3 +11742,22 @@ no private GT/cache/weights opened for this check):
   cache-payload, reconciliation, and CVPR acceptance suite passed **4/4**.
   No training, Test access, model selection, or external process operation
   occurred.
+
+## Current MASA source-closure refresh during formal-cache wait (2026-10-26 UTC)
+
+- Re-ran the read-only MASA release/source closure audit against the current
+  branch head.  The pinned reference tree is clean and still matches source
+  commit `c5472b9c7615f35abdf1188cb1a0c5408fe50d66`; the pinned checkpoint
+  provenance and official TAO public-detection configuration remain present.
+- The audit also reconfirms the critical boundary: the current TrackOCD
+  candidate is image-only, while the official TAO release route requires
+  public detections.  Exact release-stage training binding is still open, so
+  neither route is promoted as the other and the lawful-frontend gate remains
+  open.
+- The source-closure, frontend-selection, and predicted-training-readiness
+  regression suite passed **3/3** in 0.29 seconds.  This stage read only
+  source/configuration metadata; it did not read TAO data or Test content,
+  start inference/training, select a model, or touch an external process.
+- The formal COVTrack-native Val cache remains independently validated but
+  partial at **457/723**; the existing RAM-safe supervisor remains the only
+  active continuation path.
