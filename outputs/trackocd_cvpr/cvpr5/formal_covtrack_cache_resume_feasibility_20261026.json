@@ -1,0 +1,95 @@
+{
+  "schema_version": "trackocd.cvpr5.formal_covtrack_cache_resume_feasibility.v1",
+  "status": "PASS_HISTORICAL_SOURCE_MATCH_PARTIAL_CACHE_RESUMABLE_STORAGE_TIGHT",
+  "generated_utc": "2026-10-26T03:11:31Z",
+  "recorded_from_commit": "e2d6f233c42f221aa1b495ad9547fc1b025d5e60",
+  "split": "val",
+  "frontend": "COVTrack-native",
+  "historical_selected_input": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/covtrack_native_physical_tracks.jsonl",
+    "bytes": 258036479,
+    "sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+    "role": "selected_frontend_normalized_category_free_physical_stream"
+  },
+  "non_substitutable_runtime_input": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/physical_tracks.jsonl",
+    "bytes": 258032642,
+    "sha256": "70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9",
+    "reason": "different source hash; not silently substituted for the historical selected stream"
+  },
+  "partial_cache": {
+    "root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
+    "manifest": "cache_manifest.json",
+    "manifest_sha256": "7e2d4db63e554c0b1471ca37d1e96800700d842c53d682c2dc94b0a36a5dc631",
+    "manifest_status": "RUNNING",
+    "completed_shards": 384,
+    "expected_shards": 723,
+    "missing_shards": 339,
+    "shard_tracks": 512,
+    "total_tracks": 369794,
+    "completed_tracks": 196608,
+    "completed_observations": 739486,
+    "shard_payload_bytes": 2977127826,
+    "root_bytes_including_manifest": 2977298523,
+    "source_hashes_checked": 384,
+    "source_hashes_all_match": true,
+    "shard_payload_schema": "trackocd.v2.formal_feature_shard.v1",
+    "prefixes": [1, 2, 4, 8, 16]
+  },
+  "storage_snapshot": {
+    "filesystem": "/dev/loop20",
+    "free_bytes": 5417488384,
+    "free_human": "5.1G",
+    "existing_shard_mean_bytes": 7752937.046875,
+    "existing_shard_median_bytes": 7172717.5,
+    "estimated_missing_bytes_mean": 2628245659,
+    "estimated_missing_bytes_median": 2431551233,
+    "estimated_free_after_full_cache_mean": 2789242725,
+    "assessment": "TIGHT_BUT_POSITIVE_BEFORE_OTHER_WRITES"
+  },
+  "encoder_contract": {
+    "name": "DINOv2 ViT-B/14",
+    "model_repo": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_core/dinov2_7764ea0",
+    "model_repo_hubconf_sha256": "c1f5090e78ff940b72c076d2bf9c0310d1707c946b3d10e2d6f2b0bdf56a6f64",
+    "model_weights": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+    "model_weights_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "frames_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "dimension": 768,
+    "aggregation": "quality-weighted causal mean then L2 normalization",
+    "category_or_text_logits": false,
+    "category_id_feature": false,
+    "physical_id_feature": false,
+    "future_observations_used": false
+  },
+  "authorization_evidence": {
+    "audit_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/audit",
+    "frontend_selection_sha256": "6cedcf09c46d08f77924182af976f98327cdb5afe82bf9812655fbd33143d17e",
+    "representation_decision_sha256": "4cbf0cf43084e5994d217d2598fc412f341494b3c68a916ddd763b6af9c92244",
+    "frontend_stage_sha256": "524ef72597300b300fa869926cd0135274e2364b2a27ae4b40529a80d9906526",
+    "frontend_native_run_sha256": "4350d5270f1608d7e30b0a3f51d7865adfcfba22cc72e812a18c76ad758ceca2",
+    "frontend_metrics_sha256": "e670f4284b1261641e4865a39d2df659840e043b95a01a0a9c298db21e75e6c2",
+    "selection_status": "FINAL_PHYSICAL_FRONTEND_SELECTED",
+    "representation_status": "FINAL_REPRESENTATION_SELECTED",
+    "representation_formal_cache_authorized": true,
+    "selection_receipt_formal_cache_authorized": false,
+    "authorization_inconsistency_recorded": true,
+    "test_semantic_accessed": false
+  },
+  "bounded_resume_validation": {
+    "planned_shard_start": 384,
+    "planned_shard_end_exclusive": 387,
+    "planned_shards": 3,
+    "gpu_policy": "one newly checked idle GPU only",
+    "ram_policy": "retain at least 25 percent system RAM",
+    "purpose": "validate exact source authorization, DINO feature payload, atomic done markers, and resumable worker manifest before any larger continuation",
+    "full_cache_not_claimed": true
+  },
+  "boundary": {
+    "tao_test_read": false,
+    "unapproved_gt_or_novel_vocabulary_read": false,
+    "model_selection_from_val_labels": false,
+    "external_processes_touched": false,
+    "training_started": false,
+    "formal_causal_metrics_claimed": false
+  }
+}

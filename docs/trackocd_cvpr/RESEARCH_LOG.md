@@ -11271,3 +11271,30 @@ no private GT/cache/weights opened for this check):
   acceptance mapping, mechanism coverage, and TETA recovery).  The cleanup
   receipt is recoverable from the pinned COVTrack checkpoint and subshard
   inputs if a future formal evaluator needs the raw formatted files again.
+
+## Formal COVTrack Val cache resume feasibility (2026-10-26 UTC)
+
+- Reconciled the local formal cache against the historically selected
+  COVTrack-native physical stream before any continuation.  The historical
+  stream is `258,036,479` bytes with SHA256
+  `63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1`, and
+  all 384 existing `.done` payloads carry that same source hash.  The separate
+  current runtime stream has SHA256
+  `70fc5b69db21ded6c50dc8d18b7694c224fa91b778b2cb3964bc857dd5ff26d9` and is
+  explicitly not substituted.
+- The cache currently contains 384 of the expected 723 shards (196,608 of
+  369,794 tracks; 739,486 observations).  It is a resumable partial cache,
+  not a complete formal feature cache or a metric result.  DINOv2 ViT-B/14,
+  the pinned local checkpoint, frame root, causal prefix contract, and the
+  historical audit receipts were all found locally.  The old selection and
+  representation receipts disagree on one authorization flag; this is
+  recorded rather than silently normalized, while the representation receipt
+  is the flag consumed by the formal-cache gate.
+- A storage feasibility snapshot records about `5.1G` free and a mean missing
+  payload estimate of about `2.63GB`; this leaves a tight but positive margin
+  before other writes.  The next action is a bounded three-shard worker range
+  (`384` inclusive through `387` exclusive), one checked idle GPU, and no
+  Test/GT/Novel access.  This validation is not full-cache completion,
+  Predicted-track training, or causal OCD/MOT acceptance.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_resume_feasibility_20261026.json`.
