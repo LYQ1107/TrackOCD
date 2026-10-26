@@ -32,6 +32,28 @@ because `324` shards are missing; no baseline, training, frontend selection,
 or OCD/MOT result was created from the partial cache.  The focused boundary
 and acceptance tests passed `8/8`.
 
+## 2026-10-26 — recovered Val stream audit blocks predicted-stream aliasing
+
+The staged Val-only recovery bundle was audited one row at a time without
+opening categories, semantic names, images, weights, Test content, or GT
+labels for decisions.  All four causal-order GT streams passed structural
+checks: each has `5,232` rows and `107,880` observations across `985` videos,
+the four SHA256 values are distinct, and their physical-track and video key
+sets match.  The COVTrack-native physical stream also passed with `369,794`
+tracks, `1,133,841` observations, `988` videos, and source SHA256
+`63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1`.
+
+The older `tao_val_predicted_tracks.jsonl` did **not** pass: it contains
+`16,290` degenerate boxes (`15,902` x2≤x1 cases and `10,615` y2≤y1 cases;
+some boxes contribute to both counts), across `649,378` tracks and
+`1,853,369` observations.  Its audit also reached `419,778,560` bytes RSS,
+above the registered 256 MiB audit plan.  Receipt:
+`outputs/trackocd_cvpr/cvpr5/nas_recovered_val_stream_audit_20261026.json`
+(SHA256 `a17d21efffc21a545d7041cecaf28b3ee7bfea49638fcbdbdbf16c60f2652493`).
+This is a real negative asset-integrity result: the file is not silently
+aliased as the missing formal `pred_track_stream.jsonl`; no formal evaluator,
+training, model selection, or OCD/MOT metric was run.
+
 ## 2026-10-26 — adjacent-frame frozen MASA Train online smoke
 
 - Added a bounded, isolated smoke for the image-only MASA route using eight
