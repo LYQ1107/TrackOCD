@@ -11517,3 +11517,16 @@ no private GT/cache/weights opened for this check):
   it started no training or metric evaluation.  The refreshed receipt was
   committed as `9ae3ed53`, pushed, fetched, and verified against the remote
   branch.
+
+## Candidate-aware and persistent-memory contract recheck (2026-10-26 UTC)
+
+- Re-ran the current CPU-only contract suite covering candidate-aware
+  lifecycle/support, family-peak/order controls, M-branch controls, joint RCM
+  policy receipts/training interfaces, and support availability: **14/14
+  passed** in 5.58 seconds.
+- This is a software-contract regression result only.  It does not promote
+  candidate-aware decision or self-correcting persistent memory to scientific
+  acceptance: qualified predicted-track training, independent folds,
+  multi-seed/order/coverage evaluation, and locked causal metrics remain open.
+- The suite opened no TAO Test asset, large formal cache, or external process;
+  no training or inference worker was launched.
