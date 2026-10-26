@@ -226,6 +226,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/predicted_training_readiness_audit_20261026.json",
     )
+    teta_path, teta = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/result.json",
+    )
 
     core_reviews = review.get("scoped_actual_core_reviews", [])
     extra_reviews = review.get("licensed_extra_inspection_reviews", [])
@@ -1019,6 +1023,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
                     reported_status=covtrack_recheck.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/result.json",
+                    reported_status=teta.get("status"),
+                ),
             evidence(
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
@@ -1053,6 +1062,16 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "covtrack_native_teta_reference_status": covtrack_recheck_metrics.get(
                     "teta_reference_status"
                 ),
+                "teta_reference_recovery_status": teta.get("status"),
+                "teta_reference_combined_teta50": nested(
+                    teta, "teta_reference", "teta50", "combined", "TETA"
+                ),
+                "teta_reference_known_teta50": nested(
+                    teta, "teta_reference", "teta50", "known", "TETA"
+                ),
+                "teta_reference_novel_teta50": nested(
+                    teta, "teta_reference", "teta50", "novel", "TETA"
+                ),
                 "covtrack_native_recheck_is_frontend_acceptance": covtrack_recheck.get(
                     "qualification_boundary", {}
                 ).get("frontend_registered_as_bakeoff_complete"),
@@ -1073,9 +1092,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "val_nearest_is_new_rerun": nested(
                     nearest, "qualification_boundary", "is_new_rerun"
                 ),
-                "formal_v2_status": "not complete; DP-means and full causal Goal evaluation remain open",
+                "formal_v2_status": "TETA reference recovered; qualified frontend, predicted-track OCD training, and full causal Goal evaluation remain open",
             },
-            "open_gate": "The COVTrack-native Val category-free MOT/observability recheck is real sealed evidence, but TETA reference evaluation is pending and no frontend, OCD, predicted-track, or Goal acceptance is promoted.",
+            "open_gate": "The COVTrack-native Val category-free MOT/observability and TETA reference evidence are sealed, but the TETA result is reference-only; no frontend, OCD, predicted-track, or Goal acceptance is promoted.",
         },
         {
             "id": "independent_final_and_goals",
@@ -1148,6 +1167,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/covtrack_native_val_metrics_recheck_20261026.json",
                 reported_status=covtrack_recheck.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/result.json",
+                reported_status=teta.get("status"),
             ),
             evidence(
                 repo,
