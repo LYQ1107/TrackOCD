@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:42:05.597977+00:00",
+  "generated_utc": "2026-10-26T00:44:45.877628+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "0a599f5f250c4f0dc6abe88eebc06d939614d087",
+    "head": "b0f6c00b08f3314fa23e327265df81eb34f84113",
     "clean_before_audit": false
   },
   "scope": {
@@ -474,6 +474,13 @@
           "bytes": 1947,
           "sha256": "59b62e771c4a57ecd0a28edac0241187dd003d59a5eaf0e36fd85053b18d8a6c",
           "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+          "exists": true,
+          "bytes": 2416,
+          "sha256": "020a7bdc5a2609c27a03dd1a7e17b994ef1e6b9ee4f217aa6d968ccb1c3c5982",
+          "reported_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
         }
       ],
       "facts": {
@@ -504,9 +511,29 @@
         "family_peak_full_clock_cross_video_token_count": 3,
         "family_peak_full_clock_m_support_steps": 28,
         "family_peak_full_clock_positive_other_video_groups": 28,
-        "family_peak_full_clock_optimizer_steps": 0
+        "family_peak_full_clock_optimizer_steps": 0,
+        "family_peak_order_control_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE",
+        "family_peak_order_control_orders": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "family_peak_order_control_m_support_steps": [
+          1,
+          1
+        ],
+        "family_peak_order_control_positive_other_video_groups": [
+          1,
+          1
+        ],
+        "family_peak_order_control_order_winner_selected": false
       },
-      "open_gate": "A fixed family-relative support smoke is positive, but a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation remain open."
+      "open_gate": "The fixed family-relative rule has positive support in both registered orders, but action counts are order-sensitive; trained/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
     },
     {
       "id": "self_correcting_persistent_memory",
@@ -570,6 +597,13 @@
           "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+          "exists": true,
+          "bytes": 2416,
+          "sha256": "020a7bdc5a2609c27a03dd1a7e17b994ef1e6b9ee4f217aa6d968ccb1c3c5982",
+          "reported_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -615,6 +649,16 @@
         "family_peak_full_clock_m_support_steps": 28,
         "family_peak_full_clock_positive_other_video_groups": 28,
         "family_peak_full_clock_optimizer_steps": 0,
+        "family_peak_order_control_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE",
+        "family_peak_order_control_m_support_steps": [
+          1,
+          1
+        ],
+        "family_peak_order_control_positive_other_video_groups": [
+          1,
+          1
+        ],
+        "family_peak_order_control_order_winner_selected": false,
         "predicted_cross_video_lifecycle_is_supervision": false,
         "family_peak_support_is_scientific_acceptance": false
       },
@@ -834,6 +878,13 @@
       "bytes": 1947,
       "sha256": "59b62e771c4a57ecd0a28edac0241187dd003d59a5eaf0e36fd85053b18d8a6c",
       "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+      "exists": true,
+      "bytes": 2416,
+      "sha256": "020a7bdc5a2609c27a03dd1a7e17b994ef1e6b9ee4f217aa6d968ccb1c3c5982",
+      "reported_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",

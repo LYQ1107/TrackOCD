@@ -1,0 +1,90 @@
+{
+  "boundaries": {
+    "category_or_vocabulary_in_numeric_forward": false,
+    "formal_metrics": false,
+    "harness_forced_cross_video_reuse": false,
+    "labels_external_loss_only": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "model_selection": false,
+    "optimizer_started": false,
+    "order_winner_selected": false,
+    "predicted_frontend_qualification": false,
+    "scientific_acceptance": false,
+    "val_or_test_accessed": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_family_peak_order_control_v1.json",
+    "sha256": "a56deead62ec8b00ea357d1beef547d245e32f41bdcad0977411147cfedd910d"
+  },
+  "generated_utc": "2026-10-26T00:44:26.657768+00:00",
+  "interpretation": "This is a bounded fixed-order causal control. Its per-order outcomes are descriptive plumbing evidence, not a selected method, trained memory, an OCD/MOT metric, or Goal A/B/C acceptance.",
+  "mechanism": {
+    "name": "family_peak_standardization",
+    "order_winner_selected": false,
+    "orders_preregistered": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "score_sweep": false
+  },
+  "per_order": [
+    {
+      "actions": {
+        "EXISTING": 4,
+        "NEW": 10
+      },
+      "cross_video_token_count": 1,
+      "events": 14,
+      "frames": 4,
+      "m_support_steps": 1,
+      "memory_versions": 17,
+      "order": [
+        0,
+        1
+      ],
+      "plan_reasons": {
+        "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 1,
+        "MASKED_SINGLETON_NO_OTHER_SUPPORT": 10
+      },
+      "positive_other_video_groups": 1,
+      "videos": 2
+    },
+    {
+      "actions": {
+        "EXISTING": 2,
+        "NEW": 12
+      },
+      "cross_video_token_count": 1,
+      "events": 14,
+      "frames": 4,
+      "m_support_steps": 1,
+      "memory_versions": 20,
+      "order": [
+        1,
+        0
+      ],
+      "plan_reasons": {
+        "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 1,
+        "MASKED_SINGLETON_NO_OTHER_SUPPORT": 13
+      },
+      "positive_other_video_groups": 1,
+      "videos": 2
+    }
+  ],
+  "resources": {
+    "device": "CPU",
+    "optimizer_steps": 0,
+    "peak_rss_bytes": 1034698752,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 88.35736296899995,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-family-peak-order-control-result.v1",
+  "status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
+}

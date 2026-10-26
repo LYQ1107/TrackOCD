@@ -10983,3 +10983,26 @@ no private GT/cache/weights opened for this check):
   but remains untrained two-video evidence rather than self-correcting memory,
   independent calibration, predicted-track training, formal OCD/MOT metrics,
   or Goal A/B/C acceptance.
+
+## Family-relative candidate fixed-order control (2026-10-26 UTC)
+
+- To expose causal order sensitivity without selecting a favorable order, the
+  same family-peak rule was replayed under both preregistered permutations of
+  the first two policy-order videos: `[0,1]` and `[1,0]`. Each order consumed
+  its first two metadata clock frames, with no optimizer or result-based
+  stopping.
+- Both orders produced one natural cross-video token and one
+  prediction-owned M-support plan. The `[0,1]` order produced `4` EXISTING
+  and `10` NEW events; `[1,0]` produced `2` EXISTING and `12` NEW events.
+  Thus support was available in both controls, but action volume is visibly
+  order-sensitive; no winner was selected. The run used zero optimizer steps,
+  no Val/Test input, no vocabulary, and no harness-forced reuse. Peak RSS was
+  `1,034,698,752` bytes and wall time was `88.357` seconds.
+- Receipt/config/test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json`,
+  `configs/trackocd_cvpr/candidate_family_peak_order_control_v1.json`, and
+  `tests/trackocd_cvpr/test_candidate_family_peak_order_control.py`.
+  This is a fairness-control result, not evidence of order-invariant
+  generalization or scientific acceptance; independent folds, seeds, coverage
+  controls, predicted training, self-correction and locked metrics remain
+  open.

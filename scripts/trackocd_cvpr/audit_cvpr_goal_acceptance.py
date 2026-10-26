@@ -140,6 +140,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
     )
+    family_peak_order_path, family_peak_order = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -565,6 +569,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
                     reported_status=family_peak_full_clock.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+                    reported_status=family_peak_order.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
@@ -634,8 +643,23 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "family_peak_full_clock_optimizer_steps": nested(
                     family_peak_full_clock, "resources", "optimizer_steps"
                 ),
+                "family_peak_order_control_status": family_peak_order.get("status"),
+                "family_peak_order_control_orders": nested(
+                    family_peak_order, "mechanism", "orders_preregistered"
+                ),
+                "family_peak_order_control_m_support_steps": [
+                    nested(row, "m_support_steps")
+                    for row in family_peak_order.get("per_order", [])
+                ],
+                "family_peak_order_control_positive_other_video_groups": [
+                    nested(row, "positive_other_video_groups")
+                    for row in family_peak_order.get("per_order", [])
+                ],
+                "family_peak_order_control_order_winner_selected": nested(
+                    family_peak_order, "mechanism", "order_winner_selected"
+                ),
             },
-            "open_gate": "A fixed family-relative support smoke is positive, but a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation remain open.",
+            "open_gate": "The fixed family-relative rule has positive support in both registered orders, but action counts are order-sensitive; trained/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open.",
         },
         {
             "id": "self_correcting_persistent_memory",
@@ -677,6 +701,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
                     reported_status=family_peak_full_clock.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+                    reported_status=family_peak_order.get("status"),
                 ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
@@ -748,6 +777,18 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 "family_peak_full_clock_optimizer_steps": nested(
                     family_peak_full_clock, "resources", "optimizer_steps"
+                ),
+                "family_peak_order_control_status": family_peak_order.get("status"),
+                "family_peak_order_control_m_support_steps": [
+                    nested(row, "m_support_steps")
+                    for row in family_peak_order.get("per_order", [])
+                ],
+                "family_peak_order_control_positive_other_video_groups": [
+                    nested(row, "positive_other_video_groups")
+                    for row in family_peak_order.get("per_order", [])
+                ],
+                "family_peak_order_control_order_winner_selected": nested(
+                    family_peak_order, "mechanism", "order_winner_selected"
                 ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
                 "family_peak_support_is_scientific_acceptance": False,
@@ -934,6 +975,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
                 reported_status=family_peak_full_clock.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_order_control_v1/result.json",
+                reported_status=family_peak_order.get("status"),
             ),
             evidence(
                 repo,
