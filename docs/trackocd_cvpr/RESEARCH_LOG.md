@@ -11571,3 +11571,15 @@ no private GT/cache/weights opened for this check):
   process.  This validates those three payloads as reusable partial cache
   evidence only; it does not produce OCD/MOT metrics or certify the full
   `723`-shard cache.
+
+## Independent audit of the complete newly written range (2026-10-26 UTC)
+
+- Extended the bounded payload audit across the full new range
+  `shard-000384` through `shard-000398` (15 shards).  All passed with
+  **7680 tracks**, **20061 observations**, **7680 unique sample keys**,
+  **7680 unique physical tracks**, zero invalid boxes, and zero errors.
+- The read took 1.986 seconds with peak RSS 188,067,840 bytes.  It remained
+  Val-only and category-free, did not read GT or TAO Test, and touched no
+  external process.  This upgrades the new range from marker-only evidence to
+  independently checked partial payload evidence; the remaining `324` shards
+  and formal metrics are still open.
