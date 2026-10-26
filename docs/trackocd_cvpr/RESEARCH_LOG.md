@@ -11343,6 +11343,12 @@ no private GT/cache/weights opened for this check):
   boundary at shard `399` inclusive.  The range manifest remains
   `RANGE_RUNNING` with 399 complete shards; this is a safety stop of the
   worker, not a pause or completion of the research Goal.
+- A task-owned resume supervisor (PID `4028752`) is now waiting without a
+  child worker.  Its first snapshot was `MemAvailable=26,511,356 kB` versus a
+  `32,908,271 kB` floor.  It will launch only after both the RAM floor and the
+  GPU-0 no-compute-app check pass, and will stop only its own child if the RAM
+  floor is violated twice.  This supervisor does not modify or terminate any
+  external process.
 - This is a resumable cache continuation, not training and not evaluation.
   It remains subject to the 25% RAM floor and storage check; the registered
   snapshot had about `5.39GB` free and the prior estimate left a tight

@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr5.formal_covtrack_cache_full_resume_launch.v1",
-  "status": "STOPPED_RAM_SAFETY_RESUMABLE",
+  "status": "WAITING_RAM_RESUME_SUPERVISOR",
   "generated_utc": "2026-10-26T03:16:21Z",
   "started_utc": "2026-10-26T03:17:39Z",
   "worker_pid_at_start": 3995006,
@@ -8,6 +8,17 @@
   "worker_pid_at_stop": 3995006,
   "completed_shards_at_stop": 399,
   "resume_from_shard_inclusive": 399,
+  "resume_supervisor": {
+    "pid": 4028752,
+    "started_utc": "2026-10-26T03:30:35Z",
+    "status": "WAITING_RESOURCE",
+    "child_started": false,
+    "resume_range": {
+      "start_inclusive": 399,
+      "end_exclusive": 723
+    },
+    "policy": "launch only when MemAvailable is at least 25 percent and GPU 0 has no compute app with at least 8 GiB free; stop only its own child after two below-floor samples"
+  },
   "code_commit_at_registration": "fb43085dc705bb452a4b5f4a2b4b6f6685381d06",
   "split": "val",
   "frontend": "COVTrack-native",
