@@ -11324,7 +11324,7 @@ no private GT/cache/weights opened for this check):
   and
   `outputs/trackocd_v2_runtime/audit/bounded_resume_payload_audit_20261026.json`.
 
-## Full remainder cache continuation registered (2026-10-26 UTC)
+## Full remainder cache continuation running (2026-10-26 UTC)
 
 - After the three-shard boundary passed, registered the remaining Val range
   `387` inclusive through `723` exclusive (336 shards).  The worker is pinned
@@ -11332,6 +11332,10 @@ no private GT/cache/weights opened for this check):
   frame root, batch 16, and the historical selected-stream SHA256.  GPUs
   occupied by other users/tasks are excluded; no external process is stopped
   or reconfigured.
+- The registered worker is now running as PID `3995006`; the first live
+  progress check reached shard `389` (390/723 completed including the prior
+  boundary).  This PID is current-run evidence only and will not be reused as
+  a future launch instruction.
 - This is a resumable cache continuation, not training and not evaluation.
   It remains subject to the 25% RAM floor and storage check; the registered
   snapshot had about `5.39GB` free and the prior estimate left a tight
