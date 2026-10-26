@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T01:48:00.583170+00:00",
+  "generated_utc": "2026-10-26T01:56:34.982382+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "f32cef5582486b591a31f00aa25e272fa13114e6",
+    "head": "1d5d16e280f73cacd97f32a1e9bf6847051dc9b4",
     "clean_before_audit": false
   },
   "scope": {
@@ -502,6 +502,13 @@
           "bytes": 3896,
           "sha256": "3301d13a9383dbab5c8872c55789eeb15bad9b24971709742de68c1d445e404a",
           "reported_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+          "exists": true,
+          "bytes": 3771,
+          "sha256": "fedeab6eaa6941ad0c09a787105ce3a8f212d38195e9709969fdc7464ec1155e",
+          "reported_status": "PASS_M_GATED_DECISION_EFFECT_CONTROL"
         }
       ],
       "facts": {
@@ -572,9 +579,15 @@
         "family_peak_m_effect_online_memory_versions": 311,
         "family_peak_m_effect_action_counts_equal": true,
         "family_peak_m_effect_arm_selected": false,
-        "family_peak_m_effect_predicted_track_training": false
+        "family_peak_m_effect_predicted_track_training": false,
+        "family_peak_m_gated_status": "PASS_M_GATED_DECISION_EFFECT_CONTROL",
+        "family_peak_m_gated_changed_frame_count": 6,
+        "family_peak_m_gated_action_changed_frame_count": 0,
+        "family_peak_m_gated_decision_action_effect_observed": false,
+        "family_peak_m_gated_online_optimizer_steps": 1,
+        "family_peak_m_gated_action_counts_equal": true
       },
-      "open_gate": "The fixed family-relative rule and bounded short/full-clock M-only optimizer smokes have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
+      "open_gate": "The fixed family-relative rule and M-gated short-clock control show numeric event effects but no action-level effect; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
     },
     {
       "id": "self_correcting_persistent_memory",
@@ -666,6 +679,13 @@
           "reported_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+          "exists": true,
+          "bytes": 3771,
+          "sha256": "fedeab6eaa6941ad0c09a787105ce3a8f212d38195e9709969fdc7464ec1155e",
+          "reported_status": "PASS_M_GATED_DECISION_EFFECT_CONTROL"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -741,6 +761,11 @@
         "family_peak_m_effect_action_counts_equal": true,
         "family_peak_m_effect_arm_selected": false,
         "family_peak_m_effect_predicted_track_training": false,
+        "family_peak_m_gated_status": "PASS_M_GATED_DECISION_EFFECT_CONTROL",
+        "family_peak_m_gated_changed_frame_count": 6,
+        "family_peak_m_gated_action_changed_frame_count": 0,
+        "family_peak_m_gated_decision_action_effect_observed": false,
+        "family_peak_m_gated_action_counts_equal": true,
         "joint_rcm_complete_clock_consumed": true,
         "joint_rcm_version_records": 143,
         "joint_rcm_append_only_memory_history_retained": true,
@@ -993,6 +1018,13 @@
       "bytes": 3896,
       "sha256": "3301d13a9383dbab5c8872c55789eeb15bad9b24971709742de68c1d445e404a",
       "reported_status": "PASS_FIXED_M_ONLINE_EFFECT_CONTROL"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+      "exists": true,
+      "bytes": 3771,
+      "sha256": "fedeab6eaa6941ad0c09a787105ce3a8f212d38195e9709969fdc7464ec1155e",
+      "reported_status": "PASS_M_GATED_DECISION_EFFECT_CONTROL"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",

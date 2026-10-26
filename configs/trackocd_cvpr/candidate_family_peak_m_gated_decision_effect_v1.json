@@ -1,0 +1,45 @@
+{
+  "schema_version": "trackocd.cvpr.candidate-family-peak-m-gated-decision-effect.v1",
+  "status": "FROZEN_POLICY_TRAIN_M_GATED_DECISION_EFFECT_NO_PRED_OR_GOAL_ACCEPTANCE",
+  "purpose": "Pair frozen and online M under one preregistered M-adjusted family-relative candidate score to test whether a lawful reliability update can affect anonymous causal actions.",
+  "joint_rcm_config": "configs/trackocd_cvpr/joint_rcm_policy_pilot_v1.json",
+  "joint_rcm_config_sha256": "8e5d2db56af95a8ed3e1eeae122c21423e8a50255f897cc4ca0b448103274abe",
+  "mechanism": "m_adjusted_family_peak",
+  "pilot_policy_relative_ordinals": [0, 1],
+  "frames_per_video": 8,
+  "online_optimizer_steps": 1,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 1.0,
+  "paired_arms": ["frozen_m", "online_m"],
+  "scorer": {
+    "formula": "m_adjusted_similarity = adapted_cos + (adapted_cos - raw_cos)",
+    "feature_indices": {"adapted_cos": 0, "adapted_minus_raw": 12},
+    "family_standardization": "population mean/std within existing and Known families, then existing peak wins ties",
+    "candidate_bindings_in_numeric_forward": false,
+    "coefficient_sweep": false
+  },
+  "selection_rule": "Use the first two frozen policy-order videos and first eight metadata clock frames of each; initialize both arms with the same seed and update only the online arm at the first eligible fixed-scope M opportunity, without selecting an arm or stopping on an outcome.",
+  "limits": {
+    "frozen_optimizer_steps": 0,
+    "online_optimizer_steps": 1,
+    "training_gpu_hours": 0,
+    "device": "CPU",
+    "workers": 1
+  },
+  "boundaries": {
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "category_or_vocabulary_in_numeric_forward": false,
+    "val_or_test_accessed": false,
+    "predicted_track_training": false,
+    "model_selection": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "weights_uploaded": false,
+    "external_processes_touched": false
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+  "interpretation": "This is a bounded causal decision-effect control for the M-gated candidate scorer. It is not calibrated self-correcting memory, predicted-track training, an OCD/MOT metric, model selection, or Goal A/B/C acceptance."
+}

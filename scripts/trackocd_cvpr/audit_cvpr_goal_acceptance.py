@@ -156,6 +156,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
     )
+    family_peak_m_gated_path, family_peak_m_gated = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -604,6 +608,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
                     reported_status=family_peak_m_effect.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+                    reported_status=family_peak_m_gated.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
@@ -743,8 +752,25 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "family_peak_m_effect_predicted_track_training": nested(
                     family_peak_m_effect, "boundaries", "predicted_track_training"
                 ),
+                "family_peak_m_gated_status": family_peak_m_gated.get("status"),
+                "family_peak_m_gated_changed_frame_count": nested(
+                    family_peak_m_gated, "paired_effect", "changed_frame_count"
+                ),
+                "family_peak_m_gated_action_changed_frame_count": nested(
+                    family_peak_m_gated, "paired_effect", "action_changed_frame_count"
+                ),
+                "family_peak_m_gated_decision_action_effect_observed": nested(
+                    family_peak_m_gated, "paired_effect", "decision_action_effect_observed"
+                ),
+                "family_peak_m_gated_online_optimizer_steps": nested(
+                    family_peak_m_gated, "arms", "online_m", "optimizer_steps"
+                ),
+                "family_peak_m_gated_action_counts_equal": (
+                    nested(family_peak_m_gated, "arms", "frozen_m", "actions")
+                    == nested(family_peak_m_gated, "arms", "online_m", "actions")
+                ),
             },
-            "open_gate": "The fixed family-relative rule and bounded short/full-clock M-only optimizer smokes have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open.",
+            "open_gate": "The fixed family-relative rule and M-gated short-clock control show numeric event effects but no action-level effect; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open.",
         },
         {
             "id": "self_correcting_persistent_memory",
@@ -806,6 +832,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
                     reported_status=family_peak_m_effect.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+                    reported_status=family_peak_m_gated.get("status"),
                 ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
@@ -944,6 +975,20 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 "family_peak_m_effect_predicted_track_training": nested(
                     family_peak_m_effect, "boundaries", "predicted_track_training"
+                ),
+                "family_peak_m_gated_status": family_peak_m_gated.get("status"),
+                "family_peak_m_gated_changed_frame_count": nested(
+                    family_peak_m_gated, "paired_effect", "changed_frame_count"
+                ),
+                "family_peak_m_gated_action_changed_frame_count": nested(
+                    family_peak_m_gated, "paired_effect", "action_changed_frame_count"
+                ),
+                "family_peak_m_gated_decision_action_effect_observed": nested(
+                    family_peak_m_gated, "paired_effect", "decision_action_effect_observed"
+                ),
+                "family_peak_m_gated_action_counts_equal": (
+                    nested(family_peak_m_gated, "arms", "frozen_m", "actions")
+                    == nested(family_peak_m_gated, "arms", "online_m", "actions")
                 ),
                 "joint_rcm_complete_clock_consumed": joint_rcm_episode.get(
                     "complete_clock_consumed"
@@ -1163,6 +1208,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json",
                 reported_status=family_peak_m_effect.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json",
+                reported_status=family_peak_m_gated.get("status"),
             ),
             evidence(
                 repo,

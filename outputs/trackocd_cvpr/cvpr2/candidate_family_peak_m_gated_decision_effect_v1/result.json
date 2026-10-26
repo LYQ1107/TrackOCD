@@ -1,0 +1,112 @@
+{
+  "arms": {
+    "frozen_m": {
+      "actions": {
+        "EXISTING": 25,
+        "NEW": 28
+      },
+      "events": 53,
+      "frames": 16,
+      "gradient_norms": [],
+      "losses": [],
+      "memory_lifecycle_counts": {
+        "Quarantined": 23,
+        "Tentative": 41
+      },
+      "memory_versions": 64,
+      "optimizer_steps": 0,
+      "parameter_digest_after": "30a93bd30f3ada4fb08b9c0abc080833fd546fef1d0059fffa4766ab7929c97c",
+      "parameter_digest_before": "30a93bd30f3ada4fb08b9c0abc080833fd546fef1d0059fffa4766ab7929c97c",
+      "parameters_changed": false,
+      "plan_reasons": {
+        "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 8,
+        "MASKED_SINGLETON_NO_OTHER_SUPPORT": 50
+      },
+      "positive_other_video_groups": 8,
+      "support_plans": 58,
+      "update_frames": []
+    },
+    "online_m": {
+      "actions": {
+        "EXISTING": 25,
+        "NEW": 28
+      },
+      "events": 53,
+      "frames": 16,
+      "gradient_norms": [
+        0.47252264618873596
+      ],
+      "losses": [
+        0.6931471824645996
+      ],
+      "memory_lifecycle_counts": {
+        "Quarantined": 23,
+        "Tentative": 46
+      },
+      "memory_versions": 69,
+      "optimizer_steps": 1,
+      "parameter_digest_after": "ec1d20898aefeb8c129f7fbf4ff92e25b6333e6ed20dece3e8a94e9c9a7037ae",
+      "parameter_digest_before": "30a93bd30f3ada4fb08b9c0abc080833fd546fef1d0059fffa4766ab7929c97c",
+      "parameters_changed": true,
+      "plan_reasons": {
+        "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 8,
+        "MASKED_SINGLETON_NO_OTHER_SUPPORT": 50
+      },
+      "positive_other_video_groups": 8,
+      "support_plans": 58,
+      "update_frames": [
+        {
+          "epoch": 1,
+          "frame": 30
+        }
+      ]
+    }
+  },
+  "boundaries": {
+    "category_or_vocabulary_in_numeric_forward": false,
+    "external_processes_touched": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "model_selection": false,
+    "predicted_track_training": false,
+    "val_or_test_accessed": false,
+    "weights_uploaded": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_family_peak_m_gated_decision_effect_v1.json",
+    "sha256": "37b7d4b268a11c14d0621e265aa48efff3e590a1a0e4c60cdfa46d5aaae14db0"
+  },
+  "generated_utc": "2026-10-26T01:55:53.044011+00:00",
+  "interpretation": "This is a bounded causal decision-effect control for the M-gated candidate scorer. It is not calibrated self-correcting memory, predicted-track training, an OCD/MOT metric, model selection, or Goal A/B/C acceptance.",
+  "paired_effect": {
+    "action_changed_frame_count": 0,
+    "action_counts_equal": true,
+    "arm_selected": false,
+    "changed_frame_count": 6,
+    "decision_action_effect_observed": false,
+    "frozen_action_digest": "e93b8fbe20c26263a91e4711bcdc0658034c466e2689edcce70b46e0575e9e56",
+    "frozen_event_digest": "051bec81bc709283aa4d64eeb315e039f3c7814246639b8bd2a8e869a184d0df",
+    "online_action_digest": "e93b8fbe20c26263a91e4711bcdc0658034c466e2689edcce70b46e0575e9e56",
+    "online_event_digest": "143c35e2884ef0ab549333b4eeb536f11782bd5c582962330005afb32c44c32f",
+    "policy_effect_observed": true,
+    "same_initial_seed_and_scope": true
+  },
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 969035776,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 301.15092273400296,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-family-peak-m-gated-decision-effect-result.v1",
+  "scope": {
+    "complete_fixed_clock": false,
+    "events": 53,
+    "frames": 16,
+    "frames_per_video": 8,
+    "videos": 2
+  },
+  "status": "PASS_M_GATED_DECISION_EFFECT_CONTROL"
+}

@@ -11129,3 +11129,30 @@ no private GT/cache/weights opened for this check):
   `.../policy_temporal.json`,
   `.../development_vs_one_frame_temporal.json`, and
   `.../policy_vs_one_frame_temporal.json`.
+
+## M-adjusted candidate decision-effect control (2026-10-26 UTC)
+
+- The previous family-relative scorer showed a causal online-M numeric effect
+  but identical action counts. To test whether the decision interface itself
+  was suppressing that effect, one new scorer was preregistered:
+  `m_adjusted_similarity = adapted_cos + (adapted_cos - raw_cos)`, followed by
+  the same within-family population standardization and existing-tie rule.
+  The coefficient was fixed; no sweep or outcome-based choice was performed.
+- A paired frozen-M/online-M control consumed the first `8` metadata clock
+  frames of each of the same two policy-order Train videos (`16` frames,
+  `53` events). The online arm made exactly one prediction-owned M update at
+  epoch `1`, frame `30`, with finite loss `0.693147` and gradient norm
+  `0.472523`; its parameters and append-only memory versions changed.
+- The intervention changed compact numeric event digests on `6` frames, but
+  changed action digests on `0` frames. Both arms retained exactly `25`
+  EXISTING and `28` NEW actions. This is a useful negative causal result:
+  the M-gated numeric bridge is active, but this fixed short-clock scorer does
+  not yet produce decision-level correction or self-correcting memory.
+- The run used CPU/one worker, peak RSS `969,035,776` bytes, wall time
+  `301.151` seconds, no Val/Test access, no category/vocabulary in numeric
+  forward, no formal metrics, no model selection, and no Goal acceptance.
+- Receipt/config/script/test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_gated_decision_effect_v1/result.json`,
+  `configs/trackocd_cvpr/candidate_family_peak_m_gated_decision_effect_v1.json`,
+  `scripts/trackocd_cvpr/candidate_family_peak_m_gated_decision_effect.py`, and
+  `tests/trackocd_cvpr/test_candidate_family_peak_m_gated_decision_effect.py`.
