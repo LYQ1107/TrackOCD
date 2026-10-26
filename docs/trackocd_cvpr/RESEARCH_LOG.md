@@ -11595,3 +11595,24 @@ no private GT/cache/weights opened for this check):
 - No threshold was relaxed, no GPU was claimed from another task, and no
   process was stopped or reconfigured.  The cache remains resumable at shard
   `399`.
+
+## Positive sealed Val evidence inventory (2026-10-26 UTC)
+
+- Existing COVTrack-native category-free Val recheck reports HOTA **15.402**,
+  AssA **44.535**, DetA **5.5815**, DetPr **5.7719**, DetRe **54.418**, AssPr
+  **73.595**, AssRe **48.878**, LocA **76.647**, and OWTA **48.199** percent;
+  Novel Track Observability is `189/819 = 0.230769`, and Persistent
+  Observability is `84/527 = 0.159393`.  This is sealed Val evidence, not a
+  newly rerun frontend or Goal result.
+- The sealed nearest OCD baseline remains positive but low: at prefix 16,
+  All/Old/New accuracy is `0.096713/0.089961/0.133089`, H-score `0.107356`,
+  Commit-CT `0.051233`, and false-assignment rate `0.166983`.  DP-means is
+  still waiting for the formal feature cache.
+- The recovered reference-only TETA receipt reports combined/known/novel
+  TETA50 of `31.967/37.391942/29.752611`; it is explicitly not frontend
+  selection, predicted-track training, or Goal acceptance.
+- Two preserved sealed category-free MOT receipts differ slightly
+  (`HOTA 15.402 vs 15.412`, `OWTA 48.199 vs 48.228`) and have different audit
+  provenance.  They are intentionally not collapsed into one formal number;
+  reconciliation remains open.  No Test asset or external process was
+  touched while inventorying these compact receipts.
