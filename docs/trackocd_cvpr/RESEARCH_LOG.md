@@ -11211,3 +11211,27 @@ no private GT/cache/weights opened for this check):
   `configs/trackocd_cvpr/family_peak_joint_rcm_training_pilot_v1.json`,
   `scripts/trackocd_cvpr/pilot_family_peak_joint_rcm.py`, and
   `tests/trackocd_cvpr/test_family_peak_joint_rcm.py`.
+
+## COVTrack-native Val TETA reference recovery (2026-10-26 UTC)
+
+- The missing TETA reference was recovered without rerunning COVTrack. The
+  pinned official source is `SysCV/tet@a62a9c0affec3a97f2cd0263141c53bcfb9c79f7`;
+  the current A100 environment could import it through a temporary source
+  checkout, so no broad legacy environment or model asset was installed.
+- The owned evaluator converted the sealed COVTrack-native Val JSONL into an
+  evaluator-only TAO JSON with `1,133,872` rows, then ran single-worker CPU
+  TETA50 on the existing Val annotation. No frames, frontend inference,
+  training, model selection, Novel forward input, or TAO Test was accessed.
+- Reference values are: Combined TETA **31.967** (LocS 54.468, AssocS
+  38.879, ClsS 2.5546); Known TETA **37.39194**; Novel TETA **29.75261**.
+  The category-aware TETA result remains reference-only and is not mixed into
+  the category-free TrackOCD backend or used to select a frontend.
+- The first two runner failures are preserved: one missing project-root import
+  and one intentional-format error from passing JSONL directly to a JSON-only
+  helper. The final v2 receipt passed its regression test and keeps all
+  previous failed attempts intact.
+- Receipt/config/script/test:
+  `outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/result.json`,
+  `configs/trackocd_cvpr/covtrack_native_teta_recovery_v1.json`,
+  `scripts/trackocd_cvpr/run_covtrack_native_teta_recovery.py`, and
+  `tests/trackocd_cvpr/test_covtrack_native_teta_recovery.py`.

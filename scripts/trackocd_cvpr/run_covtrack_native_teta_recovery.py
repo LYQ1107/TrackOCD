@@ -99,7 +99,7 @@ def run(config_path: Path, source_root: Path) -> dict:
     _verify_source(source_root.resolve(), config["teta_commit"])
     output_json = output_root / "teta_reference.json"
     teta_input = output_root / "native_input" / "tao_track.json"
-    converted_rows, converted_videos = _atomic_native_teta_json(native, teta_input)
+    converted_rows, converted_categories = _atomic_native_teta_json(native, teta_input)
     log_path = output_root / "evaluator.log"
     command = [
         sys.executable,
@@ -140,7 +140,7 @@ def run(config_path: Path, source_root: Path) -> dict:
             "native_stream_sha256": observed_stream_sha256,
             "converted_teta_input": str(teta_input.resolve()),
             "converted_rows": converted_rows,
-            "converted_videos": len(converted_videos),
+            "converted_categories": len(converted_categories),
             "annotation": str(annotation.resolve()),
             "known_ids": str(known_ids.resolve()),
             "novel_ids": str(novel_ids.resolve()),

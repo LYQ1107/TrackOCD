@@ -1,0 +1,118 @@
+{
+  "boundaries": {
+    "external_process_intervention": false,
+    "formal_frontend_selection": false,
+    "frontend_inference_started": false,
+    "goal_acceptance": false,
+    "model_selection_performed": false,
+    "novel_vocabulary_used_for_forward_or_selection": false,
+    "owned_evaluator_subprocess": true,
+    "tao_test_read": false,
+    "training_started": false,
+    "val_only": true
+  },
+  "command": [
+    "/data3/liuyeqiang/.venvs/trackocd-a100/bin/python",
+    "/data3/liuyeqiang/TrackOCD/scripts/trackocd_v2/run_teta_reference.py",
+    "--tracker-json",
+    "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/native_input/tao_track.json",
+    "--annotation",
+    "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+    "--output-root",
+    "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2",
+    "--output-json",
+    "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/teta_reference.json",
+    "--tracker-name",
+    "covtrack_native",
+    "--known-ids",
+    "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/known_ids.json",
+    "--novel-ids",
+    "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/unknown_ids_val.json"
+  ],
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/covtrack_native_teta_recovery_v1.json",
+    "sha256": "232170a9e1605166cf2041372769092e22c576ab750cca339df78e31400179fd"
+  },
+  "evaluator_log": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/evaluator.log",
+  "generated_utc": "2026-10-26T02:54:18.910417+00:00",
+  "inputs": {
+    "annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+    "converted_rows": 1133872,
+    "converted_teta_input": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/native_input/tao_track.json",
+    "converted_categories": 295,
+    "frontend_inference_started": false,
+    "known_ids": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/known_ids.json",
+    "native_stream": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/native_evaluator_rows.jsonl",
+    "native_stream_sha256": "be5d2a0275c82aefc106f1c6ab250a6ab0122697f39d7b9bb407f4ba0e6c4597",
+    "novel_ids": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_core/recovered_splits/unknown_ids_val.json",
+    "tao_test_read": false,
+    "training_started": false
+  },
+  "interpretation": "Reference-only TETA numbers for the already sealed category-aware native stream. This does not qualify the frontend, train a predicted-track policy, produce OCD metrics, or accept Goal A/B/C.",
+  "schema_version": "trackocd.cvpr.covtrack-native-teta-recovery-result.v1",
+  "status": "PASS_VAL_TETA_REFERENCE_RECOVERED_NO_SELECTION",
+  "teta_reference": {
+    "annotation": "/data3/liuyeqiang/TAO-Amodal/annotations/validation.json",
+    "category_count": 1230,
+    "config": {
+      "cores": 1,
+      "exhaustive": false,
+      "max_detections_per_image": 300,
+      "parallel": false,
+      "threshold": 50
+    },
+    "evaluator": "pinned TETA TAO",
+    "known_ids_count": 78,
+    "novel_ids_count": 209,
+    "schema_version": "trackocd.v2.teta_reference.v1",
+    "status": "COMPLETE",
+    "summary_path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/results/covtrack_native/teta_summary_results.pth",
+    "summary_sha256": "cf0fd71a29acadfee0fb9d2fb58a49ab54084627ad65b70375e763509a277318",
+    "test_semantic_accessed": false,
+    "teta50": {
+      "combined": {
+        "AssocPr": 73.363,
+        "AssocRe": 42.25,
+        "AssocS": 38.879,
+        "ClsPr": 3.1642,
+        "ClsRe": 3.9526,
+        "ClsS": 2.5546,
+        "LocPr": 79.992,
+        "LocRe": 56.651,
+        "LocS": 54.468,
+        "TETA": 31.967
+      },
+      "known": {
+        "AssocPr": 76.53332692307693,
+        "AssocRe": 49.809907692307696,
+        "AssocS": 46.42016538461539,
+        "ClsPr": 7.031644230769232,
+        "ClsRe": 11.991761538461539,
+        "ClsS": 6.092044230769231,
+        "LocPr": 81.69332692307692,
+        "LocRe": 62.40436538461539,
+        "LocS": 59.66369230769232,
+        "TETA": 37.39194230769231
+      },
+      "novel": {
+        "AssocPr": 72.35585645933014,
+        "AssocRe": 38.81100861244019,
+        "AssocS": 35.914320095693775,
+        "ClsPr": 2.822734449760765,
+        "ClsRe": 2.727832535885167,
+        "ClsS": 2.17556985645933,
+        "LocPr": 78.77045454545456,
+        "LocRe": 53.15102105263158,
+        "LocS": 51.16800574162679,
+        "TETA": 29.752611004784686
+      }
+    },
+    "tracker_json": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/native_input/tao_track.json",
+    "tracker_name": "covtrack_native"
+  },
+  "teta_source": {
+    "commit": "a62a9c0affec3a97f2cd0263141c53bcfb9c79f7",
+    "repository": "https://github.com/SysCV/tet",
+    "source_root": "/tmp/tet_inspect.zigyHn"
+  }
+}
