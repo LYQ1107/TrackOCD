@@ -11090,3 +11090,42 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_online_effect_control_v1/result.json`,
   `configs/trackocd_cvpr/candidate_family_peak_m_online_effect_control_v1.json`,
   and `tests/trackocd_cvpr/test_candidate_family_peak_m_online_effect_control.py`.
+
+## Sparse-cadence gap-aware physical reassociation control (2026-10-26 UTC)
+
+- The existing COVTrack Train readiness audit shows that GT-adjacent
+  observations are predominantly separated by source-frame gaps `30`, `25`,
+  and `24`, while the earlier physical bridge was fixed to a one-frame
+  horizon. A new immutable diagnostic therefore preregistered the same
+  `quality >= 0.005` cut and IoU `0.5`, but allowed a causal prior-state
+  Hungarian bridge up to `30` source frames. The role IDs remained the
+  previously frozen eight development and ten policy Train videos; no new
+  threshold or outcome-based subset was selected.
+- The transform completed on CPU/one worker without GT, labels, vocabulary,
+  pixels, features, Val/Test input, or training. Policy retained `225`
+  score-gated tracks and emitted `206` gap-aware tracks over `13,997`
+  observations; development retained `1,193` score-gated tracks and emitted
+  `1,112` gap-aware tracks over `31,688` observations. The bounded probe found
+  `19` policy birth bridges at gap `30` versus `2` at gap `1`.
+- Category-free Train geometry/continuity audits still rejected the candidate:
+  policy observation recall changed by `-0.293375` and switch rate improved by
+  `-0.098801`; development recall changed by `-0.292273` and switch rate by
+  `-0.129857`. Direct gap30-versus-one-frame controls changed no policy
+  recall/continuity value and only changed development switch rate by
+  `-0.014925`. Thus a longer physical bridge reduces switches only after the
+  score gate has already removed coverage; it does not repair the readiness
+  gate or qualify a frontend.
+- The result is recorded as a fifth mechanism variant under the existing
+  physical-temporal-association family, with disposition
+  `REJECTED_PHYSICAL_BRIDGES_DO_NOT_RECOVER_COVERAGE`. It does not authorize
+  predicted-track training, formal OCD/MOT metrics, model selection, or
+  Goal A/B/C acceptance.
+- Receipt/config/script/test and paired audits:
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/run.json`,
+  `configs/trackocd_cvpr/covtrack_score_gate_gap30_reassoc_transfer_v1.json`,
+  `scripts/trackocd_cvpr/run_score_gate_gap30_reassoc_transfer.py`,
+  `tests/trackocd_cvpr/test_score_gate_gap30_reassoc_transfer.py`,
+  `.../development_temporal.json`,
+  `.../policy_temporal.json`,
+  `.../development_vs_one_frame_temporal.json`, and
+  `.../policy_vs_one_frame_temporal.json`.

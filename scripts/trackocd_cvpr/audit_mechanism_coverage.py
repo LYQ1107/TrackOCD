@@ -88,6 +88,21 @@ def build_audit(repo: Path) -> dict[str, Any]:
     reassoc_policy_path, reassoc_policy = load_json(
         repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_reassoc_transfer_v1/policy_temporal.json"
     )
+    gap_run_path, gap_run = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/run.json"
+    )
+    gap_dev_path, gap_dev = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/development_temporal.json"
+    )
+    gap_policy_path, gap_policy = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_temporal.json"
+    )
+    gap_dev_control_path, gap_dev_control = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/development_vs_one_frame_temporal.json"
+    )
+    gap_policy_control_path, gap_policy_control = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_vs_one_frame_temporal.json"
+    )
 
     nosem_base = nosem_geo["baseline"]["geometry"]
     nosem_candidate = nosem_geo["candidate"]["geometry"]
@@ -144,6 +159,19 @@ def build_audit(repo: Path) -> dict[str, Any]:
     )
     reassoc_safe = false_flags(
         reassoc_run,
+        "feature_arrays_read",
+        "full_cache_automatic_start",
+        "gt_category_fields_read",
+        "gt_role_or_vocabulary_read",
+        "prediction_to_gt_mapping_persisted",
+        "raw_payload_uploaded",
+        "test_accessed",
+        "train_annotation_opened",
+        "training_started",
+        "val_labels_read",
+    )
+    gap_safe = false_flags(
+        gap_run,
         "feature_arrays_read",
         "full_cache_automatic_start",
         "gt_category_fields_read",
@@ -246,6 +274,37 @@ def build_audit(repo: Path) -> dict[str, Any]:
             },
             "disposition": "REJECTED_PRECISION_PERSISTENCE_GAIN_COSTS_COVERAGE",
             "boundary_safe": reassoc_safe,
+        },
+        {
+            "id": "gap_aware_physical_reassociation",
+            "root_cause_family": "physical_temporal_association",
+            "candidate": gap_run["mechanism"],
+            "baseline": "one_frame_score_gate_reassociation_candidate",
+            "evidence": [
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/run.json", gap_run),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/development_temporal.json", gap_dev),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_temporal.json", gap_policy),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/development_vs_one_frame_temporal.json", gap_dev_control),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_vs_one_frame_temporal.json", gap_policy_control),
+            ],
+            "observed": {
+                "gap30_against_one_frame": {
+                    "development": gap_dev_control["deltas_candidate_minus_baseline"],
+                    "policy": gap_policy_control["deltas_candidate_minus_baseline"],
+                },
+                "gap30_track_counts": {
+                    "development": {
+                        "score_retained_tracks": gap_run["roles"]["development_pseudo"]["score_retained_tracks"],
+                        "candidate_tracks": gap_run["roles"]["development_pseudo"]["candidate_tracks"],
+                    },
+                    "policy": {
+                        "score_retained_tracks": gap_run["roles"]["policy_train_pseudo"]["score_retained_tracks"],
+                        "candidate_tracks": gap_run["roles"]["policy_train_pseudo"]["candidate_tracks"],
+                    },
+                },
+            },
+            "disposition": "REJECTED_PHYSICAL_BRIDGES_DO_NOT_RECOVER_COVERAGE",
+            "boundary_safe": gap_safe,
         },
     ]
 

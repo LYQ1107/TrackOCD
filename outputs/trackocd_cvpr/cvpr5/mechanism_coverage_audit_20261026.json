@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.mechanism-coverage-audit.v1",
-  "generated_utc": "2026-10-25T22:56:08.975590+00:00",
+  "generated_utc": "2026-10-26T01:47:56.985001+00:00",
   "status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE",
   "scope": {
     "receipt_only": true,
@@ -13,7 +13,7 @@
     "goal_acceptance_claimed": false
   },
   "mechanism_family_count": 3,
-  "mechanism_variant_count": 4,
+  "mechanism_variant_count": 5,
   "mechanisms": [
     {
       "id": "semantic_association_ablation",
@@ -172,6 +172,89 @@
         }
       },
       "disposition": "REJECTED_PRECISION_PERSISTENCE_GAIN_COSTS_COVERAGE",
+      "boundary_safe": true
+    },
+    {
+      "id": "gap_aware_physical_reassociation",
+      "root_cause_family": "physical_temporal_association",
+      "candidate": {
+        "candidate_order": "causal score gate first, then gap-aware physical reassociation",
+        "reassociation_iou_threshold": 0.5,
+        "reassociation_max_gap_frames": 30,
+        "reassociation_max_gap_rationale": "Fixed before candidate output inspection from the existing full-Train source-cadence audit: dominant gaps are 30, 25, and 24 source frames; 30 is the declared upper bridge bound.",
+        "reassociation_rule": "At each observed source frame, one-to-one Hungarian IoU bridge from a current birth to at most one prior persistent state whose last observation is no more than 30 source frames earlier; no future observations.",
+        "score_field": "quality",
+        "score_threshold": 0.005,
+        "score_threshold_rationale": "Reuse the already registered full-407 counterfactual cut; no new threshold sweep.",
+        "semantic_or_feature_input": false
+      },
+      "baseline": "one_frame_score_gate_reassociation_candidate",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/run.json",
+          "exists": true,
+          "bytes": 14584,
+          "sha256": "79b7c762c50ca474e1cb377f6fa91c29ccaa8beabc28aeababdf6db36d34c9f6",
+          "status": "COMPLETE_CATEGORY_FREE_SCORE_GATE_GAP30_REASSOCIATION_TRANSFER"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/development_temporal.json",
+          "exists": true,
+          "bytes": 11908,
+          "sha256": "855b28733066004a9c5d5ca1e2eb7b05494298adfac3b87ece8f3f16e13eec5f",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_temporal.json",
+          "exists": true,
+          "bytes": 10890,
+          "sha256": "df552b60804eeff3841bbd405da17bd10500aa31e333a9dd679ef9290dcf697f",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/development_vs_one_frame_temporal.json",
+          "exists": true,
+          "bytes": 11529,
+          "sha256": "bb50fd3fed403642657c6efafbdd22640eefea46f3d4b88d389eb0cc93d753b6",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_vs_one_frame_temporal.json",
+          "exists": true,
+          "bytes": 10505,
+          "sha256": "7479177da7be3ea232a2e4bb33127ffa0ef9a7f5f758c03d5fdb7856a9340691",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        }
+      ],
+      "observed": {
+        "gap30_against_one_frame": {
+          "development": {
+            "adjacent_pair_match_rate": 0.0,
+            "matched_observations": 0,
+            "observation_recall": 0.0,
+            "same_id_rate_given_matches": 0.01492537313432829,
+            "switch_rate_given_matches": -0.01492537313432836
+          },
+          "policy": {
+            "adjacent_pair_match_rate": 0.0,
+            "matched_observations": 0,
+            "observation_recall": 0.0,
+            "same_id_rate_given_matches": 0.0,
+            "switch_rate_given_matches": 0.0
+          }
+        },
+        "gap30_track_counts": {
+          "development": {
+            "score_retained_tracks": 1193,
+            "candidate_tracks": 1112
+          },
+          "policy": {
+            "score_retained_tracks": 225,
+            "candidate_tracks": 206
+          }
+        }
+      },
+      "disposition": "REJECTED_PHYSICAL_BRIDGES_DO_NOT_RECOVER_COVERAGE",
       "boundary_safe": true
     }
   ],

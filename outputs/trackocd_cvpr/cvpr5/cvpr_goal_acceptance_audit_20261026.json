@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T01:38:43.279030+00:00",
+  "generated_utc": "2026-10-26T01:48:00.583170+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "cad95767c12db66c5bc48c3ab32425c575122fe1",
+    "head": "f32cef5582486b591a31f00aa25e272fa13114e6",
     "clean_before_audit": false
   },
   "scope": {
@@ -140,14 +140,14 @@
         {
           "path": "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json",
           "exists": true,
-          "bytes": 8475,
-          "sha256": "28b36574b7853fd951cf03a676526ca872bb088b510952d4196e4229855d772f",
+          "bytes": 12411,
+          "sha256": "eb36f48a52aa6904768da58cb85caff05e9f15f3377e05038372976a78d122fa",
           "reported_status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE"
         }
       ],
       "facts": {
         "mechanism_family_count": 3,
-        "mechanism_variant_count": 4,
+        "mechanism_variant_count": 5,
         "all_boundaries_safe": true,
         "scientific_acceptance_claimed": false
       },
@@ -878,8 +878,8 @@
     {
       "path": "outputs/trackocd_cvpr/cvpr5/mechanism_coverage_audit_20261026.json",
       "exists": true,
-      "bytes": 8475,
-      "sha256": "28b36574b7853fd951cf03a676526ca872bb088b510952d4196e4229855d772f",
+      "bytes": 12411,
+      "sha256": "eb36f48a52aa6904768da58cb85caff05e9f15f3377e05038372976a78d122fa",
       "reported_status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE"
     },
     {
