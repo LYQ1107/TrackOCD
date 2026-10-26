@@ -688,7 +688,10 @@ def build(
     eligible = eligible_gpus(snapshot, 1)
     if gpu_index is not None:
         if gpu_index not in eligible:
-            raise RuntimeError("requested GPU %d is not idle within the RAM safety margin" % gpu_index)
+            raise RuntimeError(
+                "FORMAL_CACHE_WAITING_RESOURCE: requested GPU %d is not idle within the RAM safety margin"
+                % gpu_index
+            )
         selected_gpu = gpu_index
     elif not eligible:
         wait = _manifest_payload(
