@@ -11323,3 +11323,20 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_bounded_resume_20261026.json`
   and
   `outputs/trackocd_v2_runtime/audit/bounded_resume_payload_audit_20261026.json`.
+
+## Full remainder cache continuation registered (2026-10-26 UTC)
+
+- After the three-shard boundary passed, registered the remaining Val range
+  `387` inclusive through `723` exclusive (336 shards).  The worker is pinned
+  to one currently eligible GPU (`0`), the same local DINOv2 checkpoint and
+  frame root, batch 16, and the historical selected-stream SHA256.  GPUs
+  occupied by other users/tasks are excluded; no external process is stopped
+  or reconfigured.
+- This is a resumable cache continuation, not training and not evaluation.
+  It remains subject to the 25% RAM floor and storage check; the registered
+  snapshot had about `5.39GB` free and the prior estimate left a tight
+  positive margin.  The final cache manifest will be considered formal only
+  after all 723 shard payloads pass the independent audit and the non-range
+  manifest is regenerated.
+- Launch receipt:
+  `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_full_resume_launch_20261026.json`.

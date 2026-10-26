@@ -1,0 +1,44 @@
+{
+  "schema_version": "trackocd.cvpr5.formal_covtrack_cache_full_resume_launch.v1",
+  "status": "REGISTERED_PENDING_FULL_REMAINDER_RESUME",
+  "generated_utc": "2026-10-26T03:16:21Z",
+  "code_commit_at_registration": "fb43085dc705bb452a4b5f4a2b4b6f6685381d06",
+  "split": "val",
+  "frontend": "COVTrack-native",
+  "source_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+  "cache_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
+  "existing_completed_shards": 387,
+  "expected_shards": 723,
+  "resume_range": {
+    "start_inclusive": 387,
+    "end_exclusive": 723,
+    "shard_count": 336
+  },
+  "command_contract": {
+    "model_repo": "/data3/liuyeqiang/TrackOCD/vendor/trackocd_core/dinov2_7764ea0",
+    "model_weights": "/data3/liuyeqiang/TrackOCD/checkpoints/dinov2_vitb14_pretrain.pth",
+    "model_weights_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "frames_root": "/data3/liuyeqiang/TAO-Amodal/frames",
+    "batch": 16,
+    "shard_tracks": 512,
+    "gpu_index": 0,
+    "worker_count": 1
+  },
+  "resource_snapshot_at_registration": {
+    "free_bytes": 5393879040,
+    "gpu0_memory_used_mib": 1584,
+    "gpu0_memory_free_mib": 38858,
+    "gpu0_compute_apps": [],
+    "other_gpu_indices_observed_busy_or_reserved": [1, 3, 4, 5, 6, 7, 8, 9]
+  },
+  "safety": {
+    "ram_floor_percent": 25,
+    "tao_test_read": false,
+    "gt_or_novel_vocabulary_read": false,
+    "external_processes_touched": false,
+    "training_started": false,
+    "model_selection_changed": false,
+    "full_cache_completion_claimed": false
+  },
+  "next_artifact": "cache_manifest.worker-000387-000723.json"
+}
