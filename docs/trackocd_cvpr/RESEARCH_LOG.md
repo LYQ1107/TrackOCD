@@ -11357,3 +11357,28 @@ no private GT/cache/weights opened for this check):
   manifest is regenerated.
 - Launch receipt:
   `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_full_resume_launch_20261026.json`.
+
+## RAM-gate mismatch repair and resumable supervisor replacement (2026-10-26 UTC)
+
+- The first resume supervisor launch at `MemAvailable=34,544,876 kB` was
+  correctly below the cache worker's actual eligibility requirement
+  (`25% RAM + 8 GiB`), but the supervisor itself only checked the 25% floor.
+  The worker therefore exited before reading frames or writing a payload with
+  `RuntimeError: requested GPU 0 is not idle within the RAM safety margin`.
+  The failure is recorded in
+  `outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_failure.worker-000399-000723.json`;
+  the range remains exactly 399 completed shards and no external process was
+  touched.
+- Fixed the worker's resource rejection to carry the explicit retryable
+  `FORMAL_CACHE_WAITING_RESOURCE` marker and added
+  `scripts/trackocd_v2/resume_formal_cache_supervisor.py`.  The replacement
+  waits for the worker's full gate (`MemAvailable >= 41,296,879 kB` on this
+  host, plus idle GPU 0), terminates only its own child after repeated drops
+  below the hard 25% floor, and resumes only at shard boundaries.  It keeps
+  the formal Val stream, DINO checkpoint, batch 16, and Test/GT/Novel access
+  prohibitions unchanged.
+- Syntax, help, gate-contract, and diff checks passed.  Commits
+  `5fd9635f` and `28e1baf5` were pushed and verified at the remote branch
+  `research/cvpr-trackocd-autonomous-v2`.  Replacement supervisor PID
+  `4070199` is currently waiting at shard 399; no new payload has yet been
+  written after the repair.
