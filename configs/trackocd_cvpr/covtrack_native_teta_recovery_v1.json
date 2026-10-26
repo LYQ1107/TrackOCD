@@ -1,0 +1,35 @@
+{
+  "schema_version": "trackocd.cvpr.covtrack-native-teta-recovery.v1",
+  "status": "REGISTERED_VAL_ONLY_TETA_REFERENCE_RECOVERY_NO_SELECTION",
+  "purpose": "Recover the missing category-aware TETA reference for the already sealed COVTrack-native TAO Val stream without rerunning the frontend.",
+  "teta_repository": "https://github.com/SysCV/tet",
+  "teta_commit": "a62a9c0affec3a97f2cd0263141c53bcfb9c79f7",
+  "teta_subdirectory": "teta",
+  "reference_runner": "scripts/trackocd_v2/run_teta_reference.py",
+  "native_stream": "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/native_evaluator_rows.jsonl",
+  "native_stream_sha256": "be5d2a0275c82aefc106f1c6ab250a6ab0122697f39d7b9bb407f4ba0e6c4597",
+  "annotation": "data/raw/tao/annotations/validation.json",
+  "known_ids": "data/tao_ow_ocd_v1/splits/known_ids.json",
+  "novel_ids": "data/tao_ow_ocd_v1/splits/unknown_ids_val.json",
+  "output_directory": "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v1",
+  "limits": {
+    "device": "CPU",
+    "workers": 1,
+    "parallel": false,
+    "max_detections_per_image": 300,
+    "training_gpu_hours": 0
+  },
+  "boundaries": {
+    "val_only": true,
+    "tao_test_read": false,
+    "frontend_inference_started": false,
+    "training_started": false,
+    "model_selection_performed": false,
+    "novel_vocabulary_used_for_forward_or_selection": false,
+    "external_process_intervention": false,
+    "owned_evaluator_subprocess": true,
+    "formal_frontend_selection": false,
+    "goal_acceptance": false
+  },
+  "interpretation": "Reference-only TETA numbers for the already sealed category-aware native stream. This does not qualify the frontend, train a predicted-track policy, produce OCD metrics, or accept Goal A/B/C."
+}
