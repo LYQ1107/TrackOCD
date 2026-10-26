@@ -11500,3 +11500,20 @@ no private GT/cache/weights opened for this check):
   passed **60/60**.  The old waiting supervisor was interrupted only through
   its own task-owned session and replaced by the storage-safe supervisor;
   external processes were not touched.
+
+## Current acceptance refresh and resumable safe wait (2026-10-26 UTC)
+
+- Ran the receipt-only CVPR acceptance audit at the latest pre-receipt code
+  head.  It remains `INCOMPLETE_OPEN_REQUIREMENTS`; the six open gates are
+  lawful strong frontend, predicted-track training, candidate-aware decision,
+  self-correcting persistent memory, formal causal online metrics, and
+  independent final/Goal-A-B-C evaluation.  No scientific success claim was
+  promoted.
+- The storage-safe supervisor still observes `399/723` completed formal Val
+  shards.  Its storage estimate passes with the 1 GiB reserve, while the
+  worker RAM margin remains below the required threshold and no child is
+  running.  The postprocess watcher remains waiting at the same boundary.
+- This refresh opened no large stream, TAO Test asset, or external process;
+  it started no training or metric evaluation.  The refreshed receipt was
+  committed as `9ae3ed53`, pushed, fetched, and verified against the remote
+  branch.
