@@ -1,0 +1,30 @@
+{
+  "schema_version": "trackocd.cvpr.recoverable-intermediate-cleanup.v1",
+  "generated_at": "2026-10-26T11:01:52+08:00",
+  "status": "REGISTERED_COMPLETED_TETA_INTERMEDIATES_SAFE_TO_RECOMPUTE",
+  "reason": "The Val-only TETA reference completed and its compact result is committed; these evaluator intermediates are not required by the receipt or regression tests and can be regenerated from the sealed native stream.",
+  "preserved_receipt": {
+    "path": "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/result.json",
+    "sha256": "7ea37d5d9b094833d0f28177ec71137e4b2b8cd8debfdbf9c3000a26622a752d",
+    "git_commit": "0bfffdec1cbc9951f705e1068811519f3eaec62b"
+  },
+  "deleted_files": [
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/native_input/tao_track.json",
+      "bytes": 203406435,
+      "sha256_before_delete": "fd4251cc8d20a02a3ac17ef29c5ae327142f2d32867cccc5b62f7b78f099a733"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/covtrack_native_teta_recovery_v2/results/covtrack_native/teta_summary_results.pth",
+      "bytes": 167025292,
+      "sha256_before_delete": "cf0fd71a29acadfee0fb9d2fb58a49ab54084627ad65b70375e763509a277318"
+    }
+  ],
+  "boundaries": {
+    "raw_native_stream_deleted": false,
+    "weights_deleted": false,
+    "shards_deleted": false,
+    "tao_test_read": false,
+    "external_processes_touched": false
+  }
+}
