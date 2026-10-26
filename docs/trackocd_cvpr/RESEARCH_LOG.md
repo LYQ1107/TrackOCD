@@ -1,5 +1,17 @@
 # CVPR research log
 
+## 2026-10-26 — NAS direct-read probe remains unavailable
+
+The current server was checked for the read-only NAS recovery route before
+using any historical asset path.  The local host has no `/data3/liuyeqiang/.ssh/config`
+entry for `nas57`; a direct, non-mutating SSH probe to `Valadmin@192.168.31.57:22`
+timed out.  No NAS file was read or changed, and no external process was
+started, stopped, or altered.  Historical NAS cache paths therefore remain
+provenance evidence only, not current assets.  The locally owned formal
+Val cache remains the authoritative checkpoint at `399/723` completed shards;
+its supervisor continues to wait for the existing RAM/GPU safety gate rather
+than relaxing it.
+
 ## 2026-10-26 — adjacent-frame frozen MASA Train online smoke
 
 - Added a bounded, isolated smoke for the image-only MASA route using eight
