@@ -11775,3 +11775,17 @@ no private GT/cache/weights opened for this check):
 - The dedicated acceptance regression test passed **1/1**.  This was a
   receipt-only CPU check with no training, inference, Test access, model
   selection, or external-process operation.
+
+## Legacy lineage preservation recheck (2026-10-26 UTC)
+
+- Re-ran the metadata-only preservation audit against the current branch.  It
+  returned `PASS_LEGACY_RESEARCH_PRESERVATION_VERIFIED`: the protected
+  historical parent `7546527e5f9540d351785ade34c8e3292a74441d` exists and is
+  an ancestor of the current research head, and the protected branch refs,
+  CVPR-0 manifest binding, and preserved failed attempts remain intact.
+- The audit opened no streams, data, weights, labels, or TAO Test content;
+  moved no refs and touched no external process.  The legacy-preservation and
+  acceptance boundary tests passed **2/2**.
+- This strengthens provenance only; it does not accept any method, metric, or
+  Goal A/B/C result.  The formal Val cache remains at **457/723** under the
+  RAM-safe supervisor.
