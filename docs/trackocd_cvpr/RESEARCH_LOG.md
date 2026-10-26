@@ -11427,3 +11427,15 @@ no private GT/cache/weights opened for this check):
   online metrics, and independent final / Goal A-B-C evaluation.
 - The receipt was committed and the exact branch SHA was verified after push;
   this refresh is an evidence/provenance update, not scientific acceptance.
+
+## Cache supervisor regression coverage (2026-10-26 UTC)
+
+- Added `tests/trackocd_v2/test_cache_supervisors.py` covering the dynamic
+  idle-GPU selector, the worker RAM-margin gate, and range-scoped `.done` /
+  `.launched` marker accounting.
+- The targeted supervisor/cache gate tests passed **6/6**; the complete
+  `tests/trackocd_v2` regression passed **59/59**.  These are software and
+  safety-contract checks, not a cache-completion or scientific metric claim.
+- Commit `3e7f8916` was pushed and the exact remote branch SHA was verified;
+  the task-owned cache and postprocess supervisors remain alive and waiting
+  at the same safe boundary.
