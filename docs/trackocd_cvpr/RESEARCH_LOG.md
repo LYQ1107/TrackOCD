@@ -12,6 +12,26 @@ Val cache remains the authoritative checkpoint at `399/723` completed shards;
 its supervisor continues to wait for the existing RAM/GPU safety gate rather
 than relaxing it.
 
+## 2026-10-26 — complete audit of the reachable 399-shard checkpoint
+
+An independent read-only payload audit covered every currently completed
+local shard (`000000`--`000398`) through the cumulative range manifest.  It
+checked `204,288` tracks and `759,547` observations in `37.471s`: all NPY
+arrays were finite and shape/dtype valid, all Parquet lineage and completion
+markers were bound, sample/physical-track keys were unique, and there were
+`0` errors and `0` invalid boxes.  The receipt is
+`outputs/trackocd_v2_runtime/audit/local_399_partial_cache_payload_audit_20261026.json`
+(SHA256 `fd5846d9a3f34405226a089109f74afc804579c53bb8bbd5eb320b61a47c789b`).
+It explicitly reports `PASS_PARTIAL_COMPLETED_SHARDS`, `399/723`,
+`formal_cache_complete=false`, `test_content_opened=false`, and
+`external_processes_touched=false`.
+
+The local reconciliation now prefers this cumulative partial receipt while
+retaining the older 384-shard receipt.  Its formal gate remains closed solely
+because `324` shards are missing; no baseline, training, frontend selection,
+or OCD/MOT result was created from the partial cache.  The focused boundary
+and acceptance tests passed `8/8`.
+
 ## 2026-10-26 — adjacent-frame frozen MASA Train online smoke
 
 - Added a bounded, isolated smoke for the image-only MASA route using eight

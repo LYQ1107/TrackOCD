@@ -25,7 +25,8 @@ def test_local_formal_cache_checkpoint_is_partial_and_not_promoted():
     assert audit["local_cache"]["missing_shards"] <= 324
     assert audit["local_cache"]["marker_completed_shards"] == audit["local_cache"]["completed_shards"]
     assert audit["binding_checks"]["range_manifest_matches_completion_markers"] is True
-    assert audit["binding_checks"]["partial_payload_audit_covers_observed_range"] is False
+    assert audit["binding_checks"]["partial_payload_audit_covers_observed_range"] is True
+    assert audit["binding_checks"]["partial_payload_audit_covers_base_range"] is False
     assert audit["local_cache"]["formal_cache_complete"] is False
     assert audit["historical_cache"]["reported_completed_shards"] == 723
     assert audit["historical_cache"]["historical_pass_is_current_asset"] is False

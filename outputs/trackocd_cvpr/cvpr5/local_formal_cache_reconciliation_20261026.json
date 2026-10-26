@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.local-formal-cache-reconciliation.v1",
-  "generated_utc": "2026-10-26T04:52:49.273775+00:00",
+  "generated_utc": "2026-10-26T05:11:31.106690+00:00",
   "status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY",
   "scope": {
     "small_metadata_receipts_only": true,
@@ -52,8 +52,8 @@
         722
       ]
     ],
-    "checked_tracks": 196608,
-    "checked_observations": 739486,
+    "checked_tracks": 204288,
+    "checked_observations": 759547,
     "invalid_box_count": 0,
     "formal_cache_complete": false,
     "cache_root_reachable": true
@@ -72,11 +72,14 @@
   "binding_checks": {
     "partial_manifest_matches_local_manifest": true,
     "partial_audit_cache_root_matches_manifest": true,
-    "base_manifest_count_matches_partial_audit": true,
-    "base_checked_track_count_matches_manifest_entries": true,
+    "base_manifest_count_matches_partial_audit": false,
+    "base_checked_track_count_matches_manifest_entries": false,
+    "observed_range_count_matches_partial_audit": true,
+    "observed_range_checked_track_count_matches_partial_audit": true,
     "range_manifest_matches_completion_markers": true,
     "completion_marker_errors": [],
-    "partial_payload_audit_covers_observed_range": false,
+    "partial_payload_audit_covers_observed_range": true,
+    "partial_payload_audit_covers_base_range": false,
     "local_formal_cache_complete": false,
     "historical_cache_reachable": false
   },
@@ -89,10 +92,10 @@
       "reported_status": "RUNNING"
     },
     {
-      "path": "outputs/trackocd_v2_runtime/audit/local_partial_cache_payload_audit_20261026.json",
+      "path": "outputs/trackocd_v2_runtime/audit/local_399_partial_cache_payload_audit_20261026.json",
       "exists": true,
-      "bytes": 62575,
-      "sha256": "0be83ce7d44ca747c9a5c9555e9b972dedae61e6424360dc1a2c37fc5c025279",
+      "bytes": 65011,
+      "sha256": "fd5846d9a3f34405226a089109f74afc804579c53bb8bbd5eb320b61a47c789b",
       "reported_status": "PASS_PARTIAL_COMPLETED_SHARDS"
     },
     {

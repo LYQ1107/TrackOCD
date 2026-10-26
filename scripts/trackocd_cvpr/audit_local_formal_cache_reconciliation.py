@@ -20,6 +20,7 @@ from typing import Any
 SCHEMA = "trackocd.cvpr.local-formal-cache-reconciliation.v1"
 LOCAL_MANIFEST = "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json"
 LOCAL_PARTIAL_AUDIT = "outputs/trackocd_v2_runtime/audit/local_partial_cache_payload_audit_20261026.json"
+LOCAL_CURRENT_PARTIAL_AUDIT = "outputs/trackocd_v2_runtime/audit/local_399_partial_cache_payload_audit_20261026.json"
 HISTORICAL_AUDIT = "outputs/trackocd_v2_runtime/audit/formal_cache_payload_audit_20261022.json"
 RANGE_MANIFEST_GLOB = "cache_manifest.worker-*.json"
 
@@ -124,9 +125,67 @@ def _marker_metadata(cache_root: Path, shard_tracks: int, source_sha256: str) ->
     return sorted(set(indices)), errors
 
 
+def _select_partial_audit(
+    repo: Path,
+    manifest_path: Path,
+    manifest: dict[str, Any],
+    range_candidates: list[tuple[Path, dict[str, Any]]],
+) -> tuple[Path, dict[str, Any]]:
+    """Select the most complete current partial payload audit.
+
+    The first continuation audit covered only the canonical 384-entry
+    manifest.  A later bounded audit may cover the cumulative range manifest
+    and all currently marked shards.  Prefer that newer, strictly bound
+    receipt, while retaining the legacy fallback for recovery of older local
+    snapshots.
+    """
+
+    local_root = str(Path(str(manifest.get("cache_root", ""))).resolve())
+    source_sha256 = str((manifest.get("input") or {}).get("sha256") or "")
+    allowed_manifests = {manifest_path.resolve()}
+    allowed_manifests.update(path.resolve() for path, _ in range_candidates)
+    candidates = (
+        LOCAL_CURRENT_PARTIAL_AUDIT,
+        LOCAL_PARTIAL_AUDIT,
+    )
+    valid: list[tuple[int, str, Path, dict[str, Any]]] = []
+    for relative_path in candidates:
+        path = repo / relative_path
+        if not path.is_file():
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(payload, dict):
+            continue
+        try:
+            bound_manifest = Path(str(payload.get("manifest", ""))).resolve()
+            completed = int(payload.get("completed_shards", -1))
+        except (TypeError, ValueError, OSError):
+            continue
+        if (
+            bound_manifest not in allowed_manifests
+            or str(payload.get("cache_root", "")) != local_root
+            or payload.get("input_stream_sha256") != source_sha256
+            or payload.get("frontend") != manifest.get("frontend")
+            or payload.get("split") != manifest.get("split")
+            or payload.get("status") != "PASS_PARTIAL_COMPLETED_SHARDS"
+            or payload.get("error_count") != 0
+            or payload.get("invalid_box_count") != 0
+            or payload.get("test_content_opened") is not False
+            or payload.get("external_processes_touched") is not False
+        ):
+            continue
+        valid.append((completed, str(payload.get("generated_utc", "")), path, payload))
+    if valid:
+        _, _, path, payload = max(valid, key=lambda item: (item[0], item[1], str(item[2])))
+        return path, payload
+    return load(repo, LOCAL_PARTIAL_AUDIT)
+
+
 def build_audit(repo: Path) -> dict[str, Any]:
     manifest_path, manifest = load(repo, LOCAL_MANIFEST)
-    partial_path, partial = load(repo, LOCAL_PARTIAL_AUDIT)
     historical_path, historical = load(repo, HISTORICAL_AUDIT)
 
     shard_tracks = int(manifest["shard_tracks"])
@@ -136,6 +195,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
     base_completed_indices = sorted(int(entry["track_start"]) // shard_tracks for entry in base_entries)
 
     range_candidates = _range_manifest_candidates(manifest_path, manifest)
+    partial_path, partial = _select_partial_audit(repo, manifest_path, manifest, range_candidates)
     latest_range_path: Path | None = None
     latest_range: dict[str, Any] | None = None
     if range_candidates:
@@ -149,6 +209,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
         )
     observed_entries = (latest_range or {}).get("completed_shards") or base_entries
     observed_completed_indices = sorted(int(entry["track_start"]) // shard_tracks for entry in observed_entries)
+    observed_manifest_count = len(observed_entries)
     marker_indices, marker_errors = _marker_metadata(
         Path(str(manifest.get("cache_root"))).resolve(), shard_tracks, str(manifest["input"]["sha256"])
     )
@@ -159,14 +220,20 @@ def build_audit(repo: Path) -> dict[str, Any]:
     historical_manifest = Path(str(historical.get("manifest", "")))
     historical_root = Path(str(historical.get("cache_root", "")))
     local_manifest_resolved = str(manifest_path.resolve())
-    partial_manifest_matches = str(partial.get("manifest", "")) == local_manifest_resolved
+    allowed_manifest_paths = {manifest_path.resolve()}
+    allowed_manifest_paths.update(path.resolve() for path, _ in range_candidates)
+    partial_manifest_matches = Path(str(partial.get("manifest", ""))).resolve() in allowed_manifest_paths
     local_root = Path(str(manifest.get("cache_root", ""))).resolve()
     local_root_matches = str(partial.get("cache_root", "")) == str(local_root)
-    base_manifest_count_matches = len(base_entries) == int(partial.get("completed_shards", -1))
-    base_checked_track_count_matches = int(partial.get("checked_tracks", -1)) == sum(
+    partial_checked_track_count = int(partial.get("checked_tracks", -1))
+    base_checked_track_count = sum(
         int(entry["track_count"]) for entry in base_entries
     )
-    observed_manifest_count = len(observed_entries)
+    observed_checked_track_count = sum(int(entry["track_count"]) for entry in observed_entries)
+    partial_completed_count_matches_base = len(base_entries) == int(partial.get("completed_shards", -1))
+    partial_checked_track_count_matches_base = partial_checked_track_count == base_checked_track_count
+    partial_completed_count_matches_observed = observed_manifest_count == int(partial.get("completed_shards", -1))
+    partial_checked_track_count_matches_observed = partial_checked_track_count == observed_checked_track_count
     observed_observation_count = sum(int(entry.get("observation_count", 0)) for entry in observed_entries)
     marker_set = set(marker_indices)
     observed_set = set(observed_completed_indices)
@@ -190,8 +257,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         and partial.get("external_processes_touched") is False
         and partial_manifest_matches
         and local_root_matches
-        and base_manifest_count_matches
-        and base_checked_track_count_matches
+        and (
+            (partial_completed_count_matches_base and partial_checked_track_count_matches_base)
+            or (partial_completed_count_matches_observed and partial_checked_track_count_matches_observed)
+        )
         and range_manifest_matches_markers
         and not marker_errors
         and not local_complete
@@ -234,7 +303,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "completed_shard_ranges": ranges(completed_indices),
             "missing_shards": len(missing_indices),
             "missing_shard_ranges": ranges(missing_indices),
-            "checked_tracks": partial.get("checked_tracks"),
+            "checked_tracks": partial_checked_track_count,
             "checked_observations": partial.get("checked_observations"),
             "invalid_box_count": partial.get("invalid_box_count"),
             "formal_cache_complete": local_complete,
@@ -254,17 +323,22 @@ def build_audit(repo: Path) -> dict[str, Any]:
         "binding_checks": {
             "partial_manifest_matches_local_manifest": partial_manifest_matches,
             "partial_audit_cache_root_matches_manifest": local_root_matches,
-            "base_manifest_count_matches_partial_audit": base_manifest_count_matches,
-            "base_checked_track_count_matches_manifest_entries": base_checked_track_count_matches,
+            "base_manifest_count_matches_partial_audit": partial_completed_count_matches_base,
+            "base_checked_track_count_matches_manifest_entries": partial_checked_track_count_matches_base,
+            "observed_range_count_matches_partial_audit": partial_completed_count_matches_observed,
+            "observed_range_checked_track_count_matches_partial_audit": partial_checked_track_count_matches_observed,
             "range_manifest_matches_completion_markers": range_manifest_matches_markers,
             "completion_marker_errors": marker_errors,
-            "partial_payload_audit_covers_observed_range": observed_manifest_count == len(base_entries),
+            "partial_payload_audit_covers_observed_range": partial_completed_count_matches_observed
+            and partial_checked_track_count_matches_observed,
+            "partial_payload_audit_covers_base_range": partial_completed_count_matches_base
+            and partial_checked_track_count_matches_base,
             "local_formal_cache_complete": local_complete,
             "historical_cache_reachable": historical_reachable,
         },
         "evidence": [
             evidence(manifest_path, LOCAL_MANIFEST, manifest),
-            evidence(partial_path, LOCAL_PARTIAL_AUDIT, partial),
+            evidence(partial_path, str(partial_path.relative_to(repo)), partial),
             evidence(historical_path, HISTORICAL_AUDIT, historical),
         ],
         "scientific_boundary": "This reconciles the current cache checkpoint only; it does not select a frontend, authorize formal predicted evaluation, or claim OCD/MOT or Goal A/B/C success.",
