@@ -1,0 +1,417 @@
+{
+  "boundaries": {
+    "feature_arrays_read": false,
+    "full_cache_automatic_start": false,
+    "gt_category_fields_read": false,
+    "gt_role_or_vocabulary_read": false,
+    "prediction_to_gt_mapping_persisted": false,
+    "raw_payload_uploaded": false,
+    "test_accessed": false,
+    "train_annotation_opened": false,
+    "training_started": false,
+    "val_labels_read": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1.json",
+    "sha256": "a9fc637e37b4a4def83cb9f9fff63c134a7d57fca7df3da859a773aa586229a9"
+  },
+  "generated_utc": "2026-10-26T02:01:41.782710+00:00",
+  "interpretation": "Category-free sparse-cadence transfer evidence only; no official MOT/OCD metric, frontend qualification, model selection, predicted training, or Goal A/B/C acceptance.",
+  "mechanism": {
+    "candidate_order": "causal score gate first, then velocity-predicted gap-aware physical reassociation",
+    "motion_model": "constant_box_velocity_from_last_two_persistent_observations",
+    "motion_model_formula": "predicted_box = last_box + (last_box - previous_box) * (current_frame - last_frame) / (last_frame - previous_frame)",
+    "reassociation_iou_threshold": 0.5,
+    "reassociation_max_gap_frames": 30,
+    "reassociation_max_gap_rationale": "Reuse the previously preregistered upper bridge bound from the full-Train source-cadence audit; dominant gaps are 30, 25, and 24 source frames.",
+    "reassociation_rule": "At each observed source frame, one-to-one Hungarian IoU bridge from a current birth to at most one prior persistent state whose last observation is no more than 30 source frames earlier; no future observations.",
+    "score_field": "quality",
+    "score_threshold": 0.005,
+    "score_threshold_rationale": "Reuse the already registered full-407 counterfactual cut; no new threshold sweep.",
+    "semantic_or_feature_input": false,
+    "single_observation_fallback": "last_box"
+  },
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 447451136,
+    "wall_seconds": 52.823768176996964
+  },
+  "roles": {
+    "development_pseudo": {
+      "candidate": {
+        "bytes": 5608442,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/development_velocity_gap30_reassoc.jsonl",
+        "rows": 1139,
+        "sha256": "537e0f15f4340c831f7b363aadf564bc1a063dc92d069b9be52c40a52afe07cb"
+      },
+      "candidate_observations": 31688,
+      "candidate_tracks": 1139,
+      "native_observations": 290211,
+      "native_subset": {
+        "bytes": 55229886,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/development_native_subset.jsonl",
+        "rows": 28549,
+        "sha256": "6e58d1aa070352ea943d4c112112b3f82da485e7a52ca8dabfb47844aa900ee4"
+      },
+      "native_tracks": 28549,
+      "reassociation_by_video": {
+        "0": {
+          "collision_splits": 0,
+          "fallback_matches": 2,
+          "input_native_tracks": 53,
+          "input_observations": 406,
+          "matched_births": 4,
+          "new_births": 49,
+          "output_observations": 406,
+          "output_persistent_tracks": 49,
+          "velocity_matches": 2
+        },
+        "11": {
+          "collision_splits": 0,
+          "fallback_matches": 9,
+          "input_native_tracks": 606,
+          "input_observations": 15220,
+          "matched_births": 38,
+          "new_births": 572,
+          "output_observations": 15220,
+          "output_persistent_tracks": 572,
+          "velocity_matches": 29
+        },
+        "146": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 100,
+          "input_observations": 5213,
+          "matched_births": 3,
+          "new_births": 97,
+          "output_observations": 5213,
+          "output_persistent_tracks": 97,
+          "velocity_matches": 3
+        },
+        "220": {
+          "collision_splits": 0,
+          "fallback_matches": 3,
+          "input_native_tracks": 318,
+          "input_observations": 7102,
+          "matched_births": 14,
+          "new_births": 307,
+          "output_observations": 7102,
+          "output_persistent_tracks": 307,
+          "velocity_matches": 11
+        },
+        "221": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 78,
+          "input_observations": 1930,
+          "matched_births": 1,
+          "new_births": 77,
+          "output_observations": 1930,
+          "output_persistent_tracks": 77,
+          "velocity_matches": 1
+        },
+        "239": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 12,
+          "input_observations": 362,
+          "matched_births": 0,
+          "new_births": 12,
+          "output_observations": 362,
+          "output_persistent_tracks": 12,
+          "velocity_matches": 0
+        },
+        "3": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 5,
+          "input_observations": 458,
+          "matched_births": 0,
+          "new_births": 5,
+          "output_observations": 458,
+          "output_persistent_tracks": 5,
+          "velocity_matches": 0
+        },
+        "38": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 21,
+          "input_observations": 997,
+          "matched_births": 1,
+          "new_births": 20,
+          "output_observations": 997,
+          "output_persistent_tracks": 20,
+          "velocity_matches": 1
+        }
+      },
+      "score_retained_observations": 31688,
+      "score_retained_tracks": 1193,
+      "video_ids": [
+        0,
+        3,
+        11,
+        38,
+        146,
+        220,
+        221,
+        239
+      ]
+    },
+    "policy_train_pseudo": {
+      "candidate": {
+        "bytes": 2264470,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/policy_velocity_gap30_reassoc.jsonl",
+        "rows": 215,
+        "sha256": "11a827378a5287fceb63f602901c1fb31ff9b6e664545a66ab47dba615db0691"
+      },
+      "candidate_observations": 13997,
+      "candidate_tracks": 215,
+      "native_observations": 319521,
+      "native_subset": {
+        "bytes": 55796416,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/policy_native_subset.jsonl",
+        "rows": 25258,
+        "sha256": "2d46dc9f538595227fbe08ea4a666d809fccd6679a7940a95781f13d427d8583"
+      },
+      "native_tracks": 25258,
+      "reassociation_by_video": {
+        "1524": {
+          "collision_splits": 0,
+          "fallback_matches": 1,
+          "input_native_tracks": 33,
+          "input_observations": 374,
+          "matched_births": 2,
+          "new_births": 31,
+          "output_observations": 374,
+          "output_persistent_tracks": 31,
+          "velocity_matches": 1
+        },
+        "1831": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 9,
+          "input_observations": 1135,
+          "matched_births": 0,
+          "new_births": 9,
+          "output_observations": 1135,
+          "output_persistent_tracks": 9,
+          "velocity_matches": 0
+        },
+        "2330": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 11,
+          "input_observations": 27,
+          "matched_births": 0,
+          "new_births": 11,
+          "output_observations": 27,
+          "output_persistent_tracks": 11,
+          "velocity_matches": 0
+        },
+        "2686": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 6,
+          "input_observations": 1759,
+          "matched_births": 0,
+          "new_births": 6,
+          "output_observations": 1759,
+          "output_persistent_tracks": 6,
+          "velocity_matches": 0
+        },
+        "275": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 20,
+          "input_observations": 158,
+          "matched_births": 0,
+          "new_births": 20,
+          "output_observations": 158,
+          "output_persistent_tracks": 20,
+          "velocity_matches": 0
+        },
+        "2977": {
+          "collision_splits": 0,
+          "fallback_matches": 1,
+          "input_native_tracks": 26,
+          "input_observations": 926,
+          "matched_births": 1,
+          "new_births": 25,
+          "output_observations": 926,
+          "output_persistent_tracks": 25,
+          "velocity_matches": 0
+        },
+        "2987": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 8,
+          "input_observations": 1345,
+          "matched_births": 0,
+          "new_births": 8,
+          "output_observations": 1345,
+          "output_persistent_tracks": 8,
+          "velocity_matches": 0
+        },
+        "349": {
+          "collision_splits": 0,
+          "fallback_matches": 1,
+          "input_native_tracks": 57,
+          "input_observations": 2099,
+          "matched_births": 2,
+          "new_births": 55,
+          "output_observations": 2099,
+          "output_persistent_tracks": 55,
+          "velocity_matches": 1
+        },
+        "371": {
+          "collision_splits": 0,
+          "fallback_matches": 0,
+          "input_native_tracks": 29,
+          "input_observations": 5933,
+          "matched_births": 2,
+          "new_births": 27,
+          "output_observations": 5933,
+          "output_persistent_tracks": 27,
+          "velocity_matches": 2
+        },
+        "72": {
+          "collision_splits": 0,
+          "fallback_matches": 1,
+          "input_native_tracks": 26,
+          "input_observations": 241,
+          "matched_births": 3,
+          "new_births": 23,
+          "output_observations": 241,
+          "output_persistent_tracks": 23,
+          "velocity_matches": 2
+        }
+      },
+      "score_retained_observations": 13997,
+      "score_retained_tracks": 225,
+      "video_ids": [
+        72,
+        275,
+        349,
+        371,
+        1524,
+        1831,
+        2330,
+        2686,
+        2977,
+        2987
+      ]
+    }
+  },
+  "schema_version": "trackocd.cvpr.covtrack-score-gate-velocity-gap30-reassociation-transfer-result.v1",
+  "source": {
+    "reconciliation": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+    "reconciliation_sha256": "532e53c40a3b04561438150d1d8d308a9ee8f2d642ad6502f494c0eb6e9a36d8",
+    "root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1",
+    "stream_count": 13,
+    "streams": [
+      {
+        "bytes": 694095500,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_0_tccoff2/physical_tracks.jsonl",
+        "selected_videos": [
+          0,
+          3,
+          11,
+          38,
+          72,
+          146,
+          220,
+          221,
+          239,
+          275,
+          349,
+          371
+        ],
+        "sha256": "8f0ba4079a47d26e1d3f8479e057c071c9f56d282c33ac08a826718ecd5f2f3c"
+      },
+      {
+        "bytes": 205809321,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_00_tccoff8_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "798d7d2411f6aa34affc4fa4112a0dfafe58540c13dd7956e3758fe68571396b"
+      },
+      {
+        "bytes": 223694674,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_01_tccoff9_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "c36166d101d8075ea4708874b203eba82fcc317d7b79bf03724a061bfd23b19d"
+      },
+      {
+        "bytes": 150585180,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_02_tccoff10_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "f0cd71236804b31841366a7bbfb99a7b4f4388fced60e9bcd5a5bb3d484cc000"
+      },
+      {
+        "bytes": 127813179,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_1_part_03_tccoff11_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "add972b38a31f01556003c00b20f4ca0cffd1f6acb9f68cb949b07ee93136406"
+      },
+      {
+        "bytes": 136983444,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_00_tccoff12_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          1524
+        ],
+        "sha256": "4f193c618a66fffec9df39f16dda14333ebb9658011f978ca5a9efbb125f1bd6"
+      },
+      {
+        "bytes": 131906941,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_01_tccoff13_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          1831
+        ],
+        "sha256": "24089d57957e52bebeb638acf9f63a81d404f448af9d6175dce58e88cf848898"
+      },
+      {
+        "bytes": 146128220,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_02_tccoff14_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "fdf32751d4f6aed899e360d79398b0e2e090b2e7b2c0f6b92284dd3e661de4c3"
+      },
+      {
+        "bytes": 114105064,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_2_part_03_tccoff15_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "f383a4423f2528025b897e2a4f99abd413baf721752941efc31775fa48417c1e"
+      },
+      {
+        "bytes": 130253797,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_00_tccoff16_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          2330
+        ],
+        "sha256": "c684ebd01e16b0edf9be06f286471b1eccc953811cb2777975f81a5b75c51db2"
+      },
+      {
+        "bytes": 142717567,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_01_tccoff17_20261022/physical_tracks.jsonl",
+        "selected_videos": [],
+        "sha256": "2df7cacb57976bcb02729db7b9ea105ce620fb119cea466e70309ed953d4ba86"
+      },
+      {
+        "bytes": 105335057,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_02_tccoff18_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          2686
+        ],
+        "sha256": "e1e3f176391e69aeb21259b1b3d697f868dbb7acf3d299021f50a7334d7b307f"
+      },
+      {
+        "bytes": 111718699,
+        "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/shard_3_part_03_tccoff19_20261022/physical_tracks.jsonl",
+        "selected_videos": [
+          2977,
+          2987
+        ],
+        "sha256": "ac02bc2cf8012a318773b2b05c4603394c86277d4056d1ea991fbff43a028c18"
+      }
+    ]
+  },
+  "status": "COMPLETE_CATEGORY_FREE_SCORE_GATE_VELOCITY_GAP30_REASSOCIATION_TRANSFER"
+}

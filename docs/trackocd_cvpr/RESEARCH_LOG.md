@@ -11156,3 +11156,24 @@ no private GT/cache/weights opened for this check):
   `configs/trackocd_cvpr/candidate_family_peak_m_gated_decision_effect_v1.json`,
   `scripts/trackocd_cvpr/candidate_family_peak_m_gated_decision_effect.py`, and
   `tests/trackocd_cvpr/test_candidate_family_peak_m_gated_decision_effect.py`.
+
+## Causal velocity gap-30 reassociation control (2026-10-26 UTC)
+
+- The full-Train cadence audit identified source gaps of 30, 25, and 24 frames,
+  while the earlier fixed gap-30 last-box bridge did not recover coverage.  A
+  separate pre-registered control therefore kept the same quality cut (`0.005`),
+  IoU gate (`0.5`), 30-frame horizon, fixed development/policy video IDs, and
+  causal ordering, changing only the bridge box to constant-velocity extrapolation
+  from the last two persistent observations.  A one-observation state falls back
+  to its last box; no future frame, feature, category, GT, Val, or Test input is
+  available to the mechanism.
+- On the fixed eight development videos and ten policy videos, the transform
+  produced 47 velocity-based birth matches in development and 6 in policy.  The
+  paired geometry-only continuity audit nevertheless found zero matched-observation
+  and recall change versus the last-box gap-30 control.  Development switch rate
+  worsened by `+0.014925`; policy continuity was unchanged.  This is a negative
+  physical-association result, not frontend qualification or Pred training.
+- The result is recorded under
+  `outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/`;
+  the compact mechanism synthesis now records six variants across three root-cause
+  families while keeping scientific acceptance open.

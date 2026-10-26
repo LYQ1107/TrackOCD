@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.mechanism-coverage-audit.v1",
-  "generated_utc": "2026-10-26T01:47:56.985001+00:00",
+  "generated_utc": "2026-10-26T02:02:25.870251+00:00",
   "status": "PASS_THREE_ROOT_CAUSE_MECHANISM_FAMILIES_RECORDED_NOT_SCIENTIFIC_ACCEPTANCE",
   "scope": {
     "receipt_only": true,
@@ -13,7 +13,7 @@
     "goal_acceptance_claimed": false
   },
   "mechanism_family_count": 3,
-  "mechanism_variant_count": 5,
+  "mechanism_variant_count": 6,
   "mechanisms": [
     {
       "id": "semantic_association_ablation",
@@ -256,12 +256,88 @@
       },
       "disposition": "REJECTED_PHYSICAL_BRIDGES_DO_NOT_RECOVER_COVERAGE",
       "boundary_safe": true
+    },
+    {
+      "id": "velocity_gap_aware_physical_reassociation",
+      "root_cause_family": "physical_temporal_association",
+      "candidate": {
+        "candidate_order": "causal score gate first, then velocity-predicted gap-aware physical reassociation",
+        "motion_model": "constant_box_velocity_from_last_two_persistent_observations",
+        "motion_model_formula": "predicted_box = last_box + (last_box - previous_box) * (current_frame - last_frame) / (last_frame - previous_frame)",
+        "reassociation_iou_threshold": 0.5,
+        "reassociation_max_gap_frames": 30,
+        "reassociation_max_gap_rationale": "Reuse the previously preregistered upper bridge bound from the full-Train source-cadence audit; dominant gaps are 30, 25, and 24 source frames.",
+        "reassociation_rule": "At each observed source frame, one-to-one Hungarian IoU bridge from a current birth to at most one prior persistent state whose last observation is no more than 30 source frames earlier; no future observations.",
+        "score_field": "quality",
+        "score_threshold": 0.005,
+        "score_threshold_rationale": "Reuse the already registered full-407 counterfactual cut; no new threshold sweep.",
+        "semantic_or_feature_input": false,
+        "single_observation_fallback": "last_box"
+      },
+      "baseline": "gap30_last_box_score_gate_reassociation_candidate",
+      "evidence": [
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/run.json",
+          "exists": true,
+          "bytes": 16117,
+          "sha256": "e80fc514a3a6bdd5d1b6f538a66c3a83db295030f11af35d99e5bc55f27c2794",
+          "status": "COMPLETE_CATEGORY_FREE_SCORE_GATE_VELOCITY_GAP30_REASSOCIATION_TRANSFER"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/development_velocity_vs_gap30_temporal.json",
+          "exists": true,
+          "bytes": 11550,
+          "sha256": "18be87f7c2a5dfd905b6e157bf8fcea06f922c7315c28216e6e2e73b58a2dcbf",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/policy_velocity_vs_gap30_temporal.json",
+          "exists": true,
+          "bytes": 10526,
+          "sha256": "3f000d7301d8ff0862cb25378887f822e08a55bafb7448da02ea30a724bbcb92",
+          "status": "COMPLETE_CATEGORY_FREE_POLICY_FRONTEND_TEMPORAL_CONTINUITY"
+        }
+      ],
+      "observed": {
+        "velocity_against_gap30": {
+          "development": {
+            "adjacent_pair_match_rate": 0.0,
+            "matched_observations": 0,
+            "observation_recall": 0.0,
+            "same_id_rate_given_matches": -0.01492537313432829,
+            "switch_rate_given_matches": 0.01492537313432836
+          },
+          "policy": {
+            "adjacent_pair_match_rate": 0.0,
+            "matched_observations": 0,
+            "observation_recall": 0.0,
+            "same_id_rate_given_matches": 0.0,
+            "switch_rate_given_matches": 0.0
+          }
+        },
+        "velocity_matches": {
+          "development": 47,
+          "policy": 6
+        },
+        "track_counts": {
+          "development": {
+            "gap30_tracks": 1112,
+            "velocity_tracks": 1139
+          },
+          "policy": {
+            "gap30_tracks": 206,
+            "velocity_tracks": 215
+          }
+        }
+      },
+      "disposition": "REJECTED_VELOCITY_EXTRAPOLATION_DOES_NOT_RECOVER_COVERAGE",
+      "boundary_safe": true
     }
   ],
   "inference": {
     "semantic_association": "NoSemantic changed the exported stream but left geometry and continuity unchanged on the fixed development prefix; semantic association is not sufficient to explain the dominant failure.",
     "score_contract": "Single-softmax and foreground-mass probes changed score mass and track population materially; score construction is causally active, but these probes do not establish a qualified frontend.",
-    "physical_association": "Causal reassociation reduced switches only while sharply reducing adjacent coverage/recall; persistence alone cannot be optimized without the geometry/coverage gate."
+    "physical_association": "Causal reassociation reduced switches only while sharply reducing adjacent coverage/recall; the fixed gap30 velocity extension changed a few birth assignments but did not recover coverage and slightly worsened development switch rate, so persistence alone cannot be optimized without the geometry/coverage gate."
   },
   "scientific_boundary": "This satisfies the bookkeeping requirement to preserve at least three distinct root-cause mechanism families with real paired evidence. It does not qualify a frontend, train a predicted-track policy, create formal OCD/MOT metrics, or accept Goal A/B/C."
 }

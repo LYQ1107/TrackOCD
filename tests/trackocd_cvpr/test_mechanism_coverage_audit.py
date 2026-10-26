@@ -19,7 +19,7 @@ def test_mechanism_coverage_is_receipt_only_and_has_three_families():
         "goal_acceptance_claimed": False,
     }
     assert audit["mechanism_family_count"] == 3
-    assert audit["mechanism_variant_count"] == 4
+    assert audit["mechanism_variant_count"] == 6
     assert all(item["boundary_safe"] for item in audit["mechanisms"])
     assert {item["root_cause_family"] for item in audit["mechanisms"]} == {
         "semantic_association_or_feature_fusion",

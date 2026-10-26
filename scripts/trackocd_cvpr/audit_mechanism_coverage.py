@@ -103,6 +103,15 @@ def build_audit(repo: Path) -> dict[str, Any]:
     gap_policy_control_path, gap_policy_control = load_json(
         repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_gap30_reassoc_transfer_v1/policy_vs_one_frame_temporal.json"
     )
+    velocity_run_path, velocity_run = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/run.json"
+    )
+    velocity_dev_path, velocity_dev = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/development_velocity_vs_gap30_temporal.json"
+    )
+    velocity_policy_path, velocity_policy = load_json(
+        repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/policy_velocity_vs_gap30_temporal.json"
+    )
 
     nosem_base = nosem_geo["baseline"]["geometry"]
     nosem_candidate = nosem_geo["candidate"]["geometry"]
@@ -178,6 +187,39 @@ def build_audit(repo: Path) -> dict[str, Any]:
         "gt_role_or_vocabulary_read",
         "prediction_to_gt_mapping_persisted",
         "raw_payload_uploaded",
+        "test_accessed",
+        "train_annotation_opened",
+        "training_started",
+        "val_labels_read",
+    )
+    velocity_safe = false_flags(
+        velocity_run,
+        "feature_arrays_read",
+        "full_cache_automatic_start",
+        "gt_category_fields_read",
+        "gt_role_or_vocabulary_read",
+        "prediction_to_gt_mapping_persisted",
+        "raw_payload_uploaded",
+        "test_accessed",
+        "train_annotation_opened",
+        "training_started",
+        "val_labels_read",
+    ) and false_flags(
+        velocity_dev,
+        "feature_arrays_read",
+        "gt_category_fields_read",
+        "gt_role_or_vocabulary_read",
+        "prediction_to_gt_mapping_persisted",
+        "test_accessed",
+        "train_annotation_opened",
+        "training_started",
+        "val_labels_read",
+    ) and false_flags(
+        velocity_policy,
+        "feature_arrays_read",
+        "gt_category_fields_read",
+        "gt_role_or_vocabulary_read",
+        "prediction_to_gt_mapping_persisted",
         "test_accessed",
         "train_annotation_opened",
         "training_started",
@@ -306,6 +348,39 @@ def build_audit(repo: Path) -> dict[str, Any]:
             "disposition": "REJECTED_PHYSICAL_BRIDGES_DO_NOT_RECOVER_COVERAGE",
             "boundary_safe": gap_safe,
         },
+        {
+            "id": "velocity_gap_aware_physical_reassociation",
+            "root_cause_family": "physical_temporal_association",
+            "candidate": velocity_run["mechanism"],
+            "baseline": "gap30_last_box_score_gate_reassociation_candidate",
+            "evidence": [
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/run.json", velocity_run),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/development_velocity_vs_gap30_temporal.json", velocity_dev),
+                evidence(repo, "outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/policy_velocity_vs_gap30_temporal.json", velocity_policy),
+            ],
+            "observed": {
+                "velocity_against_gap30": {
+                    "development": velocity_dev["deltas_candidate_minus_baseline"],
+                    "policy": velocity_policy["deltas_candidate_minus_baseline"],
+                },
+                "velocity_matches": {
+                    "development": sum(item["velocity_matches"] for item in velocity_run["roles"]["development_pseudo"]["reassociation_by_video"].values()),
+                    "policy": sum(item["velocity_matches"] for item in velocity_run["roles"]["policy_train_pseudo"]["reassociation_by_video"].values()),
+                },
+                "track_counts": {
+                    "development": {
+                        "gap30_tracks": gap_run["roles"]["development_pseudo"]["candidate_tracks"],
+                        "velocity_tracks": velocity_run["roles"]["development_pseudo"]["candidate_tracks"],
+                    },
+                    "policy": {
+                        "gap30_tracks": gap_run["roles"]["policy_train_pseudo"]["candidate_tracks"],
+                        "velocity_tracks": velocity_run["roles"]["policy_train_pseudo"]["candidate_tracks"],
+                    },
+                },
+            },
+            "disposition": "REJECTED_VELOCITY_EXTRAPOLATION_DOES_NOT_RECOVER_COVERAGE",
+            "boundary_safe": velocity_safe,
+        },
     ]
 
     family_count = len({item["root_cause_family"] for item in mechanisms})
@@ -337,7 +412,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
         "inference": {
             "semantic_association": "NoSemantic changed the exported stream but left geometry and continuity unchanged on the fixed development prefix; semantic association is not sufficient to explain the dominant failure.",
             "score_contract": "Single-softmax and foreground-mass probes changed score mass and track population materially; score construction is causally active, but these probes do not establish a qualified frontend.",
-            "physical_association": "Causal reassociation reduced switches only while sharply reducing adjacent coverage/recall; persistence alone cannot be optimized without the geometry/coverage gate.",
+            "physical_association": "Causal reassociation reduced switches only while sharply reducing adjacent coverage/recall; the fixed gap30 velocity extension changed a few birth assignments but did not recover coverage and slightly worsened development switch rate, so persistence alone cannot be optimized without the geometry/coverage gate.",
         },
         "scientific_boundary": "This satisfies the bookkeeping requirement to preserve at least three distinct root-cause mechanism families with real paired evidence. It does not qualify a frontend, train a predicted-track policy, create formal OCD/MOT metrics, or accept Goal A/B/C.",
     }
