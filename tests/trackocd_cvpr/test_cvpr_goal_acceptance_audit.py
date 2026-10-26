@@ -92,6 +92,14 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     )
     assert rows["candidate_aware_decision"]["facts"]["candidate_aware_rcm_cross_video_token_count"] == 0
     assert rows["candidate_aware_decision"]["facts"]["candidate_aware_rcm_m_support_steps"] == 0
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_support_status"] == (
+        "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+    )
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_cross_video_token_count"] == 1
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_m_support_steps"] == 1
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_positive_other_video_groups"] == 1
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_optimizer_steps"] == 0
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_score_sweep"] is False
     assert rows["predicted_track_training"]["facts"]["predicted_training_readiness_status"] == (
         "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
     )
@@ -138,6 +146,21 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
         "candidate_aware_rcm_m_support_steps"
     ] == 0
     assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_rcm_support_status"
+    ] == "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_rcm_cross_video_token_count"
+    ] == 1
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_rcm_m_support_steps"
+    ] == 1
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_rcm_positive_other_video_groups"
+    ] == 1
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_rcm_optimizer_steps"
+    ] == 0
+    assert rows["self_correcting_persistent_memory"]["facts"][
         "rcm_m_branch_scientifically_exercised"
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][
@@ -145,6 +168,9 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][
         "predicted_cross_video_lifecycle_is_supervision"
+    ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_support_is_scientific_acceptance"
     ] is False
     assert rows["formal_causal_online_metrics"]["facts"][
         "covtrack_native_val_recheck_status"

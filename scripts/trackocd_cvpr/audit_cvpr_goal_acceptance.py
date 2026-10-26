@@ -132,6 +132,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
     )
+    family_peak_rcm_support_path, family_peak_rcm_support = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -547,6 +551,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
                     reported_status=candidate_rcm_support.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+                    reported_status=family_peak_rcm_support.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
@@ -584,8 +593,24 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "candidate_aware_rcm_positive_other_video_groups": nested(
                     candidate_rcm_support, "m_support", "positive_other_video_groups"
                 ),
+                "family_peak_rcm_support_status": family_peak_rcm_support.get("status"),
+                "family_peak_rcm_cross_video_token_count": nested(
+                    family_peak_rcm_support, "lifecycle", "cross_video_token_count"
+                ),
+                "family_peak_rcm_m_support_steps": nested(
+                    family_peak_rcm_support, "m_support", "m_support_steps"
+                ),
+                "family_peak_rcm_positive_other_video_groups": nested(
+                    family_peak_rcm_support, "m_support", "positive_other_video_groups"
+                ),
+                "family_peak_rcm_optimizer_steps": nested(
+                    family_peak_rcm_support, "resources", "optimizer_steps"
+                ),
+                "family_peak_rcm_score_sweep": nested(
+                    family_peak_rcm_support, "mechanism", "score_sweep"
+                ),
             },
-            "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation.",
+            "open_gate": "A fixed family-relative support smoke is positive, but a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation remain open.",
         },
         {
             "id": "self_correcting_persistent_memory",
@@ -617,6 +642,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
                     reported_status=candidate_rcm_support.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+                    reported_status=family_peak_rcm_support.get("status"),
                 ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
@@ -660,9 +690,23 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "candidate_aware_rcm_m_support_steps": nested(
                     candidate_rcm_support, "m_support", "m_support_steps"
                 ),
+                "family_peak_rcm_support_status": family_peak_rcm_support.get("status"),
+                "family_peak_rcm_cross_video_token_count": nested(
+                    family_peak_rcm_support, "lifecycle", "cross_video_token_count"
+                ),
+                "family_peak_rcm_m_support_steps": nested(
+                    family_peak_rcm_support, "m_support", "m_support_steps"
+                ),
+                "family_peak_rcm_positive_other_video_groups": nested(
+                    family_peak_rcm_support, "m_support", "positive_other_video_groups"
+                ),
+                "family_peak_rcm_optimizer_steps": nested(
+                    family_peak_rcm_support, "resources", "optimizer_steps"
+                ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
+                "family_peak_support_is_scientific_acceptance": False,
             },
-            "open_gate": "The static policy fold contains lawful cross-video Known support, but both the preserved RCM pilot and the fixed candidate-aware support repair produced zero prediction-owned cross-video groups; change the support aggregation mechanism before claiming or selecting self-correcting memory.",
+            "open_gate": "The family-relative smoke now exercises one prediction-owned cross-video support group, but it is untrained and only four fixed frames; independent lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required.",
         },
         {
             "id": "formal_causal_online_metrics",
@@ -834,6 +878,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
                 reported_status=candidate_rcm_support.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+                reported_status=family_peak_rcm_support.get("status"),
             ),
             evidence(
                 repo,

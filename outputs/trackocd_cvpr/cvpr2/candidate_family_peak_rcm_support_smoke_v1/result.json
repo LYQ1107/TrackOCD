@@ -1,0 +1,61 @@
+{
+  "boundaries": {
+    "category_or_vocabulary_in_numeric_forward": false,
+    "formal_metrics": false,
+    "harness_forced_cross_video_reuse": false,
+    "labels_external_loss_only": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "model_selection": false,
+    "optimizer_started": false,
+    "predicted_frontend_qualification": false,
+    "scientific_acceptance": false,
+    "val_or_test_accessed": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_family_peak_rcm_support_smoke_v1.json",
+    "sha256": "7d4cf61032ee3e04a8e571d26b4f6df749d516d711d072cec1ca9295a67f21ff"
+  },
+  "generated_utc": "2026-10-26T00:28:08.133649+00:00",
+  "interpretation": "A positive support-group result is bounded causal lifecycle evidence for this fixed mechanism only; it is not trained memory, independent calibration, predicted-track qualification, an OCD/MOT metric, or Goal A/B/C acceptance.",
+  "lifecycle": {
+    "actions": {
+      "EXISTING": 4,
+      "NEW": 10
+    },
+    "cross_video_token_count": 1,
+    "events": 14,
+    "frames": 4,
+    "harness_forced_cross_video_reuse": false,
+    "memory_versions": 17,
+    "videos": 2
+  },
+  "m_support": {
+    "m_support_steps": 1,
+    "plan_reasons": {
+      "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 1,
+      "MASKED_SINGLETON_NO_OTHER_SUPPORT": 10
+    },
+    "positive_other_video_groups": 1
+  },
+  "mechanism": {
+    "hand_selected_similarity_threshold": false,
+    "name": "family_peak_standardization",
+    "score_sweep": false,
+    "tie_break": "EXISTING"
+  },
+  "resources": {
+    "device": "CPU",
+    "optimizer_steps": 0,
+    "peak_rss_bytes": 1026252800,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 46.16197945900058,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-family-peak-rcm-support-smoke-result.v1",
+  "status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE",
+  "support_group_size_histogram": {
+    "0": 4,
+    "1": 5,
+    "2": 1
+  }
+}

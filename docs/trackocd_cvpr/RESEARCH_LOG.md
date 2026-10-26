@@ -10933,3 +10933,33 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json`.
   It does not authorize threshold search, formal predicted training, or a
   scientific failure claim about the full TrackOCD method.
+
+## Family-relative candidate calibration smoke (2026-10-26 UTC)
+
+- The fixed absolute-similarity rule and the first relative-comparison rule
+  both left the RCM support audit at zero prediction-owned cross-video groups.
+  A bounded candidate-distribution diagnostic showed that existing and Known
+  candidate families had different adapted-similarity scales: existing peaks
+  could be high in later frames, but the raw family maxima were not directly
+  comparable at the second-video boundary.
+- A third, distinct mechanism was therefore frozen: within each current
+  candidate family, standardize adapted similarity by that family's mean and
+  population standard deviation, then compare the family peak z-scores. The
+  tie rule favors an existing candidate; there is no hand-selected similarity
+  threshold and no score sweep. Candidate bindings remain outside the numeric
+  scorer, and external Known/pseudo targets are read only after the anonymous
+  decision for the support-agreement audit.
+- On the same fixed first two policy-order videos and first two clock frames
+  per video, the mechanism produced `4` EXISTING and `10` NEW events, `1`
+  natural cross-video token, and `1` full other-group support-agreement plan.
+  It used `0` optimizer steps, CPU/one worker, no Val/Test input, no
+  vocabulary, no formal metrics, and no harness-forced reuse. Peak RSS was
+  `1,026,252,800` bytes and wall time was `46.162` seconds.
+- Receipt/config/test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json`,
+  `configs/trackocd_cvpr/candidate_family_peak_rcm_support_smoke_v1.json`, and
+  `tests/trackocd_cvpr/test_candidate_family_peak_rcm_support_smoke.py`.
+  This is positive bounded lifecycle/M-support plumbing evidence only; it is
+  not trained self-correcting memory, independent calibration, predicted-track
+  qualification, an OCD/MOT metric, or Goal A/B/C acceptance. The acceptance
+  audit remains incomplete and keeps the requirement open.

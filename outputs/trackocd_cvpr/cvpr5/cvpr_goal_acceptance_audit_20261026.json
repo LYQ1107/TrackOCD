@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:17:51.760601+00:00",
+  "generated_utc": "2026-10-26T00:28:42.342374+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "954c3e063a018b1012ece4979fd6e698b534db0c",
-    "clean_before_audit": true
+    "head": "61efd89b323e596c4610ad780433698cf362b816",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -460,6 +460,13 @@
           "bytes": 1551,
           "sha256": "b887d7f2176ef28bb1c75d4e8c05f5daa6047dff7c7482c6bef6446d630c6740",
           "reported_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 1962,
+          "sha256": "a015f02368989f55301e97a6f5fef3c44b5d56e553e92715ef737eb36589b8db",
+          "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
         }
       ],
       "facts": {
@@ -478,9 +485,15 @@
         "candidate_aware_rcm_support_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO",
         "candidate_aware_rcm_cross_video_token_count": 0,
         "candidate_aware_rcm_m_support_steps": 0,
-        "candidate_aware_rcm_positive_other_video_groups": 0
+        "candidate_aware_rcm_positive_other_video_groups": 0,
+        "family_peak_rcm_support_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE",
+        "family_peak_rcm_cross_video_token_count": 1,
+        "family_peak_rcm_m_support_steps": 1,
+        "family_peak_rcm_positive_other_video_groups": 1,
+        "family_peak_rcm_optimizer_steps": 0,
+        "family_peak_rcm_score_sweep": false
       },
-      "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation."
+      "open_gate": "A fixed family-relative support smoke is positive, but a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation remain open."
     },
     {
       "id": "self_correcting_persistent_memory",
@@ -530,6 +543,13 @@
           "reported_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 1962,
+          "sha256": "a015f02368989f55301e97a6f5fef3c44b5d56e553e92715ef737eb36589b8db",
+          "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -564,9 +584,15 @@
         "candidate_aware_lifecycle_harness_forced_reuse": false,
         "candidate_aware_rcm_support_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO",
         "candidate_aware_rcm_m_support_steps": 0,
-        "predicted_cross_video_lifecycle_is_supervision": false
+        "family_peak_rcm_support_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE",
+        "family_peak_rcm_cross_video_token_count": 1,
+        "family_peak_rcm_m_support_steps": 1,
+        "family_peak_rcm_positive_other_video_groups": 1,
+        "family_peak_rcm_optimizer_steps": 0,
+        "predicted_cross_video_lifecycle_is_supervision": false,
+        "family_peak_support_is_scientific_acceptance": false
       },
-      "open_gate": "The static policy fold contains lawful cross-video Known support, but both the preserved RCM pilot and the fixed candidate-aware support repair produced zero prediction-owned cross-video groups; change the support aggregation mechanism before claiming or selecting self-correcting memory."
+      "open_gate": "The family-relative smoke now exercises one prediction-owned cross-video support group, but it is untrained and only four fixed frames; independent lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required."
     },
     {
       "id": "formal_causal_online_metrics",
@@ -768,6 +794,13 @@
       "bytes": 1551,
       "sha256": "b887d7f2176ef28bb1c75d4e8c05f5daa6047dff7c7482c6bef6446d630c6740",
       "reported_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+      "exists": true,
+      "bytes": 1962,
+      "sha256": "a015f02368989f55301e97a6f5fef3c44b5d56e553e92715ef737eb36589b8db",
+      "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",

@@ -1,0 +1,32 @@
+{
+  "schema_version": "trackocd.cvpr.candidate-family-peak-rcm-support-smoke.v1",
+  "status": "FROZEN_CATEGORY_FREE_FAMILY_PEAK_RCM_SUPPORT_SMOKE_NO_TRAINING",
+  "purpose": "Test one fixed family-relative candidate rule against the previously observed adapted-score scale mismatch, using the same qualified two-video RCM policy scope.",
+  "joint_rcm_config": "configs/trackocd_cvpr/joint_rcm_policy_pilot_v1.json",
+  "joint_rcm_config_sha256": "8e5d2db56af95a8ed3e1eeae122c21423e8a50255f897cc4ca0b448103274abe",
+  "mechanism": "family_peak_standardization",
+  "mechanism_contract": "For each current candidate family (EXISTING and KNOWN), standardize adapted similarity by that family's own mean and population standard deviation; compare the two family peak z-scores. Select the existing peak on a deterministic tie in favor of existing; otherwise emit NEW. No hand-selected similarity threshold or score sweep is allowed.",
+  "pilot_policy_relative_ordinals": [0, 1],
+  "frames_per_video": 2,
+  "selection_rule": "Use the first two frozen policy-order videos and the first two metadata clock frames of each; no score, label, coverage, or result selection.",
+  "limits": {
+    "optimizer_steps": 0,
+    "training_gpu_hours": 0,
+    "device": "CPU",
+    "workers": 1
+  },
+  "boundaries": {
+    "labels_external_loss_only": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "category_or_vocabulary_in_numeric_forward": false,
+    "val_or_test_accessed": false,
+    "optimizer_started": false,
+    "formal_metrics": false,
+    "model_selection": false,
+    "predicted_frontend_qualification": false,
+    "harness_forced_cross_video_reuse": false,
+    "scientific_acceptance": false
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_support_smoke_v1/result.json",
+  "interpretation": "A positive support-group result is bounded causal lifecycle evidence for this fixed mechanism only; it is not trained memory, independent calibration, predicted-track qualification, an OCD/MOT metric, or Goal A/B/C acceptance."
+}
