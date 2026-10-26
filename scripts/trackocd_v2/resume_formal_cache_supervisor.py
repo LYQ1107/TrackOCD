@@ -3,9 +3,10 @@
 
 This supervisor owns only the cache worker that it starts.  It waits for the
 worker's actual resource contract (25% of RAM plus the declared 8 GiB worker
-margin, and an idle GPU 0), terminates only that worker after repeated drops
-below the hard RAM floor, and resumes at shard boundaries.  It never selects a
-different frontend, opens Test, or touches unrelated processes.
+margin, an idle GPU, and enough estimated disk space with a reserve),
+terminates only that worker after repeated drops below a hard safety gate, and
+resumes at shard boundaries.  It never selects a different frontend, opens
+Test, or touches unrelated processes.
 """
 
 from __future__ import annotations
@@ -13,7 +14,9 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import math
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -39,6 +42,7 @@ DEFAULT_AUDIT_ROOT = ROOT / "outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/a
 DEFAULT_FRAMES_ROOT = Path("/data3/liuyeqiang/TAO-Amodal/frames")
 DEFAULT_RECEIPT = ROOT / "outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_resume_supervisor_20261026.json"
 DEFAULT_LOG = ROOT / "outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_resume_supervisor_20261026.log"
+DEFAULT_STORAGE_RESERVE_GIB = 1.0
 
 
 def utc_now() -> str:
@@ -51,6 +55,51 @@ def done_count(cache_root: Path, start: int, end: int) -> int:
         (shards / (f"shard-{index:06d}") / ".done").is_file()
         for index in range(start, end)
     )
+
+
+def storage_gate(cache_root: Path, expected_shards: int, reserve_bytes: int) -> dict[str, Any]:
+    """Estimate remaining payload space without opening feature arrays."""
+
+    shards = cache_root / "shards"
+    observed_sizes: list[int] = []
+    if shards.is_dir():
+        for index in range(expected_shards):
+            shard = shards / f"shard-{index:06d}"
+            if not (shard / ".done").is_file():
+                continue
+            payload_bytes = sum(
+                path.stat().st_size
+                for path in shard.rglob("*")
+                if path.is_file() and path.name not in {".done", ".launched"}
+            )
+            if payload_bytes > 0:
+                observed_sizes.append(int(payload_bytes))
+    usage_path = cache_root if cache_root.exists() else cache_root.parent
+    free_bytes = int(shutil.disk_usage(usage_path).free)
+    if not observed_sizes:
+        return {
+            "pass": False,
+            "reason": "no_completed_payload_sample",
+            "free_bytes": free_bytes,
+            "reserve_bytes": int(reserve_bytes),
+            "observed_completed_shards": 0,
+            "estimated_missing_bytes": None,
+        }
+    mean_bytes = float(sum(observed_sizes)) / float(len(observed_sizes))
+    missing_shards = max(0, int(expected_shards) - len(observed_sizes))
+    estimated_missing = int(math.ceil(mean_bytes * missing_shards))
+    required_bytes = estimated_missing + int(reserve_bytes)
+    return {
+        "pass": free_bytes >= required_bytes,
+        "reason": "sufficient_estimated_space" if free_bytes >= required_bytes else "insufficient_estimated_space",
+        "free_bytes": free_bytes,
+        "reserve_bytes": int(reserve_bytes),
+        "observed_completed_shards": len(observed_sizes),
+        "mean_payload_bytes": mean_bytes,
+        "missing_shards": missing_shards,
+        "estimated_missing_bytes": estimated_missing,
+        "required_bytes": required_bytes,
+    }
 
 
 def gate(snapshot: dict[str, Any], requested_gpu_index: int) -> dict[str, Any]:
@@ -119,6 +168,7 @@ def main() -> int:
     parser.add_argument("--end", type=int, default=723)
     parser.add_argument("--gpu-index", type=int, default=-1, help="GPU index, or -1 to choose a currently eligible idle GPU")
     parser.add_argument("--batch", type=int, default=16)
+    parser.add_argument("--storage-reserve-gib", type=float, default=DEFAULT_STORAGE_RESERVE_GIB)
     parser.add_argument("--poll-seconds", type=float, default=30.0)
     parser.add_argument("--receipt", type=Path, default=DEFAULT_RECEIPT)
     parser.add_argument("--log", type=Path, default=DEFAULT_LOG)
@@ -128,6 +178,8 @@ def main() -> int:
         raise SystemExit("invalid half-open shard range")
     if args.batch < 1 or args.batch > 64:
         raise SystemExit("--batch must be between 1 and 64")
+    if args.storage_reserve_gib <= 0:
+        raise SystemExit("--storage-reserve-gib must be positive")
 
     args.cache_root = args.cache_root.resolve()
     args.input = args.input.resolve()
@@ -162,6 +214,7 @@ def main() -> int:
     events: list[dict[str, Any]] = []
     process: subprocess.Popen[Any] | None = None
     below_floor_samples = 0
+    below_storage_samples = 0
     status = "WAITING_RESOURCE"
     child_pid: int | None = None
     command: list[str] | None = None
@@ -179,6 +232,7 @@ def main() -> int:
             "range": {"start_inclusive": args.start, "end_exclusive": args.end},
             "command": command,
             "batch": args.batch,
+            "storage_reserve_gib": args.storage_reserve_gib,
             "gpu_index": args.gpu_index,
             "done_count": done_count(args.cache_root, args.start, args.end),
             "prior_failure": prior_failure,
@@ -200,6 +254,13 @@ def main() -> int:
             snapshot = resource_snapshot()
             resource_gate = gate(snapshot, args.gpu_index)
             current_done = done_count(args.cache_root, args.start, args.end)
+            storage = storage_gate(
+                args.cache_root,
+                args.end,
+                int(args.storage_reserve_gib * 1024 * 1024 * 1024),
+            )
+            resource_gate["storage_gate"] = storage
+            resource_gate["pass"] = bool(resource_gate["pass"] and storage["pass"])
 
             if process is None:
                 if current_done == args.end - args.start:
@@ -217,7 +278,7 @@ def main() -> int:
                         "resource_gate": resource_gate,
                     }
                     write_receipt(latest)
-                    announce({"supervisor": status, "done": current_done, "mem_available_kib": resource_gate["mem_available_kib"], "required_available_kib": resource_gate["required_available_kib"]})
+                    announce({"supervisor": status, "done": current_done, "mem_available_kib": resource_gate["mem_available_kib"], "required_available_kib": resource_gate["required_available_kib"], "storage": storage})
                     time.sleep(max(1.0, args.poll_seconds))
                     continue
 
@@ -239,6 +300,7 @@ def main() -> int:
                 log_handle.close()
                 child_pid = process.pid
                 below_floor_samples = 0
+                below_storage_samples = 0
                 events.append({"time": utc_now(), "event": "CHILD_STARTED", "child_pid": child_pid, "done_before": current_done, "resource_gate": resource_gate})
                 write_receipt({"event": "CHILD_STARTED", "child_pid": child_pid, "resource_gate": resource_gate})
                 announce({"supervisor": "CHILD_STARTED", "child_pid": child_pid, "done_before": current_done})
@@ -274,15 +336,21 @@ def main() -> int:
                 below_floor_samples += 1
             else:
                 below_floor_samples = 0
-            if below_floor_samples >= 2:
+            if not resource_gate["storage_gate"]["pass"]:
+                below_storage_samples += 1
+            else:
+                below_storage_samples = 0
+            if below_floor_samples >= 2 or below_storage_samples >= 2:
                 stop_mode = stop_owned_child(process)
-                events.append({"time": utc_now(), "event": "CHILD_STOPPED_FOR_RAM", "child_pid": child_pid, "stop_mode": stop_mode, "done_count": current_done, "resource_gate": resource_gate})
+                reason = "RAM" if below_floor_samples >= 2 else "STORAGE"
+                events.append({"time": utc_now(), "event": f"CHILD_STOPPED_FOR_{reason}", "child_pid": child_pid, "stop_mode": stop_mode, "done_count": current_done, "resource_gate": resource_gate})
                 status = "WAITING_RESOURCE"
-                write_receipt({"event": "CHILD_STOPPED_FOR_RAM", "child_pid": child_pid, "done_count": current_done, "resource_gate": resource_gate})
-                announce({"supervisor": "CHILD_STOPPED_FOR_RAM", "child_pid": child_pid, "done": current_done})
+                write_receipt({"event": f"CHILD_STOPPED_FOR_{reason}", "child_pid": child_pid, "done_count": current_done, "resource_gate": resource_gate})
+                announce({"supervisor": f"CHILD_STOPPED_FOR_{reason}", "child_pid": child_pid, "done": current_done})
                 process = None
                 child_pid = None
                 below_floor_samples = 0
+                below_storage_samples = 0
                 time.sleep(max(1.0, args.poll_seconds))
                 continue
 

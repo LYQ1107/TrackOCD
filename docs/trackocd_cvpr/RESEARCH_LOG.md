@@ -11484,3 +11484,19 @@ no private GT/cache/weights opened for this check):
 - This keeps predicted-track training and downstream scientific acceptance
   open until a lawful dense frontend and non-leaking Train-development join
   are actually available; no training was started by this check.
+
+## Storage-aware formal-cache supervisor (2026-10-26 UTC)
+
+- Added a read-only storage gate to
+  `scripts/trackocd_v2/resume_formal_cache_supervisor.py`.  Before launch and
+  during a child run it estimates missing payload bytes from completed shard
+  payloads, requires a configurable reserve (default **1 GiB**), and stops
+  only its own child after repeated storage-gate failure.  It does not delete
+  or rewrite any shard.
+- The storage gate currently estimates 324 remaining shards at about 2.50 GB;
+  the live filesystem has about 5.29 GB free, so storage passes with the
+  reserve.  RAM/GPU eligibility still fails, so no feature worker has started.
+- Targeted supervisor/cache tests passed **8/8** and the complete v2 suite
+  passed **60/60**.  The old waiting supervisor was interrupted only through
+  its own task-owned session and replaced by the storage-safe supervisor;
+  external processes were not touched.
