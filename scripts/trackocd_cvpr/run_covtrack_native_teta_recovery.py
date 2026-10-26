@@ -19,6 +19,7 @@ CONFIG = ROOT / "configs/trackocd_cvpr/covtrack_native_teta_recovery_v1.json"
 RUNNER = ROOT / "scripts/trackocd_v2/run_teta_reference.py"
 
 from src.trackocd_v2.io import atomic_json
+from scripts.trackocd_v2.run_frontend_metrics import _atomic_native_teta_json
 
 
 def _now() -> str:
@@ -97,11 +98,13 @@ def run(config_path: Path, source_root: Path) -> dict:
         raise ValueError("sealed native stream hash changed")
     _verify_source(source_root.resolve(), config["teta_commit"])
     output_json = output_root / "teta_reference.json"
+    teta_input = output_root / "native_input" / "tao_track.json"
+    converted_rows, converted_videos = _atomic_native_teta_json(native, teta_input)
     log_path = output_root / "evaluator.log"
     command = [
         sys.executable,
         str(RUNNER.resolve()),
-        "--tracker-json", str(native.resolve()),
+        "--tracker-json", str(teta_input.resolve()),
         "--annotation", str(annotation.resolve()),
         "--output-root", str(output_root.resolve()),
         "--output-json", str(output_json.resolve()),
@@ -135,6 +138,9 @@ def run(config_path: Path, source_root: Path) -> dict:
         "inputs": {
             "native_stream": str(native.resolve()),
             "native_stream_sha256": observed_stream_sha256,
+            "converted_teta_input": str(teta_input.resolve()),
+            "converted_rows": converted_rows,
+            "converted_videos": len(converted_videos),
             "annotation": str(annotation.resolve()),
             "known_ids": str(known_ids.resolve()),
             "novel_ids": str(novel_ids.resolve()),
