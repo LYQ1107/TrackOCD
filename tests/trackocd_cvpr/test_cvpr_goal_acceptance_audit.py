@@ -100,6 +100,14 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_positive_other_video_groups"] == 1
     assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_optimizer_steps"] == 0
     assert rows["candidate_aware_decision"]["facts"]["family_peak_rcm_score_sweep"] is False
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_full_clock_status"] == (
+        "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+    )
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_full_clock_frames"] == 79
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_full_clock_cross_video_token_count"] == 3
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_full_clock_m_support_steps"] == 28
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_full_clock_positive_other_video_groups"] == 28
+    assert rows["candidate_aware_decision"]["facts"]["family_peak_full_clock_optimizer_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["predicted_training_readiness_status"] == (
         "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
     )
@@ -159,6 +167,24 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     ] == 1
     assert rows["self_correcting_persistent_memory"]["facts"][
         "family_peak_rcm_optimizer_steps"
+    ] == 0
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_full_clock_status"
+    ] == "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_full_clock_frames"
+    ] == 79
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_full_clock_cross_video_token_count"
+    ] == 3
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_full_clock_m_support_steps"
+    ] == 28
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_full_clock_positive_other_video_groups"
+    ] == 28
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "family_peak_full_clock_optimizer_steps"
     ] == 0
     assert rows["self_correcting_persistent_memory"]["facts"][
         "rcm_m_branch_scientifically_exercised"

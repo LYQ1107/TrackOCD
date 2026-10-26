@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:28:42.342374+00:00",
+  "generated_utc": "2026-10-26T00:42:05.597977+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "61efd89b323e596c4610ad780433698cf362b816",
+    "head": "0a599f5f250c4f0dc6abe88eebc06d939614d087",
     "clean_before_audit": false
   },
   "scope": {
@@ -467,6 +467,13 @@
           "bytes": 1962,
           "sha256": "a015f02368989f55301e97a6f5fef3c44b5d56e553e92715ef737eb36589b8db",
           "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
+          "exists": true,
+          "bytes": 1947,
+          "sha256": "59b62e771c4a57ecd0a28edac0241187dd003d59a5eaf0e36fd85053b18d8a6c",
+          "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
         }
       ],
       "facts": {
@@ -491,7 +498,13 @@
         "family_peak_rcm_m_support_steps": 1,
         "family_peak_rcm_positive_other_video_groups": 1,
         "family_peak_rcm_optimizer_steps": 0,
-        "family_peak_rcm_score_sweep": false
+        "family_peak_rcm_score_sweep": false,
+        "family_peak_full_clock_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE",
+        "family_peak_full_clock_frames": 79,
+        "family_peak_full_clock_cross_video_token_count": 3,
+        "family_peak_full_clock_m_support_steps": 28,
+        "family_peak_full_clock_positive_other_video_groups": 28,
+        "family_peak_full_clock_optimizer_steps": 0
       },
       "open_gate": "A fixed family-relative support smoke is positive, but a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation remain open."
     },
@@ -550,6 +563,13 @@
           "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
+          "exists": true,
+          "bytes": 1947,
+          "sha256": "59b62e771c4a57ecd0a28edac0241187dd003d59a5eaf0e36fd85053b18d8a6c",
+          "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -589,10 +609,16 @@
         "family_peak_rcm_m_support_steps": 1,
         "family_peak_rcm_positive_other_video_groups": 1,
         "family_peak_rcm_optimizer_steps": 0,
+        "family_peak_full_clock_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE",
+        "family_peak_full_clock_frames": 79,
+        "family_peak_full_clock_cross_video_token_count": 3,
+        "family_peak_full_clock_m_support_steps": 28,
+        "family_peak_full_clock_positive_other_video_groups": 28,
+        "family_peak_full_clock_optimizer_steps": 0,
         "predicted_cross_video_lifecycle_is_supervision": false,
         "family_peak_support_is_scientific_acceptance": false
       },
-      "open_gate": "The family-relative smoke now exercises one prediction-owned cross-video support group, but it is untrained and only four fixed frames; independent lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required."
+      "open_gate": "The family-relative smoke now exercises prediction-owned cross-video support over a fixed two-video full clock, but it is untrained and not an independent scientific evaluation; lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required."
     },
     {
       "id": "formal_causal_online_metrics",
@@ -800,6 +826,13 @@
       "exists": true,
       "bytes": 1962,
       "sha256": "a015f02368989f55301e97a6f5fef3c44b5d56e553e92715ef737eb36589b8db",
+      "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json",
+      "exists": true,
+      "bytes": 1947,
+      "sha256": "59b62e771c4a57ecd0a28edac0241187dd003d59a5eaf0e36fd85053b18d8a6c",
       "reported_status": "PASS_FAMILY_PEAK_RCM_M_SUPPORT_SMOKE"
     },
     {

@@ -56,8 +56,10 @@ def _load_config(path: Path) -> dict:
         raise ValueError("family-peak RCM smoke is not frozen")
     if config.get("mechanism") != "family_peak_standardization":
         raise ValueError("unexpected family-peak mechanism")
-    if config.get("pilot_policy_relative_ordinals") != [0, 1] or config.get("frames_per_video") != 2:
+    if config.get("pilot_policy_relative_ordinals") != [0, 1]:
         raise ValueError("fixed two-video/two-frame scope required")
+    if config.get("frames_per_video") is not None and config.get("frames_per_video") != 2:
+        raise ValueError("only the registered two-frame or complete-clock scope is allowed")
     if config.get("limits") != {
         "optimizer_steps": 0,
         "training_gpu_hours": 0,
@@ -162,6 +164,7 @@ def run(config_path: Path, output_path: Path) -> dict:
     for epoch, (_video, arrays) in enumerate(fixed_videos):
         if epoch:
             controller.start_next_video()
+        video_frames_consumed = 0
         for frame, observations in policy_current_frames(arrays):
             prior_bank, _ = controller.state_snapshot()
             result, _ = controller.ingest(frame, observations, track_grad=False)
@@ -181,7 +184,11 @@ def run(config_path: Path, output_path: Path) -> dict:
                     positive_other_video += 1
             event_count += len(result.events)
             frames_consumed += 1
-            if frames_consumed % config["frames_per_video"] == 0:
+            video_frames_consumed += 1
+            if (
+                config["frames_per_video"] is not None
+                and video_frames_consumed >= config["frames_per_video"]
+            ):
                 break
     cross_video_token_count = sum(len(epochs) >= 2 for epochs in token_epochs.values())
     support_sizes = Counter(

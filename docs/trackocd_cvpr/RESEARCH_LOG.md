@@ -10963,3 +10963,23 @@ no private GT/cache/weights opened for this check):
   not trained self-correcting memory, independent calibration, predicted-track
   qualification, an OCD/MOT metric, or Goal A/B/C acceptance. The acceptance
   audit remains incomplete and keeps the requirement open.
+
+## Family-relative candidate full-clock audit (2026-10-26 UTC)
+
+- The same frozen family-peak rule was then run over every metadata clock frame
+  of the same two fixed policy-order videos, rather than only the first two
+  frames. The scope was still structurally fixed before payload access; no
+  result-, label-, coverage-, or score-based subset was selected.
+- The full clock consumed `79` frames and `215` events. It produced `125`
+  EXISTING and `90` NEW actions, `3` natural cross-video tokens, and `28`
+  prediction-owned `EXTERNAL_FULL_OTHER_GROUP_AGREEMENT` plans. It used zero
+  optimizer steps, no Val/Test input, no vocabulary, no formal metrics, and no
+  harness-forced reuse. Peak RSS was `1,046,122,496` bytes and wall time was
+  `665.057` seconds.
+- Receipt and regression test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_rcm_full_clock_v1/result.json`
+  and `tests/trackocd_cvpr/test_candidate_family_peak_rcm_full_clock.py`.
+  This strengthens the mechanism/plumbing evidence over the four-frame smoke,
+  but remains untrained two-video evidence rather than self-correcting memory,
+  independent calibration, predicted-track training, formal OCD/MOT metrics,
+  or Goal A/B/C acceptance.
