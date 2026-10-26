@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:06:09.066872+00:00",
+  "generated_utc": "2026-10-26T00:11:31.953789+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "32c2ebc9f3ab870da999f06563b0ad0957be7949",
+    "head": "f0f9a0f5ef70680c11506b75d6b72ec9d51457b0",
     "clean_before_audit": true
   },
   "scope": {
@@ -480,6 +480,13 @@
           "reported_status": "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json",
+          "exists": true,
+          "bytes": 2095,
+          "sha256": "35fd179f50b648041ae5278e4720e3eef5f492f5435b0f9947bb675048031ab7",
+          "reported_status": "PASS_LAWFUL_CROSS_VIDEO_KNOWN_SUPPORT_AVAILABLE"
+        },
+        {
           "path": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
           "exists": true,
           "bytes": 1923,
@@ -508,13 +515,17 @@
         "rcm_m_support_coverage_status": "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO",
         "rcm_m_loss_steps": 0,
         "rcm_positive_other_video_groups": 0,
+        "rcm_static_support_status": "PASS_LAWFUL_CROSS_VIDEO_KNOWN_SUPPORT_AVAILABLE",
+        "rcm_static_support_pair_count": 36,
+        "rcm_static_physical_track_count": 54,
+        "rcm_static_masked_track_count": 10,
         "rcm_m_branch_scientifically_exercised": false,
         "rcm_pilot_is_goal_acceptance": false,
         "predicted_cross_video_lifecycle_smoke_status": "PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING",
         "predicted_cross_video_lifecycle_token_count": 3,
         "predicted_cross_video_lifecycle_is_supervision": false
       },
-      "open_gate": "The bounded R/C/M pilot has zero M support coverage; freeze a legal cross-video Known-support fold before claiming or selecting self-correcting memory."
+      "open_gate": "The static policy fold contains lawful cross-video Known support, but the preserved pilot produced zero prediction-owned cross-video groups; repair and freeze the anonymous lifecycle coverage before claiming or selecting self-correcting memory."
     },
     {
       "id": "formal_causal_online_metrics",
@@ -688,6 +699,13 @@
       "bytes": 1330,
       "sha256": "3a03c38d0a6a2298a4aa3c0f8699fa0f8597e47fff23f62ee271fbb33f402318",
       "reported_status": "FAIL_RCM_PILOT_M_SUPPORT_COVERAGE_ZERO"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json",
+      "exists": true,
+      "bytes": 2095,
+      "sha256": "35fd179f50b648041ae5278e4720e3eef5f492f5435b0f9947bb675048031ab7",
+      "reported_status": "PASS_LAWFUL_CROSS_VIDEO_KNOWN_SUPPORT_AVAILABLE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
