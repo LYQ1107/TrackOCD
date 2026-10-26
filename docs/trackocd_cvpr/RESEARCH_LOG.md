@@ -11177,3 +11177,37 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/covtrack_score_gate_velocity_gap30_reassoc_transfer_v1/`;
   the compact mechanism synthesis now records six variants across three root-cause
   families while keeping scientific acceptance open.
+
+## Family-peak residual joint R/C/M interface pilot (2026-10-26 UTC)
+
+- The first family-peak residual joint pilot was retained as an unsuccessful
+  implementation attempt: the existing controller type guard rejected the new
+  scorer before training. A second attempt reached the complete clock but its
+  first two optimizer updates occurred before any M-support term, so both
+  `M_loss` values were null. Neither attempt is treated as scientific evidence.
+- After the minimal type-compatible scorer and update-gate repair were
+  preregistered, the fixed two-video policy scope consumed all `79` metadata
+  frames and `215` anonymous observations. The scorer keeps the deterministic
+  within-family population-standardized family-peak action and adds a fixed
+  `1e-3` differentiable numeric residual; no labels, IDs, tokens, vocabulary,
+  Val/Test input, or raw annotations enter the numeric forward.
+- The final bounded receipt performed exactly `2` CPU AdamW updates. Both had
+  non-null external C and M losses: C/M losses were
+  `(110.8642425537, 0.6931471825)` and `(83.3126373291, 0.6899322867)`;
+  R/C/M gradient sums were strictly positive on both updates. The M plan
+  recorded `64` full other-group support plans, while singleton groups stayed
+  masked. Append-only lineage retained `330` version records and all parent
+  history/tombstones; the private endpoint reopened exactly and was not
+  uploaded. Peak RSS was `2,412,478,464` bytes and wall time was `633.597`
+  seconds on CPU/one worker.
+- This is real causal R/C/M interface and M-loss plumbing evidence on the
+  family-peak policy Train pilot. It is explicitly not predicted-track
+  training, not a calibrated/self-correcting memory result, not an OCD/MOT
+  metric, and not Goal A/B/C acceptance. Predicted-track qualification,
+  independent folds/seeds/coverage, action-level correction, and locked final
+  evaluation remain open.
+- Receipt/config/script/test:
+  `outputs/trackocd_cvpr/cvpr5/family_peak_joint_rcm_training_pilot_v4/result.json`,
+  `configs/trackocd_cvpr/family_peak_joint_rcm_training_pilot_v1.json`,
+  `scripts/trackocd_cvpr/pilot_family_peak_joint_rcm.py`, and
+  `tests/trackocd_cvpr/test_family_peak_joint_rcm.py`.
