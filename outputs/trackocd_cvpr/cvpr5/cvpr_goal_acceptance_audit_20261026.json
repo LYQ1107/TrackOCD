@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T05:08:33.376416+00:00",
+  "generated_utc": "2026-10-26T05:12:14.536385+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "f0a20a33b370302109d185885ef0f57f8c27ce42",
-    "clean_before_audit": true
+    "head": "cac0f7e093fe074c461794fcbfc5ce86c801dff7",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -928,8 +928,8 @@
     {
       "path": "outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json",
       "exists": true,
-      "bytes": 3995,
-      "sha256": "a9e2d4ebd2f908db6e3509adbc7d3ca650100a224e6da07ed4d8183d0c43e2c5",
+      "bytes": 4180,
+      "sha256": "3ea9d85ee929739aeea3432e2c531b8078c2023ba4403dc33ab031cd39bdd738",
       "reported_status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY"
     },
     {
