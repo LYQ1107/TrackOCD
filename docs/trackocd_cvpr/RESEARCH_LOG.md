@@ -11546,3 +11546,15 @@ no private GT/cache/weights opened for this check):
   focused tests passed **5/5**.  The result remains partial and not formal
   cache-ready.  Changes were committed as `9250efe7` and `f1324eda`; remote
   verification follows after the final push.
+
+## Current-boundary regression after reconciliation (2026-10-26 UTC)
+
+- The current CVPR acceptance receipt, metadata-only formal-cache
+  reconciliation, and legacy-preservation audit passed **3/3** in 0.47
+  seconds.  The checks confirm the observed `399/723` checkpoint is not
+  promoted to formal completion and the protected historical lineage remains
+  intact.
+- Both owned supervisors remain live: the cache supervisor is
+  `WAITING_RESOURCE` and the CPU postprocess watcher is `WAITING_CACHE` at
+  `399/723`.  No worker was launched, no TAO Test asset was read, and no
+  external process was touched.
