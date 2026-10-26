@@ -11456,3 +11456,16 @@ no private GT/cache/weights opened for this check):
   reconciliation passed **3/3**; the separate current v2 regression remains
   **59/59**.  This result keeps historical compatibility and current-v2
   verification as distinct gates and does not promote either to Goal A/B/C.
+
+## Current lineage re-audit after regression (2026-10-26 UTC)
+
+- Re-ran the metadata-only legacy preservation audit at current HEAD
+  `8d580a2f`.  It returned
+  `PASS_LEGACY_RESEARCH_PRESERVATION_VERIFIED`: the `7546527` ancestor is
+  present, the current branch descends from it, protected `main`, v2, and core
+  refs still match their pinned SHAs, and all four preserved failed attempts
+  remain marked undeleted.
+- This confirms that the 120 historical source-binding failures are a
+  compatibility boundary in the descendant worktree, not evidence that the
+  historical lineage was lost.  No receipt, protected ref, data, weight, or
+  Test asset was changed by the audit.
