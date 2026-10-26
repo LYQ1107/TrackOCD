@@ -10902,3 +10902,18 @@ no private GT/cache/weights opened for this check):
   supervision, authorize formal predicted training, or change Goal/metric
   acceptance. Receipt:
   `outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json`.
+
+## Candidate-aware lifecycle smoke (2026-10-26 UTC)
+
+- A bounded label-free smoke replaced the prior forced-reuse harness with one
+  deterministic candidate-aware rule: reuse the highest-similarity existing
+  candidate only when the fixed numeric adapted-similarity margin is at least
+  `0.55`; otherwise emit `NEW`. Candidate bindings stayed outside the scorer.
+- On the same two fixed anonymous predicted-Train videos, two frames and four
+  tracks per video, the rule formed `1` natural cross-video token across `4`
+  frames and `8` events. It used zero optimizer steps, no labels/GT or
+  vocabulary, no Val/Test input, and did not force reuse.
+- This is stronger lifecycle plumbing evidence than the earlier harness-only
+  smoke, but it is not M supervision, predicted-track training, a selected
+  threshold, or an OCD/MOT result. Receipt:
+  `outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json`.

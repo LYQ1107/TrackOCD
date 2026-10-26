@@ -124,6 +124,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
     )
+    candidate_lifecycle_path, candidate_lifecycle = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -529,6 +533,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr3/C_development_all9_matrix_v1/result.json",
                     reported_status=candidate_matrix.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+                    reported_status=candidate_lifecycle.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
@@ -545,6 +554,16 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 "gt_controlled_matrix_pred_or_goal_accepted": candidate_aggregate.get(
                     "official_CT_full_semantic_truth_Pred_or_Goal_accepted"
+                ),
+                "candidate_aware_lifecycle_status": candidate_lifecycle.get("status"),
+                "candidate_aware_lifecycle_cross_video_token_count": nested(
+                    candidate_lifecycle, "lifecycle", "cross_video_token_count"
+                ),
+                "candidate_aware_lifecycle_optimizer_steps": nested(
+                    candidate_lifecycle, "lifecycle", "optimizer_steps"
+                ),
+                "candidate_aware_lifecycle_harness_forced_reuse": nested(
+                    candidate_lifecycle, "lifecycle", "harness_forced_cross_video_reuse"
                 ),
             },
             "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation.",
@@ -569,6 +588,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
                     reported_status=cross_video_smoke.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+                    reported_status=candidate_lifecycle.get("status"),
                 ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
@@ -600,6 +624,13 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "predicted_cross_video_lifecycle_smoke_status": cross_video_smoke.get("status"),
                 "predicted_cross_video_lifecycle_token_count": nested(
                     cross_video_smoke, "lifecycle", "cross_video_token_count"
+                ),
+                "candidate_aware_lifecycle_status": candidate_lifecycle.get("status"),
+                "candidate_aware_lifecycle_cross_video_token_count": nested(
+                    candidate_lifecycle, "lifecycle", "cross_video_token_count"
+                ),
+                "candidate_aware_lifecycle_harness_forced_reuse": nested(
+                    candidate_lifecycle, "lifecycle", "harness_forced_cross_video_reuse"
                 ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
             },
@@ -765,6 +796,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
                 reported_status=cross_video_smoke.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+                reported_status=candidate_lifecycle.get("status"),
             ),
             evidence(
                 repo,

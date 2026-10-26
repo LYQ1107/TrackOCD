@@ -1,0 +1,33 @@
+{
+  "schema_version": "trackocd.cvpr.candidate-aware-lifecycle-smoke.v1",
+  "status": "FROZEN_CATEGORY_FREE_CANDIDATE_AWARE_LIFECYCLE_SMOKE_NO_TRAINING",
+  "purpose": "Exercise a deterministic candidate-similarity lifecycle route on two fixed anonymous predicted-Train videos without labels, training, or forced reuse.",
+  "base_input_config": "configs/trackocd_cvpr/predicted_train_rcm_cross_video_smoke_v1.json",
+  "base_input_config_sha256": "1ff3454e49c7e5370097e39d58c15cc6c13dbae71cb6ded6ecb57d5b28d4d066",
+  "fixed_similarity_reuse_threshold": 0.55,
+  "threshold_rationale": "Single pre-registered engineering margin for candidate existing-token reuse; no sweep or selection.",
+  "selection_rule": "Reuse the highest-similarity existing candidate only when its numeric adapted similarity reaches the fixed margin; otherwise create NEW. Candidate bindings remain outside the scorer.",
+  "limits": {
+    "videos": 2,
+    "frames_per_video": 2,
+    "tracks_per_video": 4,
+    "optimizer_steps": 0,
+    "training_gpu_hours": 0,
+    "device": "CPU",
+    "workers": 1,
+    "future_suffix_used": false
+  },
+  "boundaries": {
+    "labels_or_gt_read": false,
+    "category_or_vocabulary_read": false,
+    "val_or_test_accessed": false,
+    "training_started": false,
+    "formal_metrics": false,
+    "model_selection": false,
+    "harness_forced_cross_video_reuse": false,
+    "scientific_acceptance": false,
+    "raw_prediction_persisted": false
+  },
+  "output": "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+  "interpretation": "A natural cross-video token is engineering evidence for candidate-aware lifecycle plumbing only; it is not M supervision, predicted-track training, or a scientific result."
+}

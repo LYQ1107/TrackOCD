@@ -1,0 +1,38 @@
+{
+  "boundaries": {
+    "category_or_vocabulary_read": false,
+    "formal_metrics": false,
+    "harness_forced_cross_video_reuse": false,
+    "labels_or_gt_read": false,
+    "model_selection": false,
+    "raw_prediction_persisted": false,
+    "scientific_acceptance": false,
+    "training_started": false,
+    "val_or_test_accessed": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_aware_lifecycle_smoke_v1.json",
+    "sha256": "b8f59a114f14ea4fabd5245724d48ed44e8e43c61036e35b85c5f759a8629123"
+  },
+  "generated_utc": "2026-10-26T00:12:39.567720+00:00",
+  "interpretation": "A natural cross-video token is engineering evidence for candidate-aware lifecycle plumbing only; it is not M supervision, predicted-track training, or a scientific result.",
+  "lifecycle": {
+    "append_only_commit_history": true,
+    "cross_video_token_count": 1,
+    "events": 16,
+    "frames": 4,
+    "harness_forced_cross_video_reuse": false,
+    "memory_versions": 16,
+    "optimizer_steps": 0,
+    "videos": 2
+  },
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 533528576,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 1.509801232998143,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-aware-lifecycle-smoke-result.v1",
+  "status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
+}
