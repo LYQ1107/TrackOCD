@@ -1,0 +1,39 @@
+{
+  "schema_version": "trackocd.cvpr.family-peak-residual-joint-rcm-pilot.v1",
+  "status": "REGISTERED_FAMILY_PEAK_RESIDUAL_JOINT_RCM_PILOT_NOT_SCIENTIFIC_ACCEPTANCE",
+  "purpose": "Exercise a fixed family-relative anonymous route with a bounded differentiable residual so prediction-owned C and M losses can reach the same causal R/C/M graph.",
+  "joint_rcm_config": "configs/trackocd_cvpr/joint_rcm_policy_pilot_v1.json",
+  "joint_rcm_config_sha256": "8e5d2db56af95a8ed3e1eeae122c21423e8a50255f897cc4ca0b448103274abe",
+  "branch": "research/cvpr-trackocd-autonomous-v2",
+  "pilot_policy_relative_ordinals": [0, 1],
+  "episodes": 1,
+  "updates_per_episode": 2,
+  "scorer": {
+    "family_rule": "within_family_population_standardized_adapted_similarity",
+    "tie_break": "EXISTING",
+    "residual_scale": 0.001,
+    "residual_parameters": 804
+  },
+  "limits": {
+    "optimizer_steps": 2,
+    "training_gpu_hours": 0,
+    "device": "CPU",
+    "workers": 1
+  },
+  "rss_bytes_ceiling": 3221225472,
+  "output_bytes_ceiling": 8388608,
+  "boundaries": {
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "category_or_vocabulary_in_numeric_forward": false,
+    "val_or_test_accessed": false,
+    "predicted_track_training": false,
+    "model_selection": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "weights_uploaded": false,
+    "external_processes_touched": false
+  },
+  "output_directory": "outputs/trackocd_cvpr/cvpr5/family_peak_joint_rcm_training_pilot_v1",
+  "interpretation": "Bounded full-clock causal R/C/M interface evidence only. The family-peak action is a fixed control and the residual is not calibrated or selected on development data. This is not predicted-track training, an OCD/MOT metric, a strong-frontend result, or Goal A/B/C acceptance."
+}

@@ -171,14 +171,17 @@ class JointRCMAtomicMemberControl(JointAtomicMemberControl):
 
 
 def train_joint_rcm_policy_pilot(videos, projection, known_prototypes, known_support_groups,
-                                 cfg, guard, progress, checkpoint=None):
+                                 cfg, guard, progress, checkpoint=None, scorer_factory=None):
     """Run a fixed causal R/C/M pilot; no dev metrics or endpoint selection."""
     if not videos or len({video for video, _ in videos}) != len(videos):
         raise ValueError('Unique fixed R/C/M pilot videos required')
     torch.manual_seed(cfg['seed'])
     rng = np.random.default_rng(cfg['seed'])
     evidence = RawPreservingEvidence().train()
-    scorer = CandidateScoreMLP(feature_count=14).train()
+    if scorer_factory is None:
+        scorer = CandidateScoreMLP(feature_count=14).train()
+    else:
+        scorer = scorer_factory().train()
     member = MemberReliabilityMLP(pooled_control=False).train()
     parameters = tuple(evidence.parameters()) + tuple(scorer.parameters()) + tuple(member.parameters())
     optimizer = torch.optim.AdamW(parameters, lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'])
