@@ -65,10 +65,16 @@ def _load_config(path: Path) -> dict:
         raise ValueError("unexpected family-peak M-training configuration")
     if config.get("status") != "FROZEN_POLICY_TRAIN_FAMILY_PEAK_M_BRANCH_SMOKE_NO_PRED_OR_GOAL_ACCEPTANCE":
         raise ValueError("family-peak M-training smoke is not frozen")
-    if config.get("pilot_policy_relative_ordinals") != [0, 1] or config.get("frames_per_video") != 2:
-        raise ValueError("fixed two-video/two-frame scope required")
-    if config.get("max_optimizer_steps") != 1 or config.get("limits") != {
-        "optimizer_steps": 1,
+    if config.get("pilot_policy_relative_ordinals") != [0, 1]:
+        raise ValueError("fixed two-video scope required")
+    if (config.get("frames_per_video"), config.get("max_optimizer_steps")) not in (
+        (2, 1),
+        (None, 2),
+    ):
+        raise ValueError("only the registered short or full-clock M scope is allowed")
+    expected_steps = config["max_optimizer_steps"]
+    if config.get("limits") != {
+        "optimizer_steps": expected_steps,
         "training_gpu_hours": 0,
         "device": "CPU",
         "workers": 1,
@@ -98,6 +104,7 @@ def run(config_path: Path, output_path: Path) -> dict:
         raise ValueError("preserve an existing M-training receipt")
     started = time.monotonic()
     _install_input_barrier()
+    torch.manual_seed(int(config.get("seed", 1027)))
     rcm_config = json.loads((ROOT / config["joint_rcm_config"]).read_text(encoding="utf-8"))
     videos, projection, _ = load_completed_policy_videos(ROOT, rcm_config, lambda: None)
     fit_tracks, _ = load_completed_fit_tracks(ROOT, rcm_config, lambda: None)
@@ -174,12 +181,14 @@ def run(config_path: Path, output_path: Path) -> dict:
                 gradient_norms.append(float(norm))
             frames += 1
             video_frames += 1
-            if video_frames >= config["frames_per_video"]:
+            if config["frames_per_video"] is not None and video_frames >= config["frames_per_video"]:
                 break
     after_digest = _parameter_digest(member)
     result = {
         "schema_version": "trackocd.cvpr.candidate-family-peak-m-training-smoke-result.v1",
-        "status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE" if optimizer_steps == 1 else "FAIL_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+        "status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+        if optimizer_steps == config["max_optimizer_steps"]
+        else "FAIL_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
         "generated_utc": _now(),
         "config": {"path": str(config_path.resolve()), "sha256": _sha256(config_path)},
         "scope": {

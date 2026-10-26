@@ -1,0 +1,57 @@
+{
+  "boundaries": {
+    "category_or_vocabulary_in_numeric_forward": false,
+    "external_processes_touched": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "model_selection": false,
+    "predicted_track_training": false,
+    "val_or_test_accessed": false,
+    "weights_uploaded": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_family_peak_m_full_clock_v1.json",
+    "sha256": "ce2ca9772052a8b00c8f25d4b5b381535cba6be42f9d27b429959823ca7729de"
+  },
+  "generated_utc": "2026-10-26T01:10:31.490812+00:00",
+  "interpretation": "This is bounded full-clock optimizer/interface evidence for the M branch on policy Train cache. It is not predicted-track training, calibrated memory, an OCD/MOT metric, or Goal A/B/C acceptance.",
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 953679872,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 639.036075131,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-family-peak-m-training-smoke-result.v1",
+  "scope": {
+    "events": 215,
+    "frames": 79,
+    "plan_reasons": {
+      "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 28,
+      "MASKED_SINGLETON_NO_OTHER_SUPPORT": 383
+    },
+    "positive_other_video_groups": 28,
+    "support_plans": 411,
+    "videos": 2
+  },
+  "status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+  "training": {
+    "branch": "M_member_reliability_only",
+    "gradient_norms": [
+      0.9029606580734253,
+      0.8937041163444519
+    ],
+    "losses": [
+      0.6931471824645996,
+      0.6900781393051147
+    ],
+    "optimizer": "AdamW",
+    "optimizer_steps": 2,
+    "parameter_digest_after": "63bbe4e88cad2a91cb9dadfcebfa39b8132a6fa146292ce8559008134183ec05",
+    "parameter_digest_before": "77d750ea20bd66ef6ec64398c09549c7f15aa1240795a51d58812c2ab2f71dfe",
+    "parameters_changed": true,
+    "predicted_track_training": false
+  }
+}

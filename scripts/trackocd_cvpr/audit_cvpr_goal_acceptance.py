@@ -148,6 +148,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
     )
+    family_peak_m_full_clock_path, family_peak_m_full_clock = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -583,6 +587,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
                     reported_status=family_peak_m_training.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+                    reported_status=family_peak_m_full_clock.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
@@ -680,8 +689,24 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "family_peak_m_training_predicted_track_training": nested(
                     family_peak_m_training, "training", "predicted_track_training"
                 ),
+                "family_peak_m_full_clock_status": family_peak_m_full_clock.get("status"),
+                "family_peak_m_full_clock_frames": nested(
+                    family_peak_m_full_clock, "scope", "frames"
+                ),
+                "family_peak_m_full_clock_optimizer_steps": nested(
+                    family_peak_m_full_clock, "training", "optimizer_steps"
+                ),
+                "family_peak_m_full_clock_positive_other_video_groups": nested(
+                    family_peak_m_full_clock, "scope", "positive_other_video_groups"
+                ),
+                "family_peak_m_full_clock_parameters_changed": nested(
+                    family_peak_m_full_clock, "training", "parameters_changed"
+                ),
+                "family_peak_m_full_clock_predicted_track_training": nested(
+                    family_peak_m_full_clock, "training", "predicted_track_training"
+                ),
             },
-            "open_gate": "The fixed family-relative rule and one M-only optimizer step have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open.",
+            "open_gate": "The fixed family-relative rule and bounded short/full-clock M-only optimizer smokes have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open.",
         },
         {
             "id": "self_correcting_persistent_memory",
@@ -733,6 +758,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
                     reported_status=family_peak_m_training.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+                    reported_status=family_peak_m_full_clock.get("status"),
                 ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
@@ -830,10 +860,26 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "family_peak_m_training_predicted_track_training": nested(
                     family_peak_m_training, "training", "predicted_track_training"
                 ),
+                "family_peak_m_full_clock_status": family_peak_m_full_clock.get("status"),
+                "family_peak_m_full_clock_frames": nested(
+                    family_peak_m_full_clock, "scope", "frames"
+                ),
+                "family_peak_m_full_clock_optimizer_steps": nested(
+                    family_peak_m_full_clock, "training", "optimizer_steps"
+                ),
+                "family_peak_m_full_clock_positive_other_video_groups": nested(
+                    family_peak_m_full_clock, "scope", "positive_other_video_groups"
+                ),
+                "family_peak_m_full_clock_parameters_changed": nested(
+                    family_peak_m_full_clock, "training", "parameters_changed"
+                ),
+                "family_peak_m_full_clock_predicted_track_training": nested(
+                    family_peak_m_full_clock, "training", "predicted_track_training"
+                ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
                 "family_peak_support_is_scientific_acceptance": False,
             },
-            "open_gate": "The family-relative smoke now exercises prediction-owned cross-video support over a fixed two-video full clock, but it is untrained and not an independent scientific evaluation; lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required.",
+            "open_gate": "The family-relative route now has bounded M-only optimizer evidence over a fixed two-video full clock, but it is not self-correcting persistent memory or an independent scientific evaluation; lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required.",
         },
         {
             "id": "formal_causal_online_metrics",
@@ -1025,6 +1071,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
                 reported_status=family_peak_m_training.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+                reported_status=family_peak_m_full_clock.get("status"),
             ),
             evidence(
                 repo,

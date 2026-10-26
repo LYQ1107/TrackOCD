@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:47:29.016700+00:00",
+  "generated_utc": "2026-10-26T01:11:24.334551+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "30bf326dff6b0129b06dd2e0a5edb37686237973",
+    "head": "8a2aaa3743c711354d5fcda7a3df3bc318780dcb",
     "clean_before_audit": false
   },
   "scope": {
@@ -488,6 +488,13 @@
           "bytes": 2006,
           "sha256": "5f6b77945b0a3168cc7b1157e9d52ee33e2c59d3c63013587b117a44cab4794c",
           "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+          "exists": true,
+          "bytes": 1998,
+          "sha256": "496ae074ba72c2c8b82f353a9cb3ff0cf067a1a69b1e0873e99df118d8dcba18",
+          "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
         }
       ],
       "facts": {
@@ -543,9 +550,15 @@
         "family_peak_m_training_optimizer_steps": 1,
         "family_peak_m_training_positive_other_video_groups": 1,
         "family_peak_m_training_parameters_changed": true,
-        "family_peak_m_training_predicted_track_training": false
+        "family_peak_m_training_predicted_track_training": false,
+        "family_peak_m_full_clock_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+        "family_peak_m_full_clock_frames": 79,
+        "family_peak_m_full_clock_optimizer_steps": 2,
+        "family_peak_m_full_clock_positive_other_video_groups": 28,
+        "family_peak_m_full_clock_parameters_changed": true,
+        "family_peak_m_full_clock_predicted_track_training": false
       },
-      "open_gate": "The fixed family-relative rule and one M-only optimizer step have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
+      "open_gate": "The fixed family-relative rule and bounded short/full-clock M-only optimizer smokes have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
     },
     {
       "id": "self_correcting_persistent_memory",
@@ -623,6 +636,13 @@
           "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+          "exists": true,
+          "bytes": 1998,
+          "sha256": "496ae074ba72c2c8b82f353a9cb3ff0cf067a1a69b1e0873e99df118d8dcba18",
+          "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -683,10 +703,16 @@
         "family_peak_m_training_positive_other_video_groups": 1,
         "family_peak_m_training_parameters_changed": true,
         "family_peak_m_training_predicted_track_training": false,
+        "family_peak_m_full_clock_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+        "family_peak_m_full_clock_frames": 79,
+        "family_peak_m_full_clock_optimizer_steps": 2,
+        "family_peak_m_full_clock_positive_other_video_groups": 28,
+        "family_peak_m_full_clock_parameters_changed": true,
+        "family_peak_m_full_clock_predicted_track_training": false,
         "predicted_cross_video_lifecycle_is_supervision": false,
         "family_peak_support_is_scientific_acceptance": false
       },
-      "open_gate": "The family-relative smoke now exercises prediction-owned cross-video support over a fixed two-video full clock, but it is untrained and not an independent scientific evaluation; lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required."
+      "open_gate": "The family-relative route now has bounded M-only optimizer evidence over a fixed two-video full clock, but it is not self-correcting persistent memory or an independent scientific evaluation; lawful folds, actual predicted-track training, multi-seed/order controls, self-correction tests, and locked final metrics remain required."
     },
     {
       "id": "formal_causal_online_metrics",
@@ -915,6 +941,13 @@
       "exists": true,
       "bytes": 2006,
       "sha256": "5f6b77945b0a3168cc7b1157e9d52ee33e2c59d3c63013587b117a44cab4794c",
+      "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json",
+      "exists": true,
+      "bytes": 1998,
+      "sha256": "496ae074ba72c2c8b82f353a9cb3ff0cf067a1a69b1e0873e99df118d8dcba18",
       "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
     },
     {

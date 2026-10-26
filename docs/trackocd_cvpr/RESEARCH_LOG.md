@@ -11026,3 +11026,27 @@ no private GT/cache/weights opened for this check):
   This proves only a lawful M optimizer/interface path on policy Train cache;
   it is explicitly not predicted-track training, calibrated/self-correcting
   memory, a formal metric, or Goal A/B/C acceptance.
+
+## Family-relative M-branch full-clock optimizer smoke (2026-10-26 UTC)
+
+- The same frozen family-relative candidate rule was extended from the
+  registered two-frame smoke to the complete fixed metadata clock of the
+  first two policy-order Train videos. The scope was fixed before payload
+  access: `79` frames, `215` events, `28` positive other-video support
+  groups, and `411` support plans. No outcome-based frame or group selection
+  was used.
+- The M member-reliability branch alone performed exactly `2` AdamW updates.
+  Losses were `0.6931471825` and `0.6900781393`; gradient norms were
+  `0.9029606581` and `0.8937041163`; the parameter digest changed. The run
+  used CPU/one worker, took `639.036` seconds, and had peak RSS
+  `953,679,872` bytes.
+- The receipt explicitly records `predicted_track_training=false`, no
+  Val/Test access, no category/vocabulary in the numeric forward, no formal
+  metrics, no model selection, and no Goal acceptance. This is bounded
+  optimizer/interface evidence for the M branch on policy Train cache, not
+  actual predicted-track training, calibrated or self-correcting persistent
+  memory, an OCD/MOT result, or Goal A/B/C acceptance.
+- Receipt/config/regression test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json`,
+  `configs/trackocd_cvpr/candidate_family_peak_m_full_clock_v1.json`, and
+  `tests/trackocd_cvpr/test_candidate_family_peak_m_full_clock.py`.
