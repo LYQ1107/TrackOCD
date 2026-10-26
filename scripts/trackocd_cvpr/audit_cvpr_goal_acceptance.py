@@ -218,6 +218,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
     )
+    recovered_stream_audit_path, recovered_stream_audit = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/nas_recovered_val_stream_audit_20261026.json",
+    )
     frontend_reconciliation_path, frontend_reconciliation = load_json(
         repo,
         "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
@@ -402,6 +406,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 evidence(
                     repo,
+                    "outputs/trackocd_cvpr/cvpr5/nas_recovered_val_stream_audit_20261026.json",
+                    reported_status=recovered_stream_audit.get("status"),
+                ),
+                evidence(
+                    repo,
                     "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
                     reported_status=frontend_reconciliation.get("status"),
                 ),
@@ -491,6 +500,23 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "nas_recovery_probe_status": nas_probe.get("status"),
                 "nas_reverse_tunnel_listening": nested(
                     nas_probe, "managed_mount", "reverse_endpoint_listening_at_probe"
+                ),
+                "recovered_val_stream_audit_status": recovered_stream_audit.get("status"),
+                "recovered_val_predicted_stream_status": nested(
+                    recovered_stream_audit, "files", "predicted", "status"
+                ),
+                "recovered_val_predicted_invalid_boxes": nested(
+                    recovered_stream_audit, "files", "predicted", "invalid_boxes"
+                ),
+                "recovered_val_native_stream_status": nested(
+                    recovered_stream_audit, "files", "native", "status"
+                ),
+                "recovered_val_causal_order_statuses": {
+                    name: nested(recovered_stream_audit, "files", name, "status")
+                    for name in ("base", "seed1027", "seed1028", "seed1029")
+                },
+                "recovered_val_stream_audit_memory_plan_pass": recovered_stream_audit.get(
+                    "memory_plan_pass"
                 ),
                 "historical_current_frontend_stream_identity_status": frontend_reconciliation.get(
                     "status"
@@ -1275,6 +1301,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/nas_recovery_probe_20261026.json",
                 reported_status=nas_probe.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/nas_recovered_val_stream_audit_20261026.json",
+                reported_status=recovered_stream_audit.get("status"),
             ),
         ],
     }

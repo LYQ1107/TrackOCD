@@ -73,6 +73,19 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
         "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE"
     )
     assert rows["lawful_strong_frontend"]["facts"]["nas_reverse_tunnel_listening"] is False
+    assert rows["lawful_strong_frontend"]["facts"]["recovered_val_stream_audit_status"] == (
+        "FAIL_VAL_ONLY_STREAM_INTEGRITY"
+    )
+    assert rows["lawful_strong_frontend"]["facts"]["recovered_val_predicted_stream_status"] == "FAIL"
+    assert rows["lawful_strong_frontend"]["facts"]["recovered_val_predicted_invalid_boxes"] == 16290
+    assert rows["lawful_strong_frontend"]["facts"]["recovered_val_native_stream_status"] == "PASS"
+    assert rows["lawful_strong_frontend"]["facts"]["recovered_val_causal_order_statuses"] == {
+        "base": "PASS",
+        "seed1027": "PASS",
+        "seed1028": "PASS",
+        "seed1029": "PASS",
+    }
+    assert rows["lawful_strong_frontend"]["facts"]["recovered_val_stream_audit_memory_plan_pass"] is False
     assert rows["lawful_strong_frontend"]["facts"]["historical_current_frontend_stream_identity_status"] == (
         "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH"
     )
