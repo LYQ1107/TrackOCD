@@ -54,6 +54,14 @@ This is a real negative asset-integrity result: the file is not silently
 aliased as the missing formal `pred_track_stream.jsonl`; no formal evaluator,
 training, model selection, or OCD/MOT metric was run.
 
+A path-only search of the local project, local NAS mount point, and Codex
+workspace found no second exact `pred_track_stream.jsonl`, matching predicted
+stream, or same-name backup; the only candidate is the failed file above.
+`/data3/liuyeqiang/nas` is present as an unmounted directory and
+`/data3/liuyeqiang/nas/A100` contains no recovered asset at this checkpoint.
+No file contents were opened by this search and no mount or external process
+was changed.
+
 ## 2026-10-26 — adjacent-frame frozen MASA Train online smoke
 
 - Added a bounded, isolated smoke for the image-only MASA route using eight
