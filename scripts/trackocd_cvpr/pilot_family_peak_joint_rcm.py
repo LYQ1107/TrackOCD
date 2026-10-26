@@ -83,7 +83,7 @@ def _digest_model(model: torch.nn.Module) -> str:
     return digest.hexdigest()
 
 
-class FamilyPeakResidualScorer(torch.nn.Module):
+class FamilyPeakResidualScorer(CandidateScoreMLP):
     """Fixed family-peak action plus a differentiable numeric residual.
 
     The route uses only candidate features and query context.  The residual is
@@ -94,11 +94,10 @@ class FamilyPeakResidualScorer(torch.nn.Module):
     """
 
     def __init__(self, residual_scale: float = 1e-3):
-        super().__init__()
+        super().__init__(feature_count=14)
         if residual_scale != 1e-3:
             raise ValueError("Only the registered residual scale is allowed")
         self.residual_scale = residual_scale
-        self.residual = CandidateScoreMLP(feature_count=14)
 
     def forward(self, features: torch.Tensor, context: torch.Tensor) -> torch.Tensor:
         if features.ndim != 2 or features.shape[1] != 14 or context.shape != (6,):
@@ -107,7 +106,7 @@ class FamilyPeakResidualScorer(torch.nn.Module):
             raise ValueError("registered float32 family-peak residual bridge required")
         if not torch.isfinite(features).all() or not torch.isfinite(context).all():
             raise ValueError("finite family-peak residual bridge required")
-        learned = self.residual(features, context)
+        learned = super().forward(features, context)
         scores = self.residual_scale * learned - 100.0
         existing = torch.where(features[:, 1] < 0.5)[0]
         known = torch.where(features[:, 1] >= 0.5)[0]
