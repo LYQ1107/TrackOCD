@@ -11558,3 +11558,16 @@ no private GT/cache/weights opened for this check):
   `WAITING_RESOURCE` and the CPU postprocess watcher is `WAITING_CACHE` at
   `399/723`.  No worker was launched, no TAO Test asset was read, and no
   external process was touched.
+
+## Independent audit of the three newly completed shards (2026-10-26 UTC)
+
+- Independently rechecked only `shard-000384` through `shard-000386` using
+  their `.done` metadata, NumPy payloads, and Parquet lineage indexes.  All
+  three passed: **1536 tracks**, **4062 observations**, **1536 unique sample
+  keys**, **1536 unique physical tracks**, zero invalid boxes, finite arrays,
+  contiguous global ranges, and zero audit errors.
+- The bounded read took 0.923 seconds with a peak RSS of 156,196,864 bytes.
+  It opened no GT/category labels or TAO Test content, and touched no external
+  process.  This validates those three payloads as reusable partial cache
+  evidence only; it does not produce OCD/MOT metrics or certify the full
+  `723`-shard cache.
