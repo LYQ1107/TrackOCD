@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:13:25.479179+00:00",
+  "generated_utc": "2026-10-26T00:17:51.760601+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "4e08e8ed1f9c845389b93b80edd1b895d1a91de0",
+    "head": "954c3e063a018b1012ece4979fd6e698b534db0c",
     "clean_before_audit": true
   },
   "scope": {
@@ -453,6 +453,13 @@
           "bytes": 1351,
           "sha256": "5b1ee149bb9a8f96ed1227f4048bf3356a54cd65f5615a73b551ecf4a8254b85",
           "reported_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 1551,
+          "sha256": "b887d7f2176ef28bb1c75d4e8c05f5daa6047dff7c7482c6bef6446d630c6740",
+          "reported_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
         }
       ],
       "facts": {
@@ -467,7 +474,11 @@
         "candidate_aware_lifecycle_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE",
         "candidate_aware_lifecycle_cross_video_token_count": 1,
         "candidate_aware_lifecycle_optimizer_steps": 0,
-        "candidate_aware_lifecycle_harness_forced_reuse": false
+        "candidate_aware_lifecycle_harness_forced_reuse": false,
+        "candidate_aware_rcm_support_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO",
+        "candidate_aware_rcm_cross_video_token_count": 0,
+        "candidate_aware_rcm_m_support_steps": 0,
+        "candidate_aware_rcm_positive_other_video_groups": 0
       },
       "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation."
     },
@@ -512,6 +523,13 @@
           "reported_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 1551,
+          "sha256": "b887d7f2176ef28bb1c75d4e8c05f5daa6047dff7c7482c6bef6446d630c6740",
+          "reported_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -544,9 +562,11 @@
         "candidate_aware_lifecycle_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE",
         "candidate_aware_lifecycle_cross_video_token_count": 1,
         "candidate_aware_lifecycle_harness_forced_reuse": false,
+        "candidate_aware_rcm_support_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO",
+        "candidate_aware_rcm_m_support_steps": 0,
         "predicted_cross_video_lifecycle_is_supervision": false
       },
-      "open_gate": "The static policy fold contains lawful cross-video Known support, but the preserved pilot produced zero prediction-owned cross-video groups; repair and freeze the anonymous lifecycle coverage before claiming or selecting self-correcting memory."
+      "open_gate": "The static policy fold contains lawful cross-video Known support, but both the preserved RCM pilot and the fixed candidate-aware support repair produced zero prediction-owned cross-video groups; change the support aggregation mechanism before claiming or selecting self-correcting memory."
     },
     {
       "id": "formal_causal_online_metrics",
@@ -741,6 +761,13 @@
       "bytes": 1351,
       "sha256": "5b1ee149bb9a8f96ed1227f4048bf3356a54cd65f5615a73b551ecf4a8254b85",
       "reported_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+      "exists": true,
+      "bytes": 1551,
+      "sha256": "b887d7f2176ef28bb1c75d4e8c05f5daa6047dff7c7482c6bef6446d630c6740",
+      "reported_status": "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
