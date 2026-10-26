@@ -11413,3 +11413,17 @@ no private GT/cache/weights opened for this check):
   was pushed and verified on
   `research/cvpr-trackocd-autonomous-v2`.  The task-owned postprocess session
   is waiting at 399/723; no baseline or metric result is claimed yet.
+
+## Receipt-only CVPR acceptance audit refresh (2026-10-26 UTC)
+
+- Re-ran `scripts/trackocd_cvpr/audit_cvpr_goal_acceptance.py` with the
+  TrackOCD virtual environment after the cache-supervisor repair.  The audit
+  reads compact receipts only: no large streams, weights, GT, TAO Test, model
+  selection, or external process state was touched.
+- The current evidence is anchored to `c4ab1b5e` and remains
+  `INCOMPLETE_OPEN_REQUIREMENTS`.  The six open gates are unchanged:
+  lawful strong frontend, qualified predicted-track training,
+  candidate-aware decision, self-correcting persistent memory, formal causal
+  online metrics, and independent final / Goal A-B-C evaluation.
+- The receipt was committed and the exact branch SHA was verified after push;
+  this refresh is an evidence/provenance update, not scientific acceptance.
