@@ -11761,3 +11761,17 @@ no private GT/cache/weights opened for this check):
 - The formal COVTrack-native Val cache remains independently validated but
   partial at **457/723**; the existing RAM-safe supervisor remains the only
   active continuation path.
+
+## Current-head CVPR acceptance refresh (2026-10-26 UTC)
+
+- Re-ran the fail-closed CVPR acceptance audit at commit
+  `0a67f94a5a3c4e50c4117251f01be07306ba47e9`; the audit confirmed a clean
+  worktree before inspection and returned `INCOMPLETE_OPEN_REQUIREMENTS`.
+- The six open scientific gates remain explicit: lawful strong frontend,
+  qualified predicted-track training, candidate-aware decision,
+  self-correcting persistent memory, formal causal online metrics, and
+  independent Goal A/B/C evaluation.  No partial Val metric or source audit
+  was promoted to a final claim.
+- The dedicated acceptance regression test passed **1/1**.  This was a
+  receipt-only CPU check with no training, inference, Test access, model
+  selection, or external-process operation.

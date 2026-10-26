@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T06:35:49.515303+00:00",
+  "generated_utc": "2026-10-26T06:53:37.524292+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "bfe879a7ed0f9b18e6b523072526758060f683e6",
-    "clean_before_audit": false
+    "head": "0a67f94a5a3c4e50c4117251f01be07306ba47e9",
+    "clean_before_audit": true
   },
   "scope": {
     "receipt_only": true,
@@ -233,7 +233,7 @@
           "path": "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json",
           "exists": true,
           "bytes": 3664,
-          "sha256": "d2107b8aa266186bbf68cc4f1a3c42c586ed735d88107839ec74cee1814b6a55",
+          "sha256": "8575e1322c6d9297c2b69e1404e60808e2d9e7a5c5c42e929e91223425ce33db",
           "reported_status": "PASS_SOURCE_CLOSURE_RELEASE_ROUTE_MISMATCH_QUALIFICATION_OPEN"
         },
         {
