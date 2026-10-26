@@ -11336,6 +11336,13 @@ no private GT/cache/weights opened for this check):
   progress check reached shard `389` (390/723 completed including the prior
   boundary).  This PID is current-run evidence only and will not be reused as
   a future launch instruction.
+- A later resource check found `MemAvailable=29,153,920 kB`, below the
+  required 25% floor of `32,908,271 kB`.  The task-owned worker was therefore
+  sent `SIGTERM` at `2026-10-26T03:28:43Z`; no external PID was touched.  The
+  worker had atomically completed shard `398`, leaving an exact resumable
+  boundary at shard `399` inclusive.  The range manifest remains
+  `RANGE_RUNNING` with 399 complete shards; this is a safety stop of the
+  worker, not a pause or completion of the research Goal.
 - This is a resumable cache continuation, not training and not evaluation.
   It remains subject to the 25% RAM floor and storage check; the registered
   snapshot had about `5.39GB` free and the prior estimate left a tight
