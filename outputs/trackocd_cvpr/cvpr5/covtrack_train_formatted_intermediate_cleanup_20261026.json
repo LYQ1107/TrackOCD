@@ -1,0 +1,47 @@
+{
+  "schema_version": "trackocd.cvpr.recoverable-intermediate-cleanup.v1",
+  "generated_at": "2026-10-26T11:07:39+08:00",
+  "status": "REGISTERED_COMPLETED_TRAIN_FORMATTED_INTERMEDIATES_SAFE_TO_RECOMPUTE",
+  "reason": "The seven completed anonymous Train subshards retain their canonical category-free physical streams, native evaluator streams, input annotations, run receipts, normalization receipts, and compact full-cache reconciliation. The formatted tao_bbox/tao_track JSON files are recomputable COVTrack intermediates and are removed only to relieve the critically full personal filesystem before any future lawful cache work.",
+  "selection_rule": "Only files under completed COMPLETE_ANONYMOUS_TRAIN_DENSE_SUBSHARD_TCC_OFF receipts were included; no incomplete run, canonical stream, input, weight, feature shard, or historical compact receipt was selected.",
+  "preserved_provenance": [
+    "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/full_cache_reconciliation.json",
+    "outputs/trackocd_v2_runtime/manifests/frontend_streams/covtrack_native/covtrack_train_dense_shards_v1/",
+    "outputs/trackocd_v2_runtime/frontend_inputs/covtrack_train_dense_shards_v1/",
+    "outputs/trackocd_cvpr/cvpr2/covtrack_train_dense_shards_v1/"
+  ],
+  "deleted_files": [
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_1_part_02_tccoff10_20261022/formatted/tao_bbox.json", "bytes": 179119570, "sha256_before_delete": "7beac409b761e06c837df120efb45bd80cb843897b252d5b190030b45348f346"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_1_part_02_tccoff10_20261022/formatted/tao_track.json", "bytes": 148170934, "sha256_before_delete": "1b53b3e8680f87863eb1f1c78556c273d3252f7d97af0ea91dc736b5e9d7815e"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_1_part_03_tccoff11_20261022/formatted/tao_bbox.json", "bytes": 151769679, "sha256_before_delete": "68b79d12a4fb659a25562a18db483f1cb86184b8e613d7e6bb2c4884351dd2a1"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_1_part_03_tccoff11_20261022/formatted/tao_track.json", "bytes": 123636609, "sha256_before_delete": "51ade53305002ebfc84188028bb7dafd025773966c9422324944006cc7288b4c"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_2_part_02_tccoff14_20261022/formatted/tao_bbox.json", "bytes": 207972117, "sha256_before_delete": "e0d8f80987889b09cddd2358bc4abde8e96ab0a9d29dd40a82fdcecd1b6f1114"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_2_part_02_tccoff14_20261022/formatted/tao_track.json", "bytes": 167896782, "sha256_before_delete": "93e91f99842d4ceca751c2d5fb0dd19de07d9901a06bad3fe89b0b00f814fad0"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_2_part_03_tccoff15_20261022/formatted/tao_bbox.json", "bytes": 185977899, "sha256_before_delete": "419552dc0ac5b9aa9296a9cf33b9643106c61b03e95a1166b92548bc0c169962"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_2_part_03_tccoff15_20261022/formatted/tao_track.json", "bytes": 137519336, "sha256_before_delete": "6936b7063be940874ddbf76695a20c8527de05002d0e71874d38d60c8ec07897"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_3_part_01_tccoff17_20261022/formatted/tao_bbox.json", "bytes": 186216238, "sha256_before_delete": "8e51fcb7b79759ba8274a97e83c8c0b4b9f1adec401600031993f8b126d98035"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_3_part_01_tccoff17_20261022/formatted/tao_track.json", "bytes": 153639284, "sha256_before_delete": "9a091a25c346b5b91b0da35d098a83ff5956a11e753904b7d274f5c0448cef5c"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_3_part_02_tccoff18_20261022/formatted/tao_bbox.json", "bytes": 144895402, "sha256_before_delete": "b41c0b66f62e41381eedbf79b9e6c1c8b0ecc7c16a8fd7940d8ffab35996e769"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_3_part_02_tccoff18_20261022/formatted/tao_track.json", "bytes": 113475157, "sha256_before_delete": "9a837ddaf46060ed26d20d27b82d89848be3f917f689c5d5cb055a82e41952cf"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_3_part_03_tccoff19_20261022/formatted/tao_bbox.json", "bytes": 174388236, "sha256_before_delete": "b071499725dd6b07759f2b307306ba6e60f4ce024c31fd86d78f0880de883c85"},
+    {"path": "outputs/trackocd_v2_runtime/frontend_native/covtrack_native/covtrack_train_dense_shards_v1_shard_3_part_03_tccoff19_20261022/formatted/tao_track.json", "bytes": 138530768, "sha256_before_delete": "ea96da68855e3475d561282769786ab5350540dc17fc5dbb05e248363eae70a5"}
+  ],
+  "planned_recovery": {
+    "raw_intermediate_bytes": 2213208011,
+    "canonical_physical_stream_deleted": false,
+    "canonical_native_evaluator_stream_deleted": false,
+    "train_input_deleted": false,
+    "weights_deleted": false,
+    "feature_shards_deleted": false,
+    "tao_test_read": false,
+    "external_processes_touched": false
+  },
+  "cleanup_verification": {
+    "deleted_targets_absent": true,
+    "canonical_physical_and_evaluator_streams_present": true,
+    "canonical_streams_checked": 26,
+    "raw_formatted_targets_remaining": 0,
+    "freed_bytes": 2213208011,
+    "free_space_after_cleanup": "5.1G"
+  }
+}

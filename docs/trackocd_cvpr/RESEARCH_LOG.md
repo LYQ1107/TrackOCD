@@ -11250,3 +11250,24 @@ no private GT/cache/weights opened for this check):
   family-peak R/C/M controls, score-gate gap-aware reassociation, TETA
   recovery, and the acceptance-audit mapping.  This is verification of the
   recorded evidence, not a new scientific metric or model-selection event.
+
+## Recoverable COVTrack formatted-intermediate cleanup (2026-10-26 UTC)
+
+- The personal loop filesystem had only about `3.0G` free while the existing
+  local Val feature cache already occupied about `2.8G`.  A read-only inventory
+  found fourteen formatted `tao_bbox.json` / `tao_track.json` files from seven
+  completed anonymous Train subshards, totaling `2,213,208,011` bytes.  Each
+  target had a complete subshard receipt, verified pre-delete SHA256, and both
+  canonical category-free physical/evaluator streams present; no COVTrack
+  worker had an open handle.
+- Those recomputable formatted intermediates were deleted and recorded in
+  `outputs/trackocd_cvpr/cvpr5/covtrack_train_formatted_intermediate_cleanup_20261026.json`.
+  All thirteen subshards' canonical streams, Train inputs, weights, feature
+  shards, run/normalization receipts, and historical evidence were preserved.
+  Free space rose to about `5.1G`.  This was storage maintenance only: no new
+  inference, training, model selection, Val/Test evaluation, or Goal acceptance
+  was performed.
+- Post-cleanup integrity regression passed **8 tests** (dense-shard audit,
+  acceptance mapping, mechanism coverage, and TETA recovery).  The cleanup
+  receipt is recoverable from the pinned COVTrack checkpoint and subshard
+  inputs if a future formal evaluator needs the raw formatted files again.
