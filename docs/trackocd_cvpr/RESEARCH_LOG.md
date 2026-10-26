@@ -10840,3 +10840,25 @@ no private GT/cache/weights opened for this check):
   the current stream is complete provenance, but neither dense causal cadence
   nor a reliable non-leaking supervision join is present. No optimizer or new
   label access was performed.
+
+## Bounded MASA dense Train pilot (2026-10-26 UTC)
+
+- A new bounded pilot used the frozen MASA runtime on one fixed Train-only BDD
+  video, `frame0001.jpg` through `frame0032.jpg`. The wrapper only adapts the
+  BDD `frameNNNN` filename convention to the existing frozen smoke executor;
+  model weights, current-image inference, resource ceilings, and audit hooks
+  remain unchanged.
+- The pilot sealed `32/32` consecutive frames with `50` detections per frame,
+  `48--50` anonymous foreground tracks per frame, finite boxes throughout, and
+  `44--50` retained IDs between adjacent frames (mean `48.354839`). Peak GPU
+  allocated/reserved memory was `3,126,209,024`/`3,439,329,280` bytes and peak
+  host RSS was `1,626,693,632` bytes; elapsed time was `16.516` seconds.
+- This is engineering evidence that the frozen current-image path can consume
+  dense adjacent Train frames and emit stable anonymous track IDs. It is not a
+  MOT/OCD metric, frontend qualification, Pred-training authorization, or model
+  selection result. No GT, category field, Val/Test frame, optimizer, raw
+  prediction dump, or external process was touched.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json`.
+  The acceptance audit records this as strengthened pilot evidence while the
+  lawful strong-frontend gate remains open.

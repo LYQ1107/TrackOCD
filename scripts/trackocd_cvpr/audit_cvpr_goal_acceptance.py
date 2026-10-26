@@ -138,6 +138,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
     dense_masa_path, dense_masa = load_json(
         repo, "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json"
     )
+    dense_masa_pilot_path, dense_masa_pilot = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json",
+    )
     hybrid_path, hybrid = load_json(
         repo,
         "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
@@ -321,6 +325,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
                     reported_status=dense_masa.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json",
+                    reported_status=dense_masa_pilot.get("status"),
+                ),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json", reported_status=asset.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_runtime_checkpoint_reconciliation_20261026.json", reported_status=runtime.get("status")),
                 evidence(repo, "outputs/trackocd_cvpr/cvpr5/masa_release_source_closure_20261026.json", reported_status=release.get("status")),
@@ -362,6 +371,32 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     if isinstance(nested(dense_masa, "worker", "frames", default=[]), list)
                     else None
                 ),
+                "masa_dense_train_pilot_status": dense_masa_pilot.get("status"),
+                "masa_dense_train_pilot_frames": count_or_length(
+                    nested(dense_masa_pilot, "worker", "frames", default=[])
+                ),
+                "masa_dense_train_pilot_train_images_only": nested(
+                    dense_masa_pilot, "boundaries", "train_images_only"
+                ),
+                "masa_dense_train_pilot_all_finite": (
+                    all(
+                        row.get("finite_boxes") is True
+                        for row in nested(dense_masa_pilot, "worker", "frames", default=[])
+                    )
+                    if isinstance(nested(dense_masa_pilot, "worker", "frames", default=[]), list)
+                    else False
+                ),
+                "masa_dense_train_pilot_max_retained_ids": (
+                    max(
+                        (
+                            int(row.get("retained_track_ids_from_previous_frame", 0))
+                            for row in nested(dense_masa_pilot, "worker", "frames", default=[])
+                        ),
+                        default=None,
+                    )
+                    if isinstance(nested(dense_masa_pilot, "worker", "frames", default=[]), list)
+                    else None
+                ),
                 "strong_legal_primary_accepted": asset.get("strong_legal_primary_Pred_or_scientific_Goal_accepted"),
                 "runtime_checkpoint_binding_reconciled": nested(runtime, "qualification_boundary", "runtime_checkpoint_compatibility_reconciled"),
                 "exact_release_stage_training_binding_verified": nested(runtime, "qualification_boundary", "exact_release_stage_training_binding_verified"),
@@ -398,7 +433,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "same_input_stream_proven",
                 ),
             },
-            "open_gate": "The adjacent-frame MASA smoke confirms a frozen current-image causal path, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
+            "open_gate": "The bounded MASA dense pilot strengthens the frozen current-image causal-path evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
         },
         {
             "id": "predicted_track_training",
@@ -690,6 +725,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
                 reported_status=dense_masa.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json",
+                reported_status=dense_masa_pilot.get("status"),
             ),
             evidence(
                 repo,

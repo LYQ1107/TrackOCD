@@ -50,6 +50,13 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
         == "BLOCKED_MISSING_OR_INVALID_FORMAL_V2_ASSETS"
     )
     assert rows["lawful_strong_frontend"]["facts"]["formal_v2_missing_or_invalid_asset_count"] > 0
+    assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_status"] == (
+        "PASS_BOUNDED_MASA_DENSE_FRAME_ONLINE_TRAIN_SMOKE_NO_GT"
+    )
+    assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_frames"] == 32
+    assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_train_images_only"] is True
+    assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_all_finite"] is True
+    assert rows["lawful_strong_frontend"]["facts"]["masa_dense_train_pilot_max_retained_ids"] == 50
     assert rows["lawful_strong_frontend"]["facts"]["hybrid_geometry_smoke_status"] == (
         "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION"
     )
