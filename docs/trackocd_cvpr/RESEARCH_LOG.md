@@ -11298,3 +11298,28 @@ no private GT/cache/weights opened for this check):
   Predicted-track training, or causal OCD/MOT acceptance.
 - Receipt:
   `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_resume_feasibility_20261026.json`.
+
+## Bounded formal COVTrack Val cache resume (2026-10-26 UTC)
+
+- The bounded retry completed exactly three missing shard indices, `384`,
+  `385`, and `386`, using the formal cache builder with the historical
+  selected-stream SHA256, local DINOv2 ViT-B/14 weights, and one newly checked
+  idle GPU.  The first requested GPU (`2`) was rejected by the builder's own
+  one-worker resource selection; no payload was written in that attempt.  A
+  fresh resource check selected GPU `0`, and the retry completed without
+  touching external processes.
+- The new shards contain 1,536 tracks and 4,062 observations.  Every shard has
+  the expected `.done`, NumPy arrays, Parquet index, exact source hash, finite
+  arrays, valid lineage, and no invalid boxes.  The independent payload audit
+  checked all 387 available shards: `error_count=0`, `invalid_box_count=0`,
+  and `test_content_opened=false`.  The worker manifest is
+  `RANGE_COMPLETE`, but the cache still has only 387/723 shards and is not a
+  complete formal cache or an OCD/MOT metric result.
+- The main `cache_manifest.json` remains the prior 384-shard partial manifest;
+  the range worker manifest is deliberately retained separately so a partial
+  range cannot be mistaken for full-cache completion.  No Predicted-track
+  training or causal online evaluation was started.
+- Receipts/audit:
+  `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_bounded_resume_20261026.json`
+  and
+  `outputs/trackocd_v2_runtime/audit/bounded_resume_payload_audit_20261026.json`.

@@ -1,0 +1,2734 @@
+{
+  "cache_root": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022",
+  "checked_observations": 743548,
+  "checked_tracks": 198144,
+  "completed_shards": 387,
+  "elapsed_seconds": 21.9,
+  "error_count": 0,
+  "errors": [],
+  "external_processes_touched": false,
+  "formal_cache_complete": false,
+  "frontend": "COVTrack-native",
+  "generated_utc": "2026-10-26T03:16:21.225874+00:00",
+  "input_stream_sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1",
+  "invalid_box_count": 0,
+  "manifest": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.worker-000384-000387.json",
+  "required_shards": 723,
+  "schema_version": "trackocd.v2.sharded_cache_payload_audit.v1",
+  "shards": [
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6160,
+      "shard": "shard-000000",
+      "track_count": 512,
+      "track_start": 0
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 4972,
+      "shard": "shard-000001",
+      "track_count": 512,
+      "track_start": 512
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 4747,
+      "shard": "shard-000002",
+      "track_count": 512,
+      "track_start": 1024
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 4998,
+      "shard": "shard-000003",
+      "track_count": 512,
+      "track_start": 1536
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5975,
+      "shard": "shard-000004",
+      "track_count": 512,
+      "track_start": 2048
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5384,
+      "shard": "shard-000005",
+      "track_count": 512,
+      "track_start": 2560
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 4421,
+      "shard": "shard-000006",
+      "track_count": 512,
+      "track_start": 3072
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5358,
+      "shard": "shard-000007",
+      "track_count": 512,
+      "track_start": 3584
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5415,
+      "shard": "shard-000008",
+      "track_count": 512,
+      "track_start": 4096
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6874,
+      "shard": "shard-000009",
+      "track_count": 512,
+      "track_start": 4608
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5336,
+      "shard": "shard-000010",
+      "track_count": 512,
+      "track_start": 5120
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5766,
+      "shard": "shard-000011",
+      "track_count": 512,
+      "track_start": 5632
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2994,
+      "shard": "shard-000012",
+      "track_count": 512,
+      "track_start": 6144
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2911,
+      "shard": "shard-000013",
+      "track_count": 512,
+      "track_start": 6656
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2805,
+      "shard": "shard-000014",
+      "track_count": 512,
+      "track_start": 7168
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2519,
+      "shard": "shard-000015",
+      "track_count": 512,
+      "track_start": 7680
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3727,
+      "shard": "shard-000016",
+      "track_count": 512,
+      "track_start": 8192
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2671,
+      "shard": "shard-000017",
+      "track_count": 512,
+      "track_start": 8704
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3509,
+      "shard": "shard-000018",
+      "track_count": 512,
+      "track_start": 9216
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1990,
+      "shard": "shard-000019",
+      "track_count": 512,
+      "track_start": 9728
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2144,
+      "shard": "shard-000020",
+      "track_count": 512,
+      "track_start": 10240
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2317,
+      "shard": "shard-000021",
+      "track_count": 512,
+      "track_start": 10752
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3263,
+      "shard": "shard-000022",
+      "track_count": 512,
+      "track_start": 11264
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3341,
+      "shard": "shard-000023",
+      "track_count": 512,
+      "track_start": 11776
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3355,
+      "shard": "shard-000024",
+      "track_count": 512,
+      "track_start": 12288
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2985,
+      "shard": "shard-000025",
+      "track_count": 512,
+      "track_start": 12800
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 4823,
+      "shard": "shard-000026",
+      "track_count": 512,
+      "track_start": 13312
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5348,
+      "shard": "shard-000027",
+      "track_count": 512,
+      "track_start": 13824
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6267,
+      "shard": "shard-000028",
+      "track_count": 512,
+      "track_start": 14336
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2725,
+      "shard": "shard-000029",
+      "track_count": 512,
+      "track_start": 14848
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3490,
+      "shard": "shard-000030",
+      "track_count": 512,
+      "track_start": 15360
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3733,
+      "shard": "shard-000031",
+      "track_count": 512,
+      "track_start": 15872
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6679,
+      "shard": "shard-000032",
+      "track_count": 512,
+      "track_start": 16384
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6085,
+      "shard": "shard-000033",
+      "track_count": 512,
+      "track_start": 16896
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5085,
+      "shard": "shard-000034",
+      "track_count": 512,
+      "track_start": 17408
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6883,
+      "shard": "shard-000035",
+      "track_count": 512,
+      "track_start": 17920
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5915,
+      "shard": "shard-000036",
+      "track_count": 512,
+      "track_start": 18432
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 7309,
+      "shard": "shard-000037",
+      "track_count": 512,
+      "track_start": 18944
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 5764,
+      "shard": "shard-000038",
+      "track_count": 512,
+      "track_start": 19456
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 6639,
+      "shard": "shard-000039",
+      "track_count": 512,
+      "track_start": 19968
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3296,
+      "shard": "shard-000040",
+      "track_count": 512,
+      "track_start": 20480
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3075,
+      "shard": "shard-000041",
+      "track_count": 512,
+      "track_start": 20992
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2910,
+      "shard": "shard-000042",
+      "track_count": 512,
+      "track_start": 21504
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2983,
+      "shard": "shard-000043",
+      "track_count": 512,
+      "track_start": 22016
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2602,
+      "shard": "shard-000044",
+      "track_count": 512,
+      "track_start": 22528
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2718,
+      "shard": "shard-000045",
+      "track_count": 512,
+      "track_start": 23040
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2640,
+      "shard": "shard-000046",
+      "track_count": 512,
+      "track_start": 23552
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3175,
+      "shard": "shard-000047",
+      "track_count": 512,
+      "track_start": 24064
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2761,
+      "shard": "shard-000048",
+      "track_count": 512,
+      "track_start": 24576
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2919,
+      "shard": "shard-000049",
+      "track_count": 512,
+      "track_start": 25088
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1551,
+      "shard": "shard-000050",
+      "track_count": 512,
+      "track_start": 25600
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1615,
+      "shard": "shard-000051",
+      "track_count": 512,
+      "track_start": 26112
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1563,
+      "shard": "shard-000052",
+      "track_count": 512,
+      "track_start": 26624
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1888,
+      "shard": "shard-000053",
+      "track_count": 512,
+      "track_start": 27136
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3244,
+      "shard": "shard-000054",
+      "track_count": 512,
+      "track_start": 27648
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3040,
+      "shard": "shard-000055",
+      "track_count": 512,
+      "track_start": 28160
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1630,
+      "shard": "shard-000056",
+      "track_count": 512,
+      "track_start": 28672
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3721,
+      "shard": "shard-000057",
+      "track_count": 512,
+      "track_start": 29184
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3577,
+      "shard": "shard-000058",
+      "track_count": 512,
+      "track_start": 29696
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2503,
+      "shard": "shard-000059",
+      "track_count": 512,
+      "track_start": 30208
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1736,
+      "shard": "shard-000060",
+      "track_count": 512,
+      "track_start": 30720
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3351,
+      "shard": "shard-000061",
+      "track_count": 512,
+      "track_start": 31232
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2463,
+      "shard": "shard-000062",
+      "track_count": 512,
+      "track_start": 31744
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1936,
+      "shard": "shard-000063",
+      "track_count": 512,
+      "track_start": 32256
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2177,
+      "shard": "shard-000064",
+      "track_count": 512,
+      "track_start": 32768
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2369,
+      "shard": "shard-000065",
+      "track_count": 512,
+      "track_start": 33280
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2606,
+      "shard": "shard-000066",
+      "track_count": 512,
+      "track_start": 33792
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2370,
+      "shard": "shard-000067",
+      "track_count": 512,
+      "track_start": 34304
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1804,
+      "shard": "shard-000068",
+      "track_count": 512,
+      "track_start": 34816
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1433,
+      "shard": "shard-000069",
+      "track_count": 512,
+      "track_start": 35328
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1698,
+      "shard": "shard-000070",
+      "track_count": 512,
+      "track_start": 35840
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1556,
+      "shard": "shard-000071",
+      "track_count": 512,
+      "track_start": 36352
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1355,
+      "shard": "shard-000072",
+      "track_count": 512,
+      "track_start": 36864
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2164,
+      "shard": "shard-000073",
+      "track_count": 512,
+      "track_start": 37376
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2270,
+      "shard": "shard-000074",
+      "track_count": 512,
+      "track_start": 37888
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2137,
+      "shard": "shard-000075",
+      "track_count": 512,
+      "track_start": 38400
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2845,
+      "shard": "shard-000076",
+      "track_count": 512,
+      "track_start": 38912
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2290,
+      "shard": "shard-000077",
+      "track_count": 512,
+      "track_start": 39424
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1698,
+      "shard": "shard-000078",
+      "track_count": 512,
+      "track_start": 39936
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2124,
+      "shard": "shard-000079",
+      "track_count": 512,
+      "track_start": 40448
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2173,
+      "shard": "shard-000080",
+      "track_count": 512,
+      "track_start": 40960
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1561,
+      "shard": "shard-000081",
+      "track_count": 512,
+      "track_start": 41472
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2335,
+      "shard": "shard-000082",
+      "track_count": 512,
+      "track_start": 41984
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1895,
+      "shard": "shard-000083",
+      "track_count": 512,
+      "track_start": 42496
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2124,
+      "shard": "shard-000084",
+      "track_count": 512,
+      "track_start": 43008
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1602,
+      "shard": "shard-000085",
+      "track_count": 512,
+      "track_start": 43520
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1396,
+      "shard": "shard-000086",
+      "track_count": 512,
+      "track_start": 44032
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1302,
+      "shard": "shard-000087",
+      "track_count": 512,
+      "track_start": 44544
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 882,
+      "shard": "shard-000088",
+      "track_count": 512,
+      "track_start": 45056
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2189,
+      "shard": "shard-000089",
+      "track_count": 512,
+      "track_start": 45568
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3536,
+      "shard": "shard-000090",
+      "track_count": 512,
+      "track_start": 46080
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1380,
+      "shard": "shard-000091",
+      "track_count": 512,
+      "track_start": 46592
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2881,
+      "shard": "shard-000092",
+      "track_count": 512,
+      "track_start": 47104
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2056,
+      "shard": "shard-000093",
+      "track_count": 512,
+      "track_start": 47616
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1554,
+      "shard": "shard-000094",
+      "track_count": 512,
+      "track_start": 48128
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1983,
+      "shard": "shard-000095",
+      "track_count": 512,
+      "track_start": 48640
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2093,
+      "shard": "shard-000096",
+      "track_count": 512,
+      "track_start": 49152
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1803,
+      "shard": "shard-000097",
+      "track_count": 512,
+      "track_start": 49664
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1725,
+      "shard": "shard-000098",
+      "track_count": 512,
+      "track_start": 50176
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1639,
+      "shard": "shard-000099",
+      "track_count": 512,
+      "track_start": 50688
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2435,
+      "shard": "shard-000100",
+      "track_count": 512,
+      "track_start": 51200
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2271,
+      "shard": "shard-000101",
+      "track_count": 512,
+      "track_start": 51712
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1312,
+      "shard": "shard-000102",
+      "track_count": 512,
+      "track_start": 52224
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1330,
+      "shard": "shard-000103",
+      "track_count": 512,
+      "track_start": 52736
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1300,
+      "shard": "shard-000104",
+      "track_count": 512,
+      "track_start": 53248
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1270,
+      "shard": "shard-000105",
+      "track_count": 512,
+      "track_start": 53760
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1731,
+      "shard": "shard-000106",
+      "track_count": 512,
+      "track_start": 54272
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2269,
+      "shard": "shard-000107",
+      "track_count": 512,
+      "track_start": 54784
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2648,
+      "shard": "shard-000108",
+      "track_count": 512,
+      "track_start": 55296
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2396,
+      "shard": "shard-000109",
+      "track_count": 512,
+      "track_start": 55808
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1856,
+      "shard": "shard-000110",
+      "track_count": 512,
+      "track_start": 56320
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2493,
+      "shard": "shard-000111",
+      "track_count": 512,
+      "track_start": 56832
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1906,
+      "shard": "shard-000112",
+      "track_count": 512,
+      "track_start": 57344
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1640,
+      "shard": "shard-000113",
+      "track_count": 512,
+      "track_start": 57856
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1962,
+      "shard": "shard-000114",
+      "track_count": 512,
+      "track_start": 58368
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1851,
+      "shard": "shard-000115",
+      "track_count": 512,
+      "track_start": 58880
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1669,
+      "shard": "shard-000116",
+      "track_count": 512,
+      "track_start": 59392
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1644,
+      "shard": "shard-000117",
+      "track_count": 512,
+      "track_start": 59904
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1987,
+      "shard": "shard-000118",
+      "track_count": 512,
+      "track_start": 60416
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1213,
+      "shard": "shard-000119",
+      "track_count": 512,
+      "track_start": 60928
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1236,
+      "shard": "shard-000120",
+      "track_count": 512,
+      "track_start": 61440
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1260,
+      "shard": "shard-000121",
+      "track_count": 512,
+      "track_start": 61952
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1100,
+      "shard": "shard-000122",
+      "track_count": 512,
+      "track_start": 62464
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1535,
+      "shard": "shard-000123",
+      "track_count": 512,
+      "track_start": 62976
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2012,
+      "shard": "shard-000124",
+      "track_count": 512,
+      "track_start": 63488
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2766,
+      "shard": "shard-000125",
+      "track_count": 512,
+      "track_start": 64000
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1700,
+      "shard": "shard-000126",
+      "track_count": 512,
+      "track_start": 64512
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2346,
+      "shard": "shard-000127",
+      "track_count": 512,
+      "track_start": 65024
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1604,
+      "shard": "shard-000128",
+      "track_count": 512,
+      "track_start": 65536
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1942,
+      "shard": "shard-000129",
+      "track_count": 512,
+      "track_start": 66048
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1721,
+      "shard": "shard-000130",
+      "track_count": 512,
+      "track_start": 66560
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1679,
+      "shard": "shard-000131",
+      "track_count": 512,
+      "track_start": 67072
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1759,
+      "shard": "shard-000132",
+      "track_count": 512,
+      "track_start": 67584
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1704,
+      "shard": "shard-000133",
+      "track_count": 512,
+      "track_start": 68096
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1557,
+      "shard": "shard-000134",
+      "track_count": 512,
+      "track_start": 68608
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1426,
+      "shard": "shard-000135",
+      "track_count": 512,
+      "track_start": 69120
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1129,
+      "shard": "shard-000136",
+      "track_count": 512,
+      "track_start": 69632
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1224,
+      "shard": "shard-000137",
+      "track_count": 512,
+      "track_start": 70144
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1437,
+      "shard": "shard-000138",
+      "track_count": 512,
+      "track_start": 70656
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 849,
+      "shard": "shard-000139",
+      "track_count": 512,
+      "track_start": 71168
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1612,
+      "shard": "shard-000140",
+      "track_count": 512,
+      "track_start": 71680
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2540,
+      "shard": "shard-000141",
+      "track_count": 512,
+      "track_start": 72192
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1505,
+      "shard": "shard-000142",
+      "track_count": 512,
+      "track_start": 72704
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2026,
+      "shard": "shard-000143",
+      "track_count": 512,
+      "track_start": 73216
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1617,
+      "shard": "shard-000144",
+      "track_count": 512,
+      "track_start": 73728
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1660,
+      "shard": "shard-000145",
+      "track_count": 512,
+      "track_start": 74240
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2028,
+      "shard": "shard-000146",
+      "track_count": 512,
+      "track_start": 74752
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1906,
+      "shard": "shard-000147",
+      "track_count": 512,
+      "track_start": 75264
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1516,
+      "shard": "shard-000148",
+      "track_count": 512,
+      "track_start": 75776
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1971,
+      "shard": "shard-000149",
+      "track_count": 512,
+      "track_start": 76288
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1691,
+      "shard": "shard-000150",
+      "track_count": 512,
+      "track_start": 76800
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1384,
+      "shard": "shard-000151",
+      "track_count": 512,
+      "track_start": 77312
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1187,
+      "shard": "shard-000152",
+      "track_count": 512,
+      "track_start": 77824
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1505,
+      "shard": "shard-000153",
+      "track_count": 512,
+      "track_start": 78336
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 875,
+      "shard": "shard-000154",
+      "track_count": 512,
+      "track_start": 78848
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1176,
+      "shard": "shard-000155",
+      "track_count": 512,
+      "track_start": 79360
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2539,
+      "shard": "shard-000156",
+      "track_count": 512,
+      "track_start": 79872
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2700,
+      "shard": "shard-000157",
+      "track_count": 512,
+      "track_start": 80384
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2380,
+      "shard": "shard-000158",
+      "track_count": 512,
+      "track_start": 80896
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1632,
+      "shard": "shard-000159",
+      "track_count": 512,
+      "track_start": 81408
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1457,
+      "shard": "shard-000160",
+      "track_count": 512,
+      "track_start": 81920
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2241,
+      "shard": "shard-000161",
+      "track_count": 512,
+      "track_start": 82432
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1790,
+      "shard": "shard-000162",
+      "track_count": 512,
+      "track_start": 82944
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1701,
+      "shard": "shard-000163",
+      "track_count": 512,
+      "track_start": 83456
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2005,
+      "shard": "shard-000164",
+      "track_count": 512,
+      "track_start": 83968
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1610,
+      "shard": "shard-000165",
+      "track_count": 512,
+      "track_start": 84480
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1498,
+      "shard": "shard-000166",
+      "track_count": 512,
+      "track_start": 84992
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1468,
+      "shard": "shard-000167",
+      "track_count": 512,
+      "track_start": 85504
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1177,
+      "shard": "shard-000168",
+      "track_count": 512,
+      "track_start": 86016
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1057,
+      "shard": "shard-000169",
+      "track_count": 512,
+      "track_start": 86528
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1557,
+      "shard": "shard-000170",
+      "track_count": 512,
+      "track_start": 87040
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 987,
+      "shard": "shard-000171",
+      "track_count": 512,
+      "track_start": 87552
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1004,
+      "shard": "shard-000172",
+      "track_count": 512,
+      "track_start": 88064
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1371,
+      "shard": "shard-000173",
+      "track_count": 512,
+      "track_start": 88576
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1709,
+      "shard": "shard-000174",
+      "track_count": 512,
+      "track_start": 89088
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1841,
+      "shard": "shard-000175",
+      "track_count": 512,
+      "track_start": 89600
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1221,
+      "shard": "shard-000176",
+      "track_count": 512,
+      "track_start": 90112
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1686,
+      "shard": "shard-000177",
+      "track_count": 512,
+      "track_start": 90624
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1812,
+      "shard": "shard-000178",
+      "track_count": 512,
+      "track_start": 91136
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1631,
+      "shard": "shard-000179",
+      "track_count": 512,
+      "track_start": 91648
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1637,
+      "shard": "shard-000180",
+      "track_count": 512,
+      "track_start": 92160
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1788,
+      "shard": "shard-000181",
+      "track_count": 512,
+      "track_start": 92672
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1426,
+      "shard": "shard-000182",
+      "track_count": 512,
+      "track_start": 93184
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1595,
+      "shard": "shard-000183",
+      "track_count": 512,
+      "track_start": 93696
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1402,
+      "shard": "shard-000184",
+      "track_count": 512,
+      "track_start": 94208
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1024,
+      "shard": "shard-000185",
+      "track_count": 512,
+      "track_start": 94720
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1128,
+      "shard": "shard-000186",
+      "track_count": 512,
+      "track_start": 95232
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1068,
+      "shard": "shard-000187",
+      "track_count": 512,
+      "track_start": 95744
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 932,
+      "shard": "shard-000188",
+      "track_count": 512,
+      "track_start": 96256
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1637,
+      "shard": "shard-000189",
+      "track_count": 512,
+      "track_start": 96768
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2562,
+      "shard": "shard-000190",
+      "track_count": 512,
+      "track_start": 97280
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2022,
+      "shard": "shard-000191",
+      "track_count": 512,
+      "track_start": 97792
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1301,
+      "shard": "shard-000192",
+      "track_count": 512,
+      "track_start": 98304
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1606,
+      "shard": "shard-000193",
+      "track_count": 512,
+      "track_start": 98816
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1615,
+      "shard": "shard-000194",
+      "track_count": 512,
+      "track_start": 99328
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1578,
+      "shard": "shard-000195",
+      "track_count": 512,
+      "track_start": 99840
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1642,
+      "shard": "shard-000196",
+      "track_count": 512,
+      "track_start": 100352
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1379,
+      "shard": "shard-000197",
+      "track_count": 512,
+      "track_start": 100864
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1511,
+      "shard": "shard-000198",
+      "track_count": 512,
+      "track_start": 101376
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1344,
+      "shard": "shard-000199",
+      "track_count": 512,
+      "track_start": 101888
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1350,
+      "shard": "shard-000200",
+      "track_count": 512,
+      "track_start": 102400
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1259,
+      "shard": "shard-000201",
+      "track_count": 512,
+      "track_start": 102912
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1280,
+      "shard": "shard-000202",
+      "track_count": 512,
+      "track_start": 103424
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1493,
+      "shard": "shard-000203",
+      "track_count": 512,
+      "track_start": 103936
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 898,
+      "shard": "shard-000204",
+      "track_count": 512,
+      "track_start": 104448
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1037,
+      "shard": "shard-000205",
+      "track_count": 512,
+      "track_start": 104960
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2247,
+      "shard": "shard-000206",
+      "track_count": 512,
+      "track_start": 105472
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1918,
+      "shard": "shard-000207",
+      "track_count": 512,
+      "track_start": 105984
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 3065,
+      "shard": "shard-000208",
+      "track_count": 512,
+      "track_start": 106496
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1821,
+      "shard": "shard-000209",
+      "track_count": 512,
+      "track_start": 107008
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1255,
+      "shard": "shard-000210",
+      "track_count": 512,
+      "track_start": 107520
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1645,
+      "shard": "shard-000211",
+      "track_count": 512,
+      "track_start": 108032
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1220,
+      "shard": "shard-000212",
+      "track_count": 512,
+      "track_start": 108544
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1491,
+      "shard": "shard-000213",
+      "track_count": 512,
+      "track_start": 109056
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1706,
+      "shard": "shard-000214",
+      "track_count": 512,
+      "track_start": 109568
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1507,
+      "shard": "shard-000215",
+      "track_count": 512,
+      "track_start": 110080
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1297,
+      "shard": "shard-000216",
+      "track_count": 512,
+      "track_start": 110592
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1340,
+      "shard": "shard-000217",
+      "track_count": 512,
+      "track_start": 111104
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1300,
+      "shard": "shard-000218",
+      "track_count": 512,
+      "track_start": 111616
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1076,
+      "shard": "shard-000219",
+      "track_count": 512,
+      "track_start": 112128
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1265,
+      "shard": "shard-000220",
+      "track_count": 512,
+      "track_start": 112640
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 792,
+      "shard": "shard-000221",
+      "track_count": 512,
+      "track_start": 113152
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1668,
+      "shard": "shard-000222",
+      "track_count": 512,
+      "track_start": 113664
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2241,
+      "shard": "shard-000223",
+      "track_count": 512,
+      "track_start": 114176
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1988,
+      "shard": "shard-000224",
+      "track_count": 512,
+      "track_start": 114688
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1027,
+      "shard": "shard-000225",
+      "track_count": 512,
+      "track_start": 115200
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1506,
+      "shard": "shard-000226",
+      "track_count": 512,
+      "track_start": 115712
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1475,
+      "shard": "shard-000227",
+      "track_count": 512,
+      "track_start": 116224
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1394,
+      "shard": "shard-000228",
+      "track_count": 512,
+      "track_start": 116736
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1881,
+      "shard": "shard-000229",
+      "track_count": 512,
+      "track_start": 117248
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1665,
+      "shard": "shard-000230",
+      "track_count": 512,
+      "track_start": 117760
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1688,
+      "shard": "shard-000231",
+      "track_count": 512,
+      "track_start": 118272
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1188,
+      "shard": "shard-000232",
+      "track_count": 512,
+      "track_start": 118784
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1489,
+      "shard": "shard-000233",
+      "track_count": 512,
+      "track_start": 119296
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1111,
+      "shard": "shard-000234",
+      "track_count": 512,
+      "track_start": 119808
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1034,
+      "shard": "shard-000235",
+      "track_count": 512,
+      "track_start": 120320
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1083,
+      "shard": "shard-000236",
+      "track_count": 512,
+      "track_start": 120832
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1334,
+      "shard": "shard-000237",
+      "track_count": 512,
+      "track_start": 121344
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 861,
+      "shard": "shard-000238",
+      "track_count": 512,
+      "track_start": 121856
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1260,
+      "shard": "shard-000239",
+      "track_count": 512,
+      "track_start": 122368
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1351,
+      "shard": "shard-000240",
+      "track_count": 512,
+      "track_start": 122880
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2034,
+      "shard": "shard-000241",
+      "track_count": 512,
+      "track_start": 123392
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1852,
+      "shard": "shard-000242",
+      "track_count": 512,
+      "track_start": 123904
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1085,
+      "shard": "shard-000243",
+      "track_count": 512,
+      "track_start": 124416
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1493,
+      "shard": "shard-000244",
+      "track_count": 512,
+      "track_start": 124928
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1331,
+      "shard": "shard-000245",
+      "track_count": 512,
+      "track_start": 125440
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1347,
+      "shard": "shard-000246",
+      "track_count": 512,
+      "track_start": 125952
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1917,
+      "shard": "shard-000247",
+      "track_count": 512,
+      "track_start": 126464
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1583,
+      "shard": "shard-000248",
+      "track_count": 512,
+      "track_start": 126976
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1293,
+      "shard": "shard-000249",
+      "track_count": 512,
+      "track_start": 127488
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1326,
+      "shard": "shard-000250",
+      "track_count": 512,
+      "track_start": 128000
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1181,
+      "shard": "shard-000251",
+      "track_count": 512,
+      "track_start": 128512
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1164,
+      "shard": "shard-000252",
+      "track_count": 512,
+      "track_start": 129024
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1324,
+      "shard": "shard-000253",
+      "track_count": 512,
+      "track_start": 129536
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1013,
+      "shard": "shard-000254",
+      "track_count": 512,
+      "track_start": 130048
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 911,
+      "shard": "shard-000255",
+      "track_count": 512,
+      "track_start": 130560
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1986,
+      "shard": "shard-000256",
+      "track_count": 512,
+      "track_start": 131072
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2116,
+      "shard": "shard-000257",
+      "track_count": 512,
+      "track_start": 131584
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1230,
+      "shard": "shard-000258",
+      "track_count": 512,
+      "track_start": 132096
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1363,
+      "shard": "shard-000259",
+      "track_count": 512,
+      "track_start": 132608
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1204,
+      "shard": "shard-000260",
+      "track_count": 512,
+      "track_start": 133120
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1479,
+      "shard": "shard-000261",
+      "track_count": 512,
+      "track_start": 133632
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1650,
+      "shard": "shard-000262",
+      "track_count": 512,
+      "track_start": 134144
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1398,
+      "shard": "shard-000263",
+      "track_count": 512,
+      "track_start": 134656
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1388,
+      "shard": "shard-000264",
+      "track_count": 512,
+      "track_start": 135168
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1316,
+      "shard": "shard-000265",
+      "track_count": 512,
+      "track_start": 135680
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1340,
+      "shard": "shard-000266",
+      "track_count": 512,
+      "track_start": 136192
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1739,
+      "shard": "shard-000267",
+      "track_count": 512,
+      "track_start": 136704
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1096,
+      "shard": "shard-000268",
+      "track_count": 512,
+      "track_start": 137216
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1078,
+      "shard": "shard-000269",
+      "track_count": 512,
+      "track_start": 137728
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1232,
+      "shard": "shard-000270",
+      "track_count": 512,
+      "track_start": 138240
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1196,
+      "shard": "shard-000271",
+      "track_count": 512,
+      "track_start": 138752
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 870,
+      "shard": "shard-000272",
+      "track_count": 512,
+      "track_start": 139264
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1749,
+      "shard": "shard-000273",
+      "track_count": 512,
+      "track_start": 139776
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1672,
+      "shard": "shard-000274",
+      "track_count": 512,
+      "track_start": 140288
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1775,
+      "shard": "shard-000275",
+      "track_count": 512,
+      "track_start": 140800
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1256,
+      "shard": "shard-000276",
+      "track_count": 512,
+      "track_start": 141312
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1380,
+      "shard": "shard-000277",
+      "track_count": 512,
+      "track_start": 141824
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1309,
+      "shard": "shard-000278",
+      "track_count": 512,
+      "track_start": 142336
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1828,
+      "shard": "shard-000279",
+      "track_count": 512,
+      "track_start": 142848
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1070,
+      "shard": "shard-000280",
+      "track_count": 512,
+      "track_start": 143360
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1367,
+      "shard": "shard-000281",
+      "track_count": 512,
+      "track_start": 143872
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1531,
+      "shard": "shard-000282",
+      "track_count": 512,
+      "track_start": 144384
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1421,
+      "shard": "shard-000283",
+      "track_count": 512,
+      "track_start": 144896
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1189,
+      "shard": "shard-000284",
+      "track_count": 512,
+      "track_start": 145408
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1168,
+      "shard": "shard-000285",
+      "track_count": 512,
+      "track_start": 145920
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1282,
+      "shard": "shard-000286",
+      "track_count": 512,
+      "track_start": 146432
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2452,
+      "shard": "shard-000287",
+      "track_count": 512,
+      "track_start": 146944
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 652,
+      "shard": "shard-000288",
+      "track_count": 512,
+      "track_start": 147456
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1114,
+      "shard": "shard-000289",
+      "track_count": 512,
+      "track_start": 147968
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1238,
+      "shard": "shard-000290",
+      "track_count": 512,
+      "track_start": 148480
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1911,
+      "shard": "shard-000291",
+      "track_count": 512,
+      "track_start": 148992
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2100,
+      "shard": "shard-000292",
+      "track_count": 512,
+      "track_start": 149504
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1074,
+      "shard": "shard-000293",
+      "track_count": 512,
+      "track_start": 150016
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1375,
+      "shard": "shard-000294",
+      "track_count": 512,
+      "track_start": 150528
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1220,
+      "shard": "shard-000295",
+      "track_count": 512,
+      "track_start": 151040
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1074,
+      "shard": "shard-000296",
+      "track_count": 512,
+      "track_start": 151552
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1476,
+      "shard": "shard-000297",
+      "track_count": 512,
+      "track_start": 152064
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1185,
+      "shard": "shard-000298",
+      "track_count": 512,
+      "track_start": 152576
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1173,
+      "shard": "shard-000299",
+      "track_count": 512,
+      "track_start": 153088
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1489,
+      "shard": "shard-000300",
+      "track_count": 512,
+      "track_start": 153600
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1267,
+      "shard": "shard-000301",
+      "track_count": 512,
+      "track_start": 154112
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1200,
+      "shard": "shard-000302",
+      "track_count": 512,
+      "track_start": 154624
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1274,
+      "shard": "shard-000303",
+      "track_count": 512,
+      "track_start": 155136
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1227,
+      "shard": "shard-000304",
+      "track_count": 512,
+      "track_start": 155648
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1665,
+      "shard": "shard-000305",
+      "track_count": 512,
+      "track_start": 156160
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 906,
+      "shard": "shard-000306",
+      "track_count": 512,
+      "track_start": 156672
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1455,
+      "shard": "shard-000307",
+      "track_count": 512,
+      "track_start": 157184
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1537,
+      "shard": "shard-000308",
+      "track_count": 512,
+      "track_start": 157696
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1693,
+      "shard": "shard-000309",
+      "track_count": 512,
+      "track_start": 158208
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1436,
+      "shard": "shard-000310",
+      "track_count": 512,
+      "track_start": 158720
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1224,
+      "shard": "shard-000311",
+      "track_count": 512,
+      "track_start": 159232
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1351,
+      "shard": "shard-000312",
+      "track_count": 512,
+      "track_start": 159744
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1403,
+      "shard": "shard-000313",
+      "track_count": 512,
+      "track_start": 160256
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1836,
+      "shard": "shard-000314",
+      "track_count": 512,
+      "track_start": 160768
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1259,
+      "shard": "shard-000315",
+      "track_count": 512,
+      "track_start": 161280
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1336,
+      "shard": "shard-000316",
+      "track_count": 512,
+      "track_start": 161792
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1405,
+      "shard": "shard-000317",
+      "track_count": 512,
+      "track_start": 162304
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1225,
+      "shard": "shard-000318",
+      "track_count": 512,
+      "track_start": 162816
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1180,
+      "shard": "shard-000319",
+      "track_count": 512,
+      "track_start": 163328
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1251,
+      "shard": "shard-000320",
+      "track_count": 512,
+      "track_start": 163840
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 998,
+      "shard": "shard-000321",
+      "track_count": 512,
+      "track_start": 164352
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2212,
+      "shard": "shard-000322",
+      "track_count": 512,
+      "track_start": 164864
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1520,
+      "shard": "shard-000323",
+      "track_count": 512,
+      "track_start": 165376
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1333,
+      "shard": "shard-000324",
+      "track_count": 512,
+      "track_start": 165888
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1407,
+      "shard": "shard-000325",
+      "track_count": 512,
+      "track_start": 166400
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1159,
+      "shard": "shard-000326",
+      "track_count": 512,
+      "track_start": 166912
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1301,
+      "shard": "shard-000327",
+      "track_count": 512,
+      "track_start": 167424
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1358,
+      "shard": "shard-000328",
+      "track_count": 512,
+      "track_start": 167936
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1375,
+      "shard": "shard-000329",
+      "track_count": 512,
+      "track_start": 168448
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1230,
+      "shard": "shard-000330",
+      "track_count": 512,
+      "track_start": 168960
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1366,
+      "shard": "shard-000331",
+      "track_count": 512,
+      "track_start": 169472
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1382,
+      "shard": "shard-000332",
+      "track_count": 512,
+      "track_start": 169984
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1051,
+      "shard": "shard-000333",
+      "track_count": 512,
+      "track_start": 170496
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1100,
+      "shard": "shard-000334",
+      "track_count": 512,
+      "track_start": 171008
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1263,
+      "shard": "shard-000335",
+      "track_count": 512,
+      "track_start": 171520
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1521,
+      "shard": "shard-000336",
+      "track_count": 512,
+      "track_start": 172032
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1133,
+      "shard": "shard-000337",
+      "track_count": 512,
+      "track_start": 172544
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1650,
+      "shard": "shard-000338",
+      "track_count": 512,
+      "track_start": 173056
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1956,
+      "shard": "shard-000339",
+      "track_count": 512,
+      "track_start": 173568
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1431,
+      "shard": "shard-000340",
+      "track_count": 512,
+      "track_start": 174080
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1346,
+      "shard": "shard-000341",
+      "track_count": 512,
+      "track_start": 174592
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1283,
+      "shard": "shard-000342",
+      "track_count": 512,
+      "track_start": 175104
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1219,
+      "shard": "shard-000343",
+      "track_count": 512,
+      "track_start": 175616
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1228,
+      "shard": "shard-000344",
+      "track_count": 512,
+      "track_start": 176128
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1227,
+      "shard": "shard-000345",
+      "track_count": 512,
+      "track_start": 176640
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1278,
+      "shard": "shard-000346",
+      "track_count": 512,
+      "track_start": 177152
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1402,
+      "shard": "shard-000347",
+      "track_count": 512,
+      "track_start": 177664
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1244,
+      "shard": "shard-000348",
+      "track_count": 512,
+      "track_start": 178176
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1240,
+      "shard": "shard-000349",
+      "track_count": 512,
+      "track_start": 178688
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1302,
+      "shard": "shard-000350",
+      "track_count": 512,
+      "track_start": 179200
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1032,
+      "shard": "shard-000351",
+      "track_count": 512,
+      "track_start": 179712
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1486,
+      "shard": "shard-000352",
+      "track_count": 512,
+      "track_start": 180224
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1477,
+      "shard": "shard-000353",
+      "track_count": 512,
+      "track_start": 180736
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1481,
+      "shard": "shard-000354",
+      "track_count": 512,
+      "track_start": 181248
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1263,
+      "shard": "shard-000355",
+      "track_count": 512,
+      "track_start": 181760
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1284,
+      "shard": "shard-000356",
+      "track_count": 512,
+      "track_start": 182272
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1684,
+      "shard": "shard-000357",
+      "track_count": 512,
+      "track_start": 182784
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1181,
+      "shard": "shard-000358",
+      "track_count": 512,
+      "track_start": 183296
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1444,
+      "shard": "shard-000359",
+      "track_count": 512,
+      "track_start": 183808
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1285,
+      "shard": "shard-000360",
+      "track_count": 512,
+      "track_start": 184320
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1255,
+      "shard": "shard-000361",
+      "track_count": 512,
+      "track_start": 184832
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1189,
+      "shard": "shard-000362",
+      "track_count": 512,
+      "track_start": 185344
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1553,
+      "shard": "shard-000363",
+      "track_count": 512,
+      "track_start": 185856
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1333,
+      "shard": "shard-000364",
+      "track_count": 512,
+      "track_start": 186368
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1528,
+      "shard": "shard-000365",
+      "track_count": 512,
+      "track_start": 186880
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1032,
+      "shard": "shard-000366",
+      "track_count": 512,
+      "track_start": 187392
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1827,
+      "shard": "shard-000367",
+      "track_count": 512,
+      "track_start": 187904
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1407,
+      "shard": "shard-000368",
+      "track_count": 512,
+      "track_start": 188416
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1141,
+      "shard": "shard-000369",
+      "track_count": 512,
+      "track_start": 188928
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2055,
+      "shard": "shard-000370",
+      "track_count": 512,
+      "track_start": 189440
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 2166,
+      "shard": "shard-000371",
+      "track_count": 512,
+      "track_start": 189952
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1169,
+      "shard": "shard-000372",
+      "track_count": 512,
+      "track_start": 190464
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1093,
+      "shard": "shard-000373",
+      "track_count": 512,
+      "track_start": 190976
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1620,
+      "shard": "shard-000374",
+      "track_count": 512,
+      "track_start": 191488
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1341,
+      "shard": "shard-000375",
+      "track_count": 512,
+      "track_start": 192000
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1223,
+      "shard": "shard-000376",
+      "track_count": 512,
+      "track_start": 192512
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1441,
+      "shard": "shard-000377",
+      "track_count": 512,
+      "track_start": 193024
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1241,
+      "shard": "shard-000378",
+      "track_count": 512,
+      "track_start": 193536
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1602,
+      "shard": "shard-000379",
+      "track_count": 512,
+      "track_start": 194048
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1560,
+      "shard": "shard-000380",
+      "track_count": 512,
+      "track_start": 194560
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1362,
+      "shard": "shard-000381",
+      "track_count": 512,
+      "track_start": 195072
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1092,
+      "shard": "shard-000382",
+      "track_count": 512,
+      "track_start": 195584
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1200,
+      "shard": "shard-000383",
+      "track_count": 512,
+      "track_start": 196096
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1574,
+      "shard": "shard-000384",
+      "track_count": 512,
+      "track_start": 196608
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1293,
+      "shard": "shard-000385",
+      "track_count": 512,
+      "track_start": 197120
+    },
+    {
+      "invalid_box_count": 0,
+      "observation_count": 1195,
+      "shard": "shard-000386",
+      "track_count": 512,
+      "track_start": 197632
+    }
+  ],
+  "split": "val",
+  "status": "PASS_PARTIAL_COMPLETED_SHARDS",
+  "test_content_opened": false,
+  "unique_physical_tracks": 198144,
+  "unique_sample_keys": 198144
+}

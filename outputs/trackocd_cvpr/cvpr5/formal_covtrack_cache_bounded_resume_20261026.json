@@ -1,0 +1,90 @@
+{
+  "schema_version": "trackocd.cvpr5.formal_covtrack_cache_bounded_resume.v1",
+  "status": "PASS_BOUNDED_RESUME_THREE_SHARDS_PARTIAL_CACHE",
+  "generated_utc": "2026-10-26T03:16:21Z",
+  "code_commit_at_registration": "9d61ae6cbd241dc01a04dcae5163aad4fc8a6d87",
+  "split": "val",
+  "frontend": "COVTrack-native",
+  "source_stream": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_cvpr/cvpr2/nas_recovery_20261022/val/covtrack_native_physical_tracks.jsonl",
+    "sha256": "63945d2ae19f63390930b3ad0ed1971d64c4d3ff1067fff2842317f31d8fe2f1"
+  },
+  "worker": {
+    "manifest": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.worker-000384-000387.json",
+    "manifest_sha256": "95c14e36f01b3e4ce368192d8e8d316f90a280d148cd7ec5ec6a051e67b97756",
+    "status": "RANGE_COMPLETE",
+    "shard_start_inclusive": 384,
+    "shard_end_exclusive": 387,
+    "selected_gpu_index": 0,
+    "batch": 16,
+    "shard_tracks": 512,
+    "completed_shards_in_worker_manifest": 387,
+    "total_tracks_in_worker_manifest": 369794,
+    "total_observations_in_worker_manifest": 743548,
+    "test_semantic_accessed": false
+  },
+  "new_shards": [
+    {
+      "shard": "shard-000384",
+      "track_start": 196608,
+      "track_count": 512,
+      "observation_count": 1574,
+      "payload_bytes": 7201742,
+      "finished_utc": "2026-10-26T03:14:10.322675+00:00"
+    },
+    {
+      "shard": "shard-000385",
+      "track_start": 197120,
+      "track_count": 512,
+      "observation_count": 1293,
+      "payload_bytes": 6761107,
+      "finished_utc": "2026-10-26T03:14:57.149876+00:00"
+    },
+    {
+      "shard": "shard-000386",
+      "track_start": 197632,
+      "track_count": 512,
+      "observation_count": 1195,
+      "payload_bytes": 6606646,
+      "finished_utc": "2026-10-26T03:15:40.135221+00:00"
+    }
+  ],
+  "payload_audit": {
+    "path": "/data3/liuyeqiang/TrackOCD/outputs/trackocd_v2_runtime/audit/bounded_resume_payload_audit_20261026.json",
+    "sha256": "61856a2082103a66ca382f10f0657f94ef35ed1c5006edc16ffaeca3ee5c3282",
+    "status": "PASS_PARTIAL_COMPLETED_SHARDS",
+    "checked_shards": 387,
+    "checked_tracks": 198144,
+    "checked_observations": 743548,
+    "error_count": 0,
+    "invalid_box_count": 0,
+    "unique_sample_keys": 198144,
+    "unique_physical_tracks": 198144,
+    "formal_cache_complete": false,
+    "test_content_opened": false
+  },
+  "resource_gate_history": {
+    "first_attempt": {
+      "requested_gpu": 2,
+      "status": "FAILED_FORMAL_FEATURE_CACHE",
+      "reason": "script resource gate selected only GPU 0 for the one-worker request",
+      "payload_written": false,
+      "test_semantic_accessed": false
+    },
+    "retry": {
+      "gpu": 0,
+      "resource_gate_passed": true,
+      "external_processes_touched": false
+    },
+    "free_bytes_after": 5395136512
+  },
+  "boundary": {
+    "tao_test_read": false,
+    "gt_or_novel_vocabulary_read": false,
+    "training_started": false,
+    "model_selection_changed": false,
+    "causal_metrics_claimed": false,
+    "full_cache_completion_claimed": false,
+    "external_processes_touched": false
+  }
+}
