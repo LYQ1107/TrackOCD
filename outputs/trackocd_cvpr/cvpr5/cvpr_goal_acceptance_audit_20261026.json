@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T05:12:27.303393+00:00",
+  "generated_utc": "2026-10-26T05:17:52.003522+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "3a59f7e2926051a06ec02dc3b5ee915a48ed1c25",
+    "head": "d833af5a7a9d034416fc7c59e355e5067e8701bb",
     "clean_before_audit": true
   },
   "scope": {
@@ -258,6 +258,13 @@
           "reported_status": "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr5/nas_recovered_val_stream_audit_20261026.json",
+          "exists": true,
+          "bytes": 7663,
+          "sha256": "a17d21efffc21a545d7041cecaf28b3ee7bfea49638fcbdbdbf16c60f2652493",
+          "reported_status": "FAIL_VAL_ONLY_STREAM_INTEGRITY"
+        },
+        {
           "path": "outputs/trackocd_cvpr/cvpr5/frontend_selection_reconciliation_20261026.json",
           "exists": true,
           "bytes": 3816,
@@ -326,6 +333,17 @@
         "hybrid_geometry_smoke_is_frontend_qualification": false,
         "nas_recovery_probe_status": "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE",
         "nas_reverse_tunnel_listening": false,
+        "recovered_val_stream_audit_status": "FAIL_VAL_ONLY_STREAM_INTEGRITY",
+        "recovered_val_predicted_stream_status": "FAIL",
+        "recovered_val_predicted_invalid_boxes": 16290,
+        "recovered_val_native_stream_status": "PASS",
+        "recovered_val_causal_order_statuses": {
+          "base": "PASS",
+          "seed1027": "PASS",
+          "seed1028": "PASS",
+          "seed1029": "PASS"
+        },
+        "recovered_val_stream_audit_memory_plan_pass": false,
         "historical_current_frontend_stream_identity_status": "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH",
         "historical_current_same_input_stream_proven": false
       },
@@ -1085,6 +1103,13 @@
       "bytes": 1460,
       "sha256": "30f9a166962006ee5a7371cb6b9bd4574529e447a5ff1bf61e7e2e5e3796df5b",
       "reported_status": "BLOCKED_REVERSE_TUNNEL_UNAVAILABLE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr5/nas_recovered_val_stream_audit_20261026.json",
+      "exists": true,
+      "bytes": 7663,
+      "sha256": "a17d21efffc21a545d7041cecaf28b3ee7bfea49638fcbdbdbf16c60f2652493",
+      "reported_status": "FAIL_VAL_ONLY_STREAM_INTEGRITY"
     }
   ]
 }
