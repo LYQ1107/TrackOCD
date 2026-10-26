@@ -13,6 +13,8 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 CONFIG = ROOT / "configs/trackocd_cvpr/covtrack_native_teta_recovery_v1.json"
 RUNNER = ROOT / "scripts/trackocd_v2/run_teta_reference.py"
 
