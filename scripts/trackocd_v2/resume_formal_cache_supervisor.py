@@ -53,17 +53,21 @@ def done_count(cache_root: Path, start: int, end: int) -> int:
     )
 
 
-def gate(snapshot: dict[str, Any], gpu_index: int) -> dict[str, Any]:
+def gate(snapshot: dict[str, Any], requested_gpu_index: int) -> dict[str, Any]:
     total = int(snapshot.get("mem_total_kib") or 0)
     available = int(snapshot.get("mem_available_kib") or 0)
     ram_floor = int(total * 0.25)
     worker_margin = int(WORKER_RAM_GIB * 1024 * 1024)
     required = ram_floor + worker_margin
+    candidates = sorted(snapshot.get("gpu_rows", []), key=lambda row: int(row.get("index", -1)))
+    if requested_gpu_index >= 0:
+        candidates = [row for row in candidates if int(row.get("index", -1)) == requested_gpu_index]
     gpu = next(
-        (row for row in snapshot.get("gpu_rows", []) if int(row.get("index", -1)) == gpu_index),
+        (row for row in candidates if int(row.get("memory_free_mib", 0)) >= 8192 and not row.get("compute_apps")),
         None,
     )
-    gpu_ok = bool(gpu) and int(gpu.get("memory_free_mib", 0)) >= 8192 and not gpu.get("compute_apps")
+    selected_gpu_index = int(gpu["index"]) if gpu is not None else None
+    gpu_ok = gpu is not None
     return {
         "mem_total_kib": total,
         "mem_available_kib": available,
@@ -72,7 +76,8 @@ def gate(snapshot: dict[str, Any], gpu_index: int) -> dict[str, Any]:
         "required_available_kib": required,
         "ram_floor_pass": available >= ram_floor,
         "worker_gate_pass": available >= required,
-        "gpu_index": gpu_index,
+        "requested_gpu_index": requested_gpu_index,
+        "gpu_index": selected_gpu_index,
         "gpu_gate_pass": gpu_ok,
         "gpu": gpu,
         "pass": available >= required and gpu_ok,
@@ -112,7 +117,7 @@ def main() -> int:
     parser.add_argument("--frames-root", type=Path, default=DEFAULT_FRAMES_ROOT)
     parser.add_argument("--start", type=int, default=399)
     parser.add_argument("--end", type=int, default=723)
-    parser.add_argument("--gpu-index", type=int, default=0)
+    parser.add_argument("--gpu-index", type=int, default=-1, help="GPU index, or -1 to choose a currently eligible idle GPU")
     parser.add_argument("--batch", type=int, default=16)
     parser.add_argument("--poll-seconds", type=float, default=30.0)
     parser.add_argument("--receipt", type=Path, default=DEFAULT_RECEIPT)
@@ -133,23 +138,24 @@ def main() -> int:
     args.receipt.parent.mkdir(parents=True, exist_ok=True)
     args.log.parent.mkdir(parents=True, exist_ok=True)
 
-    command = [
-        sys.executable,
-        str(ROOT / "scripts/trackocd_v2/build_sharded_feature_cache.py"),
-        "--frontend", "covtrack_native",
-        "--split", "val",
-        "--input", str(args.input),
-        "--output-root", str(args.cache_root),
-        "--model-repo", str(args.model_repo),
-        "--model-weights", str(args.model_weights),
-        "--audit-root", str(args.audit_root),
-        "--frames-root", str(args.frames_root),
-        "--batch", str(args.batch),
-        "--shard-tracks", "512",
-        "--gpu-index", str(args.gpu_index),
-        "--shard-start", str(args.start),
-        "--shard-end", str(args.end),
-    ]
+    def build_command(selected_gpu_index: int) -> list[str]:
+        return [
+            sys.executable,
+            str(ROOT / "scripts/trackocd_v2/build_sharded_feature_cache.py"),
+            "--frontend", "covtrack_native",
+            "--split", "val",
+            "--input", str(args.input),
+            "--output-root", str(args.cache_root),
+            "--model-repo", str(args.model_repo),
+            "--model-weights", str(args.model_weights),
+            "--audit-root", str(args.audit_root),
+            "--frames-root", str(args.frames_root),
+            "--batch", str(args.batch),
+            "--shard-tracks", "512",
+            "--gpu-index", str(selected_gpu_index),
+            "--shard-start", str(args.start),
+            "--shard-end", str(args.end),
+        ]
 
     started = utc_now()
     prior_failure = resource_failure(args.cache_root, args.start, args.end)
@@ -158,6 +164,7 @@ def main() -> int:
     below_floor_samples = 0
     status = "WAITING_RESOURCE"
     child_pid: int | None = None
+    command: list[str] | None = None
 
     def write_receipt(latest: dict[str, Any]) -> None:
         payload = {
@@ -215,6 +222,10 @@ def main() -> int:
                     continue
 
                 status = "CHILD_RUNNING"
+                selected_gpu_index = resource_gate["gpu_index"]
+                if selected_gpu_index is None:
+                    raise RuntimeError("resource gate passed without selecting a GPU")
+                command = build_command(int(selected_gpu_index))
                 log_handle = args.log.open("a", encoding="utf-8")
                 log_handle.write(f"\n[{utc_now()}] launch: {json.dumps(command)}\n")
                 log_handle.flush()
