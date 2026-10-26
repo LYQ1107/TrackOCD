@@ -26,7 +26,6 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.trackocd_cvpr.candidate_aware_rcm_support_smoke import _install_input_barrier
 from src.trackocd_cvpr.batched_evidence import reencode_batched_supports
 from src.trackocd_cvpr.candidate_score_contract import CandidateScoreMLP
 from src.trackocd_cvpr.fit_R_training import load_completed_fit_tracks, support_groups
@@ -191,9 +190,10 @@ def _source_gate(config: dict, preregistration_commit: str, git_proxy: str) -> d
 
 
 def _install_restricted_barrier(output: Path) -> None:
-    _install_input_barrier()
-
     def barrier(event: str, args: tuple) -> None:
+        if event in {"socket.connect", "socket.getaddrinfo", "socket.sendto",
+                     "subprocess.Popen", "os.system"}:
+            raise PermissionError("family-peak joint pilot forbids external activity")
         if event == "open" and args and isinstance(args[0], (str, bytes)):
             path = Path(os.fsdecode(args[0])).resolve()
             if path.suffix in (".pt", ".pth") and path.parent != output:
