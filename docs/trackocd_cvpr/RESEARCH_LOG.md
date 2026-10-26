@@ -11530,3 +11530,19 @@ no private GT/cache/weights opened for this check):
   multi-seed/order/coverage evaluation, and locked causal metrics remain open.
 - The suite opened no TAO Test asset, large formal cache, or external process;
   no training or inference worker was launched.
+
+## Resumable-cache metadata reconciliation repair (2026-10-26 UTC)
+
+- The canonical continuation manifest intentionally remained at `384` while
+  the cumulative worker manifest and atomic `.done` markers had reached
+  `399`.  The old reconciliation therefore under-reported the live checkpoint
+  by 15 shards and its acceptance open-gate text repeated that stale number.
+- Updated the metadata-only reconciliation to read the bound cumulative range
+  manifest and completion markers, report both the base manifest (`384`) and
+  observed checkpoint (`399/723`, `324` missing), and explicitly record that
+  the independent payload audit still covers only the base `384` shards.
+  No arrays, streams, weights, labels, or Test assets were opened.
+- Updated the fail-closed CVPR acceptance audit and regression expectations;
+  focused tests passed **5/5**.  The result remains partial and not formal
+  cache-ready.  Changes were committed as `9250efe7` and `f1324eda`; remote
+  verification follows after the final push.
