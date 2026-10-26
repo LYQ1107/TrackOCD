@@ -8,6 +8,7 @@
   "pilot_policy_relative_ordinals": [0, 1],
   "episodes": 1,
   "updates_per_episode": 2,
+  "require_joint_loss_terms": true,
   "scorer": {
     "family_rule": "within_family_population_standardized_adapted_similarity",
     "tie_break": "EXISTING",
@@ -34,6 +35,6 @@
     "weights_uploaded": false,
     "external_processes_touched": false
   },
-  "output_directory": "outputs/trackocd_cvpr/cvpr5/family_peak_joint_rcm_training_pilot_v3",
+  "output_directory": "outputs/trackocd_cvpr/cvpr5/family_peak_joint_rcm_training_pilot_v4",
   "interpretation": "Bounded full-clock causal R/C/M interface evidence only. The family-peak action is a fixed control and the residual is not calibrated or selected on development data. This is not predicted-track training, an OCD/MOT metric, a strong-frontend result, or Goal A/B/C acceptance."
 }

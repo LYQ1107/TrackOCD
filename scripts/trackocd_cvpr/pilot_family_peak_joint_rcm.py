@@ -143,6 +143,8 @@ def _load_config(path: Path) -> dict:
         raise ValueError("fixed two-video policy scope required")
     if config.get("updates_per_episode") != 2 or config.get("episodes") != 1:
         raise ValueError("exact two-update one-episode scope required")
+    if config.get("require_joint_loss_terms") is not True:
+        raise ValueError("joint C and M update gate must be frozen")
     if config.get("scorer") != {
         "family_rule": "within_family_population_standardized_adapted_similarity",
         "tie_break": "EXISTING",
@@ -266,6 +268,7 @@ def run(config_path: Path, output_path: Path, preregistration_commit: str, git_p
     evidence, scorer, member, optimizer, summary = train_joint_rcm_policy_pilot(
         pilot_videos, projection, known, known_supports, base_config, guard, progress,
         save_checkpoint, scorer_factory=FamilyPeakResidualScorer,
+        require_joint_loss_terms=config["require_joint_loss_terms"],
     )
     guard()
     endpoint = output_path / "private_family_peak_joint_step2_checkpoint.pt"

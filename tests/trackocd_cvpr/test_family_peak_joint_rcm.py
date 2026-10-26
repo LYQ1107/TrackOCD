@@ -29,5 +29,6 @@ def test_family_peak_joint_config_is_frozen_and_not_acceptance():
     config = json.loads(path.read_text(encoding="utf-8"))
     assert config["pilot_policy_relative_ordinals"] == [0, 1]
     assert config["updates_per_episode"] == 2
+    assert config["require_joint_loss_terms"] is True
     assert config["boundaries"]["predicted_track_training"] is False
     assert config["boundaries"]["goal_acceptance"] is False

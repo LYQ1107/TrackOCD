@@ -171,7 +171,8 @@ class JointRCMAtomicMemberControl(JointAtomicMemberControl):
 
 
 def train_joint_rcm_policy_pilot(videos, projection, known_prototypes, known_support_groups,
-                                 cfg, guard, progress, checkpoint=None, scorer_factory=None):
+                                 cfg, guard, progress, checkpoint=None, scorer_factory=None,
+                                 require_joint_loss_terms=False):
     """Run a fixed causal R/C/M pilot; no dev metrics or endpoint selection."""
     if not videos or len({video for video, _ in videos}) != len(videos):
         raise ValueError('Unique fixed R/C/M pilot videos required')
@@ -238,7 +239,8 @@ def train_joint_rcm_policy_pilot(videos, projection, known_prototypes, known_sup
                         if steps < cfg['updates_per_episode']:
                             M_terms[label].append(loss)
                             families['M_' + label[0]] += 1
-                if (C_terms or M_terms) and steps < cfg['updates_per_episode']:
+                eligible_joint_update = bool(C_terms and M_terms) if require_joint_loss_terms else bool(C_terms or M_terms)
+                if eligible_joint_update and steps < cfg['updates_per_episode']:
                     C_loss = _class_macro_loss(C_terms) if C_terms else None
                     M_loss = _class_macro_loss(M_terms) if M_terms else None
                     loss = C_loss if C_loss is not None else torch.zeros((), dtype=torch.float32)
