@@ -10917,3 +10917,19 @@ no private GT/cache/weights opened for this check):
   smoke, but it is not M supervision, predicted-track training, a selected
   threshold, or an OCD/MOT result. Receipt:
   `outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json`.
+
+## Candidate-aware RCM support repair smoke (2026-10-26 UTC)
+
+- The same fixed similarity rule was applied to the registered two-video RCM
+  policy cache, with external Known/pseudo targets consulted only after each
+  anonymous decision for an in-memory support-agreement audit. The numeric
+  forward saw no labels or category fields; no optimizer was started.
+- Over `4` clock frames and `14` events, the route produced `13` singleton
+  support plans, `0` cross-video tokens, and `0` M-support steps. This is a
+  bounded negative mechanism result: the simple similarity reuse rule does
+  not repair anonymous support aggregation even though the static policy fold
+  has lawful cross-video Known support.
+- Receipt:
+  `outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json`.
+  It does not authorize threshold search, formal predicted training, or a
+  scientific failure claim about the full TrackOCD method.

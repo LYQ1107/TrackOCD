@@ -128,6 +128,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
     )
+    candidate_rcm_support_path, candidate_rcm_support = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+    )
     masa_path, masa = load_json(
         repo, "outputs/trackocd_cvpr/v2/masa_frontend_migration_eligibility_v1.json"
     )
@@ -538,6 +542,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
                     reported_status=candidate_lifecycle.get("status"),
                 ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+                    reported_status=candidate_rcm_support.get("status"),
+                ),
             ],
             "facts": {
                 "old_diagnostic_candidate_ceiling": "measured as an upper bound, not a deployed method",
@@ -564,6 +573,16 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 "candidate_aware_lifecycle_harness_forced_reuse": nested(
                     candidate_lifecycle, "lifecycle", "harness_forced_cross_video_reuse"
+                ),
+                "candidate_aware_rcm_support_status": candidate_rcm_support.get("status"),
+                "candidate_aware_rcm_cross_video_token_count": nested(
+                    candidate_rcm_support, "lifecycle", "cross_video_token_count"
+                ),
+                "candidate_aware_rcm_m_support_steps": nested(
+                    candidate_rcm_support, "m_support", "m_support_steps"
+                ),
+                "candidate_aware_rcm_positive_other_video_groups": nested(
+                    candidate_rcm_support, "m_support", "positive_other_video_groups"
                 ),
             },
             "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation.",
@@ -593,6 +612,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     repo,
                     "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
                     reported_status=candidate_lifecycle.get("status"),
+                ),
+                evidence(
+                    repo,
+                    "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+                    reported_status=candidate_rcm_support.get("status"),
                 ),
                 evidence(repo, "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md"),
             ],
@@ -632,9 +656,13 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "candidate_aware_lifecycle_harness_forced_reuse": nested(
                     candidate_lifecycle, "lifecycle", "harness_forced_cross_video_reuse"
                 ),
+                "candidate_aware_rcm_support_status": candidate_rcm_support.get("status"),
+                "candidate_aware_rcm_m_support_steps": nested(
+                    candidate_rcm_support, "m_support", "m_support_steps"
+                ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
             },
-            "open_gate": "The static policy fold contains lawful cross-video Known support, but the preserved pilot produced zero prediction-owned cross-video groups; repair and freeze the anonymous lifecycle coverage before claiming or selecting self-correcting memory.",
+            "open_gate": "The static policy fold contains lawful cross-video Known support, but both the preserved RCM pilot and the fixed candidate-aware support repair produced zero prediction-owned cross-video groups; change the support aggregation mechanism before claiming or selecting self-correcting memory.",
         },
         {
             "id": "formal_causal_online_metrics",
@@ -801,6 +829,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
                 reported_status=candidate_lifecycle.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr2/candidate_aware_rcm_support_smoke_v1/result.json",
+                reported_status=candidate_rcm_support.get("status"),
             ),
             evidence(
                 repo,

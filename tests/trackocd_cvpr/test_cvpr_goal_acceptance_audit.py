@@ -87,6 +87,11 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["candidate_aware_decision"]["facts"]["candidate_aware_lifecycle_cross_video_token_count"] == 1
     assert rows["candidate_aware_decision"]["facts"]["candidate_aware_lifecycle_optimizer_steps"] == 0
     assert rows["candidate_aware_decision"]["facts"]["candidate_aware_lifecycle_harness_forced_reuse"] is False
+    assert rows["candidate_aware_decision"]["facts"]["candidate_aware_rcm_support_status"] == (
+        "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
+    )
+    assert rows["candidate_aware_decision"]["facts"]["candidate_aware_rcm_cross_video_token_count"] == 0
+    assert rows["candidate_aware_decision"]["facts"]["candidate_aware_rcm_m_support_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["predicted_training_readiness_status"] == (
         "BLOCKED_PREDICTED_TRAINING_INPUT_NOT_QUALIFIED"
     )
@@ -126,6 +131,12 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["self_correcting_persistent_memory"]["facts"][
         "candidate_aware_lifecycle_harness_forced_reuse"
     ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "candidate_aware_rcm_support_status"
+    ] == "FAIL_CANDIDATE_AWARE_RCM_M_SUPPORT_ZERO"
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "candidate_aware_rcm_m_support_steps"
+    ] == 0
     assert rows["self_correcting_persistent_memory"]["facts"][
         "rcm_m_branch_scientifically_exercised"
     ] is False
