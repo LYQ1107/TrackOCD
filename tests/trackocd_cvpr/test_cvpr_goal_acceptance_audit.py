@@ -100,6 +100,18 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["predicted_track_training"]["facts"]["rcm_m_loss_steps"] == 0
     assert rows["predicted_track_training"]["facts"]["rcm_positive_other_video_groups"] == 0
     assert rows["self_correcting_persistent_memory"]["facts"][
+        "rcm_static_support_status"
+    ] == "PASS_LAWFUL_CROSS_VIDEO_KNOWN_SUPPORT_AVAILABLE"
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "rcm_static_support_pair_count"
+    ] == 36
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "rcm_static_physical_track_count"
+    ] == 54
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "rcm_static_masked_track_count"
+    ] == 10
+    assert rows["self_correcting_persistent_memory"]["facts"][
         "rcm_m_branch_scientifically_exercised"
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][

@@ -10883,3 +10883,22 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_pilot_bdd32_v1/result.json`.
   The acceptance audit records this as strengthened pilot evidence while the
   lawful strong-frontend gate remains open.
+
+## RCM cross-video Known-support availability audit (2026-10-26 UTC)
+
+- A read-only audit reopened the already qualified policy Train cache and its
+  approved external loss-target projection, but did not construct the RCM
+  model, decode pixels, run inference, or optimize. The full policy fold has
+  `54` physical tracks: `34` existing Known targets, `10` policy-pseudo
+  targets, and `10` explicitly masked no-retained-semantic-truth tracks.
+- In the frozen policy order, `9/10` videos contain Known targets and there are
+  `36` cross-video Known-support pairs. The preserved first two-video RCM
+  pilot nevertheless had `0` M-loss steps and `0` prediction-owned
+  cross-video groups. Therefore the zero M coverage is not explained by an
+  empty lawful support fold; the next repair must address anonymous lifecycle
+  grouping/coverage while preserving unknown tracks as masked, never
+  background or Novel.
+- This is planning evidence only. It does not select a fold, claim M
+  supervision, authorize formal predicted training, or change Goal/metric
+  acceptance. Receipt:
+  `outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json`.

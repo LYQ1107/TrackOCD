@@ -112,6 +112,10 @@ def build_audit(repo: Path) -> dict[str, Any]:
         repo,
         "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
     )
+    rcm_support_path, rcm_support = load_json(
+        repo,
+        "outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json",
+    )
     predicted_feature_video0275_path, predicted_feature_video0275 = load_json(
         repo,
         "outputs/trackocd_cvpr/cvpr2/predicted_train_policy_feature_pilot_video0275_v1/result.json",
@@ -558,6 +562,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 evidence(
                     repo,
+                    "outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json",
+                    reported_status=rcm_support.get("status"),
+                ),
+                evidence(
+                    repo,
                     "outputs/trackocd_cvpr/cvpr2/predicted_train_rcm_cross_video_smoke_v1/result.json",
                     reported_status=cross_video_smoke.get("status"),
                 ),
@@ -572,6 +581,16 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 "rcm_positive_other_video_groups": nested(
                     rcm_coverage, "coverage", "positive_other_video_groups"
                 ),
+                "rcm_static_support_status": rcm_support.get("status"),
+                "rcm_static_support_pair_count": nested(
+                    rcm_support, "support", "cross_video_known_support_pair_count"
+                ),
+                "rcm_static_physical_track_count": nested(
+                    rcm_support, "support", "physical_track_count"
+                ),
+                "rcm_static_masked_track_count": nested(
+                    rcm_support, "support", "masked_target_tracks"
+                ),
                 "rcm_m_branch_scientifically_exercised": nested(
                     rcm_coverage, "boundary", "m_branch_scientifically_exercised"
                 ),
@@ -584,7 +603,7 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
             },
-            "open_gate": "The bounded R/C/M pilot has zero M support coverage; freeze a legal cross-video Known-support fold before claiming or selecting self-correcting memory.",
+            "open_gate": "The static policy fold contains lawful cross-video Known support, but the preserved pilot produced zero prediction-owned cross-video groups; repair and freeze the anonymous lifecycle coverage before claiming or selecting self-correcting memory.",
         },
         {
             "id": "formal_causal_online_metrics",
@@ -736,6 +755,11 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 repo,
                 "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
                 reported_status=rcm_coverage.get("status"),
+            ),
+            evidence(
+                repo,
+                "outputs/trackocd_cvpr/cvpr5/rcm_support_availability_audit_20261026.json",
+                reported_status=rcm_support.get("status"),
             ),
             evidence(
                 repo,

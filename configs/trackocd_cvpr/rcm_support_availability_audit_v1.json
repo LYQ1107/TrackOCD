@@ -1,0 +1,26 @@
+{
+  "schema_version": "trackocd.cvpr.rcm-support-availability-audit.v1",
+  "status": "FROZEN_READ_ONLY_RCM_SUPPORT_AVAILABILITY_AUDIT",
+  "purpose": "Determine whether the registered policy Train fold contains lawful cross-video Known support, without running the RCM model or optimizer.",
+  "joint_rcm_config": "configs/trackocd_cvpr/joint_rcm_policy_pilot_v1.json",
+  "joint_rcm_config_sha256": "8e5d2db56af95a8ed3e1eeae122c21423e8a50255f897cc4ca0b448103274abe",
+  "coverage_receipt": "outputs/trackocd_cvpr/cvpr5/rcm_pilot_coverage_audit_20261026.json",
+  "coverage_receipt_sha256": "3a03c38d0a6a2298a4aa3c0f8699fa0f8597e47fff23f62ee271fbb33f402318",
+  "expected_policy_video_count": 10,
+  "expected_known_target_tracks": 34,
+  "expected_policy_pseudo_target_tracks": 10,
+  "boundaries": {
+    "read_only": true,
+    "model_constructed": false,
+    "inference_started": false,
+    "optimizer_started": false,
+    "new_cache_started": false,
+    "gt_category_fields_read": false,
+    "novel_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "model_selection": false,
+    "semantic_ids_written_to_receipt": false
+  },
+  "interpretation": "Static support availability is a planning fact, not M-loss evidence. The receipt must not select a fold or claim a self-correcting memory result."
+}

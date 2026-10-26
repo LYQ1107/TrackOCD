@@ -1,0 +1,59 @@
+{
+  "schema_version": "trackocd.cvpr.rcm-support-availability-result.v1",
+  "status": "PASS_LAWFUL_CROSS_VIDEO_KNOWN_SUPPORT_AVAILABLE",
+  "generated_utc": "2026-10-26T00:10:43.297540+00:00",
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/rcm_support_availability_audit_v1.json",
+    "sha256": "b05ca4a69639ae554e6e7995efbe5fe0b5568d767c7e37c56f0a8accd12839e2"
+  },
+  "source": {
+    "joint_rcm_config_sha256": "8e5d2db56af95a8ed3e1eeae122c21423e8a50255f897cc4ca0b448103274abe",
+    "coverage_receipt_sha256": "3a03c38d0a6a2298a4aa3c0f8699fa0f8597e47fff23f62ee271fbb33f402318",
+    "policy_video_count": 10
+  },
+  "support": {
+    "known_target_tracks": 34,
+    "policy_pseudo_target_tracks": 10,
+    "masked_target_tracks": 10,
+    "physical_track_count": 54,
+    "videos_with_known_targets": 9,
+    "known_tracks_by_frozen_policy_order": [
+      2,
+      5,
+      10,
+      4,
+      6,
+      1,
+      0,
+      3,
+      2,
+      1
+    ],
+    "cross_video_known_support_pair_count": 36,
+    "first_support_pair_by_frozen_ordinals": {
+      "left_ordinal": 0,
+      "right_ordinal": 1,
+      "shared_known_binding_count": 1,
+      "shared_known_track_overlap_count": 1
+    }
+  },
+  "preserved_rcm_coverage": {
+    "m_loss_steps": 0,
+    "positive_other_video_groups": 0,
+    "pilot_status": "COMPLETED_JOINT_RCM_MEMORY_PILOT_NOT_DEV_PRED_OR_GOAL_ACCEPTANCE"
+  },
+  "boundaries": {
+    "read_only": true,
+    "model_constructed": false,
+    "inference_started": false,
+    "optimizer_started": false,
+    "new_cache_started": false,
+    "gt_category_fields_read": false,
+    "novel_vocabulary_read": false,
+    "val_labels_read": false,
+    "test_accessed": false,
+    "model_selection": false,
+    "semantic_ids_written_to_receipt": false
+  },
+  "interpretation": "Lawful external Known support exists in the registered policy fold, while the preserved RCM pilot produced zero prediction-owned cross-video support groups. This narrows the repair target to anonymous lifecycle grouping/coverage; it is not M-loss evidence, fold selection, or scientific acceptance."
+}
