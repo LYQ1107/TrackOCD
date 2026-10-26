@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:11:31.953789+00:00",
+  "generated_utc": "2026-10-26T00:13:25.479179+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "f0f9a0f5ef70680c11506b75d6b72ec9d51457b0",
+    "head": "4e08e8ed1f9c845389b93b80edd1b895d1a91de0",
     "clean_before_audit": true
   },
   "scope": {
@@ -446,6 +446,13 @@
           "bytes": 219418,
           "sha256": "45911586efe6112045c4233aa47a685764b2e166f286122398b29baaf9ba0e3d",
           "reported_status": "ACTUAL_PUBLIC_ALL9_C_DEVELOPMENT_MATRIX_NOT_NEWLOSS_PRED_CT_OR_GOAL_ACCEPTANCE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 1351,
+          "sha256": "5b1ee149bb9a8f96ed1227f4048bf3356a54cd65f5615a73b551ecf4a8254b85",
+          "reported_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
         }
       ],
       "facts": {
@@ -456,7 +463,11 @@
         "gt_controlled_matrix_trial_count": 9,
         "gt_controlled_matrix_orders_per_trial": 3,
         "gt_controlled_matrix_selected_model_or_seed": false,
-        "gt_controlled_matrix_pred_or_goal_accepted": false
+        "gt_controlled_matrix_pred_or_goal_accepted": false,
+        "candidate_aware_lifecycle_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE",
+        "candidate_aware_lifecycle_cross_video_token_count": 1,
+        "candidate_aware_lifecycle_optimizer_steps": 0,
+        "candidate_aware_lifecycle_harness_forced_reuse": false
       },
       "open_gate": "Need a trained/predicted implementation, independent folds, multi-seed/order/coverage controls, and locked evaluation."
     },
@@ -494,6 +505,13 @@
           "reported_status": "PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 1351,
+          "sha256": "5b1ee149bb9a8f96ed1227f4048bf3356a54cd65f5615a73b551ecf4a8254b85",
+          "reported_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -523,6 +541,9 @@
         "rcm_pilot_is_goal_acceptance": false,
         "predicted_cross_video_lifecycle_smoke_status": "PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING",
         "predicted_cross_video_lifecycle_token_count": 3,
+        "candidate_aware_lifecycle_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE",
+        "candidate_aware_lifecycle_cross_video_token_count": 1,
+        "candidate_aware_lifecycle_harness_forced_reuse": false,
         "predicted_cross_video_lifecycle_is_supervision": false
       },
       "open_gate": "The static policy fold contains lawful cross-video Known support, but the preserved pilot produced zero prediction-owned cross-video groups; repair and freeze the anonymous lifecycle coverage before claiming or selecting self-correcting memory."
@@ -713,6 +734,13 @@
       "bytes": 1923,
       "sha256": "8ec4cc90becb4985523f9b68c6aaa5efcde8b492430a78e033e4e4a458941d96",
       "reported_status": "PASS_CATEGORY_FREE_CROSS_VIDEO_RCM_LIFECYCLE_SMOKE_NO_TRAINING"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_aware_lifecycle_smoke_v1/result.json",
+      "exists": true,
+      "bytes": 1351,
+      "sha256": "5b1ee149bb9a8f96ed1227f4048bf3356a54cd65f5615a73b551ecf4a8254b85",
+      "reported_status": "PASS_UNTRAINED_CANDIDATE_AWARE_LIFECYCLE_SMOKE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",
