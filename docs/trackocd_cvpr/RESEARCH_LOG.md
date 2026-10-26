@@ -11050,3 +11050,18 @@ no private GT/cache/weights opened for this check):
   `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_full_clock_v1/result.json`,
   `configs/trackocd_cvpr/candidate_family_peak_m_full_clock_v1.json`, and
   `tests/trackocd_cvpr/test_candidate_family_peak_m_full_clock.py`.
+
+## Existing joint RCM persistent-lineage boundary (2026-10-26 UTC)
+
+- The preserved bounded joint R/C/M policy pilot independently consumed its
+  complete two-video clock (`79` metadata frames) and retained `143` actual
+  version records. Its receipt verifies append-only memory history and
+  retention of all parent history and empty tombstones.
+- The same receipt explicitly reports no full semantic-truth or
+  self-excluded-reuse certificate, and its M-loss plan had no eligible
+  optimizer term. Therefore this is evidence for causal persistent-history
+  plumbing only; it does not demonstrate self-correcting category memory,
+  predicted-track training, or Goal acceptance. The new family-peak M smoke
+  supplies positive M support/optimizer interface evidence, but the two
+  receipts must remain separate rather than being combined into a scientific
+  claim.

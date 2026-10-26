@@ -242,6 +242,9 @@ def build_audit(repo: Path) -> dict[str, Any]:
     candidate_aggregate = candidate_matrix.get("aggregate", {})
     candidate_models = candidate_aggregate.get("models", {})
     candidate_trials = candidate_matrix.get("all_original_trials", {})
+    joint_rcm_episodes = nested(rcm, "summary", "episodes", default=[])
+    joint_rcm_episode = joint_rcm_episodes[0] if joint_rcm_episodes else {}
+    joint_rcm_lineage = joint_rcm_episode.get("version_lineage_audit", {})
 
     requirements: list[dict[str, Any]] = [
         {
@@ -875,6 +878,19 @@ def build_audit(repo: Path) -> dict[str, Any]:
                 ),
                 "family_peak_m_full_clock_predicted_track_training": nested(
                     family_peak_m_full_clock, "training", "predicted_track_training"
+                ),
+                "joint_rcm_complete_clock_consumed": joint_rcm_episode.get(
+                    "complete_clock_consumed"
+                ),
+                "joint_rcm_version_records": joint_rcm_episode.get("version_records"),
+                "joint_rcm_append_only_memory_history_retained": joint_rcm_episode.get(
+                    "append_only_memory_history_retained"
+                ),
+                "joint_rcm_lineage_all_parent_history_and_empty_tombstones_retained": (
+                    joint_rcm_lineage.get("all_parent_history_and_empty_tombstones_retained")
+                ),
+                "joint_rcm_lineage_semantic_or_self_excluded_certificate": joint_rcm_lineage.get(
+                    "full_semantic_GT_truth_or_self_excluded_reuse_certificate"
                 ),
                 "predicted_cross_video_lifecycle_is_supervision": False,
                 "family_peak_support_is_scientific_acceptance": False,

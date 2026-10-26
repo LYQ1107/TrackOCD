@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T01:11:24.334551+00:00",
+  "generated_utc": "2026-10-26T01:13:17.832923+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "8a2aaa3743c711354d5fcda7a3df3bc318780dcb",
+    "head": "1d7d3df3fcb80e5d06a9a151574d88b1619044fe",
     "clean_before_audit": false
   },
   "scope": {
@@ -709,6 +709,11 @@
         "family_peak_m_full_clock_positive_other_video_groups": 28,
         "family_peak_m_full_clock_parameters_changed": true,
         "family_peak_m_full_clock_predicted_track_training": false,
+        "joint_rcm_complete_clock_consumed": true,
+        "joint_rcm_version_records": 143,
+        "joint_rcm_append_only_memory_history_retained": true,
+        "joint_rcm_lineage_all_parent_history_and_empty_tombstones_retained": true,
+        "joint_rcm_lineage_semantic_or_self_excluded_certificate": false,
         "predicted_cross_video_lifecycle_is_supervision": false,
         "family_peak_support_is_scientific_acceptance": false
       },

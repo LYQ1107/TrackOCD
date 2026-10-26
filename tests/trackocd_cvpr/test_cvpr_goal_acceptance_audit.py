@@ -235,6 +235,21 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
         "family_peak_m_full_clock_predicted_track_training"
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][
+        "joint_rcm_complete_clock_consumed"
+    ] is True
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "joint_rcm_version_records"
+    ] == 143
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "joint_rcm_append_only_memory_history_retained"
+    ] is True
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "joint_rcm_lineage_all_parent_history_and_empty_tombstones_retained"
+    ] is True
+    assert rows["self_correcting_persistent_memory"]["facts"][
+        "joint_rcm_lineage_semantic_or_self_excluded_certificate"
+    ] is False
+    assert rows["self_correcting_persistent_memory"]["facts"][
         "rcm_m_branch_scientifically_exercised"
     ] is False
     assert rows["self_correcting_persistent_memory"]["facts"][
