@@ -1,10 +1,10 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T05:18:43.897363+00:00",
+  "generated_utc": "2026-10-26T06:35:49.515303+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "905059698973fa64c865a783c0a4bc9eb2a2c081",
-    "clean_before_audit": true
+    "head": "bfe879a7ed0f9b18e6b523072526758060f683e6",
+    "clean_before_audit": false
   },
   "scope": {
     "receipt_only": true,
@@ -322,8 +322,8 @@
         "formal_v2_missing_or_invalid_asset_count": 16,
         "local_cache_reconciliation_status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY",
         "local_cache_required_shards": 723,
-        "local_cache_completed_shards": 399,
-        "local_cache_missing_shards": 324,
+        "local_cache_completed_shards": 457,
+        "local_cache_missing_shards": 266,
         "local_cache_formal_complete": false,
         "historical_complete_cache_reachable": false,
         "hybrid_geometry_smoke_status": "COMPLETE_CATEGORY_FREE_HYBRID_GEOMETRY_SMOKE_NOT_QUALIFICATION",
@@ -347,7 +347,7 @@
         "historical_current_frontend_stream_identity_status": "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH",
         "historical_current_same_input_stream_proven": false
       },
-      "open_gate": "The bounded MASA dense pilot and fixed score-gate counterfactual strengthen engineering evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 399/723 shards and the historical 723/723 path is currently unreachable."
+      "open_gate": "The bounded MASA dense pilot and fixed score-gate counterfactual strengthen engineering evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 457/723 shards and the historical 723/723 path is currently unreachable."
     },
     {
       "id": "predicted_track_training",
@@ -946,8 +946,8 @@
     {
       "path": "outputs/trackocd_cvpr/cvpr5/local_formal_cache_reconciliation_20261026.json",
       "exists": true,
-      "bytes": 4180,
-      "sha256": "3ea9d85ee929739aeea3432e2c531b8078c2023ba4403dc33ab031cd39bdd738",
+      "bytes": 4171,
+      "sha256": "43b122bc5208a442dfc8053ca963012a8533abe31676ba2c922a6a0ab753d711",
       "reported_status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY"
     },
     {

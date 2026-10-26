@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.local-formal-cache-reconciliation.v1",
-  "generated_utc": "2026-10-26T05:11:31.106690+00:00",
+  "generated_utc": "2026-10-26T06:35:32.735110+00:00",
   "status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY",
   "scope": {
     "small_metadata_receipts_only": true,
@@ -15,21 +15,21 @@
     "manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json",
     "manifest_status": "RUNNING",
     "manifest_completed_shards": 384,
-    "observed_range_manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.worker-000387-000723.json",
+    "observed_range_manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.worker-000399-000723.json",
     "observed_range_manifest_status": "RANGE_RUNNING",
-    "observed_completed_shards": 399,
+    "observed_completed_shards": 457,
     "observed_completed_shard_ranges": [
       [
         0,
-        398
+        456
       ]
     ],
-    "observed_observations": 759547,
-    "marker_completed_shards": 399,
+    "observed_observations": 834128,
+    "marker_completed_shards": 457,
     "marker_completed_shard_ranges": [
       [
         0,
-        398
+        456
       ]
     ],
     "marker_errors": [],
@@ -38,22 +38,22 @@
     "shard_tracks": 512,
     "total_tracks": 369794,
     "required_shards": 723,
-    "completed_shards": 399,
+    "completed_shards": 457,
     "completed_shard_ranges": [
       [
         0,
-        398
+        456
       ]
     ],
-    "missing_shards": 324,
+    "missing_shards": 266,
     "missing_shard_ranges": [
       [
-        399,
+        457,
         722
       ]
     ],
-    "checked_tracks": 204288,
-    "checked_observations": 759547,
+    "checked_tracks": 233984,
+    "checked_observations": 834128,
     "invalid_box_count": 0,
     "formal_cache_complete": false,
     "cache_root_reachable": true
@@ -92,10 +92,10 @@
       "reported_status": "RUNNING"
     },
     {
-      "path": "outputs/trackocd_v2_runtime/audit/local_399_partial_cache_payload_audit_20261026.json",
+      "path": "outputs/trackocd_cvpr/cvpr5/formal_cache_partial_payload_audit_20261026.json",
       "exists": true,
-      "bytes": 65011,
-      "sha256": "fd5846d9a3f34405226a089109f74afc804579c53bb8bbd5eb320b61a47c789b",
+      "bytes": 74346,
+      "sha256": "76c4784f8866cf09ff7eafc0d9f510542523b4d5c834cba544c7343eff8cedb0",
       "reported_status": "PASS_PARTIAL_COMPLETED_SHARDS"
     },
     {

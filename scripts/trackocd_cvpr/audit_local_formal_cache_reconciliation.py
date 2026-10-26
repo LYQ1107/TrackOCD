@@ -21,6 +21,7 @@ SCHEMA = "trackocd.cvpr.local-formal-cache-reconciliation.v1"
 LOCAL_MANIFEST = "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json"
 LOCAL_PARTIAL_AUDIT = "outputs/trackocd_v2_runtime/audit/local_partial_cache_payload_audit_20261026.json"
 LOCAL_CURRENT_PARTIAL_AUDIT = "outputs/trackocd_v2_runtime/audit/local_399_partial_cache_payload_audit_20261026.json"
+LOCAL_CURRENT_CVPR5_PARTIAL_AUDIT = "outputs/trackocd_cvpr/cvpr5/formal_cache_partial_payload_audit_20261026.json"
 HISTORICAL_AUDIT = "outputs/trackocd_v2_runtime/audit/formal_cache_payload_audit_20261022.json"
 RANGE_MANIFEST_GLOB = "cache_manifest.worker-*.json"
 
@@ -145,6 +146,7 @@ def _select_partial_audit(
     allowed_manifests = {manifest_path.resolve()}
     allowed_manifests.update(path.resolve() for path, _ in range_candidates)
     candidates = (
+        LOCAL_CURRENT_CVPR5_PARTIAL_AUDIT,
         LOCAL_CURRENT_PARTIAL_AUDIT,
         LOCAL_PARTIAL_AUDIT,
     )

@@ -11696,3 +11696,49 @@ no private GT/cache/weights opened for this check):
   reliability-memory invariants, and candidate-aware lifecycle smoke.  This
   confirms that positive Val evidence is retained while the six open
   scientific gates remain open; it is not a new OCD/MOT rerun.
+
+## Partial formal-cache payload audit and RAM-safe pause (2026-10-26 UTC)
+
+- The storage-safe supervisor reached `457/723` completed Val shards and
+  stopped only its own feature worker when the RAM safety gate failed.  The
+  storage estimate still passes (about **4.95 GB** free versus about **2.02
+  GB** estimated payload remaining plus a **1 GiB** reserve), while
+  `MemAvailable` remained around **31--34 GiB**, below the configured
+  **41,296,879 KiB** worker-launch threshold.  No shard was deleted or
+  rewritten, and no external process was stopped or reconfigured.
+- With the worker paused, ran the existing read-only
+  `scripts/trackocd_v2/audit_sharded_cache_payload.py` against the cumulative
+  worker manifest.  It returned `PASS_PARTIAL_COMPLETED_SHARDS`: all **457**
+  completed shards were checked, covering **233,984 tracks** and **834,128
+  observations**, with **233,984 unique sample keys**, **233,984 unique
+  physical tracks**, **0 invalid boxes**, and **0 audit errors**.  Arrays were
+  finite and shape/dtype/index/lineage/source contracts passed; the audit
+  opened no Test content and reports `external_processes_touched=false`.
+- The machine-readable receipt is
+  `outputs/trackocd_cvpr/cvpr5/formal_cache_partial_payload_audit_20261026.json`.
+  This validates the completed partial cache as reusable evidence only;
+  `formal_cache_complete=false`, 266 shards remain, and no DP-means,
+  training, or final causal metric was promoted.  The supervisor and CPU
+  postprocess watcher remain resumable and the CVPR Goal remains open.
+
+## Current partial-receipt rebinding and acceptance regression fix (2026-10-26 UTC)
+
+- The reconciliation refresh exposed a stale receipt-discovery contract: the
+  selector searched only the older `outputs/trackocd_v2_runtime/audit`
+  locations and therefore ignored the newly generated cvpr5 partial audit.
+  Added the current cvpr5 receipt as a strictly bound candidate while
+  retaining older receipts as fallback.  Selection still requires the cache
+  root, source SHA256, range manifest, Val split, zero errors/invalid boxes,
+  and both safety flags to match.
+- Rebuilt the reconciliation receipt.  It now reports
+  `PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY`
+  at **457/723**, with 266 missing shards and
+  `formal_cache_complete=false`.  The CVPR acceptance receipt was refreshed
+  and remains `INCOMPLETE_OPEN_REQUIREMENTS`; the six scientific gates and
+  Goal A/B/C remain pending.
+- Updated the regression contract so the live checkpoint must be at least
+  the previously verified 399 shards but still strictly partial, rather than
+  freezing a dynamic worker checkpoint at exactly 399.  The focused
+  cache-payload, reconciliation, and CVPR acceptance suite passed **4/4**.
+  No training, Test access, model selection, or external process operation
+  occurred.
