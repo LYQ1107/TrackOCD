@@ -1,0 +1,55 @@
+{
+  "boundaries": {
+    "category_or_vocabulary_in_numeric_forward": false,
+    "external_processes_touched": false,
+    "formal_metrics": false,
+    "goal_acceptance": false,
+    "labels_external_loss_only_after_decision": true,
+    "labels_or_gt_in_numeric_forward": false,
+    "model_selection": false,
+    "predicted_track_training": false,
+    "val_or_test_accessed": false,
+    "weights_uploaded": false
+  },
+  "config": {
+    "path": "/data3/liuyeqiang/TrackOCD/configs/trackocd_cvpr/candidate_family_peak_m_training_smoke_v1.json",
+    "sha256": "cee3eed5fc948d352f7c7ab691778147ef9f38e778bfd4a52a49f4cd1d86434c"
+  },
+  "generated_utc": "2026-10-26T00:46:58.916423+00:00",
+  "interpretation": "This is optimizer/interface evidence that a lawful M branch can receive a real external support-agreement gradient after anonymous candidate decisions. It is not predicted-track training, calibrated memory, an OCD/MOT metric, or Goal A/B/C acceptance.",
+  "resources": {
+    "device": "CPU",
+    "peak_rss_bytes": 967704576,
+    "training_gpu_hours": 0.0,
+    "wall_seconds": 42.749335812000936,
+    "workers": 1
+  },
+  "schema_version": "trackocd.cvpr.candidate-family-peak-m-training-smoke-result.v1",
+  "scope": {
+    "events": 14,
+    "frames": 4,
+    "plan_reasons": {
+      "EXTERNAL_FULL_OTHER_GROUP_AGREEMENT": 1,
+      "MASKED_SINGLETON_NO_OTHER_SUPPORT": 10
+    },
+    "positive_other_video_groups": 1,
+    "support_plans": 11,
+    "videos": 2
+  },
+  "status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+  "training": {
+    "branch": "M_member_reliability_only",
+    "gradient_norms": [
+      0.25896716117858887
+    ],
+    "losses": [
+      0.6931471824645996
+    ],
+    "optimizer": "AdamW",
+    "optimizer_steps": 1,
+    "parameter_digest_after": "b3ee20d847be07ebfe0e63856de9443afa6ed8c7d9dbee5f1b7751197f2a93dd",
+    "parameter_digest_before": "654d0ec4fd4fc1bd0c72c22c84fa5cb372a38c7741278a97c653e8f1e43a9b04",
+    "parameters_changed": true,
+    "predicted_track_training": false
+  }
+}

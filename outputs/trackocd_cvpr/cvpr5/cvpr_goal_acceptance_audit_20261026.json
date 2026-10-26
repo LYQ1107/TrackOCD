@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:44:45.877628+00:00",
+  "generated_utc": "2026-10-26T00:47:29.016700+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "b0f6c00b08f3314fa23e327265df81eb34f84113",
+    "head": "30bf326dff6b0129b06dd2e0a5edb37686237973",
     "clean_before_audit": false
   },
   "scope": {
@@ -481,6 +481,13 @@
           "bytes": 2416,
           "sha256": "020a7bdc5a2609c27a03dd1a7e17b994ef1e6b9ee4f217aa6d968ccb1c3c5982",
           "reported_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
+        },
+        {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 2006,
+          "sha256": "5f6b77945b0a3168cc7b1157e9d52ee33e2c59d3c63013587b117a44cab4794c",
+          "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
         }
       ],
       "facts": {
@@ -531,9 +538,14 @@
           1,
           1
         ],
-        "family_peak_order_control_order_winner_selected": false
+        "family_peak_order_control_order_winner_selected": false,
+        "family_peak_m_training_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+        "family_peak_m_training_optimizer_steps": 1,
+        "family_peak_m_training_positive_other_video_groups": 1,
+        "family_peak_m_training_parameters_changed": true,
+        "family_peak_m_training_predicted_track_training": false
       },
-      "open_gate": "The fixed family-relative rule has positive support in both registered orders, but action counts are order-sensitive; trained/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
+      "open_gate": "The fixed family-relative rule and one M-only optimizer step have positive plumbing evidence, but action counts are order-sensitive; trained R/C/predicted implementation, independent folds, multi-seed/coverage controls, and locked evaluation remain open."
     },
     {
       "id": "self_correcting_persistent_memory",
@@ -604,6 +616,13 @@
           "reported_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
+          "exists": true,
+          "bytes": 2006,
+          "sha256": "5f6b77945b0a3168cc7b1157e9d52ee33e2c59d3c63013587b117a44cab4794c",
+          "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
+        },
+        {
           "path": "docs/trackocd_cvpr/CVPR2_ROOT_SUPPORTED_MECHANISMS.md",
           "exists": true,
           "bytes": 15049,
@@ -659,6 +678,11 @@
           1
         ],
         "family_peak_order_control_order_winner_selected": false,
+        "family_peak_m_training_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE",
+        "family_peak_m_training_optimizer_steps": 1,
+        "family_peak_m_training_positive_other_video_groups": 1,
+        "family_peak_m_training_parameters_changed": true,
+        "family_peak_m_training_predicted_track_training": false,
         "predicted_cross_video_lifecycle_is_supervision": false,
         "family_peak_support_is_scientific_acceptance": false
       },
@@ -885,6 +909,13 @@
       "bytes": 2416,
       "sha256": "020a7bdc5a2609c27a03dd1a7e17b994ef1e6b9ee4f217aa6d968ccb1c3c5982",
       "reported_status": "PASS_FAMILY_PEAK_ORDER_CONTROL_SMOKE"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json",
+      "exists": true,
+      "bytes": 2006,
+      "sha256": "5f6b77945b0a3168cc7b1157e9d52ee33e2c59d3c63013587b117a44cab4794c",
+      "reported_status": "PASS_FAMILY_PEAK_M_BRANCH_TRAINING_SMOKE"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_dense_train_online_smoke_v1/result.json",

@@ -11006,3 +11006,23 @@ no private GT/cache/weights opened for this check):
   generalization or scientific acceptance; independent folds, seeds, coverage
   controls, predicted training, self-correction and locked metrics remain
   open.
+
+## Family-relative M-branch optimizer smoke (2026-10-26 UTC)
+
+- After the family-peak rule produced a real prediction-owned cross-video
+  support group, a separate fixed one-step CPU smoke exercised only the M
+  member-reliability branch. The first two policy-order videos and first two
+  metadata clock frames were consumed in full; no C/R optimizer, Pred input,
+  Val/Test data, vocabulary, metric, or model-selection path was opened.
+- The external Known/policy-pseudo target projection was consulted only after
+  each anonymous decision to form the support-agreement loss. The run produced
+  one eligible other-video group, one AdamW update, loss `0.693147`, gradient
+  norm `0.258967`, and a changed parameter digest. Singleton/unknown groups
+  remained masked rather than converted to background or Novel.
+- Receipt/config/test:
+  `outputs/trackocd_cvpr/cvpr2/candidate_family_peak_m_training_smoke_v1/result.json`,
+  `configs/trackocd_cvpr/candidate_family_peak_m_training_smoke_v1.json`, and
+  `tests/trackocd_cvpr/test_candidate_family_peak_m_training_smoke.py`.
+  This proves only a lawful M optimizer/interface path on policy Train cache;
+  it is explicitly not predicted-track training, calibrated/self-correcting
+  memory, a formal metric, or Goal A/B/C acceptance.
