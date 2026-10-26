@@ -11583,3 +11583,15 @@ no private GT/cache/weights opened for this check):
   external process.  This upgrades the new range from marker-only evidence to
   independently checked partial payload evidence; the remaining `324` shards
   and formal metrics are still open.
+
+## Resource-gate diagnosis for the waiting worker (2026-10-26 UTC)
+
+- Rechecked the supervisor contract and live receipt.  A launch requires both
+  `MemAvailable >= 41,296,879 KiB` (25% RAM floor plus an 8 GiB worker
+  margin) and an actually idle GPU with at least **8192 MiB** free and no
+  compute application.  The current receipt has storage passing, RAM below
+  the worker threshold, and no eligible GPU; this is an intentional safety
+  wait rather than a worker crash.
+- No threshold was relaxed, no GPU was claimed from another task, and no
+  process was stopped or reconfigured.  The cache remains resumable at shard
+  `399`.
