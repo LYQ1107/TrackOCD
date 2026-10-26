@@ -11789,3 +11789,13 @@ no private GT/cache/weights opened for this check):
 - This strengthens provenance only; it does not accept any method, metric, or
   Goal A/B/C result.  The formal Val cache remains at **457/723** under the
   RAM-safe supervisor.
+
+## Acceptance receipt rebound after preservation recheck (2026-10-26 UTC)
+
+- Rebound the CVPR acceptance receipt to the latest preservation-audit head
+  `437293e250a3535f556df66ba06e3fa128985341`.  The receipt again reports
+  `INCOMPLETE_OPEN_REQUIREMENTS`, with Goal A, Goal B, and Goal C all pending
+  and no scientific success claim.
+- The fail-closed acceptance regression passed **1/1**.  This was a compact
+  receipt-only check; it opened no data, weights, streams, labels, or Test
+  content and performed no model selection or external-process operation.
