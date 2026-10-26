@@ -41,8 +41,8 @@ def test_cvpr_goal_acceptance_audit_is_fail_closed_and_receipt_only():
     assert rows["lawful_strong_frontend"]["facts"]["current_candidate_is_official_tao_route"] is False
     assert rows["lawful_strong_frontend"]["facts"]["formal_v2_ready"] is False
     assert rows["lawful_strong_frontend"]["facts"]["local_cache_required_shards"] == 723
-    assert rows["lawful_strong_frontend"]["facts"]["local_cache_completed_shards"] == 384
-    assert rows["lawful_strong_frontend"]["facts"]["local_cache_missing_shards"] == 339
+    assert rows["lawful_strong_frontend"]["facts"]["local_cache_completed_shards"] == 399
+    assert rows["lawful_strong_frontend"]["facts"]["local_cache_missing_shards"] == 324
     assert rows["lawful_strong_frontend"]["facts"]["local_cache_formal_complete"] is False
     assert rows["lawful_strong_frontend"]["facts"]["historical_complete_cache_reachable"] is False
     assert (

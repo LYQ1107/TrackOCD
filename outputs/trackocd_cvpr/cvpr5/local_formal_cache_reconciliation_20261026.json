@@ -1,6 +1,6 @@
 {
   "schema_version": "trackocd.cvpr.local-formal-cache-reconciliation.v1",
-  "generated_utc": "2026-10-25T23:00:55.656459+00:00",
+  "generated_utc": "2026-10-26T04:52:49.273775+00:00",
   "status": "PASS_LOCAL_PARTIAL_CACHE_RECONCILED_HISTORICAL_COMPLETE_CACHE_UNREACHABLE_NOT_FORMAL_READY",
   "scope": {
     "small_metadata_receipts_only": true,
@@ -14,22 +14,41 @@
   "local_cache": {
     "manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.json",
     "manifest_status": "RUNNING",
+    "manifest_completed_shards": 384,
+    "observed_range_manifest": "outputs/trackocd_v2_runtime/features/formal/covtrack_native_continuation_20261022/cache_manifest.worker-000387-000723.json",
+    "observed_range_manifest_status": "RANGE_RUNNING",
+    "observed_completed_shards": 399,
+    "observed_completed_shard_ranges": [
+      [
+        0,
+        398
+      ]
+    ],
+    "observed_observations": 759547,
+    "marker_completed_shards": 399,
+    "marker_completed_shard_ranges": [
+      [
+        0,
+        398
+      ]
+    ],
+    "marker_errors": [],
     "frontend": "COVTrack-native",
     "split": "val",
     "shard_tracks": 512,
     "total_tracks": 369794,
     "required_shards": 723,
-    "completed_shards": 384,
+    "completed_shards": 399,
     "completed_shard_ranges": [
       [
         0,
-        383
+        398
       ]
     ],
-    "missing_shards": 339,
+    "missing_shards": 324,
     "missing_shard_ranges": [
       [
-        384,
+        399,
         722
       ]
     ],
@@ -53,8 +72,11 @@
   "binding_checks": {
     "partial_manifest_matches_local_manifest": true,
     "partial_audit_cache_root_matches_manifest": true,
-    "manifest_count_matches_partial_audit": true,
-    "checked_track_count_matches_manifest_entries": true,
+    "base_manifest_count_matches_partial_audit": true,
+    "base_checked_track_count_matches_manifest_entries": true,
+    "range_manifest_matches_completion_markers": true,
+    "completion_marker_errors": [],
+    "partial_payload_audit_covers_observed_range": false,
     "local_formal_cache_complete": false,
     "historical_cache_reachable": false
   },

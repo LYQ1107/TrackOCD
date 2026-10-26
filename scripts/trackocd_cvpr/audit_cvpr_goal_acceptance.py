@@ -501,7 +501,15 @@ def build_audit(repo: Path) -> dict[str, Any]:
                     "same_input_stream_proven",
                 ),
             },
-            "open_gate": "The bounded MASA dense pilot and fixed score-gate counterfactual strengthen engineering evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable.",
+            "open_gate": (
+                "The bounded MASA dense pilot and fixed score-gate counterfactual strengthen engineering "
+                "evidence, but frontend admission still needs exact release provenance, full lawful coverage, "
+                "and shared metric validation; the reachable local formal cache is only "
+                f"{nested(local_cache, 'local_cache', 'completed_shards')}/"
+                f"{nested(local_cache, 'local_cache', 'required_shards')} shards and the historical "
+                f"{nested(local_cache, 'historical_cache', 'reported_completed_shards')}/"
+                f"{nested(local_cache, 'local_cache', 'required_shards')} path is currently unreachable."
+            ),
         },
         {
             "id": "predicted_track_training",
