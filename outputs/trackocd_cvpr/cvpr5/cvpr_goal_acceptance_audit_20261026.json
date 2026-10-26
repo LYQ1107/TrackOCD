@@ -1,9 +1,9 @@
 {
   "schema_version": "trackocd.cvpr.goal-acceptance-audit.v1",
-  "generated_utc": "2026-10-26T00:03:46.595084+00:00",
+  "generated_utc": "2026-10-26T00:06:09.066872+00:00",
   "repository": {
     "branch": "research/cvpr-trackocd-autonomous-v2",
-    "head": "9d270a6404607b2e2a6b9f21bd554afed7d6c3be",
+    "head": "32c2ebc9f3ab870da999f06563b0ad0957be7949",
     "clean_before_audit": true
   },
   "scope": {
@@ -209,6 +209,13 @@
           "reported_status": "PASS_BOUNDED_MASA_DENSE_FRAME_ONLINE_TRAIN_SMOKE_NO_GT"
         },
         {
+          "path": "outputs/trackocd_cvpr/cvpr2/masa_score_gate_counterfactual_v1/result.json",
+          "exists": true,
+          "bytes": 3178,
+          "sha256": "cae5e2e49e124b7adcacee061239b54c11ba6392d89378956f8797b613310e20",
+          "reported_status": "PASS_MASA_SCORE_GATE_COUNTERFACTUAL_DIAGNOSTIC_NOT_SELECTION"
+        },
+        {
           "path": "outputs/trackocd_cvpr/cvpr5/image_only_frontend_asset_recheck_v1.json",
           "exists": true,
           "bytes": 3225,
@@ -270,6 +277,34 @@
         "masa_dense_train_pilot_train_images_only": true,
         "masa_dense_train_pilot_all_finite": true,
         "masa_dense_train_pilot_max_retained_ids": 50,
+        "masa_score_gate_status": "PASS_MASA_SCORE_GATE_COUNTERFACTUAL_DIAGNOSTIC_NOT_SELECTION",
+        "masa_score_gate_fixed_thresholds": [
+          {
+            "threshold": 0.25,
+            "precision": 0.05617021276595745,
+            "recall": 0.7252747252747253,
+            "conditional_switch_rate": 0.15789473684210525
+          },
+          {
+            "threshold": 0.5,
+            "precision": 0.07258064516129033,
+            "recall": 0.6923076923076923,
+            "conditional_switch_rate": 0.16216216216216217
+          },
+          {
+            "threshold": 0.75,
+            "precision": 0.09533073929961089,
+            "recall": 0.5384615384615384,
+            "conditional_switch_rate": 0.07407407407407407
+          },
+          {
+            "threshold": 0.9,
+            "precision": 0.14545454545454545,
+            "recall": 0.43956043956043955,
+            "conditional_switch_rate": 0.13043478260869565
+          }
+        ],
+        "masa_score_gate_selected_threshold": null,
         "strong_legal_primary_accepted": false,
         "runtime_checkpoint_binding_reconciled": true,
         "exact_release_stage_training_binding_verified": false,
@@ -294,7 +329,7 @@
         "historical_current_frontend_stream_identity_status": "HISTORICAL_SELECTION_NOT_REPROMOTED_CURRENT_STREAM_IDENTITY_MISMATCH",
         "historical_current_same_input_stream_proven": false
       },
-      "open_gate": "The bounded MASA dense pilot strengthens the frozen current-image causal-path evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable."
+      "open_gate": "The bounded MASA dense pilot and fixed score-gate counterfactual strengthen engineering evidence, but frontend admission still needs exact release provenance, full lawful coverage, and shared metric validation; the reachable local formal cache is only 384/723 shards and the historical 723/723 path is currently unreachable."
     },
     {
       "id": "predicted_track_training",
@@ -674,6 +709,13 @@
       "bytes": 24955,
       "sha256": "dc6d576834960c2e0b40abaff856aff72378025722a481185219d3cc34c73a42",
       "reported_status": "PASS_BOUNDED_MASA_DENSE_FRAME_ONLINE_TRAIN_SMOKE_NO_GT"
+    },
+    {
+      "path": "outputs/trackocd_cvpr/cvpr2/masa_score_gate_counterfactual_v1/result.json",
+      "exists": true,
+      "bytes": 3178,
+      "sha256": "cae5e2e49e124b7adcacee061239b54c11ba6392d89378956f8797b613310e20",
+      "reported_status": "PASS_MASA_SCORE_GATE_COUNTERFACTUAL_DIAGNOSTIC_NOT_SELECTION"
     },
     {
       "path": "outputs/trackocd_cvpr/cvpr2/masa_covtrack_hybrid_geometry_smoke_v1/result.json",
