@@ -11382,3 +11382,19 @@ no private GT/cache/weights opened for this check):
   `research/cvpr-trackocd-autonomous-v2`.  Replacement supervisor PID
   `4070199` is currently waiting at shard 399; no new payload has yet been
   written after the repair.
+
+## Dynamic idle-GPU resume handoff (2026-10-26 UTC)
+
+- GPU0 subsequently became occupied by an external task while the fixed-index
+  supervisor was waiting.  A fresh read-only `nvidia-smi` check found compute
+  applications on all ten visible GPUs; no other GPU was assumed idle.
+- Updated the task-owned supervisor to accept `--gpu-index -1` and select an
+  actually idle GPU at launch time, while retaining the same 25% RAM plus
+  8 GiB worker gate, Val-only stream, batch 16, and child-only termination
+  policy.  Simulation, syntax, help, and diff checks passed.
+- Commit `200a01d0` was pushed and verified on
+  `research/cvpr-trackocd-autonomous-v2`.  The replacement dynamic supervisor
+  is PID `4129913`, with receipt
+  `outputs/trackocd_cvpr/cvpr5/formal_covtrack_cache_resume_supervisor_dynamic_20261026.json`;
+  it is waiting at 0/324 new-range shards (399/723 overall).  No external
+  process was touched and no new payload has been written yet.
